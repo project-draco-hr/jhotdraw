@@ -1,4 +1,4 @@
 {
   MDIDesktopPane desktop=(MDIDesktopPane)(((DrawApplication)getDrawingEditor()).getDesktop());
-  return new CH.ifa.draw.contrib.CTXWindowMenu("TestCTXWindowMenu",desktop,getDrawingEditor());
+  return new CTXWindowMenu("TestCTXWindowMenu",desktop,getDrawingEditor());
 }

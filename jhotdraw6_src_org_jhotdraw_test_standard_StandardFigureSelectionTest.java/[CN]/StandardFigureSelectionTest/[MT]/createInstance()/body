@@ -3,5 +3,5 @@
   l.add(new RectangleFigure(new Point(10,10),new Point(100,100)));
   l.add(new PolyLineFigure(20,20));
   FigureEnumeration fenum=new FigureEnumerator(l);
-  return new CH.ifa.draw.standard.StandardFigureSelection(fenum,l.size());
+  return new StandardFigureSelection(fenum,l.size());
 }

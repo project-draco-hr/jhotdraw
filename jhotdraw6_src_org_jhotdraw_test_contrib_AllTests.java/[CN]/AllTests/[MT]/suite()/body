@@ -1,5 +1,5 @@
 {
-  TestSuite suite=new TestSuite("Test for CH.ifa.draw.test.contrib");
+  TestSuite suite=new TestSuite("Test for org.jhotdraw.test.contrib");
   suite.addTest(new TestSuite(CTXCommandMenuTest.class));
   suite.addTest(new TestSuite(CTXWindowMenuTest.class));
   suite.addTest(new TestSuite(ChopDiamondConnectorTest.class));

@@ -1,5 +1,5 @@
 {
-  TestSuite suite=new TestSuite("Test for CH.ifa.draw.test.samples.minimap");
+  TestSuite suite=new TestSuite("Test for org.jhotdraw.test.samples.minimap");
   suite.addTest(new TestSuite(MiniMapApplicationTest.class));
   suite.addTest(new TestSuite(MiniMapDesktopTest.class));
   return suite;

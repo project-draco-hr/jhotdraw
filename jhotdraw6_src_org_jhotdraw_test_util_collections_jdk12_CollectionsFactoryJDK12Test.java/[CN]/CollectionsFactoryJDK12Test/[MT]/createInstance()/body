@@ -1,3 +1,3 @@
 {
-  return new CH.ifa.draw.util.collections.jdk12.CollectionsFactoryJDK12();
+  return new CollectionsFactoryJDK12();
 }

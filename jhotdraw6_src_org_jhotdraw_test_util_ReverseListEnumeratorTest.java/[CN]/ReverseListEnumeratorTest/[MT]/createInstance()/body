@@ -2,5 +2,5 @@
   List l=CollectionsFactory.current().createList();
   l.add("TestString1");
   l.add("TestString2");
-  return new CH.ifa.draw.util.ReverseListEnumerator(l);
+  return new ReverseListEnumerator(l);
 }

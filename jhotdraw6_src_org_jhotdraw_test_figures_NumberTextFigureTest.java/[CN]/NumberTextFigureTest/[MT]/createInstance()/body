@@ -1,3 +1,3 @@
 {
-  return new CH.ifa.draw.figures.NumberTextFigure();
+  return new NumberTextFigure();
 }

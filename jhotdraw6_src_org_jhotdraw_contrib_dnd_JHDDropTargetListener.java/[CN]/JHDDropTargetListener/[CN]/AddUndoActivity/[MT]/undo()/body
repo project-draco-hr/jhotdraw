@@ -6,7 +6,7 @@
   DeleteFromDrawingVisitor deleteVisitor=new DeleteFromDrawingVisitor(getDrawingView().drawing());
   FigureEnumeration fe=getAffectedFigures();
   while (fe.hasNextFigure()) {
-    CH.ifa.draw.framework.Figure f=fe.nextFigure();
+    org.jhotdraw.framework.Figure f=fe.nextFigure();
     f.visit(deleteVisitor);
   }
   setAffectedFigures(deleteVisitor.getDeletedFigures());

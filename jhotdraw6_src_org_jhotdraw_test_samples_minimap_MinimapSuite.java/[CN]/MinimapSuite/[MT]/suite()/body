@@ -1,7 +1,7 @@
 {
   TestSuite suite;
-  suite=new TestSuite("CH.ifa.draw.test.samples.minimap");
-  suite.addTestSuite(CH.ifa.draw.test.samples.minimap.MiniMapDesktopTest.class);
-  suite.addTestSuite(CH.ifa.draw.test.samples.minimap.MiniMapApplicationTest.class);
+  suite=new TestSuite("org.jhotdraw.test.samples.minimap");
+  suite.addTestSuite(org.jhotdraw.test.samples.minimap.MiniMapDesktopTest.class);
+  suite.addTestSuite(org.jhotdraw.test.samples.minimap.MiniMapApplicationTest.class);
   return suite;
 }

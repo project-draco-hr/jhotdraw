@@ -1,3 +1,3 @@
 {
-  return new CH.ifa.draw.standard.FigureChangeAdapter();
+  return new FigureChangeAdapter();
 }

@@ -1,5 +1,5 @@
 {
-  TestSuite suite=new TestSuite("Test for CH.ifa.draw.test.framework");
+  TestSuite suite=new TestSuite("Test for org.jhotdraw.test.framework");
   suite.addTest(new TestSuite(DrawingChangeEventTest.class));
   suite.addTest(new TestSuite(FigureAttributeConstantTest.class));
   suite.addTest(new TestSuite(FigureChangeEventTest.class));

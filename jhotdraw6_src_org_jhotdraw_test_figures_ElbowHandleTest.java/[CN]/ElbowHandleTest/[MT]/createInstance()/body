@@ -1,4 +1,4 @@
 {
   LineConnection lineConn=new LineConnection();
-  return new CH.ifa.draw.figures.ElbowHandle(lineConn,1);
+  return new ElbowHandle(lineConn,1);
 }

@@ -2,5 +2,5 @@
   PolygonFigure figure=new PolygonFigure(20,20);
   figure.addPoint(30,30);
   figure.addPoint(40,40);
-  return new CH.ifa.draw.contrib.PolygonHandle(figure,PolygonFigure.locator(2),2);
+  return new PolygonHandle(figure,PolygonFigure.locator(2),2);
 }

@@ -1,8 +1,8 @@
 {
   TestSuite suite;
-  suite=new TestSuite("CH.ifa.draw.test.framework");
-  suite.addTestSuite(CH.ifa.draw.test.framework.FigureAttributeConstantTest.class);
-  suite.addTestSuite(CH.ifa.draw.test.framework.FigureChangeEventTest.class);
-  suite.addTestSuite(CH.ifa.draw.test.framework.DrawingChangeEventTest.class);
+  suite=new TestSuite("org.jhotdraw.test.framework");
+  suite.addTestSuite(org.jhotdraw.test.framework.FigureAttributeConstantTest.class);
+  suite.addTestSuite(org.jhotdraw.test.framework.FigureChangeEventTest.class);
+  suite.addTestSuite(org.jhotdraw.test.framework.DrawingChangeEventTest.class);
   return suite;
 }

@@ -1,3 +1,3 @@
 {
-  return new CH.ifa.draw.standard.ToggleGridCommand("TestToggle",getDrawingEditor(),new Point(5,5));
+  return new ToggleGridCommand("TestToggle",getDrawingEditor(),new Point(5,5));
 }

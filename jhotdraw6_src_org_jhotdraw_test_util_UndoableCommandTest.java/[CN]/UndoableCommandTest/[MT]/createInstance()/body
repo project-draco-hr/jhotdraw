@@ -1,3 +1,3 @@
 {
-  return new CH.ifa.draw.util.UndoableCommand(new DeleteCommand("Delete",getDrawingEditor()));
+  return new UndoableCommand(new DeleteCommand("Delete",getDrawingEditor()));
 }

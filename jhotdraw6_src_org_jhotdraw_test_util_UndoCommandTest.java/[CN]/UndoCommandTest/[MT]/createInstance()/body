@@ -1,3 +1,3 @@
 {
-  return new CH.ifa.draw.util.UndoCommand("TestUndo",getDrawingEditor());
+  return new UndoCommand("TestUndo",getDrawingEditor());
 }

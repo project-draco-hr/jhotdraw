@@ -1,5 +1,5 @@
 {
-  TestSuite suite=new TestSuite("Test for CH.ifa.draw.test.figures");
+  TestSuite suite=new TestSuite("Test for org.jhotdraw.test.figures");
   suite.addTest(new TestSuite(ArrowTipTest.class));
   suite.addTest(new TestSuite(BorderDecoratorTest.class));
   suite.addTest(new TestSuite(BorderToolTest.class));

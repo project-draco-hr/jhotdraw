@@ -1,5 +1,5 @@
 {
-  TestSuite suite=new TestSuite("Test for CH.ifa.draw.test.util");
+  TestSuite suite=new TestSuite("Test for org.jhotdraw.test.util");
   suite.addTest(new TestSuite(BoundsTest.class));
   suite.addTest(new TestSuite(ClipboardTest.class));
   suite.addTest(new TestSuite(ColorMapTest.class));

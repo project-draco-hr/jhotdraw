@@ -1,5 +1,5 @@
 {
   EventListener l1=new TextFigure();
   Drawing l2=getDrawingEditor().view().drawing();
-  return new CH.ifa.draw.standard.FigureChangeEventMulticaster(l1,l2);
+  return new FigureChangeEventMulticaster(l1,l2);
 }

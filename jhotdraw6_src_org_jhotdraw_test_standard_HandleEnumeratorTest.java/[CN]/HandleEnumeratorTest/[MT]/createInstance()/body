@@ -3,5 +3,5 @@
   List l=CollectionsFactory.current().createList();
   l.add(new NullHandle(figure,RelativeLocator.north()));
   l.add(new NullHandle(figure,RelativeLocator.north()));
-  return new CH.ifa.draw.standard.HandleEnumerator(l);
+  return new HandleEnumerator(l);
 }

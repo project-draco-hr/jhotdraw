@@ -1,16 +1,16 @@
 {
-  TestSuite suite=new TestSuite("Test for CH.ifa.draw.test");
-  suite.addTest(CH.ifa.draw.test.contrib.AllTests.suite());
-  suite.addTest(CH.ifa.draw.test.figures.AllTests.suite());
-  suite.addTest(CH.ifa.draw.test.framework.AllTests.suite());
-  suite.addTest(CH.ifa.draw.test.samples.javadraw.AllTests.suite());
-  suite.addTest(CH.ifa.draw.test.samples.minimap.AllTests.suite());
-  suite.addTest(CH.ifa.draw.test.samples.net.AllTests.suite());
-  suite.addTest(CH.ifa.draw.test.samples.nothing.AllTests.suite());
-  suite.addTest(CH.ifa.draw.test.samples.pert.AllTests.suite());
-  suite.addTest(CH.ifa.draw.test.standard.AllTests.suite());
-  suite.addTest(CH.ifa.draw.test.util.AllTests.suite());
-  suite.addTest(CH.ifa.draw.test.util.collections.jdk11.AllTests.suite());
-  suite.addTest(CH.ifa.draw.test.util.collections.jdk12.AllTests.suite());
+  TestSuite suite=new TestSuite("Test for org.jhotdraw.test");
+  suite.addTest(org.jhotdraw.test.contrib.AllTests.suite());
+  suite.addTest(org.jhotdraw.test.figures.AllTests.suite());
+  suite.addTest(org.jhotdraw.test.framework.AllTests.suite());
+  suite.addTest(org.jhotdraw.test.samples.javadraw.AllTests.suite());
+  suite.addTest(org.jhotdraw.test.samples.minimap.AllTests.suite());
+  suite.addTest(org.jhotdraw.test.samples.net.AllTests.suite());
+  suite.addTest(org.jhotdraw.test.samples.nothing.AllTests.suite());
+  suite.addTest(org.jhotdraw.test.samples.pert.AllTests.suite());
+  suite.addTest(org.jhotdraw.test.standard.AllTests.suite());
+  suite.addTest(org.jhotdraw.test.util.AllTests.suite());
+  suite.addTest(org.jhotdraw.test.util.collections.jdk11.AllTests.suite());
+  suite.addTest(org.jhotdraw.test.util.collections.jdk12.AllTests.suite());
   return suite;
 }

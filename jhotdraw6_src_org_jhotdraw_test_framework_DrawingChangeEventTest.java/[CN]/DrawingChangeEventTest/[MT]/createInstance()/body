@@ -1,3 +1,3 @@
 {
-  return new CH.ifa.draw.framework.DrawingChangeEvent(new StandardDrawing(),new Rectangle(10,10,100,100));
+  return new DrawingChangeEvent(new StandardDrawing(),new Rectangle(10,10,100,100));
 }

@@ -1,3 +1,3 @@
 {
-  return new CH.ifa.draw.util.CommandButton(new DuplicateCommand("Duplicate",getDrawingEditor()));
+  return new CommandButton(new DuplicateCommand("Duplicate",getDrawingEditor()));
 }

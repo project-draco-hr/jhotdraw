@@ -1,3 +1,3 @@
 {
-  return new CH.ifa.draw.figures.FontSizeHandle(new RectangleFigure(new Point(10,10),new Point(100,100)),new RelativeLocator());
+  return new FontSizeHandle(new RectangleFigure(new Point(10,10),new Point(100,100)),new RelativeLocator());
 }

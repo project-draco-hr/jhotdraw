@@ -7,5 +7,5 @@
   l2.add(new RectangleFigure(new Point(10,10),new Point(100,100)));
   l2.add(new PolyLineFigure(20,20));
   FigureEnumerator enum2=new FigureEnumerator(l2);
-  return new CH.ifa.draw.standard.FigureAndEnumerator(enum1,enum2);
+  return new FigureAndEnumerator(enum1,enum2);
 }

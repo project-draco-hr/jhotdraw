@@ -7,5 +7,5 @@
       f.release();
     }
   }
-  setAffectedFigures(CH.ifa.draw.standard.FigureEnumerator.getEmptyEnumeration());
+  setAffectedFigures(org.jhotdraw.standard.FigureEnumerator.getEmptyEnumeration());
 }

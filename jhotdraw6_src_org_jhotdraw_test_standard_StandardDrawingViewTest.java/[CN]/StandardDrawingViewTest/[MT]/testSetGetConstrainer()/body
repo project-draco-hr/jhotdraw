@@ -1,5 +1,5 @@
 {
-  CH.ifa.draw.framework.PointConstrainer[] tests={new GridConstrainer(5,5),null};
+  org.jhotdraw.framework.PointConstrainer[] tests={new GridConstrainer(5,5),null};
   for (int i=0; i < tests.length; i++) {
     standarddrawingview.setConstrainer(tests[i]);
     assertEquals(tests[i],standarddrawingview.getConstrainer());

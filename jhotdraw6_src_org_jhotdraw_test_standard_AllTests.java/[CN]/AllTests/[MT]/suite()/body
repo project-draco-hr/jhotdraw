@@ -1,5 +1,5 @@
 {
-  TestSuite suite=new TestSuite("Test for CH.ifa.draw.test.standard");
+  TestSuite suite=new TestSuite("Test for org.jhotdraw.test.standard");
   suite.addTest(new TestSuite(AlignCommandTest.class));
   suite.addTest(new TestSuite(BoxHandleKitTest.class));
   suite.addTest(new TestSuite(BringToFrontCommandTest.class));

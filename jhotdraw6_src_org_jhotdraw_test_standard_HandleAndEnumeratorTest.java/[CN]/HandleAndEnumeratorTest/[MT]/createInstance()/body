@@ -9,5 +9,5 @@
   l2.add(new NullHandle(figure2,RelativeLocator.north()));
   l2.add(new NullHandle(figure2,RelativeLocator.north()));
   HandleEnumerator handleEnum2=new HandleEnumerator(l2);
-  return new CH.ifa.draw.standard.HandleAndEnumerator(handleEnum1,handleEnum2);
+  return new HandleAndEnumerator(handleEnum1,handleEnum2);
 }
