@@ -1,8 +1,5 @@
 {
   Rectangle r=parm1.displayBox();
-  int circumference=r.width * 2 + r.height * 2;
-  int insets=2 * 4 * CORNERSPACE;
-  int spacing=circumference / (fPPS * 4 + 4);
   float hSpacing=(float)r.width / (fPPS + 1);
   float vSpacing=(float)r.height / (fPPS + 1);
   int x, y;
