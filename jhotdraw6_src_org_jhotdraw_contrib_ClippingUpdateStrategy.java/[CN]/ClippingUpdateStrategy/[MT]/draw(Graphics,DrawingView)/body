@@ -5,7 +5,7 @@
     return;
   }
   FigureEnumeration fe=view.drawing().figures();
-  Vector v=new Vector(1000);
+  List figuresList=CollectionsFactory.current().createList(1000);
   while (fe.hasNextFigure()) {
     Figure fig=fe.nextFigure();
     Rectangle r=fig.displayBox();
@@ -16,9 +16,9 @@
       r.height=1;
     }
     if (r.intersects(viewClipRectangle)) {
-      v.add(fig);
+      figuresList.add(fig);
     }
   }
-  FigureEnumeration clippedFE=new FigureEnumerator(v);
+  FigureEnumeration clippedFE=new FigureEnumerator(figuresList);
   view.draw(g,clippedFE);
 }

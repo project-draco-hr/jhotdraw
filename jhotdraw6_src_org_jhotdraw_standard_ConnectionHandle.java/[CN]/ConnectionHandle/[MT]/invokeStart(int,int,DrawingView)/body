@@ -1,9 +1,9 @@
 {
   setConnection(createConnection());
   setUndoActivity(createUndoActivity(view));
-  Vector v=new Vector();
-  v.add(getConnection());
-  getUndoActivity().setAffectedFigures(new FigureEnumerator(v));
+  List connectionsList=CollectionsFactory.current().createList();
+  connectionsList.add(getConnection());
+  getUndoActivity().setAffectedFigures(new FigureEnumerator(connectionsList));
   Point p=locate();
   getConnection().startPoint(p.x,p.y);
   getConnection().endPoint(p.x,p.y);

@@ -12,6 +12,6 @@
     forceRedraw();
   }
  else {
-    throw new RuntimeException("zooming only works if this view is contained in a ScrollPane");
+    throw new JHotDrawRuntimeException("zooming only works if this view is contained in a ScrollPane");
   }
 }
