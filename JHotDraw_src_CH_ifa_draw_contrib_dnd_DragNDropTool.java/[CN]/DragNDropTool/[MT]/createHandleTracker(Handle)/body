@@ -1,3 +1,3 @@
 {
-  return new HandleTracker(editor(),handle);
+  return new CH.ifa.draw.standard.HandleTracker(editor(),handle);
 }

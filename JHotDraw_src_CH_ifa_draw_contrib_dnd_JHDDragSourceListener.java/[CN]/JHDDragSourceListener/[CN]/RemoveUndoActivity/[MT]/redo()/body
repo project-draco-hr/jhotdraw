@@ -1,0 +1,15 @@
+{
+  if (isRedoable()) {
+    log("RemoveUndoActivity redo");
+    DeleteFromDrawingVisitor deleteVisitor=new DeleteFromDrawingVisitor(getDrawingView().drawing());
+    FigureEnumeration fe=getAffectedFigures();
+    while (fe.hasNextFigure()) {
+      fe.nextFigure().visit(deleteVisitor);
+    }
+    getDrawingView().clearSelection();
+    setAffectedFigures(deleteVisitor.getDeletedFigures());
+    undone=false;
+    return true;
+  }
+  return false;
+}

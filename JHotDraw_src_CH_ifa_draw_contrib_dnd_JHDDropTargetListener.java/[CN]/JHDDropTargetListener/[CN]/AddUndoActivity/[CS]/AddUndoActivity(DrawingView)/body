@@ -1,0 +1,6 @@
+{
+  super(newDrawingView);
+  log("AddUndoActivity created " + newDrawingView);
+  setUndoable(true);
+  setRedoable(true);
+}

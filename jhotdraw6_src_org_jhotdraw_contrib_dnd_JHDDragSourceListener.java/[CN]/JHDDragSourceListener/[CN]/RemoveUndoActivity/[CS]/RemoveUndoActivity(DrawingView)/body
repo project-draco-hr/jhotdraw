@@ -1,0 +1,6 @@
+{
+  super(view);
+  log("RemoveUndoActivity created " + view);
+  setUndoable(true);
+  setRedoable(true);
+}

@@ -1,5 +1,4 @@
 {
   super.activate();
-  System.out.println("DNDTool Activation");
-  setDragSourceActive(true);
+  setDragOn(true);
 }

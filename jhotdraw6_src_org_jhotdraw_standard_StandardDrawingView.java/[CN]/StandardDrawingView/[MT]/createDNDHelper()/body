@@ -1,8 +1,12 @@
 {
-  return new DNDHelper(){
+  DNDHelper dndh=new DNDHelper(true,true){
     protected DrawingView view(){
       return StandardDrawingView.this;
     }
+    protected DrawingEditor editor(){
+      return StandardDrawingView.this.editor();
+    }
   }
 ;
+  return dndh;
 }

@@ -1,0 +1,4 @@
+{
+  log("DropTargetDragEvent-dropActionChanged");
+  supportDropTargetDragEvent(dtde);
+}

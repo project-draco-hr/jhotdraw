@@ -1,4 +1,5 @@
 {
   super(editor);
-  comps=CollectionsFactory.current().createList();
+  setDragGestureListener(createDragGestureListener());
+  dragOn=false;
 }

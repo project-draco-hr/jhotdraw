@@ -1,5 +1,4 @@
 {
-  System.out.println("DNDTool deactivation.");
-  setDragSourceActive(false);
+  setDragOn(false);
   super.deactivate();
 }

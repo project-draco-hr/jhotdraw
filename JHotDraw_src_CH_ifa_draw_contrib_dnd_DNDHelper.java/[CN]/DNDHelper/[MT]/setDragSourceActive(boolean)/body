@@ -1,9 +1,0 @@
-{
-  if (state == true) {
-    return createDragGestureRecognizer();
-  }
- else {
-    destroyDragGestreRecognizer();
-    return false;
-  }
-}

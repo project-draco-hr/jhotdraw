@@ -1,0 +1,10 @@
+{
+  if (getDragSourceListener() != null) {
+    destroyDragGestreRecognizer();
+    setDragSourceListener(null);
+  }
+  if (getDropTargetListener() != null) {
+    setDropTarget(null);
+    setDropTargetListener(null);
+  }
+}

@@ -1,0 +1,4 @@
+{
+  this.isDragSource=isDragSource;
+  this.isDropTarget=isDropTarget;
+}

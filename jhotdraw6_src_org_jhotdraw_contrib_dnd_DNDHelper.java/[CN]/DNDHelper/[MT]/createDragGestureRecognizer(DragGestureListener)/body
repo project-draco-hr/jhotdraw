@@ -1,0 +1,8 @@
+{
+  DragGestureRecognizer aDgr=null;
+  if (view() instanceof Component) {
+    Component c=(Component)view();
+    aDgr=java.awt.dnd.DragSource.getDefaultDragSource().createDefaultDragGestureRecognizer(c,getDragSourceActions(),dgl);
+  }
+  return aDgr;
+}

@@ -1,7 +1,0 @@
-{
-  Iterator it=comps.iterator();
-  while (it.hasNext()) {
-    DNDInterface dndi=(DNDInterface)it.next();
-    dndi.setDragSourceActive(newState);
-  }
-}

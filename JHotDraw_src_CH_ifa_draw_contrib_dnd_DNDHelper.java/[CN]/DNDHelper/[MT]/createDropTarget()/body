@@ -1,9 +1,8 @@
 {
-  if (Component.class.isInstance(view())) {
+  DropTarget dt=null;
+  if (view() instanceof Component) {
     try {
-      dt=new DropTarget((Component)view(),DnDConstants.ACTION_COPY_OR_MOVE,this);
-      System.out.println("" + view() + " Initialized to DND.");
-      return true;
+      dt=new DropTarget((Component)view(),getDropTargetActions(),getDropTargetListener());
     }
  catch (    java.lang.NullPointerException npe) {
       System.err.println("View Failed to initialize to DND.");
@@ -12,5 +11,5 @@
       npe.printStackTrace();
     }
   }
-  return false;
+  return dt;
 }

@@ -1,0 +1,7 @@
+{
+  if ((dropTarget == null) && (this.dropTarget != null)) {
+    this.dropTarget.setComponent(null);
+    this.dropTarget.removeDropTargetListener(getDropTargetListener());
+  }
+  this.dropTarget=dropTarget;
+}

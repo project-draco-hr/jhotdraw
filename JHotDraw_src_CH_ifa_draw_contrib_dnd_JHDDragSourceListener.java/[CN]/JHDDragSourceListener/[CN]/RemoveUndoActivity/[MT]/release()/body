@@ -1,0 +1,11 @@
+{
+  if (undone == false) {
+    FigureEnumeration fe=getAffectedFigures();
+    while (fe.hasNextFigure()) {
+      Figure f=fe.nextFigure();
+      getDrawingView().drawing().remove(f);
+      f.release();
+    }
+  }
+  setAffectedFigures(CH.ifa.draw.standard.FigureEnumerator.getEmptyEnumeration());
+}

@@ -7,7 +7,7 @@
   if (handle != null) {
     if (LocatorHandle.class.isInstance(handle)) {
       LocatorHandle lh=(LocatorHandle)handle;
-      Locator loc=lh.getLocator();
+      CH.ifa.draw.framework.Locator loc=lh.getLocator();
       if (RelativeLocator.class.isInstance(loc)) {
         RelativeLocator rl=(RelativeLocator)loc;
         if (rl.equals(RelativeLocator.north())) {

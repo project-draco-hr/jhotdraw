@@ -1,8 +1,7 @@
 {
-  System.out.println("Destroying DGR");
-  if (dgr != null) {
-    dgr.removeDragGestureListener(this);
-    dgr.setComponent(null);
-    dgr=null;
+  if (getDragGestureRecognizer() != null) {
+    getDragGestureRecognizer().removeDragGestureListener(getDragGestureListener());
+    getDragGestureRecognizer().setComponent(null);
+    setDragGestureRecognizer(null);
   }
 }

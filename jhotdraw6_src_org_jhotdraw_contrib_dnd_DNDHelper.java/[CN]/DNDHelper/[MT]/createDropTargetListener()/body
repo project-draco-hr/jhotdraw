@@ -1,0 +1,3 @@
+{
+  return new JHDDropTargetListener(editor(),view());
+}

@@ -1,7 +1,0 @@
-{
-  if (dt != null) {
-    dt.setComponent(null);
-    dt.removeDropTargetListener(this);
-    dt=null;
-  }
-}
