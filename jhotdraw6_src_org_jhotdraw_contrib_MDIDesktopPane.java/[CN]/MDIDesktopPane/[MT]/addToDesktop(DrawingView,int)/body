@@ -5,7 +5,7 @@
   int w;
   int h;
   frame.addInternalFrameListener(internalFrameListener);
-  Component retval=super.add(frame);
+  super.add(frame);
   checkDesktopSize();
   if (array.length > 0) {
     p=array[0].getLocation();
