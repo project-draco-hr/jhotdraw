@@ -1,6 +1,8 @@
 {
   int token=fTokenizer.nextToken();
-  if (token == StreamTokenizer.TT_NUMBER)   return fTokenizer.nval;
+  if (token == StreamTokenizer.TT_NUMBER) {
+    return fTokenizer.nval;
+  }
   String msg="Double expected in line: " + fTokenizer.lineno();
   throw new IOException(msg);
 }

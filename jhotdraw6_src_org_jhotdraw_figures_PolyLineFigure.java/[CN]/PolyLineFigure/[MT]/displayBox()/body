@@ -1,6 +1,8 @@
 {
   Enumeration k=points();
   Rectangle r=new Rectangle((Point)k.nextElement());
-  while (k.hasMoreElements())   r.add((Point)k.nextElement());
+  while (k.hasMoreElements()) {
+    r.add((Point)k.nextElement());
+  }
   return r;
 }

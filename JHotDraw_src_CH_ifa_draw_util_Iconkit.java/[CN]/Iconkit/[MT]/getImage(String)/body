@@ -1,6 +1,8 @@
 {
   Image image=basicGetImage(filename);
-  if (image != null)   return image;
+  if (image != null) {
+    return image;
+  }
   loadRegisteredImages(fComponent);
   return basicGetImage(filename);
 }

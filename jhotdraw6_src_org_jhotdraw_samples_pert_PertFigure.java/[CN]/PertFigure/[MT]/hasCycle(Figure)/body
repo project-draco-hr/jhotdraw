@@ -1,8 +1,12 @@
 {
-  if (start == this)   return true;
+  if (start == this) {
+    return true;
+  }
   Enumeration i=fPreTasks.elements();
   while (i.hasMoreElements()) {
-    if (((PertFigure)i.nextElement()).hasCycle(start))     return true;
+    if (((PertFigure)i.nextElement()).hasCycle(start)) {
+      return true;
+    }
   }
   return false;
 }

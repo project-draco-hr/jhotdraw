@@ -5,5 +5,7 @@
     target.removePreTask(source);
     target.updateDurations();
   }
-  if (source != null)   source.removePostTask(target);
+  if (source != null) {
+    source.removePostTask(target);
+  }
 }

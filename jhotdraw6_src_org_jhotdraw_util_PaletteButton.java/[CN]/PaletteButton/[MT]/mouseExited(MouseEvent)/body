@@ -1,4 +1,6 @@
 {
-  if (fState == PRESSED)   mouseDragged(e);
+  if (fState == PRESSED) {
+    mouseDragged(e);
+  }
   fListener.paletteUserOver(this,false);
 }

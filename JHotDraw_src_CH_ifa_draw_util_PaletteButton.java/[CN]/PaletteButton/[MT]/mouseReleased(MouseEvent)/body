@@ -1,5 +1,7 @@
 {
   fState=fOldState;
   repaint();
-  if (contains(e.getX(),e.getY()))   fListener.paletteUserSelected(this);
+  if (contains(e.getX(),e.getY())) {
+    fListener.paletteUserSelected(this);
+  }
 }

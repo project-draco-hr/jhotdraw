@@ -1,7 +1,9 @@
 {
   super(listener);
   Iconkit kit=Iconkit.instance();
-  if (kit == null)   throw new JHotDrawRuntimeException("Iconkit instance isn't set");
+  if (kit == null) {
+    throw new JHotDrawRuntimeException("Iconkit instance isn't set");
+  }
   Image im[]=new Image[3];
   im[0]=kit.loadImageResource(iconName + "1.gif");
   im[1]=kit.loadImageResource(iconName + "2.gif");

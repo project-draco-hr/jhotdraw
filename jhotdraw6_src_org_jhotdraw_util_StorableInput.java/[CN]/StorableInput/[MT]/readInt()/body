@@ -1,6 +1,8 @@
 {
   int token=fTokenizer.nextToken();
-  if (token == StreamTokenizer.TT_NUMBER)   return (int)fTokenizer.nval;
+  if (token == StreamTokenizer.TT_NUMBER) {
+    return (int)fTokenizer.nval;
+  }
   String msg="Integer expected in line: " + fTokenizer.lineno();
   IOException exception=new IOException(msg);
   exception.printStackTrace();

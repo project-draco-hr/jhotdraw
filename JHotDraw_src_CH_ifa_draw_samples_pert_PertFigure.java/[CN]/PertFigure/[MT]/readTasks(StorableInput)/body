@@ -1,6 +1,8 @@
 {
   int size=dr.readInt();
   Vector v=new Vector(size);
-  for (int i=0; i < size; i++)   v.addElement((Figure)dr.readStorable());
+  for (int i=0; i < size; i++) {
+    v.addElement((Figure)dr.readStorable());
+  }
   return v;
 }

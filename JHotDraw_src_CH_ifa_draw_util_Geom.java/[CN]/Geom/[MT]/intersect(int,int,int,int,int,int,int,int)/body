@@ -3,10 +3,16 @@
   double rnum=((ya - yc) * (xd - xc) - (xa - xc) * (yd - yc));
   if (denom == 0.0) {
     if (rnum == 0.0) {
-      if ((xa < xb && (xb < xc || xb < xd)) || (xa > xb && (xb > xc || xb > xd)))       return new Point(xb,yb);
- else       return new Point(xa,ya);
+      if ((xa < xb && (xb < xc || xb < xd)) || (xa > xb && (xb > xc || xb > xd))) {
+        return new Point(xb,yb);
+      }
+ else {
+        return new Point(xa,ya);
+      }
     }
- else     return null;
+ else {
+      return null;
+    }
   }
   double r=rnum / denom;
   double snum=((ya - yc) * (xb - xa) - (xa - xc) * (yb - ya));
@@ -16,5 +22,7 @@
     int py=(int)(ya + (yb - ya) * r);
     return new Point(px,py);
   }
- else   return null;
+ else {
+    return null;
+  }
 }

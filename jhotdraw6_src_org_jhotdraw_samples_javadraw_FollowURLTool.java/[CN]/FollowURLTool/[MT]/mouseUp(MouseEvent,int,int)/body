@@ -1,8 +1,12 @@
 {
   Figure figure=drawing().findFigureInside(x,y);
-  if (figure == null)   return;
+  if (figure == null) {
+    return;
+  }
   String urlstring=(String)figure.getAttribute("URL");
-  if (urlstring == null)   return;
+  if (urlstring == null) {
+    return;
+  }
   try {
     URL url=new URL(fApplet.getDocumentBase(),urlstring);
     fApplet.getAppletContext().showDocument(url);

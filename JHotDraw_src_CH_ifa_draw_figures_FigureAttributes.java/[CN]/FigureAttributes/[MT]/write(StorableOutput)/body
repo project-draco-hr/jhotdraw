@@ -15,8 +15,12 @@
     }
  else     if (v instanceof Boolean) {
       dw.writeString("Boolean");
-      if (((Boolean)v).booleanValue())       dw.writeString("TRUE");
- else       dw.writeString("FALSE");
+      if (((Boolean)v).booleanValue()) {
+        dw.writeString("TRUE");
+      }
+ else {
+        dw.writeString("FALSE");
+      }
     }
  else     if (v instanceof Integer) {
       dw.writeString("Int");

@@ -1,12 +1,16 @@
 {
   Rectangle bounds=displayBox();
   bounds.grow(4,4);
-  if (!bounds.contains(x,y))   return false;
+  if (!bounds.contains(x,y)) {
+    return false;
+  }
   Point p1, p2;
   for (int i=0; i < fPoints.size() - 1; i++) {
     p1=(Point)fPoints.elementAt(i);
     p2=(Point)fPoints.elementAt(i + 1);
-    if (Geom.lineContainsPoint(p1.x,p1.y,p2.x,p2.y,x,y))     return true;
+    if (Geom.lineContainsPoint(p1.x,p1.y,p2.x,p2.y,x,y)) {
+      return true;
+    }
   }
   return false;
 }

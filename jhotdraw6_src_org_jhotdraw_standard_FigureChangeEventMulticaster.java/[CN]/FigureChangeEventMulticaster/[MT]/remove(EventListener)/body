@@ -1,8 +1,16 @@
 {
-  if (oldl == a)   return b;
-  if (oldl == b)   return a;
+  if (oldl == a) {
+    return b;
+  }
+  if (oldl == b) {
+    return a;
+  }
   EventListener a2=removeInternal((FigureChangeListener)a,oldl);
   EventListener b2=removeInternal((FigureChangeListener)b,oldl);
-  if (a2 == a && b2 == b)   return this;
- else   return addInternal((FigureChangeListener)a2,(FigureChangeListener)b2);
+  if (a2 == a && b2 == b) {
+    return this;
+  }
+ else {
+    return addInternal((FigureChangeListener)a2,(FigureChangeListener)b2);
+  }
 }

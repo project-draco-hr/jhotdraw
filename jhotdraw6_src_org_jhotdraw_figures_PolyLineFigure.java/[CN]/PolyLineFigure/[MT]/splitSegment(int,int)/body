@@ -1,5 +1,7 @@
 {
   int i=findSegment(x,y);
-  if (i != -1)   insertPointAt(new Point(x,y),i + 1);
+  if (i != -1) {
+    insertPointAt(new Point(x,y),i + 1);
+  }
   return i + 1;
 }

@@ -1,5 +1,9 @@
 {
-  if (contains(e.getX(),e.getY()))   fState=PRESSED;
- else   fState=fOldState;
+  if (contains(e.getX(),e.getY())) {
+    fState=PRESSED;
+  }
+ else {
+    fState=fOldState;
+  }
   repaint();
 }

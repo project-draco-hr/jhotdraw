@@ -7,12 +7,16 @@
       Dimension d=m.getMinimumSize();
       if (fVerticalLayout) {
         dim.width=Math.max(dim.width,d.width);
-        if (i > 0)         dim.height+=fGap;
+        if (i > 0) {
+          dim.height+=fGap;
+        }
         dim.height+=d.height;
       }
  else {
         dim.height=Math.max(dim.height,d.height);
-        if (i > 0)         dim.width+=fGap;
+        if (i > 0) {
+          dim.width+=fGap;
+        }
         dim.width+=d.width;
       }
     }

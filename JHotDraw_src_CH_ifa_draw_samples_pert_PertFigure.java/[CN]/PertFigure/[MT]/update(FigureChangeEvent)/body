@@ -1,5 +1,7 @@
 {
-  if (e.getFigure() == figureAt(1))   updateDurations();
+  if (e.getFigure() == figureAt(1)) {
+    updateDurations();
+  }
   if (needsLayout()) {
     layout();
     changed();

@@ -4,8 +4,12 @@
     Figure figure=k.nextFigure();
     Rectangle r2=figure.displayBox();
     if (fSelectGroup.contains(r2.x,r2.y) && fSelectGroup.contains(r2.x + r2.width,r2.y + r2.height)) {
-      if (toggle)       view().toggleSelection(figure);
- else       view().addToSelection(figure);
+      if (toggle) {
+        view().toggleSelection(figure);
+      }
+ else {
+        view().addToSelection(figure);
+      }
     }
   }
 }
