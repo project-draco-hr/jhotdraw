@@ -4,7 +4,7 @@
   fLastClick=new Point(0,0);
   fConstrainer=null;
   fSelection=new Vector();
-  setDisplayUpdate(new BufferedUpdateStrategy());
+  setDisplayUpdate(new FastBufferedUpdateStrategy());
   setBackground(Color.lightGray);
   addMouseListener(this);
   addMouseMotionListener(this);
