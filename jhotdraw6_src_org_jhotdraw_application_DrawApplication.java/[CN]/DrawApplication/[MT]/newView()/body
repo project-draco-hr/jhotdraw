@@ -1,14 +1,9 @@
 {
-  if (view() == null) {
+  DrawingView dv=getDesktop().getActiveDrawingView();
+  if (dv == null || !dv.isInteractive()) {
     return;
   }
   DrawApplication window=createApplication();
   window.open();
-  window.newWindow(view().drawing());
-  if (view().drawing().getTitle() != null) {
-    window.setDrawingTitle(view().drawing().getTitle() + " (View)");
-  }
- else {
-    window.setDrawingTitle(getDefaultDrawingTitle() + " (View)");
-  }
+  window.newWindow(dv.drawing());
 }

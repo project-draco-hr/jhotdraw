@@ -1,3 +1,20 @@
 {
-  return super.getDefaultDrawingTitle() + views().length;
+  DrawingView[] dvs=getDesktop().getAllFromDesktop(Desktop.PRIMARY);
+  int x=1;
+  while (true) {
+    String name=super.getDefaultDrawingTitle() + x;
+    boolean good=true;
+    for (int i=0; i < dvs.length; i++) {
+      if (dvs[i].drawing().getTitle().equals(name)) {
+        good=false;
+        break;
+      }
+    }
+    if (good == true) {
+      return name;
+    }
+ else {
+      x++;
+    }
+  }
 }

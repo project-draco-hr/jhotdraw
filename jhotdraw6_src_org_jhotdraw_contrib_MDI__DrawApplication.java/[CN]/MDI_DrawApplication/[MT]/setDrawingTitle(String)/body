@@ -1,3 +1,0 @@
-{
-  getDesktop().updateTitle(drawingTitle);
-}

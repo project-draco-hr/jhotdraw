@@ -1,0 +1,19 @@
+{
+  manager=new MDIDesktopManager(this);
+  setDesktopManager(manager);
+  setDragMode(JDesktopPane.OUTLINE_DRAG_MODE);
+  setAlignmentX(JComponent.LEFT_ALIGNMENT);
+  addDesktopListener(new DesktopListener(){
+    public void drawingViewAdded(    DesktopEvent dpe){
+      DrawingView dv=dpe.getDrawingView();
+      dv.drawing().addDrawingChangeListener(dcl);
+    }
+    public void drawingViewRemoved(    DesktopEvent dpe){
+      DrawingView dv=dpe.getDrawingView();
+      dv.drawing().removeDrawingChangeListener(dcl);
+    }
+    public void drawingViewSelected(    DrawingView oldView,    DesktopEvent dpe){
+    }
+  }
+);
+}

@@ -1,13 +1,6 @@
 {
-  if (!view().isInteractive()) {
+  if (!getDesktop().getActiveDrawingView().isInteractive()) {
     return;
   }
-  newWindow(view().drawing());
-  String copyTitle=getDrawingTitle();
-  if (copyTitle != null) {
-    setDrawingTitle(copyTitle);
-  }
- else {
-    setDrawingTitle(getDefaultDrawingTitle());
-  }
+  newWindow(getDesktop().getActiveDrawingView().drawing());
 }

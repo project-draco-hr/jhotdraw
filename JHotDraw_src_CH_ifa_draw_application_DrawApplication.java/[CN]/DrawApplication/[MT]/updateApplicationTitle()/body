@@ -1,0 +1,12 @@
+{
+  DrawingView dv=getDesktop().getActiveDrawingView();
+  if (dv != null && dv.isInteractive()) {
+    String drawingTitle=dv.drawing().getTitle();
+    if (!getDefaultDrawingTitle().equals(drawingTitle)) {
+      setTitle(getApplicationName() + " - " + drawingTitle);
+    }
+  }
+ else {
+    setTitle(getApplicationName());
+  }
+}

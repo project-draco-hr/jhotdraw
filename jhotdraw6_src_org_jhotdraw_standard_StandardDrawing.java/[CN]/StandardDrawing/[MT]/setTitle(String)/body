@@ -1,3 +1,4 @@
 {
   myTitle=newTitle;
+  fireDrawingTitleChanged();
 }

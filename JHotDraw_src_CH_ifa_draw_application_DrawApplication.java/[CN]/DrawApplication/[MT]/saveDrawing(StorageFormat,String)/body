@@ -1,13 +1,13 @@
 {
-  if (view() == null) {
-    return;
-  }
-  try {
-    String name=storeFormat.store(file,view().drawing());
-    view().drawing().setTitle(name);
-    setDrawingTitle(name);
-  }
- catch (  IOException e) {
-    showStatus(e.toString());
+  DrawingView dv=getDesktop().getActiveDrawingView();
+  if (dv != null && dv.isInteractive()) {
+    try {
+      String name=storeFormat.store(file,dv.drawing());
+      dv.drawing().setTitle(name);
+      updateApplicationTitle();
+    }
+ catch (    IOException e) {
+      showStatus(e.toString());
+    }
   }
 }
