@@ -1,7 +1,7 @@
 {
   setName(newName);
   setDrawingEditor(newDrawingEditor);
-  getDrawingEditor().addViewChangeListener(this);
+  getDrawingEditor().addViewChangeListener(myViewChangeListener);
   myIsViewRequired=newIsViewRequired;
   setEventDispatcher(createEventDispatcher());
 }

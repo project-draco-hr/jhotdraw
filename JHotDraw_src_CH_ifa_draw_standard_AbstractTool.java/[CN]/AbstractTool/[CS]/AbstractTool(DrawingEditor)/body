@@ -3,5 +3,5 @@
   setEventDispatcher(createEventDispatcher());
   setEnabled(true);
   checkUsable();
-  editor().addViewChangeListener(this);
+  editor().addViewChangeListener(myViewChangeListener);
 }
