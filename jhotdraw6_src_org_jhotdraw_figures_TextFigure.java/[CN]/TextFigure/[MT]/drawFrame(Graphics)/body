@@ -1,7 +1,7 @@
 {
   g.setFont(fFont);
   g.setColor((Color)getAttribute(FigureAttributeConstant.TEXT_COLOR));
-  FontMetrics metrics=g.getFontMetrics(fFont);
+  FontMetrics metrics=Toolkit.getDefaultToolkit().getFontMetrics(fFont);
   Rectangle r=displayBox();
   g.drawString(getText(),r.x,r.y + metrics.getAscent());
 }
