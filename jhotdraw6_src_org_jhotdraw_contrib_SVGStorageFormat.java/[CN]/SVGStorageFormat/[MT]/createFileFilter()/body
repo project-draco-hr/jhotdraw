@@ -1,0 +1,11 @@
+{
+  return new FileFilter(){
+    public boolean accept(    File f){
+      return f.getName().endsWith(extension);
+    }
+    public String getDescription(){
+      return description;
+    }
+  }
+;
+}

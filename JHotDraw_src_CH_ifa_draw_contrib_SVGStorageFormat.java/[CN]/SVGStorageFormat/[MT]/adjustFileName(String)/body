@@ -1,0 +1,8 @@
+{
+  if (!hasCorrectFileExtension(testFileName)) {
+    return testFileName + "." + getExtension();
+  }
+ else {
+    return testFileName;
+  }
+}
