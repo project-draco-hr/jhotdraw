@@ -1,3 +1,4 @@
 {
-  endApp();
+  destroy();
+  dispose();
 }

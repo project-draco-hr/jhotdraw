@@ -1,7 +1,7 @@
 {
   addWindowListener(new WindowAdapter(){
     public void windowClosing(    WindowEvent event){
-      exit();
+      endApp();
     }
     public void windowOpened(    WindowEvent event){
       winCount++;

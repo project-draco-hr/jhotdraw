@@ -32,7 +32,7 @@
   menu.addSeparator();
   cmd=new AbstractCommand("Exit",this,true){
     public void execute(){
-      exit();
+      endApp();
     }
   }
 ;

@@ -46,11 +46,11 @@
     }
  catch (    java.lang.InterruptedException ie) {
       System.err.println(ie.getMessage());
-      endApp();
+      exit();
     }
 catch (    java.lang.reflect.InvocationTargetException ite) {
       System.err.println(ite.getMessage());
-      endApp();
+      exit();
     }
   }
  else {
