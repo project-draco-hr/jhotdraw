@@ -1,6 +1,6 @@
 {
   if (fDrawingLockHolder != null) {
     fDrawingLockHolder=null;
-    notifyAll();
+    notify();
   }
 }
