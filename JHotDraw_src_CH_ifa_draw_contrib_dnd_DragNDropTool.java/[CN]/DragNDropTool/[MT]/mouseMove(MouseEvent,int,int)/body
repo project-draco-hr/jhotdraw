@@ -1,5 +1,5 @@
 {
-  if (e.getSource() == getActiveView()) {
+  if (evt.getSource() == getActiveView()) {
     setCursor(x,y,getActiveView());
   }
 }

@@ -1,18 +1,18 @@
 {
   return new DragGestureListener(){
     public void dragGestureRecognized(    final java.awt.dnd.DragGestureEvent dge){
-      java.awt.Component c=dge.getComponent();
+      Component c=dge.getComponent();
       if (isDragOn() == false) {
         return;
       }
       if (c instanceof DrawingView) {
         boolean found=false;
         DrawingView dv=(DrawingView)c;
-        CH.ifa.draw.framework.FigureEnumeration selectedElements=dv.selection();
+        FigureEnumeration selectedElements=dv.selection();
         if (selectedElements.hasNextFigure() == false) {
           return;
         }
-        java.awt.Point p=dge.getDragOrigin();
+        Point p=dge.getDragOrigin();
         while (selectedElements.hasNextFigure()) {
           Figure f=selectedElements.nextFigure();
           if (f.containsPoint(p.x,p.y)) {

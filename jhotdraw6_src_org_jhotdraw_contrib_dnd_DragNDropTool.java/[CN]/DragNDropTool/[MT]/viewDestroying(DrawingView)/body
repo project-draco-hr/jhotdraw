@@ -1,5 +1,5 @@
 {
-  if (view instanceof DNDInterface) {
+  if (DNDInterface.class.isInstance(view)) {
     DNDInterface dndi=(DNDInterface)view;
     dndi.DNDDeinitialize();
   }

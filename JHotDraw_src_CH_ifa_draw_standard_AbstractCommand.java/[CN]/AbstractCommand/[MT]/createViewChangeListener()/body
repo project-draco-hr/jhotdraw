@@ -1,0 +1,14 @@
+{
+  return new ViewChangeListener(){
+    public void viewSelectionChanged(    DrawingView oldView,    DrawingView newView){
+      AbstractCommand.this.viewSelectionChanged(oldView,newView);
+    }
+    public void viewCreated(    DrawingView view){
+      AbstractCommand.this.viewCreated(view);
+    }
+    public void viewDestroying(    DrawingView view){
+      AbstractCommand.this.viewDestroying(view);
+    }
+  }
+;
+}
