@@ -1,4 +1,4 @@
 {
   Rectangle r=displayBox();
-  g.fillOval(r.x,r.y,r.width - 1,r.height - 1);
+  g.fillOval(r.x,r.y,r.width,r.height);
 }
