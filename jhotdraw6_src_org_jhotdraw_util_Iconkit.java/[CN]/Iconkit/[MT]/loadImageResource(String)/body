@@ -1,13 +1,3 @@
 {
-  Toolkit toolkit=Toolkit.getDefaultToolkit();
-  try {
-    URL url=getClass().getResource(resourcename);
-    if (fgDebug) {
-      System.out.println(resourcename);
-    }
-    return toolkit.createImage((ImageProducer)url.getContent());
-  }
- catch (  Exception ex) {
-    return null;
-  }
+  return loadImageResourceURL(getResourceURL(fileName));
 }

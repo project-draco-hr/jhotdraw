@@ -1,5 +1,3 @@
 {
-  registerImage(fileName);
-  loadRegisteredImages(component);
-  return getImage(fileName);
+  return registerAndLoadImageURL(component,getResourceURL(fileName));
 }

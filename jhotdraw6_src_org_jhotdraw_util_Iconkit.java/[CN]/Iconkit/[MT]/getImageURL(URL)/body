@@ -1,0 +1,9 @@
+{
+  Image image=basicGetImageURL(url);
+  if (image != null) {
+    return image;
+  }
+  registerImageURL(url);
+  loadRegisteredImages(fComponent);
+  return basicGetImageURL(url);
+}

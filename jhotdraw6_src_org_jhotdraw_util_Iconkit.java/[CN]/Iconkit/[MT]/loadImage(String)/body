@@ -1,10 +1,3 @@
 {
-  if (fMap.containsKey(filename)) {
-    return (Image)fMap.get(filename);
-  }
-  Image image=loadImageResource(filename);
-  if (image != null) {
-    fMap.put(filename,image);
-  }
-  return image;
+  return loadImageURL(getResourceURL(fileName));
 }

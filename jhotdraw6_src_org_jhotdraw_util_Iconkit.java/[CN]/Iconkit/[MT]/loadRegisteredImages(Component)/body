@@ -1,11 +1,14 @@
 {
   if (fRegisteredImages.size() == 0)   return;
+  if (component == null) {
+    component=fComponent;
+  }
   MediaTracker tracker=new MediaTracker(component);
   Iterator iter=fRegisteredImages.iterator();
   while (iter.hasNext()) {
-    String fileName=(String)iter.next();
-    if (basicGetImage(fileName) == null) {
-      tracker.addImage(loadImage(fileName),ID);
+    URL url=(URL)iter.next();
+    if (basicGetImageURL(url) == null) {
+      tracker.addImage(loadImageURL(url),ID);
     }
   }
   fRegisteredImages.clear();

@@ -1,0 +1,6 @@
+{
+  if (fMap.containsKey(url)) {
+    return (Image)fMap.get(url);
+  }
+  return null;
+}

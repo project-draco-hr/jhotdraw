@@ -1,6 +1,0 @@
-{
-  if (fMap.containsKey(filename)) {
-    return (Image)fMap.get(filename);
-  }
-  return null;
-}
