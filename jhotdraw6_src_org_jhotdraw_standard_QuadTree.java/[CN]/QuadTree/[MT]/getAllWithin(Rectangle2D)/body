@@ -16,10 +16,10 @@
       }
     }
     if (_nMaxTreeDepth > 1) {
-      l.add(_nwQuadTree.getAllWithin(r));
-      l.add(_neQuadTree.getAllWithin(r));
-      l.add(_swQuadTree.getAllWithin(r));
-      l.add(_seQuadTree.getAllWithin(r));
+      addFigureEnumerationToList(l,_nwQuadTree.getAllWithin(r));
+      addFigureEnumerationToList(l,_neQuadTree.getAllWithin(r));
+      addFigureEnumerationToList(l,_swQuadTree.getAllWithin(r));
+      addFigureEnumerationToList(l,_seQuadTree.getAllWithin(r));
     }
   }
   return new FigureEnumerator(l);
