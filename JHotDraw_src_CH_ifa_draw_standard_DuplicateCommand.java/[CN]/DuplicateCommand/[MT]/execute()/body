@@ -1,7 +1,7 @@
 {
-  FigureSelection selection=fView.getFigureSelection();
-  fView.clearSelection();
-  Vector figures=(Vector)selection.getData(FigureSelection.TYPE);
+  FigureSelection selection=view().getFigureSelection();
+  view().clearSelection();
+  Vector figures=(Vector)selection.getData(StandardFigureSelection.TYPE);
   insertFigures(figures,10,10);
-  fView.checkDamage();
+  view().checkDamage();
 }

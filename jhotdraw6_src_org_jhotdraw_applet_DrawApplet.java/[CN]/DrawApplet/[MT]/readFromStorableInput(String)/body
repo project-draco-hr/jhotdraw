@@ -5,7 +5,7 @@
     StorableInput input=new StorableInput(stream);
     fDrawing.release();
     fDrawing=(Drawing)input.readStorable();
-    fView.setDrawing(fDrawing);
+    view().setDrawing(fDrawing);
   }
  catch (  IOException e) {
     initDrawing();

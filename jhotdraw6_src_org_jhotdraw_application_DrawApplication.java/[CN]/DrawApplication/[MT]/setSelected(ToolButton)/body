@@ -1,5 +1,9 @@
 {
-  if (fSelectedToolButton != null)   fSelectedToolButton.reset();
+  if (fSelectedToolButton != null) {
+    fSelectedToolButton.reset();
+  }
   fSelectedToolButton=button;
-  if (fSelectedToolButton != null)   fSelectedToolButton.select();
+  if (fSelectedToolButton != null) {
+    fSelectedToolButton.select();
+  }
 }

@@ -1,8 +1,8 @@
 {
-  Image image=Iconkit.instance().registerAndLoadImage((Component)fView,fImage);
-  ImageFigure figure=new ImageFigure(image,fImage,fView.lastClick());
-  fView.add(figure);
-  fView.clearSelection();
-  fView.addToSelection(figure);
-  fView.checkDamage();
+  Image image=Iconkit.instance().registerAndLoadImage((Component)view(),fImage);
+  ImageFigure figure=new ImageFigure(image,fImage,view().lastClick());
+  view().add(figure);
+  view().clearSelection();
+  view().addToSelection(figure);
+  view().checkDamage();
 }

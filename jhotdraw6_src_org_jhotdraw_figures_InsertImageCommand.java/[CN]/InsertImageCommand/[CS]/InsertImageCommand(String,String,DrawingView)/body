@@ -1,5 +1,4 @@
 {
-  super(name);
+  super(name,view);
   fImage=image;
-  fView=view;
 }

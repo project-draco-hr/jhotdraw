@@ -1,5 +1,5 @@
 {
-  StandardDrawingView fView=createDrawingView();
+  DrawingView fView=createDrawingView();
   Drawing fDrawing=createDrawing();
   fView.setDrawing(fDrawing);
   createContents(fView);

@@ -1,5 +1,5 @@
 {
-  FigureEnumeration selection=fView.selectionElements();
+  FigureEnumeration selection=view().selectionElements();
   Figure anchorFigure=selection.nextFigure();
   Rectangle r=anchorFigure.displayBox();
   while (selection.hasMoreElements()) {
@@ -26,5 +26,5 @@ f.moveBy(0,(r.y + r.height) - (rr.y + rr.height));
 break;
 }
 }
-fView.checkDamage();
+view().checkDamage();
 }

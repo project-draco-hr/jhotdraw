@@ -1,8 +1,8 @@
 {
-  FigureEnumeration k=fView.selectionElements();
+  FigureEnumeration k=view().selectionElements();
   while (k.hasMoreElements()) {
     Figure f=k.nextFigure();
     f.setAttribute(fAttribute,fValue);
   }
-  fView.checkDamage();
+  view().checkDamage();
 }

@@ -4,7 +4,7 @@
   Color textColor=(Color)AttributeFigure.getDefaultAttribute("TextColor");
   Integer arrowMode=(Integer)AttributeFigure.getDefaultAttribute("ArrowMode");
   String fontName=(String)AttributeFigure.getDefaultAttribute("FontName");
-  FigureEnumeration k=fView.selectionElements();
+  FigureEnumeration k=view().selectionElements();
   while (k.hasMoreElements()) {
     Figure f=k.nextFigure();
     frameColor=(Color)f.getAttribute("FrameColor");

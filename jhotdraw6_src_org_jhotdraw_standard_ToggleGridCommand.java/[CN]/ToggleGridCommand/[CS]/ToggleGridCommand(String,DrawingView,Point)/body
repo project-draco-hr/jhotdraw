@@ -1,5 +1,4 @@
 {
-  super(name);
-  fView=view;
+  super(name,view);
   fGrid=new Point(grid.x,grid.y);
 }

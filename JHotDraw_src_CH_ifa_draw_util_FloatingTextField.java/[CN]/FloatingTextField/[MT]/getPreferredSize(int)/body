@@ -1,3 +1,4 @@
 {
+  fEditWidget.setColumns(cols);
   return fEditWidget.getPreferredSize();
 }

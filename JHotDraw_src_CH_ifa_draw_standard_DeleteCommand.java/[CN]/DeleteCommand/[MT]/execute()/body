@@ -1,4 +1,4 @@
 {
   deleteSelection();
-  fView.checkDamage();
+  view().checkDamage();
 }
