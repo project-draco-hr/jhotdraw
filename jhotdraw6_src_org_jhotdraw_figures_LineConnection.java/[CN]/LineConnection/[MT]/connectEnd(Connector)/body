@@ -1,4 +1,5 @@
 {
+  newEndConnector=newEndConnector.finalizeConnector(false);
   setEndConnector(newEndConnector);
   if (newEndConnector != null) {
     endFigure().addDependendFigure(this);

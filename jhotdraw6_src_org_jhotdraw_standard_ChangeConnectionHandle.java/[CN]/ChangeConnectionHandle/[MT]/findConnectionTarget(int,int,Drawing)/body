@@ -1,5 +1,6 @@
 {
   Figure target=findConnectableFigure(x,y,drawing);
+  if (target == fOriginalTarget.owner() && fOriginalTarget instanceof OffsetConnector)   return fOriginalTarget;
   if ((target != null) && target.canConnect() && target != fOriginalTarget && !target.includes(owner()) && canConnectTo(target)) {
     return findConnector(x,y,target);
   }

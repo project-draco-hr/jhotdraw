@@ -1,0 +1,7 @@
+{
+  trackingPoint=calculateFigureConstrainedTrackingPoint(x,y);
+  OffsetLocator l=(OffsetLocator)myLocator;
+  l.fOffsetX=trackingPoint.x - fOwnerBox.x;
+  l.fOffsetY=trackingPoint.y - fOwnerBox.y;
+  return this;
+}

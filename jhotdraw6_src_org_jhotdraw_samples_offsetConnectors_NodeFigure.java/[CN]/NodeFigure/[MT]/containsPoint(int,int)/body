@@ -1,0 +1,9 @@
+{
+  if (fConnectorsVisible) {
+    Rectangle r=displayBox();
+    int d=LocatorConnector.SIZE / 2;
+    r.grow(d,d);
+    return r.contains(x,y);
+  }
+  return super.containsPoint(x,y);
+}

@@ -1,5 +1,3 @@
 {
-  double si=Math.sin(angle);
-  double co=Math.cos(angle);
-  return new Point((int)(fx * co + 0.5),(int)(fy * si + 0.5));
+  return polarToPoint(angle,fx,fy,new Point());
 }

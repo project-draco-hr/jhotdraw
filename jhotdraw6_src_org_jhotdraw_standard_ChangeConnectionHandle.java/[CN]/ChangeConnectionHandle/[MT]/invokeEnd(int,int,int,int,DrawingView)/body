@@ -3,6 +3,11 @@
   if (target == null) {
     target=fOriginalTarget;
   }
+  if (target == fOriginalTarget) {
+    Point p=target.connectorMovedTo(x,y);
+    x=p.x;
+    y=p.y;
+  }
   setPoint(x,y);
   connect(target);
   getConnection().updateConnection();

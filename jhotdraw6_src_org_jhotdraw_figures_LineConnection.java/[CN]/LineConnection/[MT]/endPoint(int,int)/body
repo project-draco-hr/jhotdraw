@@ -6,5 +6,6 @@
  else {
     fPoints.set(fPoints.size() - 1,new Point(x,y));
   }
+  if (myEndConnector != null && myStartConnector.owner() == myEndConnector.owner() && myEndConnector instanceof OffsetConnector)   resetSelfConnections();
   changed();
 }

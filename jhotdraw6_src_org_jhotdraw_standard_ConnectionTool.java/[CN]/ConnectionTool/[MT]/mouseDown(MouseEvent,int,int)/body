@@ -2,6 +2,7 @@
   super.mouseDown(e,x,y);
   int ex=e.getX();
   int ey=e.getY();
+  OffsetConnector.trackingConnector1.reset(getActiveView());
   ConnectionFigure connection=findConnection(ex,ey,drawing());
   if (connection != null) {
     if (!connection.joinSegments(ex,ey)) {

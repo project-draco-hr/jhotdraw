@@ -15,4 +15,8 @@
     p=Geom.center(target.displayBox());
   }
   setPoint(p.x,p.y);
+  if (target == fOriginalTarget) {
+    p=target.connectorMovedTo(x,y);
+    setPoint(p.x,p.y);
+  }
 }
