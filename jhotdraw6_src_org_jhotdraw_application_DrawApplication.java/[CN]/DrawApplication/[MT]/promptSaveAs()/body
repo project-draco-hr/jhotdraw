@@ -5,6 +5,9 @@
     getStorageFormatManager().registerFileFilters(saveDialog);
     if (saveDialog.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
       StorageFormat foundFormat=getStorageFormatManager().findStorageFormat(saveDialog.getFileFilter());
+      if (foundFormat == null) {
+        foundFormat=getStorageFormatManager().findStorageFormat(saveDialog.getSelectedFile());
+      }
       if (foundFormat != null) {
         saveDrawing(foundFormat,saveDialog.getSelectedFile().getAbsolutePath());
       }
