@@ -1,7 +1,6 @@
 {
   Color frameColor=(Color)AttributeFigure.getDefaultAttribute(FigureAttributeConstant.FRAME_COLOR);
   Color fillColor=(Color)AttributeFigure.getDefaultAttribute(FigureAttributeConstant.FILL_COLOR);
-  Color textColor=(Color)AttributeFigure.getDefaultAttribute(FigureAttributeConstant.TEXT_COLOR);
   Integer arrowMode=(Integer)AttributeFigure.getDefaultAttribute(FigureAttributeConstant.ARROW_MODE);
   String fontName=(String)AttributeFigure.getDefaultAttribute(FigureAttributeConstant.FONT_NAME);
   FigureEnumeration fe=view().selection();
@@ -9,7 +8,6 @@
     Figure f=fe.nextFigure();
     frameColor=(Color)f.getAttribute(FigureAttributeConstant.FRAME_COLOR);
     fillColor=(Color)f.getAttribute(FigureAttributeConstant.FILL_COLOR);
-    textColor=(Color)f.getAttribute(FigureAttributeConstant.TEXT_COLOR);
     arrowMode=(Integer)f.getAttribute(FigureAttributeConstant.ARROW_MODE);
     fontName=(String)f.getAttribute(FigureAttributeConstant.FONT_NAME);
   }
