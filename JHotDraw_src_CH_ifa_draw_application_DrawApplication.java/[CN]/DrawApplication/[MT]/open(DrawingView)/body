@@ -30,6 +30,7 @@
   }
   addListeners();
   setStorageFormatManager(createStorageFormatManager());
+  setVisible(true);
   Runnable r=new Runnable(){
     public void run(){
       if (newDrawingView.isInteractive()) {
@@ -45,16 +46,14 @@
     }
  catch (    java.lang.InterruptedException ie) {
       System.err.println(ie.getMessage());
-      exit();
+      endApp();
     }
 catch (    java.lang.reflect.InvocationTargetException ite) {
       System.err.println(ite.getMessage());
-      exit();
+      endApp();
     }
   }
  else {
     r.run();
   }
-  setVisible(true);
-  toolDone();
 }

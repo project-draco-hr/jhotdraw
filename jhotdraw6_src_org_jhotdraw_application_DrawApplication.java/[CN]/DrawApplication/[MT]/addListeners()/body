@@ -3,6 +3,14 @@
     public void windowClosing(    WindowEvent event){
       exit();
     }
+    public void windowOpened(    WindowEvent event){
+      winCount++;
+    }
+    public void windowClosed(    WindowEvent event){
+      if (--winCount == 0) {
+        System.exit(0);
+      }
+    }
   }
 );
 }

@@ -1,9 +1,3 @@
 {
-  destroy();
-  setVisible(false);
-  dispose();
-  winCount--;
-  if (winCount == 0) {
-    System.exit(0);
-  }
+  endApp();
 }
