@@ -1,0 +1,21 @@
+{
+  if (type.equals(TYPE)) {
+    InputStream input=new ByteArrayInputStream(fData);
+    Vector result=new Vector(10);
+    StorableInput reader=new StorableInput(input);
+    int numRead=0;
+    try {
+      int count=reader.readInt();
+      while (numRead < count) {
+        Figure newFigure=(Figure)reader.readStorable();
+        result.addElement(newFigure);
+        numRead++;
+      }
+    }
+ catch (    IOException e) {
+      System.out.println(e.toString());
+    }
+    return result;
+  }
+  return null;
+}
