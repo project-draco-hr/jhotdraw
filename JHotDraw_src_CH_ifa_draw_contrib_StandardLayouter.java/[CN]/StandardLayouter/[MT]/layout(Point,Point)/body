@@ -5,7 +5,7 @@
   while (fe.hasNextFigure()) {
     Figure currentFigure=fe.nextFigure();
     Point partOrigin=new Point(r.x + getInsets().left,r.y + maxHeight);
-    Point partCorner=new Point(r.x + getInsets().left - getInsets().right + r.width,r.y + currentFigure.displayBox().height);
+    Point partCorner=new Point(r.x + r.width - getInsets().right,r.y + maxHeight + currentFigure.displayBox().height);
     currentFigure.displayBox(partOrigin,partCorner);
     maxHeight+=currentFigure.displayBox().height;
   }

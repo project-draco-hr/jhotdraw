@@ -1,6 +1,6 @@
 {
   int maxWidth=Math.abs(corner.x - origin.x);
-  int maxHeight=0;
+  int maxHeight=getInsets().top;
   FigureEnumeration fe=getLayoutable().figures();
   while (fe.hasNextFigure()) {
     Figure currentFigure=fe.nextFigure();
@@ -8,13 +8,13 @@
     if (currentFigure instanceof Layoutable) {
       Layouter layoutStrategy=((Layoutable)currentFigure).getLayouter();
       r=layoutStrategy.calculateLayout(new Point(0,0),new Point(0,0));
-      r.grow(layoutStrategy.getInsets().left + layoutStrategy.getInsets().right,layoutStrategy.getInsets().top + layoutStrategy.getInsets().bottom);
     }
  else {
       r=new Rectangle(currentFigure.displayBox().getBounds());
     }
-    maxWidth=Math.max(maxWidth,r.width);
+    maxWidth=Math.max(maxWidth,r.width + getInsets().left + getInsets().right);
     maxHeight+=r.height;
   }
+  maxHeight+=getInsets().bottom;
   return new Rectangle(origin.x,origin.y,maxWidth,maxHeight);
 }
