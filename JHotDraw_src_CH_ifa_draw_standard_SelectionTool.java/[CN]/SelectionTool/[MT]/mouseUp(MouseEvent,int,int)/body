@@ -1,8 +1,8 @@
 {
-  if (fChild != null) {
-    fChild.mouseUp(e,x,y);
-    fChild.deactivate();
-    fChild=null;
+  if (getChild() != null) {
+    getChild().mouseUp(e,x,y);
+    getChild().deactivate();
+    setChild(null);
   }
   if (view() != null) {
     view().unfreezeView();
