@@ -1,17 +1,17 @@
 {
-  Color frameColor=(Color)AttributeFigure.getDefaultAttribute("FrameColor");
-  Color fillColor=(Color)AttributeFigure.getDefaultAttribute("FillColor");
-  Color textColor=(Color)AttributeFigure.getDefaultAttribute("TextColor");
-  Integer arrowMode=(Integer)AttributeFigure.getDefaultAttribute("ArrowMode");
-  String fontName=(String)AttributeFigure.getDefaultAttribute("FontName");
+  Color frameColor=(Color)AttributeFigure.getDefaultAttribute(FigureAttributeConstant.FRAME_COLOR);
+  Color fillColor=(Color)AttributeFigure.getDefaultAttribute(FigureAttributeConstant.FILL_COLOR);
+  Color textColor=(Color)AttributeFigure.getDefaultAttribute(FigureAttributeConstant.TEXT_COLOR);
+  Integer arrowMode=(Integer)AttributeFigure.getDefaultAttribute(FigureAttributeConstant.ARROW_MODE);
+  String fontName=(String)AttributeFigure.getDefaultAttribute(FigureAttributeConstant.FONT_NAME);
   FigureEnumeration k=view().selectionElements();
   while (k.hasMoreElements()) {
     Figure f=k.nextFigure();
-    frameColor=(Color)f.getAttribute("FrameColor");
-    fillColor=(Color)f.getAttribute("FillColor");
-    textColor=(Color)f.getAttribute("TextColor");
-    arrowMode=(Integer)f.getAttribute("ArrowMode");
-    fontName=(String)f.getAttribute("FontName");
+    frameColor=(Color)f.getAttribute(FigureAttributeConstant.FRAME_COLOR);
+    fillColor=(Color)f.getAttribute(FigureAttributeConstant.FILL_COLOR);
+    textColor=(Color)f.getAttribute(FigureAttributeConstant.TEXT_COLOR);
+    arrowMode=(Integer)f.getAttribute(FigureAttributeConstant.ARROW_MODE);
+    fontName=(String)f.getAttribute(FigureAttributeConstant.FONT_NAME);
   }
   fFrameColor.setSelectedIndex(ColorMap.colorIndex(frameColor));
   fFillColor.setSelectedIndex(ColorMap.colorIndex(fillColor));

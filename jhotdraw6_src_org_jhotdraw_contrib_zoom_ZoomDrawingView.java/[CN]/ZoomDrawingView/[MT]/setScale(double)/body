@@ -1,0 +1,7 @@
+{
+  Dimension oldSize=getUserSize();
+  this.scale=scale;
+  setUserSize(oldSize.width,oldSize.height);
+  centralize(drawing());
+  forceRedraw();
+}

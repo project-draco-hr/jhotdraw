@@ -1,20 +1,21 @@
 {
   panel.add(new JLabel("Fill"));
-  fFillColor=createColorChoice("FillColor");
+  fFillColor=createColorChoice(FigureAttributeConstant.FILL_COLOR.getName());
   panel.add(fFillColor);
   panel.add(new JLabel("Text"));
-  fTextColor=createColorChoice("TextColor");
+  fTextColor=createColorChoice(FigureAttributeConstant.TEXT_COLOR.getName());
   panel.add(fTextColor);
   panel.add(new JLabel("Pen"));
-  fFrameColor=createColorChoice("FrameColor");
+  fFrameColor=createColorChoice(FigureAttributeConstant.FRAME_COLOR.getName());
   panel.add(fFrameColor);
   panel.add(new JLabel("Arrow"));
   CommandChoice choice=new CommandChoice();
   fArrowChoice=choice;
-  choice.addItem(new ChangeAttributeCommand("none","ArrowMode",new Integer(PolyLineFigure.ARROW_TIP_NONE),this));
-  choice.addItem(new ChangeAttributeCommand("at Start","ArrowMode",new Integer(PolyLineFigure.ARROW_TIP_START),this));
-  choice.addItem(new ChangeAttributeCommand("at End","ArrowMode",new Integer(PolyLineFigure.ARROW_TIP_END),this));
-  choice.addItem(new ChangeAttributeCommand("at Both","ArrowMode",new Integer(PolyLineFigure.ARROW_TIP_BOTH),this));
+  String arrowModeStr=FigureAttributeConstant.ARROW_MODE.getName();
+  choice.addItem(new ChangeAttributeCommand("none",arrowModeStr,new Integer(PolyLineFigure.ARROW_TIP_NONE),this));
+  choice.addItem(new ChangeAttributeCommand("at Start",arrowModeStr,new Integer(PolyLineFigure.ARROW_TIP_START),this));
+  choice.addItem(new ChangeAttributeCommand("at End",arrowModeStr,new Integer(PolyLineFigure.ARROW_TIP_END),this));
+  choice.addItem(new ChangeAttributeCommand("at Both",arrowModeStr,new Integer(PolyLineFigure.ARROW_TIP_BOTH),this));
   panel.add(fArrowChoice);
   panel.add(new JLabel("Font"));
   fFontChoice=createFontChoice();

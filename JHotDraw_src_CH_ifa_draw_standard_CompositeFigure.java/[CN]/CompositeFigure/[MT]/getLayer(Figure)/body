@@ -1,5 +1,5 @@
 {
-  if (!fFigures.contains(figure)) {
+  if (!containsFigure(figure)) {
     return -1;
   }
  else {

@@ -8,7 +8,7 @@
     }
 );
   }
-  if (figure != fURLTarget && fURLTarget != null) {
+  if ((figure != fURLTarget) && (fURLTarget != null)) {
     endEdit();
   }
   if (figure != fURLTarget) {

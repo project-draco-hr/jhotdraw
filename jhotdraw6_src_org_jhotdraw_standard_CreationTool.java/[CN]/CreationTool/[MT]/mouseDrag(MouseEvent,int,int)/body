@@ -1,3 +1,5 @@
 {
-  getAddedFigure().displayBox(fAnchorPoint,new Point(x,y));
+  if (getAddedFigure() != null) {
+    getAddedFigure().displayBox(fAnchorPoint,new Point(x,y));
+  }
 }

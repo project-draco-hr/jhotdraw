@@ -1,0 +1,6 @@
+{
+  fEditWidget=new JEditorPane();
+  fEditScrollContainer=new JScrollPane(fEditWidget,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+  fEditScrollContainer.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+  fEditScrollContainer.setBorder(BorderFactory.createLineBorder(Color.black));
+}

@@ -1,0 +1,4 @@
+{
+  super.mouseUp(e,x,y);
+  eraseRubberBand();
+}

@@ -1,0 +1,3 @@
+{
+  real.drawLine((int)(x1 * scale),(int)(y1 * scale),(int)(x2 * scale),(int)(y2 * scale));
+}

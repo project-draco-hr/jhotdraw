@@ -1,8 +1,0 @@
-{
-  if (value != null) {
-    fMap.put(name,value);
-  }
- else {
-    fMap.remove(name);
-  }
-}

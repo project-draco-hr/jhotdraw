@@ -1,5 +1,5 @@
 {
-  if (fFigures.contains(figure)) {
+  if (containsFigure(figure)) {
     fFigures.removeElement(figure);
     fFigures.addElement(figure);
     _nHighestZ++;

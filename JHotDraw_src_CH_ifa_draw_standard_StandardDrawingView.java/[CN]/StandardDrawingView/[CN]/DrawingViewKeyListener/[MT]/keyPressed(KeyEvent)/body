@@ -1,0 +1,16 @@
+{
+  int code=e.getKeyCode();
+  if ((code == KeyEvent.VK_BACK_SPACE) || (code == KeyEvent.VK_DELETE)) {
+    Command cmd=new DeleteCommand("Delete",editor());
+    if (cmd.isExecutable()) {
+      cmd.execute();
+    }
+  }
+ else   if ((code == KeyEvent.VK_DOWN) || (code == KeyEvent.VK_UP) || (code == KeyEvent.VK_RIGHT)|| (code == KeyEvent.VK_LEFT)) {
+    handleCursorKey(code);
+  }
+ else {
+    tool().keyDown(e,code);
+  }
+  checkDamage();
+}

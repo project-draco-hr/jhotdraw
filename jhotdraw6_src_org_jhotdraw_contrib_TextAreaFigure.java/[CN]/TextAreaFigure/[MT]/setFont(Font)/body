@@ -1,0 +1,9 @@
+{
+  willChange();
+  fFont=newFont;
+  markSizeDirty();
+  fFontIsDirty=true;
+  attributesMap=new Hashtable(1);
+  attributesMap.put(TextAttribute.FONT,newFont);
+  changed();
+}

@@ -1,0 +1,11 @@
+{
+  return new StandardDrawingView.DrawingViewMouseMotionListener(){
+    public void mouseDragged(    MouseEvent e){
+      super.mouseDragged(createScaledEvent(e));
+    }
+    public void mouseMoved(    MouseEvent e){
+      super.mouseMoved(createScaledEvent(e));
+    }
+  }
+;
+}

@@ -1,10 +1,10 @@
 {
   boolean isPrinting=g instanceof PrintGraphics;
-  if (fBackgrounds != null && !isPrinting) {
+  if ((fBackgrounds != null) && !isPrinting) {
     drawPainters(g,fBackgrounds);
   }
-  fDrawing.draw(g,fe);
-  if (fForegrounds != null && !isPrinting) {
+  drawing().draw(g,fe);
+  if ((fForegrounds != null) && !isPrinting) {
     drawPainters(g,fForegrounds);
   }
   if (!isPrinting) {

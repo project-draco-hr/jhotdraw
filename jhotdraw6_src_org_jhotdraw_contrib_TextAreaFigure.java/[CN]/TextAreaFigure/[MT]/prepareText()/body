@@ -1,0 +1,15 @@
+{
+  if (!fTextIsDirty) {
+    return;
+  }
+  fParagraphs=new Vector();
+  String paragraphText;
+  Point pos=new Point(-1,-1);
+  while ((paragraphText=getNextParagraph(fText,pos)) != null) {
+    if (paragraphText.length() == 0) {
+      paragraphText=" ";
+    }
+    fParagraphs.add(paragraphText);
+  }
+  fTextIsDirty=false;
+}

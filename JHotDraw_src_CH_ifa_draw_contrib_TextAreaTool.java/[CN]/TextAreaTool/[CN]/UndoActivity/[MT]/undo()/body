@@ -1,0 +1,23 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  getDrawingView().clearSelection();
+  if (!isValidText(getOriginalText())) {
+    FigureEnumeration fe=getAffectedFigures();
+    while (fe.hasMoreElements()) {
+      getDrawingView().drawing().orphan(fe.nextFigure());
+    }
+  }
+ else   if (!isValidText(getBackupText())) {
+    FigureEnumeration fe=getAffectedFigures();
+    while (fe.hasMoreElements()) {
+      getDrawingView().add(fe.nextFigure());
+    }
+    setText(getOriginalText());
+  }
+ else {
+    setText(getOriginalText());
+  }
+  return true;
+}

@@ -1,0 +1,3 @@
+{
+  real.drawString(iterator,(int)(x * scale),(int)(y * scale));
+}

@@ -1,6 +1,8 @@
 {
   super.createTools(palette);
-  Tool tool=new UndoableTool(new TextTool(this,new TextFigure()));
+  Tool tool=new ZoomTool(this);
+  palette.add(createToolButton(IMAGES + "ZOOM","Zoom Tool",tool));
+  tool=new UndoableTool(new TextTool(this,new TextFigure()));
   palette.add(createToolButton(IMAGES + "TEXT","Text Tool",tool));
   tool=new UndoableTool(new ConnectedTextTool(this,new TextFigure()));
   palette.add(createToolButton(IMAGES + "ATEXT","Connected Text Tool",tool));
@@ -28,4 +30,9 @@
   palette.add(createToolButton(IMAGES + "SCRIBBL","Scribble Tool",tool));
   tool=new UndoableTool(new BorderTool(this));
   palette.add(createToolButton(IMAGES + "BORDDEC","Border Tool",tool));
+  Component button=new JButton("Hello World");
+  tool=new CreationTool(this,new ComponentFigure(button,this));
+  palette.add(createToolButton(IMAGES + "RECT","Component Tool",tool));
+  tool=new TextAreaTool(this,new TextAreaFigure());
+  palette.add(createToolButton(IMAGES + "COOLTEXTAREA","Component Tool",tool));
 }

@@ -1,0 +1,4 @@
+{
+  Container container=(Container)getEditor().view();
+  getCellRendererPane(component,container).paintComponent(g,component,null,bounds.x,bounds.y,bounds.width,bounds.height,true);
+}

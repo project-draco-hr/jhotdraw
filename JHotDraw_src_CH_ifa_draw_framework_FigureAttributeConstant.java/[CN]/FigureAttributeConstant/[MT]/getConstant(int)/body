@@ -1,0 +1,3 @@
+{
+  return (FigureAttributeConstant)attributeConstants.elementAt(constantId);
+}

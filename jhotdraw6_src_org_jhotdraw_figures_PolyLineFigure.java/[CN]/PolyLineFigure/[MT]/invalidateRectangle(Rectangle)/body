@@ -1,0 +1,6 @@
+{
+  Rectangle parentR=super.invalidateRectangle(r);
+  parentR.add(getStartDecoration().displayBox());
+  parentR.add(getEndDecoration().displayBox());
+  return parentR;
+}

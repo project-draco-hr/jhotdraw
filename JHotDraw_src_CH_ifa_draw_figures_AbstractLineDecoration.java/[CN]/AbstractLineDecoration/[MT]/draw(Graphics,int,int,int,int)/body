@@ -1,5 +1,6 @@
 {
   Polygon p=outline(x1,y1,x2,y2);
+  myBounds=p.getBounds();
   if (getFillColor() == null) {
     g.fillPolygon(p.xpoints,p.ypoints,p.npoints);
   }

@@ -1,0 +1,16 @@
+{
+  if (attributeConstant.equals(FigureAttributeConstant.FRAME_COLOR)) {
+    return getFrameColor();
+  }
+ else   if (attributeConstant.equals(FigureAttributeConstant.ARROW_MODE)) {
+    int value=0;
+    if (getStartDecoration() != null) {
+      value|=ARROW_TIP_START;
+    }
+    if (getEndDecoration() != null) {
+      value|=ARROW_TIP_END;
+    }
+    return new Integer(value);
+  }
+  return super.getAttribute(attributeConstant);
+}

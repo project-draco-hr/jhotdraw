@@ -1,0 +1,8 @@
+{
+  if (getCreatedFigure() == null) {
+    return;
+  }
+  view().checkDamage();
+  TextHolder textHolder=(TextHolder)getCreatedFigure();
+  beginEdit(textHolder,getCreatedFigure());
+}

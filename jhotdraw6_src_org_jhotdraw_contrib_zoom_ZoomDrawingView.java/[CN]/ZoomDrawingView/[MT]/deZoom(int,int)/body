@@ -1,0 +1,18 @@
+{
+  if (hasZoomSupport()) {
+    Dimension viewportSize=getViewportSize();
+    Dimension userSize=getUserSize();
+    int xOrigin=x - viewportSize.width / 2;
+    int yOrigin=y - viewportSize.height / 2;
+    if (xOrigin < 0)     xOrigin=0;
+    if (yOrigin < 0)     yOrigin=0;
+    this.scale=1.0;
+    setUserSize(userSize);
+    revalidate();
+    setViewPosition(new Point((int)(xOrigin),(int)(yOrigin)));
+    forceRedraw();
+  }
+ else {
+    throw new RuntimeException("zooming only works if this view is contained in a ScrollPane");
+  }
+}

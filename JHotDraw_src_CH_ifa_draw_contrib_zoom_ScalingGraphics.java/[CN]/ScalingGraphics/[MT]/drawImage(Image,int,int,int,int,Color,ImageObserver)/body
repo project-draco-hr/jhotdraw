@@ -1,0 +1,4 @@
+{
+  if (img instanceof DoubleBufferImage)   return real.drawImage(((DoubleBufferImage)img).getRealImage(),x,y,width,height,bgcolor,observer);
+ else   return real.drawImage(img,(int)(x * scale),(int)(y * scale),(int)(width * scale),(int)(height * scale),bgcolor,observer);
+}

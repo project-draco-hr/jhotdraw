@@ -1,6 +1,6 @@
 {
   super.mouseDrag(e,x,y);
-  fMoved=(Math.abs(x - fAnchorX) > 4) || (Math.abs(y - fAnchorY) > 4);
+  fMoved=(Math.abs(x - getAnchorX()) > 4) || (Math.abs(y - getAnchorY()) > 4);
   if (fMoved) {
     FigureEnumeration figures=getUndoActivity().getAffectedFigures();
     while (figures.hasMoreElements()) {

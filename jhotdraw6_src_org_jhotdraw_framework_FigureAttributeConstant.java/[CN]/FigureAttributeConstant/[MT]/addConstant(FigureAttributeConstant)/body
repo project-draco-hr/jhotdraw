@@ -1,0 +1,10 @@
+{
+  int idPos=newConstant.getID() - 1;
+  if (idPos >= attributeConstants.size()) {
+    attributeConstants.setSize(idPos + 1);
+  }
+  if (attributeConstants.elementAt(idPos) != null) {
+    throw new JHotDrawRuntimeException("No unique FigureAttribute ID: " + newConstant.getID());
+  }
+  attributeConstants.setElementAt(newConstant,idPos);
+}

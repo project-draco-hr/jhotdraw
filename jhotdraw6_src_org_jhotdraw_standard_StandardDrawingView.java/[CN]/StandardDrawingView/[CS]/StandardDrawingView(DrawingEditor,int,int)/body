@@ -8,9 +8,9 @@
   fLastClick=new Point(0,0);
   fConstrainer=null;
   fSelection=new Vector();
-  setDisplayUpdate(new SimpleUpdateStrategy());
+  setDisplayUpdate(createDisplayUpdate());
   setBackground(Color.lightGray);
-  addMouseListener(ml);
-  addMouseMotionListener(mml);
-  addKeyListener(this);
+  addMouseListener(createMouseListener());
+  addMouseMotionListener(createMouseMotionListener());
+  addKeyListener(createKeyListener());
 }

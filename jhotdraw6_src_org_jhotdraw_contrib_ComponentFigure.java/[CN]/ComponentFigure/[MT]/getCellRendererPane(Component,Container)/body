@@ -1,0 +1,14 @@
+{
+  Container shell=c.getParent();
+  if (shell instanceof CellRendererPane) {
+    if (shell.getParent() != p) {
+      p.add(shell);
+    }
+  }
+ else {
+    shell=new CellRendererPane();
+    shell.add(c);
+    p.add(shell);
+  }
+  return (CellRendererPane)shell;
+}

@@ -1,0 +1,3 @@
+{
+  return new MouseEvent(e.getComponent(),e.getID(),e.getWhen(),e.getModifiers(),(int)(e.getX() / getScale()),(int)(e.getY() / getScale()),e.getClickCount(),e.isPopupTrigger());
+}

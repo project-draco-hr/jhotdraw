@@ -1,0 +1,28 @@
+{
+  if (attributeConstant.equals(FigureAttributeConstant.FRAME_COLOR)) {
+    setFrameColor((Color)value);
+    changed();
+  }
+ else   if (attributeConstant.equals(FigureAttributeConstant.ARROW_MODE.getName())) {
+    Integer intObj=(Integer)value;
+    if (intObj != null) {
+      int decoration=intObj.intValue();
+      if ((decoration & ARROW_TIP_START) != 0) {
+        setStartDecoration(new ArrowTip());
+      }
+ else {
+        setStartDecoration(null);
+      }
+      if ((decoration & ARROW_TIP_END) != 0) {
+        setEndDecoration(new ArrowTip());
+      }
+ else {
+        setEndDecoration(null);
+      }
+    }
+    changed();
+  }
+ else {
+    super.setAttribute(attributeConstant,value);
+  }
+}

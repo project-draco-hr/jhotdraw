@@ -1,5 +1,5 @@
 {
-  if (!fFigures.contains(figure)) {
+  if (!containsFigure(figure)) {
     figure.setZValue(++_nHighestZ);
     fFigures.addElement(figure);
     figure.addToContainer(this);

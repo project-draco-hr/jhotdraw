@@ -1,0 +1,3 @@
+{
+  return new Font((String)getAttribute("FontName"),((Integer)getAttribute("FontStyle")).intValue(),((Integer)getAttribute("FontSize")).intValue());
+}

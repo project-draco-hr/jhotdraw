@@ -1,0 +1,5 @@
+{
+  setName(newName);
+  setID(newID);
+  addConstant(this);
+}

@@ -1,0 +1,14 @@
+{
+  if (getTypingTarget() != null) {
+    if (fTextField.getText().length() > 0) {
+      getTypingTarget().setText(fTextField.getText());
+      getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getEditedFigure()));
+      ((TextAreaTool.UndoActivity)getUndoActivity()).setBackupText(getTypingTarget().getText());
+    }
+ else {
+      drawing().orphan((Figure)getAddedFigure());
+    }
+    fTextField.endOverlay();
+    fTextField=null;
+  }
+}

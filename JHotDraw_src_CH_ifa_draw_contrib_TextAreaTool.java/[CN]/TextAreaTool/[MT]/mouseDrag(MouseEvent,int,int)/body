@@ -1,0 +1,6 @@
+{
+  if (getCreatedFigure() == null) {
+    return;
+  }
+  super.mouseDrag(e,x,y);
+}

@@ -1,0 +1,4 @@
+{
+  setComponent(newComponent);
+  setEditor(newDrawingEditor);
+}

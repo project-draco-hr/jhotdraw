@@ -1,4 +1,4 @@
 {
-  fAnchorX=x;
-  fAnchorY=y;
+  setAnchorX(x);
+  setAnchorY(y);
 }

@@ -1,0 +1,8 @@
+{
+  Image image=loadImage(filename);
+  if (image != null && waitForLoad) {
+    ImageIcon icon=new ImageIcon(image);
+    image=icon.getImage();
+  }
+  return image;
+}

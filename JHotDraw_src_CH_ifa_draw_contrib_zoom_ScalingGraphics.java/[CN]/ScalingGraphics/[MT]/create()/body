@@ -1,0 +1,6 @@
+{
+  Graphics realCopy=real.create();
+  ScalingGraphics result=new ScalingGraphics(realCopy);
+  result.setScale(getScale());
+  return result;
+}

@@ -5,9 +5,9 @@
   while (enum.hasMoreElements()) {
     Figure currentFigure=enum.nextFigure();
     Point partOrigin=new Point(r.x + getInsets().left,r.y + maxHeight);
-    Point partCorner=new Point(r.x + getInsets().left + r.width,r.y + currentFigure.displayBox().height);
+    Point partCorner=new Point(r.x + getInsets().left - getInsets().right + r.width,r.y + currentFigure.displayBox().height);
     currentFigure.displayBox(partOrigin,partCorner);
     maxHeight+=currentFigure.displayBox().height;
   }
-  return new Rectangle(r.x,r.y,r.x + r.width,r.y + maxHeight + getInsets().bottom);
+  return new Rectangle(r.x,r.y,r.width,maxHeight + getInsets().bottom);
 }

@@ -1,0 +1,5 @@
+{
+  if (listener() != null) {
+    listener().figureRequestRemove(new FigureChangeEvent(this));
+  }
+}

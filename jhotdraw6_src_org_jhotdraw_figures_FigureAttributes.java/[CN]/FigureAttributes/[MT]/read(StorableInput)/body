@@ -30,6 +30,7 @@
  else     if (valtype.equals("UNKNOWN")) {
       continue;
     }
-    fMap.put(key,val);
+    FigureAttributeConstant attributeConstant=FigureAttributeConstant.getConstant(key);
+    set(attributeConstant,val);
   }
 }

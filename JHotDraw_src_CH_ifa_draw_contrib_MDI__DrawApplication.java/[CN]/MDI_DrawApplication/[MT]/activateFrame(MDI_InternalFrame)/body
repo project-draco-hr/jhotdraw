@@ -5,7 +5,6 @@
     }
     if (currentFrame != null) {
       currentFrame.getDrawingView().freezeView();
-      currentFrame.getDrawingView().clearSelection();
     }
     currentFrame=newFrame;
   }

@@ -1,10 +1,10 @@
 {
   String fillColorId=dr.readString();
-  if (fillColorId.equals("FillColor")) {
+  if (fillColorId.equals(FigureAttributeConstant.FRAME_COLOR.getName())) {
     setFillColor(FigureAttributes.readColor(dr));
   }
   String borderColorId=dr.readString();
-  if (borderColorId.equals("BorderColor")) {
+  if (borderColorId.equals("BorderColor") || borderColorId.equals(FigureAttributeConstant.FRAME_COLOR.getName())) {
     setBorderColor(FigureAttributes.readColor(dr));
   }
 }

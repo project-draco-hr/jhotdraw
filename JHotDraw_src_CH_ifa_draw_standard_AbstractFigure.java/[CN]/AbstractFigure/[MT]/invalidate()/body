@@ -1,7 +1,6 @@
 {
-  if (fListener != null) {
-    Rectangle r=displayBox();
-    r.grow(Handle.HANDLESIZE,Handle.HANDLESIZE);
-    fListener.figureInvalidated(new FigureChangeEvent(this,r));
+  if (listener() != null) {
+    Rectangle r=invalidateRectangle(displayBox());
+    listener().figureInvalidated(new FigureChangeEvent(this,r));
   }
 }

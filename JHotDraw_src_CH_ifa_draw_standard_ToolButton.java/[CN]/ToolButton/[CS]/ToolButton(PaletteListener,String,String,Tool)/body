@@ -22,8 +22,14 @@
   fIcon=new PaletteIcon(new Dimension(24,24),im[0],im[1],im[2]);
   fTool=tool;
   fName=name;
-  setIcon(new ImageIcon(im[0]));
-  setPressedIcon(new ImageIcon(im[1]));
-  setSelectedIcon(new ImageIcon(im[2]));
+  if (im[0] != null) {
+    setIcon(new ImageIcon(im[0]));
+  }
+  if (im[1] != null) {
+    setPressedIcon(new ImageIcon(im[1]));
+  }
+  if (im[2] != null) {
+    setSelectedIcon(new ImageIcon(im[2]));
+  }
   setToolTipText(name);
 }

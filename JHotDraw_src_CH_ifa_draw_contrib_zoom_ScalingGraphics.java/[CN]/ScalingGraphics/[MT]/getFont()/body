@@ -1,0 +1,4 @@
+{
+  if (userFont == null)   userFont=real.getFont();
+  return userFont;
+}

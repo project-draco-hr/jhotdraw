@@ -1,5 +1,5 @@
 {
-  ToolButton toolButton=(ToolButton)button;
+  ToolButton toolButton=(ToolButton)paletteButton;
   if (inside) {
     showStatus(toolButton.name());
   }

@@ -1,7 +1,8 @@
 {
+  String fontStyleStr=FigureAttributeConstant.FONT_STYLE.getName();
   CommandMenu menu=new CommandMenu("Font Style");
-  menu.add(new UndoableCommand(new ChangeAttributeCommand("Plain","FontStyle",new Integer(Font.PLAIN),this)));
-  menu.add(new UndoableCommand(new ChangeAttributeCommand("Italic","FontStyle",new Integer(Font.ITALIC),this)));
-  menu.add(new UndoableCommand(new ChangeAttributeCommand("Bold","FontStyle",new Integer(Font.BOLD),this)));
+  menu.add(new UndoableCommand(new ChangeAttributeCommand("Plain",fontStyleStr,new Integer(Font.PLAIN),this)));
+  menu.add(new UndoableCommand(new ChangeAttributeCommand("Italic",fontStyleStr,new Integer(Font.ITALIC),this)));
+  menu.add(new UndoableCommand(new ChangeAttributeCommand("Bold",fontStyleStr,new Integer(Font.BOLD),this)));
   return menu;
 }

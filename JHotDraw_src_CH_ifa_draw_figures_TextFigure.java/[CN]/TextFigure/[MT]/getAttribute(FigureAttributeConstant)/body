@@ -1,0 +1,13 @@
+{
+  Font font=getFont();
+  if (attributeConstant.equals(FigureAttributeConstant.FONT_SIZE)) {
+    return new Integer(font.getSize());
+  }
+  if (attributeConstant.equals(FigureAttributeConstant.FONT_STYLE)) {
+    return new Integer(font.getStyle());
+  }
+  if (attributeConstant.equals(FigureAttributeConstant.FONT_NAME)) {
+    return font.getName();
+  }
+  return super.getAttribute(attributeConstant);
+}

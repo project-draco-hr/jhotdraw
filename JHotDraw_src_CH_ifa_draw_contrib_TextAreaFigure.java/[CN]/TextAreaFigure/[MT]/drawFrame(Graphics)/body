@@ -1,0 +1,5 @@
+{
+  Rectangle r=displayBox();
+  g.setColor((Color)getAttribute("FrameColor"));
+  g.drawRect(r.x,r.y,r.width,r.height);
+}

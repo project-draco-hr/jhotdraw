@@ -1,0 +1,5 @@
+{
+  Object currentValue=getDefaultAttribute(name);
+  fgDefaultAttributes.set(FigureAttributeConstant.getConstant(name),value);
+  return currentValue;
+}

@@ -9,7 +9,7 @@
       setUndoActivity(null);
       return;
     }
-    Rectangle r=bounds(getUndoActivity().getAffectedFigures());
+    Rectangle r=getBounds(getUndoActivity().getAffectedFigures());
     view().clearSelection();
     FigureEnumeration fe=insertFigures(getUndoActivity().getAffectedFigures(),lastClick.x - r.x,lastClick.y - r.y);
     getUndoActivity().setAffectedFigures(fe);

@@ -1,3 +1,6 @@
 {
-  open(createInitialDrawingView());
+  DrawingView initialDrawingView=createInitialDrawingView();
+  initialDrawingView.setDrawing(createDrawing());
+  initialDrawingView.drawing().setTitle(getDefaultDrawingTitle());
+  open(initialDrawingView);
 }

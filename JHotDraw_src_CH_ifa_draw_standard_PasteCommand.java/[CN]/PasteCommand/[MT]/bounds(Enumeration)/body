@@ -1,7 +1,0 @@
-{
-  Rectangle r=((Figure)k.nextElement()).displayBox();
-  while (k.hasMoreElements()) {
-    r.add(((Figure)k.nextElement()).displayBox());
-  }
-  return r;
-}

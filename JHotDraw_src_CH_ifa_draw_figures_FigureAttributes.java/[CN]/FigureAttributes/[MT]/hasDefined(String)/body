@@ -1,3 +1,0 @@
-{
-  return fMap.containsKey(name);
-}

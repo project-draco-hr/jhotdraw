@@ -1,14 +1,14 @@
 {
   if (getFillColor() != null) {
-    FigureAttributes.writeColor(dw,"FillColor",getFillColor());
+    FigureAttributes.writeColor(dw,FigureAttributeConstant.FILL_COLOR.getName(),getFillColor());
   }
  else {
-    dw.writeString("noFillColor");
+    dw.writeString("no" + FigureAttributeConstant.FILL_COLOR.getName());
   }
   if (getBorderColor() != null) {
-    FigureAttributes.writeColor(dw,"BorderColor",getBorderColor());
+    FigureAttributes.writeColor(dw,FigureAttributeConstant.FRAME_COLOR.getName(),getBorderColor());
   }
  else {
-    dw.writeString("noBorderColor");
+    dw.writeString("no" + FigureAttributeConstant.FRAME_COLOR.getName());
   }
 }

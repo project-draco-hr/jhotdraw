@@ -3,7 +3,7 @@
   getContentPane().setLayout(new BorderLayout());
   fView=new StandardDrawingView(this,400,370);
   getContentPane().add("Center",fView);
-  fTool=new FollowURLTool(this,this);
+  setTool(new FollowURLTool(this,this));
   fIconkit=new Iconkit(this);
   String filename=getParameter("Drawing");
   if (filename != null) {

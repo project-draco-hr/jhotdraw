@@ -3,7 +3,7 @@
   if (figure == null) {
     return;
   }
-  String urlstring=(String)figure.getAttribute("URL");
+  String urlstring=(String)figure.getAttribute(FigureAttributeConstant.URL);
   if (urlstring == null) {
     return;
   }

@@ -1,0 +1,5 @@
+{
+  ComponentFigure clonedFigure=(ComponentFigure)super.clone();
+  clonedFigure.setEditor(getEditor());
+  return clonedFigure;
+}

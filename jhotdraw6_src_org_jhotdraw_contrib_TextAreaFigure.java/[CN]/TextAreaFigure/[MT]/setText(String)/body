@@ -1,0 +1,7 @@
+{
+  if (!newText.equals(fText)) {
+    markTextDirty();
+    fText=newText;
+    changed();
+  }
+}

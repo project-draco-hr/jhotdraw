@@ -1,0 +1,8 @@
+{
+  setUndoActivity(createUndoActivity());
+  Vector v=new Vector();
+  v.addElement(figure);
+  v.addElement(((DecoratorFigure)figure).peelDecoration());
+  getUndoActivity().setAffectedFigures(new FigureEnumerator(v));
+  ((BorderTool.UndoActivity)getUndoActivity()).replaceAffectedFigures();
+}

@@ -1,0 +1,31 @@
+{
+  TextHolder textHolder=null;
+  Figure pressedFigure=drawing().findFigureInside(x,y);
+  if (pressedFigure instanceof TextHolder) {
+    textHolder=(TextHolder)pressedFigure;
+    if (!textHolder.acceptsTyping()) {
+      textHolder=null;
+    }
+  }
+  if (textHolder != null) {
+    beginEdit(textHolder,pressedFigure);
+    return;
+  }
+  if (getTypingTarget() != null) {
+    endEdit();
+    if (getCreatedFigure() != null && getCreatedFigure().isEmpty()) {
+      drawing().remove(getAddedFigure());
+      setUndoActivity(null);
+    }
+ else {
+    }
+    setTypingTarget(null);
+    setCreatedFigure(null);
+    setEditedFigure(null);
+    setAddedFigure(null);
+    editor().toolDone();
+  }
+ else {
+    super.mouseDown(e,x,y);
+  }
+}

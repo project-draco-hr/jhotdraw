@@ -1,13 +1,15 @@
 {
-  if (getCreatedFigure().isEmpty()) {
-    drawing().remove(getAddedFigure());
-    setUndoActivity(null);
-  }
+  if (getAddedFigure() != null) {
+    if (getCreatedFigure().isEmpty()) {
+      drawing().remove(getAddedFigure());
+      setUndoActivity(null);
+    }
  else {
-    setUndoActivity(createUndoActivity());
-    getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
+      setUndoActivity(createUndoActivity());
+      getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
+    }
+    setAddedFigure(null);
   }
   fCreatedFigure=null;
-  setAddedFigure(null);
   editor().toolDone();
 }

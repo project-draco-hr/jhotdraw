@@ -1,0 +1,28 @@
+{
+  Font font=getFont();
+  if (name.equals("FontSize")) {
+    Integer s=(Integer)value;
+    setFont(new Font(font.getName(),font.getStyle(),s.intValue()));
+    super.setAttribute(name,value);
+  }
+ else   if (name.equals("FontStyle")) {
+    Integer s=(Integer)value;
+    int style=font.getStyle();
+    if (s.intValue() == Font.PLAIN) {
+      style=font.PLAIN;
+    }
+ else {
+      style=style ^ s.intValue();
+    }
+    setFont(new Font(font.getName(),style,font.getSize()));
+    super.setAttribute(name,new Integer(style));
+  }
+ else   if (name.equals("FontName")) {
+    String n=(String)value;
+    setFont(new Font(n,font.getStyle(),font.getSize()));
+    super.setAttribute(name,value);
+  }
+ else {
+    super.setAttribute(name,value);
+  }
+}

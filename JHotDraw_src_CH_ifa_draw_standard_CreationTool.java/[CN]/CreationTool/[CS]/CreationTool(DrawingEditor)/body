@@ -1,4 +1,3 @@
 {
-  super(newDrawingEditor);
-  fPrototype=null;
+  this(newDrawingEditor,null);
 }

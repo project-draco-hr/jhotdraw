@@ -1,4 +1,7 @@
 {
+  if (frame != null) {
+    frame.getDrawingView().clearSelection();
+  }
   if (currentFrame == frame) {
     currentFrame=null;
   }

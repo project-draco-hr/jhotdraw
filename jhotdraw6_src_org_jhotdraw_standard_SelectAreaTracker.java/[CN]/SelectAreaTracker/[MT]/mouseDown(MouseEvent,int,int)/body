@@ -1,4 +1,4 @@
 {
   super.mouseDown(e,e.getX(),e.getY());
-  rubberBand(fAnchorX,fAnchorY,fAnchorX,fAnchorY);
+  rubberBand(getAnchorX(),getAnchorY(),getAnchorX(),getAnchorY());
 }

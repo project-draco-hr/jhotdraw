@@ -1,0 +1,3 @@
+{
+  super.paint(transformGraphics(g,getScale()));
+}
