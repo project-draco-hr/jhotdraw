@@ -1,0 +1,3 @@
+{
+  return (GraphNode)nodes.get(node);
+}
