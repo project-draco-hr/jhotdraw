@@ -1,20 +1,9 @@
 {
   JMenuBar mb=getJMenuBar();
-  CommandMenu editMenu=(CommandMenu)mb.getMenu(EDIT_MENU);
-  if (editMenu != null) {
-    editMenu.checkEnabled();
-  }
-  CommandMenu alignmentMenu=(CommandMenu)mb.getMenu(ALIGNMENT_MENU);
-  if (alignmentMenu != null) {
-    alignmentMenu.checkEnabled();
-  }
-  JMenu attributeMenu=mb.getMenu(ATTRIBUTES_MENU);
-  if (attributeMenu != null) {
-    for (int i=0; i < attributeMenu.getItemCount(); i++) {
-      JMenuItem currentMenu=attributeMenu.getItem(i);
-      if (currentMenu instanceof CommandMenu) {
-        ((CommandMenu)currentMenu).checkEnabled();
-      }
+  for (int x=0; x < mb.getMenuCount(); x++) {
+    JMenu jm=mb.getMenu(x);
+    if (CommandMenu.class.isInstance(jm)) {
+      checkCommandMenu((CommandMenu)jm);
     }
   }
 }

@@ -1,5 +1,4 @@
 {
-  Tool tool=createSelectionTool();
-  setDefaultTool(createDefaultToo());
+  setDefaultTool(createDefaultTool());
   palette.add(fDefaultToolButton);
 }

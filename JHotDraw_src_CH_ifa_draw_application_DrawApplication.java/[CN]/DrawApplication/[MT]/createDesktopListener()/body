@@ -1,0 +1,20 @@
+{
+  return new DesktopListener(){
+    public void drawingViewAdded(    DesktopEvent dpe){
+      DrawingView dv=dpe.getDrawingView();
+      fireViewCreatedEvent(dv);
+    }
+    public void drawingViewRemoved(    DesktopEvent dpe){
+      DrawingView dv=dpe.getDrawingView();
+      fireViewDestroyingEvent(dv);
+    }
+    public void drawingViewSelected(    DesktopEvent dpe){
+      DrawingView dv=dpe.getDrawingView();
+      if (dv != null) {
+        if (dv.drawing() != null)         dv.unfreezeView();
+      }
+      setView(dv);
+    }
+  }
+;
+}

@@ -1,7 +1,6 @@
 {
   getVersionControlStrategy().assertCompatibleVersion();
   setUndoManager(new UndoManager());
-  fIconkit=new Iconkit(this);
   getContentPane().setLayout(new BorderLayout());
   fView=createDrawingView();
   JPanel attributes=createAttributesPanel();

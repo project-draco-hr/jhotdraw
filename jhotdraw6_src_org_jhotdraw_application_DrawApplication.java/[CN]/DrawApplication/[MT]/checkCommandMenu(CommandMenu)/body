@@ -1,0 +1,9 @@
+{
+  cm.checkEnabled();
+  for (int y=0; y < cm.getItemCount(); y++) {
+    JMenuItem jmi=cm.getItem(y);
+    if (CommandMenu.class.isInstance(jmi)) {
+      checkCommandMenu((CommandMenu)jmi);
+    }
+  }
+}

@@ -1,5 +1,3 @@
 {
-  toolDone();
-  view().setDrawing(createDrawing());
-  view().drawing().setTitle(getDefaultDrawingTitle());
+  newWindow(createDrawing());
 }

@@ -1,14 +1,12 @@
 {
   getVersionControlStrategy().assertCompatibleVersion();
   setUndoManager(new UndoManager());
-  fIconkit=new Iconkit(this);
+  setIconkit(createIconkit());
   getContentPane().setLayout(new BorderLayout());
   fStatusLine=createStatusLine();
   getContentPane().add(fStatusLine,BorderLayout.SOUTH);
   setTool(new NullTool(this),"");
   setView(newDrawingView);
-  JComponent contents=createContents(view());
-  contents.setAlignmentX(LEFT_ALIGNMENT);
   JToolBar tools=createToolPalette();
   createTools(tools);
   JPanel activePanel=new JPanel();
@@ -16,7 +14,9 @@
   activePanel.setAlignmentY(TOP_ALIGNMENT);
   activePanel.setLayout(new BorderLayout());
   activePanel.add(tools,BorderLayout.NORTH);
-  activePanel.add(contents,BorderLayout.CENTER);
+  setDesktopListener(createDesktopListener());
+  setDesktop(createDesktop());
+  activePanel.add((Component)getDesktop(),BorderLayout.CENTER);
   getContentPane().add(activePanel,BorderLayout.CENTER);
   JMenuBar mb=new JMenuBar();
   createMenus(mb);
@@ -31,5 +31,8 @@
   addListeners();
   setVisible(true);
   fStorageFormatManager=createStorageFormatManager();
+  if (newDrawingView.isInteractive()) {
+    getDesktop().addToDesktop(newDrawingView,Desktop.PRIMARY);
+  }
   toolDone();
 }
