@@ -1,7 +1,7 @@
 {
   Toolkit toolkit=Toolkit.getDefaultToolkit();
   try {
-    java.net.URL url=getClass().getResource(resourcename);
+    URL url=getClass().getResource(resourcename);
     if (fgDebug) {
       System.out.println(resourcename);
     }

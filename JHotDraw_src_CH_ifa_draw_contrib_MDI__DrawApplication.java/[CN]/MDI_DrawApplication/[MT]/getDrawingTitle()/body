@@ -1,3 +1,0 @@
-{
-  return currentFrame.getDrawing().getTitle();
-}

@@ -1,5 +1,3 @@
 {
-  int width=fEditWidget.getWidth();
-  int height=fEditWidget.getHeight();
   return new Dimension(fEditWidget.getWidth(),fEditWidget.getHeight());
 }

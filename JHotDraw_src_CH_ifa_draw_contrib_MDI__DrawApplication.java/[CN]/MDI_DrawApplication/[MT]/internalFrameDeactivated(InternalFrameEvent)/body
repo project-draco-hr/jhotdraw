@@ -1,3 +1,0 @@
-{
-  deactivateFrame((MDI_InternalFrame)e.getSource());
-}

@@ -1,7 +1,7 @@
 {
-  if (view() != null) {
-    view().clearSelection();
-    view().checkDamage();
+  if (getActiveView() != null) {
+    getActiveView().clearSelection();
+    getActiveView().checkDamage();
     getEventDispatcher().fireToolActivatedEvent();
   }
 }

@@ -1,0 +1,9 @@
+{
+  if (state == true) {
+    return createDropTarget();
+  }
+ else {
+    destroyDropTarget();
+    return false;
+  }
+}

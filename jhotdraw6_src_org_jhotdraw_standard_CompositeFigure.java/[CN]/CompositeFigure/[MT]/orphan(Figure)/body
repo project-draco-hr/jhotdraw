@@ -1,7 +1,7 @@
 {
   if (containsFigure(figure)) {
     figure.removeFromContainer(this);
-    fFigures.removeElement(figure);
+    fFigures.remove(figure);
     _removeFromQuadTree(figure);
   }
   return figure;

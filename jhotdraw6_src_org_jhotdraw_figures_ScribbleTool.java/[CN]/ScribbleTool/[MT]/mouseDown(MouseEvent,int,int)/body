@@ -1,8 +1,8 @@
 {
+  super.mouseDown(e,x,y);
   if (e.getClickCount() >= 2) {
     setUndoActivity(createUndoActivity());
     getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
-    editor().toolDone();
   }
  else {
     point(e.getX(),e.getY());

@@ -1,0 +1,8 @@
+{
+  if (Component.class.isInstance(view())) {
+    Component c=(Component)view();
+    dgr=DragSource.getDefaultDragSource().createDefaultDragGestureRecognizer(c,DnDConstants.ACTION_COPY_OR_MOVE,this);
+    return true;
+  }
+ else   return false;
+}

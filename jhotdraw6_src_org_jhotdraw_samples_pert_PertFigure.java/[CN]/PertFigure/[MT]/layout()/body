@@ -2,9 +2,9 @@
   Point partOrigin=new Point(fDisplayBox.x,fDisplayBox.y);
   partOrigin.translate(BORDER,BORDER);
   Dimension extent=new Dimension(0,0);
-  FigureEnumeration k=figures();
-  while (k.hasMoreElements()) {
-    Figure f=k.nextFigure();
+  FigureEnumeration fe=figures();
+  while (fe.hasNextFigure()) {
+    Figure f=fe.nextFigure();
     Dimension partExtent=f.size();
     Point corner=new Point(partOrigin.x + partExtent.width,partOrigin.y + partExtent.height);
     f.basicDisplayBox(partOrigin,corner);

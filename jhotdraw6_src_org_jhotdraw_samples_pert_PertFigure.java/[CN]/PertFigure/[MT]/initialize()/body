@@ -1,6 +1,6 @@
 {
-  fPostTasks=new Vector();
-  fPreTasks=new Vector();
+  fPostTasks=CollectionsFactory.current().createList();
+  fPreTasks=CollectionsFactory.current().createList();
   fDisplayBox=new Rectangle(0,0,0,0);
   Font f=new Font("Helvetica",Font.PLAIN,12);
   Font fb=new Font("Helvetica",Font.BOLD,12);

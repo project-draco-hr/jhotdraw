@@ -12,8 +12,8 @@
  else     if (figureLayer > layerNr) {
       assignFiguresToSuccessorZValue(layerNr,figureLayer - 1);
     }
-    fFigures.removeElement(figure);
-    fFigures.insertElementAt(figure,layerNr);
+    fFigures.remove(figure);
+    fFigures.add(layerNr,figure);
     figure.setZValue(layerFigureZValue);
     figure.changed();
   }

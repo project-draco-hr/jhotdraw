@@ -1,8 +1,8 @@
 {
   if (fConnectorsVisible) {
-    Enumeration e=connectors().elements();
-    while (e.hasMoreElements()) {
-      ((Connector)e.nextElement()).draw(g);
+    Iterator iter=connectors();
+    while (iter.hasNext()) {
+      ((Connector)iter.next()).draw(g);
     }
   }
 }

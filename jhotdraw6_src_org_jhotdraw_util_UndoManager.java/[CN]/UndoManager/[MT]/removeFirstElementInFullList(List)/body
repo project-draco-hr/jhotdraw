@@ -1,0 +1,5 @@
+{
+  if (l.size() >= maxStackCapacity) {
+    l.remove(0);
+  }
+}

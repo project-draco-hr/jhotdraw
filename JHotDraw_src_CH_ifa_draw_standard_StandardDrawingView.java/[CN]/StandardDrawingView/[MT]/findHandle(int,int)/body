@@ -1,8 +1,8 @@
 {
   Handle handle;
-  Enumeration k=selectionHandles();
-  while (k.hasMoreElements()) {
-    handle=(Handle)k.nextElement();
+  HandleEnumeration he=selectionHandles();
+  while (he.hasNextHandle()) {
+    handle=he.nextHandle();
     if (handle.containsPoint(x,y)) {
       return handle;
     }

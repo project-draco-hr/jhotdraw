@@ -18,5 +18,7 @@
     viewport.setViewPosition(new Point(xOrigin,yOrigin));
     forceRedraw();
   }
- else   throw new RuntimeException("zooming only works if this view is contained in a ScrollPane");
+ else {
+    throw new RuntimeException("zooming only works if this view is contained in a ScrollPane");
+  }
 }

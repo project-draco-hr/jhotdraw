@@ -1,4 +1,5 @@
 {
+  setView((DrawingView)e.getSource());
   if (e.isPopupTrigger()) {
     handlePopupMenu(e,x,y);
   }

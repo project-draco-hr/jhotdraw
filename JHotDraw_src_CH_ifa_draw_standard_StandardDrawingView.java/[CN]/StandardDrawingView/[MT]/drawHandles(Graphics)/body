@@ -1,6 +1,6 @@
 {
-  Enumeration k=selectionHandles();
-  while (k.hasMoreElements()) {
-    ((Handle)k.nextElement()).draw(g);
+  HandleEnumeration he=selectionHandles();
+  while (he.hasNextHandle()) {
+    (he.nextHandle()).draw(g);
   }
 }

@@ -1,7 +1,7 @@
 {
   if (containsFigure(figure)) {
-    fFigures.removeElement(figure);
-    fFigures.insertElementAt(figure,0);
+    fFigures.remove(figure);
+    fFigures.add(0,figure);
     _nLowestZ--;
     figure.setZValue(_nLowestZ);
     figure.changed();

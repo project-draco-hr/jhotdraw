@@ -1,7 +1,7 @@
 {
-  FigureEnumeration k=figuresReverse();
-  while (k.hasMoreElements()) {
-    Figure figure=k.nextFigure();
+  FigureEnumeration fe=figuresReverse();
+  while (fe.hasNextFigure()) {
+    Figure figure=fe.nextFigure();
     Rectangle fr=figure.displayBox();
     if (r.intersects(fr)) {
       return figure;

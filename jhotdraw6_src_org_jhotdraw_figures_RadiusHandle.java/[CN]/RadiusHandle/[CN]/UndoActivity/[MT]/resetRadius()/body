@@ -1,6 +1,6 @@
 {
   FigureEnumeration fe=getAffectedFigures();
-  if (!fe.hasMoreElements()) {
+  if (!fe.hasNextFigure()) {
     return false;
   }
   RoundRectangleFigure currentFigure=(RoundRectangleFigure)fe.nextFigure();

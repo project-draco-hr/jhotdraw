@@ -1,0 +1,9 @@
+{
+  super.viewCreated(view);
+  if (DNDInterface.class.isInstance(view)) {
+    DNDInterface dndi=(DNDInterface)view;
+    dndi.setDropTargetActive(true);
+    dndi.setDragSourceActive(false);
+    comps.add(dndi);
+  }
+}

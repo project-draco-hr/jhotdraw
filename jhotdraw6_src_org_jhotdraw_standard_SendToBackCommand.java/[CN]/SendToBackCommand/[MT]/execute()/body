@@ -1,9 +1,9 @@
 {
   super.execute();
   setUndoActivity(createUndoActivity());
-  getUndoActivity().setAffectedFigures(new ReverseFigureEnumerator(view().selectionZOrdered()));
+  getUndoActivity().setAffectedFigures(view().selectionZOrdered());
   FigureEnumeration fe=getUndoActivity().getAffectedFigures();
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     view().drawing().sendToBack(fe.nextFigure());
   }
   view().checkDamage();

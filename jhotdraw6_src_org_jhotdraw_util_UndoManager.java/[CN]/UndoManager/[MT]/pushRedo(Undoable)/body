@@ -1,13 +1,11 @@
 {
   if (redoActivity.isRedoable()) {
-    if (getRedoSize() >= maxStackCapacity) {
-      redoStack.removeElementAt(0);
-    }
+    removeFirstElementInFullList(redoStack);
     if ((getRedoSize() == 0) || (peekRedo() != redoActivity)) {
-      redoStack.addElement(redoActivity);
+      redoStack.add(redoActivity);
     }
   }
  else {
-    redoStack=new Vector(maxStackCapacity);
+    redoStack=CollectionsFactory.current().createList(maxStackCapacity);
   }
 }

@@ -1,7 +1,7 @@
 {
-  fConnectors=new Vector(4);
-  fConnectors.addElement(new LocatorConnector(this,RelativeLocator.north()));
-  fConnectors.addElement(new LocatorConnector(this,RelativeLocator.south()));
-  fConnectors.addElement(new LocatorConnector(this,RelativeLocator.west()));
-  fConnectors.addElement(new LocatorConnector(this,RelativeLocator.east()));
+  fConnectors=CollectionsFactory.current().createList(4);
+  fConnectors.add(new LocatorConnector(this,RelativeLocator.north()));
+  fConnectors.add(new LocatorConnector(this,RelativeLocator.south()));
+  fConnectors.add(new LocatorConnector(this,RelativeLocator.west()));
+  fConnectors.add(new LocatorConnector(this,RelativeLocator.east()));
 }

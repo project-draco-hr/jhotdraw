@@ -1,6 +1,6 @@
 {
   if (getRedoSize() > 0) {
-    return ((Undoable)redoStack.lastElement()).isRedoable();
+    return getLastElement(redoStack).isRedoable();
   }
  else {
     return false;

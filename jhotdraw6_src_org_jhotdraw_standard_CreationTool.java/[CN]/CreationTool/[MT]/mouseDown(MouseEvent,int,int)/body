@@ -1,4 +1,5 @@
 {
+  setView((DrawingView)e.getSource());
   fAnchorPoint=new Point(x,y);
   setCreatedFigure(createFigure());
   setAddedFigure((view().add(getCreatedFigure())));

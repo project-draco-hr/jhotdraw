@@ -1,5 +1,5 @@
 {
-  if (super.undo() && getAffectedFigures().hasMoreElements()) {
+  if (super.undo() && getAffectedFigures().hasNextFigure()) {
     getDrawingView().clearSelection();
     setAffectedFigures(myCommand.insertFigures(getAffectedFigures(),0,0));
     return true;

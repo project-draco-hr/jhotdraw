@@ -1,6 +1,6 @@
 {
-  Enumeration i=fPostTasks.elements();
-  while (i.hasMoreElements()) {
-    ((PertFigure)i.nextElement()).updateDurations();
+  Iterator iter=fPostTasks.iterator();
+  while (iter.hasNext()) {
+    ((PertFigure)iter.next()).updateDurations();
   }
 }

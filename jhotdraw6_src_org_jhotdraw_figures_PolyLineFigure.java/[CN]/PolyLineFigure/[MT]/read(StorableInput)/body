@@ -1,11 +1,11 @@
 {
   super.read(dr);
   int size=dr.readInt();
-  fPoints=new Vector(size);
+  fPoints=CollectionsFactory.current().createList(size);
   for (int i=0; i < size; i++) {
     int x=dr.readInt();
     int y=dr.readInt();
-    fPoints.addElement(new Point(x,y));
+    fPoints.add(new Point(x,y));
   }
   setStartDecoration((LineDecoration)dr.readStorable());
   setEndDecoration((LineDecoration)dr.readStorable());

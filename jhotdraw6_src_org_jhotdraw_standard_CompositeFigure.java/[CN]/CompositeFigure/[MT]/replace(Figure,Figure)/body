@@ -4,7 +4,7 @@
     replacement.setZValue(figure.getZValue());
     replacement.addToContainer(this);
     figure.removeFromContainer(this);
-    fFigures.setElementAt(replacement,index);
+    fFigures.set(index,replacement);
     figure.changed();
     replacement.changed();
   }

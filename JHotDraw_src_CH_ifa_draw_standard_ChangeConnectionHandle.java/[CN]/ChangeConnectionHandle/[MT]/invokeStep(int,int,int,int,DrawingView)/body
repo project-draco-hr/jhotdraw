@@ -3,11 +3,11 @@
   Figure f=findConnectableFigure(x,y,view.drawing());
   if (f != getTargetFigure()) {
     if (getTargetFigure() != null) {
-      getTargetFigure().connectorVisibility(false);
+      getTargetFigure().connectorVisibility(false,null);
     }
     setTargetFigure(f);
     if (getTargetFigure() != null) {
-      getTargetFigure().connectorVisibility(true);
+      getTargetFigure().connectorVisibility(true,getConnection());
     }
   }
   Connector target=findConnectionTarget(p.x,p.y,view.drawing());

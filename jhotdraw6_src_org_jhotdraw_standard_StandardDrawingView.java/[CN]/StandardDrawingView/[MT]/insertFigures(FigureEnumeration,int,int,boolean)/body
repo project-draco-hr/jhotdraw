@@ -2,22 +2,22 @@
   if (fe == null) {
     return FigureEnumerator.getEmptyEnumeration();
   }
-  Vector addedFigures=new Vector();
-  Vector vCF=new Vector(10);
-  while (fe.hasMoreElements()) {
+  List addedFigures=CollectionsFactory.current().createList();
+  List vCF=CollectionsFactory.current().createList(10);
+  while (fe.hasNextFigure()) {
     Figure figure=fe.nextFigure();
     if (figure instanceof ConnectionFigure) {
-      vCF.addElement(figure);
+      vCF.add(figure);
     }
  else     if (figure != null) {
       figure.moveBy(dx,dy);
       figure=add(figure);
       addToSelection(figure);
-      addedFigures.addElement(figure);
+      addedFigures.add(figure);
     }
   }
   FigureEnumeration ecf=new FigureEnumerator(vCF);
-  while (ecf.hasMoreElements()) {
+  while (ecf.hasNextFigure()) {
     ConnectionFigure cf=(ConnectionFigure)ecf.nextFigure();
     Figure sf=cf.startFigure();
     Figure ef=cf.endFigure();
@@ -35,7 +35,7 @@
       }
       Figure nf=add(cf);
       addToSelection(nf);
-      addedFigures.addElement(nf);
+      addedFigures.add(nf);
     }
   }
   return new FigureEnumerator(addedFigures);

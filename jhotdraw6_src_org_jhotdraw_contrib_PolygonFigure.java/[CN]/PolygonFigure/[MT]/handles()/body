@@ -1,8 +1,8 @@
 {
-  Vector handles=new Vector(pointCount());
+  List handles=CollectionsFactory.current().createList(pointCount());
   for (int i=0; i < pointCount(); i++) {
-    handles.addElement(new PolygonHandle(this,locator(i),i));
+    handles.add(new PolygonHandle(this,locator(i),i));
   }
-  handles.addElement(new PolygonScaleHandle(this));
-  return handles;
+  handles.add(new PolygonScaleHandle(this));
+  return new HandleEnumerator(handles);
 }

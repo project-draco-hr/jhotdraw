@@ -1,5 +1,5 @@
 {
   maxStackCapacity=newUndoStackSize;
-  undoStack=new Vector(maxStackCapacity);
-  redoStack=new Vector(maxStackCapacity);
+  undoStack=CollectionsFactory.current().createList(maxStackCapacity);
+  redoStack=CollectionsFactory.current().createList(maxStackCapacity);
 }

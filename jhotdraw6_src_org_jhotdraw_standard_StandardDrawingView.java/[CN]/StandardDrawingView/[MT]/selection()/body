@@ -1,3 +1,3 @@
 {
-  return (Vector)fSelection.clone();
+  return selectionZOrdered();
 }

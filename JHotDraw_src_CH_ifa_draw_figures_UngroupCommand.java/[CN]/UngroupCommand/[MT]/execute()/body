@@ -1,7 +1,7 @@
 {
   super.execute();
   setUndoActivity(createUndoActivity());
-  getUndoActivity().setAffectedFigures(view().selectionElements());
+  getUndoActivity().setAffectedFigures(view().selection());
   view().clearSelection();
   ((UngroupCommand.UndoActivity)getUndoActivity()).ungroupFigures();
   view().checkDamage();

@@ -1,0 +1,5 @@
+{
+  if (!pm.currentTransaction().isActive()) {
+    pm.currentTransaction().begin();
+  }
+}

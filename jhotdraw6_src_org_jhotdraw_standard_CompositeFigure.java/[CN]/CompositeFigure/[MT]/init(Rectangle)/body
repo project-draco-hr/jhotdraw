@@ -1,7 +1,7 @@
 {
   _theQuadTree=new QuadTree(new Bounds(viewRectangle).asRectangle2D());
   FigureEnumeration fe=figures();
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     _addToQuadTree(fe.nextFigure());
   }
 }

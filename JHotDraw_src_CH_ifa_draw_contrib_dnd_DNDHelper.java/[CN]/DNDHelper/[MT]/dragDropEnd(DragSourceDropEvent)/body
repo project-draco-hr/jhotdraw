@@ -1,0 +1,29 @@
+{
+  DrawingView view=(DrawingView)dsde.getDragSourceContext().getComponent();
+  System.out.println("DragSourceDropEvent-dragDropEnd");
+  if (dsde.getDropSuccess() == true) {
+    if (dsde.getDropAction() == DnDConstants.ACTION_MOVE) {
+      DNDFigures df=(DNDFigures)ProcessReceivedData(DNDFiguresTransferable.DNDFiguresFlavor,dsde.getDragSourceContext().getTransferable());
+      FigureEnumeration fe=df.getFigures();
+      if (fe != null) {
+        while (fe.hasNextFigure()) {
+          Figure f=fe.nextFigure();
+          view.remove(f);
+          System.out.println("removing " + f);
+        }
+        view.clearSelection();
+        view.checkDamage();
+      }
+    }
+ else     if (dsde.getDropAction() == DnDConstants.ACTION_COPY) {
+    }
+  }
+  if (autoscrollState != null) {
+    Component c=dsde.getDragSourceContext().getComponent();
+    if (JComponent.class.isInstance(c)) {
+      JComponent jc=(JComponent)c;
+      jc.setAutoscrolls(autoscrollState.booleanValue());
+      autoscrollState=null;
+    }
+  }
+}

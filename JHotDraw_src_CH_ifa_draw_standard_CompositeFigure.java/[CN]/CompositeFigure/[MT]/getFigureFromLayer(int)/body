@@ -1,6 +1,6 @@
 {
   if ((layerNr >= 0) && (layerNr < fFigures.size())) {
-    return (Figure)fFigures.elementAt(layerNr);
+    return (Figure)fFigures.get(layerNr);
   }
  else {
     return null;

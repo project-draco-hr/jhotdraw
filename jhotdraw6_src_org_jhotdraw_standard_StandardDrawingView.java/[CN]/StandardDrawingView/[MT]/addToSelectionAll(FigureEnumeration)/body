@@ -1,5 +1,5 @@
 {
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     addToSelection(fe.nextFigure());
   }
 }

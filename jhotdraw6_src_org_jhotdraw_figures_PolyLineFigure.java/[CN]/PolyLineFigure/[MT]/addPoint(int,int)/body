@@ -1,4 +1,4 @@
 {
-  fPoints.addElement(new Point(x,y));
+  fPoints.add(new Point(x,y));
   changed();
 }

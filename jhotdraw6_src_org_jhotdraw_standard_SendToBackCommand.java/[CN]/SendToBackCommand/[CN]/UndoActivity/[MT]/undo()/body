@@ -3,7 +3,7 @@
     return false;
   }
   FigureEnumeration fe=getAffectedFigures();
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     Figure currentFigure=fe.nextFigure();
     int currentFigureLayer=getOriginalLayer(currentFigure);
     getDrawingView().drawing().sendToLayer(currentFigure,currentFigureLayer);

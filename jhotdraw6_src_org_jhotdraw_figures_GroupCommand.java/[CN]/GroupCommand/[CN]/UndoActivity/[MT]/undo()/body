@@ -4,15 +4,15 @@
   }
   getDrawingView().clearSelection();
   getDrawingView().drawing().orphanAll(getAffectedFigures());
-  Vector affectedFigures=new Vector();
+  List affectedFigures=CollectionsFactory.current().createList();
   FigureEnumeration fe=getAffectedFigures();
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     Figure currentFigure=fe.nextFigure();
     getDrawingView().drawing().addAll(currentFigure.figures());
     getDrawingView().addToSelectionAll(currentFigure.figures());
     FigureEnumeration groupedFigures=currentFigure.figures();
-    while (groupedFigures.hasMoreElements()) {
-      affectedFigures.addElement(groupedFigures.nextFigure());
+    while (groupedFigures.hasNextFigure()) {
+      affectedFigures.add(groupedFigures.nextFigure());
     }
   }
   setAffectedFigures(new FigureEnumerator(affectedFigures));

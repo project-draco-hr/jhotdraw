@@ -1,0 +1,9 @@
+{
+  Component[] comps=getContainer().getComponents();
+  for (int x=0; x < comps.length; x++) {
+    if (dv == Helper.getDrawingView(comps[x])) {
+      getContainer().remove(comps[x]);
+      break;
+    }
+  }
+}

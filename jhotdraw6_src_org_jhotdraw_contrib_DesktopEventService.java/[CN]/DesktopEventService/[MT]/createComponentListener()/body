@@ -1,0 +1,28 @@
+{
+  return new ContainerAdapter(){
+    /** 
+ * If the dv is null assert
+ */
+    public void componentAdded(    ContainerEvent e){
+      DrawingView dv=Helper.getDrawingView((java.awt.Container)e.getChild());
+      if (dv != null) {
+        fireDrawingViewAddedEvent(dv);
+        selectedView=dv;
+        fireDrawingViewSelectedEvent(selectedView);
+      }
+    }
+    /** 
+ * If dv is null assert
+ * if dv is not != selectedView assert
+ */
+    public void componentRemoved(    ContainerEvent e){
+      DrawingView dv=Helper.getDrawingView((java.awt.Container)e.getChild());
+      if (dv != null) {
+        selectedView=null;
+        fireDrawingViewSelectedEvent(selectedView);
+        fireDrawingViewRemovedEvent(dv);
+      }
+    }
+  }
+;
+}

@@ -1,4 +1,5 @@
 {
+  setView((DrawingView)e.getSource());
   if ((e.getModifiers() & InputEvent.CTRL_MASK) == 0) {
     super.mouseDown(e,x,y);
   }

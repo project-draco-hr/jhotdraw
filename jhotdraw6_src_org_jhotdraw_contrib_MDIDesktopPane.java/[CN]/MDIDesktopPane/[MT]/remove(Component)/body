@@ -1,4 +1,0 @@
-{
-  super.remove(c);
-  checkDesktopSize();
-}

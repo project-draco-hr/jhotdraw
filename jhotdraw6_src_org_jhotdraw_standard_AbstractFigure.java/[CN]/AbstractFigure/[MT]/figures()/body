@@ -1,5 +1,3 @@
 {
-  Vector figures=new Vector(1);
-  figures.addElement(this);
-  return new FigureEnumerator(figures);
+  return new SingleFigureEnumerator(this);
 }

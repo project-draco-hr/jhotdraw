@@ -1,3 +1,0 @@
-{
-  return ((JDesktopPane)getDesktop()).getAllFrames().length > 0;
-}

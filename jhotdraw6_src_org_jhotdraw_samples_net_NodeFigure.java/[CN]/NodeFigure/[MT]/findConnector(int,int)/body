@@ -1,9 +1,9 @@
 {
   long min=Long.MAX_VALUE;
   Connector closest=null;
-  Enumeration e=connectors().elements();
-  while (e.hasMoreElements()) {
-    Connector c=(Connector)e.nextElement();
+  Iterator iter=connectors();
+  while (iter.hasNext()) {
+    Connector c=(Connector)iter.next();
     Point p2=Geom.center(c.displayBox());
     long d=Geom.length2(x,y,p2.x,p2.y);
     if (d < min) {

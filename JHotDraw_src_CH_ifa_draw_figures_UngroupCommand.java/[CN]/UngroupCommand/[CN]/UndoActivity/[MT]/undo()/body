@@ -4,7 +4,7 @@
   }
   getDrawingView().clearSelection();
   FigureEnumeration groupFigures=getAffectedFigures();
-  while (groupFigures.hasMoreElements()) {
+  while (groupFigures.hasNextFigure()) {
     Figure groupFigure=groupFigures.nextFigure();
     getDrawingView().drawing().orphanAll(groupFigure.figures());
     Figure figure=getDrawingView().drawing().add(groupFigure);

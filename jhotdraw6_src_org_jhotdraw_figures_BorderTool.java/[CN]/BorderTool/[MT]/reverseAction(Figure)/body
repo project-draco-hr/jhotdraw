@@ -1,8 +1,8 @@
 {
   setUndoActivity(createUndoActivity());
-  Vector v=new Vector();
-  v.addElement(figure);
-  v.addElement(((DecoratorFigure)figure).peelDecoration());
-  getUndoActivity().setAffectedFigures(new FigureEnumerator(v));
+  List l=CollectionsFactory.current().createList();
+  l.add(figure);
+  l.add(((DecoratorFigure)figure).peelDecoration());
+  getUndoActivity().setAffectedFigures(new FigureEnumerator(l));
   ((BorderTool.UndoActivity)getUndoActivity()).replaceAffectedFigures();
 }

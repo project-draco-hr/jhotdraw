@@ -1,0 +1,3 @@
+{
+  myDisplayBox.translate(dx,dy);
+}

@@ -1,0 +1,6 @@
+{
+  JInternalFrame[] jifs=getAllFrames();
+  for (int x=0; x < jifs.length; x++) {
+    jifs[x].dispose();
+  }
+}

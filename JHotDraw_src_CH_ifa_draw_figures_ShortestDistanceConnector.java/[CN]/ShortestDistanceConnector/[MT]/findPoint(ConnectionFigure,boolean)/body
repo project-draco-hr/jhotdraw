@@ -79,6 +79,8 @@ end=e;
 len2=l2;
 }
 }
-if (getStart) return start;
+if (getStart) {
+return start;
+}
 return end;
 }

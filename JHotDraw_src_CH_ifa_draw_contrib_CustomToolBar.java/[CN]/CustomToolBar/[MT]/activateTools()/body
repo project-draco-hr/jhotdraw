@@ -5,9 +5,9 @@
  else {
     removeAll();
     JComponent currentTool=null;
-    Enumeration enum=currentTools.elements();
-    while (enum.hasMoreElements()) {
-      currentTool=(JComponent)enum.nextElement();
+    Iterator iter=currentTools.iterator();
+    while (iter.hasNext()) {
+      currentTool=(JComponent)iter.next();
       super.add(currentTool);
     }
     validate();

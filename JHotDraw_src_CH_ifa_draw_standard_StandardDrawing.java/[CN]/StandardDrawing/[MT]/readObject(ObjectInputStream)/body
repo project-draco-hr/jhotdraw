@@ -1,4 +1,4 @@
 {
   s.defaultReadObject();
-  fListeners=new Vector(2);
+  fListeners=CollectionsFactory.current().createList(2);
 }

@@ -1,0 +1,10 @@
+{
+  Figure figure=getFigureWithoutDecoration(drawing().findFigure(e.getX(),e.getY()));
+  if ((figure != null) && (figure instanceof CompositeFigure)) {
+    setContainerFigure((CompositeFigure)figure);
+    super.mouseDown(e,x,y);
+  }
+ else {
+    toolDone();
+  }
+}

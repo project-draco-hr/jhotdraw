@@ -1,3 +1,0 @@
-{
-  setRightComponent(super.createContents(view));
-}

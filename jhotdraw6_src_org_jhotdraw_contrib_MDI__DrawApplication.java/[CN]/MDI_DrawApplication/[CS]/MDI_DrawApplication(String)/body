@@ -1,7 +1,3 @@
 {
   super(title);
-  setDesktop(new MDIDesktopPane());
-  getDesktop().setAlignmentX(JComponent.LEFT_ALIGNMENT);
-  mdiListeners=new Vector();
-  addInternalFrameListener(this);
 }

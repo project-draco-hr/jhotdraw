@@ -3,7 +3,7 @@
     return false;
   }
   FigureEnumeration fe=getAffectedFigures();
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     Figure currentFigure=fe.nextFigure();
     if (currentFigure instanceof TextHolder) {
       TextHolder currentTextHolder=(TextHolder)currentFigure;

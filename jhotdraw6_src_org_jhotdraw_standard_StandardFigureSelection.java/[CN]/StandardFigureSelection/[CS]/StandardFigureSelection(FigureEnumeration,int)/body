@@ -2,8 +2,8 @@
   ByteArrayOutputStream output=new ByteArrayOutputStream(200);
   StorableOutput writer=new StorableOutput(output);
   writer.writeInt(figureCount);
-  while (figures.hasMoreElements()) {
-    writer.writeStorable(figures.nextFigure());
+  while (fe.hasNextFigure()) {
+    writer.writeStorable(fe.nextFigure());
   }
   writer.close();
   fData=output.toByteArray();

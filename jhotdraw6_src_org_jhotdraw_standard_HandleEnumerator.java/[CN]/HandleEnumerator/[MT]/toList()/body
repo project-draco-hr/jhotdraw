@@ -1,0 +1,8 @@
+{
+  List handles=CollectionsFactory.current().createList();
+  while (hasNextHandle()) {
+    handles.add(nextHandle());
+  }
+  myIterator=handles.iterator();
+  return handles;
+}

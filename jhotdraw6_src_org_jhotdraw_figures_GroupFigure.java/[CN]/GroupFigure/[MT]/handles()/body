@@ -1,8 +1,8 @@
 {
-  Vector handles=new Vector();
-  handles.addElement(new GroupHandle(this,RelativeLocator.northWest()));
-  handles.addElement(new GroupHandle(this,RelativeLocator.northEast()));
-  handles.addElement(new GroupHandle(this,RelativeLocator.southWest()));
-  handles.addElement(new GroupHandle(this,RelativeLocator.southEast()));
-  return handles;
+  List handles=CollectionsFactory.current().createList();
+  handles.add(new GroupHandle(this,RelativeLocator.northWest()));
+  handles.add(new GroupHandle(this,RelativeLocator.northEast()));
+  handles.add(new GroupHandle(this,RelativeLocator.southWest()));
+  handles.add(new GroupHandle(this,RelativeLocator.southEast()));
+  return new HandleEnumerator(handles);
 }

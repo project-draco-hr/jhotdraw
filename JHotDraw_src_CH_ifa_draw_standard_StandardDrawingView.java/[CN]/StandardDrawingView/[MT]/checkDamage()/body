@@ -1,7 +1,7 @@
 {
-  Enumeration each=drawing().drawingChangeListeners();
-  while (each.hasMoreElements()) {
-    Object l=each.nextElement();
+  Iterator each=drawing().drawingChangeListeners();
+  while (each.hasNext()) {
+    Object l=each.next();
     if (l instanceof DrawingView) {
       ((DrawingView)l).repairDamage();
     }

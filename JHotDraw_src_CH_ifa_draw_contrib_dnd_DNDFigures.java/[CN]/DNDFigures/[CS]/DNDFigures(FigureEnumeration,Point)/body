@@ -1,0 +1,7 @@
+{
+  this.figures=CollectionsFactory.current().createList();
+  while (fe.hasNextFigure()) {
+    figures.add(fe.nextFigure());
+  }
+  this.origin=origin;
+}

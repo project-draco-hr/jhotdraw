@@ -3,8 +3,8 @@
     upperBound=fFigures.size() - 1;
   }
   for (int i=upperBound; i >= lowerBound; i--) {
-    Figure currentFigure=(Figure)fFigures.elementAt(i);
-    Figure successorFigure=(Figure)fFigures.elementAt(i + 1);
+    Figure currentFigure=(Figure)fFigures.get(i);
+    Figure successorFigure=(Figure)fFigures.get(i + 1);
     currentFigure.setZValue(successorFigure.getZValue());
   }
 }

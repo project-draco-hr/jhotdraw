@@ -1,4 +1,5 @@
 {
+  super.mouseDown(e,x,y);
   x=e.getX();
   y=e.getY();
   if (e.getClickCount() >= 2) {

@@ -1,0 +1,9 @@
+{
+  supportDropTargetDragEvent(dtde);
+  if (fLastX == 0) {
+    fLastX=dtde.getLocation().x;
+  }
+  if (fLastY == 0) {
+    fLastY=dtde.getLocation().y;
+  }
+}

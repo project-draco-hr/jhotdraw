@@ -1,4 +1,6 @@
 {
   setStartConnector(newStartConnector);
-  startFigure().addFigureChangeListener(this);
+  if (newStartConnector != null) {
+    startFigure().addFigureChangeListener(this);
+  }
 }

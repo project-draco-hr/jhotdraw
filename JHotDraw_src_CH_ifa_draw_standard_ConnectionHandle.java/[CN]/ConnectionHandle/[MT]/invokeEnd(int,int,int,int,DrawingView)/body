@@ -9,8 +9,8 @@
     view.drawing().remove(getConnection());
   }
   setConnection(null);
-  if (fTarget != null) {
-    fTarget.connectorVisibility(false);
-    fTarget=null;
+  if (getTargetFigure() != null) {
+    getTargetFigure().connectorVisibility(false,null);
+    setTargetFigure(null);
   }
 }

@@ -1,8 +1,8 @@
 {
   Dimension extent=new Dimension(0,0);
-  FigureEnumeration k=figures();
-  while (k.hasMoreElements()) {
-    Figure f=k.nextFigure();
+  FigureEnumeration fe=figures();
+  while (fe.hasNextFigure()) {
+    Figure f=fe.nextFigure();
     extent.width=Math.max(extent.width,f.size().width);
   }
   int newExtent=extent.width + 2 * BORDER;

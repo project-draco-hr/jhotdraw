@@ -1,0 +1,18 @@
+{
+  setRightComponent(createRightComponent(dv));
+  setLeftComponent(createLeftComponent(dv));
+switch (location) {
+case Desktop.PRIMARY:
+{
+      return getLeftComponent();
+    }
+case Desktop.SECONDARY:
+{
+    return getRightComponent();
+  }
+default :
+{
+  return null;
+}
+}
+}

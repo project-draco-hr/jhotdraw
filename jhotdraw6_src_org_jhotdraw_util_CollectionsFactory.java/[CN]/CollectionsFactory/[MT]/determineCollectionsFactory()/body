@@ -1,0 +1,10 @@
+{
+  String jdkVersion=null;
+  if (isJDK12()) {
+    jdkVersion="12";
+  }
+ else {
+    jdkVersion="11";
+  }
+  return createCollectionsFactory(jdkVersion);
+}

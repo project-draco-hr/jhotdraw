@@ -1,6 +1,6 @@
 {
-  Enumeration k=fPoints.elements();
-  while (k.hasMoreElements()) {
-    ((Point)k.nextElement()).translate(dx,dy);
+  Iterator iter=points();
+  while (iter.hasNext()) {
+    ((Point)iter.next()).translate(dx,dy);
   }
 }

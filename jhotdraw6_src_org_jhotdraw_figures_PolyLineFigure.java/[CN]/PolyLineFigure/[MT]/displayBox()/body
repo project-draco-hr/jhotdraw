@@ -1,8 +1,13 @@
 {
-  Enumeration k=points();
-  Rectangle r=new Rectangle();
-  while (k.hasMoreElements()) {
-    r.add((Point)k.nextElement());
+  Iterator iter=points();
+  if (iter.hasNext()) {
+    Rectangle r=new Rectangle((Point)iter.next());
+    while (iter.hasNext()) {
+      r.add((Point)iter.next());
+    }
+    return r;
   }
-  return r;
+ else {
+    return new Rectangle();
+  }
 }

@@ -1,8 +1,8 @@
 {
   s.defaultReadObject();
-  fSelection=new Vector();
+  fSelection=CollectionsFactory.current().createList();
   if (drawing() != null) {
     drawing().addDrawingChangeListener(this);
   }
-  fSelectionListeners=new Vector();
+  fSelectionListeners=CollectionsFactory.current().createList();
 }

@@ -2,7 +2,7 @@
   super.write(dw);
   dw.writeInt(figureCount());
   FigureEnumeration fe=figures();
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     dw.writeStorable(fe.nextFigure());
   }
 }

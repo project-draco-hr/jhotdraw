@@ -1,0 +1,15 @@
+{
+  Component[] comps=getComponents();
+  for (int x=0; x < comps.length; x++) {
+    DrawingView dv2=Helper.getDrawingView(comps[x]);
+    if (dv == dv2) {
+      JInternalFrame frame=(JInternalFrame)comps[x];
+      try {
+        frame.setSelected(true);
+      }
+ catch (      java.beans.PropertyVetoException pve) {
+        System.out.println(pve);
+      }
+    }
+  }
+}

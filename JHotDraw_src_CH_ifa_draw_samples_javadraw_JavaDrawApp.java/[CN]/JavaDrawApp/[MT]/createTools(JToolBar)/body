@@ -43,4 +43,8 @@
   palette.add(createToolButton(IMAGES + "RECT","Nested Figure Tool",tool));
   tool=new HTMLTextAreaTool(this,new HTMLTextAreaFigure());
   palette.add(createToolButton(IMAGES + "TEXTAREA","HTML TextArea Tool",tool));
+  LineConnection lineConnection=new LineConnection();
+  lineConnection.setStartDecoration(null);
+  tool=new UndoableTool(new SplitConnectionTool(this,lineConnection));
+  palette.add(createToolButton(IMAGES + "OCONN","Elbow Connection Tool",tool));
 }

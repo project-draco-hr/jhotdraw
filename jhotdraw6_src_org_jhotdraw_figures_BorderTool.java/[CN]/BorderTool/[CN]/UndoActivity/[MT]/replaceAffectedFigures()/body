@@ -1,17 +1,17 @@
 {
   FigureEnumeration fe=getAffectedFigures();
-  if (!fe.hasMoreElements()) {
+  if (!fe.hasNextFigure()) {
     return false;
   }
   Figure oldFigure=fe.nextFigure();
-  if (!fe.hasMoreElements()) {
+  if (!fe.hasNextFigure()) {
     return false;
   }
   Figure replaceFigure=fe.nextFigure();
   replaceFigure=getDrawingView().drawing().replace(oldFigure,replaceFigure);
-  Vector v=new Vector();
-  v.addElement(replaceFigure);
-  v.addElement(oldFigure);
-  setAffectedFigures(new FigureEnumerator(v));
+  List l=CollectionsFactory.current().createList();
+  l.add(replaceFigure);
+  l.add(oldFigure);
+  setAffectedFigures(new FigureEnumerator(l));
   return true;
 }

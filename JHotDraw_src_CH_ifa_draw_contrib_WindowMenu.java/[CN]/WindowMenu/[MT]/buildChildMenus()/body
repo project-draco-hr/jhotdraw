@@ -1,8 +1,8 @@
 {
   ChildMenuItem menu;
   JInternalFrame[] array=desktop.getAllFrames();
-  add(cascadeCommand);
-  add(tileCommand);
+  add(new CommandMenuItem(cascadeCommand));
+  add(new CommandMenuItem(tileCommand));
   if (array.length > 0) {
     addSeparator();
   }

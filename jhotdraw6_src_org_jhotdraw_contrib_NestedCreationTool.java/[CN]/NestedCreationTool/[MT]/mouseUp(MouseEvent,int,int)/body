@@ -1,0 +1,6 @@
+{
+  if ((getContainerFigure() != null) && (getCreatedFigure() != null) && getContainerFigure().containsPoint(e.getX(),e.getY())) {
+    getContainerFigure().add(getCreatedFigure());
+  }
+  toolDone();
+}

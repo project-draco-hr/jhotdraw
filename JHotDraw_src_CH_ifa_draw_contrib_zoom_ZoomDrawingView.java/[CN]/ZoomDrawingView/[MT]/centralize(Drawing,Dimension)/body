@@ -5,8 +5,8 @@
   int diffX=boundsCenter.x - drawingCenter.x;
   int diffY=boundsCenter.y - drawingCenter.y;
   if (diffX != 0 || diffY != 0) {
-    for (FigureEnumeration k=d.figures(); k.hasMoreElements(); ) {
-      k.nextFigure().moveBy(diffX,diffY);
+    for (FigureEnumeration fe=d.figures(); fe.hasNextFigure(); ) {
+      fe.nextFigure().moveBy(diffX,diffY);
     }
   }
 }

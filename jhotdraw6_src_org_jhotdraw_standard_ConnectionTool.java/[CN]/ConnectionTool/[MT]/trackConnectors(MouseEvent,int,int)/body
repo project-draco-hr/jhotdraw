@@ -1,18 +1,18 @@
 {
   Figure c=null;
   if (getStartConnector() == null) {
-    c=findSource(x,y,drawing());
+    c=findSource(x,y,getActiveDrawing());
   }
  else {
-    c=findTarget(x,y,drawing());
+    c=findTarget(x,y,getActiveDrawing());
   }
   if (c != getTargetFigure()) {
     if (getTargetFigure() != null) {
-      getTargetFigure().connectorVisibility(false);
+      getTargetFigure().connectorVisibility(false,null);
     }
     setTargetFigure(c);
     if (getTargetFigure() != null) {
-      getTargetFigure().connectorVisibility(true);
+      getTargetFigure().connectorVisibility(true,getConnection());
     }
   }
   Connector cc=null;
@@ -22,5 +22,5 @@
   if (cc != getTargetConnector()) {
     setTargetConnector(cc);
   }
-  view().checkDamage();
+  getActiveView().checkDamage();
 }

@@ -1,5 +1,5 @@
 {
-  Vector handles=new Vector();
+  List handles=CollectionsFactory.current().createList();
   BoxHandleKit.addHandles(this,handles);
-  return handles;
+  return new HandleEnumerator(handles);
 }

@@ -1,3 +1,3 @@
 {
-  return new ReverseFigureEnumerator((Vector)fFigures.clone());
+  return new ReverseFigureEnumerator(CollectionsFactory.current().createList(fFigures));
 }

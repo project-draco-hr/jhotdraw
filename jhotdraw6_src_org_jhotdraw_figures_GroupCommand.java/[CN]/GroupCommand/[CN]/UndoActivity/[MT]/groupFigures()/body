@@ -5,7 +5,7 @@
   group.addAll(getAffectedFigures());
   Figure figure=getDrawingView().drawing().add(group);
   getDrawingView().addToSelection(figure);
-  Vector affectedFigures=new Vector();
-  affectedFigures.addElement(figure);
+  List affectedFigures=CollectionsFactory.current().createList();
+  affectedFigures.add(figure);
   setAffectedFigures(new FigureEnumerator(affectedFigures));
 }

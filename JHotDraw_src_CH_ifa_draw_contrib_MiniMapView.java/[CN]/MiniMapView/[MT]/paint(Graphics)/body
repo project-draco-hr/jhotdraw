@@ -2,7 +2,7 @@
   Graphics2D g2d=(Graphics2D)g;
   Component mappedComponent=getMappedComponent();
   AffineTransform at=getViewToMiniMapTransform(mappedComponent);
-  g2d.setTransform(at);
+  g2d.transform(at);
   getMappedDrawingView().drawAll(g2d);
   drawViewRectangle(g2d,getViewRectangle());
 }

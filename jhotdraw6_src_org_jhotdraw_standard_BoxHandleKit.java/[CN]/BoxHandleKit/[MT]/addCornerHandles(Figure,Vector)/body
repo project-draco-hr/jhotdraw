@@ -1,6 +1,0 @@
-{
-  handles.addElement(southEast(f));
-  handles.addElement(southWest(f));
-  handles.addElement(northEast(f));
-  handles.addElement(northWest(f));
-}

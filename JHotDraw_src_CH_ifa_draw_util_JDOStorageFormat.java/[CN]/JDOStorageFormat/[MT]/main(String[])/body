@@ -1,0 +1,12 @@
+{
+  DrawingSelector frame=new DrawingSelector();
+  try {
+    Drawing newDrawing=new StandardDrawing();
+    newDrawing.setTitle("TestDrawingName" + new Random(System.currentTimeMillis()).nextLong());
+    new JDOStorageFormat().store("base.j2",newDrawing);
+    System.exit(0);
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+  }
+}

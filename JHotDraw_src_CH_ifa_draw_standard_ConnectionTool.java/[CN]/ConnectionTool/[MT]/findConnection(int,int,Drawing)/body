@@ -1,7 +1,7 @@
 {
-  Enumeration k=drawing.figuresReverse();
-  while (k.hasMoreElements()) {
-    Figure figure=(Figure)k.nextElement();
+  FigureEnumeration fe=drawing.figuresReverse();
+  while (fe.hasNextFigure()) {
+    Figure figure=fe.nextFigure();
     figure=figure.findFigureInside(x,y);
     if (figure != null && (figure instanceof ConnectionFigure)) {
       return (ConnectionFigure)figure;

@@ -1,5 +1,5 @@
 {
-  java.awt.Component allFrames[]=getAllFrames();
+  Component[] allFrames=getAllFrames();
   if (allFrames.length == 0) {
     return;
   }

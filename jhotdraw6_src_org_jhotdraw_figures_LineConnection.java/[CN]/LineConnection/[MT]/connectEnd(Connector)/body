@@ -1,5 +1,7 @@
 {
   setEndConnector(newEndConnector);
-  endFigure().addFigureChangeListener(this);
-  handleConnect(startFigure(),endFigure());
+  if (newEndConnector != null) {
+    endFigure().addFigureChangeListener(this);
+    handleConnect(startFigure(),endFigure());
+  }
 }

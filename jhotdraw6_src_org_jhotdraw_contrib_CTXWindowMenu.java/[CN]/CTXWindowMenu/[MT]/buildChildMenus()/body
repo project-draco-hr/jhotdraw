@@ -1,5 +1,4 @@
 {
-  ChildMenuItem menu;
   JInternalFrame[] array=desktop.getAllFrames();
   cascadeCommand.setEnabled(array.length > 0);
   tileHCommand.setEnabled(array.length > 0);
@@ -11,7 +10,7 @@
   }
   addSeparator();
   for (int i=0; i < array.length; i++) {
-    menu=new ChildMenuItem(array[i]);
+    ChildMenuItem menu=new ChildMenuItem(array[i]);
     menu.setState(i == 0);
     menu.addActionListener(new ActionListener(){
       public void actionPerformed(      ActionEvent ae){

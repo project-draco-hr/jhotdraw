@@ -1,4 +1,5 @@
 {
+  super.mouseDown(e,x,y);
   if ((e.getModifiers() & InputEvent.BUTTON1_MASK) != 0) {
     if (child != null) {
       return;

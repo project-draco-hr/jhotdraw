@@ -1,6 +1,6 @@
 {
-  Enumeration le=myRegisteredListeners.elements();
-  while (le.hasMoreElements()) {
-    ((CommandListener)le.nextElement()).commandNotExecutable(new EventObject(myObservedCommand));
+  Iterator iter=myRegisteredListeners.iterator();
+  while (iter.hasNext()) {
+    ((CommandListener)iter.next()).commandNotExecutable(new EventObject(myObservedCommand));
   }
 }

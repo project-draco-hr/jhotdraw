@@ -1,7 +1,7 @@
 {
   super(newText);
-  this.desktop=desktop;
-  cascadeCommand=new AbstractCommand("Cascade",editor){
+  this.desktop=newDesktop;
+  cascadeCommand=new AbstractCommand("Cascade",newEditor){
     public void execute(){
       WindowMenu.this.desktop.cascadeFrames();
     }
@@ -10,7 +10,7 @@
     }
   }
 ;
-  tileCommand=new AbstractCommand("Tile",editor){
+  tileCommand=new AbstractCommand("Tile",newEditor){
     public void execute(){
       WindowMenu.this.desktop.tileFrames();
     }

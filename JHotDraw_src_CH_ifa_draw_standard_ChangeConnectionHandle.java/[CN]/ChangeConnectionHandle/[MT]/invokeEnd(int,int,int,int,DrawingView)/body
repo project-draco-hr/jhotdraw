@@ -14,7 +14,7 @@
     getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getConnection()));
   }
   if (getTargetFigure() != null) {
-    getTargetFigure().connectorVisibility(false);
+    getTargetFigure().connectorVisibility(false,null);
     setTargetFigure(null);
   }
 }

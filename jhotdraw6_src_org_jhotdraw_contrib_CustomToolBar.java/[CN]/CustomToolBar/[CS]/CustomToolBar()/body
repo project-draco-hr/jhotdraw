@@ -1,7 +1,7 @@
 {
   super();
-  standardTools=new Vector();
-  editTools=new Vector();
+  standardTools=CollectionsFactory.current().createList();
+  editTools=CollectionsFactory.current().createList();
   currentTools=standardTools;
   needsUpdate=false;
 }

@@ -1,0 +1,10 @@
+{
+  super();
+  pms=new Hashtable();
+  Runtime.getRuntime().addShutdownHook(new Thread(){
+    public void run(){
+      Iterator iter=pms.values().iterator();
+    }
+  }
+);
+}

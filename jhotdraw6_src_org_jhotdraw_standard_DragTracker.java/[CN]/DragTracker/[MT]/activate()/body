@@ -1,4 +1,2 @@
 {
-  setUndoActivity(createUndoActivity());
-  getUndoActivity().setAffectedFigures(view().selectionElements());
 }

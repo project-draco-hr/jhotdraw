@@ -1,7 +1,7 @@
 {
-  Vector handles=new Vector(fPoints.size());
+  List handles=CollectionsFactory.current().createList(fPoints.size());
   for (int i=0; i < fPoints.size(); i++) {
-    handles.addElement(new PolyLineHandle(this,locator(i),i));
+    handles.add(new PolyLineHandle(this,locator(i),i));
   }
-  return handles;
+  return new HandleEnumerator(handles);
 }

@@ -1,0 +1,9 @@
+{
+  if (DNDInterface.class.isInstance(view)) {
+    DNDInterface dndi=(DNDInterface)view;
+    dndi.setDropTargetActive(false);
+    dndi.setDragSourceActive(false);
+    comps.remove(dndi);
+  }
+  super.viewDestroying(view);
+}

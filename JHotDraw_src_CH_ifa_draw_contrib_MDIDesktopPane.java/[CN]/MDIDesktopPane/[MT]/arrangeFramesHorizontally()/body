@@ -1,13 +1,11 @@
 {
-  java.awt.Component allFrames[]=getAllFrames();
+  Component[] allFrames=getAllFrames();
   if (allFrames.length == 0) {
     return;
   }
   manager.setNormalSize();
-  int horFrames;
-  int vertFrames;
-  vertFrames=(int)Math.ceil(Math.sqrt(allFrames.length));
-  horFrames=(int)Math.floor(Math.sqrt(allFrames.length));
+  int vertFrames=(int)Math.ceil(Math.sqrt(allFrames.length));
+  int horFrames=(int)Math.floor(Math.sqrt(allFrames.length));
   int frameWidth=getBounds().width / horFrames;
   int frameHeight=getBounds().height / vertFrames;
   int x=0;

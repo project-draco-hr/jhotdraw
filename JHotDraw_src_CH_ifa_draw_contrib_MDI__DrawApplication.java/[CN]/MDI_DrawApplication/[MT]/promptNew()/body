@@ -1,8 +1,3 @@
 {
-  if (hasInternalFrames()) {
-    super.promptNew();
-  }
- else {
-    newWindow(createDrawing());
-  }
+  newWindow(createDrawing());
 }

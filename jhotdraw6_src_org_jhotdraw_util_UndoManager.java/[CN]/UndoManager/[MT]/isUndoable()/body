@@ -1,6 +1,6 @@
 {
   if (getUndoSize() > 0) {
-    return ((Undoable)undoStack.lastElement()).isUndoable();
+    return getLastElement(undoStack).isUndoable();
   }
  else {
     return false;

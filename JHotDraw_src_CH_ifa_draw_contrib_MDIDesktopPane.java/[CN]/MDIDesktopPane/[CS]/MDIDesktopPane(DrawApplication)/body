@@ -1,0 +1,7 @@
+{
+  setDrawApplication(newDrawApplication);
+  manager=new MDIDesktopManager(this);
+  setDesktopManager(manager);
+  setDragMode(JDesktopPane.OUTLINE_DRAG_MODE);
+  setAlignmentX(JComponent.LEFT_ALIGNMENT);
+}

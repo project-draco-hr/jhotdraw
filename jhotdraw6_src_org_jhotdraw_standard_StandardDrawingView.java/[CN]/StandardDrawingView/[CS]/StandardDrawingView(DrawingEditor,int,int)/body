@@ -4,11 +4,11 @@
   fEditor=editor;
   fViewSize=new Dimension(width,height);
   setSize(width,height);
-  fSelectionListeners=new Vector();
+  fSelectionListeners=CollectionsFactory.current().createList();
   addFigureSelectionListener(editor());
   setLastClick(new Point(0,0));
   fConstrainer=null;
-  fSelection=new Vector();
+  fSelection=CollectionsFactory.current().createList();
   setDisplayUpdate(createDisplayUpdate());
   setBackground(Color.lightGray);
   addMouseListener(createMouseListener());

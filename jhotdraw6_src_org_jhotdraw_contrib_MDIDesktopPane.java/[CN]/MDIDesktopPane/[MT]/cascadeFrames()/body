@@ -1,7 +1,7 @@
 {
   int x=0;
   int y=0;
-  JInternalFrame allFrames[]=getAllFrames();
+  JInternalFrame[] allFrames=getAllFrames();
   if (allFrames.length == 0) {
     return;
   }

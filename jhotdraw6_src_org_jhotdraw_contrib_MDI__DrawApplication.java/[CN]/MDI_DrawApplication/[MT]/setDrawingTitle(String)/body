@@ -1,3 +1,0 @@
-{
-  currentFrame.setTitle(getApplicationName() + " - " + newDrawingTitle);
-}

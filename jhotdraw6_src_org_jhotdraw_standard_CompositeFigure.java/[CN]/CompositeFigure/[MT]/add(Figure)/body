@@ -1,7 +1,7 @@
 {
   if (!containsFigure(figure)) {
     figure.setZValue(++_nHighestZ);
-    fFigures.addElement(figure);
+    fFigures.add(figure);
     figure.addToContainer(this);
     _addToQuadTree(figure);
   }

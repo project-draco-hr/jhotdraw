@@ -2,11 +2,11 @@
   if (fSelectionHandles == null) {
     return;
   }
-  FigureEnumeration fe=selectionElements();
-  while (fe.hasMoreElements()) {
+  FigureEnumeration fe=selection();
+  while (fe.hasNextFigure()) {
     fe.nextFigure().invalidate();
   }
-  fSelection=new Vector();
+  fSelection=CollectionsFactory.current().createList();
   fSelectionHandles=null;
   fireSelectionChanged();
 }

@@ -1,0 +1,19 @@
+{
+  PersistenceManager pm=getPersistenceManager(fileName);
+  endTransaction(pm,false);
+  startTransaction(pm);
+  Drawing restoredDrawing=null;
+  try {
+    Extent extent=pm.getExtent(StandardDrawing.class,true);
+    DrawingListModel listModel=new DrawingListModel(extent.iterator());
+    Drawing txnDrawing=showRestoreDialog(listModel);
+    if (txnDrawing != null) {
+      restoredDrawing=txnDrawing;
+    }
+  }
+  finally {
+    endTransaction(pm,false);
+  }
+  startTransaction(pm);
+  return restoredDrawing;
+}

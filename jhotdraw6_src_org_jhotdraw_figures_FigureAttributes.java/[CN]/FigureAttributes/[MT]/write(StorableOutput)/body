@@ -1,9 +1,9 @@
 {
   dw.writeString("attributes");
   dw.writeInt(fMap.size());
-  Enumeration k=fMap.keys();
-  while (k.hasMoreElements()) {
-    String s=(String)k.nextElement();
+  Iterator iter=fMap.keySet().iterator();
+  while (iter.hasNext()) {
+    String s=(String)iter.next();
     Object v=fMap.get(s);
     dw.writeString(s);
     if (v instanceof String) {

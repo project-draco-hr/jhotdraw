@@ -1,0 +1,2 @@
+PersistenceManager pm
+boolean doCommit

@@ -1,8 +1,8 @@
 {
-  myAffectedFigures=new Vector();
+  myAffectedFigures=CollectionsFactory.current().createList();
   myAffectedFiguresCount=0;
-  while (toBeRemembered.hasMoreElements()) {
-    myAffectedFigures.addElement(toBeRemembered.nextElement());
+  while (toBeRemembered.hasNextFigure()) {
+    myAffectedFigures.add(toBeRemembered.nextFigure());
     myAffectedFiguresCount++;
   }
 }

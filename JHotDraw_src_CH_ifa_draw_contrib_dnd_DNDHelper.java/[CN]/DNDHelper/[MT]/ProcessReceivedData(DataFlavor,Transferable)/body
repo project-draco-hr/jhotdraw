@@ -1,0 +1,47 @@
+{
+  if (transferable == null) {
+    return null;
+  }
+  try {
+    if (flavor.equals(DataFlavor.stringFlavor)) {
+      String str=(String)transferable.getTransferData(DataFlavor.stringFlavor);
+      return str;
+    }
+ else     if (flavor.equals(DataFlavor.javaFileListFlavor)) {
+      java.util.List aList=(java.util.List)transferable.getTransferData(DataFlavor.javaFileListFlavor);
+      File fList[]=new File[aList.size()];
+      aList.toArray(fList);
+      return fList;
+    }
+ else     if (flavor.equals(ASCIIFlavor)) {
+      String txt=null;
+      InputStream is=(InputStream)transferable.getTransferData(ASCIIFlavor);
+      int length=is.available();
+      byte[] bytes=new byte[length];
+      int n=is.read(bytes);
+      if (n > 0) {
+        txt=new String(bytes,0,n);
+      }
+      return txt;
+    }
+ else     if (flavor.equals(DNDFiguresTransferable.DNDFiguresFlavor)) {
+      DNDFigures ff=(DNDFigures)transferable.getTransferData(DNDFiguresTransferable.DNDFiguresFlavor);
+      return ff;
+    }
+ else {
+      return null;
+    }
+  }
+ catch (  java.io.IOException ioe) {
+    System.err.println(ioe);
+    return null;
+  }
+catch (  UnsupportedFlavorException ufe) {
+    System.err.println(ufe);
+    return null;
+  }
+catch (  ClassCastException cce) {
+    System.err.println(cce);
+    return null;
+  }
+}

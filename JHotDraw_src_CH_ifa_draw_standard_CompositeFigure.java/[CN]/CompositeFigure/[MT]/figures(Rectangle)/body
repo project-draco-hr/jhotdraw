@@ -1,18 +1,18 @@
 {
   if (_theQuadTree != null) {
-    Vector v=_theQuadTree.getAllWithin(new Bounds(viewRectangle).asRectangle2D());
-    Vector v2=new Vector();
-    for (Enumeration e=v.elements(); e.hasMoreElements(); ) {
-      Figure f=(Figure)e.nextElement();
-      v2.addElement(new OrderedFigureElement(f,f.getZValue()));
+    FigureEnumeration fe=_theQuadTree.getAllWithin(new Bounds(viewRectangle).asRectangle2D());
+    List l2=CollectionsFactory.current().createList();
+    while (fe.hasNextFigure()) {
+      Figure f=fe.nextFigure();
+      l2.add(new OrderedFigureElement(f,f.getZValue()));
     }
-    Collections.sort(v2);
-    Vector v3=new Vector();
-    for (Enumeration e=v2.elements(); e.hasMoreElements(); ) {
-      OrderedFigureElement ofe=(OrderedFigureElement)e.nextElement();
-      v3.addElement(ofe.getFigure());
+    Collections.sort(l2);
+    List l3=CollectionsFactory.current().createList();
+    for (Iterator iter=l2.iterator(); iter.hasNext(); ) {
+      OrderedFigureElement ofe=(OrderedFigureElement)iter.next();
+      l3.add(ofe.getFigure());
     }
-    return new FigureEnumerator(v3);
+    return new FigureEnumerator(l3);
   }
   return figures();
 }

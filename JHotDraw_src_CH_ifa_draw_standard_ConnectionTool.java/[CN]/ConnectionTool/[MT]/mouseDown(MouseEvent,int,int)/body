@@ -1,14 +1,14 @@
 {
+  super.mouseDown(e,x,y);
   int ex=e.getX();
   int ey=e.getY();
   setTargetFigure(findConnectionStart(ex,ey,drawing()));
   if (getTargetFigure() != null) {
     setStartConnector(findConnector(ex,ey,getTargetFigure()));
     if (getStartConnector() != null) {
-      Point p=new Point(ex,ey);
       setConnection(createConnection());
-      getConnection().startPoint(p.x,p.y);
-      getConnection().endPoint(p.x,p.y);
+      getConnection().startPoint(ex,ey);
+      getConnection().endPoint(ex,ey);
       setAddedFigure(view().add(getConnection()));
     }
   }

@@ -3,7 +3,7 @@
   if (!s.toLowerCase().equals("attributes")) {
     throw new IOException("Attributes expected");
   }
-  fMap=new Hashtable();
+  fMap=CollectionsFactory.current().createMap();
   int size=dr.readInt();
   for (int i=0; i < size; i++) {
     String key=dr.readString();

@@ -1,4 +1,5 @@
 {
+  super.mouseDown(e,x,y);
   if (fChild != null) {
     return;
   }
@@ -19,6 +20,6 @@
       fChild=createAreaTracker();
     }
   }
-  fChild.mouseDown(e,x,y);
   fChild.activate();
+  fChild.mouseDown(e,x,y);
 }

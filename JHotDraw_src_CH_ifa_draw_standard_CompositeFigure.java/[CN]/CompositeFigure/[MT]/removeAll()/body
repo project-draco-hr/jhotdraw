@@ -1,10 +1,10 @@
 {
   FigureEnumeration fe=figures();
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     Figure figure=fe.nextFigure();
     figure.removeFromContainer(this);
   }
-  fFigures.removeAllElements();
+  fFigures.clear();
   _clearQuadTree();
   _nLowestZ=0;
   _nHighestZ=0;

@@ -1,6 +1,6 @@
 {
   if (getRedoSize() > 0) {
-    return (Undoable)redoStack.lastElement();
+    return getLastElement(redoStack);
   }
  else {
     return null;

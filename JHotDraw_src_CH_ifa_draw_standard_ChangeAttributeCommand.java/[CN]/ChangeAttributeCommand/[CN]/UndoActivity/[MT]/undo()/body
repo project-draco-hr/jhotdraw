@@ -2,9 +2,9 @@
   if (!super.undo()) {
     return false;
   }
-  FigureEnumeration k=getAffectedFigures();
-  while (k.hasMoreElements()) {
-    Figure f=k.nextFigure();
+  FigureEnumeration fe=getAffectedFigures();
+  while (fe.hasNextFigure()) {
+    Figure f=fe.nextFigure();
     if (getOriginalValue(f) != null) {
       f.setAttribute(getAttributeName(),getOriginalValue(f));
     }

@@ -1,0 +1,8 @@
+{
+  myList=new ArrayList();
+  while (iter.hasNext()) {
+    Object o=iter.next();
+    System.out.println("extent: " + o + " .. "+ ((Drawing)o).getTitle());
+    myList.add(o);
+  }
+}

@@ -1,8 +1,8 @@
 {
   int start=0;
-  Enumeration i=fPreTasks.elements();
-  while (i.hasMoreElements()) {
-    PertFigure f=(PertFigure)i.nextElement();
+  Iterator iter=fPreTasks.iterator();
+  while (iter.hasNext()) {
+    PertFigure f=(PertFigure)iter.next();
     start=Math.max(start,f.end());
   }
   return start;

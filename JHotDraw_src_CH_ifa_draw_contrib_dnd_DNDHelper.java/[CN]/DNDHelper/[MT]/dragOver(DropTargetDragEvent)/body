@@ -1,0 +1,10 @@
+{
+  if (supportDropTargetDragEvent(dtde) == true) {
+    int x=dtde.getLocation().x;
+    int y=dtde.getLocation().y;
+    if ((Math.abs(x - fLastX) > 0) || (Math.abs(y - fLastY) > 0)) {
+      fLastX=x;
+      fLastY=y;
+    }
+  }
+}

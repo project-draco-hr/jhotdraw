@@ -1,10 +1,12 @@
 {
   int idPos=newConstant.getID() - 1;
-  if (idPos >= attributeConstants.size()) {
-    attributeConstants.setSize(idPos + 1);
-  }
-  if (attributeConstants.elementAt(idPos) != null) {
+  if ((idPos < attributeConstants.length) && (attributeConstants[idPos] != null)) {
     throw new JHotDrawRuntimeException("No unique FigureAttribute ID: " + newConstant.getID());
   }
-  attributeConstants.setElementAt(newConstant,idPos);
+  if (idPos >= attributeConstants.length) {
+    FigureAttributeConstant[] tempStrs=new FigureAttributeConstant[idPos + 1];
+    System.arraycopy(attributeConstants,0,tempStrs,0,attributeConstants.length);
+    attributeConstants=tempStrs;
+  }
+  attributeConstants[idPos]=newConstant;
 }

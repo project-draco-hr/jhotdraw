@@ -1,9 +1,9 @@
 {
   int maxWidth=Math.abs(corner.x - origin.x);
   int maxHeight=0;
-  FigureEnumeration enum=getLayoutable().figures();
-  while (enum.hasMoreElements()) {
-    Figure currentFigure=enum.nextFigure();
+  FigureEnumeration fe=getLayoutable().figures();
+  while (fe.hasNextFigure()) {
+    Figure currentFigure=fe.nextFigure();
     Rectangle r=null;
     if (currentFigure instanceof Layoutable) {
       Layouter layoutStrategy=((Layoutable)currentFigure).getLayouter();

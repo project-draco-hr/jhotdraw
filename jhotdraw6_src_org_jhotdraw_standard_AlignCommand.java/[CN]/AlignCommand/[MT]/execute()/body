@@ -1,7 +1,7 @@
 {
   super.execute();
   setUndoActivity(createUndoActivity());
-  getUndoActivity().setAffectedFigures(new FigureEnumerator(view().selection()));
+  getUndoActivity().setAffectedFigures(view().selection());
   ((AlignCommand.UndoActivity)getUndoActivity()).alignAffectedFigures(getAlignment());
   view().checkDamage();
 }

@@ -1,0 +1,16 @@
+{
+  DrawingView oldDrawingView=null;
+  Component[] components=container.getComponents();
+  for (int i=0; i < components.length; i++) {
+    if (components[i] instanceof DrawingView) {
+      return (DrawingView)components[i];
+    }
+ else     if (components[i] instanceof Container) {
+      oldDrawingView=getDrawingView((Container)components[i]);
+      if (oldDrawingView != null) {
+        return oldDrawingView;
+      }
+    }
+  }
+  return null;
+}

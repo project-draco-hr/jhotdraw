@@ -1,4 +1,5 @@
 {
+  fParagraphs=CollectionsFactory.current().createList();
   fDisplayBox=new Rectangle(0,0,30,15);
   fFont=createFont();
   fText=new String("");

@@ -5,13 +5,13 @@
   getDrawingView().clearSelection();
   if (!isValidText(getBackupText())) {
     FigureEnumeration fe=getAffectedFigures();
-    while (fe.hasMoreElements()) {
+    while (fe.hasNextFigure()) {
       getDrawingView().drawing().orphan(fe.nextFigure());
     }
   }
  else   if (!isValidText(getOriginalText())) {
     FigureEnumeration fe=getAffectedFigures();
-    while (fe.hasMoreElements()) {
+    while (fe.hasNextFigure()) {
       getDrawingView().drawing().add(fe.nextFigure());
       setText(getBackupText());
     }

@@ -1,4 +1,3 @@
 {
-  this();
-  setLayoutable(newLayoutable);
+  super(newLayoutable);
 }

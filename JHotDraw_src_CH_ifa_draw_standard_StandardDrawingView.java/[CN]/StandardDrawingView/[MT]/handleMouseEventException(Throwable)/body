@@ -1,3 +1,4 @@
 {
   JOptionPane.showMessageDialog(this,t.getClass().getName() + " - " + t.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+  t.printStackTrace();
 }

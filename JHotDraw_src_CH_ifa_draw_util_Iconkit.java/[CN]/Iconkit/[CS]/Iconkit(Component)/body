@@ -1,6 +1,6 @@
 {
   fMap=new Hashtable(53);
-  fRegisteredImages=new Vector(10);
+  fRegisteredImages=CollectionsFactory.current().createList(10);
   fComponent=component;
   fgIconkit=this;
 }

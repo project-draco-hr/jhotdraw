@@ -3,7 +3,7 @@
     return false;
   }
   FigureEnumeration fe=getAffectedFigures();
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     getDrawingView().drawing().orphan(fe.nextFigure());
   }
   getDrawingView().clearSelection();

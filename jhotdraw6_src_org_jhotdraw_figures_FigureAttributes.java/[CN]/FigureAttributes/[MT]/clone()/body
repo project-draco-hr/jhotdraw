@@ -1,7 +1,7 @@
 {
   try {
     FigureAttributes a=(FigureAttributes)super.clone();
-    a.fMap=(Hashtable)fMap.clone();
+    a.fMap=CollectionsFactory.current().createMap(fMap);
     return a;
   }
  catch (  CloneNotSupportedException e) {

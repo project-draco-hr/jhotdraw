@@ -1,5 +1,5 @@
 {
-  Vector h=super.handles();
-  h.addElement(new TriangleRotationHandle(this));
-  return h;
+  List h=super.handles().toList();
+  h.add(new TriangleRotationHandle(this));
+  return new HandleEnumerator(h);
 }

@@ -1,9 +1,9 @@
 {
   super.execute();
   setUndoActivity(createUndoActivity());
-  getUndoActivity().setAffectedFigures(view().selectionElements());
+  getUndoActivity().setAffectedFigures(view().selection());
   FigureEnumeration fe=getUndoActivity().getAffectedFigures();
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     fe.nextFigure().setAttribute(fAttribute,fValue);
   }
   view().checkDamage();

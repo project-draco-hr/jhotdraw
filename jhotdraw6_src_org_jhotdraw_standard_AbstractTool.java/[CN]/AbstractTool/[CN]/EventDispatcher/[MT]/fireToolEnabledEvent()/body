@@ -1,6 +1,6 @@
 {
-  Enumeration le=myRegisteredListeners.elements();
-  while (le.hasMoreElements()) {
-    ((ToolListener)le.nextElement()).toolEnabled(new EventObject(myObservedTool));
+  Iterator iter=myRegisteredListeners.iterator();
+  while (iter.hasNext()) {
+    ((ToolListener)iter.next()).toolEnabled(new EventObject(myObservedTool));
   }
 }

@@ -5,12 +5,12 @@
   String copyTitle=getDrawingTitle();
   DrawingView newView=createDrawingView();
   newView.setDrawing(view().drawing());
-  createContents(newView);
+  getDesktop().addToDesktop(newView,Desktop.PRIMARY);
   if (copyTitle != null) {
-    setDrawingTitle(copyTitle + " (View)");
+    setDrawingTitle(copyTitle);
   }
  else {
-    setDrawingTitle(getDefaultDrawingTitle() + " (View)");
+    setDrawingTitle(getDefaultDrawingTitle());
   }
   toolDone();
 }

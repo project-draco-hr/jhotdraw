@@ -1,0 +1,16 @@
+{
+  if (Component.class.isInstance(view())) {
+    try {
+      dt=new DropTarget((Component)view(),DnDConstants.ACTION_COPY_OR_MOVE,this);
+      System.out.println("" + view() + " Initialized to DND.");
+      return true;
+    }
+ catch (    java.lang.NullPointerException npe) {
+      System.err.println("View Failed to initialize to DND.");
+      System.err.println("Container likely did not have peer before the DropTarget was added");
+      System.err.println(npe);
+      npe.printStackTrace();
+    }
+  }
+  return false;
+}

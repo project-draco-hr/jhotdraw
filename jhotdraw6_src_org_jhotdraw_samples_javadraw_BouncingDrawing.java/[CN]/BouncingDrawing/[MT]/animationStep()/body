@@ -1,7 +1,7 @@
 {
-  Enumeration k=figures();
-  while (k.hasMoreElements()) {
-    Figure f=(Figure)k.nextElement();
+  FigureEnumeration fe=figures();
+  while (fe.hasNextFigure()) {
+    Figure f=(Figure)fe.nextFigure();
     if (!(f instanceof ConnectionFigure)) {
       ((AnimationDecorator)f).animationStep();
     }

@@ -1,6 +1,6 @@
 {
-  FigureEnumeration figures=selectionElements();
-  while (figures.hasMoreElements()) {
+  FigureEnumeration figures=selection();
+  while (figures.hasNextFigure()) {
     figures.nextFigure().moveBy(dx,dy);
   }
   checkDamage();

@@ -1,9 +1,9 @@
 {
   super.write(dw);
   dw.writeInt(fPoints.size());
-  Enumeration k=fPoints.elements();
-  while (k.hasMoreElements()) {
-    Point p=(Point)k.nextElement();
+  Iterator iter=points();
+  while (iter.hasNext()) {
+    Point p=(Point)iter.next();
     dw.writeInt(p.x);
     dw.writeInt(p.y);
   }

@@ -5,7 +5,7 @@
   if (selection != null) {
     setUndoActivity(createUndoActivity());
     getUndoActivity().setAffectedFigures((FigureEnumerator)selection.getData(StandardFigureSelection.TYPE));
-    if (!getUndoActivity().getAffectedFigures().hasMoreElements()) {
+    if (!getUndoActivity().getAffectedFigures().hasNextFigure()) {
       setUndoActivity(null);
       return;
     }

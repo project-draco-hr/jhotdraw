@@ -1,8 +1,8 @@
 {
-  FigureEnumeration k=drawing().figures();
+  FigureEnumeration fe=drawing().figures();
   Dimension d=new Dimension(0,0);
-  while (k.hasMoreElements()) {
-    Rectangle r=k.nextFigure().displayBox();
+  while (fe.hasNextFigure()) {
+    Rectangle r=fe.nextFigure().displayBox();
     d.width=Math.max(d.width,r.x + r.width);
     d.height=Math.max(d.height,r.y + r.height);
   }

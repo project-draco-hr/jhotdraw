@@ -3,11 +3,13 @@
   fLastX=x;
   fLastY=y;
   if (e.isShiftDown()) {
-    view().toggleSelection(fAnchorFigure);
+    getActiveView().toggleSelection(fAnchorFigure);
     fAnchorFigure=null;
   }
- else   if (!view().isFigureSelected(fAnchorFigure)) {
-    view().clearSelection();
-    view().addToSelection(fAnchorFigure);
+ else   if (!getActiveView().isFigureSelected(fAnchorFigure)) {
+    getActiveView().clearSelection();
+    getActiveView().addToSelection(fAnchorFigure);
   }
+  setUndoActivity(createUndoActivity());
+  getUndoActivity().setAffectedFigures(getActiveView().selection());
 }

@@ -1,4 +1,5 @@
 {
+  setView((DrawingView)e.getSource());
   if (e.getClickCount() == 2) {
     Figure figure=drawing().findFigure(e.getX(),e.getY());
     if (figure != null) {

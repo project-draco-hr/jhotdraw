@@ -1,7 +1,7 @@
 {
   super(newText);
-  this.desktop=desktop;
-  cascadeCommand=new CommandMenuItem(new AbstractCommand("Cascade",editor){
+  this.desktop=newDesktop;
+  cascadeCommand=new CommandMenuItem(new AbstractCommand("Cascade",newEditor){
     public void execute(){
       CTXWindowMenu.this.desktop.cascadeFrames();
     }
@@ -10,7 +10,7 @@
     }
   }
 );
-  tileHCommand=new CommandMenuItem(new AbstractCommand("Tile Horizontally",editor){
+  tileHCommand=new CommandMenuItem(new AbstractCommand("Tile Horizontally",newEditor){
     public void execute(){
       CTXWindowMenu.this.desktop.tileFramesHorizontally();
     }
@@ -19,7 +19,7 @@
     }
   }
 );
-  tileVCommand=new CommandMenuItem(new AbstractCommand("Tile Vertically",editor){
+  tileVCommand=new CommandMenuItem(new AbstractCommand("Tile Vertically",newEditor){
     public void execute(){
       CTXWindowMenu.this.desktop.tileFramesVertically();
     }
@@ -28,7 +28,7 @@
     }
   }
 );
-  arrangeHCommand=new CommandMenuItem(new AbstractCommand("Arrange Horizontally",editor){
+  arrangeHCommand=new CommandMenuItem(new AbstractCommand("Arrange Horizontally",newEditor){
     public void execute(){
       CTXWindowMenu.this.desktop.arrangeFramesHorizontally();
     }
@@ -37,7 +37,7 @@
     }
   }
 );
-  arrangeVCommand=new CommandMenuItem(new AbstractCommand("Arrange Vertically",editor){
+  arrangeVCommand=new CommandMenuItem(new AbstractCommand("Arrange Vertically",newEditor){
     public void execute(){
       CTXWindowMenu.this.desktop.arrangeFramesVertically();
     }

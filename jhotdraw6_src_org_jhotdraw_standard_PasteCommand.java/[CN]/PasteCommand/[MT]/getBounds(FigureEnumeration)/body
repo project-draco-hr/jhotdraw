@@ -1,6 +1,6 @@
 {
   Rectangle r=fe.nextFigure().displayBox();
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     r.add(fe.nextFigure().displayBox());
   }
   return r;

@@ -1,0 +1,3 @@
+{
+  return getDNDHelper().setDropTargetActive(state);
+}

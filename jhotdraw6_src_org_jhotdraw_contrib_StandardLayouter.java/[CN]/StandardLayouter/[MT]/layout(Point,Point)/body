@@ -1,9 +1,9 @@
 {
   Rectangle r=calculateLayout(origin,corner);
   int maxHeight=getInsets().top;
-  FigureEnumeration enum=getLayoutable().figures();
-  while (enum.hasMoreElements()) {
-    Figure currentFigure=enum.nextFigure();
+  FigureEnumeration fe=getLayoutable().figures();
+  while (fe.hasNextFigure()) {
+    Figure currentFigure=fe.nextFigure();
     Point partOrigin=new Point(r.x + getInsets().left,r.y + maxHeight);
     Point partCorner=new Point(r.x + getInsets().left - getInsets().right + r.width,r.y + currentFigure.displayBox().height);
     currentFigure.displayBox(partOrigin,partCorner);

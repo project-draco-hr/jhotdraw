@@ -1,10 +1,10 @@
 {
   willChange();
   if (fPoints.size() < 2) {
-    fPoints.addElement(new Point(x,y));
+    fPoints.add(new Point(x,y));
   }
  else {
-    fPoints.setElementAt(new Point(x,y),fPoints.size() - 1);
+    fPoints.set(fPoints.size() - 1,new Point(x,y));
   }
   changed();
 }

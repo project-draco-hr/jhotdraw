@@ -1,11 +1,11 @@
 {
-  Vector result=new Vector(selectionCount());
+  List result=CollectionsFactory.current().createList(selectionCount());
   FigureEnumeration figures=drawing().figures();
-  while (figures.hasMoreElements()) {
+  while (figures.hasNextFigure()) {
     Figure f=figures.nextFigure();
     if (isFigureSelected(f)) {
-      result.addElement(f);
+      result.add(f);
     }
   }
-  return result;
+  return new ReverseFigureEnumerator(result);
 }

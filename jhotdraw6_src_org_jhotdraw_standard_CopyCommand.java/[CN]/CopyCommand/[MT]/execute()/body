@@ -1,4 +1,4 @@
 {
   super.execute();
-  copyFigures(view().selectionElements(),view().selectionCount());
+  copyFigures(view().selection(),view().selectionCount());
 }

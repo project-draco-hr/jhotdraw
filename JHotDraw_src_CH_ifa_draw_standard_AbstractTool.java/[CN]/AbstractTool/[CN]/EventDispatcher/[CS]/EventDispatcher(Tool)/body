@@ -1,4 +1,4 @@
 {
-  myRegisteredListeners=new Vector();
+  myRegisteredListeners=CollectionsFactory.current().createList();
   myObservedTool=newObservedTool;
 }

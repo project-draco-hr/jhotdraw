@@ -1,0 +1,6 @@
+{
+  Properties props=new Properties();
+  final PersistenceManagerFactory pmf=PersistenceManagerFactories.getPersistenceManagerFactory(props);
+  pmf.setConnectionURL("fastobjects://LOCAL/" + dbFileName);
+  return pmf;
+}

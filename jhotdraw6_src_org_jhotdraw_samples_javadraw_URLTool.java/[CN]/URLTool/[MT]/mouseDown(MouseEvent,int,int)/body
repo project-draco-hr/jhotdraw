@@ -1,6 +1,6 @@
 {
-  Figure pressedFigure;
-  pressedFigure=drawing().findFigureInside(x,y);
+  super.mouseDown(e,x,y);
+  Figure pressedFigure=drawing().findFigureInside(x,y);
   if (pressedFigure != null) {
     beginEdit(pressedFigure);
     return;

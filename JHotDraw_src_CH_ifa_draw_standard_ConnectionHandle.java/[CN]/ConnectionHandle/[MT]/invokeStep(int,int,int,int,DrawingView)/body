@@ -1,13 +1,13 @@
 {
   Point p=new Point(x,y);
   Figure f=findConnectableFigure(x,y,view.drawing());
-  if (f != fTarget) {
-    if (fTarget != null) {
-      fTarget.connectorVisibility(false);
+  if (f != getTargetFigure()) {
+    if (getTargetFigure() != null) {
+      getTargetFigure().connectorVisibility(false,null);
     }
-    fTarget=f;
-    if (fTarget != null) {
-      fTarget.connectorVisibility(true);
+    setTargetFigure(f);
+    if (getTargetFigure() != null) {
+      getTargetFigure().connectorVisibility(true,getConnection());
     }
   }
   Connector target=findConnectionTarget(p.x,p.y,view.drawing());

@@ -1,7 +1,5 @@
 {
   JScrollPane scrollPane=getScrollPane();
-  int x=0;
-  int y=0;
   Insets scrollInsets=getScrollPaneInsets();
   if (scrollPane != null) {
     Dimension d=scrollPane.getVisibleRect().getSize();

@@ -2,9 +2,9 @@
   if (start == this) {
     return true;
   }
-  Enumeration i=fPreTasks.elements();
-  while (i.hasMoreElements()) {
-    if (((PertFigure)i.nextElement()).hasCycle(start)) {
+  Iterator iter=fPreTasks.iterator();
+  while (iter.hasNext()) {
+    if (((PertFigure)iter.next()).hasCycle(start)) {
       return true;
     }
   }

@@ -1,7 +1,7 @@
 {
-  FigureEnumeration enum=getLayoutable().figures();
-  while (enum.hasMoreElements()) {
-    Figure currentFigure=enum.nextFigure();
+  FigureEnumeration fe=getLayoutable().figures();
+  while (fe.hasNextFigure()) {
+    Figure currentFigure=fe.nextFigure();
     currentFigure.basicDisplayBox(origin,corner);
   }
   Rectangle r=new Rectangle(origin);

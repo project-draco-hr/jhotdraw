@@ -1,5 +1,5 @@
 {
-  fFigures=new Vector();
+  fFigures=CollectionsFactory.current().createList();
   _nLowestZ=0;
   _nHighestZ=0;
 }

@@ -3,7 +3,7 @@
     return false;
   }
   FigureEnumeration fe=getAffectedFigures();
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     sendToCommand(fe.nextFigure());
   }
   return true;

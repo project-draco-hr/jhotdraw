@@ -1,6 +1,7 @@
 {
   CommandMenu menu=new CommandMenu("Images");
-  File imagesDirectory=new File(fgSampleImagesPath);
+  URL url=getClass().getResource(fgSampleImagesPath);
+  File imagesDirectory=new File(url.getFile());
   try {
     String[] list=imagesDirectory.list();
     for (int i=0; i < list.length; i++) {

@@ -5,7 +5,7 @@
   getConnection().disconnectStart();
   getConnection().disconnectEnd();
   FigureEnumeration fe=getAffectedFigures();
-  while (fe.hasMoreElements()) {
+  while (fe.hasNextFigure()) {
     getDrawingView().drawing().orphan(fe.nextFigure());
   }
   getDrawingView().clearSelection();

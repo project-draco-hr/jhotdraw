@@ -1,8 +1,8 @@
 {
   int size=dr.readInt();
-  Vector v=new Vector(size);
+  List l=CollectionsFactory.current().createList(size);
   for (int i=0; i < size; i++) {
-    v.addElement((Figure)dr.readStorable());
+    l.add((Figure)dr.readStorable());
   }
-  return v;
+  return l;
 }

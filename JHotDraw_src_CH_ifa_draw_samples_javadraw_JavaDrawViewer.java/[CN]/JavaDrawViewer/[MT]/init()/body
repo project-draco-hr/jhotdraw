@@ -4,7 +4,6 @@
   fView=new StandardDrawingView(this,400,370);
   getContentPane().add("Center",fView);
   setTool(new FollowURLTool(this,this));
-  fIconkit=new Iconkit(this);
   String filename=getParameter("Drawing");
   if (filename != null) {
     loadDrawing(filename);

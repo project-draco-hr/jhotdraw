@@ -1,5 +1,5 @@
 {
-  Figure figure=drawing().findFigureInside(x,y);
+  Figure figure=getActiveDrawing().findFigureInside(x,y);
   if (figure == null) {
     return;
   }

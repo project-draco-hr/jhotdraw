@@ -4,6 +4,6 @@
   if ((undoActivity != null) && (undoActivity.isUndoable())) {
     editor().getUndoManager().pushUndo(undoActivity);
     editor().getUndoManager().clearRedos();
-    editor().figureSelectionChanged(view());
+    editor().figureSelectionChanged(getActiveView());
   }
 }

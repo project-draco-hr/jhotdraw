@@ -1,0 +1,74 @@
+{
+  System.out.println("DropTargetDropEvent-drop");
+  if (dtde.isDataFlavorSupported(DNDFiguresTransferable.DNDFiguresFlavor) == true) {
+    System.out.println("DNDFiguresFlavor");
+    if ((dtde.getDropAction() & DnDConstants.ACTION_COPY_OR_MOVE) != 0) {
+      System.out.println("copy or move");
+      if (dtde.isLocalTransfer() == false) {
+        System.err.println("Intra-JVM Transfers not implemented for figures yet.");
+        return;
+      }
+      dtde.acceptDrop(dtde.getDropAction());
+      try {
+        DNDFigures ff=(DNDFigures)ProcessReceivedData(DNDFiguresTransferable.DNDFiguresFlavor,dtde.getTransferable());
+        FigureEnumeration fe=ff.getFigures();
+        Point theO=ff.getOrigin();
+        view().clearSelection();
+        Point newP=dtde.getLocation();
+        int dx=newP.x - theO.x;
+        int dy=newP.y - theO.y;
+        while (fe.hasNextFigure()) {
+          Figure f=fe.nextFigure();
+          f.moveBy(dx,dy);
+          view().add(f);
+          if (dtde.getDropAction() == DnDConstants.ACTION_MOVE)           view().addToSelection(f);
+          System.out.println("added to view");
+        }
+        view().checkDamage();
+        dtde.getDropTargetContext().dropComplete(true);
+      }
+ catch (      NullPointerException npe) {
+        npe.printStackTrace();
+        dtde.getDropTargetContext().dropComplete(false);
+      }
+    }
+ else {
+      dtde.rejectDrop();
+    }
+  }
+ else   if (dtde.isDataFlavorSupported(DataFlavor.stringFlavor)) {
+    dtde.acceptDrop(dtde.getDropAction());
+    Object o=ProcessReceivedData(DataFlavor.stringFlavor,dtde.getTransferable());
+    if (o != null) {
+      dtde.getDropTargetContext().dropComplete(true);
+    }
+ else {
+      dtde.getDropTargetContext().dropComplete(false);
+    }
+  }
+ else   if (dtde.isDataFlavorSupported(ASCIIFlavor) == true) {
+    dtde.acceptDrop(DnDConstants.ACTION_COPY);
+    Object o=ProcessReceivedData(ASCIIFlavor,dtde.getTransferable());
+    if (o != null) {
+      dtde.getDropTargetContext().dropComplete(true);
+    }
+ else {
+      dtde.getDropTargetContext().dropComplete(false);
+    }
+  }
+ else   if (dtde.isDataFlavorSupported(DataFlavor.javaFileListFlavor)) {
+    dtde.acceptDrop(DnDConstants.ACTION_COPY);
+    java.io.File[] fList=(java.io.File[])ProcessReceivedData(DataFlavor.javaFileListFlavor,dtde.getTransferable());
+    if (fList != null) {
+      for (int x=0; x < fList.length; x++) {
+        System.out.println(fList[x].getAbsolutePath());
+      }
+      dtde.getDropTargetContext().dropComplete(true);
+    }
+ else {
+      dtde.getDropTargetContext().dropComplete(false);
+    }
+  }
+  fLastX=0;
+  fLastY=0;
+}

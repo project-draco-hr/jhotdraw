@@ -1,0 +1,10 @@
+{
+  Component[] comps=getComponents();
+  for (int x=0; x < comps.length; x++) {
+    if (dv == Helper.getDrawingView(comps[x])) {
+      ((JInternalFrame)comps[x]).dispose();
+      break;
+    }
+  }
+  checkDesktopSize();
+}
