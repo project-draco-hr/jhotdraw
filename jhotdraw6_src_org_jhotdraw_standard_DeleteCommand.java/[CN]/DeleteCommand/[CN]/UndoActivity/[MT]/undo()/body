@@ -1,7 +1,7 @@
 {
   if (super.undo() && getAffectedFigures().hasNextFigure()) {
     getDrawingView().clearSelection();
-    setAffectedFigures(myCommand.insertFigures(getAffectedFigures(),0,0));
+    setAffectedFigures(myCommand.insertFigures(getAffectedFiguresReversed(),0,0));
     return true;
   }
   return false;

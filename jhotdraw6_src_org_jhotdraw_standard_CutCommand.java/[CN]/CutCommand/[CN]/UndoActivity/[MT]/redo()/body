@@ -1,6 +1,6 @@
 {
   if (isRedoable()) {
-    myCommand.copyFigures(getAffectedFigures(),getDrawingView().selectionCount());
+    myCommand.copyFigures(getSelectedFigures(),getSelectedFiguresCount());
     myCommand.deleteFigures(getAffectedFigures());
     return true;
   }
