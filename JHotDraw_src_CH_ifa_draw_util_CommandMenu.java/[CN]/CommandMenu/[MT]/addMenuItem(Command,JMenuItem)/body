@@ -4,5 +4,4 @@
   add(m);
   fCommands.addElement(command);
   command.addCommandListener(this);
-  checkEnabled();
 }

@@ -1,0 +1,3 @@
+{
+  return NullDrawingView.getManagedDrawingView(this);
+}

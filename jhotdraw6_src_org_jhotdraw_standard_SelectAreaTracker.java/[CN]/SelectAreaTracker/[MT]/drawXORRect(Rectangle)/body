@@ -1,6 +1,13 @@
 {
   Graphics g=view().getGraphics();
-  g.setXORMode(view().getBackground());
-  g.setColor(Color.black);
-  g.drawRect(r.x,r.y,r.width,r.height);
+  if (g != null) {
+    try {
+      g.setXORMode(view().getBackground());
+      g.setColor(Color.black);
+      g.drawRect(r.x,r.y,r.width,r.height);
+    }
+  finally {
+      g.dispose();
+    }
+  }
 }

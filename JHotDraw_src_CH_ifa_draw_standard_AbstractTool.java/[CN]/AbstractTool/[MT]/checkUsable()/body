@@ -1,8 +1,5 @@
 {
-  if (isUsable()) {
-    getEventDispatcher().fireToolUsableEvent();
-  }
- else {
-    getEventDispatcher().fireToolUnusableEvent();
+  if (isEnabled()) {
+    setUsable((view() != null) && view().isInteractive());
   }
 }

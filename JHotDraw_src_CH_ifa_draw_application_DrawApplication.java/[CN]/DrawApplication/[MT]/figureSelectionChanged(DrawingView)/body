@@ -5,7 +5,7 @@
     editMenu.checkEnabled();
   }
   CommandMenu alignmentMenu=(CommandMenu)mb.getMenu(ALIGNMENT_MENU);
-  if (editMenu != null) {
+  if (alignmentMenu != null) {
     alignmentMenu.checkEnabled();
   }
   JMenu attributeMenu=mb.getMenu(ATTRIBUTES_MENU);

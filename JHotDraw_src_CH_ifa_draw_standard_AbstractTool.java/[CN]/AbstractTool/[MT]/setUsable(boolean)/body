@@ -1,0 +1,11 @@
+{
+  if (isUsable() != newIsUsable) {
+    myIsUsable=newIsUsable;
+    if (isUsable()) {
+      getEventDispatcher().fireToolUsableEvent();
+    }
+ else {
+      getEventDispatcher().fireToolUnusableEvent();
+    }
+  }
+}

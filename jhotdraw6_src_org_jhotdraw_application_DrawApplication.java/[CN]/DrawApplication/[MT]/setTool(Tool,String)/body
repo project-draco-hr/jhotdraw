@@ -1,5 +1,5 @@
 {
-  if (tool() != null) {
+  if ((tool() != null) && (tool().isActive())) {
     tool().deactivate();
   }
   fTool=t;

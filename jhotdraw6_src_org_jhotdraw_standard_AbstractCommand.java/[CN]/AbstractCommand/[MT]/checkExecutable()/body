@@ -1,8 +1,0 @@
-{
-  if (isExecutable()) {
-    getEventDispatcher().fireCommandExecutableEvent();
-  }
- else {
-    getEventDispatcher().fireCommandNotExecutableEvent();
-  }
-}

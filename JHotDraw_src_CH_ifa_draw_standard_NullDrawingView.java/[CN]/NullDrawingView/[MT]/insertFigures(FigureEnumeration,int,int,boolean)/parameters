@@ -1,0 +1,4 @@
+FigureEnumeration inFigures
+int dx
+int dy
+boolean bCheck

@@ -5,5 +5,14 @@
   if (newView != null) {
     newView.addFigureSelectionListener(this);
   }
-  checkExecutable();
+  if (isViewRequired()) {
+    boolean isOldViewInteractive=(oldView != null) && oldView.isInteractive();
+    boolean isNewViewInteractive=(newView != null) && newView.isInteractive();
+    if (!isOldViewInteractive && isNewViewInteractive) {
+      getEventDispatcher().fireCommandExecutableEvent();
+    }
+ else     if (isOldViewInteractive && !isNewViewInteractive) {
+      getEventDispatcher().fireCommandNotExecutableEvent();
+    }
+  }
 }

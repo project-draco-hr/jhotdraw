@@ -1,0 +1,13 @@
+{
+  if (isEnabled() != newIsEnabled) {
+    myIsEnabled=newIsEnabled;
+    if (isEnabled()) {
+      getEventDispatcher().fireToolEnabledEvent();
+    }
+ else {
+      getEventDispatcher().fireToolDisabledEvent();
+      setUsable(false);
+      deactivate();
+    }
+  }
+}

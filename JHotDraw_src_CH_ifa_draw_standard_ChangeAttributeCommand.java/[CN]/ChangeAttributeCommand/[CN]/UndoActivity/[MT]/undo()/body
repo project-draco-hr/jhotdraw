@@ -5,7 +5,9 @@
   FigureEnumeration k=getAffectedFigures();
   while (k.hasMoreElements()) {
     Figure f=k.nextFigure();
-    f.setAttribute(getAttributeName(),getOriginalValue(f));
+    if (getOriginalValue(f) != null) {
+      f.setAttribute(getAttributeName(),getOriginalValue(f));
+    }
   }
   return true;
 }

@@ -1,0 +1,6 @@
+{
+  Enumeration le=myRegisteredListeners.elements();
+  while (le.hasMoreElements()) {
+    ((ToolListener)le.nextElement()).toolDisabled(new EventObject(myObservedTool));
+  }
+}

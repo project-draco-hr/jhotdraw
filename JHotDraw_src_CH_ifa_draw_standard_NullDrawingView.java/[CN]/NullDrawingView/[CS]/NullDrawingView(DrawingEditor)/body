@@ -1,0 +1,5 @@
+{
+  setEditor(editor);
+  myTool=new SelectionTool(editor());
+  setDrawing(new StandardDrawing());
+}

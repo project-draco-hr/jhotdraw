@@ -3,6 +3,9 @@
   setUndoManager(new UndoManager());
   fIconkit=new Iconkit(this);
   getContentPane().setLayout(new BorderLayout());
+  fStatusLine=createStatusLine();
+  getContentPane().add(fStatusLine,BorderLayout.SOUTH);
+  setTool(new NullTool(this),"");
   setView(newDrawingView);
   JComponent contents=createContents(view());
   contents.setAlignmentX(LEFT_ALIGNMENT);
@@ -14,9 +17,7 @@
   activePanel.setLayout(new BorderLayout());
   activePanel.add(tools,BorderLayout.NORTH);
   activePanel.add(contents,BorderLayout.CENTER);
-  fStatusLine=createStatusLine();
   getContentPane().add(activePanel,BorderLayout.CENTER);
-  getContentPane().add(fStatusLine,BorderLayout.SOUTH);
   JMenuBar mb=new JMenuBar();
   createMenus(mb);
   setJMenuBar(mb);
