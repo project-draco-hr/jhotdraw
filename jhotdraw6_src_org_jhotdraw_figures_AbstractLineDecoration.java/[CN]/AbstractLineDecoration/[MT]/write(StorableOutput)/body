@@ -1,0 +1,14 @@
+{
+  if (getFillColor() != null) {
+    FigureAttributes.writeColor(dw,"FillColor",getFillColor());
+  }
+ else {
+    dw.writeString("noFillColor");
+  }
+  if (getBorderColor() != null) {
+    FigureAttributes.writeColor(dw,"BorderColor",getBorderColor());
+  }
+ else {
+    dw.writeString("noBorderColor");
+  }
+}
