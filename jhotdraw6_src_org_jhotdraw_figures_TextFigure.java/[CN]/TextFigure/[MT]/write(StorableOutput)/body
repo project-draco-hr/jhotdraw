@@ -1,7 +1,8 @@
 {
   super.write(dw);
-  dw.writeInt(fOriginX);
-  dw.writeInt(fOriginY);
+  Rectangle r=displayBox();
+  dw.writeInt(r.x);
+  dw.writeInt(r.y);
   dw.writeString(getText());
   dw.writeString(fFont.getName());
   dw.writeInt(fFont.getStyle());

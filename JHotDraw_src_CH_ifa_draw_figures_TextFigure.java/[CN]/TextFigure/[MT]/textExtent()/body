@@ -6,5 +6,5 @@
   fWidth=metrics.stringWidth(getText());
   fHeight=metrics.getHeight();
   fSizeIsDirty=false;
-  return new Dimension(metrics.stringWidth(getText()),metrics.getHeight());
+  return new Dimension(fWidth,fHeight);
 }
