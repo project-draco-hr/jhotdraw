@@ -1,0 +1,13 @@
+{
+  UndoManager um=view().getUndoManager();
+  if ((um == null) || !um.isUndoable()) {
+    return;
+  }
+  Undoable lastUndoable=um.popUndo();
+  boolean hasBeenUndone=lastUndoable.undo();
+  if (hasBeenUndone && lastUndoable.isRedoable()) {
+    um.pushRedo(lastUndoable);
+  }
+  view().checkDamage();
+  view().editor().figureSelectionChanged(view());
+}

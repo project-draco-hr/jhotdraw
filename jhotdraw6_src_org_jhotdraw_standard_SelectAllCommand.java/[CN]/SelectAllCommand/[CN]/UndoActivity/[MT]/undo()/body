@@ -1,0 +1,8 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  getDrawingView().clearSelection();
+  getDrawingView().addToSelectionAll(getAffectedFigures());
+  return true;
+}

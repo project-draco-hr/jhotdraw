@@ -1,0 +1,27 @@
+{
+  this.desktop=desktop;
+  setText(newText);
+  cascade.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent ae){
+      WindowMenu.this.desktop.cascadeFrames();
+    }
+  }
+);
+  tile.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent ae){
+      WindowMenu.this.desktop.tileFrames();
+    }
+  }
+);
+  addMenuListener(new MenuListener(){
+    public void menuCanceled(    MenuEvent e){
+    }
+    public void menuDeselected(    MenuEvent e){
+      removeAll();
+    }
+    public void menuSelected(    MenuEvent e){
+      buildChildMenus();
+    }
+  }
+);
+}

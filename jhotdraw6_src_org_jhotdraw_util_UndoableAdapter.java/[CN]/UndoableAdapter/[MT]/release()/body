@@ -1,0 +1,8 @@
+{
+  FigureEnumeration fe=getAffectedFigures();
+  while (fe.hasMoreElements()) {
+    fe.nextFigure().release();
+  }
+  myAffectedFiguresCount=0;
+  setAffectedFigures(FigureEnumerator.getEmptyEnumeration());
+}

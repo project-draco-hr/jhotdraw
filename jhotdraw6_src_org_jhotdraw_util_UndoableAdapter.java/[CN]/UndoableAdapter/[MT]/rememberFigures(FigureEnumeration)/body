@@ -1,0 +1,8 @@
+{
+  myAffectedFigures=new Vector();
+  myAffectedFiguresCount=0;
+  while (toBeRemembered.hasMoreElements()) {
+    myAffectedFigures.addElement(toBeRemembered.nextElement());
+    myAffectedFiguresCount++;
+  }
+}

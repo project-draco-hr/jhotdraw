@@ -1,0 +1,8 @@
+{
+  if (getUndoSize() > 0) {
+    return (Undoable)undoStack.lastElement();
+  }
+ else {
+    return null;
+  }
+}

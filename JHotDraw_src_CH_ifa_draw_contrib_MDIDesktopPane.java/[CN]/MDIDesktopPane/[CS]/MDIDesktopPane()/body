@@ -1,0 +1,5 @@
+{
+  manager=new MDIDesktopManager(this);
+  setDesktopManager(manager);
+  setDragMode(JDesktopPane.OUTLINE_DRAG_MODE);
+}

@@ -1,0 +1,14 @@
+{
+  if (redoActivity.isRedoable()) {
+    if (getRedoSize() >= maxStackCapacity) {
+      redoStack.removeElementAt(0);
+    }
+    if ((getRedoSize() == 0) || (peekRedo() != redoActivity)) {
+      redoStack.addElement(redoActivity);
+    }
+    System.out.println("pushRedo: " + redoStack.size() + " .. "+ redoActivity);
+  }
+ else {
+    redoStack=new Vector(maxStackCapacity);
+  }
+}

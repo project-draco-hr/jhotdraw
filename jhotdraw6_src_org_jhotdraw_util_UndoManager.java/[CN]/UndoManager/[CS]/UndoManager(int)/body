@@ -1,0 +1,5 @@
+{
+  maxStackCapacity=newUndoStackSize;
+  undoStack=new Vector(maxStackCapacity);
+  redoStack=new Vector(maxStackCapacity);
+}

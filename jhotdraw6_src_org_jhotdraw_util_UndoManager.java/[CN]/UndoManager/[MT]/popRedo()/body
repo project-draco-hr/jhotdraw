@@ -1,0 +1,5 @@
+{
+  Undoable lastUndoable=peekRedo();
+  redoStack.removeElementAt(getRedoSize() - 1);
+  return lastUndoable;
+}

@@ -1,0 +1,3 @@
+{
+  setAffectedFigures(StandardFigureSelection.duplicateFigures(getAffectedFigures(),getAffectedFiguresCount()));
+}

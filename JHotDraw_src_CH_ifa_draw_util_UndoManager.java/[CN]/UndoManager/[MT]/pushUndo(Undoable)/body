@@ -1,0 +1,12 @@
+{
+  if (undoActivity.isUndoable()) {
+    if (getUndoSize() >= maxStackCapacity) {
+      undoStack.removeElementAt(0);
+    }
+    undoStack.addElement(undoActivity);
+    System.out.println("pushUndo: " + undoStack.size() + " .. "+ undoActivity);
+  }
+ else {
+    undoStack=new Vector(maxStackCapacity);
+  }
+}

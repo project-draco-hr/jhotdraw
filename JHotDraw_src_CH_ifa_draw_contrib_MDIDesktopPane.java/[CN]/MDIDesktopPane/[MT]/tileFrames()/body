@@ -1,0 +1,17 @@
+{
+  java.awt.Component allFrames[]=getAllFrames();
+  manager.setNormalSize();
+  int frameHeight=getBounds().height / allFrames.length;
+  int y=0;
+  for (int i=0; i < allFrames.length; i++) {
+    try {
+      ((JInternalFrame)allFrames[i]).setMaximum(false);
+    }
+ catch (    PropertyVetoException e) {
+      e.printStackTrace();
+    }
+    allFrames[i].setBounds(0,y,getBounds().width,frameHeight);
+    y=y + frameHeight;
+  }
+  checkDesktopSize();
+}

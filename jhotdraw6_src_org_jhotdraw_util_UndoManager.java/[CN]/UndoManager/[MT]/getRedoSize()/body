@@ -1,0 +1,3 @@
+{
+  return redoStack.size();
+}

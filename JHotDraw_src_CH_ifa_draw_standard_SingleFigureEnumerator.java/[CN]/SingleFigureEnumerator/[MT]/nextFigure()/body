@@ -1,0 +1,5 @@
+{
+  Figure returnFigure=(Figure)mySingleFigure;
+  mySingleFigure=null;
+  return returnFigure;
+}

@@ -1,0 +1,3 @@
+{
+  getWrappedHandle().invokeStep(dx,dy,drawing);
+}

@@ -1,0 +1,7 @@
+{
+  FigureEnumeration e=view().drawing().figures();
+  if (e.hasMoreElements() && e.nextFigure() != null) {
+    return true;
+  }
+  return false;
+}

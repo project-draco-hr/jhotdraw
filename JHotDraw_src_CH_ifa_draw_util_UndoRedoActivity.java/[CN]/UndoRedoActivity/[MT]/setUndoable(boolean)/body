@@ -1,0 +1,3 @@
+{
+  getReversedActivity().setRedoable(newIsUndoable);
+}

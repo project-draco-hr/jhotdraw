@@ -1,0 +1,4 @@
+{
+  clearStack(redoStack);
+  System.out.println("Redos cleared: " + redoStack.size());
+}

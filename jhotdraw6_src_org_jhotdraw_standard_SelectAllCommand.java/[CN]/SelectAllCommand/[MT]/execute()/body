@@ -1,0 +1,6 @@
+{
+  setUndoActivity(createUndoActivity());
+  getUndoActivity().setAffectedFigures(view().selectionElements());
+  view().addToSelectionAll(view().drawing().figures());
+  view().checkDamage();
+}
