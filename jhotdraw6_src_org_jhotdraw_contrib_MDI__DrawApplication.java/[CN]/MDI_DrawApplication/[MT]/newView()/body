@@ -2,15 +2,12 @@
   if (!view().isInteractive()) {
     return;
   }
+  newWindow(view().drawing());
   String copyTitle=getDrawingTitle();
-  DrawingView newView=createDrawingView();
-  newView.setDrawing(view().drawing());
-  getDesktop().addToDesktop(newView,Desktop.PRIMARY);
   if (copyTitle != null) {
     setDrawingTitle(copyTitle);
   }
  else {
     setDrawingTitle(getDefaultDrawingTitle());
   }
-  toolDone();
 }

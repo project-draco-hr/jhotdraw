@@ -1,0 +1,3 @@
+{
+  return super.getDefaultDrawingTitle() + getDesktop().getAllFromDesktop(0).length;
+}
