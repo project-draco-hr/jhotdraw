@@ -1,7 +1,5 @@
 {
-  AffineTransform at=new AffineTransform();
-  at.setToIdentity();
-  g2d.setTransform(at);
+  g2d.setTransform(originalTransform);
   g2d.setColor(m_viewBoxColor);
   g2d.draw(viewPortRectangle);
 }

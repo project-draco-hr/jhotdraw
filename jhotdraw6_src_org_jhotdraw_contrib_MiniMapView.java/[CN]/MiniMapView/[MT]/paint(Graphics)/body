@@ -1,5 +1,6 @@
 {
   Graphics2D g2d=(Graphics2D)g;
+  originalTransform=g2d.getTransform();
   Component mappedComponent=getMappedComponent();
   AffineTransform at=getViewToMiniMapTransform(mappedComponent);
   g2d.transform(at);
