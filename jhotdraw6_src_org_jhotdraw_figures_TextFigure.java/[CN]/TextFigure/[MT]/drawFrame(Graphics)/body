@@ -2,5 +2,5 @@
   g.setFont(fFont);
   g.setColor((Color)getAttribute(FigureAttributeConstant.TEXT_COLOR));
   FontMetrics metrics=g.getFontMetrics(fFont);
-  g.drawString(fText,fOriginX,fOriginY + metrics.getAscent());
+  g.drawString(getText(),fOriginX,fOriginY + metrics.getAscent());
 }

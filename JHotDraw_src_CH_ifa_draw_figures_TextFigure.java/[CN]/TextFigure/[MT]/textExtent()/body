@@ -3,8 +3,8 @@
     return new Dimension(fWidth,fHeight);
   }
   FontMetrics metrics=Toolkit.getDefaultToolkit().getFontMetrics(fFont);
-  fWidth=metrics.stringWidth(fText);
+  fWidth=metrics.stringWidth(getText());
   fHeight=metrics.getHeight();
   fSizeIsDirty=false;
-  return new Dimension(metrics.stringWidth(fText),metrics.getHeight());
+  return new Dimension(metrics.stringWidth(getText()),metrics.getHeight());
 }
