@@ -1,23 +1,19 @@
 {
   setView((DrawingView)e.getSource());
-  TextHolder textHolder=null;
   Figure pressedFigure=drawing().findFigureInside(x,y);
-  if (pressedFigure instanceof TextHolder) {
-    textHolder=(TextHolder)pressedFigure;
-    if (!textHolder.acceptsTyping()) {
-      textHolder=null;
-    }
+  TextHolder textHolder=null;
+  if (pressedFigure != null) {
+    textHolder=pressedFigure.getTextHolder();
   }
-  if (textHolder != null) {
+  if ((textHolder != null) && textHolder.acceptsTyping()) {
     beginEdit(textHolder);
   }
  else   if (getTypingTarget() != null) {
-    deactivate();
+    editor().toolDone();
   }
  else {
     super.mouseDown(e,x,y);
     view().checkDamage();
-    textHolder=(TextHolder)getCreatedFigure();
-    beginEdit(textHolder);
+    beginEdit(getCreatedFigure().getTextHolder());
   }
 }

@@ -1,13 +1,10 @@
 {
-  TextHolder textHolder=null;
   Figure pressedFigure=drawing().findFigureInside(x,y);
-  if (pressedFigure instanceof TextHolder) {
-    textHolder=(TextHolder)pressedFigure;
-    if (!textHolder.acceptsTyping()) {
-      textHolder=null;
-    }
+  TextHolder textHolder=null;
+  if (pressedFigure != null) {
+    textHolder=pressedFigure.getTextHolder();
   }
-  if (textHolder != null) {
+  if ((textHolder != null) && (textHolder.acceptsTyping())) {
     beginEdit(textHolder,pressedFigure);
     return;
   }

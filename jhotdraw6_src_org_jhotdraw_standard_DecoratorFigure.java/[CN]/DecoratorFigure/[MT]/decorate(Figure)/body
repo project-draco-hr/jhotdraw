@@ -1,4 +1,5 @@
 {
   fComponent=figure;
   fComponent.addToContainer(this);
+  addDependendFigure(fComponent);
 }

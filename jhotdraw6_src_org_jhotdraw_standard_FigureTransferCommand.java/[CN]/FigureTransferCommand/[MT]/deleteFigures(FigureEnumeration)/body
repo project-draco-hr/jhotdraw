@@ -1,6 +1,7 @@
 {
+  DeleteFromDrawingVisitor deleteVisitor=new DeleteFromDrawingVisitor(view().drawing());
   while (fe.hasNextFigure()) {
-    view().drawing().orphan(fe.nextFigure());
+    fe.nextFigure().visit(deleteVisitor);
   }
   view().clearSelection();
 }

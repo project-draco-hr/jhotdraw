@@ -1,6 +1,7 @@
 {
   setStartConnector(newStartConnector);
   if (newStartConnector != null) {
+    startFigure().addDependendFigure(this);
     startFigure().addFigureChangeListener(this);
   }
 }

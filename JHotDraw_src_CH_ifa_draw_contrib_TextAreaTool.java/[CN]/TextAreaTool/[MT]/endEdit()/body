@@ -6,7 +6,7 @@
       ((TextAreaTool.UndoActivity)getUndoActivity()).setBackupText(getTypingTarget().getText());
     }
  else {
-      drawing().orphan((Figure)getAddedFigure());
+      drawing().orphan(getAddedFigure());
     }
     fTextField.endOverlay();
     fTextField=null;

@@ -1,5 +1,6 @@
 {
   handleDisconnect(startFigure(),endFigure());
   endFigure().removeFigureChangeListener(this);
+  endFigure().removeDependendFigure(this);
   setEndConnector(null);
 }

@@ -1,0 +1,8 @@
+{
+  Figure addedFigure=super.add(figure);
+  if (addedFigure.listener() != null) {
+    addedFigure.listener().figureRequestUpdate(new FigureChangeEvent(figure,null));
+    return addedFigure;
+  }
+  return addedFigure;
+}

@@ -12,7 +12,7 @@
   InputStream input=new ByteArrayInputStream(output.toByteArray());
   try {
     ObjectInput reader=new ObjectInputStream(input);
-    clone=(Object)reader.readObject();
+    clone=reader.readObject();
   }
  catch (  IOException e) {
     System.err.println(e.toString());

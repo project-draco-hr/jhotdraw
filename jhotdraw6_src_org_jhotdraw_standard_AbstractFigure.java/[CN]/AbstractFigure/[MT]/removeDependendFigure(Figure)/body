@@ -1,0 +1,3 @@
+{
+  myDependendFigures.remove(oldDependendFigure);
+}

@@ -1,10 +1,10 @@
 {
   super.mouseDown(e,x,y);
-  Figure pressedFigure=drawing().findFigureInside(x,y);
+  setConnectedFigure(drawing().findFigureInside(x,y));
   TextHolder textHolder=getTypingTarget();
-  if (!fConnected && pressedFigure != null && textHolder != null && pressedFigure != textHolder) {
-    textHolder.connect(pressedFigure);
-    ((ConnectedTextTool.UndoActivity)getUndoActivity()).setConnectedFigure(pressedFigure);
+  if (!fConnected && (getConnectedFigure() != null) && (textHolder != null)&& (getConnectedFigure() != textHolder)) {
+    textHolder.connect(getConnectedFigure());
+    getConnectedFigure().addDependendFigure(getAddedFigure());
     fConnected=true;
   }
 }

@@ -1,3 +1,6 @@
 {
   myPresentationFigure=newPresentationFigure;
+  if (myPresentationFigure != null) {
+    myPresentationFigure.addDependendFigure(this);
+  }
 }

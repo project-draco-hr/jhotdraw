@@ -4,11 +4,16 @@
       getTypingTarget().setText(getFloatingTextField().getText());
     }
  else {
-      drawing().orphan((Figure)getAddedFigure());
+      drawing().orphan(getAddedFigure());
     }
-    setUndoActivity(createUndoActivity());
-    getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
-    ((TextTool.UndoActivity)getUndoActivity()).setBackupText(getTypingTarget().getText());
+    TextTool.UndoActivity undoActivity=((TextTool.UndoActivity)getUndoActivity());
+    if ((undoActivity.getOriginalText() != null) || (getTypingTarget().getText() != null)) {
+      getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
+      undoActivity.setBackupText(getTypingTarget().getText());
+    }
+ else {
+      setUndoActivity(null);
+    }
     setTypingTarget(null);
     getFloatingTextField().endOverlay();
   }

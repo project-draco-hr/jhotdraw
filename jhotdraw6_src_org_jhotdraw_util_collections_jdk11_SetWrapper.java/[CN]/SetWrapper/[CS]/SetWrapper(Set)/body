@@ -1,0 +1,7 @@
+{
+  myDelegee=new Hashtable();
+  Iterator iter=initSet.iterator();
+  while (iter.hasNext()) {
+    add(iter.next());
+  }
+}

@@ -5,4 +5,5 @@
     Figure figure=fe.nextFigure();
     figure.addToContainer(this);
   }
+  init(new Rectangle(0,0));
 }
