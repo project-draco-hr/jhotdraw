@@ -1,4 +1,5 @@
 {
   super(command.name());
   setCommand(command);
+  addActionListener(this);
 }

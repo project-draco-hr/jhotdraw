@@ -1,0 +1,3 @@
+{
+  getCommand().execute();
+}
