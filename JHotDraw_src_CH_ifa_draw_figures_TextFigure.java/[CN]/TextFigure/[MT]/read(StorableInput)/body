@@ -6,9 +6,9 @@
   fText=dr.readString();
   fFont=new Font(dr.readString(),dr.readInt(),dr.readInt());
   fIsReadOnly=dr.readBoolean();
-  fObservedFigure=(Figure)dr.readStorable();
-  if (fObservedFigure != null) {
-    fObservedFigure.addFigureChangeListener(this);
+  setObservedFigure((Figure)dr.readStorable());
+  if (getObservedFigure() != null) {
+    getObservedFigure().addFigureChangeListener(this);
   }
-  fLocator=(OffsetLocator)dr.readStorable();
+  setLocator((OffsetLocator)dr.readStorable());
 }

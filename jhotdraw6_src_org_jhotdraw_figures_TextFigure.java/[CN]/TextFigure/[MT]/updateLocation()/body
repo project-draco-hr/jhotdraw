@@ -1,6 +1,6 @@
 {
-  if (fLocator != null) {
-    Point p=fLocator.locate(fObservedFigure);
+  if (getLocator() != null) {
+    Point p=getLocator().locate(getObservedFigure());
     p.x-=size().width / 2 + fOriginX;
     p.y-=size().height / 2 + fOriginY;
     if (p.x != 0 || p.y != 0) {

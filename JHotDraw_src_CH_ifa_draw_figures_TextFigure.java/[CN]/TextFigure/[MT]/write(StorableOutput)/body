@@ -7,6 +7,6 @@
   dw.writeInt(fFont.getStyle());
   dw.writeInt(fFont.getSize());
   dw.writeBoolean(fIsReadOnly);
-  dw.writeStorable(fObservedFigure);
-  dw.writeStorable(fLocator);
+  dw.writeStorable(getObservedFigure());
+  dw.writeStorable(getLocator());
 }
