@@ -3,9 +3,8 @@
   AffineTransform at=AffineTransform.getScaleInstance(1,1);
   FlatteningPathIterator pIter=new FlatteningPathIterator(getClippingShape().getPathIterator(at),1);
   double[] coords=new double[6];
-  int pointType;
   while (!pIter.isDone()) {
-    pointType=pIter.currentSegment(coords);
+    pIter.currentSegment(coords);
     polygon.addPoint((int)coords[0],(int)coords[1]);
     pIter.next();
   }

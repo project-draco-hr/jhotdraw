@@ -1,17 +1,13 @@
 {
   Shape savedClipArea=null;
   Color savedFontColor=null;
-  Font savedFont=null;
-  Rectangle2D clipRect=null;
   RenderingHints savedRenderingHints=null;
   if (g2 != null) {
     savedRenderingHints=g2.getRenderingHints();
     savedClipArea=g2.getClip();
-    savedFont=g2.getFont();
     savedFontColor=g2.getColor();
     g2.clip(drawingBox);
   }
-  float finalHeight=renderText(g2,drawingBox);
   if (g2 != null) {
     g2.setClip(savedClipArea);
     g2.setColor(savedFontColor);
