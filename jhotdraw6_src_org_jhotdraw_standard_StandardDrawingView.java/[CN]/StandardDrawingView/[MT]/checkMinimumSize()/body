@@ -1,8 +1,9 @@
 {
   Dimension d=getDrawingSize();
-  if (fViewSize.height < d.height || fViewSize.width < d.width) {
-    fViewSize.height=d.height + SCROLL_OFFSET;
-    fViewSize.width=d.width + SCROLL_OFFSET;
-    setSize(fViewSize);
+  Dimension v=getPreferredSize();
+  if (v.height < d.height || v.width < d.width) {
+    v.height=d.height + SCROLL_OFFSET;
+    v.width=d.width + SCROLL_OFFSET;
+    setPreferredSize(v);
   }
 }

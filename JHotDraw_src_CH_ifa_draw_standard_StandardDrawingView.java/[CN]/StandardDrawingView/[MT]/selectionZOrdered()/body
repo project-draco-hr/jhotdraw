@@ -1,11 +1,5 @@
 {
   List result=CollectionsFactory.current().createList(selectionCount());
-  FigureEnumeration figures=drawing().figures();
-  while (figures.hasNextFigure()) {
-    Figure f=figures.nextFigure();
-    if (isFigureSelected(f)) {
-      result.add(f);
-    }
-  }
+  result.addAll(fSelection);
   return new ReverseFigureEnumerator(result);
 }
