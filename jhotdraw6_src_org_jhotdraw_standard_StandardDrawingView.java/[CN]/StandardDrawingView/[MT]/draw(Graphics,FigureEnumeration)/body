@@ -1,5 +1,5 @@
 {
-  boolean isPrinting=g instanceof PrintGraphics;
+  boolean isPrinting=isPrinting(g);
   if ((fBackgrounds != null) && !isPrinting) {
     drawPainters(g,fBackgrounds);
   }
