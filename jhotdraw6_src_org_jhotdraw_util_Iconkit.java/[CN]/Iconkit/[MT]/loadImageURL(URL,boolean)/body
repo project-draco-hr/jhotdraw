@@ -1,8 +1,13 @@
 {
-  Image image=loadImageURL(url);
-  if (image != null && waitForLoad) {
-    ImageIcon icon=new ImageIcon(image);
-    image=icon.getImage();
+  if (fMap.containsKey(url)) {
+    return (Image)fMap.get(url);
+  }
+  Image image=loadImageUncachedURL(url);
+  if (image != null) {
+    fMap.put(url,image);
+    if (waitForLoad) {
+      waitForLoadedImage(image);
+    }
   }
   return image;
 }

@@ -1,6 +1,6 @@
 {
   if ((myAffectedImageFigure == null) || (myAffectedImageFigure.get() == null)) {
-    Image image=Iconkit.instance().registerAndLoadImage((Component)getDrawingView(),myAffectedImageName);
+    Image image=Iconkit.instance().loadImage(myAffectedImageName,true);
     setImageFigure(new ImageFigure(image,myAffectedImageName,getDrawingView().lastClick()));
   }
   return (ImageFigure)myAffectedImageFigure.get();

@@ -1,5 +1,0 @@
-{
-  registerImageURL(url);
-  loadRegisteredImages(component);
-  return getImageURL(url);
-}

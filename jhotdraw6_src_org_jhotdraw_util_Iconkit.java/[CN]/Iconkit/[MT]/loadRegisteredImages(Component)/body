@@ -7,7 +7,7 @@
   Iterator iter=fRegisteredImages.iterator();
   while (iter.hasNext()) {
     URL url=(URL)iter.next();
-    if (basicGetImageURL(url) == null) {
+    if (!fMap.containsKey(url)) {
       tracker.addImage(loadImageURL(url),ID);
     }
   }
