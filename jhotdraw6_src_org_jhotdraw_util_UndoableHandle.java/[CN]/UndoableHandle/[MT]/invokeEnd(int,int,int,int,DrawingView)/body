@@ -2,7 +2,7 @@
   getWrappedHandle().invokeEnd(x,y,anchorX,anchorY,view);
   Undoable undoableActivity=getWrappedHandle().getUndoActivity();
   if ((undoableActivity != null) && (undoableActivity.isUndoable())) {
-    getDrawingView().editor().getUndoManager().pushUndo(undoableActivity);
-    getDrawingView().editor().getUndoManager().clearRedos();
+    view.editor().getUndoManager().pushUndo(undoableActivity);
+    view.editor().getUndoManager().clearRedos();
   }
 }

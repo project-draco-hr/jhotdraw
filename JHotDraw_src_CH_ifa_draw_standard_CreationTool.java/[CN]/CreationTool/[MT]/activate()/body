@@ -1,6 +1,6 @@
 {
   super.activate();
   if (isUsable()) {
-    getActiveView().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
+    getActiveView().setCursor(new AWTCursor(java.awt.Cursor.CROSSHAIR_CURSOR));
   }
 }

@@ -1,0 +1,5 @@
+{
+  if (cursor instanceof java.awt.Cursor) {
+    super.setCursor((java.awt.Cursor)cursor);
+  }
+}
