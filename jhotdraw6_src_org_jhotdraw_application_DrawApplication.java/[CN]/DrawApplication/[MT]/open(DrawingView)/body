@@ -3,8 +3,8 @@
   setUndoManager(new UndoManager());
   setIconkit(createIconkit());
   getContentPane().setLayout(new BorderLayout());
-  fStatusLine=createStatusLine();
-  getContentPane().add(fStatusLine,BorderLayout.SOUTH);
+  setStatusLine(createStatusLine());
+  getContentPane().add(getStatusLine(),BorderLayout.SOUTH);
   setTool(new NullTool(this),"");
   setView(newDrawingView);
   JToolBar tools=createToolPalette();
@@ -30,7 +30,7 @@
   }
   addListeners();
   setVisible(true);
-  fStorageFormatManager=createStorageFormatManager();
+  setStorageFormatManager(createStorageFormatManager());
   if (newDrawingView.isInteractive()) {
     getDesktop().addToDesktop(newDrawingView,Desktop.PRIMARY);
   }
