@@ -1,3 +1,5 @@
 {
-  return getPresentationFigure().handles();
+  List handles=CollectionsFactory.current().createList();
+  BoxHandleKit.addHandles(this,handles);
+  return new HandleEnumerator(handles);
 }

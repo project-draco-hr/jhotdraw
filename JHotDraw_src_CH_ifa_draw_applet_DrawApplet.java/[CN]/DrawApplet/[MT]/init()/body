@@ -1,4 +1,5 @@
 {
+  createIconkit();
   getVersionControlStrategy().assertCompatibleVersion();
   setUndoManager(new UndoManager());
   getContentPane().setLayout(new BorderLayout());
