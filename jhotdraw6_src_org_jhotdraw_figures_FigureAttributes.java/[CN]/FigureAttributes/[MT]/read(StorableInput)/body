@@ -24,7 +24,7 @@
  else     if (valtype.equals("Storable")) {
       val=dr.readStorable();
     }
- else     if (valtype.equals(Figure.POPUP_MENU)) {
+ else     if (valtype.equals(FigureAttributeConstant.POPUP_MENU_STR)) {
       continue;
     }
  else     if (valtype.equals("UNKNOWN")) {

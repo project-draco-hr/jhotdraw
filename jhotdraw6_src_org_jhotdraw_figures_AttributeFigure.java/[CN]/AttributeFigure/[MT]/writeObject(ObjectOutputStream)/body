@@ -1,10 +1,10 @@
 {
-  Object associatedMenu=getAttribute(Figure.POPUP_MENU);
+  Object associatedMenu=getAttribute(FigureAttributeConstant.POPUP_MENU);
   if (associatedMenu != null) {
-    setAttribute(Figure.POPUP_MENU,null);
+    setAttribute(FigureAttributeConstant.POPUP_MENU,null);
   }
   o.defaultWriteObject();
   if (associatedMenu != null) {
-    setAttribute(Figure.POPUP_MENU,associatedMenu);
+    setAttribute(FigureAttributeConstant.POPUP_MENU,associatedMenu);
   }
 }
