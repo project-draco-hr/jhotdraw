@@ -1,5 +1,5 @@
 {
-  Object attribute=figure.getAttribute(Figure.POPUP_MENU);
+  Object attribute=figure.getAttribute(popupMenuAttribute);
   if ((attribute != null) && (attribute instanceof JPopupMenu)) {
     JPopupMenu popup=(JPopupMenu)attribute;
     if (popup instanceof PopupMenuFigureSelection) {
