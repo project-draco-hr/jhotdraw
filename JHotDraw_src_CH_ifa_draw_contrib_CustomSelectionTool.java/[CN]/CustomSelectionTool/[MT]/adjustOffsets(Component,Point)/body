@@ -1,7 +1,0 @@
-{
-  if (comp != null) {
-    Point compLocation=comp.getLocation();
-    offsetPoint.translate(compLocation.x,compLocation.y);
-    adjustOffsets(comp.getParent(),offsetPoint);
-  }
-}

@@ -5,8 +5,19 @@
     if (popup instanceof PopupMenuFigureSelection) {
       ((PopupMenuFigureSelection)popup).setSelectedFigure(figure);
     }
-    Point newLocation=new Point(x,y);
-    adjustOffsets(comp.getParent(),newLocation);
+    Point newLocation;
+    try {
+      newLocation=comp.getLocationOnScreen();
+    }
+ catch (    IllegalComponentStateException e) {
+      return;
+    }
+    if (comp instanceof ZoomDrawingView) {
+      double scale=((ZoomDrawingView)comp).getScale();
+      x*=scale;
+      y*=scale;
+    }
+    newLocation.translate(x,y);
     popup.setLocation(newLocation);
     popup.setInvoker(comp);
     popup.setVisible(true);
