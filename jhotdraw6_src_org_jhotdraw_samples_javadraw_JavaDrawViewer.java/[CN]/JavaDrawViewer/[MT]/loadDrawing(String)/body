@@ -7,7 +7,7 @@
   }
  catch (  IOException e) {
     fDrawing=new StandardDrawing();
-    System.out.println("Error when Loading: " + e);
+    System.err.println("Error when Loading: " + e);
     showStatus("Error when Loading: " + e);
   }
 }

@@ -1,0 +1,6 @@
+{
+  super.createTools(palette);
+  Tool tool=new DragNDropTool(this);
+  ToolButton tb=createToolButton(IMAGES + "SEL","Drag N Drop Tool",tool);
+  palette.add(tb);
+}

@@ -1,0 +1,6 @@
+{
+  super(newView);
+  setUndoable(true);
+  setRedoable(true);
+  setPointIndex(newPointIndex);
+}

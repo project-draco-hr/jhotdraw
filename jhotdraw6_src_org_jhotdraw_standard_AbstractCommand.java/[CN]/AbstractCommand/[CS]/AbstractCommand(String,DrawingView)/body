@@ -1,5 +1,0 @@
-{
-  setName(newName);
-  setView(newView);
-  view().addFigureSelectionListener(this);
-}

@@ -1,0 +1,4 @@
+{
+  this(nestedException.getLocalizedMessage());
+  nestedException.fillInStackTrace();
+}

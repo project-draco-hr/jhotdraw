@@ -1,5 +1,7 @@
 {
-  fState=SELECTED;
-  setSelected(true);
-  repaint();
+  if (isEnabled()) {
+    fState=SELECTED;
+    setSelected(true);
+    repaint();
+  }
 }

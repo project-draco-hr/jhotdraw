@@ -1,4 +1,5 @@
 {
+  super.execute();
   PointConstrainer grid=view().getConstrainer();
   if (grid != null) {
     view().setConstrainer(null);

@@ -1,7 +1,0 @@
-{
-  UndoManager um=view().getUndoManager();
-  if ((um != null) && (um.getUndoSize() > 0)) {
-    return true;
-  }
-  return false;
-}

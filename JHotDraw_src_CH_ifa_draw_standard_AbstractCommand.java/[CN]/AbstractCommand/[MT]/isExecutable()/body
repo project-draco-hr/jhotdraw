@@ -1,3 +1,11 @@
 {
-  return true;
+  if (view() == null) {
+    return false;
+  }
+ else   if (isExecutableWithView()) {
+    return view().isInteractive();
+  }
+ else {
+    return true;
+  }
 }

@@ -1,0 +1,13 @@
+{
+  FigureEnumeration fe=view().selectionElements();
+  while (fe.hasMoreElements()) {
+    Figure currentFigure=fe.nextFigure();
+    if (currentFigure instanceof DecoratorFigure) {
+      currentFigure=((DecoratorFigure)currentFigure).getDecoratedFigure();
+    }
+    if (!(currentFigure instanceof GroupFigure)) {
+      return false;
+    }
+  }
+  return view().selectionCount() > 0;
+}

@@ -1,4 +1,0 @@
-{
-  view().setDrawing(drawing);
-  fDrawing=drawing;
-}

@@ -13,8 +13,8 @@
  else {
     getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getConnection()));
   }
-  if (getTarget() != null) {
-    getTarget().connectorVisibility(false);
-    setTarget(null);
+  if (getTargetFigure() != null) {
+    getTargetFigure().connectorVisibility(false);
+    setTargetFigure(null);
   }
 }

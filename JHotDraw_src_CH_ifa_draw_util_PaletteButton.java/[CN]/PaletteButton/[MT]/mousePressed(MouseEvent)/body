@@ -1,5 +1,7 @@
 {
-  fOldState=fState;
-  fState=PRESSED;
-  repaint();
+  if (isEnabled()) {
+    fOldState=fState;
+    fState=PRESSED;
+    repaint();
+  }
 }

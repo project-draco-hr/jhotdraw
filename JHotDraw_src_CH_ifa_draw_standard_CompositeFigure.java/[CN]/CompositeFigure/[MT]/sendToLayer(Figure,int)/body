@@ -1,13 +1,11 @@
 {
   if (fFigures.contains(figure)) {
     if (layerNr >= fFigures.size()) {
-      System.out.println("original layerNr: " + layerNr);
       layerNr=fFigures.size() - 1;
     }
     Figure layerFigure=getFigureFromLayer(layerNr);
     int layerFigureZValue=layerFigure.getZValue();
     int figureLayer=getLayer(figure);
-    System.out.println("figureLayer: " + figureLayer + " layerNr: "+ layerNr);
     if (figureLayer < layerNr) {
       assignFiguresToPredecessorZValue(figureLayer + 1,layerNr);
     }
@@ -18,6 +16,5 @@
     fFigures.insertElementAt(figure,layerNr);
     figure.setZValue(layerFigureZValue);
     figure.changed();
-    System.out.println("figureLayer(2): " + figure.getZValue());
   }
 }

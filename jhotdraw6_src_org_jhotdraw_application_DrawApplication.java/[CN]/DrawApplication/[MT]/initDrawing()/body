@@ -1,6 +1,0 @@
-{
-  setDrawing(createDrawing());
-  setDrawingTitle(fgUntitled);
-  view().setDrawing(drawing());
-  toolDone();
-}

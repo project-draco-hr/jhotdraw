@@ -1,5 +1,7 @@
 {
-  if (tool() != null)   tool().deactivate();
+  if (tool() != null) {
+    tool().deactivate();
+  }
   fTool=t;
   if (tool() != null) {
     showStatus(name);

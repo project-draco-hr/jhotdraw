@@ -1,7 +1,6 @@
 {
   if (disconnectFigure != null) {
     disconnectFigure.removeFigureChangeListener(this);
-    disconnectFigure=null;
   }
   fLocator=null;
 }

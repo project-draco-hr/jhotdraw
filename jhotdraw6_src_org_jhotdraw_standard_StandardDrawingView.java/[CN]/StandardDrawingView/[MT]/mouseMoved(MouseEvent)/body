@@ -1,3 +1,0 @@
-{
-  tool().mouseMove(e,e.getX(),e.getY());
-}

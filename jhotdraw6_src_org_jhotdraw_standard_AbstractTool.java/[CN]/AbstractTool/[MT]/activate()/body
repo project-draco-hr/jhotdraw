@@ -1,3 +1,6 @@
 {
-  view().clearSelection();
+  if (view() != null) {
+    view().clearSelection();
+    getEventDispatcher().fireToolActivatedEvent();
+  }
 }

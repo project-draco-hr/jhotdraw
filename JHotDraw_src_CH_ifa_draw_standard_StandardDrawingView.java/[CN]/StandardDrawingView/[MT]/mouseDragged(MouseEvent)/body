@@ -1,5 +1,0 @@
-{
-  Point p=constrainPoint(new Point(e.getX(),e.getY()));
-  tool().mouseDrag(e,p.x,p.y);
-  checkDamage();
-}

@@ -1,7 +1,3 @@
 {
-  JCheckBoxMenuItem m=new JCheckBoxMenuItem(command.name());
-  m.setName(command.name());
-  m.addActionListener(this);
-  add(m);
-  fCommands.addElement(command);
+  addMenuItem(command,new JCheckBoxMenuItem(command.name()));
 }

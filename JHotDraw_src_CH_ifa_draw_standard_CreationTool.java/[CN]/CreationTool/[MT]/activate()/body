@@ -1,3 +1,6 @@
 {
-  view().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
+  super.activate();
+  if (isUsable()) {
+    view().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
+  }
 }

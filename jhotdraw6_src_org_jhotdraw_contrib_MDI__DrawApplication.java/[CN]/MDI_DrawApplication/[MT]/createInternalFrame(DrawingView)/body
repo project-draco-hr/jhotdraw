@@ -1,0 +1,18 @@
+{
+  String applicationTitle=null;
+  if ((view == null) || (view.drawing() == null) || (view.drawing().getTitle() == null)) {
+    applicationTitle=getApplicationName() + " - " + getDefaultDrawingTitle();
+  }
+ else {
+    applicationTitle=getApplicationName() + " - " + view.drawing().getTitle();
+  }
+  MDI_InternalFrame internalFrame=new MDI_InternalFrame(applicationTitle,true,true,true,true);
+  internalFrame.setDrawingView(view);
+  internalFrame.setSize(200,200);
+  Enumeration enum=mdiListeners.elements();
+  while (enum.hasMoreElements()) {
+    internalFrame.addInternalFrameListener((InternalFrameListener)enum.nextElement());
+  }
+  fireViewCreatedEvent(view);
+  return internalFrame;
+}

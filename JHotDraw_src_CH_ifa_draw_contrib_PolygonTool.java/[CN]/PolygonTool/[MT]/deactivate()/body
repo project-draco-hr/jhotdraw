@@ -1,5 +1,4 @@
 {
-  super.deactivate();
   if (fPolygon != null) {
     fPolygon.smoothPoints();
     if (fPolygon.pointCount() < 3 || fPolygon.size().width < 4 || fPolygon.size().height < 4) {
@@ -8,4 +7,5 @@
     }
   }
   fPolygon=null;
+  super.deactivate();
 }

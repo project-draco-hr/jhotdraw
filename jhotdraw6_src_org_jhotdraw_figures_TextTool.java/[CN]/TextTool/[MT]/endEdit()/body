@@ -6,7 +6,6 @@
  else {
       drawing().orphan((Figure)getAddedFigure());
     }
-    System.out.println("UndoActivity (2): " + getUndoActivity());
     getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
     ((TextTool.UndoActivity)getUndoActivity()).setBackupText(getTypingTarget().getText());
     setTypingTarget(null);

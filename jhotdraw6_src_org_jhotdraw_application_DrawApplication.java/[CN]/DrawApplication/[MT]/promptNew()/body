@@ -1,4 +1,5 @@
 {
   toolDone();
-  initDrawing();
+  view().setDrawing(createDrawing());
+  view().drawing().setTitle(getDefaultDrawingTitle());
 }

@@ -6,13 +6,13 @@
  else {
     c=findTarget(x,y,drawing());
   }
-  if (c != getTarget()) {
-    if (getTarget() != null) {
-      getTarget().connectorVisibility(false);
+  if (c != getTargetFigure()) {
+    if (getTargetFigure() != null) {
+      getTargetFigure().connectorVisibility(false);
     }
-    setTarget(c);
-    if (getTarget() != null) {
-      getTarget().connectorVisibility(true);
+    setTargetFigure(c);
+    if (getTargetFigure() != null) {
+      getTargetFigure().connectorVisibility(true);
     }
   }
   Connector cc=null;

@@ -1,4 +1,5 @@
 {
+  super.execute();
   setUndoActivity(createUndoActivity());
   getUndoActivity().setAffectedFigures(view().selectionElements());
   copyFigures(getUndoActivity().getAffectedFigures(),view().selectionCount());

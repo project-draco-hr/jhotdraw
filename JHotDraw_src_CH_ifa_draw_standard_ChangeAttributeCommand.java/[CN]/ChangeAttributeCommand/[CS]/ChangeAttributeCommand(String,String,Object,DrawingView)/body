@@ -1,5 +1,0 @@
-{
-  super(name,view);
-  fAttribute=attributeName;
-  fValue=value;
-}

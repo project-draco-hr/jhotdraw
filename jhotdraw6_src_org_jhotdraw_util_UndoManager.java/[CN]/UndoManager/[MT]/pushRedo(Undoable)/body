@@ -6,7 +6,6 @@
     if ((getRedoSize() == 0) || (peekRedo() != redoActivity)) {
       redoStack.addElement(redoActivity);
     }
-    System.out.println("pushRedo: " + redoStack.size() + " .. "+ redoActivity);
   }
  else {
     redoStack=new Vector(maxStackCapacity);

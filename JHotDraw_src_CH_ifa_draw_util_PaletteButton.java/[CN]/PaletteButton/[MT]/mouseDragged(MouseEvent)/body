@@ -1,9 +1,11 @@
 {
-  if (contains(e.getX(),e.getY())) {
-    fState=PRESSED;
-  }
+  if (isEnabled()) {
+    if (contains(e.getX(),e.getY())) {
+      fState=PRESSED;
+    }
  else {
-    fState=fOldState;
+      fState=fOldState;
+    }
+    repaint();
   }
-  repaint();
 }

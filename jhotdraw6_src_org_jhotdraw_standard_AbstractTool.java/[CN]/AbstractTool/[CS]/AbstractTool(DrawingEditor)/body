@@ -1,0 +1,5 @@
+{
+  myDrawingEditor=newDrawingEditor;
+  setEventDispatcher(createEventDispatcher());
+  editor().addViewChangeListener(this);
+}

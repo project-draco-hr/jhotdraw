@@ -1,4 +1,4 @@
 {
-  int fIndex=((PolyLineHandle.UndoActivity)getUndoActivity()).getPointIndex();
-  myOwner().setPointAt(new Point(x,y),fIndex);
+  int index=((PolyLineHandle.UndoActivity)getUndoActivity()).getPointIndex();
+  myOwner().setPointAt(new Point(x,y),index);
 }

@@ -1,0 +1,10 @@
+{
+  final Object[] listeners=listenerList.getListenerList();
+  ViewChangeListener vsl=null;
+  for (int i=listeners.length - 2; i >= 0; i-=2) {
+    if (listeners[i] == ViewChangeListener.class) {
+      vsl=(ViewChangeListener)listeners[i + 1];
+      vsl.viewCreated(view);
+    }
+  }
+}

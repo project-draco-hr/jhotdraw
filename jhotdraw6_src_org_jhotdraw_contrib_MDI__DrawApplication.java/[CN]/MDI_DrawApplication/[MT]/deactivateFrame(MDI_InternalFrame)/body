@@ -1,0 +1,5 @@
+{
+  if (currentFrame == frame) {
+    currentFrame=null;
+  }
+}

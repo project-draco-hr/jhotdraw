@@ -1,4 +1,5 @@
 {
   super(title);
   setApplicationName(title);
+  winCount++;
 }

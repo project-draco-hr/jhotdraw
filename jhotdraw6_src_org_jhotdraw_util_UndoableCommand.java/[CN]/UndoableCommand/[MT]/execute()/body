@@ -4,11 +4,11 @@
   getWrappedCommand().execute();
   Undoable undoableCommand=getWrappedCommand().getUndoActivity();
   if ((undoableCommand != null) && (undoableCommand.isUndoable())) {
-    view().getUndoManager().pushUndo(undoableCommand);
-    view().getUndoManager().clearRedos();
+    getDrawingEditor().getUndoManager().pushUndo(undoableCommand);
+    getDrawingEditor().getUndoManager().clearRedos();
   }
-  if (!hasSelectionChanged || (view().getUndoManager().getUndoSize() == 1)) {
-    view().editor().figureSelectionChanged(view());
+  if (!hasSelectionChanged || (getDrawingEditor().getUndoManager().getUndoSize() == 1)) {
+    getDrawingEditor().figureSelectionChanged(view());
   }
   view().addFigureSelectionListener(this);
 }

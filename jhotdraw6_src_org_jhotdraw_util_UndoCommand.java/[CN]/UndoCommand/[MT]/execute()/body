@@ -1,5 +1,6 @@
 {
-  UndoManager um=view().getUndoManager();
+  super.execute();
+  UndoManager um=getDrawingEditor().getUndoManager();
   if ((um == null) || !um.isUndoable()) {
     return;
   }
@@ -8,6 +9,6 @@
   if (hasBeenUndone && lastUndoable.isRedoable()) {
     um.pushRedo(lastUndoable);
   }
-  view().checkDamage();
-  view().editor().figureSelectionChanged(view());
+  lastUndoable.getDrawingView().checkDamage();
+  getDrawingEditor().figureSelectionChanged(lastUndoable.getDrawingView());
 }

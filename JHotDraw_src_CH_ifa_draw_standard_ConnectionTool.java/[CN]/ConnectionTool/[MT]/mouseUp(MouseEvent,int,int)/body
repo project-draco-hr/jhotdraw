@@ -19,5 +19,6 @@
   setConnection(null);
   setStartConnector(null);
   setEndConnector(null);
+  setAddedFigure(null);
   editor().toolDone();
 }

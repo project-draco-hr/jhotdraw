@@ -3,6 +3,6 @@
     super.promptNew();
   }
  else {
-    newWindow();
+    newWindow(createDrawing());
   }
 }

@@ -1,23 +1,15 @@
 {
-  JComponent contents=super.createContents(view);
-  MDI_InternalFrame internalFrame=createInternalFrame();
-  internalFrame.setDrawingView(view);
-  internalFrame.setSize(200,200);
-  internalFrame.getContentPane().add(contents);
-  if (currentFrame == null) {
-    currentFrame=internalFrame;
-    backupDrawingView=createDrawingView();
+  if (view.isInteractive()) {
+    MDI_InternalFrame internalFrame=createInternalFrame(view);
+    JComponent contents=super.createContents(view);
+    internalFrame.getContentPane().add(contents);
+    getDesktop().add(internalFrame);
+    internalFrame.setVisible(true);
+    try {
+      internalFrame.setSelected(true);
+    }
+ catch (    java.beans.PropertyVetoException e) {
+    }
   }
-  Enumeration enum=mdiListeners.elements();
-  while (enum.hasMoreElements()) {
-    internalFrame.addInternalFrameListener((InternalFrameListener)enum.nextElement());
-  }
-  getDesktop().add(internalFrame);
-  try {
-    internalFrame.setSelected(true);
-  }
- catch (  java.beans.PropertyVetoException e) {
-  }
-  internalFrame.setVisible(true);
   return getDesktop();
 }

@@ -1,6 +1,6 @@
 {
   fCurrent=new Point(x,y);
-  PolygonScaleHandle.UndoActivity activity=(PolygonScaleHandle.UndoActivity)createUndoActivity();
+  PolygonScaleHandle.UndoActivity activity=(PolygonScaleHandle.UndoActivity)createUndoActivity(view);
   setUndoActivity(activity);
   activity.setAffectedFigures(new SingleFigureEnumerator(owner()));
   activity.setPolygon(((PolygonFigure)(owner())).getPolygon());

@@ -1,0 +1,6 @@
+{
+  DrawingView newView=createDrawingView();
+  newView.setDrawing(newDrawing);
+  createContents(newView);
+  toolDone();
+}

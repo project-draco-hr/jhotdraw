@@ -1,7 +1,3 @@
 {
-  JMenuItem m=new JMenuItem(command.name(),shortcut.getKey());
-  m.setName(command.name());
-  m.addActionListener(this);
-  add(m);
-  fCommands.addElement(command);
+  addMenuItem(command,new JMenuItem(command.name(),shortcut.getKey()));
 }

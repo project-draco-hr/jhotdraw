@@ -10,13 +10,13 @@
  else {
     Figure figure=drawing().findFigure(e.getX(),e.getY());
     if (figure != null) {
-      fChild=createDragTracker(view(),figure);
+      fChild=createDragTracker(figure);
     }
  else {
       if (!e.isShiftDown()) {
         view().clearSelection();
       }
-      fChild=createAreaTracker(view());
+      fChild=createAreaTracker();
     }
   }
   fChild.mouseDown(e,x,y);

@@ -1,0 +1,3 @@
+{
+  return new UndoableTool(new DragTracker(editor(),f));
+}

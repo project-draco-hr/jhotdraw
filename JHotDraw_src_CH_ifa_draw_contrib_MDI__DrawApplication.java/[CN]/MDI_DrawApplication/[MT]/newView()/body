@@ -1,8 +1,16 @@
 {
-  String copyTitle=getDrawingTitle();
-  DrawingView newView=createDrawingView();
-  newView.setDrawing(drawing());
-  createContents(newView);
-  setDrawingTitle(copyTitle + " (View)");
+  if (!view().isInteractive()) {
+    return;
+  }
+  String copyTitle=view().drawing().getTitle();
+  DrawingView fView=createDrawingView();
+  fView.setDrawing(view().drawing());
+  createContents(fView);
+  if (copyTitle != null) {
+    setDrawingTitle(copyTitle + " (View)");
+  }
+ else {
+    setDrawingTitle(getDefaultDrawingTitle() + " (View)");
+  }
   toolDone();
 }

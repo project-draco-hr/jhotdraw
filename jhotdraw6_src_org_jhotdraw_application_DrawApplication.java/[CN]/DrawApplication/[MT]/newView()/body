@@ -1,6 +1,13 @@
 {
+  if (view() == null) {
+    return;
+  }
   DrawApplication window=createApplication();
-  window.open();
-  window.setDrawing(drawing());
-  window.setDrawingTitle(getDrawingTitle() + " (View)");
+  window.open(view());
+  if (view().drawing().getTitle() != null) {
+    window.setDrawingTitle(view().drawing().getTitle() + " (View)");
+  }
+ else {
+    window.setDrawingTitle(getDefaultDrawingTitle() + " (View)");
+  }
 }

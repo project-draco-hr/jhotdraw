@@ -1,0 +1,6 @@
+{
+  Enumeration le=myRegisteredListeners.elements();
+  while (le.hasMoreElements()) {
+    ((CommandListener)le.nextElement()).commandExecuted(new EventObject(myObservedCommand));
+  }
+}

@@ -1,4 +1,0 @@
-{
-  super(view);
-  fAnchorHandle=anchorHandle;
-}

@@ -2,5 +2,8 @@
   destroy();
   setVisible(false);
   dispose();
-  System.exit(0);
+  winCount--;
+  if (winCount == 0) {
+    System.exit(0);
+  }
 }

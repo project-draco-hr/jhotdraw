@@ -1,3 +1,7 @@
 {
-  return super.remove(figure);
+  Figure f=super.remove(figure);
+  if (f instanceof AnimationDecorator) {
+    return ((AnimationDecorator)f).peelDecoration();
+  }
+  return f;
 }

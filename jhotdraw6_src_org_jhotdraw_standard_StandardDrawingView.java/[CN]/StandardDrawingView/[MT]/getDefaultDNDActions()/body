@@ -1,0 +1,3 @@
+{
+  return java.awt.dnd.DnDConstants.ACTION_COPY_OR_MOVE;
+}

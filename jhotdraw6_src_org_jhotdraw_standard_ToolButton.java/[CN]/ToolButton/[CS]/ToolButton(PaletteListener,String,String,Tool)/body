@@ -1,5 +1,7 @@
 {
   super(listener);
+  tool.addToolListener(this);
+  setEnabled(tool.isUsable());
   Iconkit kit=Iconkit.instance();
   if (kit == null) {
     throw new JHotDrawRuntimeException("Iconkit instance isn't set");

@@ -1,2 +1,9 @@
 {
+  MDI_InternalFrame mdf=(MDI_InternalFrame)e.getSource();
+  DrawingView dv=mdf.getDrawingView();
+  fireViewDestroyingEvent(dv);
+  if (mdf == currentFrame) {
+    currentFrame=null;
+    setView(NullDrawingView.getManagedDrawingView(this));
+  }
 }

@@ -2,9 +2,8 @@
   try {
     Drawing restoredDrawing=restoreFormat.restore(file);
     if (restoredDrawing != null) {
-      newWindow();
-      setDrawing(restoredDrawing);
-      setDrawingTitle(file);
+      restoredDrawing.setTitle(file);
+      newWindow(restoredDrawing);
     }
  else {
       showStatus("Unknown file type: could not open file '" + file + "'");

@@ -1,3 +1,0 @@
-{
-  return new MDI_InternalFrame("untitled",true,true,true,true);
-}

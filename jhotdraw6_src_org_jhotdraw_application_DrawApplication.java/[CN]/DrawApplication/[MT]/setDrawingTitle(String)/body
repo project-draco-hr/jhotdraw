@@ -1,6 +1,5 @@
 {
-  fDrawingFilename=drawingTitle;
-  if (fgUntitled.equals(drawingTitle)) {
+  if (getDefaultDrawingTitle().equals(drawingTitle)) {
     setTitle(getApplicationName());
   }
  else {

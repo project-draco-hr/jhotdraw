@@ -1,20 +1,18 @@
 {
-  JMenu menu=new JMenu("Animation");
-  JMenuItem mi=new JMenuItem("Start Animation");
-  mi.addActionListener(new ActionListener(){
-    public void actionPerformed(    ActionEvent event){
+  CommandMenu menu=new CommandMenu("Animation");
+  Command cmd=new AbstractCommand("Start Animation",this){
+    public void execute(){
       startAnimation();
     }
   }
-);
-  menu.add(mi);
-  mi=new JMenuItem("Stop Animation");
-  mi.addActionListener(new ActionListener(){
-    public void actionPerformed(    ActionEvent event){
+;
+  menu.add(cmd);
+  cmd=new AbstractCommand("Stop Animation",this){
+    public void execute(){
       endAnimation();
     }
   }
-);
-  menu.add(mi);
+;
+  menu.add(cmd);
   return menu;
 }

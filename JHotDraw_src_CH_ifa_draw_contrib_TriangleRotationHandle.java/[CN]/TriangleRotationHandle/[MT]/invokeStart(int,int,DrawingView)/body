@@ -1,6 +1,6 @@
 {
   fOrigin=getOrigin();
-  TriangleRotationHandle.UndoActivity activity=(TriangleRotationHandle.UndoActivity)createUndoActivity();
+  TriangleRotationHandle.UndoActivity activity=(TriangleRotationHandle.UndoActivity)createUndoActivity(view);
   setUndoActivity(activity);
   activity.setAffectedFigures(new SingleFigureEnumerator(owner()));
   double rotation=((TriangleFigure)(owner())).getRotationAngle();

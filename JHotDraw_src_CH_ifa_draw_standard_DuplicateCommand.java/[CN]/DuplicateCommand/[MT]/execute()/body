@@ -1,4 +1,5 @@
 {
+  super.execute();
   setUndoActivity(createUndoActivity());
   FigureSelection selection=view().getFigureSelection();
   FigureEnumeration figures=(FigureEnumeration)selection.getData(StandardFigureSelection.TYPE);

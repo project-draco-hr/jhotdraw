@@ -6,6 +6,6 @@
     figure.release();
   }
  else {
-    System.out.println("Attempt to remove non-existing figure");
+    System.err.println("Attempt to remove non-existing figure");
   }
 }

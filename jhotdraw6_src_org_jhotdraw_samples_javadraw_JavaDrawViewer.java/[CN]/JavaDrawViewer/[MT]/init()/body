@@ -1,13 +1,16 @@
 {
+  setUndoManager(new UndoManager());
   getContentPane().setLayout(new BorderLayout());
   fView=new StandardDrawingView(this,400,370);
   getContentPane().add("Center",fView);
-  fTool=new FollowURLTool(view(),this);
+  fTool=new FollowURLTool(this,this);
   fIconkit=new Iconkit(this);
   String filename=getParameter("Drawing");
   if (filename != null) {
     loadDrawing(filename);
     fView.setDrawing(fDrawing);
   }
- else   showStatus("Unable to load drawing");
+ else {
+    showStatus("Unable to load drawing");
+  }
 }

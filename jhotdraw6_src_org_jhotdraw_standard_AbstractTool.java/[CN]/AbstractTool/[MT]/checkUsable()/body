@@ -1,0 +1,8 @@
+{
+  if (isUsable()) {
+    getEventDispatcher().fireToolUsableEvent();
+  }
+ else {
+    getEventDispatcher().fireToolUnusableEvent();
+  }
+}

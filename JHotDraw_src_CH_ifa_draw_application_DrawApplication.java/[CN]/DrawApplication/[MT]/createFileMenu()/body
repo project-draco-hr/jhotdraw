@@ -1,46 +1,41 @@
 {
-  JMenu menu=new JMenu("File");
-  JMenuItem mi=new JMenuItem("New",new MenuShortcut('n').getKey());
-  mi.addActionListener(new ActionListener(){
-    public void actionPerformed(    ActionEvent event){
+  CommandMenu menu=new CommandMenu("File");
+  Command cmd=new AbstractCommand("New",this,false){
+    public void execute(){
       promptNew();
     }
   }
-);
-  menu.add(mi);
-  mi=new JMenuItem("Open...",new MenuShortcut('o').getKey());
-  mi.addActionListener(new ActionListener(){
-    public void actionPerformed(    ActionEvent event){
+;
+  menu.add(cmd,new MenuShortcut('n'));
+  cmd=new AbstractCommand("Open...",this,false){
+    public void execute(){
       promptOpen();
     }
   }
-);
-  menu.add(mi);
-  mi=new JMenuItem("Save As...",new MenuShortcut('s').getKey());
-  mi.addActionListener(new ActionListener(){
-    public void actionPerformed(    ActionEvent event){
+;
+  menu.add(cmd,new MenuShortcut('o'));
+  cmd=new AbstractCommand("Save As...",this,true){
+    public void execute(){
       promptSaveAs();
     }
   }
-);
-  menu.add(mi);
+;
+  menu.add(cmd,new MenuShortcut('s'));
   menu.addSeparator();
-  mi=new JMenuItem("Print...",new MenuShortcut('p').getKey());
-  mi.addActionListener(new ActionListener(){
-    public void actionPerformed(    ActionEvent event){
+  cmd=new AbstractCommand("Print...",this,true){
+    public void execute(){
       print();
     }
   }
-);
-  menu.add(mi);
+;
+  menu.add(cmd,new MenuShortcut('p'));
   menu.addSeparator();
-  mi=new JMenuItem("Exit");
-  mi.addActionListener(new ActionListener(){
-    public void actionPerformed(    ActionEvent event){
+  cmd=new AbstractCommand("Exit",this,true){
+    public void execute(){
       exit();
     }
   }
-);
-  menu.add(mi);
+;
+  menu.add(cmd);
   return menu;
 }

@@ -1,3 +1,2 @@
 {
-  activateFrame((MDI_InternalFrame)e.getSource());
 }

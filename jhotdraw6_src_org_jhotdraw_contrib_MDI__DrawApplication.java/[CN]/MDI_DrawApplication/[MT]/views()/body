@@ -1,0 +1,16 @@
+{
+  DrawingView[] views;
+  ArrayList frames=new ArrayList();
+  JInternalFrame[] ifs=((JDesktopPane)getDesktop()).getAllFrames();
+  for (int x=0; x < ifs.length; x++) {
+    if (MDI_InternalFrame.class.isInstance(ifs[x])) {
+      DrawingView dv=((MDI_InternalFrame)ifs[x]).getDrawingView();
+      if (DrawingView.class.isInstance(dv)) {
+        frames.add(dv);
+      }
+    }
+  }
+  views=new DrawingView[frames.size()];
+  frames.toArray(views);
+  return views;
+}

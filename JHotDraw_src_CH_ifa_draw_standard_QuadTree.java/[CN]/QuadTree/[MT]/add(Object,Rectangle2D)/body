@@ -6,6 +6,7 @@
  else {
       _outsideHashtable.put(anObject,absoluteBoundingRectangle2D);
     }
+    return;
   }
   boolean bNW=absoluteBoundingRectangle2D.intersects(_nwQuadTree.getAbsoluteBoundingRectangle2D());
   boolean bNE=absoluteBoundingRectangle2D.intersects(_neQuadTree.getAbsoluteBoundingRectangle2D());

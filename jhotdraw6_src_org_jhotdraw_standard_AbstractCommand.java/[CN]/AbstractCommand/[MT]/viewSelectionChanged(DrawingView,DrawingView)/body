@@ -1,0 +1,9 @@
+{
+  if (oldView != null) {
+    oldView.removeFigureSelectionListener(this);
+  }
+  if (newView != null) {
+    newView.addFigureSelectionListener(this);
+  }
+  checkExecutable();
+}

@@ -9,5 +9,4 @@
   fTextField.setBounds(fieldBounds(figure),figure.getText());
   setTypingTarget(figure);
   setUndoActivity(createUndoActivity());
-  System.out.println("UndoActivity (1): " + getUndoActivity());
 }

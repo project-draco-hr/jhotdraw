@@ -1,4 +1,6 @@
 {
+  setAutoscrolls(true);
+  counter++;
   fEditor=editor;
   fViewSize=new Dimension(width,height);
   fSelectionListeners=new Vector();
@@ -6,10 +8,9 @@
   fLastClick=new Point(0,0);
   fConstrainer=null;
   fSelection=new Vector();
-  setUndoManager(new UndoManager());
   setDisplayUpdate(new SimpleUpdateStrategy());
   setBackground(Color.lightGray);
-  addMouseListener(this);
-  addMouseMotionListener(this);
+  addMouseListener(ml);
+  addMouseMotionListener(mml);
   addKeyListener(this);
 }

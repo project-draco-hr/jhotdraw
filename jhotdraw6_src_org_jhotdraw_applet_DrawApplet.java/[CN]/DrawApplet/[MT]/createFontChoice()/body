@@ -2,7 +2,7 @@
   CommandChoice choice=new CommandChoice();
   String fonts[]=Toolkit.getDefaultToolkit().getFontList();
   for (int i=0; i < fonts.length; i++) {
-    choice.addItem(new ChangeAttributeCommand(fonts[i],"FontName",fonts[i],view()));
+    choice.addItem(new ChangeAttributeCommand(fonts[i],"FontName",fonts[i],this));
   }
   return choice;
 }

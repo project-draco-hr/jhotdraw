@@ -1,9 +1,9 @@
 {
   int ex=e.getX();
   int ey=e.getY();
-  setTarget(findConnectionStart(ex,ey,drawing()));
-  if (getTarget() != null) {
-    setStartConnector(findConnector(ex,ey,getTarget()));
+  setTargetFigure(findConnectionStart(ex,ey,drawing()));
+  if (getTargetFigure() != null) {
+    setStartConnector(findConnector(ex,ey,getTargetFigure()));
     if (getStartConnector() != null) {
       Point p=new Point(ex,ey);
       setConnection(createConnection());

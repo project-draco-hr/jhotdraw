@@ -1,4 +1,4 @@
 {
-  super.deactivate();
   endEdit();
+  super.deactivate();
 }

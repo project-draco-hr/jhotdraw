@@ -1,3 +1,6 @@
 {
-  view().setCursor(Cursor.getDefaultCursor());
+  if ((isActive() == true) && (view() != null)) {
+    view().setCursor(Cursor.getDefaultCursor());
+    getEventDispatcher().fireToolDeactivatedEvent();
+  }
 }

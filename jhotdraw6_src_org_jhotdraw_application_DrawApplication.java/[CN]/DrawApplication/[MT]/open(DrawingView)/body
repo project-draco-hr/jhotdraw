@@ -1,0 +1,34 @@
+{
+  getVersionControlStrategy().assertCompatibleVersion();
+  setUndoManager(new UndoManager());
+  fIconkit=new Iconkit(this);
+  getContentPane().setLayout(new BorderLayout());
+  setView(newDrawingView);
+  JComponent contents=createContents(view());
+  contents.setAlignmentX(LEFT_ALIGNMENT);
+  JToolBar tools=createToolPalette();
+  createTools(tools);
+  JPanel activePanel=new JPanel();
+  activePanel.setAlignmentX(LEFT_ALIGNMENT);
+  activePanel.setAlignmentY(TOP_ALIGNMENT);
+  activePanel.setLayout(new BorderLayout());
+  activePanel.add(tools,BorderLayout.NORTH);
+  activePanel.add(contents,BorderLayout.CENTER);
+  fStatusLine=createStatusLine();
+  getContentPane().add(activePanel,BorderLayout.CENTER);
+  getContentPane().add(fStatusLine,BorderLayout.SOUTH);
+  JMenuBar mb=new JMenuBar();
+  createMenus(mb);
+  setJMenuBar(mb);
+  Dimension d=defaultSize();
+  if (d.width > mb.getPreferredSize().width) {
+    setSize(d.width,d.height);
+  }
+ else {
+    setSize(mb.getPreferredSize().width,d.height);
+  }
+  addListeners();
+  setVisible(true);
+  fStorageFormatManager=createStorageFormatManager();
+  toolDone();
+}

@@ -1,4 +1,5 @@
 {
+  super.execute();
   Point lastClick=view().lastClick();
   FigureSelection selection=(FigureSelection)Clipboard.getClipboard().getContents();
   if (selection != null) {

@@ -3,12 +3,11 @@
     if (newFrame.getDrawingView().drawing() != null) {
       newFrame.getDrawingView().unfreezeView();
     }
-    backupDrawingView.setDrawing(view().drawing());
-    currentFrame.replaceDrawingView(backupDrawingView);
-    currentFrame.validate();
-    currentFrame.getDrawingView().freezeView();
-    setDrawing(newFrame.getDrawingView().drawing());
-    backupDrawingView=newFrame.replaceDrawingView(view());
+    if (currentFrame != null) {
+      currentFrame.getDrawingView().freezeView();
+      currentFrame.getDrawingView().clearSelection();
+    }
     currentFrame=newFrame;
   }
+  setView(currentFrame.getDrawingView());
 }

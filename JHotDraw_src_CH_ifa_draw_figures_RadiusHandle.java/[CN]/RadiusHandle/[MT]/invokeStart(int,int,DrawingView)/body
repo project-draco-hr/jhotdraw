@@ -1,0 +1,5 @@
+{
+  setUndoActivity(createUndoActivity(view));
+  getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(owner()));
+  ((RadiusHandle.UndoActivity)getUndoActivity()).setOldRadius(((RoundRectangleFigure)owner()).getArc());
+}
