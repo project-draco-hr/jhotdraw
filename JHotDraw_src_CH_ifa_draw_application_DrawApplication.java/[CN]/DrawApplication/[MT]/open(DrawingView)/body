@@ -31,8 +31,29 @@
   addListeners();
   setVisible(true);
   setStorageFormatManager(createStorageFormatManager());
-  if (newDrawingView.isInteractive()) {
-    getDesktop().addToDesktop(newDrawingView,Desktop.PRIMARY);
+  Runnable r=new Runnable(){
+    public void run(){
+      if (newDrawingView.isInteractive()) {
+        getDesktop().addToDesktop(newDrawingView,Desktop.PRIMARY);
+      }
+      toolDone();
+    }
   }
-  toolDone();
+;
+  if (java.awt.EventQueue.isDispatchThread() == false) {
+    try {
+      java.awt.EventQueue.invokeAndWait(r);
+    }
+ catch (    java.lang.InterruptedException ie) {
+      System.err.println(ie.getMessage());
+      exit();
+    }
+catch (    java.lang.reflect.InvocationTargetException ite) {
+      System.err.println(ite.getMessage());
+      exit();
+    }
+  }
+ else {
+    r.run();
+  }
 }
