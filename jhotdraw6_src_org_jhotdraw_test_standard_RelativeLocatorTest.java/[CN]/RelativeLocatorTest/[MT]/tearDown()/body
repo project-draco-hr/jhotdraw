@@ -1,0 +1,4 @@
+{
+  relativelocator=null;
+  super.tearDown();
+}

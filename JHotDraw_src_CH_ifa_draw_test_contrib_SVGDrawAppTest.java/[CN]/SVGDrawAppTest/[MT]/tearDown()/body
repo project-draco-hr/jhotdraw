@@ -1,0 +1,4 @@
+{
+  svgdrawapp=null;
+  super.tearDown();
+}

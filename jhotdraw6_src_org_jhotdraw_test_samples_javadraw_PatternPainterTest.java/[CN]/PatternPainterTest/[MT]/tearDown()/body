@@ -1,0 +1,4 @@
+{
+  patternpainter=null;
+  super.tearDown();
+}

@@ -1,0 +1,4 @@
+{
+  fastbufferedupdatestrategy=null;
+  super.tearDown();
+}

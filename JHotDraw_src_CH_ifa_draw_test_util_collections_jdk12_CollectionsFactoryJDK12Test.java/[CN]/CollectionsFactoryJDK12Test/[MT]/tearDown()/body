@@ -1,0 +1,4 @@
+{
+  collectionsfactoryjdk12=null;
+  super.tearDown();
+}

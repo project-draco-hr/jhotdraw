@@ -1,0 +1,3 @@
+{
+  return CH.ifa.draw.util.Clipboard.getClipboard();
+}

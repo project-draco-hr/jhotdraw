@@ -1,0 +1,4 @@
+{
+  trianglefigure=null;
+  super.tearDown();
+}

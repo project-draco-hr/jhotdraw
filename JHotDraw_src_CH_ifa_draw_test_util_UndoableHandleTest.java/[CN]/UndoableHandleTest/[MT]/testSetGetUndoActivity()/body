@@ -1,0 +1,7 @@
+{
+  CH.ifa.draw.util.Undoable[] tests={new ChangeConnectionEndHandle.UndoActivity(getDrawingEditor().view()),null};
+  for (int i=0; i < tests.length; i++) {
+    undoablehandle.setUndoActivity(tests[i]);
+    assertEquals(tests[i],undoablehandle.getUndoActivity());
+  }
+}

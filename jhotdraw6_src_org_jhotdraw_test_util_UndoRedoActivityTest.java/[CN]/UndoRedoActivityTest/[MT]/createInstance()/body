@@ -1,0 +1,5 @@
+{
+  Undoable undoActivity=new PasteCommand.UndoActivity(getDrawingEditor().view());
+  undoActivity.setAffectedFigures(new SingleFigureEnumerator(new RectangleFigure(new Point(33,33),new Point(44,44))));
+  return (UndoRedoActivity)UndoRedoActivity.createUndoRedoActivity(undoActivity);
+}

@@ -1,0 +1,4 @@
+{
+  mdi_drawapplication=null;
+  super.tearDown();
+}

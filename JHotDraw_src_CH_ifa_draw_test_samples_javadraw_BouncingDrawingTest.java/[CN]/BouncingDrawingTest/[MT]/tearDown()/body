@@ -1,0 +1,4 @@
+{
+  bouncingdrawing=null;
+  super.tearDown();
+}

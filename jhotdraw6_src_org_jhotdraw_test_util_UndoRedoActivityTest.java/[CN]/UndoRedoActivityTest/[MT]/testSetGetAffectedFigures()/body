@@ -1,0 +1,7 @@
+{
+  CH.ifa.draw.framework.FigureEnumeration[] tests={new SingleFigureEnumerator(new RectangleFigure(new Point(44,44),new Point(55,55))),null};
+  for (int i=0; i < tests.length; i++) {
+    undoredoactivity.setAffectedFigures(tests[i]);
+    assertEquals(tests[i],undoredoactivity.getAffectedFigures());
+  }
+}

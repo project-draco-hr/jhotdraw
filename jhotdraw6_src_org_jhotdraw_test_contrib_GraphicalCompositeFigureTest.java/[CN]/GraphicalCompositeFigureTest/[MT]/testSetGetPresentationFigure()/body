@@ -1,0 +1,7 @@
+{
+  CH.ifa.draw.framework.Figure[] tests={new RectangleFigure(new Point(10,10),new Point(100,100)),null};
+  for (int i=0; i < tests.length; i++) {
+    graphicalcompositefigure.setPresentationFigure(tests[i]);
+    assertEquals(tests[i],graphicalcompositefigure.getPresentationFigure());
+  }
+}

@@ -1,0 +1,4 @@
+{
+  super.setUp();
+  bounds=createInstance();
+}

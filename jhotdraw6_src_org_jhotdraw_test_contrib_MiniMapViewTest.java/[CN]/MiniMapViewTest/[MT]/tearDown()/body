@@ -1,0 +1,4 @@
+{
+  minimapview=null;
+  super.tearDown();
+}

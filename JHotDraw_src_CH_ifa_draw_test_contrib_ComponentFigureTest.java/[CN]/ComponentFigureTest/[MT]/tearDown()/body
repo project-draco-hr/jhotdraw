@@ -1,0 +1,4 @@
+{
+  componentfigure=null;
+  super.tearDown();
+}

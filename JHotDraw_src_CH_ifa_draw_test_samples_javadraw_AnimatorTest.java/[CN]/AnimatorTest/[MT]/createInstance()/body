@@ -1,0 +1,5 @@
+{
+  Drawing drawing=new BouncingDrawing();
+  Animatable animatable=(Animatable)drawing.add(new RectangleFigure(new Point(10,10),new Point(100,100)));
+  return new CH.ifa.draw.samples.javadraw.Animator(animatable,getDrawingEditor().view());
+}

@@ -1,0 +1,4 @@
+{
+  mdidesktoppane=null;
+  super.tearDown();
+}

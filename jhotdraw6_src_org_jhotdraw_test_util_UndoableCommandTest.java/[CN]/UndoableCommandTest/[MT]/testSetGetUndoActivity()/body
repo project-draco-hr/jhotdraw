@@ -1,0 +1,7 @@
+{
+  CH.ifa.draw.util.Undoable[] tests={new DeleteCommand.UndoActivity(new DeleteCommand("Delete",getDrawingEditor())),null};
+  for (int i=0; i < tests.length; i++) {
+    undoablecommand.setUndoActivity(tests[i]);
+    assertEquals(tests[i],undoablecommand.getUndoActivity());
+  }
+}

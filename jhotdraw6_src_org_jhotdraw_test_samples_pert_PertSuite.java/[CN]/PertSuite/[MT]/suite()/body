@@ -1,0 +1,10 @@
+{
+  TestSuite suite;
+  suite=new TestSuite("CH.ifa.draw.test.samples.pert");
+  suite.addTestSuite(CH.ifa.draw.test.samples.pert.PertFigureCreationToolTest.class);
+  suite.addTestSuite(CH.ifa.draw.test.samples.pert.PertFigureTest.class);
+  suite.addTestSuite(CH.ifa.draw.test.samples.pert.PertDependencyTest.class);
+  suite.addTestSuite(CH.ifa.draw.test.samples.pert.PertApplicationTest.class);
+  suite.addTestSuite(CH.ifa.draw.test.samples.pert.PertAppletTest.class);
+  return suite;
+}

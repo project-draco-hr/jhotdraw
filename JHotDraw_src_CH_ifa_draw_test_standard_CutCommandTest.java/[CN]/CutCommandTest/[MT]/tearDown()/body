@@ -1,0 +1,4 @@
+{
+  cutcommand=null;
+  super.tearDown();
+}

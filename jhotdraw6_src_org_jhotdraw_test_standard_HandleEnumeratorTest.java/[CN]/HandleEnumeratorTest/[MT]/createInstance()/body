@@ -1,0 +1,7 @@
+{
+  RectangleFigure figure=new RectangleFigure(new Point(15,15),new Point(20,20));
+  List l=CollectionsFactory.current().createList();
+  l.add(new NullHandle(figure,RelativeLocator.north()));
+  l.add(new NullHandle(figure,RelativeLocator.north()));
+  return new CH.ifa.draw.standard.HandleEnumerator(l);
+}

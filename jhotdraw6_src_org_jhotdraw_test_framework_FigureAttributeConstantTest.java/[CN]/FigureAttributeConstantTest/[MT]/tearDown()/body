@@ -1,0 +1,4 @@
+{
+  figureattributeconstant=null;
+  super.tearDown();
+}

@@ -1,0 +1,7 @@
+{
+  java.awt.Point[] tests={new java.awt.Point(),null};
+  for (int i=0; i < tests.length; i++) {
+    borderdecorator.setBorderOffset(tests[i]);
+    assertEquals(tests[i],borderdecorator.getBorderOffset());
+  }
+}

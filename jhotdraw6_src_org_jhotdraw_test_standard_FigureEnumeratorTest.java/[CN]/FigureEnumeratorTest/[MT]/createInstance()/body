@@ -1,0 +1,6 @@
+{
+  List l=CollectionsFactory.current().createList();
+  l.add(new RectangleFigure(new Point(10,10),new Point(100,100)));
+  l.add(new PolyLineFigure(20,20));
+  return new CH.ifa.draw.standard.FigureEnumerator(l);
+}

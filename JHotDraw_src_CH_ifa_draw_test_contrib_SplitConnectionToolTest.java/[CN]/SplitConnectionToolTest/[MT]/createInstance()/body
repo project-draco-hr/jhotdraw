@@ -1,0 +1,4 @@
+{
+  ConnectionFigure lineConnection=new LineConnection();
+  return new CH.ifa.draw.contrib.SplitConnectionTool(getDrawingEditor(),lineConnection);
+}

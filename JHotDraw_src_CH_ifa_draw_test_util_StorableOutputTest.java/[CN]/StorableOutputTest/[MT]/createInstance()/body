@@ -1,0 +1,5 @@
+{
+  String fileName="";
+  FileOutputStream stream=new FileOutputStream(fileName);
+  return new CH.ifa.draw.util.StorableOutput(stream);
+}

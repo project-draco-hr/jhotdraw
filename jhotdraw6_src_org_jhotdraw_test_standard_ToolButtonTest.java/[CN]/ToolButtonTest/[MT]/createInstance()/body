@@ -1,0 +1,4 @@
+{
+  Tool tool=new SelectionTool(getDrawingEditor());
+  return new CH.ifa.draw.standard.ToolButton((DrawApplication)getDrawingEditor(),DrawApplication.IMAGES + "SEL","Selection Tool",tool);
+}

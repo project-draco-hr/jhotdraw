@@ -1,0 +1,4 @@
+{
+  standardversioncontrolstrategy=null;
+  super.tearDown();
+}

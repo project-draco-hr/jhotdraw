@@ -1,0 +1,7 @@
+{
+  java.awt.Color[] tests={java.awt.Color.BLACK,null};
+  for (int i=0; i < tests.length; i++) {
+    nulldrawingview.setBackground(tests[i]);
+    assertEquals(tests[i],nulldrawingview.getBackground());
+  }
+}

@@ -1,0 +1,7 @@
+{
+  CH.ifa.draw.util.Undoable[] tests={new PasteCommand.UndoActivity(getDrawingEditor().view()),null};
+  for (int i=0; i < tests.length; i++) {
+    undoabletool.setUndoActivity(tests[i]);
+    assertEquals(tests[i],undoabletool.getUndoActivity());
+  }
+}

@@ -1,0 +1,4 @@
+{
+  insertintodrawingvisitor=null;
+  super.tearDown();
+}

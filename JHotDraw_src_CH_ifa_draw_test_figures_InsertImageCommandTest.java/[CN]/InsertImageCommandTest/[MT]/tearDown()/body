@@ -1,0 +1,4 @@
+{
+  insertimagecommand=null;
+  super.tearDown();
+}

@@ -1,0 +1,4 @@
+{
+  minimapdesktop=null;
+  super.tearDown();
+}

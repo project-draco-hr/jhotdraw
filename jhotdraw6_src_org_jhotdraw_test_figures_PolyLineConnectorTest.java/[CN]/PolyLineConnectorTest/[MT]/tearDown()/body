@@ -1,0 +1,4 @@
+{
+  polylineconnector=null;
+  super.tearDown();
+}

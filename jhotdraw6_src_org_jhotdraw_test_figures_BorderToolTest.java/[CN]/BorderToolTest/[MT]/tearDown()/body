@@ -1,0 +1,4 @@
+{
+  bordertool=null;
+  super.tearDown();
+}

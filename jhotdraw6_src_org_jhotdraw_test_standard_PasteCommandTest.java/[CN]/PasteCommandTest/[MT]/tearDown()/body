@@ -1,0 +1,4 @@
+{
+  pastecommand=null;
+  super.tearDown();
+}

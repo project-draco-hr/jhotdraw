@@ -1,0 +1,4 @@
+{
+  iteratorwrapper=null;
+  super.tearDown();
+}

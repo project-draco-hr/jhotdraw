@@ -1,0 +1,3 @@
+{
+  return new CH.ifa.draw.samples.net.NetApp();
+}

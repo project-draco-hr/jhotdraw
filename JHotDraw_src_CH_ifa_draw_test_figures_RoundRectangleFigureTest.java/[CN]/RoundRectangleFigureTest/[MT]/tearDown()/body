@@ -1,0 +1,4 @@
+{
+  roundrectanglefigure=null;
+  super.tearDown();
+}

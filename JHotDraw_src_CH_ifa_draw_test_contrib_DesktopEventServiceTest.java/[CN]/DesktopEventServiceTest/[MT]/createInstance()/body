@@ -1,0 +1,4 @@
+{
+  Desktop desktop=new JPanelDesktop((DrawApplication)getDrawingEditor());
+  return new CH.ifa.draw.contrib.DesktopEventService(desktop,((Container)desktop));
+}

@@ -1,0 +1,4 @@
+{
+  handleenumerator=null;
+  super.tearDown();
+}

@@ -1,0 +1,4 @@
+{
+  pertfigurecreationtool=null;
+  super.tearDown();
+}

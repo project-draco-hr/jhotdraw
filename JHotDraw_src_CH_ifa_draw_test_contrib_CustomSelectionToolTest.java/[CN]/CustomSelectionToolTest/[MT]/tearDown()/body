@@ -1,0 +1,4 @@
+{
+  customselectiontool=null;
+  super.tearDown();
+}

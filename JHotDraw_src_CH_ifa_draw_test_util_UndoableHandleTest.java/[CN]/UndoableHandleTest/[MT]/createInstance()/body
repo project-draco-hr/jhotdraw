@@ -1,0 +1,3 @@
+{
+  return new CH.ifa.draw.util.UndoableHandle(BoxHandleKit.south(new RectangleFigure(new Point(44,44),new Point(88,88))),getDrawingEditor().view());
+}

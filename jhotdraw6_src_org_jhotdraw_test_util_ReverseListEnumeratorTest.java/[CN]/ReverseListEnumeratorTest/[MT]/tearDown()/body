@@ -1,0 +1,4 @@
+{
+  reverselistenumerator=null;
+  super.tearDown();
+}

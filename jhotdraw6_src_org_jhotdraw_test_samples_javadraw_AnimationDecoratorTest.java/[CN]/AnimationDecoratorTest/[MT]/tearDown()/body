@@ -1,0 +1,4 @@
+{
+  animationdecorator=null;
+  super.tearDown();
+}

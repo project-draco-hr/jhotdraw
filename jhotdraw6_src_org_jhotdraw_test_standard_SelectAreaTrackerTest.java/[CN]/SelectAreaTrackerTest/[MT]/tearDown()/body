@@ -1,0 +1,4 @@
+{
+  selectareatracker=null;
+  super.tearDown();
+}

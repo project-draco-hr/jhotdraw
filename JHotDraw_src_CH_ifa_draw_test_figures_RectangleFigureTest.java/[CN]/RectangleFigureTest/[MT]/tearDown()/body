@@ -1,0 +1,4 @@
+{
+  rectanglefigure=null;
+  super.tearDown();
+}

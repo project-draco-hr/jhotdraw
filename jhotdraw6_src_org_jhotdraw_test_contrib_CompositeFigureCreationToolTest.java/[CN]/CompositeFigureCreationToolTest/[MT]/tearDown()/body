@@ -1,0 +1,4 @@
+{
+  compositefigurecreationtool=null;
+  super.tearDown();
+}

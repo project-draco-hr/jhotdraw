@@ -1,0 +1,7 @@
+{
+  boolean[] tests={true,false};
+  for (int i=0; i < tests.length; i++) {
+    textareafigure.setFontDirty(tests[i]);
+    assertEquals(tests[i],textareafigure.isFontDirty());
+  }
+}

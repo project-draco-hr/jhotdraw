@@ -1,0 +1,6 @@
+{
+  TestSuite suite;
+  suite=new TestSuite("CH.ifa.draw.test.util.collections.jdk12");
+  suite.addTestSuite(CH.ifa.draw.test.util.collections.jdk12.CollectionsFactoryJDK12Test.class);
+  return suite;
+}

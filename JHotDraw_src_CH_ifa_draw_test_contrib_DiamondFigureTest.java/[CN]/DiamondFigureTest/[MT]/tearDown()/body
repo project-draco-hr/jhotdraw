@@ -1,0 +1,4 @@
+{
+  diamondfigure=null;
+  super.tearDown();
+}

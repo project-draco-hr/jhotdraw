@@ -1,0 +1,4 @@
+{
+  elbowconnection=null;
+  super.tearDown();
+}

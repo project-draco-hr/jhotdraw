@@ -1,0 +1,10 @@
+{
+  TestSuite suite;
+  suite=new TestSuite("CH.ifa.draw.test.util.collections.jdk11");
+  suite.addTestSuite(CH.ifa.draw.test.util.collections.jdk11.SetWrapperTest.class);
+  suite.addTestSuite(CH.ifa.draw.test.util.collections.jdk11.CollectionsFactoryJDK11Test.class);
+  suite.addTestSuite(CH.ifa.draw.test.util.collections.jdk11.MapWrapperTest.class);
+  suite.addTestSuite(CH.ifa.draw.test.util.collections.jdk11.ListWrapperTest.class);
+  suite.addTestSuite(CH.ifa.draw.test.util.collections.jdk11.IteratorWrapperTest.class);
+  return suite;
+}

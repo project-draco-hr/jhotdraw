@@ -1,0 +1,4 @@
+{
+  choppolygonconnector=null;
+  super.tearDown();
+}

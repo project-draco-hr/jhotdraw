@@ -1,0 +1,4 @@
+{
+  customtoolbar=null;
+  super.tearDown();
+}

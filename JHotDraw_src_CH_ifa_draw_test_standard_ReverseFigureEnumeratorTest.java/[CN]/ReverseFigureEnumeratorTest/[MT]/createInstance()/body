@@ -1,0 +1,6 @@
+{
+  List l=CollectionsFactory.current().createList();
+  l.add(new RectangleFigure(new Point(10,10),new Point(50,50)));
+  l.add(new PolyLineFigure());
+  return new CH.ifa.draw.standard.ReverseFigureEnumerator(l);
+}
