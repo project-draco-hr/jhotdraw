@@ -1,5 +1,5 @@
 {
-  if (fSelectionHandles == null) {
+  if (selectionCount() == 0) {
     return;
   }
   FigureEnumeration fe=selection();
