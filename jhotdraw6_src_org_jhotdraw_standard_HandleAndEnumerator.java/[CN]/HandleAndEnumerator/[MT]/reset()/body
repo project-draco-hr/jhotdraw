@@ -1,0 +1,4 @@
+{
+  myHE1.reset();
+  myHE2.reset();
+}

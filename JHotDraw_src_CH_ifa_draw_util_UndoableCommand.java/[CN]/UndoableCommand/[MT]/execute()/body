@@ -10,5 +10,5 @@
   if (!hasSelectionChanged || (getDrawingEditor().getUndoManager().getUndoSize() == 1)) {
     getDrawingEditor().figureSelectionChanged(view());
   }
-  view().addFigureSelectionListener(this);
+  view().removeFigureSelectionListener(this);
 }

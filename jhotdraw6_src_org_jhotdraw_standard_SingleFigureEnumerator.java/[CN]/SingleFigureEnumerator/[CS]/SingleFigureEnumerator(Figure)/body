@@ -1,3 +1,4 @@
 {
-  mySingleFigure=newSingleFigure;
+  myInitialFigure=newSingleFigure;
+  reset();
 }

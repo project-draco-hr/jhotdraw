@@ -3,6 +3,5 @@
   while (fe.hasNextFigure()) {
     fe.nextFigure().release();
   }
-  myAffectedFiguresCount=0;
   setAffectedFigures(FigureEnumerator.getEmptyEnumeration());
 }

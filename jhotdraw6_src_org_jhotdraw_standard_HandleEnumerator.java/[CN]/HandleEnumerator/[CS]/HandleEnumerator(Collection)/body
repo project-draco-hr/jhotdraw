@@ -1,3 +1,4 @@
 {
-  myIterator=c.iterator();
+  myInitialCollection=c;
+  reset();
 }

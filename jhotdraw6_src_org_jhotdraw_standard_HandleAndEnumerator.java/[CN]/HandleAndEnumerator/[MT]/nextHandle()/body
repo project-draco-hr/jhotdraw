@@ -1,0 +1,11 @@
+{
+  if (myHE1.hasNextHandle()) {
+    return myHE1.nextHandle();
+  }
+ else   if (myHE2.hasNextHandle()) {
+    return myHE2.nextHandle();
+  }
+ else {
+    return null;
+  }
+}

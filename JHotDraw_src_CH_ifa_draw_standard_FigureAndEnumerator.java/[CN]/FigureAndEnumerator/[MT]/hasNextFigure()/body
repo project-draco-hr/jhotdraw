@@ -1,0 +1,3 @@
+{
+  return myFE1.hasNextFigure() || myFE2.hasNextFigure();
+}

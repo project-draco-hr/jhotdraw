@@ -1,8 +1,6 @@
 {
   myAffectedFigures=CollectionsFactory.current().createList();
-  myAffectedFiguresCount=0;
   while (toBeRemembered.hasNextFigure()) {
     myAffectedFigures.add(toBeRemembered.nextFigure());
-    myAffectedFiguresCount++;
   }
 }
