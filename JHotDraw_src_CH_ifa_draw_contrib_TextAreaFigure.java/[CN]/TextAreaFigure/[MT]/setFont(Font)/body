@@ -1,4 +1,7 @@
 {
+  if (newFont == null) {
+    throw new IllegalArgumentException();
+  }
   willChange();
   fFont=newFont;
   markSizeDirty();

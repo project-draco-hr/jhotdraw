@@ -1,0 +1,6 @@
+{
+  TestSuite suite=new TestSuite("Test for CH.ifa.draw.test.samples.net");
+  suite.addTest(new TestSuite(NetAppTest.class));
+  suite.addTest(new TestSuite(NodeFigureTest.class));
+  return suite;
+}

@@ -1,5 +1,6 @@
 {
-  String fileName="";
-  FileInputStream stream=new FileInputStream(fileName);
+  File tempFile=File.createTempFile("StorableInputTest","dat");
+  FileInputStream stream=new FileInputStream(tempFile);
+  tempFile.deleteOnExit();
   return new CH.ifa.draw.util.StorableInput(stream);
 }

@@ -1,0 +1,10 @@
+{
+  Font original=textareafigure.getFont();
+  try {
+    textareafigure.setFont(null);
+    fail("IllegalArgumentException expected");
+  }
+ catch (  IllegalArgumentException ok) {
+    assertEquals("setFont(null) altered property value",original,textareafigure.getFont());
+  }
+}

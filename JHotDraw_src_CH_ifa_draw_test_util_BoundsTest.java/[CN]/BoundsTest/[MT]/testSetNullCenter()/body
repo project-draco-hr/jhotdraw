@@ -1,0 +1,10 @@
+{
+  Point2D original=bounds.getCenter();
+  try {
+    bounds.setCenter(null);
+    fail("IllegalArgumentException expected");
+  }
+ catch (  IllegalArgumentException ok) {
+    assertEquals("setCenter(null) altered property value",original,bounds.getCenter());
+  }
+}

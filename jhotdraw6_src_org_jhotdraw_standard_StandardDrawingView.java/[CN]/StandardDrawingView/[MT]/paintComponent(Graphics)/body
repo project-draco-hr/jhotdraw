@@ -1,3 +1,5 @@
 {
-  getDisplayUpdate().draw(g,this);
+  if (getDisplayUpdate() != null) {
+    getDisplayUpdate().draw(g,this);
+  }
 }

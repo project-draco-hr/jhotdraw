@@ -1,0 +1,6 @@
+{
+  TestSuite suite=new TestSuite("Test for CH.ifa.draw.test.samples.nothing");
+  suite.addTest(new TestSuite(NothingAppTest.class));
+  suite.addTest(new TestSuite(NothingAppletTest.class));
+  return suite;
+}

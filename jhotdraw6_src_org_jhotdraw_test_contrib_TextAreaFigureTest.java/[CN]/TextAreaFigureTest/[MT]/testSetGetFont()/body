@@ -1,5 +1,5 @@
 {
-  java.awt.Font[] tests={new Font("Helvetica",Font.PLAIN,12),null};
+  Font[] tests={new Font("Helvetica",Font.PLAIN,12)};
   for (int i=0; i < tests.length; i++) {
     textareafigure.setFont(tests[i]);
     assertEquals(tests[i],textareafigure.getFont());

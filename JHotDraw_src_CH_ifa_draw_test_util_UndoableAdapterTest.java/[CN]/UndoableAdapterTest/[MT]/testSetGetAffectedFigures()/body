@@ -1,7 +1,13 @@
 {
-  CH.ifa.draw.framework.FigureEnumeration[] tests={new SingleFigureEnumerator(new RectangleFigure(new Point(30,30),new Point(60,60))),null};
+  FigureEnumeration[] tests={new SingleFigureEnumerator(new RectangleFigure(new Point(30,30),new Point(60,60)))};
   for (int i=0; i < tests.length; i++) {
     undoableadapter.setAffectedFigures(tests[i]);
-    assertEquals(tests[i],undoableadapter.getAffectedFigures());
+    FigureEnumeration returned=undoableadapter.getAffectedFigures();
+    tests[i].reset();
+    while (returned.hasNextFigure()) {
+      assertTrue(tests[i].hasNextFigure());
+      assertEquals(tests[i].nextFigure(),returned.nextFigure());
+    }
+    assertFalse(tests[i].hasNextFigure());
   }
 }

@@ -1,0 +1,9 @@
+{
+  FigureEnumeration original=undoredoactivity.getAffectedFigures();
+  try {
+    undoredoactivity.setAffectedFigures(null);
+    fail("IllegalArgumentException expected");
+  }
+ catch (  IllegalArgumentException ok) {
+  }
+}
