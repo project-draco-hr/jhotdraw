@@ -1,0 +1,4 @@
+{
+  this(source,r);
+  myNestedEvent=nestedEvent;
+}

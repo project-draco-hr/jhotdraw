@@ -1,7 +1,8 @@
 {
   if (listener() != null) {
     if (includes(e.getFigure())) {
-      listener().figureRequestRemove(new FigureChangeEvent(e.getFigure(),e.getInvalidatedRectangle()));
+      Rectangle r=invalidateRectangle(displayBox());
+      listener().figureRequestRemove(new FigureChangeEvent(this,r,e));
     }
  else {
       super.figureRequestRemove(e);

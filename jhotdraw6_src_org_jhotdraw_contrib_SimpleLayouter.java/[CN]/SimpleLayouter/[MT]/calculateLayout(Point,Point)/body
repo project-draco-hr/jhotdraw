@@ -1,5 +1,6 @@
 {
   Rectangle maxRect=new Rectangle(origin);
+  maxRect.add(corner);
   FigureEnumeration fe=getLayoutable().figures();
   while (fe.hasNextFigure()) {
     Figure currentFigure=fe.nextFigure();

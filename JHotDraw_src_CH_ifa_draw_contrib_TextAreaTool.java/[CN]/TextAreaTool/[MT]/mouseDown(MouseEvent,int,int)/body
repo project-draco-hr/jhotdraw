@@ -1,4 +1,5 @@
 {
+  setView((DrawingView)e.getSource());
   Figure pressedFigure=drawing().findFigureInside(x,y);
   TextHolder textHolder=null;
   if (pressedFigure != null) {

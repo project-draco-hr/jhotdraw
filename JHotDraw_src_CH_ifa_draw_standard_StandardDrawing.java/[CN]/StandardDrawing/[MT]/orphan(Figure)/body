@@ -1,7 +1,8 @@
 {
   Figure orphanedFigure=super.orphan(figure);
   if (orphanedFigure.listener() != null) {
-    orphanedFigure.listener().figureRequestRemove(new FigureChangeEvent(orphanedFigure,null));
+    Rectangle rect=invalidateRectangle(displayBox());
+    orphanedFigure.listener().figureRequestRemove(new FigureChangeEvent(orphanedFigure,rect));
   }
   return orphanedFigure;
 }

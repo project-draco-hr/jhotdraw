@@ -1,4 +1,4 @@
 {
   super.activate();
-  view().clearSelection();
+  getActiveView().clearSelection();
 }
