@@ -1,3 +1,5 @@
 {
+  willChange();
   updateLocation();
+  changed();
 }

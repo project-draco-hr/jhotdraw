@@ -4,9 +4,7 @@
     p.x-=size().width / 2 + fOriginX;
     p.y-=size().height / 2 + fOriginY;
     if (p.x != 0 || p.y != 0) {
-      willChange();
       basicMoveBy(p.x,p.y);
-      changed();
     }
   }
 }
