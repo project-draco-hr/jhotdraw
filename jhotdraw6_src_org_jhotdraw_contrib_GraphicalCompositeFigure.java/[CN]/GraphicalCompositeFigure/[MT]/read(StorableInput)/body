@@ -1,0 +1,4 @@
+{
+  super.read(dr);
+  setPresentationFigure((Figure)dr.readStorable());
+}

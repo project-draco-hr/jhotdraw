@@ -1,6 +1,6 @@
 {
-  Menu menu=new Menu("Animation");
-  MenuItem mi=new MenuItem("Start Animation");
+  JMenu menu=new JMenu("Animation");
+  JMenuItem mi=new JMenuItem("Start Animation");
   mi.addActionListener(new ActionListener(){
     public void actionPerformed(    ActionEvent event){
       startAnimation();
@@ -8,7 +8,7 @@
   }
 );
   menu.add(mi);
-  mi=new MenuItem("Stop Animation");
+  mi=new JMenuItem("Stop Animation");
   mi.addActionListener(new ActionListener(){
     public void actionPerformed(    ActionEvent event){
       endAnimation();

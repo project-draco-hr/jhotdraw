@@ -1,0 +1,10 @@
+{
+  if (currentTools == editTools) {
+    editTools.addElement(newTool);
+  }
+ else {
+    standardTools.addElement(newTool);
+  }
+  needsUpdate=true;
+  return super.add(newTool);
+}

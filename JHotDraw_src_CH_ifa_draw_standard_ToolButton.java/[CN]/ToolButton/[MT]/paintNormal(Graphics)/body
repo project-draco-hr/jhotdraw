@@ -1,3 +1,0 @@
-{
-  if (fIcon.normal() != null)   g.drawImage(fIcon.normal(),0,0,this);
-}

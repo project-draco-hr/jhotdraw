@@ -1,5 +1,5 @@
 {
   Rectangle r=fComponent.displayBox();
-  r.grow(border().x,border().y);
+  r.grow(getBorderOffset().x,getBorderOffset().y);
   return r;
 }

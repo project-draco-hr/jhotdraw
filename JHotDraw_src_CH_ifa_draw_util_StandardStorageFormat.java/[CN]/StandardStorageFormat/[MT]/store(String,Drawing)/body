@@ -1,0 +1,7 @@
+{
+  FileOutputStream stream=new FileOutputStream(adjustFileName(fileName));
+  StorableOutput output=new StorableOutput(stream);
+  output.writeStorable(saveDrawing);
+  output.close();
+  return adjustFileName(fileName);
+}

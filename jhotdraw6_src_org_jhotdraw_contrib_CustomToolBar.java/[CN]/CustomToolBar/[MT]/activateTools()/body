@@ -1,0 +1,16 @@
+{
+  if (!needsUpdate) {
+    return;
+  }
+ else {
+    removeAll();
+    JComponent currentTool=null;
+    Enumeration enum=currentTools.elements();
+    while (enum.hasMoreElements()) {
+      currentTool=(JComponent)enum.nextElement();
+      super.add(currentTool);
+    }
+    validate();
+    needsUpdate=false;
+  }
+}

@@ -1,2 +1,6 @@
 {
+  dw.writeDouble(getAngle());
+  dw.writeDouble(getOuterRadius());
+  dw.writeDouble(getInnerRadius());
+  super.write(dw);
 }

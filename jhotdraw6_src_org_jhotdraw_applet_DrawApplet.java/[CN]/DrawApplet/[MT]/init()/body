@@ -1,18 +1,17 @@
 {
   fIconkit=new Iconkit(this);
-  setLayout(new BorderLayout());
+  getContentPane().setLayout(new BorderLayout());
   fView=createDrawingView();
-  Panel attributes=createAttributesPanel();
+  JPanel attributes=createAttributesPanel();
   createAttributeChoices(attributes);
-  add("North",attributes);
-  Panel toolPanel=createToolPalette();
+  getContentPane().add("North",attributes);
+  JPanel toolPanel=createToolPalette();
   createTools(toolPanel);
-  add("West",toolPanel);
-  add("Center",fView);
-  Panel buttonPalette=createButtonPanel();
+  getContentPane().add("West",toolPanel);
+  getContentPane().add("Center",fView);
+  JPanel buttonPalette=createButtonPanel();
   createButtons(buttonPalette);
-  add("South",buttonPalette);
+  getContentPane().add("South",buttonPalette);
   initDrawing();
-  setBufferedDisplayUpdate();
   setupAttributes();
 }

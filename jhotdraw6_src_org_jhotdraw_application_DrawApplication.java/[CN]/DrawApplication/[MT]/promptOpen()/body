@@ -1,11 +1,14 @@
 {
-  FileDialog dialog=new FileDialog(this,"Open File...",FileDialog.LOAD);
-  dialog.show();
-  String filename=dialog.getFile();
-  if (filename != null) {
-    filename=stripTrailingAsterisks(filename);
-    String dirname=dialog.getDirectory();
-    loadDrawing(dirname + filename);
+  toolDone();
+  JFileChooser openDialog=createOpenFileChooser();
+  getStorageFormatManager().registerFileFilters(openDialog);
+  if (openDialog.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+    StorageFormat foundFormat=getStorageFormatManager().findStorageFormat(openDialog.getFileFilter());
+    if (foundFormat != null) {
+      loadDrawing(foundFormat,openDialog.getSelectedFile().getAbsolutePath());
+    }
+ else {
+      showStatus("Not a valid file format: " + openDialog.getFileFilter().getDescription());
+    }
   }
-  dialog.dispose();
 }

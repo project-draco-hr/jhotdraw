@@ -1,8 +1,14 @@
 {
   toolDone();
-  String path=getSavePath("Save File...");
-  if (path != null) {
-    if (!path.endsWith(".draw"))     path+=".draw";
-    saveAsStorableOutput(path);
+  JFileChooser saveDialog=createSaveFileChooser();
+  getStorageFormatManager().registerFileFilters(saveDialog);
+  if (saveDialog.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+    StorageFormat foundFormat=getStorageFormatManager().findStorageFormat(saveDialog.getFileFilter());
+    if (foundFormat != null) {
+      saveDrawing(foundFormat,saveDialog.getSelectedFile().getAbsolutePath());
+    }
+ else {
+      showStatus("Not a valid file format: " + saveDialog.getFileFilter().getDescription());
+    }
   }
 }

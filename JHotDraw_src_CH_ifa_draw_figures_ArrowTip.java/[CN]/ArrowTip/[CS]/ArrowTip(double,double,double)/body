@@ -1,5 +1,5 @@
 {
-  fAngle=angle;
-  fOuterRadius=outerRadius;
-  fInnerRadius=innerRadius;
+  setAngle(angle);
+  setOuterRadius(outerRadius);
+  setInnerRadius(innerRadius);
 }

@@ -1,5 +1,0 @@
-{
-  if (file.endsWith(".draw"))   return "storable";
-  if (file.endsWith(".ser"))   return "serialized";
-  return "unknown";
-}

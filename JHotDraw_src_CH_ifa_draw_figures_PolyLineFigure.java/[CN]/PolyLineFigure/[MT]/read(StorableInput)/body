@@ -7,7 +7,7 @@
     int y=dr.readInt();
     fPoints.addElement(new Point(x,y));
   }
-  fStartDecoration=(LineDecoration)dr.readStorable();
-  fEndDecoration=(LineDecoration)dr.readStorable();
+  setStartDecoration((LineDecoration)dr.readStorable());
+  setEndDecoration((LineDecoration)dr.readStorable());
   fFrameColor=dr.readColor();
 }

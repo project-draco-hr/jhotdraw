@@ -1,5 +1,5 @@
 {
-  MenuItem m=new MenuItem(command.name());
+  JMenuItem m=new JMenuItem(command.name());
   m.addActionListener(this);
   add(m);
   fCommands.addElement(command);

@@ -7,10 +7,10 @@
     Integer intObj=(Integer)value;
     if (intObj != null) {
       int decoration=intObj.intValue();
-      if ((decoration & ARROW_TIP_START) != 0)       fStartDecoration=new ArrowTip();
- else       fStartDecoration=null;
-      if ((decoration & ARROW_TIP_END) != 0)       fEndDecoration=new ArrowTip();
- else       fEndDecoration=null;
+      if ((decoration & ARROW_TIP_START) != 0)       setStartDecoration(new ArrowTip());
+ else       setStartDecoration(null);
+      if ((decoration & ARROW_TIP_END) != 0)       setEndDecoration(new ArrowTip());
+ else       setEndDecoration(null);
     }
     changed();
   }

@@ -1,8 +1,12 @@
 {
-  clearSelection();
-  if (fDrawing != null)   fDrawing.removeDrawingChangeListener(this);
+  if (fDrawing != null) {
+    clearSelection();
+    fDrawing.removeDrawingChangeListener(this);
+  }
   fDrawing=d;
-  if (fDrawing != null)   fDrawing.addDrawingChangeListener(this);
+  if (fDrawing != null) {
+    fDrawing.addDrawingChangeListener(this);
+  }
   checkMinimumSize();
   repaint();
 }

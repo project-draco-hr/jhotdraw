@@ -1,0 +1,5 @@
+{
+  Object cloneObject=super.clone();
+  ((GraphicalCompositeFigure)cloneObject).initialize();
+  return cloneObject;
+}

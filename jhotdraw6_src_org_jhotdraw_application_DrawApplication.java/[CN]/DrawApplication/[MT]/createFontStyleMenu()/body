@@ -1,7 +1,7 @@
 {
   CommandMenu menu=new CommandMenu("Font Style");
-  menu.add(new ChangeAttributeCommand("Plain","FontStyle",new Integer(Font.PLAIN),fView));
-  menu.add(new ChangeAttributeCommand("Italic","FontStyle",new Integer(Font.ITALIC),fView));
-  menu.add(new ChangeAttributeCommand("Bold","FontStyle",new Integer(Font.BOLD),fView));
+  menu.add(new ChangeAttributeCommand("Plain","FontStyle",new Integer(Font.PLAIN),view()));
+  menu.add(new ChangeAttributeCommand("Italic","FontStyle",new Integer(Font.ITALIC),view()));
+  menu.add(new ChangeAttributeCommand("Bold","FontStyle",new Integer(Font.BOLD),view()));
   return menu;
 }

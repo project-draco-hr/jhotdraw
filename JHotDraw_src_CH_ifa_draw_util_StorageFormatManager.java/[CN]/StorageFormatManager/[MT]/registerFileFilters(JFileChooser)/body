@@ -1,0 +1,9 @@
+{
+  Iterator formatsIterator=myStorageFormats.iterator();
+  while (formatsIterator.hasNext()) {
+    fileChooser.addChoosableFileFilter(((StorageFormat)formatsIterator.next()).getFileFilter());
+  }
+  if (getDefaultStorageFormat() != null) {
+    fileChooser.setFileFilter(getDefaultStorageFormat().getFileFilter());
+  }
+}

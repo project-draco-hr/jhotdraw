@@ -1,5 +1,5 @@
 {
   fView.setDisplayUpdate(new BufferedUpdateStrategy());
-  fUpdateButton.setLabel("Buffered Update");
+  fUpdateButton.setText("Buffered Update");
   fSimpleUpdate=false;
 }

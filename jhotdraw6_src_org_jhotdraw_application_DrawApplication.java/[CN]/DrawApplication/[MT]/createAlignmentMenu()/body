@@ -1,13 +1,13 @@
 {
   CommandMenu menu=new CommandMenu("Align");
-  menu.add(new ToggleGridCommand("Toggle Snap to Grid",fView,new Point(4,4)));
+  menu.add(new ToggleGridCommand("Toggle Snap to Grid",view(),new Point(4,4)));
   menu.addSeparator();
-  menu.add(new AlignCommand("Lefts",fView,AlignCommand.LEFTS));
-  menu.add(new AlignCommand("Centers",fView,AlignCommand.CENTERS));
-  menu.add(new AlignCommand("Rights",fView,AlignCommand.RIGHTS));
+  menu.add(new AlignCommand("Lefts",view(),AlignCommand.LEFTS));
+  menu.add(new AlignCommand("Centers",view(),AlignCommand.CENTERS));
+  menu.add(new AlignCommand("Rights",view(),AlignCommand.RIGHTS));
   menu.addSeparator();
-  menu.add(new AlignCommand("Tops",fView,AlignCommand.TOPS));
-  menu.add(new AlignCommand("Middles",fView,AlignCommand.MIDDLES));
-  menu.add(new AlignCommand("Bottoms",fView,AlignCommand.BOTTOMS));
+  menu.add(new AlignCommand("Tops",view(),AlignCommand.TOPS));
+  menu.add(new AlignCommand("Middles",view(),AlignCommand.MIDDLES));
+  menu.add(new AlignCommand("Bottoms",view(),AlignCommand.BOTTOMS));
   return menu;
 }

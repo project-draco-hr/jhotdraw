@@ -1,3 +1,5 @@
 {
   fFigures=new Vector();
+  _nLowestZ=0;
+  _nHighestZ=0;
 }

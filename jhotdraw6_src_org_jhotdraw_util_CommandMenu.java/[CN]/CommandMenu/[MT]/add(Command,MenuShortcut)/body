@@ -1,5 +1,5 @@
 {
-  MenuItem m=new MenuItem(command.name(),shortcut);
+  JMenuItem m=new JMenuItem(command.name(),shortcut.getKey());
   m.setName(command.name());
   m.addActionListener(this);
   add(m);

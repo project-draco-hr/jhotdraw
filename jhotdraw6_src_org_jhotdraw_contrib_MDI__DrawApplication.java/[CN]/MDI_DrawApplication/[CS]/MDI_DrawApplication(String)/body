@@ -1,0 +1,7 @@
+{
+  super(title);
+  setDesktop(new JDesktopPane());
+  getDesktop().setAlignmentX(LEFT_ALIGNMENT);
+  mdiListeners=new Vector();
+  addInternalFrameListener(this);
+}

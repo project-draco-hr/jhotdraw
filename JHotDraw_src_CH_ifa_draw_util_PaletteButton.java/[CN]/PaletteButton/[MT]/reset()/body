@@ -1,4 +1,5 @@
 {
   fState=NORMAL;
+  setSelected(false);
   repaint();
 }

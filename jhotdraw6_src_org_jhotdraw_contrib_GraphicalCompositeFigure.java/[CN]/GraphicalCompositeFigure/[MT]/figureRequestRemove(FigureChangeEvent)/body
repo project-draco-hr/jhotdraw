@@ -1,0 +1,10 @@
+{
+  if (listener() != null) {
+    if (includes(e.getFigure())) {
+      listener().figureRequestRemove(new FigureChangeEvent(e.getFigure(),e.getInvalidatedRectangle()));
+    }
+ else {
+      super.figureRequestRemove(e);
+    }
+  }
+}

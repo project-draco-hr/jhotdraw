@@ -1,0 +1,8 @@
+{
+  try {
+    setDrawingTitle(storeFormat.store(file,drawing()));
+  }
+ catch (  IOException e) {
+    showStatus(e.toString());
+  }
+}

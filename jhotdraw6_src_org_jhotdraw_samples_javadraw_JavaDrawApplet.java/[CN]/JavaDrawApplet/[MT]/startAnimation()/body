@@ -2,6 +2,6 @@
   if (drawing() instanceof Animatable && fAnimator == null) {
     fAnimator=new Animator((Animatable)drawing(),view());
     fAnimator.start();
-    fAnimationButton.setLabel("End Animation");
+    fAnimationButton.setText("End Animation");
   }
 }

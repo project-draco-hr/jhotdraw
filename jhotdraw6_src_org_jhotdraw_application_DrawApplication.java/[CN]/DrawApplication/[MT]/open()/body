@@ -1,20 +1,35 @@
 {
   fIconkit=new Iconkit(this);
-  setLayout(new BorderLayout());
+  getContentPane().setLayout(new BorderLayout());
+  JPanel fullPanel=new JPanel();
+  fullPanel.setLayout(new BoxLayout(fullPanel,BoxLayout.X_AXIS));
   fView=createDrawingView();
-  Component contents=createContents(fView);
-  add("Center",contents);
-  Panel tools=createToolPalette();
+  JComponent contents=createContents((StandardDrawingView)view());
+  contents.setAlignmentX(LEFT_ALIGNMENT);
+  JToolBar tools=createToolPalette();
   createTools(tools);
-  add("West",tools);
+  JPanel activePanel=new JPanel();
+  activePanel.setAlignmentX(LEFT_ALIGNMENT);
+  activePanel.setAlignmentY(TOP_ALIGNMENT);
+  activePanel.setLayout(new BorderLayout());
+  activePanel.add(tools,BorderLayout.NORTH);
+  activePanel.add(contents,BorderLayout.CENTER);
+  fullPanel.add(activePanel);
   fStatusLine=createStatusLine();
-  add("South",fStatusLine);
-  MenuBar mb=new MenuBar();
+  getContentPane().add(fullPanel,BorderLayout.CENTER);
+  getContentPane().add(fStatusLine,BorderLayout.SOUTH);
+  JMenuBar mb=new JMenuBar();
   createMenus(mb);
-  setMenuBar(mb);
+  setJMenuBar(mb);
   initDrawing();
   Dimension d=defaultSize();
-  setSize(d.width,d.height);
+  if (d.width > mb.getPreferredSize().width) {
+    setSize(d.width,d.height);
+  }
+ else {
+    setSize(mb.getPreferredSize().width,d.height);
+  }
   addListeners();
-  show();
+  setVisible(true);
+  fStorageFormatManager=createStorageFormatManager();
 }

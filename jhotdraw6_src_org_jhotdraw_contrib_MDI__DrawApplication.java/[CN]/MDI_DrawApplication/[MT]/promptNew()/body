@@ -1,0 +1,8 @@
+{
+  if (hasInternalFrames()) {
+    super.promptNew();
+  }
+ else {
+    newWindow();
+  }
+}

@@ -1,0 +1,7 @@
+{
+  StorageFormatManager storageFormatManager=new StorageFormatManager();
+  storageFormatManager.setDefaultStorageFormat(new StandardStorageFormat());
+  storageFormatManager.addStorageFormat(storageFormatManager.getDefaultStorageFormat());
+  storageFormatManager.addStorageFormat(new SerializationStorageFormat());
+  return storageFormatManager;
+}

@@ -13,8 +13,8 @@
     arrowMode=(Integer)f.getAttribute("ArrowMode");
     fontName=(String)f.getAttribute("FontName");
   }
-  fFrameColor.select(ColorMap.colorIndex(frameColor));
-  fFillColor.select(ColorMap.colorIndex(fillColor));
-  if (arrowMode != null)   fArrowChoice.select(arrowMode.intValue());
-  if (fontName != null)   fFontChoice.select(fontName);
+  fFrameColor.setSelectedIndex(ColorMap.colorIndex(frameColor));
+  fFillColor.setSelectedIndex(ColorMap.colorIndex(fillColor));
+  if (arrowMode != null)   fArrowChoice.setSelectedIndex(arrowMode.intValue());
+  if (fontName != null)   fFontChoice.setSelectedItem(fontName);
 }

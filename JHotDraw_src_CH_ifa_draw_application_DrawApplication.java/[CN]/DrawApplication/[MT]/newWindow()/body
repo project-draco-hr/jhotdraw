@@ -1,0 +1,4 @@
+{
+  DrawApplication window=createApplication();
+  window.open();
+}

@@ -1,0 +1,9 @@
+{
+  fDrawingFilename=drawingTitle;
+  if (fgUntitled.equals(drawingTitle)) {
+    setTitle(getApplicationName());
+  }
+ else {
+    setTitle(getApplicationName() + " - " + drawingTitle);
+  }
+}

@@ -1,7 +1,7 @@
 {
-  setLayout(new BorderLayout());
+  getContentPane().setLayout(new BorderLayout());
   fView=new StandardDrawingView(this,400,370);
-  add("Center",fView);
+  getContentPane().add("Center",fView);
   fTool=new FollowURLTool(view(),this);
   fIconkit=new Iconkit(this);
   String filename=getParameter("Drawing");

@@ -1,5 +1,5 @@
 {
-  MenuBar mb=getMenuBar();
+  JMenuBar mb=getJMenuBar();
   CommandMenu editMenu=(CommandMenu)mb.getMenu(EDIT_MENU);
   editMenu.checkEnabled();
   CommandMenu alignmentMenu=(CommandMenu)mb.getMenu(ALIGNMENT_MENU);

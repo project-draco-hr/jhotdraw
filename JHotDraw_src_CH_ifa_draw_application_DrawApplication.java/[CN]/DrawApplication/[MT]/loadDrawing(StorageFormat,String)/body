@@ -1,0 +1,16 @@
+{
+  try {
+    Drawing restoredDrawing=restoreFormat.restore(file);
+    if (restoredDrawing != null) {
+      newWindow();
+      setDrawing(restoredDrawing);
+      setDrawingTitle(file);
+    }
+ else {
+      showStatus("Unknown file type: could not open file '" + file + "'");
+    }
+  }
+ catch (  IOException e) {
+    showStatus("Error: " + e);
+  }
+}

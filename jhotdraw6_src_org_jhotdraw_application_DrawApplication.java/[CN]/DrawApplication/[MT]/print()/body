@@ -1,13 +1,13 @@
 {
-  fTool.deactivate();
+  tool().deactivate();
   PrintJob printJob=getToolkit().getPrintJob(this,"Print Drawing",null);
   if (printJob != null) {
     Graphics pg=printJob.getGraphics();
     if (pg != null) {
-      fView.printAll(pg);
+      ((StandardDrawingView)view()).printAll(pg);
       pg.dispose();
     }
     printJob.end();
   }
-  fTool.activate();
+  tool().activate();
 }

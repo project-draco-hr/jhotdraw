@@ -1,0 +1,7 @@
+{
+  super();
+  standardTools=new Vector();
+  editTools=new Vector();
+  currentTools=standardTools;
+  needsUpdate=false;
+}

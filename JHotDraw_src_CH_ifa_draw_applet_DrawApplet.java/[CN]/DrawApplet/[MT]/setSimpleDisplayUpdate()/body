@@ -1,5 +1,5 @@
 {
   fView.setDisplayUpdate(new SimpleUpdateStrategy());
-  fUpdateButton.setLabel("Simple Update");
+  fUpdateButton.setText("Simple Update");
   fSimpleUpdate=true;
 }

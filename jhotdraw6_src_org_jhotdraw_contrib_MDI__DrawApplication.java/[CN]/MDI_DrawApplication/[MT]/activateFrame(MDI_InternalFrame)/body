@@ -1,0 +1,14 @@
+{
+  if (currentFrame != newFrame) {
+    if (newFrame.getDrawingView().drawing() != null) {
+      newFrame.getDrawingView().unfreezeView();
+    }
+    backupDrawingView.setDrawing(view().drawing());
+    currentFrame.replaceDrawingView(backupDrawingView);
+    currentFrame.validate();
+    currentFrame.getDrawingView().freezeView();
+    setDrawing(newFrame.getDrawingView().drawing());
+    backupDrawingView=newFrame.replaceDrawingView((StandardDrawingView)view());
+    currentFrame=newFrame;
+  }
+}

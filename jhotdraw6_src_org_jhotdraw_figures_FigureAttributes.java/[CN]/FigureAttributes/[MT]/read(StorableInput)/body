@@ -12,6 +12,9 @@
  else     if (valtype.equals("String"))     val=dr.readString();
  else     if (valtype.equals("Int"))     val=new Integer(dr.readInt());
  else     if (valtype.equals("Storable"))     val=dr.readStorable();
+ else     if (valtype.equals(Figure.POPUP_MENU)) {
+      continue;
+    }
  else     if (valtype.equals("UNKNOWN"))     continue;
     fMap.put(key,val);
   }

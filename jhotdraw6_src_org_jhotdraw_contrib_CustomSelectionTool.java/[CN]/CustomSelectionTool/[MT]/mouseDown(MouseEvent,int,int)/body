@@ -1,0 +1,9 @@
+{
+  if (e.isPopupTrigger()) {
+    handlePopupMenu(e,x,y);
+  }
+ else {
+    super.mouseDown(e,x,y);
+    handleMouseDown(e,x,y);
+  }
+}

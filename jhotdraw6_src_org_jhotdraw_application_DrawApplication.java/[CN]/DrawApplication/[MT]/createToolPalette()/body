@@ -1,6 +1,5 @@
 {
-  Panel palette=new Panel();
+  JToolBar palette=new JToolBar();
   palette.setBackground(Color.lightGray);
-  palette.setLayout(new PaletteLayout(2,new Point(2,2)));
   return palette;
 }

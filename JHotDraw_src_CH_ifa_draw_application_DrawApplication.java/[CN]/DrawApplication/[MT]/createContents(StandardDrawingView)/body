@@ -1,9 +1,6 @@
 {
-  ScrollPane sp=new ScrollPane();
-  Adjustable vadjust=sp.getVAdjustable();
-  Adjustable hadjust=sp.getHAdjustable();
-  hadjust.setUnitIncrement(16);
-  vadjust.setUnitIncrement(16);
-  sp.add(view);
+  JScrollPane sp=new JScrollPane(view);
+  sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+  sp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
   return sp;
 }

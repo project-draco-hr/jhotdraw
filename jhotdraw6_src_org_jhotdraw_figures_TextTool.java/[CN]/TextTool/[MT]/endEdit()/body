@@ -1,8 +1,10 @@
 {
-  if (fTypingTarget != null) {
-    if (fTextField.getText().length() > 0)     fTypingTarget.setText(fTextField.getText());
- else     drawing().remove((Figure)fTypingTarget);
-    fTypingTarget=null;
+  if (getTypingTarget() != null) {
+    if (fTextField.getText().length() > 0)     getTypingTarget().setText(fTextField.getText());
+ else {
+      drawing().remove((Figure)getTypingTarget());
+    }
+    setTypingTarget(null);
     fTextField.endOverlay();
     view().checkDamage();
   }

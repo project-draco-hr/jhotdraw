@@ -1,0 +1,16 @@
+{
+  createLeftComponent(view);
+  createRightComponent(view);
+  if ((getLeftComponent() == null) && (getRightComponent() == null)) {
+    return super.createContents(view);
+  }
+ else   if (getLeftComponent() == null) {
+    return getRightComponent();
+  }
+ else   if (getRightComponent() == null) {
+    return getLeftComponent();
+  }
+ else {
+    return createSplitPane(view);
+  }
+}

@@ -1,0 +1,4 @@
+{
+  getPresentationFigure().draw(g);
+  super.draw(g);
+}

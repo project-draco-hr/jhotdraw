@@ -1,0 +1,14 @@
+{
+  Object attribute=figure.getAttribute(Figure.POPUP_MENU);
+  if ((attribute != null) && (attribute instanceof JPopupMenu)) {
+    JPopupMenu popup=(JPopupMenu)attribute;
+    if (popup instanceof PopupMenuFigureSelection) {
+      ((PopupMenuFigureSelection)popup).setSelectedFigure(figure);
+    }
+    Point newLocation=new Point(x,y);
+    adjustOffsets(comp.getParent(),newLocation);
+    popup.setLocation(newLocation);
+    popup.setInvoker(comp);
+    popup.setVisible(true);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  mdiListeners.addElement(newMDIListener);
+}

@@ -1,7 +1,0 @@
-{
-  toolDone();
-  String type=guessType(file);
-  if (type.equals("storable"))   readFromStorableInput(file);
- else   if (type.equals("serialized"))   readFromObjectInput(file);
- else   showStatus("Unknown file type");
-}

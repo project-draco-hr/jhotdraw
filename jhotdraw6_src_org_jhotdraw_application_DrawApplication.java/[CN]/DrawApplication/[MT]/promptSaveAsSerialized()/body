@@ -1,8 +1,0 @@
-{
-  toolDone();
-  String path=getSavePath("Save File...");
-  if (path != null) {
-    if (!path.endsWith(".ser"))     path+=".ser";
-    saveAsObjectOutput(path);
-  }
-}

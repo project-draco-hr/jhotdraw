@@ -1,0 +1,3 @@
+{
+  setLeftComponent(new JScrollPane(new JList()));
+}

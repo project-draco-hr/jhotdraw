@@ -5,9 +5,7 @@
     figure.removeFromContainer(this);
   }
   fFigures.removeAllElements();
-  if (_theQuadTree != null) {
-    _theQuadTree.clear();
-  }
+  _clearQuadTree();
   _nLowestZ=0;
   _nHighestZ=0;
 }

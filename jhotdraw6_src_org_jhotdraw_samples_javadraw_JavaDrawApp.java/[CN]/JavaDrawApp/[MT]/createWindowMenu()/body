@@ -1,9 +1,17 @@
 {
-  Menu menu=new Menu("Window");
-  MenuItem mi=new MenuItem("New Window");
+  JMenu menu=new JMenu("Window");
+  JMenuItem mi=new JMenuItem("New View");
   mi.addActionListener(new ActionListener(){
     public void actionPerformed(    ActionEvent event){
-      openView();
+      newView();
+    }
+  }
+);
+  menu.add(mi);
+  mi=new JMenuItem("New Window");
+  mi.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent event){
+      newWindow();
     }
   }
 );

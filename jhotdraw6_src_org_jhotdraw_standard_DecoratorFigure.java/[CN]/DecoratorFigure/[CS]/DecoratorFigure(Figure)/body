@@ -1,3 +1,4 @@
 {
+  initialize();
   decorate(figure);
 }

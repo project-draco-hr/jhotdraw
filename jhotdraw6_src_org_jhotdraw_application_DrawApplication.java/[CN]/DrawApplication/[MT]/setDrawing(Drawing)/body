@@ -1,4 +1,4 @@
 {
-  fView.setDrawing(drawing);
+  view().setDrawing(drawing);
   fDrawing=drawing;
 }

@@ -1,0 +1,11 @@
+{
+  Iterator formatsIterator=myStorageFormats.iterator();
+  StorageFormat currentStorageFormat=null;
+  while (formatsIterator.hasNext()) {
+    currentStorageFormat=(StorageFormat)formatsIterator.next();
+    if (currentStorageFormat.getFileFilter().equals(findFileFilter)) {
+      return currentStorageFormat;
+    }
+  }
+  return null;
+}

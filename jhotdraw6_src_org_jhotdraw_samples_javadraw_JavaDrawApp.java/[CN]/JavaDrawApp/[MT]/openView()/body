@@ -1,6 +1,0 @@
-{
-  JavaDrawApp window=new JavaDrawApp();
-  window.open();
-  window.setDrawing(drawing());
-  window.setTitle("JHotDraw (View)");
-}

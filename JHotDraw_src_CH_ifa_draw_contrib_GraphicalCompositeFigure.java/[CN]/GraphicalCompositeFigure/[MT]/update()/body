@@ -1,0 +1,6 @@
+{
+  willChange();
+  layout();
+  change();
+  changed();
+}

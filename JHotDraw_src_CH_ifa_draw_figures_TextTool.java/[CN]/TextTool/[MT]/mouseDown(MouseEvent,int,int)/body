@@ -1,7 +1,6 @@
 {
-  Figure pressedFigure;
   TextHolder textHolder=null;
-  pressedFigure=drawing().findFigureInside(x,y);
+  Figure pressedFigure=drawing().findFigureInside(x,y);
   if (pressedFigure instanceof TextHolder) {
     textHolder=(TextHolder)pressedFigure;
     if (!textHolder.acceptsTyping())     textHolder=null;
@@ -10,7 +9,7 @@
     beginEdit(textHolder);
     return;
   }
-  if (fTypingTarget != null) {
+  if (getTypingTarget() != null) {
     editor().toolDone();
     endEdit();
   }

@@ -1,8 +1,8 @@
 {
   CommandMenu menu=new CommandMenu("Arrow");
-  menu.add(new ChangeAttributeCommand("none","ArrowMode",new Integer(PolyLineFigure.ARROW_TIP_NONE),fView));
-  menu.add(new ChangeAttributeCommand("at Start","ArrowMode",new Integer(PolyLineFigure.ARROW_TIP_START),fView));
-  menu.add(new ChangeAttributeCommand("at End","ArrowMode",new Integer(PolyLineFigure.ARROW_TIP_END),fView));
-  menu.add(new ChangeAttributeCommand("at Both","ArrowMode",new Integer(PolyLineFigure.ARROW_TIP_BOTH),fView));
+  menu.add(new ChangeAttributeCommand("none","ArrowMode",new Integer(PolyLineFigure.ARROW_TIP_NONE),view()));
+  menu.add(new ChangeAttributeCommand("at Start","ArrowMode",new Integer(PolyLineFigure.ARROW_TIP_START),view()));
+  menu.add(new ChangeAttributeCommand("at End","ArrowMode",new Integer(PolyLineFigure.ARROW_TIP_END),view()));
+  menu.add(new ChangeAttributeCommand("at Both","ArrowMode",new Integer(PolyLineFigure.ARROW_TIP_BOTH),view()));
   return menu;
 }

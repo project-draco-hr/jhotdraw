@@ -1,5 +1,5 @@
 {
-  Menu menu=new Menu("Attributes");
+  JMenu menu=new JMenu("Attributes");
   menu.add(createColorMenu("Fill Color","FillColor"));
   menu.add(createColorMenu("Pen Color","FrameColor"));
   menu.add(createArrowMenu());

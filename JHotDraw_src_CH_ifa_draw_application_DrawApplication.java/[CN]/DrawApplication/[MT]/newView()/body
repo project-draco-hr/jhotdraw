@@ -1,0 +1,6 @@
+{
+  DrawApplication window=createApplication();
+  window.open();
+  window.setDrawing(drawing());
+  window.setDrawingTitle(getDrawingTitle() + " (View)");
+}

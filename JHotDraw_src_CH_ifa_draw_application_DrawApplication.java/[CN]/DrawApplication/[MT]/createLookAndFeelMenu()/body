@@ -1,0 +1,17 @@
+{
+  JMenu menu=new JMenu("Look'n'Feel");
+  UIManager.LookAndFeelInfo[] lafs=UIManager.getInstalledLookAndFeels();
+  JMenuItem mi=null;
+  for (int i=0; i < lafs.length; i++) {
+    mi=new JMenuItem(lafs[i].getName());
+    final String lnfClassName=lafs[i].getClassName();
+    mi.addActionListener(new ActionListener(){
+      public void actionPerformed(      ActionEvent event){
+        newLookAndFeel(lnfClassName);
+      }
+    }
+);
+    menu.add(mi);
+  }
+  return menu;
+}
