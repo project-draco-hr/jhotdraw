@@ -5,10 +5,10 @@
   for (int i=listeners.length - 2; i >= 0; i-=2) {
     if (listeners[i] == DesktopListener.class) {
       if (dpe == null) {
-        dpe=createDesktopEvent(dv);
+        dpe=new DesktopEvent(MDIDesktopPane.this,newView);
       }
       dpl=(DesktopListener)listeners[i + 1];
-      dpl.drawingViewSelected(dpe);
+      dpl.drawingViewSelected(oldView,dpe);
     }
   }
 }

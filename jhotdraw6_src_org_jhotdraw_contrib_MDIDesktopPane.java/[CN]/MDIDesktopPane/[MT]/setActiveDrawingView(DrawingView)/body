@@ -1,3 +1,5 @@
 {
+  DrawingView oldSelectedView=selectedView;
   selectedView=newSelectedView;
+  fireDrawingViewSelectedEvent(oldSelectedView,newSelectedView);
 }
