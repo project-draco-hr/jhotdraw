@@ -1,0 +1,7 @@
+{
+  super.write(dw);
+  dw.writeBoolean((fURL != null));
+  if (fURL != null) {
+    dw.writeString(fURL.toExternalForm());
+  }
+}

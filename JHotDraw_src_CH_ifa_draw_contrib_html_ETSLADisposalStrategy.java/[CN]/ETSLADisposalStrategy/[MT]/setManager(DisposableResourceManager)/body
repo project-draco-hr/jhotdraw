@@ -1,0 +1,6 @@
+{
+  if (manager == null) {
+    stopDisposing(Long.MAX_VALUE);
+  }
+  this.manager=manager;
+}

@@ -1,6 +1,6 @@
 {
-  if (fDamage != null) {
-    repaint(fDamage.x,fDamage.y,fDamage.width,fDamage.height);
-    fDamage=null;
+  if (getDamage() != null) {
+    repaint(getDamage().x,getDamage().y,getDamage().width,getDamage().height);
+    setDamage(null);
   }
 }

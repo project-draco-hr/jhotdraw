@@ -1,0 +1,7 @@
+{
+  super.write(dw);
+  dw.writeBoolean((fColor != null));
+  if (fColor != null) {
+    dw.writeInt(fColor.getRGB());
+  }
+}

@@ -5,7 +5,7 @@
   if (figure != getTypingTarget() && getTypingTarget() != null) {
     endEdit();
   }
-  fTextField.createOverlay((Container)view(),figure.getFont());
+  fTextField.createOverlay((Container)view(),getFont(figure));
   fTextField.setBounds(fieldBounds(figure),figure.getText());
   setTypingTarget(figure);
   setEditedFigure(selectedFigure);

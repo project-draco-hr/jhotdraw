@@ -1,0 +1,6 @@
+{
+  super.write(dw);
+  dw.writeStorable(getFrameFigure());
+  dw.writeBoolean(usesDirectDraw());
+  dw.writeBoolean(isRawHTML());
+}

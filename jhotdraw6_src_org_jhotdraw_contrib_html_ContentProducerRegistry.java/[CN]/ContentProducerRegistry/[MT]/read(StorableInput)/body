@@ -1,0 +1,14 @@
+{
+  int prodCount=dr.readInt();
+  String prodClass;
+  ContentProducer producer;
+  for (int cnt=0; cnt < prodCount; cnt++) {
+    prodClass=dr.readString();
+    producer=(ContentProducer)dr.readStorable();
+    try {
+      registerContentProducer(Class.forName(prodClass),producer);
+    }
+ catch (    ClassNotFoundException ex) {
+    }
+  }
+}

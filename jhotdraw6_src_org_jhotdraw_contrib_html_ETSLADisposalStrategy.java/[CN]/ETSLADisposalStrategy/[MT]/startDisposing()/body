@@ -1,0 +1,10 @@
+{
+  if (manager == null) {
+    throw new ResourceManagerNotSetException();
+  }
+  if (disposingActive) {
+    return;
+  }
+  disposingActive=true;
+  disposalThread.start();
+}

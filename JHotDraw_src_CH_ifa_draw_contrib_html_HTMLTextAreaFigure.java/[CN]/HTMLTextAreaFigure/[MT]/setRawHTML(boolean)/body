@@ -1,0 +1,4 @@
+{
+  fRawHTML=newRawHTML;
+  setAttribute(Figure.POPUP_MENU,createPopupMenu());
+}

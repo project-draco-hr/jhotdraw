@@ -2,6 +2,7 @@
   super.read(dr);
   markSizeDirty();
   markTextDirty();
+  markFontDirty();
   fDisplayBox.x=dr.readInt();
   fDisplayBox.y=dr.readInt();
   fDisplayBox.width=dr.readInt();

@@ -1,0 +1,13 @@
+{
+  float leftMargin=((Float)getAttribute("LeftMargin")).floatValue();
+  float rightMargin=((Float)getAttribute("RightMargin")).floatValue();
+  float topMargin=((Float)getAttribute("TopMargin")).floatValue();
+  float bottomMargin=((Float)getAttribute("BottomMargin")).floatValue();
+  Rectangle drawingBox=new Rectangle(displayBox);
+  drawingBox.grow(-1,-1);
+  drawingBox.x+=leftMargin;
+  drawingBox.width-=(leftMargin + rightMargin);
+  drawingBox.y+=topMargin;
+  drawingBox.height-=topMargin + bottomMargin;
+  return drawingBox;
+}

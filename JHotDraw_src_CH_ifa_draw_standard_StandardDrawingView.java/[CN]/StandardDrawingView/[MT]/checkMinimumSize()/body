@@ -1,11 +1,5 @@
 {
-  FigureEnumeration k=drawing().figures();
-  Dimension d=new Dimension(0,0);
-  while (k.hasMoreElements()) {
-    Rectangle r=k.nextFigure().displayBox();
-    d.width=Math.max(d.width,r.x + r.width);
-    d.height=Math.max(d.height,r.y + r.height);
-  }
+  Dimension d=getDrawingSize();
   if (fViewSize.height < d.height || fViewSize.width < d.width) {
     fViewSize.height=d.height + SCROLL_OFFSET;
     fViewSize.width=d.width + SCROLL_OFFSET;

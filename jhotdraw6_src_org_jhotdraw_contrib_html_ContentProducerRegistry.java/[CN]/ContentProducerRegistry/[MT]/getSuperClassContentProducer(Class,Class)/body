@@ -1,0 +1,23 @@
+{
+  Map.Entry entry;
+  Class entryClass;
+  ContentProducer closestProducer=null;
+  Iterator iter=fContentProducers.entrySet().iterator();
+  while (iter.hasNext()) {
+    entry=(Map.Entry)iter.next();
+    entryClass=(Class)entry.getKey();
+    if (entryClass.isAssignableFrom(targetClass)) {
+      if (closestClass != null && closestClass.isAssignableFrom(entryClass)) {
+        closestClass=entryClass;
+        closestProducer=(ContentProducer)entry.getValue();
+      }
+    }
+  }
+  if (!this.isAutonomous()) {
+    ContentProducer parentProducer=getParent().getSuperClassContentProducer(targetClass,closestClass);
+    if (parentProducer != null) {
+      closestProducer=parentProducer;
+    }
+  }
+  return closestProducer;
+}

@@ -1,0 +1,4 @@
+{
+  resetDelay();
+  isLocked=false;
+}

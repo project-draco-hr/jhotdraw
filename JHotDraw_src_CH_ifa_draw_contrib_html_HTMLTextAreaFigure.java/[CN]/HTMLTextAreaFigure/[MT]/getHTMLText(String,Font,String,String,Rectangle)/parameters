@@ -1,0 +1,5 @@
+String text
+Font font
+String textColor
+String backColor
+Rectangle displayBox

@@ -1,0 +1,4 @@
+{
+  String colorCode=Integer.toHexString(color.getRGB());
+  return "#" + colorCode.substring(colorCode.length() - 6);
+}

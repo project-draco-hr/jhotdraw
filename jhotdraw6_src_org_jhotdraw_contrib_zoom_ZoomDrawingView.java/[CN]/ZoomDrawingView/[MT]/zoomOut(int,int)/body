@@ -2,7 +2,7 @@
   if (hasZoomSupport()) {
     Dimension viewportSize=getViewportSize();
     Dimension userSize=getUserSize();
-    this.scale=getScale() / 2.0;
+    this.scale=getScale() / getZoomSpeed();
     int xScreen=(int)(x * getScale());
     int yScreen=(int)(y * getScale());
     int xOrigin=xScreen - viewportSize.width / 2;

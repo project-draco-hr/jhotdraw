@@ -1,0 +1,7 @@
+{
+  super.read(dr);
+  boolean hasURL=dr.readBoolean();
+  if (hasURL) {
+    fURL=new URL(dr.readString());
+  }
+}

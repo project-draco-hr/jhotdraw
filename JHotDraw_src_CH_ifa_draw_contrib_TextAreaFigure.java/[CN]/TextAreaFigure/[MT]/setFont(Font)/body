@@ -2,7 +2,7 @@
   willChange();
   fFont=newFont;
   markSizeDirty();
-  fFontIsDirty=true;
+  markFontDirty();
   attributesMap=new Hashtable(1);
   attributesMap.put(TextAttribute.FONT,newFont);
   changed();

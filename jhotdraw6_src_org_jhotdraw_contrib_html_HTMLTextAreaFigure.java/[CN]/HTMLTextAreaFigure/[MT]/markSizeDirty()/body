@@ -1,0 +1,4 @@
+{
+  markImageDirty();
+  super.markSizeDirty();
+}

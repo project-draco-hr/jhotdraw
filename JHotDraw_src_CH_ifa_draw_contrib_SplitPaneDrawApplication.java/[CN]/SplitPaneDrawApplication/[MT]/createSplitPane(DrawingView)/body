@@ -2,5 +2,7 @@
   JSplitPane dividedContents=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,getLeftComponent(),getRightComponent());
   dividedContents.setAlignmentX(JSplitPane.LEFT_ALIGNMENT);
   dividedContents.setOneTouchExpandable(true);
+  dividedContents.addPropertyChangeListener(myPropertyChangeListener);
+  dividedContents.setDividerLocation(150);
   return dividedContents;
 }

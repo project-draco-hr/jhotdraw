@@ -1,0 +1,8 @@
+{
+  double scaleX=((double)getWidth()) / ((double)mappedComponent.getWidth());
+  double scaleY=((double)getHeight()) / ((double)mappedComponent.getHeight());
+  AffineTransform at=null;
+  at=getInverseSubjectTransform();
+  at.concatenate(AffineTransform.getScaleInstance(scaleX,scaleY));
+  return at;
+}

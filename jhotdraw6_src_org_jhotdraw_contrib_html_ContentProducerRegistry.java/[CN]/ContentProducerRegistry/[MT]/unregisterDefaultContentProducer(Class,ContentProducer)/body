@@ -1,0 +1,3 @@
+{
+  fDefaultRegistry.unregisterContentProducer(targetClass,producer);
+}

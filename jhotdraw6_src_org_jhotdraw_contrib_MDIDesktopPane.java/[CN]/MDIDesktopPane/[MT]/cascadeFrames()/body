@@ -2,6 +2,9 @@
   int x=0;
   int y=0;
   JInternalFrame allFrames[]=getAllFrames();
+  if (allFrames.length == 0) {
+    return;
+  }
   manager.setNormalSize();
   int frameHeight=(getBounds().height - 5) - allFrames.length * FRAME_OFFSET;
   int frameWidth=(getBounds().width - 5) - allFrames.length * FRAME_OFFSET;

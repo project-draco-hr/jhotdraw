@@ -1,0 +1,5 @@
+{
+  this.manager=manager;
+  gcPeriodicity=periodicity;
+  initDisposalThread();
+}

@@ -1,0 +1,4 @@
+{
+  super(command.name(),icon);
+  setCommand(command);
+}

@@ -1,0 +1,4 @@
+{
+  gcPeriodicity=periodicity;
+  initDisposalThread();
+}

@@ -1,3 +1,10 @@
 {
   super(title);
+  myPropertyChangeListener=new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      getRightComponent().repaint();
+      getLeftComponent().repaint();
+    }
+  }
+;
 }

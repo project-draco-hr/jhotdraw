@@ -15,7 +15,7 @@
       ((ZoomDrawingView)view()).zoomIn(x,y);
     }
  else     if ((e.getModifiers() & InputEvent.CTRL_MASK) != 0) {
-      ((ZoomDrawingView)view()).zoomOut(x,y);
+      ((ZoomDrawingView)view()).deZoom(x,y);
     }
  else {
       ((ZoomDrawingView)view()).zoomOut(x,y);

@@ -3,9 +3,10 @@
   counter++;
   fEditor=editor;
   fViewSize=new Dimension(width,height);
+  setSize(width,height);
   fSelectionListeners=new Vector();
   addFigureSelectionListener(editor());
-  fLastClick=new Point(0,0);
+  setLastClick(new Point(0,0));
   fConstrainer=null;
   fSelection=new Vector();
   setDisplayUpdate(createDisplayUpdate());

@@ -1,0 +1,3 @@
+{
+  addMenuItem(new CommandMenuItem(command));
+}

@@ -1,0 +1,4 @@
+{
+  MiniMapApplication window=new MiniMapApplication();
+  window.open();
+}

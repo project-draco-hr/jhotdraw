@@ -2,8 +2,12 @@
   Graphics g=view().getGraphics();
   if (g != null) {
     try {
+      if (g instanceof Graphics2D) {
+        Stroke dashedStroke=new BasicStroke(1.0f,BasicStroke.CAP_SQUARE,BasicStroke.JOIN_MITER,10.0f,new float[]{5f,5f,5f,5f},5.0f);
+        ((Graphics2D)g).setStroke(dashedStroke);
+      }
       g.setXORMode(view().getBackground());
-      g.setColor(Color.black);
+      g.setColor(fRubberBandColor);
       g.drawRect(r.x,r.y,r.width,r.height);
     }
   finally {

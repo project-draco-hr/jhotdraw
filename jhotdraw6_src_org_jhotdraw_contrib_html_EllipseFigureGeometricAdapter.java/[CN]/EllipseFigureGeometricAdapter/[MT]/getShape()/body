@@ -1,0 +1,5 @@
+{
+  Rectangle rect=displayBox();
+  Ellipse2D.Float ellipse=new Ellipse2D.Float(rect.x,rect.y,rect.width,rect.height);
+  return ellipse;
+}

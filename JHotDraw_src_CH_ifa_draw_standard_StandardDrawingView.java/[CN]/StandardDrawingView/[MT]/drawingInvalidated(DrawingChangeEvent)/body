@@ -1,9 +1,11 @@
 {
   Rectangle r=e.getInvalidatedRectangle();
-  if (fDamage == null) {
-    fDamage=r;
+  if (getDamage() == null) {
+    setDamage(r);
   }
  else {
-    fDamage.add(r);
+    Rectangle damagedR=getDamage();
+    damagedR.add(r);
+    setDamage(damagedR);
   }
 }

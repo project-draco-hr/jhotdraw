@@ -1,0 +1,3 @@
+{
+  return getFrameFigure().containsPoint(x,y);
+}

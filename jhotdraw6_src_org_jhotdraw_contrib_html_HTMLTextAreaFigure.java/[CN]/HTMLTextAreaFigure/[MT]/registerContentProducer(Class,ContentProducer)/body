@@ -1,0 +1,3 @@
+{
+  return fContentProducers.registerContentProducer(targetClass,producer);
+}

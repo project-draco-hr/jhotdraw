@@ -1,0 +1,5 @@
+{
+  fUseDirectDraw=newUseDirectDraw;
+  setAttribute(Figure.POPUP_MENU,createPopupMenu());
+  markSizeDirty();
+}

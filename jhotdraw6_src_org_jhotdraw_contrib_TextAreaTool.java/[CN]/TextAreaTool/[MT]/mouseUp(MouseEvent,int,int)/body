@@ -4,5 +4,10 @@
   }
   view().checkDamage();
   TextHolder textHolder=(TextHolder)getCreatedFigure();
-  beginEdit(textHolder,getCreatedFigure());
+  if (textHolder.acceptsTyping()) {
+    beginEdit(textHolder,getCreatedFigure());
+  }
+ else {
+    editor().toolDone();
+  }
 }

@@ -1,0 +1,8 @@
+{
+  if (!isFontDirty()) {
+    return;
+  }
+  FontMetrics metrics=Toolkit.getDefaultToolkit().getFontMetrics(getFont());
+  fFontWidth=metrics.charWidth('W');
+  setFontDirty(false);
+}

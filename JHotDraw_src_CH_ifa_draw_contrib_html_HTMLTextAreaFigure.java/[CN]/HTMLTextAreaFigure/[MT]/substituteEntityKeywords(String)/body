@@ -1,0 +1,38 @@
+{
+  int startPos;
+  int chunkEnd;
+  int endPos;
+  StringBuffer finalText=new StringBuffer();
+  startPos=0;
+  chunkEnd=startPos;
+  try {
+    while ((startPos=template.indexOf(START_ENTITY_CHAR,startPos)) != -1) {
+      if (startPos != 0 && template.charAt(startPos - 1) == ESCAPE_CHAR) {
+        startPos++;
+        continue;
+      }
+      endPos=startPos + 1;
+      while ((endPos=template.indexOf(END_ENTITY_CHAR,endPos)) != -1) {
+        if (endPos == 0 || template.charAt(endPos - 1) != ESCAPE_CHAR) {
+          break;
+        }
+        throw new InvalidAttributeMarker();
+      }
+      String attrName=template.substring(startPos + 1,endPos);
+      String attrValue=getEntityHTMLRepresentation(attrName);
+      if (attrValue != null) {
+        finalText.append(template.substring(chunkEnd,startPos));
+        finalText.append(substituteEntityKeywords(attrValue));
+        startPos=endPos + 1;
+        chunkEnd=startPos;
+      }
+ else {
+        startPos++;
+      }
+    }
+  }
+ catch (  InvalidAttributeMarker ex) {
+  }
+  finalText.append(template.substring(chunkEnd));
+  return finalText.toString();
+}

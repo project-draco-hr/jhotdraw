@@ -1,0 +1,4 @@
+{
+  super.basicDisplayBox(origin,corner);
+  getFrameFigure().displayBox(displayBox());
+}

@@ -6,10 +6,10 @@
         forceRedraw();
       }
  else       if (e.getKeyChar() == 'o') {
-        setScale(getScale() / 2);
+        setScale(getScale() / getZoomSpeed());
       }
  else       if (e.getKeyChar() == 'i') {
-        setScale(getScale() * 2);
+        setScale(getScale() * getZoomSpeed());
       }
  else       if (e.getKeyChar() == 'c') {
         centralize(drawing());

@@ -1,0 +1,9 @@
+{
+  Rectangle maxRect=new Rectangle();
+  FigureEnumeration enum=getLayoutable().figures();
+  while (enum.hasMoreElements()) {
+    Figure currentFigure=enum.nextFigure();
+    maxRect.union(currentFigure.displayBox());
+  }
+  return maxRect;
+}

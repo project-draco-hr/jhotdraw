@@ -1,8 +1,4 @@
 {
-  if (!fFontIsDirty) {
-    return fFontWidth;
-  }
-  FontMetrics metrics=Toolkit.getDefaultToolkit().getFontMetrics(getFont());
-  fFontWidth=metrics.charWidth('W');
+  updateFontInfo();
   return fFontWidth;
 }

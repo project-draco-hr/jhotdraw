@@ -1,0 +1,15 @@
+{
+  try {
+    String resourceName=(fResourceName != null) ? fResourceName : (String)ctxAttrValue;
+    InputStream reader=this.getClass().getResourceAsStream(resourceName);
+    int available=reader.available();
+    byte contents[]=new byte[available];
+    reader.read(contents,0,available);
+    reader.close();
+    return new String(contents);
+  }
+ catch (  Exception ex) {
+    ex.printStackTrace();
+    return ex.toString();
+  }
+}

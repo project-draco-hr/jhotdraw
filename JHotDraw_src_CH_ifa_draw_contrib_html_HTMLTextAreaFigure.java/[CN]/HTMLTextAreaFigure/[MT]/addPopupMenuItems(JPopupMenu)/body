@@ -1,0 +1,46 @@
+{
+  ButtonGroup drawingPopupGroup;
+  JRadioButtonMenuItem rbOption;
+  drawingPopupGroup=new ButtonGroup();
+  rbOption=new JRadioButtonMenuItem(new AbstractAction("Direct drawing"){
+    public void actionPerformed(    ActionEvent event){
+      setUseDirectDraw(true);
+    }
+  }
+);
+  drawingPopupGroup.add(rbOption);
+  if (usesDirectDraw()) {
+    drawingPopupGroup.setSelected(rbOption.getModel(),true);
+  }
+  popupMenu.add(rbOption);
+  rbOption=new JRadioButtonMenuItem(new AbstractAction("Buffered drawing"){
+    public void actionPerformed(    ActionEvent event){
+      setUseDirectDraw(false);
+    }
+  }
+);
+  drawingPopupGroup.add(rbOption);
+  if (usesBufferedDraw()) {
+    drawingPopupGroup.setSelected(rbOption.getModel(),true);
+  }
+  popupMenu.add(rbOption);
+  popupMenu.addSeparator();
+  drawingPopupGroup=new ButtonGroup();
+  rbOption=new JRadioButtonMenuItem(new AbstractAction("Normal HTML"){
+    public void actionPerformed(    ActionEvent event){
+      setRawHTML(false);
+    }
+  }
+);
+  drawingPopupGroup.add(rbOption);
+  drawingPopupGroup.setSelected(rbOption.getModel(),true);
+  popupMenu.add(rbOption);
+  rbOption=new JRadioButtonMenuItem(new AbstractAction("Raw HTML"){
+    public void actionPerformed(    ActionEvent event){
+      setRawHTML(true);
+    }
+  }
+);
+  drawingPopupGroup.add(rbOption);
+  popupMenu.add(rbOption);
+}

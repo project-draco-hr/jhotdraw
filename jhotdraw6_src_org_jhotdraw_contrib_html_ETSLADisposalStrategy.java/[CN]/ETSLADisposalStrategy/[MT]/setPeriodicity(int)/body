@@ -1,0 +1,6 @@
+{
+  gcPeriodicity=newPeriodicity;
+  if (disposalThread != null) {
+    disposalThread.setPeriodicity(newPeriodicity);
+  }
+}

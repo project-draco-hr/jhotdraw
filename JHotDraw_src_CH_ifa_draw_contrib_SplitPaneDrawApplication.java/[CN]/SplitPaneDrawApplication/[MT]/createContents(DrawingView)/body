@@ -1,6 +1,6 @@
 {
-  createLeftComponent(view);
   createRightComponent(view);
+  createLeftComponent(view);
   if ((getLeftComponent() == null) && (getRightComponent() == null)) {
     return super.createContents(view);
   }

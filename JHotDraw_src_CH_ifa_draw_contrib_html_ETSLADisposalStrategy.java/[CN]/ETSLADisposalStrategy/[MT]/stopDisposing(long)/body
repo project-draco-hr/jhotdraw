@@ -1,0 +1,14 @@
+{
+  if (!disposingActive) {
+    return;
+  }
+  try {
+    disposalThread.interruptDisposalPending=true;
+    disposalThread.join(millis);
+  }
+ catch (  InterruptedException ex) {
+  }
+ finally {
+    disposingActive=false;
+  }
+}

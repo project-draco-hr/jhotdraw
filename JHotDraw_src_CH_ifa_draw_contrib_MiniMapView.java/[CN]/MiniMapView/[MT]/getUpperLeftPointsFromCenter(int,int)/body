@@ -1,0 +1,7 @@
+{
+  int[] upperLeft=new int[2];
+  Rectangle oldRectangle=getViewRectangle();
+  upperLeft[0]=centerX - oldRectangle.width / 2;
+  upperLeft[1]=centerY - oldRectangle.height / 2;
+  return upperLeft;
+}

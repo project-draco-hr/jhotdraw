@@ -14,5 +14,7 @@
   }
 ;
   menu.add(cmd);
+  menu.addSeparator();
+  menu.add(new WindowMenu("Window List",(MDIDesktopPane)getDesktop(),this));
   return menu;
 }

@@ -1,3 +1,8 @@
 {
-  tool().mouseMove(e,e.getX(),e.getY());
+  try {
+    tool().mouseMove(e,e.getX(),e.getY());
+  }
+ catch (  Throwable t) {
+    handleMouseEventException(t);
+  }
 }

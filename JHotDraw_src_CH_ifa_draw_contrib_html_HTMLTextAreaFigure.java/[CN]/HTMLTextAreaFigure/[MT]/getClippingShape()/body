@@ -1,0 +1,7 @@
+{
+  Figure frame=getFrameFigure();
+  if (frame instanceof GeometricFigure) {
+    return ((GeometricFigure)frame).getShape();
+  }
+  return frame.displayBox();
+}

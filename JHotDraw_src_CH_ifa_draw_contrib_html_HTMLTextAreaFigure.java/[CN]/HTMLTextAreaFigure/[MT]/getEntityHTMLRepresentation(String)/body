@@ -1,0 +1,20 @@
+{
+  Object attrValue=null;
+  attrValue=getIntrinsicContentProducer().getContent(this,attrName,attrValue);
+  if (attrValue == null) {
+    return null;
+  }
+  while (attrValue != null && !(attrValue instanceof String)) {
+    if (attrValue instanceof ContentProducer) {
+      attrValue=((ContentProducer)attrValue).getContent(this,attrName,attrValue);
+      continue;
+    }
+    ContentProducer defaultProducer=getContentProducer(attrValue.getClass());
+    if (defaultProducer != null) {
+      attrValue=defaultProducer.getContent(this,attrName,attrValue);
+      continue;
+    }
+    attrValue=attrValue.toString();
+  }
+  return (String)attrValue;
+}

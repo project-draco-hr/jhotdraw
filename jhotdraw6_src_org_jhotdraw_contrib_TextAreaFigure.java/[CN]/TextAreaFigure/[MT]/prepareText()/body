@@ -1,5 +1,5 @@
 {
-  if (!fTextIsDirty) {
+  if (!isTextDirty()) {
     return;
   }
   fParagraphs=new Vector();
@@ -11,5 +11,5 @@
     }
     fParagraphs.add(paragraphText);
   }
-  fTextIsDirty=false;
+  setTextDirty(false);
 }

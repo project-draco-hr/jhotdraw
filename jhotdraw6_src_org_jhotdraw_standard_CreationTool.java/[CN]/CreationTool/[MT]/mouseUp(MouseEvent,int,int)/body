@@ -10,6 +10,6 @@
     }
     setAddedFigure(null);
   }
-  fCreatedFigure=null;
+  setCreatedFigure(null);
   editor().toolDone();
 }

@@ -1,0 +1,4 @@
+{
+  Line2D.Double line=new Line2D.Double(xa,xb,ya,yb);
+  return line.ptSegDist(xc,yc);
+}

@@ -1,0 +1,15 @@
+{
+synchronized (manager) {
+    long currentTime=System.currentTimeMillis();
+    Iterator resourceIter=manager.getResources();
+    DisposableResourceHolder resource;
+    while (resourceIter.hasNext()) {
+      resource=(DisposableResourceHolder)resourceIter.next();
+synchronized (resource) {
+        if (!resource.isLocked() && (resource.getLastTimeAccessed() + resource.getDisposableDelay()) < currentTime) {
+          resource.dispose();
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,7 @@
 {
   Figure figure=e.getFigure();
   if (fFigures.contains(figure)) {
-    fFigures.removeElement(figure);
-    figure.removeFromContainer(this);
+    super.remove(figure);
     figure.release();
   }
  else {

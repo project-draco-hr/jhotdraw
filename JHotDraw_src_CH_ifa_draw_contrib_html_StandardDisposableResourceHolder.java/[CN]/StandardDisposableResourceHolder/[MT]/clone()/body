@@ -1,0 +1,5 @@
+{
+  StandardDisposableResourceHolder clone=new StandardDisposableResourceHolder();
+  clone.setDisposableDelay(this.getDisposableDelay());
+  return clone;
+}

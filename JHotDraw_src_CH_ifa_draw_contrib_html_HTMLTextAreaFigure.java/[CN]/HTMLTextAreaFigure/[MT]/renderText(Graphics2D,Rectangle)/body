@@ -1,0 +1,25 @@
+{
+  g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
+  g2.setRenderingHint(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_QUALITY);
+  g2.setBackground(getFillColor());
+  g2.setColor(getFillColor());
+  g2.clearRect(drawingBox.x,drawingBox.y,drawingBox.width,drawingBox.height);
+  g2.fillRect(drawingBox.x,drawingBox.y,drawingBox.width,drawingBox.height);
+  String text;
+  if (isRawHTML()) {
+    text=getText();
+  }
+ else {
+    text=getHTMLText(getText(),getFont(),(String)getContentProducer(Color.class).getContent(this,FigureAttributeConstant.TEXT_COLOR_STR,getTextColor()),(String)getContentProducer(Color.class).getContent(this,FigureAttributeConstant.FILL_COLOR_STR,getFillColor()),drawingBox);
+  }
+  text=substituteEntityKeywords(text);
+  JLabel displayDelegate=getDisplayDelegate();
+  displayDelegate.setText(text);
+  displayDelegate.setBackground(getFillColor());
+  displayDelegate.setLocation(0,0);
+  displayDelegate.setSize(drawingBox.width,drawingBox.height);
+  displayDelegate.setHorizontalAlignment(((Integer)getAttribute("XAlignment")).intValue());
+  displayDelegate.setVerticalAlignment(((Integer)getAttribute("YAlignment")).intValue());
+  SwingUtilities.paintComponent(g2,displayDelegate,getContainerPanel(displayDelegate,drawingBox),drawingBox.x,drawingBox.y,drawingBox.width,drawingBox.height);
+  return drawingBox.height;
+}

@@ -1,5 +1,10 @@
 {
-  Point p=constrainPoint(new Point(e.getX(),e.getY()));
-  tool().mouseUp(e,p.x,p.y);
-  checkDamage();
+  try {
+    Point p=constrainPoint(new Point(e.getX(),e.getY()));
+    tool().mouseUp(e,p.x,p.y);
+    checkDamage();
+  }
+ catch (  Throwable t) {
+    handleMouseEventException(t);
+  }
 }
