@@ -1,0 +1,18 @@
+{
+  if (_theQuadTree != null) {
+    Vector v=_theQuadTree.getAllWithin(new Bounds(viewRectangle).asRectangle2D());
+    Vector v2=new Vector();
+    for (Enumeration e=v.elements(); e.hasMoreElements(); ) {
+      Figure f=(Figure)e.nextElement();
+      v2.addElement(new OrderedFigureElement(f,f.getZValue()));
+    }
+    Collections.sort(v2);
+    Vector v3=new Vector();
+    for (Enumeration e=v2.elements(); e.hasMoreElements(); ) {
+      OrderedFigureElement ofe=(OrderedFigureElement)e.nextElement();
+      v3.addElement(ofe.getFigure());
+    }
+    return new FigureEnumerator(v3);
+  }
+  return figures();
+}

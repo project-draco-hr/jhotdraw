@@ -1,4 +1,5 @@
 {
   fFigures.removeElement(figure);
+  _removeFromQuadTree(figure);
   return figure;
 }

@@ -1,6 +1,7 @@
 {
   int index=fFigures.indexOf(figure);
   if (index != -1) {
+    replacement.setZValue(figure.getZValue());
     replacement.addToContainer(this);
     figure.changed();
     fFigures.setElementAt(replacement,index);

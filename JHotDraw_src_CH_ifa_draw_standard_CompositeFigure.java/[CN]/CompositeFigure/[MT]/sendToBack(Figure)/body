@@ -2,6 +2,7 @@
   if (fFigures.contains(figure)) {
     fFigures.removeElement(figure);
     fFigures.insertElementAt(figure,0);
+    figure.setZValue(--_nLowestZ);
     figure.changed();
   }
 }

@@ -1,0 +1,5 @@
+{
+  if (_theQuadTree != null) {
+    _theQuadTree.add(f,new Bounds(f.displayBox()).asRectangle2D());
+  }
+}

@@ -1,0 +1,7 @@
+{
+  _theQuadTree=new QuadTree(new Bounds(viewRectangle).asRectangle2D());
+  for (Enumeration e=fFigures.elements(); e.hasMoreElements(); ) {
+    Figure f=(Figure)e.nextElement();
+    _addToQuadTree(f);
+  }
+}
