@@ -1,3 +1,0 @@
-{
-  junit.textui.TestRunner.run(CollectionsFactoryJDK12Test.class);
-}

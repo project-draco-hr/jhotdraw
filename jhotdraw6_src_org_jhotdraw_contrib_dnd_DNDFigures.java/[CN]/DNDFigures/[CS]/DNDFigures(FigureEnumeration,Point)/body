@@ -3,5 +3,5 @@
   while (fe.hasNextFigure()) {
     figures.add(fe.nextFigure());
   }
-  this.origin=origin;
+  origin=newOrigin;
 }

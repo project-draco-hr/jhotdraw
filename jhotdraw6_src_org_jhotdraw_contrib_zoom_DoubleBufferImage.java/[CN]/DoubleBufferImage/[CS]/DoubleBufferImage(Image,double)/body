@@ -1,4 +1,4 @@
 {
-  this.real=real;
-  this.scale=scale;
+  real=newReal;
+  scale=newScale;
 }

@@ -1,6 +1,6 @@
 {
-  if (readOnly != this.readOnly) {
-    if (readOnly) {
+  if (newIsReadOnly != isReadOnly()) {
+    if (newIsReadOnly) {
       removeMouseListener(mouseListener);
       removeMouseMotionListener(motionListener);
       removeKeyListener(keyListener);
@@ -10,6 +10,6 @@
       addMouseMotionListener(motionListener);
       addKeyListener(keyListener);
     }
-    this.readOnly=readOnly;
+    myIsReadOnly=newIsReadOnly;
   }
 }

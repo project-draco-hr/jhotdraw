@@ -8,7 +8,7 @@
   im[0]=kit.loadImageResource(iconName + "1.gif");
   im[1]=kit.loadImageResource(iconName + "2.gif");
   im[2]=kit.loadImageResource(iconName + "3.gif");
-  MediaTracker tracker=new MediaTracker((DrawApplication)getDrawingEditor());
+  MediaTracker tracker=new MediaTracker(getDrawingEditor());
   for (int i=0; i < 3; i++) {
     tracker.addImage(im[i],i);
   }

@@ -1,4 +1,4 @@
 {
-  this.resource=resource;
+  resource=newResource;
   resetDelay();
 }

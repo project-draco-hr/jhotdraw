@@ -1,14 +1,14 @@
 {
   super.mouseDown(e,x,y);
-  fLastX=x;
-  fLastY=y;
+  setLastMouseX(x);
+  setLastMouseY(y);
   if (e.isShiftDown()) {
-    getActiveView().toggleSelection(fAnchorFigure);
-    fAnchorFigure=null;
+    getActiveView().toggleSelection(getAnchorFigure());
+    setAnchorFigure(null);
   }
- else   if (!getActiveView().isFigureSelected(fAnchorFigure)) {
+ else   if (!getActiveView().isFigureSelected(getAnchorFigure())) {
     getActiveView().clearSelection();
-    getActiveView().addToSelection(fAnchorFigure);
+    getActiveView().addToSelection(getAnchorFigure());
   }
   setUndoActivity(createUndoActivity());
   getUndoActivity().setAffectedFigures(getActiveView().selection());

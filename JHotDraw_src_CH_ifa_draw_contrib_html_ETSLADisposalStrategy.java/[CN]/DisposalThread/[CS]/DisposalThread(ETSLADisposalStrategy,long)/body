@@ -1,4 +1,4 @@
 {
-  this.strategy=strategy;
-  this.periodicity=periodicity;
+  strategy=newStrategy;
+  periodicity=newPeriodicity;
 }

@@ -1,6 +1,6 @@
 {
-  if (fMoved) {
-    ((DragTracker.UndoActivity)getUndoActivity()).setBackupPoint(new Point(fLastX,fLastY));
+  if (hasMoved()) {
+    ((DragTracker.UndoActivity)getUndoActivity()).setBackupPoint(new Point(getLastMouseX(),getLastMouseY()));
   }
  else {
     setUndoActivity(null);

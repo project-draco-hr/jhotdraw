@@ -1,5 +1,5 @@
 {
-  if (getTypingTarget() != null) {
+  if ((getTypingTarget() != null) && (fTextField != null)) {
     if (fTextField.getText().length() > 0) {
       getTypingTarget().setText(fTextField.getText());
       getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getEditedFigure()));

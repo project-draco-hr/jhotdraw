@@ -1,7 +1,7 @@
 {
   Figure figure=drawing().findFigure(e.getX(),e.getY());
   if (figure != null) {
-    Object attribute=figure.getAttribute(popupMenuAttribute);
+    Object attribute=figure.getAttribute(FigureAttributeConstant.POPUP_MENU);
     if (attribute == null) {
       figure=drawing().findFigureInside(e.getX(),e.getY());
     }

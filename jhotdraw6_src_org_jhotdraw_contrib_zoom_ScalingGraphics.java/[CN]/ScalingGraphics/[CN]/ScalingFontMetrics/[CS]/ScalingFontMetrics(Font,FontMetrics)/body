@@ -1,5 +1,5 @@
 {
   super(null);
-  this.userFont=userFont;
-  this.real=real;
+  userFont=newUserFont;
+  real=newReal;
 }

@@ -1,2 +1,2 @@
-DisposableResourceManager manager
-long periodicity
+DisposableResourceManager newManager
+long newPeriodicity

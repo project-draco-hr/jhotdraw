@@ -5,8 +5,8 @@
   if (oldl == b) {
     return a;
   }
-  EventListener a2=removeInternal((FigureChangeListener)a,oldl);
-  EventListener b2=removeInternal((FigureChangeListener)b,oldl);
+  EventListener a2=removeInternal(a,oldl);
+  EventListener b2=removeInternal(b,oldl);
   if (a2 == a && b2 == b) {
     return this;
   }

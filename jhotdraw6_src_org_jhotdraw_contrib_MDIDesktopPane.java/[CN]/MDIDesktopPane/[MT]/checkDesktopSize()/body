@@ -1,3 +1,5 @@
 {
-  if ((getParent() != null) && isVisible())   manager.resizeDesktop();
+  if ((getParent() != null) && isVisible()) {
+    manager.resizeDesktop();
+  }
 }

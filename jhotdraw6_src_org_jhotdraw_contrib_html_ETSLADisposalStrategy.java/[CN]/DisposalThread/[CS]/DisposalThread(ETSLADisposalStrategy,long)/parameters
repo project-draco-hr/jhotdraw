@@ -1,2 +1,2 @@
-ETSLADisposalStrategy strategy
-long periodicity
+ETSLADisposalStrategy newStrategy
+long newPeriodicity

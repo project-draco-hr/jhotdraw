@@ -1,12 +1,12 @@
 {
   super.mouseDrag(e,x,y);
-  fMoved=(Math.abs(x - getAnchorX()) > 4) || (Math.abs(y - getAnchorY()) > 4);
-  if (fMoved) {
+  setHasMoved((Math.abs(x - getAnchorX()) > 4) || (Math.abs(y - getAnchorY()) > 4));
+  if (hasMoved()) {
     FigureEnumeration figures=getUndoActivity().getAffectedFigures();
     while (figures.hasNextFigure()) {
-      figures.nextFigure().moveBy(x - fLastX,y - fLastY);
+      figures.nextFigure().moveBy(x - getLastMouseX(),y - getLastMouseY());
     }
   }
-  fLastX=x;
-  fLastY=y;
+  setLastMouseX(x);
+  setLastMouseY(y);
 }

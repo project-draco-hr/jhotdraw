@@ -3,7 +3,7 @@
     JViewport viewport=(JViewport)getParent();
     Dimension viewportSize=viewport.getSize();
     Dimension userSize=getUserSize();
-    this.scale=scale;
+    scale=newScale;
     Point viewOrg=viewport.getViewPosition();
     viewOrg.x=viewOrg.x + (viewportSize.width / 2);
     viewOrg.y=viewOrg.y + (viewportSize.height / 2);

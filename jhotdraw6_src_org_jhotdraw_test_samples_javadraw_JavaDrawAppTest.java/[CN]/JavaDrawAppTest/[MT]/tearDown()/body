@@ -1,4 +1,4 @@
 {
-  javadrawapp=null;
+  myDrawApplication=null;
   super.tearDown();
 }

@@ -1,4 +1,4 @@
 {
-  super(frame.getTitle());
-  this.frame=frame;
+  super(newFrame.getTitle());
+  frame=newFrame;
 }

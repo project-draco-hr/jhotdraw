@@ -1,2 +1,2 @@
-DrawingEditor editor
-DrawingView view
+DrawingEditor newEditor
+DrawingView newView

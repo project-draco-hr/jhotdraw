@@ -1,4 +1,4 @@
 {
-  this.isDragSource=isDragSource;
-  this.isDropTarget=isDropTarget;
+  isDragSource=newIsDragSource;
+  isDropTarget=newIsDropTarget;
 }
