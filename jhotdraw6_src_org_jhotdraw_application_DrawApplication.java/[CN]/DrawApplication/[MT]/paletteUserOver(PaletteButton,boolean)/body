@@ -1,9 +1,5 @@
 {
   ToolButton toolButton=(ToolButton)button;
-  if (inside) {
-    showStatus(toolButton.name());
-  }
- else {
-    showStatus(fSelectedToolButton.name());
-  }
+  if (inside)   showStatus(toolButton.name());
+ else   showStatus(fSelectedToolButton.name());
 }

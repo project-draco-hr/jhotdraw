@@ -18,13 +18,13 @@
 );
   panel.add(new Filler(6,20));
   JButton button;
-  button=new CommandButton(new DeleteCommand("Delete",view()));
+  button=new CommandButton(new DeleteCommand("Delete",fView));
   panel.add(button);
-  button=new CommandButton(new DuplicateCommand("Duplicate",view()));
+  button=new CommandButton(new DuplicateCommand("Duplicate",fView));
   panel.add(button);
-  button=new CommandButton(new GroupCommand("Group",view()));
+  button=new CommandButton(new GroupCommand("Group",fView));
   panel.add(button);
-  button=new CommandButton(new UngroupCommand("Ungroup",view()));
+  button=new CommandButton(new UngroupCommand("Ungroup",fView));
   panel.add(button);
   button=new JButton("Help");
   button.addActionListener(new ActionListener(){

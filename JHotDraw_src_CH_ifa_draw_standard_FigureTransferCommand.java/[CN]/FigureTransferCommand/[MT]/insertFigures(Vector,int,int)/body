@@ -3,7 +3,7 @@
   while (e.hasMoreElements()) {
     Figure figure=e.nextFigure();
     figure.moveBy(dx,dy);
-    figure=view().add(figure);
-    view().addToSelection(figure);
+    figure=fView.add(figure);
+    fView.addToSelection(figure);
   }
 }

@@ -1,8 +1,6 @@
 {
   fEditor=editor;
   fViewSize=new Dimension(width,height);
-  fSelectionListeners=new Vector();
-  addFigureSelectionListener(editor());
   fLastClick=new Point(0,0);
   fConstrainer=null;
   fSelection=new Vector();

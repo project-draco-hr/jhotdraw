@@ -3,6 +3,6 @@
     fSelection.removeElement(figure);
     fSelectionHandles=null;
     figure.invalidate();
-    fireSelectionChanged();
+    selectionChanged();
   }
 }

@@ -1,9 +1,9 @@
 {
-  PointConstrainer grid=view().getConstrainer();
+  PointConstrainer grid=fView.getConstrainer();
   if (grid != null) {
-    view().setConstrainer(null);
+    fView.setConstrainer(null);
   }
  else {
-    view().setConstrainer(new GridConstrainer(fGrid.x,fGrid.y));
+    fView.setConstrainer(new GridConstrainer(fGrid.x,fGrid.y));
   }
 }

@@ -1,0 +1,3 @@
+{
+  fUpdateStrategy.draw(g,this);
+}

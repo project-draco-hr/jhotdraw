@@ -1,3 +1,0 @@
-{
-  fSelectionListeners.remove(fsl);
-}

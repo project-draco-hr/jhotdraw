@@ -2,7 +2,7 @@
   if (tool() != null)   tool().deactivate();
   fTool=t;
   if (tool() != null) {
-    showStatus(name);
+    fStatusLine.setText(name);
     tool().activate();
   }
 }

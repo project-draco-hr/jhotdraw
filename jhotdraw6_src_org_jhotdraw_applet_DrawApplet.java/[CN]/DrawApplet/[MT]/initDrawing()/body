@@ -1,5 +1,5 @@
 {
   fDrawing=createDrawing();
-  view().setDrawing(fDrawing);
+  fView.setDrawing(fDrawing);
   toolDone();
 }

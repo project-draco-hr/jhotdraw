@@ -1,4 +1,4 @@
 {
-  view().drawing().removeAll(view().selection());
-  view().clearSelection();
+  fView.drawing().removeAll(fView.selection());
+  fView.clearSelection();
 }

@@ -1,3 +1,4 @@
 {
-  super(name,view);
+  super(name);
+  fView=view;
 }

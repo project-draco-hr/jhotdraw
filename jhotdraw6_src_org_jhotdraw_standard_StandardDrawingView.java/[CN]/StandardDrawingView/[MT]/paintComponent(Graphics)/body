@@ -1,3 +1,0 @@
-{
-  getDisplayUpdate().draw(g,this);
-}

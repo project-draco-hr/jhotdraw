@@ -1,6 +1,0 @@
-{
-  JScrollPane sp=new JScrollPane((StandardDrawingView)view);
-  sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-  sp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-  return sp;
-}

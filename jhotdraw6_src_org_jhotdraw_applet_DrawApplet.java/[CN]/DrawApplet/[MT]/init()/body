@@ -8,7 +8,7 @@
   JPanel toolPanel=createToolPalette();
   createTools(toolPanel);
   getContentPane().add("West",toolPanel);
-  getContentPane().add("Center",(Component)view());
+  getContentPane().add("Center",fView);
   JPanel buttonPalette=createButtonPanel();
   createButtons(buttonPalette);
   getContentPane().add("South",buttonPalette);

@@ -1,4 +1,4 @@
 {
-  FigureSelection selection=view().getFigureSelection();
+  FigureSelection selection=fView.getFigureSelection();
   Clipboard.getClipboard().setContents(selection);
 }

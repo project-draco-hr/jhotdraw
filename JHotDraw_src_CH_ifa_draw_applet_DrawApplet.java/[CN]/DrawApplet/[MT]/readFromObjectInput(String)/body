@@ -5,7 +5,7 @@
     ObjectInput input=new ObjectInputStream(stream);
     fDrawing.release();
     fDrawing=(Drawing)input.readObject();
-    view().setDrawing(fDrawing);
+    fView.setDrawing(fDrawing);
   }
  catch (  IOException e) {
     initDrawing();

@@ -8,7 +8,7 @@
     currentFrame.validate();
     currentFrame.getDrawingView().freezeView();
     setDrawing(newFrame.getDrawingView().drawing());
-    backupDrawingView=newFrame.replaceDrawingView(view());
+    backupDrawingView=newFrame.replaceDrawingView((StandardDrawingView)view());
     currentFrame=newFrame;
   }
 }
