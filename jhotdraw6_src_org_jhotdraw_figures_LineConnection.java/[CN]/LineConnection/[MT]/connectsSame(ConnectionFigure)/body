@@ -1,0 +1,3 @@
+{
+  return other.start() == start() && other.end() == end();
+}

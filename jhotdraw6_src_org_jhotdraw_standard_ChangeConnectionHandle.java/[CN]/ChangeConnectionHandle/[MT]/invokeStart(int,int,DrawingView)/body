@@ -1,0 +1,5 @@
+{
+  fOriginalTarget=target();
+  fStart=new Point(x,y);
+  disconnect();
+}

@@ -1,0 +1,6 @@
+{
+  willChange();
+  basicMoveBy(x,y);
+  if (fLocator != null)   fLocator.moveBy(x,y);
+  changed();
+}

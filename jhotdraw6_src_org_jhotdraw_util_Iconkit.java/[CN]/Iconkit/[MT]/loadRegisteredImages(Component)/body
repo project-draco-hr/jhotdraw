@@ -1,0 +1,17 @@
+{
+  if (fRegisteredImages.size() == 0)   return;
+  MediaTracker tracker=new MediaTracker(component);
+  Enumeration k=fRegisteredImages.elements();
+  while (k.hasMoreElements()) {
+    String fileName=(String)k.nextElement();
+    if (basicGetImage(fileName) == null) {
+      tracker.addImage(loadImage(fileName),ID);
+    }
+  }
+  fRegisteredImages.removeAllElements();
+  try {
+    tracker.waitForAll();
+  }
+ catch (  Exception e) {
+  }
+}

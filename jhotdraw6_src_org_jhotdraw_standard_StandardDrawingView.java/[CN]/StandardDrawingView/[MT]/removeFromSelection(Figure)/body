@@ -1,0 +1,8 @@
+{
+  if (fSelection.contains(figure)) {
+    fSelection.removeElement(figure);
+    fSelectionHandles=null;
+    figure.invalidate();
+    selectionChanged();
+  }
+}

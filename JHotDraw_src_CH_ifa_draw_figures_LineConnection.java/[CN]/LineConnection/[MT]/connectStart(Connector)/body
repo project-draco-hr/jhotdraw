@@ -1,0 +1,4 @@
+{
+  fStart=start;
+  startFigure().addFigureChangeListener(this);
+}

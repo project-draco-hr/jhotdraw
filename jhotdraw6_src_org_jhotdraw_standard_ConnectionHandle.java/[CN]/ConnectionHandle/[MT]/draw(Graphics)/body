@@ -1,0 +1,5 @@
+{
+  Rectangle r=displayBox();
+  g.setColor(Color.blue);
+  g.drawOval(r.x,r.y,r.width,r.height);
+}

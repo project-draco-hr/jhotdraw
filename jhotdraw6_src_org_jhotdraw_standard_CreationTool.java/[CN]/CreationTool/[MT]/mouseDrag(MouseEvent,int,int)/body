@@ -1,0 +1,3 @@
+{
+  fCreatedFigure.displayBox(fAnchorPoint,new Point(x,y));
+}

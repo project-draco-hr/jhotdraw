@@ -1,0 +1,11 @@
+{
+  Connector target=findConnectionTarget(x,y,view.drawing());
+  if (target == null)   target=fOriginalTarget;
+  setPoint(x,y);
+  connect(target);
+  fConnection.updateConnection();
+  if (fTarget != null) {
+    fTarget.connectorVisibility(false);
+    fTarget=null;
+  }
+}

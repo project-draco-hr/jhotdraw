@@ -1,0 +1,4 @@
+{
+  fComponent.removeFromContainer(this);
+  return fComponent;
+}

@@ -1,0 +1,4 @@
+{
+  fOriginX=newOrigin.x;
+  fOriginY=newOrigin.y;
+}

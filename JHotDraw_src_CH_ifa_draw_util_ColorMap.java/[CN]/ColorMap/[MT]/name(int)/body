@@ -1,0 +1,4 @@
+{
+  if (index < size() && index >= 0)   return fMap[index].fName;
+  throw new ArrayIndexOutOfBoundsException("Color index: " + index);
+}

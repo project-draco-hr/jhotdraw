@@ -1,0 +1,7 @@
+{
+  MenuBar mb=getMenuBar();
+  CommandMenu editMenu=(CommandMenu)mb.getMenu(EDIT_MENU);
+  editMenu.checkEnabled();
+  CommandMenu alignmentMenu=(CommandMenu)mb.getMenu(ALIGNMENT_MENU);
+  alignmentMenu.checkEnabled();
+}

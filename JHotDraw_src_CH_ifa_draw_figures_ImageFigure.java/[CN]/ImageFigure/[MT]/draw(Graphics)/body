@@ -1,0 +1,5 @@
+{
+  if (fImage == null)   fImage=Iconkit.instance().getImage(fFileName);
+  if (fImage != null)   g.drawImage(fImage,fDisplayBox.x,fDisplayBox.y,fDisplayBox.width,fDisplayBox.height,this);
+ else   drawGhost(g);
+}

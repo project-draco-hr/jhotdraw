@@ -1,0 +1,13 @@
+{
+  ConnectionFigure prototype=new LineConnection();
+  Vector handles=new Vector();
+  handles.addElement(new ConnectionHandle(this,RelativeLocator.east(),prototype));
+  handles.addElement(new ConnectionHandle(this,RelativeLocator.west(),prototype));
+  handles.addElement(new ConnectionHandle(this,RelativeLocator.south(),prototype));
+  handles.addElement(new ConnectionHandle(this,RelativeLocator.north(),prototype));
+  handles.addElement(new NullHandle(this,RelativeLocator.southEast()));
+  handles.addElement(new NullHandle(this,RelativeLocator.southWest()));
+  handles.addElement(new NullHandle(this,RelativeLocator.northEast()));
+  handles.addElement(new NullHandle(this,RelativeLocator.northWest()));
+  return handles;
+}

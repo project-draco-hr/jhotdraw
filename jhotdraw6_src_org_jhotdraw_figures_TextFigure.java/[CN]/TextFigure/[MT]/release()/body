@@ -1,0 +1,4 @@
+{
+  super.release();
+  if (fObservedFigure != null)   fObservedFigure.removeFigureChangeListener(this);
+}

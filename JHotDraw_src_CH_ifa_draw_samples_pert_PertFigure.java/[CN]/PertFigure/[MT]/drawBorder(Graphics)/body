@@ -1,0 +1,16 @@
+{
+  super.draw(g);
+  Rectangle r=displayBox();
+  Figure f=figureAt(0);
+  Rectangle rf=f.displayBox();
+  g.setColor(Color.gray);
+  g.drawLine(r.x,r.y + rf.height + 2,r.x + r.width,r.y + rf.height + 2);
+  g.setColor(Color.white);
+  g.drawLine(r.x,r.y + rf.height + 3,r.x + r.width,r.y + rf.height + 3);
+  g.setColor(Color.white);
+  g.drawLine(r.x,r.y,r.x,r.y + r.height);
+  g.drawLine(r.x,r.y,r.x + r.width,r.y);
+  g.setColor(Color.gray);
+  g.drawLine(r.x + r.width,r.y,r.x + r.width,r.y + r.height);
+  g.drawLine(r.x,r.y + r.height,r.x + r.width,r.y + r.height);
+}

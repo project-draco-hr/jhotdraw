@@ -1,0 +1,18 @@
+{
+  if (name.equals("FrameColor")) {
+    setFrameColor((Color)value);
+    changed();
+  }
+ else   if (name.equals("ArrowMode")) {
+    Integer intObj=(Integer)value;
+    if (intObj != null) {
+      int decoration=intObj.intValue();
+      if ((decoration & ARROW_TIP_START) != 0)       fStartDecoration=new ArrowTip();
+ else       fStartDecoration=null;
+      if ((decoration & ARROW_TIP_END) != 0)       fEndDecoration=new ArrowTip();
+ else       fEndDecoration=null;
+    }
+    changed();
+  }
+ else   super.setAttribute(name,value);
+}

@@ -1,0 +1,28 @@
+{
+  fStream.print('"');
+  for (int i=0; i < s.length(); i++) {
+    char c=s.charAt(i);
+switch (c) {
+case '\n':
+      fStream.print('\\');
+    fStream.print('n');
+  break;
+case '"':
+fStream.print('\\');
+fStream.print('"');
+break;
+case '\\':
+fStream.print('\\');
+fStream.print('\\');
+break;
+case '\t':
+fStream.print('\\');
+fStream.print('\t');
+break;
+default :
+fStream.print(c);
+}
+}
+fStream.print('"');
+space();
+}

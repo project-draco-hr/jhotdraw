@@ -1,0 +1,3 @@
+{
+  fPostTasks.removeElement(figure);
+}

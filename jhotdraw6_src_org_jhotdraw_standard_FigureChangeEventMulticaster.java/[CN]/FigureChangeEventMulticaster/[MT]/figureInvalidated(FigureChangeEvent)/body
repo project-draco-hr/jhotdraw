@@ -1,0 +1,4 @@
+{
+  ((FigureChangeListener)a).figureInvalidated(e);
+  ((FigureChangeListener)b).figureInvalidated(e);
+}

@@ -1,0 +1,21 @@
+{
+  if (fChild != null)   return;
+  view().freezeView();
+  Handle handle=view().findHandle(e.getX(),e.getY());
+  if (handle != null) {
+    fChild=createHandleTracker(view(),handle);
+  }
+ else {
+    Figure figure=drawing().findFigure(e.getX(),e.getY());
+    if (figure != null) {
+      fChild=createDragTracker(view(),figure);
+    }
+ else {
+      if (!e.isShiftDown()) {
+        view().clearSelection();
+      }
+      fChild=createAreaTracker(view());
+    }
+  }
+  fChild.mouseDown(e,x,y);
+}

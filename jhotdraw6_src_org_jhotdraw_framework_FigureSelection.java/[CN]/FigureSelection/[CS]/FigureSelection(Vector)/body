@@ -1,0 +1,12 @@
+{
+  ByteArrayOutputStream output=new ByteArrayOutputStream(200);
+  StorableOutput writer=new StorableOutput(output);
+  writer.writeInt(figures.size());
+  Enumeration selected=figures.elements();
+  while (selected.hasMoreElements()) {
+    Figure figure=(Figure)selected.nextElement();
+    writer.writeStorable(figure);
+  }
+  writer.close();
+  fData=output.toByteArray();
+}

@@ -1,0 +1,5 @@
+{
+  super(owner);
+  fLocator=l;
+  fIndex=index;
+}

@@ -1,0 +1,9 @@
+{
+  Figure pressedFigure;
+  pressedFigure=drawing().findFigureInside(x,y);
+  if (pressedFigure != null) {
+    beginEdit(pressedFigure);
+    return;
+  }
+  endEdit();
+}

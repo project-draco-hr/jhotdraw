@@ -1,0 +1,6 @@
+{
+  fDrawing=createDrawing();
+  fDrawingFilename=fgUntitled;
+  fView.setDrawing(fDrawing);
+  toolDone();
+}

@@ -1,0 +1,16 @@
+{
+  Figure c=null;
+  if (fStartConnector != null)   c=findTarget(e.getX(),e.getY(),drawing());
+  if (c != null) {
+    fEndConnector=findConnector(e.getX(),e.getY(),c);
+    if (fEndConnector != null) {
+      fConnection.connectStart(fStartConnector);
+      fConnection.connectEnd(fEndConnector);
+      fConnection.updateConnection();
+    }
+  }
+ else   if (fConnection != null)   view().remove(fConnection);
+  fConnection=null;
+  fStartConnector=fEndConnector=null;
+  editor().toolDone();
+}

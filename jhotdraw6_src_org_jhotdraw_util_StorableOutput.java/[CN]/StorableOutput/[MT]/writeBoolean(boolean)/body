@@ -1,0 +1,5 @@
+{
+  if (b)   fStream.print(1);
+ else   fStream.print(0);
+  space();
+}

@@ -1,0 +1,7 @@
+{
+  addCornerHandles(f,handles);
+  handles.addElement(south(f));
+  handles.addElement(north(f));
+  handles.addElement(east(f));
+  handles.addElement(west(f));
+}

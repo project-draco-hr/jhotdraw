@@ -1,0 +1,3 @@
+{
+  fPoly.addPoint(x,y);
+}

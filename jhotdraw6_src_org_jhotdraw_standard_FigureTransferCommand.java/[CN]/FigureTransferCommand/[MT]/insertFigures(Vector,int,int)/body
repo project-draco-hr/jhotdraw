@@ -1,0 +1,9 @@
+{
+  FigureEnumeration e=new FigureEnumerator(figures);
+  while (e.hasMoreElements()) {
+    Figure figure=e.nextFigure();
+    figure.moveBy(dx,dy);
+    figure=fView.add(figure);
+    fView.addToSelection(figure);
+  }
+}

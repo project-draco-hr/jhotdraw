@@ -1,0 +1,6 @@
+{
+  if (drawing() instanceof Animatable && fAnimator == null) {
+    fAnimator=new Animator((Animatable)drawing(),view());
+    fAnimator.start();
+  }
+}

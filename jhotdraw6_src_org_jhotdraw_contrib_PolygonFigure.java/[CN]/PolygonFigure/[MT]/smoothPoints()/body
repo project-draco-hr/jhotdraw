@@ -1,0 +1,25 @@
+{
+  willChange();
+  boolean removed=false;
+  int n=fPoly.npoints;
+  do {
+    removed=false;
+    int i=0;
+    while (i < n && n >= 3) {
+      int nxt=(i + 1) % n;
+      int prv=(i - 1 + n) % n;
+      if ((distanceFromLine(fPoly.xpoints[prv],fPoly.ypoints[prv],fPoly.xpoints[nxt],fPoly.ypoints[nxt],fPoly.xpoints[i],fPoly.ypoints[i]) < TOO_CLOSE)) {
+        removed=true;
+        --n;
+        for (int j=i; j < n; ++j) {
+          fPoly.xpoints[j]=fPoly.xpoints[j + 1];
+          fPoly.ypoints[j]=fPoly.ypoints[j + 1];
+        }
+      }
+ else       ++i;
+    }
+  }
+ while (removed);
+  if (n != fPoly.npoints)   fPoly=new Polygon(fPoly.xpoints,fPoly.ypoints,n);
+  changed();
+}

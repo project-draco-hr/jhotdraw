@@ -1,0 +1,9 @@
+{
+  if (fTypingTarget != null) {
+    if (fTextField.getText().length() > 0)     fTypingTarget.setText(fTextField.getText());
+ else     drawing().remove((Figure)fTypingTarget);
+    fTypingTarget=null;
+    fTextField.endOverlay();
+    view().checkDamage();
+  }
+}

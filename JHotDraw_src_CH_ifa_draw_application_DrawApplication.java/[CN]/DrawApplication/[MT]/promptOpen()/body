@@ -1,0 +1,11 @@
+{
+  FileDialog dialog=new FileDialog(this,"Open File...",FileDialog.LOAD);
+  dialog.show();
+  String filename=dialog.getFile();
+  if (filename != null) {
+    filename=stripTrailingAsterisks(filename);
+    String dirname=dialog.getDirectory();
+    loadDrawing(dirname + filename);
+  }
+  dialog.dispose();
+}

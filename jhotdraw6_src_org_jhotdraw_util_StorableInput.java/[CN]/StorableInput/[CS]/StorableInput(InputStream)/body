@@ -1,0 +1,5 @@
+{
+  Reader r=new BufferedReader(new InputStreamReader(stream));
+  fTokenizer=new StreamTokenizer(r);
+  fMap=new Vector();
+}

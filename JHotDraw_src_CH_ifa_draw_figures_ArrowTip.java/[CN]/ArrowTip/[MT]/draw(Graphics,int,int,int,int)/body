@@ -1,0 +1,4 @@
+{
+  Polygon p=outline(x1,y1,x2,y2);
+  g.fillPolygon(p.xpoints,p.ypoints,p.npoints);
+}

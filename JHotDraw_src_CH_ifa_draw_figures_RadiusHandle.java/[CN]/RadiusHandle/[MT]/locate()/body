@@ -1,0 +1,5 @@
+{
+  Point radius=fOwner.getArc();
+  Rectangle r=fOwner.displayBox();
+  return new Point(r.x + radius.x / 2 + OFFSET,r.y + radius.y / 2 + OFFSET);
+}

@@ -1,0 +1,8 @@
+{
+  clearSelection();
+  if (fDrawing != null)   fDrawing.removeDrawingChangeListener(this);
+  fDrawing=d;
+  if (fDrawing != null)   fDrawing.addDrawingChangeListener(this);
+  checkMinimumSize();
+  repaint();
+}

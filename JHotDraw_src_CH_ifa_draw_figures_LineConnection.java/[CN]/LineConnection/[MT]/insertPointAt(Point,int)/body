@@ -1,0 +1,4 @@
+{
+  super.insertPointAt(p,i);
+  layoutConnection();
+}

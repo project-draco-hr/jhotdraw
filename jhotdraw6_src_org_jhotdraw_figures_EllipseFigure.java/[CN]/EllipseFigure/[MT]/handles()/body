@@ -1,0 +1,5 @@
+{
+  Vector handles=new Vector();
+  BoxHandleKit.addHandles(this,handles);
+  return handles;
+}

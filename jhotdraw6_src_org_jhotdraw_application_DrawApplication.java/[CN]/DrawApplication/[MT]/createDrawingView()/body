@@ -1,0 +1,4 @@
+{
+  Dimension d=getDrawingViewSize();
+  return new StandardDrawingView(this,d.width,d.height);
+}

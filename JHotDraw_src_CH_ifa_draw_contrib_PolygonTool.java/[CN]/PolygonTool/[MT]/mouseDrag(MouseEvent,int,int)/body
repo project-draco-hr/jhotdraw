@@ -1,0 +1,5 @@
+{
+  x=e.getX();
+  y=e.getY();
+  addPoint(x,y);
+}

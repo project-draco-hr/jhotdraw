@@ -1,0 +1,8 @@
+{
+  if (!newText.equals(fText)) {
+    willChange();
+    fText=new String(newText);
+    markDirty();
+    changed();
+  }
+}

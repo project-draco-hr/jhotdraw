@@ -1,0 +1,8 @@
+{
+  super.write(dw);
+  dw.writeInt(fPoly.npoints);
+  for (int i=0; i < fPoly.npoints; ++i) {
+    dw.writeInt(fPoly.xpoints[i]);
+    dw.writeInt(fPoly.ypoints[i]);
+  }
+}

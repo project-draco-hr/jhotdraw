@@ -1,0 +1,9 @@
+{
+  super.createTools(palette);
+  Tool tool=new TextTool(view(),new NodeFigure());
+  palette.add(createToolButton(IMAGES + "TEXT","Text Tool",tool));
+  tool=new CreationTool(view(),new NodeFigure());
+  palette.add(createToolButton(IMAGES + "RECT","Create Org Unit",tool));
+  tool=new ConnectionTool(view(),new LineConnection());
+  palette.add(createToolButton(IMAGES + "CONN","Connection Tool",tool));
+}

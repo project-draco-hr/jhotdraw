@@ -1,0 +1,14 @@
+{
+  x=e.getX();
+  y=e.getY();
+  if (e.getClickCount() >= 2) {
+    if (fPolygon != null) {
+      fPolygon.smoothPoints();
+      editor().toolDone();
+    }
+    fPolygon=null;
+  }
+ else {
+    addPoint(e.getX(),e.getY());
+  }
+}

@@ -1,0 +1,4 @@
+{
+  double angle=Math.atan2(fOrigin.y + dy - fCenter.y,fOrigin.x + dx - fCenter.x);
+  ((TriangleFigure)(owner())).rotate(angle);
+}

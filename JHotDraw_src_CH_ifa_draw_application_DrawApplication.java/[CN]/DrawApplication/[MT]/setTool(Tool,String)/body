@@ -1,0 +1,8 @@
+{
+  if (fTool != null)   fTool.deactivate();
+  fTool=t;
+  if (fTool != null) {
+    fStatusLine.setText(name);
+    fTool.activate();
+  }
+}

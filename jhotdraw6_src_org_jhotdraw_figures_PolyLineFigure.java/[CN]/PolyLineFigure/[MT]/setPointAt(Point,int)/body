@@ -1,0 +1,5 @@
+{
+  willChange();
+  fPoints.setElementAt(p,i);
+  changed();
+}

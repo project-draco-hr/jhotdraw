@@ -1,0 +1,8 @@
+{
+  Insets i=super.connectionInsets();
+  i.top-=3;
+  i.bottom-=3;
+  i.left-=3;
+  i.right-=3;
+  return i;
+}

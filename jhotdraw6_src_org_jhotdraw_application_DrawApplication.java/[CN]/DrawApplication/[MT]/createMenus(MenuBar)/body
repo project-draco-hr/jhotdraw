@@ -1,0 +1,7 @@
+{
+  mb.add(createFileMenu());
+  mb.add(createEditMenu());
+  mb.add(createAlignmentMenu());
+  mb.add(createAttributesMenu());
+  mb.add(createDebugMenu());
+}

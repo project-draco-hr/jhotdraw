@@ -1,0 +1,37 @@
+{
+  dw.writeString("attributes");
+  dw.writeInt(fMap.size());
+  Enumeration k=fMap.keys();
+  while (k.hasMoreElements()) {
+    String s=(String)k.nextElement();
+    dw.writeString(s);
+    Object v=fMap.get(s);
+    if (v instanceof String) {
+      dw.writeString("String");
+      dw.writeString((String)v);
+    }
+ else     if (v instanceof Color) {
+      dw.writeString("Color");
+      dw.writeInt(((Color)v).getRed());
+      dw.writeInt(((Color)v).getGreen());
+      dw.writeInt(((Color)v).getBlue());
+    }
+ else     if (v instanceof Boolean) {
+      dw.writeString("Boolean");
+      if (((Boolean)v).booleanValue())       dw.writeString("TRUE");
+ else       dw.writeString("FALSE");
+    }
+ else     if (v instanceof Integer) {
+      dw.writeString("Int");
+      dw.writeInt(((Integer)v).intValue());
+    }
+ else     if (v instanceof Storable) {
+      dw.writeString("Storable");
+      dw.writeStorable((Storable)v);
+    }
+ else {
+      System.out.println(v);
+      dw.writeString("UNKNOWN");
+    }
+  }
+}

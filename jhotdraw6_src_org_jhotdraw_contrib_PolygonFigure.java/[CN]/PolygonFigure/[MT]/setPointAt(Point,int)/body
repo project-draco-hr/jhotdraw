@@ -1,0 +1,6 @@
+{
+  willChange();
+  fPoly.xpoints[i]=p.x;
+  fPoly.ypoints[i]=p.y;
+  changed();
+}

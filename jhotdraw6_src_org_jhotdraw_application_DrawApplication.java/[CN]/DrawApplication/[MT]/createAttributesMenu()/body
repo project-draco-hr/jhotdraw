@@ -1,0 +1,12 @@
+{
+  Menu menu=new Menu("Attributes");
+  menu.add(createColorMenu("Fill Color","FillColor"));
+  menu.add(createColorMenu("Pen Color","FrameColor"));
+  menu.add(createArrowMenu());
+  menu.addSeparator();
+  menu.add(createFontMenu());
+  menu.add(createFontSizeMenu());
+  menu.add(createFontStyleMenu());
+  menu.add(createColorMenu("Text Color","TextColor"));
+  return menu;
+}

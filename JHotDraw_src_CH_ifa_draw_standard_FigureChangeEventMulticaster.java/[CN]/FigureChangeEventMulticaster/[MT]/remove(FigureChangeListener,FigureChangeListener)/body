@@ -1,0 +1,3 @@
+{
+  return (FigureChangeListener)removeInternal(l,oldl);
+}

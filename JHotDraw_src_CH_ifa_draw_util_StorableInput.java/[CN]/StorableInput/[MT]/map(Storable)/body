@@ -1,0 +1,3 @@
+{
+  if (!fMap.contains(storable))   fMap.addElement(storable);
+}

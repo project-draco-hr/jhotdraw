@@ -1,0 +1,9 @@
+{
+  if (e.getClickCount() >= 2) {
+    fScribble=null;
+    editor().toolDone();
+  }
+ else {
+    point(e.getX(),e.getY());
+  }
+}

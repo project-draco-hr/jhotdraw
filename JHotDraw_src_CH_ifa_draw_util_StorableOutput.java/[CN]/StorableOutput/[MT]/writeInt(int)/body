@@ -1,0 +1,4 @@
+{
+  fStream.print(i);
+  space();
+}

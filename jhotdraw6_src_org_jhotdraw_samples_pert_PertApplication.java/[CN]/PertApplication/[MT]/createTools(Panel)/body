@@ -1,0 +1,12 @@
+{
+  super.createTools(palette);
+  Tool tool;
+  tool=new TextTool(view(),new TextFigure());
+  palette.add(createToolButton(IMAGES + "TEXT","Text Tool",tool));
+  tool=new PertFigureCreationTool(view());
+  palette.add(createToolButton(PERTIMAGES + "PERT","Task Tool",tool));
+  tool=new ConnectionTool(view(),new PertDependency());
+  palette.add(createToolButton(IMAGES + "CONN","Dependency Tool",tool));
+  tool=new CreationTool(view(),new LineFigure());
+  palette.add(createToolButton(IMAGES + "Line","Line Tool",tool));
+}

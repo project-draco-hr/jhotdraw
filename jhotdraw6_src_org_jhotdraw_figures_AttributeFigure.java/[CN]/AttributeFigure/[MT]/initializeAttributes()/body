@@ -1,0 +1,10 @@
+{
+  fgDefaultAttributes=new FigureAttributes();
+  fgDefaultAttributes.set("FrameColor",Color.black);
+  fgDefaultAttributes.set("FillColor",new Color(0x70DB93));
+  fgDefaultAttributes.set("TextColor",Color.black);
+  fgDefaultAttributes.set("ArrowMode",new Integer(0));
+  fgDefaultAttributes.set("FontName","Helvetica");
+  fgDefaultAttributes.set("FontSize",new Integer(12));
+  fgDefaultAttributes.set("FontStyle",new Integer(Font.PLAIN));
+}

@@ -1,0 +1,14 @@
+{
+  FigureEnumeration k=drawing().figures();
+  Dimension d=new Dimension(0,0);
+  while (k.hasMoreElements()) {
+    Rectangle r=k.nextFigure().displayBox();
+    d.width=Math.max(d.width,r.x + r.width);
+    d.height=Math.max(d.height,r.y + r.height);
+  }
+  if (fViewSize.height < d.height || fViewSize.width < d.width) {
+    fViewSize.height=d.height + 10;
+    fViewSize.width=d.width + 10;
+    setSize(fViewSize);
+  }
+}

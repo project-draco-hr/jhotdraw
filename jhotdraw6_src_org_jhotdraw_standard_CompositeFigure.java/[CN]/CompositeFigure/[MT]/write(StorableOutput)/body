@@ -1,0 +1,6 @@
+{
+  super.write(dw);
+  dw.writeInt(fFigures.size());
+  Enumeration k=fFigures.elements();
+  while (k.hasMoreElements())   dw.writeStorable((Storable)k.nextElement());
+}

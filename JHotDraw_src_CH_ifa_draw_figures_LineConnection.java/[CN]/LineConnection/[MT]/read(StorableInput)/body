@@ -1,0 +1,8 @@
+{
+  super.read(dr);
+  Connector start=(Connector)dr.readStorable();
+  if (start != null)   connectStart(start);
+  Connector end=(Connector)dr.readStorable();
+  if (end != null)   connectEnd(end);
+  if (start != null && end != null)   updateConnection();
+}

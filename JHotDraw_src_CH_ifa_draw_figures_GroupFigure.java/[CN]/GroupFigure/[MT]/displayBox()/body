@@ -1,0 +1,6 @@
+{
+  FigureEnumeration k=figures();
+  Rectangle r=k.nextFigure().displayBox();
+  while (k.hasMoreElements())   r.add(k.nextFigure().displayBox());
+  return r;
+}

@@ -1,0 +1,9 @@
+{
+  Figure figure=e.getFigure();
+  if (fFigures.contains(figure)) {
+    fFigures.removeElement(figure);
+    figure.removeFromContainer(this);
+    figure.release();
+  }
+ else   System.out.println("Attempt to remove non-existing figure");
+}

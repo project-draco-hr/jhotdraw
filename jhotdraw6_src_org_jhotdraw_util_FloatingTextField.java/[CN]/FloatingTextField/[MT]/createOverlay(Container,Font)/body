@@ -1,0 +1,5 @@
+{
+  container.add(fEditWidget,0);
+  if (font != null)   fEditWidget.setFont(font);
+  fContainer=container;
+}

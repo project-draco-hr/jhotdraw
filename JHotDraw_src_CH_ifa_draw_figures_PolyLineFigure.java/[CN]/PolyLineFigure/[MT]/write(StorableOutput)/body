@@ -1,0 +1,13 @@
+{
+  super.write(dw);
+  dw.writeInt(fPoints.size());
+  Enumeration k=fPoints.elements();
+  while (k.hasMoreElements()) {
+    Point p=(Point)k.nextElement();
+    dw.writeInt(p.x);
+    dw.writeInt(p.y);
+  }
+  dw.writeStorable(fStartDecoration);
+  dw.writeStorable(fEndDecoration);
+  dw.writeColor(fFrameColor);
+}

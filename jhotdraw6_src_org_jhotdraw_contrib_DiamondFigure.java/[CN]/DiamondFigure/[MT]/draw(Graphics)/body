@@ -1,0 +1,7 @@
+{
+  Polygon p=polygon();
+  g.setColor(getFillColor());
+  g.fillPolygon(p);
+  g.setColor(getFrameColor());
+  g.drawPolygon(p);
+}

@@ -1,0 +1,5 @@
+{
+  if (a == null)   return b;
+  if (b == null)   return a;
+  return new FigureChangeEventMulticaster(a,b);
+}

@@ -1,0 +1,10 @@
+{
+  Polygon p=((TriangleFigure)(owner())).polygon();
+  Point first=new Point(p.xpoints[0],p.ypoints[0]);
+  Point ctr=owner().center();
+  double len=Geom.length(first.x,first.y,ctr.x,ctr.y);
+  if (len == 0)   return new Point(first.x - HANDLESIZE / 2,first.y + HANDLESIZE / 2);
+  double u=HANDLESIZE / len;
+  if (u > 1.0)   return new Point((first.x * 3 + ctr.x) / 4,(first.y * 3 + ctr.y) / 4);
+ else   return new Point((int)(first.x * (1.0 - u) + ctr.x * u),(int)(first.y * (1.0 - u) + ctr.y * u));
+}

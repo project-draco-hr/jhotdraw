@@ -1,0 +1,4 @@
+{
+  fCommands=new Vector(10);
+  addItemListener(this);
+}

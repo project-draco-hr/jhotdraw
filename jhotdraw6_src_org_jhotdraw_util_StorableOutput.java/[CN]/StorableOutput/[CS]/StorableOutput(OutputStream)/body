@@ -1,0 +1,5 @@
+{
+  fStream=new PrintWriter(stream);
+  fMap=new Vector();
+  fIndent=0;
+}

@@ -1,0 +1,3 @@
+{
+  fView.setCursor(Cursor.getDefaultCursor());
+}

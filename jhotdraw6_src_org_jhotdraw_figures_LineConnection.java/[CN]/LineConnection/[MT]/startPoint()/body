@@ -1,0 +1,4 @@
+{
+  Point p=(Point)fPoints.firstElement();
+  return new Point(p.x,p.y);
+}

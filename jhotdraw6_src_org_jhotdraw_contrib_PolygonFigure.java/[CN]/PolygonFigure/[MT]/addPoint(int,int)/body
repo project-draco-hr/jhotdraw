@@ -1,0 +1,4 @@
+{
+  fPoly.addPoint(x,y);
+  changed();
+}

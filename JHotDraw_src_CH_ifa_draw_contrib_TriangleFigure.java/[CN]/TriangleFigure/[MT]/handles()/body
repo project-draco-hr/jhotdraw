@@ -1,0 +1,5 @@
+{
+  Vector h=super.handles();
+  h.addElement(new TriangleRotationHandle(this));
+  return h;
+}

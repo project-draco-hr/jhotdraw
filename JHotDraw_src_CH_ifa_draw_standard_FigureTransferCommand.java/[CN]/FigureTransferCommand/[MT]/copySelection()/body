@@ -1,0 +1,4 @@
+{
+  FigureSelection selection=fView.getFigureSelection();
+  Clipboard.getClipboard().setContents(selection);
+}

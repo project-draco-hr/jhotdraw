@@ -1,0 +1,4 @@
+{
+  super.read(dr);
+  fRotation=dr.readInt();
+}

@@ -1,0 +1,4 @@
+{
+  if (fSleeper == null)   fSleeper=new SleeperThread(this);
+  fSleeper.start();
+}

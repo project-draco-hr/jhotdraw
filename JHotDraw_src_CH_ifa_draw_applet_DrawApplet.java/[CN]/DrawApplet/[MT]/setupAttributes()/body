@@ -1,0 +1,20 @@
+{
+  Color frameColor=(Color)AttributeFigure.getDefaultAttribute("FrameColor");
+  Color fillColor=(Color)AttributeFigure.getDefaultAttribute("FillColor");
+  Color textColor=(Color)AttributeFigure.getDefaultAttribute("TextColor");
+  Integer arrowMode=(Integer)AttributeFigure.getDefaultAttribute("ArrowMode");
+  String fontName=(String)AttributeFigure.getDefaultAttribute("FontName");
+  FigureEnumeration k=fView.selectionElements();
+  while (k.hasMoreElements()) {
+    Figure f=k.nextFigure();
+    frameColor=(Color)f.getAttribute("FrameColor");
+    fillColor=(Color)f.getAttribute("FillColor");
+    textColor=(Color)f.getAttribute("TextColor");
+    arrowMode=(Integer)f.getAttribute("ArrowMode");
+    fontName=(String)f.getAttribute("FontName");
+  }
+  fFrameColor.select(ColorMap.colorIndex(frameColor));
+  fFillColor.select(ColorMap.colorIndex(fillColor));
+  if (arrowMode != null)   fArrowChoice.select(arrowMode.intValue());
+  if (fontName != null)   fFontChoice.select(fontName);
+}

@@ -1,0 +1,8 @@
+{
+  if (fPolygon != null) {
+    if (fPolygon.pointCount() > 1) {
+      fPolygon.setPointAt(new Point(x,y),fPolygon.pointCount() - 1);
+      view().checkDamage();
+    }
+  }
+}

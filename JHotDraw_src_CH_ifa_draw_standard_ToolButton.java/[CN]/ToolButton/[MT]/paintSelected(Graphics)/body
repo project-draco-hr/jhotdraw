@@ -1,0 +1,3 @@
+{
+  if (fIcon.selected() != null)   g.drawImage(fIcon.selected(),0,0,this);
+}

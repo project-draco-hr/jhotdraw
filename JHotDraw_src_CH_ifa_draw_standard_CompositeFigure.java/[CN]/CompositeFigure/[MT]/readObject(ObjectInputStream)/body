@@ -1,0 +1,8 @@
+{
+  s.defaultReadObject();
+  FigureEnumeration k=figures();
+  while (k.hasMoreElements()) {
+    Figure figure=k.nextFigure();
+    figure.addToContainer(this);
+  }
+}

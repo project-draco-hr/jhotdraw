@@ -1,0 +1,5 @@
+{
+  if (fAttributes == null)   fAttributes=new FigureAttributes();
+  fAttributes.set(name,value);
+  changed();
+}

@@ -1,0 +1,4 @@
+{
+  startFigure().removeFigureChangeListener(this);
+  fStart=null;
+}

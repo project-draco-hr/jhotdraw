@@ -1,0 +1,15 @@
+{
+  int iwidth=image.getWidth(view);
+  int iheight=image.getHeight(view);
+  Dimension d=view.getSize();
+  int x=0;
+  int y=0;
+  while (y < d.height) {
+    while (x < d.width) {
+      g.drawImage(image,x,y,view);
+      x+=iwidth;
+    }
+    y+=iheight;
+    x=0;
+  }
+}

@@ -1,0 +1,4 @@
+{
+  double dir=Math.PI / 2 - Math.atan2(x2 - x1,y1 - y2);
+  return outline(x1,y1,dir);
+}

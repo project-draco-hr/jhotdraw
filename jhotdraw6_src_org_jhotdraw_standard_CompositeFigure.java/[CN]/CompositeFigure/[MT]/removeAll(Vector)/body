@@ -1,0 +1,4 @@
+{
+  Enumeration k=figures.elements();
+  while (k.hasMoreElements())   remove((Figure)k.nextElement());
+}

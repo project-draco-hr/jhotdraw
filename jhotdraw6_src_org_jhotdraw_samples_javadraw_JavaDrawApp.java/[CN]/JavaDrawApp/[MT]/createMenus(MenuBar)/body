@@ -1,0 +1,6 @@
+{
+  super.createMenus(mb);
+  mb.add(createAnimationMenu());
+  mb.add(createImagesMenu());
+  mb.add(createWindowMenu());
+}

@@ -1,0 +1,4 @@
+{
+  Rectangle r=owner().displayBox();
+  owner().displayBox(new Point(r.x,Math.min(r.y + r.height,y)),new Point(r.x + r.width,r.y + r.height));
+}

@@ -1,0 +1,7 @@
+{
+  if (fTextField == null)   fTextField=new FloatingTextField();
+  if (figure != fTypingTarget && fTypingTarget != null)   endEdit();
+  fTextField.createOverlay((Container)view(),figure.getFont());
+  fTextField.setBounds(fieldBounds(figure),figure.getText());
+  fTypingTarget=figure;
+}

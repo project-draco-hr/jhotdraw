@@ -1,0 +1,4 @@
+{
+  Enumeration i=fPostTasks.elements();
+  while (i.hasMoreElements())   ((PertFigure)i.nextElement()).updateDurations();
+}

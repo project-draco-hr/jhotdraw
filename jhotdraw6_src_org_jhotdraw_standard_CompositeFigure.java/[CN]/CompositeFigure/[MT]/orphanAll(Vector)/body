@@ -1,0 +1,4 @@
+{
+  Enumeration k=newFigures.elements();
+  while (k.hasMoreElements())   orphan((Figure)k.nextElement());
+}

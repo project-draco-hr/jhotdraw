@@ -1,0 +1,9 @@
+{
+  if (without == null)   return findFigure(x,y);
+  FigureEnumeration k=figuresReverse();
+  while (k.hasMoreElements()) {
+    Figure figure=k.nextFigure();
+    if (figure.containsPoint(x,y) && !figure.includes(without))     return figure;
+  }
+  return null;
+}

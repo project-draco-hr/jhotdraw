@@ -1,0 +1,9 @@
+{
+  if (super.includes(figure))   return true;
+  FigureEnumeration k=figures();
+  while (k.hasMoreElements()) {
+    Figure f=k.nextFigure();
+    if (f.includes(figure))     return true;
+  }
+  return false;
+}

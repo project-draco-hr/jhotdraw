@@ -1,0 +1,6 @@
+{
+  MenuItem m=new MenuItem(command.name());
+  m.addActionListener(this);
+  add(m);
+  fCommands.addElement(command);
+}

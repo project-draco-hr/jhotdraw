@@ -1,0 +1,7 @@
+{
+  if (!fFigures.contains(figure)) {
+    fFigures.addElement(figure);
+    figure.addToContainer(this);
+  }
+  return figure;
+}

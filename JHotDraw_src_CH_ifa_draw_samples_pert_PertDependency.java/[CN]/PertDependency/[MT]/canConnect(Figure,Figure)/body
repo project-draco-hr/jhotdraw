@@ -1,0 +1,3 @@
+{
+  return (start instanceof PertFigure && end instanceof PertFigure);
+}

@@ -1,0 +1,4 @@
+{
+  Rectangle r=displayBox();
+  g.fillRect(r.x,r.y,r.width,r.height);
+}

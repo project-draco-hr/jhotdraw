@@ -1,0 +1,3 @@
+{
+  fRegisteredImages.addElement(fileName);
+}

@@ -1,0 +1,5 @@
+{
+  handleDisconnect(startFigure(),endFigure());
+  endFigure().removeFigureChangeListener(this);
+  fEnd=null;
+}

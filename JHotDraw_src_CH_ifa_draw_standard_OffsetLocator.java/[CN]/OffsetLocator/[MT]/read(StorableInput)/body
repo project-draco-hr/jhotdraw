@@ -1,0 +1,6 @@
+{
+  super.read(dr);
+  fOffsetX=dr.readInt();
+  fOffsetY=dr.readInt();
+  fBase=(Locator)dr.readStorable();
+}

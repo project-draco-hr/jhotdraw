@@ -1,0 +1,5 @@
+{
+  Point p=owner.center();
+  Rectangle r=owner.displayBox();
+  return new Point(p.x,p.y - 10);
+}

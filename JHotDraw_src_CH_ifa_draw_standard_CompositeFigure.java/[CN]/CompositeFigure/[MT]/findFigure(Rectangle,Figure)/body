@@ -1,0 +1,10 @@
+{
+  if (without == null)   return findFigure(r);
+  FigureEnumeration k=figuresReverse();
+  while (k.hasMoreElements()) {
+    Figure figure=k.nextFigure();
+    Rectangle fr=figure.displayBox();
+    if (r.intersects(fr) && !figure.includes(without))     return figure;
+  }
+  return null;
+}

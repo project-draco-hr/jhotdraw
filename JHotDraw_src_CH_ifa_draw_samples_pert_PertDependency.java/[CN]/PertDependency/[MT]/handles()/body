@@ -1,0 +1,5 @@
+{
+  Vector handles=super.handles();
+  handles.setElementAt(new NullHandle(this,PolyLineFigure.locator(0)),0);
+  return handles;
+}

@@ -1,0 +1,5 @@
+{
+  super.write(dw);
+  dw.writeDouble(fRelativeX);
+  dw.writeDouble(fRelativeY);
+}

@@ -1,0 +1,18 @@
+{
+  fIconkit=new Iconkit(this);
+  setLayout(new BorderLayout());
+  fView=createDrawingView();
+  Panel attributes=createAttributesPanel();
+  createAttributeChoices(attributes);
+  add("North",attributes);
+  Panel toolPanel=createToolPalette();
+  createTools(toolPanel);
+  add("West",toolPanel);
+  add("Center",fView);
+  Panel buttonPalette=createButtonPanel();
+  createButtons(buttonPalette);
+  add("South",buttonPalette);
+  initDrawing();
+  setBufferedDisplayUpdate();
+  setupAttributes();
+}

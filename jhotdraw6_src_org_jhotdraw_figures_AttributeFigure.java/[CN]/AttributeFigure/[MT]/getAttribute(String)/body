@@ -1,0 +1,6 @@
+{
+  if (fAttributes != null) {
+    if (fAttributes.hasDefined(name))     return fAttributes.get(name);
+  }
+  return getDefaultAttribute(name);
+}

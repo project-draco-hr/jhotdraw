@@ -1,0 +1,17 @@
+{
+  double si=Math.sin(angle);
+  double co=Math.cos(angle);
+  double e=0.0001;
+  int x=0, y=0;
+  if (Math.abs(si) > e) {
+    x=(int)((1.0 + co / Math.abs(si)) / 2.0 * r.width);
+    x=range(0,r.width,x);
+  }
+ else   if (co >= 0.0)   x=r.width;
+  if (Math.abs(co) > e) {
+    y=(int)((1.0 + si / Math.abs(co)) / 2.0 * r.height);
+    y=range(0,r.height,y);
+  }
+ else   if (si >= 0.0)   y=r.height;
+  return new Point(r.x + x,r.y + y);
+}

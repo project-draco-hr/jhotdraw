@@ -1,0 +1,6 @@
+{
+  if (fAnimator != null) {
+    fAnimator.end();
+    fAnimator=null;
+  }
+}

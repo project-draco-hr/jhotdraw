@@ -1,0 +1,4 @@
+{
+  if (fPrototype == null)   throw new HJDError("No protoype defined");
+  return (Figure)fPrototype.clone();
+}

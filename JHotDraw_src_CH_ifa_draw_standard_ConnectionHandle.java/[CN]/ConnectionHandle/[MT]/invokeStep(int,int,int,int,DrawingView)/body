@@ -1,0 +1,12 @@
+{
+  Point p=new Point(x,y);
+  Figure f=findConnectableFigure(x,y,view.drawing());
+  if (f != fTarget) {
+    if (fTarget != null)     fTarget.connectorVisibility(false);
+    fTarget=f;
+    if (fTarget != null)     fTarget.connectorVisibility(true);
+  }
+  Connector target=findConnectionTarget(p.x,p.y,view.drawing());
+  if (target != null)   p=Geom.center(target.displayBox());
+  fConnection.endPoint(p.x,p.y);
+}

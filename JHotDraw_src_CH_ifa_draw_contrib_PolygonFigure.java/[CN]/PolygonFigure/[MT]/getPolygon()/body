@@ -1,0 +1,3 @@
+{
+  return new Polygon(fPoly.xpoints,fPoly.ypoints,fPoly.npoints);
+}

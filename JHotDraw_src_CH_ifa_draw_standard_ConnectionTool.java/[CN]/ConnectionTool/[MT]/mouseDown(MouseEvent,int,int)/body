@@ -1,0 +1,27 @@
+{
+  int ex=e.getX();
+  int ey=e.getY();
+  fTarget=findConnectionStart(ex,ey,drawing());
+  if (fTarget != null) {
+    fStartConnector=findConnector(ex,ey,fTarget);
+    if (fStartConnector != null) {
+      Point p=new Point(ex,ey);
+      fConnection=createConnection();
+      fConnection.startPoint(p.x,p.y);
+      fConnection.endPoint(p.x,p.y);
+      view().add(fConnection);
+    }
+  }
+ else {
+    ConnectionFigure connection=findConnection(ex,ey,drawing());
+    if (connection != null) {
+      if (!connection.joinSegments(ex,ey)) {
+        fSplitPoint=connection.splitSegment(ex,ey);
+        fEditedConnection=connection;
+      }
+ else {
+        fEditedConnection=null;
+      }
+    }
+  }
+}

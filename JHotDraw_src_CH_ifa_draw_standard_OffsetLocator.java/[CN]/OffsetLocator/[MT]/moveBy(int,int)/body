@@ -1,0 +1,4 @@
+{
+  fOffsetX+=dx;
+  fOffsetY+=dy;
+}

@@ -1,0 +1,4 @@
+{
+  deleteSelection();
+  fView.checkDamage();
+}

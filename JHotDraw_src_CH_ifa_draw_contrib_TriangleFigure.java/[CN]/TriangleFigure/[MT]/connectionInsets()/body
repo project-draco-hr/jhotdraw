@@ -1,0 +1,23 @@
+{
+  Rectangle r=displayBox();
+switch (fRotation) {
+case 0:
+    return new Insets(r.height,r.width / 2,0,r.width / 2);
+case 1:
+  return new Insets(0,r.width,r.height,0);
+case 2:
+return new Insets(r.height / 2,0,r.height / 2,r.width);
+case 3:
+return new Insets(r.height,r.width,0,0);
+case 4:
+return new Insets(0,r.width / 2,r.height,r.width / 2);
+case 5:
+return new Insets(r.height,0,0,r.width);
+case 6:
+return new Insets(r.height / 2,r.width,r.height / 2,0);
+case 7:
+return new Insets(0,0,r.height,r.width);
+default :
+return null;
+}
+}

@@ -1,0 +1,3 @@
+{
+  return fView.selectionCount() > 0;
+}

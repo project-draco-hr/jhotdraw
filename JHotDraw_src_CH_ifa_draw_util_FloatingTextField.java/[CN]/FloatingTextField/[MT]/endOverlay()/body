@@ -1,0 +1,8 @@
+{
+  fContainer.requestFocus();
+  if (fEditWidget == null)   return;
+  fEditWidget.setVisible(false);
+  fContainer.remove(fEditWidget);
+  Rectangle bounds=fEditWidget.getBounds();
+  fContainer.repaint(bounds.x,bounds.y,bounds.width,bounds.height);
+}

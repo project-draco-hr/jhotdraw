@@ -1,0 +1,5 @@
+int x
+int y
+int anchorX
+int anchorY
+DrawingView view

@@ -1,0 +1,7 @@
+{
+  int ref=fMap.indexOf(storable);
+  fStream.print("REF");
+  space();
+  fStream.print(ref);
+  space();
+}

@@ -1,0 +1,4 @@
+{
+  if (filename.endsWith("*.*"))   return filename.substring(0,filename.length() - 4);
+ else   return filename;
+}

@@ -1,0 +1,12 @@
+{
+  Menu menu=new Menu("Window");
+  MenuItem mi=new MenuItem("New Window");
+  mi.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent event){
+      openView();
+    }
+  }
+);
+  menu.add(mi);
+  return menu;
+}

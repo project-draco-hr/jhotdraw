@@ -1,0 +1,9 @@
+{
+  PertFigure source=(PertFigure)start;
+  PertFigure target=(PertFigure)end;
+  if (target != null) {
+    target.removePreTask(source);
+    target.updateDurations();
+  }
+  if (source != null)   source.removePostTask(target);
+}

@@ -1,0 +1,6 @@
+{
+  fAnchorPoint=new Point(x,y);
+  fCreatedFigure=createFigure();
+  fCreatedFigure.displayBox(fAnchorPoint,fAnchorPoint);
+  view().add(fCreatedFigure);
+}

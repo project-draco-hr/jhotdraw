@@ -1,0 +1,3 @@
+{
+  if (fScribble != null)   point(e.getX(),e.getY());
+}

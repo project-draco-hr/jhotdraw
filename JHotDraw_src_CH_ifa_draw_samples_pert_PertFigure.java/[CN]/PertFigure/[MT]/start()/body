@@ -1,0 +1,9 @@
+{
+  int start=0;
+  Enumeration i=fPreTasks.elements();
+  while (i.hasMoreElements()) {
+    PertFigure f=(PertFigure)i.nextElement();
+    start=Math.max(start,f.end());
+  }
+  return start;
+}

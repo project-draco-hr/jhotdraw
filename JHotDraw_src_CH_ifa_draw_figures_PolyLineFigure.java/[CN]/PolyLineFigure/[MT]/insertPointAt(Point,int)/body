@@ -1,0 +1,4 @@
+{
+  fPoints.insertElementAt(p,i);
+  changed();
+}

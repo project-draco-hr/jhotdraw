@@ -1,0 +1,15 @@
+{
+  CommandMenu menu=new CommandMenu("Images");
+  File imagesDirectory=new File(fgSampleImagesPath);
+  try {
+    String[] list=imagesDirectory.list();
+    for (int i=0; i < list.length; i++) {
+      String name=list[i];
+      String path=fgSampleImagesResourcePath + name;
+      menu.add(new InsertImageCommand(name,path,view()));
+    }
+  }
+ catch (  Exception e) {
+  }
+  return menu;
+}

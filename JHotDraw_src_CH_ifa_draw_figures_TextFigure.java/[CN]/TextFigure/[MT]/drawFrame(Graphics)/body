@@ -1,0 +1,6 @@
+{
+  g.setFont(fFont);
+  g.setColor((Color)getAttribute("TextColor"));
+  FontMetrics metrics=g.getFontMetrics(fFont);
+  g.drawString(fText,fOriginX,fOriginY + metrics.getAscent());
+}

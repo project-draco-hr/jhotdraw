@@ -1,0 +1,20 @@
+{
+  Menu menu=new Menu("Debug");
+  MenuItem mi=new MenuItem("Simple Update");
+  mi.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent event){
+      fView.setDisplayUpdate(new SimpleUpdateStrategy());
+    }
+  }
+);
+  menu.add(mi);
+  mi=new MenuItem("Buffered Update");
+  mi.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent event){
+      fView.setDisplayUpdate(new BufferedUpdateStrategy());
+    }
+  }
+);
+  menu.add(mi);
+  return menu;
+}

@@ -1,0 +1,13 @@
+{
+  super.mouseDown(e,x,y);
+  fLastX=x;
+  fLastY=y;
+  if (e.isShiftDown()) {
+    view().toggleSelection(fAnchorFigure);
+    fAnchorFigure=null;
+  }
+ else   if (!view().selection().contains(fAnchorFigure)) {
+    view().clearSelection();
+    view().addToSelection(fAnchorFigure);
+  }
+}

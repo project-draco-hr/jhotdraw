@@ -1,0 +1,11 @@
+{
+  if (l == oldl || l == null) {
+    return null;
+  }
+ else   if (l instanceof FigureChangeEventMulticaster) {
+    return ((FigureChangeEventMulticaster)l).remove(oldl);
+  }
+ else {
+    return l;
+  }
+}

@@ -1,0 +1,4 @@
+{
+  ((FigureChangeListener)a).figureRequestUpdate(e);
+  ((FigureChangeListener)b).figureRequestUpdate(e);
+}

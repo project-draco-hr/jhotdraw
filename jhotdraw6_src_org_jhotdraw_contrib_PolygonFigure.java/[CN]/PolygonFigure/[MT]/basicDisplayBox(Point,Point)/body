@@ -1,0 +1,10 @@
+{
+  Rectangle r=displayBox();
+  int dx=origin.x - r.x;
+  int dy=origin.y - r.y;
+  fPoly.translate(dx,dy);
+  r=displayBox();
+  Point oldCorner=new Point(r.x + r.width,r.y + r.height);
+  Polygon p=getPolygon();
+  scaleRotate(oldCorner,p,corner);
+}

@@ -1,0 +1,12 @@
+{
+  if (fStartDecoration != null) {
+    Point p1=(Point)fPoints.elementAt(0);
+    Point p2=(Point)fPoints.elementAt(1);
+    fStartDecoration.draw(g,p1.x,p1.y,p2.x,p2.y);
+  }
+  if (fEndDecoration != null) {
+    Point p3=(Point)fPoints.elementAt(fPoints.size() - 2);
+    Point p4=(Point)fPoints.elementAt(fPoints.size() - 1);
+    fEndDecoration.draw(g,p4.x,p4.y,p3.x,p3.y);
+  }
+}

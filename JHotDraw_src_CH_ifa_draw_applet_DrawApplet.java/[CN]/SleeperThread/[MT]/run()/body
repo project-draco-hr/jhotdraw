@@ -1,0 +1,11 @@
+{
+  try {
+    for (; ; ) {
+      fApplet.showStatus("loading icons...");
+      sleep(50);
+    }
+  }
+ catch (  InterruptedException e) {
+    return;
+  }
+}

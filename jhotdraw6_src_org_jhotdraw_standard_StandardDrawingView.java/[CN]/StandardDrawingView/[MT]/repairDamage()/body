@@ -1,0 +1,6 @@
+{
+  if (fDamage != null) {
+    repaint(fDamage.x,fDamage.y,fDamage.width,fDamage.height);
+    fDamage=null;
+  }
+}

@@ -1,0 +1,5 @@
+{
+  super.release();
+  fComponent.removeFromContainer(this);
+  fComponent.release();
+}

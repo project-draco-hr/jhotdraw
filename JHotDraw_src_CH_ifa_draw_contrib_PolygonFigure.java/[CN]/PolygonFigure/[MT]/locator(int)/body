@@ -1,0 +1,10 @@
+{
+  return new AbstractLocator(){
+    public Point locate(    Figure owner){
+      PolygonFigure plf=(PolygonFigure)owner;
+      if (pointIndex < plf.pointCount())       return ((PolygonFigure)owner).pointAt(pointIndex);
+      return new Point(-1,-1);
+    }
+  }
+;
+}

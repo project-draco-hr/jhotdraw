@@ -1,0 +1,20 @@
+{
+  Menu menu=new Menu("Animation");
+  MenuItem mi=new MenuItem("Start Animation");
+  mi.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent event){
+      startAnimation();
+    }
+  }
+);
+  menu.add(mi);
+  mi=new MenuItem("Stop Animation");
+  mi.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent event){
+      endAnimation();
+    }
+  }
+);
+  menu.add(mi);
+  return menu;
+}

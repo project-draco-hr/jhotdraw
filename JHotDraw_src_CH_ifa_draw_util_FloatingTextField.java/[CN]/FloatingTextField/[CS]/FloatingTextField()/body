@@ -1,0 +1,3 @@
+{
+  fEditWidget=new TextField(20);
+}

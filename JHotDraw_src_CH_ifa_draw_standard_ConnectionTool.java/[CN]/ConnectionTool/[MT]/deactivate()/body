@@ -1,0 +1,4 @@
+{
+  super.deactivate();
+  if (fTarget != null)   fTarget.connectorVisibility(false);
+}

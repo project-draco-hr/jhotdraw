@@ -1,0 +1,13 @@
+{
+  super.read(dr);
+  int size=dr.readInt();
+  fPoints=new Vector(size);
+  for (int i=0; i < size; i++) {
+    int x=dr.readInt();
+    int y=dr.readInt();
+    fPoints.addElement(new Point(x,y));
+  }
+  fStartDecoration=(LineDecoration)dr.readStorable();
+  fEndDecoration=(LineDecoration)dr.readStorable();
+  fFrameColor=dr.readColor();
+}

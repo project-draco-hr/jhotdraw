@@ -1,0 +1,13 @@
+{
+  setLayout(new BorderLayout());
+  fView=new StandardDrawingView(this,400,370);
+  add("Center",fView);
+  fTool=new FollowURLTool(view(),this);
+  fIconkit=new Iconkit(this);
+  String filename=getParameter("Drawing");
+  if (filename != null) {
+    loadDrawing(filename);
+    fView.setDrawing(fDrawing);
+  }
+ else   showStatus("Unable to load drawing");
+}

@@ -1,0 +1,16 @@
+{
+  while (fIsRunning) {
+    long tm=System.currentTimeMillis();
+    fView.freezeView();
+    fAnimatable.animationStep();
+    fView.checkDamage();
+    fView.unfreezeView();
+    try {
+      tm+=DELAY;
+      Thread.sleep(Math.max(0,tm - System.currentTimeMillis()));
+    }
+ catch (    InterruptedException e) {
+      break;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  Figure pressedFigure;
+  TextHolder textHolder=null;
+  pressedFigure=drawing().findFigureInside(x,y);
+  if (pressedFigure instanceof TextHolder) {
+    textHolder=(TextHolder)pressedFigure;
+    if (!textHolder.acceptsTyping())     textHolder=null;
+  }
+  if (textHolder != null) {
+    beginEdit(textHolder);
+    return;
+  }
+  if (fTypingTarget != null) {
+    editor().toolDone();
+    endEdit();
+  }
+ else {
+    super.mouseDown(e,x,y);
+    textHolder=(TextHolder)createdFigure();
+    beginEdit(textHolder);
+  }
+}

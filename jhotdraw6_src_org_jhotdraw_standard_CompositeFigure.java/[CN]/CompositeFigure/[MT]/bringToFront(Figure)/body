@@ -1,0 +1,7 @@
+{
+  if (fFigures.contains(figure)) {
+    fFigures.removeElement(figure);
+    fFigures.addElement(figure);
+    figure.changed();
+  }
+}

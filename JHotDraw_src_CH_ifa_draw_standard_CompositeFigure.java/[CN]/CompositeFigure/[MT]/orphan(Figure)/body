@@ -1,0 +1,4 @@
+{
+  fFigures.removeElement(figure);
+  return figure;
+}

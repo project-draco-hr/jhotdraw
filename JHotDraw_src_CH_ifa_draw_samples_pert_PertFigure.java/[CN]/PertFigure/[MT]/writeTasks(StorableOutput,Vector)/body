@@ -1,0 +1,5 @@
+{
+  dw.writeInt(v.size());
+  Enumeration i=v.elements();
+  while (i.hasMoreElements())   dw.writeStorable((Storable)i.nextElement());
+}

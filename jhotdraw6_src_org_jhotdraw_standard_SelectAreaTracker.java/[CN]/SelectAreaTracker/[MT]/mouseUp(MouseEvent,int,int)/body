@@ -1,0 +1,5 @@
+{
+  super.mouseUp(e,x,y);
+  eraseRubberBand();
+  selectGroup(e.isShiftDown());
+}

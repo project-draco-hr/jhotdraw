@@ -1,0 +1,9 @@
+{
+  ScrollPane sp=new ScrollPane();
+  Adjustable vadjust=sp.getVAdjustable();
+  Adjustable hadjust=sp.getHAdjustable();
+  hadjust.setUnitIncrement(16);
+  vadjust.setUnitIncrement(16);
+  sp.add(view);
+  return sp;
+}

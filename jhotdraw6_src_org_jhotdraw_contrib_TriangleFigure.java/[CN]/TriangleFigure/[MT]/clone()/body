@@ -1,0 +1,5 @@
+{
+  TriangleFigure figure=(TriangleFigure)super.clone();
+  figure.fRotation=fRotation;
+  return figure;
+}

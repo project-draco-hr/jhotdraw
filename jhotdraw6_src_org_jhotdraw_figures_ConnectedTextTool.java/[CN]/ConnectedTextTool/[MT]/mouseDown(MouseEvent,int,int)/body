@@ -1,0 +1,9 @@
+{
+  super.mouseDown(e,x,y);
+  Figure pressedFigure=drawing().findFigureInside(x,y);
+  TextHolder textHolder=(TextHolder)createdFigure();
+  if (!fConnected && pressedFigure != null && textHolder != null && pressedFigure != textHolder) {
+    textHolder.connect(pressedFigure);
+    fConnected=true;
+  }
+}

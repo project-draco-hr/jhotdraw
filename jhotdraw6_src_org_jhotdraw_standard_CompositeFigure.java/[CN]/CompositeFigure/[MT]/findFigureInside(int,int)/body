@@ -1,0 +1,8 @@
+{
+  FigureEnumeration k=figuresReverse();
+  while (k.hasMoreElements()) {
+    Figure figure=k.nextFigure().findFigureInside(x,y);
+    if (figure != null)     return figure;
+  }
+  return null;
+}

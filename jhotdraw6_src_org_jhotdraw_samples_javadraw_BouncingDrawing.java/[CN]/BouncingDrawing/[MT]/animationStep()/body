@@ -1,0 +1,4 @@
+{
+  Enumeration k=figures();
+  while (k.hasMoreElements())   ((AnimationDecorator)k.nextElement()).animationStep();
+}

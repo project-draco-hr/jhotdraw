@@ -1,0 +1,16 @@
+{
+  CommandMenu menu=new CommandMenu("Edit");
+  menu.add(new CutCommand("Cut",fView),new MenuShortcut('x'));
+  menu.add(new CopyCommand("Copy",fView),new MenuShortcut('c'));
+  menu.add(new PasteCommand("Paste",fView),new MenuShortcut('v'));
+  menu.addSeparator();
+  menu.add(new DuplicateCommand("Duplicate",fView),new MenuShortcut('d'));
+  menu.add(new DeleteCommand("Delete",fView));
+  menu.addSeparator();
+  menu.add(new GroupCommand("Group",fView));
+  menu.add(new UngroupCommand("Ungroup",fView));
+  menu.addSeparator();
+  menu.add(new SendToBackCommand("Send to Back",fView));
+  menu.add(new BringToFrontCommand("Bring to Front",fView));
+  return menu;
+}

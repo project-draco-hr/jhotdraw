@@ -1,0 +1,12 @@
+{
+  Vector selected=fView.selectionZOrdered();
+  Drawing drawing=fView.drawing();
+  if (selected.size() > 0) {
+    fView.clearSelection();
+    drawing.orphanAll(selected);
+    GroupFigure group=new GroupFigure();
+    group.addAll(selected);
+    fView.addToSelection(drawing.add(group));
+  }
+  fView.checkDamage();
+}

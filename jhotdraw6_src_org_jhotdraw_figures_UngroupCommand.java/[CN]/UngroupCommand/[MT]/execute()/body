@@ -1,0 +1,12 @@
+{
+  FigureEnumeration selection=fView.selectionElements();
+  fView.clearSelection();
+  Vector parts=new Vector();
+  while (selection.hasMoreElements()) {
+    Figure selected=selection.nextFigure();
+    Figure group=fView.drawing().orphan(selected);
+    FigureEnumeration k=group.decompose();
+    while (k.hasMoreElements())     fView.addToSelection(fView.add(k.nextFigure()));
+  }
+  fView.checkDamage();
+}

@@ -1,0 +1,5 @@
+{
+  registerImage(fileName);
+  loadRegisteredImages(component);
+  return getImage(fileName);
+}

@@ -1,0 +1,13 @@
+{
+  try {
+    FileInputStream stream=new FileInputStream(file);
+    StorableInput input=new StorableInput(stream);
+    fDrawing.release();
+    fDrawing=(Drawing)input.readStorable();
+    fView.setDrawing(fDrawing);
+  }
+ catch (  IOException e) {
+    initDrawing();
+    showStatus("Error: " + e);
+  }
+}

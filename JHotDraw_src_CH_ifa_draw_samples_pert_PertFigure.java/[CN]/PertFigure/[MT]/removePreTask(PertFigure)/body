@@ -1,0 +1,3 @@
+{
+  fPreTasks.removeElement(figure);
+}

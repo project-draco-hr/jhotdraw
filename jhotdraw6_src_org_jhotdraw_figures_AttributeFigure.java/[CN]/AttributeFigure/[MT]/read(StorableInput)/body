@@ -1,0 +1,8 @@
+{
+  super.read(dr);
+  String s=dr.readString();
+  if (s.toLowerCase().equals("attributes")) {
+    fAttributes=new FigureAttributes();
+    fAttributes.read(dr);
+  }
+}

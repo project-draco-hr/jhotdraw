@@ -1,0 +1,3 @@
+{
+  return fComponent.findFigureInside(x,y);
+}

@@ -1,0 +1,11 @@
+{
+  Vector result=new Vector(fSelection.size());
+  FigureEnumeration figures=drawing().figures();
+  while (figures.hasMoreElements()) {
+    Figure f=figures.nextFigure();
+    if (fSelection.contains(f)) {
+      result.addElement(f);
+    }
+  }
+  return result;
+}

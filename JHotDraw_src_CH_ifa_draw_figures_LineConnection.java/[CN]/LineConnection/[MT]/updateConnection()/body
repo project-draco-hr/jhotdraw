@@ -1,0 +1,10 @@
+{
+  if (fStart != null) {
+    Point start=fStart.findStart(this);
+    startPoint(start.x,start.y);
+  }
+  if (fEnd != null) {
+    Point end=fEnd.findEnd(this);
+    endPoint(end.x,end.y);
+  }
+}

@@ -1,0 +1,8 @@
+{
+  int index=fFigures.indexOf(figure);
+  if (index != -1) {
+    replacement.addToContainer(this);
+    figure.changed();
+    fFigures.setElementAt(replacement,index);
+  }
+}

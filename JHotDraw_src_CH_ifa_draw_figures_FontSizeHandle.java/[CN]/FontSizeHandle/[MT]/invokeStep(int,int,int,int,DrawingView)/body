@@ -1,0 +1,5 @@
+{
+  TextFigure textOwner=(TextFigure)owner();
+  int newSize=fSize + y - anchorY;
+  textOwner.setFont(new Font(fFont.getName(),fFont.getStyle(),newSize));
+}

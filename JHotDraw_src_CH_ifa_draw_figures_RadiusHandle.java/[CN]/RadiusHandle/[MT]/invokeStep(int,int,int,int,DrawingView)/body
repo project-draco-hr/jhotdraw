@@ -1,0 +1,8 @@
+{
+  int dx=x - anchorX;
+  int dy=y - anchorY;
+  Rectangle r=fOwner.displayBox();
+  int rx=Geom.range(0,r.width,2 * (fRadius.x + dx));
+  int ry=Geom.range(0,r.height,2 * (fRadius.y + dy));
+  fOwner.setArc(rx,ry);
+}

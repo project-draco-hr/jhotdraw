@@ -1,0 +1,4 @@
+{
+  Enumeration k=selectionHandles();
+  while (k.hasMoreElements())   ((Handle)k.nextElement()).draw(g);
+}

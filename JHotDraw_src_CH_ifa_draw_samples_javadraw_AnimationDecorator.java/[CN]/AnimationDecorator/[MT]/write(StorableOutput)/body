@@ -1,0 +1,5 @@
+{
+  super.write(dw);
+  dw.writeInt(fXVelocity);
+  dw.writeInt(fYVelocity);
+}

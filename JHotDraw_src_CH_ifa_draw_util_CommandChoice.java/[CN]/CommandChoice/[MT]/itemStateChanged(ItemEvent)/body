@@ -1,0 +1,4 @@
+{
+  Command command=(Command)fCommands.elementAt(getSelectedIndex());
+  command.execute();
+}

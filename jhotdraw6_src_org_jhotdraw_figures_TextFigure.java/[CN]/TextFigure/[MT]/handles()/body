@@ -1,0 +1,8 @@
+{
+  Vector handles=new Vector();
+  handles.addElement(new NullHandle(this,RelativeLocator.northWest()));
+  handles.addElement(new NullHandle(this,RelativeLocator.northEast()));
+  handles.addElement(new NullHandle(this,RelativeLocator.southEast()));
+  handles.addElement(new FontSizeHandle(this,RelativeLocator.southWest()));
+  return handles;
+}

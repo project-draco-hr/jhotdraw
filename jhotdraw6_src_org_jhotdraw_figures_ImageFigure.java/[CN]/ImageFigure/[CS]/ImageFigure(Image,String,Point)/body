@@ -1,0 +1,7 @@
+{
+  fFileName=fileName;
+  fImage=image;
+  fDisplayBox=new Rectangle(origin.x,origin.y,0,0);
+  fDisplayBox.width=fImage.getWidth(this);
+  fDisplayBox.height=fImage.getHeight(this);
+}

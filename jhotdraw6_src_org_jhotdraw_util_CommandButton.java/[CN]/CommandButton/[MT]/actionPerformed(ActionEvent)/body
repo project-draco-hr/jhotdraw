@@ -1,0 +1,6 @@
+{
+  fCommand.execute();
+  if (!getLabel().equals(fCommand.name())) {
+    setLabel(fCommand.name());
+  }
+}

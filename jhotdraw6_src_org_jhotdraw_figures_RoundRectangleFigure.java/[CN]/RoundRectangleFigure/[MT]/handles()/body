@@ -1,0 +1,6 @@
+{
+  Vector handles=new Vector();
+  BoxHandleKit.addHandles(this,handles);
+  handles.addElement(new RadiusHandle(this));
+  return handles;
+}

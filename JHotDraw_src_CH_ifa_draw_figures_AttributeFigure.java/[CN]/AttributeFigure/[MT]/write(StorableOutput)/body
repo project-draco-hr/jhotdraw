@@ -1,0 +1,8 @@
+{
+  super.write(dw);
+  if (fAttributes == null)   dw.writeString("no_attributes");
+ else {
+    dw.writeString("attributes");
+    fAttributes.write(dw);
+  }
+}

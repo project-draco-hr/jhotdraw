@@ -1,0 +1,4 @@
+{
+  fComponent=figure;
+  fComponent.addToContainer(this);
+}

@@ -1,0 +1,19 @@
+{
+  if (storable == null) {
+    fStream.print("NULL");
+    space();
+    return;
+  }
+  if (mapped(storable)) {
+    writeRef(storable);
+    return;
+  }
+  incrementIndent();
+  startNewLine();
+  map(storable);
+  fStream.print(storable.getClass().getName());
+  space();
+  storable.write(this);
+  space();
+  decrementIndent();
+}

@@ -1,0 +1,5 @@
+{
+  super.draw(g);
+  drawBorder(g);
+  drawConnectors(g);
+}

@@ -1,0 +1,3 @@
+{
+  fPoly=new Polygon(p.xpoints,p.ypoints,p.npoints);
+}

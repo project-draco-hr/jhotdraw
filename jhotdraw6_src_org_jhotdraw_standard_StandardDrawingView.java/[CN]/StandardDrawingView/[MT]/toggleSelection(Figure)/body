@@ -1,0 +1,5 @@
+{
+  if (fSelection.contains(figure))   removeFromSelection(figure);
+ else   addToSelection(figure);
+  selectionChanged();
+}

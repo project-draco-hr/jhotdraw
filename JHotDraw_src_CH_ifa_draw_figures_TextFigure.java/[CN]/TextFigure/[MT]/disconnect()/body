@@ -1,0 +1,5 @@
+{
+  fObservedFigure.removeFigureChangeListener(this);
+  fObservedFigure=null;
+  fLocator=null;
+}

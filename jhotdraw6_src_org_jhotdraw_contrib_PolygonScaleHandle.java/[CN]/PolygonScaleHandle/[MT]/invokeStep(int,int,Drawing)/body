@@ -1,0 +1,4 @@
+{
+  fCurrent=new Point(fOrigin.x + dx,fOrigin.y + dy);
+  ((PolygonFigure)(owner())).scaleRotate(fOrigin,fOrigPoly,fCurrent);
+}

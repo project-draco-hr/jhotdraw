@@ -1,0 +1,12 @@
+{
+  Point p=new Point(e.getX(),e.getY());
+  if (fConnection != null) {
+    trackConnectors(e,x,y);
+    if (fConnectorTarget != null)     p=Geom.center(fConnectorTarget.displayBox());
+    fConnection.endPoint(p.x,p.y);
+  }
+ else   if (fEditedConnection != null) {
+    Point pp=new Point(x,y);
+    fEditedConnection.setPointAt(pp,fSplitPoint);
+  }
+}

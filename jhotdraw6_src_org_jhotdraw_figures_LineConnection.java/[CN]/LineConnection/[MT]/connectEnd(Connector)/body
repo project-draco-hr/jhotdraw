@@ -1,0 +1,5 @@
+{
+  fEnd=end;
+  endFigure().addFigureChangeListener(this);
+  handleConnect(startFigure(),endFigure());
+}

@@ -1,0 +1,5 @@
+{
+  fWidth=width;
+  fHeight=height;
+  fBackground=background;
+}

@@ -1,0 +1,4 @@
+{
+  if (start() != null)   return start().owner();
+  return null;
+}

@@ -1,0 +1,4 @@
+{
+  invalidate();
+  if (fListener != null)   fListener.figureChanged(new FigureChangeEvent(this));
+}

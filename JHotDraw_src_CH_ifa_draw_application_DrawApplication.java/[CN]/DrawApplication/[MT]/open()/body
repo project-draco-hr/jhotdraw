@@ -1,0 +1,20 @@
+{
+  fIconkit=new Iconkit(this);
+  setLayout(new BorderLayout());
+  fView=createDrawingView();
+  Component contents=createContents(fView);
+  add("Center",contents);
+  Panel tools=createToolPalette();
+  createTools(tools);
+  add("West",tools);
+  fStatusLine=createStatusLine();
+  add("South",fStatusLine);
+  MenuBar mb=new MenuBar();
+  createMenus(mb);
+  setMenuBar(mb);
+  initDrawing();
+  Dimension d=defaultSize();
+  setSize(d.width,d.height);
+  addListeners();
+  show();
+}

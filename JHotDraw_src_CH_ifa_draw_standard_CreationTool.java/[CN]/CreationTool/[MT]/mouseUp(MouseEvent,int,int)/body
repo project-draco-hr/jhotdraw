@@ -1,0 +1,5 @@
+{
+  if (fCreatedFigure.isEmpty())   drawing().remove(fCreatedFigure);
+  fCreatedFigure=null;
+  editor().toolDone();
+}

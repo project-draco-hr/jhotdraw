@@ -1,0 +1,5 @@
+{
+  fRadius=fOwner.getArc();
+  fRadius.x=fRadius.x / 2;
+  fRadius.y=fRadius.y / 2;
+}

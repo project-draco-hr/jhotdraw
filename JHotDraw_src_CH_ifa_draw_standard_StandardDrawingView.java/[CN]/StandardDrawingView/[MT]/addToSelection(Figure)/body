@@ -1,0 +1,8 @@
+{
+  if (!fSelection.contains(figure)) {
+    fSelection.addElement(figure);
+    fSelectionHandles=null;
+    figure.invalidate();
+    selectionChanged();
+  }
+}

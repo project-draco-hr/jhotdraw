@@ -1,0 +1,3 @@
+{
+  if (fListener != null)   fListener.figureRemoved(new FigureChangeEvent(this));
+}

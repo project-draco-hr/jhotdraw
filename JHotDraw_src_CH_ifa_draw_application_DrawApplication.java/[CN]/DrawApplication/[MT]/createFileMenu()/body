@@ -1,0 +1,54 @@
+{
+  Menu menu=new Menu("File");
+  MenuItem mi=new MenuItem("New",new MenuShortcut('n'));
+  mi.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent event){
+      promptNew();
+    }
+  }
+);
+  menu.add(mi);
+  mi=new MenuItem("Open...",new MenuShortcut('o'));
+  mi.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent event){
+      promptOpen();
+    }
+  }
+);
+  menu.add(mi);
+  mi=new MenuItem("Save As...",new MenuShortcut('s'));
+  mi.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent event){
+      promptSaveAs();
+    }
+  }
+);
+  menu.add(mi);
+  mi=new MenuItem("Save As Serialized...");
+  mi.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent event){
+      promptSaveAsSerialized();
+    }
+  }
+);
+  menu.add(mi);
+  menu.addSeparator();
+  mi=new MenuItem("Print...",new MenuShortcut('p'));
+  mi.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent event){
+      print();
+    }
+  }
+);
+  menu.add(mi);
+  menu.addSeparator();
+  mi=new MenuItem("Exit");
+  mi.addActionListener(new ActionListener(){
+    public void actionPerformed(    ActionEvent event){
+      exit();
+    }
+  }
+);
+  menu.add(mi);
+  return menu;
+}

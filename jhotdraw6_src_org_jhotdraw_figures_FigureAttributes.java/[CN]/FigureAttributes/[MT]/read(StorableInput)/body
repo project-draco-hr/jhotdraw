@@ -1,0 +1,18 @@
+{
+  String s=dr.readString();
+  if (!s.toLowerCase().equals("attributes"))   throw new IOException("Attributes expected");
+  fMap=new Hashtable();
+  int size=dr.readInt();
+  for (int i=0; i < size; i++) {
+    String key=dr.readString();
+    String valtype=dr.readString();
+    Object val=null;
+    if (valtype.equals("Color"))     val=new Color(dr.readInt(),dr.readInt(),dr.readInt());
+ else     if (valtype.equals("Boolean"))     val=new Boolean(dr.readString());
+ else     if (valtype.equals("String"))     val=dr.readString();
+ else     if (valtype.equals("Int"))     val=new Integer(dr.readInt());
+ else     if (valtype.equals("Storable"))     val=dr.readStorable();
+ else     if (valtype.equals("UNKNOWN"))     continue;
+    fMap.put(key,val);
+  }
+}

@@ -1,0 +1,4 @@
+{
+  if (target() == fConnection.start())   return fConnection.end();
+  return fConnection.start();
+}

@@ -1,0 +1,12 @@
+{
+  if (name.equals("FrameColor")) {
+    return getFrameColor();
+  }
+ else   if (name.equals("ArrowMode")) {
+    int value=0;
+    if (fStartDecoration != null)     value|=ARROW_TIP_START;
+    if (fEndDecoration != null)     value|=ARROW_TIP_END;
+    return new Integer(value);
+  }
+  return super.getAttribute(name);
+}

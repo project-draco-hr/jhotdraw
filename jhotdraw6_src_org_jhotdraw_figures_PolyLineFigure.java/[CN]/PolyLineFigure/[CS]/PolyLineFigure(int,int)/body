@@ -1,0 +1,4 @@
+{
+  fPoints=new Vector();
+  fPoints.addElement(new Point(x,y));
+}

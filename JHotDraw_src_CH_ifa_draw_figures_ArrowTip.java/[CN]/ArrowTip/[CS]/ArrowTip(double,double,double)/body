@@ -1,0 +1,5 @@
+{
+  fAngle=angle;
+  fOuterRadius=outerRadius;
+  fInnerRadius=innerRadius;
+}

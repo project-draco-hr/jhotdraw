@@ -1,0 +1,3 @@
+{
+  return (Figure)fFigures.elementAt(i);
+}

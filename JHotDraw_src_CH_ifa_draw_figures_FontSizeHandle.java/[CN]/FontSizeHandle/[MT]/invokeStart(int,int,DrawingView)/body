@@ -1,0 +1,5 @@
+{
+  TextFigure textOwner=(TextFigure)owner();
+  fFont=textOwner.getFont();
+  fSize=fFont.getSize();
+}

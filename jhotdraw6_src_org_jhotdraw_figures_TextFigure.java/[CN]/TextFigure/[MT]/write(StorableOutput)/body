@@ -1,0 +1,12 @@
+{
+  super.write(dw);
+  dw.writeInt(fOriginX);
+  dw.writeInt(fOriginY);
+  dw.writeString(fText);
+  dw.writeString(fFont.getName());
+  dw.writeInt(fFont.getStyle());
+  dw.writeInt(fFont.getSize());
+  dw.writeBoolean(fIsReadOnly);
+  dw.writeStorable(fObservedFigure);
+  dw.writeStorable(fLocator);
+}

@@ -1,0 +1,7 @@
+{
+  if (fFigures.contains(figure)) {
+    figure.removeFromContainer(this);
+    fFigures.removeElement(figure);
+  }
+  return figure;
+}

@@ -1,0 +1,4 @@
+{
+  Rectangle r=owner.displayBox();
+  return new Point(r.x + (int)(r.width * fRelativeX),r.y + (int)(r.height * fRelativeY));
+}
