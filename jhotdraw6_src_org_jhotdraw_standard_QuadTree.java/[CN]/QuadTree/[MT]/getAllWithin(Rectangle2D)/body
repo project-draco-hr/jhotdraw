@@ -1,0 +1,26 @@
+{
+  Vector v=new Vector();
+  for (Iterator ii=_outsideHashtable.keySet().iterator(); ii.hasNext(); ) {
+    Object anObject=ii.next();
+    Rectangle2D itsAbsoluteBoundingRectangle2D=(Rectangle2D)_outsideHashtable.get(anObject);
+    if (itsAbsoluteBoundingRectangle2D.intersects(r)) {
+      v.addElement(anObject);
+    }
+  }
+  if (_absoluteBoundingRectangle2D.intersects(r)) {
+    for (Iterator i=_theHashtable.keySet().iterator(); i.hasNext(); ) {
+      Object anObject=i.next();
+      Rectangle2D itsAbsoluteBoundingRectangle2D=(Rectangle2D)_theHashtable.get(anObject);
+      if (itsAbsoluteBoundingRectangle2D.intersects(r)) {
+        v.addElement(anObject);
+      }
+    }
+    if (_nMaxTreeDepth > 1) {
+      v.addAll(_nwQuadTree.getAllWithin(r));
+      v.addAll(_neQuadTree.getAllWithin(r));
+      v.addAll(_swQuadTree.getAllWithin(r));
+      v.addAll(_seQuadTree.getAllWithin(r));
+    }
+  }
+  return v;
+}

@@ -1,0 +1,29 @@
+{
+  Object returnObject=_theHashtable.remove(anObject);
+  if (returnObject != null) {
+    return returnObject;
+  }
+  if (_nMaxTreeDepth > 1) {
+    returnObject=_nwQuadTree.remove(anObject);
+    if (returnObject != null) {
+      return returnObject;
+    }
+    returnObject=_neQuadTree.remove(anObject);
+    if (returnObject != null) {
+      return returnObject;
+    }
+    returnObject=_swQuadTree.remove(anObject);
+    if (returnObject != null) {
+      return returnObject;
+    }
+    returnObject=_seQuadTree.remove(anObject);
+    if (returnObject != null) {
+      return returnObject;
+    }
+  }
+  returnObject=_outsideHashtable.remove(anObject);
+  if (returnObject != null) {
+    return returnObject;
+  }
+  return null;
+}
