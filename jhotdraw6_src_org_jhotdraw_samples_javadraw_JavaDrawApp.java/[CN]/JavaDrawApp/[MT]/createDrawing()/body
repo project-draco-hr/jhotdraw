@@ -1,5 +1,3 @@
 {
-  Drawing dwg=new BouncingDrawing();
-  dwg.setTitle(getDefaultDrawingTitle());
-  return dwg;
+  return new BouncingDrawing();
 }

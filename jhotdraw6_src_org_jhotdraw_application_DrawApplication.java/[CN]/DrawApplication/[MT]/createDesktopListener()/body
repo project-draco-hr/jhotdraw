@@ -8,13 +8,12 @@
       DrawingView dv=dpe.getDrawingView();
       fireViewDestroyingEvent(dv);
     }
-    public void drawingViewSelected(    DrawingView oldView,    DesktopEvent dpe){
+    public void drawingViewSelected(    DesktopEvent dpe){
       DrawingView dv=dpe.getDrawingView();
       if (dv != null) {
         if (dv.drawing() != null)         dv.unfreezeView();
       }
-      fireViewSelectionChangedEvent(oldView,getDesktop().getActiveDrawingView());
-      updateApplicationTitle();
+      setView(dv);
     }
   }
 ;

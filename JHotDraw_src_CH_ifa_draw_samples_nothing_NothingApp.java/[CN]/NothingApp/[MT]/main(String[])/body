@@ -1,5 +1,4 @@
 {
   DrawApplication window=new NothingApp();
   window.open();
-  window.newWindow();
 }

@@ -1,5 +1,4 @@
 {
   JavaDrawApp window=new JavaDrawApp("JHotDraw");
   window.open();
-  window.newWindow();
 }

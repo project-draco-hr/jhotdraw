@@ -1,5 +1,9 @@
 {
-  getDesktop().removeAllFromDesktop(Desktop.PRIMARY);
-  getDesktop().addToDesktop(createDrawingView(newDrawing),Desktop.PRIMARY);
-  toolDone();
+  DrawApplication window=createApplication();
+  if (initialDrawing == null) {
+    window.open();
+  }
+ else {
+    window.open(window.createDrawingView(initialDrawing));
+  }
 }

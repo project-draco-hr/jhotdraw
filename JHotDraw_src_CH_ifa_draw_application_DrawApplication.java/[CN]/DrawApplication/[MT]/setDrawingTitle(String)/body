@@ -1,0 +1,8 @@
+{
+  if (getDefaultDrawingTitle().equals(drawingTitle)) {
+    setTitle(getApplicationName());
+  }
+ else {
+    setTitle(getApplicationName() + " - " + drawingTitle);
+  }
+}

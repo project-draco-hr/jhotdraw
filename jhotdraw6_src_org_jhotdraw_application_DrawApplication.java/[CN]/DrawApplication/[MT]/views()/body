@@ -1,3 +1,3 @@
 {
-  return new DrawingView[]{getDesktop().getActiveDrawingView()};
+  return new DrawingView[]{view()};
 }

@@ -4,7 +4,7 @@
   if (printJob != null) {
     Graphics pg=printJob.getGraphics();
     if (pg != null) {
-      ((StandardDrawingView)getDesktop().getActiveDrawingView()).printAll(pg);
+      ((StandardDrawingView)view()).printAll(pg);
       pg.dispose();
     }
     printJob.end();

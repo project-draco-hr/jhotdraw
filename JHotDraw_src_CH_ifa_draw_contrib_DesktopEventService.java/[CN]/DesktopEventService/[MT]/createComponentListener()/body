@@ -2,29 +2,24 @@
   return new ContainerAdapter(){
     /** 
  * If the dv is null assert
- * does adding a component always make it the selected view?
  */
     public void componentAdded(    ContainerEvent e){
       DrawingView dv=Helper.getDrawingView((java.awt.Container)e.getChild());
-      DrawingView oldView=getActiveDrawingView();
       if (dv != null) {
         fireDrawingViewAddedEvent(dv);
         selectedView=dv;
-        fireDrawingViewSelectedEvent(oldView,getActiveDrawingView());
+        fireDrawingViewSelectedEvent(selectedView);
       }
     }
     /** 
  * If dv is null assert
  * if dv is not != selectedView assert
- * why should we assert? dont see a problem with removing a view thats not a selected view
- * This definitely needs fixing!!! dnoyeb 1/1/2003
  */
     public void componentRemoved(    ContainerEvent e){
       DrawingView dv=Helper.getDrawingView((java.awt.Container)e.getChild());
       if (dv != null) {
-        DrawingView oldView=getActiveDrawingView();
         selectedView=null;
-        fireDrawingViewSelectedEvent(oldView,getActiveDrawingView());
+        fireDrawingViewSelectedEvent(selectedView);
         fireDrawingViewRemovedEvent(dv);
       }
     }

@@ -1,5 +1,5 @@
 {
-  if (getDesktop().getActiveDrawingView() != null) {
+  if (view() != null) {
     toolDone();
     JFileChooser saveDialog=createSaveFileChooser();
     getStorageFormatManager().registerFileFilters(saveDialog);

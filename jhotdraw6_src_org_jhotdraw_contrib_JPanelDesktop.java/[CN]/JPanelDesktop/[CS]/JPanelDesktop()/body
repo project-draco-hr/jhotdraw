@@ -1,5 +1,0 @@
-{
-  setDesktopEventService(createDesktopEventService());
-  setAlignmentX(LEFT_ALIGNMENT);
-  setLayout(new BorderLayout());
-}

@@ -1,0 +1,5 @@
+{
+  DrawingView oldView=fView;
+  fView=newView;
+  fireViewSelectionChangedEvent(oldView,view());
+}

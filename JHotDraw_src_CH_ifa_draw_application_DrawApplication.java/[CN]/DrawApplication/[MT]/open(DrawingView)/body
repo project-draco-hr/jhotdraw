@@ -1,0 +1,38 @@
+{
+  getVersionControlStrategy().assertCompatibleVersion();
+  setUndoManager(new UndoManager());
+  setIconkit(createIconkit());
+  getContentPane().setLayout(new BorderLayout());
+  setStatusLine(createStatusLine());
+  getContentPane().add(getStatusLine(),BorderLayout.SOUTH);
+  setTool(new NullTool(this),"");
+  setView(newDrawingView);
+  JToolBar tools=createToolPalette();
+  createTools(tools);
+  JPanel activePanel=new JPanel();
+  activePanel.setAlignmentX(LEFT_ALIGNMENT);
+  activePanel.setAlignmentY(TOP_ALIGNMENT);
+  activePanel.setLayout(new BorderLayout());
+  activePanel.add(tools,BorderLayout.NORTH);
+  setDesktopListener(createDesktopListener());
+  setDesktop(createDesktop());
+  activePanel.add((Component)getDesktop(),BorderLayout.CENTER);
+  getContentPane().add(activePanel,BorderLayout.CENTER);
+  JMenuBar mb=new JMenuBar();
+  createMenus(mb);
+  setJMenuBar(mb);
+  Dimension d=defaultSize();
+  if (d.width > mb.getPreferredSize().width) {
+    setSize(d.width,d.height);
+  }
+ else {
+    setSize(mb.getPreferredSize().width,d.height);
+  }
+  addListeners();
+  setVisible(true);
+  setStorageFormatManager(createStorageFormatManager());
+  if (newDrawingView.isInteractive()) {
+    getDesktop().addToDesktop(newDrawingView,Desktop.PRIMARY);
+  }
+  toolDone();
+}

@@ -1,0 +1,14 @@
+{
+  final Object[] listeners=listenerList.getListenerList();
+  DesktopListener dpl;
+  DesktopEvent dpe=null;
+  for (int i=listeners.length - 2; i >= 0; i-=2) {
+    if (listeners[i] == DesktopListener.class) {
+      if (dpe == null) {
+        dpe=createDesktopEvent(dv);
+      }
+      dpl=(DesktopListener)listeners[i + 1];
+      dpl.drawingViewSelected(dpe);
+    }
+  }
+}
