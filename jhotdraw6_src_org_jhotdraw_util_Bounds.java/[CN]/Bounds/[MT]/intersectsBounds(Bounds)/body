@@ -1,0 +1,22 @@
+{
+  double dLesserX=aBounds.getLesserX();
+  double dGreaterX=aBounds.getGreaterX();
+  double dLesserY=aBounds.getLesserY();
+  double dGreaterY=aBounds.getGreaterY();
+  if (dLesserX < _dX1) {
+    if (dLesserY < _dY1) {
+      return ((dGreaterX >= _dX1) && (dGreaterY >= _dY1));
+    }
+ else {
+      return ((dGreaterX >= _dX1) && (dLesserY <= _dY2));
+    }
+  }
+ else {
+    if (dLesserY < _dY1) {
+      return ((dLesserX <= _dX2) && (dGreaterY >= _dY1));
+    }
+ else {
+      return ((dLesserX <= _dX2) && (dLesserY <= _dY2));
+    }
+  }
+}

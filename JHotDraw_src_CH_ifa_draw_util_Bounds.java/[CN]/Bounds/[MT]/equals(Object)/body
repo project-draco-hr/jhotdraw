@@ -1,0 +1,8 @@
+{
+  if ((anObject == null) || (!(anObject instanceof Bounds)))   return false;
+  Bounds aBounds=(Bounds)anObject;
+  if ((_dX1 == aBounds.getLesserX()) && (_dX2 == aBounds.getGreaterX()) && (_dY1 == aBounds.getLesserY())&& (_dY2 == aBounds.getGreaterY())) {
+    return true;
+  }
+  return false;
+}

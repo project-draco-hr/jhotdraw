@@ -1,0 +1,3 @@
+{
+  this(firstPoint2D.getX(),firstPoint2D.getY(),secondPoint2D.getX(),secondPoint2D.getY());
+}

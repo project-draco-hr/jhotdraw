@@ -1,0 +1,4 @@
+{
+  includeXCoordinate(x);
+  includeYCoordinate(y);
+}

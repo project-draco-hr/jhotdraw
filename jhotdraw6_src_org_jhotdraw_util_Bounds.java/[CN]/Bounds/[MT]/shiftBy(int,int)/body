@@ -1,0 +1,7 @@
+{
+  double dWidth=_dX2 - _dX1;
+  double dHeight=_dY2 - _dY1;
+  double dDeltaX=(dWidth * nXPercentage) / 100.0;
+  double dDeltaY=(dHeight * nYPercentage) / 100.0;
+  offset(dDeltaX,dDeltaY);
+}

@@ -1,0 +1,4 @@
+{
+  _dX1=min(_dX1,_dX2,x);
+  _dX2=max(_dX1,_dX2,x);
+}

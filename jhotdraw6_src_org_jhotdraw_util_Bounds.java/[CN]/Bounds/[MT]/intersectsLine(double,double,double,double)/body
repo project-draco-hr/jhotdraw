@@ -1,0 +1,32 @@
+{
+  if (intersectsPoint(x1,y1)) {
+    return true;
+  }
+  if (intersectsPoint(x2,y2)) {
+    return true;
+  }
+  if ((x1 < _dX1) && (x2 < _dX1)) {
+    return false;
+  }
+  if ((x1 > _dX2) && (x2 > _dX2)) {
+    return false;
+  }
+  if ((y1 < _dY1) && (y2 < _dY1)) {
+    return false;
+  }
+  if ((y1 > _dY2) && (y2 > _dY2)) {
+    return false;
+  }
+  if (((_dX1 <= x1) && (x1 <= _dX2)) && ((_dX1 <= x2) && (x2 <= _dX2))) {
+    return true;
+  }
+  if (((_dY1 <= y1) && (y1 <= _dY2)) && ((_dY1 <= y2) && (y2 <= _dY2))) {
+    return true;
+  }
+  double dSlope=(y2 - y1) / (x2 - x1);
+  double _dYIntersectionAtX1=dSlope * (_dX1 - x1) + y1;
+  double _dYIntersectionAtX2=dSlope * (_dX2 - x1) + y1;
+  double _dXIntersectionAtY1=(_dY1 - y1) / dSlope + x1;
+  double _dXIntersectionAtY2=(_dY2 - y1) / dSlope + x1;
+  return (intersectsPoint(_dX1,_dYIntersectionAtX1)) || (intersectsPoint(_dX2,_dYIntersectionAtX2)) || (intersectsPoint(_dXIntersectionAtY1,_dY1))|| (intersectsPoint(_dXIntersectionAtY2,_dY2));
+}

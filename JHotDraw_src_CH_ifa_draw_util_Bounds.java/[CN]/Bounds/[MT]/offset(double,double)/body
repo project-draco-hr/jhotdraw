@@ -1,0 +1,6 @@
+{
+  _dX1+=dDeltaX;
+  _dX2+=dDeltaX;
+  _dY1+=dDeltaY;
+  _dY2+=dDeltaY;
+}

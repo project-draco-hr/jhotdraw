@@ -1,0 +1,102 @@
+{
+  if (!intersectsLine(x1,y1,x2,y2)) {
+    return null;
+  }
+  Point2D[] resultLine=new Point2D[2];
+  Point2D beginPoint2D=new Point2D.Double(x1,y1);
+  Point2D endPoint2D=new Point2D.Double(x2,y2);
+  if (beginPoint2D.getX() == endPoint2D.getX()) {
+    if (beginPoint2D.getY() > _dY2) {
+      beginPoint2D.setLocation(beginPoint2D.getX(),_dY2);
+    }
+    if (endPoint2D.getY() > _dY2) {
+      endPoint2D.setLocation(endPoint2D.getX(),_dY2);
+    }
+    if (beginPoint2D.getY() < _dY1) {
+      beginPoint2D.setLocation(beginPoint2D.getX(),_dY1);
+    }
+    if (endPoint2D.getY() < _dY1) {
+      endPoint2D.setLocation(endPoint2D.getX(),_dY1);
+    }
+  }
+ else   if (beginPoint2D.getY() == endPoint2D.getY()) {
+    if (beginPoint2D.getX() > _dX2) {
+      beginPoint2D.setLocation(_dX2,beginPoint2D.getY());
+    }
+    if (endPoint2D.getX() > _dX2) {
+      endPoint2D.setLocation(_dX2,endPoint2D.getY());
+    }
+    if (beginPoint2D.getX() < _dX1) {
+      beginPoint2D.setLocation(_dX1,beginPoint2D.getY());
+    }
+    if (endPoint2D.getX() < _dX1) {
+      endPoint2D.setLocation(_dX1,endPoint2D.getY());
+    }
+  }
+ else {
+    double dSlope=(beginPoint2D.getY() - endPoint2D.getY()) / (beginPoint2D.getX() - endPoint2D.getX());
+    if (!intersectsPoint(beginPoint2D)) {
+      if (beginPoint2D.getY() > _dY2) {
+        double x=((_dY2 - beginPoint2D.getY()) / dSlope) + beginPoint2D.getX();
+        if ((x >= _dX1) && (x <= _dX2)) {
+          beginPoint2D.setLocation(x,beginPoint2D.getY());
+          beginPoint2D.setLocation(beginPoint2D.getX(),_dY2);
+        }
+      }
+      if (beginPoint2D.getY() < _dY1) {
+        double x=((_dY1 - beginPoint2D.getY()) / dSlope) + beginPoint2D.getX();
+        if ((x >= _dX1) && (x <= _dX2)) {
+          beginPoint2D.setLocation(x,beginPoint2D.getY());
+          beginPoint2D.setLocation(beginPoint2D.getX(),_dY1);
+        }
+      }
+      if (beginPoint2D.getX() > _dX2) {
+        double y=dSlope * (_dX2 - beginPoint2D.getX()) + beginPoint2D.getY();
+        if ((y >= _dY1) && (y <= _dY2)) {
+          beginPoint2D.setLocation(_dX2,beginPoint2D.getY());
+          beginPoint2D.setLocation(beginPoint2D.getX(),y);
+        }
+      }
+      if (beginPoint2D.getX() < _dX1) {
+        double y=dSlope * (_dX1 - beginPoint2D.getX()) + beginPoint2D.getY();
+        if ((y >= _dY1) && (y <= _dY2)) {
+          beginPoint2D.setLocation(_dX1,beginPoint2D.getY());
+          beginPoint2D.setLocation(beginPoint2D.getX(),y);
+        }
+      }
+    }
+    if (!intersectsPoint(endPoint2D)) {
+      if (endPoint2D.getY() > _dY2) {
+        double x=((_dY2 - beginPoint2D.getY()) / dSlope) + beginPoint2D.getX();
+        if ((x >= _dX1) && (x <= _dX2)) {
+          endPoint2D.setLocation(x,endPoint2D.getY());
+          endPoint2D.setLocation(endPoint2D.getX(),_dY2);
+        }
+      }
+      if (endPoint2D.getY() < _dY1) {
+        double x=((_dY1 - beginPoint2D.getY()) / dSlope) + beginPoint2D.getX();
+        if ((x >= _dX1) && (x <= _dX2)) {
+          endPoint2D.setLocation(x,endPoint2D.getY());
+          endPoint2D.setLocation(endPoint2D.getX(),_dY1);
+        }
+      }
+      if (endPoint2D.getX() > _dX2) {
+        double y=dSlope * (_dX2 - beginPoint2D.getX()) + beginPoint2D.getY();
+        if ((y >= _dY1) && (y <= _dY2)) {
+          endPoint2D.setLocation(_dX2,endPoint2D.getY());
+          endPoint2D.setLocation(endPoint2D.getX(),y);
+        }
+      }
+      if (endPoint2D.getX() < _dX1) {
+        double y=dSlope * (_dX1 - beginPoint2D.getX()) + beginPoint2D.getY();
+        if ((y >= _dY1) && (y <= _dY2)) {
+          endPoint2D.setLocation(_dX1,endPoint2D.getY());
+          endPoint2D.setLocation(endPoint2D.getX(),y);
+        }
+      }
+    }
+  }
+  resultLine[0]=beginPoint2D;
+  resultLine[1]=endPoint2D;
+  return resultLine;
+}

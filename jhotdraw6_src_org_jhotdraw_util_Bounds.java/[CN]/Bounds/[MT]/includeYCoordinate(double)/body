@@ -1,0 +1,4 @@
+{
+  _dY1=min(_dY1,_dY2,y);
+  _dY2=max(_dY1,_dY2,y);
+}

@@ -1,0 +1,6 @@
+{
+  _dX1=aRectangle2D.getMinX();
+  _dX2=aRectangle2D.getMaxX();
+  _dY1=aRectangle2D.getMinY();
+  _dY2=aRectangle2D.getMaxY();
+}

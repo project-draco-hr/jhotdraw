@@ -1,0 +1,7 @@
+{
+  double temp=Math.abs(_dX1 + _dX2 + _dY1+ _dY2);
+  while ((temp != 0) && (temp < 1)) {
+    temp*=4;
+  }
+  return (int)temp;
+}

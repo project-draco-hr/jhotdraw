@@ -1,0 +1,3 @@
+{
+  return (_dX1 > aBounds.getLesserX()) && (_dX2 < aBounds.getGreaterX()) && (_dY1 > aBounds.getLesserY())&& (_dY2 < aBounds.getGreaterY());
+}
