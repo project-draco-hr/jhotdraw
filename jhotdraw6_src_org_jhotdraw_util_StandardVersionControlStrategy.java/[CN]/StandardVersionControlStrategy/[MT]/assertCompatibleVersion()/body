@@ -1,0 +1,12 @@
+{
+  String[] requiredVersions=getVersionRequester().getRequiredVersions();
+  if (requiredVersions.length == 0) {
+    return;
+  }
+  for (int i=0; i < requiredVersions.length; i++) {
+    if (isCompatibleVersion(requiredVersions[i])) {
+      return;
+    }
+  }
+  handleIncompatibleVersions();
+}

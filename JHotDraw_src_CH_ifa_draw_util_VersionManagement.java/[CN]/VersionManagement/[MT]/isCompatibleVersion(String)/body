@@ -1,0 +1,9 @@
+{
+  Package pack=packages[4];
+  if (compareVersionString == null) {
+    return pack.getSpecificationVersion() == null;
+  }
+ else {
+    return pack.isCompatibleWith(compareVersionString);
+  }
+}

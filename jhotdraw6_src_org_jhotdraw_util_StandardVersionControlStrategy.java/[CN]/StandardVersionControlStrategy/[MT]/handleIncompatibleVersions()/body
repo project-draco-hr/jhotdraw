@@ -1,0 +1,12 @@
+{
+  String[] requiredVersions=getVersionRequester().getRequiredVersions();
+  StringBuffer expectedVersions=new StringBuffer("[");
+  for (int i=0; i < requiredVersions.length - 1; i++) {
+    expectedVersions.append(requiredVersions[i] + ", ");
+  }
+  if (requiredVersions.length > 0) {
+    expectedVersions.append(requiredVersions[requiredVersions.length - 1]);
+  }
+  expectedVersions.append("]");
+  throw new JHotDrawRuntimeException("Incompatible version of JHotDraw found: " + VersionManagement.getJHotDrawVersion() + " (expected: "+ expectedVersions+ ")");
+}

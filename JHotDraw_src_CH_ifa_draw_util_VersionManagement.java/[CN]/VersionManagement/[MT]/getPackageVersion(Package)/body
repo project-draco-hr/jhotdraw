@@ -1,0 +1,14 @@
+{
+  if (lookupPackage == null) {
+    return null;
+  }
+  String specVersion=lookupPackage.getSpecificationVersion();
+  if (specVersion != null) {
+    return specVersion;
+  }
+ else {
+    String normalizedPackageName=normalizePackageName(lookupPackage.getName());
+    String nextPackageName=getNextPackage(normalizedPackageName);
+    return getPackageVersion(Package.getPackage(nextPackageName));
+  }
+}
