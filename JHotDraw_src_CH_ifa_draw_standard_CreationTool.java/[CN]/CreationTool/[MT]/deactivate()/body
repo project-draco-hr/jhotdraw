@@ -1,0 +1,6 @@
+{
+  setCreatedFigure(null);
+  setAddedFigure(null);
+  setAddedFigures(null);
+  super.deactivate();
+}
