@@ -1,4 +1,4 @@
 {
   super.write(dw);
-  dw.writeStorable(fLocator);
+  dw.writeStorable(getLocator());
 }
