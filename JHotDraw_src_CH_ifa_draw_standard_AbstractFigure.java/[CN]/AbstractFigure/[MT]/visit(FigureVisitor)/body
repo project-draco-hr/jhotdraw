@@ -1,5 +1,4 @@
 {
-  FigureChangeListener originalListener=listener();
   FigureEnumeration fe=getDependendFigures();
   visitor.visitFigure(this);
   FigureEnumeration visitFigures=figures();
