@@ -1,3 +1,4 @@
 {
-  return new DrawingViewMouseListener();
+  mouseListener=new DrawingViewMouseListener();
+  return mouseListener;
 }

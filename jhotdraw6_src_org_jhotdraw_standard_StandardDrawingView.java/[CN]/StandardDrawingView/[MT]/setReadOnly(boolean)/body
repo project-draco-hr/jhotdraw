@@ -1,0 +1,15 @@
+{
+  if (readOnly != this.readOnly) {
+    if (readOnly) {
+      removeMouseListener(mouseListener);
+      removeMouseMotionListener(motionListener);
+      removeKeyListener(keyListener);
+    }
+ else {
+      addMouseListener(mouseListener);
+      addMouseMotionListener(motionListener);
+      addKeyListener(keyListener);
+    }
+    this.readOnly=readOnly;
+  }
+}
