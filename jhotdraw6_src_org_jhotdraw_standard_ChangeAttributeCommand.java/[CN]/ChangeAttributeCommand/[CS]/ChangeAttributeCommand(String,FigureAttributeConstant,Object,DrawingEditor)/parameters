@@ -1,0 +1,4 @@
+String name
+FigureAttributeConstant attribute
+Object value
+DrawingEditor newDrawingEditor

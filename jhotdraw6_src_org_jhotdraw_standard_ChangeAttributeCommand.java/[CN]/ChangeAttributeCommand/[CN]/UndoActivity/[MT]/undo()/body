@@ -6,7 +6,7 @@
   while (fe.hasNextFigure()) {
     Figure f=fe.nextFigure();
     if (getOriginalValue(f) != null) {
-      f.setAttribute(getAttributeName(),getOriginalValue(f));
+      f.setAttribute(getAttribute(),getOriginalValue(f));
     }
   }
   return true;

@@ -1,9 +1,9 @@
 {
-  String arrowModeStr=FigureAttributeConstant.ARROW_MODE.getName();
+  FigureAttributeConstant arrowMode=FigureAttributeConstant.ARROW_MODE;
   CommandMenu menu=new CommandMenu("Arrow");
-  menu.add(new UndoableCommand(new ChangeAttributeCommand("none",arrowModeStr,new Integer(PolyLineFigure.ARROW_TIP_NONE),this)));
-  menu.add(new UndoableCommand(new ChangeAttributeCommand("at Start",arrowModeStr,new Integer(PolyLineFigure.ARROW_TIP_START),this)));
-  menu.add(new UndoableCommand(new ChangeAttributeCommand("at End",arrowModeStr,new Integer(PolyLineFigure.ARROW_TIP_END),this)));
-  menu.add(new UndoableCommand(new ChangeAttributeCommand("at Both",arrowModeStr,new Integer(PolyLineFigure.ARROW_TIP_BOTH),this)));
+  menu.add(new UndoableCommand(new ChangeAttributeCommand("none",arrowMode,new Integer(PolyLineFigure.ARROW_TIP_NONE),this)));
+  menu.add(new UndoableCommand(new ChangeAttributeCommand("at Start",arrowMode,new Integer(PolyLineFigure.ARROW_TIP_START),this)));
+  menu.add(new UndoableCommand(new ChangeAttributeCommand("at End",arrowMode,new Integer(PolyLineFigure.ARROW_TIP_END),this)));
+  menu.add(new UndoableCommand(new ChangeAttributeCommand("at Both",arrowMode,new Integer(PolyLineFigure.ARROW_TIP_BOTH),this)));
   return menu;
 }

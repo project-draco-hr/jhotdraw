@@ -3,7 +3,7 @@
   FigureEnumeration copyFe=getAffectedFigures();
   while (copyFe.hasNextFigure()) {
     Figure f=copyFe.nextFigure();
-    Object attributeValue=f.getAttribute(getAttributeName());
+    Object attributeValue=f.getAttribute(getAttribute());
     if (attributeValue != null) {
       addOriginalValue(f,attributeValue);
     }
