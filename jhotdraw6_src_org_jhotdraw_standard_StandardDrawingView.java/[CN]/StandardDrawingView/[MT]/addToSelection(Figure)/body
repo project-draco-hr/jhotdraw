@@ -1,8 +1,5 @@
 {
-  if (!isFigureSelected(figure) && drawing().includes(figure)) {
-    fSelection.add(figure);
-    fSelectionHandles=null;
-    figure.invalidate();
+  if (addToSelectionImpl(figure) == true) {
     fireSelectionChanged();
   }
 }
