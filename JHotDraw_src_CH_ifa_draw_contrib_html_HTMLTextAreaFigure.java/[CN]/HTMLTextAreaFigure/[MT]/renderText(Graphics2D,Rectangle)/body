@@ -18,8 +18,8 @@
   displayDelegate.setBackground(getFillColor());
   displayDelegate.setLocation(0,0);
   displayDelegate.setSize(drawingBox.width,drawingBox.height);
-  displayDelegate.setHorizontalAlignment(((Integer)getAttribute("XAlignment")).intValue());
-  displayDelegate.setVerticalAlignment(((Integer)getAttribute("YAlignment")).intValue());
+  displayDelegate.setHorizontalAlignment(((Integer)getAttribute(FigureAttributeConstant.XALIGNMENT)).intValue());
+  displayDelegate.setVerticalAlignment(((Integer)getAttribute(FigureAttributeConstant.YALIGNMENT)).intValue());
   SwingUtilities.paintComponent(g2,displayDelegate,getContainerPanel(displayDelegate,drawingBox),drawingBox.x,drawingBox.y,drawingBox.width,drawingBox.height);
   return drawingBox.height;
 }

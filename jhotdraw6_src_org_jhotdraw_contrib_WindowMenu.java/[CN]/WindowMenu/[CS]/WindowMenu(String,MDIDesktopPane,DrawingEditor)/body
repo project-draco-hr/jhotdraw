@@ -12,7 +12,7 @@
 ;
   tileCommand=new AbstractCommand("Tile",newEditor){
     public void execute(){
-      WindowMenu.this.desktop.tileFrames();
+      WindowMenu.this.desktop.tileFramesHorizontally();
     }
     public boolean isExecutable(){
       return super.isExecutable() && (WindowMenu.this.desktop.getAllFrames().length > 0);

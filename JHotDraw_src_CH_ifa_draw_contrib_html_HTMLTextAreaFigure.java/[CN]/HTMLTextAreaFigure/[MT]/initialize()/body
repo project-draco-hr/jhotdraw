@@ -7,5 +7,5 @@
   markImageDirty();
   markTextDirty();
   markFontDirty();
-  setAttribute(Figure.POPUP_MENU,createPopupMenu());
+  setAttribute(FigureAttributeConstant.POPUP_MENU,createPopupMenu());
 }

@@ -1,8 +1,8 @@
 {
-  float leftMargin=((Float)getAttribute("LeftMargin")).floatValue();
-  float rightMargin=((Float)getAttribute("RightMargin")).floatValue();
-  float topMargin=((Float)getAttribute("TopMargin")).floatValue();
-  float bottomMargin=((Float)getAttribute("BottomMargin")).floatValue();
+  float leftMargin=((Float)getAttribute(FigureAttributeConstant.LEFT_MARGIN)).floatValue();
+  float rightMargin=((Float)getAttribute(FigureAttributeConstant.RIGHT_MARGIN)).floatValue();
+  float topMargin=((Float)getAttribute(FigureAttributeConstant.TOP_MARGIN)).floatValue();
+  float bottomMargin=((Float)getAttribute(FigureAttributeConstant.BOTTOM_MARGIN)).floatValue();
   Rectangle drawingBox=new Rectangle(displayBox);
   drawingBox.grow(-1,-1);
   drawingBox.x+=leftMargin;

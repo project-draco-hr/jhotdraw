@@ -4,7 +4,7 @@
   htmlText.append("<table border='0' width='" + displayBox.width + "' height='"+ displayBox.height+ "' cellpadding='0' cellspacing='0'"+ "bgcolor='&FillColor;'>");
   htmlText.append("<tr><td width='100%'>");
   htmlText.append("<font face='&FontName;' color='&TextColor;' size='&FontSize;'>");
-  if (((Integer)getAttribute("XAlignment")).intValue() == SwingConstants.CENTER) {
+  if (((Integer)getAttribute(FigureAttributeConstant.XALIGNMENT)).intValue() == SwingConstants.CENTER) {
     htmlText.append("<center>");
   }
   if (font.isItalic()) {
@@ -20,7 +20,7 @@
   if (font.isItalic()) {
     htmlText.append("</i>");
   }
-  if (((Integer)getAttribute("XAlignment")).intValue() == SwingConstants.CENTER) {
+  if (((Integer)getAttribute(FigureAttributeConstant.XALIGNMENT)).intValue() == SwingConstants.CENTER) {
     htmlText.append("</center>");
   }
   htmlText.append("</font>");
