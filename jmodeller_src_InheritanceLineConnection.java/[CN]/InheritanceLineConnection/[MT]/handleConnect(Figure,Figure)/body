@@ -1,0 +1,6 @@
+{
+  super.handleConnect(start,end);
+  JModellerClass startClass=((ClassFigure)start).getModellerClass();
+  JModellerClass endClass=((ClassFigure)end).getModellerClass();
+  startClass.addSuperclass(endClass);
+}

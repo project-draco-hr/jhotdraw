@@ -1,0 +1,5 @@
+{
+  DrawingView newView=super.createDrawingView();
+  newView.setBackground(Color.white);
+  return newView;
+}

@@ -1,0 +1,17 @@
+{
+  super.createTools(palette);
+  Tool tool=new UndoableTool(new ConnectedTextTool(this,new TextFigure()));
+  palette.add(createToolButton(IMAGES + "ATEXT","Label",tool));
+  tool=new UndoableTool(new CreationTool(this,new ClassFigure()){
+    public void mouseDrag(    MouseEvent e,    int x,    int y){
+    }
+  }
+);
+  palette.add(createToolButton(DIAGRAM_IMAGES + "CLASS","New Class",tool));
+  tool=new UndoableTool(new ConnectionTool(this,new AssociationLineConnection()));
+  palette.add(createToolButton(IMAGES + "LINE","Association Tool",tool));
+  tool=new UndoableTool(new ConnectionTool(this,new DependencyLineConnection()));
+  palette.add(createToolButton(DIAGRAM_IMAGES + "DEPENDENCY","Dependency Tool",tool));
+  tool=new UndoableTool(new ConnectionTool(this,new InheritanceLineConnection()));
+  palette.add(createToolButton(DIAGRAM_IMAGES + "INHERITANCE","Inheritance Tool",tool));
+}

@@ -1,0 +1,14 @@
+{
+  dw.writeString(getModellerClass().getName());
+  dw.writeInt(getModellerClass().getNumberOfAttributes());
+  Iterator attributeIterator=getModellerClass().getAttributes();
+  while (attributeIterator.hasNext()) {
+    dw.writeString((String)attributeIterator.next());
+  }
+  dw.writeInt(getModellerClass().getNumberOfMethods());
+  Iterator methodIterator=getModellerClass().getMethods();
+  while (methodIterator.hasNext()) {
+    dw.writeString((String)methodIterator.next());
+  }
+  dw.writeStorable(getPresentationFigure());
+}

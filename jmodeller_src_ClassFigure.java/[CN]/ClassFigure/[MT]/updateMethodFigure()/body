@@ -1,0 +1,4 @@
+{
+  getMethodsFigure().update();
+  update();
+}

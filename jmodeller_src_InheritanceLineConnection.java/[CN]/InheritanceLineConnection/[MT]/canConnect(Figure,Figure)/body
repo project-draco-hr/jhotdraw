@@ -1,0 +1,5 @@
+{
+  JModellerClass startClass=((ClassFigure)start).getModellerClass();
+  JModellerClass endClass=((ClassFigure)end).getModellerClass();
+  return !endClass.hasInheritanceCycle(startClass);
+}

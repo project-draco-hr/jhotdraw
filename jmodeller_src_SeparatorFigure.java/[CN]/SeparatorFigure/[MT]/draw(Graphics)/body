@@ -1,0 +1,4 @@
+{
+  g.setColor(getFrameColor());
+  g.drawLine(startPoint().x,startPoint().y,endPoint().x - 1,startPoint().y);
+}

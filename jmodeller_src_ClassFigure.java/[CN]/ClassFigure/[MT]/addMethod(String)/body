@@ -1,0 +1,17 @@
+{
+  getModellerClass().addMethod(newMethod);
+  TextFigure classFigureMethod=new TextFigure(){
+    public void setText(    String newString){
+      if (!getText().equals(newString)) {
+        getModellerClass().renameMethod(getText(),newString);
+      }
+      super.setText(newString);
+      updateMethodFigure();
+    }
+  }
+;
+  classFigureMethod.setText(newMethod);
+  classFigureMethod.setFont(methodFont);
+  getMethodsFigure().add(classFigureMethod);
+  updateMethodFigure();
+}

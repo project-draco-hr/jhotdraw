@@ -1,0 +1,6 @@
+{
+  super.deactivate();
+  if (getTextTool().isActive()) {
+    getTextTool().deactivate();
+  }
+}

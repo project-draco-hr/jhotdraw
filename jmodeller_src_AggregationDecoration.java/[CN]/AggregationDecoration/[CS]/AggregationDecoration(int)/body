@@ -1,0 +1,5 @@
+{
+  setSize(newSize);
+  setFillColor(Color.white);
+  setBorderColor(Color.black);
+}

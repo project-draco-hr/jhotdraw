@@ -1,0 +1,3 @@
+{
+  mySuperclasses.add(newSuperclass);
+}

@@ -1,0 +1,3 @@
+{
+  return figureCount() == 0;
+}

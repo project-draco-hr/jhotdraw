@@ -1,0 +1,28 @@
+{
+  removeAll();
+  attributeFont=DEFAULT_FONT;
+  methodFont=DEFAULT_FONT;
+  setModellerClass(new JModellerClass());
+  setClassNameFigure(new TextFigure(){
+    public void setText(    String newText){
+      super.setText(newText);
+      getModellerClass().setName(newText);
+      update();
+    }
+  }
+);
+  getClassNameFigure().setFont(CLASSNAME_FONT);
+  getClassNameFigure().setText(getModellerClass().getName());
+  GraphicalCompositeFigure nameFigure=new GraphicalCompositeFigure(new SeparatorFigure());
+  nameFigure.add(getClassNameFigure());
+  nameFigure.getLayouter().setInsets(INSETS0400);
+  add(nameFigure);
+  setAttributesFigure(new GraphicalCompositeFigure(new SeparatorFigure()));
+  getAttributesFigure().getLayouter().setInsets(INSETS4440);
+  add(getAttributesFigure());
+  setMethodsFigure(new GraphicalCompositeFigure(new SeparatorFigure()));
+  getMethodsFigure().getLayouter().setInsets(INSETS4440);
+  add(getMethodsFigure());
+  setAttribute(FigureAttributeConstant.POPUP_MENU,createPopupMenu());
+  super.initialize();
+}

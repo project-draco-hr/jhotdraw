@@ -1,0 +1,7 @@
+{
+  setStartDecoration(null);
+  ArrowTip arrow=new ArrowTip(0.35,20.0,20.0);
+  arrow.setFillColor(Color.white);
+  arrow.setBorderColor(Color.black);
+  setEndDecoration(arrow);
+}

@@ -1,0 +1,12 @@
+{
+  Figure removeFigure=e.getFigure();
+  if (getAttributesFigure().includes(removeFigure)) {
+    removeAttribute(removeFigure);
+  }
+ else   if (getMethodsFigure().includes(removeFigure)) {
+    removeMethod(removeFigure);
+  }
+ else {
+    listener().figureRequestRemove(new FigureChangeEvent(this,displayBox()));
+  }
+}

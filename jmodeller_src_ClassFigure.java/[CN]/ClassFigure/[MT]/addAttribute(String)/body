@@ -1,0 +1,17 @@
+{
+  getModellerClass().addAttribute(newAttribute);
+  TextFigure classFigureAttribute=new TextFigure(){
+    public void setText(    String newString){
+      if (!getText().equals(newString)) {
+        getModellerClass().renameAttribute(getText(),newString);
+      }
+      super.setText(newString);
+      updateAttributeFigure();
+    }
+  }
+;
+  classFigureAttribute.setText(newAttribute);
+  classFigureAttribute.setFont(attributeFont);
+  getAttributesFigure().add(classFigureAttribute);
+  updateAttributeFigure();
+}

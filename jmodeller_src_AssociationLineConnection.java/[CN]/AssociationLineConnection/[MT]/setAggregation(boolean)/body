@@ -1,0 +1,11 @@
+{
+  willChange();
+  if (isAggregation) {
+    setStartDecoration(new AggregationDecoration());
+  }
+ else {
+    setStartDecoration(null);
+  }
+  change();
+  changed();
+}

@@ -1,0 +1,5 @@
+{
+  getModellerClass().removeAttribute(((TextFigure)oldAttribute).getText());
+  getAttributesFigure().remove(oldAttribute);
+  updateAttributeFigure();
+}

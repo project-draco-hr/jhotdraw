@@ -1,0 +1,7 @@
+{
+  int attributeIndex=myAttributes.indexOf(oldAttribute);
+  if (attributeIndex >= 0) {
+    myAttributes.removeElementAt(attributeIndex);
+    myAttributes.insertElementAt(newAttribute,attributeIndex);
+  }
+}

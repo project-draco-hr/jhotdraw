@@ -1,0 +1,6 @@
+{
+  JMenu menu=new JMenu("Attributes");
+  menu.add(createColorMenu("Fill Color",FigureAttributeConstant.FILL_COLOR));
+  menu.add(createColorMenu("Pen Color",FigureAttributeConstant.FRAME_COLOR));
+  return menu;
+}

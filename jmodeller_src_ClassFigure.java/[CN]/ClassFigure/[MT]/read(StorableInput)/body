@@ -1,0 +1,14 @@
+{
+  getClassNameFigure().setText(dr.readString());
+  int attributesCount=dr.readInt();
+  for (int attributeIndex=0; attributeIndex < attributesCount; attributeIndex++) {
+    addAttribute(dr.readString());
+  }
+  int methodsCount=dr.readInt();
+  for (int methodIndex=0; methodIndex < methodsCount; methodIndex++) {
+    addMethod(dr.readString());
+  }
+  setPresentationFigure((Figure)dr.readStorable());
+  setAttribute(FigureAttributeConstant.POPUP_MENU,createPopupMenu());
+  update();
+}

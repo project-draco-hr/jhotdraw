@@ -1,0 +1,8 @@
+{
+  setName(newClassName);
+  myAttributes=new Vector();
+  myMethods=new Vector();
+  myAssociatedClasses=new Vector();
+  mySuperclasses=new Vector();
+  myDependClasses=new Vector();
+}

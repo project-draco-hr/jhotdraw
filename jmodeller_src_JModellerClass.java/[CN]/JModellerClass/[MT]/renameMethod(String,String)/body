@@ -1,0 +1,7 @@
+{
+  int methodIndex=myMethods.indexOf(oldMethod);
+  if (methodIndex >= 0) {
+    myMethods.removeElementAt(methodIndex);
+    myMethods.insertElementAt(newMethod,methodIndex);
+  }
+}

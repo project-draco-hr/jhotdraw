@@ -1,0 +1,32 @@
+{
+  Polygon shape=new Polygon();
+  double xDir=(double)(x2 - x1);
+  double yDir=(double)(y2 - y1);
+  double vLength=Math.sqrt(xDir * xDir + yDir * yDir);
+  if (vLength == 0.0) {
+    return shape;
+  }
+  if (xDir == 0.0) {
+    xDir=1.0;
+  }
+  xDir=xDir / vLength;
+  yDir=yDir / vLength;
+  double endX=x1 + xDir * getSize();
+  double endY=y1 + yDir * getSize();
+  double h=Math.sqrt(getSize());
+  double v1y=1.0;
+  double v1x=-(yDir * v1y) / xDir;
+  double v1Length=Math.sqrt(v1x * v1x + v1y * v1y);
+  v1y=v1y / v1Length;
+  v1x=v1x / v1Length;
+  double p1y=(endY + y1) / 2 + v1y * h;
+  double p1x=(endX + x1) / 2 + v1x * h;
+  double p2y=(endY + y1) / 2 - v1y * h;
+  double p2x=(endX + x1) / 2 - v1x * h;
+  shape.addPoint(x1,y1);
+  shape.addPoint((int)p1x,(int)p1y);
+  shape.addPoint((int)endX,(int)endY);
+  shape.addPoint((int)p2x,(int)p2y);
+  shape.addPoint(x1,y1);
+  return shape;
+}

@@ -1,0 +1,4 @@
+{
+  super(newEditor);
+  setTextTool(new TextTool(newEditor,new TextFigure()));
+}

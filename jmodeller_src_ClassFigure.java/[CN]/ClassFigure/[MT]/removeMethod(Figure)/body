@@ -1,0 +1,5 @@
+{
+  getModellerClass().removeMethod(((TextFigure)oldMethod).getText());
+  getMethodsFigure().remove(oldMethod);
+  updateMethodFigure();
+}

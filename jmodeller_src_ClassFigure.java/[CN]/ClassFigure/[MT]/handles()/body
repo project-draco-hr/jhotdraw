@@ -1,0 +1,8 @@
+{
+  List handles=CollectionsFactory.current().createList(4);
+  handles.add(new NullHandle(getPresentationFigure(),RelativeLocator.northWest()));
+  handles.add(new NullHandle(getPresentationFigure(),RelativeLocator.northEast()));
+  handles.add(new NullHandle(getPresentationFigure(),RelativeLocator.southWest()));
+  handles.add(new NullHandle(getPresentationFigure(),RelativeLocator.southEast()));
+  return new HandleEnumerator(handles);
+}

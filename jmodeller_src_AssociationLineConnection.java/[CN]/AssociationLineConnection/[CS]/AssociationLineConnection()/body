@@ -1,0 +1,6 @@
+{
+  super();
+  setStartDecoration(null);
+  setEndDecoration(null);
+  setAttribute(FigureAttributeConstant.POPUP_MENU,createPopupMenu());
+}

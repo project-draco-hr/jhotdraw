@@ -1,0 +1,17 @@
+{
+  JPopupMenu popupMenu=new JPopupMenu();
+  popupMenu.add(new AbstractAction("add attribute"){
+    public void actionPerformed(    ActionEvent event){
+      addAttribute("attribute");
+    }
+  }
+);
+  popupMenu.add(new AbstractAction("add method"){
+    public void actionPerformed(    ActionEvent event){
+      addMethod("method()");
+    }
+  }
+);
+  popupMenu.setLightWeightPopupEnabled(true);
+  return popupMenu;
+}

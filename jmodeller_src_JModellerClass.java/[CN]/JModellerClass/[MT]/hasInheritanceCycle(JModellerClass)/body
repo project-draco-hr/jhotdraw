@@ -1,0 +1,6 @@
+{
+  if (possibleSubclass == this) {
+    return true;
+  }
+  return possibleSubclass.isSuperclass(this);
+}

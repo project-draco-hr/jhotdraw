@@ -1,0 +1,8 @@
+{
+  if ((constant != null) && (constant.equals(FigureAttributeConstant.POPUP_MENU))) {
+    return myPopupMenu;
+  }
+ else {
+    return super.getAttribute(constant);
+  }
+}

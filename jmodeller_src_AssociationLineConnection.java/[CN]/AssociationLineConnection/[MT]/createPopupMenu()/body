@@ -1,0 +1,35 @@
+{
+  JPopupMenu popupMenu=new JPopupMenu();
+  popupMenu.add(new AbstractAction("aggregation"){
+    public void actionPerformed(    ActionEvent event){
+      setAggregation(!isAggregation());
+      if (isAggregation()) {
+        ((JMenuItem)event.getSource()).setText("no aggregation");
+      }
+ else {
+        ((JMenuItem)event.getSource()).setText("aggregation");
+      }
+    }
+  }
+);
+  popupMenu.add(new AbstractAction("uni-directional"){
+    public void actionPerformed(    ActionEvent event){
+      setUniDirectional(!isUniDirectional());
+      if (isUniDirectional()) {
+        ((JMenuItem)event.getSource()).setText("bi-directional");
+        JModellerClass startClass=((ClassFigure)startFigure()).getModellerClass();
+        JModellerClass endClass=((ClassFigure)endFigure()).getModellerClass();
+        endClass.addAssociation(startClass);
+      }
+ else {
+        ((JMenuItem)event.getSource()).setText("uni-directional");
+        JModellerClass startClass=((ClassFigure)startFigure()).getModellerClass();
+        JModellerClass endClass=((ClassFigure)endFigure()).getModellerClass();
+        endClass.removeAssociation(startClass);
+      }
+    }
+  }
+);
+  popupMenu.setLightWeightPopupEnabled(true);
+  return popupMenu;
+}

@@ -1,0 +1,5 @@
+{
+  CommandMenu menu=new CommandMenu("Align");
+  menu.add(new ToggleGridCommand("Toggle Snap to Grid",this,new Point(4,4)));
+  return menu;
+}

@@ -1,0 +1,7 @@
+{
+  Figure figure=drawing().findFigureInside(e.getX(),e.getY());
+  if ((figure != null) && (figure instanceof TextFigure)) {
+    getTextTool().activate();
+    getTextTool().mouseDown(e,x,y);
+  }
+}

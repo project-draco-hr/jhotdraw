@@ -1,0 +1,8 @@
+{
+  if ((constant != null) && (constant.equals(FigureAttributeConstant.POPUP_MENU))) {
+    myPopupMenu=(JPopupMenu)value;
+  }
+ else {
+    super.setAttribute(constant,value);
+  }
+}

@@ -1,0 +1,4 @@
+{
+  JModellerApplication window=new JModellerApplication();
+  window.open();
+}

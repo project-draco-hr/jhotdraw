@@ -1,0 +1,13 @@
+{
+  if (possibleSubclass.mySuperclasses.contains(this)) {
+    return true;
+  }
+  Iterator i=possibleSubclass.getSuperclasses();
+  while (i.hasNext()) {
+    Object currentObject=i.next();
+    if (isSuperclass((JModellerClass)currentObject)) {
+      return true;
+    }
+  }
+  return false;
+}

@@ -1,0 +1,4 @@
+{
+  s.defaultReadObject();
+  setAttribute(FigureAttributeConstant.POPUP_MENU,createPopupMenu());
+}

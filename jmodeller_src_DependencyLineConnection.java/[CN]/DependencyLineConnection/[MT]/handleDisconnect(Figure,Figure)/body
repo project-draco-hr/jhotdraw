@@ -1,0 +1,8 @@
+{
+  super.handleDisconnect(start,end);
+  if ((start != null) && (end != null)) {
+    JModellerClass startClass=((ClassFigure)start).getModellerClass();
+    JModellerClass endClass=((ClassFigure)end).getModellerClass();
+    startClass.removeDependency(endClass);
+  }
+}

@@ -1,0 +1,11 @@
+{
+  JMenu menu=super.createFileMenu();
+  menu.insert(new AbstractAction("New Window"){
+    public void actionPerformed(    ActionEvent event){
+      newWindow(createDrawing());
+    }
+  }
+,5);
+  menu.insertSeparator(6);
+  return menu;
+}

@@ -1,0 +1,13 @@
+{
+  willChange();
+  if (isDirected) {
+    ArrowTip arrow=new ArrowTip(0.4,12.0,0.0);
+    arrow.setBorderColor(Color.black);
+    setEndDecoration(arrow);
+  }
+ else {
+    setEndDecoration(null);
+  }
+  change();
+  changed();
+}
