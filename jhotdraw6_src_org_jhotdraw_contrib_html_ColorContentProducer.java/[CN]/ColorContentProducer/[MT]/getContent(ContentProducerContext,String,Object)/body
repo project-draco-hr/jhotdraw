@@ -1,5 +1,5 @@
 {
-  Color color=(fColor != null) ? fColor : (Color)ctxAttrValue;
+  Color color=(getColor() != null) ? getColor() : (Color)ctxAttrValue;
   String colorCode=Integer.toHexString(color.getRGB());
   return "0x" + colorCode.substring(colorCode.length() - 6);
 }

@@ -56,4 +56,5 @@ catch (    java.lang.reflect.InvocationTargetException ite) {
  else {
     r.run();
   }
+  toolDone();
 }

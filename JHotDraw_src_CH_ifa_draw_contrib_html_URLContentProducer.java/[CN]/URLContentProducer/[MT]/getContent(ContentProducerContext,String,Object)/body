@@ -1,6 +1,6 @@
 {
   try {
-    URL url=(fURL != null) ? new URL(fURL.toExternalForm()) : new URL(((URL)ctxAttrValue).toExternalForm());
+    URL url=(getURL() != null) ? new URL(getURL().toExternalForm()) : new URL(((URL)ctxAttrValue).toExternalForm());
     InputStream reader=url.openStream();
     int available=reader.available();
     byte contents[]=new byte[available];

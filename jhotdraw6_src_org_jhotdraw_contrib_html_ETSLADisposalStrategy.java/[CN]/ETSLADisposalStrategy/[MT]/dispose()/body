@@ -1,7 +1,7 @@
 {
-synchronized (manager) {
+synchronized (getManager()) {
     long currentTime=System.currentTimeMillis();
-    Iterator resourceIter=manager.getResources();
+    Iterator resourceIter=getManager().getResources();
     DisposableResourceHolder resource;
     while (resourceIter.hasNext()) {
       resource=(DisposableResourceHolder)resourceIter.next();

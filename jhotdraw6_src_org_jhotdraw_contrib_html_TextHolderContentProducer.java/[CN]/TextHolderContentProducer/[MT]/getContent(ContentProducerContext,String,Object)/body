@@ -1,4 +1,4 @@
 {
-  TextHolder figure=(fFigure != null) ? fFigure : (TextHolder)ctxAttrValue;
+  TextHolder figure=(getTextHolder() != null) ? getTextHolder() : (TextHolder)ctxAttrValue;
   return figure.getText();
 }

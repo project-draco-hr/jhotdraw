@@ -1,5 +1,5 @@
 {
   resources=new WeakHashMap();
-  this.strategy=strategy;
-  strategy.setManager(this);
+  setStrategy(strategy);
+  getStrategy().setManager(this);
 }

@@ -2,9 +2,9 @@
   super.read(dr);
   boolean hasColor=dr.readBoolean();
   if (hasColor) {
-    fColor=new Color(dr.readInt());
+    setColor(new Color(dr.readInt()));
   }
  else {
-    fColor=null;
+    setColor(null);
   }
 }

@@ -2,5 +2,5 @@
   if (disposalThread != null) {
     return;
   }
-  disposalThread=new DisposalThread(this,gcPeriodicity);
+  disposalThread=new DisposalThread(this,getPeriodicity());
 }

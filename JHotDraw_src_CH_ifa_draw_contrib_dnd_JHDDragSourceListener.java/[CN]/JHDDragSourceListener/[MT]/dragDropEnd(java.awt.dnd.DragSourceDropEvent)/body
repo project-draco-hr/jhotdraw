@@ -5,7 +5,7 @@
     if (dsde.getDropAction() == DnDConstants.ACTION_MOVE) {
       log("DragSourceDropEvent-ACTION_MOVE");
       setSourceUndoActivity(createSourceUndoActivity(view));
-      DNDFigures df=(DNDFigures)DNDHelper.ProcessReceivedData(DNDFiguresTransferable.DNDFiguresFlavor,dsde.getDragSourceContext().getTransferable());
+      DNDFigures df=(DNDFigures)DNDHelper.processReceivedData(DNDFiguresTransferable.DNDFiguresFlavor,dsde.getDragSourceContext().getTransferable());
       getSourceUndoActivity().setAffectedFigures(df.getFigures());
       DeleteFromDrawingVisitor deleteVisitor=new DeleteFromDrawingVisitor(view.drawing());
       FigureEnumeration fe=getSourceUndoActivity().getAffectedFigures();

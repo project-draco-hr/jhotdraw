@@ -1,5 +1,5 @@
 {
-  if (manager == null) {
+  if (getManager() == null) {
     throw new ResourceManagerNotSetException();
   }
   if (disposingActive) {

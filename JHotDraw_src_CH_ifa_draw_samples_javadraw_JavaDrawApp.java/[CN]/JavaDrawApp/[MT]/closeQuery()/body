@@ -1,4 +1,0 @@
-{
-  int reply=JOptionPane.showConfirmDialog(this,"Do you really want to exit?","JHotDraw - Exit",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
-  return (reply == JOptionPane.YES_OPTION);
-}

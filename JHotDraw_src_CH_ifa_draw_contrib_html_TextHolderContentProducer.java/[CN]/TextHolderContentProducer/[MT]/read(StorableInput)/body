@@ -1,4 +1,4 @@
 {
   super.read(dr);
-  fFigure=(TextHolder)dr.readStorable();
+  setTextHolder((TextHolder)dr.readStorable());
 }

@@ -1,6 +1,5 @@
 {
-  Object attrValue=null;
-  attrValue=getIntrinsicContentProducer().getContent(this,attrName,attrValue);
+  Object attrValue=getIntrinsicContentProducer().getContent(this,attrName,null);
   if (attrValue == null) {
     return null;
   }

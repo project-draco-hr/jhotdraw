@@ -1,6 +1,6 @@
 {
   try {
-    String resourceName=(fResourceName != null) ? fResourceName : (String)ctxAttrValue;
+    String resourceName=(getResourceName() != null) ? getResourceName() : (String)ctxAttrValue;
     InputStream reader=this.getClass().getResourceAsStream(resourceName);
     int available=reader.available();
     byte contents[]=new byte[available];

@@ -1,0 +1,5 @@
+{
+  setManager(manager);
+  setPeriodicity(periodicity);
+  initDisposalThread();
+}

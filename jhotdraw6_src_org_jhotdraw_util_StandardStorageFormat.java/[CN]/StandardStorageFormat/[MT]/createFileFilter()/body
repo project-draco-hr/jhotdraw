@@ -5,7 +5,7 @@
         return true;
       }
  else {
-        return checkFile.getName().endsWith("." + getFileDescription());
+        return checkFile.getName().endsWith("." + getFileExtension());
       }
     }
     public String getDescription(){

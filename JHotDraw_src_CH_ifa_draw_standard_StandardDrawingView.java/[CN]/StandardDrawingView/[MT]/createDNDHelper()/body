@@ -1,5 +1,5 @@
 {
-  DNDHelper dndh=new DNDHelper(true,true){
+  return new DNDHelper(true,true){
     protected DrawingView view(){
       return StandardDrawingView.this;
     }
@@ -8,5 +8,4 @@
     }
   }
 ;
-  return dndh;
 }

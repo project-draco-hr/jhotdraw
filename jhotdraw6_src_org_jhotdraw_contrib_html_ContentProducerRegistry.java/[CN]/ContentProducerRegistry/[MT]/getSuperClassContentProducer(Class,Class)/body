@@ -1,6 +1,6 @@
 {
-  Map.Entry entry;
-  Class entryClass;
+  Map.Entry entry=null;
+  Class entryClass=null;
   ContentProducer closestProducer=null;
   Iterator iter=fContentProducers.entrySet().iterator();
   while (iter.hasNext()) {
