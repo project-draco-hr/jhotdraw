@@ -1,0 +1,4 @@
+Drawing drawing
+DrawingEditor editor
+int width
+int height
