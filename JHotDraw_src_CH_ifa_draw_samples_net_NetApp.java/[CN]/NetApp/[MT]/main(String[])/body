@@ -1,4 +1,5 @@
 {
   DrawApplication window=new NetApp();
   window.open();
+  window.newWindow();
 }
