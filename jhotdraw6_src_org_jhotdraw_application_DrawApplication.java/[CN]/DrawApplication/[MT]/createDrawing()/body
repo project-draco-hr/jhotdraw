@@ -1,3 +1,5 @@
 {
-  return new StandardDrawing();
+  Drawing dwg=new StandardDrawing();
+  dwg.setTitle(getDefaultDrawingTitle());
+  return dwg;
 }

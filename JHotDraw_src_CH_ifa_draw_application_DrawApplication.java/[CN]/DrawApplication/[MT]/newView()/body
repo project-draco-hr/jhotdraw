@@ -3,7 +3,8 @@
     return;
   }
   DrawApplication window=createApplication();
-  window.open(view());
+  window.open();
+  window.newWindow(view().drawing());
   if (view().drawing().getTitle() != null) {
     window.setDrawingTitle(view().drawing().getTitle() + " (View)");
   }
