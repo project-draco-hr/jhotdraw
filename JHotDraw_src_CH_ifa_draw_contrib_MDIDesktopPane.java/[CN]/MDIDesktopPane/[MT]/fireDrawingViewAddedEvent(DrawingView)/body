@@ -1,14 +1,11 @@
 {
-  final Object[] listeners=listenerList.getListenerList();
-  DesktopListener dpl;
+  java.util.ListIterator li=listeners.listIterator(listeners.size());
   DesktopEvent dpe=null;
-  for (int i=listeners.length - 2; i >= 0; i-=2) {
-    if (listeners[i] == DesktopListener.class) {
-      if (dpe == null) {
-        dpe=new DesktopEvent(MDIDesktopPane.this,dv);
-      }
-      dpl=(DesktopListener)listeners[i + 1];
-      dpl.drawingViewAdded(dpe);
+  while (li.hasPrevious()) {
+    if (dpe == null) {
+      dpe=new DesktopEvent(MDIDesktopPane.this,dv);
     }
+    DesktopListener dpl=(DesktopListener)li.previous();
+    dpl.drawingViewAdded(dpe);
   }
 }

@@ -1,10 +1,7 @@
 {
-  final Object[] listeners=listenerList.getListenerList();
-  ViewChangeListener vsl=null;
-  for (int i=listeners.length - 2; i >= 0; i-=2) {
-    if (listeners[i] == ViewChangeListener.class) {
-      vsl=(ViewChangeListener)listeners[i + 1];
-      vsl.viewDestroying(view);
-    }
+  java.util.ListIterator li=listeners.listIterator(listeners.size());
+  while (li.hasPrevious()) {
+    ViewChangeListener vsl=(ViewChangeListener)li.previous();
+    vsl.viewDestroying(view);
   }
 }

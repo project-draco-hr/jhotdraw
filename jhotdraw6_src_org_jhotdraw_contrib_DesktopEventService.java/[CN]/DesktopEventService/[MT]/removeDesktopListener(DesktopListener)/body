@@ -1,3 +1,3 @@
 {
-  listenerList.remove(DesktopListener.class,dpl);
+  listeners.remove(dpl);
 }

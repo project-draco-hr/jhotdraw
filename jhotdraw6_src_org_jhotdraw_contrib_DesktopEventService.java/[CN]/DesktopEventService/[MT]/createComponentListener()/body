@@ -3,6 +3,8 @@
     /** 
  * If the dv is null assert
  * @todo does adding a component always make it the selected view?
+ * Yes so far because this is only being used on single view Desktops.
+ * If it is to work on multipleView desktops, the we need to think further.
  */
     public void componentAdded(    ContainerEvent e){
       DrawingView dv=Helper.getDrawingView((java.awt.Container)e.getChild());
@@ -15,9 +17,8 @@
     }
     /** 
  * If dv is null assert
- * if dv is not != getActiveDrawingView() assert
- * @todo  why should we assert? dont see a problem with removing a view thats not a selected view
- * This definitely needs fixing!!! dnoyeb 1/1/2003
+ * dv will only be null if something thats not a drawingView was
+ * added to the desktop.  it would be simpler if we forbade that.
  */
     public void componentRemoved(    ContainerEvent e){
       DrawingView dv=Helper.getDrawingView((java.awt.Container)e.getChild());

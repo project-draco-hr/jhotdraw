@@ -1,4 +1,5 @@
 {
+  listeners=CollectionsFactory.current().createList();
   setDesktop(newDesktop);
   setContainer(newContainer);
   getContainer().addContainerListener(createComponentListener());

@@ -1,4 +1,5 @@
 {
+  listeners=CH.ifa.draw.util.CollectionsFactory.current().createList();
   setDrawApplication(newDrawApplication);
   manager=new MDIDesktopManager(this);
   setDesktopManager(manager);

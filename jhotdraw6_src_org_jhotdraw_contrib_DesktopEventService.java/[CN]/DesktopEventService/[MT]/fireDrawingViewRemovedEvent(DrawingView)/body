@@ -1,11 +1,11 @@
 {
-  final Object[] listeners=listenerList.getListenerList();
-  DesktopListener dpl;
-  DesktopEvent dpe=createDesktopEvent(getActiveDrawingView(),dv);
-  for (int i=listeners.length - 2; i >= 0; i-=2) {
-    if (listeners[i] == DesktopListener.class) {
-      dpl=(DesktopListener)listeners[i + 1];
-      dpl.drawingViewRemoved(dpe);
+  java.util.ListIterator li=listeners.listIterator(listeners.size());
+  DesktopEvent dpe=null;
+  while (li.hasPrevious()) {
+    if (dpe == null) {
+      dpe=createDesktopEvent(getActiveDrawingView(),dv);
     }
+    DesktopListener dpl=(DesktopListener)li.previous();
+    dpl.drawingViewRemoved(dpe);
   }
 }
