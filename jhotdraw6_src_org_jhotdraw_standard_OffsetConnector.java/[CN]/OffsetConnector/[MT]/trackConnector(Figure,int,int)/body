@@ -1,11 +1,15 @@
 {
   OffsetConnector trackingConnector=trackingConnector1;
-  if (firstConnector != null && owner != trackingConnector1.owner())   trackingConnector=trackingConnector2;
+  if (firstConnector != null && owner != trackingConnector1.owner()) {
+    trackingConnector=trackingConnector2;
+  }
   if (trackingConnector.fOwner != owner) {
     trackingConnector.fOwner=owner;
     trackingConnector.fOwnerBox=owner.displayBox();
   }
-  if (firstConnector == null)   firstConnector=trackingConnector;
+  if (firstConnector == null) {
+    firstConnector=trackingConnector;
+  }
   lastConnector=trackingConnector;
   return trackingConnector.calculateFigureConstrainedOffsets(x,y);
 }

@@ -2,7 +2,9 @@
   Figure target=findConnectableFigure(x,y,drawing);
   Figure start=getStartConnector().owner();
   boolean includesStart=(target != null && target.includes(start));
-  if (myStartConnector == OffsetConnector.trackingConnector1 || myStartConnector == OffsetConnector.trackingConnector2)   includesStart=false;
+  if ((myStartConnector == OffsetConnector.trackingConnector1) || (myStartConnector == OffsetConnector.trackingConnector2)) {
+    includesStart=false;
+  }
   if (target != null && getConnection() != null && target.canConnect() && !includesStart && getConnection().canConnect(start,target)) {
     return target;
   }

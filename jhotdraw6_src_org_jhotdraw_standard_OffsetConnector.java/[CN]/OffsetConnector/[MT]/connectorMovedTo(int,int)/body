@@ -5,10 +5,14 @@
   OffsetLocator l=(OffsetLocator)myLocator;
   if (owner() instanceof RectangleFigure) {
     if (Math.abs(py - y) <= 3) {
-      if (l.fOffsetX == 0 || l.fOffsetX == fOwnerBox.width)       l.fOffsetY=Geom.range(0,fOwnerBox.height,y - fOwnerBox.y);
+      if (l.fOffsetX == 0 || l.fOffsetX == fOwnerBox.width) {
+        l.fOffsetY=Geom.range(0,fOwnerBox.height,y - fOwnerBox.y);
+      }
     }
     if (Math.abs(px - x) <= 3) {
-      if (l.fOffsetY == 0 || l.fOffsetY == fOwnerBox.height)       l.fOffsetX=Geom.range(0,fOwnerBox.width,x - fOwnerBox.x);
+      if (l.fOffsetY == 0 || l.fOffsetY == fOwnerBox.height) {
+        l.fOffsetX=Geom.range(0,fOwnerBox.width,x - fOwnerBox.x);
+      }
     }
   }
   return new Point(locateX(),locateY());

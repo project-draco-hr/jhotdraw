@@ -1,4 +1,6 @@
 {
-  if (getConnection().getEndConnector() instanceof OffsetConnector && getConnection().getStartConnector() != null && getConnection().getStartConnector().owner() != null && getConnection().getStartConnector().owner() == getConnection().getEndConnector().owner())   return;
+  if (getConnection().getEndConnector() instanceof OffsetConnector && getConnection().getStartConnector() != null && getConnection().getStartConnector().owner() != null && getConnection().getStartConnector().owner() == getConnection().getEndConnector().owner()) {
+    return;
+  }
   super.draw(g);
 }

@@ -1,6 +1,8 @@
 {
   Rectangle r=owner().displayBox();
-  if (fOwnerBox.width == 0 && fOwnerBox.height == 0)   fOwnerBox=r;
+  if (fOwnerBox.width == 0 && fOwnerBox.height == 0) {
+    fOwnerBox=r;
+  }
   OffsetLocator l=(OffsetLocator)myLocator;
   Point p1=locate(connection);
   if (fOwnerBox.width == r.width && fOwnerBox.height == r.height) {
@@ -14,11 +16,21 @@
   }
   p1.x=fOwnerBox.x + l.fOffsetX;
   p1.y=fOwnerBox.y + l.fOffsetY;
-  if (l.fOffsetX == 0)   p1.x=r.x;
- else   if (l.fOffsetX == fOwnerBox.width)   p1.x=r.x + r.width;
-  if (l.fOffsetY == 0)   p1.y=r.y;
- else   if (l.fOffsetY == fOwnerBox.height)   p1.y=r.y + r.height;
-  if (view != null && view.getConstrainer() != null)   p1=view.getConstrainer().constrainPoint(p1);
+  if (l.fOffsetX == 0) {
+    p1.x=r.x;
+  }
+ else   if (l.fOffsetX == fOwnerBox.width) {
+    p1.x=r.x + r.width;
+  }
+  if (l.fOffsetY == 0) {
+    p1.y=r.y;
+  }
+ else   if (l.fOffsetY == fOwnerBox.height) {
+    p1.y=r.y + r.height;
+  }
+  if (view != null && view.getConstrainer() != null) {
+    p1=view.getConstrainer().constrainPoint(p1);
+  }
   l.fOffsetX=Geom.range(0,r.width,p1.x - r.x);
   l.fOffsetY=Geom.range(0,r.height,p1.y - r.y);
   fOwnerBox=r;

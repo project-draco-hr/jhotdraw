@@ -1,5 +1,7 @@
 {
-  if (this != OffsetConnector.trackingConnector1 && this != OffsetConnector.trackingConnector2)   return this;
+  if ((this != OffsetConnector.trackingConnector1) && (this != OffsetConnector.trackingConnector2)) {
+    return this;
+  }
   OffsetLocator l=(OffsetLocator)myLocator;
   OffsetConnector o=new OffsetConnector(owner(),l.fOffsetX,l.fOffsetY);
   if (this == OffsetConnector.trackingConnector2) {

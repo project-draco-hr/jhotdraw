@@ -1,8 +1,14 @@
 {
   trackingPoint.x=x;
   trackingPoint.y=y;
-  if (view != null && view.getConstrainer() != null)   trackingPoint=view.getConstrainer().constrainPoint(trackingPoint);
-  if (!(owner() instanceof EllipseFigure))   trackingPoint=Geom.angleToPoint(fOwnerBox,Geom.pointToAngle(fOwnerBox,trackingPoint));
- else   trackingPoint=Geom.ovalAngleToPoint(fOwnerBox,Geom.pointToAngle(fOwnerBox,trackingPoint));
+  if (view != null && view.getConstrainer() != null) {
+    trackingPoint=view.getConstrainer().constrainPoint(trackingPoint);
+  }
+  if (!(owner() instanceof EllipseFigure)) {
+    trackingPoint=Geom.angleToPoint(fOwnerBox,Geom.pointToAngle(fOwnerBox,trackingPoint));
+  }
+ else {
+    trackingPoint=Geom.ovalAngleToPoint(fOwnerBox,Geom.pointToAngle(fOwnerBox,trackingPoint));
+  }
   return trackingPoint;
 }
