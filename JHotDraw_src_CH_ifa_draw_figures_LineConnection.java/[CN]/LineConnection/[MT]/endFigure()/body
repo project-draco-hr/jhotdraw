@@ -1,4 +1,6 @@
 {
-  if (end() != null)   return end().owner();
+  if (getEndConnector() != null) {
+    return getEndConnector().owner();
+  }
   return null;
 }

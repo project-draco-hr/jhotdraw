@@ -1,0 +1,8 @@
+{
+  if (isRedoable()) {
+    myCommand.deleteFigures(getAffectedFigures());
+    getDrawingView().clearSelection();
+    return true;
+  }
+  return false;
+}

@@ -1,7 +1,9 @@
 {
-  FigureEnumeration k=new FigureEnumerator(fView.selectionZOrdered());
-  while (k.hasMoreElements()) {
-    fView.drawing().bringToFront(k.nextFigure());
+  setUndoActivity(createUndoActivity());
+  getUndoActivity().setAffectedFigures(view().selectionElements());
+  FigureEnumeration fe=getUndoActivity().getAffectedFigures();
+  while (fe.hasMoreElements()) {
+    view().drawing().bringToFront(fe.nextFigure());
   }
-  fView.checkDamage();
+  view().checkDamage();
 }

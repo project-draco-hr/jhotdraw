@@ -1,5 +1,7 @@
 {
-  copySelection();
-  deleteSelection();
-  fView.checkDamage();
+  setUndoActivity(createUndoActivity());
+  getUndoActivity().setAffectedFigures(view().selectionElements());
+  copyFigures(getUndoActivity().getAffectedFigures(),view().selectionCount());
+  deleteFigures(getUndoActivity().getAffectedFigures());
+  view().checkDamage();
 }

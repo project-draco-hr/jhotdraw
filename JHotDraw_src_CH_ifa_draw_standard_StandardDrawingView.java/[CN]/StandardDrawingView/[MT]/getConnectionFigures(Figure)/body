@@ -1,0 +1,17 @@
+{
+  if (inFigure == null || !inFigure.canConnect()) {
+    return null;
+  }
+  Vector result=new Vector(5);
+  FigureEnumeration figures=drawing().figures();
+  while (figures.hasMoreElements()) {
+    Figure f=figures.nextFigure();
+    if ((f instanceof ConnectionFigure) && !(isFigureSelected(f))) {
+      ConnectionFigure cf=(ConnectionFigure)f;
+      if (cf.startFigure().includes(inFigure) || cf.endFigure().includes(inFigure)) {
+        result.addElement(f);
+      }
+    }
+  }
+  return result;
+}

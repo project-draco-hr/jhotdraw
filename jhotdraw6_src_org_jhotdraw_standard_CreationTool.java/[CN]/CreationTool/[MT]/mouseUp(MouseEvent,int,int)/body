@@ -1,5 +1,13 @@
 {
-  if (fCreatedFigure.isEmpty())   drawing().remove(fCreatedFigure);
+  if (getCreatedFigure().isEmpty()) {
+    drawing().remove(getAddedFigure());
+    setUndoActivity(null);
+  }
+ else {
+    setUndoActivity(createUndoActivity());
+    getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
+  }
   fCreatedFigure=null;
+  setAddedFigure(null);
   editor().toolDone();
 }

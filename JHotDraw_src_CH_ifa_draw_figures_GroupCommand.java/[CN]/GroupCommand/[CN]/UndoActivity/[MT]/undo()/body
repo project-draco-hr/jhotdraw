@@ -1,0 +1,20 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  getDrawingView().clearSelection();
+  getDrawingView().drawing().orphanAll(getAffectedFigures());
+  Vector affectedFigures=new Vector();
+  FigureEnumeration fe=getAffectedFigures();
+  while (fe.hasMoreElements()) {
+    Figure currentFigure=fe.nextFigure();
+    getDrawingView().drawing().addAll(currentFigure.figures());
+    getDrawingView().addToSelectionAll(currentFigure.figures());
+    FigureEnumeration groupedFigures=currentFigure.figures();
+    while (groupedFigures.hasMoreElements()) {
+      affectedFigures.addElement(groupedFigures.nextFigure());
+    }
+  }
+  setAffectedFigures(new FigureEnumerator(affectedFigures));
+  return true;
+}

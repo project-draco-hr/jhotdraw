@@ -1,0 +1,9 @@
+{
+  super.setAffectedFigures(fe);
+  FigureEnumeration copyFe=getAffectedFigures();
+  while (copyFe.hasMoreElements()) {
+    Figure f=copyFe.nextFigure();
+    int originalLayer=getDrawingView().drawing().getLayer(f);
+    addOriginalLayer(f,originalLayer);
+  }
+}

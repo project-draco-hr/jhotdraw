@@ -1,0 +1,5 @@
+{
+  setUndoActivity(createUndoActivity());
+  getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(owner()));
+  ((ResizeHandle.UndoActivity)getUndoActivity()).setOldDisplayBox(owner().displayBox());
+}

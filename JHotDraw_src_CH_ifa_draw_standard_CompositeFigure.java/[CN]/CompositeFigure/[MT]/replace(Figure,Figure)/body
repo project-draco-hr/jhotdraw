@@ -3,7 +3,10 @@
   if (index != -1) {
     replacement.setZValue(figure.getZValue());
     replacement.addToContainer(this);
-    figure.changed();
+    figure.removeFromContainer(this);
     fFigures.setElementAt(replacement,index);
+    figure.changed();
+    replacement.changed();
   }
+  return replacement;
 }

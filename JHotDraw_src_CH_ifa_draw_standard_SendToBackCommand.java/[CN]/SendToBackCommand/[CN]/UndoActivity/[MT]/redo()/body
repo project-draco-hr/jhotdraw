@@ -1,0 +1,10 @@
+{
+  if (!isRedoable()) {
+    return false;
+  }
+  FigureEnumeration fe=getAffectedFigures();
+  while (fe.hasMoreElements()) {
+    sendToCommand(fe.nextFigure());
+  }
+  return true;
+}

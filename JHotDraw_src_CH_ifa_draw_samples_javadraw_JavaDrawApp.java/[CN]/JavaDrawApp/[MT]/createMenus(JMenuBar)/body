@@ -1,6 +1,6 @@
 {
   super.createMenus(mb);
-  mb.add(createAnimationMenu());
-  mb.add(createImagesMenu());
-  mb.add(createWindowMenu());
+  addMenuIfPossible(mb,createAnimationMenu());
+  addMenuIfPossible(mb,createImagesMenu());
+  addMenuIfPossible(mb,createWindowMenu());
 }

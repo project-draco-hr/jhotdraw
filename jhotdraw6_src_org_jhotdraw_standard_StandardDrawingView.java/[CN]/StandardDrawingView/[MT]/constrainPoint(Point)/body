@@ -2,6 +2,8 @@
   Dimension size=getSize();
   p.x=Geom.range(1,size.width,p.x);
   p.y=Geom.range(1,size.height,p.y);
-  if (fConstrainer != null)   return fConstrainer.constrainPoint(p);
+  if (fConstrainer != null) {
+    return fConstrainer.constrainPoint(p);
+  }
   return p;
 }

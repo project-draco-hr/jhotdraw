@@ -7,10 +7,18 @@
   for (int i=0; i < n; i++) {
     int x=p.xpoints[i];
     int y=p.ypoints[i];
-    if (x > maxx)     maxx=x;
-    if (x < minx)     minx=x;
-    if (y > maxy)     maxy=y;
-    if (y < miny)     miny=y;
+    if (x > maxx) {
+      maxx=x;
+    }
+    if (x < minx) {
+      minx=x;
+    }
+    if (y > maxy) {
+      maxy=y;
+    }
+    if (y < miny) {
+      miny=y;
+    }
   }
   return new Rectangle(minx,miny,maxx - minx,maxy - miny);
 }

@@ -1,11 +1,20 @@
 {
   Connector target=findConnectionTarget(x,y,view.drawing());
-  if (target == null)   target=fOriginalTarget;
+  if (target == null) {
+    target=fOriginalTarget;
+  }
   setPoint(x,y);
   connect(target);
-  fConnection.updateConnection();
-  if (fTarget != null) {
-    fTarget.connectorVisibility(false);
-    fTarget=null;
+  getConnection().updateConnection();
+  Connector oldConnector=((ChangeConnectionHandle.UndoActivity)getUndoActivity()).getOldConnector();
+  if ((oldConnector == null) || (target() == null) || (oldConnector.owner() == target().owner())) {
+    setUndoActivity(null);
+  }
+ else {
+    getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getConnection()));
+  }
+  if (getTarget() != null) {
+    getTarget().connectorVisibility(false);
+    setTarget(null);
   }
 }

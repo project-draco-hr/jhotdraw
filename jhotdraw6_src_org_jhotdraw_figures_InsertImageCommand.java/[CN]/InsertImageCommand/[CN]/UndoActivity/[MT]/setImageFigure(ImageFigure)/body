@@ -1,0 +1,3 @@
+{
+  myAffectedImageFigure=new WeakReference(newImageFigure);
+}

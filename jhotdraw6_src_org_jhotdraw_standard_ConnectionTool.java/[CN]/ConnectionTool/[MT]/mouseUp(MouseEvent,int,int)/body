@@ -1,16 +1,23 @@
 {
   Figure c=null;
-  if (fStartConnector != null)   c=findTarget(e.getX(),e.getY(),drawing());
+  if (getStartConnector() != null) {
+    c=findTarget(e.getX(),e.getY(),drawing());
+  }
   if (c != null) {
-    fEndConnector=findConnector(e.getX(),e.getY(),c);
-    if (fEndConnector != null) {
-      fConnection.connectStart(fStartConnector);
-      fConnection.connectEnd(fEndConnector);
-      fConnection.updateConnection();
+    setEndConnector(findConnector(e.getX(),e.getY(),c));
+    if (getEndConnector() != null) {
+      getConnection().connectStart(getStartConnector());
+      getConnection().connectEnd(getEndConnector());
+      getConnection().updateConnection();
+      setUndoActivity(createUndoActivity());
+      getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
     }
   }
- else   if (fConnection != null)   view().remove(fConnection);
-  fConnection=null;
-  fStartConnector=fEndConnector=null;
+ else   if (getConnection() != null) {
+    view().remove(getConnection());
+  }
+  setConnection(null);
+  setStartConnector(null);
+  setEndConnector(null);
   editor().toolDone();
 }

@@ -1,5 +1,7 @@
 {
-  if (fChild != null)   return;
+  if (fChild != null) {
+    return;
+  }
   view().freezeView();
   Handle handle=view().findHandle(e.getX(),e.getY());
   if (handle != null) {
@@ -18,4 +20,5 @@
     }
   }
   fChild.mouseDown(e,x,y);
+  fChild.activate();
 }

@@ -12,6 +12,12 @@
   palette.add(createToolButton(IMAGES + "RRECT","Round Rectangle Tool",tool));
   tool=new CreationTool(view(),new EllipseFigure());
   palette.add(createToolButton(IMAGES + "ELLIPSE","Ellipse Tool",tool));
+  tool=new PolygonTool(view());
+  palette.add(createToolButton(IMAGES + "POLYGON","Polygon Tool",tool));
+  tool=new CreationTool(view(),new TriangleFigure());
+  palette.add(createToolButton(IMAGES + "TRIANGLE","Triangle Tool",tool));
+  tool=new CreationTool(view(),new DiamondFigure());
+  palette.add(createToolButton(IMAGES + "DIAMOND","Diamond Tool",tool));
   tool=new CreationTool(view(),new LineFigure());
   palette.add(createToolButton(IMAGES + "LINE","Line Tool",tool));
   tool=new ConnectionTool(view(),new LineConnection());

@@ -3,7 +3,9 @@
   while (k.hasMoreElements()) {
     Figure figure=(Figure)k.nextElement();
     figure=figure.findFigureInside(x,y);
-    if (figure != null && (figure instanceof ConnectionFigure))     return (ConnectionFigure)figure;
+    if (figure != null && (figure instanceof ConnectionFigure)) {
+      return (ConnectionFigure)figure;
+    }
   }
   return null;
 }

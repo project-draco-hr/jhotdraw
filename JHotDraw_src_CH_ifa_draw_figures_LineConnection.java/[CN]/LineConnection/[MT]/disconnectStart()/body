@@ -1,4 +1,4 @@
 {
   startFigure().removeFigureChangeListener(this);
-  fStart=null;
+  setStartConnector(null);
 }

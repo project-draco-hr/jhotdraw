@@ -1,0 +1,6 @@
+{
+  JSplitPane dividedContents=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,getLeftComponent(),getRightComponent());
+  dividedContents.setAlignmentX(JSplitPane.LEFT_ALIGNMENT);
+  dividedContents.setOneTouchExpandable(true);
+  return dividedContents;
+}

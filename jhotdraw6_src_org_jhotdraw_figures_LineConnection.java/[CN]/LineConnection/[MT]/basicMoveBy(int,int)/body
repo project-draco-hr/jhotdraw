@@ -1,4 +1,6 @@
 {
-  for (int i=1; i < fPoints.size() - 1; i++)   ((Point)fPoints.elementAt(i)).translate(dx,dy);
+  for (int i=1; i < fPoints.size() - 1; i++) {
+    ((Point)fPoints.elementAt(i)).translate(dx,dy);
+  }
   updateConnection();
 }

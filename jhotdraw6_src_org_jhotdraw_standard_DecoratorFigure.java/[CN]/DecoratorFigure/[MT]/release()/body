@@ -1,5 +1,5 @@
 {
   super.release();
-  fComponent.removeFromContainer(this);
-  fComponent.release();
+  getDecoratedFigure().removeFromContainer(this);
+  getDecoratedFigure().release();
 }

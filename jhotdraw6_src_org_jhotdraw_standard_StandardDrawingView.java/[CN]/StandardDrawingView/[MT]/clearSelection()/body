@@ -1,8 +1,10 @@
 {
   Figure figure;
   FigureEnumeration k=selectionElements();
-  while (k.hasMoreElements())   k.nextFigure().invalidate();
+  while (k.hasMoreElements()) {
+    k.nextFigure().invalidate();
+  }
   fSelection=new Vector();
   fSelectionHandles=null;
-  selectionChanged();
+  fireSelectionChanged();
 }

@@ -1,0 +1,7 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  getDrawingView().clearSelection();
+  return replaceAffectedFigures();
+}

@@ -1,10 +1,12 @@
 {
   if (fPolygon == null) {
     fPolygon=new PolygonFigure(x,y);
-    view().add(fPolygon);
+    setAddedFigure(view().add(fPolygon));
     fPolygon.addPoint(x,y);
   }
- else   if (fLastX != x || fLastY != y)   fPolygon.addPoint(x,y);
+ else   if (fLastX != x || fLastY != y) {
+    fPolygon.addPoint(x,y);
+  }
   fLastX=x;
   fLastY=y;
 }

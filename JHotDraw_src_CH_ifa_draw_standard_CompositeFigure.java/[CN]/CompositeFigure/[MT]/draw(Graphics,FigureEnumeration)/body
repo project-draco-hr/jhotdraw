@@ -1,3 +1,5 @@
 {
-  while (fe.hasMoreElements())   fe.nextFigure().draw(g);
+  while (fe.hasMoreElements()) {
+    fe.nextFigure().draw(g);
+  }
 }

@@ -1,6 +1,6 @@
 {
-  Figure startFigure=connection.start().owner();
-  Figure endFigure=connection.end().owner();
+  Figure startFigure=connection.getStartConnector().owner();
+  Figure endFigure=connection.getEndConnector().owner();
   Rectangle r1=startFigure.displayBox();
   Rectangle r2=endFigure.displayBox();
   Insets i1=startFigure.connectionInsets();

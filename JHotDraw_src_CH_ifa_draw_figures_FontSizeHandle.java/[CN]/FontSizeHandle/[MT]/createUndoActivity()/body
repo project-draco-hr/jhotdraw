@@ -1,0 +1,4 @@
+{
+  TextFigure textOwner=(TextFigure)owner();
+  return new FontSizeHandle.UndoActivity(textOwner.getFont());
+}

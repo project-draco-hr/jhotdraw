@@ -7,8 +7,8 @@
     d.height=Math.max(d.height,r.y + r.height);
   }
   if (fViewSize.height < d.height || fViewSize.width < d.width) {
-    fViewSize.height=d.height + 10;
-    fViewSize.width=d.width + 10;
+    fViewSize.height=d.height + SCROLL_OFFSET;
+    fViewSize.width=d.width + SCROLL_OFFSET;
     setSize(fViewSize);
   }
 }

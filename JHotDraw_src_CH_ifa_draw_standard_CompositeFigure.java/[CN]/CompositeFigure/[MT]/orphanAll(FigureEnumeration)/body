@@ -1,0 +1,5 @@
+{
+  while (fe.hasMoreElements()) {
+    orphan(fe.nextFigure());
+  }
+}

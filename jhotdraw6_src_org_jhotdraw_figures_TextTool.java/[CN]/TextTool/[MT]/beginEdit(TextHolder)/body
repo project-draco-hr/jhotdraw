@@ -1,8 +1,13 @@
 {
-  if (fTextField == null)   fTextField=new FloatingTextField();
-  if (figure != getTypingTarget() && getTypingTarget() != null)   endEdit();
+  if (fTextField == null) {
+    fTextField=new FloatingTextField();
+  }
+  if (figure != getTypingTarget() && getTypingTarget() != null) {
+    endEdit();
+  }
   fTextField.createOverlay((Container)view(),figure.getFont());
   fTextField.setBounds(fieldBounds(figure),figure.getText());
   setTypingTarget(figure);
-  view().checkDamage();
+  setUndoActivity(createUndoActivity());
+  System.out.println("UndoActivity (1): " + getUndoActivity());
 }

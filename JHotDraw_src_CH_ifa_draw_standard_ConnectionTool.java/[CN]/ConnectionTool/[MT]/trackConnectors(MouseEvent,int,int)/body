@@ -1,14 +1,26 @@
 {
   Figure c=null;
-  if (fStartConnector == null)   c=findSource(x,y,drawing());
- else   c=findTarget(x,y,drawing());
-  if (c != fTarget) {
-    if (fTarget != null)     fTarget.connectorVisibility(false);
-    fTarget=c;
-    if (fTarget != null)     fTarget.connectorVisibility(true);
+  if (getStartConnector() == null) {
+    c=findSource(x,y,drawing());
+  }
+ else {
+    c=findTarget(x,y,drawing());
+  }
+  if (c != getTarget()) {
+    if (getTarget() != null) {
+      getTarget().connectorVisibility(false);
+    }
+    setTarget(c);
+    if (getTarget() != null) {
+      getTarget().connectorVisibility(true);
+    }
   }
   Connector cc=null;
-  if (c != null)   cc=findConnector(e.getX(),e.getY(),c);
-  if (cc != fConnectorTarget)   fConnectorTarget=cc;
+  if (c != null) {
+    cc=findConnector(e.getX(),e.getY(),c);
+  }
+  if (cc != getTargetConnector()) {
+    setTargetConnector(cc);
+  }
   view().checkDamage();
 }

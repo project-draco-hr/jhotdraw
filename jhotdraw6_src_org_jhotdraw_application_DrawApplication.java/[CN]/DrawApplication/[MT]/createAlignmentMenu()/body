@@ -1,13 +1,13 @@
 {
   CommandMenu menu=new CommandMenu("Align");
-  menu.add(new ToggleGridCommand("Toggle Snap to Grid",view(),new Point(4,4)));
+  menu.addCheckItem(new ToggleGridCommand("Toggle Snap to Grid",view(),new Point(4,4)));
   menu.addSeparator();
-  menu.add(new AlignCommand("Lefts",view(),AlignCommand.LEFTS));
-  menu.add(new AlignCommand("Centers",view(),AlignCommand.CENTERS));
-  menu.add(new AlignCommand("Rights",view(),AlignCommand.RIGHTS));
+  menu.add(new UndoableCommand(new AlignCommand(AlignCommand.Alignment.LEFTS,view())));
+  menu.add(new UndoableCommand(new AlignCommand(AlignCommand.Alignment.CENTERS,view())));
+  menu.add(new UndoableCommand(new AlignCommand(AlignCommand.Alignment.RIGHTS,view())));
   menu.addSeparator();
-  menu.add(new AlignCommand("Tops",view(),AlignCommand.TOPS));
-  menu.add(new AlignCommand("Middles",view(),AlignCommand.MIDDLES));
-  menu.add(new AlignCommand("Bottoms",view(),AlignCommand.BOTTOMS));
+  menu.add(new UndoableCommand(new AlignCommand(AlignCommand.Alignment.TOPS,view())));
+  menu.add(new UndoableCommand(new AlignCommand(AlignCommand.Alignment.MIDDLES,view())));
+  menu.add(new UndoableCommand(new AlignCommand(AlignCommand.Alignment.BOTTOMS,view())));
   return menu;
 }

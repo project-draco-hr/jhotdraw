@@ -1,0 +1,11 @@
+{
+  if (upperBound >= fFigures.size()) {
+    upperBound=fFigures.size() - 1;
+  }
+  for (int i=upperBound; i >= lowerBound; i--) {
+    Figure currentFigure=(Figure)fFigures.elementAt(i);
+    Figure successorFigure=(Figure)fFigures.elementAt(i + 1);
+    System.out.println("AssignSuccessor " + i + " -> "+ (i + 1)+ " with z: "+ currentFigure.getZValue()+ " -> "+ successorFigure.getZValue());
+    currentFigure.setZValue(successorFigure.getZValue());
+  }
+}

@@ -5,5 +5,7 @@
     figure.removeFromContainer(this);
     figure.release();
   }
- else   System.out.println("Attempt to remove non-existing figure");
+ else {
+    System.out.println("Attempt to remove non-existing figure");
+  }
 }

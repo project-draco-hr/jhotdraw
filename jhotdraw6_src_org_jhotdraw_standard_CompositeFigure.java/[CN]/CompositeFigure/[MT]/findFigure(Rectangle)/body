@@ -3,7 +3,9 @@
   while (k.hasMoreElements()) {
     Figure figure=k.nextFigure();
     Rectangle fr=figure.displayBox();
-    if (r.intersects(fr))     return figure;
+    if (r.intersects(fr)) {
+      return figure;
+    }
   }
   return null;
 }

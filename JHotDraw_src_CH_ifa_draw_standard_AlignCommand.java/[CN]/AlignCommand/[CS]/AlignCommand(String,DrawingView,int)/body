@@ -1,5 +1,0 @@
-{
-  super(name);
-  fView=view;
-  fOp=op;
-}

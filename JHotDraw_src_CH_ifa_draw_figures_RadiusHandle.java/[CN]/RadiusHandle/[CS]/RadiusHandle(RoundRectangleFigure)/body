@@ -1,4 +1,6 @@
 {
   super(owner);
-  fOwner=owner;
+  setUndoActivity(createUndoActivity());
+  getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(owner()));
+  ((RadiusHandle.UndoActivity)getUndoActivity()).setOldRadius(owner.getArc());
 }

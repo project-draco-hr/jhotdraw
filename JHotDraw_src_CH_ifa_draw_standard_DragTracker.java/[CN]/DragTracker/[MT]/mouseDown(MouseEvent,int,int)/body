@@ -6,7 +6,7 @@
     view().toggleSelection(fAnchorFigure);
     fAnchorFigure=null;
   }
- else   if (!view().selection().contains(fAnchorFigure)) {
+ else   if (!view().isFigureSelected(fAnchorFigure)) {
     view().clearSelection();
     view().addToSelection(fAnchorFigure);
   }

@@ -1,7 +1,9 @@
 {
-  FigureSelection selection=fView.getFigureSelection();
-  fView.clearSelection();
-  Vector figures=(Vector)selection.getData(FigureSelection.TYPE);
-  insertFigures(figures,10,10);
-  fView.checkDamage();
+  setUndoActivity(createUndoActivity());
+  FigureSelection selection=view().getFigureSelection();
+  FigureEnumeration figures=(FigureEnumeration)selection.getData(StandardFigureSelection.TYPE);
+  getUndoActivity().setAffectedFigures(figures);
+  view().clearSelection();
+  getUndoActivity().setAffectedFigures(insertFigures(getUndoActivity().getAffectedFigures(),10,10));
+  view().checkDamage();
 }

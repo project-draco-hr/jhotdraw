@@ -1,0 +1,8 @@
+{
+  if (fSelectionListeners != null) {
+    for (int i=0; i < fSelectionListeners.size(); i++) {
+      FigureSelectionListener l=(FigureSelectionListener)fSelectionListeners.elementAt(i);
+      l.figureSelectionChanged(this);
+    }
+  }
+}

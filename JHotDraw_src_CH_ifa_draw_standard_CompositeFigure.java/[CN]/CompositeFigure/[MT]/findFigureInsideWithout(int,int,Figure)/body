@@ -4,7 +4,9 @@
     Figure figure=k.nextFigure();
     if (figure != without) {
       Figure found=figure.findFigureInside(x,y);
-      if (found != null)       return found;
+      if (found != null) {
+        return found;
+      }
     }
   }
   return null;

@@ -2,8 +2,10 @@
   FigureEnumeration k=drawing.figuresReverse();
   while (k.hasMoreElements()) {
     Figure figure=k.nextFigure();
-    if (!figure.includes(fConnection) && figure.canConnect()) {
-      if (figure.containsPoint(x,y))       return figure;
+    if (!figure.includes(getConnection()) && figure.canConnect()) {
+      if (figure.containsPoint(x,y)) {
+        return figure;
+      }
     }
   }
   return null;

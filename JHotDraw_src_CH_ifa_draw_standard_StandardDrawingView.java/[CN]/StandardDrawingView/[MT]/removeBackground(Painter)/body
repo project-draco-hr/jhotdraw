@@ -1,4 +1,6 @@
 {
-  if (fBackgrounds != null)   fBackgrounds.removeElement(painter);
+  if (fBackgrounds != null) {
+    fBackgrounds.removeElement(painter);
+  }
   repaint();
 }

@@ -1,0 +1,3 @@
+{
+  myOriginalLayers.put(affectedFigure,new Integer(newOriginalLayer));
+}

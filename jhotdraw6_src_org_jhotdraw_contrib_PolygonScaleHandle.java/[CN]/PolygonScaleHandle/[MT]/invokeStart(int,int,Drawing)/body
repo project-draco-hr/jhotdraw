@@ -1,5 +1,0 @@
-{
-  fOrigPoly=((PolygonFigure)(owner())).getPolygon();
-  fOrigin=getOrigin();
-  fCurrent=new Point(fOrigin.x,fOrigin.y);
-}

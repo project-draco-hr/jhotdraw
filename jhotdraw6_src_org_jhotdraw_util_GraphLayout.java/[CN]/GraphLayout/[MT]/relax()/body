@@ -4,8 +4,8 @@
   while (edgeEnum.hasMoreElements()) {
     ConnectionFigure e=(ConnectionFigure)edgeEnum.nextElement();
     double targetlen=len(e);
-    GraphNode from=getGraphNode(e.start().owner());
-    GraphNode to=getGraphNode(e.end().owner());
+    GraphNode from=getGraphNode(e.getStartConnector().owner());
+    GraphNode to=getGraphNode(e.getEndConnector().owner());
     double vx=to.x - from.x;
     double vy=to.y - from.y;
     double len=Math.sqrt(vx * vx + vy * vy);

@@ -1,5 +1,7 @@
 {
-  if (fBackgrounds == null)   fBackgrounds=new Vector(3);
+  if (fBackgrounds == null) {
+    fBackgrounds=new Vector(3);
+  }
   fBackgrounds.addElement(painter);
   repaint();
 }

@@ -1,0 +1,11 @@
+{
+  getDrawingView().drawing().orphanAll(getAffectedFigures());
+  getDrawingView().clearSelection();
+  GroupFigure group=new GroupFigure();
+  group.addAll(getAffectedFigures());
+  Figure figure=getDrawingView().drawing().add(group);
+  getDrawingView().addToSelection(figure);
+  Vector affectedFigures=new Vector();
+  affectedFigures.addElement(figure);
+  setAffectedFigures(new FigureEnumerator(affectedFigures));
+}

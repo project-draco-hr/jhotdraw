@@ -1,0 +1,6 @@
+{
+  while (fe.hasMoreElements()) {
+    view().drawing().orphan(fe.nextFigure());
+  }
+  view().clearSelection();
+}

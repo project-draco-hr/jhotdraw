@@ -1,4 +1,6 @@
 {
-  deleteSelection();
-  fView.checkDamage();
+  setUndoActivity(createUndoActivity());
+  getUndoActivity().setAffectedFigures(view().selectionElements());
+  deleteFigures(getUndoActivity().getAffectedFigures());
+  view().checkDamage();
 }

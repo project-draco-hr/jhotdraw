@@ -1,8 +1,8 @@
 {
   String copyTitle=getDrawingTitle();
-  StandardDrawingView fView=createDrawingView();
-  fView.setDrawing(drawing());
-  createContents(fView);
+  DrawingView newView=createDrawingView();
+  newView.setDrawing(drawing());
+  createContents(newView);
   setDrawingTitle(copyTitle + " (View)");
   toolDone();
 }

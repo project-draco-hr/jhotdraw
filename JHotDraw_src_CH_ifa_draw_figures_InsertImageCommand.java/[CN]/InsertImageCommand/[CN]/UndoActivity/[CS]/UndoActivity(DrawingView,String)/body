@@ -1,0 +1,6 @@
+{
+  super(newDrawingView);
+  myAffectedImageName=newAffectedImageName;
+  setUndoable(true);
+  setRedoable(true);
+}

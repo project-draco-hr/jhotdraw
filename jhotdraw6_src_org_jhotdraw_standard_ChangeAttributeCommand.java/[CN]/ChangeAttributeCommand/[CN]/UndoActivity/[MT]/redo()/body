@@ -1,0 +1,11 @@
+{
+  if (!isRedoable()) {
+    return false;
+  }
+  FigureEnumeration k=getAffectedFigures();
+  while (k.hasMoreElements()) {
+    Figure f=k.nextFigure();
+    f.setAttribute(getAttributeName(),getBackupValue());
+  }
+  return true;
+}

@@ -16,5 +16,7 @@
   }
 );
   menu.add(mi);
+  menu.addSeparator();
+  menu.add(new WindowMenu("Window List",(MDIDesktopPane)getDesktop()));
   return menu;
 }

@@ -1,0 +1,8 @@
+{
+  if ((layerNr >= 0) && (layerNr < fFigures.size())) {
+    return (Figure)fFigures.elementAt(layerNr);
+  }
+ else {
+    return null;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  if (!isRedoable()) {
+    return false;
+  }
+  swapFont();
+  System.out.println("FontSizeHandle.redo()");
+  return true;
+}

@@ -1,9 +1,9 @@
 {
   double dist=TOO_CLOSE;
   int best=-1;
-  for (int i=0; i < fPoly.npoints; i++) {
-    int n=(i + 1) % fPoly.npoints;
-    double d=distanceFromLine(fPoly.xpoints[i],fPoly.ypoints[i],fPoly.xpoints[n],fPoly.ypoints[n],x,y);
+  for (int i=0; i < pointCount(); i++) {
+    int n=(i + 1) % pointCount();
+    double d=distanceFromLine(getInternalPolygon().xpoints[i],getInternalPolygon().ypoints[i],getInternalPolygon().xpoints[n],getInternalPolygon().ypoints[n],x,y);
     if (d < dist) {
       dist=d;
       best=i;

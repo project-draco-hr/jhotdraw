@@ -1,4 +1,8 @@
 {
-  if (inside)   showStatus(((ToolButton)button).name());
- else   showStatus(fSelectedToolButton.name());
+  if (inside) {
+    showStatus(((ToolButton)button).name());
+  }
+ else {
+    showStatus(fSelectedToolButton.name());
+  }
 }

@@ -1,0 +1,7 @@
+{
+  if (isRedoable()) {
+    groupFigures();
+    return true;
+  }
+  return false;
+}

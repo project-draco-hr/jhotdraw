@@ -1,5 +1,8 @@
 {
   s.defaultReadObject();
   fSelection=new Vector();
-  if (fDrawing != null)   fDrawing.addDrawingChangeListener(this);
+  if (fDrawing != null) {
+    fDrawing.addDrawingChangeListener(this);
+  }
+  fSelectionListeners=new Vector();
 }

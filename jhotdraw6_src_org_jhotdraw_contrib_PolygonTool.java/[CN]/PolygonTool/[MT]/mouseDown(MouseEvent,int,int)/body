@@ -4,6 +4,8 @@
   if (e.getClickCount() >= 2) {
     if (fPolygon != null) {
       fPolygon.smoothPoints();
+      setUndoActivity(createUndoActivity());
+      getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
       editor().toolDone();
     }
     fPolygon=null;

@@ -1,0 +1,6 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  return resetRadius();
+}

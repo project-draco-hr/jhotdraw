@@ -1,5 +1,5 @@
 {
-  Polygon p=polygon();
+  Polygon p=getPolygon();
   g.setColor(getFillColor());
   g.fillPolygon(p);
   g.setColor(getFrameColor());

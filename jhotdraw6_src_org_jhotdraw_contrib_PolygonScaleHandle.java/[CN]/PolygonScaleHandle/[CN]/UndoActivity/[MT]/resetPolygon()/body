@@ -1,0 +1,13 @@
+{
+  FigureEnumeration fe=getAffectedFigures();
+  if (!fe.hasMoreElements()) {
+    return false;
+  }
+  PolygonFigure figure=(PolygonFigure)fe.nextFigure();
+  Polygon backupPolygon=figure.getPolygon();
+  figure.willChange();
+  figure.setInternalPolygon(getPolygon());
+  figure.changed();
+  setPolygon(backupPolygon);
+  return true;
+}

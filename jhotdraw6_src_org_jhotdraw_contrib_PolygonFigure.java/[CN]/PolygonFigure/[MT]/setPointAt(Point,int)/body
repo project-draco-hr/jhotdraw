@@ -1,6 +1,6 @@
 {
   willChange();
-  fPoly.xpoints[i]=p.x;
-  fPoly.ypoints[i]=p.y;
+  getInternalPolygon().xpoints[i]=p.x;
+  getInternalPolygon().ypoints[i]=p.y;
   changed();
 }

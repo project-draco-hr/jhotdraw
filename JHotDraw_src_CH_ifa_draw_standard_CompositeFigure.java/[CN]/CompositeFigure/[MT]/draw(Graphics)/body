@@ -1,4 +1,6 @@
 {
-  FigureEnumeration k=figures();
-  while (k.hasMoreElements())   k.nextFigure().draw(g);
+  FigureEnumeration fe=figures();
+  while (fe.hasMoreElements()) {
+    fe.nextFigure().draw(g);
+  }
 }

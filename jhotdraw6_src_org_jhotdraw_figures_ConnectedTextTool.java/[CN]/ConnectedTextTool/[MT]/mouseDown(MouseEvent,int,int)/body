@@ -2,8 +2,11 @@
   super.mouseDown(e,x,y);
   Figure pressedFigure=drawing().findFigureInside(x,y);
   TextHolder textHolder=getTypingTarget();
+  System.out.println("pressedFigure: " + pressedFigure);
+  System.out.println("textHolder: " + textHolder);
   if (!fConnected && pressedFigure != null && textHolder != null && pressedFigure != textHolder) {
     textHolder.connect(pressedFigure);
+    ((ConnectedTextTool.UndoActivity)getUndoActivity()).setConnectedFigure(pressedFigure);
     fConnected=true;
   }
 }

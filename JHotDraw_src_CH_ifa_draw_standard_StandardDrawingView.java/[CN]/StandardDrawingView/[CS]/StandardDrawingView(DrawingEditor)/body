@@ -1,0 +1,3 @@
+{
+  this(editor,MINIMUM_WIDTH,MINIMUM_HEIGHT);
+}

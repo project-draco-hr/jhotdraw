@@ -1,6 +1,8 @@
 {
   Figure target=findConnectableFigure(x,y,drawing);
-  Figure start=fStartConnector.owner();
-  if (target != null && fConnection != null && target.canConnect() && !target.includes(start) && fConnection.canConnect(start,target))   return target;
+  Figure start=getStartConnector().owner();
+  if (target != null && getConnection() != null && target.canConnect() && !target.includes(start) && getConnection().canConnect(start,target)) {
+    return target;
+  }
   return null;
 }

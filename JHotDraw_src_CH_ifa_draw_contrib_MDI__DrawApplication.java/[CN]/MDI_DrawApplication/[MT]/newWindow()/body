@@ -1,7 +1,7 @@
 {
-  StandardDrawingView fView=createDrawingView();
-  Drawing fDrawing=createDrawing();
-  fView.setDrawing(fDrawing);
-  createContents(fView);
+  DrawingView newView=createDrawingView();
+  Drawing newDrawing=createDrawing();
+  newView.setDrawing(newDrawing);
+  createContents(newView);
   toolDone();
 }

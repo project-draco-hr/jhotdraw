@@ -1,8 +1,12 @@
 {
-  Figure endFigure=connection.end().owner();
-  Rectangle r1=connection.start().displayBox();
+  Figure endFigure=connection.getEndConnector().owner();
+  Rectangle r1=connection.getStartConnector().displayBox();
   Point r1c=null;
-  if (connection.pointCount() == 2)   r1c=new Point(r1.x + r1.width / 2,r1.y + r1.height / 2);
- else   r1c=connection.pointAt(connection.pointCount() - 2);
+  if (connection.pointCount() == 2) {
+    r1c=new Point(r1.x + r1.width / 2,r1.y + r1.height / 2);
+  }
+ else {
+    r1c=connection.pointAt(connection.pointCount() - 2);
+  }
   return chop(endFigure,r1c);
 }

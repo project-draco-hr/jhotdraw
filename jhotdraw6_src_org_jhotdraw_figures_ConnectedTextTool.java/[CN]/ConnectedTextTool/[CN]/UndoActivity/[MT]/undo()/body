@@ -1,0 +1,19 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  FigureEnumeration fe=getAffectedFigures();
+  while (fe.hasMoreElements()) {
+    Figure currentFigure=fe.nextFigure();
+    if (currentFigure instanceof TextHolder) {
+      TextHolder currentTextHolder=(TextHolder)currentFigure;
+      if (!isValidText(getOriginalText())) {
+        currentTextHolder.disconnect(getConnectedFigure());
+      }
+ else       if (!isValidText(getBackupText())) {
+        currentTextHolder.connect(getConnectedFigure());
+      }
+    }
+  }
+  return true;
+}

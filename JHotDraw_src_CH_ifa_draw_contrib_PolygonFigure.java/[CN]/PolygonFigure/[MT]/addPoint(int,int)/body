@@ -1,4 +1,4 @@
 {
-  fPoly.addPoint(x,y);
+  getInternalPolygon().addPoint(x,y);
   changed();
 }

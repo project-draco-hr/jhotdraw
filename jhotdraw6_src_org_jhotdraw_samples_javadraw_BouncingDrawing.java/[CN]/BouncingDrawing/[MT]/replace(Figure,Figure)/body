@@ -1,4 +1,6 @@
 {
-  if (!(replacement instanceof AnimationDecorator))   replacement=new AnimationDecorator(replacement);
-  super.replace(figure,replacement);
+  if (!(replacement instanceof AnimationDecorator) && !(replacement instanceof ConnectionFigure)) {
+    replacement=new AnimationDecorator(replacement);
+  }
+  return super.replace(figure,replacement);
 }

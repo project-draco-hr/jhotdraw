@@ -1,6 +1,8 @@
 {
-  FigureEnumeration k=figures();
-  Rectangle r=k.nextFigure().displayBox();
-  while (k.hasMoreElements())   r.add(k.nextFigure().displayBox());
+  FigureEnumeration fe=figures();
+  Rectangle r=fe.nextFigure().displayBox();
+  while (fe.hasMoreElements()) {
+    r.add(fe.nextFigure().displayBox());
+  }
   return r;
 }

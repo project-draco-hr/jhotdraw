@@ -1,5 +1,9 @@
 {
   s.defaultReadObject();
-  if (fStart != null)   connectStart(fStart);
-  if (fEnd != null)   connectEnd(fEnd);
+  if (getStartConnector() != null) {
+    connectStart(getStartConnector());
+  }
+  if (getEndConnector() != null) {
+    connectEnd(getEndConnector());
+  }
 }

@@ -1,7 +1,9 @@
 {
   Vector handles=new Vector(fPoints.size());
   handles.addElement(new ChangeConnectionStartHandle(this));
-  for (int i=1; i < fPoints.size() - 1; i++)   handles.addElement(new PolyLineHandle(this,locator(i),i));
+  for (int i=1; i < fPoints.size() - 1; i++) {
+    handles.addElement(new PolyLineHandle(this,locator(i),i));
+  }
   handles.addElement(new ChangeConnectionEndHandle(this));
   return handles;
 }

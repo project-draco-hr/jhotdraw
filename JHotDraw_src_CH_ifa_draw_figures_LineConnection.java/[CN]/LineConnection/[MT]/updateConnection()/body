@@ -1,10 +1,14 @@
 {
-  if (fStart != null) {
-    Point start=fStart.findStart(this);
-    startPoint(start.x,start.y);
+  if (getStartConnector() != null) {
+    Point start=getStartConnector().findStart(this);
+    if (start != null) {
+      startPoint(start.x,start.y);
+    }
   }
-  if (fEnd != null) {
-    Point end=fEnd.findEnd(this);
-    endPoint(end.x,end.y);
+  if (getEndConnector() != null) {
+    Point end=getEndConnector().findEnd(this);
+    if (end != null) {
+      endPoint(end.x,end.y);
+    }
   }
 }

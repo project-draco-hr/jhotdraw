@@ -1,8 +1,8 @@
 {
-  if (fSelection.contains(figure)) {
+  if (isFigureSelected(figure)) {
     fSelection.removeElement(figure);
     fSelectionHandles=null;
     figure.invalidate();
-    selectionChanged();
+    fireSelectionChanged();
   }
 }

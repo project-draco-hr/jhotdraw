@@ -1,4 +1,4 @@
 {
   s.defaultReadObject();
-  fComponent.addToContainer(this);
+  getDecoratedFigure().addToContainer(this);
 }

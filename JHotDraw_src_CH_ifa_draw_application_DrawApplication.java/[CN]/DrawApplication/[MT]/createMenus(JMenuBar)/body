@@ -1,7 +1,7 @@
 {
-  mb.add(createFileMenu());
-  mb.add(createEditMenu());
-  mb.add(createAlignmentMenu());
-  mb.add(createAttributesMenu());
-  mb.add(createDebugMenu());
+  addMenuIfPossible(mb,createFileMenu());
+  addMenuIfPossible(mb,createEditMenu());
+  addMenuIfPossible(mb,createAlignmentMenu());
+  addMenuIfPossible(mb,createAttributesMenu());
+  addMenuIfPossible(mb,createDebugMenu());
 }

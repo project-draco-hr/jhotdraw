@@ -1,0 +1,6 @@
+{
+  if (!isRedoable()) {
+    return false;
+  }
+  return movePointToOldLocation();
+}

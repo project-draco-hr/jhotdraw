@@ -1,6 +1,7 @@
 {
   if (e.getClickCount() >= 2) {
-    fScribble=null;
+    setUndoActivity(createUndoActivity());
+    getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
     editor().toolDone();
   }
  else {

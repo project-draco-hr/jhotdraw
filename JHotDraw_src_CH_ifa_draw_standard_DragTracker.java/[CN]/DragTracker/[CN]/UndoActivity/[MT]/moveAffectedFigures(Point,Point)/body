@@ -1,0 +1,6 @@
+{
+  FigureEnumeration figures=getAffectedFigures();
+  while (figures.hasMoreElements()) {
+    figures.nextFigure().moveBy(endPoint.x - startPoint.x,endPoint.y - startPoint.y);
+  }
+}

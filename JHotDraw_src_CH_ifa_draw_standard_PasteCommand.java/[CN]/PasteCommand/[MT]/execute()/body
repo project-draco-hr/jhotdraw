@@ -1,12 +1,16 @@
 {
-  Point lastClick=fView.lastClick();
+  Point lastClick=view().lastClick();
   FigureSelection selection=(FigureSelection)Clipboard.getClipboard().getContents();
   if (selection != null) {
-    Vector figures=(Vector)selection.getData(FigureSelection.TYPE);
-    if (figures.size() == 0)     return;
-    Rectangle r=bounds(figures.elements());
-    fView.clearSelection();
-    insertFigures(figures,lastClick.x - r.x,lastClick.y - r.y);
-    fView.checkDamage();
+    setUndoActivity(createUndoActivity());
+    if (view().selectionCount() <= 0) {
+      return;
+    }
+    getUndoActivity().setAffectedFigures(view().selectionElements());
+    Rectangle r=bounds(getUndoActivity().getAffectedFigures());
+    view().clearSelection();
+    FigureEnumeration fe=insertFigures(getUndoActivity().getAffectedFigures(),lastClick.x - r.x,lastClick.y - r.y);
+    getUndoActivity().setAffectedFigures(fe);
+    view().checkDamage();
   }
 }

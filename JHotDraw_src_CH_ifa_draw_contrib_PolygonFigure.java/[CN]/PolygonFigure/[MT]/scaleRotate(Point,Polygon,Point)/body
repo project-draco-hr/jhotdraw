@@ -19,7 +19,7 @@
       xs[i]=(int)(ctr.x + l * Math.cos(a) + 0.5);
       ys[i]=(int)(ctr.y + l * Math.sin(a) + 0.5);
     }
-    fPoly=new Polygon(xs,ys,n);
+    setInternalPolygon(new Polygon(xs,ys,n));
   }
   changed();
 }

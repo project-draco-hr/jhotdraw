@@ -1,5 +1,5 @@
 {
   super(owner);
-  fConnection=(ConnectionFigure)owner();
-  fTarget=null;
+  setConnection((ConnectionFigure)owner());
+  setTarget(null);
 }

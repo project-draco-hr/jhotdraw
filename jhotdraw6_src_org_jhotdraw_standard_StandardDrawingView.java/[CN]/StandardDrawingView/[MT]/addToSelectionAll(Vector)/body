@@ -1,4 +1,3 @@
 {
-  FigureEnumeration k=new FigureEnumerator(figures);
-  while (k.hasMoreElements())   addToSelection(k.nextFigure());
+  addToSelectionAll(new FigureEnumerator(figures));
 }

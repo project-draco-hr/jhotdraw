@@ -1,0 +1,4 @@
+{
+  StandardFigureSelection duplicater=new StandardFigureSelection(toBeCloned,figureCount);
+  return (FigureEnumeration)duplicater.getData(duplicater.getType());
+}

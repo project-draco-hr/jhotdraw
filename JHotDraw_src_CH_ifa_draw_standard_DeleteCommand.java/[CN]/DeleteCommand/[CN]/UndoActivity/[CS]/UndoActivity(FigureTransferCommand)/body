@@ -1,0 +1,6 @@
+{
+  super(newCommand.view());
+  myCommand=newCommand;
+  setUndoable(true);
+  setRedoable(true);
+}

@@ -1,5 +1,4 @@
 {
   invalidate();
   removeFigureChangeListener(c);
-  changed();
 }

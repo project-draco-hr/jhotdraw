@@ -2,8 +2,10 @@
   super.mouseDrag(e,x,y);
   fMoved=(Math.abs(x - fAnchorX) > 4) || (Math.abs(y - fAnchorY) > 4);
   if (fMoved) {
-    FigureEnumeration figures=view().selectionElements();
-    while (figures.hasMoreElements())     figures.nextFigure().moveBy(x - fLastX,y - fLastY);
+    FigureEnumeration figures=getUndoActivity().getAffectedFigures();
+    while (figures.hasMoreElements()) {
+      figures.nextFigure().moveBy(x - fLastX,y - fLastY);
+    }
   }
   fLastX=x;
   fLastY=y;

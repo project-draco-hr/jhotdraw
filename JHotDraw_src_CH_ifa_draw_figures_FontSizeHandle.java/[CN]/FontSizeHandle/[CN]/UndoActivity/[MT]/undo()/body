@@ -1,0 +1,8 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  swapFont();
+  System.out.println("FontSizeHandle.undo()");
+  return true;
+}

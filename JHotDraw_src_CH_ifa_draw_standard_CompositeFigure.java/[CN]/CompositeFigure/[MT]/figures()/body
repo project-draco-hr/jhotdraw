@@ -1,3 +1,3 @@
 {
-  return new FigureEnumerator(fFigures);
+  return new FigureEnumerator((Vector)fFigures.clone());
 }

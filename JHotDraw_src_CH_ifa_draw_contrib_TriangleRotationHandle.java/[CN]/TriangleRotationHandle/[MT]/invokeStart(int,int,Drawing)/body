@@ -1,4 +1,0 @@
-{
-  fCenter=owner().center();
-  fOrigin=getOrigin();
-}

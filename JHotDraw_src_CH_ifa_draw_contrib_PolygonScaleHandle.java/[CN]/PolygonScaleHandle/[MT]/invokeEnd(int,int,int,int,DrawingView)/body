@@ -1,0 +1,7 @@
+{
+  ((PolygonFigure)(owner())).smoothPoints();
+  if ((fCurrent.x == anchorX) && (fCurrent.y == anchorY)) {
+    setUndoActivity(null);
+  }
+  fCurrent=null;
+}

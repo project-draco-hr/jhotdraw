@@ -8,8 +8,8 @@
     fPoints.addElement(end);
   }
  else {
-    Rectangle r1=start().owner().displayBox();
-    Rectangle r2=end().owner().displayBox();
+    Rectangle r1=getStartConnector().owner().displayBox();
+    Rectangle r2=getEndConnector().owner().displayBox();
     int x1, y1, x2, y2;
     int dir=Geom.direction(r1.x + r1.width / 2,r1.y + r1.height / 2,r2.x + r2.width / 2,r2.y + r2.height / 2);
     if (dir == Geom.NORTH || dir == Geom.SOUTH) {

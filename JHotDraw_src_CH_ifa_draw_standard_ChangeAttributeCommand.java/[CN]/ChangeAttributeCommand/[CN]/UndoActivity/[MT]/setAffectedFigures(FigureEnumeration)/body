@@ -1,0 +1,8 @@
+{
+  super.setAffectedFigures(fe);
+  FigureEnumeration copyFe=getAffectedFigures();
+  while (copyFe.hasMoreElements()) {
+    Figure f=copyFe.nextFigure();
+    addOriginalValue(f,f.getAttribute(getAttributeName()));
+  }
+}

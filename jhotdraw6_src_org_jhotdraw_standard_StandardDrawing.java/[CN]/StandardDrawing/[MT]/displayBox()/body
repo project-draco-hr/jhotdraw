@@ -2,7 +2,9 @@
   if (fFigures.size() > 0) {
     FigureEnumeration k=figures();
     Rectangle r=k.nextFigure().displayBox();
-    while (k.hasMoreElements())     r.add(k.nextFigure().displayBox());
+    while (k.hasMoreElements()) {
+      r.add(k.nextFigure().displayBox());
+    }
     return r;
   }
   return new Rectangle(0,0,0,0);

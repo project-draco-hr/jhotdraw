@@ -1,6 +1,11 @@
 {
-  if (fDamage != null) {
-    repaint(fDamage.x,fDamage.y,fDamage.width,fDamage.height);
+  if (fDamage == null) {
+  }
+ else {
+    if (doDragScroll()) {
+      scrollToVisible(fDamage,false);
+    }
+    repaint(1,fDamage.x,fDamage.y,fDamage.width,fDamage.height);
     fDamage=null;
   }
 }

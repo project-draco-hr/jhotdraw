@@ -1,0 +1,8 @@
+{
+  super(newDrawingView);
+  myOriginalValues=new Hashtable();
+  setAttributeName(newUndoAttribute);
+  setBackupValue(newUndoValue);
+  setUndoable(true);
+  setRedoable(true);
+}

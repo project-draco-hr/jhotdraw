@@ -1,0 +1,7 @@
+{
+  super(newView);
+  myOriginalPoints=new Hashtable();
+  setAppliedAlignment(newAlignment);
+  setUndoable(true);
+  setRedoable(true);
+}

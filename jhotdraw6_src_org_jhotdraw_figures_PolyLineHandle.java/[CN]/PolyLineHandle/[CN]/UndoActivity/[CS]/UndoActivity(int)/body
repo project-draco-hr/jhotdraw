@@ -1,0 +1,6 @@
+{
+  super(null);
+  setUndoable(true);
+  setRedoable(true);
+  setPointIndex(newPointIndex);
+}

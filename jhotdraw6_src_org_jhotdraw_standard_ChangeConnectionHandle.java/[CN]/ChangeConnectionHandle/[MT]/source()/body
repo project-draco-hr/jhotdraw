@@ -1,4 +1,6 @@
 {
-  if (target() == fConnection.start())   return fConnection.end();
-  return fConnection.start();
+  if (target() == getConnection().getStartConnector()) {
+    return getConnection().getEndConnector();
+  }
+  return getConnection().getStartConnector();
 }

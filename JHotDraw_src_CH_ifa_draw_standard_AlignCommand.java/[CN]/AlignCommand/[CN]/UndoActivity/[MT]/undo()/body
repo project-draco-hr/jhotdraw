@@ -1,0 +1,13 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  FigureEnumeration k=getAffectedFigures();
+  while (k.hasMoreElements()) {
+    Figure f=k.nextFigure();
+    Point originalPoint=getOriginalPoint(f);
+    Point currentPoint=f.displayBox().getLocation();
+    f.moveBy(-currentPoint.x + originalPoint.x,-currentPoint.y + originalPoint.y);
+  }
+  return true;
+}

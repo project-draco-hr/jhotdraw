@@ -1,3 +1,5 @@
 {
-  if (listener() != null)   listener().figureInvalidated(e);
+  if (listener() != null) {
+    listener().figureInvalidated(e);
+  }
 }

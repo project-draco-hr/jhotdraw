@@ -1,7 +1,7 @@
 {
-  fConnection=createConnection();
+  setConnection(createConnection());
   Point p=locate();
-  fConnection.startPoint(p.x,p.y);
-  fConnection.endPoint(p.x,p.y);
-  view.drawing().add(fConnection);
+  getConnection().startPoint(p.x,p.y);
+  getConnection().endPoint(p.x,p.y);
+  view.drawing().add(getConnection());
 }

@@ -1,7 +1,7 @@
 {
   LineConnection line=ownerConnection();
-  Figure startFigure=line.start().owner();
-  Figure endFigure=line.end().owner();
+  Figure startFigure=line.getStartConnector().owner();
+  Figure endFigure=line.getEndConnector().owner();
   Rectangle start=startFigure.displayBox();
   Rectangle end=endFigure.displayBox();
   Insets i1=startFigure.connectionInsets();
@@ -11,7 +11,11 @@
   r1height=start.height - i1.top - i1.bottom- 1;
   r2y=end.y + i2.top;
   r2height=end.height - i2.top - i2.bottom- 1;
-  if (fSegment == 0)   y=Geom.range(r1y,r1y + r1height,y);
-  if (fSegment == line.pointCount() - 2)   y=Geom.range(r2y,r2y + r2height,y);
+  if (fSegment == 0) {
+    y=Geom.range(r1y,r1y + r1height,y);
+  }
+  if (fSegment == line.pointCount() - 2) {
+    y=Geom.range(r2y,r2y + r2height,y);
+  }
   return y;
 }

@@ -10,12 +10,13 @@
     return;
   }
   if (getTypingTarget() != null) {
-    editor().toolDone();
     endEdit();
+    editor().toolDone();
   }
  else {
     super.mouseDown(e,x,y);
-    textHolder=(TextHolder)createdFigure();
+    view().checkDamage();
+    textHolder=(TextHolder)getCreatedFigure();
     beginEdit(textHolder);
   }
 }

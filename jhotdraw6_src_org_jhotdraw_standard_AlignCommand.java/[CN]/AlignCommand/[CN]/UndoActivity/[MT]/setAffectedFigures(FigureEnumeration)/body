@@ -1,0 +1,7 @@
+{
+  super.setAffectedFigures(fe);
+  FigureEnumeration copyFe=getAffectedFigures();
+  while (copyFe.hasMoreElements()) {
+    addOriginalPoint(copyFe.nextFigure());
+  }
+}

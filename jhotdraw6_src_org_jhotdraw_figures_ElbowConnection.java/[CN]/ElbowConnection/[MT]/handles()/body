@@ -1,8 +1,12 @@
 {
   Vector handles=new Vector(fPoints.size() * 2);
   handles.addElement(new ChangeConnectionStartHandle(this));
-  for (int i=1; i < fPoints.size() - 1; i++)   handles.addElement(new NullHandle(this,locator(i)));
+  for (int i=1; i < fPoints.size() - 1; i++) {
+    handles.addElement(new NullHandle(this,locator(i)));
+  }
   handles.addElement(new ChangeConnectionEndHandle(this));
-  for (int i=0; i < fPoints.size() - 1; i++)   handles.addElement(new ElbowHandle(this,i));
+  for (int i=0; i < fPoints.size() - 1; i++) {
+    handles.addElement(new ElbowHandle(this,i));
+  }
   return handles;
 }

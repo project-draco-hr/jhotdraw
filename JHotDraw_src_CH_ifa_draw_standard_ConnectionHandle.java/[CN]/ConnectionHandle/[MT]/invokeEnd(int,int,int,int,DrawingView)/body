@@ -1,12 +1,14 @@
 {
   Connector target=findConnectionTarget(x,y,view.drawing());
   if (target != null) {
-    fConnection.connectStart(startConnector());
-    fConnection.connectEnd(target);
-    fConnection.updateConnection();
+    getConnection().connectStart(startConnector());
+    getConnection().connectEnd(target);
+    getConnection().updateConnection();
   }
- else   view.drawing().remove(fConnection);
-  fConnection=null;
+ else {
+    view.drawing().remove(getConnection());
+  }
+  setConnection(null);
   if (fTarget != null) {
     fTarget.connectorVisibility(false);
     fTarget=null;

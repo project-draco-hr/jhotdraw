@@ -1,4 +1,4 @@
 {
-  fComponent.removeFromContainer(this);
-  return fComponent;
+  getDecoratedFigure().removeFromContainer(this);
+  return getDecoratedFigure();
 }

@@ -1,0 +1,13 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  FigureEnumeration fe=getAffectedFigures();
+  while (fe.hasMoreElements()) {
+    Figure currentFigure=fe.nextFigure();
+    int currentFigureLayer=getOriginalLayer(currentFigure);
+    System.out.println("CurrentFigure sendToBack: " + currentFigure + " .. "+ currentFigureLayer);
+    getDrawingView().drawing().sendToLayer(currentFigure,currentFigureLayer);
+  }
+  return true;
+}

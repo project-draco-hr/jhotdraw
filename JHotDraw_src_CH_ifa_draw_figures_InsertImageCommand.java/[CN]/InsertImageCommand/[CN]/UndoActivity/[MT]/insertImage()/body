@@ -1,0 +1,5 @@
+{
+  getDrawingView().add(getImageFigure());
+  getDrawingView().clearSelection();
+  getDrawingView().addToSelection(getImageFigure());
+}

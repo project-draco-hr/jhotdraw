@@ -1,0 +1,11 @@
+{
+  FigureEnumeration fe=getAffectedFigures();
+  if (!fe.hasMoreElements()) {
+    return false;
+  }
+  RoundRectangleFigure currentFigure=(RoundRectangleFigure)fe.nextFigure();
+  Point figureRadius=currentFigure.getArc();
+  currentFigure.setArc(getOldRadius().x,getOldRadius().y);
+  setOldRadius(figureRadius);
+  return true;
+}

@@ -1,7 +1,7 @@
 {
-  FigureEnumeration k=figures();
-  while (k.hasMoreElements()) {
-    Figure figure=k.nextFigure();
+  FigureEnumeration fe=figures();
+  while (fe.hasMoreElements()) {
+    Figure figure=fe.nextFigure();
     figure.removeFromContainer(this);
   }
   fFigures.removeAllElements();

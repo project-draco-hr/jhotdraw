@@ -1,0 +1,8 @@
+{
+  if (!fFigures.contains(figure)) {
+    return -1;
+  }
+ else {
+    return fFigures.indexOf(figure);
+  }
+}

@@ -7,13 +7,19 @@
  else   if (name.equals("FontStyle")) {
     Integer s=(Integer)value;
     int style=font.getStyle();
-    if (s.intValue() == Font.PLAIN)     style=font.PLAIN;
- else     style=style ^ s.intValue();
+    if (s.intValue() == Font.PLAIN) {
+      style=font.PLAIN;
+    }
+ else {
+      style=style ^ s.intValue();
+    }
     setFont(new Font(font.getName(),style,font.getSize()));
   }
  else   if (name.equals("FontName")) {
     String n=(String)value;
     setFont(new Font(n,font.getStyle(),font.getSize()));
   }
- else   super.setAttribute(name,value);
+ else {
+    super.setAttribute(name,value);
+  }
 }

@@ -1,3 +1,3 @@
 {
-  return (fPoly.npoints < 3 || (size().width < TOO_CLOSE) && (size().height < TOO_CLOSE));
+  return ((pointCount() < 3) || ((size().width < TOO_CLOSE) && (size().height < TOO_CLOSE)));
 }

@@ -3,12 +3,14 @@
     fTextField=new FloatingTextField();
     fTextField.addActionListener(new ActionListener(){
       public void actionPerformed(      ActionEvent event){
-        endAction(event);
+        endEdit();
       }
     }
 );
   }
-  if (figure != fURLTarget && fURLTarget != null)   endEdit();
+  if (figure != fURLTarget && fURLTarget != null) {
+    endEdit();
+  }
   if (figure != fURLTarget) {
     fTextField.createOverlay((Container)view());
     fTextField.setBounds(fieldBounds(figure),getURL(figure));

@@ -1,15 +1,15 @@
 {
   int ex=e.getX();
   int ey=e.getY();
-  fTarget=findConnectionStart(ex,ey,drawing());
-  if (fTarget != null) {
-    fStartConnector=findConnector(ex,ey,fTarget);
-    if (fStartConnector != null) {
+  setTarget(findConnectionStart(ex,ey,drawing()));
+  if (getTarget() != null) {
+    setStartConnector(findConnector(ex,ey,getTarget()));
+    if (getStartConnector() != null) {
       Point p=new Point(ex,ey);
-      fConnection=createConnection();
-      fConnection.startPoint(p.x,p.y);
-      fConnection.endPoint(p.x,p.y);
-      view().add(fConnection);
+      setConnection(createConnection());
+      getConnection().startPoint(p.x,p.y);
+      getConnection().endPoint(p.x,p.y);
+      setAddedFigure(view().add(getConnection()));
     }
   }
  else {

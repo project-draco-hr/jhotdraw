@@ -1,0 +1,3 @@
+{
+  return fSelection.contains(checkFigure);
+}

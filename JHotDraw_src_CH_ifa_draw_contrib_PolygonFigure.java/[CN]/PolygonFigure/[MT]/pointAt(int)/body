@@ -1,3 +1,3 @@
 {
-  return new Point(fPoly.xpoints[i],fPoly.ypoints[i]);
+  return new Point(getInternalPolygon().xpoints[i],getInternalPolygon().ypoints[i]);
 }

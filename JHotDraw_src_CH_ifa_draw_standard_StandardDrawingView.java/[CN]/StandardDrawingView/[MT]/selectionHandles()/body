@@ -5,7 +5,9 @@
     while (k.hasMoreElements()) {
       Figure figure=k.nextFigure();
       Enumeration kk=figure.handles().elements();
-      while (kk.hasMoreElements())       fSelectionHandles.addElement(kk.nextElement());
+      while (kk.hasMoreElements()) {
+        fSelectionHandles.addElement(kk.nextElement());
+      }
     }
   }
   return fSelectionHandles.elements();

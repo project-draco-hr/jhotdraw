@@ -1,3 +1,8 @@
 {
-  drawing().replace(figure,new BorderDecorator(figure));
+  setUndoActivity(createUndoActivity());
+  Vector v=new Vector();
+  v.addElement(figure);
+  v.addElement(new BorderDecorator(figure));
+  getUndoActivity().setAffectedFigures(new FigureEnumerator(v));
+  ((BorderTool.UndoActivity)getUndoActivity()).replaceAffectedFigures();
 }

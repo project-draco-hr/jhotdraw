@@ -1,9 +1,11 @@
 {
   if (fScribble == null) {
     fScribble=new PolyLineFigure(x,y);
-    view().add(fScribble);
+    setAddedFigure(view().add(fScribble));
   }
- else   if (fLastX != x || fLastY != y)   fScribble.addPoint(x,y);
+ else   if (fLastX != x || fLastY != y) {
+    fScribble.addPoint(x,y);
+  }
   fLastX=x;
   fLastY=y;
 }

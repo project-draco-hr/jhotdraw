@@ -1,0 +1,9 @@
+{
+  FigureEnumeration fe=getAffectedFigures();
+  Figure anchorFigure=fe.nextFigure();
+  Rectangle r=anchorFigure.displayBox();
+  while (fe.hasMoreElements()) {
+    Figure f=fe.nextFigure();
+    applyAlignment.moveBy(f,r);
+  }
+}

@@ -1,4 +1,0 @@
-{
-  fView.drawing().removeAll(fView.selection());
-  fView.clearSelection();
-}

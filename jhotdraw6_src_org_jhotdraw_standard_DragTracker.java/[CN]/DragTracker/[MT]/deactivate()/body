@@ -1,0 +1,8 @@
+{
+  if (fMoved) {
+    ((DragTracker.UndoActivity)getUndoActivity()).setBackupPoint(new Point(fLastX,fLastY));
+  }
+ else {
+    setUndoActivity(null);
+  }
+}

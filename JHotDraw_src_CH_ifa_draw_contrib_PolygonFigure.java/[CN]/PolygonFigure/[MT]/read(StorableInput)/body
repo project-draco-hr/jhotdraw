@@ -7,5 +7,5 @@
     xs[i]=dr.readInt();
     ys[i]=dr.readInt();
   }
-  fPoly=new Polygon(xs,ys,size);
+  setInternalPolygon(new Polygon(xs,ys,size));
 }

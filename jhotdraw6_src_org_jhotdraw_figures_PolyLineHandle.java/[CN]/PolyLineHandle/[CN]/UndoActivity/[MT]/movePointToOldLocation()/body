@@ -1,0 +1,11 @@
+{
+  FigureEnumeration fe=getAffectedFigures();
+  if (!fe.hasMoreElements()) {
+    return false;
+  }
+  PolyLineFigure figure=(PolyLineFigure)fe.nextFigure();
+  Point backupPoint=figure.pointAt(getPointIndex());
+  figure.setPointAt(getOldPoint(),getPointIndex());
+  setOldPoint(backupPoint);
+  return true;
+}

@@ -15,7 +15,7 @@
  catch (    IOException e) {
       System.out.println(e.toString());
     }
-    return result;
+    return new FigureEnumerator(result);
   }
   return null;
 }

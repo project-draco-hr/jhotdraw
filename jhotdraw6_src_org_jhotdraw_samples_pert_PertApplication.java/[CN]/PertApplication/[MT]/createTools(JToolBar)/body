@@ -1,7 +1,6 @@
 {
   super.createTools(palette);
-  Tool tool;
-  tool=new TextTool(view(),new TextFigure());
+  Tool tool=new TextTool(view(),new TextFigure());
   palette.add(createToolButton(IMAGES + "TEXT","Text Tool",tool));
   tool=new PertFigureCreationTool(view());
   palette.add(createToolButton(PERTIMAGES + "PERT","Task Tool",tool));

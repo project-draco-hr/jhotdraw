@@ -1,0 +1,8 @@
+{
+  if (!isRedoable()) {
+    return false;
+  }
+  getDrawingView().clearSelection();
+  setAffectedFigures(getDrawingView().insertFigures(getAffectedFigures(),0,0,false));
+  return true;
+}

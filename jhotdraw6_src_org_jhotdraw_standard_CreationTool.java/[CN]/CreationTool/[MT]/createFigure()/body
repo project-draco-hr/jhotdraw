@@ -1,4 +1,6 @@
 {
-  if (fPrototype == null)   throw new HJDError("No protoype defined");
+  if (fPrototype == null) {
+    throw new JHotDrawRuntimeException("No protoype defined");
+  }
   return (Figure)fPrototype.clone();
 }

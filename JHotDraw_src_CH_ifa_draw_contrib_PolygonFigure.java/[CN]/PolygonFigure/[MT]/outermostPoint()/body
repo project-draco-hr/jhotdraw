@@ -2,12 +2,12 @@
   Point ctr=center();
   int outer=0;
   long dist=0;
-  for (int i=0; i < fPoly.npoints; ++i) {
-    long d=Geom.length2(ctr.x,ctr.y,fPoly.xpoints[i],fPoly.ypoints[i]);
+  for (int i=0; i < pointCount(); ++i) {
+    long d=Geom.length2(ctr.x,ctr.y,getInternalPolygon().xpoints[i],getInternalPolygon().ypoints[i]);
     if (d > dist) {
       dist=d;
       outer=i;
     }
   }
-  return new Point(fPoly.xpoints[outer],fPoly.ypoints[outer]);
+  return new Point(getInternalPolygon().xpoints[outer],getInternalPolygon().ypoints[outer]);
 }

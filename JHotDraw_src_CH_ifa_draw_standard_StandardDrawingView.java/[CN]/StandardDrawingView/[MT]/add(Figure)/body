@@ -1,3 +1,8 @@
 {
-  return drawing().add(figure);
+  Figure f=drawing().add(figure);
+  if (f != null) {
+    Rectangle r=f.displayBox();
+    scrollToVisible(r,true);
+  }
+  return f;
 }

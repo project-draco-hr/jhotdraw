@@ -1,0 +1,11 @@
+{
+  if (upperBound >= fFigures.size()) {
+    upperBound=fFigures.size() - 1;
+  }
+  for (int i=upperBound; i >= lowerBound; i--) {
+    Figure currentFigure=(Figure)fFigures.elementAt(i);
+    Figure predecessorFigure=(Figure)fFigures.elementAt(i - 1);
+    System.out.println("AssignPredeccessor " + i + " -> "+ (i - 1)+ " with z: "+ currentFigure.getZValue()+ " -> "+ predecessorFigure.getZValue());
+    currentFigure.setZValue(predecessorFigure.getZValue());
+  }
+}

@@ -1,11 +1,15 @@
 {
   if (getTypingTarget() != null) {
-    if (fTextField.getText().length() > 0)     getTypingTarget().setText(fTextField.getText());
- else {
-      drawing().remove((Figure)getTypingTarget());
+    if (fTextField.getText().length() > 0) {
+      getTypingTarget().setText(fTextField.getText());
     }
+ else {
+      drawing().orphan((Figure)getAddedFigure());
+    }
+    System.out.println("UndoActivity (2): " + getUndoActivity());
+    getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
+    ((TextTool.UndoActivity)getUndoActivity()).setBackupText(getTypingTarget().getText());
     setTypingTarget(null);
     fTextField.endOverlay();
-    view().checkDamage();
   }
 }

@@ -1,8 +1,6 @@
 {
   fIconkit=new Iconkit(this);
   getContentPane().setLayout(new BorderLayout());
-  JPanel fullPanel=new JPanel();
-  fullPanel.setLayout(new BoxLayout(fullPanel,BoxLayout.X_AXIS));
   fView=createDrawingView();
   JComponent contents=createContents((StandardDrawingView)view());
   contents.setAlignmentX(LEFT_ALIGNMENT);
@@ -14,9 +12,8 @@
   activePanel.setLayout(new BorderLayout());
   activePanel.add(tools,BorderLayout.NORTH);
   activePanel.add(contents,BorderLayout.CENTER);
-  fullPanel.add(activePanel);
   fStatusLine=createStatusLine();
-  getContentPane().add(fullPanel,BorderLayout.CENTER);
+  getContentPane().add(activePanel,BorderLayout.CENTER);
   getContentPane().add(fStatusLine,BorderLayout.SOUTH);
   JMenuBar mb=new JMenuBar();
   createMenus(mb);

@@ -1,3 +1,4 @@
 {
-  fPoly.addPoint(x,y);
+  this();
+  getInternalPolygon().addPoint(x,y);
 }

@@ -1,16 +1,21 @@
 {
   CommandMenu menu=new CommandMenu("Edit");
-  menu.add(new CutCommand("Cut",view()),new MenuShortcut('x'));
+  menu.add(new UndoableCommand(new SelectAllCommand("Select All",view())),new MenuShortcut('a'));
+  menu.addSeparator();
+  menu.add(new UndoableCommand(new CutCommand("Cut",view())),new MenuShortcut('x'));
   menu.add(new CopyCommand("Copy",view()),new MenuShortcut('c'));
-  menu.add(new PasteCommand("Paste",view()),new MenuShortcut('v'));
+  menu.add(new UndoableCommand(new PasteCommand("Paste",view())),new MenuShortcut('v'));
   menu.addSeparator();
-  menu.add(new DuplicateCommand("Duplicate",view()),new MenuShortcut('d'));
-  menu.add(new DeleteCommand("Delete",view()));
+  menu.add(new UndoableCommand(new DuplicateCommand("Duplicate",view())),new MenuShortcut('d'));
+  menu.add(new UndoableCommand(new DeleteCommand("Delete",view())));
   menu.addSeparator();
-  menu.add(new GroupCommand("Group",view()));
-  menu.add(new UngroupCommand("Ungroup",view()));
+  menu.add(new UndoableCommand(new GroupCommand("Group",view())));
+  menu.add(new UndoableCommand(new UngroupCommand("Ungroup",view())));
   menu.addSeparator();
-  menu.add(new SendToBackCommand("Send to Back",view()));
-  menu.add(new BringToFrontCommand("Bring to Front",view()));
+  menu.add(new UndoableCommand(new SendToBackCommand("Send to Back",view())));
+  menu.add(new UndoableCommand(new BringToFrontCommand("Bring to Front",view())));
+  menu.addSeparator();
+  menu.add(new UndoCommand("Undo Command",view()));
+  menu.add(new RedoCommand("Redo Command",view()));
   return menu;
 }

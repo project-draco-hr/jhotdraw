@@ -1,5 +1,9 @@
 {
-  if (fSelection.contains(figure))   removeFromSelection(figure);
- else   addToSelection(figure);
-  selectionChanged();
+  if (isFigureSelected(figure)) {
+    removeFromSelection(figure);
+  }
+ else {
+    addToSelection(figure);
+  }
+  fireSelectionChanged();
 }

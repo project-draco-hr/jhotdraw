@@ -1,0 +1,6 @@
+{
+  super(newDrawingView);
+  setOriginalPoint(newOriginalPoint);
+  setUndoable(true);
+  setRedoable(true);
+}

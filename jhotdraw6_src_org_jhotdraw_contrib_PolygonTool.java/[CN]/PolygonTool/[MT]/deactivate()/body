@@ -2,7 +2,10 @@
   super.deactivate();
   if (fPolygon != null) {
     fPolygon.smoothPoints();
-    if (fPolygon.pointCount() < 3 || fPolygon.size().width < 4 || fPolygon.size().height < 4)     drawing().remove(fPolygon);
+    if (fPolygon.pointCount() < 3 || fPolygon.size().width < 4 || fPolygon.size().height < 4) {
+      drawing().remove(fPolygon);
+      setUndoActivity(null);
+    }
   }
   fPolygon=null;
 }

@@ -1,6 +1,8 @@
 {
-  Vector handles=new Vector(fPoly.npoints);
-  for (int i=0; i < fPoly.npoints; i++)   handles.addElement(new PolygonHandle(this,locator(i),i));
+  Vector handles=new Vector(pointCount());
+  for (int i=0; i < pointCount(); i++) {
+    handles.addElement(new PolygonHandle(this,locator(i),i));
+  }
   handles.addElement(new PolygonScaleHandle(this));
   return handles;
 }

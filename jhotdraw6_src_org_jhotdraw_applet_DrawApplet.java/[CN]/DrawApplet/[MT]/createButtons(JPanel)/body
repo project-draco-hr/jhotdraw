@@ -3,11 +3,19 @@
   JComboBox drawingChoice=new JComboBox();
   drawingChoice.addItem(fgUntitled);
   String param=getParameter("DRAWINGS");
-  if (param == null)   param="";
+  if (param == null) {
+    param="";
+  }
   StringTokenizer st=new StringTokenizer(param);
-  while (st.hasMoreTokens())   drawingChoice.addItem(st.nextToken());
-  if (drawingChoice.getItemCount() > 1)   panel.add(drawingChoice);
- else   panel.add(new JLabel(fgUntitled));
+  while (st.hasMoreTokens()) {
+    drawingChoice.addItem(st.nextToken());
+  }
+  if (drawingChoice.getItemCount() > 1) {
+    panel.add(drawingChoice);
+  }
+ else {
+    panel.add(new JLabel(fgUntitled));
+  }
   drawingChoice.addItemListener(new ItemListener(){
     public void itemStateChanged(    ItemEvent e){
       if (e.getStateChange() == ItemEvent.SELECTED) {
@@ -18,13 +26,13 @@
 );
   panel.add(new Filler(6,20));
   JButton button;
-  button=new CommandButton(new DeleteCommand("Delete",fView));
+  button=new CommandButton(new DeleteCommand("Delete",view()));
   panel.add(button);
-  button=new CommandButton(new DuplicateCommand("Duplicate",fView));
+  button=new CommandButton(new DuplicateCommand("Duplicate",view()));
   panel.add(button);
-  button=new CommandButton(new GroupCommand("Group",fView));
+  button=new CommandButton(new GroupCommand("Group",view()));
   panel.add(button);
-  button=new CommandButton(new UngroupCommand("Ungroup",fView));
+  button=new CommandButton(new UngroupCommand("Ungroup",view()));
   panel.add(button);
   button=new JButton("Help");
   button.addActionListener(new ActionListener(){
@@ -37,8 +45,12 @@
   fUpdateButton=new JButton("Simple Update");
   fUpdateButton.addActionListener(new ActionListener(){
     public void actionPerformed(    ActionEvent event){
-      if (fSimpleUpdate)       setBufferedDisplayUpdate();
- else       setSimpleDisplayUpdate();
+      if (fSimpleUpdate) {
+        setBufferedDisplayUpdate();
+      }
+ else {
+        setSimpleDisplayUpdate();
+      }
     }
   }
 );

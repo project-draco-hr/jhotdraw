@@ -1,5 +1,5 @@
 {
   CommandMenu menu=new CommandMenu(title);
-  for (int i=0; i < ColorMap.size(); i++)   menu.add(new ChangeAttributeCommand(ColorMap.name(i),attribute,ColorMap.color(i),view()));
+  for (int i=0; i < ColorMap.size(); i++)   menu.add(new UndoableCommand(new ChangeAttributeCommand(ColorMap.name(i),attribute,ColorMap.color(i),view())));
   return menu;
 }

@@ -1,6 +1,8 @@
 {
   Thread current=Thread.currentThread();
-  if (fDrawingLockHolder == current)   return;
+  if (fDrawingLockHolder == current) {
+    return;
+  }
   while (fDrawingLockHolder != null) {
     try {
       wait();

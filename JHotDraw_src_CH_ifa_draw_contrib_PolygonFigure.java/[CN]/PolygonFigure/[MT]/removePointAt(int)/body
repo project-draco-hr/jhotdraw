@@ -1,16 +1,16 @@
 {
   willChange();
-  int n=fPoly.npoints - 1;
+  int n=pointCount() - 1;
   int[] xs=new int[n];
   int[] ys=new int[n];
   for (int j=0; j < i; ++j) {
-    xs[j]=fPoly.xpoints[j];
-    ys[j]=fPoly.ypoints[j];
+    xs[j]=getInternalPolygon().xpoints[j];
+    ys[j]=getInternalPolygon().ypoints[j];
   }
   for (int j=i; j < n; ++j) {
-    xs[j]=fPoly.xpoints[j + 1];
-    ys[j]=fPoly.ypoints[j + 1];
+    xs[j]=getInternalPolygon().xpoints[j + 1];
+    ys[j]=getInternalPolygon().ypoints[j + 1];
   }
-  fPoly=new Polygon(xs,ys,n);
+  setInternalPolygon(new Polygon(xs,ys,n));
   changed();
 }

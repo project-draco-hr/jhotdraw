@@ -1,0 +1,12 @@
+{
+  FigureEnumeration fe=getAffectedFigures();
+  if (!fe.hasMoreElements()) {
+    return false;
+  }
+  PolygonFigure figure=(PolygonFigure)fe.nextFigure();
+  Point backupPoint=figure.pointAt(getPointIndex());
+  figure.setPointAt(getOldPoint(),getPointIndex());
+  figure.smoothPoints();
+  setOldPoint(backupPoint);
+  return true;
+}
