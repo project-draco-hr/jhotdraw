@@ -1,0 +1,10 @@
+{
+  OrderedFigureElement ofe=(OrderedFigureElement)o;
+  if (_nZ == ofe.getZValue()) {
+    return 0;
+  }
+  if (_nZ > ofe.getZValue()) {
+    return 1;
+  }
+  return -1;
+}
