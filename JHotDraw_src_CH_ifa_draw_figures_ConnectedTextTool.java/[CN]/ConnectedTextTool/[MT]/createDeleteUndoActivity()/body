@@ -1,0 +1,4 @@
+{
+  FigureTransferCommand cmd=new DeleteCommand("Delete",editor());
+  return new DeleteUndoActivity(cmd,getConnectedFigure());
+}

@@ -1,0 +1,9 @@
+{
+  Iterator iter=redoStack.iterator();
+  while (iter.hasNext()) {
+    Undoable currentRedo=(Undoable)iter.next();
+    if (currentRedo.getDrawingView() == checkDV) {
+      iter.remove();
+    }
+  }
+}

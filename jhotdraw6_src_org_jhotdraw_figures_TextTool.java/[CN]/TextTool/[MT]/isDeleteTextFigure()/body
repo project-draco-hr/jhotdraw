@@ -1,0 +1,3 @@
+{
+  return getFloatingTextField().getText().length() == 0;
+}

@@ -1,25 +1,25 @@
 {
   super.mouseDown(e,x,y);
-  if (getChild() != null) {
+  if (getDelegateTool() != null) {
     return;
   }
   view().freezeView();
-  Handle handle=findHandle(e.getX(),e.getY());
+  Handle handle=view().findHandle(e.getX(),e.getY());
   if (handle != null) {
-    setChild(createHandleTracker(view(),handle));
+    setDelegateTool(createHandleTracker(view(),handle));
   }
  else {
-    Figure figure=findFigure(e.getX(),e.getY());
+    Figure figure=drawing().findFigure(e.getX(),e.getY());
     if (figure != null) {
-      setChild(createDragTracker(figure));
+      setDelegateTool(createDragTracker(figure));
     }
  else {
       if (!e.isShiftDown()) {
         view().clearSelection();
       }
-      setChild(createAreaTracker());
+      setDelegateTool(createAreaTracker());
     }
   }
-  getChild().activate();
-  getChild().mouseDown(e,x,y);
+  getDelegateTool().activate();
+  getDelegateTool().mouseDown(e,x,y);
 }

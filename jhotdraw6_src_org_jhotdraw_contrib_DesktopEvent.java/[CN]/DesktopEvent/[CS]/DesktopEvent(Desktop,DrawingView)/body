@@ -1,4 +1,3 @@
 {
-  super(source);
-  this.dv=dv;
+  this(source,newDrawingView,null);
 }

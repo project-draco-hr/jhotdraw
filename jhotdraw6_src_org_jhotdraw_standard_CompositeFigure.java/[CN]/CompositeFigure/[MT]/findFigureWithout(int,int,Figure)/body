@@ -1,5 +1,7 @@
 {
-  if (without == null)   return findFigure(x,y);
+  if (without == null) {
+    return findFigure(x,y);
+  }
   FigureEnumeration fe=figuresReverse();
   while (fe.hasNextFigure()) {
     Figure figure=fe.nextFigure();

@@ -6,7 +6,10 @@
     }
     public void drawingViewRemoved(    DesktopEvent dpe){
       DrawingView dv=dpe.getDrawingView();
+      getUndoManager().clearUndos(dv);
+      getUndoManager().clearRedos(dv);
       fireViewDestroyingEvent(dv);
+      checkCommandMenus();
     }
     public void drawingViewSelected(    DesktopEvent dpe){
       DrawingView dv=dpe.getDrawingView();

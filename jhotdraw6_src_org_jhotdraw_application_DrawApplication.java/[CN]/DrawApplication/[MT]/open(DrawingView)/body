@@ -29,7 +29,6 @@
     setSize(mb.getPreferredSize().width,d.height);
   }
   addListeners();
-  setVisible(true);
   setStorageFormatManager(createStorageFormatManager());
   Runnable r=new Runnable(){
     public void run(){
@@ -56,4 +55,6 @@ catch (    java.lang.reflect.InvocationTargetException ite) {
  else {
     r.run();
   }
+  setVisible(true);
+  toolDone();
 }

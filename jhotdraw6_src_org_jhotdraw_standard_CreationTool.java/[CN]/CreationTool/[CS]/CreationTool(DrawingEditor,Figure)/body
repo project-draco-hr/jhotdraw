@@ -1,4 +1,4 @@
 {
   super(newDrawingEditor);
-  fPrototype=prototype;
+  setPrototypeFigure(prototype);
 }

@@ -19,9 +19,9 @@
   }
  catch (  Exception e) {
   }
-  fIcon=new PaletteIcon(new Dimension(24,24),im[0],im[1],im[2]);
-  fTool=tool;
-  fName=name;
+  setPaletteIcon(new PaletteIcon(new Dimension(24,24),im[0],im[1],im[2]));
+  setTool(tool);
+  setName(name);
   if (im[0] != null) {
     setIcon(new ImageIcon(im[0]));
   }

@@ -1,10 +1,11 @@
 {
   super.mouseDown(e,x,y);
-  setConnectedFigure(drawing().findFigureInside(x,y));
-  TextHolder textHolder=getTypingTarget();
-  if (!fConnected && (getConnectedFigure() != null) && (textHolder != null)&& (getConnectedFigure() != textHolder)) {
-    textHolder.connect(getConnectedFigure());
-    getConnectedFigure().addDependendFigure(getAddedFigure());
-    fConnected=true;
+  if (getTypingTarget() != null) {
+    TextHolder textHolder=getTypingTarget();
+    setConnectedFigure(drawing().findFigureInsideWithout(x,y,textHolder.getRepresentingFigure()));
+    if ((getConnectedFigure() != null) && (textHolder != null) && (getConnectedFigure().getTextHolder() != textHolder)) {
+      textHolder.connect(getConnectedFigure().getDecoratedFigure());
+      getConnectedFigure().addDependendFigure(getAddedFigure());
+    }
   }
 }

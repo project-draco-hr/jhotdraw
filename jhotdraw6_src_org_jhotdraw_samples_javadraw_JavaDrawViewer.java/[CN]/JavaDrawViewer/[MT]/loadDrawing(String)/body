@@ -6,7 +6,7 @@
     fDrawing=(Drawing)reader.readStorable();
   }
  catch (  IOException e) {
-    fDrawing=new StandardDrawing();
+    fDrawing=createDrawing();
     System.err.println("Error when Loading: " + e);
     showStatus("Error when Loading: " + e);
   }

@@ -1,3 +1,0 @@
-{
-  return drawing().findFigure(x,y);
-}

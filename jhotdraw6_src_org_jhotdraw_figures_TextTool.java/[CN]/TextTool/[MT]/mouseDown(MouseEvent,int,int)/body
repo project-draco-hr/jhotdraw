@@ -1,15 +1,17 @@
 {
   setView((DrawingView)e.getSource());
-  Figure pressedFigure=drawing().findFigureInside(x,y);
+  if (getTypingTarget() != null) {
+    editor().toolDone();
+    return;
+  }
   TextHolder textHolder=null;
+  Figure pressedFigure=drawing().findFigureInside(x,y);
   if (pressedFigure != null) {
     textHolder=pressedFigure.getTextHolder();
+    setSelectedFigure(pressedFigure);
   }
   if ((textHolder != null) && textHolder.acceptsTyping()) {
     beginEdit(textHolder);
-  }
- else   if (getTypingTarget() != null) {
-    editor().toolDone();
   }
  else {
     super.mouseDown(e,x,y);

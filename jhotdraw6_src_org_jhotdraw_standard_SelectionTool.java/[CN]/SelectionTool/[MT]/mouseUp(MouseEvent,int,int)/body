@@ -1,8 +1,8 @@
 {
-  if (getChild() != null) {
-    getChild().mouseUp(e,x,y);
-    getChild().deactivate();
-    setChild(null);
+  if (getDelegateTool() != null) {
+    getDelegateTool().mouseUp(e,x,y);
+    getDelegateTool().deactivate();
+    setDelegateTool(null);
   }
   if (view() != null) {
     view().unfreezeView();

@@ -1,5 +1,4 @@
 {
-  fComponent=figure;
-  fComponent.addToContainer(this);
-  addDependendFigure(fComponent);
+  setDecoratedFigure(figure);
+  getDecoratedFigure().addToContainer(this);
 }

@@ -1,10 +1,15 @@
 {
-  Figure figure=findFigure(x,y);
-  if (figure instanceof CompositeFigure) {
-    Figure figure2=figure.findFigureInside(x,y);
-    if (figure2 != null) {
-      figure=figure2;
+  FigureEnumeration fe=figuresReverse();
+  while (fe.hasNextFigure()) {
+    Figure figure=fe.nextFigure().findFigureInside(x,y);
+    if (figure != null) {
+      return figure;
     }
   }
-  return figure;
+  if (containsPoint(x,y)) {
+    return this;
+  }
+ else {
+    return null;
+  }
 }

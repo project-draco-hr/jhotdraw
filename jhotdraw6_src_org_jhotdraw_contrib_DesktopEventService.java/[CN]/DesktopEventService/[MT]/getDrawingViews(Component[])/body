@@ -1,5 +1,5 @@
 {
-  ArrayList al=new ArrayList();
+  List al=CollectionsFactory.current().createList();
   for (int x=0; x < comps.length; x++) {
     DrawingView dv=Helper.getDrawingView(comps[x]);
     if (dv != null) {

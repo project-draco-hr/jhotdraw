@@ -1,4 +1,4 @@
 {
   super(editor);
-  comps=new ArrayList();
+  comps=CollectionsFactory.current().createList();
 }

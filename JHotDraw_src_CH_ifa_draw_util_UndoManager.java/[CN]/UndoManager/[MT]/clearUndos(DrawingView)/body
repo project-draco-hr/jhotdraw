@@ -1,0 +1,9 @@
+{
+  Iterator iter=undoStack.iterator();
+  while (iter.hasNext()) {
+    Undoable currentUndo=(Undoable)iter.next();
+    if (currentUndo.getDrawingView() == checkDV) {
+      iter.remove();
+    }
+  }
+}

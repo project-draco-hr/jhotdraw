@@ -1,20 +1,30 @@
 {
   if (getTypingTarget() != null) {
-    if (getFloatingTextField().getText().length() > 0) {
+    if (getAddedFigure() != null) {
+      if (!isDeleteTextFigure()) {
+        setUndoActivity(createPasteUndoActivity());
+        getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
+        getTypingTarget().setText(getFloatingTextField().getText());
+      }
+    }
+ else     if (isDeleteTextFigure()) {
+      setUndoActivity(createDeleteUndoActivity());
+      getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getSelectedFigure()));
+      getUndoActivity().redo();
+    }
+ else {
+      setUndoActivity(createUndoActivity());
+      getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getTypingTarget().getRepresentingFigure()));
       getTypingTarget().setText(getFloatingTextField().getText());
-    }
- else {
-      drawing().orphan(getAddedFigure());
-    }
-    TextTool.UndoActivity undoActivity=((TextTool.UndoActivity)getUndoActivity());
-    if ((undoActivity.getOriginalText() != null) || (getTypingTarget().getText() != null)) {
-      getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getAddedFigure()));
-      undoActivity.setBackupText(getTypingTarget().getText());
-    }
- else {
-      setUndoActivity(null);
+      ((TextTool.UndoActivity)getUndoActivity()).setBackupText(getTypingTarget().getText());
     }
     setTypingTarget(null);
     getFloatingTextField().endOverlay();
   }
+ else {
+    setUndoActivity(null);
+  }
+  setAddedFigure(null);
+  setCreatedFigure(null);
+  setSelectedFigure(null);
 }

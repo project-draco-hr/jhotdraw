@@ -1,0 +1,9 @@
+{
+  JMenuBar mb=getJMenuBar();
+  for (int x=0; x < mb.getMenuCount(); x++) {
+    JMenu jm=mb.getMenu(x);
+    if (CommandMenu.class.isInstance(jm)) {
+      checkCommandMenu((CommandMenu)jm);
+    }
+  }
+}

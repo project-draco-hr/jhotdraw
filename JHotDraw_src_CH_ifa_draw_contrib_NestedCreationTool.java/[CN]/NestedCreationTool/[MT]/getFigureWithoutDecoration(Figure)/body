@@ -1,8 +1,0 @@
-{
-  if (peelFigure instanceof DecoratorFigure) {
-    return getFigureWithoutDecoration(((DecoratorFigure)peelFigure).getDecoratedFigure());
-  }
- else {
-    return peelFigure;
-  }
-}

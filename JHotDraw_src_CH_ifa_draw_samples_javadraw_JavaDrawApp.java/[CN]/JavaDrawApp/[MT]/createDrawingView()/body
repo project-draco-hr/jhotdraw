@@ -1,7 +1,3 @@
 {
-  Drawing d=createDrawing();
-  d.setTitle(getDefaultDrawingTitle());
-  DrawingView dv=new ZoomDrawingView(this);
-  dv.setDrawing(d);
-  return dv;
+  return new ZoomDrawingView(this);
 }
