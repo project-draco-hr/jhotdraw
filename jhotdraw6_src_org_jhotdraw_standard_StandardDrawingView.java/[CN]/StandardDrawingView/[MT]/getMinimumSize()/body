@@ -1,0 +1,8 @@
+{
+  Rectangle r=new Rectangle();
+  FigureEnumeration k=drawing().figures();
+  while (k.hasNextFigure()) {
+    r.add(k.nextFigure().displayBox());
+  }
+  return new Dimension(r.width,r.height);
+}
