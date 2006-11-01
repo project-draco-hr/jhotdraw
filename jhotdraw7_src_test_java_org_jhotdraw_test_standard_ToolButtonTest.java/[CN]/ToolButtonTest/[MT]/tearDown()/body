@@ -1,4 +1,0 @@
-{
-  toolbutton=null;
-  super.tearDown();
-}

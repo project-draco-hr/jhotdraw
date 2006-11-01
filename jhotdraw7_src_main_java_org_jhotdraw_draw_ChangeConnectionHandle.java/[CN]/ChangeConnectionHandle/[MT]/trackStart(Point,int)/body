@@ -1,0 +1,6 @@
+{
+  originalTarget=getTarget();
+  start=anchor;
+  liner=connection.getLiner();
+  connection.setLiner(null);
+}

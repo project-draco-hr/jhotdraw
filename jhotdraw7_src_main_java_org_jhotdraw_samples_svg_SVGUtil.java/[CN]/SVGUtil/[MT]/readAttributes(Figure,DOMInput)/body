@@ -1,0 +1,58 @@
+{
+  List<Map<String,String>> styles=new ArrayList<Map<String,String>>();
+  List<String> values=in.getInheritedAttribute("style");
+  for (  String v : values) {
+    styles.add(getStyles(v));
+  }
+  String value;
+  value=getInheritedAttribute("fill",in,styles);
+  if (value != null) {
+    Color color=getColor(value);
+    if (color != INHERIT_COLOR && color != CURRENT_COLOR) {
+      FILL_COLOR.set(f,color);
+    }
+  }
+  value=getInheritedAttribute("fill-rule",in,styles);
+  if (value != null) {
+    WINDING_RULE.set(f,value.toUpperCase().equals("NONZERO") ? WindingRule.NON_ZERO : WindingRule.EVEN_ODD);
+  }
+ else {
+    WINDING_RULE.set(f,WindingRule.NON_ZERO);
+  }
+  value=getInheritedAttribute("stroke",in,styles);
+  if (value != null) {
+    Color color=getColor(value);
+    if (color != INHERIT_COLOR && color != CURRENT_COLOR) {
+      STROKE_COLOR.set(f,color);
+    }
+  }
+  value=getInheritedAttribute("stroke-width",in,styles);
+  if (value != null) {
+    STROKE_WIDTH.set(f,Double.valueOf(value));
+  }
+  value=getInheritedAttribute("stroke-miterlimit",in,styles);
+  if (value != null) {
+    STROKE_MITER_LIMIT_FACTOR.set(f,Double.valueOf(value));
+  }
+  value=getInheritedAttribute("stroke-dasharray",in,styles);
+  if (value != null) {
+    StringTokenizer tt=new StringTokenizer(value," ,");
+    double[] dashes=new double[tt.countTokens()];
+    for (int i=0, n=dashes.length; i < n; i++) {
+      dashes[i]=Double.valueOf(tt.nextToken());
+    }
+    STROKE_DASHES.set(f,dashes);
+  }
+  value=getInheritedAttribute("stroke-dashoffset",in,styles);
+  if (value != null) {
+    STROKE_DASH_PHASE.set(f,Math.abs(Double.valueOf(value)));
+  }
+  value=getInheritedAttribute("font-size",in,styles);
+  if (value != null) {
+    FONT_SIZE.set(f,getDimensionValue(in,value));
+  }
+  value=getInheritedAttribute("text-anchor",in,styles);
+  if (value != null) {
+    SVGText.TEXT_ANCHOR.set(f,Enum.valueOf(SVGText.TextAnchor.class,value.toUpperCase()));
+  }
+}

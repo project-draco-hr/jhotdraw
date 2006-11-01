@@ -1,0 +1,4 @@
+{
+  outside.remove(o);
+  root.remove(o);
+}

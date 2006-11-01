@@ -1,7 +1,0 @@
-{
-  if (resource != null) {
-    resetDelay();
-    return resource;
-  }
-  throw new NullPointerException();
-}

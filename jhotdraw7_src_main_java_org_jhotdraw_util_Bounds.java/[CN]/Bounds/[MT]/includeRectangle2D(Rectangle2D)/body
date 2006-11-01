@@ -1,6 +1,0 @@
-{
-  includeXCoordinate(aRectangle2D.getMinX());
-  includeXCoordinate(aRectangle2D.getMaxX());
-  includeYCoordinate(aRectangle2D.getMinY());
-  includeYCoordinate(aRectangle2D.getMaxY());
-}

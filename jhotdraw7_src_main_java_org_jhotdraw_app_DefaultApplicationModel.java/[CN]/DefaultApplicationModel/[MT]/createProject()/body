@@ -1,0 +1,10 @@
+{
+  try {
+    return (Project)getProjectClass().newInstance();
+  }
+ catch (  Exception e) {
+    InternalError error=new InternalError("unable to create project");
+    error.initCause(e);
+    throw error;
+  }
+}

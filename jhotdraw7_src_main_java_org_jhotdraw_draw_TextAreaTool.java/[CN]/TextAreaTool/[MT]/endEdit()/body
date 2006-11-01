@@ -1,14 +1,21 @@
 {
-  if ((getTypingTarget() != null) && (fTextField != null)) {
-    if (fTextField.getText().length() > 0) {
-      getTypingTarget().setText(fTextField.getText());
-      getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(getEditedFigure()));
-      ((TextAreaTool.UndoActivity)getUndoActivity()).setBackupText(getTypingTarget().getText());
+  if (typingTarget != null) {
+    if (textArea.getText().length() > 0) {
+      typingTarget.setText(textArea.getText());
+      if (createdFigure != null) {
+        getDrawing().fireUndoableEditHappened(creationEdit);
+        createdFigure=null;
+      }
     }
  else {
-      drawing().orphan(getAddedFigure());
+      if (createdFigure != null) {
+        getDrawing().remove((Figure)getAddedFigure());
+      }
+ else {
+        typingTarget.setText("");
+      }
     }
-    fTextField.endOverlay();
-    fTextField=null;
+    typingTarget=null;
+    textArea.endOverlay();
   }
 }

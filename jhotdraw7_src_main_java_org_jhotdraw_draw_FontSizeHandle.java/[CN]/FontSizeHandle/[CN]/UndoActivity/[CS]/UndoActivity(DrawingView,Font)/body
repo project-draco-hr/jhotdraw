@@ -1,7 +1,0 @@
-{
-  super(newView);
-  setFont(newFont);
-  setOldFontSize(getFont().getSize());
-  setUndoable(true);
-  setRedoable(true);
-}

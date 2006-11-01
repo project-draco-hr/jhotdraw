@@ -1,0 +1,22 @@
+{
+  if (isLeaf() && objects.size() >= maxCapacity && bounds.width > minSize && bounds.height > minSize) {
+    split();
+  }
+  if (isLeaf() || oBounds.contains(bounds)) {
+    objects.put(o,oBounds);
+  }
+ else {
+    if (northEast.bounds.intersects(oBounds)) {
+      northEast.add(o,oBounds);
+    }
+    if (northWest.bounds.intersects(oBounds)) {
+      northWest.add(o,oBounds);
+    }
+    if (southEast.bounds.intersects(oBounds)) {
+      southEast.add(o,oBounds);
+    }
+    if (southWest.bounds.intersects(oBounds)) {
+      southWest.add(o,oBounds);
+    }
+  }
+}

@@ -1,6 +1,0 @@
-{
-  super.read(dr);
-  fDisplayBox=new Rectangle(dr.readInt(),dr.readInt(),dr.readInt(),dr.readInt());
-  fArcWidth=dr.readInt();
-  fArcHeight=dr.readInt();
-}

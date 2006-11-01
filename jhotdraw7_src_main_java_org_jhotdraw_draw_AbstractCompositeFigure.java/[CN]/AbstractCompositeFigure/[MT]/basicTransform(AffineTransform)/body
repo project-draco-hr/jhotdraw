@@ -1,0 +1,6 @@
+{
+  for (  Figure f : children) {
+    f.basicTransform(tx);
+  }
+  invalidateBounds();
+}

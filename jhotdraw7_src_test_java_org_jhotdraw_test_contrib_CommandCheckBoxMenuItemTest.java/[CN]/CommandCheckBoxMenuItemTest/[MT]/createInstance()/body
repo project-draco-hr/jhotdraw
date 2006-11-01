@@ -1,4 +1,0 @@
-{
-  Command cmd=new DeleteCommand("TestDelete",getDrawingEditor());
-  return new CommandCheckBoxMenuItem(cmd);
-}

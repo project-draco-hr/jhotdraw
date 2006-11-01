@@ -1,4 +1,0 @@
-{
-  TextFigure t=(TextFigure)figureAt(0);
-  return t.getText();
-}

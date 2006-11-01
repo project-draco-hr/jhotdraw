@@ -1,0 +1,5 @@
+{
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  ToolBarButtonFactory.addColorButtonTo(bar,editor,STROKE_COLOR,ToolBarButtonFactory.DEFAULT_COLORS,8,"attributeStrokeColor",labels);
+  ToolBarButtonFactory.addColorButtonTo(bar,editor,FILL_COLOR,ToolBarButtonFactory.DEFAULT_COLORS,8,"attributeFillColor",labels);
+}

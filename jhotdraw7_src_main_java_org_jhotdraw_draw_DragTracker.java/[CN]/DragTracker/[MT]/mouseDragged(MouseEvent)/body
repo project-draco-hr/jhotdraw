@@ -1,0 +1,16 @@
+{
+  DrawingView view=getView();
+  if (isDragging=false) {
+    isDragging=true;
+    updateCursor(editor.findView((Container)evt.getSource()),new Point(evt.getX(),evt.getY()));
+  }
+  Point2D.Double newPoint=view.getConstrainer().constrainPoint(view.viewToDrawing(new Point(evt.getX(),evt.getY())));
+  AffineTransform tx=new AffineTransform();
+  tx.translate(newPoint.x - oldPoint.x,newPoint.y - oldPoint.y);
+  for (  Figure f : view.getSelectedFigures()) {
+    f.willChange();
+    f.basicTransform(tx);
+    f.changed();
+  }
+  oldPoint=newPoint;
+}

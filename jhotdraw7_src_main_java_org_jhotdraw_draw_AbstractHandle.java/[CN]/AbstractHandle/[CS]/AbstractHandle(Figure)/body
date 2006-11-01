@@ -1,3 +1,4 @@
 {
-  fOwner=owner;
+  this.owner=owner;
+  owner.addFigureListener(this);
 }

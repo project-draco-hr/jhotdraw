@@ -1,0 +1,5 @@
+{
+  if (a.isSharingToolsAmongProjects()) {
+    ((PertProject)p).setDrawingEditor(getSharedEditor());
+  }
+}

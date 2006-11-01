@@ -1,6 +1,0 @@
-{
-  setText("node");
-  Font fb=new Font("Helvetica",Font.BOLD,12);
-  setFont(fb);
-  createConnectors();
-}

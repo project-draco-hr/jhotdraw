@@ -1,0 +1,3 @@
+{
+  return (actions == null) ? null : (Action)actions.get(id);
+}

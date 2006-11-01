@@ -1,0 +1,11 @@
+{
+  if (editor != null && editor.getFocusedView() == this) {
+    validateHandles();
+    for (    Handle h : getSelectionHandles()) {
+      h.draw(g);
+    }
+    for (    Handle h : getSecondaryHandles()) {
+      h.draw(g);
+    }
+  }
+}

@@ -1,5 +1,0 @@
-{
-  super.read(dr);
-  fXVelocity=dr.readInt();
-  fYVelocity=dr.readInt();
-}

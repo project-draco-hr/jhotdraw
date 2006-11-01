@@ -1,6 +1,0 @@
-{
-  super.setUp();
-  getDrawingEditor().open();
-  getDrawingEditor().newWindow(new StandardDrawing());
-  standarddrawingview=createInstance();
-}

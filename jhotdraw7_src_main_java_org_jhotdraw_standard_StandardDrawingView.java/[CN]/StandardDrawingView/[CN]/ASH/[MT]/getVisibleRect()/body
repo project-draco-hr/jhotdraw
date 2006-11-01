@@ -1,3 +1,0 @@
-{
-  return StandardDrawingView.this.getVisibleRect();
-}

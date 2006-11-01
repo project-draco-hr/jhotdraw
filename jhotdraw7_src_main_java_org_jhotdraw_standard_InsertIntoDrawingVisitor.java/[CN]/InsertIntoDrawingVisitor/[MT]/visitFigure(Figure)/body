@@ -1,6 +1,0 @@
-{
-  if (!myInsertedFigures.contains(hostFigure) && !getDrawing().includes(hostFigure)) {
-    Figure addedFigure=getDrawing().add(hostFigure);
-    myInsertedFigures.add(addedFigure);
-  }
-}

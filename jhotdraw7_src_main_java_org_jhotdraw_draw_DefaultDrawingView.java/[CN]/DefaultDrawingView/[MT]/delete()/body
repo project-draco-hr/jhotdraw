@@ -1,0 +1,5 @@
+{
+  ArrayList<Figure> toBeDeleted=new ArrayList<Figure>(getSelectedFigures());
+  clearSelection();
+  getDrawing().removeAll(toBeDeleted);
+}

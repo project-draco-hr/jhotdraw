@@ -1,7 +1,0 @@
-{
-  org.jhotdraw.util.Command[] tests={new DeleteCommand("TestDelete",getDrawingEditor()),null};
-  for (int i=0; i < tests.length; i++) {
-    commandmenuitem.setCommand(tests[i]);
-    assertEquals(tests[i],commandmenuitem.getCommand());
-  }
-}

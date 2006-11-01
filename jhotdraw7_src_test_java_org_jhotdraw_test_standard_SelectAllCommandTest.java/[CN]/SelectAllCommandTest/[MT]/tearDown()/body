@@ -1,4 +1,0 @@
-{
-  selectallcommand=null;
-  super.tearDown();
-}

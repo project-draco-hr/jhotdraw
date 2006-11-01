@@ -1,0 +1,7 @@
+{
+  if (selectedFigures.remove(figure)) {
+    invalidateHandles();
+    fireSelectionChanged();
+  }
+  repaint();
+}

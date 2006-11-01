@@ -1,5 +1,0 @@
-{
-  super.read(dr);
-  fRelativeX=dr.readDouble();
-  fRelativeY=dr.readDouble();
-}

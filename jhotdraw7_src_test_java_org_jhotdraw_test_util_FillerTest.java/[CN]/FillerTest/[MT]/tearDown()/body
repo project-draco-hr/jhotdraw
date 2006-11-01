@@ -1,4 +1,0 @@
-{
-  filler=null;
-  super.tearDown();
-}

@@ -1,0 +1,8 @@
+{
+  if (domFactory == null) {
+    getToolkit().beep();
+    return;
+  }
+  copy();
+  delete();
+}

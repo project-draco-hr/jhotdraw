@@ -1,0 +1,28 @@
+{
+  if (isVisible()) {
+    AffineTransform t=view.getDrawingToViewTransform();
+    Rectangle viewBounds=g.getClipBounds();
+    Rectangle2D.Double bounds=view.viewToDrawing(viewBounds);
+    Point2D.Double origin=constrainPoint(new Point2D.Double(bounds.x,bounds.y));
+    Point2D.Double point=new Point2D.Double();
+    Point2D.Double viewPoint=new Point2D.Double();
+    if (width * view.getScaleFactor() > 1) {
+      g.setColor(minorColor);
+      for (int i=(int)(origin.x / width), m=(int)((origin.x + bounds.width) / width) + 1; i <= m; i++) {
+        g.setColor((i % 5 == 0) ? majorColor : minorColor);
+        point.x=width * i;
+        t.transform(point,viewPoint);
+        g.drawLine((int)viewPoint.x,(int)viewBounds.y,(int)viewPoint.x,(int)(viewBounds.y + viewBounds.height));
+      }
+    }
+    if (height * view.getScaleFactor() > 1) {
+      g.setColor(minorColor);
+      for (int i=(int)(origin.y / height), m=(int)((origin.y + bounds.height) / height) + 1; i <= m; i++) {
+        g.setColor((i % 5 == 0) ? majorColor : minorColor);
+        point.y=height * i;
+        t.transform(point,viewPoint);
+        g.drawLine((int)viewBounds.x,(int)viewPoint.y,(int)(viewBounds.x + viewBounds.width),(int)viewPoint.y);
+      }
+    }
+  }
+}

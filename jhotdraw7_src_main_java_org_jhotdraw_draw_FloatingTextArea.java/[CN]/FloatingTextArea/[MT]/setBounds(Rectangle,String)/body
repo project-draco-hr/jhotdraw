@@ -1,7 +1,0 @@
-{
-  fEditWidget.setText(text);
-  fEditScrollContainer.setBounds(r.x,r.y,r.width,r.height);
-  fEditScrollContainer.setVisible(true);
-  fEditWidget.setCaretPosition(0);
-  fEditWidget.requestFocus();
-}

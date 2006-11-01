@@ -1,0 +1,11 @@
+{
+  Rectangle invalidatedArea=(Rectangle)rubberBand.clone();
+  rubberBand.setBounds(Math.min(anchor.x,evt.getX()),Math.min(anchor.y,evt.getY()),Math.abs(anchor.x - evt.getX()),Math.abs(anchor.y - evt.getY()));
+  if (invalidatedArea.isEmpty()) {
+    invalidatedArea=(Rectangle)rubberBand.clone();
+  }
+ else {
+    invalidatedArea=invalidatedArea.union(rubberBand);
+  }
+  fireAreaInvalidated(invalidatedArea);
+}

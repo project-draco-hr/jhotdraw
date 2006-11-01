@@ -1,4 +1,0 @@
-{
-  jscrollpanedesktop=null;
-  super.tearDown();
-}

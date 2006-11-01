@@ -1,3 +1,0 @@
-{
-  return new Insets(fArcHeight / 2,fArcWidth / 2,fArcHeight / 2,fArcWidth / 2);
-}

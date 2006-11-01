@@ -1,7 +1,0 @@
-{
-  org.jhotdraw.util.StorageFormat[] tests={new StandardStorageFormat(),null};
-  for (int i=0; i < tests.length; i++) {
-    storageformatmanager.setDefaultStorageFormat(tests[i]);
-    assertEquals(tests[i],storageformatmanager.getDefaultStorageFormat());
-  }
-}

@@ -1,11 +1,13 @@
 {
-  if (getFloatingTextField() == null) {
-    setFloatingTextField(createFloatingTextField());
+  if (textField == null) {
+    textField=new FloatingTextField();
+    textField.addActionListener(this);
   }
-  if (figure != getTypingTarget() && getTypingTarget() != null) {
+  if (textHolder != typingTarget && typingTarget != null) {
     endEdit();
   }
-  getFloatingTextField().createOverlay((Container)view(),figure.getFont());
-  getFloatingTextField().setBounds(fieldBounds(figure),figure.getText());
-  setTypingTarget(figure);
+  textField.createOverlay(getView(),textHolder);
+  textField.setBounds(getFieldBounds(textHolder),textHolder.getText());
+  textField.requestFocus();
+  typingTarget=textHolder;
 }

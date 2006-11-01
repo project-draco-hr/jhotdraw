@@ -1,7 +1,0 @@
-{
-  if (fURLTarget != null) {
-    setURL(fURLTarget,fTextField.getText());
-    fURLTarget=null;
-    fTextField.endOverlay();
-  }
-}

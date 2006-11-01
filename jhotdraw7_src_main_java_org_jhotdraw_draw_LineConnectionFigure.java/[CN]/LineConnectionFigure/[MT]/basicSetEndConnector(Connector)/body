@@ -1,0 +1,18 @@
+{
+  if (newEnd != endConnector) {
+    if (endConnector != null) {
+      getEndFigure().removeFigureListener(connectionHandler);
+      if (getStartFigure() != null) {
+        handleDisconnect(getStartFigure(),getEndFigure());
+      }
+    }
+    endConnector=newEnd;
+    if (endConnector != null) {
+      getEndFigure().addFigureListener(connectionHandler);
+      if (getStartFigure() != null && getEndFigure() != null) {
+        handleConnect(getStartFigure(),getEndFigure());
+        updateConnection();
+      }
+    }
+  }
+}

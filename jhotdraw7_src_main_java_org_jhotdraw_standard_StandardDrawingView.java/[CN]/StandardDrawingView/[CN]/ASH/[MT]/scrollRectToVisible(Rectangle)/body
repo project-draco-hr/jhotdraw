@@ -1,3 +1,0 @@
-{
-  StandardDrawingView.this.scrollRectToVisible(aRect);
-}

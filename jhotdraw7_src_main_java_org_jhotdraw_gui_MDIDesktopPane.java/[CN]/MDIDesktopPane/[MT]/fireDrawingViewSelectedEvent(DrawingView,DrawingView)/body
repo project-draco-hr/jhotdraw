@@ -1,3 +1,0 @@
-{
-  getDesktopEventService().fireDrawingViewSelectedEvent(oldView,newView);
-}

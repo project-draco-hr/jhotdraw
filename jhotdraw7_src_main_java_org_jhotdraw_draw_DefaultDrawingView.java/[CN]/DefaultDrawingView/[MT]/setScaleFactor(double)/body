@@ -1,0 +1,10 @@
+{
+  double oldValue=scaleFactor;
+  scaleFactor=newValue;
+  fireViewTransformChanged();
+  firePropertyChange("scaleFactor",oldValue,newValue);
+  invalidateDimension();
+  invalidate();
+  if (getParent() != null)   getParent().validate();
+  repaint();
+}

@@ -1,0 +1,9 @@
+{
+  willChange();
+  Figure removed=basicRemoveChild(index);
+  if (getDrawing() != null) {
+    removed.removeNotify(getDrawing());
+  }
+  changed();
+  return removed;
+}

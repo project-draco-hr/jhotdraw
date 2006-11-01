@@ -1,9 +1,0 @@
-{
-  Color fill=getFillColor();
-  g.setColor(fill);
-  drawBackground(g);
-  drawText(g,displayBox());
-  Color frame=getFrameColor();
-  g.setColor(frame);
-  drawFrame(g);
-}

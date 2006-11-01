@@ -1,0 +1,15 @@
+{
+  if (bounds == null) {
+    for (    Figure child : getChildrenFrontToBack()) {
+      if (child.isVisible()) {
+        if (bounds == null) {
+          bounds=child.getBounds();
+        }
+ else {
+          bounds.add(child.getBounds());
+        }
+      }
+    }
+  }
+  return (bounds == null) ? new Rectangle2D.Double(0,0,-1,-1) : (Rectangle2D.Double)bounds.clone();
+}

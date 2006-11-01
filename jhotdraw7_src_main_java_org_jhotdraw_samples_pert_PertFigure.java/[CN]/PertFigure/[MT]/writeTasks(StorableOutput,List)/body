@@ -1,7 +1,0 @@
-{
-  dw.writeInt(l.size());
-  Iterator iter=l.iterator();
-  while (iter.hasNext()) {
-    dw.writeStorable((Storable)iter.next());
-  }
-}

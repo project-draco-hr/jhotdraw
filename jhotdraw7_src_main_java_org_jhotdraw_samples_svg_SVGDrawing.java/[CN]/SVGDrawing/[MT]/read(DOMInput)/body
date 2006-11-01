@@ -1,0 +1,53 @@
+{
+  for (int i=0, n=in.getElementCount(); i < n; i++) {
+    in.openElement(i);
+    String name=in.getTagName();
+    if (name.equals("title")) {
+      title=in.getText();
+      in.closeElement();
+    }
+ else     if (name.equals("desc")) {
+      description=in.getText();
+      in.closeElement();
+    }
+ else     if (name.equals("defs")) {
+      in.closeElement();
+    }
+ else     if (name.equals("use")) {
+      in.closeElement();
+    }
+ else     if (name.equals("script")) {
+      in.closeElement();
+    }
+ else     if (name.equals("style")) {
+      in.closeElement();
+    }
+ else     if (name.equals("radialGradient")) {
+      in.closeElement();
+    }
+ else {
+      in.closeElement();
+      Object f=(Object)in.readObject(i);
+      if (f instanceof SVGDrawing) {
+        SVGGroup g=new SVGGroup();
+        g.willChange();
+        for (        Figure child : ((SVGDrawing)f).getFigures()) {
+          g.basicAdd(child);
+        }
+        g.changed();
+        if (!g.isEmpty()) {
+          add(g);
+        }
+      }
+ else       if (f instanceof SVGFigure) {
+        if (!((SVGFigure)f).isEmpty()) {
+          add((Figure)f);
+        }
+      }
+ else {
+        throw new IOException("Unexpected child " + f);
+      }
+    }
+  }
+  readAttributes(in);
+}

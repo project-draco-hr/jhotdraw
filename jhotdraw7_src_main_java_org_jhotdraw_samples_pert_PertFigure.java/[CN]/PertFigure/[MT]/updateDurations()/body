@@ -1,7 +1,0 @@
-{
-  int newEnd=start() + duration();
-  if (newEnd != end()) {
-    setEnd(newEnd);
-    notifyPostTasks();
-  }
-}

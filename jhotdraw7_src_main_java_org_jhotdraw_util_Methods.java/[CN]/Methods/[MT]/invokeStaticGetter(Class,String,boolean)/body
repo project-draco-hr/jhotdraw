@@ -1,0 +1,16 @@
+{
+  try {
+    Method method=clazz.getMethod(methodName,new Class[0]);
+    Object result=method.invoke(null,new Object[0]);
+    return ((Boolean)result).booleanValue();
+  }
+ catch (  NoSuchMethodException e) {
+    return defaultValue;
+  }
+catch (  IllegalAccessException e) {
+    return defaultValue;
+  }
+catch (  InvocationTargetException e) {
+    return defaultValue;
+  }
+}

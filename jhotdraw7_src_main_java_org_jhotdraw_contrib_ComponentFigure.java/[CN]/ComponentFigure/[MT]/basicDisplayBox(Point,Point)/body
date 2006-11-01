@@ -1,4 +1,0 @@
-{
-  bounds=new Rectangle(origin);
-  bounds.add(corner);
-}

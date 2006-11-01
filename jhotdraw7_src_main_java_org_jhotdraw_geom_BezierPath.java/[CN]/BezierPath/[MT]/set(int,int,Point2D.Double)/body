@@ -1,0 +1,5 @@
+{
+  Node c=get(index);
+  c.x[coord]=p.x;
+  c.y[coord]=p.y;
+}

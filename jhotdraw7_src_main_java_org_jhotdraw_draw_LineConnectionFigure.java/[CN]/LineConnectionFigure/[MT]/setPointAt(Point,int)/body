@@ -1,4 +1,0 @@
-{
-  super.setPointAt(p,i);
-  layoutConnection();
-}

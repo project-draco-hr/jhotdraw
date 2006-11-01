@@ -1,5 +1,0 @@
-{
-  s.defaultReadObject();
-  Iconkit.instance().registerImage(fFileName);
-  fImage=null;
-}

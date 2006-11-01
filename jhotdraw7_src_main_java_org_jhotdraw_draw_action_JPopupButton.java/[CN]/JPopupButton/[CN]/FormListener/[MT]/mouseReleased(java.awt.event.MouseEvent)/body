@@ -1,0 +1,5 @@
+{
+  if (evt.getSource() == JPopupButton.this) {
+    JPopupButton.this.performAction(evt);
+  }
+}

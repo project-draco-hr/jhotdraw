@@ -1,0 +1,4 @@
+{
+  Insets2DDouble value=(Insets2DDouble)child.getAttribute(CompositeFigure.LAYOUT_INSETS);
+  return (value == null) ? new Insets2DDouble(0,0,0,0) : (Insets2DDouble)value.clone();
+}

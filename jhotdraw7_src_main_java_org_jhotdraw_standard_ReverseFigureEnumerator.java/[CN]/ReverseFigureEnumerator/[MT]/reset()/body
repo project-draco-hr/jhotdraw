@@ -1,3 +1,0 @@
-{
-  myIterator=new ReverseListEnumerator(myInitialList);
-}

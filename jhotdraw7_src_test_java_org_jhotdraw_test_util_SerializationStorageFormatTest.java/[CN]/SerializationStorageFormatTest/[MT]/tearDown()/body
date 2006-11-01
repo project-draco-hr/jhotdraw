@@ -1,4 +1,0 @@
-{
-  serializationstorageformat=null;
-  super.tearDown();
-}

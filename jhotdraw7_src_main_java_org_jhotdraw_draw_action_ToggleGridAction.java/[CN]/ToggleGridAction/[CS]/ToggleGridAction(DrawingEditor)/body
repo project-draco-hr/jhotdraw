@@ -1,0 +1,3 @@
+{
+  this(editor,new GridConstrainer(10,10),new GridConstrainer(1,1));
+}

@@ -1,3 +1,0 @@
-{
-  return (Storable)fMap.get(ref);
-}

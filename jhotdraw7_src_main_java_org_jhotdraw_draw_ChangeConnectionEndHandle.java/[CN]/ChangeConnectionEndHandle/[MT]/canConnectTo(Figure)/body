@@ -1,3 +1,0 @@
-{
-  return getConnection().canConnect(source().owner(),figure);
-}

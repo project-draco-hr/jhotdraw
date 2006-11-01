@@ -1,4 +1,0 @@
-{
-  myDrawingEditor.setVisible(false);
-  myDrawingEditor=null;
-}

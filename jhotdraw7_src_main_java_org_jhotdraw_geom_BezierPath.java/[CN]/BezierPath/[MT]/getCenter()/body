@@ -1,0 +1,10 @@
+{
+  double sx=0;
+  double sy=0;
+  for (  Node p : this) {
+    sx+=p.x[0];
+    sy+=p.y[0];
+  }
+  int n=size();
+  return new Point2D.Double(sx / n,sy / n);
+}

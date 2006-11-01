@@ -1,0 +1,5 @@
+JToolBar tb
+DrawingEditor editor
+Tool tool
+String labelKey
+ResourceBundleUtil labels

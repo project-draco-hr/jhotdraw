@@ -1,6 +1,0 @@
-{
-  if (getStartConnector() != null) {
-    return getStartConnector().owner();
-  }
-  return null;
-}

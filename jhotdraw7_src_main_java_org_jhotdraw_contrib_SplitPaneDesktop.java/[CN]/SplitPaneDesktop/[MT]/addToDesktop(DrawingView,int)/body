@@ -1,4 +1,0 @@
-{
-  createContents(dv,Desktop.PRIMARY);
-  setDividerLocation(getInitDividerLocation());
-}

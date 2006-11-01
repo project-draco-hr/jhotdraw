@@ -1,6 +1,0 @@
-{
-  if (!super.undo()) {
-    return false;
-  }
-  return movePointToOldLocation();
-}

@@ -1,4 +1,0 @@
-{
-  simpleupdatestrategy=null;
-  super.tearDown();
-}

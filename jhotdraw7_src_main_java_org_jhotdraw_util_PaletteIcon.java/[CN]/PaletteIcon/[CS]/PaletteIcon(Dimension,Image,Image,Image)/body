@@ -1,6 +1,0 @@
-{
-  fSize=size;
-  fNormal=normal;
-  fPressed=pressed;
-  fSelected=selected;
-}

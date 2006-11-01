@@ -1,0 +1,12 @@
+{
+  GeneralPath path=getDecoratorPath(f);
+  double strokeWidth=STROKE_WIDTH.get(f);
+  AffineTransform transform=new AffineTransform();
+  transform.translate(p1.x,p1.y);
+  transform.rotate(Math.atan2(p1.x - p2.x,p2.y - p1.y));
+  if (strokeWidth > 1f) {
+    transform.scale(1d + (strokeWidth - 1d) / 2d,1d + (strokeWidth - 1d) / 2d);
+  }
+  path.transform(transform);
+  return path;
+}

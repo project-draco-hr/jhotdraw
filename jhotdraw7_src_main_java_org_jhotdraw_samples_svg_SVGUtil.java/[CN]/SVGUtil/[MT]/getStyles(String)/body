@@ -1,0 +1,32 @@
+{
+  HashMap<String,String> styles=new HashMap<String,String>();
+  if (str == null)   return styles;
+  StreamTokenizer tt=new StreamTokenizer(new StringReader(str));
+  tt.resetSyntax();
+  tt.wordChars('!','9');
+  tt.wordChars('<','~');
+  tt.wordChars(128 + 32,255);
+  tt.whitespaceChars(0,' ');
+  while (tt.nextToken() != StreamTokenizer.TT_EOF) {
+    if (tt.ttype != ';') {
+      String key, value;
+      if (tt.ttype != StreamTokenizer.TT_WORD) {
+        throw new IOException("Key token expected in " + str + " "+ Integer.toHexString(tt.ttype));
+      }
+      key=tt.sval;
+      if (tt.nextToken() != ':') {
+        throw new IOException("Colon expected after " + key + " in "+ str);
+      }
+      if (tt.nextToken() != StreamTokenizer.TT_WORD) {
+        throw new IOException("Value token expected after " + key + " in "+ str+ " "+ tt.ttype);
+      }
+      value=tt.sval;
+      while (tt.nextToken() == StreamTokenizer.TT_WORD) {
+        value+=' ' + tt.sval;
+      }
+      tt.pushBack();
+      styles.put(key,value);
+    }
+  }
+  return styles;
+}

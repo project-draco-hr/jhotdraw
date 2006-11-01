@@ -1,0 +1,5 @@
+{
+  RoundRectangleFigure that=(RoundRectangleFigure)super.clone();
+  that.roundrect=(RoundRectangle2D.Double)this.roundrect.clone();
+  return that;
+}

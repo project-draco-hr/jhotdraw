@@ -1,5 +1,0 @@
-{
-  super.write(dw);
-  dw.writeStorable(getStartConnector());
-  dw.writeStorable(getEndConnector());
-}

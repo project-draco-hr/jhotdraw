@@ -1,0 +1,19 @@
+{
+  LinkedList<Figure> figures=new LinkedList<Figure>(group.getChildren());
+  view.clearSelection();
+  group.basicRemoveAllChildren();
+  LinkedList<Figure> paths=new LinkedList<Figure>();
+  for (  Figure f : figures) {
+    SVGPath path=new SVGPath();
+    path.removeAllChildren();
+    for (    Map.Entry<AttributeKey,Object> entry : group.getAttributes().entrySet()) {
+      path.basicSetAttribute(entry.getKey(),entry.getValue());
+    }
+    path.add(f);
+    view.getDrawing().basicAdd(path);
+    paths.add(path);
+  }
+  view.getDrawing().remove(group);
+  view.addToSelection(paths);
+  return figures;
+}

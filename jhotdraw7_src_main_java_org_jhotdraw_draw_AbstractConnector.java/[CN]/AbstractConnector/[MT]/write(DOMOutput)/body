@@ -1,0 +1,13 @@
+{
+  if (isStatePersistent) {
+    if (isConnectToDecorator) {
+      out.addAttribute("connectToDecorator",true);
+    }
+    if (isVisible) {
+      out.addAttribute("visible",true);
+    }
+  }
+  out.openElement("owner");
+  out.writeObject(getOwner());
+  out.closeElement();
+}

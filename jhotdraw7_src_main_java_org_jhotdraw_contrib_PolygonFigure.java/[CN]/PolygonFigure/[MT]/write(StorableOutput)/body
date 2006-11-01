@@ -1,8 +1,0 @@
-{
-  super.write(dw);
-  dw.writeInt(pointCount());
-  for (int i=0; i < pointCount(); ++i) {
-    dw.writeInt(getInternalPolygon().xpoints[i]);
-    dw.writeInt(getInternalPolygon().ypoints[i]);
-  }
-}

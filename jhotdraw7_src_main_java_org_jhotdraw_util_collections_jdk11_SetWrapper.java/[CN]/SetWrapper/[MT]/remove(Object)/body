@@ -1,3 +1,0 @@
-{
-  return myDelegee.remove(o) != null;
-}

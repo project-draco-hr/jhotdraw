@@ -1,0 +1,5 @@
+{
+  boolean oldValue=pressed;
+  pressed=basicGetBounds().contains(lead);
+  if (oldValue != pressed)   fireAreaInvalidated(getDrawBounds());
+}

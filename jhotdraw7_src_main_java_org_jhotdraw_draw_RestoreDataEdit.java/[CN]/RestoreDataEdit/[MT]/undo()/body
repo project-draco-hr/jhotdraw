@@ -1,0 +1,6 @@
+{
+  super.undo();
+  figure.willChange();
+  figure.restoreTo(oldRestoreData);
+  figure.changed();
+}

@@ -1,0 +1,25 @@
+{
+  final Project project=getCurrentProject();
+  if (project.isEnabled()) {
+    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+    oldFocusOwner=SwingUtilities.getWindowAncestor(project.getComponent()).getFocusOwner();
+    project.setEnabled(false);
+    File saveToFile;
+    JFileChooser fileChooser=getExportChooser(project);
+    JSheet.showSheet(fileChooser,project.getComponent(),labels.getString("filechooser.export"),new SheetListener(){
+      public void optionSelected(      final SheetEvent evt){
+        if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
+          final File file=evt.getFileChooser().getSelectedFile();
+          exportToFile(project,file,evt.getFileChooser().getFileFilter(),evt.getFileChooser().getAccessory());
+        }
+ else {
+          project.setEnabled(true);
+          if (oldFocusOwner != null) {
+            oldFocusOwner.requestFocus();
+          }
+        }
+      }
+    }
+);
+  }
+}

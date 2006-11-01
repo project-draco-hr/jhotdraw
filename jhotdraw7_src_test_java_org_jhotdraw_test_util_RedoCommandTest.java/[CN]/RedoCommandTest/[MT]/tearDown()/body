@@ -1,4 +1,0 @@
-{
-  redocommand=null;
-  super.tearDown();
-}

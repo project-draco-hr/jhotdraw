@@ -1,4 +1,0 @@
-{
-  LineConnectionFigure lineConn=new LineConnectionFigure();
-  return new ElbowHandle(lineConn,1);
-}

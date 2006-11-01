@@ -1,0 +1,10 @@
+{
+  try {
+    AbstractConnector that=(AbstractConnector)super.clone();
+    return that;
+  }
+ catch (  CloneNotSupportedException e) {
+    InternalError error=new InternalError(e.toString());
+    throw error;
+  }
+}

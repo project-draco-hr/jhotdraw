@@ -1,5 +1,0 @@
-{
-  getComponent().setBounds(displayBox());
-  Graphics componentG=g.create(bounds.x,bounds.y,bounds.width,bounds.height);
-  getComponent().paint(componentG);
-}

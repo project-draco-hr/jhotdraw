@@ -1,6 +1,10 @@
 {
-  invalidate();
-  if (listener() != null) {
-    listener().figureChanged(new FigureEvent(this));
+  if (changingDepth <= 1) {
+    validate();
+    fireFigureChanged(getDrawBounds());
+    changingDepth=0;
+  }
+ else {
+    changingDepth--;
   }
 }

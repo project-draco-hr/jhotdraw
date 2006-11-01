@@ -1,3 +1,0 @@
-{
-  real.fillOval((int)(x * scale),(int)(y * scale),(int)(width * scale),(int)(height * scale));
-}

@@ -1,8 +1,0 @@
-{
-  if (super.undo() && getAffectedFigures().hasNextFigure()) {
-    getDrawingView().clearSelection();
-    myCommand.insertFigures(getAffectedFiguresReversed(),0,0);
-    return true;
-  }
-  return false;
-}

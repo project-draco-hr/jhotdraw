@@ -1,6 +1,0 @@
-{
-  Point arc=getArc();
-  Rectangle dspBox=displayBox();
-  RoundRectangle2D.Float roundRectangle=new RoundRectangle2D.Float(dspBox.x,dspBox.y,dspBox.width,dspBox.height,arc.x,arc.y);
-  return roundRectangle;
-}

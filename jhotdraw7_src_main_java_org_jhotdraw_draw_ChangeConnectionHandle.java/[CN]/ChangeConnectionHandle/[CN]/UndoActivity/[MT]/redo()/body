@@ -1,7 +1,0 @@
-{
-  if (!isRedoable()) {
-    return false;
-  }
-  swapConnectors();
-  return true;
-}

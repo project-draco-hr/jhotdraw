@@ -1,3 +1,0 @@
-{
-  return (fText.length() == 0);
-}

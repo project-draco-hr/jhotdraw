@@ -1,0 +1,4 @@
+{
+  this.handles=new LinkedList<Handle>();
+  this.handles.add(handle);
+}

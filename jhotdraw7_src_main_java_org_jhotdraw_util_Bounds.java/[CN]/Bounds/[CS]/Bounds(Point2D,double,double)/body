@@ -1,6 +1,0 @@
-{
-  _dX1=centerPoint2D.getX() - (dWidth / 2.0);
-  _dX2=centerPoint2D.getX() + (dWidth / 2.0);
-  _dY1=centerPoint2D.getY() - (dHeight / 2.0);
-  _dY2=centerPoint2D.getY() + (dHeight / 2.0);
-}

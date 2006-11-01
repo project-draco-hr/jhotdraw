@@ -1,4 +1,0 @@
-{
-  fGridX=Math.max(1,x);
-  fGridY=Math.max(1,y);
-}

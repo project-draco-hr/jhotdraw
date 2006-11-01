@@ -1,3 +1,0 @@
-{
-  figure.setAttribute(FigureAttributeConstant.URL,url);
-}

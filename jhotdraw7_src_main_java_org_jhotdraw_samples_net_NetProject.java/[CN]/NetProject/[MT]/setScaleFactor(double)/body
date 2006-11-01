@@ -1,0 +1,3 @@
+{
+  view.setScaleFactor(newValue);
+}

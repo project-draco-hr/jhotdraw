@@ -1,0 +1,4 @@
+{
+  this.editor=null;
+  repaint();
+}

@@ -1,3 +1,0 @@
-{
-  return new InsertImageCommand.UndoActivity(view(),myImageName);
-}

@@ -1,4 +1,0 @@
-{
-  ctxcommandmenu=null;
-  super.tearDown();
-}

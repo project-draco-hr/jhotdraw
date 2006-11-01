@@ -1,4 +1,0 @@
-{
-  super.setUp();
-  simplelayouter=createInstance();
-}

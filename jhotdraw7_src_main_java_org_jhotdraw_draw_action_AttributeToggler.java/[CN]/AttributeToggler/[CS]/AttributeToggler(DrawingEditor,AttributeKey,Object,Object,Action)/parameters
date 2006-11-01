@@ -1,0 +1,5 @@
+DrawingEditor editor
+AttributeKey key
+Object value1
+Object value2
+Action compatibleTextAction

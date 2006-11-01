@@ -1,0 +1,4 @@
+{
+  enumClassToNameMap.put(c,name);
+  nameToEnumClassMap.put(name,c);
+}

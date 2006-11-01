@@ -1,0 +1,4 @@
+{
+  Node c=get(index);
+  return new Point2D.Double(c.x[coord],c.y[coord]);
+}

@@ -1,0 +1,7 @@
+{
+  figures.add(index,figure);
+  quadTree.add(figure,figure.getDrawBounds());
+  figure.addFigureListener(this);
+  figure.addUndoableEditListener(this);
+  needsSorting=true;
+}

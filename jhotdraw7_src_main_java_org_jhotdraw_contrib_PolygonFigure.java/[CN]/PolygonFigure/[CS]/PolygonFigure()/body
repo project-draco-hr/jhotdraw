@@ -1,4 +1,0 @@
-{
-  super();
-  setInternalPolygon(new Polygon());
-}

@@ -1,5 +1,5 @@
 {
-  TriangleFigure figure=(TriangleFigure)super.clone();
-  figure.fRotation=fRotation;
-  return figure;
+  TriangleFigure that=(TriangleFigure)super.clone();
+  that.rectangle=(Rectangle2D.Double)this.rectangle.clone();
+  return that;
 }

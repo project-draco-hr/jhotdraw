@@ -1,4 +1,0 @@
-{
-  jpaneldesktop=null;
-  super.tearDown();
-}

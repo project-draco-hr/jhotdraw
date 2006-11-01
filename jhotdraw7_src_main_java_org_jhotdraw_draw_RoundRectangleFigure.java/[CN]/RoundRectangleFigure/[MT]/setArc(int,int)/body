@@ -1,6 +1,0 @@
-{
-  willChange();
-  fArcWidth=width;
-  fArcHeight=height;
-  changed();
-}

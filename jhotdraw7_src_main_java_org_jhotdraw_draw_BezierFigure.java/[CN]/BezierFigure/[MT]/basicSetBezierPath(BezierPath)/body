@@ -1,0 +1,4 @@
+{
+  this.path=newValue;
+  this.setClosed(newValue.isClosed());
+}

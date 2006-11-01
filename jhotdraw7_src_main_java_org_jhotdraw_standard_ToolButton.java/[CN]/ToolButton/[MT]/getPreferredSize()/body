@@ -1,3 +1,0 @@
-{
-  return new Dimension(getPaletteIcon().getWidth(),getPaletteIcon().getHeight());
-}

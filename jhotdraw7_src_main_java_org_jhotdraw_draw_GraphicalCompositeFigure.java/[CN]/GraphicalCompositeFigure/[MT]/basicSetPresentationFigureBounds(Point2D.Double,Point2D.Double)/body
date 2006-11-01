@@ -1,0 +1,5 @@
+{
+  if (getPresentationFigure() != null) {
+    getPresentationFigure().basicSetBounds(anchor,lead);
+  }
+}

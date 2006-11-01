@@ -1,0 +1,5 @@
+{
+  super(owner);
+  setConnection((ConnectionFigure)owner);
+  setTargetFigure(null);
+}

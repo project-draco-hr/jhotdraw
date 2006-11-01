@@ -1,4 +1,0 @@
-{
-  storableoutput=null;
-  super.tearDown();
-}

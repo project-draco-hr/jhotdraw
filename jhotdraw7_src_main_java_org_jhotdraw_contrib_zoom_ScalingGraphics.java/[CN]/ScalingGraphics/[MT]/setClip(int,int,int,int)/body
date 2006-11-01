@@ -1,4 +1,0 @@
-{
-  userClip=new Rectangle(x,y,width,height);
-  real.setClip((int)(x * scale),(int)(y * scale),(int)(width * scale),(int)(height * scale));
-}

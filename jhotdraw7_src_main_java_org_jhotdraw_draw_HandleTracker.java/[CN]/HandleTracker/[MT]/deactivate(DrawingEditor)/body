@@ -1,0 +1,4 @@
+{
+  super.deactivate(editor);
+  getView().setCursor(Cursor.getDefaultCursor());
+}

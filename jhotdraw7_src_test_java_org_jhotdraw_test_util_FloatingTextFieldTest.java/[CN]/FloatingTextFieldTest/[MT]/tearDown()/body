@@ -1,4 +1,0 @@
-{
-  floatingtextfield=null;
-  super.tearDown();
-}

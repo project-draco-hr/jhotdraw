@@ -1,4 +1,0 @@
-{
-  deletefromdrawingvisitor=null;
-  super.tearDown();
-}

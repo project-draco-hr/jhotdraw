@@ -1,3 +1,0 @@
-{
-  log("DropTargetEvent-dragExit");
-}

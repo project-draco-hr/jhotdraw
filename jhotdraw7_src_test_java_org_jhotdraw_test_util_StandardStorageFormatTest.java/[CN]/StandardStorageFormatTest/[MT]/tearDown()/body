@@ -1,4 +1,0 @@
-{
-  standardstorageformat=null;
-  super.tearDown();
-}

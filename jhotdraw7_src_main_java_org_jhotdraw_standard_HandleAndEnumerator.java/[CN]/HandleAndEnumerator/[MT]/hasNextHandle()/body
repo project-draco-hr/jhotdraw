@@ -1,3 +1,0 @@
-{
-  return myHE1.hasNextHandle() || myHE2.hasNextHandle();
-}

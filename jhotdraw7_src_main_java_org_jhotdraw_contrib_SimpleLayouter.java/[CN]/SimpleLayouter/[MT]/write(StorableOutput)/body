@@ -1,8 +1,0 @@
-{
-  dw.writeStorable(getLayoutable());
-  Insets i=getInsets();
-  dw.writeInt(i.top);
-  dw.writeInt(i.left);
-  dw.writeInt(i.bottom);
-  dw.writeInt(i.right);
-}

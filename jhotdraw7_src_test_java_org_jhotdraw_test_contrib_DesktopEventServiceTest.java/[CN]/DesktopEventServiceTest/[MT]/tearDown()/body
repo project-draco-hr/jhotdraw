@@ -1,4 +1,0 @@
-{
-  desktopeventservice=null;
-  super.tearDown();
-}

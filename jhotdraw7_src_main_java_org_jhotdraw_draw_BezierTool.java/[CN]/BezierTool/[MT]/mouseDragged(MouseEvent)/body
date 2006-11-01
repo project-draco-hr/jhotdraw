@@ -1,0 +1,10 @@
+{
+  if (createdFigure != null) {
+    if (finishWhenMouseReleased == null) {
+      finishWhenMouseReleased=Boolean.TRUE;
+    }
+    int x=evt.getX();
+    int y=evt.getY();
+    addPointToFigure(getView().viewToDrawing(new Point(x,y)));
+  }
+}

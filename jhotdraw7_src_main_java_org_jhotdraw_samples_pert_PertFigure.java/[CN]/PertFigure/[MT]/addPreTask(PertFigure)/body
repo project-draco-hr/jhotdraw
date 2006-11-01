@@ -1,5 +1,0 @@
-{
-  if (!fPreTasks.contains(figure)) {
-    fPreTasks.add(figure);
-  }
-}

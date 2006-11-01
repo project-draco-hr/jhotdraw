@@ -1,0 +1,3 @@
+{
+  return SwingUtilities.getRootPane(project.getComponent()).getParent();
+}

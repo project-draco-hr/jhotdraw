@@ -1,0 +1,37 @@
+{
+  InputStream in=null;
+  try {
+    in=new BufferedInputStream(new FileInputStream(f));
+    NanoXMLLiteDOMInput domi=new NanoXMLLiteDOMInput(view.getDOMFactory(),in);
+    domi.openElement("PlasmaDraw");
+    final Drawing drawing=(Drawing)domi.readObject();
+    domi.closeElement();
+    SwingUtilities.invokeAndWait(new Runnable(){
+      public void run(){
+        view.getDrawing().removeUndoableEditListener(undo);
+        view.setDrawing(drawing);
+        view.getDrawing().addUndoableEditListener(undo);
+        undo.discardAllEdits();
+      }
+    }
+);
+  }
+ catch (  InterruptedException e) {
+    InternalError error=new InternalError();
+    e.initCause(e);
+    throw error;
+  }
+catch (  InvocationTargetException e) {
+    InternalError error=new InternalError();
+    e.initCause(e);
+    throw error;
+  }
+ finally {
+    if (in != null)     try {
+      in.close();
+    }
+ catch (    IOException e) {
+    }
+    ;
+  }
+}

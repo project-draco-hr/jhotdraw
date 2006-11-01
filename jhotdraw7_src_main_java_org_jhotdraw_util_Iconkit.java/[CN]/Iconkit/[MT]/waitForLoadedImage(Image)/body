@@ -1,7 +1,0 @@
-{
-  if (image != null) {
-    ImageIcon icon=new ImageIcon(image);
-    image=icon.getImage();
-  }
-  return image;
-}

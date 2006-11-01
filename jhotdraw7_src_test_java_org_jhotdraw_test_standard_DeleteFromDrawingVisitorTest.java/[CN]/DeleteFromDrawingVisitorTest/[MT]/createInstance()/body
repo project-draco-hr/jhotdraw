@@ -1,3 +1,0 @@
-{
-  return new DeleteFromDrawingVisitor(getDrawingEditor().view().drawing());
-}

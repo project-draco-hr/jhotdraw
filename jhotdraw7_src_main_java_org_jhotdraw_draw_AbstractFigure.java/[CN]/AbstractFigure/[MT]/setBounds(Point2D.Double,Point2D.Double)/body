@@ -1,0 +1,10 @@
+{
+  Point2D.Double oldAnchor=getStartPoint();
+  Point2D.Double oldLead=getEndPoint();
+  if (!oldAnchor.equals(anchor) || !oldLead.equals(lead)) {
+    willChange();
+    basicSetBounds(anchor,lead);
+    changed();
+    fireUndoableEditHappened(new SetBoundsEdit(this,oldAnchor,oldLead,anchor,lead));
+  }
+}

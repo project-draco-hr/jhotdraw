@@ -1,0 +1,15 @@
+{
+  Rectangle r=getBounds();
+  r.grow(1,1);
+  Polygon p=new Polygon();
+  p.addPoint(r.x + r.width / 2,r.y);
+  p.addPoint(r.x + r.width,r.y + r.height / 2);
+  p.addPoint(r.x + r.width / 2,r.y + r.height);
+  p.addPoint(r.x,r.y + r.height / 2);
+  p.addPoint(r.x + r.width / 2,r.y);
+  g.setColor(fill);
+  g.fill(p);
+  g.setStroke(new BasicStroke());
+  g.setColor(stroke);
+  g.draw(p);
+}

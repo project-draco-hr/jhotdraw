@@ -1,0 +1,13 @@
+{
+synchronized (getLock()) {
+    ensureSorted();
+    ArrayList<Figure> toDraw=new ArrayList<Figure>(figures.size());
+    Rectangle clipRect=g.getClipBounds();
+    for (    Figure f : figures) {
+      if (f.getDrawBounds().intersects(clipRect)) {
+        toDraw.add(f);
+      }
+    }
+    draw(g,toDraw);
+  }
+}

@@ -1,4 +1,0 @@
-{
-  Desktop desktop=new JPanelDesktop(getDrawingEditor());
-  return new DesktopEventService(desktop,((Container)desktop));
-}

@@ -1,5 +1,0 @@
-{
-  if (!myRegisteredListeners.contains(newCommandListener)) {
-    myRegisteredListeners.add(newCommandListener);
-  }
-}

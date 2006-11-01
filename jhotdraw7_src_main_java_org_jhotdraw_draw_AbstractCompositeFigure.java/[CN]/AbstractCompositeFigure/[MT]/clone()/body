@@ -1,0 +1,12 @@
+{
+  AbstractCompositeFigure that=(AbstractCompositeFigure)super.clone();
+  that.childHandler=new ChildHandler(that);
+  that.children=new LinkedList<Figure>();
+  for (  Figure thisChild : this.children) {
+    Figure thatChild=(Figure)thisChild.clone();
+    that.children.add(thatChild);
+    thatChild.addFigureListener(that.childHandler);
+    thatChild.addUndoableEditListener(that.childHandler);
+  }
+  return that;
+}

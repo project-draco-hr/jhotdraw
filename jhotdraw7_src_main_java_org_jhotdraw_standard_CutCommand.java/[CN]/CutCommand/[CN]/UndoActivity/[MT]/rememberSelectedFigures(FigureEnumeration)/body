@@ -1,6 +1,0 @@
-{
-  mySelectedFigures=CollectionsFactory.current().createList();
-  while (toBeRemembered.hasNextFigure()) {
-    mySelectedFigures.add(toBeRemembered.nextFigure());
-  }
-}

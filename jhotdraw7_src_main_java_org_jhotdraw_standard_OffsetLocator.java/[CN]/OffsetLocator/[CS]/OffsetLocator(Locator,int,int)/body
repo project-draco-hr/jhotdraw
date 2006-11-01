@@ -1,5 +1,0 @@
-{
-  this(base);
-  fOffsetX=offsetX;
-  fOffsetY=offsetY;
-}

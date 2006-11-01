@@ -1,3 +1,0 @@
-{
-  return new AlignCommand.UndoActivity(view(),getAlignment());
-}

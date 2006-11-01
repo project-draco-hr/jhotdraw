@@ -1,3 +1,3 @@
 {
-  getConnection().connectEnd(c);
+  getConnection().setEndConnector(c);
 }

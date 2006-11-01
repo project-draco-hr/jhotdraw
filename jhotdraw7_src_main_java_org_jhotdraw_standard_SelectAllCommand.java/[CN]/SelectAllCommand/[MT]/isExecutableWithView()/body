@@ -1,7 +1,0 @@
-{
-  FigureEnumeration fe=view().drawing().figures();
-  if (fe.hasNextFigure() && (fe.nextFigure() != null)) {
-    return true;
-  }
-  return false;
-}

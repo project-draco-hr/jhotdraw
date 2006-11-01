@@ -1,3 +1,0 @@
-{
-  this(gap,new Point(0,0),true);
-}

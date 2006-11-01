@@ -1,5 +1,0 @@
-{
-  if (_theQuadTree != null) {
-    _theQuadTree.clear();
-  }
-}

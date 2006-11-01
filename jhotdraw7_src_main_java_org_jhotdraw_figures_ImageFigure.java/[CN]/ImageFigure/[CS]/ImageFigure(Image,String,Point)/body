@@ -1,5 +1,0 @@
-{
-  fFileName=fileName;
-  fImage=image;
-  basicDisplayBox(origin,new Point(origin.x + fImage.getWidth(this),origin.y + fImage.getHeight(this)));
-}

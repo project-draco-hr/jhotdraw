@@ -1,3 +1,0 @@
-{
-  return (Color)getAttribute(FigureAttributeConstant.FRAME_COLOR);
-}

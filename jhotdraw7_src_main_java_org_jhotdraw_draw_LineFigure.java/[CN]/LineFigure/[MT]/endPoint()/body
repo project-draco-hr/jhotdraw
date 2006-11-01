@@ -1,3 +1,0 @@
-{
-  return pointAt(1);
-}

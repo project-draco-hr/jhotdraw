@@ -1,7 +1,0 @@
-{
-  if (isActive()) {
-    deactivate();
-    activate();
-  }
-  checkUsable();
-}

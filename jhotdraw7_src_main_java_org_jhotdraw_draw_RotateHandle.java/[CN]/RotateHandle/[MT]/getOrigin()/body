@@ -1,0 +1,4 @@
+{
+  Rectangle2D.Double bounds=getOwner().getBounds();
+  return new Point2D.Double(bounds.getCenterX(),bounds.y - getHandlesize());
+}

@@ -1,4 +1,0 @@
-{
-  keyListener=new DrawingViewKeyListener();
-  return keyListener;
-}

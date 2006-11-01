@@ -1,0 +1,14 @@
+{
+  view.getContainer().removeFocusListener(focusHandler);
+  views.remove(view);
+  if (tool != null) {
+    view.removeMouseListener(tool);
+    view.removeMouseMotionListener(tool);
+    view.removeKeyListener(tool);
+  }
+  view.removeNotify(this);
+  if (activeView == view) {
+    view=(views.size() > 0) ? views.iterator().next() : null;
+  }
+  updateFocusedView();
+}

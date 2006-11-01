@@ -1,0 +1,10 @@
+{
+  String s;
+  try {
+    s=resource.getString(key + ".mnem");
+  }
+ catch (  MissingResourceException e) {
+    s=null;
+  }
+  return (s == null || s.length() == 0) ? '\0' : s.charAt(0);
+}

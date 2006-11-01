@@ -1,3 +1,0 @@
-{
-  setSize((int)(width * getScale()),(int)(height * getScale()));
-}

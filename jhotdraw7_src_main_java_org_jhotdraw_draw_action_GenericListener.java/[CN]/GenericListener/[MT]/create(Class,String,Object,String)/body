@@ -1,0 +1,11 @@
+{
+  Method listenerMethod=getListenerMethod(listenerInterface,listenerMethodName);
+  Method targetMethod=getTargetMethod(target,targetMethodName,listenerMethod.getParameterTypes());
+  if (targetMethod == null) {
+    targetMethod=getTargetMethod(target,targetMethodName,new Class[0]);
+  }
+  if (targetMethod == null) {
+    throw new RuntimeException("no such method " + targetMethodName + " in "+ target.getClass());
+  }
+  return create(listenerMethod,target,targetMethod);
+}

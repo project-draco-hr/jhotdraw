@@ -1,9 +1,0 @@
-{
-  Dimension size=getSize();
-  Rectangle rect=getVisibleRect();
-  autoscrollInsets.top=rect.y + autoscrollMargin;
-  autoscrollInsets.left=rect.x + autoscrollMargin;
-  autoscrollInsets.bottom=size.height - (rect.y + rect.height) + autoscrollMargin;
-  autoscrollInsets.right=size.width - (rect.x + rect.width) + autoscrollMargin;
-  return autoscrollInsets;
-}

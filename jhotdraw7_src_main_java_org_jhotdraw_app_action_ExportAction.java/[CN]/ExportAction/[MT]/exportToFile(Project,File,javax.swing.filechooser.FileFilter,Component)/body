@@ -1,0 +1,20 @@
+{
+  project.execute(new Worker(){
+    public Object construct(){
+      try {
+        Methods.invoke(project,"export",new Class[]{File.class,javax.swing.filechooser.FileFilter.class,Component.class},file,filter,accessory);
+        return null;
+      }
+ catch (      InternalError e) {
+        return (e.getCause() != null) ? e.getCause() : e;
+      }
+catch (      Throwable e) {
+        return e;
+      }
+    }
+    public void finished(    Object value){
+      fileExported(project,file,value);
+    }
+  }
+);
+}

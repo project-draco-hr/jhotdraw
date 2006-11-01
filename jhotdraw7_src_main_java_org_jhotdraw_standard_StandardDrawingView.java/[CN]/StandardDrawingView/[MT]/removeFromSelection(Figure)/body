@@ -1,8 +1,0 @@
-{
-  if (isFigureSelected(figure)) {
-    fSelection.remove(figure);
-    fSelectionHandles=null;
-    figure.invalidate();
-    fireSelectionChanged();
-  }
-}

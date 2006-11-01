@@ -1,6 +1,0 @@
-{
-  if (fConnectors == null) {
-    createConnectors();
-  }
-  return fConnectors;
-}

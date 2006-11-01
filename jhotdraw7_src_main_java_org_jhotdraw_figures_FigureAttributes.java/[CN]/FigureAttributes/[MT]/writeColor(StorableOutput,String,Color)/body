@@ -1,8 +1,0 @@
-{
-  if (color != null) {
-    dw.writeString(colorName);
-    dw.writeInt(color.getRed());
-    dw.writeInt(color.getGreen());
-    dw.writeInt(color.getBlue());
-  }
-}

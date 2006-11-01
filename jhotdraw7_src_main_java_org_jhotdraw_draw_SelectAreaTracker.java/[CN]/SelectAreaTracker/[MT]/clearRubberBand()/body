@@ -1,0 +1,6 @@
+{
+  if (rubberBand.width > 0) {
+    fireAreaInvalidated(rubberBand);
+    rubberBand.width=0;
+  }
+}

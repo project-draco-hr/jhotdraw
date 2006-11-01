@@ -1,9 +1,0 @@
-{
-  Dimension size=getSize();
-  p.x=Geom.range(1,(int)(size.width / getScale()),p.x);
-  p.y=Geom.range(1,(int)(size.height / getScale()),p.y);
-  if (getConstrainer() != null) {
-    return getConstrainer().constrainPoint(p);
-  }
-  return p;
-}

@@ -1,0 +1,9 @@
+{
+  Drawing drawing=getDrawing();
+  Iterator i=getView().getSelectedFigures().iterator();
+  while (i.hasNext()) {
+    Figure figure=(Figure)i.next();
+    figure.setAttribute(key,value);
+  }
+  getEditor().setDefaultAttribute(key,value);
+}

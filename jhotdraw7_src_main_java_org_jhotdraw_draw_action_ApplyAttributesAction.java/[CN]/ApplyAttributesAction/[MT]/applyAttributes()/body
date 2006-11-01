@@ -1,0 +1,6 @@
+{
+  DrawingEditor editor=getEditor();
+  for (  Figure figure : getView().getSelectedFigures()) {
+    editor.applyDefaultAttributesTo(figure);
+  }
+}

@@ -1,0 +1,17 @@
+{
+  double dx=x2 - x1;
+  double dy=y2 - y1;
+  double lineLength=Math.sqrt(dx * dx + dy * dy);
+  double scale=thickness / (2d * lineLength);
+  double ddx=-scale * dy;
+  double ddy=scale * dx;
+  corners[0]=x1 + ddx;
+  corners[1]=y1 + ddy;
+  corners[2]=x1 - ddx;
+  corners[3]=y1 - ddy;
+  corners[4]=x2 + ddx;
+  corners[5]=y2 + ddy;
+  corners[6]=x2 - ddx;
+  corners[7]=y2 - ddy;
+  return corners;
+}

@@ -1,6 +1,0 @@
-{
-  if (currentTools != editTools) {
-    currentTools=editTools;
-    needsUpdate=true;
-  }
-}

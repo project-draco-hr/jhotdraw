@@ -1,0 +1,45 @@
+{
+  BezierPath path=((LineConnectionFigure)figure).getBezierPath();
+  Connector start=figure.getStartConnector();
+  Connector end=figure.getEndConnector();
+  if (start == null || end == null || path == null) {
+    return;
+  }
+  Point2D.Double sp=start.findStart(figure);
+  Point2D.Double ep=end.findEnd(figure);
+  path.clear();
+  path.add(new BezierPath.Node(sp.x,sp.y));
+  if (sp.x == ep.x || sp.y == ep.y) {
+    path.add(new BezierPath.Node(ep.x,ep.y));
+  }
+ else {
+    Rectangle2D.Double sb=start.getBounds();
+    sb.x+=5d;
+    sb.y+=5d;
+    sb.width-=10d;
+    sb.height-=10d;
+    Rectangle2D.Double eb=end.getBounds();
+    eb.x+=5d;
+    eb.y+=5d;
+    eb.width-=10d;
+    eb.height-=10d;
+    int soutcode=sb.outcode(sp);
+    if (soutcode == 0) {
+      soutcode=Geom.outcode(sb,eb);
+    }
+    int eoutcode=eb.outcode(ep);
+    if (eoutcode == 0) {
+      eoutcode=Geom.outcode(eb,sb);
+    }
+    if ((soutcode & (Geom.OUT_TOP | Geom.OUT_BOTTOM)) != 0 && (eoutcode & (Geom.OUT_TOP | Geom.OUT_BOTTOM)) != 0) {
+      path.add(new BezierPath.Node(sp.x,(sp.y + ep.y) / 2));
+      path.add(new BezierPath.Node(ep.x,(sp.y + ep.y) / 2));
+    }
+ else     if ((soutcode & (Geom.OUT_LEFT | Geom.OUT_RIGHT)) != 0 && (eoutcode & (Geom.OUT_LEFT | Geom.OUT_RIGHT)) != 0) {
+      path.add(new BezierPath.Node((sp.x + ep.x) / 2,sp.y));
+      path.add(new BezierPath.Node((sp.x + ep.x) / 2,ep.y));
+    }
+    path.add(new BezierPath.Node(ep.x,ep.y));
+  }
+  path.invalidatePath();
+}

@@ -1,0 +1,5 @@
+{
+  if (actionArea != null && actionArea.contains(evt.getX() - getInsets().left,evt.getY() - getInsets().top)) {
+    action.actionPerformed(new ActionEvent(this,ActionEvent.ACTION_PERFORMED,null,evt.getWhen(),evt.getModifiers()));
+  }
+}

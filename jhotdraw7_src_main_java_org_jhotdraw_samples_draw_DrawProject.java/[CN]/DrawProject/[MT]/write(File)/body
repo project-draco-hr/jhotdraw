@@ -1,0 +1,19 @@
+{
+  OutputStream out=null;
+  try {
+    out=new BufferedOutputStream(new FileOutputStream(f));
+    NanoXMLLiteDOMOutput domo=new NanoXMLLiteDOMOutput(view.getDOMFactory());
+    domo.openElement("PlasmaDraw");
+    domo.writeObject(view.getDrawing());
+    domo.closeElement();
+    domo.save(out);
+  }
+  finally {
+    if (out != null)     try {
+      out.close();
+    }
+ catch (    IOException e) {
+    }
+    ;
+  }
+}

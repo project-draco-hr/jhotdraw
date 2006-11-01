@@ -1,5 +1,0 @@
-{
-  while (fe.hasNextFigure()) {
-    orphan(fe.nextFigure());
-  }
-}

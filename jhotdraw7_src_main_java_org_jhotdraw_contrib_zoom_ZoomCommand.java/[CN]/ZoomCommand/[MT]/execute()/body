@@ -1,4 +1,0 @@
-{
-  super.execute();
-  zoomView().zoom(scale);
-}

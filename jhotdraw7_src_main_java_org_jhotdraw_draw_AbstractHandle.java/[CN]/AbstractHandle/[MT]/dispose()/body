@@ -1,0 +1,4 @@
+{
+  owner.removeFigureListener(this);
+  owner=null;
+}

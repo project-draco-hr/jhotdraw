@@ -1,4 +1,0 @@
-{
-  colormap=null;
-  super.tearDown();
-}

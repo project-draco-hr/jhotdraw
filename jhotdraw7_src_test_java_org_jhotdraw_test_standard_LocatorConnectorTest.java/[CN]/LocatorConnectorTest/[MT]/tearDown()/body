@@ -1,4 +1,0 @@
-{
-  locatorconnector=null;
-  super.tearDown();
-}

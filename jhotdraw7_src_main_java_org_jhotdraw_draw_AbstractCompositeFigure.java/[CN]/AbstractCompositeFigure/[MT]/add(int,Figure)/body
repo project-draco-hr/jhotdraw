@@ -1,0 +1,8 @@
+{
+  willChange();
+  basicAdd(index,figure);
+  if (getDrawing() != null) {
+    figure.addNotify(getDrawing());
+  }
+  changed();
+}

@@ -1,9 +1,0 @@
-{
-  Rectangle r=displayBox();
-  Polygon p=new Polygon();
-  p.addPoint(r.x,r.y + r.height / 2);
-  p.addPoint(r.x + r.width / 2,r.y);
-  p.addPoint(r.x + r.width,r.y + r.height / 2);
-  p.addPoint(r.x + r.width / 2,r.y + r.height);
-  return p;
-}

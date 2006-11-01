@@ -1,0 +1,9 @@
+{
+  this.factory=factory;
+  HashMap entities=new HashMap();
+  current=new XMLElement(entities,false,false);
+  current.parseFromReader(in);
+  document=new XMLElement(entities,false,false);
+  document.addChild(current);
+  current=document;
+}

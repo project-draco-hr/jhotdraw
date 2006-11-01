@@ -1,0 +1,22 @@
+{
+  if (value == null) {
+    project.setFile(file);
+    project.markChangesAsSaved();
+    int multiOpenId=1;
+    for (    Project p : project.getApplication().projects()) {
+      if (p != project && p.getFile() != null && p.getFile().equals(file)) {
+        multiOpenId=Math.max(multiOpenId,p.getMultipleOpenId() + 1);
+      }
+    }
+    getApplication().addRecentFile(file);
+    project.setMultipleOpenId(multiOpenId);
+  }
+ else {
+    JSheet.showMessageSheet(project.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>Couldn't save to the file \""+ file+ "\".<p>"+ "Reason: "+ value,JOptionPane.ERROR_MESSAGE);
+  }
+  project.setEnabled(true);
+  SwingUtilities.getWindowAncestor(project.getComponent()).toFront();
+  if (oldFocusOwner != null) {
+    oldFocusOwner.requestFocus();
+  }
+}

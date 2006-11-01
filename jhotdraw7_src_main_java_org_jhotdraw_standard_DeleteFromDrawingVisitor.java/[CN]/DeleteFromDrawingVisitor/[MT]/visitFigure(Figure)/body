@@ -1,6 +1,0 @@
-{
-  if (!myDeletedFigures.contains(hostFigure) && getDrawing().containsFigure(hostFigure)) {
-    Figure orphanedFigure=getDrawing().orphan(hostFigure);
-    myDeletedFigures.add(orphanedFigure);
-  }
-}

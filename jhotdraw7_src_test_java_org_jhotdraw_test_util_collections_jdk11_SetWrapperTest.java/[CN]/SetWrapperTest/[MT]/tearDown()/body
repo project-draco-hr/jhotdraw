@@ -1,4 +1,0 @@
-{
-  setwrapper=null;
-  super.tearDown();
-}

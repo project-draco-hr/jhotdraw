@@ -1,0 +1,16 @@
+{
+  if (value == null) {
+    unsavedProject.setFile(file);
+    getApplication().dispose(unsavedProject);
+    reviewNext();
+    return;
+  }
+ else {
+    JSheet.showMessageSheet(unsavedProject.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>Couldn't save to the file \""+ file+ "\".<p>"+ "Reason: "+ value,JOptionPane.ERROR_MESSAGE);
+  }
+  unsavedProject.setEnabled(true);
+  if (oldFocusOwner != null) {
+    oldFocusOwner.requestFocus();
+  }
+  getApplication().setEnabled(true);
+}

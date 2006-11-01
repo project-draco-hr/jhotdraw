@@ -1,6 +1,0 @@
-{
-  willChange();
-  getInternalPolygon().xpoints[i]=p.x;
-  getInternalPolygon().ypoints[i]=p.y;
-  changed();
-}

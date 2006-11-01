@@ -1,4 +1,0 @@
-{
-  basicDisplayBox(origin,corner);
-  fArcWidth=fArcHeight=DEFAULT_ARC;
-}

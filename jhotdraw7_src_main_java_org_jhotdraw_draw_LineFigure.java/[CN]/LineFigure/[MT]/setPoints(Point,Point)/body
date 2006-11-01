@@ -1,4 +1,0 @@
-{
-  setPointAt(start,0);
-  setPointAt(end,1);
-}

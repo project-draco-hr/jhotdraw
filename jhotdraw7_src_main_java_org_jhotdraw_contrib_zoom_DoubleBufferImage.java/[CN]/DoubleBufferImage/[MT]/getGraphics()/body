@@ -1,5 +1,0 @@
-{
-  ScalingGraphics result=new ScalingGraphics(real.getGraphics());
-  result.setScale(scale);
-  return result;
-}

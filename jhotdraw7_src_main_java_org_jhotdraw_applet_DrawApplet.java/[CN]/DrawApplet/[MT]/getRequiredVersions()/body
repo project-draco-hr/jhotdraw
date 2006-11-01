@@ -1,5 +1,0 @@
-{
-  String[] requiredVersions=new String[1];
-  requiredVersions[0]=VersionManagement.getPackageVersion(DrawApplet.class.getPackage());
-  return requiredVersions;
-}

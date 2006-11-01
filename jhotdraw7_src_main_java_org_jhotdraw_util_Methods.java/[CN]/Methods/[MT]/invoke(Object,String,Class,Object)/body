@@ -1,0 +1,12 @@
+{
+  try {
+    Method method=obj.getClass().getMethod(methodName,new Class[]{clazz});
+    return method.invoke(obj,new Object[]{newValue});
+  }
+ catch (  IllegalAccessException e) {
+    throw new NoSuchMethodException(methodName + " is not accessible");
+  }
+catch (  InvocationTargetException e) {
+    throw new InternalError(e.getMessage());
+  }
+}

@@ -1,3 +1,0 @@
-{
-  return new UngroupCommand("UngroupTest",getDrawingEditor());
-}

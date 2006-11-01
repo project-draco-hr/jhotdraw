@@ -1,0 +1,11 @@
+{
+  lineFigure=new LineFigure();
+  lineFigure.setBounds(new Point2D.Double(2,8),new Point2D.Double(23,8));
+  if (isStartDecoration) {
+    START_DECORATION.set(lineFigure,decoration);
+  }
+ else {
+    END_DECORATION.set(lineFigure,decoration);
+  }
+  STROKE_COLOR.set(lineFigure,Color.black);
+}

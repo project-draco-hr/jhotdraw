@@ -1,4 +1,0 @@
-{
-  super.read(dr);
-  setLocator((Locator)dr.readStorable());
-}

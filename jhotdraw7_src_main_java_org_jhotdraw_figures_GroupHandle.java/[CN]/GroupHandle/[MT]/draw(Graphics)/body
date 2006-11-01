@@ -1,8 +1,0 @@
-{
-  Rectangle r=displayBox();
-  g.setColor(Color.black);
-  g.drawRect(r.x,r.y,r.width,r.height);
-  r.grow(-1,-1);
-  g.setColor(Color.white);
-  g.drawRect(r.x,r.y,r.width,r.height);
-}

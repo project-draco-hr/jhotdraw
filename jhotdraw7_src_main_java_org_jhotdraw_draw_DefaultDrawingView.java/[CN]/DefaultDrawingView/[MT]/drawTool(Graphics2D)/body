@@ -1,0 +1,5 @@
+{
+  if (editor != null && editor.getView() == this && editor.getTool() != null) {
+    editor.getTool().draw(g);
+  }
+}

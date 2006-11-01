@@ -1,0 +1,25 @@
+{
+  Point2D.Double p=view.viewToDrawing(lead);
+  Figure f=findConnectableFigure(p,view.getDrawing());
+  if (f != getTargetFigure()) {
+    if (getTargetFigure() != null) {
+      getTargetFigure().setConnectorsVisible(false,null);
+    }
+    setTargetFigure(f);
+    if (getSource() == null) {
+      if (getTargetFigure() != null) {
+        getTargetFigure().setConnectorsVisible(true,getConnection());
+      }
+    }
+ else {
+      if (getTargetFigure() != null && canConnect(getSource().getOwner(),getTargetFigure())) {
+        getTargetFigure().setConnectorsVisible(true,getConnection());
+      }
+    }
+  }
+  Connector target=findConnectionTarget(p,view.getDrawing());
+  if (target != null) {
+    p=target.getAnchor();
+  }
+  setLocation(p);
+}

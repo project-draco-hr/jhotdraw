@@ -1,6 +1,0 @@
-{
-  Rectangle box=super.displayBox();
-  int d=BORDER;
-  box.grow(d,d);
-  return box;
-}

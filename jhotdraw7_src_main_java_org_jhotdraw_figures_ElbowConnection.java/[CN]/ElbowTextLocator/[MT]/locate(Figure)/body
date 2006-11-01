@@ -1,4 +1,0 @@
-{
-  Point p=owner.center();
-  return new Point(p.x,p.y - 10);
-}

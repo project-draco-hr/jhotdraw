@@ -1,5 +1,0 @@
-{
-  super.read(dr);
-  setPresentationFigure((Figure)dr.readStorable());
-  setLayouter((Layouter)dr.readStorable());
-}

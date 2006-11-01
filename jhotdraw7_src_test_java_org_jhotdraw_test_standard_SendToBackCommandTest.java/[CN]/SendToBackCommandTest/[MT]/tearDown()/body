@@ -1,4 +1,0 @@
-{
-  sendtobackcommand=null;
-  super.tearDown();
-}

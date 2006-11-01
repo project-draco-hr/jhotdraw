@@ -1,6 +1,0 @@
-{
-  willChange();
-  fFont=newFont;
-  markDirty();
-  changed();
-}

@@ -1,0 +1,6 @@
+{
+  top=in.getAttribute("top",0d);
+  left=in.getAttribute("left",0d);
+  bottom=in.getAttribute("bottom",0d);
+  right=in.getAttribute("right",0d);
+}

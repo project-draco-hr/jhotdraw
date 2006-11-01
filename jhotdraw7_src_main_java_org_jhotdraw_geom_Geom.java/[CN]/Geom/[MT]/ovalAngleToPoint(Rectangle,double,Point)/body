@@ -1,6 +1,0 @@
-{
-  p=Geom.polarToPoint(angle,r.width / 2,r.height / 2,p);
-  p.x=r.x + r.width / 2 + p.x;
-  p.y=r.y + r.height / 2 + p.y;
-  return p;
-}

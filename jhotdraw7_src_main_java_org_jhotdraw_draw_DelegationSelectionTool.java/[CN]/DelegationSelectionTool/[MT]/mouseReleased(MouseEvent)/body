@@ -1,0 +1,10 @@
+{
+  if (popupTimer != null) {
+    popupTimer.stop();
+    popupTimer=null;
+  }
+  super.mouseReleased(evt);
+  if (evt.isPopupTrigger()) {
+    handlePopupMenu(evt);
+  }
+}

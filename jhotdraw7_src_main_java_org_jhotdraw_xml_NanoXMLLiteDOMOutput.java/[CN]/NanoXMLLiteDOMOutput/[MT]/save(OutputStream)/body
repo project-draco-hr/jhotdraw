@@ -1,0 +1,5 @@
+{
+  Writer w=new OutputStreamWriter(out,"UTF8");
+  save(w);
+  w.flush();
+}

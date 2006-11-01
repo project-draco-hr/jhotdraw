@@ -1,7 +1,0 @@
-{
-  Point p=node.center();
-  if (Math.abs(p.x - Math.round(x)) > 1 || Math.abs(p.y - Math.round(y)) > 1) {
-    x=p.x;
-    y=p.y;
-  }
-}

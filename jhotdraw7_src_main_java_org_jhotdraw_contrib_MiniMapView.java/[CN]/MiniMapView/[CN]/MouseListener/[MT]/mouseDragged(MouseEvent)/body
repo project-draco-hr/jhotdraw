@@ -1,4 +1,0 @@
-{
-  int[] rectangleUpperLeft=getUpperLeftPointsFromCenter(e.getX(),e.getY());
-  scrollSubjectTo(rectangleUpperLeft[0],rectangleUpperLeft[1]);
-}

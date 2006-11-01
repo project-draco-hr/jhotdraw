@@ -1,0 +1,5 @@
+{
+  Rectangle vr=drawingToView(r);
+  vr.grow(1,1);
+  repaint(vr);
+}

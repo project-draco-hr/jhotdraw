@@ -1,3 +1,0 @@
-{
-  return getClass().getResource(resourceName);
-}

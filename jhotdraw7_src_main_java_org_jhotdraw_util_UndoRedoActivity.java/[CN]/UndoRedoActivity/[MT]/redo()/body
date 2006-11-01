@@ -1,6 +1,0 @@
-{
-  if (isUndoable()) {
-    return getReversedActivity().undo();
-  }
-  return false;
-}

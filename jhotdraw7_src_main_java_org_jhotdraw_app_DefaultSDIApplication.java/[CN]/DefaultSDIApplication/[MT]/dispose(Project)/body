@@ -1,0 +1,6 @@
+{
+  super.dispose(p);
+  if (projects().size() == 0) {
+    stop();
+  }
+}

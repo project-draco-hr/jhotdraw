@@ -1,3 +1,0 @@
-{
-  return new Point((int)r.getMaxX(),(int)r.getMinY());
-}

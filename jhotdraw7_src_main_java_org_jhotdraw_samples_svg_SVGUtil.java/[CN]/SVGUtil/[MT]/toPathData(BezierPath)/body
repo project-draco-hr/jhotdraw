@@ -1,0 +1,125 @@
+{
+  StringBuilder buf=new StringBuilder();
+  if (path.size() == 0) {
+  }
+ else   if (path.size() == 1) {
+    BezierPath.Node current=path.get(0);
+    buf.append("M ");
+    buf.append(current.x[0]);
+    buf.append(' ');
+    buf.append(current.y[0]);
+    buf.append(" L ");
+    buf.append(current.x[0]);
+    buf.append(' ');
+    buf.append(current.y[0] + 1);
+  }
+ else {
+    BezierPath.Node previous;
+    BezierPath.Node current;
+    previous=current=path.get(0);
+    buf.append("M ");
+    buf.append(current.x[0]);
+    buf.append(' ');
+    buf.append(current.y[0]);
+    for (int i=1, n=path.size(); i < n; i++) {
+      previous=current;
+      current=path.get(i);
+      if ((previous.mask & BezierPath.C2_MASK) == 0) {
+        if ((current.mask & BezierPath.C1_MASK) == 0) {
+          buf.append(" L ");
+          buf.append(current.x[0]);
+          buf.append(' ');
+          buf.append(current.y[0]);
+        }
+ else {
+          buf.append(" Q ");
+          buf.append(current.x[1]);
+          buf.append(' ');
+          buf.append(current.y[1]);
+          buf.append(' ');
+          buf.append(current.x[0]);
+          buf.append(' ');
+          buf.append(current.y[0]);
+        }
+      }
+ else {
+        if ((current.mask & BezierPath.C1_MASK) == 0) {
+          buf.append(" Q ");
+          buf.append(current.x[2]);
+          buf.append(' ');
+          buf.append(current.y[2]);
+          buf.append(' ');
+          buf.append(current.x[0]);
+          buf.append(' ');
+          buf.append(current.y[0]);
+        }
+ else {
+          buf.append(" C ");
+          buf.append(previous.x[2]);
+          buf.append(' ');
+          buf.append(previous.y[2]);
+          buf.append(' ');
+          buf.append(current.x[1]);
+          buf.append(' ');
+          buf.append(current.y[1]);
+          buf.append(' ');
+          buf.append(current.x[0]);
+          buf.append(' ');
+          buf.append(current.y[0]);
+        }
+      }
+    }
+    if (path.isClosed()) {
+      if (path.size() > 1) {
+        previous=path.get(path.size() - 1);
+        current=path.get(0);
+        if ((previous.mask & BezierPath.C2_MASK) == 0) {
+          if ((current.mask & BezierPath.C1_MASK) == 0) {
+            buf.append(" L ");
+            buf.append(current.x[0]);
+            buf.append(' ');
+            buf.append(current.y[0]);
+          }
+ else {
+            buf.append(" Q ");
+            buf.append(current.x[1]);
+            buf.append(' ');
+            buf.append(current.y[1]);
+            buf.append(' ');
+            buf.append(current.x[0]);
+            buf.append(' ');
+            buf.append(current.y[0]);
+          }
+        }
+ else {
+          if ((current.mask & BezierPath.C1_MASK) == 0) {
+            buf.append(" Q ");
+            buf.append(previous.x[2]);
+            buf.append(' ');
+            buf.append(previous.y[2]);
+            buf.append(' ');
+            buf.append(current.x[0]);
+            buf.append(' ');
+            buf.append(current.y[0]);
+          }
+ else {
+            buf.append(" C ");
+            buf.append(previous.x[2]);
+            buf.append(' ');
+            buf.append(previous.y[2]);
+            buf.append(' ');
+            buf.append(current.x[1]);
+            buf.append(' ');
+            buf.append(current.y[1]);
+            buf.append(' ');
+            buf.append(current.x[0]);
+            buf.append(' ');
+            buf.append(current.y[0]);
+          }
+        }
+      }
+      buf.append(" Z");
+    }
+  }
+  return buf.toString();
+}

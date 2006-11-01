@@ -1,5 +1,0 @@
-{
-  super.setUp();
-  getDrawingEditor().open();
-  deletefromdrawingvisitor=createInstance();
-}

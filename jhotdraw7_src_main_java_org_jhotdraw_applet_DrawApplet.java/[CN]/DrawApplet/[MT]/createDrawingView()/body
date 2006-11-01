@@ -1,3 +1,0 @@
-{
-  return new StandardDrawingView(this,410,370);
-}

@@ -1,0 +1,5 @@
+{
+  Element newElement=document.createElement(tagName);
+  current.appendChild(newElement);
+  current=newElement;
+}

@@ -1,0 +1,8 @@
+{
+  TaskFigure that=(TaskFigure)super.clone();
+  that.dependencies=new HashSet<DependencyFigure>();
+  that.getNameFigure().addFigureListener(new NameAdapter(that));
+  that.getDurationFigure().addFigureListener(new DurationAdapter(that));
+  that.updateStartTime();
+  return that;
+}

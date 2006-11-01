@@ -1,5 +1,0 @@
-{
-  if (!myRegisteredListeners.contains(newToolListener)) {
-    myRegisteredListeners.add(newToolListener);
-  }
-}

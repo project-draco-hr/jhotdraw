@@ -1,6 +1,0 @@
-{
-  if (newAffectedFigures == null) {
-    throw new IllegalArgumentException();
-  }
-  rememberFigures(newAffectedFigures);
-}

@@ -1,0 +1,4 @@
+{
+  masterHandle=handle;
+  multicaster=new HandleMulticaster(handle);
+}

@@ -1,0 +1,7 @@
+{
+  LinkedList<Handle> handles=new LinkedList<Handle>();
+  if (detailLevel == 0) {
+    BoxHandleKit.addBoxHandles(this,handles);
+  }
+  return handles;
+}

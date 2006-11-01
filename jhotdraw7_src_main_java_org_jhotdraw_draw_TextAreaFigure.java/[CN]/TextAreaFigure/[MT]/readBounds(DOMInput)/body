@@ -1,0 +1,6 @@
+{
+  bounds.x=in.getAttribute("x",0d);
+  bounds.y=in.getAttribute("y",0d);
+  bounds.width=in.getAttribute("w",0d);
+  bounds.height=in.getAttribute("h",0d);
+}

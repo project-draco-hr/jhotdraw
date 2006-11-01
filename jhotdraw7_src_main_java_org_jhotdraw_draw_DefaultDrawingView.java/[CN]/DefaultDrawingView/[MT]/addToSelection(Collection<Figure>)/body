@@ -1,0 +1,6 @@
+{
+  selectedFigures.addAll(figures);
+  invalidateHandles();
+  fireSelectionChanged();
+  repaint();
+}

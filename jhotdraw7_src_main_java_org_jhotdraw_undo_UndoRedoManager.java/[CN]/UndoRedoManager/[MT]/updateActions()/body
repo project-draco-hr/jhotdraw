@@ -1,0 +1,24 @@
+{
+  String label;
+  if (DEBUG)   System.out.println("UndoManager.updateActions " + editToBeUndone() + " canUndo="+ canUndo()+ " canRedo="+ canRedo());
+  if (canUndo()) {
+    undoAction.setEnabled(true);
+    label=getUndoPresentationName();
+  }
+ else {
+    undoAction.setEnabled(false);
+    label=labels.getString("undo");
+  }
+  undoAction.putValue(Action.NAME,label);
+  undoAction.putValue(Action.SHORT_DESCRIPTION,label);
+  if (canRedo()) {
+    redoAction.setEnabled(true);
+    label=getRedoPresentationName();
+  }
+ else {
+    redoAction.setEnabled(false);
+    label=labels.getString("redo");
+  }
+  redoAction.putValue(Action.NAME,label);
+  redoAction.putValue(Action.SHORT_DESCRIPTION,label);
+}

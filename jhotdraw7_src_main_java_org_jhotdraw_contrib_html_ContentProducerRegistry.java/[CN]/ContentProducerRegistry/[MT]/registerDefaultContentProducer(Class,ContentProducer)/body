@@ -1,3 +1,0 @@
-{
-  return fDefaultRegistry.registerContentProducer(targetClass,producer);
-}

@@ -1,4 +1,0 @@
-{
-  g.setColor(getBackground());
-  g.fillRect(0,0,getBounds().width,getBounds().height);
-}

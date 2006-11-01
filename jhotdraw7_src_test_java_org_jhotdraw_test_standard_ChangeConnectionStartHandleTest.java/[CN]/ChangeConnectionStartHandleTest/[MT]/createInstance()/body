@@ -1,3 +1,0 @@
-{
-  return new ChangeConnectionStartHandle(new LineConnectionFigure());
-}

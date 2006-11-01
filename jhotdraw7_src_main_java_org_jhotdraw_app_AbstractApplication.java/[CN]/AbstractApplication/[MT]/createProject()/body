@@ -1,0 +1,9 @@
+{
+  Project p=basicCreateProject();
+  p.init();
+  if (getModel() != null) {
+    getModel().initProject(this,p);
+  }
+  initProjectActions(p);
+  return p;
+}

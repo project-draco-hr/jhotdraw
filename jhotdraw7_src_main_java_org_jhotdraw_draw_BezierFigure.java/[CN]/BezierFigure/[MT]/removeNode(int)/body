@@ -1,0 +1,24 @@
+{
+  final BezierPath.Node oldPoint=new BezierPath.Node(path.get(index));
+  willChange();
+  basicRemoveNode(index);
+  layout();
+  changed();
+  fireUndoableEditHappened(new AbstractUndoableEdit(){
+    public String getPresentationName(){
+      return "Punkt entfernen";
+    }
+    public void undo() throws CannotUndoException {
+      super.undo();
+      willChange();
+      basicAddNode(index,oldPoint);
+      changed();
+    }
+    public void redo() throws CannotUndoException {
+      super.redo();
+      basicRemoveNode(index);
+      changed();
+    }
+  }
+);
+}

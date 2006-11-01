@@ -1,5 +1,0 @@
-{
-  DrawingView newView=createDrawingView(newDrawing);
-  getDesktop().addToDesktop(newView,Desktop.PRIMARY);
-  toolDone();
-}

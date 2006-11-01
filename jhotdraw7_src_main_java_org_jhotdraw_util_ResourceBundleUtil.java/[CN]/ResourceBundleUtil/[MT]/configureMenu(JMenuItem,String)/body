@@ -1,0 +1,7 @@
+{
+  menu.setText(getString(argument));
+  if (!(menu instanceof JMenu)) {
+    menu.setAccelerator(getAcc(argument));
+  }
+  menu.setMnemonic(getMnem(argument));
+}

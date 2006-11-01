@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("Method write() not yet implemented.");
-}

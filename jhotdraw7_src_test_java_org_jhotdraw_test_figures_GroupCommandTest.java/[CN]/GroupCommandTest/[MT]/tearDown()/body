@@ -1,4 +1,0 @@
-{
-  groupcommand=null;
-  super.tearDown();
-}

@@ -1,9 +1,0 @@
-{
-  Polygon shape=new Polygon();
-  shape.addPoint(x,y);
-  addPointRelative(shape,x,y,getOuterRadius(),direction - getAngle());
-  addPointRelative(shape,x,y,getInnerRadius(),direction);
-  addPointRelative(shape,x,y,getOuterRadius(),direction + getAngle());
-  shape.addPoint(x,y);
-  return shape;
-}

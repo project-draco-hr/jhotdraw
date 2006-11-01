@@ -1,0 +1,6 @@
+{
+  TaskFigure sf=(TaskFigure)start;
+  TaskFigure ef=(TaskFigure)end;
+  sf.removeDependency(this);
+  ef.removeDependency(this);
+}

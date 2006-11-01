@@ -1,4 +1,0 @@
-{
-  fPoints=CollectionsFactory.current().createList();
-  fPoints.add(new Point(x,y));
-}

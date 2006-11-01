@@ -1,3 +1,0 @@
-{
-  return (Figure)fFigures.get(i);
-}

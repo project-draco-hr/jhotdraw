@@ -1,3 +1,0 @@
-{
-  dw.writeStorable(owner());
-}

@@ -1,0 +1,3 @@
+{
+  TypeVariable v=new AttributeKey<Double>("hey").getClass().getTypeParameters()[0];
+}

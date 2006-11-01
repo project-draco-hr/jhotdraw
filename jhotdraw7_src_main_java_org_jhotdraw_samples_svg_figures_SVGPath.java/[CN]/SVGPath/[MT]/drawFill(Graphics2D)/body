@@ -1,0 +1,5 @@
+{
+  if (getChildren().size() > 0) {
+    g.fill(path);
+  }
+}

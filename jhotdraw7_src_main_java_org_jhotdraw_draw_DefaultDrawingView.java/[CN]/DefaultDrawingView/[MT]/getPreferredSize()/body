@@ -1,0 +1,20 @@
+{
+  if (preferredSize == null) {
+    Dimension2DDouble d=new Dimension2DDouble();
+    if (drawing != null) {
+      translate.x=0;
+      translate.y=0;
+      for (      Figure f : drawing.getFigures()) {
+        Rectangle2D.Double r=f.getDrawBounds();
+        d.width=Math.max(d.width,r.x + r.width);
+        d.height=Math.max(d.height,r.y + r.height);
+        translate.x=Math.min(translate.x,r.x);
+        translate.y=Math.min(translate.y,r.y);
+      }
+    }
+    preferredSize=new Dimension((int)((d.width + 10 - translate.x) * scaleFactor),(int)((d.height + 10 - translate.y) * scaleFactor));
+    fireViewTransformChanged();
+    repaint();
+  }
+  return preferredSize;
+}

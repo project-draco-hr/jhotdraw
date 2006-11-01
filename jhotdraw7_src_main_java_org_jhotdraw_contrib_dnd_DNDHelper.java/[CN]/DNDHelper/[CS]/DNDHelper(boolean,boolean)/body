@@ -1,4 +1,0 @@
-{
-  isDragSource=newIsDragSource;
-  isDropTarget=newIsDropTarget;
-}

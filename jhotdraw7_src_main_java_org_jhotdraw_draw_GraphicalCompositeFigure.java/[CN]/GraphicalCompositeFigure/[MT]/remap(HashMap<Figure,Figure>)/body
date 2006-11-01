@@ -1,0 +1,6 @@
+{
+  super.remap(oldToNew);
+  if (presentationFigure != null) {
+    presentationFigure.remap(oldToNew);
+  }
+}

@@ -1,0 +1,26 @@
+{
+  toolButtonGroup=new javax.swing.ButtonGroup();
+  drawingPanel=new org.jhotdraw.samples.draw.DrawingPanel();
+  jToolBar1=new javax.swing.JToolBar();
+  loadButton=new javax.swing.JButton();
+  saveButton=new javax.swing.JButton();
+  getContentPane().add(drawingPanel,java.awt.BorderLayout.CENTER);
+  jToolBar1.setFloatable(false);
+  loadButton.setText("Laden");
+  loadButton.addActionListener(new java.awt.event.ActionListener(){
+    public void actionPerformed(    java.awt.event.ActionEvent evt){
+      load(evt);
+    }
+  }
+);
+  jToolBar1.add(loadButton);
+  saveButton.setText("Speichern");
+  saveButton.addActionListener(new java.awt.event.ActionListener(){
+    public void actionPerformed(    java.awt.event.ActionEvent evt){
+      save(evt);
+    }
+  }
+);
+  jToolBar1.add(saveButton);
+  getContentPane().add(jToolBar1,java.awt.BorderLayout.SOUTH);
+}

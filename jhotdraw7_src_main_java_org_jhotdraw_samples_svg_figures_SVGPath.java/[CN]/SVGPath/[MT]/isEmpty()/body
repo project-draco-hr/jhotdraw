@@ -1,0 +1,9 @@
+{
+  for (  Figure child : getChildren()) {
+    BezierFigure b=(BezierFigure)child;
+    if (b.getPointCount() > 0) {
+      return false;
+    }
+  }
+  return true;
+}

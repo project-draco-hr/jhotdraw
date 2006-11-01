@@ -1,4 +1,0 @@
-{
-  pertapplication=null;
-  super.tearDown();
-}

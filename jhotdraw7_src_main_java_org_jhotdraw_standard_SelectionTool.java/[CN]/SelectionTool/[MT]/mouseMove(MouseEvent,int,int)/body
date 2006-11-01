@@ -1,5 +1,0 @@
-{
-  if (evt.getSource() == getActiveView()) {
-    DragNDropTool.setCursor(evt.getX(),evt.getY(),getActiveView());
-  }
-}

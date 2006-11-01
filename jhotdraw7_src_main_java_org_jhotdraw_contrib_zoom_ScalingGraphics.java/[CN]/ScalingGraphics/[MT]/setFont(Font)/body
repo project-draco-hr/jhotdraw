@@ -1,4 +1,0 @@
-{
-  userFont=font;
-  real.setFont(scaledFont(font,scale));
-}

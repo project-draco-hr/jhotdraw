@@ -1,0 +1,7 @@
+{
+  out.openElement("children");
+  for (  Figure child : getChildren()) {
+    out.writeObject(child);
+  }
+  out.closeElement();
+}

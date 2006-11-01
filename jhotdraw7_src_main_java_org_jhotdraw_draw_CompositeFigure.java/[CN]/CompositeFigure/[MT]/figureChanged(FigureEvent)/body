@@ -1,4 +1,0 @@
-{
-  _removeFromQuadTree(e.getFigure());
-  _addToQuadTree(e.getFigure());
-}

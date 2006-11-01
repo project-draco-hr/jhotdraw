@@ -1,5 +1,0 @@
-{
-  writeInt(c.getRed());
-  writeInt(c.getGreen());
-  writeInt(c.getBlue());
-}

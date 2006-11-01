@@ -1,0 +1,3 @@
+{
+  drawCircle(g,Color.white,Color.black);
+}

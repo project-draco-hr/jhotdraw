@@ -1,9 +1,0 @@
-{
-  Rectangle r=displayBox();
-  int dx=origin.x - r.x;
-  int dy=origin.y - r.y;
-  getInternalPolygon().translate(dx,dy);
-  r=displayBox();
-  Point oldCorner=new Point(r.x + r.width,r.y + r.height);
-  scaleRotate(oldCorner,getInternalPolygon(),corner);
-}

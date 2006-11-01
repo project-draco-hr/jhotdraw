@@ -1,5 +1,0 @@
-{
-  willChange();
-  fPoints.set(i,p);
-  changed();
-}

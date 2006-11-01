@@ -1,4 +1,0 @@
-{
-  fDisplayBox.translate(x,y);
-  super.basicMoveBy(x,y);
-}

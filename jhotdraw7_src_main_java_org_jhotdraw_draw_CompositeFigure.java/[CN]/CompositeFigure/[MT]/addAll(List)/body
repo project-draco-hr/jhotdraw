@@ -1,3 +1,0 @@
-{
-  addAll(new FigureEnumerator(newFigures));
-}

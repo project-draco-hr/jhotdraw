@@ -1,6 +1,0 @@
-{
-  JTextField field=new JTextField("No Tool",40);
-  field.setBackground(Color.white);
-  field.setEditable(false);
-  return field;
-}

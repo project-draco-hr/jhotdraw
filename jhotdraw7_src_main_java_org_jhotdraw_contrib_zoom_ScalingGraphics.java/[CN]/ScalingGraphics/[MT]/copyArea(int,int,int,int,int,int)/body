@@ -1,3 +1,0 @@
-{
-  real.copyArea((int)(x * scale),(int)(y * scale),(int)(width * scale),(int)(height * scale),(int)(dx * scale),(int)(dy * scale));
-}

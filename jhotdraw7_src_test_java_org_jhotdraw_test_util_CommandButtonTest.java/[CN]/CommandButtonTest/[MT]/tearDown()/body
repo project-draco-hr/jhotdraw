@@ -1,4 +1,0 @@
-{
-  commandbutton=null;
-  super.tearDown();
-}

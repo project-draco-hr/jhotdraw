@@ -1,0 +1,6 @@
+{
+  Point p=view.drawingToView(getLocation());
+  Rectangle r=new Rectangle(p);
+  r.grow(getHandlesize() / 2,getHandlesize() / 2);
+  return r;
+}

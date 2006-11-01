@@ -1,0 +1,4 @@
+{
+  T value=(T)f.getAttribute(this);
+  return (value == null && !isNullValueAllowed) ? defaultValue : value;
+}

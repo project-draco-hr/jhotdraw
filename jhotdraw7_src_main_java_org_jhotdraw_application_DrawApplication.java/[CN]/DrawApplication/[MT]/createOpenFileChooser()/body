@@ -1,6 +1,0 @@
-{
-  JFileChooser openDialog=new JFileChooser();
-  openDialog.setDialogType(JFileChooser.OPEN_DIALOG);
-  openDialog.setDialogTitle("Open File...");
-  return openDialog;
-}

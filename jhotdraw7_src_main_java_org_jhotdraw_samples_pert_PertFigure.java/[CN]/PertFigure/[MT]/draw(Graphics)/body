@@ -1,4 +1,0 @@
-{
-  drawBorder(g);
-  super.draw(g);
-}

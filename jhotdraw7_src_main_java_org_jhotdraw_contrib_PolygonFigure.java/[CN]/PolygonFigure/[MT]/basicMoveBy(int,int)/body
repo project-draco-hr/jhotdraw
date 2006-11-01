@@ -1,3 +1,0 @@
-{
-  getInternalPolygon().translate(dx,dy);
-}

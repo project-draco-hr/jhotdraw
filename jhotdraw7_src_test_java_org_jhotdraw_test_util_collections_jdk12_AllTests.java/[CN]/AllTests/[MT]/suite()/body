@@ -1,5 +1,0 @@
-{
-  TestSuite suite=new TestSuite("Test for org.jhotdraw.test.util.collections.jdk12");
-  suite.addTest(new TestSuite(CollectionsFactoryJDK12Test.class));
-  return suite;
-}

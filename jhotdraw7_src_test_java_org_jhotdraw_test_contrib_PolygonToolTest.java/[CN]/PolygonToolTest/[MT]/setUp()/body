@@ -1,4 +1,0 @@
-{
-  super.setUp();
-  polygontool=createInstance();
-}

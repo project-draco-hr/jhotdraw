@@ -1,6 +1,0 @@
-{
-  super.execute();
-  setUndoActivity(createUndoActivity());
-  ((InsertImageCommand.UndoActivity)getUndoActivity()).insertImage();
-  view().checkDamage();
-}

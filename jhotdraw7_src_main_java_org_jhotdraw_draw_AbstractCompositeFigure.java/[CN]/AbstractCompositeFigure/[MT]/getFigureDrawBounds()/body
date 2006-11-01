@@ -1,0 +1,18 @@
+{
+  if (drawBounds == null) {
+    for (    Figure child : getChildrenFrontToBack()) {
+      if (child.isVisible()) {
+        Rectangle2D.Double childBounds=child.getDrawBounds();
+        if (!childBounds.isEmpty()) {
+          if (drawBounds == null) {
+            drawBounds=childBounds;
+          }
+ else {
+            drawBounds.add(childBounds);
+          }
+        }
+      }
+    }
+  }
+  return (drawBounds == null) ? new Rectangle2D.Double(0,0,-1,-1) : (Rectangle2D.Double)drawBounds.clone();
+}

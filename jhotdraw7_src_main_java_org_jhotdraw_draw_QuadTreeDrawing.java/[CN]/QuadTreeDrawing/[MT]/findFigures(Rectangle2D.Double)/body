@@ -1,0 +1,10 @@
+{
+  Collection<Figure> c=quadTree.findIntersects(r);
+switch (c.size()) {
+case 0:
+case 1:
+    return c;
+default :
+  return sort(c);
+}
+}

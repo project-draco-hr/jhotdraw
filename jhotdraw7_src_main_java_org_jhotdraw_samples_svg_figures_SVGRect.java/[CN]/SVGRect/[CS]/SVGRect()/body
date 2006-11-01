@@ -1,0 +1,3 @@
+{
+  SVGUtil.setDefaults(this);
+}

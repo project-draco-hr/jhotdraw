@@ -1,3 +1,0 @@
-{
-  return new DrawingEvent(new StandardDrawing(),new Rectangle(10,10,100,100));
-}

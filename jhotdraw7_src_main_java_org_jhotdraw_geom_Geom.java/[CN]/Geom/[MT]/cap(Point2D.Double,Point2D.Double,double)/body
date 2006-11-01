@@ -1,0 +1,5 @@
+{
+  double angle=Math.PI / 2 - Math.atan2(p2.x - p1.x,p2.y - p1.y);
+  Point2D.Double p3=new Point2D.Double(p2.x + radius * Math.cos(angle),p2.y + radius * Math.sin(angle));
+  return p3;
+}

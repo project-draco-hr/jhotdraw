@@ -1,0 +1,4 @@
+{
+  Float w=(Float)f.getAttribute(STROKE_WIDTH);
+  return (w == null) ? 1f : w.floatValue();
+}

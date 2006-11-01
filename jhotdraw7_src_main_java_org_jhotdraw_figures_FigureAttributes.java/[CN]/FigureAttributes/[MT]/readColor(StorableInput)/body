@@ -1,3 +1,0 @@
-{
-  return new Color(dr.readInt(),dr.readInt(),dr.readInt());
-}

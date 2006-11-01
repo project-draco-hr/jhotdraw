@@ -1,5 +1,0 @@
-{
-  Undoable lastUndoable=peekRedo();
-  redoStack.remove(getRedoSize() - 1);
-  return lastUndoable;
-}

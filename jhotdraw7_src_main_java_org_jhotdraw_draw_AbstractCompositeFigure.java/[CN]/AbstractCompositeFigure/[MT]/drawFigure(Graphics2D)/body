@@ -1,0 +1,10 @@
+{
+  for (  Figure child : children) {
+    if (child.isVisible()) {
+      child.draw(g);
+    }
+  }
+  if (isConnectorsVisible()) {
+    drawConnectors(g);
+  }
+}

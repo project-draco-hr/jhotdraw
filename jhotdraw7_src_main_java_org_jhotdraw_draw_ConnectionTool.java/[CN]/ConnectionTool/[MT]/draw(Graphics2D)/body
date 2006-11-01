@@ -1,0 +1,8 @@
+{
+  if (createdFigure != null) {
+    Graphics2D gg=(Graphics2D)g.create();
+    gg.transform(getView().getDrawingToViewTransform());
+    createdFigure.draw(gg);
+    gg.dispose();
+  }
+}

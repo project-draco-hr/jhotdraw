@@ -1,0 +1,6 @@
+{
+  readPoints(in);
+  readAttributes(in);
+  AffineTransform tx=SVGUtil.getTransform(in,"transform");
+  basicTransform(tx);
+}

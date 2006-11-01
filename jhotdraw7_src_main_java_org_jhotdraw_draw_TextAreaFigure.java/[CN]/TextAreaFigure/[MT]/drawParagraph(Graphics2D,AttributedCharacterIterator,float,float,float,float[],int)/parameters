@@ -1,0 +1,7 @@
+Graphics2D g
+AttributedCharacterIterator styledText
+float verticalPos
+float leftMargin
+float rightMargin
+float[] tabStops
+int tabCount

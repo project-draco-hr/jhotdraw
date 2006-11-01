@@ -1,4 +1,0 @@
-{
-  myRegisteredListeners=CollectionsFactory.current().createList();
-  myObservedTool=newObservedTool;
-}

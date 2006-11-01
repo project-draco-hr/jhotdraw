@@ -1,9 +1,0 @@
-{
-  if (isRedoable()) {
-    getDrawingView().drawing().orphanAll(getAffectedFigures());
-    getDrawingView().clearSelection();
-    ungroupFigures();
-    return true;
-  }
-  return false;
-}

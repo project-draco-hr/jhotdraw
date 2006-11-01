@@ -1,0 +1,3 @@
+JToolBar toolbar
+String prefsPrefix
+Preferences prefs

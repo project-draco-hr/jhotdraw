@@ -1,6 +1,0 @@
-{
-  if (fListeners == null) {
-    fListeners=CollectionsFactory.current().createList(2);
-  }
-  fListeners.add(listener);
-}

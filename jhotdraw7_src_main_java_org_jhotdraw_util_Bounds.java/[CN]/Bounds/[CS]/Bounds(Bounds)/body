@@ -1,3 +1,0 @@
-{
-  this(aBounds.getLesserX(),aBounds.getLesserY(),aBounds.getGreaterX(),aBounds.getGreaterY());
-}

@@ -1,0 +1,6 @@
+{
+  for (  Handle h : new ReversedList<Handle>(handles)) {
+    h.trackEnd(current,anchor,modifiersEx);
+  }
+  view.getDrawing().fireUndoableEditHappened(edit);
+}

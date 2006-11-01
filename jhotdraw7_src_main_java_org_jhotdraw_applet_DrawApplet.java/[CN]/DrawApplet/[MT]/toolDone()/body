@@ -1,4 +1,0 @@
-{
-  setTool(fDefaultToolButton.tool(),fDefaultToolButton.name());
-  setSelected(fDefaultToolButton);
-}

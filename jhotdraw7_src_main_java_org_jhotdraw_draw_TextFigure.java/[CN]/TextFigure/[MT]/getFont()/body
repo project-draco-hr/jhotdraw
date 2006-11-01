@@ -1,3 +1,3 @@
 {
-  return fFont;
+  return AttributeKeys.getFont(this);
 }

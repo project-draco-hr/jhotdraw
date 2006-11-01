@@ -1,7 +1,0 @@
-{
-  setConnection(null);
-  setStartConnector(null);
-  setEndConnector(null);
-  setAddedFigure(null);
-  setTargetFigure(null);
-}

@@ -1,3 +1,0 @@
-{
-  return new Rectangle2D.Double(r.getX(),r.getY() + r.getHeight() / 2.0,r.getWidth() / 2.0,r.getHeight() / 2.0);
-}

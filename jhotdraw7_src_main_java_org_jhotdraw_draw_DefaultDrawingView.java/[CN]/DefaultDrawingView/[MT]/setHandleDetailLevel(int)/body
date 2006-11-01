@@ -1,0 +1,5 @@
+{
+  detailLevel=newValue;
+  invalidateHandles();
+  repaint();
+}

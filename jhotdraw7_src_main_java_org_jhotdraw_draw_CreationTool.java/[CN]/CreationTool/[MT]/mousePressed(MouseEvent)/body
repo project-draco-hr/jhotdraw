@@ -1,0 +1,14 @@
+{
+  super.mousePressed(evt);
+  getView().clearSelection();
+  creationEdit=new CompositeEdit("Figur erstellen");
+  getDrawing().fireUndoableEditHappened(creationEdit);
+  createdFigure=createFigure();
+  Point2D.Double p=constrainPoint(viewToDrawing(anchor));
+  anchor.x=evt.getX();
+  anchor.y=evt.getY();
+  createdFigure.willChange();
+  createdFigure.basicSetBounds(p,p);
+  createdFigure.changed();
+  getDrawing().add(createdFigure);
+}

@@ -1,4 +1,0 @@
-{
-  chopdiamondconnector=null;
-  super.tearDown();
-}

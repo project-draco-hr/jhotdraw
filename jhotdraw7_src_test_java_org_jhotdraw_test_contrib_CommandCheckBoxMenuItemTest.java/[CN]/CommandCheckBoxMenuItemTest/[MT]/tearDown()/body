@@ -1,4 +1,0 @@
-{
-  commandcheckboxmenuitem=null;
-  super.tearDown();
-}

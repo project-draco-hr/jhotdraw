@@ -1,0 +1,3 @@
+{
+  return getView().getSelectionCount() > 1;
+}

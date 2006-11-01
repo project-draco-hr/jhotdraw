@@ -1,8 +1,0 @@
-{
-  if (value != null) {
-    fMap.put(attributeConstant,value);
-  }
- else {
-    fMap.remove(attributeConstant);
-  }
-}

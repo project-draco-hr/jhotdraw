@@ -1,0 +1,18 @@
+{
+  int oldValue=getStartTime();
+  int newValue=0;
+  for (  TaskFigure pre : getPredecessors()) {
+    newValue=Math.max(newValue,pre.getStartTime() + pre.getDuration());
+  }
+  getStartTimeFigure().setText(Integer.toString(newValue));
+  if (newValue != oldValue) {
+    for (    TaskFigure succ : getSuccessors()) {
+      if (!this.isDependentOf(succ)) {
+        succ.updateStartTime();
+      }
+    }
+  }
+  if (oldValue != newValue) {
+    fireAreaInvalidated();
+  }
+}

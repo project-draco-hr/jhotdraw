@@ -1,9 +1,0 @@
-{
-  if (isEnabled()) {
-    fState=fOldState;
-    repaint();
-    if (contains(e.getX(),e.getY())) {
-      fListener.paletteUserSelected(this);
-    }
-  }
-}

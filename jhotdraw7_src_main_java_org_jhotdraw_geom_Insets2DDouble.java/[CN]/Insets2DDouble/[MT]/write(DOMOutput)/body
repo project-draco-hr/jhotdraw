@@ -1,0 +1,6 @@
+{
+  out.addAttribute("top",top,0d);
+  out.addAttribute("left",left,0d);
+  out.addAttribute("bottom",bottom,0d);
+  out.addAttribute("right",right,0d);
+}

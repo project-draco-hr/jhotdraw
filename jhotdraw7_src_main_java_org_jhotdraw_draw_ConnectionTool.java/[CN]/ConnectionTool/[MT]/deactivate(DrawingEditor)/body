@@ -1,0 +1,6 @@
+{
+  super.deactivate(editor);
+  if (getTargetFigure() != null) {
+    getTargetFigure().setConnectorsVisible(false,null);
+  }
+}

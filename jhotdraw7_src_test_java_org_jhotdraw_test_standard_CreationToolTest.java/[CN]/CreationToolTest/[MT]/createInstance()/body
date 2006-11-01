@@ -1,3 +1,0 @@
-{
-  return new CreationTool(getDrawingEditor(),new RectangleFigure(new Point(10,10),new Point(100,100)));
-}

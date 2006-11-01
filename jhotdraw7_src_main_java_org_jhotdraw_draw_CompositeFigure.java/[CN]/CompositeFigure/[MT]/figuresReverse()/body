@@ -1,3 +1,0 @@
-{
-  return new ReverseFigureEnumerator(CollectionsFactory.current().createList(fFigures));
-}

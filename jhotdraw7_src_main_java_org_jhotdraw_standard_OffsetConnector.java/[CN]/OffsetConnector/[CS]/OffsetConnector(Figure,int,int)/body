@@ -1,6 +1,0 @@
-{
-  super(owner,null);
-  OffsetLocator loc=new OffsetLocator(RelativeLocator.northWest(),offsetX,offsetY);
-  myLocator=loc;
-  fOwnerBox=owner.displayBox();
-}

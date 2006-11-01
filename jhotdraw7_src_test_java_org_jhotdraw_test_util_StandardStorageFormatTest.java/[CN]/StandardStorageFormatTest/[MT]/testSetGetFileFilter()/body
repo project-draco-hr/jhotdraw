@@ -1,7 +1,0 @@
-{
-  javax.swing.filechooser.FileFilter[] tests={null,null};
-  for (int i=0; i < tests.length; i++) {
-    standardstorageformat.setFileFilter(tests[i]);
-    assertEquals(tests[i],standardstorageformat.getFileFilter());
-  }
-}

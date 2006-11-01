@@ -1,4 +1,0 @@
-{
-  arrowtip=null;
-  super.tearDown();
-}

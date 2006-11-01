@@ -1,0 +1,27 @@
+{
+synchronized (parent.getTreeLock()) {
+    Insets insets=parent.getInsets();
+    int ncomponents=parent.getComponentCount();
+    int nrows=rows;
+    int ncols=cols;
+    if (nrows > 0) {
+      ncols=(ncomponents + nrows - 1) / nrows;
+    }
+ else {
+      nrows=(ncomponents + ncols - 1) / ncols;
+    }
+    int w=0;
+    int h=0;
+    for (int i=0; i < ncomponents; i++) {
+      Component comp=parent.getComponent(i);
+      Dimension d=comp.getMinimumSize();
+      if (w < d.width) {
+        w=d.width;
+      }
+      if (h < d.height) {
+        h=d.height;
+      }
+    }
+    return new Dimension(insets.left + insets.right + ncols * w + (ncols - 1) * hgap,insets.top + insets.bottom + nrows * h + (nrows - 1) * vgap);
+  }
+}

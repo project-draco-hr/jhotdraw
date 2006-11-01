@@ -1,3 +1,0 @@
-{
-  return new Font("Helvetica",Font.PLAIN,12);
-}

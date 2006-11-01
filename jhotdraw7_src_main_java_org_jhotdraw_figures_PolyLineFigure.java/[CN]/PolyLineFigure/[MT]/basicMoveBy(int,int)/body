@@ -1,6 +1,0 @@
-{
-  Iterator iter=points();
-  while (iter.hasNext()) {
-    ((Point)iter.next()).translate(dx,dy);
-  }
-}

@@ -1,9 +1,0 @@
-{
-  if (this == trackingConnector1) {
-    view=drawingView;
-    firstConnector=null;
-    lastConnector=null;
-    trackingConnector1.fOwner=null;
-    trackingConnector2.fOwner=null;
-  }
-}

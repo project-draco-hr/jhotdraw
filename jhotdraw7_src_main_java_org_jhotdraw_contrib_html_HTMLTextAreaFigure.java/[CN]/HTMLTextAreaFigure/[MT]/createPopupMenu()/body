@@ -1,6 +1,0 @@
-{
-  JPopupMenu popupMenu=new JPopupMenu();
-  addPopupMenuItems(popupMenu);
-  popupMenu.setLightWeightPopupEnabled(true);
-  return popupMenu;
-}

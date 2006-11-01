@@ -1,0 +1,4 @@
+{
+  pressed=true;
+  fireAreaInvalidated(getDrawBounds());
+}

@@ -1,0 +1,4 @@
+Application app
+String propertyName
+Class propertyClass
+Object propertyValue

@@ -1,0 +1,9 @@
+{
+  ArrayList<Figure> intersection=new ArrayList<Figure>();
+  for (  Figure f : figures) {
+    if (f.isVisible() && f.getBounds().intersects(bounds)) {
+      intersection.add(f);
+    }
+  }
+  return intersection;
+}

@@ -1,9 +1,0 @@
-{
-  for (int i=0; i < attributeConstants.length; i++) {
-    FigureAttributeConstant currentAttr=getConstant(i);
-    if ((currentAttr != null) && (currentAttr.getName() != null) && (currentAttr.getName().equals(constantName))) {
-      return currentAttr;
-    }
-  }
-  return new FigureAttributeConstant(constantName);
-}

@@ -1,5 +1,0 @@
-{
-  List h=super.handles().toList();
-  h.add(new TriangleRotationHandle(this));
-  return new HandleEnumerator(h);
-}

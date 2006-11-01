@@ -1,3 +1,0 @@
-{
-  getDNDHelper().deinitialize();
-}

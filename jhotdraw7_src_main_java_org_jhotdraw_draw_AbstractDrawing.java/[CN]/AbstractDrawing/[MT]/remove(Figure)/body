@@ -1,0 +1,29 @@
+{
+  if (contains(figure)) {
+    final int index=indexOf(figure);
+    basicRemove(figure);
+    figure.removeNotify(this);
+    fireFigureRemoved(figure);
+    fireUndoableEditHappened(new AbstractUndoableEdit(){
+      public String getPresentationName(){
+        return "Figur entfernen";
+      }
+      public void redo() throws CannotUndoException {
+        super.redo();
+        basicRemove(figure);
+        figure.removeNotify(AbstractDrawing.this);
+        fireFigureRemoved(figure);
+      }
+      public void undo() throws CannotUndoException {
+        super.undo();
+        basicAdd(index,figure);
+        figure.addNotify(AbstractDrawing.this);
+        fireFigureAdded(figure);
+      }
+    }
+);
+  }
+ else {
+    fireAreaInvalidated(figure.getDrawBounds());
+  }
+}

@@ -1,8 +1,0 @@
-{
-  if (getPresentationFigure() != null) {
-    getPresentationFigure().setAttribute(name,value);
-  }
- else {
-    super.setAttribute(name,value);
-  }
-}

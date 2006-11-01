@@ -1,8 +1,0 @@
-{
-  if ((getContainerFigure() != null) && !getContainerFigure().containsPoint(e.getX(),e.getY())) {
-    toolDone();
-  }
- else {
-    super.mouseMove(e,x,y);
-  }
-}

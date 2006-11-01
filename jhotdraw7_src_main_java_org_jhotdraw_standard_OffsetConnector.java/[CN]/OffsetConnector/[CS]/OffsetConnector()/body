@@ -1,6 +1,0 @@
-{
-  OffsetLocator loc=new OffsetLocator(RelativeLocator.northWest());
-  myLocator=loc;
-  fOwner=null;
-  fOwnerBox=new Rectangle();
-}

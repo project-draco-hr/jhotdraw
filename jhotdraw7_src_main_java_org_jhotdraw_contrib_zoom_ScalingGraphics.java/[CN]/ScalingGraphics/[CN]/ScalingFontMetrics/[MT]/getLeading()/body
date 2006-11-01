@@ -1,3 +1,0 @@
-{
-  return (int)(real.getLeading() / ScalingGraphics.this.getScale());
-}

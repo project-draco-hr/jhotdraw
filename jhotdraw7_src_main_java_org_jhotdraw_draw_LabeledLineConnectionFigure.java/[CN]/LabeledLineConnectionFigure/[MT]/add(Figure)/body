@@ -1,0 +1,6 @@
+{
+  basicAdd(figure);
+  if (getDrawing() != null) {
+    figure.addNotify(getDrawing());
+  }
+}

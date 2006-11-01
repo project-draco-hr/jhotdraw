@@ -1,4 +1,0 @@
-{
-  myDeletedFigures=CollectionsFactory.current().createSet();
-  setDrawing(newDrawing);
-}

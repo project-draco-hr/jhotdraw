@@ -1,4 +1,0 @@
-{
-  this();
-  setComponent(newComponent);
-}

@@ -1,6 +1,0 @@
-{
-  myAffectedFigures=CollectionsFactory.current().createList();
-  while (toBeRemembered.hasNextFigure()) {
-    myAffectedFigures.add(toBeRemembered.nextFigure());
-  }
-}

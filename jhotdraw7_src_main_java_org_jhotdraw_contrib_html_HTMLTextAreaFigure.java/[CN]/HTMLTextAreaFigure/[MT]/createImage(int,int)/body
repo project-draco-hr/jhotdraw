@@ -1,6 +1,0 @@
-{
-  fImageHolder.lock();
-  if (!fImageHolder.isAvailable() || ((BufferedImage)fImageHolder.getResource()).getWidth() != width || ((BufferedImage)fImageHolder.getResource()).getHeight() != height) {
-    fImageHolder.setResource(new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB));
-  }
-}

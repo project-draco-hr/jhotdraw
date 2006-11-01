@@ -1,0 +1,7 @@
+{
+  Figure target=findConnectableFigure(p,drawing);
+  if ((target != null) && target.canConnect()) {
+    return target;
+  }
+  return null;
+}

@@ -1,0 +1,5 @@
+{
+  buttonGroup1=new javax.swing.ButtonGroup();
+  setLayout(null);
+  setBackground(new java.awt.Color(255,255,255));
+}

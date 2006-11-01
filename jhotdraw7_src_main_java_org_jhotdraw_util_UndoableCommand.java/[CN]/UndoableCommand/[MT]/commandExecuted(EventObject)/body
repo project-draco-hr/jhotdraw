@@ -1,3 +1,0 @@
-{
-  getEventDispatcher().fireCommandExecutedEvent();
-}

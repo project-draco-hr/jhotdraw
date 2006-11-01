@@ -1,7 +1,0 @@
-{
-  if (getConnection() != null) {
-    view().remove(getConnection());
-  }
-  super.deactivate();
-  init();
-}

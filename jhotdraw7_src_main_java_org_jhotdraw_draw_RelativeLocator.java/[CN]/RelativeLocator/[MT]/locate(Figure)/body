@@ -1,4 +1,13 @@
 {
-  Rectangle r=owner.displayBox();
-  return new Point(r.x + (int)(r.width * fRelativeX),r.y + (int)(r.height * fRelativeY));
+  Rectangle2D.Double bounds=owner.getBounds();
+  if (owner.getDecorator() != null) {
+    Insets2DDouble insets=DECORATOR_INSETS.get(owner);
+    if (insets != null) {
+      bounds.x-=insets.left;
+      bounds.y-=insets.top;
+      bounds.width+=insets.left + insets.right;
+      bounds.height+=insets.top + insets.bottom;
+    }
+  }
+  return new Point2D.Double(bounds.x + bounds.width * relativeX,bounds.y + bounds.height * relativeY);
 }

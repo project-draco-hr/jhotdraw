@@ -1,0 +1,10 @@
+{
+  BezierPath.Node node=path.get(index);
+  double dx=p.x - node.x[0];
+  double dy=p.y - node.y[0];
+  for (int i=0; i < node.x.length; i++) {
+    node.x[i]+=dx;
+    node.y[i]+=dy;
+  }
+  invalidate();
+}

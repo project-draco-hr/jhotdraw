@@ -1,0 +1,3 @@
+{
+  drawingPanel.setDrawing(d);
+}

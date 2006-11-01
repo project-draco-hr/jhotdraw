@@ -1,0 +1,7 @@
+{
+  if (obj instanceof Insets2DDouble) {
+    Insets2DDouble insets=(Insets2DDouble)obj;
+    return ((top == insets.top) && (left == insets.left) && (bottom == insets.bottom)&& (right == insets.right));
+  }
+  return false;
+}

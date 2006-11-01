@@ -1,4 +1,0 @@
-{
-  super.removePointAt(i);
-  layoutConnection();
-}

@@ -1,0 +1,20 @@
+{
+  Application app;
+  String os=System.getProperty("os.name").toLowerCase();
+  if (os.startsWith("mac")) {
+    app=new DefaultOSXApplication();
+  }
+ else   if (os.startsWith("win")) {
+    app=new DefaultSDIApplication();
+  }
+ else {
+    app=new DefaultSDIApplication();
+  }
+  DrawApplicationModel model=new DrawApplicationModel();
+  model.setName("JHotDraw PlasmaDraw");
+  model.setVersion("0.5");
+  model.setCopyright("Copyright 2006 (c) Werner Randelshofer.");
+  model.setProjectClassName("org.jhotdraw.samples.draw.DrawProject");
+  app.setModel(model);
+  app.launch(args);
+}

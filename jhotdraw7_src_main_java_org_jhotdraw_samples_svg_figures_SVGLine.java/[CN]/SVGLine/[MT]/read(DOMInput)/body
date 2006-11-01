@@ -1,0 +1,6 @@
+{
+  setBounds(new Point2D.Double(SVGUtil.getDimension(in,"x1"),SVGUtil.getDimension(in,"y1")),new Point2D.Double(SVGUtil.getDimension(in,"x2"),SVGUtil.getDimension(in,"y2")));
+  readAttributes(in);
+  AffineTransform tx=SVGUtil.getTransform(in,"transform");
+  basicTransform(tx);
+}

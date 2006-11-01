@@ -1,4 +1,0 @@
-{
-  fPoints.add(i,p);
-  changed();
-}

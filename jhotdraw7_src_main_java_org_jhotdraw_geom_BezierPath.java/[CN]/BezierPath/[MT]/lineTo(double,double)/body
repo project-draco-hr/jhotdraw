@@ -1,0 +1,6 @@
+{
+  if (size() == 0) {
+    throw new IllegalPathStateException("lineTo only allowed when not empty");
+  }
+  add(new Node(x1,y1));
+}

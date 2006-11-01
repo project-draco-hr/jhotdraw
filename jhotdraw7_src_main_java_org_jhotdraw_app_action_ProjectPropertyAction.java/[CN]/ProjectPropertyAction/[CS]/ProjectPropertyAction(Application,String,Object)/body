@@ -1,0 +1,3 @@
+{
+  this(app,propertyName,propertyValue.getClass(),propertyValue);
+}

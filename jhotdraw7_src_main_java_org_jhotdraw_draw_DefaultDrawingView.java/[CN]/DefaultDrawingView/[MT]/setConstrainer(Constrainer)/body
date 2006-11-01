@@ -1,0 +1,6 @@
+{
+  Constrainer oldValue=constrainer;
+  constrainer=newValue;
+  repaint();
+  firePropertyChange("constrainer",oldValue,newValue);
+}

@@ -1,0 +1,25 @@
+{
+  if (popupMenu != null && (actionArea == null || !actionArea.contains(evt.getX() - getInsets().left,evt.getY() - getInsets().top))) {
+    int x, y;
+    x=0;
+    y=getHeight();
+    if (getParent() instanceof JToolBar) {
+      JToolBar toolbar=(JToolBar)getParent();
+      if (toolbar.getOrientation() == JToolBar.VERTICAL) {
+        y=0;
+        if (toolbar.getX() > toolbar.getParent().getInsets().left) {
+          x=-popupMenu.getPreferredSize().width;
+        }
+ else {
+          x=getWidth();
+        }
+      }
+ else {
+        if (toolbar.getY() > toolbar.getParent().getInsets().top) {
+          y=-popupMenu.getPreferredSize().height;
+        }
+      }
+    }
+    popupMenu.show(this,x,y);
+  }
+}

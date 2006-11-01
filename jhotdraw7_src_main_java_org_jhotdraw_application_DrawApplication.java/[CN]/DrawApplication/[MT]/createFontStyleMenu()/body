@@ -1,8 +1,0 @@
-{
-  FigureAttributeConstant fontStyle=FigureAttributeConstant.FONT_STYLE;
-  CommandMenu menu=new CommandMenu("Font Style");
-  menu.add(new UndoableCommand(new ChangeAttributeCommand("Plain",fontStyle,new Integer(Font.PLAIN),this)));
-  menu.add(new UndoableCommand(new ChangeAttributeCommand("Italic",fontStyle,new Integer(Font.ITALIC),this)));
-  menu.add(new UndoableCommand(new ChangeAttributeCommand("Bold",fontStyle,new Integer(Font.BOLD),this)));
-  return menu;
-}

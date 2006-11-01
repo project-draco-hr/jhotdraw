@@ -1,6 +1,0 @@
-{
-  File tempFile=File.createTempFile("StorableOutputTest","dat");
-  FileOutputStream stream=new FileOutputStream(tempFile);
-  tempFile.deleteOnExit();
-  return new StorableOutput(stream);
-}

@@ -1,5 +1,0 @@
-{
-  List result=CollectionsFactory.current().createList(selectionCount());
-  result.addAll(fSelection);
-  return new ReverseFigureEnumerator(result);
-}

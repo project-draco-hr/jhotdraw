@@ -1,4 +1,0 @@
-{
-  myInsertedFigures=CollectionsFactory.current().createSet();
-  setDrawing(newDrawing);
-}

@@ -1,4 +1,0 @@
-{
-  undoabletool=null;
-  super.tearDown();
-}

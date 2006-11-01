@@ -1,0 +1,15 @@
+{
+  this.action=action;
+  this.actionArea=actionArea;
+  action.addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      if (evt.getPropertyName().equals("enabled")) {
+        setEnabled(((Boolean)evt.getNewValue()).booleanValue());
+      }
+ else {
+        repaint();
+      }
+    }
+  }
+);
+}

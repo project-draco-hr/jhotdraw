@@ -1,3 +1,0 @@
-{
-  return myDelegee.put(o,o) == null;
-}

@@ -1,4 +1,0 @@
-{
-  FigureTransferCommand cmd=new DeleteCommand("Delete",editor());
-  return new DeleteCommand.UndoActivity(cmd);
-}

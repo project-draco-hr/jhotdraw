@@ -1,0 +1,6 @@
+{
+  Rectangle2D.Double bounds=path.getBounds2DDouble();
+  bounds.width=Math.max(1,bounds.width);
+  bounds.height=Math.max(1,bounds.height);
+  return bounds;
+}

@@ -1,6 +1,0 @@
-{
-  TestSuite suite=new TestSuite("Test for org.jhotdraw.test.samples.net");
-  suite.addTest(new TestSuite(NetAppTest.class));
-  suite.addTest(new TestSuite(NodeFigureTest.class));
-  return suite;
-}

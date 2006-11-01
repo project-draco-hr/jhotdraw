@@ -1,0 +1,10 @@
+{
+  configure(args);
+  SwingUtilities.invokeLater(new Runnable(){
+    public void run(){
+      init();
+      start();
+    }
+  }
+);
+}

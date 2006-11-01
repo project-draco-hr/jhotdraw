@@ -1,4 +1,0 @@
-{
-  Image img=Iconkit.instance().loadImage(DrawApplication.IMAGES + "SEL1.gif",true);
-  return new PatternPainter(img);
-}

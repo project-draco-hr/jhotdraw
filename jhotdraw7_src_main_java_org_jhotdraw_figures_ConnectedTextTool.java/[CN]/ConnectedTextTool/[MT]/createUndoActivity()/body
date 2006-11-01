@@ -1,3 +1,0 @@
-{
-  return new ConnectedTextTool.UndoActivity(view(),getTypingTarget().getText());
-}

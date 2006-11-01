@@ -1,0 +1,7 @@
+{
+  super(view);
+  this.onConstrainer=onConstrainer;
+  this.offConstrainer=offConstrainer;
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  labels.configureAction(this,ID);
+}

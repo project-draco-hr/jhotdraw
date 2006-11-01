@@ -1,3 +1,0 @@
-{
-  return (size().width < 3) && (size().height < 3);
-}

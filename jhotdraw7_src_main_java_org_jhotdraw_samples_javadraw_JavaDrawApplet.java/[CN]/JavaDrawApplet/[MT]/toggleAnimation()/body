@@ -1,4 +1,0 @@
-{
-  if (fAnimator != null)   endAnimation();
- else   startAnimation();
-}

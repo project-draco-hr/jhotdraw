@@ -1,4 +1,0 @@
-{
-  myDisplayBox=new Rectangle(origin);
-  myDisplayBox.add(corner);
-}

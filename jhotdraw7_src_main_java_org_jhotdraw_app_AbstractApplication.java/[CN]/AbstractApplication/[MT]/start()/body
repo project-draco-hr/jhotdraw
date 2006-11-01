@@ -1,0 +1,5 @@
+{
+  Project p=createProject();
+  add(p);
+  show(p);
+}

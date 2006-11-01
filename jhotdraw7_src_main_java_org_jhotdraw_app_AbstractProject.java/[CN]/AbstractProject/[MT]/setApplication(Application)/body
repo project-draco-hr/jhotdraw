@@ -1,0 +1,5 @@
+{
+  Application oldValue=application;
+  application=newValue;
+  firePropertyChange("application",oldValue,newValue);
+}

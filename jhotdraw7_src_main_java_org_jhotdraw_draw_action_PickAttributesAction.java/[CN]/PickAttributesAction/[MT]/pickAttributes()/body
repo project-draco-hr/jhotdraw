@@ -1,0 +1,12 @@
+{
+  DrawingEditor editor=getEditor();
+  Collection<Figure> selection=getView().getSelectedFigures();
+  if (selection.size() > 0) {
+    Figure figure=(Figure)selection.iterator().next();
+    for (    Map.Entry<AttributeKey,Object> entry : figure.getAttributes().entrySet()) {
+      if (entry.getKey() != AttributeKeys.TEXT) {
+        editor.setDefaultAttribute(entry.getKey(),entry.getValue());
+      }
+    }
+  }
+}

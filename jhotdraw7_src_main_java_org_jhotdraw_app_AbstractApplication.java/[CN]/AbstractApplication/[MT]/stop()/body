@@ -1,0 +1,6 @@
+{
+  for (  Project p : new LinkedList<Project>(projects())) {
+    dispose(p);
+  }
+  System.exit(0);
+}

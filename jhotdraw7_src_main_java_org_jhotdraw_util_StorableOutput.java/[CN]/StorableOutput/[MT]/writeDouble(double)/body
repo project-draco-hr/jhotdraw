@@ -1,4 +1,0 @@
-{
-  fStream.print(d);
-  space();
-}

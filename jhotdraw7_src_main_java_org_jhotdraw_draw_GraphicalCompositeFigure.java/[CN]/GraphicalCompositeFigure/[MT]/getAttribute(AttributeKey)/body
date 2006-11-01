@@ -1,0 +1,8 @@
+{
+  if (getPresentationFigure() != null) {
+    return getPresentationFigure().getAttribute(key);
+  }
+ else {
+    return (!attributes.containsKey(key)) ? key.getDefaultValue() : attributes.get(key);
+  }
+}

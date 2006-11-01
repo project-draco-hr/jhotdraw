@@ -1,3 +1,0 @@
-{
-  getWrappedHandle().invokeStep(x,y,anchorX,anchorY,view);
-}

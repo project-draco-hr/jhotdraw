@@ -1,0 +1,8 @@
+{
+  DrawingView oldValue=activeView;
+  activeView=newValue;
+  firePropertyChange("view",oldValue,newValue);
+  for (  DrawingView v : views) {
+    v.getContainer().repaint();
+  }
+}

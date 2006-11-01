@@ -1,0 +1,5 @@
+{
+  this.figure=figure;
+  this.oldRestoreData=oldRestoreData;
+  this.newRestoreData=figure.getRestoreData();
+}

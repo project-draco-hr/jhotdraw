@@ -1,4 +1,0 @@
-{
-  minimapapplication=null;
-  super.tearDown();
-}

@@ -1,0 +1,3 @@
+{
+  setEnabled(editor != null && editor.isEnabled());
+}

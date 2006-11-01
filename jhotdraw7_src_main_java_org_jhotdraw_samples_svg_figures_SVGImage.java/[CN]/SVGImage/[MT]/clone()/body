@@ -1,0 +1,5 @@
+{
+  SVGImage that=(SVGImage)super.clone();
+  that.bounds=(Rectangle2D.Double)bounds.clone();
+  return that;
+}

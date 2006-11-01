@@ -1,5 +1,0 @@
-{
-  getDecoratedFigure().removeFromContainer(this);
-  removeDependendFigure(getDecoratedFigure());
-  return getDecoratedFigure();
-}

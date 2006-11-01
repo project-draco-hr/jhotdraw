@@ -1,4 +1,0 @@
-{
-  boxhandlekit=null;
-  super.tearDown();
-}

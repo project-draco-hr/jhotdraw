@@ -1,4 +1,0 @@
-{
-  simplelayouter=null;
-  super.tearDown();
-}

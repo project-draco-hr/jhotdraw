@@ -1,0 +1,27 @@
+{
+  super.mousePressed(evt);
+  DrawingView view=getView();
+  if (evt.isShiftDown()) {
+    view.setHandleDetailLevel(0);
+    view.toggleSelection(anchorFigure);
+    if (!view.isFigureSelected(anchorFigure)) {
+      anchorFigure=null;
+    }
+  }
+ else   if (!view.isFigureSelected(anchorFigure)) {
+    view.setHandleDetailLevel(0);
+    view.clearSelection();
+    view.addToSelection(anchorFigure);
+  }
+  Point2D.Double origin=new Point2D.Double(Double.MAX_VALUE,Double.MAX_VALUE);
+  for (  Figure f : view.getSelectedFigures()) {
+    Rectangle2D.Double b=f.getBounds();
+    origin.x=Math.min(origin.x,b.x);
+    origin.y=Math.min(origin.y,b.y);
+  }
+  Point2D.Double constrainedOrigin=view.getConstrainer().constrainPoint(new Point2D.Double(origin.x,origin.y));
+  oldPoint=view.getConstrainer().constrainPoint(view.viewToDrawing(new Point(evt.getX(),evt.getY())));
+  oldPoint.x+=origin.x - constrainedOrigin.x;
+  oldPoint.y+=origin.y - constrainedOrigin.y;
+  anchorPoint=oldPoint;
+}

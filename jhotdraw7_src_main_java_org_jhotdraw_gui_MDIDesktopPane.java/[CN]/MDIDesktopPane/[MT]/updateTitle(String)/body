@@ -1,3 +1,0 @@
-{
-  getSelectedFrame().setTitle(newDrawingTitle);
-}

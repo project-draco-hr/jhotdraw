@@ -1,4 +1,0 @@
-{
-  groupfigure=null;
-  super.tearDown();
-}

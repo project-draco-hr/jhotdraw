@@ -1,7 +1,0 @@
-{
-  java.lang.String[] tests={""," ","a","A","?","?","0123456789","012345678901234567890","\n",null};
-  for (int i=0; i < tests.length; i++) {
-    standardstorageformat.setFileExtension(tests[i]);
-    assertEquals(tests[i],standardstorageformat.getFileExtension());
-  }
-}

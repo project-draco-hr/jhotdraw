@@ -1,7 +1,0 @@
-{
-  pm.retrieve(figure);
-  FigureEnumeration fe=figure.figures();
-  while (fe.hasNextFigure()) {
-    retrieveAll(pm,fe.nextFigure());
-  }
-}

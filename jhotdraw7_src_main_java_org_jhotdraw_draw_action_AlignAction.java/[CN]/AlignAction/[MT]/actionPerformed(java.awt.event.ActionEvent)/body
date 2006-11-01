@@ -1,0 +1,6 @@
+{
+  CompositeEdit edit=new CompositeEdit(labels.getString("align"));
+  fireUndoableEditHappened(edit);
+  alignFigures(getView().getSelectedFigures(),getSelectionBounds());
+  fireUndoableEditHappened(edit);
+}

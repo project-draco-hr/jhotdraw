@@ -1,0 +1,7 @@
+{
+  this.app=app;
+  if (app != null) {
+    app.addPropertyChangeListener(applicationListener);
+    updateProject(null,app.getCurrentProject());
+  }
+}

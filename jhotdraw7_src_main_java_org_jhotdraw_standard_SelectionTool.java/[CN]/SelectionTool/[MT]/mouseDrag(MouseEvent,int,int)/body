@@ -1,5 +1,0 @@
-{
-  if (getDelegateTool() != null) {
-    getDelegateTool().mouseDrag(e,x,y);
-  }
-}

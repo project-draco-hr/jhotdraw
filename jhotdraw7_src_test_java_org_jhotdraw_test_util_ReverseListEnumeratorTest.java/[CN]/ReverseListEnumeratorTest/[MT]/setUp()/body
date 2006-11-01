@@ -1,4 +1,0 @@
-{
-  super.setUp();
-  reverselistenumerator=createInstance();
-}

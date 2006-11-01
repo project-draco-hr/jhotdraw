@@ -1,5 +1,0 @@
-{
-  if (!fPostTasks.contains(figure)) {
-    fPostTasks.add(figure);
-  }
-}

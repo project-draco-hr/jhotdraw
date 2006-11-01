@@ -1,5 +1,0 @@
-{
-  p.x=((p.x + fGridX / 2) / fGridX) * fGridX;
-  p.y=((p.y + fGridY / 2) / fGridY) * fGridY;
-  return p;
-}

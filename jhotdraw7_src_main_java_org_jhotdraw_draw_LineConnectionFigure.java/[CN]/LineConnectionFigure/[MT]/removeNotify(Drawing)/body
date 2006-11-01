@@ -1,0 +1,3 @@
+{
+  super.removeNotify(drawing);
+}

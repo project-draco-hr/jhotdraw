@@ -1,8 +1,0 @@
-{
-  if (toBeReversed instanceof UndoRedoActivity) {
-    return ((UndoRedoActivity)toBeReversed).getReversedActivity();
-  }
- else {
-    return new UndoRedoActivity(toBeReversed);
-  }
-}

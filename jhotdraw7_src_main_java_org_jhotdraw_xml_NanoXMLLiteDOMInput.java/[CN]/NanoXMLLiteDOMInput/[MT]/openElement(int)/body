@@ -1,0 +1,5 @@
+{
+  stack.push(current);
+  ArrayList list=current.getChildren();
+  current=(XMLElement)list.get(index);
+}

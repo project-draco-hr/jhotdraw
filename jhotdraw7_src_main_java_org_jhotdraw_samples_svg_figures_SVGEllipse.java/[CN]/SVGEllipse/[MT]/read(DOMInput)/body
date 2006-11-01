@@ -1,0 +1,18 @@
+{
+  double rx, ry;
+  if (in.getTagName().equals("circle")) {
+    rx=ry=SVGUtil.getDimension(in,"r");
+  }
+ else {
+    rx=SVGUtil.getDimension(in,"rx");
+    ry=SVGUtil.getDimension(in,"ry");
+  }
+  double x=SVGUtil.getDimension(in,"cx") - rx;
+  double y=SVGUtil.getDimension(in,"cy") - ry;
+  double w=rx * 2d;
+  double h=ry * 2d;
+  setBounds(new Point2D.Double(x,y),new Point2D.Double(x + w,y + h));
+  readAttributes(in);
+  AffineTransform tx=SVGUtil.getTransform(in,"transform");
+  basicTransform(tx);
+}

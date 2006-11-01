@@ -1,4 +1,0 @@
-{
-  super.setUp();
-  windowmenu=createInstance();
-}

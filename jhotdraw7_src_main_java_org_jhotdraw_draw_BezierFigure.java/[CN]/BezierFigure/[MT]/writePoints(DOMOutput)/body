@@ -1,0 +1,28 @@
+{
+  out.openElement("points");
+  if (isClosed()) {
+    out.addAttribute("closed",true);
+  }
+  for (int i=0, n=getNodeCount(); i < n; i++) {
+    BezierPath.Node node=getNode(i);
+    out.openElement("p");
+    if (node.mask != 0) {
+      out.addAttribute("mask",node.mask);
+    }
+    if (!node.keepColinear) {
+      out.addAttribute("colinear",false);
+    }
+    out.addAttribute("x",node.x[0]);
+    out.addAttribute("y",node.y[0]);
+    if (node.x[1] != node.x[0] || node.y[1] != node.y[0]) {
+      out.addAttribute("c1x",node.x[1]);
+      out.addAttribute("c1y",node.y[1]);
+    }
+    if (node.x[2] != node.x[0] || node.y[2] != node.y[0]) {
+      out.addAttribute("c2x",node.x[2]);
+      out.addAttribute("c2y",node.y[2]);
+    }
+    out.closeElement();
+  }
+  out.closeElement();
+}

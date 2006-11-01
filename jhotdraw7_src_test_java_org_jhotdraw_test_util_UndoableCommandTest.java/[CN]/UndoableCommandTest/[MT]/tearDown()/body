@@ -1,4 +1,0 @@
-{
-  undoablecommand=null;
-  super.tearDown();
-}

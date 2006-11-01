@@ -1,7 +1,0 @@
-{
-  Object attrValue=super.getContent(context,ctxAttrName,ctxAttrValue);
-  if (attrValue != null) {
-    return attrValue;
-  }
-  return ((AttributeContentProducerContext)context).getAttribute(ctxAttrName);
-}

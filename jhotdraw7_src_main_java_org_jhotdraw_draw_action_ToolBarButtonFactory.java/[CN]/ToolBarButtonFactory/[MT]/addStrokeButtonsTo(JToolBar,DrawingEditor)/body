@@ -1,0 +1,7 @@
+{
+  addStrokeDecorationButtonTo(bar,editor);
+  addStrokeWidthButtonTo(bar,editor);
+  addStrokeDashesButtonTo(bar,editor);
+  addStrokeTypeButtonTo(bar,editor);
+  addStrokePlacementButtonTo(bar,editor);
+}

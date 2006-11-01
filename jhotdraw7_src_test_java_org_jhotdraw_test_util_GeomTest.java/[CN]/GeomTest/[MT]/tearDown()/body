@@ -1,4 +1,0 @@
-{
-  geom=null;
-  super.tearDown();
-}

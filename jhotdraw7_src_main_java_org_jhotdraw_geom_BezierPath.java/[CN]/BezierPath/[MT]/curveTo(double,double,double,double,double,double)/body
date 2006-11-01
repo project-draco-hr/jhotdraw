@@ -1,0 +1,10 @@
+{
+  if (size() == 0) {
+    throw new IllegalPathStateException("curveTo only allowed when not empty");
+  }
+  Node lastPoint=get(size() - 1);
+  lastPoint.mask|=C2_MASK;
+  lastPoint.x[2]=x1;
+  lastPoint.y[2]=y1;
+  add(new Node(C1_MASK,x3,y3,x2,y2,x3,y3));
+}

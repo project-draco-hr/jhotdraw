@@ -1,4 +1,0 @@
-{
-  lineconnection=null;
-  super.tearDown();
-}

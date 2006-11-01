@@ -1,4 +1,0 @@
-{
-  nestedcreationtool=null;
-  super.tearDown();
-}

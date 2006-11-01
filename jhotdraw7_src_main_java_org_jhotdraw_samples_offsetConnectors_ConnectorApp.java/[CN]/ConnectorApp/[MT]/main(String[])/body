@@ -1,4 +1,0 @@
-{
-  DrawApplication window=new ConnectorApp();
-  window.open();
-}

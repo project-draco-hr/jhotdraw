@@ -1,7 +1,0 @@
-{
-  if (fDisplayDelegate == null) {
-    fDisplayDelegate=new JLabel();
-    fDisplayDelegate.setBorder(null);
-  }
-  return fDisplayDelegate;
-}

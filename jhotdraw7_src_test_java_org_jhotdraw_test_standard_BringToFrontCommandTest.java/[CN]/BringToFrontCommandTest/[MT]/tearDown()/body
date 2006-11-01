@@ -1,4 +1,0 @@
-{
-  bringtofrontcommand=null;
-  super.tearDown();
-}

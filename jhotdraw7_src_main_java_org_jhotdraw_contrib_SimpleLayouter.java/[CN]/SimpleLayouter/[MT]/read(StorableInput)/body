@@ -1,4 +1,0 @@
-{
-  setLayoutable((Layoutable)dr.readStorable());
-  setInsets(new Insets(dr.readInt(),dr.readInt(),dr.readInt(),dr.readInt()));
-}

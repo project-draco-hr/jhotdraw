@@ -1,7 +1,0 @@
-{
-  if (fAnimator != null) {
-    fAnimator.end();
-    fAnimator=null;
-    fAnimationButton.setText("Start Animation");
-  }
-}

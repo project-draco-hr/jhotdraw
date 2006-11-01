@@ -1,0 +1,15 @@
+{
+  validatePath();
+  if (AttributeKeys.FILL_COLOR.get(this) != null) {
+    g.setColor(AttributeKeys.FILL_COLOR.get(this));
+    drawFill(g);
+  }
+  if (STROKE_COLOR.get(this) != null) {
+    g.setStroke(AttributeKeys.getStroke(this));
+    g.setColor(STROKE_COLOR.get(this));
+    drawStroke(g);
+  }
+  if (isConnectorsVisible()) {
+    drawConnectors(g);
+  }
+}

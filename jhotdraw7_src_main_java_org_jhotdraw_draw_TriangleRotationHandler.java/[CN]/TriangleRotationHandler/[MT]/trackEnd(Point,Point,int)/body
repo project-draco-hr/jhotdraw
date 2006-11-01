@@ -1,0 +1,5 @@
+{
+  if (newValue != oldValue) {
+    fireUndoableEditHappened(new AttributeChangeEdit(getOwner(),ORIENTATION,oldValue,newValue));
+  }
+}

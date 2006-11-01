@@ -1,0 +1,10 @@
+{
+  location=new Point(anchor.x,anchor.y);
+  restoreData=getOwner().getRestoreData();
+  Rectangle2D.Double bounds=getOwner().getBounds();
+  transform=new AffineTransform();
+  center=new Point2D.Double(bounds.getCenterX(),bounds.getCenterY());
+  Point2D.Double anchorPoint=view.viewToDrawing(anchor);
+  startTheta=Geom.angle(center.x,center.y,anchorPoint.x,anchorPoint.y);
+  startLength=Geom.length(center.x,center.y,anchorPoint.x,anchorPoint.y);
+}

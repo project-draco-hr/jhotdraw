@@ -1,4 +1,4 @@
 {
-  super(owner,l);
-  fPrototype=prototype;
+  super(owner,locator);
+  this.prototype=prototype;
 }

@@ -1,4 +1,0 @@
-{
-  JavaDrawApp window=new JavaDrawApp();
-  window.open();
-}

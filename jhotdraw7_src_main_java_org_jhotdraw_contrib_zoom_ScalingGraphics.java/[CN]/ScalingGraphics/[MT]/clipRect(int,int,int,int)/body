@@ -1,5 +1,0 @@
-{
-  if (userClip == null)   userClip=new Rectangle(x,y,width,height);
- else   userClip=userClip.intersection(new Rectangle(x,y,width,height));
-  real.clipRect((int)(x * scale),(int)(y * scale),(int)(width * scale),(int)(height * scale));
-}

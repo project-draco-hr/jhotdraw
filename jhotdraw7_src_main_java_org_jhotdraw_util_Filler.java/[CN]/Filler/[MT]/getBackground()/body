@@ -1,6 +1,0 @@
-{
-  if (fBackground != null) {
-    return fBackground;
-  }
-  return super.getBackground();
-}

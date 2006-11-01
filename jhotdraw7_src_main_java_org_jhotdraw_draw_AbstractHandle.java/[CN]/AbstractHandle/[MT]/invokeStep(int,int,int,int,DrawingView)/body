@@ -1,3 +1,0 @@
-{
-  invokeStep(x - anchorX,y - anchorY,view.drawing());
-}

@@ -1,5 +1,0 @@
-{
-  if (view() == null) {
-    throw new JHotDrawRuntimeException("execute should NOT be getting called when view() == null");
-  }
-}

@@ -1,6 +1,0 @@
-{
-  Rectangle r=fDisplayBox;
-  int cx=r.width / 2;
-  int cy=r.height / 2;
-  return new Insets(cy,cx,cy,cx);
-}

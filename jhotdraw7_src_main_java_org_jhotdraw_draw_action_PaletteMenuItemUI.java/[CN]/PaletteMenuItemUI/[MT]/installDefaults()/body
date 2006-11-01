@@ -1,0 +1,6 @@
+{
+  super.installDefaults();
+  defaultTextIconGap=0;
+  arrowIcon=null;
+  checkIcon=null;
+}

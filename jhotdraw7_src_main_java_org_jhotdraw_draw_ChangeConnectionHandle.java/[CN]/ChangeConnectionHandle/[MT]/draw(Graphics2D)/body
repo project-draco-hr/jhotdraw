@@ -1,0 +1,3 @@
+{
+  drawCircle(g,(getTarget() == null) ? Color.red : Color.green,Color.black);
+}

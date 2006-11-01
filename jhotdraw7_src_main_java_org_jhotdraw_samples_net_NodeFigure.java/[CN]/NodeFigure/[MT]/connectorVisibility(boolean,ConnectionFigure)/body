@@ -1,4 +1,0 @@
-{
-  fConnectorsVisible=isVisible;
-  invalidate();
-}

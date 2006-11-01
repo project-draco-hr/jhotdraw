@@ -1,0 +1,3 @@
+{
+  setPoint(getPointCount() - 1,p);
+}

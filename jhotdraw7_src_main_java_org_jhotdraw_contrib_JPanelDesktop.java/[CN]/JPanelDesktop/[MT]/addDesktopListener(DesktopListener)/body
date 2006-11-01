@@ -1,3 +1,0 @@
-{
-  getDesktopEventService().addDesktopListener(dpl);
-}

@@ -1,0 +1,7 @@
+{
+  super.updateProject(oldValue,newValue);
+  if (newValue != null) {
+    putValue(AbstractAction.NAME,newValue.getAction("undo").getValue(AbstractAction.NAME));
+    updateEnabledState();
+  }
+}

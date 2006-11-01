@@ -1,0 +1,3 @@
+{
+  return getClass().getName() + "[hgap=" + hgap+ ",vgap="+ vgap+ ",rows="+ rows+ ",cols="+ cols+ "]";
+}

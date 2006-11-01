@@ -1,3 +1,0 @@
-{
-  return (int)(real.getMaxAdvance() / ScalingGraphics.this.getScale());
-}

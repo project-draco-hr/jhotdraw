@@ -1,8 +1,0 @@
-{
-  if (isSelected()) {
-    paintSelected(g);
-  }
- else {
-    super.paint(g);
-  }
-}

@@ -1,3 +1,0 @@
-{
-  return new Bounds(new Dimension(100,100));
-}

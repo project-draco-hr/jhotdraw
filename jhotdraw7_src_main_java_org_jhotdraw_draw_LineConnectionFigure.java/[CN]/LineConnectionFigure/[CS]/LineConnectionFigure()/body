@@ -1,5 +1,2 @@
 {
-  super(4);
-  setStartDecoration(new ArrowTip());
-  setEndDecoration(new ArrowTip());
 }

@@ -1,4 +1,0 @@
-{
-  listwrapper=null;
-  super.tearDown();
-}

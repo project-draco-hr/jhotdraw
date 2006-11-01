@@ -1,5 +1,0 @@
-{
-  List figures=CollectionsFactory.current().createList(1);
-  figures.add(this);
-  return new FigureEnumerator(figures);
-}

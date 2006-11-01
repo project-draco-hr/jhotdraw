@@ -1,7 +1,0 @@
-{
-  if (!isRedoable()) {
-    return false;
-  }
-  getDrawingView().clearSelection();
-  return replaceAffectedFigures();
-}

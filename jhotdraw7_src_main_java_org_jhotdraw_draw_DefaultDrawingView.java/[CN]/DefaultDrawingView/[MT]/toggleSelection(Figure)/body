@@ -1,0 +1,11 @@
+{
+  if (selectedFigures.contains(figure)) {
+    selectedFigures.remove(figure);
+  }
+ else {
+    selectedFigures.add(figure);
+  }
+  fireSelectionChanged();
+  invalidateHandles();
+  repaint();
+}

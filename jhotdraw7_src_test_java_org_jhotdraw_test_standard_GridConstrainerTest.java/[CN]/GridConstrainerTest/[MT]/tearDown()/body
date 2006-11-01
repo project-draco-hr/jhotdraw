@@ -1,4 +1,0 @@
-{
-  gridconstrainer=null;
-  super.tearDown();
-}

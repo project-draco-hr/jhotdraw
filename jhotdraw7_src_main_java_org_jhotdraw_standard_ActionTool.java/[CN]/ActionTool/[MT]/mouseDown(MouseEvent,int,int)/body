@@ -1,8 +1,0 @@
-{
-  super.mouseDown(e,x,y);
-  Figure target=drawing().findFigure(x,y);
-  if (target != null) {
-    view().addToSelection(target);
-    action(target);
-  }
-}

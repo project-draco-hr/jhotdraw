@@ -1,4 +1,0 @@
-{
-  setDefaultTool(createDefaultTool());
-  palette.add(fDefaultToolButton);
-}

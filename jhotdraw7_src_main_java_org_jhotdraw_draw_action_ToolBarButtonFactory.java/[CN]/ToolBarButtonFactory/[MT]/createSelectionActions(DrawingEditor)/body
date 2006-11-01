@@ -1,0 +1,11 @@
+{
+  LinkedList<Action> a=new LinkedList<Action>();
+  a.add(new DuplicateAction());
+  a.add(null);
+  a.add(new GroupAction(editor));
+  a.add(new UngroupAction(editor));
+  a.add(null);
+  a.add(new MoveToFrontAction(editor));
+  a.add(new MoveToBackAction(editor));
+  return a;
+}

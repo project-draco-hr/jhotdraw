@@ -1,9 +1,9 @@
 {
-  fContainer.requestFocus();
-  if (fEditScrollContainer != null) {
-    fEditScrollContainer.setVisible(false);
-    fContainer.remove(fEditScrollContainer);
-    Rectangle bounds=fEditScrollContainer.getBounds();
-    fContainer.repaint(bounds.x,bounds.y,bounds.width,bounds.height);
+  view.getContainer().requestFocus();
+  if (editScrollContainer != null) {
+    editScrollContainer.setVisible(false);
+    view.getContainer().remove(editScrollContainer);
+    Rectangle bounds=editScrollContainer.getBounds();
+    view.getContainer().repaint(bounds.x,bounds.y,bounds.width,bounds.height);
   }
 }

@@ -1,0 +1,9 @@
+{
+  view.getContainer().requestFocus();
+  if (editWidget != null) {
+    editWidget.setVisible(false);
+    view.getContainer().remove(editWidget);
+    Rectangle bounds=editWidget.getBounds();
+    view.getContainer().repaint(bounds.x,bounds.y,bounds.width,bounds.height);
+  }
+}

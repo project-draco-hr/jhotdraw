@@ -1,5 +1,0 @@
-{
-  m.addActionListener(this);
-  add(m);
-  ((CommandHolder)m).getCommand().addCommandListener(this);
-}

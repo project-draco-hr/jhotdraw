@@ -1,0 +1,4 @@
+{
+  this.presentationName=presentationName;
+  this.isSignificant=isSignificant;
+}

@@ -1,3 +1,0 @@
-{
-  return (NullDrawingView)NullDrawingView.getManagedDrawingView(getDrawingEditor());
-}

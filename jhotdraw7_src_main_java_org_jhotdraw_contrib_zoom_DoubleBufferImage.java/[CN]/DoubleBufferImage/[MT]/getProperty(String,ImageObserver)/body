@@ -1,3 +1,0 @@
-{
-  return real.getProperty(name,observer);
-}

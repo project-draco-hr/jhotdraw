@@ -1,3 +1,0 @@
-{
-  return view().insertFigures(fe,dx,dy,false);
-}

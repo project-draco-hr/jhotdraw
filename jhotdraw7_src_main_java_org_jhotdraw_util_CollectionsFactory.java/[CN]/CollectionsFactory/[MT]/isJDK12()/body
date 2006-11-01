@@ -1,9 +1,0 @@
-{
-  try {
-    Class.forName(JAVA_UTIL_LIST);
-    return true;
-  }
- catch (  ClassNotFoundException e) {
-  }
-  return false;
-}

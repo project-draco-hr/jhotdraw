@@ -1,0 +1,39 @@
+{
+  final Project p=getCurrentProject();
+  if (p.isEnabled()) {
+    final ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+    Window wAncestor=SwingUtilities.getWindowAncestor(p.getComponent());
+    oldFocusOwner=(wAncestor == null) ? null : wAncestor.getFocusOwner();
+    p.setEnabled(false);
+    if (p.hasUnsavedChanges()) {
+      JOptionPane pane=new JOptionPane("<html>" + UIManager.getString("OptionPane.css") + labels.getString("saveBeforeMessage"),JOptionPane.WARNING_MESSAGE);
+      Object[] options={labels.getString("save"),labels.getString("cancel"),labels.getString("dontSave")};
+      pane.setOptions(options);
+      pane.setInitialValue(options[0]);
+      pane.putClientProperty("Quaqua.OptionPane.destructiveOption",new Integer(2));
+      JSheet.showSheet(pane,p.getComponent(),new SheetListener(){
+        public void optionSelected(        SheetEvent evt){
+          Object value=evt.getValue();
+          if (value == null || value.equals(labels.getString("cancel"))) {
+            p.setEnabled(true);
+          }
+ else           if (value.equals(labels.getString("dontSave"))) {
+            doIt(p);
+            p.setEnabled(true);
+          }
+ else           if (value.equals(labels.getString("save"))) {
+            saveChanges(p);
+          }
+        }
+      }
+);
+    }
+ else {
+      doIt(p);
+      p.setEnabled(true);
+      if (oldFocusOwner != null) {
+        oldFocusOwner.requestFocus();
+      }
+    }
+  }
+}

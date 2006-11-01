@@ -1,0 +1,6 @@
+{
+  for (  Figure child : getChildren()) {
+    out.writeObject(child);
+  }
+  writeAttributes(out);
+}

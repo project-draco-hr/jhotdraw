@@ -1,3 +1,0 @@
-{
-  return new DragTracker.UndoActivity(getActiveView(),new Point(getLastMouseX(),getLastMouseY()));
-}

@@ -1,0 +1,15 @@
+{
+  Handle handle=view.findHandle(p);
+  if (handle != null) {
+    view.setCursor(handle.getCursor());
+  }
+ else {
+    Figure figure=view.findFigure(p);
+    if (figure != null) {
+      view.setCursor(figure.getCursor(view.viewToDrawing(p)));
+    }
+ else {
+      view.setCursor(Cursor.getDefaultCursor());
+    }
+  }
+}

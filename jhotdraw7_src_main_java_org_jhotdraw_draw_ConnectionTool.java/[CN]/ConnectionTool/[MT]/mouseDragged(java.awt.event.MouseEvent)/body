@@ -1,0 +1,20 @@
+{
+  Point2D.Double p=viewToDrawing(new Point(e.getX(),e.getY()));
+  if (getConnection() != null) {
+    trackConnectors(e);
+    if (getTargetConnector() != null) {
+      p=getTargetConnector().getAnchor();
+    }
+    ConnectionFigure f=getConnection();
+    fireAreaInvalidated(f.getDrawBounds());
+    f.willChange();
+    f.basicSetBounds(f.getStartPoint(),p);
+    f.changed();
+    fireAreaInvalidated(f.getDrawBounds());
+  }
+ else   if (editedConnection != null) {
+    editedConnection.willChange();
+    editedConnection.setPoint(splitPoint,p);
+    editedConnection.changed();
+  }
+}

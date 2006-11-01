@@ -1,0 +1,20 @@
+{
+  super.mousePressed(evt);
+  isPressed=true;
+  getView().clearSelection();
+  Point2D.Double ap=viewToDrawing(anchor);
+  if (getTargetFigure() != null) {
+    getTargetFigure().setConnectorsVisible(false,null);
+  }
+  setTargetFigure(findConnectionStart(ap,getDrawing()));
+  if (getTargetFigure() != null) {
+    setStartConnector(findConnector(ap,target,prototype));
+    if (getStartConnector() != null && canConnect(getTargetFigure())) {
+      Point2D.Double p=getStartConnector().getAnchor();
+      setConnection(createFigure());
+      getConnection().basicSetBounds(p,p);
+      getConnection().addFigureListener(this);
+      setCreatedFigure(getConnection());
+    }
+  }
+}

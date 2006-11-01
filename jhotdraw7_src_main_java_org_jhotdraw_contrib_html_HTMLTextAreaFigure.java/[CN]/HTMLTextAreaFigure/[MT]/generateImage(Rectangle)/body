@@ -1,8 +1,0 @@
-{
-  createImage(drawingBox.width,drawingBox.height);
-  Graphics2D g2=(Graphics2D)getImage().getGraphics();
-  Rectangle finalBox=new Rectangle(drawingBox);
-  finalBox.setLocation(0,0);
-  renderText(g2,finalBox);
-  g2.dispose();
-}

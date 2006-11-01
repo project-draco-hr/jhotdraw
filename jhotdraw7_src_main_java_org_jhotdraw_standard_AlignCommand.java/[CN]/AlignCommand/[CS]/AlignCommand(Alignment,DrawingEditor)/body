@@ -1,4 +1,0 @@
-{
-  super(newAlignment.getDescription(),newDrawingEditor);
-  setAlignment(newAlignment);
-}

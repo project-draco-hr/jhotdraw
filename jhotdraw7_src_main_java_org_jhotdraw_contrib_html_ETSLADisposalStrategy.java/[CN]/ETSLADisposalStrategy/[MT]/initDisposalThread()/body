@@ -1,6 +1,0 @@
-{
-  if (disposalThread != null) {
-    return;
-  }
-  disposalThread=new DisposalThread(this,getPeriodicity());
-}

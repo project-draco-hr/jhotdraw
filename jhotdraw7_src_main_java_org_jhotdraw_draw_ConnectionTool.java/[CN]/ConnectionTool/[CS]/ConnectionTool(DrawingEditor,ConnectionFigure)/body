@@ -1,4 +1,0 @@
-{
-  super(newDrawingEditor);
-  fPrototype=newPrototype;
-}

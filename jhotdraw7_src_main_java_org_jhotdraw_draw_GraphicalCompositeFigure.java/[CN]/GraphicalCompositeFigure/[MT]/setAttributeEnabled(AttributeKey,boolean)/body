@@ -1,0 +1,11 @@
+{
+  if (forbiddenAttributes == null) {
+    forbiddenAttributes=new HashSet<AttributeKey>();
+  }
+  if (b) {
+    forbiddenAttributes.remove(key);
+  }
+ else {
+    forbiddenAttributes.add(key);
+  }
+}

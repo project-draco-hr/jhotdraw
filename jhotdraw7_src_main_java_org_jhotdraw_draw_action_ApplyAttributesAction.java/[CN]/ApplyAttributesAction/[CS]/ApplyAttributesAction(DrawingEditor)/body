@@ -1,0 +1,5 @@
+{
+  super(editor);
+  labels.configureAction(this,"attributesApply");
+  setEnabled(true);
+}

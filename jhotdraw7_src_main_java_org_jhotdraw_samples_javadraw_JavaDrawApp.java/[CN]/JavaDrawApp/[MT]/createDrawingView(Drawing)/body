@@ -1,6 +1,0 @@
-{
-  Dimension d=getDrawingViewSize();
-  DrawingView newDrawingView=new ZoomDrawingView(this,d.width,d.height);
-  newDrawingView.setDrawing(newDrawing);
-  return newDrawingView;
-}

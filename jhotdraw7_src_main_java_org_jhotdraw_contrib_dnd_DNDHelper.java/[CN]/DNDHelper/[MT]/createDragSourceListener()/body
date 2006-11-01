@@ -1,3 +1,0 @@
-{
-  return new JHDDragSourceListener(editor(),view());
-}

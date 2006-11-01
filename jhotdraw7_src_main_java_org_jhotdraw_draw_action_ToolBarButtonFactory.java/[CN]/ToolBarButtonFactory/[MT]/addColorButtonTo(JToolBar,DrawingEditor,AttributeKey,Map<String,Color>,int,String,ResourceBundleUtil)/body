@@ -1,0 +1,22 @@
+{
+  final JPopupButton popupButton=new JPopupButton();
+  popupButton.setAction(new DefaultAttributeAction(editor,attributeKey),new Rectangle(0,0,22,22));
+  popupButton.setColumnCount(columnCount,false);
+  for (  Map.Entry<String,Color> entry : colorMap.entrySet()) {
+    AttributeAction a;
+    popupButton.add(a=new AttributeAction(editor,attributeKey,entry.getValue(),new ColorIcon(entry.getValue())));
+    a.putValue(Action.SHORT_DESCRIPTION,entry.getKey());
+  }
+  ImageIcon chooserIcon=new ImageIcon(ToolBarButtonFactory.class.getResource("/org/jhotdraw/draw/action/images/showColorChooser.png"));
+  popupButton.add(new ColorChooserAction(editor,attributeKey,chooserIcon));
+  labels.configureToolBarButton(popupButton,labelKey);
+  popupButton.setIcon(new ColorAttributeIcon(editor,attributeKey,labels.getImageIcon(labelKey,ToolBarButtonFactory.class).getImage()));
+  popupButton.setFocusable(false);
+  editor.addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      popupButton.repaint();
+    }
+  }
+);
+  bar.add(popupButton);
+}

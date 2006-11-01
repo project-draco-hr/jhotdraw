@@ -1,0 +1,10 @@
+{
+  if (listenerList.getListenerCount() > 0) {
+    Object[] listeners=listenerList.getListenerList();
+    for (int i=listeners.length - 2; i >= 0; i-=2) {
+      if (listeners[i] == FigureListener.class) {
+        ((FigureListener)listeners[i + 1]).figureChanged(event);
+      }
+    }
+  }
+}

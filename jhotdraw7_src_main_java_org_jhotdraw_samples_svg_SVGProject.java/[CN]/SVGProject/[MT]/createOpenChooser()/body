@@ -1,0 +1,5 @@
+{
+  JFileChooser c=super.createOpenChooser();
+  c.addChoosableFileFilter(new ExtensionFileFilter("SVG Drawing","svg"));
+  return c;
+}

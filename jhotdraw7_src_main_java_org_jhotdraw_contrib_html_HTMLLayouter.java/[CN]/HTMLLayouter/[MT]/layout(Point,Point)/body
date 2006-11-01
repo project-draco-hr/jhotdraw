@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("Method layout() not yet implemented.");
-}

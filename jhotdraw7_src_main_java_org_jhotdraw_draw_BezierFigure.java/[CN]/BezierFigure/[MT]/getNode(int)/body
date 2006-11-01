@@ -1,0 +1,3 @@
+{
+  return (BezierPath.Node)path.get(index).clone();
+}

@@ -1,6 +1,0 @@
-{
-  RoundRectangleFigure owner=(RoundRectangleFigure)owner();
-  Point radius=owner.getArc();
-  Rectangle r=owner.displayBox();
-  return new Point(r.x + radius.x / 2 + OFFSET,r.y + radius.y / 2 + OFFSET);
-}

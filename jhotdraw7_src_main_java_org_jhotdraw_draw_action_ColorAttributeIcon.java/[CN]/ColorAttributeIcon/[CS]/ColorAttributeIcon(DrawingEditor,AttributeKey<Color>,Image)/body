@@ -1,0 +1,5 @@
+{
+  super(image);
+  this.editor=editor;
+  this.key=key;
+}

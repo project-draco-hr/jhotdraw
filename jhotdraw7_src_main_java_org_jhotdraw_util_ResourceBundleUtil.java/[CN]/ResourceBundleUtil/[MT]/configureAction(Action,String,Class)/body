@@ -1,0 +1,6 @@
+{
+  action.putValue(Action.NAME,getString(argument));
+  action.putValue(Action.ACCELERATOR_KEY,getAcc(argument));
+  action.putValue(Action.MNEMONIC_KEY,new Integer(getMnem(argument)));
+  action.putValue(Action.SMALL_ICON,getImageIcon(argument,baseClass));
+}

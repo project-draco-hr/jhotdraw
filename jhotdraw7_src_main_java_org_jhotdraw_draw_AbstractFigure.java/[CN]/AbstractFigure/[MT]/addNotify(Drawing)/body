@@ -1,0 +1,4 @@
+{
+  this.drawing=d;
+  fireFigureAdded();
+}

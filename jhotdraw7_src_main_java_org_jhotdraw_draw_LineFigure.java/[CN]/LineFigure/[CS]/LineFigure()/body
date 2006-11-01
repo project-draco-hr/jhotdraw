@@ -1,4 +1,4 @@
 {
-  addPoint(0,0);
-  addPoint(0,0);
+  basicAddNode(new BezierPath.Node(new Point2D.Double(0,0)));
+  basicAddNode(new BezierPath.Node(new Point2D.Double(0,0)));
 }

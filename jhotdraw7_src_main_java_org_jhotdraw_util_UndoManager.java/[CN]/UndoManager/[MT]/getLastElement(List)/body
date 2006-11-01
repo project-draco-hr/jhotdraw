@@ -1,8 +1,0 @@
-{
-  if (l.size() > 0) {
-    return (Undoable)l.get(l.size() - 1);
-  }
- else {
-    return null;
-  }
-}

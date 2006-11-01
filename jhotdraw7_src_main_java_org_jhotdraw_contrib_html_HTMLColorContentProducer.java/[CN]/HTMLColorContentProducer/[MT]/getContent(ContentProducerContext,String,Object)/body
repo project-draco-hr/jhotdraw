@@ -1,4 +1,0 @@
-{
-  Color color=(getColor() != null) ? getColor() : (Color)ctxAttrValue;
-  return getHTMLColorCode(color);
-}

@@ -1,0 +1,41 @@
+{
+  if (domFactory == null) {
+    getToolkit().beep();
+    return;
+  }
+  try {
+    ArrayList<Figure> toBeSelected=new ArrayList<Figure>();
+    DataFlavor flavor=new DataFlavor("application/x-drawing-clip","Drawing Clip");
+    Transferable transfer=Toolkit.getDefaultToolkit().getSystemClipboard().getContents(this);
+    if (transfer.isDataFlavorSupported(flavor)) {
+      CompositeEdit ce=new CompositeEdit("Paste");
+      getDrawing().fireUndoableEditHappened(ce);
+      for (      Figure f : new LinkedList<Figure>(getSelectedFigures())) {
+        getDrawing().remove(f);
+      }
+      InputStream in=null;
+      try {
+        in=(InputStream)transfer.getTransferData(flavor);
+        NanoXMLLiteDOMInput domi=new NanoXMLLiteDOMInput(domFactory,in);
+        domi.openElement("DrawingClip");
+        for (int i=0, n=domi.getElementCount(); i < n; i++) {
+          Figure f=(Figure)domi.readObject(i);
+          getDrawing().add(f);
+          toBeSelected.add(f);
+        }
+      }
+  finally {
+        if (in != null)         in.close();
+      }
+      clearSelection();
+      addToSelection(toBeSelected);
+      getDrawing().fireUndoableEditHappened(ce);
+    }
+ else {
+      Toolkit.getDefaultToolkit().beep();
+    }
+  }
+ catch (  Throwable e) {
+    e.printStackTrace();
+  }
+}

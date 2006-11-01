@@ -1,4 +1,0 @@
-{
-  setWrappedHandle(newWrappedHandle);
-  setDrawingView(newDrawingView);
-}

@@ -1,0 +1,14 @@
+{
+  if (this.drawing != null) {
+    this.drawing.removeDrawingListener(this);
+    clearSelection();
+  }
+  this.drawing=d;
+  if (this.drawing != null) {
+    this.drawing.addDrawingListener(this);
+  }
+  invalidateDimension();
+  invalidate();
+  if (getParent() != null)   getParent().validate();
+  repaint();
+}

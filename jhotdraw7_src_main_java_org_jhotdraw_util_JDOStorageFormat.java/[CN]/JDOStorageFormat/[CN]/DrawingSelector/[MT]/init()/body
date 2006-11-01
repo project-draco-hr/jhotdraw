@@ -1,6 +1,0 @@
-{
-  setTitle("Select Drawing");
-  getContentPane().setLayout(new BorderLayout());
-  getContentPane().add(new JLabel("Database content"),BorderLayout.NORTH);
-  setSize(200,200);
-}

@@ -1,8 +1,0 @@
-{
-  if (getUndoSize() > 0) {
-    return getLastElement(undoStack);
-  }
- else {
-    return null;
-  }
-}

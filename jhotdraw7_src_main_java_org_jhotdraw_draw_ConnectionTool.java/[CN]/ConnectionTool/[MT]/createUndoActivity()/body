@@ -1,3 +1,0 @@
-{
-  return new ConnectionTool.UndoActivity(view(),getConnection());
-}

@@ -1,3 +1,0 @@
-{
-  return getDecoratedFigure().containsPoint(x,y);
-}

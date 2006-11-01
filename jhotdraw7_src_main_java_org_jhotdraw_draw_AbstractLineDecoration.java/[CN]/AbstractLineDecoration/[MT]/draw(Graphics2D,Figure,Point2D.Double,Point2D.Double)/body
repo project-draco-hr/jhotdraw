@@ -1,0 +1,24 @@
+{
+  GeneralPath path=getTransformedDecoratorPath(f,p1,p2);
+  Color color;
+  if (isFilled) {
+    if (isSolid) {
+      color=STROKE_COLOR.get(f);
+    }
+ else {
+      color=FILL_COLOR.get(f);
+    }
+    if (color != null) {
+      g.setColor(color);
+      g.fill(path);
+    }
+  }
+  if (isStroked) {
+    color=STROKE_COLOR.get(f);
+    if (color != null) {
+      g.setColor(color);
+      g.setStroke(AttributeKeys.getStroke(f));
+      g.draw(path);
+    }
+  }
+}

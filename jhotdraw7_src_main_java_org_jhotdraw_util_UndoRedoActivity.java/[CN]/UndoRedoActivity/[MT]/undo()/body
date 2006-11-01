@@ -1,6 +1,0 @@
-{
-  if (isRedoable()) {
-    return getReversedActivity().redo();
-  }
-  return false;
-}

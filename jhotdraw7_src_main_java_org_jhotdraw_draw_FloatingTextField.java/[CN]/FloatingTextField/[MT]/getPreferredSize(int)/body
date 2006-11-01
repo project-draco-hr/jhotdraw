@@ -1,0 +1,4 @@
+{
+  editWidget.setColumns(cols);
+  return editWidget.getPreferredSize();
+}

@@ -1,3 +1,0 @@
-{
-  displayBox(new Point(r.x,r.y),new Point(r.x + r.width,r.y + r.height));
-}

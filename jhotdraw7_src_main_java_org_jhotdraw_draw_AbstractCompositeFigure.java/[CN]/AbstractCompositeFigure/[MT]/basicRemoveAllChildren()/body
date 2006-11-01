@@ -1,0 +1,5 @@
+{
+  while (children.size() > 0) {
+    Figure f=basicRemoveChild(children.size() - 1);
+  }
+}

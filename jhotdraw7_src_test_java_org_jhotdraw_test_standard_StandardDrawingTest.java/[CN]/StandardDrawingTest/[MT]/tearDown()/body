@@ -1,4 +1,0 @@
-{
-  standarddrawing=null;
-  super.tearDown();
-}

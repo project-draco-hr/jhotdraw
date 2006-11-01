@@ -1,3 +1,0 @@
-{
-  fMap=CollectionsFactory.current().createMap();
-}

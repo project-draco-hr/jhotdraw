@@ -1,7 +1,0 @@
-{
-  boolean[] tests={true,false};
-  for (int i=0; i < tests.length; i++) {
-    undoredoactivity.setRedoable(tests[i]);
-    assertEquals(tests[i],undoredoactivity.isRedoable());
-  }
-}

@@ -1,0 +1,7 @@
+{
+  BezierPath that=(BezierPath)super.clone();
+  for (int i=0, n=this.size(); i < n; i++) {
+    that.set(i,(Node)this.get(i).clone());
+  }
+  return that;
+}

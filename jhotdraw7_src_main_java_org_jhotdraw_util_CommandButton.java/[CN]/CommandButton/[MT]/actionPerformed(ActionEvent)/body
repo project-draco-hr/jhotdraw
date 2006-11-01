@@ -1,6 +1,0 @@
-{
-  fCommand.execute();
-  if (!getText().equals(fCommand.name())) {
-    setText(fCommand.name());
-  }
-}

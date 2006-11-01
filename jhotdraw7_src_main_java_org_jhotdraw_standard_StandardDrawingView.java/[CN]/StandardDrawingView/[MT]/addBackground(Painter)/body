@@ -1,7 +1,0 @@
-{
-  if (fBackgrounds == null) {
-    fBackgrounds=CollectionsFactory.current().createList(3);
-  }
-  fBackgrounds.add(painter);
-  repaint();
-}

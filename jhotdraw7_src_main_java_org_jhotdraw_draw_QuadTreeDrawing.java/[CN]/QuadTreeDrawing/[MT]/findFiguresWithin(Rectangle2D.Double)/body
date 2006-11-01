@@ -1,0 +1,10 @@
+{
+  Collection<Figure> c=findFigures(r);
+  ArrayList<Figure> result=new ArrayList<Figure>(c.size());
+  for (  Figure f : c) {
+    if (r.contains(f.getBounds())) {
+      result.add(f);
+    }
+  }
+  return result;
+}

@@ -1,0 +1,8 @@
+{
+  super(view);
+  this.scaleFactor=scaleFactor;
+  this.button=button;
+  label=(int)(scaleFactor * 100) + " %";
+  putValue(Action.DEFAULT,label);
+  putValue(Action.NAME,label);
+}

@@ -1,4 +1,0 @@
-{
-  figurechangeevent=null;
-  super.tearDown();
-}

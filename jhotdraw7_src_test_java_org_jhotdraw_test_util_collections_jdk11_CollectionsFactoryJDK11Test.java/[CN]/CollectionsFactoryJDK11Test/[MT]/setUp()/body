@@ -1,4 +1,0 @@
-{
-  super.setUp();
-  collectionsfactoryjdk11=createInstance();
-}

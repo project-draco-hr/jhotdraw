@@ -1,4 +1,0 @@
-{
-  drawingInvalidated(new DrawingEvent(drawing(),new Rectangle(getSize())));
-  repairDamage();
-}

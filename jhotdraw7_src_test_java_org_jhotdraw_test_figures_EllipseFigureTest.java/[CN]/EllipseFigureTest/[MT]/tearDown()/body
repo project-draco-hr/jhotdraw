@@ -1,4 +1,0 @@
-{
-  ellipsefigure=null;
-  super.tearDown();
-}

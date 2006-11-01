@@ -1,5 +1,0 @@
-{
-  super(command.name());
-  fCommand=command;
-  addActionListener(this);
-}

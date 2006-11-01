@@ -1,4 +1,0 @@
-{
-  super.write(dw);
-  dw.writeString(getResourceName());
-}

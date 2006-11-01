@@ -1,0 +1,53 @@
+{
+  Window window=getWindowForComponent(parentComponent);
+  final JSheet sheet;
+  if (window instanceof Frame) {
+    sheet=new JSheet((Frame)window);
+  }
+ else {
+    sheet=new JSheet((Dialog)window);
+  }
+  Container contentPane=sheet.getContentPane();
+  contentPane.setLayout(new BorderLayout());
+  contentPane.add(pane,BorderLayout.CENTER);
+  sheet.setResizable(false);
+  sheet.addWindowListener(new WindowAdapter(){
+    private boolean gotFocus=false;
+    int count;
+    public void windowClosing(    WindowEvent we){
+      pane.setValue(null);
+    }
+    public void windowClosed(    WindowEvent we){
+      if (pane.getValue() == JOptionPane.UNINITIALIZED_VALUE) {
+        sheet.fireOptionSelected(pane);
+      }
+    }
+    public void windowGainedFocus(    WindowEvent we){
+      if (!gotFocus) {
+        OptionPaneUI ui=pane.getUI();
+        if (ui != null) {
+          ui.selectInitialValue(pane);
+        }
+        gotFocus=true;
+      }
+    }
+  }
+);
+  sheet.addComponentListener(new ComponentAdapter(){
+    public void componentShown(    ComponentEvent ce){
+      pane.setValue(JOptionPane.UNINITIALIZED_VALUE);
+    }
+  }
+);
+  pane.addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent event){
+      if (sheet.isVisible() && event.getSource() == pane && (event.getPropertyName().equals(JOptionPane.VALUE_PROPERTY)) && event.getNewValue() != null && event.getNewValue() != JOptionPane.UNINITIALIZED_VALUE) {
+        sheet.setVisible(false);
+        sheet.fireOptionSelected(pane);
+      }
+    }
+  }
+);
+  sheet.pack();
+  return sheet;
+}

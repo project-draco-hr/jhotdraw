@@ -1,0 +1,5 @@
+{
+  if (!owner.isChanging()) {
+    owner.fireAreaInvalidated(e.getInvalidatedArea());
+  }
+}

@@ -1,5 +1,0 @@
-{
-  if (!e.isPopupTrigger()) {
-    super.mouseDrag(e,x,y);
-  }
-}

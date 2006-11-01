@@ -1,0 +1,13 @@
+{
+  if (startConnector != null && endConnector != null) {
+    handleDisconnect(startConnector.getOwner(),endConnector.getOwner());
+    Connector tmpC=startConnector;
+    startConnector=endConnector;
+    endConnector=tmpC;
+    Point2D.Double tmpP=getStartPoint();
+    setStartPoint(getEndPoint());
+    setEndPoint(tmpP);
+    handleConnect(startConnector.getOwner(),endConnector.getOwner());
+    updateConnection();
+  }
+}

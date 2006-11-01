@@ -1,4 +1,0 @@
-{
-  super.mouseDrag(e,x,y);
-  fAnchorHandle.invokeStep(x,y,getAnchorX(),getAnchorY(),view());
-}

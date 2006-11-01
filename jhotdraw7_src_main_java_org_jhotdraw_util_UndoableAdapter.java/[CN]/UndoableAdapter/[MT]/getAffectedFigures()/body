@@ -1,8 +1,0 @@
-{
-  if (myAffectedFigures == null) {
-    return new FigureEnumerator(Collections.EMPTY_LIST);
-  }
- else {
-    return new FigureEnumerator(CollectionsFactory.current().createList(myAffectedFigures));
-  }
-}

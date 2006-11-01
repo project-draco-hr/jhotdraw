@@ -1,4 +1,0 @@
-{
-  getDesktopEventService().removeAllComponents();
-  getContainer().validate();
-}

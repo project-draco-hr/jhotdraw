@@ -1,0 +1,4 @@
+{
+  Object oldValue=defaultAttributes.put(key,newValue);
+  firePropertyChange(key.getKey(),oldValue,newValue);
+}

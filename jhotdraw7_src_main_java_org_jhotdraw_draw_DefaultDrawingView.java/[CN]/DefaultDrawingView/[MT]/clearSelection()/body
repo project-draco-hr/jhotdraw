@@ -1,0 +1,8 @@
+{
+  if (getSelectionCount() > 0) {
+    selectedFigures.clear();
+    invalidateHandles();
+    fireSelectionChanged();
+  }
+  repaint();
+}

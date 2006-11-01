@@ -1,6 +1,10 @@
 {
-  if (getPrototypeFigure() == null) {
-    throw new JHotDrawRuntimeException("No protoype defined");
+  Figure f=(Figure)prototype.clone();
+  getEditor().applyDefaultAttributesTo(f);
+  if (attributes != null) {
+    for (    Map.Entry<AttributeKey,Object> entry : attributes.entrySet()) {
+      f.setAttribute(entry.getKey(),entry.getValue());
+    }
   }
-  return (Figure)getPrototypeFigure().clone();
+  return f;
 }

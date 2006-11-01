@@ -1,6 +1,0 @@
-{
-  _dX1=Math.min(x1,x2);
-  _dX2=Math.max(x1,x2);
-  _dY1=Math.min(y1,y2);
-  _dY2=Math.max(y1,y2);
-}

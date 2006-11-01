@@ -1,0 +1,4 @@
+{
+  view.getDrawing().fireUndoableEditHappened(new RestoreDataEdit(getOwner(),restoreData));
+  location=null;
+}

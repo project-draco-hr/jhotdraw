@@ -1,8 +1,0 @@
-{
-  PersistenceManager pm=(PersistenceManager)pms.get(fileName);
-  if (pm == null) {
-    pm=createPersistenceManagerFactory(fileName).getPersistenceManager();
-    pms.put(fileName,pm);
-  }
-  return pm;
-}

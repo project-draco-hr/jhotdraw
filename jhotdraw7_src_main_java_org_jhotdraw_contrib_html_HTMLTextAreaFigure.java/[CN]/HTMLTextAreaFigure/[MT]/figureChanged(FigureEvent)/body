@@ -1,5 +1,0 @@
-{
-  willChange();
-  super.basicDisplayBox(e.getFigure().displayBox().getLocation(),Geom.corner(e.getFigure().displayBox()));
-  changed();
-}

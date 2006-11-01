@@ -1,0 +1,8 @@
+{
+  JMenuItem b=(JMenuItem)c;
+  paintBackground(g,b,selectionBackground);
+  Icon icon=(Icon)b.getIcon();
+  if (icon != null) {
+    icon.paintIcon(b,g,1,1);
+  }
+}

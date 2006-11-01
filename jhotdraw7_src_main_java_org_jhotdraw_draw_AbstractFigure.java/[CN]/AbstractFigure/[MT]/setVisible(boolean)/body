@@ -1,0 +1,7 @@
+{
+  if (newValue != isVisible) {
+    willChange();
+    isVisible=newValue;
+    changed();
+  }
+}

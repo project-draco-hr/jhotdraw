@@ -1,0 +1,35 @@
+{
+  final Project project=getCurrentProject();
+  if (project.isEnabled()) {
+    oldFocusOwner=SwingUtilities.getWindowAncestor(project.getComponent()).getFocusOwner();
+    project.setEnabled(false);
+    File saveToFile;
+    if (!saveAs && project.getFile() != null) {
+      saveToFile(project,project.getFile());
+    }
+ else {
+      JFileChooser fileChooser=project.getSaveChooser();
+      JSheet.showSaveSheet(fileChooser,project.getComponent(),new SheetListener(){
+        public void optionSelected(        final SheetEvent evt){
+          if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
+            final File file;
+            if (evt.getFileChooser().getFileFilter() instanceof ExtensionFileFilter) {
+              file=((ExtensionFileFilter)evt.getFileChooser().getFileFilter()).makeAcceptable(evt.getFileChooser().getSelectedFile());
+            }
+ else {
+              file=evt.getFileChooser().getSelectedFile();
+            }
+            saveToFile(project,file);
+          }
+ else {
+            project.setEnabled(true);
+            if (oldFocusOwner != null) {
+              oldFocusOwner.requestFocus();
+            }
+          }
+        }
+      }
+);
+    }
+  }
+}

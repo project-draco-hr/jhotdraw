@@ -1,0 +1,9 @@
+{
+  super.readPoints(in);
+  in.openElement("startConnector");
+  setStartConnector((Connector)in.readObject());
+  in.closeElement();
+  in.openElement("endConnector");
+  setEndConnector((Connector)in.readObject());
+  in.closeElement();
+}

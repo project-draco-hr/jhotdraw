@@ -1,5 +1,0 @@
-{
-  fCurrent=new Point(x,y);
-  Polygon polygon=((PolygonScaleHandle.UndoActivity)getUndoActivity()).getPolygon();
-  ((PolygonFigure)(owner())).scaleRotate(new Point(anchorX,anchorY),polygon,fCurrent);
-}

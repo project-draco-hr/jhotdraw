@@ -1,7 +1,3 @@
 {
-  if (newText == null || !newText.equals(fText)) {
-    markTextDirty();
-    fText=newText;
-    changed();
-  }
+  setAttribute(TEXT,newText);
 }

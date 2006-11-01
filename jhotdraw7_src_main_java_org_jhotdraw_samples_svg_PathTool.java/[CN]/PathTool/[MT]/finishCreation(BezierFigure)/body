@@ -1,0 +1,8 @@
+{
+  getDrawing().remove(createdFigure);
+  SVGPath createdPath=createPath();
+  createdPath.removeAllChildren();
+  createdPath.add(createdFigure);
+  getDrawing().add(createdPath);
+  getView().addToSelection(createdPath);
+}

@@ -1,0 +1,3 @@
+{
+  ((XMLElement)document.getChildren().get(0)).print(out);
+}

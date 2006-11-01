@@ -1,3 +1,0 @@
-{
-  return new Rectangle(fDisplayBox.x,fDisplayBox.y,fDisplayBox.width,fDisplayBox.height);
-}

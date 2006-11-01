@@ -1,3 +1,0 @@
-{
-  return new Point(getInternalPolygon().xpoints[i],getInternalPolygon().ypoints[i]);
-}

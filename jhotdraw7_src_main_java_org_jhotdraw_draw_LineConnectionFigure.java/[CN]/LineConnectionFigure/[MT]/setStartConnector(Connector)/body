@@ -1,3 +1,26 @@
 {
-  myStartConnector=newStartConnector;
+  final Connector oldStart=startConnector;
+  if (newStart != oldStart) {
+    willChange();
+    basicSetStartConnector(newStart);
+    fireUndoableEditHappened(new AbstractUndoableEdit(){
+      public String getPresentationName(){
+        return "Start-Verbindung setzen";
+      }
+      public void undo() throws CannotUndoException {
+        super.undo();
+        willChange();
+        basicSetStartConnector(oldStart);
+        changed();
+      }
+      public void redo() throws CannotUndoException {
+        super.redo();
+        willChange();
+        basicSetStartConnector(newStart);
+        changed();
+      }
+    }
+);
+    changed();
+  }
 }

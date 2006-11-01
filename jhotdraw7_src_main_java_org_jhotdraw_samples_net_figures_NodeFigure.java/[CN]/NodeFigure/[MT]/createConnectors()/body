@@ -1,0 +1,10 @@
+{
+  connectors=new LinkedList<AbstractConnector>();
+  connectors.add(new LocatorConnector(this,new RelativeLocator(0.5,0)));
+  connectors.add(new LocatorConnector(this,new RelativeLocator(0.5,1)));
+  connectors.add(new LocatorConnector(this,new RelativeLocator(1,0.5)));
+  connectors.add(new LocatorConnector(this,new RelativeLocator(0,0.5)));
+  for (  AbstractConnector c : connectors) {
+    c.setVisible(true);
+  }
+}

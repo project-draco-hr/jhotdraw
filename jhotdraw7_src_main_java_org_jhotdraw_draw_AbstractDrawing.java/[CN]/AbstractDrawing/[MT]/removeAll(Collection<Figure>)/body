@@ -1,0 +1,8 @@
+{
+  CompositeEdit edit=new CompositeEdit("Figuren entfernen");
+  fireUndoableEditHappened(edit);
+  for (  Figure f : new ArrayList<Figure>(toBeRemoved)) {
+    remove(f);
+  }
+  fireUndoableEditHappened(edit);
+}

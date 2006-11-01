@@ -1,6 +1,0 @@
-{
-  Reader r=new BufferedReader(new InputStreamReader(stream));
-  fTokenizer=new StreamTokenizer(r);
-  fTokenizer.wordChars('$','$');
-  fMap=CollectionsFactory.current().createList();
-}

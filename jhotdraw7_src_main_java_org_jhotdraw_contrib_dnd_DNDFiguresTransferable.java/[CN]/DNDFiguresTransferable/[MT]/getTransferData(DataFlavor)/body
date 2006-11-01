@@ -1,6 +1,0 @@
-{
-  if (isDataFlavorSupported(flavor) == false) {
-    throw new UnsupportedFlavorException(flavor);
-  }
-  return o;
-}

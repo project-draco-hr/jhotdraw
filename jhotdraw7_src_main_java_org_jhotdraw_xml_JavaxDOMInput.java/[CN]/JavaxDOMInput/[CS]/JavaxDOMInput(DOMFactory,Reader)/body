@@ -1,0 +1,15 @@
+{
+  this.factory=factory;
+  try {
+    Transformer t=TransformerFactory.newInstance().newTransformer();
+    DOMResult result=new DOMResult();
+    t.transform(new StreamSource(in),result);
+    document=(Document)result.getNode();
+    current=document;
+  }
+ catch (  TransformerException e) {
+    IOException error=new IOException(e.getMessage());
+    error.initCause(e);
+    throw error;
+  }
+}

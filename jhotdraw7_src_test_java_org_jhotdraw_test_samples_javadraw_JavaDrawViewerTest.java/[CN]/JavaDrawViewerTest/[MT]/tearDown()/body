@@ -1,4 +1,0 @@
-{
-  javadrawviewer=null;
-  super.tearDown();
-}

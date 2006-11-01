@@ -1,0 +1,6 @@
+{
+  setDefaultAttribute(FILL_COLOR,Color.white);
+  setDefaultAttribute(STROKE_COLOR,Color.black);
+  setDefaultAttribute(TEXT_COLOR,Color.black);
+  views=new HashSet<DrawingView>();
+}

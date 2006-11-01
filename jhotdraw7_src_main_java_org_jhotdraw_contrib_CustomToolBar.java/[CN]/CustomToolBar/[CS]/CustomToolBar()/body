@@ -1,7 +1,0 @@
-{
-  super();
-  standardTools=CollectionsFactory.current().createList();
-  editTools=CollectionsFactory.current().createList();
-  currentTools=standardTools;
-  needsUpdate=false;
-}

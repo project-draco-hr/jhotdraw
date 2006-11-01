@@ -1,0 +1,9 @@
+{
+  RectangleFigure rf=new RectangleFigure();
+  setDecorator(rf);
+  createConnectors();
+  setDrawDecoratorFirst(true);
+  DECORATOR_INSETS.set(this,new Insets2DDouble(6,10,6,10));
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.samples.net.Labels");
+  setText(labels.getString("nodeDefaultName"));
+}

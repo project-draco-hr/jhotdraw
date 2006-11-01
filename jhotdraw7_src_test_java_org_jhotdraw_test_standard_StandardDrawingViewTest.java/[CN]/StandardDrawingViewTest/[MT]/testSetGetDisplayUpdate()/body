@@ -1,7 +1,0 @@
-{
-  org.jhotdraw.framework.Painter[] tests={new SimpleUpdateStrategy(),null};
-  for (int i=0; i < tests.length; i++) {
-    standarddrawingview.setDisplayUpdate(tests[i]);
-    assertEquals(tests[i],standarddrawingview.getDisplayUpdate());
-  }
-}

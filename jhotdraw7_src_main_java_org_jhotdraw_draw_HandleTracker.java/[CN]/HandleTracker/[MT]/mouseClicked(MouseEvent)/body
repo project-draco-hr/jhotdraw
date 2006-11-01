@@ -1,0 +1,5 @@
+{
+  if (evt.getClickCount() == 2) {
+    multicaster.trackDoubleClick(new Point(evt.getX(),evt.getY()),evt.getModifiersEx(),getView());
+  }
+}

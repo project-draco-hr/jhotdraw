@@ -1,5 +1,0 @@
-{
-  int size=f.getSize();
-  int scaledSize=(int)(size * scale);
-  return new Font(f.getFamily(),f.getStyle(),scaledSize);
-}

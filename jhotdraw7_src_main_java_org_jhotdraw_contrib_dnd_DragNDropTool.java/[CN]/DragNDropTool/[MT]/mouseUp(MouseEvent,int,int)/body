@@ -1,8 +1,0 @@
-{
-  if (fChild != null) {
-    fChild.mouseUp(e,x,y);
-    fChild=null;
-  }
-  setDragOn(true);
-  view().unfreezeView();
-}

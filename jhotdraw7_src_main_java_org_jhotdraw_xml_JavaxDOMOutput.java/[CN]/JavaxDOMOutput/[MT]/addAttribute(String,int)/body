@@ -1,0 +1,3 @@
+{
+  ((Element)current).setAttribute(name,Integer.toString(value));
+}

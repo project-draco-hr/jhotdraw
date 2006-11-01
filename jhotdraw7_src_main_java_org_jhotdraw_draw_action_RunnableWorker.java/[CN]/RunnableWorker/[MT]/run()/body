@@ -1,0 +1,17 @@
+{
+  final Runnable doFinished=new Runnable(){
+    public void run(){
+      finished(getValue());
+    }
+  }
+;
+  try {
+    setValue(construct());
+  }
+ catch (  Throwable e) {
+    e.printStackTrace();
+  }
+ finally {
+    SwingUtilities.invokeLater(doFinished);
+  }
+}

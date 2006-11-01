@@ -1,7 +1,0 @@
-{
-  initManager();
-  DisposableResourceHolder holder=(DisposableResourceHolder)holderPrototype.clone();
-  holder.setResource(resource);
-  getManager().registerResource(holder);
-  return holder;
-}

@@ -1,0 +1,3 @@
+{
+  return getBezierFigure().getPointCount() > index ? view.drawingToView(getBezierFigure().getPoint(index,controlPointIndex)) : new Point(10,10);
+}

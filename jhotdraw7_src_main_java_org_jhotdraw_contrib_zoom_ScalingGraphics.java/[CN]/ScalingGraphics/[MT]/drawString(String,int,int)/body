@@ -1,3 +1,0 @@
-{
-  real.drawString(str,(int)(x * scale),(int)(y * scale));
-}

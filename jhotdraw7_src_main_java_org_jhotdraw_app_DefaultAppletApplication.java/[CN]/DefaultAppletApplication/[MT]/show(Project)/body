@@ -1,0 +1,5 @@
+{
+  this.project=p;
+  applet.getContentPane().removeAll();
+  applet.getContentPane().add(p.getComponent());
+}

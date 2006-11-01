@@ -1,3 +1,0 @@
-{
-  return new Dimension(displayBox().width,displayBox().height);
-}

@@ -1,0 +1,3 @@
+{
+  return AttributeKeys.getStroke(this);
+}

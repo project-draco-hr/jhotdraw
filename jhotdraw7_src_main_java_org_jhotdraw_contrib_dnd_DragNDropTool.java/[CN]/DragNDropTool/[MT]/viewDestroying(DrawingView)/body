@@ -1,7 +1,0 @@
-{
-  if (DNDInterface.class.isInstance(view)) {
-    DNDInterface dndi=(DNDInterface)view;
-    dndi.DNDDeinitialize();
-  }
-  super.viewDestroying(view);
-}

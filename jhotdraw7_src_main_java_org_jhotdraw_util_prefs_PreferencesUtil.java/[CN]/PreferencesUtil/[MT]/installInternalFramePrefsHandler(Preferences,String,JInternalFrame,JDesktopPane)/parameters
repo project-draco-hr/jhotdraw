@@ -1,0 +1,4 @@
+Preferences prefs
+String name
+JInternalFrame window
+JDesktopPane desktop

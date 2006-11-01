@@ -1,4 +1,0 @@
-{
-  fIndent-=4;
-  if (fIndent < 0)   fIndent=0;
-}

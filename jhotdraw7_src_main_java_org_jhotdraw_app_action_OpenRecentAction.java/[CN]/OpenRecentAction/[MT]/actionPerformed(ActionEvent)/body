@@ -1,0 +1,20 @@
+{
+  final Application app=getApplication();
+  if (app.isEnabled()) {
+    app.setEnabled(false);
+    Project emptyProject=app.getCurrentProject();
+    if (emptyProject == null || emptyProject.getFile() != null || emptyProject.hasUnsavedChanges()) {
+      emptyProject=null;
+    }
+    final Project p;
+    if (emptyProject == null) {
+      p=app.createProject();
+      app.add(p);
+      app.show(p);
+    }
+ else {
+      p=emptyProject;
+    }
+    openFile(p);
+  }
+}

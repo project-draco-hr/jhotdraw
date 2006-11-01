@@ -1,0 +1,7 @@
+{
+  out.addAttribute("x1",getPoint(0).x);
+  out.addAttribute("y1",getPoint(0).y);
+  out.addAttribute("x2",getPoint(1).x);
+  out.addAttribute("y2",getPoint(1).y);
+  writeAttributes(out);
+}

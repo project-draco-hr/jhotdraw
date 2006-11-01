@@ -1,0 +1,6 @@
+{
+  Point2D.Double[] d={new Point2D.Double(0.0,0.0),new Point2D.Double(0.0,0.5),new Point2D.Double(1.1,1.4),new Point2D.Double(2.1,1.6),new Point2D.Double(3.2,1.1),new Point2D.Double(4.0,0.2),new Point2D.Double(4.0,0.0)};
+  double error=4.0;
+  GeneralPath path=fitCurve(d,error);
+  System.out.println(path);
+}

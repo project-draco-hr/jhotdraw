@@ -1,0 +1,6 @@
+{
+  willChange();
+  isConnectorsVisible=isVisible;
+  courtingConnection=connection;
+  changed();
+}

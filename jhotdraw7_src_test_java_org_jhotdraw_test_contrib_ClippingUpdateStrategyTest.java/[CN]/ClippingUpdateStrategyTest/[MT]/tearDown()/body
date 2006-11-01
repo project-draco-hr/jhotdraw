@@ -1,4 +1,0 @@
-{
-  clippingupdatestrategy=null;
-  super.tearDown();
-}

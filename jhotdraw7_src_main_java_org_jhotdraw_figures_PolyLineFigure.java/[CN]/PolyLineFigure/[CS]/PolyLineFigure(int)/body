@@ -1,3 +1,0 @@
-{
-  fPoints=CollectionsFactory.current().createList(size);
-}

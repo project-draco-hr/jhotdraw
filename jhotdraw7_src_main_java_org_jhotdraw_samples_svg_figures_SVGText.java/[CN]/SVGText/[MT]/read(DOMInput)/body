@@ -1,0 +1,20 @@
+{
+  origin.x=SVGUtil.getDimension(in,"x");
+  origin.y=SVGUtil.getDimension(in,"y");
+  setText(in.getText());
+  readAttributes(in);
+  AffineTransform tx=SVGUtil.getTransform(in,"transform");
+  basicTransform(tx);
+  Rectangle2D.Double r=getBounds();
+switch (TEXT_ANCHOR.get(this)) {
+case START:
+    break;
+case MIDDLE:
+  origin.x-=r.width / 2d;
+break;
+case END:
+origin.x-=r.width;
+break;
+}
+origin.y-=FONT_SIZE.get(this);
+}

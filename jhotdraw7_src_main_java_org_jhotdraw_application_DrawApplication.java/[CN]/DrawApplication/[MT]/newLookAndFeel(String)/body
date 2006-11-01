@@ -1,9 +1,0 @@
-{
-  try {
-    UIManager.setLookAndFeel(landf);
-    SwingUtilities.updateComponentTreeUI(this);
-  }
- catch (  Exception e) {
-    System.err.println(e);
-  }
-}

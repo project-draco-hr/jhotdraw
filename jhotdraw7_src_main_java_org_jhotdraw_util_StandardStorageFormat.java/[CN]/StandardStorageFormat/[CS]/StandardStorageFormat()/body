@@ -1,5 +1,0 @@
-{
-  setFileExtension(createFileExtension());
-  setFileDescription(createFileDescription());
-  setFileFilter(createFileFilter());
-}

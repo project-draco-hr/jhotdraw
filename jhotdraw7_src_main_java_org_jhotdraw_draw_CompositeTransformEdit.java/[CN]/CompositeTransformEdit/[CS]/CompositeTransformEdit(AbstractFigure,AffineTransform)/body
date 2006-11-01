@@ -1,0 +1,6 @@
+{
+  this.owner=owner;
+  this.tx=(AffineTransform)tx.clone();
+  ;
+  inProgress=true;
+}

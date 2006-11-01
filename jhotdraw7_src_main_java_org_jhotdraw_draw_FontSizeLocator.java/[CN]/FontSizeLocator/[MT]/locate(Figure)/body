@@ -1,0 +1,8 @@
+{
+  Point2D.Double p=owner.getStartPoint();
+  p.y+=FONT_SIZE.get(owner);
+  if (owner instanceof TextHolder) {
+    p.y+=((TextHolder)owner).getInsets().top;
+  }
+  return p;
+}

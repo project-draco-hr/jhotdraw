@@ -1,0 +1,3 @@
+{
+  current.appendChild(document.createTextNode(text));
+}

@@ -1,0 +1,22 @@
+{
+  BezierFigure figure=getBezierFigure();
+  if ((modifiersEx & (InputEvent.META_DOWN_MASK | InputEvent.CTRL_DOWN_MASK)) != 0) {
+    figure.willChange();
+    BezierPath.Node v=figure.getNode(index);
+    v.keepColinear=!v.keepColinear;
+    if (v.keepColinear) {
+      Point2D.Double p=figure.getPoint(index,controlPointIndex);
+      double a=Math.PI + Math.atan2(p.y - v.y[0],p.x - v.x[0]);
+      int c2=(controlPointIndex == 1) ? 2 : 1;
+      double r=Math.sqrt((v.x[c2] - v.x[0]) * (v.x[c2] - v.x[0]) + (v.y[c2] - v.y[0]) * (v.y[c2] - v.y[0]));
+      double sina=Math.sin(a);
+      double cosa=Math.cos(a);
+      Point2D.Double p2=new Point2D.Double(r * cosa + v.x[0],r * sina + v.y[0]);
+      v.x[c2]=p2.x;
+      v.y[c2]=p2.y;
+    }
+    figure.setNode(index,v);
+    figure.changed();
+  }
+  view.getDrawing().fireUndoableEditHappened(edit);
+}

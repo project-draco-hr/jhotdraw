@@ -1,0 +1,8 @@
+{
+  if (p.getApplication() != this) {
+    int oldCount=projects.size();
+    projects.add(p);
+    p.setApplication(this);
+    firePropertyChange("projectCount",oldCount,projects.size());
+  }
+}

@@ -1,0 +1,17 @@
+{
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  bar.add(new AlignAction.West(editor)).setFocusable(false);
+  bar.add(new AlignAction.East(editor)).setFocusable(false);
+  bar.add(new AlignAction.Horizontal(editor)).setFocusable(false);
+  bar.add(new AlignAction.North(editor)).setFocusable(false);
+  bar.add(new AlignAction.South(editor)).setFocusable(false);
+  bar.add(new AlignAction.Vertical(editor)).setFocusable(false);
+  bar.addSeparator();
+  bar.add(new MoveAction.West(editor)).setFocusable(false);
+  bar.add(new MoveAction.East(editor)).setFocusable(false);
+  bar.add(new MoveAction.North(editor)).setFocusable(false);
+  bar.add(new MoveAction.South(editor)).setFocusable(false);
+  bar.addSeparator();
+  bar.add(new MoveToFrontAction(editor)).setFocusable(false);
+  bar.add(new MoveToBackAction(editor)).setFocusable(false);
+}

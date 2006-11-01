@@ -1,6 +1,0 @@
-{
-  List handles=CollectionsFactory.current().createList();
-  BoxHandleKit.addHandles(this,handles);
-  handles.add(new RadiusHandle(this));
-  return new HandleEnumerator(handles);
-}

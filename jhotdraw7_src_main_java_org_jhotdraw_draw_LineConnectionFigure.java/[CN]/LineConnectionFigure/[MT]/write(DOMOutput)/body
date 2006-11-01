@@ -1,0 +1,5 @@
+{
+  writePoints(out);
+  writeAttributes(out);
+  writeLiner(out);
+}

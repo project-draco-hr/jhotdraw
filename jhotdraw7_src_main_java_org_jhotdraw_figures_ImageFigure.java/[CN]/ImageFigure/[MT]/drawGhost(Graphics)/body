@@ -1,4 +1,0 @@
-{
-  g.setColor(Color.gray);
-  g.fillRect(fDisplayBox.x,fDisplayBox.y,fDisplayBox.width,fDisplayBox.height);
-}

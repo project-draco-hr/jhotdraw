@@ -1,7 +1,0 @@
-{
-  Point2D[] tests={new Point2D.Double(2.0,3.0)};
-  for (int i=0; i < tests.length; i++) {
-    bounds.setCenter(tests[i]);
-    assertEquals(tests[i],bounds.getCenter());
-  }
-}

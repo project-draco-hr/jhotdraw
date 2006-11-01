@@ -1,0 +1,3 @@
+{
+  return NAME + "\nVersion " + VERSION+ "\n\nCopyright 2004 \u00a9 Werner Randelshofer"+ "\nAlle Rechte vorbehalten."+ "\n\nDiese Software basiert auf"+ "\nJHotDraw \u00a9 1996, 1997 IFA Informatik und Erich Gamma";
+}

@@ -1,0 +1,6 @@
+{
+  willChange();
+  basicTransform(tx);
+  fireUndoableEditHappened(new TransformEdit(this,tx));
+  changed();
+}

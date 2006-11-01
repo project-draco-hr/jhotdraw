@@ -1,3 +1,0 @@
-{
-  return myOriginalValues.get(lookupAffectedFigure);
-}

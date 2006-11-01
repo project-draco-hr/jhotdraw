@@ -1,0 +1,18 @@
+{
+  Point2D.Double p=view.viewToDrawing(lead);
+  Connector target=findConnectionTarget(p,view.getDrawing());
+  if (target == null) {
+    target=originalTarget;
+  }
+  setLocation(p);
+  if (target != originalTarget) {
+    disconnect();
+    connect(target);
+  }
+  connection.setLiner(liner);
+  getConnection().updateConnection();
+  if (getTargetFigure() != null) {
+    getTargetFigure().setConnectorsVisible(false,null);
+    setTargetFigure(null);
+  }
+}

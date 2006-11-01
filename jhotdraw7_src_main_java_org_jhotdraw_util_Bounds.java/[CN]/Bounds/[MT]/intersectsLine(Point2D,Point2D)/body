@@ -1,3 +1,0 @@
-{
-  return intersectsLine(onePoint2D.getX(),onePoint2D.getY(),twoPoint2D.getX(),twoPoint2D.getY());
-}

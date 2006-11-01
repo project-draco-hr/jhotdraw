@@ -1,0 +1,37 @@
+{
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  final JPopupButton zoomPopupButton=new JPopupButton();
+  labels.configureToolBarButton(zoomPopupButton,"viewZoom");
+  zoomPopupButton.setFocusable(false);
+  if (editor.getDrawingViews().size() == 0) {
+    zoomPopupButton.setText("100 %");
+  }
+ else {
+    zoomPopupButton.setText((int)(editor.getDrawingViews().iterator().next().getScaleFactor() * 100) + " %");
+  }
+  editor.addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      if (evt.getPropertyName() == "focusedView") {
+        if (evt.getNewValue() == null) {
+          zoomPopupButton.setText("100 %");
+        }
+ else {
+          zoomPopupButton.setText((int)(editor.getFocusedView().getScaleFactor() * 100) + " %");
+        }
+      }
+    }
+  }
+);
+  double[] factors={16,8,5,4,3,2,1.5,1.25,1,0.75,0.5,0.25,0.10};
+  for (int i=0; i < factors.length; i++) {
+    zoomPopupButton.add(new ZoomEditorAction(editor,factors[i],zoomPopupButton){
+      public void actionPerformed(      java.awt.event.ActionEvent e){
+        super.actionPerformed(e);
+        zoomPopupButton.setText((int)(editor.getView().getScaleFactor() * 100) + " %");
+      }
+    }
+);
+  }
+  zoomPopupButton.setFocusable(false);
+  return zoomPopupButton;
+}

@@ -1,0 +1,5 @@
+{
+  readBounds(in);
+  readAttributes(in);
+  textLayout=null;
+}

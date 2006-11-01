@@ -1,9 +1,0 @@
-{
-  FigureEnumeration original=undoableadapter.getAffectedFigures();
-  try {
-    undoableadapter.setAffectedFigures(null);
-    fail("IllegalArgumentException expected");
-  }
- catch (  IllegalArgumentException ok) {
-  }
-}

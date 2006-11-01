@@ -1,7 +1,0 @@
-{
-  super.execute();
-  setUndoActivity(createUndoActivity());
-  getUndoActivity().setAffectedFigures(view().selection());
-  view().addToSelectionAll(view().drawing().figures());
-  view().checkDamage();
-}

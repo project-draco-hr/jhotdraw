@@ -1,5 +1,0 @@
-{
-  JToolBar palette=new JToolBar();
-  palette.setBackground(Color.lightGray);
-  return palette;
-}

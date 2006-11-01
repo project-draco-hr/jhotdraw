@@ -1,0 +1,3 @@
+{
+  return getLAFBundle(baseName,LocaleUtil.getDefault());
+}

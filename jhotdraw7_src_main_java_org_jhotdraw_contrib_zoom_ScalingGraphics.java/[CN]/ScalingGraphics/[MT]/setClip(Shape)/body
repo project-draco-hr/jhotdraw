@@ -1,5 +1,0 @@
-{
-  userClip=(Rectangle)clip;
-  if (clip != null)   real.setClip(scaledShape(clip,scale));
- else   real.setClip(null);
-}

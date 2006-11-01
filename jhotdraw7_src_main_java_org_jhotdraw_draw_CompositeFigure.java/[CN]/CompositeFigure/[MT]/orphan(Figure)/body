@@ -1,6 +1,0 @@
-{
-  figure.removeFromContainer(this);
-  fFigures.remove(figure);
-  _removeFromQuadTree(figure);
-  return figure;
-}

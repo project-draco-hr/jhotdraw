@@ -1,4 +1,0 @@
-{
-  super.read(dr);
-  decorate((Figure)dr.readStorable());
-}

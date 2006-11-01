@@ -1,0 +1,6 @@
+Point2D.Double[] d
+int first
+int last
+double[] uPrime
+Point2D.Double tHat1
+Point2D.Double tHat2

@@ -1,0 +1,6 @@
+{
+  if (children.remove(figure)) {
+    children.add(figure);
+    figure.invalidate();
+  }
+}

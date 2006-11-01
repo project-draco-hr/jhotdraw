@@ -1,0 +1,55 @@
+{
+  BezierPath path=((LineConnectionFigure)figure).getBezierPath();
+  Connector start=figure.getStartConnector();
+  Connector end=figure.getEndConnector();
+  if (start == null || end == null || path == null) {
+    return;
+  }
+  while (path.size() < 4) {
+    path.add(1,new BezierPath.Node(0,0));
+  }
+  while (path.size() < 4) {
+    path.remove(1);
+  }
+  Point2D.Double sp=start.findStart(figure);
+  Point2D.Double ep=end.findEnd(figure);
+  sp=figure.getStartPoint();
+  ep=figure.getEndPoint();
+  Rectangle2D.Double sb=start.getBounds();
+  Rectangle2D.Double eb=end.getBounds();
+  path.get(0).moveTo(sp);
+  path.get(path.size() - 1).moveTo(ep);
+  int outcode=sb.outcode(sp);
+  if (outcode == 0) {
+    outcode=Geom.outcode(sb,eb);
+  }
+  if ((outcode & Geom.OUT_RIGHT) != 0) {
+    path.get(1).moveTo(sp.x + slantSize,sp.y);
+  }
+ else   if ((outcode & Geom.OUT_LEFT) != 0) {
+    path.get(1).moveTo(sp.x - slantSize,sp.y);
+  }
+ else   if ((outcode & Geom.OUT_BOTTOM) != 0) {
+    path.get(1).moveTo(sp.x,sp.y + slantSize);
+  }
+ else {
+    path.get(1).moveTo(sp.x,sp.y - slantSize);
+  }
+  outcode=eb.outcode(ep);
+  if (outcode == 0) {
+    outcode=Geom.outcode(eb,sb);
+  }
+  if ((outcode & Geom.OUT_RIGHT) != 0) {
+    path.get(2).moveTo(ep.x + slantSize,ep.y);
+  }
+ else   if ((outcode & Geom.OUT_LEFT) != 0) {
+    path.get(2).moveTo(ep.x - slantSize,ep.y);
+  }
+ else   if ((outcode & Geom.OUT_BOTTOM) != 0) {
+    path.get(2).moveTo(ep.x,ep.y + slantSize);
+  }
+ else {
+    path.get(2).moveTo(ep.x,ep.y - slantSize);
+  }
+  path.invalidatePath();
+}

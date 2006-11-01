@@ -1,0 +1,3 @@
+{
+  fireUndoableEditHappened(e.getEdit());
+}

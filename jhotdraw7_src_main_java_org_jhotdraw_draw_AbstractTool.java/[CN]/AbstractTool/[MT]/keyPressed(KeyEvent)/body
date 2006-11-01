@@ -1,0 +1,74 @@
+{
+  if (evt.getSource() instanceof Container) {
+    editor.setView(editor.findView((Container)evt.getSource()));
+  }
+  CompositeEdit edit;
+switch (evt.getKeyCode()) {
+case KeyEvent.VK_DELETE:
+case KeyEvent.VK_BACK_SPACE:
+{
+      editDelete();
+      break;
+    }
+case KeyEvent.VK_A:
+{
+    if ((evt.getModifiers() & (KeyEvent.CTRL_MASK | KeyEvent.META_MASK)) != 0) {
+      getView().addToSelection(getView().getDrawing().getFigures());
+    }
+    break;
+  }
+case KeyEvent.VK_LEFT:
+{
+  Collection<Figure> figures=getView().getSelectedFigures();
+  AffineTransform tx=new AffineTransform();
+  tx.translate(-1,0);
+  for (  Figure f : figures) {
+    f.willChange();
+    f.basicTransform(tx);
+    f.changed();
+  }
+  getDrawing().fireUndoableEditHappened(new TransformEdit(figures,tx));
+  break;
+}
+case KeyEvent.VK_RIGHT:
+{
+Collection<Figure> figures=getView().getSelectedFigures();
+AffineTransform tx=new AffineTransform();
+tx.translate(1,0);
+for (Figure f : figures) {
+  f.willChange();
+  f.basicTransform(tx);
+  f.changed();
+}
+getDrawing().fireUndoableEditHappened(new TransformEdit(figures,tx));
+break;
+}
+case KeyEvent.VK_UP:
+{
+Collection<Figure> figures=getView().getSelectedFigures();
+AffineTransform tx=new AffineTransform();
+tx.translate(0,-1);
+for (Figure f : figures) {
+f.willChange();
+f.basicTransform(tx);
+f.changed();
+}
+getDrawing().fireUndoableEditHappened(new TransformEdit(figures,tx));
+break;
+}
+case KeyEvent.VK_DOWN:
+{
+Collection<Figure> figures=getView().getSelectedFigures();
+getDrawing().fireUndoableEditHappened(edit=new CompositeEdit("Figur(en) verschieben"));
+AffineTransform tx=new AffineTransform();
+tx.translate(0,1);
+for (Figure f : figures) {
+f.willChange();
+f.basicTransform(tx);
+f.changed();
+}
+getDrawing().fireUndoableEditHappened(new TransformEdit(figures,tx));
+break;
+}
+}
+}

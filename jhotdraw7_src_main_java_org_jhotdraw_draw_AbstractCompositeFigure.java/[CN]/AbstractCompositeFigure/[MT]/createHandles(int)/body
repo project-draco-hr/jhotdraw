@@ -1,0 +1,7 @@
+{
+  if (detailLevel == 0) {
+    return super.createHandles(0);
+  }
+  LinkedList<Handle> handles=new LinkedList<Handle>();
+  return handles;
+}

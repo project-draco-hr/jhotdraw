@@ -1,0 +1,7 @@
+{
+  super(editor);
+  this.key=key;
+  putValue(AbstractAction.NAME,name);
+  putValue(AbstractAction.SMALL_ICON,icon);
+  setEnabled(true);
+}

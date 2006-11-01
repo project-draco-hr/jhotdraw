@@ -1,0 +1,6 @@
+{
+  super.redo();
+  owner.willChange();
+  owner.basicSetNode(index,newValue);
+  owner.changed();
+}

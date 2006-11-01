@@ -1,5 +1,0 @@
-{
-  startFigure().removeFigureChangeListener(this);
-  startFigure().removeDependendFigure(this);
-  setStartConnector(null);
-}

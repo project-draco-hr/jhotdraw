@@ -1,0 +1,4 @@
+{
+  super(editor);
+  putValue(AbstractAction.NAME,labels.getString("editSelectSame"));
+}

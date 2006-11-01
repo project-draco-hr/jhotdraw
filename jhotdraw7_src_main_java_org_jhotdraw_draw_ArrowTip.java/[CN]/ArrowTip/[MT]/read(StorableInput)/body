@@ -1,6 +1,0 @@
-{
-  setAngle(dr.readDouble());
-  setOuterRadius(dr.readDouble());
-  setInnerRadius(dr.readDouble());
-  super.read(dr);
-}

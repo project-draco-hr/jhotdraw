@@ -1,5 +1,0 @@
-{
-  fSelectGroup=new Rectangle(new Point(x1,y1));
-  fSelectGroup.add(new Point(x2,y2));
-  drawXORRect(fSelectGroup);
-}

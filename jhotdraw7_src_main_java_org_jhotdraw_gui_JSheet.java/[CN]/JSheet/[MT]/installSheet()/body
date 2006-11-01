@@ -1,0 +1,46 @@
+{
+  if (!isInstalled) {
+    Window owner=getOwner();
+    if (owner != null) {
+      Point ownerLoc=owner.getLocation();
+      Point sheetLoc;
+      if (isShowAsSheet()) {
+        if (owner instanceof JFrame) {
+          sheetLoc=new Point(ownerLoc.x + (owner.getWidth() - getWidth()) / 2,ownerLoc.y + owner.getInsets().top + ((JFrame)owner).getRootPane().getContentPane().getY());
+        }
+ else         if (owner instanceof JDialog) {
+          sheetLoc=new Point(ownerLoc.x + (owner.getWidth() - getWidth()) / 2,ownerLoc.y + owner.getInsets().top + ((JDialog)owner).getRootPane().getContentPane().getY());
+        }
+ else {
+          sheetLoc=new Point(ownerLoc.x + (owner.getWidth() - getWidth()) / 2,ownerLoc.y + owner.getInsets().top);
+        }
+        if (sheetLoc.x < 0) {
+          owner.setLocation(ownerLoc.x - sheetLoc.x,ownerLoc.y);
+          sheetLoc.x=0;
+          shiftBackLocation=ownerLoc;
+          oldLocation=owner.getLocation();
+        }
+ else {
+          shiftBackLocation=null;
+          oldLocation=ownerLoc;
+        }
+      }
+ else {
+        sheetLoc=new Point(ownerLoc.x + (owner.getWidth() - getWidth()) / 2,ownerLoc.y + (owner.getHeight() - getHeight()) / 2);
+      }
+      setLocation(sheetLoc);
+      oldFocusOwner=owner.getFocusOwner();
+      owner.setFocusableWindowState(false);
+      owner.setEnabled(false);
+      if (UIManager.getBoolean("Sheet.showAsSheet")) {
+        owner.addComponentListener(ownerMovementHandler);
+      }
+ else {
+        if (owner instanceof Frame) {
+          setTitle(((Frame)owner).getTitle());
+        }
+      }
+    }
+    isInstalled=true;
+  }
+}

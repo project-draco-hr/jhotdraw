@@ -1,0 +1,3 @@
+{
+  return getDimensionValue(in,in.getAttribute(attributeName,"0"));
+}

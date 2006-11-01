@@ -1,5 +1,0 @@
-{
-  Rectangle r=target.displayBox();
-  double angle=Geom.pointToAngle(r,from);
-  return Geom.ovalAngleToPoint(r,angle);
-}

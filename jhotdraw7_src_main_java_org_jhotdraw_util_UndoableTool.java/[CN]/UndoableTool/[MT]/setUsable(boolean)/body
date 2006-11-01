@@ -1,3 +1,0 @@
-{
-  getWrappedTool().setUsable(newIsUsable);
-}

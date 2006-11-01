@@ -1,4 +1,0 @@
-{
-  selectiontool=null;
-  super.tearDown();
-}

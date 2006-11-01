@@ -1,0 +1,7 @@
+{
+  if (o instanceof AttributeKey) {
+    AttributeKey that=(AttributeKey)o;
+    return that.key.equals(this.key);
+  }
+  return false;
+}

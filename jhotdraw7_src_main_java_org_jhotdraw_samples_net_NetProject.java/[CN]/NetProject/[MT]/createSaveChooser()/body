@@ -1,0 +1,5 @@
+{
+  JFileChooser c=super.createSaveChooser();
+  c.addChoosableFileFilter(new ExtensionFileFilter("Net Diagram","xml"));
+  return c;
+}

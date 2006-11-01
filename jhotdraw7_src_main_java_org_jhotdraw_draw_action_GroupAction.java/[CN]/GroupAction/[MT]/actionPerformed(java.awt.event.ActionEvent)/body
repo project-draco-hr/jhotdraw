@@ -1,0 +1,24 @@
+{
+  if (canGroup()) {
+    final DrawingView view=getView();
+    final LinkedList<Figure> ungroupedFigures=new LinkedList<Figure>(view.getSelectedFigures());
+    final CompositeFigure group=(CompositeFigure)prototype.clone();
+    CompositeEdit edit=new CompositeEdit(labels.getString("selectionGroup")){
+      public void redo() throws CannotRedoException {
+        super.redo();
+        groupFigures(view,group,ungroupedFigures);
+      }
+      public void undo() throws CannotUndoException {
+        ungroupFigures(view,group);
+        super.undo();
+      }
+      public boolean addEdit(      UndoableEdit anEdit){
+        return super.addEdit(anEdit);
+      }
+    }
+;
+    fireUndoableEditHappened(edit);
+    groupFigures(view,group,ungroupedFigures);
+    fireUndoableEditHappened(edit);
+  }
+}

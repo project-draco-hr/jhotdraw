@@ -1,9 +1,0 @@
-{
-  super.write(dw);
-  dw.writeInt(fDisplayBox.x);
-  dw.writeInt(fDisplayBox.y);
-  dw.writeInt(fDisplayBox.width);
-  dw.writeInt(fDisplayBox.height);
-  dw.writeInt(fArcWidth);
-  dw.writeInt(fArcHeight);
-}

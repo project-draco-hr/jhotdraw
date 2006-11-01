@@ -1,0 +1,7 @@
+Point2D.Double[] d
+int first
+int last
+Point2D.Double tHat1
+Point2D.Double tHat2
+double error
+BezierPath bezierPath

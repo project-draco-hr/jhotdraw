@@ -1,0 +1,13 @@
+{
+  double y=selectionBounds.y + selectionBounds.height;
+  for (Iterator i=getView().getSelectedFigures().iterator(); i.hasNext(); ) {
+    Figure f=(Figure)i.next();
+    f.willChange();
+    Rectangle2D.Double b=f.getBounds();
+    AffineTransform tx=new AffineTransform();
+    tx.translate(0,y - b.y - b.height);
+    f.basicTransform(tx);
+    f.changed();
+    fireUndoableEditHappened(new TransformEdit(f,tx));
+  }
+}

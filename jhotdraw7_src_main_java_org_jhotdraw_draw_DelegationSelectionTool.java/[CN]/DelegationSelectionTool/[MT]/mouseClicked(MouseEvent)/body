@@ -1,0 +1,6 @@
+{
+  super.mouseClicked(evt);
+  if (evt.getClickCount() == 2) {
+    handleDoubleClick(evt);
+  }
+}

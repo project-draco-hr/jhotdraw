@@ -1,7 +1,0 @@
-{
-  Object view=super.view();
-  if (view instanceof ZoomDrawingView) {
-    return (ZoomDrawingView)view;
-  }
-  throw new JHotDrawRuntimeException("execute should NOT be getting called when view not instanceof ZoomDrawingView");
-}

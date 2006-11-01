@@ -1,6 +1,8 @@
 {
-  fEditWidget=new JEditorPane();
-  fEditScrollContainer=new JScrollPane(fEditWidget,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-  fEditScrollContainer.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-  fEditScrollContainer.setBorder(BorderFactory.createLineBorder(Color.black));
+  editWidget=new JTextArea();
+  editWidget.setWrapStyleWord(true);
+  editWidget.setLineWrap(true);
+  editScrollContainer=new JScrollPane(editWidget,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+  editScrollContainer.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+  editScrollContainer.setBorder(BorderFactory.createLineBorder(Color.black));
 }

@@ -1,0 +1,3 @@
+{
+  return (endConnector == null) ? null : endConnector.getOwner();
+}

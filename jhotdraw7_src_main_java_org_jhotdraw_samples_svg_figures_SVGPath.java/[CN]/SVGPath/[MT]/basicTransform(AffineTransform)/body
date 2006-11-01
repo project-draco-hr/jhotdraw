@@ -1,0 +1,4 @@
+{
+  super.basicTransform(tx);
+  invalidatePath();
+}

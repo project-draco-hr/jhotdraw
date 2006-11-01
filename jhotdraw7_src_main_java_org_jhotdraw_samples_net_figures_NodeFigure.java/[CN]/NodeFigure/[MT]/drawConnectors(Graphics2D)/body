@@ -1,0 +1,5 @@
+{
+  for (  Connector c : connectors) {
+    c.draw(g);
+  }
+}

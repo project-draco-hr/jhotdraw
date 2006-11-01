@@ -1,9 +1,0 @@
-{
-  if ((flags & (FRAMEBITS | ALLBITS)) != 0) {
-    invalidate();
-    if (listener() != null) {
-      listener().figureRequestUpdate(new FigureEvent(this));
-    }
-  }
-  return (flags & (ALLBITS | ABORT)) == 0;
-}

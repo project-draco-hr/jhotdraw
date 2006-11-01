@@ -1,6 +1,0 @@
-{
-  Iterator iter=myRegisteredListeners.iterator();
-  while (iter.hasNext()) {
-    ((ToolListener)iter.next()).toolDisabled(new EventObject(myObservedTool));
-  }
-}

@@ -1,4 +1,0 @@
-{
-  super.setUp();
-  mdi_drawapplication=createInstance();
-}

@@ -1,8 +1,0 @@
-{
-  TestSuite suite;
-  suite=new TestSuite("org.jhotdraw.test.framework");
-  suite.addTestSuite(org.jhotdraw.test.framework.FigureAttributeConstantTest.class);
-  suite.addTestSuite(org.jhotdraw.test.framework.FigureChangeEventTest.class);
-  suite.addTestSuite(org.jhotdraw.test.framework.DrawingChangeEventTest.class);
-  return suite;
-}

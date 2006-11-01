@@ -1,0 +1,8 @@
+{
+  Rectangle r=getBounds();
+  g.setColor(fill);
+  g.fillOval(r.x,r.y,r.width,r.height);
+  g.setStroke(new BasicStroke());
+  g.setColor(stroke);
+  g.drawOval(r.x,r.y,r.width,r.height);
+}

@@ -1,0 +1,25 @@
+{
+  if (AttributeKeys.FILL_COLOR.get(this) != null) {
+    g.setColor(AttributeKeys.FILL_COLOR.get(this));
+    drawFill(g);
+  }
+  if (STROKE_COLOR.get(this) != null && STROKE_WIDTH.get(this) > 0d) {
+    g.setStroke(AttributeKeys.getStroke(this));
+    g.setColor(STROKE_COLOR.get(this));
+    drawStroke(g);
+  }
+  if (TEXT_COLOR.get(this) != null) {
+    if (TEXT_SHADOW_COLOR.get(this) != null && TEXT_SHADOW_OFFSET.get(this) != null) {
+      Dimension2DDouble d=TEXT_SHADOW_OFFSET.get(this);
+      g.translate(d.width,d.height);
+      g.setColor(TEXT_SHADOW_COLOR.get(this));
+      drawText(g);
+      g.translate(-d.width,-d.height);
+    }
+    g.setColor(TEXT_COLOR.get(this));
+    drawText(g);
+  }
+  if (isConnectorsVisible()) {
+    drawConnectors(g);
+  }
+}

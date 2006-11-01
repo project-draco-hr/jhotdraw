@@ -1,0 +1,6 @@
+{
+  if (key == CLOSED) {
+    path.setClosed((Boolean)newValue);
+  }
+  super.basicSetAttribute(key,newValue);
+}

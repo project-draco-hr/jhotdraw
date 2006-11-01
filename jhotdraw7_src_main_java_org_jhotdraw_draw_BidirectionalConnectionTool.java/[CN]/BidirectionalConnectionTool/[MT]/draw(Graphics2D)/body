@@ -1,0 +1,5 @@
+{
+  if (createdFigure != null) {
+    createdFigure.draw(g);
+  }
+}

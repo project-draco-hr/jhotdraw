@@ -1,0 +1,11 @@
+{
+  try {
+    return invokeStatic(Class.forName(clazz),methodName,types,values);
+  }
+ catch (  ClassNotFoundException e) {
+    return defaultValue;
+  }
+catch (  NoSuchMethodException e) {
+    return defaultValue;
+  }
+}

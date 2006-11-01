@@ -1,0 +1,5 @@
+{
+  TextHolder textOwner=(TextHolder)getOwner();
+  float newSize=(float)Math.max(1,oldSize + view.viewToDrawing(new Point(0,lead.y - anchor.y)).y);
+  textOwner.setFontSize(newSize);
+}

@@ -1,6 +1,0 @@
-{
-  List l=CollectionsFactory.current().createList();
-  l.add("TestString1");
-  l.add("TestString2");
-  return new ReverseListEnumerator(l);
-}

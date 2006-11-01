@@ -1,0 +1,5 @@
+{
+  Collection<Figure> c=quadTree.findIntersects(g.getClipBounds().getBounds2D());
+  Collection<Figure> toDraw=sort(c);
+  draw(g,toDraw);
+}

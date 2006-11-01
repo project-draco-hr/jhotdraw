@@ -1,6 +1,0 @@
-{
-  if (fConnectorsVisible) {
-    Iterator connectorsIterator=getConnectors().iterator();
-    while (connectorsIterator.hasNext())     ((Connector)connectorsIterator.next()).draw(g);
-  }
-}

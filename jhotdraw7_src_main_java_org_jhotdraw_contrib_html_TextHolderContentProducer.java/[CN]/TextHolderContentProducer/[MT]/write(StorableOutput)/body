@@ -1,4 +1,0 @@
-{
-  super.write(dw);
-  dw.writeStorable(getTextHolder().getRepresentingFigure());
-}

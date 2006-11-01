@@ -1,0 +1,7 @@
+{
+  out.openElement("figures");
+  for (  Figure f : getFigures()) {
+    out.writeObject(f);
+  }
+  out.closeElement();
+}

@@ -1,0 +1,4 @@
+{
+  putAction(UndoAction.ID,undo.getUndoAction());
+  putAction(RedoAction.ID,undo.getRedoAction());
+}

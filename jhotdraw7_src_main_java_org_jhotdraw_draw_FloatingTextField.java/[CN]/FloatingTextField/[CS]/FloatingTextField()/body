@@ -1,0 +1,3 @@
+{
+  editWidget=new JTextField(20);
+}

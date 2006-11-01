@@ -1,4 +1,0 @@
-{
-  nodes.put(node,new GraphNode(node));
-  node.addFigureChangeListener(this);
-}

@@ -1,3 +1,0 @@
-{
-  myStorageFormats.remove(oldStorageFormat);
-}

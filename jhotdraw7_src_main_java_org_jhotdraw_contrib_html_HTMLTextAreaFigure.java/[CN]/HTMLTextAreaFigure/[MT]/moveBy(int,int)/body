@@ -1,4 +1,0 @@
-{
-  super.moveBy(dx,dy);
-  getFrameFigure().moveBy(dx,dy);
-}

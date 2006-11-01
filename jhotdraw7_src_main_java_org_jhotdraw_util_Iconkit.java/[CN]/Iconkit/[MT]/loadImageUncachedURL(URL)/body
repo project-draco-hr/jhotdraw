@@ -1,9 +1,0 @@
-{
-  Toolkit toolkit=Toolkit.getDefaultToolkit();
-  try {
-    return toolkit.createImage((ImageProducer)url.getContent());
-  }
- catch (  Exception ex) {
-    return null;
-  }
-}

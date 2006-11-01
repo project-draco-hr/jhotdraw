@@ -1,4 +1,0 @@
-{
-  textareafigure=null;
-  super.tearDown();
-}

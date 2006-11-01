@@ -1,5 +1,0 @@
-{
-  Tool tool=createSelectionTool();
-  fDefaultToolButton=createToolButton(IMAGES + "SEL","Selection Tool",tool);
-  palette.add(fDefaultToolButton);
-}

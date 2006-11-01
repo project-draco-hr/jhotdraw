@@ -1,5 +1,0 @@
-{
-  ToolButton toolButton=(ToolButton)button;
-  setTool(toolButton.tool(),toolButton.name());
-  setSelected(toolButton);
-}

@@ -1,4 +1,0 @@
-{
-  graphlayout=null;
-  super.tearDown();
-}

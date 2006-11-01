@@ -1,5 +1,0 @@
-{
-  Object cloneObject=super.clone();
-  ((HTMLTextAreaFigure)cloneObject).initialize();
-  return cloneObject;
-}

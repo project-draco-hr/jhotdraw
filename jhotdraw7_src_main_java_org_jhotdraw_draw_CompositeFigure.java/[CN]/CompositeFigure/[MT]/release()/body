@@ -1,8 +1,0 @@
-{
-  FigureEnumeration fe=figures();
-  while (fe.hasNextFigure()) {
-    Figure figure=fe.nextFigure();
-    figure.release();
-  }
-  super.release();
-}

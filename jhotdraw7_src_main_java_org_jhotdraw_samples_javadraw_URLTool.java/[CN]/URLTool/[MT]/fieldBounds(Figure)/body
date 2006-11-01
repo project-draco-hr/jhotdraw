@@ -1,8 +1,0 @@
-{
-  Rectangle box=figure.displayBox();
-  int nChars=Math.max(20,getURL(figure).length());
-  Dimension d=fTextField.getPreferredSize(nChars);
-  box.x=Math.max(0,box.x + (box.width - d.width) / 2);
-  box.y=Math.max(0,box.y + (box.height - d.height) / 2);
-  return new Rectangle(box.x,box.y,d.width,d.height);
-}

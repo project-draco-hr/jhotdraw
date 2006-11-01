@@ -1,6 +1,0 @@
-{
-  super(newDrawingView);
-  setOriginalText(newOriginalText);
-  setUndoable(true);
-  setRedoable(true);
-}

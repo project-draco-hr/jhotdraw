@@ -1,4 +1,0 @@
-{
-  splitconnectiontool=null;
-  super.tearDown();
-}

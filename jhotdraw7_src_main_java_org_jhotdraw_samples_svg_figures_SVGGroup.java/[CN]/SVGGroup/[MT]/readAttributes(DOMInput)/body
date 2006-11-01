@@ -1,0 +1,3 @@
+{
+  SVGUtil.readAttributes(this,in);
+}

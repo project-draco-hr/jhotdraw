@@ -1,4 +1,0 @@
-{
-  Point p=locate();
-  return owner().connectorAt(p.x,p.y);
-}

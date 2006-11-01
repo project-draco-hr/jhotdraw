@@ -1,3 +1,0 @@
-{
-  setText(Integer.toString(value));
-}

@@ -1,0 +1,11 @@
+{
+  BezierFigure figure=getBezierFigure();
+  figure.willChange();
+  Point2D.Double p=view.getConstrainer().constrainPoint(view.viewToDrawing(lead));
+  BezierPath.Node n=figure.getNode(index);
+  fireAreaInvalidated(n);
+  n.moveTo(p);
+  fireAreaInvalidated(n);
+  figure.basicSetNode(index,n);
+  figure.changed();
+}

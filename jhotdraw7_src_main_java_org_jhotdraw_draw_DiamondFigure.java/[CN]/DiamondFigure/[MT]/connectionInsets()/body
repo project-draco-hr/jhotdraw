@@ -1,4 +1,0 @@
-{
-  Rectangle r=displayBox();
-  return new Insets(r.height / 2,r.width / 2,r.height / 2,r.width / 2);
-}

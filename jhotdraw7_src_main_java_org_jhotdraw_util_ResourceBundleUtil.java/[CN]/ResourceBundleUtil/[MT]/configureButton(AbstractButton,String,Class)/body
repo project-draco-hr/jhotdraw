@@ -1,0 +1,5 @@
+{
+  button.setText(getString(argument));
+  button.setIcon(getImageIcon(argument,baseClass));
+  button.setToolTipText(getTip(argument));
+}

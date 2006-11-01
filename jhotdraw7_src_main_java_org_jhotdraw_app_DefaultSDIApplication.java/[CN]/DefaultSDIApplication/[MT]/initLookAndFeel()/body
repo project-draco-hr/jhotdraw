@@ -1,0 +1,15 @@
+{
+  System.setProperty("apple.laf.useScreenMenuBar","false");
+  System.setProperty("com.apple.macos.useScreenMenuBar","false");
+  System.setProperty("apple.awt.graphics.UseQuartz","false");
+  try {
+    String lafName=UIManager.getSystemLookAndFeelClassName();
+    UIManager.setLookAndFeel(lafName);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+  if (UIManager.getString("OptionPane.css") == null) {
+    UIManager.put("OptionPane.css","");
+  }
+}

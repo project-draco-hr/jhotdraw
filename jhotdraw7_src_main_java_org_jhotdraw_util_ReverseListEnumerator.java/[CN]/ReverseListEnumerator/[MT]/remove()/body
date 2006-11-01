@@ -1,4 +1,0 @@
-{
-  myList.remove(count);
-  count--;
-}

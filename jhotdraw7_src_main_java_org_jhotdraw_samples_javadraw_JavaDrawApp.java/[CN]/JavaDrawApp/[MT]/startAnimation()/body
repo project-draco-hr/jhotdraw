@@ -1,6 +1,0 @@
-{
-  if (view().drawing() instanceof Animatable && fAnimator == null) {
-    fAnimator=new Animator((Animatable)view().drawing(),view());
-    fAnimator.start();
-  }
-}

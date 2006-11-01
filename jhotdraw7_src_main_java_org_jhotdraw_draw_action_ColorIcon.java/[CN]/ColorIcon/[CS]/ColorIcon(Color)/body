@@ -1,0 +1,4 @@
+{
+  this.fillColor=fillColor;
+  borderColor=(fillColor == null) ? new Color(0,0,0,38) : Colors.shadow(fillColor,38);
+}

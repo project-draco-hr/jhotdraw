@@ -1,5 +1,0 @@
-{
-  super();
-  fCommands=CollectionsFactory.current().createList(10);
-  addItemListener(this);
-}

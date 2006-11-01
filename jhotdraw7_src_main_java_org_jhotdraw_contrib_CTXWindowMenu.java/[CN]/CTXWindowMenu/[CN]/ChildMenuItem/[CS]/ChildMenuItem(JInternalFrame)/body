@@ -1,4 +1,0 @@
-{
-  super(newFrame.getTitle());
-  frame=newFrame;
-}

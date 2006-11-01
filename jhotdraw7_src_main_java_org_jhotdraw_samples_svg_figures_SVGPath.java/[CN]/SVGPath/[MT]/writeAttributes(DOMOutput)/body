@@ -1,0 +1,3 @@
+{
+  SVGUtil.writeAttributes(this,out);
+}

@@ -1,4 +1,0 @@
-{
-  palettelayout=null;
-  super.tearDown();
-}

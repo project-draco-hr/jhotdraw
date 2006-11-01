@@ -1,7 +1,0 @@
-{
-  if (!super.redo()) {
-    return false;
-  }
-  moveAffectedFigures(getOriginalPoint(),getBackupPoint());
-  return true;
-}

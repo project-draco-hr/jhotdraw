@@ -3,16 +3,16 @@
   int vx=x2 - x1;
   int vy=y2 - y1;
   if (vy < vx && vx > -vy) {
-    direction=EAST;
+    direction=OUT_RIGHT;
   }
  else   if (vy > vx && vy > -vx) {
-    direction=NORTH;
+    direction=OUT_TOP;
   }
  else   if (vx < vy && vx < -vy) {
-    direction=WEST;
+    direction=OUT_LEFT;
   }
  else {
-    direction=SOUTH;
+    direction=OUT_BOTTOM;
   }
   return direction;
 }

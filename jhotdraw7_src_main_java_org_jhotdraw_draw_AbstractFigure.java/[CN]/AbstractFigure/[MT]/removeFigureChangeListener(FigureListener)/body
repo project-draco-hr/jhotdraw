@@ -1,3 +1,0 @@
-{
-  fListener=FigureChangeEventMulticaster.remove(listener(),l);
-}

@@ -1,0 +1,6 @@
+{
+  if (value == null && !isNullValueAllowed) {
+    throw new NullPointerException("Null value not allowed for AttributeKey " + key);
+  }
+  f.setAttribute(this,value);
+}

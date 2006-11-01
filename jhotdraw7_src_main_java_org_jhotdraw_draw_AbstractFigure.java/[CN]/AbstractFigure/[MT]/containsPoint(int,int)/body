@@ -1,3 +1,0 @@
-{
-  return displayBox().contains(x,y);
-}

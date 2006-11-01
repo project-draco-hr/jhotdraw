@@ -1,3 +1,0 @@
-{
-  return new UndoableTool(new UndoableTool(new CreationTool(getDrawingEditor(),new DiamondFigure())));
-}

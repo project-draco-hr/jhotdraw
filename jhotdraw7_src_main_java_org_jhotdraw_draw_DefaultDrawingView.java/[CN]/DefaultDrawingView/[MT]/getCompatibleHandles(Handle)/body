@@ -1,0 +1,14 @@
+{
+  validateHandles();
+  HashSet<Figure> owners=new HashSet<Figure>();
+  LinkedList<Handle> compatibleHandles=new LinkedList<Handle>();
+  owners.add(master.getOwner());
+  compatibleHandles.add(master);
+  for (  Handle handle : getSelectionHandles()) {
+    if (!owners.contains(handle.getOwner()) && handle.isCombinableWith(master)) {
+      owners.add(handle.getOwner());
+      compatibleHandles.add(handle);
+    }
+  }
+  return compatibleHandles;
+}

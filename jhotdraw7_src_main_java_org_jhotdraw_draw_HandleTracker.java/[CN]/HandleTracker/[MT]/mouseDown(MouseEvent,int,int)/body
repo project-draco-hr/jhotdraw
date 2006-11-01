@@ -1,4 +1,0 @@
-{
-  super.mouseDown(e,x,y);
-  fAnchorHandle.invokeStart(x,y,view());
-}

@@ -1,0 +1,3 @@
+{
+  return (Locator)f.getAttribute(LAYOUT_LOCATOR);
+}

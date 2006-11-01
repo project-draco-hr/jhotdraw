@@ -1,4 +1,0 @@
-{
-  super.read(dr);
-  setTextHolder((TextHolder)dr.readStorable());
-}

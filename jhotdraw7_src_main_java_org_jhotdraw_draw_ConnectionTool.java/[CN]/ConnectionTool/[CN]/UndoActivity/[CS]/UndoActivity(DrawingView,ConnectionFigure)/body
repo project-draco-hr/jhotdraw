@@ -1,8 +1,0 @@
-{
-  super(newDrawingView);
-  setConnection(newConnection);
-  myStartConnector=getConnection().getStartConnector();
-  myEndConnector=getConnection().getEndConnector();
-  setUndoable(true);
-  setRedoable(true);
-}

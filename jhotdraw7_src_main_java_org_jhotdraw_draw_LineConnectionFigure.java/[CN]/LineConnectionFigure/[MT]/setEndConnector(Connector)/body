@@ -1,3 +1,26 @@
 {
-  myEndConnector=newEndConnector;
+  final Connector oldEnd=endConnector;
+  if (newEnd != oldEnd) {
+    willChange();
+    basicSetEndConnector(newEnd);
+    fireUndoableEditHappened(new AbstractUndoableEdit(){
+      public String getPresentationName(){
+        return "End-Verbindung setzen";
+      }
+      public void undo() throws CannotUndoException {
+        super.undo();
+        willChange();
+        basicSetEndConnector(oldEnd);
+        changed();
+      }
+      public void redo() throws CannotUndoException {
+        super.redo();
+        willChange();
+        basicSetEndConnector(newEnd);
+        changed();
+      }
+    }
+);
+    changed();
+  }
 }

@@ -1,4 +1,0 @@
-{
-  nullconnector=null;
-  super.tearDown();
-}

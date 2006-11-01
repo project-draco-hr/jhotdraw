@@ -1,0 +1,9 @@
+{
+  JFileChooser fileChooser=project.getOpenChooser();
+  if (fileChooser.showOpenDialog(project.getComponent()) == JFileChooser.APPROVE_OPTION) {
+    openFile(project,fileChooser);
+  }
+ else {
+    project.setEnabled(true);
+  }
+}

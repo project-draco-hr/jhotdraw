@@ -1,4 +1,0 @@
-{
-  super.draw(g);
-  drawText(g,displayBox());
-}

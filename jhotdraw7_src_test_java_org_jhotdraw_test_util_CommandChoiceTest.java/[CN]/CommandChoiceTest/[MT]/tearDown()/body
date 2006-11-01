@@ -1,4 +1,0 @@
-{
-  commandchoice=null;
-  super.tearDown();
-}

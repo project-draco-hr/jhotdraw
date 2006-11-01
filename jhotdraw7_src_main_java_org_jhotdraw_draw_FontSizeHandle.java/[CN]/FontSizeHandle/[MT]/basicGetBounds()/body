@@ -1,0 +1,5 @@
+{
+  Rectangle r=new Rectangle(getLocation());
+  r.grow(getHandlesize() / 2 + 1,getHandlesize() / 2 + 1);
+  return r;
+}

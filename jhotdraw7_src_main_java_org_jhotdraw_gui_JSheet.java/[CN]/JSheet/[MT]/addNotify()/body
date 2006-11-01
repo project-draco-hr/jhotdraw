@@ -1,0 +1,6 @@
+{
+  super.addNotify();
+  if (UIManager.getBoolean("Sheet.showAsSheet")) {
+    Methods.invokeStatic("ch.randelshofer.quaqua.QuaquaUtilities","setWindowAlpha",new Class[]{Window.class,Integer.TYPE},new Object[]{this,240},null);
+  }
+}

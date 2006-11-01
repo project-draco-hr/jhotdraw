@@ -1,6 +1,0 @@
-{
-  super.read(dr);
-  setFrameFigure((Figure)dr.readStorable());
-  setUseDirectDraw(dr.readBoolean());
-  setRawHTML(dr.readBoolean());
-}

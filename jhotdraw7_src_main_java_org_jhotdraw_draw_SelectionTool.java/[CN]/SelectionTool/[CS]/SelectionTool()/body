@@ -1,0 +1,4 @@
+{
+  tracker=createAreaTracker();
+  tracker.addToolListener(this);
+}

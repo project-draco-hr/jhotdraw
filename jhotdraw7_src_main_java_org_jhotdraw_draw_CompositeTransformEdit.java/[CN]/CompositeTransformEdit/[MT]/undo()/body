@@ -1,0 +1,11 @@
+{
+  super.undo();
+  owner.willChange();
+  try {
+    owner.basicTransform(tx.createInverse());
+  }
+ catch (  NoninvertibleTransformException ex) {
+    ex.printStackTrace();
+  }
+  owner.changed();
+}

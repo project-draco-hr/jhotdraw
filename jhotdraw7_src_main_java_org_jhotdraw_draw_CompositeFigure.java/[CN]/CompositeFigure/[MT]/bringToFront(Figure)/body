@@ -1,9 +1,0 @@
-{
-  if (containsFigure(figure)) {
-    fFigures.remove(figure);
-    fFigures.add(figure);
-    _nHighestZ++;
-    figure.setZValue(_nHighestZ);
-    figure.changed();
-  }
-}

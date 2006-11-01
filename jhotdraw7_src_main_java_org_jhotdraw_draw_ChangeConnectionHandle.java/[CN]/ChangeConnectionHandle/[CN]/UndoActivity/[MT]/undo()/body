@@ -1,7 +1,0 @@
-{
-  if (!super.undo()) {
-    return false;
-  }
-  swapConnectors();
-  return true;
-}

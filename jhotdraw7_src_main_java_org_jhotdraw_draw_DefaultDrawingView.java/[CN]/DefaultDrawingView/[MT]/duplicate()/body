@@ -1,0 +1,20 @@
+{
+  Collection<Figure> sorted=getDrawing().sort(getSelectedFigures());
+  HashMap<Figure,Figure> originalToDuplicateMap=new HashMap<Figure,Figure>(sorted.size());
+  clearSelection();
+  Drawing drawing=getDrawing();
+  ArrayList<Figure> duplicates=new ArrayList<Figure>(sorted.size());
+  AffineTransform tx=new AffineTransform();
+  tx.translate(5,5);
+  for (  Figure f : sorted) {
+    Figure d=(Figure)f.clone();
+    d.basicTransform(tx);
+    duplicates.add(d);
+    originalToDuplicateMap.put(f,d);
+    drawing.add(d);
+  }
+  for (  Figure f : duplicates) {
+    f.remap(originalToDuplicateMap);
+  }
+  addToSelection(duplicates);
+}

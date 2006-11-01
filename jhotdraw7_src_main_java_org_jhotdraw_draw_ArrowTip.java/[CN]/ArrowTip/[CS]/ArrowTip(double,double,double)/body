@@ -1,5 +1,3 @@
 {
-  setAngle(angle);
-  setOuterRadius(outerRadius);
-  setInnerRadius(innerRadius);
+  this(angle,outerRadius,innerRadius,true,false,true);
 }

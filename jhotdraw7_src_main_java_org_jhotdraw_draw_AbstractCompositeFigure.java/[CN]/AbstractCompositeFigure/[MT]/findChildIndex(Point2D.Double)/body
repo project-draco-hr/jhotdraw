@@ -1,0 +1,4 @@
+{
+  Figure child=findChild(p);
+  return (child == null) ? -1 : children.indexOf(child);
+}

@@ -1,0 +1,15 @@
+{
+  BezierFigure f=getBezierFigure();
+  if (f.getPointCount() > index) {
+    BezierPath.Node v=f.getNode(index);
+    if (v.mask == 0) {
+      drawRectangle(g,Color.black,Color.white);
+    }
+ else     if (v.mask == BezierPath.C1_MASK || v.mask == BezierPath.C2_MASK || !f.isClosed() && v.mask == (BezierPath.C1_MASK | BezierPath.C2_MASK) && index == 0 || index == f.getNodeCount() - 1) {
+      drawDiamond(g,Color.black,Color.white);
+    }
+ else {
+      drawCircle(g,Color.black,Color.white);
+    }
+  }
+}

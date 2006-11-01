@@ -1,4 +1,0 @@
-{
-  super(name,newDrawingEditor);
-  fGrid=new Point(grid.x,grid.y);
-}

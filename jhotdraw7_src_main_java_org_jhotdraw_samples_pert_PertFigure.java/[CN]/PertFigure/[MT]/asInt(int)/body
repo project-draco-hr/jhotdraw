@@ -1,4 +1,0 @@
-{
-  NumberTextFigure t=(NumberTextFigure)figureAt(figureIndex);
-  return t.getValue();
-}

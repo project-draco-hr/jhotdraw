@@ -1,4 +1,0 @@
-{
-  Tool tool=new SelectionTool(getDrawingEditor());
-  return new ToolButton(getDrawingEditor(),DrawApplication.IMAGES + "SEL","Selection Tool",tool);
-}

@@ -1,4 +1,0 @@
-{
-  motionListener=new DrawingViewMouseMotionListener();
-  return motionListener;
-}

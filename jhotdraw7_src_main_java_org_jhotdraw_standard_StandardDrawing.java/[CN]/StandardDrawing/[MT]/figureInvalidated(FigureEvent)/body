@@ -1,8 +1,0 @@
-{
-  if (fListeners != null) {
-    for (int i=0; i < fListeners.size(); i++) {
-      DrawingListener l=(DrawingListener)fListeners.get(i);
-      l.drawingInvalidated(new DrawingEvent(this,e.getInvalidatedRectangle()));
-    }
-  }
-}

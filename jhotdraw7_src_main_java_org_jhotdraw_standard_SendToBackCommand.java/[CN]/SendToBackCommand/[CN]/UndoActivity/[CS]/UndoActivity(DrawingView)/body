@@ -1,6 +1,0 @@
-{
-  super(newDrawingView);
-  myOriginalLayers=new Hashtable();
-  setUndoable(true);
-  setRedoable(true);
-}

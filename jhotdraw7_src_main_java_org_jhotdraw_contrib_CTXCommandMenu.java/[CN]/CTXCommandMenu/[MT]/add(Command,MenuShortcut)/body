@@ -1,3 +1,0 @@
-{
-  addMenuItem(new CommandMenuItem(command,shortcut.getKey()));
-}

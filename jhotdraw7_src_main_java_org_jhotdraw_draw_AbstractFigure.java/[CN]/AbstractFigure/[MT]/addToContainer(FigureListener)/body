@@ -1,4 +1,0 @@
-{
-  addFigureChangeListener(c);
-  invalidate();
-}

@@ -1,0 +1,31 @@
+{
+  final Application app=getApplication();
+  if (evt instanceof ApplicationEvent) {
+    final ApplicationEvent ae=(ApplicationEvent)evt;
+    final Project p=app.createProject();
+    p.setEnabled(false);
+    app.add(p);
+    p.execute(new Worker(){
+      public Object construct(){
+        try {
+          p.read(ae.getFile());
+          return null;
+        }
+ catch (        IOException e) {
+          return e;
+        }
+      }
+      public void finished(      Object value){
+        if (value == null) {
+          p.setFile(ae.getFile());
+          p.setEnabled(true);
+        }
+ else {
+          app.dispose(p);
+          JOptionPane.showMessageDialog(null,"<html>" + UIManager.getString("OptionPane.css") + "<b>Can't open file "+ ae.getFile()+ "</b><p>"+ value,"",JOptionPane.ERROR_MESSAGE);
+        }
+      }
+    }
+);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return new Point2D.Double(p.x / scaleFactor + translate.x,p.y / scaleFactor + translate.y);
+}

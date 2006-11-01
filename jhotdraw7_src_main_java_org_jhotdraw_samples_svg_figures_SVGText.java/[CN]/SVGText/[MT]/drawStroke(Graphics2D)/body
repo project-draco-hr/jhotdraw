@@ -1,0 +1,10 @@
+{
+  if (getText() != null || isEditable()) {
+    Rectangle2D.Double bounds=getBounds();
+    TextLayout layout=getTextLayout();
+    AffineTransform tx=new AffineTransform();
+    tx.translate(origin.x,origin.y + layout.getAscent());
+    Shape outline=layout.getOutline(tx);
+    g.draw(outline);
+  }
+}

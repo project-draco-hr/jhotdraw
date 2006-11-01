@@ -1,9 +1,0 @@
-{
-  int[] realXPoints=new int[nPoints];
-  int[] realYPoints=new int[nPoints];
-  for (int i=0; i < nPoints; i++) {
-    realXPoints[i]=(int)(xPoints[i] * scale);
-    realYPoints[i]=(int)(yPoints[i] * scale);
-  }
-  real.drawPolygon(realXPoints,realYPoints,nPoints);
-}

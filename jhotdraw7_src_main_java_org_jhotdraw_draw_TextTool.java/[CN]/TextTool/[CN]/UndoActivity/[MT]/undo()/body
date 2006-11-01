@@ -1,8 +1,0 @@
-{
-  if (!super.undo()) {
-    return false;
-  }
-  getDrawingView().clearSelection();
-  setText(getOriginalText());
-  return true;
-}

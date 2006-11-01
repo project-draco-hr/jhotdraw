@@ -1,0 +1,11 @@
+{
+  super.init();
+  prefs=Preferences.userNodeForPackage((getModel() == null) ? getClass() : getModel().getClass());
+  initLookAndFeel();
+  paletteHandler=new OSXPaletteHandler(this);
+  initLabels();
+  initApplicationActions();
+  paletteActions=new LinkedList<Action>();
+  initPalettes(paletteActions);
+  initScreenMenuBar();
+}

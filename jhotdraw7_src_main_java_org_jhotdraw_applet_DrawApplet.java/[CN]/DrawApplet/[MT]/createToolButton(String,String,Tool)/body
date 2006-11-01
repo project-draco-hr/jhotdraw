@@ -1,3 +1,0 @@
-{
-  return new ToolButton(this,iconName,toolName,tool);
-}

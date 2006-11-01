@@ -1,0 +1,7 @@
+{
+  in.openElement("children");
+  for (int i=0; i < in.getElementCount(); i++) {
+    add((Figure)in.readObject(i));
+  }
+  in.closeElement();
+}

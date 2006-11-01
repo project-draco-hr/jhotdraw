@@ -1,6 +1,0 @@
-{
-  includeXCoordinate(aBounds.getLesserX());
-  includeXCoordinate(aBounds.getGreaterX());
-  includeYCoordinate(aBounds.getLesserY());
-  includeYCoordinate(aBounds.getGreaterY());
-}

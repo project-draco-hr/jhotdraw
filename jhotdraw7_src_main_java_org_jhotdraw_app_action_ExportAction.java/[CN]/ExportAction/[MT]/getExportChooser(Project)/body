@@ -1,0 +1,10 @@
+{
+  try {
+    return (JFileChooser)Methods.invoke(project,"getExportChooser");
+  }
+ catch (  Throwable e) {
+    InternalError error=new InternalError("Project does not support exporting");
+    error.initCause(e);
+    throw error;
+  }
+}

@@ -1,3 +1,0 @@
-{
-  real.drawRoundRect((int)(x * scale),(int)(y * scale),(int)(width * scale),(int)(height * scale),(int)(arcWidth * scale),(int)(arcHeight * scale));
-}

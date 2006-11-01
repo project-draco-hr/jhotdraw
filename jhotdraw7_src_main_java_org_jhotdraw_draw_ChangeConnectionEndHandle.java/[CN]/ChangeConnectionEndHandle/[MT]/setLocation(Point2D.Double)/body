@@ -1,0 +1,5 @@
+{
+  getConnection().willChange();
+  getConnection().setEndPoint(p);
+  getConnection().changed();
+}

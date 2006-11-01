@@ -1,0 +1,3 @@
+{
+  return (getCurrentProject() == null) ? null : getCurrentProject().getAction("undo");
+}

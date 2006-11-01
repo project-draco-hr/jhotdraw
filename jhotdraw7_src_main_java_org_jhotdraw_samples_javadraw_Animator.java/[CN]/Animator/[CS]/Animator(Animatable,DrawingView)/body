@@ -1,5 +1,0 @@
-{
-  super("Animator");
-  fView=view;
-  fAnimatable=animatable;
-}

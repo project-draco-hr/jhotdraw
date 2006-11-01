@@ -1,0 +1,10 @@
+{
+  setConnection(createConnection());
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  edit=new CompositeEdit(labels.getString("createConnection"));
+  fireUndoableEditHappened(edit);
+  Point2D.Double p=getLocationOnDrawing();
+  getConnection().setStartPoint(p);
+  getConnection().setEndPoint(p);
+  view.getDrawing().add(getConnection());
+}

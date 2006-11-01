@@ -1,0 +1,3 @@
+{
+  this(rows,cols,0,0,isVertical);
+}

@@ -1,0 +1,6 @@
+{
+  super.setAttribute(key,newValue);
+  if (getDecorator() != null) {
+    getDecorator().setAttribute(key,newValue);
+  }
+}

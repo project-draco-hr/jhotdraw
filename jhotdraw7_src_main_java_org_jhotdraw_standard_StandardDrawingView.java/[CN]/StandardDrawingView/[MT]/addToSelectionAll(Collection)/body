@@ -1,3 +1,0 @@
-{
-  addToSelectionAll(new FigureEnumerator(figures));
-}

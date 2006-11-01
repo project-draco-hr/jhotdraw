@@ -1,7 +1,0 @@
-{
-  setEditor(newDrawingEditor);
-  setEventDispatcher(createEventDispatcher());
-  setEnabled(true);
-  checkUsable();
-  editor().addViewChangeListener(createViewChangeListener());
-}

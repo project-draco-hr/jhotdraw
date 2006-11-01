@@ -1,9 +1,0 @@
-{
-  try {
-    fOwner=(Figure)dr.readStorable();
-  }
- catch (  ClassCastException ex) {
-    Object o=dr.readStorable();
-    System.out.println("Class Cast Exception " + o.toString());
-  }
-}

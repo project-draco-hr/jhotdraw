@@ -1,0 +1,4 @@
+{
+  Boolean b=(Boolean)getAttribute(IS_QUADRATIC);
+  return b == null ? false : b.booleanValue();
+}

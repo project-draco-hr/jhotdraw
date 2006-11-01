@@ -1,0 +1,6 @@
+{
+  Map<AttributeKey,Object> attr=((AttributedFigure)getPresentationFigure()).getAttributes();
+  for (  Map.Entry<AttributeKey,Object> entry : attr.entrySet()) {
+    f.setAttribute(entry.getKey(),entry.getValue());
+  }
+}

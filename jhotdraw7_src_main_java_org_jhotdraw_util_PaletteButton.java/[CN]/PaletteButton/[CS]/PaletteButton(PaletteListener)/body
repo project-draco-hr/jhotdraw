@@ -1,6 +1,0 @@
-{
-  fListener=listener;
-  fState=fOldState=NORMAL;
-  addMouseListener(this);
-  addMouseMotionListener(this);
-}

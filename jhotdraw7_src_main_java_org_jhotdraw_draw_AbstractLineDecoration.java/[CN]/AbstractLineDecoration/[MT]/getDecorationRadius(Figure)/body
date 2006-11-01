@@ -1,0 +1,11 @@
+{
+  double strokeWidth=STROKE_WIDTH.get(f);
+  double scaleFactor;
+  if (strokeWidth > 1f) {
+    scaleFactor=1d + (strokeWidth - 1d) / 2d;
+  }
+ else {
+    scaleFactor=1d;
+  }
+  return getDecoratorPathRadius(f) * scaleFactor;
+}

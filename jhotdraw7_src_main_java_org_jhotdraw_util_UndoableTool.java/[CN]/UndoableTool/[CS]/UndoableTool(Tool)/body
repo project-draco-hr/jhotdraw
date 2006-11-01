@@ -1,5 +1,0 @@
-{
-  setEventDispatcher(createEventDispatcher());
-  setWrappedTool(newWrappedTool);
-  getWrappedTool().addToolListener(this);
-}

@@ -1,4 +1,0 @@
-{
-  windowmenu=null;
-  super.tearDown();
-}

@@ -1,0 +1,11 @@
+{
+  views.add(view);
+  view.addNotify(this);
+  view.getContainer().addFocusListener(focusHandler);
+  if (tool != null) {
+    view.addMouseListener(tool);
+    view.addMouseMotionListener(tool);
+    view.addKeyListener(tool);
+  }
+  updateFocusedView();
+}

@@ -1,6 +1,0 @@
-{
-  setCreatedFigure(null);
-  setAddedFigure(null);
-  setContainerFigure(null);
-  editor().toolDone();
-}

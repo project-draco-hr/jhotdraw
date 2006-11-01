@@ -1,4 +1,0 @@
-{
-  super(cmd);
-  setConnectedFigure(newConnectedFigure);
-}

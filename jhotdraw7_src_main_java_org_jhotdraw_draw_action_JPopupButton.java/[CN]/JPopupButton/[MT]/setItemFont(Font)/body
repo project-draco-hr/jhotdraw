@@ -1,0 +1,6 @@
+{
+  itemFont=newValue;
+  if (popupMenu != null) {
+    updateFont(popupMenu);
+  }
+}

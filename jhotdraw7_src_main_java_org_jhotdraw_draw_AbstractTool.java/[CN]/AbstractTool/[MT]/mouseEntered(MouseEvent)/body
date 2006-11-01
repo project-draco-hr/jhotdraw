@@ -1,0 +1,5 @@
+{
+  if (!isWorking) {
+    editor.setView(editor.findView((Container)evt.getSource()));
+  }
+}

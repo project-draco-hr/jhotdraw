@@ -1,5 +1,0 @@
-{
-  view().setDisplayUpdate(new SimpleUpdateStrategy());
-  fUpdateButton.setText("Simple Update");
-  fSimpleUpdate=true;
-}

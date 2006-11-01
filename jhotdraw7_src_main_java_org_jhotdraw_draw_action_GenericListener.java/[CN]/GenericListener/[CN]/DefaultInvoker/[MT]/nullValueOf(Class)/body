@@ -1,0 +1,17 @@
+{
+  if (!rt.isPrimitive()) {
+    return null;
+  }
+ else   if (rt == void.class) {
+    return null;
+  }
+ else   if (rt == boolean.class) {
+    return Boolean.FALSE;
+  }
+ else   if (rt == char.class) {
+    return char_0;
+  }
+ else {
+    return byte_0;
+  }
+}

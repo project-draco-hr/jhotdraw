@@ -1,0 +1,9 @@
+{
+  GraphicalCompositeFigure that=(GraphicalCompositeFigure)super.clone();
+  that.presentationFigure=(this.presentationFigure == null) ? null : (Figure)this.presentationFigure.clone();
+  if (that.presentationFigure != null) {
+    that.presentationFigure.addFigureListener(that.presentationFigureHandler);
+    that.presentationFigure.addUndoableEditListener(that.presentationFigureHandler);
+  }
+  return that;
+}

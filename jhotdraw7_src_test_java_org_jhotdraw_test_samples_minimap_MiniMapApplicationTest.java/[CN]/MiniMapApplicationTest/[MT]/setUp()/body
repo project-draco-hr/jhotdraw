@@ -1,4 +1,0 @@
-{
-  super.setUp();
-  minimapapplication=createInstance();
-}

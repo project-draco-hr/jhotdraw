@@ -1,0 +1,10 @@
+{
+  DrawingEvent event=null;
+  Object[] listeners=listenerList.getListenerList();
+  for (int i=listeners.length - 2; i >= 0; i-=2) {
+    if (listeners[i] == DrawingListener.class) {
+      if (event == null)       event=new DrawingEvent(this,f,f.getDrawBounds());
+      ((DrawingListener)listeners[i + 1]).figureAdded(event);
+    }
+  }
+}

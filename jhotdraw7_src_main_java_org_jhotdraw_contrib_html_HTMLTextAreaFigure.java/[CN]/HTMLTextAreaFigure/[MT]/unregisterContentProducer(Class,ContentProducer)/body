@@ -1,3 +1,0 @@
-{
-  fContentProducers.unregisterContentProducer(targetClass,producer);
-}

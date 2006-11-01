@@ -1,0 +1,3 @@
+{
+  return (isConnectToDecorator && f.getDecorator() != null) ? f.getDecorator() : f;
+}

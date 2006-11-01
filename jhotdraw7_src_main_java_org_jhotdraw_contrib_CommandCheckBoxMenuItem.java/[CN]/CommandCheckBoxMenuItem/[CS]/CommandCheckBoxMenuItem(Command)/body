@@ -1,4 +1,0 @@
-{
-  super(command.name());
-  setCommand(command);
-}

@@ -1,8 +1,0 @@
-{
-  if (myBorderOffset == null) {
-    return new Point(0,0);
-  }
- else {
-    return myBorderOffset;
-  }
-}

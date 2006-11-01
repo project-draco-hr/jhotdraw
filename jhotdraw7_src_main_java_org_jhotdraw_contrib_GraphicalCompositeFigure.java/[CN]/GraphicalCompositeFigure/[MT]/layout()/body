@@ -1,6 +1,0 @@
-{
-  if (getLayouter() != null) {
-    Rectangle r=getLayouter().calculateLayout(displayBox().getLocation(),displayBox().getLocation());
-    displayBox(r.getLocation(),new Point(r.x + r.width,r.y + r.height));
-  }
-}

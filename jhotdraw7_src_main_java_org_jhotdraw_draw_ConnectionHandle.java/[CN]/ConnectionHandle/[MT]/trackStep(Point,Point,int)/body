@@ -1,0 +1,18 @@
+{
+  Point2D.Double p=view.viewToDrawing(lead);
+  Figure f=findConnectableFigure(p,view.getDrawing());
+  if (f != getTargetFigure()) {
+    if (getTargetFigure() != null) {
+      getTargetFigure().setConnectorsVisible(false,null);
+    }
+    setTargetFigure(f);
+    if (getTargetFigure() != null) {
+      getTargetFigure().setConnectorsVisible(true,getConnection());
+    }
+  }
+  Connector target=findConnectionTarget(p,view.getDrawing());
+  if (target != null) {
+    p=Geom.center(target.getBounds());
+  }
+  getConnection().setEndPoint(p);
+}

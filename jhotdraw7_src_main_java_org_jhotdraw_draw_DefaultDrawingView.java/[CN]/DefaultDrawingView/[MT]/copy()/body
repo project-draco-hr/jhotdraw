@@ -1,0 +1,29 @@
+{
+  if (domFactory == null) {
+    getToolkit().beep();
+    return;
+  }
+  HashSet<Figure> toBeCopied=new HashSet<Figure>(getSelectedFigures());
+  if (toBeCopied.size() == 0)   return;
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  try {
+    NanoXMLLiteDOMOutput domo=new NanoXMLLiteDOMOutput(domFactory);
+    domo.openElement("DrawingClip");
+    for (    Figure f : getDrawing().getFigures()) {
+      if (toBeCopied.contains(f)) {
+        domo.writeObject(f);
+      }
+    }
+    domo.closeElement();
+    domo.save(out);
+    byte[] data=out.toByteArray();
+    CompositeTransferable transfer=new CompositeTransferable();
+    transfer.add(new XMLTransferable(data,"application/x-drawing-clip","DrawingClip"));
+    transfer.add(new XMLTransferable(data,"text/xml","DrawingClip"));
+    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(transfer,transfer);
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+    getToolkit().beep();
+  }
+}

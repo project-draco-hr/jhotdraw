@@ -1,0 +1,20 @@
+{
+  TextHolder textHolder=null;
+  Figure pressedFigure=getDrawing().findFigureInside(getView().viewToDrawing(new Point(e.getX(),e.getY())));
+  if (pressedFigure instanceof TextHolder) {
+    textHolder=(TextHolder)pressedFigure;
+    if (!textHolder.isEditable())     textHolder=null;
+  }
+  if (textHolder != null) {
+    createdFigure=null;
+    beginEdit(textHolder);
+    return;
+  }
+  if (typingTarget != null) {
+    endEdit();
+    fireToolDone();
+  }
+ else {
+    super.mousePressed(e);
+  }
+}

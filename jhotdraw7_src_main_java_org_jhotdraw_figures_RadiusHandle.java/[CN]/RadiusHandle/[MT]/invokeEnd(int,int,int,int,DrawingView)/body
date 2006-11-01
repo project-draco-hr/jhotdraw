@@ -1,7 +1,0 @@
-{
-  Point currentRadius=((RoundRectangleFigure)owner()).getArc();
-  Point originalRadius=((RadiusHandle.UndoActivity)getUndoActivity()).getOldRadius();
-  if ((currentRadius.x == originalRadius.x) && (currentRadius.y == originalRadius.y)) {
-    setUndoActivity(null);
-  }
-}

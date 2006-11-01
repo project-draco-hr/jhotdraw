@@ -1,0 +1,4 @@
+Point anchor
+Point lead
+int modifiersEx
+DrawingView view

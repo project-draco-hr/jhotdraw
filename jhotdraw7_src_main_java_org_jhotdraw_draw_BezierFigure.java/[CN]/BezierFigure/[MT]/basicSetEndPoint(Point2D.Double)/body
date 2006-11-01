@@ -1,0 +1,3 @@
+{
+  basicSetPoint(getPointCount() - 1,p);
+}

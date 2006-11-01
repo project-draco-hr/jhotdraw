@@ -1,0 +1,35 @@
+{
+  if (isClosed()) {
+    double grow=AttributeKeys.getPerpendicularHitGrowth(this);
+    if (grow == 0d) {
+      return path.contains(p);
+    }
+ else {
+      GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT_FACTOR.get(this)));
+      return gs.createStrokedShape(path).contains(p);
+    }
+  }
+ else {
+    double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2);
+    if (getCappedPath().outlineContains(p,tolerance)) {
+      return true;
+    }
+    if (START_DECORATION.get(this) != null) {
+      BezierPath cp=getCappedPath();
+      Point2D.Double p1=path.get(0,0);
+      Point2D.Double p2=cp.get(0,0);
+      if (Geom.lineContainsPoint(p1.x,p1.y,p2.x,p2.y,p.x,p.y,tolerance)) {
+        return true;
+      }
+    }
+    if (END_DECORATION.get(this) != null) {
+      BezierPath cp=getCappedPath();
+      Point2D.Double p1=path.get(path.size() - 1,0);
+      Point2D.Double p2=cp.get(path.size() - 1,0);
+      if (Geom.lineContainsPoint(p1.x,p1.y,p2.x,p2.y,p.x,p.y,tolerance)) {
+        return true;
+      }
+    }
+    return false;
+  }
+}

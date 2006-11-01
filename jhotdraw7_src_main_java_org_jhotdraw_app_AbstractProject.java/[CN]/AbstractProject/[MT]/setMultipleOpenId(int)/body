@@ -1,0 +1,5 @@
+{
+  int oldValue=multipleOpenId;
+  multipleOpenId=newValue;
+  firePropertyChange("multipleOpenId",oldValue,newValue);
+}

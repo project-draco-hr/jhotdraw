@@ -1,3 +1,0 @@
-{
-  return (super.includes(figure) || getDecoratedFigure().includes(figure));
-}

@@ -1,8 +1,0 @@
-{
-  CommandChoice choice=new CommandChoice();
-  String fonts[]=GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-  for (int i=0; i < fonts.length; i++) {
-    choice.addItem(new ChangeAttributeCommand(fonts[i],FigureAttributeConstant.FONT_NAME,fonts[i],this));
-  }
-  return choice;
-}

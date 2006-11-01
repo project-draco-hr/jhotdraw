@@ -1,0 +1,6 @@
+{
+  super.redo();
+  figure.willChange();
+  figure.restoreTo(newRestoreData);
+  figure.changed();
+}

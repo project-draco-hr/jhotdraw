@@ -1,4 +1,0 @@
-{
-  Rectangle r=displayBox();
-  g.drawRoundRect(r.x,r.y,r.width - 1,r.height - 1,fArcWidth,fArcHeight);
-}

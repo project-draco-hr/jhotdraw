@@ -1,0 +1,4 @@
+{
+  Rectangle2D.Double r=getBounds();
+  return new Dimension2DDouble(r.width,r.height);
+}

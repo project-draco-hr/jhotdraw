@@ -1,9 +1,0 @@
-{
-  long token=fTokenizer.nextToken();
-  if (token == StreamTokenizer.TT_NUMBER) {
-    return (long)fTokenizer.nval;
-  }
-  String msg="Long expected in line: " + fTokenizer.lineno();
-  IOException exception=new IOException(msg);
-  throw exception;
-}

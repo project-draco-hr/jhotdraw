@@ -1,3 +1,0 @@
-{
-  return (g instanceof PrintGraphics) || (g instanceof PrinterGraphics);
-}

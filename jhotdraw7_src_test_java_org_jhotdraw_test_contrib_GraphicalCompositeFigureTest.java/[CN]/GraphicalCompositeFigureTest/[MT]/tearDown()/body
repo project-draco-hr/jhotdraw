@@ -1,4 +1,0 @@
-{
-  graphicalcompositefigure=null;
-  super.tearDown();
-}

@@ -1,5 +1,0 @@
-{
-  if (addToSelectionImpl(figure) == true) {
-    fireSelectionChanged();
-  }
-}

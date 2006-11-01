@@ -1,0 +1,27 @@
+{
+  final double oldWidth=roundrect.getArcWidth();
+  final double oldHeight=roundrect.getArcHeight();
+  roundrect.arcwidth=w;
+  roundrect.archeight=h;
+  fireFigureChanged(getDrawBounds());
+  fireUndoableEditHappened(new AbstractUndoableEdit(){
+    public String getPresentationName(){
+      return "Rundung";
+    }
+    public void undo() throws CannotUndoException {
+      super.undo();
+      willChange();
+      roundrect.arcwidth=oldWidth;
+      roundrect.archeight=oldHeight;
+      changed();
+    }
+    public void redo() throws CannotRedoException {
+      super.redo();
+      willChange();
+      roundrect.arcwidth=w;
+      roundrect.archeight=h;
+      changed();
+    }
+  }
+);
+}

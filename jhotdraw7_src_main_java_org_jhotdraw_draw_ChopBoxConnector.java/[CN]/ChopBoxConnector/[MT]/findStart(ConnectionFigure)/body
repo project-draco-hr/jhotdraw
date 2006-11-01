@@ -1,12 +1,17 @@
 {
-  Figure startFigure=connection.getStartConnector().owner();
-  Rectangle r2=connection.getEndConnector().displayBox();
-  Point r2c=null;
-  if (connection.pointCount() == 2) {
-    r2c=new Point(r2.x + r2.width / 2,r2.y + r2.height / 2);
+  Figure startFigure=connection.getStartConnector().getOwner();
+  Point2D.Double from;
+  if (connection.getPointCount() <= 2 || connection.getLiner() != null) {
+    if (connection.getEndConnector() == null) {
+      from=connection.getEndPoint();
+    }
+ else {
+      Rectangle2D.Double r1=getConnectorTarget(connection.getEndConnector().getOwner()).getBounds();
+      from=new Point2D.Double(r1.x + r1.width / 2,r1.y + r1.height / 2);
+    }
   }
  else {
-    r2c=connection.pointAt(1);
+    from=connection.getPoint(1);
   }
-  return chop(startFigure,r2c);
+  return chop(startFigure,from);
 }

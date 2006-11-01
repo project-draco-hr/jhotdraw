@@ -1,7 +1,0 @@
-{
-  if (isEnabled()) {
-    fState=NORMAL;
-    setSelected(false);
-    repaint();
-  }
-}

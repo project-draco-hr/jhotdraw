@@ -1,3 +1,0 @@
-{
-  getDecoratedFigure().connectorVisibility(isVisible,null);
-}

@@ -1,4 +1,0 @@
-{
-  Rectangle r=target.displayBox();
-  return Geom.angleToPoint(r,(Geom.pointToAngle(r,from)));
-}

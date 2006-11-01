@@ -1,3 +1,0 @@
-{
-  getWrappedHandle().invokeStart(x,y,view);
-}

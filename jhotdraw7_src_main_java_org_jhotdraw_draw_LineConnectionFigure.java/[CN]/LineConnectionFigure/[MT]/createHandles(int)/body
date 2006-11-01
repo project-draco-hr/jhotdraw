@@ -1,0 +1,15 @@
+{
+  ArrayList<Handle> handles=new ArrayList<Handle>(getNodeCount());
+switch (detailLevel) {
+case 0:
+    if (getLiner() == null) {
+      for (int i=1, n=getNodeCount() - 1; i < n; i++) {
+        handles.add(new BezierNodeHandle(this,i));
+      }
+    }
+  handles.add(new ChangeConnectionStartHandle(this));
+handles.add(new ChangeConnectionEndHandle(this));
+break;
+}
+return handles;
+}

@@ -1,4 +1,0 @@
-{
-  OffsetLocator l=(OffsetLocator)myLocator;
-  return fOwnerBox.x + l.fOffsetX;
-}

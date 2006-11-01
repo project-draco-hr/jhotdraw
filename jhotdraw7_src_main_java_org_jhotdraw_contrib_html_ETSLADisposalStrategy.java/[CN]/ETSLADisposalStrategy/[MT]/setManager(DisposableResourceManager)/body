@@ -1,6 +1,0 @@
-{
-  if (getManager() == null) {
-    stopDisposing(Long.MAX_VALUE);
-  }
-  manager=newManager;
-}

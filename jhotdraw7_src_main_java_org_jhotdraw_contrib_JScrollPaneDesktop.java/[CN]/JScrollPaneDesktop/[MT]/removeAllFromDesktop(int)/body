@@ -1,3 +1,0 @@
-{
-  getDesktopEventService().removeAllComponents();
-}

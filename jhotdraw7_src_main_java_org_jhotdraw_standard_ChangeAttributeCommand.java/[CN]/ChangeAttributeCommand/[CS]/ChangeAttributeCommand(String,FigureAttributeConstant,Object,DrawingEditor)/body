@@ -1,5 +1,0 @@
-{
-  super(name,newDrawingEditor);
-  fAttribute=attribute;
-  fValue=value;
-}

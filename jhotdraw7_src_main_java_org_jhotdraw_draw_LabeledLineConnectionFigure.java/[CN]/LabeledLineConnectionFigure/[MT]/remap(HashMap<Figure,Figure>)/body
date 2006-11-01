@@ -1,0 +1,6 @@
+{
+  super.remap(oldToNew);
+  for (  Figure child : children) {
+    child.remap(oldToNew);
+  }
+}

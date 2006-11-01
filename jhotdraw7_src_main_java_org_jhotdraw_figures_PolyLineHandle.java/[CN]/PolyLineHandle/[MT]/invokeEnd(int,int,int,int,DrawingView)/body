@@ -1,5 +1,0 @@
-{
-  if ((x == anchorX) && (y == anchorY)) {
-    setUndoActivity(null);
-  }
-}

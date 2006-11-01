@@ -1,4 +1,0 @@
-{
-  nulltool=null;
-  super.tearDown();
-}

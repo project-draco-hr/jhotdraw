@@ -1,14 +1,16 @@
 {
+  willChange();
   if (getStartConnector() != null) {
-    Point start=getStartConnector().findStart(this);
+    Point2D.Double start=getStartConnector().findStart(this);
     if (start != null) {
-      startPoint(start.x,start.y);
+      basicSetStartPoint(start);
     }
   }
   if (getEndConnector() != null) {
-    Point end=getEndConnector().findEnd(this);
+    Point2D.Double end=getEndConnector().findEnd(this);
     if (end != null) {
-      endPoint(end.x,end.y);
+      basicSetEndPoint(end);
     }
   }
+  changed();
 }

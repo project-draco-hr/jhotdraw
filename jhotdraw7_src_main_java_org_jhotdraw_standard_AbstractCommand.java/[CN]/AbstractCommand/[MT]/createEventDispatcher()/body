@@ -1,3 +1,0 @@
-{
-  return new AbstractCommand.EventDispatcher(this);
-}

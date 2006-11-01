@@ -1,8 +1,0 @@
-{
-  List handles=CollectionsFactory.current().createList(pointCount());
-  for (int i=0; i < pointCount(); i++) {
-    handles.add(new PolygonHandle(this,locator(i),i));
-  }
-  handles.add(new PolygonScaleHandle(this));
-  return new HandleEnumerator(handles);
-}

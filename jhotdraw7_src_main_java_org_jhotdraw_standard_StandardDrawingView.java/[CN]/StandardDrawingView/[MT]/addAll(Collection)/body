@@ -1,6 +1,0 @@
-{
-  FigureEnumeration fe=new FigureEnumerator(figures);
-  while (fe.hasNextFigure()) {
-    add(fe.nextFigure());
-  }
-}

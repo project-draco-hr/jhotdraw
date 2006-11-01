@@ -1,4 +1,4 @@
 {
-  fRelativeX=relativeX;
-  fRelativeY=relativeY;
+  this.relativeX=relativeX;
+  this.relativeY=relativeY;
 }

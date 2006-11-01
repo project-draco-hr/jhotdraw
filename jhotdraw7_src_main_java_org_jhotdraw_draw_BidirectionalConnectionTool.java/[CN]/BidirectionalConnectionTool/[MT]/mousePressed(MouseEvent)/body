@@ -1,0 +1,16 @@
+{
+  super.mousePressed(evt);
+  Point2D.Double ap=viewToDrawing(anchor);
+  setTargetFigure(findConnectionStart(ap,getDrawing()));
+  if (getTargetFigure() != null) {
+    setStartConnector(findConnector(ap,target,prototype));
+    if (getStartConnector() != null && prototype.canConnect(getTargetFigure())) {
+      Point2D.Double p=getStartConnector().getAnchor();
+      setConnection(createFigure());
+      ConnectionFigure cf=getConnection();
+      cf.basicSetBounds(p,p);
+      cf.addFigureListener(this);
+      setCreatedFigure(cf);
+    }
+  }
+}

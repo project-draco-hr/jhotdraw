@@ -1,9 +1,0 @@
-{
-  boolean changed=false;
-  while (fe.hasNextFigure()) {
-    changed|=addToSelectionImpl(fe.nextFigure());
-  }
-  if (changed == true) {
-    fireSelectionChanged();
-  }
-}

@@ -1,4 +1,0 @@
-{
-  polylinehandle=null;
-  super.tearDown();
-}

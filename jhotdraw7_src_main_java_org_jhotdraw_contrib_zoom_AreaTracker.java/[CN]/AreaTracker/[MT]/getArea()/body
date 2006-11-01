@@ -1,3 +1,0 @@
-{
-  return new Rectangle(area.x,area.y,area.width,area.height);
-}

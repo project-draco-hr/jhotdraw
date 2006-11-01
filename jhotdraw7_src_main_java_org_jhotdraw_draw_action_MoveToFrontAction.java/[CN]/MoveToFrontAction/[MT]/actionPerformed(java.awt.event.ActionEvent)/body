@@ -1,0 +1,19 @@
+{
+  final DrawingView view=getView();
+  final LinkedList<Figure> figures=new LinkedList<Figure>(view.getSelectedFigures());
+  bringToFront(view,figures);
+  fireUndoableEditHappened(new AbstractUndoableEdit(){
+    public String getPresentationName(){
+      return labels.getString("moveToFront");
+    }
+    public void redo() throws CannotRedoException {
+      super.redo();
+      MoveToFrontAction.bringToFront(view,figures);
+    }
+    public void undo() throws CannotUndoException {
+      super.undo();
+      MoveToBackAction.sendToBack(view,figures);
+    }
+  }
+);
+}

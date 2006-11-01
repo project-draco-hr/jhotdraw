@@ -1,4 +1,0 @@
-{
-  setEditor(editor);
-  setDrawing(new StandardDrawing());
-}

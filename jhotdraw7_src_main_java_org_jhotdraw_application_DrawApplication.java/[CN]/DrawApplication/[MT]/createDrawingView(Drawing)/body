@@ -1,6 +1,0 @@
-{
-  Dimension d=getDrawingViewSize();
-  DrawingView newDrawingView=new StandardDrawingView(this,d.width,d.height);
-  newDrawingView.setDrawing(newDrawing);
-  return newDrawingView;
-}

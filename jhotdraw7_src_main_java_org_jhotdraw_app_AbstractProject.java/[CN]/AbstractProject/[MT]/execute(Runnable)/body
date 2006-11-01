@@ -1,0 +1,6 @@
+{
+  if (executor == null) {
+    executor=Executors.newSingleThreadExecutor();
+  }
+  executor.execute(worker);
+}

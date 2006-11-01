@@ -1,0 +1,22 @@
+{
+  if (getPointCount() > 1) {
+    if (START_DECORATION.get(this) != null) {
+      BezierPath cp=getCappedPath();
+      Point2D.Double p1=path.get(0,0);
+      Point2D.Double p2=cp.get(0,0);
+      if (p2.equals(p1)) {
+        p2=path.get(1,0);
+      }
+      START_DECORATION.get(this).draw(g,this,p1,p2);
+    }
+    if (END_DECORATION.get(this) != null) {
+      BezierPath cp=getCappedPath();
+      Point2D.Double p1=path.get(path.size() - 1,0);
+      Point2D.Double p2=cp.get(path.size() - 1,0);
+      if (p2.equals(p1)) {
+        p2=path.get(path.size() - 2,0);
+      }
+      END_DECORATION.get(this).draw(g,this,p1,p2);
+    }
+  }
+}

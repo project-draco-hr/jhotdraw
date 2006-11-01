@@ -1,0 +1,8 @@
+{
+  if (getView().getConstrainer() == onConstrainer) {
+    getView().setConstrainer(offConstrainer);
+  }
+ else {
+    getView().setConstrainer(onConstrainer);
+  }
+}

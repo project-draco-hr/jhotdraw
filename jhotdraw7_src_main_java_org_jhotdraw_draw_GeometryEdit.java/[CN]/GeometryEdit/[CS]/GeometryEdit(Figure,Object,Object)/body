@@ -1,0 +1,5 @@
+{
+  this.owner=owner;
+  this.oldGeometry=oldGeometry;
+  this.newGeometry=newGeometry;
+}

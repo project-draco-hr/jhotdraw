@@ -1,0 +1,14 @@
+{
+  LinkedList<Handle> handles;
+  if (detailLevel == 0) {
+    handles=(LinkedList<Handle>)super.createHandles(detailLevel);
+    handles.add(new RotateHandle(this));
+  }
+ else {
+    handles=new LinkedList<Handle>();
+    for (    Figure child : getChildren()) {
+      handles.addAll(child.createHandles(detailLevel));
+    }
+  }
+  return handles;
+}

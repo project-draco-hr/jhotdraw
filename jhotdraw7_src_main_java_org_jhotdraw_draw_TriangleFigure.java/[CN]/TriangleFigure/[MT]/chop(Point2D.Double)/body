@@ -1,0 +1,9 @@
+{
+  Shape triangle=getBezierPath();
+  double grow=AttributeKeys.getPerpendicularHitGrowth(this);
+  if (grow != 0d) {
+    GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT_FACTOR.get(this)));
+    triangle=gs.createStrokedShape(triangle);
+  }
+  return Geom.chop(triangle,p);
+}

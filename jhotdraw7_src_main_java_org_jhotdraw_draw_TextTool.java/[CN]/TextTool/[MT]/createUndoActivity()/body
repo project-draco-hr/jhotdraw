@@ -1,3 +1,0 @@
-{
-  return new TextTool.UndoActivity(view(),getTypingTarget().getText());
-}

@@ -1,5 +1,0 @@
-{
-  Point original=borderdecorator.getBorderOffset();
-  borderdecorator.setBorderOffset(null);
-  assertEquals(new Point(0,0),borderdecorator.getBorderOffset());
-}

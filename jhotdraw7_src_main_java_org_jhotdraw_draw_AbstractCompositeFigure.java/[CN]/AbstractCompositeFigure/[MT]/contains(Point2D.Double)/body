@@ -1,0 +1,8 @@
+{
+  if (getDrawBounds().contains(p)) {
+    for (    Figure child : getChildrenFrontToBack()) {
+      if (child.isVisible() && child.contains(p))       return true;
+    }
+  }
+  return false;
+}

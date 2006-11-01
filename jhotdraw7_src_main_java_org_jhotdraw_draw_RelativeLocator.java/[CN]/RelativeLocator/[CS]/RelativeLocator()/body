@@ -1,4 +1,4 @@
 {
-  fRelativeX=0.0;
-  fRelativeY=0.0;
+  relativeX=0.0;
+  relativeY=0.0;
 }

@@ -1,4 +1,0 @@
-{
-  setEndDecoration(new ArrowTip());
-  setStartDecoration(null);
-}

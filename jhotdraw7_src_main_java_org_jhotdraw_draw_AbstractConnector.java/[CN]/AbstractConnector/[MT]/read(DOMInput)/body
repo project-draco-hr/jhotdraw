@@ -1,0 +1,9 @@
+{
+  if (isStatePersistent) {
+    isConnectToDecorator=in.getAttribute("connectToDecorator",false);
+    isVisible=in.getAttribute("visible",false);
+  }
+  in.openElement("owner");
+  this.owner=(Figure)in.readObject(0);
+  in.closeElement();
+}

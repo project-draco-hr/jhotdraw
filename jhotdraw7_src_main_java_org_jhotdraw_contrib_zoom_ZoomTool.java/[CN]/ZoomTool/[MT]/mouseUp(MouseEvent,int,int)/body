@@ -1,7 +1,0 @@
-{
-  if (child != null) {
-    view().unfreezeView();
-    child.mouseUp(e,x,y);
-  }
-  child=null;
-}

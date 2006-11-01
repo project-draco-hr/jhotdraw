@@ -1,6 +1,0 @@
-{
-  ContentProducer currentProducer=getContentProducer(targetClass);
-  if (currentProducer == producer) {
-    fContentProducers.remove(targetClass);
-  }
-}

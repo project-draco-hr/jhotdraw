@@ -1,0 +1,6 @@
+{
+  if (beanDescriptor == null)   beanDescriptor=new BeanDescriptor(JPopupButtonBeanInfo.class);
+  beanDescriptor.setValue("isContainer",Boolean.FALSE);
+  beanDescriptor.setDisplayName("JPopupButton");
+  return beanDescriptor;
+}

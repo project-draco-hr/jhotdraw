@@ -1,0 +1,9 @@
+{
+  LinkedList list=(LinkedList)geometry;
+  int index=0;
+  for (  Object geom : list) {
+    getChild(index).restoreTo(geom);
+    index++;
+  }
+  invalidateBounds();
+}

@@ -1,0 +1,26 @@
+{
+  super.mousePressed(evt);
+  DrawingView view=getView();
+  Handle handle=view.findHandle(anchor);
+  Tool newTracker=null;
+  if (handle != null) {
+    newTracker=createHandleTracker(handle);
+  }
+ else {
+    Figure figure=view.findFigure(anchor);
+    if (figure != null) {
+      newTracker=createDragTracker(figure);
+    }
+ else {
+      if (!evt.isShiftDown()) {
+        view.clearSelection();
+        view.setHandleDetailLevel(0);
+      }
+      newTracker=createAreaTracker();
+    }
+  }
+  if (newTracker != null) {
+    setTracker(newTracker);
+  }
+  tracker.mousePressed(evt);
+}

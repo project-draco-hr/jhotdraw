@@ -1,0 +1,8 @@
+{
+  if (getView() != null && getView().getSelectionCount() > 0) {
+    CompositeEdit edit=new CompositeEdit(labels.getString("drawAttributeChange"));
+    fireUndoableEditHappened(edit);
+    changeAttributes();
+    fireUndoableEditHappened(edit);
+  }
+}

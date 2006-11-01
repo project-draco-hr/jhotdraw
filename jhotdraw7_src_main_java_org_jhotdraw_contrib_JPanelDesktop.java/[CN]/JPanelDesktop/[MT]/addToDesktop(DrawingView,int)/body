@@ -1,4 +1,0 @@
-{
-  getDesktopEventService().addComponent(createContents(dv));
-  getContainer().validate();
-}

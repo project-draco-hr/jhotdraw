@@ -1,0 +1,6 @@
+{
+  if (button != null) {
+    button.setText(label);
+  }
+  getView().setScaleFactor(scaleFactor);
+}

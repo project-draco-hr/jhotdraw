@@ -1,8 +1,0 @@
-{
-  if (currentTools == standardTools) {
-    switchToEditTools();
-  }
- else {
-    switchToStandardTools();
-  }
-}

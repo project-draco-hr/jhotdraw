@@ -1,0 +1,21 @@
+{
+  JButton b;
+  ApplicationModel m=getModel();
+  b=tb.add(m.getAction(ClearAction.ID));
+  b.setFocusable(false);
+  b=tb.add(m.getAction(LoadAction.ID));
+  b.setFocusable(false);
+  b=tb.add(m.getAction(SaveAction.ID));
+  tb.addSeparator();
+  b=tb.add(m.getAction(UndoAction.ID));
+  b.setFocusable(false);
+  b=tb.add(m.getAction(RedoAction.ID));
+  b.setFocusable(false);
+  tb.addSeparator();
+  b=tb.add(m.getAction(CutAction.ID));
+  b.setFocusable(false);
+  b=tb.add(m.getAction(CopyAction.ID));
+  b.setFocusable(false);
+  b=tb.add(m.getAction(PasteAction.ID));
+  b.setFocusable(false);
+}

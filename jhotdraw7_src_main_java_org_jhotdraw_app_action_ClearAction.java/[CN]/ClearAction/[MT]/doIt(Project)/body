@@ -1,0 +1,4 @@
+{
+  project.clear();
+  project.setFile(null);
+}

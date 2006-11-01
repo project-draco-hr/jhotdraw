@@ -1,0 +1,6 @@
+{
+  if (size() != 0) {
+    throw new IllegalPathStateException("moveTo only allowed when empty");
+  }
+  add(new Node(x1,y1));
+}

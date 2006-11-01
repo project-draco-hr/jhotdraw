@@ -1,7 +1,0 @@
-{
-  Figure orphanedFigure=orphan(figure);
-  if (orphanedFigure != null) {
-    orphanedFigure.release();
-  }
-  return orphanedFigure;
-}

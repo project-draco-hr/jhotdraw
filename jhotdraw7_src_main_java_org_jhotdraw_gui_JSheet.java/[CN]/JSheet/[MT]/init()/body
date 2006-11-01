@@ -1,0 +1,19 @@
+{
+  if (getOwner() != null && isShowAsSheet()) {
+    setUndecorated(true);
+    getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+    getRootPane().setBorder(UIManager.getBorder("Sheet.border"));
+  }
+  ownerMovementHandler=new ComponentAdapter(){
+    public void componentMoved(    ComponentEvent evt){
+      Window owner=getOwner();
+      Point newLocation=owner.getLocation();
+      if (!newLocation.equals(oldLocation)) {
+        setLocation(newLocation.x + (owner.getWidth() - getWidth()) / 2,newLocation.y + owner.getInsets().top);
+        shiftBackLocation=null;
+        oldLocation=newLocation;
+      }
+    }
+  }
+;
+}

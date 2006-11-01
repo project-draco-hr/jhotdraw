@@ -1,3 +1,0 @@
-{
-  getWrappedTool().mouseMove(evt,x,y);
-}

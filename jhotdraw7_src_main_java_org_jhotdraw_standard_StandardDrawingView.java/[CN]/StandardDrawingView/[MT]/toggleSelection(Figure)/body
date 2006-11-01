@@ -1,9 +1,0 @@
-{
-  if (isFigureSelected(figure)) {
-    removeFromSelection(figure);
-  }
- else {
-    addToSelection(figure);
-  }
-  fireSelectionChanged();
-}

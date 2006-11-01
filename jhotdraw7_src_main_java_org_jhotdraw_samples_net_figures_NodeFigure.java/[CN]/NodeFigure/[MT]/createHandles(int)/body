@@ -1,0 +1,14 @@
+{
+  java.util.List<Handle> handles=new LinkedList<Handle>();
+  if (detailLevel == 0) {
+    handles.add(new MoveHandle(this,RelativeLocator.northWest()));
+    handles.add(new MoveHandle(this,RelativeLocator.northEast()));
+    handles.add(new MoveHandle(this,RelativeLocator.southWest()));
+    handles.add(new MoveHandle(this,RelativeLocator.southEast()));
+    handles.add(new ConnectionHandle(this,RelativeLocator.north(),new LineConnectionFigure()));
+    handles.add(new ConnectionHandle(this,RelativeLocator.east(),new LineConnectionFigure()));
+    handles.add(new ConnectionHandle(this,RelativeLocator.south(),new LineConnectionFigure()));
+    handles.add(new ConnectionHandle(this,RelativeLocator.west(),new LineConnectionFigure()));
+  }
+  return handles;
+}

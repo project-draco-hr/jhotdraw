@@ -1,4 +1,0 @@
-{
-  setDecoratedFigure(figure);
-  getDecoratedFigure().addToContainer(this);
-}

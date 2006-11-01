@@ -1,0 +1,27 @@
+{
+  if (compatibleTextAction != null) {
+    Component focusOwner=KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
+    if (focusOwner != null && focusOwner instanceof JTextComponent) {
+      compatibleTextAction.actionPerformed(evt);
+      return;
+    }
+  }
+  Iterator i=getView().getSelectedFigures().iterator();
+  Object newValue=null;
+  if (i.hasNext()) {
+    Figure f=(Figure)i.next();
+    Object attr=f.getAttribute(key);
+    if (value1 == null && attr == null || (value1 != null && attr != null && attr.equals(value1))) {
+      newValue=value2;
+    }
+ else {
+      newValue=value1;
+    }
+    getEditor().setDefaultAttribute(key,newValue);
+    f.setAttribute(key,newValue);
+  }
+  while (i.hasNext()) {
+    Figure f=(Figure)i.next();
+    f.setAttribute(key,newValue);
+  }
+}

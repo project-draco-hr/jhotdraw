@@ -1,4 +1,0 @@
-{
-  paletteicon=null;
-  super.tearDown();
-}

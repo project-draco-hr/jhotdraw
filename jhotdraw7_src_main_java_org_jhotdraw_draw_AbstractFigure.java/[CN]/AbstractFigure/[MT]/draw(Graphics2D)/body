@@ -1,0 +1,10 @@
+{
+  if (isDrawDecoratorFirst()) {
+    drawDecorator(g);
+    drawFigure(g);
+  }
+ else {
+    drawFigure(g);
+    drawDecorator(g);
+  }
+}

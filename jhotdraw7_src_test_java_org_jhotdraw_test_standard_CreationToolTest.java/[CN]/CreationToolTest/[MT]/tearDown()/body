@@ -1,4 +1,0 @@
-{
-  creationtool=null;
-  super.tearDown();
-}

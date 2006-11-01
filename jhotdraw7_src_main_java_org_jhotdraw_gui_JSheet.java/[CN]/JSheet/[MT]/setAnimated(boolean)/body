@@ -1,0 +1,5 @@
+{
+  boolean oldValue=isAnimated;
+  isAnimated=newValue;
+  firePropertyChange("animated",oldValue,newValue);
+}

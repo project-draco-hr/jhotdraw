@@ -1,3 +1,0 @@
-{
-  return new AWTCursor(java.awt.Cursor.HAND_CURSOR);
-}

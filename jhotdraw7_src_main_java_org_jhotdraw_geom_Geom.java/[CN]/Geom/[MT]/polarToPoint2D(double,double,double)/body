@@ -1,0 +1,5 @@
+{
+  double si=Math.sin(angle);
+  double co=Math.cos(angle);
+  return new Point2D.Double(fx * co + 0.5,fy * si + 0.5);
+}

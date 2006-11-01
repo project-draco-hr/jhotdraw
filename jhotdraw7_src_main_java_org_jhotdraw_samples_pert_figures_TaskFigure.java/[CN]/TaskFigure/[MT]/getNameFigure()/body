@@ -1,0 +1,3 @@
+{
+  return (TextFigure)((ListFigure)getChild(0)).getChild(0);
+}

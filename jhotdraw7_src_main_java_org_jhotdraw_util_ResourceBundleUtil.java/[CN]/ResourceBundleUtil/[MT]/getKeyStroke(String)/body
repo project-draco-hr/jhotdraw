@@ -1,0 +1,10 @@
+{
+  KeyStroke ks=null;
+  try {
+    String s=resource.getString(key);
+    ks=(s == null) ? (KeyStroke)null : KeyStroke.getKeyStroke(s);
+  }
+ catch (  NoSuchElementException e) {
+  }
+  return ks;
+}

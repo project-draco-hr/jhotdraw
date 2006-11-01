@@ -1,3 +1,0 @@
-{
-  return new UndoableCommand(new DeleteCommand("Delete",editor()));
-}

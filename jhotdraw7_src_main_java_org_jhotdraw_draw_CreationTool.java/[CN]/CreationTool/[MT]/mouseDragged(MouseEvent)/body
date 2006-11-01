@@ -1,0 +1,8 @@
+{
+  if (createdFigure != null) {
+    Point2D.Double p=constrainPoint(new Point(evt.getX(),evt.getY()));
+    createdFigure.willChange();
+    createdFigure.basicSetBounds(constrainPoint(new Point(anchor.x,anchor.y)),p);
+    createdFigure.changed();
+  }
+}

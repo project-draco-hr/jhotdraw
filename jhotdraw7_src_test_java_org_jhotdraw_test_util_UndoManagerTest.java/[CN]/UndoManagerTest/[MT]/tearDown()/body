@@ -1,4 +1,0 @@
-{
-  undomanager=null;
-  super.tearDown();
-}

@@ -1,0 +1,4 @@
+{
+  view.setDrawing(new SVGDrawing());
+  undo.discardAllEdits();
+}

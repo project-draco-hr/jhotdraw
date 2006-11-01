@@ -1,8 +1,0 @@
-{
-  Dimension prevSize=fDisplayBox.getSize();
-  fDisplayBox=new Rectangle(origin);
-  fDisplayBox.add(corner);
-  if (!fDisplayBox.getSize().equals(prevSize)) {
-    markSizeDirty();
-  }
-}

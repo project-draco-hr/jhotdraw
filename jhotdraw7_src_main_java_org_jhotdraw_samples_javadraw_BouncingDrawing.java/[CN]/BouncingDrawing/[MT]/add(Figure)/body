@@ -1,6 +1,0 @@
-{
-  if (!(figure instanceof AnimationDecorator) && !(figure instanceof ConnectionFigure)) {
-    figure=new AnimationDecorator(figure);
-  }
-  return super.add(figure);
-}

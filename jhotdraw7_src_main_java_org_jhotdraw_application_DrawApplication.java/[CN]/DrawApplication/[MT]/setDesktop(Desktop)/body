@@ -1,4 +1,0 @@
-{
-  newDesktop.addDesktopListener(getDesktopListener());
-  fDesktop=newDesktop;
-}

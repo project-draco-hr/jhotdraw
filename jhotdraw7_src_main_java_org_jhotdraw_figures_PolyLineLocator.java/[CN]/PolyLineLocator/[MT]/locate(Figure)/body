@@ -1,7 +1,0 @@
-{
-  PolyLineFigure plf=(PolyLineFigure)owner;
-  if (fIndex < plf.pointCount()) {
-    return ((PolyLineFigure)owner).pointAt(fIndex);
-  }
-  return new Point(0,0);
-}

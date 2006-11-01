@@ -1,3 +1,0 @@
-{
-  return new ChangeAttributeCommand.UndoActivity(view(),fAttribute,fValue);
-}

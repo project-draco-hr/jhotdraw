@@ -1,0 +1,5 @@
+{
+  if (parentComponent == null)   return JOptionPane.getRootFrame();
+  if (parentComponent instanceof Frame || parentComponent instanceof Dialog)   return (Window)parentComponent;
+  return getWindowForComponent(parentComponent.getParent());
+}

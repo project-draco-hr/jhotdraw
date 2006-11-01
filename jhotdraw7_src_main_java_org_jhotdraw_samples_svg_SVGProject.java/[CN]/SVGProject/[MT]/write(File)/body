@@ -1,0 +1,18 @@
+{
+  OutputStream out=null;
+  try {
+    out=new BufferedOutputStream(new FileOutputStream(f));
+    NanoXMLDOMOutput domo=new NanoXMLDOMOutput(view.getDOMFactory());
+    domo.setDoctype("svg PUBLIC \"-//W3C//DTD SVG 1.0//EN\" " + "\"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd\"");
+    domo.writeObject(view.getDrawing());
+    domo.save(out);
+  }
+  finally {
+    if (out != null)     try {
+      out.close();
+    }
+ catch (    IOException e) {
+    }
+    ;
+  }
+}

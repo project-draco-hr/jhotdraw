@@ -1,0 +1,18 @@
+{
+  HashSet<Figure> unsorted=new HashSet<Figure>();
+  unsorted.addAll(c);
+  ArrayList<Figure> sorted=new ArrayList<Figure>(c.size());
+  for (  Figure f : figures) {
+    if (unsorted.contains(f)) {
+      sorted.add(f);
+      unsorted.remove(f);
+    }
+  }
+  for (  Figure f : c) {
+    if (unsorted.contains(f)) {
+      sorted.add(f);
+      unsorted.remove(f);
+    }
+  }
+  return sorted;
+}

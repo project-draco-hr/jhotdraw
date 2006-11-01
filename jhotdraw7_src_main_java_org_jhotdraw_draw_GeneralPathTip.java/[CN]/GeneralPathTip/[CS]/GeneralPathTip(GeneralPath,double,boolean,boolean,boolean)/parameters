@@ -1,0 +1,5 @@
+GeneralPath path
+double decorationRadius
+boolean isFilled
+boolean isStroked
+boolean isSolid

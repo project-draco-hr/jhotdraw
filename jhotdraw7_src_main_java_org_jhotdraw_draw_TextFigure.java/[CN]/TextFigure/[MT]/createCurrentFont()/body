@@ -1,3 +1,0 @@
-{
-  return new Font(fgCurrentFontName,fgCurrentFontStyle,fgCurrentFontSize);
-}

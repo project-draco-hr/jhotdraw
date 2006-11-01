@@ -1,7 +1,0 @@
-{
-  double si=Math.sin(angle);
-  double co=Math.cos(angle);
-  p.x=(int)(fx * co + 0.5);
-  p.y=(int)(fy * si + 0.5);
-  return p;
-}

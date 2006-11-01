@@ -1,0 +1,18 @@
+{
+  double grow;
+  double strokeWidth=AttributeKeys.getStrokeTotalWidth(f);
+  StrokePlacement placement=STROKE_PLACEMENT.get(f);
+switch (placement) {
+case INSIDE:
+    grow=strokeWidth / -2d;
+  break;
+case OUTSIDE:
+grow=strokeWidth / 2d;
+break;
+case CENTER:
+default :
+grow=0f;
+break;
+}
+return grow;
+}

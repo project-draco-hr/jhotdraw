@@ -1,0 +1,9 @@
+{
+switch (STROKE_TYPE.get(f)) {
+case BASIC:
+default :
+    return STROKE_WIDTH.get(f);
+case DOUBLE:
+  return STROKE_WIDTH.get(f) * (1d + STROKE_INNER_WIDTH_FACTOR.get(f));
+}
+}

@@ -1,8 +1,0 @@
-{
-  for (int i=0; i < htmlFontSizeEquivalences.length; i++) {
-    if (pointSize >= htmlFontSizeEquivalences[i][1] && pointSize <= htmlFontSizeEquivalences[i][2]) {
-      return htmlFontSizeEquivalences[i][0];
-    }
-  }
-  return 3;
-}

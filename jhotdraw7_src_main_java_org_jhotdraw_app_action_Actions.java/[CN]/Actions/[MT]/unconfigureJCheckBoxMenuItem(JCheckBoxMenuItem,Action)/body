@@ -1,0 +1,7 @@
+{
+  PropertyChangeListener propertyHandler=(PropertyChangeListener)mi.getClientProperty("actionPropertyHandler");
+  if (propertyHandler != null) {
+    a.removePropertyChangeListener(propertyHandler);
+    mi.putClientProperty("actionPropertyHandler",null);
+  }
+}

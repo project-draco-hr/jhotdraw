@@ -1,8 +1,0 @@
-{
-  if (nodes != null) {
-    Figure node=e.getFigure();
-    if (nodes.containsKey(node)) {
-      getGraphNode(node).update();
-    }
-  }
-}

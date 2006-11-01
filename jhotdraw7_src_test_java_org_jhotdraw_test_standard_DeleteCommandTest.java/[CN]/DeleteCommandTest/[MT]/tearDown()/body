@@ -1,4 +1,0 @@
-{
-  deletecommand=null;
-  super.tearDown();
-}

@@ -1,0 +1,7 @@
+{
+  selectedFigures.clear();
+  selectedFigures.addAll(drawing.getFigures());
+  invalidateHandles();
+  fireSelectionChanged();
+  repaint();
+}

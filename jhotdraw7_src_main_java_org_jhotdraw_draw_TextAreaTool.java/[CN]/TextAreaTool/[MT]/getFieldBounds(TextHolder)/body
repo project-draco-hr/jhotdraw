@@ -1,0 +1,10 @@
+{
+  Rectangle2D.Double r=figure.getBounds();
+  Insets2DDouble insets=figure.getInsets();
+  r=new Rectangle2D.Double(r.x + insets.left,r.y + insets.top,r.width - insets.left - insets.right,r.height - insets.top - insets.bottom);
+  r.x-=1;
+  r.y-=2;
+  r.width+=18;
+  r.height+=4;
+  return r;
+}

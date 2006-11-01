@@ -1,3 +1,0 @@
-{
-  return new CommandButton(new DuplicateCommand("Duplicate",getDrawingEditor()));
-}

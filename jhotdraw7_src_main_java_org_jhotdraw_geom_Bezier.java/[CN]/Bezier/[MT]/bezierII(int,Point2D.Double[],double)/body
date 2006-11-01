@@ -1,0 +1,17 @@
+{
+  int i, j;
+  Point2D.Double Q;
+  Point2D.Double[] Vtemp;
+  Vtemp=new Point2D.Double[degree + 1];
+  for (i=0; i <= degree; i++) {
+    Vtemp[i]=(Point2D.Double)V[i].clone();
+  }
+  for (i=1; i <= degree; i++) {
+    for (j=0; j <= degree - i; j++) {
+      Vtemp[j].x=(1.0 - t) * Vtemp[j].x + t * Vtemp[j + 1].x;
+      Vtemp[j].y=(1.0 - t) * Vtemp[j].y + t * Vtemp[j + 1].y;
+    }
+  }
+  Q=Vtemp[0];
+  return Q;
+}

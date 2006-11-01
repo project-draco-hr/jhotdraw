@@ -1,0 +1,3 @@
+{
+  editWidget.removeActionListener(listener);
+}

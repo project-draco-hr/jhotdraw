@@ -1,4 +1,0 @@
-{
-  setViewPosition(newOrigin);
-  forceRedraw();
-}

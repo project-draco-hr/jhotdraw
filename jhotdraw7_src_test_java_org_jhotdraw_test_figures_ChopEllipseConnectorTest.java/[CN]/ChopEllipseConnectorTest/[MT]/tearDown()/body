@@ -1,4 +1,0 @@
-{
-  chopellipseconnector=null;
-  super.tearDown();
-}

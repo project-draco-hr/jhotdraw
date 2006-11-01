@@ -1,0 +1,5 @@
+{
+  g.setColor(Color.blue);
+  g.setStroke(new BasicStroke());
+  g.draw(getBounds());
+}

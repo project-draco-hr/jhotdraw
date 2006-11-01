@@ -1,7 +1,0 @@
-{
-  JScrollPane sp=new JScrollPane((Component)getDrawingEditor().view());
-  sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-  sp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-  sp.setAlignmentX(Component.LEFT_ALIGNMENT);
-  return new MiniMapView(getDrawingEditor().view(),sp);
-}
