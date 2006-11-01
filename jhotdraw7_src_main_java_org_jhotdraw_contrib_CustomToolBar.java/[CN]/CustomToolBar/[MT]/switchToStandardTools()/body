@@ -1,0 +1,6 @@
+{
+  if (currentTools != standardTools) {
+    currentTools=standardTools;
+    needsUpdate=true;
+  }
+}

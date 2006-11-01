@@ -1,0 +1,8 @@
+{
+  if (isRedoable()) {
+    myCommand.copyFigures(getSelectedFigures(),getSelectedFiguresCount());
+    myCommand.deleteFigures(getAffectedFigures());
+    return true;
+  }
+  return false;
+}

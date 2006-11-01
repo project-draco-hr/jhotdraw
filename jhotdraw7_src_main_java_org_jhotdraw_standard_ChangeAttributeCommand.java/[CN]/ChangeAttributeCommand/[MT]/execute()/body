@@ -1,0 +1,10 @@
+{
+  super.execute();
+  setUndoActivity(createUndoActivity());
+  getUndoActivity().setAffectedFigures(view().selection());
+  FigureEnumeration fe=getUndoActivity().getAffectedFigures();
+  while (fe.hasNextFigure()) {
+    fe.nextFigure().setAttribute(fAttribute,fValue);
+  }
+  view().checkDamage();
+}

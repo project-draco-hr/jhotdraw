@@ -1,0 +1,14 @@
+{
+  if (getStartConnector() != null) {
+    Point start=getStartConnector().findStart(this);
+    if (start != null) {
+      startPoint(start.x,start.y);
+    }
+  }
+  if (getEndConnector() != null) {
+    Point end=getEndConnector().findEnd(this);
+    if (end != null) {
+      endPoint(end.x,end.y);
+    }
+  }
+}

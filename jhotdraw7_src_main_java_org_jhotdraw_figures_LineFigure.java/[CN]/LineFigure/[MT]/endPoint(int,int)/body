@@ -1,0 +1,3 @@
+{
+  setPointAt(new Point(x,y),1);
+}

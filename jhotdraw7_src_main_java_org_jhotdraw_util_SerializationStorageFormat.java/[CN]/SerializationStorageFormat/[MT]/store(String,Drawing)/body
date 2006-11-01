@@ -1,0 +1,7 @@
+{
+  FileOutputStream stream=new FileOutputStream(adjustFileName(fileName));
+  ObjectOutput output=new ObjectOutputStream(stream);
+  output.writeObject(saveDrawing);
+  output.close();
+  return adjustFileName(fileName);
+}

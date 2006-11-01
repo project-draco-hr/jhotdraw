@@ -1,0 +1,4 @@
+{
+  helper=null;
+  super.tearDown();
+}

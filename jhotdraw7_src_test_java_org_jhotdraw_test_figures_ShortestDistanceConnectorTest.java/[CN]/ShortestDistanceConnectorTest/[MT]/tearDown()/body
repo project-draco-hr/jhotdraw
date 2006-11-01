@@ -1,0 +1,4 @@
+{
+  shortestdistanceconnector=null;
+  super.tearDown();
+}

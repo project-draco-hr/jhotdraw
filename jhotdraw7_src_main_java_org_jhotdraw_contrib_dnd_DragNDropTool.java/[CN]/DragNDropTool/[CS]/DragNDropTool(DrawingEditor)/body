@@ -1,0 +1,5 @@
+{
+  super(editor);
+  setDragGestureListener(createDragGestureListener());
+  dragOn=false;
+}

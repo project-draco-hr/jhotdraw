@@ -1,0 +1,11 @@
+{
+  if (myFE1.hasNextFigure()) {
+    return myFE1.nextFigure();
+  }
+ else   if (myFE2.hasNextFigure()) {
+    return myFE2.nextFigure();
+  }
+ else {
+    return null;
+  }
+}

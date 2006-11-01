@@ -1,0 +1,3 @@
+{
+  return (FigureChangeListener)addInternal(a,b);
+}

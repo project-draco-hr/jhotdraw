@@ -1,0 +1,14 @@
+{
+  hasSelectionChanged=false;
+  view().addFigureSelectionListener(this);
+  getWrappedCommand().execute();
+  Undoable undoableCommand=getWrappedCommand().getUndoActivity();
+  if ((undoableCommand != null) && (undoableCommand.isUndoable())) {
+    getDrawingEditor().getUndoManager().pushUndo(undoableCommand);
+    getDrawingEditor().getUndoManager().clearRedos();
+  }
+  if (!hasSelectionChanged || (getDrawingEditor().getUndoManager().getUndoSize() == 1)) {
+    getDrawingEditor().figureSelectionChanged(view());
+  }
+  view().removeFigureSelectionListener(this);
+}

@@ -1,0 +1,11 @@
+{
+  if (redoActivity.isRedoable()) {
+    removeFirstElementInFullList(redoStack);
+    if ((getRedoSize() == 0) || (peekRedo() != redoActivity)) {
+      redoStack.add(redoActivity);
+    }
+  }
+ else {
+    redoStack=CollectionsFactory.current().createList(maxStackCapacity);
+  }
+}

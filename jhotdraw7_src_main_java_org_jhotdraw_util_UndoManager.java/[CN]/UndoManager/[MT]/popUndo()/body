@@ -1,0 +1,5 @@
+{
+  Undoable lastUndoable=peekUndo();
+  undoStack.remove(getUndoSize() - 1);
+  return lastUndoable;
+}

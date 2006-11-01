@@ -1,0 +1,4 @@
+{
+  SVGDrawApp window=new SVGDrawApp();
+  window.open();
+}

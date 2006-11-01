@@ -1,0 +1,3 @@
+{
+  return new HandleTracker(editor(),new UndoableHandle(handle));
+}

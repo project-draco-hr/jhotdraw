@@ -1,0 +1,3 @@
+{
+  return other.getStartConnector() == getStartConnector() && other.getEndConnector() == getEndConnector();
+}

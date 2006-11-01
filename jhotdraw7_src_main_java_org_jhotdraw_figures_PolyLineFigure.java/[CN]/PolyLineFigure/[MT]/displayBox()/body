@@ -1,0 +1,13 @@
+{
+  Iterator iter=points();
+  if (iter.hasNext()) {
+    Rectangle r=new Rectangle((Point)iter.next());
+    while (iter.hasNext()) {
+      r.add((Point)iter.next());
+    }
+    return r;
+  }
+ else {
+    return new Rectangle();
+  }
+}

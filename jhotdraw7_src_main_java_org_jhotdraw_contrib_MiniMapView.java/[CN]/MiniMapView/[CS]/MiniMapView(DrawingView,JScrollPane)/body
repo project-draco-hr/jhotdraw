@@ -1,0 +1,10 @@
+{
+  m_subjectListener=new SubjectListener();
+  setSubject(subject);
+  setMappedDrawingView(newMappedDrawingView);
+  myDrawingChangeListener=new MappedDrawingChangeListener();
+  getMappedDrawingView().drawing().addDrawingChangeListener(myDrawingChangeListener);
+  MouseListener ml=new MouseListener();
+  addMouseListener(new MouseListener());
+  addMouseMotionListener(ml);
+}

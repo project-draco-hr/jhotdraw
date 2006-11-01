@@ -1,0 +1,3 @@
+{
+  return findConnectableFigure(x,y,drawing);
+}

@@ -1,0 +1,9 @@
+{
+  List handles=CollectionsFactory.current().createList(fPoints.size());
+  handles.add(new ChangeConnectionStartHandle(this));
+  for (int i=1; i < fPoints.size() - 1; i++) {
+    handles.add(new PolyLineHandle(this,locator(i),i));
+  }
+  handles.add(new ChangeConnectionEndHandle(this));
+  return new HandleEnumerator(handles);
+}

@@ -1,0 +1,4 @@
+{
+  nothingapplet=null;
+  super.tearDown();
+}

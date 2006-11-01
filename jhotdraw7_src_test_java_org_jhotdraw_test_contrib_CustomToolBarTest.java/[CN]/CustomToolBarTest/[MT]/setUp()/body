@@ -1,0 +1,4 @@
+{
+  super.setUp();
+  customtoolbar=createInstance();
+}

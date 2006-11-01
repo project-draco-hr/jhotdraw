@@ -1,0 +1,7 @@
+{
+  ContentProducer producer=getExactContentProducer(targetClass);
+  if (producer != null) {
+    return producer;
+  }
+  return getSuperClassContentProducer(targetClass,null);
+}

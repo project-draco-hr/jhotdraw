@@ -1,0 +1,5 @@
+{
+  super();
+  fListeners=CollectionsFactory.current().createList(2);
+  init(new Rectangle(-500,-500,2000,2000));
+}

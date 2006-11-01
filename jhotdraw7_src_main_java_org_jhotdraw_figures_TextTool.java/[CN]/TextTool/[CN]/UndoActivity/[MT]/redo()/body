@@ -1,0 +1,8 @@
+{
+  if (!super.redo()) {
+    return false;
+  }
+  getDrawingView().clearSelection();
+  setText(getBackupText());
+  return true;
+}

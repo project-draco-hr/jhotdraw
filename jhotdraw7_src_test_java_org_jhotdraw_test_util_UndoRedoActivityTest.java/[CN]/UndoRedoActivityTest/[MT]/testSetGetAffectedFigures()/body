@@ -1,0 +1,13 @@
+{
+  FigureEnumeration[] tests={new SingleFigureEnumerator(new RectangleFigure(new Point(44,44),new Point(55,55)))};
+  for (int i=0; i < tests.length; i++) {
+    undoredoactivity.setAffectedFigures(tests[i]);
+    FigureEnumeration returned=undoredoactivity.getAffectedFigures();
+    tests[i].reset();
+    while (returned.hasNextFigure()) {
+      assertTrue(tests[i].hasNextFigure());
+      assertEquals(tests[i].nextFigure(),returned.nextFigure());
+    }
+    assertFalse(tests[i].hasNextFigure());
+  }
+}

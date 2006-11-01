@@ -1,0 +1,11 @@
+{
+  if (getObservedFigure() != null) {
+    getObservedFigure().removeFigureChangeListener(this);
+  }
+  setObservedFigure(figure);
+  setLocator(new OffsetLocator(getObservedFigure().connectedTextLocator(this)));
+  getObservedFigure().addFigureChangeListener(this);
+  willChange();
+  updateLocation();
+  changed();
+}

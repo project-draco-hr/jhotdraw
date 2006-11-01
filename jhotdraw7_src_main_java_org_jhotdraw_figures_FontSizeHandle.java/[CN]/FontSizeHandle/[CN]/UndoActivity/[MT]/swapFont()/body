@@ -1,0 +1,7 @@
+{
+  setOldFontSize(replaceFontSize());
+  FigureEnumeration fe=getAffectedFigures();
+  while (fe.hasNextFigure()) {
+    ((TextFigure)fe.nextFigure()).setFont(getFont());
+  }
+}

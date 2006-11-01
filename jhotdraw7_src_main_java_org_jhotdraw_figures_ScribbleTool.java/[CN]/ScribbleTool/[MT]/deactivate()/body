@@ -1,0 +1,10 @@
+{
+  super.deactivate();
+  if (fScribble != null) {
+    if (fScribble.size().width < 4 || fScribble.size().height < 4) {
+      getActiveDrawing().remove(fScribble);
+      setUndoActivity(null);
+    }
+    fScribble=null;
+  }
+}

@@ -1,0 +1,4 @@
+{
+  duplicatecommand=null;
+  super.tearDown();
+}

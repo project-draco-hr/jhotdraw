@@ -1,0 +1,4 @@
+{
+  borderdecorator=null;
+  super.tearDown();
+}

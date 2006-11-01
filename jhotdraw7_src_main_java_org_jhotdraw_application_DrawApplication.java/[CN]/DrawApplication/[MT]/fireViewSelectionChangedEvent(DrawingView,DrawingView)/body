@@ -1,0 +1,7 @@
+{
+  ListIterator li=listeners.listIterator(listeners.size());
+  while (li.hasPrevious()) {
+    ViewChangeListener vsl=(ViewChangeListener)li.previous();
+    vsl.viewSelectionChanged(oldView,newView);
+  }
+}

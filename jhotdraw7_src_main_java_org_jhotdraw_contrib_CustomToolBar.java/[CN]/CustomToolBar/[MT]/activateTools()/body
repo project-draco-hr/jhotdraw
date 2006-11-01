@@ -1,0 +1,16 @@
+{
+  if (!needsUpdate) {
+    return;
+  }
+ else {
+    removeAll();
+    JComponent currentTool=null;
+    Iterator iter=currentTools.iterator();
+    while (iter.hasNext()) {
+      currentTool=(JComponent)iter.next();
+      super.add(currentTool);
+    }
+    validate();
+    needsUpdate=false;
+  }
+}

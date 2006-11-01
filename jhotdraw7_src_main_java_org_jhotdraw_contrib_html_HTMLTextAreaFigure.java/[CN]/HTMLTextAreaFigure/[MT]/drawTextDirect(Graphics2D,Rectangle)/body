@@ -1,0 +1,16 @@
+{
+  Shape savedClipArea=null;
+  Color savedFontColor=null;
+  RenderingHints savedRenderingHints=null;
+  if (g2 != null) {
+    savedRenderingHints=g2.getRenderingHints();
+    savedClipArea=g2.getClip();
+    savedFontColor=g2.getColor();
+    g2.clip(drawingBox);
+  }
+  if (g2 != null) {
+    g2.setClip(savedClipArea);
+    g2.setColor(savedFontColor);
+    g2.setRenderingHints(savedRenderingHints);
+  }
+}

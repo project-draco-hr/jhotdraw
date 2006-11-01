@@ -1,0 +1,9 @@
+{
+  getWrappedTool().deactivate();
+  Undoable undoActivity=getWrappedTool().getUndoActivity();
+  if ((undoActivity != null) && (undoActivity.isUndoable())) {
+    editor().getUndoManager().pushUndo(undoActivity);
+    editor().getUndoManager().clearRedos();
+    editor().figureSelectionChanged(getActiveView());
+  }
+}

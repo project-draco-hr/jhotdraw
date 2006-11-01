@@ -1,0 +1,10 @@
+{
+  super();
+  pms=CollectionsFactory.current().createMap();
+  Runtime.getRuntime().addShutdownHook(new Thread(){
+    public void run(){
+      Iterator iter=pms.values().iterator();
+    }
+  }
+);
+}

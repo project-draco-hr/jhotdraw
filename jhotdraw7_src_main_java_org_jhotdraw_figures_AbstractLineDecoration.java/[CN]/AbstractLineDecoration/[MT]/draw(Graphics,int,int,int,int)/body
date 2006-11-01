@@ -1,0 +1,19 @@
+{
+  Polygon p=outline(x1,y1,x2,y2);
+  myBounds=p.getBounds();
+  if (getFillColor() == null) {
+    g.fillPolygon(p.xpoints,p.ypoints,p.npoints);
+  }
+ else {
+    Color drawColor=g.getColor();
+    g.setColor(getFillColor());
+    g.fillPolygon(p.xpoints,p.ypoints,p.npoints);
+    g.setColor(drawColor);
+  }
+  if (getBorderColor() != getFillColor()) {
+    Color drawColor=g.getColor();
+    g.setColor(getBorderColor());
+    g.drawPolygon(p.xpoints,p.ypoints,p.npoints);
+    g.setColor(drawColor);
+  }
+}

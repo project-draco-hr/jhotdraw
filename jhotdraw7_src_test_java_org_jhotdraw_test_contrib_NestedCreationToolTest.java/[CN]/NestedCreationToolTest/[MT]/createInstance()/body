@@ -1,0 +1,3 @@
+{
+  return new NestedCreationTool(getDrawingEditor(),new RectangleFigure(new Point(20,20),new Point(90,90)));
+}

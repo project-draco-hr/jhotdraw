@@ -1,0 +1,6 @@
+{
+  setDesktopEventService(createDesktopEventService());
+  setAlignmentX(JSplitPane.LEFT_ALIGNMENT);
+  setOneTouchExpandable(true);
+  addPropertyChangeListener(createPropertyChangeListener());
+}

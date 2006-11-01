@@ -1,0 +1,4 @@
+{
+  setUndoActivity(createUndoActivity(view));
+  getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(owner()));
+}

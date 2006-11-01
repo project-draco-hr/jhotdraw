@@ -1,0 +1,4 @@
+{
+  Point p=locate();
+  return new Rectangle(p.x - HANDLESIZE / 2,p.y - HANDLESIZE / 2,HANDLESIZE,HANDLESIZE);
+}

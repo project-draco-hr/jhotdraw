@@ -1,0 +1,6 @@
+{
+  Iterator iter=fPostTasks.iterator();
+  while (iter.hasNext()) {
+    ((PertFigure)iter.next()).updateDurations();
+  }
+}

@@ -1,0 +1,4 @@
+{
+  chopboxconnector=null;
+  super.tearDown();
+}

@@ -1,0 +1,5 @@
+{
+  JPanel palette=new JPanel();
+  palette.setLayout(new PaletteLayout(2,new Point(2,2)));
+  return palette;
+}

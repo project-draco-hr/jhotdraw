@@ -1,0 +1,11 @@
+{
+  fImageHolder=DisposableResourceManagerFactory.createStandardHolder(null);
+  setFrameFigure(new RectangleFigure());
+  setIntrinsicContentProducer(new HTMLContentProducer());
+  fContentProducers=new ContentProducerRegistry(fDefaultContentProducers);
+  markSizeDirty();
+  markImageDirty();
+  markTextDirty();
+  markFontDirty();
+  setAttribute(FigureAttributeConstant.POPUP_MENU,createPopupMenu());
+}

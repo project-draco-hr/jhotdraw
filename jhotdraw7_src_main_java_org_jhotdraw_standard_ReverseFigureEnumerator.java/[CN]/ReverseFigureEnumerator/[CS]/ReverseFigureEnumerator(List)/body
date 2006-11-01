@@ -1,0 +1,4 @@
+{
+  myInitialList=l;
+  reset();
+}

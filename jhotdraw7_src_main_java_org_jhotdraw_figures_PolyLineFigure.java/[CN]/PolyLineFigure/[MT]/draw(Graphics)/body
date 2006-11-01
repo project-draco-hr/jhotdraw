@@ -1,0 +1,10 @@
+{
+  g.setColor(getFrameColor());
+  Point p1, p2;
+  for (int i=0; i < fPoints.size() - 1; i++) {
+    p1=pointAt(i);
+    p2=pointAt(i + 1);
+    drawLine(g,p1.x,p1.y,p2.x,p2.y);
+  }
+  decorate(g);
+}

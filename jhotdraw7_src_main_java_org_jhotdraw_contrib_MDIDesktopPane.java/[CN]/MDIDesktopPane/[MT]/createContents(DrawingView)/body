@@ -1,0 +1,18 @@
+{
+  JScrollPane sp=new JScrollPane((Component)dv);
+  sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+  sp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+  sp.setAlignmentX(LEFT_ALIGNMENT);
+  String applicationTitle;
+  if (dv.drawing().getTitle() == null) {
+    applicationTitle=getDrawApplication().getApplicationName() + " - " + getDrawApplication().getDefaultDrawingTitle();
+  }
+ else {
+    applicationTitle=getDrawApplication().getApplicationName() + " - " + dv.drawing().getTitle();
+  }
+  JInternalFrame internalFrame=new JInternalFrame(applicationTitle,true,true,true,true);
+  internalFrame.setName(applicationTitle);
+  internalFrame.getContentPane().add(sp);
+  internalFrame.setSize(200,200);
+  return internalFrame;
+}

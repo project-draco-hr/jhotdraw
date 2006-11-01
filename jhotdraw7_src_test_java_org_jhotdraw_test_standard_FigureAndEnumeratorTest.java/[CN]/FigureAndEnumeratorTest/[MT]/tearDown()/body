@@ -1,0 +1,4 @@
+{
+  figureandenumerator=null;
+  super.tearDown();
+}

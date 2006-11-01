@@ -1,0 +1,9 @@
+{
+  if (RelativeLocator.class.isInstance(o)) {
+    RelativeLocator rl=(RelativeLocator)o;
+    if ((rl.fRelativeX) == fRelativeX && (rl.fRelativeY == fRelativeY)) {
+      return true;
+    }
+  }
+  return false;
+}

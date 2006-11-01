@@ -1,0 +1,8 @@
+{
+  if (isActive()) {
+    if (getActiveView() != null) {
+      getActiveView().setCursor(new AWTCursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }
+    getEventDispatcher().fireToolDeactivatedEvent();
+  }
+}

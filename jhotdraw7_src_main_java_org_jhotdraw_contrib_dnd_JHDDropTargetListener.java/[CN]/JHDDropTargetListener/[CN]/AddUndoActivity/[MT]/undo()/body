@@ -1,0 +1,16 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  log("AddUndoActivity AddUndoActivity undo");
+  DeleteFromDrawingVisitor deleteVisitor=new DeleteFromDrawingVisitor(getDrawingView().drawing());
+  FigureEnumeration fe=getAffectedFigures();
+  while (fe.hasNextFigure()) {
+    org.jhotdraw.framework.Figure f=fe.nextFigure();
+    f.visit(deleteVisitor);
+  }
+  setAffectedFigures(deleteVisitor.getDeletedFigures());
+  getDrawingView().clearSelection();
+  undone=true;
+  return true;
+}

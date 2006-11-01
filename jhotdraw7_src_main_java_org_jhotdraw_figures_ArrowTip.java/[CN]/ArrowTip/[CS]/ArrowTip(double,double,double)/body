@@ -1,0 +1,5 @@
+{
+  setAngle(angle);
+  setOuterRadius(outerRadius);
+  setInnerRadius(innerRadius);
+}

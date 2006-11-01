@@ -1,0 +1,6 @@
+{
+  Point p=fBase.locate(owner);
+  p.x+=fOffsetX;
+  p.y+=fOffsetY;
+  return p;
+}

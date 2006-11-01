@@ -1,0 +1,7 @@
+{
+  org.jhotdraw.contrib.Layoutable[] tests={new GraphicalCompositeFigure(),null};
+  for (int i=0; i < tests.length; i++) {
+    simplelayouter.setLayoutable(tests[i]);
+    assertEquals(tests[i],simplelayouter.getLayoutable());
+  }
+}

@@ -1,0 +1,3 @@
+{
+  setAttribute(FigureAttributeConstant.getConstant(name),value);
+}

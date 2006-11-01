@@ -1,0 +1,3 @@
+{
+  return new ScalingFontMetrics(f,real.getFontMetrics(scaledFont(f,scale)));
+}

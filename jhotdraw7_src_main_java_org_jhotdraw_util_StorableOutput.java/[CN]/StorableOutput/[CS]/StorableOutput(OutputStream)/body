@@ -1,0 +1,5 @@
+{
+  fStream=new PrintWriter(stream);
+  fMap=CollectionsFactory.current().createList();
+  fIndent=0;
+}

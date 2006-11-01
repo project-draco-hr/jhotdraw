@@ -1,0 +1,4 @@
+{
+  polylinefigure=null;
+  super.tearDown();
+}

@@ -1,0 +1,10 @@
+{
+  double subjectsScale=((ZoomDrawingView)getMappedComponent()).getScale();
+  AffineTransform at=null;
+  try {
+    at=AffineTransform.getScaleInstance(subjectsScale,subjectsScale).createInverse();
+  }
+ catch (  NoninvertibleTransformException nte) {
+  }
+  return at;
+}

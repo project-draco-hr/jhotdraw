@@ -1,0 +1,6 @@
+{
+  super.write(dw);
+  dw.writeInt(fOffsetX);
+  dw.writeInt(fOffsetY);
+  dw.writeStorable(fBase);
+}

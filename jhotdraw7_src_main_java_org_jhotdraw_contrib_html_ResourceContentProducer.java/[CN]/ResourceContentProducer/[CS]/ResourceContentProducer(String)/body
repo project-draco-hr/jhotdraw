@@ -1,0 +1,3 @@
+{
+  setResourceName(resourceName);
+}

@@ -1,0 +1,8 @@
+{
+  if (getLayouter() != null) {
+    setLayouter(getLayouter().create(this));
+  }
+ else {
+    setLayouter(new StandardLayouter(this));
+  }
+}

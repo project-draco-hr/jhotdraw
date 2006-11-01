@@ -1,0 +1,5 @@
+{
+  willChange();
+  basicMoveBy(dx,dy);
+  changed();
+}

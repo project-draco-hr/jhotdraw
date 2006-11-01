@@ -1,0 +1,10 @@
+{
+  TextFigure textOwner=(TextFigure)owner();
+  FontSizeHandle.UndoActivity activity=(FontSizeHandle.UndoActivity)getUndoActivity();
+  if (textOwner.getFont().getSize() == activity.getOldFontSize()) {
+    setUndoActivity(null);
+  }
+ else {
+    activity.setFont(textOwner.getFont());
+  }
+}

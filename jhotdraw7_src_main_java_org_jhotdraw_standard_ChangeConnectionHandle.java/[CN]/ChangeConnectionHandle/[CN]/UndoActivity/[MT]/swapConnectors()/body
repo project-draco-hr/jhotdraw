@@ -1,0 +1,8 @@
+{
+  FigureEnumeration fe=getAffectedFigures();
+  if (fe.hasNextFigure()) {
+    ConnectionFigure connection=(ConnectionFigure)fe.nextFigure();
+    setOldConnector(replaceConnector(connection));
+    connection.updateConnection();
+  }
+}

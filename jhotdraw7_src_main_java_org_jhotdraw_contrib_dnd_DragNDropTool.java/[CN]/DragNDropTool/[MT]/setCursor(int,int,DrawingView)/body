@@ -1,0 +1,16 @@
+{
+  if (view == null) {
+    return;
+  }
+  Handle handle=view.findHandle(x,y);
+  Figure figure=view.drawing().findFigure(x,y);
+  if (handle != null) {
+    view.setCursor(handle.getCursor());
+  }
+ else   if (figure != null) {
+    view.setCursor(new AWTCursor(java.awt.Cursor.MOVE_CURSOR));
+  }
+ else {
+    view.setCursor(new AWTCursor(java.awt.Cursor.DEFAULT_CURSOR));
+  }
+}

@@ -1,0 +1,5 @@
+{
+  super.release();
+  getDecoratedFigure().removeFromContainer(this);
+  getDecoratedFigure().release();
+}

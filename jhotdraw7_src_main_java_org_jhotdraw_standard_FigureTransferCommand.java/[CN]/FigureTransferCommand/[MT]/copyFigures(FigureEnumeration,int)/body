@@ -1,0 +1,3 @@
+{
+  Clipboard.getClipboard().setContents(new StandardFigureSelection(fe,figureCount));
+}

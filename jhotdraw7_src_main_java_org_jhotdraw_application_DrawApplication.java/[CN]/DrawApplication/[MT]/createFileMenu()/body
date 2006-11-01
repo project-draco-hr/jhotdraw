@@ -1,0 +1,41 @@
+{
+  CommandMenu menu=new CommandMenu("File");
+  Command cmd=new AbstractCommand("New",this,false){
+    public void execute(){
+      promptNew();
+    }
+  }
+;
+  menu.add(cmd,new MenuShortcut('n'));
+  cmd=new AbstractCommand("Open...",this,false){
+    public void execute(){
+      promptOpen();
+    }
+  }
+;
+  menu.add(cmd,new MenuShortcut('o'));
+  cmd=new AbstractCommand("Save As...",this,true){
+    public void execute(){
+      promptSaveAs();
+    }
+  }
+;
+  menu.add(cmd,new MenuShortcut('s'));
+  menu.addSeparator();
+  cmd=new AbstractCommand("Print...",this,true){
+    public void execute(){
+      print();
+    }
+  }
+;
+  menu.add(cmd,new MenuShortcut('p'));
+  menu.addSeparator();
+  cmd=new AbstractCommand("Exit",this,true){
+    public void execute(){
+      endApp();
+    }
+  }
+;
+  menu.add(cmd);
+  return menu;
+}

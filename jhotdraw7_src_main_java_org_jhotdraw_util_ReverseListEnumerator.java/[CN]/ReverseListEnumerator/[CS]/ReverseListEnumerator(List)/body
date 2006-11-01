@@ -1,0 +1,4 @@
+{
+  myList=l;
+  count=myList.size() - 1;
+}

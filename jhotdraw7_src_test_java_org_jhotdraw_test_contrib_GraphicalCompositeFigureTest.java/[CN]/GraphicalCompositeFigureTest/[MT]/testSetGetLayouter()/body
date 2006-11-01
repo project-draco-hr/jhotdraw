@@ -1,0 +1,7 @@
+{
+  org.jhotdraw.contrib.Layouter[] tests={new SimpleLayouter(graphicalcompositefigure),null};
+  for (int i=0; i < tests.length; i++) {
+    graphicalcompositefigure.setLayouter(tests[i]);
+    assertEquals(tests[i],graphicalcompositefigure.getLayouter());
+  }
+}

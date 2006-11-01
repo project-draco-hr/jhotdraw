@@ -1,0 +1,5 @@
+{
+  if (closeQuery() == true) {
+    exit();
+  }
+}

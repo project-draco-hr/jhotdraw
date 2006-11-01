@@ -1,0 +1,7 @@
+{
+  if (fFrameFigure != null) {
+    fFrameFigure.removeFigureChangeListener(this);
+  }
+  fFrameFigure=newFrameFigure;
+  fFrameFigure.addFigureChangeListener(this);
+}

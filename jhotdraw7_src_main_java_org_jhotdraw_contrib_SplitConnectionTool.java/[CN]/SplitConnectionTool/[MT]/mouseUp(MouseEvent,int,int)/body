@@ -1,0 +1,6 @@
+{
+  if (e.getClickCount() == 2) {
+    init();
+    editor().toolDone();
+  }
+}

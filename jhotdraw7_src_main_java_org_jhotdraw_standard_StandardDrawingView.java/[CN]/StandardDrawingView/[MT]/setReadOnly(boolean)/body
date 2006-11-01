@@ -1,0 +1,15 @@
+{
+  if (newIsReadOnly != isReadOnly()) {
+    if (newIsReadOnly) {
+      removeMouseListener(mouseListener);
+      removeMouseMotionListener(motionListener);
+      removeKeyListener(keyListener);
+    }
+ else {
+      addMouseListener(mouseListener);
+      addMouseMotionListener(motionListener);
+      addKeyListener(keyListener);
+    }
+    myIsReadOnly=newIsReadOnly;
+  }
+}

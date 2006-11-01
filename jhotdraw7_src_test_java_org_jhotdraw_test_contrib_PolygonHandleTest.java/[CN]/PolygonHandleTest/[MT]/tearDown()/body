@@ -1,0 +1,4 @@
+{
+  polygonhandle=null;
+  super.tearDown();
+}

@@ -1,0 +1,11 @@
+{
+  if (getFloatingTextField() == null) {
+    setFloatingTextField(createFloatingTextField());
+  }
+  if (figure != getTypingTarget() && getTypingTarget() != null) {
+    endEdit();
+  }
+  getFloatingTextField().createOverlay((Container)view(),figure.getFont());
+  getFloatingTextField().setBounds(fieldBounds(figure),figure.getText());
+  setTypingTarget(figure);
+}

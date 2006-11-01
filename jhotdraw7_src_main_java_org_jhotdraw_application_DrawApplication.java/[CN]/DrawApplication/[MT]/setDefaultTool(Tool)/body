@@ -1,0 +1,8 @@
+{
+  if (newDefaultTool != null) {
+    fDefaultToolButton=createToolButton(IMAGES + "SEL","Selection Tool",newDefaultTool);
+  }
+ else {
+    fDefaultToolButton=null;
+  }
+}

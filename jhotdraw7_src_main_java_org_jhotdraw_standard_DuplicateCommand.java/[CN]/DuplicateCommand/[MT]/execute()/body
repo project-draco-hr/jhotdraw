@@ -1,0 +1,10 @@
+{
+  super.execute();
+  setUndoActivity(createUndoActivity());
+  FigureSelection selection=view().getFigureSelection();
+  FigureEnumeration figures=(FigureEnumeration)selection.getData(StandardFigureSelection.TYPE);
+  getUndoActivity().setAffectedFigures(figures);
+  view().clearSelection();
+  getUndoActivity().setAffectedFigures(insertFigures(getUndoActivity().getAffectedFigures(),10,10));
+  view().checkDamage();
+}

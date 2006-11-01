@@ -1,0 +1,7 @@
+{
+  if (!isRedoable()) {
+    return false;
+  }
+  swapFont();
+  return true;
+}

@@ -1,0 +1,5 @@
+{
+  DrawingView createdDrawingView=createDrawingView(createDrawing());
+  createdDrawingView.drawing().setTitle(getDefaultDrawingTitle());
+  return createdDrawingView;
+}

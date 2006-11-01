@@ -1,0 +1,20 @@
+{
+  fPostTasks=CollectionsFactory.current().createList();
+  fPreTasks=CollectionsFactory.current().createList();
+  fDisplayBox=new Rectangle(0,0,0,0);
+  Font f=new Font("Helvetica",Font.PLAIN,12);
+  Font fb=new Font("Helvetica",Font.BOLD,12);
+  TextFigure name=new TextFigure();
+  name.setFont(fb);
+  name.setText("Task");
+  add(name);
+  NumberTextFigure duration=new NumberTextFigure();
+  duration.setValue(0);
+  duration.setFont(fb);
+  add(duration);
+  NumberTextFigure end=new NumberTextFigure();
+  end.setValue(0);
+  end.setFont(f);
+  end.setReadOnly(true);
+  add(end);
+}

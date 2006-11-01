@@ -1,0 +1,18 @@
+{
+  int direction=0;
+  int vx=x2 - x1;
+  int vy=y2 - y1;
+  if (vy < vx && vx > -vy) {
+    direction=EAST;
+  }
+ else   if (vy > vx && vy > -vx) {
+    direction=NORTH;
+  }
+ else   if (vx < vy && vx < -vy) {
+    direction=WEST;
+  }
+ else {
+    direction=SOUTH;
+  }
+  return direction;
+}

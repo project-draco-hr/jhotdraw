@@ -1,0 +1,3 @@
+{
+  getStatusLine().setText(string);
+}

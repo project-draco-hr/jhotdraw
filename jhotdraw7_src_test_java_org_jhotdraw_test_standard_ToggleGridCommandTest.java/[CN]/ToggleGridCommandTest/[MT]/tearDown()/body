@@ -1,0 +1,4 @@
+{
+  togglegridcommand=null;
+  super.tearDown();
+}

@@ -1,0 +1,5 @@
+{
+  super(command.name(),icon);
+  setCommand(command);
+  addActionListener(this);
+}

@@ -1,0 +1,4 @@
+{
+  textfigure=null;
+  super.tearDown();
+}

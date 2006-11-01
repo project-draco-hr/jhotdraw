@@ -1,0 +1,5 @@
+{
+  Connector tempEndConnector=connection.getEndConnector();
+  connection.connectEnd(getOldConnector());
+  return tempEndConnector;
+}

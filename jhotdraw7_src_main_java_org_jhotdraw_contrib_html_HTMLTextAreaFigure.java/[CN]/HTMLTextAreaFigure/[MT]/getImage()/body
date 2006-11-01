@@ -1,0 +1,6 @@
+{
+  if (fImageHolder.isAvailable()) {
+    return (BufferedImage)fImageHolder.getResource();
+  }
+  return null;
+}

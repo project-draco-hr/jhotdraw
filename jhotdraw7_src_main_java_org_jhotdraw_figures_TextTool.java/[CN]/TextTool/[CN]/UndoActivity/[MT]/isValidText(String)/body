@@ -1,0 +1,3 @@
+{
+  return ((toBeChecked != null) && (toBeChecked.length() > 0));
+}

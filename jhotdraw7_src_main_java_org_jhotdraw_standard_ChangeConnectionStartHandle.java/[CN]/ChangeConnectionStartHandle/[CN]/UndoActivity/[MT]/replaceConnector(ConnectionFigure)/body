@@ -1,0 +1,5 @@
+{
+  Connector tempStartConnector=connection.getStartConnector();
+  connection.connectStart(getOldConnector());
+  return tempStartConnector;
+}

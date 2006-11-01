@@ -1,0 +1,4 @@
+{
+  super(command.name(),mnemonic);
+  setCommand(command);
+}

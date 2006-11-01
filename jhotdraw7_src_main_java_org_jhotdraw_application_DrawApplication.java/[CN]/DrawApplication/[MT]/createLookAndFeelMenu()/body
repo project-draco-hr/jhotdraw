@@ -1,0 +1,15 @@
+{
+  CommandMenu menu=new CommandMenu("Look'n'Feel");
+  UIManager.LookAndFeelInfo[] lafs=UIManager.getInstalledLookAndFeels();
+  for (int i=0; i < lafs.length; i++) {
+    final String lnfClassName=lafs[i].getClassName();
+    Command cmd=new AbstractCommand(lafs[i].getName(),this){
+      public void execute(){
+        newLookAndFeel(lnfClassName);
+      }
+    }
+;
+    menu.add(cmd);
+  }
+  return menu;
+}

@@ -1,0 +1,5 @@
+{
+  setUndoActivity(createUndoActivity(view,fIndex));
+  getUndoActivity().setAffectedFigures(new SingleFigureEnumerator(owner()));
+  ((PolyLineHandle.UndoActivity)getUndoActivity()).setOldPoint(new Point(x,y));
+}

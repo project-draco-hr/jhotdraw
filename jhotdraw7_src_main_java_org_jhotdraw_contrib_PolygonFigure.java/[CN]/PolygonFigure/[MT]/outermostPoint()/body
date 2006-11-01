@@ -1,0 +1,13 @@
+{
+  Point ctr=center();
+  int outer=0;
+  long dist=0;
+  for (int i=0; i < pointCount(); ++i) {
+    long d=Geom.length2(ctr.x,ctr.y,getInternalPolygon().xpoints[i],getInternalPolygon().ypoints[i]);
+    if (d > dist) {
+      dist=d;
+      outer=i;
+    }
+  }
+  return new Point(getInternalPolygon().xpoints[outer],getInternalPolygon().ypoints[outer]);
+}

@@ -1,0 +1,8 @@
+{
+  if (myBounds != null) {
+    return myBounds;
+  }
+ else {
+    return new Rectangle(0,0);
+  }
+}

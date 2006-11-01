@@ -1,0 +1,11 @@
+{
+  if (isDragSource) {
+    setDragGestureListener(dgl);
+    setDragSourceListener(createDragSourceListener());
+    setDragGestureRecognizer(createDragGestureRecognizer(getDragGestureListener()));
+  }
+  if (isDropTarget) {
+    setDropTargetListener(createDropTargetListener());
+    setDropTarget(createDropTarget());
+  }
+}

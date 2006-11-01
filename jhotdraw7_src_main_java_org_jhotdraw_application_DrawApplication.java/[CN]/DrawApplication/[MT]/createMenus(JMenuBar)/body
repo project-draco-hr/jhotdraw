@@ -1,0 +1,7 @@
+{
+  addMenuIfPossible(mb,createFileMenu());
+  addMenuIfPossible(mb,createEditMenu());
+  addMenuIfPossible(mb,createAlignmentMenu());
+  addMenuIfPossible(mb,createAttributesMenu());
+  addMenuIfPossible(mb,createDebugMenu());
+}

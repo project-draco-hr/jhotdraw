@@ -1,0 +1,4 @@
+{
+  fPoints.add(new Point(x,y));
+  changed();
+}

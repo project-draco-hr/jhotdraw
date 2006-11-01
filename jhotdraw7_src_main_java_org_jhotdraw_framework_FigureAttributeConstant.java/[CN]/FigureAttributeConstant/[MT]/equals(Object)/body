@@ -1,0 +1,19 @@
+{
+  if (compareObject == null) {
+    return false;
+  }
+  if (!(compareObject instanceof FigureAttributeConstant)) {
+    return false;
+  }
+  FigureAttributeConstant compareAttribute=(FigureAttributeConstant)compareObject;
+  if (compareAttribute.getID() != getID()) {
+    return false;
+  }
+  if ((compareAttribute.getName() == null) && (getName() == null)) {
+    return true;
+  }
+  if ((compareAttribute.getName() != null) && (getName() != null)) {
+    return getName().equals(compareAttribute.getName());
+  }
+  return false;
+}

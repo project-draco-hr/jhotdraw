@@ -1,0 +1,8 @@
+{
+  if ((getSelectedIndex() >= 0) && (getSelectedIndex() < fCommands.size())) {
+    Command command=(Command)fCommands.get(getSelectedIndex());
+    if (command.isExecutable()) {
+      command.execute();
+    }
+  }
+}

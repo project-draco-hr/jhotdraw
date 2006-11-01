@@ -1,0 +1,13 @@
+{
+  Rectangle r=calculateLayout(origin,corner);
+  int maxHeight=getInsets().top;
+  FigureEnumeration fe=getLayoutable().figures();
+  while (fe.hasNextFigure()) {
+    Figure currentFigure=fe.nextFigure();
+    Point partOrigin=new Point(r.x + getInsets().left,r.y + maxHeight);
+    Point partCorner=new Point(r.x + r.width - getInsets().right,r.y + maxHeight + currentFigure.displayBox().height);
+    currentFigure.displayBox(partOrigin,partCorner);
+    maxHeight+=currentFigure.displayBox().height;
+  }
+  return new Rectangle(r.x,r.y,r.width,maxHeight + getInsets().bottom);
+}

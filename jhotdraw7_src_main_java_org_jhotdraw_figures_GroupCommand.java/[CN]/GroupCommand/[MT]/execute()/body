@@ -1,0 +1,7 @@
+{
+  super.execute();
+  setUndoActivity(createUndoActivity());
+  getUndoActivity().setAffectedFigures(view().selection());
+  ((GroupCommand.UndoActivity)getUndoActivity()).groupFigures();
+  view().checkDamage();
+}

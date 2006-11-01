@@ -1,0 +1,4 @@
+{
+  changeconnectionstarthandle=null;
+  super.tearDown();
+}

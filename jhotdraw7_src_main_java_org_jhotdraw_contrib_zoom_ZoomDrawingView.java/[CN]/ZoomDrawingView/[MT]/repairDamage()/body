@@ -1,0 +1,7 @@
+{
+  Rectangle damagedArea=getDamage();
+  if (damagedArea != null) {
+    repaint((int)(damagedArea.x * getScale()),(int)(damagedArea.y * getScale()),(int)(damagedArea.width * getScale()),(int)(damagedArea.height * getScale()));
+    setDamage(null);
+  }
+}

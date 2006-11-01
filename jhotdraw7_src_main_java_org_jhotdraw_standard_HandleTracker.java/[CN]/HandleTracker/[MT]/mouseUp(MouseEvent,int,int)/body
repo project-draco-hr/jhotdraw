@@ -1,0 +1,4 @@
+{
+  super.mouseUp(e,x,y);
+  fAnchorHandle.invokeEnd(x,y,getAnchorX(),getAnchorY(),view());
+}

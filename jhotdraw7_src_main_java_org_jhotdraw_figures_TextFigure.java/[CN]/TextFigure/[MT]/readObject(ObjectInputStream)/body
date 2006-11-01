@@ -1,0 +1,7 @@
+{
+  s.defaultReadObject();
+  if (getObservedFigure() != null) {
+    getObservedFigure().addFigureChangeListener(this);
+  }
+  markDirty();
+}

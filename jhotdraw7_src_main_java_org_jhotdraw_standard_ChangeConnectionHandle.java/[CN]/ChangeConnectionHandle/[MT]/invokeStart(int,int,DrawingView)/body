@@ -1,0 +1,7 @@
+{
+  fOriginalTarget=target();
+  fStart=new Point(x,y);
+  setUndoActivity(createUndoActivity(view));
+  ((ChangeConnectionHandle.UndoActivity)getUndoActivity()).setOldConnector(target());
+  disconnect();
+}

@@ -1,0 +1,7 @@
+{
+  TestSuite suite;
+  suite=new TestSuite("org.jhotdraw.test.samples.nothing");
+  suite.addTestSuite(org.jhotdraw.test.samples.nothing.NothingAppletTest.class);
+  suite.addTestSuite(org.jhotdraw.test.samples.nothing.NothingAppTest.class);
+  return suite;
+}

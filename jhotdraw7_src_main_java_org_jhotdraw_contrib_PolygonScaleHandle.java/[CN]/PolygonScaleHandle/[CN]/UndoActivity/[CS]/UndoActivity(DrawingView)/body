@@ -1,0 +1,5 @@
+{
+  super(newView);
+  setUndoable(true);
+  setRedoable(true);
+}

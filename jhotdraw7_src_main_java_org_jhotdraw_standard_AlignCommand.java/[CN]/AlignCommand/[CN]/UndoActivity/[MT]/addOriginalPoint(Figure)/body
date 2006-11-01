@@ -1,0 +1,3 @@
+{
+  myOriginalPoints.put(f,f.displayBox().getLocation());
+}

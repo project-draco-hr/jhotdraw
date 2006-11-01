@@ -1,0 +1,18 @@
+{
+  willChange();
+  int n=pointCount() + 1;
+  int[] xs=new int[n];
+  int[] ys=new int[n];
+  for (int j=0; j < i; ++j) {
+    xs[j]=getInternalPolygon().xpoints[j];
+    ys[j]=getInternalPolygon().ypoints[j];
+  }
+  xs[i]=p.x;
+  ys[i]=p.y;
+  for (int j=i; j < pointCount(); ++j) {
+    xs[j + 1]=getInternalPolygon().xpoints[j];
+    ys[j + 1]=getInternalPolygon().ypoints[j];
+  }
+  setInternalPolygon(new Polygon(xs,ys,n));
+  changed();
+}

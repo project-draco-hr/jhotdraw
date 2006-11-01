@@ -1,0 +1,8 @@
+{
+  if (compareObject instanceof StandardStorageFormat) {
+    return getFileExtension().equals(((StandardStorageFormat)compareObject).getFileExtension());
+  }
+ else {
+    return false;
+  }
+}

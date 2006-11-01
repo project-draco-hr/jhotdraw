@@ -1,0 +1,3 @@
+{
+  return (int)(real.getAscent() / ScalingGraphics.this.getScale());
+}

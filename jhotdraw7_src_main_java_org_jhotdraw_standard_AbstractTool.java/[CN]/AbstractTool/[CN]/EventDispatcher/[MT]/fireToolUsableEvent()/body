@@ -1,0 +1,6 @@
+{
+  Iterator iter=myRegisteredListeners.iterator();
+  while (iter.hasNext()) {
+    ((ToolListener)iter.next()).toolUsable(new EventObject(myObservedTool));
+  }
+}

@@ -1,0 +1,5 @@
+{
+  willChange();
+  fPoints.remove(i);
+  changed();
+}

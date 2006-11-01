@@ -1,0 +1,15 @@
+{
+  FigureEnumeration fe=figuresReverse();
+  while (fe.hasNextFigure()) {
+    Figure figure=fe.nextFigure().findFigureInside(x,y);
+    if (figure != null) {
+      return figure;
+    }
+  }
+  if (containsPoint(x,y)) {
+    return this;
+  }
+ else {
+    return null;
+  }
+}

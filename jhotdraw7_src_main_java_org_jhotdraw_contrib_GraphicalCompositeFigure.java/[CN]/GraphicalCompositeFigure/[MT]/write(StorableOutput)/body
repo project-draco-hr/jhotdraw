@@ -1,0 +1,5 @@
+{
+  super.write(dw);
+  dw.writeStorable(getPresentationFigure());
+  dw.writeStorable(getLayouter());
+}

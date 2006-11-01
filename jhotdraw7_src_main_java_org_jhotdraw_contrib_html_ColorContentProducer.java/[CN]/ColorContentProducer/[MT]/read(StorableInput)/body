@@ -1,0 +1,10 @@
+{
+  super.read(dr);
+  boolean hasColor=dr.readBoolean();
+  if (hasColor) {
+    setColor(new Color(dr.readInt()));
+  }
+ else {
+    setColor(null);
+  }
+}

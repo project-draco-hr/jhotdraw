@@ -1,0 +1,4 @@
+{
+  figurechangeadapter=null;
+  super.tearDown();
+}

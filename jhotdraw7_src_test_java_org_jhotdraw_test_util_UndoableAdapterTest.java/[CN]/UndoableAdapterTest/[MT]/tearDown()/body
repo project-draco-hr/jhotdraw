@@ -1,0 +1,4 @@
+{
+  undoableadapter=null;
+  super.tearDown();
+}

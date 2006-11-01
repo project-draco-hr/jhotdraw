@@ -1,0 +1,7 @@
+{
+  if (!isFontDirty()) {
+    return;
+  }
+  fFontWidth=(int)getFont().getMaxCharBounds(new FontRenderContext(null,false,false)).getWidth();
+  setFontDirty(false);
+}

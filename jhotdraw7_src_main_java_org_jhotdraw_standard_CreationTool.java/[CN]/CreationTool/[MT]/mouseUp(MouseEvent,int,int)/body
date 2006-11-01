@@ -1,0 +1,16 @@
+{
+  if (getAddedFigure() != null && !getCreatedFigure().isEmpty()) {
+    getAddedFigures().add(getAddedFigure());
+  }
+ else {
+    getActiveView().remove(getAddedFigure());
+  }
+  if (getAddedFigures().isEmpty()) {
+    setUndoActivity(null);
+  }
+ else {
+    setUndoActivity(createUndoActivity());
+    getUndoActivity().setAffectedFigures(new FigureEnumerator(getAddedFigures()));
+  }
+  editor().toolDone();
+}

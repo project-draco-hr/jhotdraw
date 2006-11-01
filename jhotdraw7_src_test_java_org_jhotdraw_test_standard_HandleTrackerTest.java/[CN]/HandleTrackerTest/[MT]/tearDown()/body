@@ -1,0 +1,4 @@
+{
+  handletracker=null;
+  super.tearDown();
+}

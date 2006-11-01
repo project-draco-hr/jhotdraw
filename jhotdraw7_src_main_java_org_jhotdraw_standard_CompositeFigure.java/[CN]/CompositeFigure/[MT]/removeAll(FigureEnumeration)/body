@@ -1,0 +1,5 @@
+{
+  while (fe.hasNextFigure()) {
+    remove(fe.nextFigure());
+  }
+}

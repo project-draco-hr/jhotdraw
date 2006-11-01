@@ -1,0 +1,33 @@
+{
+  DrawingView view=(DrawingView)dsde.getDragSourceContext().getComponent();
+  log("DragSourceDropEvent-dragDropEnd");
+  if (dsde.getDropSuccess() == true) {
+    if (dsde.getDropAction() == DnDConstants.ACTION_MOVE) {
+      log("DragSourceDropEvent-ACTION_MOVE");
+      setSourceUndoActivity(createSourceUndoActivity(view));
+      DNDFigures df=(DNDFigures)DNDHelper.processReceivedData(DNDFiguresTransferable.DNDFiguresFlavor,dsde.getDragSourceContext().getTransferable());
+      getSourceUndoActivity().setAffectedFigures(df.getFigures());
+      DeleteFromDrawingVisitor deleteVisitor=new DeleteFromDrawingVisitor(view.drawing());
+      FigureEnumeration fe=getSourceUndoActivity().getAffectedFigures();
+      while (fe.hasNextFigure()) {
+        fe.nextFigure().visit(deleteVisitor);
+      }
+      view.clearSelection();
+      view.checkDamage();
+      editor().getUndoManager().pushUndo(getSourceUndoActivity());
+      editor().getUndoManager().clearRedos();
+      editor().figureSelectionChanged(view);
+    }
+ else     if (dsde.getDropAction() == DnDConstants.ACTION_COPY) {
+      log("DragSourceDropEvent-ACTION_COPY");
+    }
+  }
+  if (autoscrollState != null) {
+    Component c=dsde.getDragSourceContext().getComponent();
+    if (JComponent.class.isInstance(c)) {
+      JComponent jc=(JComponent)c;
+      jc.setAutoscrolls(autoscrollState.booleanValue());
+      autoscrollState=null;
+    }
+  }
+}

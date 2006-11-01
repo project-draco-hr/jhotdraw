@@ -1,0 +1,13 @@
+{
+  FigureEnumeration fe=getAffectedFigures();
+  if (!fe.hasNextFigure()) {
+    return false;
+  }
+  TriangleFigure figure=(TriangleFigure)fe.nextFigure();
+  double backupAngle=figure.getRotationAngle();
+  figure.willChange();
+  figure.rotate(getRotationAngle());
+  figure.changed();
+  setRotationAngle(backupAngle);
+  return true;
+}

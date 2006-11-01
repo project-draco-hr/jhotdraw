@@ -1,0 +1,4 @@
+{
+  node=newNode;
+  update();
+}

@@ -1,0 +1,6 @@
+{
+  if (getToolTipText() != null) {
+    setToolTipText(null);
+    setToolTipLocation(null);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  Rectangle r=getDecoratedFigure().displayBox();
+  r.grow(getBorderOffset().x,getBorderOffset().y);
+  return r;
+}

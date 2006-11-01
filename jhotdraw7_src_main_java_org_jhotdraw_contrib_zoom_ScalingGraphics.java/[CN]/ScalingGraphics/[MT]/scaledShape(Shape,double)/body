@@ -1,0 +1,9 @@
+{
+  if (s instanceof Rectangle) {
+    Rectangle r=(Rectangle)s;
+    return new Rectangle((int)(r.x * scale),(int)(r.y * scale),(int)(r.width * scale),(int)(r.height * scale));
+  }
+ else {
+    throw new RuntimeException("Cannot scale shape: " + s.getClass().getName());
+  }
+}

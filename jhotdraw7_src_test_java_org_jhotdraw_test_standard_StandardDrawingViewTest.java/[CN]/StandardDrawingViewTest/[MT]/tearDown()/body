@@ -1,0 +1,4 @@
+{
+  standarddrawingview=null;
+  super.tearDown();
+}

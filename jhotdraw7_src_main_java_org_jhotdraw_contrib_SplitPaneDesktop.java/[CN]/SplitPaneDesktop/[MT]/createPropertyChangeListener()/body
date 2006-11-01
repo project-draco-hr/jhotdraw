@@ -1,0 +1,13 @@
+{
+  return new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      if (getRightComponent() != null) {
+        getRightComponent().repaint();
+      }
+      if (getLeftComponent() != null) {
+        getLeftComponent().repaint();
+      }
+    }
+  }
+;
+}

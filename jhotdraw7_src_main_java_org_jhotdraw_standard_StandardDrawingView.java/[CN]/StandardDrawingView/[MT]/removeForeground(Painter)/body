@@ -1,0 +1,6 @@
+{
+  if (fForegrounds != null) {
+    fForegrounds.remove(painter);
+  }
+  repaint();
+}

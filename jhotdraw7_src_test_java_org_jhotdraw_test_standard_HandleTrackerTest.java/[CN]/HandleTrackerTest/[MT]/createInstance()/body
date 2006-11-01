@@ -1,0 +1,4 @@
+{
+  Handle handle=new NullHandle(new RectangleFigure(new Point(10,10),new Point(40,40)),RelativeLocator.north());
+  return new HandleTracker(getDrawingEditor(),handle);
+}

@@ -1,0 +1,6 @@
+{
+  super.mouseUp(e,x,y);
+  if (e.getClickCount() >= 2) {
+    editor().toolDone();
+  }
+}

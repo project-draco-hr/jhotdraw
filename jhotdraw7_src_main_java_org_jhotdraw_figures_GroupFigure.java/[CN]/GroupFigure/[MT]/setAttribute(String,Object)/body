@@ -1,0 +1,7 @@
+{
+  super.setAttribute(name,value);
+  FigureEnumeration fe=figures();
+  while (fe.hasNextFigure()) {
+    fe.nextFigure().setAttribute(name,value);
+  }
+}

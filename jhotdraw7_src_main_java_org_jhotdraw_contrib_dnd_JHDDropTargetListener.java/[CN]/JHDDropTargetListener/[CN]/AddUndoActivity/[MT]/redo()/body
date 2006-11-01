@@ -1,0 +1,10 @@
+{
+  if (!isRedoable()) {
+    return false;
+  }
+  log("AddUndoActivity redo");
+  getDrawingView().clearSelection();
+  setAffectedFigures(getDrawingView().insertFigures(getAffectedFigures(),0,0,false));
+  undone=false;
+  return true;
+}

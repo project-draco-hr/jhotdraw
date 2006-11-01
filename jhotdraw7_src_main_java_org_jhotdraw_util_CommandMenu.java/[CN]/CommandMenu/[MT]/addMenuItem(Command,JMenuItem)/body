@@ -1,0 +1,7 @@
+{
+  m.setName(command.name());
+  m.addActionListener(this);
+  add(m);
+  command.addCommandListener(this);
+  hm.put(m,command);
+}

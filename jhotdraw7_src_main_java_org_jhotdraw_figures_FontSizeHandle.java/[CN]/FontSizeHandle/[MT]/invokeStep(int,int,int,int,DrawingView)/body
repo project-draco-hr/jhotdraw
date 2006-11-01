@@ -1,0 +1,6 @@
+{
+  TextFigure textOwner=(TextFigure)owner();
+  FontSizeHandle.UndoActivity activity=(FontSizeHandle.UndoActivity)getUndoActivity();
+  int newSize=activity.getFont().getSize() + y - anchorY;
+  textOwner.setFont(new Font(activity.getFont().getName(),activity.getFont().getStyle(),newSize));
+}

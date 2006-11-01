@@ -1,0 +1,8 @@
+{
+  if (inside) {
+    showStatus(button.name());
+  }
+ else   if (fSelectedToolButton != null) {
+    showStatus(fSelectedToolButton.name());
+  }
+}

@@ -1,0 +1,4 @@
+{
+  Dimension extent=textExtent();
+  return new Rectangle(fOriginX,fOriginY,extent.width,extent.height);
+}

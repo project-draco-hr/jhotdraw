@@ -1,0 +1,8 @@
+{
+  if (isViewRequired()) {
+    if ((view() == null) || !view().isInteractive()) {
+      return false;
+    }
+  }
+  return isExecutableWithView();
+}

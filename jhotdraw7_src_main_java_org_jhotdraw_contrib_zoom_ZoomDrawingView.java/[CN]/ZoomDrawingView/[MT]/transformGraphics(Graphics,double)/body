@@ -1,0 +1,7 @@
+{
+  if (currentScale != 1.0) {
+    Graphics2D g2=(Graphics2D)g;
+    g2.transform(AffineTransform.getScaleInstance(currentScale,currentScale));
+  }
+  return g;
+}

@@ -1,0 +1,8 @@
+{
+  Insets i=super.connectionInsets();
+  i.top-=getBorderOffset().y;
+  i.bottom-=getBorderOffset().y;
+  i.left-=getBorderOffset().x;
+  i.right-=getBorderOffset().x;
+  return i;
+}

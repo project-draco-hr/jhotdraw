@@ -1,0 +1,20 @@
+{
+  if (containsFigure(figure)) {
+    if (layerNr >= fFigures.size()) {
+      layerNr=fFigures.size() - 1;
+    }
+    Figure layerFigure=getFigureFromLayer(layerNr);
+    int layerFigureZValue=layerFigure.getZValue();
+    int figureLayer=getLayer(figure);
+    if (figureLayer < layerNr) {
+      assignFiguresToPredecessorZValue(figureLayer + 1,layerNr);
+    }
+ else     if (figureLayer > layerNr) {
+      assignFiguresToSuccessorZValue(layerNr,figureLayer - 1);
+    }
+    fFigures.remove(figure);
+    fFigures.add(layerNr,figure);
+    figure.setZValue(layerFigureZValue);
+    figure.changed();
+  }
+}

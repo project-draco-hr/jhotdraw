@@ -1,0 +1,7 @@
+{
+  UndoManager um=getDrawingEditor().getUndoManager();
+  if ((um != null) && (um.getRedoSize() > 0)) {
+    return true;
+  }
+  return false;
+}

@@ -1,0 +1,8 @@
+{
+  if (fAttributes != null) {
+    if (fAttributes.hasDefined(attributeConstant)) {
+      return fAttributes.get(attributeConstant);
+    }
+  }
+  return getDefaultAttribute(attributeConstant);
+}

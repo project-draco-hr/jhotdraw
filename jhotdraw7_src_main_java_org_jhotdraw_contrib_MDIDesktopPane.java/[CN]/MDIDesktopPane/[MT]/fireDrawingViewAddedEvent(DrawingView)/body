@@ -1,0 +1,3 @@
+{
+  getDesktopEventService().fireDrawingViewAddedEvent(dv);
+}

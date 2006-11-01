@@ -1,0 +1,4 @@
+{
+  iconkit=null;
+  super.tearDown();
+}

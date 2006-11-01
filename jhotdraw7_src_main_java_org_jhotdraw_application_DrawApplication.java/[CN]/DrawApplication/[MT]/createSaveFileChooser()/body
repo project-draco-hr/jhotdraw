@@ -1,0 +1,6 @@
+{
+  JFileChooser saveDialog=new JFileChooser();
+  saveDialog.setDialogType(JFileChooser.SAVE_DIALOG);
+  saveDialog.setDialogTitle("Save File...");
+  return saveDialog;
+}

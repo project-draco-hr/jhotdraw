@@ -1,0 +1,10 @@
+{
+  if (fTool != null) {
+    fTool.deactivate();
+  }
+  fTool=t;
+  if (fTool != null) {
+    showStatus(name);
+    fTool.activate();
+  }
+}

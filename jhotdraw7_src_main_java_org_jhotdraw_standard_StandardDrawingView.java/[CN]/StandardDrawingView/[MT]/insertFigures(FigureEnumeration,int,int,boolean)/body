@@ -1,0 +1,39 @@
+{
+  if (fe == null) {
+    return FigureEnumerator.getEmptyEnumeration();
+  }
+  List vCF=CollectionsFactory.current().createList(10);
+  InsertIntoDrawingVisitor visitor=new InsertIntoDrawingVisitor(drawing());
+  while (fe.hasNextFigure()) {
+    Figure figure=fe.nextFigure();
+    if (figure instanceof ConnectionFigure) {
+      vCF.add(figure);
+    }
+ else     if (figure != null) {
+      figure.moveBy(dx,dy);
+      figure.visit(visitor);
+    }
+  }
+  FigureEnumeration ecf=new FigureEnumerator(vCF);
+  while (ecf.hasNextFigure()) {
+    ConnectionFigure cf=(ConnectionFigure)ecf.nextFigure();
+    Figure sf=cf.startFigure();
+    Figure ef=cf.endFigure();
+    if (figureExists(sf,drawing().figures()) && figureExists(ef,drawing().figures()) && (!bCheck || cf.canConnect(sf,ef))) {
+      if (bCheck) {
+        Point sp=sf.center();
+        Point ep=ef.center();
+        Connector fStartConnector=cf.startFigure().connectorAt(ep.x,ep.y);
+        Connector fEndConnector=cf.endFigure().connectorAt(sp.x,sp.y);
+        if (fEndConnector != null && fStartConnector != null) {
+          cf.connectStart(fStartConnector);
+          cf.connectEnd(fEndConnector);
+          cf.updateConnection();
+        }
+      }
+      cf.visit(visitor);
+    }
+  }
+  addToSelectionAll(visitor.getInsertedFigures());
+  return visitor.getInsertedFigures();
+}

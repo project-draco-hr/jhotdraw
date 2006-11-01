@@ -1,0 +1,9 @@
+{
+  while (fe.hasNextFigure()) {
+    Figure figure=fe.nextFigure();
+    if (figure.includes(inf)) {
+      return true;
+    }
+  }
+  return false;
+}

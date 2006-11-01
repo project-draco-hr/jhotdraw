@@ -1,0 +1,12 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  DeleteFromDrawingVisitor deleteVisitor=new DeleteFromDrawingVisitor(getDrawingView().drawing());
+  FigureEnumeration fe=getAffectedFigures();
+  while (fe.hasNextFigure()) {
+    fe.nextFigure().visit(deleteVisitor);
+  }
+  getDrawingView().clearSelection();
+  return true;
+}

@@ -1,0 +1,3 @@
+{
+  return ovalAngleToPoint(r,angle,new Point());
+}

@@ -1,0 +1,29 @@
+{
+  willChange();
+  boolean removed=false;
+  int n=pointCount();
+  do {
+    removed=false;
+    int i=0;
+    while (i < n && n >= 3) {
+      int nxt=(i + 1) % n;
+      int prv=(i - 1 + n) % n;
+      if ((Geom.distanceFromLine(getInternalPolygon().xpoints[prv],getInternalPolygon().ypoints[prv],getInternalPolygon().xpoints[nxt],getInternalPolygon().ypoints[nxt],getInternalPolygon().xpoints[i],getInternalPolygon().ypoints[i]) < TOO_CLOSE)) {
+        removed=true;
+        --n;
+        for (int j=i; j < n; ++j) {
+          getInternalPolygon().xpoints[j]=getInternalPolygon().xpoints[j + 1];
+          getInternalPolygon().ypoints[j]=getInternalPolygon().ypoints[j + 1];
+        }
+      }
+ else {
+        ++i;
+      }
+    }
+  }
+ while (removed);
+  if (n != pointCount()) {
+    setInternalPolygon(new Polygon(getInternalPolygon().xpoints,getInternalPolygon().ypoints,n));
+  }
+  changed();
+}

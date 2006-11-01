@@ -1,0 +1,5 @@
+{
+  if (isEnabled()) {
+    setUsable((getActiveView() != null) && getActiveView().isInteractive());
+  }
+}

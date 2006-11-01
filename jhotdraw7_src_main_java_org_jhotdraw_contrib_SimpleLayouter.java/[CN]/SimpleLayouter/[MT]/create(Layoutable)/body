@@ -1,0 +1,5 @@
+{
+  SimpleLayouter newLayouter=new SimpleLayouter(newLayoutable);
+  newLayouter.setInsets((Insets)getInsets().clone());
+  return newLayouter;
+}

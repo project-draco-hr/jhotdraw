@@ -1,0 +1,18 @@
+{
+  int xdiff=xb - xa;
+  int ydiff=yb - ya;
+  long l2=xdiff * xdiff + ydiff * ydiff;
+  if (l2 == 0) {
+    return Geom.length(xa,ya,xc,yc);
+  }
+  double rnum=(ya - yc) * (ya - yb) - (xa - xc) * (xb - xa);
+  double r=rnum / l2;
+  if (r < 0.0 || r > 1.0) {
+    return Double.MAX_VALUE;
+  }
+  double xi=xa + r * xdiff;
+  double yi=ya + r * ydiff;
+  double xd=xc - xi;
+  double yd=yc - yi;
+  return Math.sqrt(xd * xd + yd * yd);
+}

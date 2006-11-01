@@ -1,0 +1,4 @@
+{
+  commandmenu=null;
+  super.tearDown();
+}

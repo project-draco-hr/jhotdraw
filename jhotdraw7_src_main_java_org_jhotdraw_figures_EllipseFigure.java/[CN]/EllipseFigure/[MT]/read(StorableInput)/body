@@ -1,0 +1,4 @@
+{
+  super.read(dr);
+  fDisplayBox=new Rectangle(dr.readInt(),dr.readInt(),dr.readInt(),dr.readInt());
+}

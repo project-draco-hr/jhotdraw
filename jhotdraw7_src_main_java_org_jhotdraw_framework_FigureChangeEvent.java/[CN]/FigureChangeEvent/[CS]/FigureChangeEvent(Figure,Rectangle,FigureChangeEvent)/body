@@ -1,0 +1,4 @@
+{
+  this(newSource,newRect);
+  myNestedEvent=nestedEvent;
+}

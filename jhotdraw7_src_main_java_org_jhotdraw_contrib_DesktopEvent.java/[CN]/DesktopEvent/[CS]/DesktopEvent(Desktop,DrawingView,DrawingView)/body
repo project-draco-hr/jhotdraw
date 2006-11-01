@@ -1,0 +1,5 @@
+{
+  super(newSource);
+  setDrawingView(newDrawingView);
+  setPreviousDrawingView(newPreviousDV);
+}

@@ -1,0 +1,26 @@
+{
+  Figure c=null;
+  if (getStartConnector() == null) {
+    c=findSource(x,y,getActiveDrawing());
+  }
+ else {
+    c=findTarget(x,y,getActiveDrawing());
+  }
+  if (c != getTargetFigure()) {
+    if (getTargetFigure() != null) {
+      getTargetFigure().connectorVisibility(false,null);
+    }
+    setTargetFigure(c);
+    if (getTargetFigure() != null) {
+      getTargetFigure().connectorVisibility(true,getConnection());
+    }
+  }
+  Connector cc=null;
+  if (c != null) {
+    cc=findConnector(e.getX(),e.getY(),c);
+  }
+  if (cc != getTargetConnector()) {
+    setTargetConnector(cc);
+  }
+  getActiveView().checkDamage();
+}

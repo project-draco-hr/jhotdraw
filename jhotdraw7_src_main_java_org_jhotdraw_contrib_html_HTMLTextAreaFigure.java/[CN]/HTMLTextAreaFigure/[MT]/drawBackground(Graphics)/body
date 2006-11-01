@@ -1,0 +1,3 @@
+{
+  ((Graphics2D)g).fill(getClippingShape());
+}

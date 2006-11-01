@@ -1,0 +1,11 @@
+{
+  if (isEnabled()) {
+    if (contains(e.getX(),e.getY())) {
+      fState=PRESSED;
+    }
+ else {
+      fState=fOldState;
+    }
+    repaint();
+  }
+}

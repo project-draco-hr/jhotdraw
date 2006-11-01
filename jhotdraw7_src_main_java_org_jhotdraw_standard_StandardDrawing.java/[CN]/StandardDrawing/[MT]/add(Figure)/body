@@ -1,0 +1,9 @@
+{
+  Figure addedFigure=super.add(figure);
+  if (addedFigure.listener() != null) {
+    Rectangle rect=invalidateRectangle(displayBox());
+    addedFigure.listener().figureRequestUpdate(new FigureChangeEvent(figure,rect));
+    return addedFigure;
+  }
+  return addedFigure;
+}

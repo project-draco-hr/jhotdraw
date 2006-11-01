@@ -1,0 +1,11 @@
+{
+  super.read(dr);
+  int size=dr.readInt();
+  int[] xs=new int[size];
+  int[] ys=new int[size];
+  for (int i=0; i < size; i++) {
+    xs[i]=dr.readInt();
+    ys[i]=dr.readInt();
+  }
+  setInternalPolygon(new Polygon(xs,ys,size));
+}

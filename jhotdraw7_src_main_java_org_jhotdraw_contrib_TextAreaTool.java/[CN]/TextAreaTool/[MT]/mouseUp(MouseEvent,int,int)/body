@@ -1,0 +1,13 @@
+{
+  if (getCreatedFigure() == null) {
+    return;
+  }
+  view().checkDamage();
+  TextHolder textHolder=(TextHolder)getCreatedFigure();
+  if (textHolder.acceptsTyping()) {
+    beginEdit(textHolder,getCreatedFigure());
+  }
+ else {
+    editor().toolDone();
+  }
+}

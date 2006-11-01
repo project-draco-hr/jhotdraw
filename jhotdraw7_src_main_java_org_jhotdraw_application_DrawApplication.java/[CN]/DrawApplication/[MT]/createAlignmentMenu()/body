@@ -1,0 +1,13 @@
+{
+  CommandMenu menu=new CommandMenu("Align");
+  menu.addCheckItem(new ToggleGridCommand("Toggle Snap to Grid",this,new Point(4,4)));
+  menu.addSeparator();
+  menu.add(new UndoableCommand(new AlignCommand(AlignCommand.Alignment.LEFTS,this)));
+  menu.add(new UndoableCommand(new AlignCommand(AlignCommand.Alignment.CENTERS,this)));
+  menu.add(new UndoableCommand(new AlignCommand(AlignCommand.Alignment.RIGHTS,this)));
+  menu.addSeparator();
+  menu.add(new UndoableCommand(new AlignCommand(AlignCommand.Alignment.TOPS,this)));
+  menu.add(new UndoableCommand(new AlignCommand(AlignCommand.Alignment.MIDDLES,this)));
+  menu.add(new UndoableCommand(new AlignCommand(AlignCommand.Alignment.BOTTOMS,this)));
+  return menu;
+}

@@ -1,0 +1,10 @@
+{
+  for (int i=1; i < fPoints.size() - 1; i++) {
+    Point p=pointAt(i);
+    if (Geom.length(x,y,p.x,p.y) < 3) {
+      removePointAt(i);
+      return true;
+    }
+  }
+  return false;
+}

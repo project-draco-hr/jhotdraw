@@ -1,0 +1,26 @@
+{
+  List l=CollectionsFactory.current().createList();
+  for (Iterator ii=_outsideHashtable.keySet().iterator(); ii.hasNext(); ) {
+    Object anObject=ii.next();
+    Rectangle2D itsAbsoluteBoundingRectangle2D=(Rectangle2D)_outsideHashtable.get(anObject);
+    if (itsAbsoluteBoundingRectangle2D.intersects(r)) {
+      l.add(anObject);
+    }
+  }
+  if (_absoluteBoundingRectangle2D.intersects(r)) {
+    for (Iterator i=_theHashtable.keySet().iterator(); i.hasNext(); ) {
+      Object anObject=i.next();
+      Rectangle2D itsAbsoluteBoundingRectangle2D=(Rectangle2D)_theHashtable.get(anObject);
+      if (itsAbsoluteBoundingRectangle2D.intersects(r)) {
+        l.add(anObject);
+      }
+    }
+    if (_nMaxTreeDepth > 1) {
+      addFigureEnumerationToList(l,_nwQuadTree.getAllWithin(r));
+      addFigureEnumerationToList(l,_neQuadTree.getAllWithin(r));
+      addFigureEnumerationToList(l,_swQuadTree.getAllWithin(r));
+      addFigureEnumerationToList(l,_seQuadTree.getAllWithin(r));
+    }
+  }
+  return new FigureEnumerator(l);
+}

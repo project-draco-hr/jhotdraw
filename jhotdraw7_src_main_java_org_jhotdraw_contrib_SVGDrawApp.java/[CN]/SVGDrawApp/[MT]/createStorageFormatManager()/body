@@ -1,0 +1,7 @@
+{
+  StorageFormatManager storageFormatManager=new StorageFormatManager();
+  SVGStorageFormat format=new SVGStorageFormat();
+  storageFormatManager.addStorageFormat(format);
+  storageFormatManager.setDefaultStorageFormat(format);
+  return storageFormatManager;
+}

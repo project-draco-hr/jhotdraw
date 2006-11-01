@@ -1,0 +1,12 @@
+{
+  super.release();
+  handleDisconnect(startFigure(),endFigure());
+  if (getStartConnector() != null) {
+    startFigure().removeFigureChangeListener(this);
+    startFigure().removeDependendFigure(this);
+  }
+  if (getEndConnector() != null) {
+    endFigure().removeFigureChangeListener(this);
+    endFigure().removeDependendFigure(this);
+  }
+}

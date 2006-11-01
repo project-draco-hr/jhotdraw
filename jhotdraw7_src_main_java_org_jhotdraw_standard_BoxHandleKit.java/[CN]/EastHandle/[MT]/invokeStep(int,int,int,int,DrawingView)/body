@@ -1,0 +1,4 @@
+{
+  Rectangle r=owner().displayBox();
+  owner().displayBox(new Point(r.x,r.y),new Point(Math.max(r.x,x),r.y + r.height));
+}

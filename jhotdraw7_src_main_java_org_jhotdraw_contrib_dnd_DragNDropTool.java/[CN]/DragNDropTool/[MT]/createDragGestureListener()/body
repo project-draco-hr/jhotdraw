@@ -1,0 +1,35 @@
+{
+  return new DragGestureListener(){
+    public void dragGestureRecognized(    final java.awt.dnd.DragGestureEvent dge){
+      Component c=dge.getComponent();
+      if (isDragOn() == false) {
+        return;
+      }
+      if (c instanceof DrawingView) {
+        boolean found=false;
+        DrawingView dv=(DrawingView)c;
+        FigureEnumeration selectedElements=dv.selection();
+        if (selectedElements.hasNextFigure() == false) {
+          return;
+        }
+        Point p=dge.getDragOrigin();
+        while (selectedElements.hasNextFigure()) {
+          Figure f=selectedElements.nextFigure();
+          if (f.containsPoint(p.x,p.y)) {
+            found=true;
+            break;
+          }
+        }
+        if (found == true) {
+          DNDFigures dndff=new DNDFigures(dv.selection(),p);
+          DNDFiguresTransferable trans=new DNDFiguresTransferable(dndff);
+          if (c instanceof JComponent) {
+            ((JComponent)c).setAutoscrolls(false);
+          }
+          dge.getDragSource().startDrag(dge,null,trans,((DNDInterface)dv).getDragSourceListener());
+        }
+      }
+    }
+  }
+;
+}

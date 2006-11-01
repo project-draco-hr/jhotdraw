@@ -1,0 +1,3 @@
+{
+  setVersionRequester(newVersionRequester);
+}

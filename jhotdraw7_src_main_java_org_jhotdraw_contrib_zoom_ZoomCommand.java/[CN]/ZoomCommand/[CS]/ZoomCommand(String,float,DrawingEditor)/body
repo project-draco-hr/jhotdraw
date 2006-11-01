@@ -1,0 +1,4 @@
+{
+  super(newSame,newDrawingEditor,true);
+  scale=newScale;
+}

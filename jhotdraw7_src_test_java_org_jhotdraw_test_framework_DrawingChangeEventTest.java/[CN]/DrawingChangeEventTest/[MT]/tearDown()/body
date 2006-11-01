@@ -1,0 +1,4 @@
+{
+  drawingchangeevent=null;
+  super.tearDown();
+}

@@ -1,0 +1,18 @@
+{
+  CommandMenu menu=new CommandMenu("Debug");
+  Command cmd=new AbstractCommand("Simple Update",this){
+    public void execute(){
+      this.view().setDisplayUpdate(new SimpleUpdateStrategy());
+    }
+  }
+;
+  menu.add(cmd);
+  cmd=new AbstractCommand("Buffered Update",this){
+    public void execute(){
+      this.view().setDisplayUpdate(new BufferedUpdateStrategy());
+    }
+  }
+;
+  menu.add(cmd);
+  return menu;
+}

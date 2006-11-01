@@ -1,0 +1,3 @@
+{
+  return PolygonFigure.chop(getPolygon(),p);
+}

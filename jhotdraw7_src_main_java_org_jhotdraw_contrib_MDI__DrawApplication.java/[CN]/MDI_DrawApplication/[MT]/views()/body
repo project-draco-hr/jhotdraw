@@ -1,0 +1,3 @@
+{
+  return getDesktop().getAllFromDesktop(Desktop.PRIMARY);
+}

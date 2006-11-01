@@ -1,0 +1,4 @@
+{
+  Point p=pointAt(0);
+  return new Point(p.x,p.y);
+}

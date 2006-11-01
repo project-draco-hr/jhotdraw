@@ -1,0 +1,4 @@
+{
+  Rectangle r=getLayouter().layout(origin,corner);
+  getPresentationFigure().basicDisplayBox(r.getLocation(),new Point((int)r.getMaxX(),(int)r.getMaxY()));
+}

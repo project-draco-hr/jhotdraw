@@ -1,0 +1,9 @@
+{
+  Dimension d=getDrawingSize();
+  Dimension v=getPreferredSize();
+  if (v.height < d.height || v.width < d.width) {
+    v.height=d.height + SCROLL_OFFSET;
+    v.width=d.width + SCROLL_OFFSET;
+    setPreferredSize(v);
+  }
+}

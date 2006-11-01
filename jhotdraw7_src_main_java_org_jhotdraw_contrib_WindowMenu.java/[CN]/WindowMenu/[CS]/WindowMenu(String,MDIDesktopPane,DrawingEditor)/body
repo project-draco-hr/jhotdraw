@@ -1,0 +1,33 @@
+{
+  super(newText);
+  this.desktop=newDesktop;
+  cascadeCommand=new AbstractCommand("Cascade",newEditor){
+    public void execute(){
+      WindowMenu.this.desktop.cascadeFrames();
+    }
+    public boolean isExecutable(){
+      return super.isExecutable() && (WindowMenu.this.desktop.getAllFrames().length > 0);
+    }
+  }
+;
+  tileCommand=new AbstractCommand("Tile",newEditor){
+    public void execute(){
+      WindowMenu.this.desktop.tileFramesHorizontally();
+    }
+    public boolean isExecutable(){
+      return super.isExecutable() && (WindowMenu.this.desktop.getAllFrames().length > 0);
+    }
+  }
+;
+  addMenuListener(new MenuListener(){
+    public void menuCanceled(    MenuEvent e){
+    }
+    public void menuDeselected(    MenuEvent e){
+      removeAll();
+    }
+    public void menuSelected(    MenuEvent e){
+      buildChildMenus();
+    }
+  }
+);
+}

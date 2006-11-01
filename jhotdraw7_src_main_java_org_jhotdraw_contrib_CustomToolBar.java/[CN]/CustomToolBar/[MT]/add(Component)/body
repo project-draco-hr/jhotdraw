@@ -1,0 +1,10 @@
+{
+  if (currentTools == editTools) {
+    editTools.add(newTool);
+  }
+ else {
+    standardTools.add(newTool);
+  }
+  needsUpdate=true;
+  return super.add(newTool);
+}

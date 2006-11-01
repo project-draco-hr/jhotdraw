@@ -1,0 +1,34 @@
+{
+  return new ContainerAdapter(){
+    /** 
+ * If the dv is null assert
+ * @todo does adding a component always make it the selected view?
+ * Yes so far because this is only being used on single view Desktops.
+ * If it is to work on multipleView desktops, the we need to think further.
+ */
+    public void componentAdded(    ContainerEvent e){
+      DrawingView dv=Helper.getDrawingView((java.awt.Container)e.getChild());
+      DrawingView oldView=getActiveDrawingView();
+      if (dv != null) {
+        fireDrawingViewAddedEvent(dv);
+        setActiveDrawingView(dv);
+        fireDrawingViewSelectedEvent(oldView,getActiveDrawingView());
+      }
+    }
+    /** 
+ * If dv is null assert
+ * dv will only be null if something thats not a drawingView was
+ * added to the desktop.  it would be simpler if we forbade that.
+ */
+    public void componentRemoved(    ContainerEvent e){
+      DrawingView dv=Helper.getDrawingView((java.awt.Container)e.getChild());
+      if (dv != null) {
+        DrawingView oldView=getActiveDrawingView();
+        setActiveDrawingView(NullDrawingView.getManagedDrawingView(oldView.editor()));
+        fireDrawingViewSelectedEvent(oldView,getActiveDrawingView());
+        fireDrawingViewRemovedEvent(dv);
+      }
+    }
+  }
+;
+}

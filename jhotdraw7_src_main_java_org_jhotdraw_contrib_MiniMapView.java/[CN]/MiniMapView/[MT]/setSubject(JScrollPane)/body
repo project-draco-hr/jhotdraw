@@ -1,0 +1,10 @@
+{
+  if (m_subject != null) {
+    m_subject.getViewport().removeChangeListener(m_subjectListener);
+  }
+  m_subject=subject;
+  if (m_subject != null) {
+    m_subject.getViewport().addChangeListener(m_subjectListener);
+  }
+  repaint();
+}

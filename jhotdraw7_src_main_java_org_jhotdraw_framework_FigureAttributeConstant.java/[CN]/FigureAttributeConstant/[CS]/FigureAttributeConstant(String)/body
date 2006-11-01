@@ -1,0 +1,3 @@
+{
+  this(newName,attributeConstants.length + 1);
+}

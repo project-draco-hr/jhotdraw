@@ -1,0 +1,3 @@
+{
+  fEditWidget.addActionListener(listener);
+}

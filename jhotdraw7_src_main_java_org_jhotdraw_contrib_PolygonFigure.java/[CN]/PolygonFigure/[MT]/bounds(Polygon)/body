@@ -1,0 +1,24 @@
+{
+  int minx=Integer.MAX_VALUE;
+  int miny=Integer.MAX_VALUE;
+  int maxx=Integer.MIN_VALUE;
+  int maxy=Integer.MIN_VALUE;
+  int n=p.npoints;
+  for (int i=0; i < n; i++) {
+    int x=p.xpoints[i];
+    int y=p.ypoints[i];
+    if (x > maxx) {
+      maxx=x;
+    }
+    if (x < minx) {
+      minx=x;
+    }
+    if (y > maxy) {
+      maxy=y;
+    }
+    if (y < miny) {
+      miny=y;
+    }
+  }
+  return new Rectangle(minx,miny,maxx - minx,maxy - miny);
+}

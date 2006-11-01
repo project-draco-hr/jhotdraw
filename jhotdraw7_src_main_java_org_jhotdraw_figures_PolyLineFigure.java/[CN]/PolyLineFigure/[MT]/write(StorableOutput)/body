@@ -1,0 +1,13 @@
+{
+  super.write(dw);
+  dw.writeInt(fPoints.size());
+  Iterator iter=points();
+  while (iter.hasNext()) {
+    Point p=(Point)iter.next();
+    dw.writeInt(p.x);
+    dw.writeInt(p.y);
+  }
+  dw.writeStorable(fStartDecoration);
+  dw.writeStorable(fEndDecoration);
+  dw.writeColor(fFrameColor);
+}

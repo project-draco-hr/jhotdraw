@@ -1,0 +1,6 @@
+{
+  myOwner().smoothPoints();
+  if ((x == anchorX) && (y == anchorY)) {
+    setUndoActivity(null);
+  }
+}

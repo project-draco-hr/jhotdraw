@@ -1,0 +1,9 @@
+{
+  Figure foundFigure=getDecoratedFigure().findFigureInside(x,y);
+  if ((foundFigure != null) && (foundFigure == getDecoratedFigure())) {
+    return this;
+  }
+ else {
+    return foundFigure;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  HandleEnumeration he=selectionHandles();
+  while (he.hasNextHandle()) {
+    (he.nextHandle()).draw(g);
+  }
+}

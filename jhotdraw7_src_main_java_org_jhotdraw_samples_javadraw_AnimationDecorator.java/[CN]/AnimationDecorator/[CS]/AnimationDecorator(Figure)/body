@@ -1,0 +1,5 @@
+{
+  super(figure);
+  fXVelocity=4;
+  fYVelocity=4;
+}

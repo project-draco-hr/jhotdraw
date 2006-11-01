@@ -1,0 +1,3 @@
+{
+  getDecoratedFigure().basicDisplayBox(origin,corner);
+}

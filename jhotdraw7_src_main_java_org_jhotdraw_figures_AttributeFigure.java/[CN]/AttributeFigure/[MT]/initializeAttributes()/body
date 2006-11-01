@@ -1,0 +1,10 @@
+{
+  fgDefaultAttributes=new FigureAttributes();
+  fgDefaultAttributes.set(FigureAttributeConstant.FRAME_COLOR,Color.black);
+  fgDefaultAttributes.set(FigureAttributeConstant.FILL_COLOR,new Color(0x70DB93));
+  fgDefaultAttributes.set(FigureAttributeConstant.TEXT_COLOR,Color.black);
+  fgDefaultAttributes.set(FigureAttributeConstant.ARROW_MODE,new Integer(0));
+  fgDefaultAttributes.set(FigureAttributeConstant.FONT_NAME,"Helvetica");
+  fgDefaultAttributes.set(FigureAttributeConstant.FONT_SIZE,new Integer(12));
+  fgDefaultAttributes.set(FigureAttributeConstant.FONT_STYLE,new Integer(Font.PLAIN));
+}

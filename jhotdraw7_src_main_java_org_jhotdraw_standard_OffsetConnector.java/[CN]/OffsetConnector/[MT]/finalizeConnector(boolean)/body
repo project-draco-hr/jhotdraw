@@ -1,0 +1,19 @@
+{
+  if ((this != OffsetConnector.trackingConnector1) && (this != OffsetConnector.trackingConnector2)) {
+    return this;
+  }
+  OffsetLocator l=(OffsetLocator)myLocator;
+  OffsetConnector o=new OffsetConnector(owner(),l.fOffsetX,l.fOffsetY);
+  if (this == OffsetConnector.trackingConnector2) {
+    int p1X=trackingConnector1.locateX();
+    int p1Y=trackingConnector1.locateY();
+    int p2X=locateX();
+    int p2Y=locateY();
+    if (Math.abs(p1X - p2X) <= 8)     p2X=p1X;
+    if (Math.abs(p1Y - p2Y) <= 8)     p2Y=p1Y;
+    l=(OffsetLocator)o.myLocator;
+    l.fOffsetX=Geom.range(0,fOwnerBox.width,p2X - fOwnerBox.x);
+    l.fOffsetY=Geom.range(0,fOwnerBox.height,p2Y - fOwnerBox.y);
+  }
+  return o;
+}

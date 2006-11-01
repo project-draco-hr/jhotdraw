@@ -1,0 +1,12 @@
+{
+  if (_theQuadTree != null) {
+    Rectangle r=f.displayBox();
+    if (r.height == 0) {
+      r.grow(0,1);
+    }
+    if (r.width == 0) {
+      r.grow(1,0);
+    }
+    _theQuadTree.add(f,new Bounds(r).asRectangle2D());
+  }
+}

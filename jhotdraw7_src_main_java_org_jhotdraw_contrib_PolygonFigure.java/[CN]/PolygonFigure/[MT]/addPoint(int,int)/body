@@ -1,0 +1,4 @@
+{
+  getInternalPolygon().addPoint(x,y);
+  changed();
+}

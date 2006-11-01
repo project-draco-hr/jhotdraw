@@ -1,0 +1,4 @@
+{
+  NumberTextFigure t=(NumberTextFigure)figureAt(figureIndex);
+  t.setValue(value);
+}

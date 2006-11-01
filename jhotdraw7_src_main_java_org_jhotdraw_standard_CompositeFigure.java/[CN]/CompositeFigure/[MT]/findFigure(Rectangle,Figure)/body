@@ -1,0 +1,14 @@
+{
+  if (without == null) {
+    return findFigure(r);
+  }
+  FigureEnumeration fe=figuresReverse();
+  while (fe.hasNextFigure()) {
+    Figure figure=fe.nextFigure();
+    Rectangle fr=figure.displayBox();
+    if (r.intersects(fr) && !figure.includes(without)) {
+      return figure;
+    }
+  }
+  return null;
+}

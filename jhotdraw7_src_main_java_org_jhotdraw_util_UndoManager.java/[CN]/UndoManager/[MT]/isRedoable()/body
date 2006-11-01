@@ -1,0 +1,8 @@
+{
+  if (getRedoSize() > 0) {
+    return getLastElement(redoStack).isRedoable();
+  }
+ else {
+    return false;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  super.createMenus(mb);
+  addMenuIfPossible(mb,createAnimationMenu());
+  addMenuIfPossible(mb,createImagesMenu());
+  addMenuIfPossible(mb,createWindowMenu());
+}

@@ -1,0 +1,3 @@
+{
+  this(newSource,newDrawingView,null);
+}

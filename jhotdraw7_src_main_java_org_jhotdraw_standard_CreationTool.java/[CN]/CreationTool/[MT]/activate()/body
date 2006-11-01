@@ -1,0 +1,7 @@
+{
+  super.activate();
+  if (isUsable()) {
+    getActiveView().setCursor(new AWTCursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+  }
+  setAddedFigures(CollectionsFactory.current().createList());
+}

@@ -1,0 +1,11 @@
+{
+  setView((DrawingView)e.getSource());
+  if (e.getClickCount() == 2) {
+    Figure figure=drawing().findFigure(e.getX(),e.getY());
+    if (figure != null) {
+      inspectFigure(figure);
+      return;
+    }
+  }
+  super.mouseDown(e,x,y);
+}

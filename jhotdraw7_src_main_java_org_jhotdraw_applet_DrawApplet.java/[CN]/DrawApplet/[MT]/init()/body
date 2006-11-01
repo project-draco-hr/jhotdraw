@@ -1,0 +1,19 @@
+{
+  createIconkit();
+  getVersionControlStrategy().assertCompatibleVersion();
+  setUndoManager(new UndoManager());
+  getContentPane().setLayout(new BorderLayout());
+  fView=createDrawingView();
+  JPanel attributes=createAttributesPanel();
+  createAttributeChoices(attributes);
+  getContentPane().add("North",attributes);
+  JPanel toolPanel=createToolPalette();
+  createTools(toolPanel);
+  getContentPane().add("West",toolPanel);
+  getContentPane().add("Center",(Component)view());
+  JPanel buttonPalette=createButtonPanel();
+  createButtons(buttonPalette);
+  getContentPane().add("South",buttonPalette);
+  initDrawing();
+  setupAttributes();
+}

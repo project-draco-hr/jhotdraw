@@ -1,0 +1,6 @@
+{
+  Rectangle box=figure.textDisplayBox();
+  int nChars=figure.overlayColumns();
+  Dimension d=getFloatingTextField().getPreferredSize(nChars);
+  return new Rectangle(box.x,box.y,d.width,d.height);
+}

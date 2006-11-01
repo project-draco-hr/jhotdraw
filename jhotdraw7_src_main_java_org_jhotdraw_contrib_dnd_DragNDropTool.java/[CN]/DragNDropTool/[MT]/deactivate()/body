@@ -1,0 +1,4 @@
+{
+  setDragOn(false);
+  super.deactivate();
+}

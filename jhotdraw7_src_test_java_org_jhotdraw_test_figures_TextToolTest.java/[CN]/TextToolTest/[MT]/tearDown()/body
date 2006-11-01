@@ -1,0 +1,4 @@
+{
+  texttool=null;
+  super.tearDown();
+}

@@ -1,0 +1,12 @@
+{
+  int index=fFigures.indexOf(figure);
+  if (index != -1) {
+    replacement.setZValue(figure.getZValue());
+    replacement.addToContainer(this);
+    figure.removeFromContainer(this);
+    fFigures.set(index,replacement);
+    figure.changed();
+    replacement.changed();
+  }
+  return replacement;
+}

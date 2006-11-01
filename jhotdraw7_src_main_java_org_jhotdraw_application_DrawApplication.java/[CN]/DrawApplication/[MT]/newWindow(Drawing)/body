@@ -1,0 +1,9 @@
+{
+  DrawApplication window=createApplication();
+  if (initialDrawing == null) {
+    window.open();
+  }
+ else {
+    window.open(window.createDrawingView(initialDrawing));
+  }
+}

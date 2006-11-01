@@ -1,0 +1,8 @@
+{
+  if (getPresentationFigure() != null) {
+    return getPresentationFigure().getAttribute(attributeConstant);
+  }
+ else {
+    return super.getAttribute(attributeConstant);
+  }
+}

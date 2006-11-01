@@ -1,0 +1,4 @@
+{
+  fontsizehandle=null;
+  super.tearDown();
+}

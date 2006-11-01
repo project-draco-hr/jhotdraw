@@ -1,0 +1,17 @@
+{
+  double dCurrentRatio=getWidth() / getHeight();
+  if (dCurrentRatio < dRatio) {
+    double dNewWidth=dRatio * getHeight();
+    double dCenterX=(_dX1 + _dX2) / 2.0;
+    double dDelta=dNewWidth / 2.0;
+    _dX1=dCenterX - dDelta;
+    _dX2=dCenterX + dDelta;
+  }
+  if (dCurrentRatio > dRatio) {
+    double dNewHeight=getWidth() / dRatio;
+    double dCenterY=(_dY1 + _dY2) / 2.0;
+    double dDelta=dNewHeight / 2.0;
+    _dY1=dCenterY - dDelta;
+    _dY2=dCenterY + dDelta;
+  }
+}

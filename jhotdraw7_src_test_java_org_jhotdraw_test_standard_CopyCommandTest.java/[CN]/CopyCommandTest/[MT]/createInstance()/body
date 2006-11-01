@@ -1,0 +1,3 @@
+{
+  return new CopyCommand("TestCopy",getDrawingEditor());
+}

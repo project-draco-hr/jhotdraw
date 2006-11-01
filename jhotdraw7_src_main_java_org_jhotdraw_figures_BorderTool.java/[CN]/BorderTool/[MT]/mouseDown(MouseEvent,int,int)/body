@@ -1,0 +1,13 @@
+{
+  setView((DrawingView)e.getSource());
+  if ((e.getModifiers() & InputEvent.CTRL_MASK) == 0) {
+    super.mouseDown(e,x,y);
+  }
+ else {
+    Figure target=drawing().findFigure(x,y);
+    if ((target != null) && (target != target.getDecoratedFigure())) {
+      view().addToSelection(target);
+      reverseAction(target);
+    }
+  }
+}

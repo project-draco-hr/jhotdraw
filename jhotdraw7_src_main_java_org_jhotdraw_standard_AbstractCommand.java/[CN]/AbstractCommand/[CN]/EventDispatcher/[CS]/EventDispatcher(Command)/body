@@ -1,0 +1,4 @@
+{
+  myRegisteredListeners=CollectionsFactory.current().createList();
+  myObservedCommand=newObservedCommand;
+}

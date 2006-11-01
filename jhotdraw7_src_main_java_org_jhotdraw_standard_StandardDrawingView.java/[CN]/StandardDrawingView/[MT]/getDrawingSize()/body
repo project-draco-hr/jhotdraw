@@ -1,0 +1,12 @@
+{
+  Dimension d=new Dimension(0,0);
+  if (drawing() != null) {
+    FigureEnumeration fe=drawing().figures();
+    while (fe.hasNextFigure()) {
+      Rectangle r=fe.nextFigure().displayBox();
+      d.width=Math.max(d.width,r.x + r.width);
+      d.height=Math.max(d.height,r.y + r.height);
+    }
+  }
+  return d;
+}

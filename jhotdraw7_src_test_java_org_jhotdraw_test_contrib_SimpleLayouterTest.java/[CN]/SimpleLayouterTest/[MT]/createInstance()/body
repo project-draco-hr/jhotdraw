@@ -1,0 +1,4 @@
+{
+  Layoutable fig=new GraphicalCompositeFigure(new RectangleFigure(new Point(10,10),new Point(100,100)));
+  return new SimpleLayouter(fig);
+}

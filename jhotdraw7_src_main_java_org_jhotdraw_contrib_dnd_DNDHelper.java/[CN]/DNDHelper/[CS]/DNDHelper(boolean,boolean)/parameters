@@ -1,0 +1,2 @@
+boolean newIsDragSource
+boolean newIsDropTarget

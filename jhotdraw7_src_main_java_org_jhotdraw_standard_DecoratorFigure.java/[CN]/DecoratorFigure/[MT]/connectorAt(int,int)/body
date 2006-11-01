@@ -1,0 +1,3 @@
+{
+  return getDecoratedFigure().connectorAt(x,y);
+}

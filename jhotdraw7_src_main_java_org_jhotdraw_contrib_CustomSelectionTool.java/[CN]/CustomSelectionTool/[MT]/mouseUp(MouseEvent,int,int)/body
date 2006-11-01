@@ -1,0 +1,15 @@
+{
+  if (e.isPopupTrigger()) {
+    handlePopupMenu(e,x,y);
+    super.mouseUp(e,x,y);
+  }
+ else   if (e.getClickCount() == 2) {
+    super.mouseUp(e,x,y);
+    handleMouseDoubleClick(e,x,y);
+  }
+ else {
+    super.mouseUp(e,x,y);
+    handleMouseUp(e,x,y);
+    handleMouseClick(e,x,y);
+  }
+}

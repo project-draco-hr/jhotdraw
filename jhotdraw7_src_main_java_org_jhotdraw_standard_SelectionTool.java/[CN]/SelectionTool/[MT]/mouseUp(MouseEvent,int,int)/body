@@ -1,0 +1,11 @@
+{
+  if (getDelegateTool() != null) {
+    getDelegateTool().mouseUp(e,x,y);
+    getDelegateTool().deactivate();
+    setDelegateTool(null);
+  }
+  if (view() != null) {
+    view().unfreezeView();
+    editor().figureSelectionChanged(view());
+  }
+}

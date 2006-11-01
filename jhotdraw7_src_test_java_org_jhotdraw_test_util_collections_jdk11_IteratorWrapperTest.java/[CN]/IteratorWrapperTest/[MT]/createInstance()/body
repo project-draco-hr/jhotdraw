@@ -1,0 +1,7 @@
+{
+  Vector v=new Vector();
+  v.add(new RectangleFigure(new Point(10,10),new Point(100,100)));
+  v.add(new PolyLineFigure(20,20));
+  v.add(new RectangleFigure(new Point(100,10),new Point(150,100)));
+  return new IteratorWrapper(v.elements());
+}

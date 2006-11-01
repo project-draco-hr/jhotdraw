@@ -1,0 +1,4 @@
+{
+  mapwrapper=null;
+  super.tearDown();
+}

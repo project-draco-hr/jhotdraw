@@ -1,0 +1,5 @@
+{
+  fDisplayBox=new Rectangle(origin);
+  fDisplayBox.add(corner);
+  layout();
+}

@@ -1,0 +1,5 @@
+{
+  setAnchorX(x);
+  setAnchorY(y);
+  setView((DrawingView)e.getSource());
+}

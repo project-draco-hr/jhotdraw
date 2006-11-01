@@ -1,0 +1,23 @@
+{
+  return new StandardDrawingView.DrawingViewKeyListener(){
+    public void keyPressed(    KeyEvent e){
+      super.keyPressed(e);
+      if (e.getKeyChar() == ' ') {
+        forceRedraw();
+      }
+ else       if (e.getKeyChar() == 'o') {
+        setScale(getScale() / getZoomSpeed());
+      }
+ else       if (e.getKeyChar() == 'i') {
+        setScale(getScale() * getZoomSpeed());
+      }
+ else       if (e.getKeyChar() == 'c') {
+        centralize(drawing());
+      }
+ else {
+        super.keyPressed(e);
+      }
+    }
+  }
+;
+}

@@ -1,0 +1,4 @@
+{
+  ctxwindowmenu=null;
+  super.tearDown();
+}

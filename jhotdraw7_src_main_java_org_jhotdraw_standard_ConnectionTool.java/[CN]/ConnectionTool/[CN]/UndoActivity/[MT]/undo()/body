@@ -1,0 +1,13 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  getConnection().disconnectStart();
+  getConnection().disconnectEnd();
+  FigureEnumeration fe=getAffectedFigures();
+  while (fe.hasNextFigure()) {
+    getDrawingView().drawing().orphan(fe.nextFigure());
+  }
+  getDrawingView().clearSelection();
+  return true;
+}

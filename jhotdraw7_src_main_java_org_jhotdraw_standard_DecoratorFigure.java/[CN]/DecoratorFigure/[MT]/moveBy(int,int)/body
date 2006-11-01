@@ -1,0 +1,3 @@
+{
+  getDecoratedFigure().moveBy(x,y);
+}

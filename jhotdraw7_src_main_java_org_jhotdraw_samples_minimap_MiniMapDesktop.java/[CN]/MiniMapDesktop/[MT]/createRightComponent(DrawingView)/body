@@ -1,0 +1,6 @@
+{
+  Image image=Iconkit.instance().loadImage(imageName,true);
+  view.add(new ImageFigure(image,imageName,new Point(0,0)));
+  view.checkDamage();
+  return super.createRightComponent(view);
+}

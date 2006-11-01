@@ -1,0 +1,9 @@
+{
+  s.defaultReadObject();
+  if (getStartConnector() != null) {
+    connectStart(getStartConnector());
+  }
+  if (getEndConnector() != null) {
+    connectEnd(getEndConnector());
+  }
+}

@@ -1,0 +1,16 @@
+{
+  return new FileFilter(){
+    public boolean accept(    File checkFile){
+      if (checkFile.isDirectory()) {
+        return true;
+      }
+ else {
+        return checkFile.getName().endsWith("." + getFileExtension());
+      }
+    }
+    public String getDescription(){
+      return getFileDescription();
+    }
+  }
+;
+}

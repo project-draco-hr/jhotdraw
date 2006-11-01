@@ -1,0 +1,6 @@
+{
+  Iterator iter=myRegisteredListeners.iterator();
+  while (iter.hasNext()) {
+    ((CommandListener)iter.next()).commandNotExecutable(new EventObject(myObservedCommand));
+  }
+}

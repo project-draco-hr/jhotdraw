@@ -1,0 +1,4 @@
+{
+  aligncommand=null;
+  super.tearDown();
+}

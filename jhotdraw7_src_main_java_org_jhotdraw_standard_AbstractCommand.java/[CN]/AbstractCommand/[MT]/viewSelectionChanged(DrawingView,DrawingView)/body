@@ -1,0 +1,18 @@
+{
+  if (oldView != null) {
+    oldView.removeFigureSelectionListener(this);
+  }
+  if (newView != null) {
+    newView.addFigureSelectionListener(this);
+  }
+  if (isViewRequired()) {
+    boolean isOldViewInteractive=(oldView != null) && oldView.isInteractive();
+    boolean isNewViewInteractive=(newView != null) && newView.isInteractive();
+    if (!isOldViewInteractive && isNewViewInteractive) {
+      getEventDispatcher().fireCommandExecutableEvent();
+    }
+ else     if (isOldViewInteractive && !isNewViewInteractive) {
+      getEventDispatcher().fireCommandNotExecutableEvent();
+    }
+  }
+}

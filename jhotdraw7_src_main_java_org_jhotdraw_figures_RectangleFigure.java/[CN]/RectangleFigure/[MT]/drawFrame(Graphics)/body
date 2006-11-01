@@ -1,0 +1,4 @@
+{
+  Rectangle r=displayBox();
+  g.drawRect(r.x,r.y,r.width - 1,r.height - 1);
+}

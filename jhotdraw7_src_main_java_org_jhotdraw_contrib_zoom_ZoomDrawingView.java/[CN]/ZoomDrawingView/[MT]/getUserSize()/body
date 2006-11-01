@@ -1,0 +1,4 @@
+{
+  Dimension screenSize=getSize();
+  return new Dimension((int)(screenSize.width / getScale()),(int)(screenSize.height / getScale()));
+}

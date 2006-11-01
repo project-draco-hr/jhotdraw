@@ -1,0 +1,4 @@
+{
+  myDrawApplication=null;
+  super.tearDown();
+}

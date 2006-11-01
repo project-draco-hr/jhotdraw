@@ -1,0 +1,4 @@
+{
+  pertapplet=null;
+  super.tearDown();
+}

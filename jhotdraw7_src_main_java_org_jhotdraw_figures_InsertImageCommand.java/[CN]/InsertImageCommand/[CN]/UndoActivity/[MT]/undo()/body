@@ -1,0 +1,8 @@
+{
+  if (super.undo()) {
+    getDrawingView().clearSelection();
+    getDrawingView().drawing().orphan(getImageFigure());
+    return true;
+  }
+  return false;
+}

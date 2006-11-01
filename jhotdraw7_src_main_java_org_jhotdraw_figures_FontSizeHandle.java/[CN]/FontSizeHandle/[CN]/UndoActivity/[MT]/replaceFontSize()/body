@@ -1,0 +1,5 @@
+{
+  int tempFontSize=getFont().getSize();
+  setFont(new Font(getFont().getName(),getFont().getStyle(),getOldFontSize()));
+  return tempFontSize;
+}

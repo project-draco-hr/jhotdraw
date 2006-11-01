@@ -1,0 +1,18 @@
+{
+  double value=0.0;
+  int token=fTokenizer.nextToken();
+  if (token == StreamTokenizer.TT_NUMBER) {
+    value=fTokenizer.nval;
+    int token2=fTokenizer.nextToken();
+    if (token2 == StreamTokenizer.TT_WORD && (fTokenizer.sval.charAt(0) == 'E' || fTokenizer.sval.charAt(0) == 'e')) {
+      value=Double.valueOf(value + fTokenizer.sval).doubleValue();
+    }
+ else {
+      fTokenizer.pushBack();
+    }
+    return value;
+  }
+ else {
+    throw new IOException("Double expected in line: " + fTokenizer.lineno());
+  }
+}

@@ -1,0 +1,9 @@
+{
+  ToolButton toolButton=(ToolButton)paletteButton;
+  if (inside) {
+    showStatus(toolButton.name());
+  }
+ else   if (fSelectedToolButton != null) {
+    showStatus(fSelectedToolButton.name());
+  }
+}

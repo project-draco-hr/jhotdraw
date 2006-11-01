@@ -1,0 +1,48 @@
+{
+  if (_nMaxTreeDepth == 1) {
+    if (absoluteBoundingRectangle2D.intersects(_absoluteBoundingRectangle2D)) {
+      _theHashtable.put(anObject,absoluteBoundingRectangle2D);
+    }
+ else {
+      _outsideHashtable.put(anObject,absoluteBoundingRectangle2D);
+    }
+    return;
+  }
+  boolean bNW=absoluteBoundingRectangle2D.intersects(_nwQuadTree.getAbsoluteBoundingRectangle2D());
+  boolean bNE=absoluteBoundingRectangle2D.intersects(_neQuadTree.getAbsoluteBoundingRectangle2D());
+  boolean bSW=absoluteBoundingRectangle2D.intersects(_swQuadTree.getAbsoluteBoundingRectangle2D());
+  boolean bSE=absoluteBoundingRectangle2D.intersects(_seQuadTree.getAbsoluteBoundingRectangle2D());
+  int nCount=0;
+  if (bNW == true) {
+    nCount++;
+  }
+  if (bNE == true) {
+    nCount++;
+  }
+  if (bSW == true) {
+    nCount++;
+  }
+  if (bSE == true) {
+    nCount++;
+  }
+  if (nCount > 1) {
+    _theHashtable.put(anObject,absoluteBoundingRectangle2D);
+    return;
+  }
+  if (nCount == 0) {
+    _outsideHashtable.put(anObject,absoluteBoundingRectangle2D);
+    return;
+  }
+  if (bNW == true) {
+    _nwQuadTree.add(anObject,absoluteBoundingRectangle2D);
+  }
+  if (bNE == true) {
+    _neQuadTree.add(anObject,absoluteBoundingRectangle2D);
+  }
+  if (bSW == true) {
+    _swQuadTree.add(anObject,absoluteBoundingRectangle2D);
+  }
+  if (bSE == true) {
+    _seQuadTree.add(anObject,absoluteBoundingRectangle2D);
+  }
+}

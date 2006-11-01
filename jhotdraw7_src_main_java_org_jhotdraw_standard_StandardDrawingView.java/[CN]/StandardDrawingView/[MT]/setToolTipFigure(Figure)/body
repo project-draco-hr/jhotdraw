@@ -1,0 +1,5 @@
+{
+  Rectangle r=f.displayBox();
+  Point p=new Point(r.x,r.y + r.height + 10);
+  setToolTipLocation(p);
+}

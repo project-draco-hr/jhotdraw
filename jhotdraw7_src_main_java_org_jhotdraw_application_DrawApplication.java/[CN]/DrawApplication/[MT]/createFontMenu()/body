@@ -1,0 +1,8 @@
+{
+  CommandMenu menu=new CommandMenu("Font");
+  String fonts[]=GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+  for (int i=0; i < fonts.length; i++) {
+    menu.add(new UndoableCommand(new ChangeAttributeCommand(fonts[i],FigureAttributeConstant.FONT_NAME,fonts[i],this)));
+  }
+  return menu;
+}

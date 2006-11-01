@@ -1,0 +1,20 @@
+{
+  if (!super.undo()) {
+    return false;
+  }
+  getDrawingView().clearSelection();
+  getDrawingView().drawing().orphanAll(getAffectedFigures());
+  List affectedFigures=CollectionsFactory.current().createList();
+  FigureEnumeration fe=getAffectedFigures();
+  while (fe.hasNextFigure()) {
+    Figure currentFigure=fe.nextFigure();
+    getDrawingView().drawing().addAll(currentFigure.figures());
+    getDrawingView().addToSelectionAll(currentFigure.figures());
+    FigureEnumeration groupedFigures=currentFigure.figures();
+    while (groupedFigures.hasNextFigure()) {
+      affectedFigures.add(groupedFigures.nextFigure());
+    }
+  }
+  setAffectedFigures(new FigureEnumerator(affectedFigures));
+  return true;
+}

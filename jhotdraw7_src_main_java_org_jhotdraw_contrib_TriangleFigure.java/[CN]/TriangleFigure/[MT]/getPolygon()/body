@@ -1,0 +1,47 @@
+{
+  Rectangle r=displayBox();
+  Polygon p=new Polygon();
+switch (fRotation) {
+case 0:
+    p.addPoint(r.x + r.width / 2,r.y);
+  p.addPoint(r.x + r.width,r.y + r.height);
+p.addPoint(r.x,r.y + r.height);
+break;
+case 1:
+p.addPoint(r.x + r.width,r.y);
+p.addPoint(r.x + r.width,r.y + r.height);
+p.addPoint(r.x,r.y);
+break;
+case 2:
+p.addPoint(r.x + r.width,r.y + r.height / 2);
+p.addPoint(r.x,r.y + r.height);
+p.addPoint(r.x,r.y);
+break;
+case 3:
+p.addPoint(r.x + r.width,r.y + r.height);
+p.addPoint(r.x,r.y + r.height);
+p.addPoint(r.x + r.width,r.y);
+break;
+case 4:
+p.addPoint(r.x + r.width / 2,r.y + r.height);
+p.addPoint(r.x,r.y);
+p.addPoint(r.x + r.width,r.y);
+break;
+case 5:
+p.addPoint(r.x,r.y + r.height);
+p.addPoint(r.x,r.y);
+p.addPoint(r.x + r.width,r.y + r.height);
+break;
+case 6:
+p.addPoint(r.x,r.y + r.height / 2);
+p.addPoint(r.x + r.width,r.y);
+p.addPoint(r.x + r.width,r.y + r.height);
+break;
+case 7:
+p.addPoint(r.x,r.y);
+p.addPoint(r.x + r.width,r.y);
+p.addPoint(r.x,r.y + r.height);
+break;
+}
+return p;
+}

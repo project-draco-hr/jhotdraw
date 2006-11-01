@@ -1,0 +1,4 @@
+{
+  peripherallocator=null;
+  super.tearDown();
+}

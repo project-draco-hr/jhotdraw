@@ -1,0 +1,4 @@
+{
+  addItem(command.name());
+  fCommands.add(command);
+}

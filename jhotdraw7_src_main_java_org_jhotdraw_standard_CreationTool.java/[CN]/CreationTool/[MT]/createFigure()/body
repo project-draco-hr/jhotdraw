@@ -1,0 +1,6 @@
+{
+  if (getPrototypeFigure() == null) {
+    throw new JHotDrawRuntimeException("No protoype defined");
+  }
+  return (Figure)getPrototypeFigure().clone();
+}

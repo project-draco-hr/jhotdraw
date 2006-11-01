@@ -1,0 +1,6 @@
+{
+  Rectangle oldDisplayBox=((ResizeHandle.UndoActivity)getUndoActivity()).getOldDisplayBox();
+  if (owner().displayBox().equals(oldDisplayBox)) {
+    setUndoActivity(null);
+  }
+}

@@ -1,0 +1,11 @@
+{
+  g.setColor(getColor());
+  Dimension size=view.getSize();
+  int width=size.width;
+  int height=size.height;
+  for (int x=0; x < width; x+=getHorizontalSeparation()) {
+    for (int y=0; y < height; y+=getVerticalSeparation()) {
+      g.drawRect(x,y,0,0);
+    }
+  }
+}

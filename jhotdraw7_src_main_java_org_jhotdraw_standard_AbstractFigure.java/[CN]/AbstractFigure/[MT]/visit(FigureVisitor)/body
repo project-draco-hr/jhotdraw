@@ -1,0 +1,15 @@
+{
+  FigureEnumeration fe=getDependendFigures();
+  visitor.visitFigure(this);
+  FigureEnumeration visitFigures=figures();
+  while (visitFigures.hasNextFigure()) {
+    visitFigures.nextFigure().visit(visitor);
+  }
+  HandleEnumeration visitHandles=handles();
+  while (visitHandles.hasNextHandle()) {
+    visitor.visitHandle(visitHandles.nextHandle());
+  }
+  while (fe.hasNextFigure()) {
+    fe.nextFigure().visit(visitor);
+  }
+}

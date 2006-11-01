@@ -1,0 +1,7 @@
+{
+  String url=(String)figure.getAttribute(FigureAttributeConstant.URL);
+  if (url == null) {
+    url="";
+  }
+  return url;
+}

@@ -1,0 +1,6 @@
+{
+  if (l.size() >= maxStackCapacity) {
+    Undoable removedActivity=(Undoable)l.remove(0);
+    removedActivity.release();
+  }
+}

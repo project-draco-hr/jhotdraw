@@ -1,0 +1,7 @@
+{
+  TestSuite suite;
+  suite=new TestSuite("org.jhotdraw.test.samples.minimap");
+  suite.addTestSuite(org.jhotdraw.test.samples.minimap.MiniMapDesktopTest.class);
+  suite.addTestSuite(org.jhotdraw.test.samples.minimap.MiniMapApplicationTest.class);
+  return suite;
+}

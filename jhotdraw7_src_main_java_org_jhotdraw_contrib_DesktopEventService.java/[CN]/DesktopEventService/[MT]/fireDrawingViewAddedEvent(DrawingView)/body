@@ -1,0 +1,8 @@
+{
+  ListIterator li=listeners.listIterator(listeners.size());
+  DesktopEvent dpe=createDesktopEvent(getActiveDrawingView(),dv);
+  while (li.hasPrevious()) {
+    DesktopListener dpl=(DesktopListener)li.previous();
+    dpl.drawingViewAdded(dpe);
+  }
+}

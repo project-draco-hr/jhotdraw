@@ -1,0 +1,3 @@
+{
+  myDependendFigures=CollectionsFactory.current().createList();
+}

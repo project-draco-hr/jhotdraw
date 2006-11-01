@@ -1,0 +1,7 @@
+{
+  HTMLContentProducerContext htmlContext=(HTMLContentProducerContext)context;
+  if (ctxAttrName.compareTo(ContentProducer.ENTITY_FONT_SIZE) == 0) {
+    return Integer.toString(getHTMLFontSizeEquivalent(htmlContext.getFont().getSize()));
+  }
+  return super.getContent(context,ctxAttrName,ctxAttrValue);
+}

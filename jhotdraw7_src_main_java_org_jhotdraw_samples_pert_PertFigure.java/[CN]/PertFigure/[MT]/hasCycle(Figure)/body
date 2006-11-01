@@ -1,0 +1,12 @@
+{
+  if (start == this) {
+    return true;
+  }
+  Iterator iter=fPreTasks.iterator();
+  while (iter.hasNext()) {
+    if (((PertFigure)iter.next()).hasCycle(start)) {
+      return true;
+    }
+  }
+  return false;
+}

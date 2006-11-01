@@ -1,0 +1,9 @@
+{
+  if (undoActivity.isUndoable()) {
+    removeFirstElementInFullList(undoStack);
+    undoStack.add(undoActivity);
+  }
+ else {
+    undoStack=CollectionsFactory.current().createList(maxStackCapacity);
+  }
+}

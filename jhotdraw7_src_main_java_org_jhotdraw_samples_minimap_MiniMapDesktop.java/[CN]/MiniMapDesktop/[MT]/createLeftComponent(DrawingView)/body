@@ -1,0 +1,8 @@
+{
+  JPanel blankPanel=new JPanel();
+  MiniMapView mmv=new MiniMapView(view,(JScrollPane)getRightComponent());
+  JSplitPane leftSplitPane=new JSplitPane(JSplitPane.VERTICAL_SPLIT,blankPanel,mmv);
+  leftSplitPane.setOneTouchExpandable(true);
+  leftSplitPane.setDividerLocation(200);
+  return leftSplitPane;
+}

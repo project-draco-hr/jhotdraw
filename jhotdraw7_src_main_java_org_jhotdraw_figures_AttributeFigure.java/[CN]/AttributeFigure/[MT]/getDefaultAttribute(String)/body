@@ -1,0 +1,6 @@
+{
+  if (fgDefaultAttributes == null) {
+    initializeAttributes();
+  }
+  return fgDefaultAttributes.get(FigureAttributeConstant.getConstant(name));
+}

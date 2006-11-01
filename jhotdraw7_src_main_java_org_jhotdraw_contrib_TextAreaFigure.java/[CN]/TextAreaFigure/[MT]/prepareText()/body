@@ -1,0 +1,15 @@
+{
+  if (!isTextDirty()) {
+    return;
+  }
+  fParagraphs=CollectionsFactory.current().createList();
+  String paragraphText;
+  Point pos=new Point(-1,-1);
+  while ((paragraphText=getNextParagraph(fText,pos)) != null) {
+    if (paragraphText.length() == 0) {
+      paragraphText=" ";
+    }
+    fParagraphs.add(paragraphText);
+  }
+  setTextDirty(false);
+}

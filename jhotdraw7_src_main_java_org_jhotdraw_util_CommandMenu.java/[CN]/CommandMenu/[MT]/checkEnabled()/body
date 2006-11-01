@@ -1,0 +1,9 @@
+{
+  for (int i=0; i < getMenuComponentCount(); i++) {
+    Component c=getMenuComponent(i);
+    Command cmd=(Command)hm.get(c);
+    if (cmd != null) {
+      c.setEnabled(cmd.isExecutable());
+    }
+  }
+}

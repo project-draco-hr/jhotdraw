@@ -1,0 +1,128 @@
+{
+  Graphics2D g2=null;
+  Shape savedClipArea=null;
+  Color savedFontColor=null;
+  Rectangle2D clipRect=null;
+  RenderingHints savedRenderingHints=null;
+  if (g != null) {
+    g2=(Graphics2D)g;
+    savedRenderingHints=g2.getRenderingHints();
+    g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
+    g2.setRenderingHint(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_QUALITY);
+    savedFontColor=g2.getColor();
+    savedClipArea=g2.getClip();
+    if (savedClipArea != null) {
+      clipRect=displayBox.createIntersection((Rectangle2D)savedClipArea);
+    }
+ else {
+      clipRect=displayBox;
+    }
+    g2.setClip(clipRect);
+    Color textColor=getTextColor();
+    if (!ColorMap.isTransparent(textColor)) {
+      g2.setColor(textColor);
+    }
+    g2.setFont(getFont());
+  }
+  FontRenderContext fontRenderCtx=new FontRenderContext(null,false,false);
+  prepareText();
+  float leftMargin=displayBox.x + ((Float)getAttribute("LeftMargin")).floatValue();
+  float rightMargin=displayBox.x + displayBox.width - ((Float)getAttribute("RightMargin")).floatValue();
+  float topMargin=displayBox.y + ((Float)getAttribute("TopMargin")).floatValue();
+  float[] tabStops=new float[40];
+  float tabSize=((Float)getAttribute("TabSize")).floatValue() * getFontWidth();
+  float tabPos=tabSize;
+  for (int tabCnt=0; tabCnt < 40; tabCnt++) {
+    tabStops[tabCnt]=tabPos + leftMargin;
+    tabPos+=tabSize;
+  }
+  float verticalPos=topMargin;
+  Iterator paragraphs=fParagraphs.iterator();
+  while (paragraphs.hasNext()) {
+    String paragraphText=(String)paragraphs.next();
+    AttributedString attrText=new AttributedString(paragraphText);
+    AttributedCharacterIterator paragraphIter=attrText.getIterator();
+    int[] tabLocations=new int[paragraphText.length()];
+    int tabCount=0;
+    for (char c=paragraphIter.first(); c != CharacterIterator.DONE; c=paragraphIter.next()) {
+      if (c == '\t') {
+        tabLocations[tabCount++]=paragraphIter.getIndex();
+      }
+    }
+    tabLocations[tabCount]=paragraphIter.getEndIndex() - 1;
+    paragraphText=paragraphText.replace('\t',' ');
+    attrText=new AttributedString(paragraphText,attributesMap);
+    paragraphIter=attrText.getIterator();
+    LineBreakMeasurer measurer=new LineBreakMeasurer(paragraphIter,fontRenderCtx);
+    int currentTab=0;
+    while (measurer.getPosition() < paragraphIter.getEndIndex()) {
+      boolean lineContainsText=false;
+      boolean lineComplete=false;
+      float maxAscent=0;
+      float maxDescent=0;
+      float horizontalPos=leftMargin;
+      List layouts=CollectionsFactory.current().createList(1);
+      List penPositions=CollectionsFactory.current().createList(1);
+      while (!lineComplete) {
+        float wrappingWidth=rightMargin - horizontalPos;
+        wrappingWidth=Math.max(1,wrappingWidth);
+        TextLayout layout=measurer.nextLayout(wrappingWidth,tabLocations[currentTab] + 1,lineContainsText);
+        if (layout != null) {
+          layouts.add(layout);
+          penPositions.add(new Float(horizontalPos));
+          horizontalPos+=layout.getAdvance();
+          maxAscent=Math.max(maxAscent,layout.getAscent());
+          maxDescent=Math.max(maxDescent,layout.getDescent() + layout.getLeading());
+        }
+ else {
+          lineComplete=true;
+        }
+        lineContainsText=true;
+        if (measurer.getPosition() == tabLocations[currentTab] + 1) {
+          currentTab++;
+        }
+        if (measurer.getPosition() == paragraphIter.getEndIndex()) {
+          lineComplete=true;
+        }
+ else         if (horizontalPos >= tabStops[tabStops.length - 1]) {
+          lineComplete=true;
+        }
+        if (!lineComplete) {
+          int j;
+          for (j=0; horizontalPos >= tabStops[j]; j++) {
+          }
+          horizontalPos=tabStops[j];
+        }
+      }
+      verticalPos+=maxAscent;
+      Iterator layoutEnum=layouts.iterator();
+      Iterator positionEnum=penPositions.iterator();
+      while (layoutEnum.hasNext()) {
+        TextLayout nextLayout=(TextLayout)layoutEnum.next();
+        Float nextPosition=(Float)positionEnum.next();
+        if (g2 != null) {
+          nextLayout.draw(g2,nextPosition.floatValue(),verticalPos);
+        }
+      }
+      verticalPos+=maxDescent;
+    }
+  }
+  if (g2 != null && verticalPos > clipRect.getMaxY() && clipRect.getMaxY() == displayBox.getMaxY()) {
+    Stroke savedStroke=g2.getStroke();
+    float[] dash=new float[2];
+    dash[0]=2f;
+    dash[1]=4f;
+    g2.setStroke(new BasicStroke(1f,BasicStroke.CAP_SQUARE,BasicStroke.JOIN_MITER,1f,dash,0f));
+    g2.setColor(Color.red);
+    g2.drawLine((int)clipRect.getMinX() + 1,(int)clipRect.getMaxY() - 1,(int)clipRect.getMaxX() - 1,(int)clipRect.getMaxY() - 1);
+    g2.setStroke(savedStroke);
+  }
+  if (g2 != null) {
+    if (savedClipArea != null) {
+      g2.setClip(savedClipArea);
+    }
+    g2.setColor(savedFontColor);
+    g2.setRenderingHints(savedRenderingHints);
+  }
+  return verticalPos;
+}

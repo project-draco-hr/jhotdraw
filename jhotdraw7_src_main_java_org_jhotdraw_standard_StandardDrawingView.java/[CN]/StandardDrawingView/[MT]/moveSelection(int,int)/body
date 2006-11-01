@@ -1,0 +1,7 @@
+{
+  FigureEnumeration figures=selection();
+  while (figures.hasNextFigure()) {
+    figures.nextFigure().moveBy(dx,dy);
+  }
+  checkDamage();
+}

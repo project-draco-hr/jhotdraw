@@ -1,0 +1,3 @@
+{
+  getWrappedHandle().invokeStart(x,y,drawing);
+}

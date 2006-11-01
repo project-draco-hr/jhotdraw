@@ -1,0 +1,5 @@
+{
+  if (getPaletteIcon().selected() != null) {
+    g.drawImage(getPaletteIcon().selected(),0,0,this);
+  }
+}

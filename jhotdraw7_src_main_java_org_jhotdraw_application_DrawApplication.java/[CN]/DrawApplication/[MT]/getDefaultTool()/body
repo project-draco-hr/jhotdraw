@@ -1,0 +1,8 @@
+{
+  if (fDefaultToolButton != null) {
+    return fDefaultToolButton.tool();
+  }
+ else {
+    return null;
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return getInternalPolygon().contains(x,y);
+}

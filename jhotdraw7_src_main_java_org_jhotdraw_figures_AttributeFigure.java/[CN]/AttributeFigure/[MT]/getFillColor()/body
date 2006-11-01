@@ -1,0 +1,3 @@
+{
+  return (Color)getAttribute(FigureAttributeConstant.FILL_COLOR);
+}

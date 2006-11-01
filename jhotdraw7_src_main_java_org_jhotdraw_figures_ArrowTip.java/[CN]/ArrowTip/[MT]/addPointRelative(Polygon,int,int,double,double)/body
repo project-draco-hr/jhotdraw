@@ -1,0 +1,3 @@
+{
+  shape.addPoint(x + (int)(radius * Math.cos(angle)),y + (int)(radius * Math.sin(angle)));
+}

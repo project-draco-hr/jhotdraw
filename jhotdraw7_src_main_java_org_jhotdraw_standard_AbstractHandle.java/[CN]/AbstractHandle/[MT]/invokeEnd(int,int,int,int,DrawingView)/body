@@ -1,0 +1,3 @@
+{
+  invokeEnd(x - anchorX,y - anchorY,view.drawing());
+}

@@ -1,0 +1,8 @@
+{
+  if (fCurrent == null) {
+    return getOrigin();
+  }
+ else {
+    return fCurrent;
+  }
+}

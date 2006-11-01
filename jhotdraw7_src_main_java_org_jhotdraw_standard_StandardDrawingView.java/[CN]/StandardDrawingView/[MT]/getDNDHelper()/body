@@ -1,0 +1,6 @@
+{
+  if (dndh == null) {
+    dndh=createDNDHelper();
+  }
+  return dndh;
+}

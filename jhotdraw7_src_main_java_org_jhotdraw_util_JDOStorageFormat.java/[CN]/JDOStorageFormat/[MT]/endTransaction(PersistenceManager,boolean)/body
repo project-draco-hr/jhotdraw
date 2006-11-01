@@ -1,0 +1,10 @@
+{
+  if (pm.currentTransaction().isActive()) {
+    if (doCommit) {
+      pm.currentTransaction().commit();
+    }
+ else {
+      pm.currentTransaction().rollback();
+    }
+  }
+}

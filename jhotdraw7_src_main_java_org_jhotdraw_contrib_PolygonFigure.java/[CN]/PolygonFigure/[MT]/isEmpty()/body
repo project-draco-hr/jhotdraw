@@ -1,0 +1,3 @@
+{
+  return ((pointCount() < 3) || ((size().width < TOO_CLOSE) && (size().height < TOO_CLOSE)));
+}

@@ -1,0 +1,10 @@
+{
+  boolean changed=false;
+  if (!isFigureSelected(figure) && drawing().includes(figure)) {
+    fSelection.add(figure);
+    fSelectionHandles=null;
+    figure.invalidate();
+    changed=true;
+  }
+  return changed;
+}

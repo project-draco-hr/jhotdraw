@@ -1,0 +1,13 @@
+{
+  interruptDisposalPending=false;
+  while (!interruptDisposalPending) {
+    try {
+      sleep(periodicity);
+    }
+ catch (    Exception ex) {
+      break;
+    }
+    strategy.dispose();
+  }
+  interruptDisposalPending=false;
+}

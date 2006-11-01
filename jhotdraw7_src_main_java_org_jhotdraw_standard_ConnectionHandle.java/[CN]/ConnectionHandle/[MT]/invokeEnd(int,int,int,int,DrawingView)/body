@@ -1,0 +1,17 @@
+{
+  Connector target=findConnectionTarget(x,y,view.drawing());
+  if (target != null) {
+    getConnection().connectStart(startConnector());
+    getConnection().connectEnd(target);
+    getConnection().updateConnection();
+  }
+ else {
+    view.drawing().remove(getConnection());
+    setUndoActivity(null);
+  }
+  setConnection(null);
+  if (getTargetFigure() != null) {
+    getTargetFigure().connectorVisibility(false,null);
+    setTargetFigure(null);
+  }
+}

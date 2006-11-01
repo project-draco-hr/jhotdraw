@@ -1,0 +1,5 @@
+{
+  List joinedList=myHE1.toList();
+  joinedList.addAll(myHE2.toList());
+  return joinedList;
+}

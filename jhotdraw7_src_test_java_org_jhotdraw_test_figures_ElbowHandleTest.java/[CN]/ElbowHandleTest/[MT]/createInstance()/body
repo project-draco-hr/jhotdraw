@@ -1,0 +1,4 @@
+{
+  LineConnection lineConn=new LineConnection();
+  return new ElbowHandle(lineConn,1);
+}

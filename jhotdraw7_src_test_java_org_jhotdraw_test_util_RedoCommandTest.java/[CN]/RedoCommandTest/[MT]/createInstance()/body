@@ -1,0 +1,3 @@
+{
+  return new RedoCommand("TestRedo",getDrawingEditor());
+}

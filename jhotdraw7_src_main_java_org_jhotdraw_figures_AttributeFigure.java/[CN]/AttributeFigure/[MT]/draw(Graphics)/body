@@ -1,0 +1,12 @@
+{
+  Color fill=getFillColor();
+  if (!ColorMap.isTransparent(fill)) {
+    g.setColor(fill);
+    drawBackground(g);
+  }
+  Color frame=getFrameColor();
+  if (!ColorMap.isTransparent(frame)) {
+    g.setColor(frame);
+    drawFrame(g);
+  }
+}

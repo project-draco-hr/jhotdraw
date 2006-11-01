@@ -1,0 +1,22 @@
+{
+  super.execute();
+  setUndoActivity(createUndoActivity());
+  FigureEnumeration fe=view().selection();
+  List affected=CollectionsFactory.current().createList();
+  Figure f;
+  FigureEnumeration dfe;
+  while (fe.hasNextFigure()) {
+    f=fe.nextFigure();
+    affected.add(0,f);
+    dfe=f.getDependendFigures();
+    if (dfe != null) {
+      while (dfe.hasNextFigure()) {
+        affected.add(0,dfe.nextFigure());
+      }
+    }
+  }
+  fe=new FigureEnumerator(affected);
+  getUndoActivity().setAffectedFigures(fe);
+  deleteFigures(getUndoActivity().getAffectedFigures());
+  view().checkDamage();
+}

@@ -1,0 +1,10 @@
+{
+  try {
+    FigureAttributes a=(FigureAttributes)super.clone();
+    a.fMap=CollectionsFactory.current().createMap(fMap);
+    return a;
+  }
+ catch (  CloneNotSupportedException e) {
+    throw new InternalError();
+  }
+}

@@ -1,0 +1,4 @@
+{
+  includePoint(x1,y1);
+  includePoint(x2,y2);
+}

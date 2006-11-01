@@ -1,0 +1,6 @@
+{
+  super();
+  setHorizontalSeparation(horizontalSeparation);
+  setVerticalSeparation(verticalSeparation);
+  setColor(Color.black);
+}

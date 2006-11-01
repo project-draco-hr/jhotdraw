@@ -1,0 +1,4 @@
+{
+  changeattributecommand=null;
+  super.tearDown();
+}

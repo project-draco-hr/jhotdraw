@@ -1,0 +1,18 @@
+{
+  if (currentManager == null) {
+    if (holderPrototype == null) {
+      holderPrototype=new StandardDisposableResourceHolder();
+    }
+    if (currentStrategy == null) {
+      currentStrategy=new ETSLADisposalStrategy(DEFAULT_DISPOSAL_PERIODICITY);
+    }
+    if (currentManager == null) {
+      currentManager=new StandardDisposableResourceManager(currentStrategy);
+    }
+    try {
+      currentManager.startDisposing();
+    }
+ catch (    ResourceManagerNotSetException ex) {
+    }
+  }
+}

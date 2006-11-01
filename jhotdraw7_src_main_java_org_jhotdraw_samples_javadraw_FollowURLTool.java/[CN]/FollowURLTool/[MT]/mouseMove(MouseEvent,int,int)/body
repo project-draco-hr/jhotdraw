@@ -1,0 +1,13 @@
+{
+  String urlstring=null;
+  Figure figure=drawing().findFigureInside(x,y);
+  if (figure != null) {
+    urlstring=(String)figure.getAttribute(FigureAttributeConstant.URL);
+  }
+  if (urlstring != null) {
+    fApplet.showStatus(urlstring);
+  }
+ else {
+    fApplet.showStatus("");
+  }
+}

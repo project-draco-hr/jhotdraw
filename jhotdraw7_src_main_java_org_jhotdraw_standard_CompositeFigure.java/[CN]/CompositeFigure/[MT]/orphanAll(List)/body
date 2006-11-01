@@ -1,0 +1,3 @@
+{
+  orphanAll(new FigureEnumerator(newFigures));
+}

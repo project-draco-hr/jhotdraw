@@ -1,0 +1,4 @@
+{
+  ConnectionFigure lineConnection=new LineConnection();
+  return new SplitConnectionTool(getDrawingEditor(),lineConnection);
+}

@@ -1,0 +1,7 @@
+{
+  fConnectors=CollectionsFactory.current().createList(4);
+  fConnectors.add(new LocatorConnector(this,RelativeLocator.north()));
+  fConnectors.add(new LocatorConnector(this,RelativeLocator.south()));
+  fConnectors.add(new LocatorConnector(this,RelativeLocator.west()));
+  fConnectors.add(new LocatorConnector(this,RelativeLocator.east()));
+}

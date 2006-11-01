@@ -1,0 +1,16 @@
+{
+  addWindowListener(new WindowAdapter(){
+    public void windowClosing(    WindowEvent event){
+      endApp();
+    }
+    public void windowOpened(    WindowEvent event){
+      winCount++;
+    }
+    public void windowClosed(    WindowEvent event){
+      if (--winCount == 0) {
+        System.exit(0);
+      }
+    }
+  }
+);
+}

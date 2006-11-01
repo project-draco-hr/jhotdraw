@@ -1,0 +1,8 @@
+{
+  CommandMenu menu=new CommandMenu("Font Size");
+  int sizes[]={9,10,12,14,18,24,36,48,72};
+  for (int i=0; i < sizes.length; i++) {
+    menu.add(new UndoableCommand(new ChangeAttributeCommand(Integer.toString(sizes[i]),FigureAttributeConstant.FONT_SIZE,new Integer(sizes[i]),this)));
+  }
+  return menu;
+}

@@ -1,0 +1,5 @@
+{
+  ContentProducer previousProducer=getContentProducer(targetClass);
+  fContentProducers.put(targetClass,producer);
+  return previousProducer;
+}

@@ -1,0 +1,8 @@
+{
+  willChange();
+  basicMoveBy(x,y);
+  if (getLocator() != null) {
+    getLocator().moveBy(x,y);
+  }
+  changed();
+}

@@ -1,0 +1,5 @@
+{
+  setWrappedCommand(newWrappedCommand);
+  getWrappedCommand().addCommandListener(this);
+  setEventDispatcher(createEventDispatcher());
+}

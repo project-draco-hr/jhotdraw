@@ -1,0 +1,7 @@
+{
+  List pts=CollectionsFactory.current().createList(pointCount());
+  for (int i=0; i < pointCount(); ++i) {
+    pts.add(new Point(getInternalPolygon().xpoints[i],getInternalPolygon().ypoints[i]));
+  }
+  return pts.iterator();
+}

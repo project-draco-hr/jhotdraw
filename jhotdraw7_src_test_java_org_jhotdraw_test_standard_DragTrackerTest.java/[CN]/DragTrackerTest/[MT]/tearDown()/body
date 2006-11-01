@@ -1,0 +1,4 @@
+{
+  dragtracker=null;
+  super.tearDown();
+}

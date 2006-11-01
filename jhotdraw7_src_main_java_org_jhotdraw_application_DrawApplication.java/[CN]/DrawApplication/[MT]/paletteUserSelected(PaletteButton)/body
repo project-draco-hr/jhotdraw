@@ -1,0 +1,5 @@
+{
+  ToolButton toolButton=(ToolButton)paletteButton;
+  setTool(toolButton.tool(),toolButton.name());
+  setSelected(toolButton);
+}

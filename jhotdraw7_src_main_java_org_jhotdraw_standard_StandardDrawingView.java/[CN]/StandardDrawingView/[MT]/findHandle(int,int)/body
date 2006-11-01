@@ -1,0 +1,11 @@
+{
+  Handle handle;
+  HandleEnumeration he=selectionHandles();
+  while (he.hasNextHandle()) {
+    handle=he.nextHandle();
+    if (handle.containsPoint(x,y)) {
+      return handle;
+    }
+  }
+  return null;
+}

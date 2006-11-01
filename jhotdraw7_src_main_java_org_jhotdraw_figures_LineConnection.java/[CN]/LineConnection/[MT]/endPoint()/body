@@ -1,0 +1,9 @@
+{
+  if (fPoints.size() > 0) {
+    Point p=pointAt(fPoints.size() - 1);
+    return new Point(p.x,p.y);
+  }
+ else {
+    return null;
+  }
+}

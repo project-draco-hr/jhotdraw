@@ -1,0 +1,3 @@
+{
+  getDecoratedFigure().setAttribute(name,value);
+}

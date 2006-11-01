@@ -1,0 +1,5 @@
+{
+  super.mouseDrag(e,x,y);
+  eraseRubberBand();
+  rubberBand(getAnchorX(),getAnchorY(),x,y);
+}

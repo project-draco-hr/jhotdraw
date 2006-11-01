@@ -1,0 +1,3 @@
+{
+  return (int)(real.charWidth(ch) / ScalingGraphics.this.getScale());
+}

@@ -1,0 +1,35 @@
+{
+  super(listener);
+  tool.addToolListener(this);
+  setEnabled(tool.isUsable());
+  Iconkit kit=Iconkit.instance();
+  if (kit == null) {
+    throw new JHotDrawRuntimeException("Iconkit instance isn't set");
+  }
+  Image im[]=new Image[3];
+  im[0]=kit.loadImage(iconName + "1.gif");
+  im[1]=kit.loadImage(iconName + "2.gif");
+  im[2]=kit.loadImage(iconName + "3.gif");
+  MediaTracker tracker=new MediaTracker(this);
+  for (int i=0; i < 3; i++) {
+    tracker.addImage(im[i],i);
+  }
+  try {
+    tracker.waitForAll();
+  }
+ catch (  Exception e) {
+  }
+  setPaletteIcon(new PaletteIcon(new Dimension(24,24),im[0],im[1],im[2]));
+  setTool(tool);
+  setName(name);
+  if (im[0] != null) {
+    setIcon(new ImageIcon(im[0]));
+  }
+  if (im[1] != null) {
+    setPressedIcon(new ImageIcon(im[1]));
+  }
+  if (im[2] != null) {
+    setSelectedIcon(new ImageIcon(im[2]));
+  }
+  setToolTipText(name);
+}

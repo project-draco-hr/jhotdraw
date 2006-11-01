@@ -1,0 +1,7 @@
+{
+  if (isRedoable()) {
+    getDrawingView().addToSelectionAll(getDrawingView().drawing().figures());
+    return true;
+  }
+  return false;
+}

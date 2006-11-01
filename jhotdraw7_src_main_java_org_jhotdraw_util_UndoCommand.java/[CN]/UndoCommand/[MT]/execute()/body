@@ -1,0 +1,14 @@
+{
+  super.execute();
+  UndoManager um=getDrawingEditor().getUndoManager();
+  if ((um == null) || !um.isUndoable()) {
+    return;
+  }
+  Undoable lastUndoable=um.popUndo();
+  boolean hasBeenUndone=lastUndoable.undo();
+  if (hasBeenUndone && lastUndoable.isRedoable()) {
+    um.pushRedo(lastUndoable);
+  }
+  lastUndoable.getDrawingView().checkDamage();
+  getDrawingEditor().figureSelectionChanged(lastUndoable.getDrawingView());
+}

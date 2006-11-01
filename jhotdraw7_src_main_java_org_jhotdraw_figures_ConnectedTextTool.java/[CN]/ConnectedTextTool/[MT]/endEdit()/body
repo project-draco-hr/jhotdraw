@@ -1,0 +1,9 @@
+{
+  super.endEdit();
+  if ((getUndoActivity() != null) && (getUndoActivity() instanceof ConnectedTextTool.UndoActivity)) {
+    ((ConnectedTextTool.UndoActivity)getUndoActivity()).setConnectedFigure(getConnectedFigure());
+  }
+ else   if ((getConnectedFigure() != null) && isDeleteTextFigure()) {
+    getConnectedFigure().removeDependendFigure(getAddedFigure());
+  }
+}

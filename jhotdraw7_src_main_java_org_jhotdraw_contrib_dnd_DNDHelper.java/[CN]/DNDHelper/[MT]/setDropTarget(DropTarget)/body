@@ -1,0 +1,7 @@
+{
+  if ((newDropTarget == null) && (dropTarget != null)) {
+    dropTarget.setComponent(null);
+    dropTarget.removeDropTargetListener(getDropTargetListener());
+  }
+  dropTarget=newDropTarget;
+}

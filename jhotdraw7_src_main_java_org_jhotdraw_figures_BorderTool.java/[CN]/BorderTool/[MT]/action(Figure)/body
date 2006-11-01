@@ -1,0 +1,8 @@
+{
+  setUndoActivity(createUndoActivity());
+  List l=CollectionsFactory.current().createList();
+  l.add(figure);
+  l.add(new BorderDecorator(figure));
+  getUndoActivity().setAffectedFigures(new FigureEnumerator(l));
+  ((BorderTool.UndoActivity)getUndoActivity()).replaceAffectedFigures();
+}

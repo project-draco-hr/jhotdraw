@@ -1,0 +1,6 @@
+{
+  if (getDamage() != null) {
+    repaint(getDamage().x,getDamage().y,getDamage().width,getDamage().height);
+    setDamage(null);
+  }
+}

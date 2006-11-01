@@ -1,0 +1,4 @@
+{
+  updateFontInfo();
+  return fFontWidth;
+}
