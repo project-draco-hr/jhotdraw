@@ -2,7 +2,7 @@
   Figure addedFigure=super.add(figure);
   if (addedFigure.listener() != null) {
     Rectangle rect=invalidateRectangle(displayBox());
-    addedFigure.listener().figureRequestUpdate(new FigureChangeEvent(figure,rect));
+    addedFigure.listener().figureRequestUpdate(new FigureEvent(figure,rect));
     return addedFigure;
   }
   return addedFigure;

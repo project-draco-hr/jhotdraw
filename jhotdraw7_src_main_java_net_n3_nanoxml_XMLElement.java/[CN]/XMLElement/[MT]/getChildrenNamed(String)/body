@@ -1,0 +1,12 @@
+{
+  ArrayList result=new ArrayList(this.children.size());
+  Iterator enm=this.children.iterator();
+  while (enm.hasNext()) {
+    IXMLElement child=(IXMLElement)enm.next();
+    String childName=child.getFullName();
+    if ((childName != null) && childName.equals(name)) {
+      result.add(child);
+    }
+  }
+  return result;
+}

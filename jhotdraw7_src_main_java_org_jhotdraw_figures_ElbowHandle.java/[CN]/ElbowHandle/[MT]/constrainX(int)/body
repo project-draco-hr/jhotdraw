@@ -1,5 +1,5 @@
 {
-  LineConnection line=ownerConnection();
+  LineConnectionFigure line=ownerConnection();
   Figure startFigure=line.getStartConnector().owner();
   Figure endFigure=line.getEndConnector().owner();
   Rectangle start=startFigure.displayBox();

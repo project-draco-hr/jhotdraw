@@ -1,3 +1,3 @@
 {
-  return new ChangeConnectionEndHandle(new LineConnection());
+  return new ChangeConnectionEndHandle(new LineConnectionFigure());
 }

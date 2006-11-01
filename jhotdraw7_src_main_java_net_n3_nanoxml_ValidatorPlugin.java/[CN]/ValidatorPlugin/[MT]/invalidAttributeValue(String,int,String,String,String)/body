@@ -1,0 +1,3 @@
+{
+  XMLUtil.errorInvalidAttributeValue(systemID,lineNr,elementName,attributeName,attributeValue);
+}

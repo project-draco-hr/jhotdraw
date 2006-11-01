@@ -1,0 +1,4 @@
+{
+  ((FigureListener)a).figureChanged(e);
+  ((FigureListener)b).figureChanged(e);
+}

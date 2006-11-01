@@ -1,0 +1,58 @@
+{
+  try {
+    if (this.name == null) {
+      this.writeEncoded(writer,this.contents);
+      return;
+    }
+    char[] spaces=new char[indent * 2];
+    Arrays.fill(spaces,' ');
+    writer.write(spaces);
+    writer.write('<');
+    writer.write(this.name);
+    if (!this.attributes.isEmpty()) {
+      Iterator enm=this.attributes.keySet().iterator();
+      while (enm.hasNext()) {
+        writer.write(' ');
+        String key=(String)enm.next();
+        String value=(String)this.attributes.get(key);
+        writer.write(key);
+        writer.write('=');
+        writer.write('"');
+        this.writeEncoded(writer,value);
+        writer.write('"');
+      }
+    }
+    if ((this.contents != null) && (this.contents.length() > 0)) {
+      writer.write('>');
+      this.writeEncoded(writer,this.contents);
+      writer.write('<');
+      writer.write('/');
+      writer.write(this.name);
+      writer.write('>');
+    }
+ else     if (this.children.isEmpty()) {
+      writer.write('/');
+      writer.write('>');
+    }
+ else {
+      writer.write('>');
+      writer.write('\n');
+      Iterator enm=this.getChildren().iterator();
+      while (enm.hasNext()) {
+        XMLElement child=(XMLElement)enm.next();
+        child.print(writer,indent + 1);
+      }
+      writer.write(spaces);
+      writer.write('<');
+      writer.write('/');
+      writer.write(this.name);
+      writer.write('>');
+    }
+    writer.write('\n');
+  }
+ catch (  IOException e) {
+    InternalError error=new InternalError(e.getMessage());
+    error.initCause(e);
+    throw error;
+  }
+}

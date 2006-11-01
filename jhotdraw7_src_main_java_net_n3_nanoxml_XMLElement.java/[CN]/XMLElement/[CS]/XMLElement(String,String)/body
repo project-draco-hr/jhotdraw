@@ -1,0 +1,3 @@
+{
+  this(fullName,namespace,null,NO_LINE);
+}

@@ -11,6 +11,6 @@
     return this;
   }
  else {
-    return addInternal((FigureChangeListener)a2,(FigureChangeListener)b2);
+    return addInternal((FigureListener)a2,(FigureListener)b2);
   }
 }

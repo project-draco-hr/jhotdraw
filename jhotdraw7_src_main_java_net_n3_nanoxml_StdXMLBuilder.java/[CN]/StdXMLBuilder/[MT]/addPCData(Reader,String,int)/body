@@ -1,0 +1,30 @@
+{
+  int bufSize=2048;
+  int sizeRead=0;
+  StringBuffer str=new StringBuffer(bufSize);
+  char[] buf=new char[bufSize];
+  for (; ; ) {
+    if (sizeRead >= bufSize) {
+      bufSize*=2;
+      str.ensureCapacity(bufSize);
+    }
+    int size;
+    try {
+      size=reader.read(buf);
+    }
+ catch (    IOException e) {
+      break;
+    }
+    if (size < 0) {
+      break;
+    }
+    str.append(buf,0,size);
+    sizeRead+=size;
+  }
+  IXMLElement elt=this.prototype.createElement(null,systemID,lineNr);
+  elt.setContent(str.toString());
+  if (!this.stack.empty()) {
+    IXMLElement top=(IXMLElement)this.stack.peek();
+    top.addChild(elt);
+  }
+}

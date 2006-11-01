@@ -1,0 +1,15 @@
+{
+  String fullName=name;
+  if (nsPrefix != null) {
+    fullName=nsPrefix + ':' + name;
+  }
+  IXMLElement elt=this.prototype.createElement(fullName,nsURI,systemID,lineNr);
+  if (this.stack.empty()) {
+    this.root=elt;
+  }
+ else {
+    IXMLElement top=(IXMLElement)this.stack.peek();
+    top.addChild(elt);
+  }
+  this.stack.push(elt);
+}

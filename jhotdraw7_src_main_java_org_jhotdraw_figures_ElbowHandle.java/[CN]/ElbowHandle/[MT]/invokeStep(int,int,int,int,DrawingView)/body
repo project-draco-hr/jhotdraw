@@ -1,5 +1,5 @@
 {
-  LineConnection line=ownerConnection();
+  LineConnectionFigure line=ownerConnection();
   Point p1=line.pointAt(fSegment);
   Point p2=line.pointAt(fSegment + 1);
   int ddx=x - fLastX;

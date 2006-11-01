@@ -1,5 +1,0 @@
-{
-  Rectangle rect=e.getInvalidatedRectangle();
-  rect.grow(getBorderOffset().x,getBorderOffset().y);
-  super.figureInvalidated(new FigureChangeEvent(this,rect,e));
-}

@@ -1,0 +1,9 @@
+{
+  ArrayList result=new ArrayList();
+  Iterator enm=this.attributes.iterator();
+  while (enm.hasNext()) {
+    XMLAttribute attr=(XMLAttribute)enm.next();
+    result.add(attr.getFullName());
+  }
+  return result.iterator();
+}

@@ -1,0 +1,7 @@
+{
+  Class cls=Class.forName(className);
+  IXMLParser parser=(IXMLParser)cls.newInstance();
+  parser.setBuilder(builder);
+  parser.setValidator(new NonValidator());
+  return parser;
+}

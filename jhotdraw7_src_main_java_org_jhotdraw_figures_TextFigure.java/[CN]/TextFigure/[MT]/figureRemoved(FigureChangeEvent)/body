@@ -1,6 +1,0 @@
-{
-  if (listener() != null) {
-    Rectangle rect=invalidateRectangle(displayBox());
-    listener().figureRemoved(new FigureChangeEvent(this,rect,e));
-  }
-}

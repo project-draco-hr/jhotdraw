@@ -1,0 +1,9 @@
+{
+  Properties result=new Properties();
+  Iterator enm=this.attributes.iterator();
+  while (enm.hasNext()) {
+    XMLAttribute attr=(XMLAttribute)enm.next();
+    result.put(attr.getFullName(),attr.getValue());
+  }
+  return result;
+}

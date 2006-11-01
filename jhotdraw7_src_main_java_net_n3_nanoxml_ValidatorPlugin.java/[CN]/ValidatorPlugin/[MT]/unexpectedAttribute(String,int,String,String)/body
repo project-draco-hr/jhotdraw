@@ -1,0 +1,3 @@
+{
+  XMLUtil.errorUnexpectedAttribute(systemID,lineNr,elementName,attributeName);
+}

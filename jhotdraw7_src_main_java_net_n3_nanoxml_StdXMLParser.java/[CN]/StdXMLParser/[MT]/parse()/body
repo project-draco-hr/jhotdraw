@@ -1,0 +1,15 @@
+{
+  try {
+    this.builder.startBuilding(this.reader.getSystemID(),this.reader.getLineNr());
+    this.scanData();
+    return this.builder.getResult();
+  }
+ catch (  XMLException e) {
+    throw e;
+  }
+catch (  Exception e) {
+    XMLException error=new XMLException(e);
+    error.initCause(e);
+    throw error;
+  }
+}

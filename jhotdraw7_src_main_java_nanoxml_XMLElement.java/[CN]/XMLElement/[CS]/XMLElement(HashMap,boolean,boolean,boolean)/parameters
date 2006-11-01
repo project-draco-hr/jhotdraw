@@ -1,0 +1,4 @@
+HashMap entities
+boolean skipLeadingWhitespace
+boolean fillBasicConversionTable
+boolean ignoreCase

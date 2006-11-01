@@ -1,0 +1,20 @@
+{
+  ArrayList result=new ArrayList(this.children.size());
+  Iterator enm=this.children.iterator();
+  while (enm.hasNext()) {
+    IXMLElement child=(IXMLElement)enm.next();
+    String str=child.getName();
+    boolean found=(str != null) && (str.equals(name));
+    str=child.getNamespace();
+    if (str == null) {
+      found&=(name == null);
+    }
+ else {
+      found&=str.equals(namespace);
+    }
+    if (found) {
+      result.add(child);
+    }
+  }
+  return result;
+}

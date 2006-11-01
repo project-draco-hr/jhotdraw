@@ -1,0 +1,3 @@
+{
+  XMLUtil.validationError(systemID,lineNr,message,elementName,attributeName,attributeValue);
+}

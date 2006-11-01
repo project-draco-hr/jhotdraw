@@ -1,0 +1,6 @@
+{
+  int v=getIntAttribute(name,defaultValue);
+  if (v < min)   return min;
+  if (v > max)   return max;
+  return v;
+}

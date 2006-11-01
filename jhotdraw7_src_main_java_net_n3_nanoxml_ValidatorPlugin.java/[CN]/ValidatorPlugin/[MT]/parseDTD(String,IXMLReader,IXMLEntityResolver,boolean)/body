@@ -1,0 +1,3 @@
+{
+  this.delegate.parseDTD(publicID,reader,entityResolver,external);
+}

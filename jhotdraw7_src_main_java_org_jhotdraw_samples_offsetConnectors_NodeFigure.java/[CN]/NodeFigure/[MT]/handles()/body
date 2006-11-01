@@ -1,5 +1,5 @@
 {
-  ConnectionFigure prototype=new LineConnection();
+  ConnectionFigure prototype=new LineConnectionFigure();
   List handles=CollectionsFactory.current().createList();
   handles.add(new ConnectionHandle(this,RelativeLocator.east(),prototype));
   handles.add(new ConnectionHandle(this,RelativeLocator.west(),prototype));

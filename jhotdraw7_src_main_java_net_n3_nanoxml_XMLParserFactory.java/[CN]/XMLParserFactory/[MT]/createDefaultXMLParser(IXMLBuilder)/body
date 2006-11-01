@@ -1,0 +1,9 @@
+{
+  String className=XMLParserFactory.DEFAULT_CLASS;
+  try {
+    className=System.getProperty(XMLParserFactory.CLASS_KEY,XMLParserFactory.DEFAULT_CLASS);
+  }
+ catch (  AccessControlException e) {
+  }
+  return XMLParserFactory.createXMLParser(className,builder);
+}

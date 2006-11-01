@@ -1,6 +1,0 @@
-{
-  invalidate();
-  if (listener() != null) {
-    listener().figureChanged(new FigureChangeEvent(this));
-  }
-}

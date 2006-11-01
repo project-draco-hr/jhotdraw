@@ -1,0 +1,3 @@
+{
+  return getBooleanAttribute(name,"true","false",defaultValue);
+}

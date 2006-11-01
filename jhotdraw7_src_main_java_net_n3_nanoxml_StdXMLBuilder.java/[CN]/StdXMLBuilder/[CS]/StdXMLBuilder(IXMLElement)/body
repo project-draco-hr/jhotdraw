@@ -1,0 +1,5 @@
+{
+  this.stack=null;
+  this.root=null;
+  this.prototype=prototype;
+}

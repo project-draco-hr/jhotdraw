@@ -4,6 +4,6 @@
   palette.add(createToolButton(IMAGES + "TEXT","Text Tool",tool));
   tool=new CreationTool(this,new NodeFigure());
   palette.add(createToolButton(IMAGES + "RECT","Create Org Unit",tool));
-  tool=new ConnectionTool(this,new LineConnection());
+  tool=new ConnectionTool(this,new LineConnectionFigure());
   palette.add(createToolButton(IMAGES + "CONN","Connection Tool",tool));
 }

@@ -1,0 +1,5 @@
+{
+  XMLElement elem=createElement();
+  elem.setName(name);
+  return elem;
+}

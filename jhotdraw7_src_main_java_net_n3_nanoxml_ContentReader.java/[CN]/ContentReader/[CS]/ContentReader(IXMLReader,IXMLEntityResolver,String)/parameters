@@ -1,0 +1,3 @@
+IXMLReader reader
+IXMLEntityResolver resolver
+String buffer

@@ -1,0 +1,17 @@
+{
+  Iterator enm=this.attributes.iterator();
+  while (enm.hasNext()) {
+    XMLAttribute attr=(XMLAttribute)enm.next();
+    boolean found=attr.getName().equals(name);
+    if (namespace == null) {
+      found&=(attr.getNamespace() == null);
+    }
+ else {
+      found&=namespace.equals(attr.getNamespace());
+    }
+    if (found) {
+      return attr;
+    }
+  }
+  return null;
+}

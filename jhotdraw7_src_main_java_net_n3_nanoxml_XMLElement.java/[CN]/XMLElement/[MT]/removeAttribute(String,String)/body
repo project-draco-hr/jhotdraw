@@ -1,0 +1,16 @@
+{
+  for (int i=0; i < this.attributes.size(); i++) {
+    XMLAttribute attr=(XMLAttribute)this.attributes.get(i);
+    boolean found=attr.getName().equals(name);
+    if (namespace == null) {
+      found&=(attr.getNamespace() == null);
+    }
+ else {
+      found&=attr.getNamespace().equals(namespace);
+    }
+    if (found) {
+      this.attributes.remove(i);
+      return;
+    }
+  }
+}

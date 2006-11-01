@@ -1,0 +1,10 @@
+{
+  IXMLElement elt=(IXMLElement)this.stack.pop();
+  if (elt.getChildrenCount() == 1) {
+    IXMLElement child=elt.getChildAtIndex(0);
+    if (child.getName() == null) {
+      elt.setContent(child.getContent());
+      elt.removeChildAtIndex(0);
+    }
+  }
+}

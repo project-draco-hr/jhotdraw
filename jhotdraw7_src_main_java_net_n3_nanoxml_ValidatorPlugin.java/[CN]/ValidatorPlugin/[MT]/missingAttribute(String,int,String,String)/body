@@ -1,0 +1,3 @@
+{
+  XMLUtil.errorMissingAttribute(systemID,lineNr,elementName,attributeName);
+}

@@ -22,7 +22,7 @@
   palette.add(createToolButton(IMAGES + "DIAMOND","Diamond Tool",tool));
   tool=new UndoableTool(new CreationTool(this,new LineFigure()));
   palette.add(createToolButton(IMAGES + "LINE","Line Tool",tool));
-  tool=new UndoableTool(new ConnectionTool(this,new LineConnection()));
+  tool=new UndoableTool(new ConnectionTool(this,new LineConnectionFigure()));
   palette.add(createToolButton(IMAGES + "CONN","Connection Tool",tool));
   tool=new UndoableTool(new ConnectionTool(this,new ElbowConnection()));
   palette.add(createToolButton(IMAGES + "OCONN","Elbow Connection Tool",tool));
@@ -43,7 +43,7 @@
   palette.add(createToolButton(IMAGES + "RECT","Nested Figure Tool",tool));
   tool=new HTMLTextAreaTool(this,new HTMLTextAreaFigure());
   palette.add(createToolButton(IMAGES + "TEXTAREA","HTML TextArea Tool",tool));
-  LineConnection lineConnection=new LineConnection();
+  LineConnectionFigure lineConnection=new LineConnectionFigure();
   lineConnection.setStartDecoration(null);
   tool=new UndoableTool(new SplitConnectionTool(this,lineConnection));
   palette.add(createToolButton(IMAGES + "OCONN","Split Connection Tool",tool));

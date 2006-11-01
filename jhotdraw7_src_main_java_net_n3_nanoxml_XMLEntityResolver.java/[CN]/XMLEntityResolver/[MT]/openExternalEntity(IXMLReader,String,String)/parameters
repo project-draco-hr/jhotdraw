@@ -1,0 +1,3 @@
+IXMLReader xmlReader
+String publicID
+String systemID

@@ -1,5 +1,5 @@
 {
-  LineConnection line=ownerConnection();
+  LineConnectionFigure line=ownerConnection();
   int segment=Math.min(fSegment,line.pointCount() - 2);
   Point p1=line.pointAt(segment);
   Point p2=line.pointAt(segment + 1);

@@ -20,7 +20,7 @@
   palette.add(createToolButton(IMAGES + "DIAMOND","Diamond Tool",tool));
   tool=new CreationTool(this,new LineFigure());
   palette.add(createToolButton(IMAGES + "LINE","Line Tool",tool));
-  tool=new ConnectionTool(this,new LineConnection());
+  tool=new ConnectionTool(this,new LineConnectionFigure());
   palette.add(createToolButton(IMAGES + "CONN","Connection Tool",tool));
   tool=new ConnectionTool(this,new ElbowConnection());
   palette.add(createToolButton(IMAGES + "OCONN","Elbow Connection Tool",tool));

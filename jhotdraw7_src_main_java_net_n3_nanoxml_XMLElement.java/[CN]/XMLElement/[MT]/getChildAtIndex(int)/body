@@ -1,0 +1,3 @@
+{
+  return (IXMLElement)this.children.get(index);
+}

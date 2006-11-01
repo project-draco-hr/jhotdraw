@@ -1,0 +1,8 @@
+{
+  try {
+    return (ArrayList)this.children.clone();
+  }
+ catch (  Exception e) {
+    return null;
+  }
+}

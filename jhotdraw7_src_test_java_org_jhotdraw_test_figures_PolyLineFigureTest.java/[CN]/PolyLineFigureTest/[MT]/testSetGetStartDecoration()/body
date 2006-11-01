@@ -1,5 +1,5 @@
 {
-  org.jhotdraw.figures.LineDecoration[] tests={new ArrowTip(),null};
+  org.jhotdraw.draw.LineDecoration[] tests={new ArrowTip(),null};
   for (int i=0; i < tests.length; i++) {
     polylinefigure.setStartDecoration(tests[i]);
     assertEquals(tests[i],polylinefigure.getStartDecoration());

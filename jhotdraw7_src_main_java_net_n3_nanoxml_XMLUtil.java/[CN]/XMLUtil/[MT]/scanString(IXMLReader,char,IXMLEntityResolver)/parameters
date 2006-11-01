@@ -1,0 +1,3 @@
+IXMLReader reader
+char entityChar
+IXMLEntityResolver entityResolver

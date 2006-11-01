@@ -1,0 +1,3 @@
+IXMLElement xml
+boolean prettyPrint
+int indent

@@ -1,4 +1,0 @@
-{
-  ((FigureChangeListener)a).figureRemoved(e);
-  ((FigureChangeListener)b).figureRemoved(e);
-}
