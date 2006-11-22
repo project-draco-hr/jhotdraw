@@ -1,7 +1,5 @@
 {
-  if (!isClosed() && getNodeCount() >= 2) {
-    basicSetStartPoint(anchor);
-    basicSetEndPoint(lead);
-    invalidate();
-  }
+  basicSetStartPoint(anchor);
+  basicSetEndPoint(lead);
+  invalidate();
 }
