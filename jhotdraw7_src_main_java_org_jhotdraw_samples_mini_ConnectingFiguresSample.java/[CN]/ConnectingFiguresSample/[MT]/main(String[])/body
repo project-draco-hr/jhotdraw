@@ -1,0 +1,26 @@
+{
+  SwingUtilities.invokeLater(new Runnable(){
+    public void run(){
+      TextAreaFigure ta=new TextAreaFigure();
+      ta.basicSetBounds(new Point2D.Double(10,10),new Point2D.Double(100,100));
+      TextAreaFigure tb=new TextAreaFigure();
+      tb.basicSetBounds(new Point2D.Double(210,110),new Point2D.Double(300,200));
+      ConnectionFigure cf=new LineConnectionFigure();
+      cf.setLiner(new ElbowLiner());
+      cf.setStartConnector(ta.findConnector(Geom.center(ta.getBounds()),cf));
+      cf.setEndConnector(tb.findConnector(Geom.center(tb.getBounds()),cf));
+      Drawing drawing=new DefaultDrawing();
+      drawing.add(ta);
+      drawing.add(tb);
+      drawing.add(cf);
+      JFrame f=new JFrame("My Drawing");
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      f.setSize(400,300);
+      DrawingView view=new DefaultDrawingView();
+      view.setDrawing(drawing);
+      f.getContentPane().add(view.getContainer());
+      f.show();
+    }
+  }
+);
+}
