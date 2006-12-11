@@ -2,6 +2,14 @@
   BezierPath bp=new BezierPath();
   GeneralPath left=new GeneralPath();
   GeneralPath right=new GeneralPath();
+  if (s instanceof GeneralPath) {
+    left.setWindingRule(((GeneralPath)s).getWindingRule());
+    right.setWindingRule(((GeneralPath)s).getWindingRule());
+  }
+ else   if (s instanceof BezierPath) {
+    left.setWindingRule(((BezierPath)s).getWindingRule());
+    right.setWindingRule(((BezierPath)s).getWindingRule());
+  }
   double[] coords=new double[6];
   for (PathIterator i=s.getPathIterator(null,0.1d); !i.isDone(); i.next()) {
     int type=i.currentSegment(coords);

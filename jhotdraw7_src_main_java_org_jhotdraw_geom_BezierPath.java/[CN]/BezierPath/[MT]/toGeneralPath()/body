@@ -1,6 +1,6 @@
 {
   GeneralPath gp=new GeneralPath();
-  gp.setWindingRule(GeneralPath.WIND_EVEN_ODD);
+  gp.setWindingRule(windingRule);
   if (size() == 0) {
     gp.moveTo(0,0);
     gp.lineTo(0,0 + 1);
