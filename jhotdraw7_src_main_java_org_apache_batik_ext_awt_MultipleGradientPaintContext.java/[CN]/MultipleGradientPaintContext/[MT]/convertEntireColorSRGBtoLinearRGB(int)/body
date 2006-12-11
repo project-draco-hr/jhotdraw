@@ -1,0 +1,11 @@
+{
+  int a1, r1, g1, b1;
+  a1=(rgb >> 24) & 0xff;
+  r1=(rgb >> 16) & 0xff;
+  g1=(rgb >> 8) & 0xff;
+  b1=rgb & 0xff;
+  r1=SRGBtoLinearRGB[r1];
+  g1=SRGBtoLinearRGB[g1];
+  b1=SRGBtoLinearRGB[b1];
+  return ((a1 << 24) | (r1 << 16) | (g1 << 8)| b1);
+}

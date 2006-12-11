@@ -1,0 +1,19 @@
+{
+  if (cached != null) {
+    WritableRaster cras=(WritableRaster)cached.get();
+    if (cras != null) {
+      int cw=cras.getWidth();
+      int ch=cras.getHeight();
+      int iw=ras.getWidth();
+      int ih=ras.getHeight();
+      if (cw >= iw && ch >= ih) {
+        return;
+      }
+      if (cw * ch >= iw * ih) {
+        return;
+      }
+    }
+  }
+  cachedModel=cm;
+  cached=new WeakReference(ras);
+}

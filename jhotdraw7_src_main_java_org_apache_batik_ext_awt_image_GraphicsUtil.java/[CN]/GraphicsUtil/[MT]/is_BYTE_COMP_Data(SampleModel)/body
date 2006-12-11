@@ -1,0 +1,5 @@
+{
+  if (!(sm instanceof ComponentSampleModel))   return false;
+  if (sm.getDataType() != DataBuffer.TYPE_BYTE)   return false;
+  return true;
+}

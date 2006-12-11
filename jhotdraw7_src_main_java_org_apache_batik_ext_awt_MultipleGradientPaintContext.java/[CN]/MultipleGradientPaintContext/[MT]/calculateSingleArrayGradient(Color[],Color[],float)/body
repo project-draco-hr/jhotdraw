@@ -1,0 +1,51 @@
+{
+  isSimpleLookup=true;
+  int rgb1;
+  int rgb2;
+  int gradientsTot=1;
+  int aveA=0x008000;
+  int aveR=0x008000;
+  int aveG=0x008000;
+  int aveB=0x008000;
+  for (int i=0; i < gradients.length; i++) {
+    int nGradients=(int)((normalizedIntervals[i] / Imin) * 255f);
+    gradientsTot+=nGradients;
+    gradients[i]=new int[nGradients];
+    rgb1=loColors[i].getRGB();
+    rgb2=hiColors[i].getRGB();
+    interpolate(rgb1,rgb2,gradients[i]);
+    int argb=gradients[i][GRADIENT_SIZE / 2];
+    float norm=normalizedIntervals[i];
+    aveA+=(int)(((argb >> 8) & 0xFF0000) * norm);
+    aveR+=(int)(((argb) & 0xFF0000) * norm);
+    aveG+=(int)(((argb << 8) & 0xFF0000) * norm);
+    aveB+=(int)(((argb << 16) & 0xFF0000) * norm);
+    transparencyTest&=rgb1;
+    transparencyTest&=rgb2;
+  }
+  gradientAverage=(((aveA & 0xFF0000) << 8) | ((aveR & 0xFF0000)) | ((aveG & 0xFF0000) >> 8)| ((aveB & 0xFF0000) >> 16));
+  gradient=new int[gradientsTot];
+  int curOffset=0;
+  for (int i=0; i < gradients.length; i++) {
+    System.arraycopy(gradients[i],0,gradient,curOffset,gradients[i].length);
+    curOffset+=gradients[i].length;
+  }
+  gradient[gradient.length - 1]=hiColors[hiColors.length - 1].getRGB();
+  if (colorSpace == LinearGradientPaint.LINEAR_RGB) {
+    if (dataModel.getColorSpace() == ColorSpace.getInstance(ColorSpace.CS_sRGB)) {
+      for (int i=0; i < gradient.length; i++) {
+        gradient[i]=convertEntireColorLinearRGBtoSRGB(gradient[i]);
+      }
+      gradientAverage=convertEntireColorLinearRGBtoSRGB(gradientAverage);
+    }
+  }
+ else {
+    if (dataModel.getColorSpace() == ColorSpace.getInstance(ColorSpace.CS_LINEAR_RGB)) {
+      for (int i=0; i < gradient.length; i++) {
+        gradient[i]=convertEntireColorSRGBtoLinearRGB(gradient[i]);
+      }
+      gradientAverage=convertEntireColorSRGBtoLinearRGB(gradientAverage);
+    }
+  }
+  fastGradientArraySize=gradient.length - 1;
+}

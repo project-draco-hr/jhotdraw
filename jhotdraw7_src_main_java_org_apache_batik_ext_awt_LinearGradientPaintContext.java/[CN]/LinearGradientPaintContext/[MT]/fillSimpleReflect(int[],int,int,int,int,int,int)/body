@@ -1,0 +1,31 @@
+{
+  final float initConst=(dgdX * x) + gc;
+  final int[] grad=gradient;
+  for (int i=0; i < h; i++) {
+    float g=initConst + dgdY * (y + i);
+    g=g - 2 * ((int)(g / 2.0f));
+    float step=dgdX;
+    if (g < 0) {
+      g=-g;
+      step=-step;
+    }
+    step=step - 2 * ((int)step / 2.0f);
+    if (step < 0)     step+=2.0;
+    final int reflectMax=2 * fastGradientArraySize;
+    g*=fastGradientArraySize;
+    g+=0.5;
+    step*=fastGradientArraySize;
+    final int rowLimit=off + w;
+    while (off < rowLimit) {
+      int idx=(int)g;
+      if (idx >= reflectMax) {
+        g-=reflectMax;
+        idx-=reflectMax;
+      }
+      if (idx <= fastGradientArraySize)       pixels[off++]=grad[idx];
+ else       pixels[off++]=grad[reflectMax - idx];
+      g+=step;
+    }
+    off+=adjust;
+  }
+}

@@ -1,0 +1,6 @@
+Point2D start
+Point2D end
+float[] fractions
+Color[] colors
+CycleMethodEnum cycleMethod
+ColorSpaceEnum colorSpace

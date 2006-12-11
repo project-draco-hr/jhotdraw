@@ -1,0 +1,3 @@
+{
+  this(start,end,fractions,colors,cycleMethod,colorSpace,new AffineTransform());
+}

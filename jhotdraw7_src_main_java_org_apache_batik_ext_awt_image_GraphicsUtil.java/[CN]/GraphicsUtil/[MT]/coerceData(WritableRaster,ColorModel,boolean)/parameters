@@ -1,0 +1,3 @@
+WritableRaster wr
+ColorModel cm
+boolean newAlphaPreMult

@@ -1,0 +1,7 @@
+int pixels[]
+int off
+int adjust
+int x
+int y
+int w
+int h

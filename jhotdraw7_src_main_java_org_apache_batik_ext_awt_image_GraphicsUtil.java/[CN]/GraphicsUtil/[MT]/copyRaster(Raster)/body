@@ -1,0 +1,3 @@
+{
+  return copyRaster(ras,ras.getMinX(),ras.getMinY());
+}

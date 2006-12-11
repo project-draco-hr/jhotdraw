@@ -1,0 +1,3 @@
+{
+  this(new Point2D.Float(startX,startY),new Point2D.Float(endX,endY),fractions,colors,cycleMethod,SRGB);
+}

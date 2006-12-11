@@ -1,0 +1,7 @@
+float cx
+float cy
+float radius
+float fx
+float fy
+float[] fractions
+Color[] colors

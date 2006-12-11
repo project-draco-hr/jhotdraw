@@ -1,0 +1,105 @@
+{
+  if (cycleMethod == MultipleGradientPaint.NO_CYCLE) {
+    if (DEBUG)     System.out.println("NO_CYCLE");
+    float p1=position - (sz / 2);
+    float p2=position + (sz / 2);
+    if (p1 >= 1)     return gradientOverflow;
+    if (p2 <= 0)     return gradientUnderflow;
+    int interior;
+    float top_weight=0, bottom_weight=0, frac;
+    if (p2 >= 1) {
+      top_weight=(p2 - 1) / sz;
+      if (p1 <= 0) {
+        bottom_weight=-p1 / sz;
+        frac=1;
+        interior=gradientAverage;
+      }
+ else {
+        frac=1 - p1;
+        interior=getAntiAlias(p1,true,1,false,1 - p1,1);
+      }
+    }
+ else     if (p1 <= 0) {
+      bottom_weight=-p1 / sz;
+      frac=p2;
+      interior=getAntiAlias(0,true,p2,false,p2,1);
+    }
+ else     return getAntiAlias(p1,true,p2,false,sz,1);
+    int norm=(int)((1 << 16) * frac / sz);
+    int pA=(((interior >>> 20) & 0xFF0) * norm) >> 16;
+    int pR=(((interior >> 12) & 0xFF0) * norm) >> 16;
+    int pG=(((interior >> 4) & 0xFF0) * norm) >> 16;
+    int pB=(((interior << 4) & 0xFF0) * norm) >> 16;
+    if (bottom_weight != 0) {
+      int bPix=gradientUnderflow;
+      norm=(int)((1 << 16) * bottom_weight);
+      pA+=(((bPix >>> 20) & 0xFF0) * norm) >> 16;
+      pR+=(((bPix >> 12) & 0xFF0) * norm) >> 16;
+      pG+=(((bPix >> 4) & 0xFF0) * norm) >> 16;
+      pB+=(((bPix << 4) & 0xFF0) * norm) >> 16;
+    }
+    if (top_weight != 0) {
+      int tPix=gradientOverflow;
+      norm=(int)((1 << 16) * top_weight);
+      pA+=(((tPix >>> 20) & 0xFF0) * norm) >> 16;
+      pR+=(((tPix >> 12) & 0xFF0) * norm) >> 16;
+      pG+=(((tPix >> 4) & 0xFF0) * norm) >> 16;
+      pB+=(((tPix << 4) & 0xFF0) * norm) >> 16;
+    }
+    return (((pA & 0xFF0) << 20) | ((pR & 0xFF0) << 12) | ((pG & 0xFF0) << 4)| ((pB & 0xFF0) >> 4));
+  }
+  int intSz=(int)sz;
+  float weight=1f;
+  if (intSz != 0) {
+    sz-=intSz;
+    weight=sz / (intSz + sz);
+    if (weight < 0.1)     return gradientAverage;
+  }
+  if (sz > 0.99)   return gradientAverage;
+  float p1=position - (sz / 2);
+  float p2=position + (sz / 2);
+  if (DEBUG)   System.out.println("P1: " + p1 + " P2: "+ p2);
+  boolean p1_up=true;
+  boolean p2_up=false;
+  if (cycleMethod == MultipleGradientPaint.REPEAT) {
+    if (DEBUG)     System.out.println("REPEAT");
+    p1=p1 - (int)p1;
+    p2=p2 - (int)p2;
+    if (p1 < 0)     p1+=1;
+    if (p2 < 0)     p2+=1;
+  }
+ else {
+    if (DEBUG)     System.out.println("REFLECT");
+    if (p2 < 0) {
+      p1=-p1;
+      p1_up=!p1_up;
+      p2=-p2;
+      p2_up=!p2_up;
+    }
+ else     if (p1 < 0) {
+      p1=-p1;
+      p1_up=!p1_up;
+    }
+    int part1, part2;
+    part1=(int)p1;
+    p1=p1 - part1;
+    part2=(int)p2;
+    p2=p2 - part2;
+    if ((part1 & 0x01) == 1) {
+      p1=1 - p1;
+      p1_up=!p1_up;
+    }
+    if ((part2 & 0x01) == 1) {
+      p2=1 - p2;
+      p2_up=!p2_up;
+    }
+    if ((p1 > p2) && !p1_up && p2_up) {
+      float t=p1;
+      p1=p2;
+      p2=t;
+      p1_up=true;
+      p2_up=false;
+    }
+  }
+  return getAntiAlias(p1,p1_up,p2,p2_up,sz,weight);
+}

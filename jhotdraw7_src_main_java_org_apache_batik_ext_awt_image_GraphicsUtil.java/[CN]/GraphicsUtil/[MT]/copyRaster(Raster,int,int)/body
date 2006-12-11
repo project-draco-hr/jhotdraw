@@ -1,0 +1,41 @@
+{
+  WritableRaster ret=Raster.createWritableRaster(ras.getSampleModel(),new Point(0,0));
+  ret=ret.createWritableChild(ras.getMinX() - ras.getSampleModelTranslateX(),ras.getMinY() - ras.getSampleModelTranslateY(),ras.getWidth(),ras.getHeight(),minX,minY,null);
+  DataBuffer srcDB=ras.getDataBuffer();
+  DataBuffer retDB=ret.getDataBuffer();
+  if (srcDB.getDataType() != retDB.getDataType()) {
+    throw new IllegalArgumentException("New DataBuffer doesn't match original");
+  }
+  int len=srcDB.getSize();
+  int banks=srcDB.getNumBanks();
+  int[] offsets=srcDB.getOffsets();
+  for (int b=0; b < banks; b++) {
+switch (srcDB.getDataType()) {
+case DataBuffer.TYPE_BYTE:
+{
+        DataBufferByte srcDBT=(DataBufferByte)srcDB;
+        DataBufferByte retDBT=(DataBufferByte)retDB;
+        System.arraycopy(srcDBT.getData(b),offsets[b],retDBT.getData(b),offsets[b],len);
+      }
+case DataBuffer.TYPE_INT:
+{
+      DataBufferInt srcDBT=(DataBufferInt)srcDB;
+      DataBufferInt retDBT=(DataBufferInt)retDB;
+      System.arraycopy(srcDBT.getData(b),offsets[b],retDBT.getData(b),offsets[b],len);
+    }
+case DataBuffer.TYPE_SHORT:
+{
+    DataBufferShort srcDBT=(DataBufferShort)srcDB;
+    DataBufferShort retDBT=(DataBufferShort)retDB;
+    System.arraycopy(srcDBT.getData(b),offsets[b],retDBT.getData(b),offsets[b],len);
+  }
+case DataBuffer.TYPE_USHORT:
+{
+  DataBufferUShort srcDBT=(DataBufferUShort)srcDB;
+  DataBufferUShort retDBT=(DataBufferUShort)retDB;
+  System.arraycopy(srcDBT.getData(b),offsets[b],retDBT.getData(b),offsets[b],len);
+}
+}
+}
+return ret;
+}

@@ -1,0 +1,11 @@
+{
+  super(fractions,colors,cycleMethod,colorSpace,gradientTransform);
+  if (start == null || end == null) {
+    throw new NullPointerException("Start and end points must be" + "non-null");
+  }
+  if (start.equals(end)) {
+    throw new IllegalArgumentException("Start point cannot equal" + "endpoint");
+  }
+  this.start=(Point2D)start.clone();
+  this.end=(Point2D)end.clone();
+}

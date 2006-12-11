@@ -1,0 +1,15 @@
+{
+  super(fractions,colors,cycleMethod,colorSpace,gradientTransform);
+  if (center == null) {
+    throw new NullPointerException("Center point should not be null.");
+  }
+  if (focus == null) {
+    throw new NullPointerException("Focus point should not be null.");
+  }
+  if (radius <= 0) {
+    throw new IllegalArgumentException("radius should be greater than zero");
+  }
+  this.center=(Point2D)center.clone();
+  this.focus=(Point2D)focus.clone();
+  this.radius=radius;
+}

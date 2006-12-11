@@ -1,0 +1,3 @@
+{
+  this((float)gradientBounds.getX() + ((float)gradientBounds.getWidth() / 2),(float)gradientBounds.getY() + ((float)gradientBounds.getWidth() / 2),(float)gradientBounds.getWidth() / 2,fractions,colors);
+}

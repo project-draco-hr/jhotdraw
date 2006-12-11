@@ -1,0 +1,11 @@
+{
+  if (cm.hasAlpha() == false)   return cm;
+  if (cm.isAlphaPremultiplied() == newAlphaPreMult)   return cm;
+  if (newAlphaPreMult) {
+    multiplyAlpha(wr);
+  }
+ else {
+    divideAlpha(wr);
+  }
+  return coerceColorModel(cm,newAlphaPreMult);
+}

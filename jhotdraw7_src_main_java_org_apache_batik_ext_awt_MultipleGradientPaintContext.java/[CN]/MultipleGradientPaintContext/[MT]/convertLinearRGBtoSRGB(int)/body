@@ -1,0 +1,12 @@
+{
+  float input, output;
+  input=color / 255.0f;
+  if (input <= 0.0031308) {
+    output=input * 12.92f;
+  }
+ else {
+    output=(1.055f * ((float)Math.pow(input,(1.0 / 2.4)))) - 0.055f;
+  }
+  int o=Math.round(output * 255.0f);
+  return o;
+}

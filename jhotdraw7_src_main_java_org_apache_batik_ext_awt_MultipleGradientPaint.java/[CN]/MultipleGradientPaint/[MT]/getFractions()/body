@@ -1,0 +1,5 @@
+{
+  float fractions[]=new float[this.fractions.length];
+  System.arraycopy(this.fractions,0,fractions,0,this.fractions.length);
+  return fractions;
+}

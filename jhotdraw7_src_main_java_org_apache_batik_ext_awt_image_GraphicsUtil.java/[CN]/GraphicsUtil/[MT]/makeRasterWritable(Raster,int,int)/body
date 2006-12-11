@@ -1,0 +1,5 @@
+{
+  WritableRaster ret=Raster.createWritableRaster(ras.getSampleModel(),ras.getDataBuffer(),new Point(0,0));
+  ret=ret.createWritableChild(ras.getMinX() - ras.getSampleModelTranslateX(),ras.getMinY() - ras.getSampleModelTranslateY(),ras.getWidth(),ras.getHeight(),minX,minY,null);
+  return ret;
+}

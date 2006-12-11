@@ -1,0 +1,35 @@
+{
+  final float initConst=(dgdX * x) + gc;
+  if (fillMethod == ANTI_ALIAS_IMPL) {
+    for (int i=0; i < h; i++) {
+      float g=initConst + dgdY * (y + i);
+      final int rowLimit=off + w;
+      while (off < rowLimit) {
+        pixels[off++]=indexGradientAntiAlias(g,pixSz);
+        g+=dgdX;
+      }
+      off+=adjust;
+    }
+  }
+ else   if (!isSimpleLookup) {
+    if (cycleMethod == MultipleGradientPaint.NO_CYCLE) {
+      fillHardNoCycle(pixels,off,adjust,x,y,w,h);
+    }
+ else {
+      for (int i=0; i < h; i++) {
+        float g=initConst + dgdY * (y + i);
+        final int rowLimit=off + w;
+        while (off < rowLimit) {
+          pixels[off++]=indexIntoGradientsArrays(g);
+          g+=dgdX;
+        }
+        off+=adjust;
+      }
+    }
+  }
+ else {
+    if (cycleMethod == MultipleGradientPaint.NO_CYCLE)     fillSimpleNoCycle(pixels,off,adjust,x,y,w,h);
+ else     if (cycleMethod == MultipleGradientPaint.REPEAT)     fillSimpleRepeat(pixels,off,adjust,x,y,w,h);
+ else     fillSimpleReflect(pixels,off,adjust,x,y,w,h);
+  }
+}

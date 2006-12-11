@@ -1,0 +1,5 @@
+{
+  if (cm.isAlphaPremultiplied() == newAlphaPreMult)   return cm;
+  WritableRaster wr=cm.createCompatibleWritableRaster(1,1);
+  return cm.coerceData(wr,newAlphaPreMult);
+}

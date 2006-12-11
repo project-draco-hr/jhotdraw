@@ -1,0 +1,13 @@
+{
+switch (fillMethod) {
+case FIXED_POINT_IMPL:
+    fixedPointSimplestCaseNonCyclicFillRaster(pixels,off,adjust,x,y,w,h);
+  break;
+case ANTI_ALIAS_IMPL:
+antiAliasFillRaster(pixels,off,adjust,x,y,w,h);
+break;
+case DEFAULT_IMPL:
+default :
+cyclicCircularGradientFillRaster(pixels,off,adjust,x,y,w,h);
+}
+}

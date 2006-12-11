@@ -1,0 +1,125 @@
+{
+  final double constC=-(radiusSq) + (centerX * centerX) + (centerY * centerY);
+  final float precalc2=2 * centerY;
+  final float precalc3=-2 * centerX;
+  final float constX=(a00 * (x - .5f)) + (a01 * (y + .5f)) + a02;
+  final float constY=(a10 * (x - .5f)) + (a11 * (y + .5f)) + a12;
+  float X;
+  float Y;
+  int i, j;
+  int indexer=off - 1;
+  double[] prevGs=new double[w + 1];
+  double deltaXSq, deltaYSq;
+  double solutionX, solutionY;
+  double slope, yintcpt, A, B, C, det;
+  double intersectToFocusSq, currentToFocusSq;
+  double g00, g01, g10, g11;
+  X=constX - a01;
+  Y=constY - a11;
+  for (i=0; i <= w; i++) {
+    if (((X - focusX) > -0.000001) && ((X - focusX) < 0.000001)) {
+      solutionX=focusX;
+      solutionY=centerY;
+      solutionY+=(Y > focusY) ? trivial : -trivial;
+    }
+ else {
+      slope=(Y - focusY) / (X - focusX);
+      yintcpt=Y - (slope * X);
+      A=(slope * slope) + 1;
+      B=precalc3 + (-2 * slope * (centerY - yintcpt));
+      C=constC + (yintcpt * (yintcpt - precalc2));
+      det=Math.sqrt((B * B) - (4 * A * C));
+      solutionX=-B;
+      solutionX+=(X < focusX) ? -det : det;
+      solutionX=solutionX / (2 * A);
+      solutionY=(slope * solutionX) + yintcpt;
+    }
+    deltaXSq=solutionX - focusX;
+    deltaXSq=deltaXSq * deltaXSq;
+    deltaYSq=solutionY - focusY;
+    deltaYSq=deltaYSq * deltaYSq;
+    intersectToFocusSq=deltaXSq + deltaYSq;
+    deltaXSq=X - focusX;
+    deltaXSq=deltaXSq * deltaXSq;
+    deltaYSq=Y - focusY;
+    deltaYSq=deltaYSq * deltaYSq;
+    currentToFocusSq=deltaXSq + deltaYSq;
+    prevGs[i]=Math.sqrt(currentToFocusSq / intersectToFocusSq);
+    X+=a00;
+    Y+=a10;
+  }
+  for (j=0; j < h; j++) {
+    X=(a01 * j) + constX;
+    Y=(a11 * j) + constY;
+    g10=prevGs[0];
+    if (((X - focusX) > -0.000001) && ((X - focusX) < 0.000001)) {
+      solutionX=focusX;
+      solutionY=centerY;
+      solutionY+=(Y > focusY) ? trivial : -trivial;
+    }
+ else {
+      slope=(Y - focusY) / (X - focusX);
+      yintcpt=Y - (slope * X);
+      A=(slope * slope) + 1;
+      B=precalc3 + (-2 * slope * (centerY - yintcpt));
+      C=constC + (yintcpt * (yintcpt - precalc2));
+      det=Math.sqrt((B * B) - (4 * A * C));
+      solutionX=-B;
+      solutionX+=(X < focusX) ? -det : det;
+      solutionX=solutionX / (2 * A);
+      solutionY=(slope * solutionX) + yintcpt;
+    }
+    deltaXSq=solutionX - focusX;
+    deltaXSq=deltaXSq * deltaXSq;
+    deltaYSq=solutionY - focusY;
+    deltaYSq=deltaYSq * deltaYSq;
+    intersectToFocusSq=deltaXSq + deltaYSq;
+    deltaXSq=X - focusX;
+    deltaXSq=deltaXSq * deltaXSq;
+    deltaYSq=Y - focusY;
+    deltaYSq=deltaYSq * deltaYSq;
+    currentToFocusSq=deltaXSq + deltaYSq;
+    g11=Math.sqrt(currentToFocusSq / intersectToFocusSq);
+    prevGs[0]=g11;
+    X+=a00;
+    Y+=a10;
+    for (i=1; i <= w; i++) {
+      g00=g10;
+      g01=g11;
+      g10=prevGs[i];
+      if (((X - focusX) > -0.000001) && ((X - focusX) < 0.000001)) {
+        solutionX=focusX;
+        solutionY=centerY;
+        solutionY+=(Y > focusY) ? trivial : -trivial;
+      }
+ else {
+        slope=(Y - focusY) / (X - focusX);
+        yintcpt=Y - (slope * X);
+        A=(slope * slope) + 1;
+        B=precalc3 + (-2 * slope * (centerY - yintcpt));
+        C=constC + (yintcpt * (yintcpt - precalc2));
+        det=Math.sqrt((B * B) - (4 * A * C));
+        solutionX=-B;
+        solutionX+=(X < focusX) ? -det : det;
+        solutionX=solutionX / (2 * A);
+        solutionY=(slope * solutionX) + yintcpt;
+      }
+      deltaXSq=solutionX - focusX;
+      deltaXSq=deltaXSq * deltaXSq;
+      deltaYSq=solutionY - focusY;
+      deltaYSq=deltaYSq * deltaYSq;
+      intersectToFocusSq=deltaXSq + deltaYSq;
+      deltaXSq=X - focusX;
+      deltaXSq=deltaXSq * deltaXSq;
+      deltaYSq=Y - focusY;
+      deltaYSq=deltaYSq * deltaYSq;
+      currentToFocusSq=deltaXSq + deltaYSq;
+      g11=Math.sqrt(currentToFocusSq / intersectToFocusSq);
+      prevGs[i]=g11;
+      pixels[indexer + i]=indexGradientAntiAlias((float)((g00 + g01 + g10+ g11) / 4),(float)Math.max(Math.abs(g11 - g00),Math.abs(g10 - g01)));
+      X+=a00;
+      Y+=a10;
+    }
+    indexer+=(w + adjust);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  this(new Point2D.Float(cx,cy),radius,new Point2D.Float(fx,fy),fractions,colors,NO_CYCLE,SRGB);
+}

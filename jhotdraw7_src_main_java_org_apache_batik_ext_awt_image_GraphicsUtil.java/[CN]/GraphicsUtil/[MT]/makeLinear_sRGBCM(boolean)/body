@@ -1,0 +1,4 @@
+{
+  if (premult)   return Linear_sRGB_Pre;
+  return Linear_sRGB_Unpre;
+}

@@ -1,0 +1,5 @@
+{
+  Color colors[]=new Color[this.colors.length];
+  System.arraycopy(this.colors,0,colors,0,this.colors.length);
+  return colors;
+}
