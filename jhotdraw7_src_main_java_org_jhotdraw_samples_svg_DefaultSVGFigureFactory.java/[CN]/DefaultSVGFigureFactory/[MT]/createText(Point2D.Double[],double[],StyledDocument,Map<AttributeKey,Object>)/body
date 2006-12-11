@@ -1,0 +1,15 @@
+{
+  SVGText figure=new SVGText();
+  figure.basicSetCoordinates(coordinates);
+  figure.basicSetRotates(rotates);
+  try {
+    figure.setText(text.getText(0,text.getLength()));
+  }
+ catch (  BadLocationException e) {
+    InternalError ex=new InternalError(e.getMessage());
+    ex.initCause(e);
+    throw ex;
+  }
+  figure.setAttributes(a);
+  return figure;
+}

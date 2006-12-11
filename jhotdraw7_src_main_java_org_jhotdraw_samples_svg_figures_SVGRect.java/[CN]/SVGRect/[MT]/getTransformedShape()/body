@@ -1,0 +1,14 @@
+{
+  if (cachedTransformedShape == null) {
+    if (getArcHeight() == 0 || getArcWidth() == 0) {
+      cachedTransformedShape=roundrect.getBounds2D();
+    }
+ else {
+      cachedTransformedShape=(Shape)roundrect.clone();
+    }
+    if (TRANSFORM.get(this) != null) {
+      cachedTransformedShape=TRANSFORM.get(this).createTransformedShape(cachedTransformedShape);
+    }
+  }
+  return cachedTransformedShape;
+}

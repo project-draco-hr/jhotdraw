@@ -1,0 +1,4 @@
+{
+  coordinates=new Point2D.Double[]{new Point2D.Double(anchor.x,anchor.y)};
+  rotates=new double[]{0d};
+}

@@ -1,0 +1,3 @@
+{
+  return getDimensionFromValue(elem,elem.getAttribute(attributeName,"0"));
+}

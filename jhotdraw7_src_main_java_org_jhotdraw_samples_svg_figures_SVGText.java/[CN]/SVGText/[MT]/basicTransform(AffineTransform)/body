@@ -1,0 +1,16 @@
+{
+  invalidateTransformedShape();
+  if (TRANSFORM.get(this) != null || (tx.getType() & (AffineTransform.TYPE_TRANSLATION | AffineTransform.TYPE_MASK_SCALE)) != tx.getType()) {
+    if (TRANSFORM.get(this) == null) {
+      TRANSFORM.set(this,(AffineTransform)tx.clone());
+    }
+ else {
+      TRANSFORM.get(this).preConcatenate(tx);
+    }
+  }
+ else {
+    for (int i=0; i < coordinates.length; i++) {
+      tx.transform(coordinates[i],coordinates[i]);
+    }
+  }
+}

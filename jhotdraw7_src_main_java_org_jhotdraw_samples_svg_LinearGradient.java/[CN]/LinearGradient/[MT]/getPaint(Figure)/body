@@ -1,0 +1,22 @@
+{
+  if (stopColors.length == 0) {
+    return Color.black;
+  }
+  Point2D.Double p1;
+  Point2D.Double p2;
+  if (isRelativeToFigureBounds) {
+    Rectangle2D.Double bounds=f.getBounds();
+    p1=new Point2D.Double(bounds.x + bounds.width * x1,bounds.y + bounds.height * y1);
+    p2=new Point2D.Double(bounds.x + bounds.width * x2,bounds.y + bounds.height * y2);
+  }
+ else {
+    p1=new Point2D.Double(x1,y1);
+    p2=new Point2D.Double(x2,y2);
+  }
+  float[] fractions=new float[stopColors.length];
+  for (int i=0; i < stopColors.length; i++) {
+    fractions[i]=(float)stopOffsets[i];
+  }
+  LinearGradientPaint gp=new LinearGradientPaint(p1,p2,fractions,stopColors);
+  return gp;
+}

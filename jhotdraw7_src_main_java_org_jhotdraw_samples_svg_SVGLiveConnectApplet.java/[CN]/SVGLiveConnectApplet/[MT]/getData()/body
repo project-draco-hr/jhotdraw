@@ -1,7 +1,7 @@
 {
   CharArrayWriter out=new CharArrayWriter();
   try {
-    NanoXMLDOMOutput domo=new NanoXMLDOMOutput(new SVGFigureFactory());
+    NanoXMLDOMOutput domo=new NanoXMLDOMOutput(new SVGFigureFactoryOld());
     domo.openElement("SVGDraw");
     domo.writeObject(getDrawing());
     domo.closeElement();

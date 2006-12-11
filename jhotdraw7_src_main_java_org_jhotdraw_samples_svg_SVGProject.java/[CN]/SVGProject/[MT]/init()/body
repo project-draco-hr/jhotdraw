@@ -5,7 +5,7 @@
   scrollPane.setLayout(new PlacardScrollPaneLayout());
   scrollPane.setBorder(new EmptyBorder(0,0,0,0));
   setEditor(new DefaultDrawingEditor());
-  view.setDOMFactory(new SVGFigureFactory());
+  view.setDOMFactory(new SVGFigureFactoryOld());
   undo=new UndoRedoManager();
   view.setDrawing(new SVGDrawing());
   view.getDrawing().addUndoableEditListener(undo);

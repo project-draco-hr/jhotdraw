@@ -32,7 +32,7 @@
   }
   value=getInheritedAttribute("stroke-miterlimit",in,styles);
   if (value != null) {
-    STROKE_MITER_LIMIT_FACTOR.set(f,Double.valueOf(value));
+    STROKE_MITER_LIMIT.set(f,Double.valueOf(value));
   }
   value=getInheritedAttribute("stroke-dasharray",in,styles);
   if (value != null) {
@@ -53,6 +53,6 @@
   }
   value=getInheritedAttribute("text-anchor",in,styles);
   if (value != null) {
-    SVGText.TEXT_ANCHOR.set(f,Enum.valueOf(SVGText.TextAnchor.class,value.toUpperCase()));
+    TEXT_ANCHOR.set(f,Enum.valueOf(SVGAttributeKeys.TextAnchor.class,value.toUpperCase()));
   }
 }

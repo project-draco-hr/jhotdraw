@@ -1,5 +1,0 @@
-{
-  out.addAttribute("x",origin.x);
-  out.addAttribute("y",origin.y);
-  out.addText(getText());
-}

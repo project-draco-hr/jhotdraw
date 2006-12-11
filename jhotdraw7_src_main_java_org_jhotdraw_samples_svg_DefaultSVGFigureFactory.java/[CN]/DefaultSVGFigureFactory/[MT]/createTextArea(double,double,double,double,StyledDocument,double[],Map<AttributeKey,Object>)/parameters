@@ -1,0 +1,7 @@
+double x
+double y
+double w
+double h
+StyledDocument text
+double[] rotate
+Map<AttributeKey,Object> a

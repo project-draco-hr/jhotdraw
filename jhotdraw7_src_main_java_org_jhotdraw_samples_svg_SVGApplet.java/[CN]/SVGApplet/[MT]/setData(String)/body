@@ -2,7 +2,7 @@
   if (text != null && text.length() > 0) {
     StringReader in=new StringReader(text);
     try {
-      NanoXMLDOMInput domi=new NanoXMLDOMInput(new SVGFigureFactory(),in);
+      NanoXMLDOMInput domi=new NanoXMLDOMInput(new SVGFigureFactoryOld(),in);
       domi.openElement("SVGDraw");
       setDrawing((Drawing)domi.readObject(0));
     }

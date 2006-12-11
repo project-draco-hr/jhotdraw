@@ -1,3 +1,6 @@
 {
+  if (STROKE_GRADIENT.get(this) != null) {
+    g.setPaint(STROKE_GRADIENT.get(this).getPaint(this));
+  }
   g.draw(path);
 }

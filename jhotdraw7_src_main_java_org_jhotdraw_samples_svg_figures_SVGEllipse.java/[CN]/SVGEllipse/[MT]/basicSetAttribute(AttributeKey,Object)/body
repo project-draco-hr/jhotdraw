@@ -1,0 +1,6 @@
+{
+  if (key == SVGAttributeKeys.TRANSFORM) {
+    invalidateTransformedShape();
+  }
+  super.basicSetAttribute(key,newValue);
+}

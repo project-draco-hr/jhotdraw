@@ -1,0 +1,34 @@
+{
+  if (cachedTransformedShape == null) {
+    String text=getText();
+    if (text == null || text.length() == 0) {
+      text=" ";
+    }
+    FontRenderContext frc=getFontRenderContext();
+    HashMap<TextAttribute,Object> textAttributes=new HashMap<TextAttribute,Object>();
+    textAttributes.put(TextAttribute.FONT,getFont());
+    if (FONT_UNDERLINED.get(this)) {
+      textAttributes.put(TextAttribute.UNDERLINE,TextAttribute.UNDERLINE_LOW_ONE_PIXEL);
+    }
+    TextLayout textLayout=new TextLayout(text,textAttributes,frc);
+    AffineTransform tx=new AffineTransform();
+    tx.translate(coordinates[0].x,coordinates[0].y);
+switch (TEXT_ANCHOR.get(this)) {
+case END:
+      tx.translate(-textLayout.getAdvance(),0);
+    break;
+case MIDDLE:
+  tx.translate(-textLayout.getAdvance() / 2d,0);
+break;
+case START:
+break;
+}
+tx.rotate(rotates[0]);
+if (TRANSFORM.get(this) != null) {
+tx.preConcatenate(TRANSFORM.get(this));
+}
+cachedTransformedShape=tx.createTransformedShape(textLayout.getOutline(tx));
+cachedTransformedShape=textLayout.getOutline(tx);
+}
+return cachedTransformedShape;
+}

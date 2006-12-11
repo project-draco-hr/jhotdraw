@@ -1,0 +1,7 @@
+{
+  LinearGradient g=new LinearGradient();
+  g.setGradientVector(x1,y1,x2,y2);
+  g.setStops(stopOffsets,stopColors);
+  g.setRelativeToFigureBounds(isRelativeToFigureBounds);
+  return g;
+}

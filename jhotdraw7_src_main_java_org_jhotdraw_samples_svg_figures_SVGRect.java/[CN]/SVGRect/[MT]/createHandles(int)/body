@@ -1,0 +1,6 @@
+{
+  LinkedList<Handle> handles=(LinkedList<Handle>)super.createHandles(detailLevel);
+  handles.add(new SVGRectRadiusHandle(this));
+  handles.add(new RotateHandle(this));
+  return handles;
+}

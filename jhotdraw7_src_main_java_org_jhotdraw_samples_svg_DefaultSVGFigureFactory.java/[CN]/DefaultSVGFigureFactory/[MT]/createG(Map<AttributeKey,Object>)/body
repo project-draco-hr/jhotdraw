@@ -1,0 +1,4 @@
+{
+  SVGGroup figure=new SVGGroup();
+  return figure;
+}

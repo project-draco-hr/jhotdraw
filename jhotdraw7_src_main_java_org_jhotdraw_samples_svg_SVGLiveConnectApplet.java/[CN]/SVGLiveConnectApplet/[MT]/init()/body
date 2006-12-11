@@ -15,7 +15,7 @@
       Object result;
       try {
         if (getParameter("data") != null && getParameter("data").length() > 0) {
-          NanoXMLDOMInput domi=new NanoXMLDOMInput(new SVGFigureFactory(),new StringReader(getParameter("data")));
+          NanoXMLDOMInput domi=new NanoXMLDOMInput(new SVGFigureFactoryOld(),new StringReader(getParameter("data")));
           result=domi.readObject(0);
         }
  else         if (getParameter("datafile") != null) {
@@ -23,7 +23,7 @@
           try {
             URL url=new URL(getDocumentBase(),getParameter("datafile"));
             in=url.openConnection().getInputStream();
-            NanoXMLDOMInput domi=new NanoXMLDOMInput(new SVGFigureFactory(),in);
+            NanoXMLDOMInput domi=new NanoXMLDOMInput(new SVGFigureFactoryOld(),in);
             result=domi.readObject(0);
           }
   finally {

@@ -1,4 +1,5 @@
 {
+  System.setProperty("apple.awt.graphics.UseQuartz","false");
   Application app=new DefaultOSXApplication();
   SVGApplicationModel model=new SVGApplicationModel();
   model.setName("SVG Draw");

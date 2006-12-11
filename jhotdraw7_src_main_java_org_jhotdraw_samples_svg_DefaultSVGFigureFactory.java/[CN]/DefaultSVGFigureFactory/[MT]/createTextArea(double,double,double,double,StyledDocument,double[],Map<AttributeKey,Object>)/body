@@ -1,0 +1,14 @@
+{
+  SVGTextArea figure=new SVGTextArea();
+  figure.basicSetBounds(new Point2D.Double(x,y),new Point2D.Double(x + w,y + h));
+  try {
+    figure.setText(text.getText(0,text.getLength()));
+  }
+ catch (  BadLocationException e) {
+    InternalError ex=new InternalError(e.getMessage());
+    ex.initCause(e);
+    throw ex;
+  }
+  figure.setAttributes(a);
+  return figure;
+}

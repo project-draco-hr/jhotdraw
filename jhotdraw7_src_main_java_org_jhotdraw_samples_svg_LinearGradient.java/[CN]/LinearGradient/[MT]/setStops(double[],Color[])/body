@@ -1,0 +1,4 @@
+{
+  this.stopOffsets=offsets;
+  this.stopColors=colors;
+}
