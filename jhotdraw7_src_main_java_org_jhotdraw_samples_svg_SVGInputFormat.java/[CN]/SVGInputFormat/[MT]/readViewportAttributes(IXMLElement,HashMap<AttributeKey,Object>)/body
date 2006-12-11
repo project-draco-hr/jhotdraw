@@ -1,0 +1,7 @@
+{
+  Object value;
+  value=readAttribute(elem,"viewport-fill","none");
+  System.out.println("  viewport-fill=" + value);
+  value=readAttribute(elem,"viewport-fill-opacity","1.0");
+  System.out.println("  viewport-fill-opacity=" + value);
+}

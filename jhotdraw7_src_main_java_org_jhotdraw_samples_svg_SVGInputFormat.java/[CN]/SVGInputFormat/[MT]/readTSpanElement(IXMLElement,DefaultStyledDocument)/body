@@ -1,0 +1,26 @@
+{
+  try {
+    if (elem.getContent() != null) {
+      doc.insertString(0,toText(elem,elem.getContent()),null);
+    }
+ else {
+      for (      Object childObj : elem.getChildren()) {
+        IXMLElement node=(IXMLElement)childObj;
+        if (node.getName() == null) {
+          doc.insertString(0,toText(node,node.getContent()),null);
+        }
+ else         if (node.getName().equals("tspan")) {
+          readTSpanElement(node,doc);
+        }
+ else {
+          System.out.println("  text node " + node.getName());
+        }
+      }
+    }
+  }
+ catch (  BadLocationException e) {
+    InternalError ex=new InternalError(e.getMessage());
+    ex.initCause(e);
+    throw ex;
+  }
+}

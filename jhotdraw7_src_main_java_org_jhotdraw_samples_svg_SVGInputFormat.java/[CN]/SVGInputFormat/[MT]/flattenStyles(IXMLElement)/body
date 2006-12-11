@@ -1,0 +1,17 @@
+{
+  if (elem.getNamespace() == null || elem.getNamespace().equals(SVG_NAMESPACE)) {
+    String style=elem.getAttribute("style",null);
+    if (style != null) {
+      for (      String styleProperty : style.split(";")) {
+        String[] stylePropertyElements=styleProperty.split(":");
+        if (stylePropertyElements.length == 2 && !elem.hasAttribute(stylePropertyElements[0],SVG_NAMESPACE)) {
+          elem.setAttribute(stylePropertyElements[0],SVG_NAMESPACE,stylePropertyElements[1]);
+        }
+      }
+    }
+    for (int i=0; i < elem.getChildrenCount(); i++) {
+      IXMLElement child=elem.getChildAtIndex(i);
+      flattenStyles(child);
+    }
+  }
+}

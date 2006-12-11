@@ -1,0 +1,5 @@
+{
+  Object value;
+  value=readInheritAttribute(elem,"line-increment","auto");
+  System.out.println("line-increment=" + value);
+}

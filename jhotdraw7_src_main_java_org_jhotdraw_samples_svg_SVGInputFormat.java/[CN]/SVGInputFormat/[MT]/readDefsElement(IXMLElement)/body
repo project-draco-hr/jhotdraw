@@ -1,0 +1,6 @@
+{
+  for (int i=0; i < elem.getChildrenCount(); i++) {
+    IXMLElement child=elem.getChildAtIndex(i);
+    Figure childFigure=readElement(child);
+  }
+}

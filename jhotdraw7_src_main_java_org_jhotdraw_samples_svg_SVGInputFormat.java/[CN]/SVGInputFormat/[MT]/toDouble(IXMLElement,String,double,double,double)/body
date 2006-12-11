@@ -1,0 +1,9 @@
+{
+  try {
+    double d=Double.valueOf(value);
+    return Math.max(Math.min(d,max),min);
+  }
+ catch (  NumberFormatException e) {
+    return defaultValue;
+  }
+}

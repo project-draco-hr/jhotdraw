@@ -1,0 +1,70 @@
+{
+  Object objectValue;
+  String value;
+  double doubleValue;
+  objectValue=toPaint(elem,readInheritAttribute(elem,"fill","black"));
+  if (objectValue instanceof Color) {
+    a.put(SVGAttributeKeys.FILL_COLOR,(Color)objectValue);
+  }
+ else   if (objectValue instanceof Gradient) {
+    a.put(SVGAttributeKeys.FILL_GRADIENT,(Gradient)objectValue);
+  }
+ else   if (objectValue == null) {
+    a.put(SVGAttributeKeys.FILL_COLOR,null);
+  }
+ else {
+    a.put(SVGAttributeKeys.FILL_COLOR,null);
+    System.out.println("  fill=" + objectValue);
+  }
+  doubleValue=toDouble(elem,readInheritAttribute(elem,"fill-opacity","1"),1d,0d,1d);
+  if (doubleValue != 1d) {
+    Color c=(Color)a.get(SVGAttributeKeys.FILL_COLOR);
+    if (c != null) {
+      a.put(SVGAttributeKeys.FILL_COLOR,new Color((c.getRGB() & 0xffffff) | ((int)(255 * doubleValue) << 24),true));
+    }
+  }
+  value=readInheritAttribute(elem,"fill-rule","nonzero");
+  a.put(SVGAttributeKeys.WINDING_RULE,fillRuleMap.get(value));
+  objectValue=toPaint(elem,readInheritAttribute(elem,"stroke","none"));
+  if (objectValue instanceof Color) {
+    a.put(SVGAttributeKeys.STROKE_COLOR,(Color)objectValue);
+  }
+ else   if (objectValue instanceof Gradient) {
+    a.put(SVGAttributeKeys.STROKE_GRADIENT,(Gradient)objectValue);
+  }
+ else   if (objectValue == null) {
+    a.put(SVGAttributeKeys.STROKE_COLOR,null);
+  }
+ else {
+    a.put(SVGAttributeKeys.STROKE_COLOR,null);
+    System.out.println("  stroke=" + objectValue);
+  }
+  value=readInheritAttribute(elem,"stroke-dasharray","none");
+  if (!value.equals("none")) {
+    String[] values=toCommaSeparatedArray(elem,value);
+    double[] dashes=new double[values.length];
+    for (int i=0; i < values.length; i++) {
+      dashes[i]=toNumber(elem,values[i]);
+    }
+    a.put(SVGAttributeKeys.STROKE_DASHES,dashes);
+  }
+  doubleValue=toNumber(elem,readInheritAttribute(elem,"stroke-dashoffset","0"));
+  a.put(SVGAttributeKeys.STROKE_DASH_PHASE,doubleValue);
+  a.put(SVGAttributeKeys.IS_STROKE_DASH_FACTOR,false);
+  value=readInheritAttribute(elem,"stroke-linecap","butt");
+  a.put(SVGAttributeKeys.STROKE_CAP,strokeLinecapMap.get(value));
+  value=readInheritAttribute(elem,"stroke-linejoin","miter");
+  a.put(SVGAttributeKeys.STROKE_JOIN,strokeLinejoinMap.get(value));
+  doubleValue=toDouble(elem,readInheritAttribute(elem,"stroke-miterlimit","4"));
+  a.put(SVGAttributeKeys.STROKE_MITER_LIMIT,doubleValue);
+  a.put(SVGAttributeKeys.IS_STROKE_MITER_LIMIT_FACTOR,false);
+  doubleValue=toDouble(elem,readInheritAttribute(elem,"stroke-opacity","1"),1d,0d,1d);
+  if (doubleValue != 1d) {
+    Color c=(Color)a.get(SVGAttributeKeys.STROKE_COLOR);
+    if (c != null) {
+      a.put(SVGAttributeKeys.STROKE_COLOR,new Color((c.getRGB() & 0xffffff) | ((int)(255 * doubleValue) << 24),true));
+    }
+  }
+  doubleValue=toNumber(elem,readInheritAttribute(elem,"stroke-width","1"));
+  a.put(SVGAttributeKeys.STROKE_WIDTH,doubleValue);
+}

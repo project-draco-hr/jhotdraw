@@ -1,0 +1,5 @@
+{
+  Object value;
+  value=readAttribute(elem,"opacity","1");
+  System.out.println("  opacity=" + value);
+}

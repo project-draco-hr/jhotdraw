@@ -1,0 +1,31 @@
+{
+  HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+  readCoreAttributes(elem,a);
+  readTransformAttribute(elem,a);
+  readShapeAttributes(elem,a);
+  String href=elem.getAttribute("xlink:href",null);
+  if (href != null && href.startsWith("#")) {
+    IXMLElement refElem=identifiedElements.get(href.substring(1));
+    if (refElem == null) {
+      System.out.println("SVGInputFormat couldntt find href for <use> element:" + href);
+    }
+ else {
+      Object obj=readElement(refElem);
+      if (obj instanceof Figure) {
+        Figure figure=(Figure)((Figure)obj).clone();
+        for (        Map.Entry<AttributeKey,Object> entry : a.entrySet()) {
+          if (!figure.getAttributes().containsKey(entry.getKey())) {
+            figure.setAttribute(entry.getKey(),entry.getValue());
+          }
+        }
+        AffineTransform tx=new AffineTransform();
+        double x=toNumber(elem,readAttribute(elem,"x","0"));
+        double y=toNumber(elem,readAttribute(elem,"y","0"));
+        tx.translate(x,y);
+        figure.basicTransform(tx);
+        return figure;
+      }
+    }
+  }
+  return null;
+}

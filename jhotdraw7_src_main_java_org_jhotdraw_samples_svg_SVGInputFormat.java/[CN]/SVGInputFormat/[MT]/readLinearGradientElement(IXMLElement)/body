@@ -1,0 +1,26 @@
+{
+  HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+  readCoreAttributes(elem,a);
+  double x1=toNumber(elem,readAttribute(elem,"x1","0"));
+  double y1=toNumber(elem,readAttribute(elem,"y1","0"));
+  double x2=toNumber(elem,readAttribute(elem,"x2","1"));
+  double y2=toNumber(elem,readAttribute(elem,"y2","0"));
+  boolean isRelativeToFigureBounds=readAttribute(elem,"gradientUnits","objectBoundingBox").equals("objectBoundingBox");
+  ArrayList stops=elem.getChildrenNamed("stop",SVG_NAMESPACE);
+  if (stops.size() == 0) {
+    stops=elem.getChildrenNamed("stop");
+  }
+  double[] stopOffsets=new double[stops.size()];
+  Color[] stopColors=new Color[stops.size()];
+  for (int i=0; i < stops.size(); i++) {
+    IXMLElement stopElem=(IXMLElement)stops.get(i);
+    stopOffsets[i]=toDouble(stopElem,readAttribute(stopElem,"offset","0"),0,0,1);
+    stopColors[i]=toColor(stopElem,readAttribute(stopElem,"stop-color","black"));
+    double doubleValue=toDouble(stopElem,readAttribute(stopElem,"stop-opacity","1"),1,0,1);
+    if (doubleValue != 1) {
+      stopColors[i]=new Color(((int)(doubleValue * 255) << 24) | (stopColors[i].getRGB() & 0xffffff),true);
+    }
+  }
+  Gradient gradient=factory.createLinearGradient(x1,y1,x2,y2,stopOffsets,stopColors,isRelativeToFigureBounds);
+  elementObjects.put(elem,gradient);
+}

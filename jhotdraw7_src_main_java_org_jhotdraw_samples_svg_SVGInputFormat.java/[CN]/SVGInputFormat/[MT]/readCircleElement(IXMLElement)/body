@@ -1,0 +1,12 @@
+{
+  HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+  readCoreAttributes(elem,a);
+  readTransformAttribute(elem,a);
+  readShapeAttributes(elem,a);
+  double cx=toNumber(elem,readAttribute(elem,"cx","0"));
+  double cy=toNumber(elem,readAttribute(elem,"cy","0"));
+  double r=toNumber(elem,readAttribute(elem,"r","0"));
+  Figure figure=factory.createCircle(cx,cy,r,a);
+  elementObjects.put(elem,figure);
+  return figure;
+}

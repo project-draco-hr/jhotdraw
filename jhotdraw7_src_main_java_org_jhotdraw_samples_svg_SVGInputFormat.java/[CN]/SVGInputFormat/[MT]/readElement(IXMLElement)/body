@@ -1,0 +1,68 @@
+{
+  Figure f=null;
+  if (elem.getNamespace() == null || elem.getNamespace().equals(SVG_NAMESPACE)) {
+    String name=elem.getName();
+    if (name.equals("circle")) {
+      f=readCircleElement(elem);
+    }
+ else     if (name.equals("defs")) {
+      readDefsElement(elem);
+      f=null;
+    }
+ else     if (name.equals("ellipse")) {
+      f=readEllipseElement(elem);
+    }
+ else     if (name.equals("svg")) {
+      f=readGElement(elem);
+    }
+ else     if (name.equals("g")) {
+      f=readGElement(elem);
+    }
+ else     if (name.equals("line")) {
+      f=readLineElement(elem);
+    }
+ else     if (name.equals("linearGradient")) {
+      readLinearGradientElement(elem);
+      f=null;
+    }
+ else     if (name.equals("path")) {
+      f=readPathElement(elem);
+    }
+ else     if (name.equals("polygon")) {
+      f=readPolygonElement(elem);
+    }
+ else     if (name.equals("polyline")) {
+      f=readPolylineElement(elem);
+    }
+ else     if (name.equals("radialGradient")) {
+      readRadialGradientElement(elem);
+      f=null;
+    }
+ else     if (name.equals("rect")) {
+      f=readRectElement(elem);
+    }
+ else     if (name.equals("solidColor")) {
+      readSolidColorElement(elem);
+      f=null;
+    }
+ else     if (name.equals("text")) {
+      f=readTextElement(elem);
+    }
+ else     if (name.equals("use")) {
+      f=readUseElement(elem);
+    }
+ else {
+      System.out.println("<" + name + ">");
+    }
+  }
+  if (f instanceof SVGFigure) {
+    if (((SVGFigure)f).isEmpty()) {
+      System.out.println("Empty figure " + f);
+      return null;
+    }
+  }
+ else   if (f != null) {
+    System.out.println("not an SVGFigure " + f);
+  }
+  return f;
+}

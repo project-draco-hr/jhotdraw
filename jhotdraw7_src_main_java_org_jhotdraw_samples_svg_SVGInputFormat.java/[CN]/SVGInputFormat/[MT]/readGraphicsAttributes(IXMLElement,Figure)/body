@@ -1,0 +1,17 @@
+{
+  Object value;
+  value=readAttribute(elem,"display","inline");
+  System.out.println("display=" + value);
+  value=readInheritAttribute(elem,"image-rendering","auto");
+  System.out.println("image-rendering=" + value);
+  value=readInheritAttribute(elem,"pointer-events","visiblePainted");
+  System.out.println("pointer-events=" + value);
+  value=readInheritAttribute(elem,"shape-rendering","auto");
+  System.out.println("shape-rendering=" + value);
+  value=readInheritAttribute(elem,"text-rendering","auto");
+  System.out.println("text-rendering=" + value);
+  value=readAttribute(elem,"vector-effect","none");
+  System.out.println("vector-effect=" + value);
+  value=readInheritAttribute(elem,"visibility",null);
+  System.out.println("visibility=" + value);
+}

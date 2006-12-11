@@ -1,0 +1,9 @@
+{
+  Object value;
+  value=readInheritAttribute(elem,"text-anchor","start");
+  a.put(SVGAttributeKeys.TEXT_ANCHOR,textAnchorMap.get(value));
+  value=readInheritAttribute(elem,"display-align","auto");
+  System.out.println("display-align=" + value);
+  value=readInheritAttribute(elem,"text-align","start");
+  System.out.println("text-align=" + value);
+}

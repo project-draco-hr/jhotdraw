@@ -1,0 +1,18 @@
+{
+  HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+  readCoreAttributes(elem,a);
+  readTransformAttribute(elem,a);
+  AffineTransform transform=(AffineTransform)a.get(SVGAttributeKeys.TRANSFORM);
+  CompositeFigure g=factory.createG(a);
+  for (int i=0; i < elem.getChildrenCount(); i++) {
+    IXMLElement child=elem.getChildAtIndex(i);
+    Figure childFigure=readElement(child);
+    if (childFigure != null) {
+      g.add(childFigure);
+    }
+  }
+  if (transform != null) {
+    g.basicTransform(transform);
+  }
+  return g;
+}

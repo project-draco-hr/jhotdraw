@@ -1,0 +1,28 @@
+{
+  String value=null;
+  if (elem.hasAttribute(attributeName,SVG_NAMESPACE)) {
+    value=elem.getAttribute(attributeName,SVG_NAMESPACE,defaultValue);
+  }
+ else   if (elem.hasAttribute(attributeName)) {
+    value=elem.getAttribute(attributeName,defaultValue);
+  }
+ else {
+    value=defaultValue;
+  }
+  if (value.equals("inherit")) {
+    return readInheritFontSizeAttribute(elem.getParent(),attributeName,defaultValue);
+  }
+ else   if (absoluteFontSizeMap.containsKey(value)) {
+    return absoluteFontSizeMap.get(value);
+  }
+ else   if (relativeFontSizeMap.containsKey(value)) {
+    return relativeFontSizeMap.get(value) * readInheritFontSizeAttribute(elem.getParent(),attributeName,defaultValue);
+  }
+ else   if (value.endsWith("%")) {
+    double factor=Double.valueOf(value.substring(0,value.length() - 1));
+    return factor * readInheritFontSizeAttribute(elem.getParent(),attributeName,defaultValue);
+  }
+ else {
+    return toHeight(elem,value);
+  }
+}
