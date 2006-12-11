@@ -5,7 +5,7 @@
       g.draw(path);
     }
  else {
-      GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT_FACTOR.get(this)));
+      GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT.get(this)));
       g.draw(gs.createStrokedShape(path));
     }
   }

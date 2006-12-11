@@ -1,12 +1,9 @@
 {
   Rectangle2D.Double bounds=owner.getBounds();
   if (owner.getDecorator() != null) {
-    Insets2DDouble insets=DECORATOR_INSETS.get(owner);
+    Insets2D.Double insets=DECORATOR_INSETS.get(owner);
     if (insets != null) {
-      bounds.x-=insets.left;
-      bounds.y-=insets.top;
-      bounds.width+=insets.left + insets.right;
-      bounds.height+=insets.top + insets.bottom;
+      insets.addTo(bounds);
     }
   }
   return new Point2D.Double(bounds.x + bounds.width * relativeX,bounds.y + bounds.height * relativeY);

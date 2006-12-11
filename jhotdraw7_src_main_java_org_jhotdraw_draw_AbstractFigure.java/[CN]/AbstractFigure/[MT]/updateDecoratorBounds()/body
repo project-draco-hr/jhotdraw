@@ -2,7 +2,7 @@
   if (decorator != null) {
     Point2D.Double sp=getStartPoint();
     Point2D.Double ep=getEndPoint();
-    Insets2DDouble decoratorInsets=AttributeKeys.DECORATOR_INSETS.get(this);
+    Insets2D.Double decoratorInsets=AttributeKeys.DECORATOR_INSETS.get(this);
     sp.x-=decoratorInsets.left;
     sp.y-=decoratorInsets.top;
     ep.x+=decoratorInsets.right;

@@ -1,11 +1,11 @@
 {
-  Insets2DDouble layoutInsets=LAYOUT_INSETS.get(layoutable);
-  if (layoutInsets == null)   layoutInsets=new Insets2DDouble(0,0,0,0);
+  Insets2D.Double layoutInsets=LAYOUT_INSETS.get(layoutable);
+  if (layoutInsets == null)   layoutInsets=new Insets2D.Double();
   Rectangle2D.Double layoutBounds=calculateLayout(layoutable,anchor,lead);
   double y=layoutBounds.y + layoutInsets.top;
   for (  Figure child : layoutable.getChildren()) {
     if (child.isVisible()) {
-      Insets2DDouble insets=getInsets(child);
+      Insets2D.Double insets=getInsets(child);
       double height=child.getPreferredSize().height;
       child.basicSetBounds(new Point2D.Double(layoutBounds.x + layoutInsets.left + insets.left,y + insets.top),new Point2D.Double(layoutBounds.x + layoutBounds.width - layoutInsets.right - insets.right,y + insets.top + height));
       y+=height + insets.top + insets.bottom;

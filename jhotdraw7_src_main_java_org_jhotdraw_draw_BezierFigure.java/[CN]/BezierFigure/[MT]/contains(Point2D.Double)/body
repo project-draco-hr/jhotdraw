@@ -1,11 +1,11 @@
 {
-  if (isClosed()) {
+  if (isClosed() || FILL_COLOR.get(this) != null) {
     double grow=AttributeKeys.getPerpendicularHitGrowth(this);
     if (grow == 0d) {
       return path.contains(p);
     }
  else {
-      GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT_FACTOR.get(this)));
+      GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT.get(this)));
       return gs.createStrokedShape(path).contains(p);
     }
   }

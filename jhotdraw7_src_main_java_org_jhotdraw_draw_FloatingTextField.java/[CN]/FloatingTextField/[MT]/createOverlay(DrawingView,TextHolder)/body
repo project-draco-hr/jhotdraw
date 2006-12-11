@@ -1,5 +1,5 @@
 {
-  view.getContainer().add(editWidget,0);
+  view.getJComponent().add(editWidget,0);
   Font f=figure.getFont();
   f=f.deriveFont(f.getStyle(),(float)(f.getSize() * view.getScaleFactor()));
   editWidget.setFont(f);

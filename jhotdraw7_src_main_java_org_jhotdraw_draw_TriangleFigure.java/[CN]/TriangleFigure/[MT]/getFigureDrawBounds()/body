@@ -8,7 +8,7 @@ case INSIDE:
     break;
 case OUTSIDE:
   if (STROKE_JOIN.get(this) == BasicStroke.JOIN_MITER) {
-    width=totalStrokeWidth * STROKE_MITER_LIMIT_FACTOR.get(this);
+    width=totalStrokeWidth * STROKE_MITER_LIMIT.get(this);
   }
  else {
     width=totalStrokeWidth;
@@ -16,7 +16,7 @@ case OUTSIDE:
 break;
 case CENTER:
 if (STROKE_JOIN.get(this) == BasicStroke.JOIN_MITER) {
-width=totalStrokeWidth / 2d * STROKE_MITER_LIMIT_FACTOR.get(this);
+width=totalStrokeWidth / 2d * STROKE_MITER_LIMIT.get(this);
 }
  else {
 width=totalStrokeWidth / 2d;

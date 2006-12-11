@@ -2,7 +2,7 @@
   if (getText() != null || isEditable()) {
     Font font=getFont();
     boolean isUnderlined=FONT_UNDERLINED.get(this);
-    Insets2DDouble insets=getInsets();
+    Insets2D.Double insets=getInsets();
     Rectangle2D.Double textRect=new Rectangle2D.Double(bounds.x + insets.left,bounds.y + insets.top,bounds.width - insets.left - insets.right,bounds.height - insets.top - insets.bottom);
     float leftMargin=(float)textRect.x;
     float rightMargin=(float)Math.max(leftMargin + 1,textRect.x + textRect.width);

@@ -15,7 +15,7 @@
       }
       for (      DrawingView v : editor.getDrawingViews()) {
         v.setConstrainer(c);
-        v.getContainer().repaint();
+        v.getJComponent().repaint();
       }
     }
   }

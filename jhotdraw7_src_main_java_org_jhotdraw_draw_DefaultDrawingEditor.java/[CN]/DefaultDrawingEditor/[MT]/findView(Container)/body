@@ -1,6 +1,6 @@
 {
   for (  DrawingView v : views) {
-    if (v.getContainer() == c) {
+    if (v.getJComponent() == c) {
       return v;
     }
   }

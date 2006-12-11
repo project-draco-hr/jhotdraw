@@ -1,7 +1,7 @@
 {
   DrawingView v=getView();
   if (v != null) {
-    Container c=v.getContainer();
+    Container c=v.getJComponent();
     c.invalidate();
     if (c.getParent() != null)     c.getParent().validate();
   }

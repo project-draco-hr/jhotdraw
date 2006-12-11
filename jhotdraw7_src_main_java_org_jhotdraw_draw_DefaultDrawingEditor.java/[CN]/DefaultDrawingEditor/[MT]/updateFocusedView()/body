@@ -1,6 +1,6 @@
 {
   for (  DrawingView v : views) {
-    if (v.getContainer().hasFocus()) {
+    if (v.getJComponent().hasFocus()) {
       setFocusedView(v);
       return;
     }

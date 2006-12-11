@@ -1,5 +1,5 @@
 {
-  view.getContainer().add(editScrollContainer,0);
+  view.getJComponent().add(editScrollContainer,0);
   if (figure != null) {
     Font f=figure.getFont();
     f=f.deriveFont(f.getStyle(),(float)(f.getSize() * view.getScaleFactor()));
