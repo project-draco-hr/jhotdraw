@@ -1,0 +1,7 @@
+{
+  if (obj instanceof Insets2D) {
+    Insets2D that=(Insets2D)obj;
+    return ((getTop() == that.getTop()) && (getLeft() == that.getLeft()) && (getBottom() == that.getBottom())&& (getRight() == that.getRight()));
+  }
+  return false;
+}
