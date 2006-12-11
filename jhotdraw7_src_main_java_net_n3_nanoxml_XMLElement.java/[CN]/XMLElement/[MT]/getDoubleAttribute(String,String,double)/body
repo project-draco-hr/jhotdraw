@@ -1,0 +1,14 @@
+{
+  XMLAttribute attr=this.findAttribute(name,namespace);
+  if (attr == null) {
+    return defaultValue;
+  }
+ else {
+    try {
+      return Double.parseDouble(attr.getValue());
+    }
+ catch (    NumberFormatException e) {
+      return defaultValue;
+    }
+  }
+}

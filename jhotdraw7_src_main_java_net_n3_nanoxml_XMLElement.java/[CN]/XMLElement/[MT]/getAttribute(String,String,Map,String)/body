@@ -1,0 +1,7 @@
+{
+  String key=this.getAttribute(name,namespace,null);
+  if (key == null || !valueSet.containsKey(key)) {
+    return valueSet.get(defaultKey);
+  }
+  return valueSet.get(key);
+}
