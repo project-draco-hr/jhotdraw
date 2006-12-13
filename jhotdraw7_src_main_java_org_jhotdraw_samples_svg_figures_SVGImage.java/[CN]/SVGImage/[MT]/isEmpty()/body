@@ -1,3 +1,4 @@
 {
-  return true;
+  Rectangle2D.Double b=getBounds();
+  return b.width <= 0 || b.height <= 0 || imageData == null && bufferedImage == null;
 }

@@ -1,0 +1,5 @@
+{
+  XMLElement elem=new XMLElement("path");
+  writeShapeAttributes(elem,f);
+  parent.addChild(elem);
+}

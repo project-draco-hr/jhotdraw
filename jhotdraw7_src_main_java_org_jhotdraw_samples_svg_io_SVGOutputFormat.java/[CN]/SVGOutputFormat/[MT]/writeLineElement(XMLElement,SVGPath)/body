@@ -1,0 +1,10 @@
+{
+  XMLElement elem=new XMLElement("line");
+  BezierFigure bezier=(BezierFigure)f.getChild(0);
+  writeAttribute(elem,"x1",bezier.getNode(0).x[0],0d);
+  writeAttribute(elem,"y1",bezier.getNode(0).y[0],0d);
+  writeAttribute(elem,"x2",bezier.getNode(1).x[0],0d);
+  writeAttribute(elem,"y2",bezier.getNode(1).y[0],0d);
+  writeShapeAttributes(elem,f);
+  parent.addChild(elem);
+}

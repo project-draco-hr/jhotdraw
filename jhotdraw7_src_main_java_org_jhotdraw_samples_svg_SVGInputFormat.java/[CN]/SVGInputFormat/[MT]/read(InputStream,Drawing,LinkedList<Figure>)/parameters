@@ -1,3 +1,0 @@
-InputStream in
-Drawing drawing
-LinkedList<Figure> figures

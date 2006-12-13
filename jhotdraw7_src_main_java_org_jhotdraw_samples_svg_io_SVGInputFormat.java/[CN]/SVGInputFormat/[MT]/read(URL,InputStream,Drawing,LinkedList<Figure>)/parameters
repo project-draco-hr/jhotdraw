@@ -1,0 +1,4 @@
+URL url
+InputStream in
+Drawing drawing
+LinkedList<Figure> figures

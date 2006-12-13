@@ -1,0 +1,6 @@
+{
+  rect.x=in.getAttribute("x",0d);
+  rect.y=in.getAttribute("y",0d);
+  rect.width=in.getAttribute("w",0d);
+  rect.height=in.getAttribute("h",0d);
+}

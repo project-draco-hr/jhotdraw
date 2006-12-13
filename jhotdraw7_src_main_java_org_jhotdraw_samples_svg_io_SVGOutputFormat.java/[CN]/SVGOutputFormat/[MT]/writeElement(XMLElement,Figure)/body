@@ -1,0 +1,61 @@
+{
+  if (f instanceof SVGEllipse) {
+    SVGEllipse ellipse=(SVGEllipse)f;
+    if (ellipse.getWidth() == ellipse.getHeight()) {
+      writeCircleElement(parent,ellipse);
+    }
+ else {
+      writeEllipseElement(parent,ellipse);
+    }
+  }
+ else   if (f instanceof SVGGroup) {
+    writeGElement(parent,(SVGGroup)f);
+  }
+ else   if (f instanceof SVGImage) {
+    writeImageElement(parent,(SVGImage)f);
+  }
+ else   if (f instanceof SVGPath) {
+    SVGPath path=(SVGPath)f;
+    if (path.getChildCount() == 1) {
+      BezierFigure bezier=(BezierFigure)path.getChild(0);
+      boolean isLinear=true;
+      for (int i=0, n=bezier.getNodeCount(); i < n; i++) {
+        if (bezier.getNode(i).getMask() != 0) {
+          isLinear=false;
+          break;
+        }
+      }
+      if (isLinear) {
+        if (bezier.isClosed()) {
+          writePolygonElement(parent,path);
+        }
+ else {
+          if (bezier.getNodeCount() == 2) {
+            writeLineElement(parent,path);
+          }
+ else {
+            writePolylineElement(parent,path);
+          }
+        }
+      }
+ else {
+        writePathElement(parent,path);
+      }
+    }
+ else {
+      writePathElement(parent,path);
+    }
+  }
+ else   if (f instanceof SVGRect) {
+    writeRectElement(parent,(SVGRect)f);
+  }
+ else   if (f instanceof SVGText) {
+    writeTextElement(parent,(SVGText)f);
+  }
+ else   if (f instanceof SVGTextArea) {
+    writeTextAreaElement(parent,(SVGTextArea)f);
+  }
+ else {
+    System.out.println("Unable to write: " + f);
+  }
+}

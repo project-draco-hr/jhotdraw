@@ -1,0 +1,3 @@
+{
+  writeAttribute(elem,name,SVG_NAMESPACE,value,defaultValue);
+}

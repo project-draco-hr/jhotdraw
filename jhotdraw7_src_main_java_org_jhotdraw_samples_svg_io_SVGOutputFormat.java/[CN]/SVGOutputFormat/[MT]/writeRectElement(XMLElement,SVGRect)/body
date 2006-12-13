@@ -1,0 +1,11 @@
+{
+  XMLElement elem=new XMLElement("rect");
+  writeAttribute(elem,"x",f.getX(),0d);
+  writeAttribute(elem,"y",f.getY(),0d);
+  writeAttribute(elem,"width",f.getWidth(),0d);
+  writeAttribute(elem,"height",f.getHeight(),0d);
+  writeAttribute(elem,"rx",f.getArcWidth(),0d);
+  writeAttribute(elem,"ry",f.getArcHeight(),0d);
+  writeShapeAttributes(elem,f);
+  parent.addChild(elem);
+}

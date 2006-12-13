@@ -1,0 +1,3 @@
+{
+  return FONT_SIZE.get(this).floatValue();
+}

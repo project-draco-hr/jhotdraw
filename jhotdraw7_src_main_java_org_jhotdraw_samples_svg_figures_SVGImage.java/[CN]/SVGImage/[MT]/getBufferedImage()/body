@@ -1,0 +1,13 @@
+{
+  if (bufferedImage == null && imageData != null) {
+    System.out.println("recreateing bufferedImage");
+    try {
+      bufferedImage=ImageIO.read(new ByteArrayInputStream(imageData));
+    }
+ catch (    IOException e) {
+      e.printStackTrace();
+      imageData=null;
+    }
+  }
+  return bufferedImage;
+}

@@ -7,6 +7,7 @@
     float leftMargin=(float)textRect.x;
     float rightMargin=(float)Math.max(leftMargin + 1,textRect.x + textRect.width);
     float verticalPos=(float)textRect.y;
+    float maxVerticalPos=(float)(textRect.y + textRect.height);
     if (leftMargin < rightMargin) {
       float tabWidth=(float)(getTabSize() * g.getFontMetrics(font).charWidth('m'));
       float[] tabStops=new float[(int)(textRect.width / tabWidth)];
@@ -25,8 +26,8 @@
             as.addAttribute(TextAttribute.UNDERLINE,TextAttribute.UNDERLINE_LOW_ONE_PIXEL);
           }
           int tabCount=new StringTokenizer(paragraphs[i],"\t").countTokens() - 1;
-          verticalPos=drawParagraph(g,as.getIterator(),verticalPos,leftMargin,rightMargin,tabStops,tabCount);
-          if (verticalPos > textRect.y + textRect.height) {
+          verticalPos=drawParagraph(g,as.getIterator(),verticalPos,maxVerticalPos,leftMargin,rightMargin,tabStops,tabCount);
+          if (verticalPos > maxVerticalPos) {
             break;
           }
         }

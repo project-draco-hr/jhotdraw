@@ -1,5 +1,7 @@
 {
   SVGImage that=(SVGImage)super.clone();
-  that.bounds=(Rectangle2D.Double)bounds.clone();
+  that.rect=(Rectangle2D.Double)this.rect.clone();
+  that.cachedTransformedShape=null;
+  that.cachedHitShape=null;
   return that;
 }

@@ -2,9 +2,9 @@
   InputStream in=null;
   try {
     in=new BufferedInputStream(new FileInputStream(f));
-    StorageFormat sf=new SVGInputFormat();
+    InputFormat sf=new SVGInputFormat();
     final Drawing drawing=new QuadTreeDrawing();
-    sf.read(in,drawing,new LinkedList<Figure>());
+    sf.read(f.toURL(),in,drawing,new LinkedList<Figure>());
     SwingUtilities.invokeAndWait(new Runnable(){
       public void run(){
         view.getDrawing().removeUndoableEditListener(undo);

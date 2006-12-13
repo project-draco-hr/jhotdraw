@@ -1,0 +1,8 @@
+{
+  XMLElement elem=new XMLElement("circle");
+  writeAttribute(elem,"cx",f.getX() + f.getWidth() / 2d,0d);
+  writeAttribute(elem,"cy",f.getY() + f.getHeight() / 2d,0d);
+  writeAttribute(elem,"r",f.getWidth() / 2d,0d);
+  writeShapeAttributes(elem,f);
+  parent.addChild(elem);
+}

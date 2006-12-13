@@ -1,4 +1,4 @@
 {
   add(new BezierFigure());
-  SVGUtil.setDefaults(this);
+  SVGConstants.setDefaults(this);
 }

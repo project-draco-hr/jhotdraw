@@ -1,0 +1,5 @@
+XMLElement elem
+String name
+String namespace
+double value
+double defaultValue
