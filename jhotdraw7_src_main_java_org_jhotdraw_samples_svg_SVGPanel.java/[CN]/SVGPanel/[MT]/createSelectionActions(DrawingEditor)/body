@@ -2,8 +2,8 @@
   LinkedList<Action> a=new LinkedList<Action>();
   a.add(new DuplicateAction());
   a.add(null);
-  a.add(new GroupAction(editor,new SVGGroup()));
-  a.add(new UngroupAction(editor,new SVGGroup()));
+  a.add(new GroupAction(editor,new SVGGroupFigure()));
+  a.add(new UngroupAction(editor,new SVGGroupFigure()));
   a.add(new CombineAction(editor));
   a.add(new SplitAction(editor));
   a.add(null);

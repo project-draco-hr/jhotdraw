@@ -1,6 +1,6 @@
 {
   getDrawing().remove(createdFigure);
-  SVGPath createdPath=createPath();
+  SVGPathFigure createdPath=createPath();
   createdPath.removeAllChildren();
   createdPath.add(createdFigure);
   getDrawing().add(createdPath);

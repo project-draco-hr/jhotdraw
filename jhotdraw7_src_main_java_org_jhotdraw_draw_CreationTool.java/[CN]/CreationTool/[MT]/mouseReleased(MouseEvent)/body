@@ -13,8 +13,8 @@
     if (createdFigure instanceof CompositeFigure) {
       ((CompositeFigure)createdFigure).layout();
     }
-    createdFigure=null;
     getDrawing().fireUndoableEditHappened(creationEdit);
-    fireToolDone();
+    creationFinished(createdFigure);
+    createdFigure=null;
   }
 }

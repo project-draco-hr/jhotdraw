@@ -1,9 +1,0 @@
-{
-  int dx=lead.x - anchor.x;
-  int dy=lead.y - anchor.y;
-  SVGRect owner=(SVGRect)getOwner();
-  Rectangle r=view.drawingToView(owner.getBounds());
-  Point viewArc=new Point(Geom.range(0,r.width,2 * (originalArc.x / 2 + dx)),Geom.range(0,r.height,2 * (originalArc.y / 2 + dy)));
-  Point2D.Double arc=view.viewToDrawing(viewArc);
-  owner.setArc(arc.x,arc.y);
-}

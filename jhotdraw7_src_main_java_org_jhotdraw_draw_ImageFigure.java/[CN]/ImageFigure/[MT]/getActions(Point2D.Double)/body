@@ -1,0 +1,5 @@
+{
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  LinkedList<Action> actions=new LinkedList<Action>();
+  return actions;
+}

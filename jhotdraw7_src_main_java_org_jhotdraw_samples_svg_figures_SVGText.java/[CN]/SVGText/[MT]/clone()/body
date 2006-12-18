@@ -1,6 +1,0 @@
-{
-  SVGText that=(SVGText)super.clone();
-  that.coordinates=(Point2D.Double[])this.coordinates.clone();
-  that.rotates=(double[])this.rotates.clone();
-  return that;
-}

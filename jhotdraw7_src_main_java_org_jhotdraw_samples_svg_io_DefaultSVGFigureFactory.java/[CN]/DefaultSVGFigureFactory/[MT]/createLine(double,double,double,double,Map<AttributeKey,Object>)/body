@@ -1,5 +1,5 @@
 {
-  SVGPath figure=new SVGPath();
+  SVGPathFigure figure=new SVGPathFigure();
   figure.removeAllChildren();
   BezierFigure bf=new BezierFigure();
   bf.addNode(new BezierPath.Node(x1,y1));

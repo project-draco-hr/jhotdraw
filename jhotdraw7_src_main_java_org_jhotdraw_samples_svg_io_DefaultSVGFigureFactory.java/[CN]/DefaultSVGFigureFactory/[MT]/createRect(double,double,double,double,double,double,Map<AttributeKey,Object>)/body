@@ -1,5 +1,5 @@
 {
-  SVGRect figure=new SVGRect();
+  SVGRectFigure figure=new SVGRectFigure();
   figure.basicSetBounds(new Point2D.Double(x,y),new Point2D.Double(x + w,y + h));
   figure.setArc(rx,ry);
   figure.setAttributes(a);

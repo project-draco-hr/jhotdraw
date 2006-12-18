@@ -1,0 +1,68 @@
+{
+  readAttributes(in);
+  for (int i=0, n=in.getElementCount(); i < n; i++) {
+    in.openElement(i);
+    String name=in.getTagName();
+    if (name.equals("pattern")) {
+      in.closeElement();
+    }
+ else     if (name.equals("color-profile")) {
+      in.closeElement();
+    }
+ else     if (name.equals("defs")) {
+      in.closeElement();
+    }
+ else     if (name.equals("use")) {
+      in.closeElement();
+    }
+ else     if (name.equals("script")) {
+      in.closeElement();
+    }
+ else     if (name.equals("filter")) {
+      in.closeElement();
+    }
+ else     if (name.equals("title")) {
+      in.closeElement();
+    }
+ else     if (name.equals("desc")) {
+      in.closeElement();
+    }
+ else     if (name.equals("switch")) {
+      in.closeElement();
+    }
+ else     if (name.equals("radialGradient")) {
+      in.closeElement();
+    }
+ else     if (name.equals("linearGradient")) {
+      in.closeElement();
+    }
+ else {
+      in.closeElement();
+      Object f=(Object)in.readObject(i);
+      if (f instanceof SVGDrawing) {
+        SVGGroupFigure g=new SVGGroupFigure();
+        g.willChange();
+        for (        Figure child : ((SVGDrawing)f).getFigures()) {
+          g.basicAdd(child);
+        }
+        g.changed();
+        if (!g.isEmpty()) {
+          add(g);
+        }
+      }
+ else       if (f instanceof SVGFigure) {
+        if (!((SVGFigure)f).isEmpty()) {
+          add((SVGFigure)f);
+        }
+      }
+ else {
+        throw new IOException("Unexpected child " + f);
+      }
+    }
+  }
+  AffineTransform tx=SVGUtil.getTransform(in,"transform");
+  for (  Figure child : getChildren()) {
+    child.basicTransform(tx);
+  }
+  invalidateBounds();
+}

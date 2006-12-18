@@ -4,12 +4,12 @@
   view.clearSelection();
   view.getDrawing().add(group);
   group.willChange();
-  ((SVGPath)group).removeAllChildren();
+  ((SVGPathFigure)group).removeAllChildren();
   for (  Map.Entry<AttributeKey,Object> entry : figures.iterator().next().getAttributes().entrySet()) {
     group.basicSetAttribute(entry.getKey(),entry.getValue());
   }
   for (  Figure f : sorted) {
-    SVGPath path=(SVGPath)f;
+    SVGPathFigure path=(SVGPathFigure)f;
     for (    Figure child : path.getChildren()) {
       group.basicAdd(child);
     }

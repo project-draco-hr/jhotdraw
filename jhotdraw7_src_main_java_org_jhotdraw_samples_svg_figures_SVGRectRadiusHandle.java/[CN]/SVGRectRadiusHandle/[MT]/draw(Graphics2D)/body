@@ -1,3 +1,0 @@
-{
-  drawDiamond(g,Color.yellow,Color.black);
-}

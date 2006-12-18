@@ -1,4 +1,4 @@
 {
-  SVGGroup figure=new SVGGroup();
+  SVGGroupFigure figure=new SVGGroupFigure();
   return figure;
 }

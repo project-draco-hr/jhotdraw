@@ -1,0 +1,3 @@
+{
+  rectangle.setRect((Rectangle2D.Double)geometry);
+}

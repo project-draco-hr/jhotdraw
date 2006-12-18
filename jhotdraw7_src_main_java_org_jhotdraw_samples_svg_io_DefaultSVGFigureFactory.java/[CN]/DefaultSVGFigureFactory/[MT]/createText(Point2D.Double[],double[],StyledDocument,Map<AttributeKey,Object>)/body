@@ -1,5 +1,5 @@
 {
-  SVGText figure=new SVGText();
+  SVGTextFigure figure=new SVGTextFigure();
   figure.basicSetCoordinates(coordinates);
   figure.basicSetRotates(rotates);
   try {

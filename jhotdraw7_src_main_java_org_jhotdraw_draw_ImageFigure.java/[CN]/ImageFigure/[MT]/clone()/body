@@ -1,0 +1,5 @@
+{
+  ImageFigure that=(ImageFigure)super.clone();
+  that.rectangle=(Rectangle2D.Double)this.rectangle.clone();
+  return that;
+}

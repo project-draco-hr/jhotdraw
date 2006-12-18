@@ -1,0 +1,5 @@
+{
+  SVGTextAreaFigure that=(SVGTextAreaFigure)super.clone();
+  that.rect=(Rectangle2D.Double)this.rect.clone();
+  return that;
+}

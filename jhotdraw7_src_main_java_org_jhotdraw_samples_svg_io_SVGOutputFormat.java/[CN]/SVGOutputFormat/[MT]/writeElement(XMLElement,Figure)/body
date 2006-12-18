@@ -1,6 +1,6 @@
 {
-  if (f instanceof SVGEllipse) {
-    SVGEllipse ellipse=(SVGEllipse)f;
+  if (f instanceof SVGEllipseFigure) {
+    SVGEllipseFigure ellipse=(SVGEllipseFigure)f;
     if (ellipse.getWidth() == ellipse.getHeight()) {
       writeCircleElement(parent,ellipse);
     }
@@ -8,14 +8,14 @@
       writeEllipseElement(parent,ellipse);
     }
   }
- else   if (f instanceof SVGGroup) {
-    writeGElement(parent,(SVGGroup)f);
+ else   if (f instanceof SVGGroupFigure) {
+    writeGElement(parent,(SVGGroupFigure)f);
   }
- else   if (f instanceof SVGImage) {
-    writeImageElement(parent,(SVGImage)f);
+ else   if (f instanceof SVGImageFigure) {
+    writeImageElement(parent,(SVGImageFigure)f);
   }
- else   if (f instanceof SVGPath) {
-    SVGPath path=(SVGPath)f;
+ else   if (f instanceof SVGPathFigure) {
+    SVGPathFigure path=(SVGPathFigure)f;
     if (path.getChildCount() == 1) {
       BezierFigure bezier=(BezierFigure)path.getChild(0);
       boolean isLinear=true;
@@ -46,14 +46,14 @@
       writePathElement(parent,path);
     }
   }
- else   if (f instanceof SVGRect) {
-    writeRectElement(parent,(SVGRect)f);
+ else   if (f instanceof SVGRectFigure) {
+    writeRectElement(parent,(SVGRectFigure)f);
   }
- else   if (f instanceof SVGText) {
-    writeTextElement(parent,(SVGText)f);
+ else   if (f instanceof SVGTextFigure) {
+    writeTextElement(parent,(SVGTextFigure)f);
   }
- else   if (f instanceof SVGTextArea) {
-    writeTextAreaElement(parent,(SVGTextArea)f);
+ else   if (f instanceof SVGTextAreaFigure) {
+    writeTextAreaElement(parent,(SVGTextAreaFigure)f);
   }
  else {
     System.out.println("Unable to write: " + f);

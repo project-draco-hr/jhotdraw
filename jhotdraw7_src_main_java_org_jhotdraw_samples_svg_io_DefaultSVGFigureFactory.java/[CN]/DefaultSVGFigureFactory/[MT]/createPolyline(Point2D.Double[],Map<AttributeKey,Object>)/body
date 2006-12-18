@@ -1,5 +1,5 @@
 {
-  SVGPath figure=new SVGPath();
+  SVGPathFigure figure=new SVGPathFigure();
   figure.removeAllChildren();
   BezierFigure bf=new BezierFigure();
   for (int i=0; i < points.length; i++) {

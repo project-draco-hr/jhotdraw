@@ -1,0 +1,6 @@
+{
+  if (fileChooser == null) {
+    fileChooser=new JFileChooser();
+  }
+  return fileChooser;
+}

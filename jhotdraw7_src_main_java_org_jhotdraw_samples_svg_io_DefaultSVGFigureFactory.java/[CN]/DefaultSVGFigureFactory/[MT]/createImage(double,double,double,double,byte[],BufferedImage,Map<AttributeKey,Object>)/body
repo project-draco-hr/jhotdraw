@@ -1,5 +1,5 @@
 {
-  SVGImage figure=new SVGImage();
+  SVGImageFigure figure=new SVGImageFigure();
   figure.basicSetBounds(new Point2D.Double(x,y),new Point2D.Double(x + w,y + h));
   figure.setImage(imageData,bufferedImage);
   figure.setAttributes(a);

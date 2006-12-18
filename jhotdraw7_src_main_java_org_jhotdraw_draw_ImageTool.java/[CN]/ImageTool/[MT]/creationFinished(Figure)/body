@@ -1,0 +1,36 @@
+{
+  if (getFileChooser().showOpenDialog(getView().getJComponent()) == JFileChooser.APPROVE_OPTION) {
+    final File file=getFileChooser().getSelectedFile();
+    new SwingWorker(){
+      public Object construct(){
+        try {
+          ((ImageHolder)createdFigure).loadImage(file);
+        }
+ catch (        Throwable t) {
+          return t;
+        }
+        return null;
+      }
+      @Override public void finished(){
+        if (getValue() instanceof Throwable) {
+          Throwable t=(Throwable)getValue();
+          t.printStackTrace();
+          JOptionPane.showConfirmDialog(getView().getJComponent(),t.getMessage(),null,JOptionPane.ERROR_MESSAGE);
+        }
+        BufferedImage img=((ImageHolder)createdFigure).getBufferedImage();
+        if (img != null) {
+          Point2D.Double p1=createdFigure.getStartPoint();
+          Point2D.Double p2=new Point2D.Double(p1.x + img.getWidth(),p1.y + img.getHeight());
+          createdFigure.willChange();
+          createdFigure.basicSetBounds(p1,p2);
+          createdFigure.changed();
+        }
+        fireToolDone();
+      }
+    }
+.start();
+  }
+ else {
+    fireToolDone();
+  }
+}

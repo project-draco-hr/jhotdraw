@@ -1,0 +1,35 @@
+{
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.samples.svg.Labels");
+  LinkedList<Action> actions=new LinkedList<Action>();
+  actions.add(new AbstractAction(labels.getString("closePath")){
+    public void actionPerformed(    ActionEvent evt){
+      for (      Figure child : getChildren()) {
+        BezierFigure b=(BezierFigure)child;
+        b.setClosed(true);
+      }
+    }
+  }
+);
+  actions.add(new AbstractAction(labels.getString("openPath")){
+    public void actionPerformed(    ActionEvent evt){
+      for (      Figure child : getChildren()) {
+        BezierFigure b=(BezierFigure)child;
+        b.setClosed(false);
+      }
+    }
+  }
+);
+  actions.add(new AbstractAction(labels.getString("windingEvenOdd")){
+    public void actionPerformed(    ActionEvent evt){
+      WINDING_RULE.set(SVGPathFigure.this,WindingRule.EVEN_ODD);
+    }
+  }
+);
+  actions.add(new AbstractAction(labels.getString("windingNonZero")){
+    public void actionPerformed(    ActionEvent evt){
+      WINDING_RULE.set(SVGPathFigure.this,WindingRule.NON_ZERO);
+    }
+  }
+);
+  return actions;
+}

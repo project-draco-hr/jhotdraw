@@ -1,5 +1,5 @@
 {
-  SVGPath f=(SVGPath)pathPrototype.clone();
+  SVGPathFigure f=(SVGPathFigure)pathPrototype.clone();
   getEditor().applyDefaultAttributesTo(f);
   if (attributes != null) {
     for (    Map.Entry<AttributeKey,Object> entry : attributes.entrySet()) {

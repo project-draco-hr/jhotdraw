@@ -1,5 +1,0 @@
-{
-  SVGEllipse that=(SVGEllipse)super.clone();
-  that.ellipse=(Ellipse2D.Double)this.ellipse.clone();
-  return that;
-}

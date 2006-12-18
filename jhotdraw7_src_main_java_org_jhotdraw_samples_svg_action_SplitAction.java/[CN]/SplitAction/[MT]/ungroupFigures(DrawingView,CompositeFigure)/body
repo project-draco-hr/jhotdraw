@@ -4,7 +4,7 @@
   group.basicRemoveAllChildren();
   LinkedList<Figure> paths=new LinkedList<Figure>();
   for (  Figure f : figures) {
-    SVGPath path=new SVGPath();
+    SVGPathFigure path=new SVGPathFigure();
     path.removeAllChildren();
     for (    Map.Entry<AttributeKey,Object> entry : group.getAttributes().entrySet()) {
       path.basicSetAttribute(entry.getKey(),entry.getValue());

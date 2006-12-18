@@ -2,7 +2,7 @@
   boolean canCombine=getView().getSelectionCount() > 1;
   if (canCombine) {
     for (    Figure f : getView().getSelectedFigures()) {
-      if (!(f instanceof SVGPath)) {
+      if (!(f instanceof SVGPathFigure)) {
         canCombine=false;
         break;
       }

@@ -1,5 +1,5 @@
 {
-  SVGEllipse figure=new SVGEllipse();
+  SVGEllipseFigure figure=new SVGEllipseFigure();
   figure.basicSetBounds(new Point2D.Double(cx - rx,cy - ry),new Point2D.Double(cx + rx,cy + ry));
   figure.setAttributes(a);
   return figure;
