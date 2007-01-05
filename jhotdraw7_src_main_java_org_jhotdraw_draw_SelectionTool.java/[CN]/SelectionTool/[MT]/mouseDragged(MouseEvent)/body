@@ -1,3 +1,5 @@
 {
-  tracker.mouseDragged(evt);
+  if (getView() != null && getView().isEnabled()) {
+    tracker.mouseDragged(evt);
+  }
 }

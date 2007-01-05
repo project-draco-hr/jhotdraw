@@ -1,4 +1,4 @@
 {
   Rectangle r=evt.getInvalidatedArea();
-  evt.getView().getJComponent().repaint(r.x,r.y,r.width,r.height);
+  evt.getView().getComponent().repaint(r.x,r.y,r.width,r.height);
 }

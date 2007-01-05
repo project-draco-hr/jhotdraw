@@ -1,3 +1,5 @@
 {
-  tracker.keyReleased(evt);
+  if (getView() != null && getView().isEnabled()) {
+    tracker.keyReleased(evt);
+  }
 }

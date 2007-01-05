@@ -1,0 +1,4 @@
+{
+  T value=(T)a.get(this);
+  return (value == null && !isNullValueAllowed) ? defaultValue : value;
+}

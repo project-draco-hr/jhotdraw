@@ -1,8 +1,0 @@
-{
-  super.drawFigure(g);
-  for (  Figure child : children) {
-    if (child.isVisible()) {
-      child.draw(g);
-    }
-  }
-}

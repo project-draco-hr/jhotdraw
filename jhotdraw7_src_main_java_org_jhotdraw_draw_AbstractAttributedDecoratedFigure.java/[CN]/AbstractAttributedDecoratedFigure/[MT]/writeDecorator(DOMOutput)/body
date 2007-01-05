@@ -1,0 +1,7 @@
+{
+  if (decorator != null) {
+    out.openElement("decorator");
+    out.writeObject(decorator);
+    out.closeElement();
+  }
+}

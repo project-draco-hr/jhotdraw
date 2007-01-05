@@ -1,8 +1,0 @@
-{
-  AttributedFigure that=(AttributedFigure)super.clone();
-  that.attributes=new HashMap<AttributeKey,Object>(this.attributes);
-  if (this.forbiddenAttributes != null) {
-    that.forbiddenAttributes=new HashSet<AttributeKey>(this.forbiddenAttributes);
-  }
-  return that;
-}

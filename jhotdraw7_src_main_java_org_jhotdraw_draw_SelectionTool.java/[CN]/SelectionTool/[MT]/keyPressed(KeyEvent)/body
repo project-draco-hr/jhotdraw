@@ -1,3 +1,5 @@
 {
-  tracker.keyPressed(e);
+  if (getView() != null && getView().isEnabled()) {
+    tracker.keyPressed(e);
+  }
 }

@@ -1,5 +1,5 @@
 {
-  if (domFactory == null) {
+  if (drawing.getOutputFormats() == null || drawing.getOutputFormats().size() == 0) {
     getToolkit().beep();
     return;
   }

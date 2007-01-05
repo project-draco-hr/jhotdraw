@@ -3,7 +3,7 @@
   final double oldHeight=roundrect.getArcHeight();
   roundrect.arcwidth=w;
   roundrect.archeight=h;
-  fireFigureChanged(getDrawBounds());
+  fireFigureChanged(getDrawingArea());
   fireUndoableEditHappened(new AbstractUndoableEdit(){
     public String getPresentationName(){
       return "Rundung";

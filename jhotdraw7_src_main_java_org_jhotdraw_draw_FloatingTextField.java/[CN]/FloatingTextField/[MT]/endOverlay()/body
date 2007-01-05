@@ -1,9 +1,9 @@
 {
-  view.getJComponent().requestFocus();
+  view.getComponent().requestFocus();
   if (editWidget != null) {
     editWidget.setVisible(false);
-    view.getJComponent().remove(editWidget);
+    view.getComponent().remove(editWidget);
     Rectangle bounds=editWidget.getBounds();
-    view.getJComponent().repaint(bounds.x,bounds.y,bounds.width,bounds.height);
+    view.getComponent().repaint(bounds.x,bounds.y,bounds.width,bounds.height);
   }
 }

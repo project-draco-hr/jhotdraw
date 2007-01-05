@@ -1,3 +1,5 @@
 {
-  tracker.keyTyped(evt);
+  if (getView() != null && getView().isEnabled()) {
+    tracker.keyTyped(evt);
+  }
 }

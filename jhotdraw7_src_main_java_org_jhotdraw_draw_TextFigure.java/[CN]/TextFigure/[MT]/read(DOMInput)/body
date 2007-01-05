@@ -1,4 +1,5 @@
 {
   setBounds(new Point2D.Double(in.getAttribute("x",0d),in.getAttribute("y",0d)),new Point2D.Double(0,0));
   readAttributes(in);
+  readDecorator(in);
 }

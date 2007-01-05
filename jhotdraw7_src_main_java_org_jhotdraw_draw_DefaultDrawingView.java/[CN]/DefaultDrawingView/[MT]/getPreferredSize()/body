@@ -5,7 +5,7 @@
       translate.x=0;
       translate.y=0;
       for (      Figure f : drawing.getFigures()) {
-        Rectangle2D.Double r=f.getDrawBounds();
+        Rectangle2D.Double r=f.getDrawingArea();
         d.width=Math.max(d.width,r.x + r.width);
         d.height=Math.max(d.height,r.y + r.height);
         translate.x=Math.min(translate.x,r.x);

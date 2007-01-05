@@ -1,0 +1,17 @@
+{
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  JPopupButton popupButton=new JPopupButton();
+  labels.configureToolBarButton(popupButton,"attributeStrokeCap");
+  popupButton.setFocusable(false);
+  HashMap<AttributeKey,Object> attr;
+  attr=new HashMap<AttributeKey,Object>();
+  attr.put(STROKE_CAP,BasicStroke.CAP_BUTT);
+  popupButton.add(new AttributeAction(editor,attr,labels.getString("attributeStrokeCapButt"),null));
+  attr=new HashMap<AttributeKey,Object>();
+  attr.put(STROKE_CAP,BasicStroke.CAP_ROUND);
+  popupButton.add(new AttributeAction(editor,attr,labels.getString("attributeStrokeCapRound"),null));
+  attr=new HashMap<AttributeKey,Object>();
+  attr.put(STROKE_CAP,BasicStroke.CAP_SQUARE);
+  popupButton.add(new AttributeAction(editor,attr,labels.getString("attributeStrokeCapSquare"),null));
+  bar.add(popupButton);
+}

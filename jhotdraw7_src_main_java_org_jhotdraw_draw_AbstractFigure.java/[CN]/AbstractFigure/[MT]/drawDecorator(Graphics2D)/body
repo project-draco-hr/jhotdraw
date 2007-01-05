@@ -1,6 +1,0 @@
-{
-  if (decorator != null) {
-    updateDecoratorBounds();
-    decorator.draw(g);
-  }
-}

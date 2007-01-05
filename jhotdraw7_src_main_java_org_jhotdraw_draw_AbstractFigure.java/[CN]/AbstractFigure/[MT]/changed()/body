@@ -1,7 +1,7 @@
 {
   if (changingDepth <= 1) {
     validate();
-    fireFigureChanged(getDrawBounds());
+    fireFigureChanged(getDrawingArea());
     changingDepth=0;
   }
  else {

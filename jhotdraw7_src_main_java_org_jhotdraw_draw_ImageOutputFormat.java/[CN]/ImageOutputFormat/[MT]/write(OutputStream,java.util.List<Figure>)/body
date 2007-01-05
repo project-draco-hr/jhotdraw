@@ -1,0 +1,5 @@
+{
+  BufferedImage img=toImage(figures,1d);
+  ImageIO.write(img,formatName,out);
+  img.flush();
+}

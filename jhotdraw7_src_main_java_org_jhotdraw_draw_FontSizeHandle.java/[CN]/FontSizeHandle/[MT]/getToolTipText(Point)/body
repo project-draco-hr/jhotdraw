@@ -1,0 +1,3 @@
+{
+  return ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels").getString("fontSizeHandle.tip");
+}

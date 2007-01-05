@@ -1,23 +1,23 @@
 {
-  if (getFileChooser().showOpenDialog(getView().getJComponent()) == JFileChooser.APPROVE_OPTION) {
+  if (getFileChooser().showOpenDialog(getView().getComponent()) == JFileChooser.APPROVE_OPTION) {
     final File file=getFileChooser().getSelectedFile();
-    new SwingWorker(){
+    new Worker(){
       public Object construct(){
         try {
-          ((ImageHolder)createdFigure).loadImage(file);
+          ((ImageHolderFigure)createdFigure).loadImage(file);
         }
  catch (        Throwable t) {
           return t;
         }
         return null;
       }
-      @Override public void finished(){
-        if (getValue() instanceof Throwable) {
-          Throwable t=(Throwable)getValue();
+      public void finished(      Object value){
+        if (value instanceof Throwable) {
+          Throwable t=(Throwable)value;
           t.printStackTrace();
-          JOptionPane.showConfirmDialog(getView().getJComponent(),t.getMessage(),null,JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showConfirmDialog(getView().getComponent(),t.getMessage(),null,JOptionPane.ERROR_MESSAGE);
         }
-        BufferedImage img=((ImageHolder)createdFigure).getBufferedImage();
+        BufferedImage img=((ImageHolderFigure)createdFigure).getBufferedImage();
         if (img != null) {
           Point2D.Double p1=createdFigure.getStartPoint();
           Point2D.Double p2=new Point2D.Double(p1.x + img.getWidth(),p1.y + img.getHeight());

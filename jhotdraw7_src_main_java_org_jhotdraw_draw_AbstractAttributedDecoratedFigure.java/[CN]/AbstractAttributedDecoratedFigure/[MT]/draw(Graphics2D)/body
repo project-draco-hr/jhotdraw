@@ -1,0 +1,6 @@
+{
+  if (decorator != null) {
+    drawDecorator(g);
+  }
+  drawFigure(g);
+}

@@ -1,0 +1,9 @@
+{
+  if (decorator != null) {
+    updateDecoratorBounds();
+    if (decorator.contains(p)) {
+      return true;
+    }
+  }
+  return figureContains(p);
+}

@@ -1,0 +1,8 @@
+{
+  Rectangle2D.Double r=getFigureDrawingArea();
+  if (decorator != null) {
+    updateDecoratorBounds();
+    r.add(decorator.getDrawingArea());
+  }
+  return r;
+}

@@ -1,8 +1,8 @@
 {
-  TextHolder textHolder=null;
+  TextHolderFigure textHolder=null;
   Figure pressedFigure=getDrawing().findFigureInside(getView().viewToDrawing(new Point(e.getX(),e.getY())));
-  if (pressedFigure instanceof TextHolder) {
-    textHolder=(TextHolder)pressedFigure;
+  if (pressedFigure instanceof TextHolderFigure) {
+    textHolder=(TextHolderFigure)pressedFigure;
     if (!textHolder.isEditable())     textHolder=null;
   }
   if (textHolder != null) {

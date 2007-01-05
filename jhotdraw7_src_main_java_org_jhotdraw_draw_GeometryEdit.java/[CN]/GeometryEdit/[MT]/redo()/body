@@ -1,6 +1,6 @@
 {
   super.redo();
   owner.willChange();
-  owner.restoreTo(newGeometry);
+  owner.restoreTransformTo(newGeometry);
   owner.changed();
 }

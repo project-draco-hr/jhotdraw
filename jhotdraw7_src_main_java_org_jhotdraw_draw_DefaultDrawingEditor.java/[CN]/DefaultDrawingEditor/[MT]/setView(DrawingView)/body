@@ -3,6 +3,6 @@
   activeView=newValue;
   firePropertyChange("view",oldValue,newValue);
   for (  DrawingView v : views) {
-    v.getJComponent().repaint();
+    v.getComponent().repaint();
   }
 }

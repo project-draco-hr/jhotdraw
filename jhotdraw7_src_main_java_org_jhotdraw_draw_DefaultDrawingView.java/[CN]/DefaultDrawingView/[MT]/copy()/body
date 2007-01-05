@@ -1,29 +1,23 @@
 {
-  if (domFactory == null) {
+  if (drawing.getOutputFormats() == null || drawing.getOutputFormats().size() == 0) {
     getToolkit().beep();
     return;
   }
-  HashSet<Figure> toBeCopied=new HashSet<Figure>(getSelectedFigures());
-  if (toBeCopied.size() == 0)   return;
-  ByteArrayOutputStream out=new ByteArrayOutputStream();
-  try {
-    NanoXMLLiteDOMOutput domo=new NanoXMLLiteDOMOutput(domFactory);
-    domo.openElement("DrawingClip");
-    for (    Figure f : getDrawing().getFigures()) {
-      if (toBeCopied.contains(f)) {
-        domo.writeObject(f);
+  java.util.List<Figure> toBeCopied=drawing.sort(getSelectedFigures());
+  if (toBeCopied.size() > 0) {
+    try {
+      CompositeTransferable transfer=new CompositeTransferable();
+      for (      OutputFormat format : drawing.getOutputFormats()) {
+        Transferable t=format.createTransferable(toBeCopied,scaleFactor);
+        if (!transfer.isDataFlavorSupported(t.getTransferDataFlavors()[0])) {
+          transfer.add(t);
+        }
       }
+      getToolkit().getSystemClipboard().setContents(transfer,transfer);
     }
-    domo.closeElement();
-    domo.save(out);
-    byte[] data=out.toByteArray();
-    CompositeTransferable transfer=new CompositeTransferable();
-    transfer.add(new XMLTransferable(data,"application/x-drawing-clip","DrawingClip"));
-    transfer.add(new XMLTransferable(data,"text/xml","DrawingClip"));
-    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(transfer,transfer);
-  }
- catch (  IOException e) {
-    e.printStackTrace();
-    getToolkit().beep();
+ catch (    IOException e) {
+      e.printStackTrace();
+      getToolkit().beep();
+    }
   }
 }

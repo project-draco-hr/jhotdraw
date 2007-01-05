@@ -1,5 +1,6 @@
 {
   initComponents();
+  setToolTipText("dummy");
   setFocusable(true);
   addFocusListener(new FocusListener(){
     public void focusGained(    FocusEvent e){

@@ -1,0 +1,11 @@
+{
+  NanoXMLDOMInput domi=new NanoXMLDOMInput(factory,in);
+  domi.openElement(factory.getName(drawing));
+  figures.clear();
+  for (int i=0, n=domi.getElementCount(); i < n; i++) {
+    Figure f=(Figure)domi.readObject();
+    figures.add(f);
+  }
+  domi.closeElement();
+  drawing.basicAddAll(drawing.getFigureCount(),figures);
+}

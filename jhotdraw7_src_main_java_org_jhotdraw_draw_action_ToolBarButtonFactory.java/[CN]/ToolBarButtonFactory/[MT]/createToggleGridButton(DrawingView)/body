@@ -1,20 +1,20 @@
 {
   ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-  final JToggleButton toggleGridButton;
-  toggleGridButton=new JToggleButton();
-  labels.configureToolBarButton(toggleGridButton,"alignGrid");
-  toggleGridButton.setFocusable(false);
-  toggleGridButton.addItemListener(new ItemListener(){
+  final JToggleButton toggleButton;
+  toggleButton=new JToggleButton();
+  labels.configureToolBarButton(toggleButton,"alignGrid");
+  toggleButton.setFocusable(false);
+  toggleButton.addItemListener(new ItemListener(){
     public void itemStateChanged(    ItemEvent event){
       Constrainer c;
-      if (toggleGridButton.isSelected()) {
+      if (toggleButton.isSelected()) {
         c=new GridConstrainer(10,10);
       }
  else {
         c=new GridConstrainer(1,1);
       }
       view.setConstrainer(c);
-      view.getJComponent().repaint();
+      view.getComponent().repaint();
     }
   }
 );
@@ -22,10 +22,10 @@
     public void propertyChange(    PropertyChangeEvent evt){
       if (evt.getPropertyName() == "gridConstrainer") {
         Constrainer c=(Constrainer)evt.getNewValue();
-        toggleGridButton.setSelected(c.isVisible());
+        toggleButton.setSelected(c.isVisible());
       }
     }
   }
 );
-  return toggleGridButton;
+  return toggleButton;
 }

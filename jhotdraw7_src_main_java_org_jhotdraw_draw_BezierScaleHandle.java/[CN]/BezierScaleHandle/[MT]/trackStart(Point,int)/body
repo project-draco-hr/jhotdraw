@@ -1,6 +1,6 @@
 {
   location=new Point(anchor.x,anchor.y);
-  restoreData=getBezierFigure().getRestoreData();
+  restoreData=getBezierFigure().getTransformRestoreData();
   transform=new AffineTransform();
   center=getBezierFigure().getCenter();
   Point2D.Double anchorPoint=view.viewToDrawing(anchor);

@@ -4,4 +4,6 @@
   addStrokeDashesButtonTo(bar,editor);
   addStrokeTypeButtonTo(bar,editor);
   addStrokePlacementButtonTo(bar,editor);
+  addStrokeCapButtonTo(bar,editor);
+  addStrokeJoinButtonTo(bar,editor);
 }

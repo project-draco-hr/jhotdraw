@@ -1,4 +1,0 @@
-{
-  drawPresentationFigure(g);
-  super.drawFigure(g);
-}

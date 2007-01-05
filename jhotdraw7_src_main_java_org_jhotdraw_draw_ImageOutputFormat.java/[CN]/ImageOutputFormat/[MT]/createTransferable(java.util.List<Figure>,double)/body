@@ -1,0 +1,3 @@
+{
+  return new ImageTransferable(toImage(figures,scaleFactor));
+}

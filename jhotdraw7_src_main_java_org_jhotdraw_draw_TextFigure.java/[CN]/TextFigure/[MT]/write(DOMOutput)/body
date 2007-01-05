@@ -3,4 +3,5 @@
   out.addAttribute("x",b.x);
   out.addAttribute("y",b.y);
   writeAttributes(out);
+  writeDecorator(out);
 }

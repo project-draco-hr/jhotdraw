@@ -6,11 +6,11 @@
       p=getTargetConnector().getAnchor();
     }
     ConnectionFigure f=getConnection();
-    fireAreaInvalidated(f.getDrawBounds());
+    fireAreaInvalidated(f.getDrawingArea());
     f.willChange();
     f.basicSetBounds(f.getStartPoint(),p);
     f.changed();
-    fireAreaInvalidated(f.getDrawBounds());
+    fireAreaInvalidated(f.getDrawingArea());
   }
  else   if (editedConnection != null) {
     editedConnection.willChange();

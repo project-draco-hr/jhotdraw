@@ -1,9 +1,9 @@
 {
-  view.getJComponent().requestFocus();
+  view.getComponent().requestFocus();
   if (editScrollContainer != null) {
     editScrollContainer.setVisible(false);
-    view.getJComponent().remove(editScrollContainer);
+    view.getComponent().remove(editScrollContainer);
     Rectangle bounds=editScrollContainer.getBounds();
-    view.getJComponent().repaint(bounds.x,bounds.y,bounds.width,bounds.height);
+    view.getComponent().repaint(bounds.x,bounds.y,bounds.width,bounds.height);
   }
 }

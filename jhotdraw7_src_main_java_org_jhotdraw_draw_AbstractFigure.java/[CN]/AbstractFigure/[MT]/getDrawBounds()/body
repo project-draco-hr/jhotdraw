@@ -1,8 +1,0 @@
-{
-  Rectangle2D.Double figureDrawBounds=getFigureDrawBounds();
-  if (decorator != null) {
-    updateDecoratorBounds();
-    figureDrawBounds.add(decorator.getDrawBounds());
-  }
-  return figureDrawBounds;
-}

@@ -1,0 +1,35 @@
+{
+  if (pageIndex < 0 || pageIndex >= getNumberOfPages()) {
+    return Printable.NO_SUCH_PAGE;
+  }
+  if (drawing.getFigureCount() > 0) {
+    Graphics2D g=(Graphics2D)graphics;
+    setRenderingHints(g);
+    Rectangle2D.Double drawBounds=null;
+    for (    Figure f : drawing.getFigures()) {
+      if (drawBounds == null) {
+        drawBounds=f.getDrawingArea();
+      }
+ else {
+        drawBounds.add(f.getDrawingArea());
+      }
+    }
+    AffineTransform tx=new AffineTransform();
+    tx.translate(pageFormat.getImageableX(),pageFormat.getImageableY());
+    if (isAutorotate && drawBounds.width > drawBounds.height && pageFormat.getImageableWidth() < pageFormat.getImageableHeight()) {
+      double scaleFactor=Math.min(pageFormat.getImageableWidth() / drawBounds.height,pageFormat.getImageableHeight() / drawBounds.width);
+      tx.scale(scaleFactor,scaleFactor);
+      tx.translate(drawBounds.height,0d);
+      tx.rotate(Math.PI / 2d,0,0);
+      tx.translate(-drawBounds.x,-drawBounds.y);
+    }
+ else {
+      double scaleFactor=Math.min(pageFormat.getImageableWidth() / drawBounds.width,pageFormat.getImageableHeight() / drawBounds.height);
+      tx.scale(scaleFactor,scaleFactor);
+      tx.translate(-drawBounds.x,-drawBounds.y);
+    }
+    g.transform(tx);
+    drawing.draw(g);
+  }
+  return Printable.PAGE_EXISTS;
+}

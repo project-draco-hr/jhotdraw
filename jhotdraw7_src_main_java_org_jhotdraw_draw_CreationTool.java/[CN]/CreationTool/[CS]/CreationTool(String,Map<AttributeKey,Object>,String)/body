@@ -7,6 +7,6 @@
     error.initCause(e);
     throw error;
   }
-  this.attributes=attributes;
+  this.prototypeAttributes=attributes;
   this.name=name;
 }

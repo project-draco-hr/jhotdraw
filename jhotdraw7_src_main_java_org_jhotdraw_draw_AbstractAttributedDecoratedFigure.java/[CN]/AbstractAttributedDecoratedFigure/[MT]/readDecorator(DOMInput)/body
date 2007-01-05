@@ -1,0 +1,10 @@
+{
+  if (in.getElementCount("decorator") > 0) {
+    in.openElement("decorator");
+    decorator=(Figure)in.readObject();
+    in.closeElement();
+  }
+ else {
+    decorator=null;
+  }
+}

@@ -1,5 +1,5 @@
 {
-  if (getDrawBounds().contains(p)) {
+  if (getDrawingArea().contains(p)) {
     Figure found=null;
     for (    Figure child : getChildrenFrontToBack()) {
       if (child.isVisible()) {

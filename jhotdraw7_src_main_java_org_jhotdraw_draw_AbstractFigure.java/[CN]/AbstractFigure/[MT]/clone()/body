@@ -4,9 +4,6 @@
     that.listenerList=new EventListenerList();
     that.isConnectorsVisible=false;
     that.courtingConnection=null;
-    if (this.decorator != null) {
-      that.decorator=(Figure)this.decorator.clone();
-    }
     return that;
   }
  catch (  CloneNotSupportedException e) {

@@ -2,6 +2,6 @@
   if (figures.remove(figure)) {
     figures.add(0,figure);
     needsSorting=true;
-    fireAreaInvalidated(figure.getDrawBounds());
+    fireAreaInvalidated(figure.getDrawingArea());
   }
 }

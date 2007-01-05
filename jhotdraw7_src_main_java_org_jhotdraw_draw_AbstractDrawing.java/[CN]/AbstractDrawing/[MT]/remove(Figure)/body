@@ -24,6 +24,6 @@
 );
   }
  else {
-    fireAreaInvalidated(figure.getDrawBounds());
+    fireAreaInvalidated(figure.getDrawingArea());
   }
 }

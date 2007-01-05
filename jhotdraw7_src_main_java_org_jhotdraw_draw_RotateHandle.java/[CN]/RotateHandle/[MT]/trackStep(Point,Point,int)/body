@@ -8,7 +8,7 @@
   transform.rotate(stepTheta - startTheta);
   transform.translate(-center.x,-center.y);
   getOwner().willChange();
-  getOwner().restoreTo(restoreData);
+  getOwner().restoreTransformTo(restoreData);
   getOwner().basicTransform(transform);
   getOwner().changed();
 }

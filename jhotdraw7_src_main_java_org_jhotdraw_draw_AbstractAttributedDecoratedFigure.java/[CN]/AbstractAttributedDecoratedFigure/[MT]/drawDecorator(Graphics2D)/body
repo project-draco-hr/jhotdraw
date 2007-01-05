@@ -1,0 +1,4 @@
+{
+  updateDecoratorBounds();
+  decorator.draw(g);
+}

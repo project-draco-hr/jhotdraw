@@ -1,16 +1,30 @@
 {
+  double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2);
   if (isClosed() || FILL_COLOR.get(this) != null) {
     double grow=AttributeKeys.getPerpendicularHitGrowth(this);
     if (grow == 0d) {
-      return path.contains(p);
+      if (path.contains(p)) {
+        return true;
+      }
+ else {
+        if (isClosed()) {
+          return false;
+        }
+      }
     }
  else {
       GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT.get(this)));
-      return gs.createStrokedShape(path).contains(p);
+      if (gs.createStrokedShape(path).contains(p)) {
+        return true;
+      }
+ else {
+        if (isClosed()) {
+          return false;
+        }
+      }
     }
   }
- else {
-    double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2);
+  if (!isClosed()) {
     if (getCappedPath().outlineContains(p,tolerance)) {
       return true;
     }
@@ -30,6 +44,6 @@
         return true;
       }
     }
-    return false;
   }
+  return false;
 }

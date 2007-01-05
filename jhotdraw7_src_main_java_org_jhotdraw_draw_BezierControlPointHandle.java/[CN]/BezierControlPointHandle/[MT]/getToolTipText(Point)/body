@@ -1,0 +1,13 @@
+{
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  BezierPath.Node node=getBezierNode();
+  if (node == null) {
+    return null;
+  }
+  if (node.mask == BezierPath.C1C2_MASK) {
+    return labels.getFormatted("bezierCubicControlHandle.tip",labels.getFormatted(node.keepColinear ? "bezierCubicControl.colinearControl" : "bezierCubicControl.unconstrainedControl"));
+  }
+ else {
+    return labels.getString("bezierQuadraticControlHandle.tip");
+  }
+}

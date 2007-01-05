@@ -1,0 +1,16 @@
+{
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  JPopupButton strokeWidthPopupButton=new JPopupButton();
+  labels.configureToolBarButton(strokeWidthPopupButton,"attributeStrokeWidth");
+  strokeWidthPopupButton.setFocusable(false);
+  NumberFormat formatter=NumberFormat.getInstance();
+  if (formatter instanceof DecimalFormat) {
+    ((DecimalFormat)formatter).setMaximumFractionDigits(1);
+    ((DecimalFormat)formatter).setMinimumFractionDigits(0);
+  }
+  for (int i=0; i < widths.length; i++) {
+    String label=Double.toString(widths[i]);
+    strokeWidthPopupButton.add(new AttributeAction(editor,STROKE_WIDTH,new Double(widths[i]),label,new StrokeIcon(new BasicStroke((float)widths[i],BasicStroke.CAP_BUTT,BasicStroke.JOIN_BEVEL))));
+  }
+  bar.add(strokeWidthPopupButton);
+}

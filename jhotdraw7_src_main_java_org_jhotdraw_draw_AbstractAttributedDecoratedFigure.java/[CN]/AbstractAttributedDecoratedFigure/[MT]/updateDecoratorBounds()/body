@@ -1,0 +1,12 @@
+{
+  if (decorator != null) {
+    Point2D.Double sp=getStartPoint();
+    Point2D.Double ep=getEndPoint();
+    Insets2D.Double decoratorInsets=DECORATOR_INSETS.get(this);
+    sp.x-=decoratorInsets.left;
+    sp.y-=decoratorInsets.top;
+    ep.x+=decoratorInsets.right;
+    ep.y+=decoratorInsets.bottom;
+    decorator.basicSetBounds(sp,ep);
+  }
+}

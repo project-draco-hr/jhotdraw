@@ -1,0 +1,14 @@
+{
+  double strokeTotalWidth=AttributeKeys.getStrokeTotalWidth(this);
+  double width=strokeTotalWidth / 2d;
+  if (STROKE_JOIN.get(this) == BasicStroke.JOIN_MITER) {
+    width*=STROKE_MITER_LIMIT.get(this);
+  }
+  if (STROKE_CAP.get(this) != BasicStroke.CAP_BUTT) {
+    width+=strokeTotalWidth * 2;
+  }
+  width++;
+  Rectangle2D.Double r=getBounds();
+  Geom.grow(r,width,width);
+  return r;
+}

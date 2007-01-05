@@ -1,7 +1,7 @@
 {
   views.add(view);
   view.addNotify(this);
-  view.getJComponent().addFocusListener(focusHandler);
+  view.getComponent().addFocusListener(focusHandler);
   if (tool != null) {
     view.addMouseListener(tool);
     view.addMouseMotionListener(tool);

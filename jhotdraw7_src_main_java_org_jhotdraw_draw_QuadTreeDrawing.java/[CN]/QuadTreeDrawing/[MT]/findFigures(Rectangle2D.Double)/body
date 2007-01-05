@@ -1,5 +1,5 @@
 {
-  Collection<Figure> c=quadTree.findIntersects(r);
+  LinkedList<Figure> c=new LinkedList<Figure>(quadTree.findIntersects(r));
 switch (c.size()) {
 case 0:
 case 1:

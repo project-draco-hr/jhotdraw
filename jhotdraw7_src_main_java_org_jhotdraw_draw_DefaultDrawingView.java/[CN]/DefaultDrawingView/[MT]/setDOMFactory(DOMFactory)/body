@@ -1,5 +1,0 @@
-{
-  DOMFactory oldValue=domFactory;
-  this.domFactory=newValue;
-  firePropertyChange("DOMFactory",oldValue,newValue);
-}

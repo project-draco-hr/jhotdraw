@@ -1,0 +1,4 @@
+{
+  super.setEnabled(b);
+  setCursor(Cursor.getPredefinedCursor(b ? Cursor.DEFAULT_CURSOR : Cursor.WAIT_CURSOR));
+}

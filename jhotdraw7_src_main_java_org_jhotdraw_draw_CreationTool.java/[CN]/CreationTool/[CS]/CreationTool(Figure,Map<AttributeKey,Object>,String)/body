@@ -1,5 +1,5 @@
 {
   this.prototype=prototype;
-  this.attributes=attributes;
+  this.prototypeAttributes=attributes;
   this.name=name;
 }

@@ -1,5 +1,5 @@
 {
-  view.getJComponent().removeFocusListener(focusHandler);
+  view.getComponent().removeFocusListener(focusHandler);
   views.remove(view);
   if (tool != null) {
     view.removeMouseListener(tool);
