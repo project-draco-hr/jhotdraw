@@ -9,6 +9,7 @@
   mo.putAction(SaveAction.ID,new SaveAction(this));
   mo.putAction(SaveAsAction.ID,new SaveAsAction(this));
   mo.putAction(CloseAction.ID,new CloseAction(this));
+  mo.putAction(PrintAction.ID,new PrintAction(this));
   mo.putAction(UndoAction.ID,new UndoAction(this));
   mo.putAction(RedoAction.ID,new RedoAction(this));
   mo.putAction(CutAction.ID,new CutAction());

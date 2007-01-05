@@ -1,0 +1,8 @@
+{
+  System.out.println("getBounds2DDouble");
+  BezierPath instance=new BezierPath();
+  Rectangle2D.Double expResult=null;
+  Rectangle2D.Double result=instance.getBounds2DDouble();
+  assertEquals(expResult,result);
+  fail("The test case is a prototype.");
+}

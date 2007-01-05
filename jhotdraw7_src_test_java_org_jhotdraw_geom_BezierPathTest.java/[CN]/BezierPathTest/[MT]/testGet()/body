@@ -1,0 +1,10 @@
+{
+  System.out.println("get");
+  int index=0;
+  int coord=0;
+  BezierPath instance=new BezierPath();
+  Point2D.Double expResult=null;
+  Point2D.Double result=instance.get(index,coord);
+  assertEquals(expResult,result);
+  fail("The test case is a prototype.");
+}

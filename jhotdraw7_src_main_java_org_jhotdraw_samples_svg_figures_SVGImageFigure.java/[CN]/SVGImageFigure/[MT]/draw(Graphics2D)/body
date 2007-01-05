@@ -1,0 +1,20 @@
+{
+  super.draw(g);
+  BufferedImage image=getBufferedImage();
+  if (image != null) {
+    if (TRANSFORM.get(this) != null) {
+      Graphics2D gx=(Graphics2D)g.create();
+      gx.transform(TRANSFORM.get(this));
+      gx.drawImage(image,(int)rectangle.x,(int)rectangle.y,(int)rectangle.width,(int)rectangle.height,null);
+      gx.dispose();
+    }
+ else {
+      g.drawImage(image,(int)rectangle.x,(int)rectangle.y,(int)rectangle.width,(int)rectangle.height,null);
+    }
+  }
+ else {
+    Shape shape=getTransformedShape();
+    g.setColor(Color.red);
+    g.draw(shape);
+  }
+}

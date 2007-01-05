@@ -4,67 +4,63 @@
   double doubleValue;
   objectValue=toPaint(elem,readInheritAttribute(elem,"fill","black"));
   if (objectValue instanceof Color) {
-    a.put(SVGAttributeKeys.FILL_COLOR,(Color)objectValue);
+    FILL_COLOR.set(a,(Color)objectValue);
   }
  else   if (objectValue instanceof Gradient) {
-    a.put(SVGAttributeKeys.FILL_GRADIENT,(Gradient)objectValue);
+    FILL_GRADIENT.set(a,(Gradient)objectValue);
   }
  else   if (objectValue == null) {
-    a.put(SVGAttributeKeys.FILL_COLOR,null);
+    FILL_COLOR.set(a,null);
   }
  else {
-    a.put(SVGAttributeKeys.FILL_COLOR,null);
+    FILL_COLOR.set(a,null);
     System.out.println("  fill=" + objectValue);
   }
-  doubleValue=toDouble(elem,readInheritAttribute(elem,"fill-opacity","1"),1d,0d,1d);
-  if (doubleValue != 1d) {
-    Color c=(Color)a.get(SVGAttributeKeys.FILL_COLOR);
-    if (c != null) {
-      a.put(SVGAttributeKeys.FILL_COLOR,new Color((c.getRGB() & 0xffffff) | ((int)(255 * doubleValue) << 24),true));
-    }
+  objectValue=readInheritAttribute(elem,"fill-opacity",null);
+  if (objectValue == null) {
+    objectValue=readInheritAttribute(elem,"opacity","1");
   }
+  FILL_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
   value=readInheritAttribute(elem,"fill-rule","nonzero");
-  a.put(SVGAttributeKeys.WINDING_RULE,fillRuleMap.get(value));
+  WINDING_RULE.set(a,fillRuleMap.get(value));
   objectValue=toPaint(elem,readInheritAttribute(elem,"stroke","none"));
   if (objectValue instanceof Color) {
-    a.put(SVGAttributeKeys.STROKE_COLOR,(Color)objectValue);
+    STROKE_COLOR.set(a,(Color)objectValue);
   }
  else   if (objectValue instanceof Gradient) {
-    a.put(SVGAttributeKeys.STROKE_GRADIENT,(Gradient)objectValue);
+    STROKE_GRADIENT.set(a,(Gradient)objectValue);
   }
  else   if (objectValue == null) {
-    a.put(SVGAttributeKeys.STROKE_COLOR,null);
+    STROKE_COLOR.set(a,null);
   }
  else {
-    a.put(SVGAttributeKeys.STROKE_COLOR,null);
+    STROKE_COLOR.set(a,null);
     System.out.println("  stroke=" + objectValue);
   }
   value=readInheritAttribute(elem,"stroke-dasharray","none");
   if (!value.equals("none")) {
-    String[] values=toCommaSeparatedArray(elem,value);
+    String[] values=toCommaSeparatedArray(value);
     double[] dashes=new double[values.length];
     for (int i=0; i < values.length; i++) {
       dashes[i]=toNumber(elem,values[i]);
     }
-    a.put(SVGAttributeKeys.STROKE_DASHES,dashes);
+    STROKE_DASHES.set(a,dashes);
   }
   doubleValue=toNumber(elem,readInheritAttribute(elem,"stroke-dashoffset","0"));
-  a.put(SVGAttributeKeys.STROKE_DASH_PHASE,doubleValue);
-  a.put(SVGAttributeKeys.IS_STROKE_DASH_FACTOR,false);
+  STROKE_DASH_PHASE.set(a,doubleValue);
+  IS_STROKE_DASH_FACTOR.set(a,false);
   value=readInheritAttribute(elem,"stroke-linecap","butt");
-  a.put(SVGAttributeKeys.STROKE_CAP,strokeLinecapMap.get(value));
+  STROKE_CAP.set(a,strokeLinecapMap.get(value));
   value=readInheritAttribute(elem,"stroke-linejoin","miter");
-  a.put(SVGAttributeKeys.STROKE_JOIN,strokeLinejoinMap.get(value));
-  doubleValue=toDouble(elem,readInheritAttribute(elem,"stroke-miterlimit","4"));
-  a.put(SVGAttributeKeys.STROKE_MITER_LIMIT,doubleValue);
-  a.put(SVGAttributeKeys.IS_STROKE_MITER_LIMIT_FACTOR,false);
-  doubleValue=toDouble(elem,readInheritAttribute(elem,"stroke-opacity","1"),1d,0d,1d);
-  if (doubleValue != 1d) {
-    Color c=(Color)a.get(SVGAttributeKeys.STROKE_COLOR);
-    if (c != null) {
-      a.put(SVGAttributeKeys.STROKE_COLOR,new Color((c.getRGB() & 0xffffff) | ((int)(255 * doubleValue) << 24),true));
-    }
+  STROKE_JOIN.set(a,strokeLinejoinMap.get(value));
+  doubleValue=toDouble(elem,readInheritAttribute(elem,"stroke-miterlimit","4"),4d,1d,Double.MAX_VALUE);
+  STROKE_MITER_LIMIT.set(a,doubleValue);
+  IS_STROKE_MITER_LIMIT_FACTOR.set(a,false);
+  objectValue=readInheritAttribute(elem,"stroke-opacity",null);
+  if (objectValue == null) {
+    objectValue=readInheritAttribute(elem,"opacity","1");
   }
-  doubleValue=toNumber(elem,readInheritAttribute(elem,"stroke-width","1"));
-  a.put(SVGAttributeKeys.STROKE_WIDTH,doubleValue);
+  STROKE_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
+  doubleValue=toScaledNumber(elem,readInheritAttribute(elem,"stroke-width","1"));
+  STROKE_WIDTH.set(a,doubleValue);
 }

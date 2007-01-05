@@ -2,6 +2,7 @@
   final Application app=getApplication();
   final File file=fileChooser.getSelectedFile();
   app.setEnabled(true);
+  project.setEnabled(false);
   int multipleOpenId=1;
   for (  Project aProject : app.projects()) {
     if (aProject != project && aProject.getFile() != null && aProject.getFile().equals(file)) {
@@ -9,6 +10,7 @@
     }
   }
   project.setMultipleOpenId(multipleOpenId);
+  project.setEnabled(false);
   project.execute(new Worker(){
     public Object construct(){
       try {

@@ -1,4 +1,5 @@
 {
+  reset();
   try {
     if (doctype != null) {
       out.write("<!DOCTYPE ");

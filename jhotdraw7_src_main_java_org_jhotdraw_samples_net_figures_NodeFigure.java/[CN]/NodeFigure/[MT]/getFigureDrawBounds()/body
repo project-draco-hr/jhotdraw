@@ -1,5 +1,0 @@
-{
-  Rectangle2D.Double b=super.getFigureDrawBounds();
-  Geom.grow(b,10d,10d);
-  return b;
-}

@@ -1,0 +1,22 @@
+{
+  if (stopColors.length == 0) {
+    return Color.BLACK;
+  }
+  Point2D.Double cp;
+  double rr;
+  if (isRelativeToFigureBounds) {
+    Rectangle2D.Double bounds=f.getBounds();
+    cp=new Point2D.Double(bounds.x + bounds.width * cx,bounds.y + bounds.height * cy);
+    rr=r * Math.sqrt(bounds.width * bounds.width + bounds.height * bounds.height);
+  }
+ else {
+    cp=new Point2D.Double(cx,cy);
+    rr=r;
+  }
+  float[] fractions=new float[stopColors.length];
+  for (int i=0; i < stopColors.length; i++) {
+    fractions[i]=(float)stopOffsets[i];
+  }
+  org.apache.batik.ext.awt.RadialGradientPaint gp=new org.apache.batik.ext.awt.RadialGradientPaint(cp,(float)rr,fractions,stopColors);
+  return gp;
+}

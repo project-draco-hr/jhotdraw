@@ -1,9 +1,7 @@
 {
   identifiedElements=new HashMap<String,IXMLElement>();
   elementObjects=new HashMap<IXMLElement,Object>();
-  widthPercentFactor=1d;
-  heightPercentFactor=1d;
-  widthFactor=1d;
-  heightFactor=1d;
-  numberFactor=1d;
+  viewportStack=new Stack<Viewport>();
+  viewportStack.push(new Viewport());
+  styleManager=new StyleManager();
 }

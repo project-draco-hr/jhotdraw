@@ -2,6 +2,6 @@
   String value;
   value=readAttribute(elem,"transform","none");
   if (!value.equals("none")) {
-    a.put(SVGAttributeKeys.TRANSFORM,toTransform(elem,value));
+    TRANSFORM.set(a,toTransform(elem,value));
   }
 }

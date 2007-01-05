@@ -1,0 +1,18 @@
+{
+  Object value;
+  value=readInheritAttribute(elem,"text-anchor","start");
+  TEXT_ANCHOR.set(a,textAnchorMap.get(value));
+  value=readInheritAttribute(elem,"display-align","auto");
+  if (!value.equals("auto")) {
+    if (value.equals("center")) {
+      TEXT_ANCHOR.set(a,TextAnchor.MIDDLE);
+    }
+ else     if (value.equals("before")) {
+      TEXT_ANCHOR.set(a,TextAnchor.END);
+    }
+  }
+  value=readInheritAttribute(elem,"text-align","start");
+  if (!value.equals("start")) {
+    TEXT_ANCHOR.set(a,textAnchorMap.get(value));
+  }
+}

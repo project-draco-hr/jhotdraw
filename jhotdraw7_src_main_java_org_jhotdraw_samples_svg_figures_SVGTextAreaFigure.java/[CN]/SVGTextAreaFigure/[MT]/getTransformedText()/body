@@ -6,7 +6,7 @@
       Font font=getFont();
       boolean isUnderlined=FONT_UNDERLINED.get(this);
       Insets2D.Double insets=getInsets();
-      Rectangle2D.Double textRect=new Rectangle2D.Double(rect.x + insets.left,rect.y + insets.top,rect.width - insets.left - insets.right,rect.height - insets.top - insets.bottom);
+      Rectangle2D.Double textRect=new Rectangle2D.Double(rectangle.x + insets.left,rectangle.y + insets.top,rectangle.width - insets.left - insets.right,rectangle.height - insets.top - insets.bottom);
       float leftMargin=(float)textRect.x;
       float rightMargin=(float)Math.max(leftMargin + 1,textRect.x + textRect.width);
       float verticalPos=(float)textRect.y;

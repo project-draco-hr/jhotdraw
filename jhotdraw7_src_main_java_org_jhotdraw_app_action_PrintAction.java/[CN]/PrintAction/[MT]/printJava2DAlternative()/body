@@ -1,0 +1,27 @@
+{
+  Pageable pageable=(Pageable)Methods.invokeGetter(getCurrentProject(),"createPageable",null);
+  if (pageable == null) {
+    throw new InternalError("Project does not have a method named java.awt.Pageable createPageable()");
+  }
+  try {
+    final PrinterJob job=PrinterJob.getPrinterJob();
+    PrintRequestAttributeSet attr=new HashPrintRequestAttributeSet();
+    attr.add(new PrinterResolution(300,300,PrinterResolution.DPI));
+    job.setPageable(pageable);
+    if (job.printDialog(attr)) {
+      try {
+        job.print();
+      }
+ catch (      PrinterException e) {
+        ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+        JSheet.showMessageSheet(getCurrentProject().getComponent(),labels.getFormatted("couldntPrint",e));
+      }
+    }
+ else {
+      System.out.println("JOB ABORTED!");
+    }
+  }
+ catch (  Throwable t) {
+    t.printStackTrace();
+  }
+}

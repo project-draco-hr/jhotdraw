@@ -1,3 +1,0 @@
-{
-  current=(XMLElement)stack.pop();
-}

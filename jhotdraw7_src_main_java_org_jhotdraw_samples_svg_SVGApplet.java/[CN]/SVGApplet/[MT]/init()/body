@@ -10,7 +10,7 @@
   for (int i=0; i < labels.length; i++) {
     c.add(new JLabel((labels[i].length() == 0) ? " " : labels[i]));
   }
-  new SwingWorker(){
+  new Worker(){
     public Object construct(){
       Object result;
       try {
@@ -40,15 +40,14 @@
       }
       return result;
     }
-    public void finished(){
-      if (getValue() instanceof Throwable) {
-        ((Throwable)getValue()).printStackTrace();
+    public void finished(    Object result){
+      if (result instanceof Throwable) {
+        ((Throwable)result).printStackTrace();
       }
       Container c=getContentPane();
       c.setLayout(new BorderLayout());
       c.removeAll();
       c.add(drawingPanel=new SVGPanel());
-      Object result=getValue();
       initComponents();
       if (result != null) {
         if (result instanceof Drawing) {

@@ -1,4 +1,4 @@
 {
-  rect=new Rectangle2D.Double(x,y,width,height);
-  SVGConstants.setDefaults(this);
+  rectangle=new Rectangle2D.Double(x,y,width,height);
+  SVGAttributeKeys.setDefaults(this);
 }

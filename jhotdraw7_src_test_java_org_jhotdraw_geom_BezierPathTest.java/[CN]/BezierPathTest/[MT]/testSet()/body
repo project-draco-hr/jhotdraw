@@ -1,0 +1,9 @@
+{
+  System.out.println("set");
+  int index=0;
+  int coord=0;
+  Point2D.Double p=null;
+  BezierPath instance=new BezierPath();
+  instance.set(index,coord,p);
+  fail("The test case is a prototype.");
+}

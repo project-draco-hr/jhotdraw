@@ -1,0 +1,4 @@
+IXMLElement elem
+String name
+String value
+String defaultValue

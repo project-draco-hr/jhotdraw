@@ -1,0 +1,3 @@
+{
+  drawing.addAll(readFigures(in));
+}

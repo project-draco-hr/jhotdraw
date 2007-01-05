@@ -1,10 +1,8 @@
 {
-  InputStream in=null;
   try {
-    in=new BufferedInputStream(new FileInputStream(f));
     InputFormat sf=new SVGInputFormat();
-    final Drawing drawing=new QuadTreeDrawing();
-    sf.read(f.toURL(),in,drawing,new LinkedList<Figure>());
+    final Drawing drawing=createDrawing();
+    sf.read(f,drawing);
     SwingUtilities.invokeAndWait(new Runnable(){
       public void run(){
         view.getDrawing().removeUndoableEditListener(undo);
@@ -24,13 +22,5 @@ catch (  InvocationTargetException e) {
     InternalError error=new InternalError();
     e.initCause(e);
     throw error;
-  }
- finally {
-    if (in != null)     try {
-      in.close();
-    }
- catch (    IOException e) {
-    }
-    ;
   }
 }

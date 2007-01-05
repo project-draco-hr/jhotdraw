@@ -10,12 +10,12 @@
   for (int i=0; i < lines.length; i++) {
     c.add(new JLabel(lines[i]));
   }
-  new SwingWorker(){
+  new Worker(){
     public Object construct(){
       Object result;
       try {
         if (getParameter("data") != null && getParameter("data").length() > 0) {
-          NanoXMLLiteDOMInput domi=new NanoXMLLiteDOMInput(new DrawFigureFactory(),new StringReader(getParameter("data")));
+          NanoXMLDOMInput domi=new NanoXMLDOMInput(new DrawFigureFactory(),new StringReader(getParameter("data")));
           domi.openElement("PlasmaDraw");
           result=domi.readObject(0);
         }
@@ -24,7 +24,7 @@
           try {
             URL url=new URL(getDocumentBase(),getParameter("datafile"));
             in=url.openConnection().getInputStream();
-            NanoXMLLiteDOMInput domi=new NanoXMLLiteDOMInput(new DrawFigureFactory(),in);
+            NanoXMLDOMInput domi=new NanoXMLDOMInput(new DrawFigureFactory(),in);
             domi.openElement("PlasmaDraw");
             result=domi.readObject(0);
           }
@@ -41,11 +41,10 @@
       }
       return result;
     }
-    public void finished(){
+    public void finished(    Object result){
       Container c=getContentPane();
       c.setLayout(new BorderLayout());
       c.removeAll();
-      Object result=getValue();
       initComponents();
       if (result != null) {
         if (result instanceof Drawing) {

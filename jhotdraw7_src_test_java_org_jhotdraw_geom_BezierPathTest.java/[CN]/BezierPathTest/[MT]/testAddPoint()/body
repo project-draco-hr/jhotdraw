@@ -1,0 +1,8 @@
+{
+  System.out.println("addPoint");
+  double x=0.0;
+  double y=0.0;
+  BezierPath instance=new BezierPath();
+  instance.addPoint(x,y);
+  fail("The test case is a prototype.");
+}

@@ -22,6 +22,10 @@
   if (model.getAction(ExportAction.ID) != null) {
     mi=m.add(model.getAction(ExportAction.ID));
   }
+  if (model.getAction(PrintAction.ID) != null) {
+    m.addSeparator();
+    m.add(model.getAction(PrintAction.ID));
+  }
   m.addSeparator();
   m.add(model.getAction(ExitAction.ID));
   mb.add(m);

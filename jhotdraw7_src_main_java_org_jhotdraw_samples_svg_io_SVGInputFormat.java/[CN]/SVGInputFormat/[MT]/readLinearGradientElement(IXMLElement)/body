@@ -6,14 +6,26 @@
   double x2=toNumber(elem,readAttribute(elem,"x2","1"));
   double y2=toNumber(elem,readAttribute(elem,"y2","0"));
   boolean isRelativeToFigureBounds=readAttribute(elem,"gradientUnits","objectBoundingBox").equals("objectBoundingBox");
-  ArrayList stops=elem.getChildrenNamed("stop",SVG_NAMESPACE);
+  ArrayList<IXMLElement> stops=elem.getChildrenNamed("stop",SVG_NAMESPACE);
   if (stops.size() == 0) {
     stops=elem.getChildrenNamed("stop");
+  }
+  AffineTransform tx=toTransform(elem,readAttribute(elem,"gradientTransform","none"));
+  if (tx != null) {
+    Point2D.Double p=new Point2D.Double(x1,y1);
+    tx.transform(p,p);
+    x1=p.x;
+    y1=p.y;
+    p.x=x2;
+    p.y=y2;
+    tx.transform(p,p);
+    x2=p.x;
+    y2=p.y;
   }
   double[] stopOffsets=new double[stops.size()];
   Color[] stopColors=new Color[stops.size()];
   for (int i=0; i < stops.size(); i++) {
-    IXMLElement stopElem=(IXMLElement)stops.get(i);
+    IXMLElement stopElem=stops.get(i);
     stopOffsets[i]=toDouble(stopElem,readAttribute(stopElem,"offset","0"),0,0,1);
     stopColors[i]=toColor(stopElem,readAttribute(stopElem,"stop-color","black"));
     double doubleValue=toDouble(stopElem,readAttribute(stopElem,"stop-opacity","1"),1,0,1);

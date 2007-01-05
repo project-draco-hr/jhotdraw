@@ -5,14 +5,14 @@
   double cy=toNumber(elem,readAttribute(elem,"cy","0"));
   double r=toNumber(elem,readAttribute(elem,"r","0.5"));
   boolean isRelativeToFigureBounds=readAttribute(elem,"gradientUnits","objectBoundingBox").equals("objectBoundingBox");
-  ArrayList stops=elem.getChildrenNamed("stop",SVG_NAMESPACE);
+  ArrayList<IXMLElement> stops=elem.getChildrenNamed("stop",SVG_NAMESPACE);
   if (stops.size() == 0) {
     stops=elem.getChildrenNamed("stop");
   }
   double[] stopOffsets=new double[stops.size()];
   Color[] stopColors=new Color[stops.size()];
   for (int i=0; i < stops.size(); i++) {
-    IXMLElement stopElem=(IXMLElement)stops.get(i);
+    IXMLElement stopElem=stops.get(i);
     stopOffsets[i]=toDouble(stopElem,readAttribute(stopElem,"offset","0"),0,0,1);
     stopColors[i]=toColor(stopElem,readAttribute(stopElem,"stop-color","black"));
     double doubleValue=toDouble(stopElem,readAttribute(stopElem,"stop-opacity","1"),1,0,1);

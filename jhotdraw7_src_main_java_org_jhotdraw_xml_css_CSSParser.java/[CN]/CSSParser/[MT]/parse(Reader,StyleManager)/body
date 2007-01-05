@@ -1,0 +1,10 @@
+{
+  StreamTokenizer tt=new StreamTokenizer(css);
+  tt.resetSyntax();
+  tt.wordChars('a','z');
+  tt.wordChars('A','Z');
+  tt.wordChars(128 + 32,255);
+  tt.whitespaceChars(0,' ');
+  tt.commentChar('/');
+  parseStylesheet(tt,rm);
+}

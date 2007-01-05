@@ -1,10 +1,10 @@
 {
   String value=null;
   if (elem.hasAttribute(attributeName,SVG_NAMESPACE)) {
-    value=elem.getAttribute(attributeName,SVG_NAMESPACE,defaultValue);
+    value=elem.getAttribute(attributeName,SVG_NAMESPACE,null);
   }
  else   if (elem.hasAttribute(attributeName)) {
-    value=elem.getAttribute(attributeName,defaultValue);
+    value=elem.getAttribute(attributeName,null);
   }
  else {
     value=defaultValue;
@@ -23,6 +23,6 @@
     return factor * readInheritFontSizeAttribute(elem.getParent(),attributeName,defaultValue);
   }
  else {
-    return toHeight(elem,value);
+    return toNumber(elem,value);
   }
 }

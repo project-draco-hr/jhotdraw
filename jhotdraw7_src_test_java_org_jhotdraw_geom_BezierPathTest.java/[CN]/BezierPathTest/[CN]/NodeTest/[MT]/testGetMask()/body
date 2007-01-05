@@ -1,0 +1,8 @@
+{
+  System.out.println("getMask");
+  BezierPath.Node instance=new BezierPath.Node();
+  int expResult=0;
+  int result=instance.getMask();
+  assertEquals(expResult,result);
+  fail("The test case is a prototype.");
+}

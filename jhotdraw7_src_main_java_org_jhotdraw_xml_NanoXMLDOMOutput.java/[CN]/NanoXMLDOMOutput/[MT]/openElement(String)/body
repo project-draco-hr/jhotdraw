@@ -1,7 +1,0 @@
-{
-  XMLElement newElement=new XMLElement();
-  newElement.setName(tagName);
-  current.addChild(newElement);
-  stack.push(current);
-  current=newElement;
-}

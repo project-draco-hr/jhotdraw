@@ -1,4 +1,4 @@
 {
   setText(text);
-  SVGConstants.setDefaults(this);
+  SVGAttributeKeys.setDefaults(this);
 }

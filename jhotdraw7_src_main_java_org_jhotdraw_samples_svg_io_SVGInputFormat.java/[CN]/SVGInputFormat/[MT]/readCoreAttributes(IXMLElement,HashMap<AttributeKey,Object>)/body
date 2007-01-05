@@ -1,4 +1,4 @@
 {
-  identifiedElements.put(elem.getAttribute("id",null),elem);
-  identifiedElements.put(elem.getAttribute("xml:id",null),elem);
+  identifiedElements.put(elem.getAttribute("id"),elem);
+  identifiedElements.put(elem.getAttribute("xml:id"),elem);
 }

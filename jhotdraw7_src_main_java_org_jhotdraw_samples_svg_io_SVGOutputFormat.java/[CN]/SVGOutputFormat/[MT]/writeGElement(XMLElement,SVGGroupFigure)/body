@@ -1,7 +1,0 @@
-{
-  XMLElement elem=new XMLElement("g");
-  for (  Figure child : f.getChildren()) {
-    writeElement(elem,child);
-  }
-  parent.addChild(elem);
-}

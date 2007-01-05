@@ -1,15 +1,12 @@
 {
   this.factory=factory;
   try {
-    Transformer t=TransformerFactory.newInstance().newTransformer();
-    DOMResult result=new DOMResult();
-    t.transform(new StreamSource(in),result);
-    document=(Document)result.getNode();
+    document=getBuilder().parse(in);
     current=document;
   }
- catch (  TransformerException e) {
-    IOException error=new IOException(e.getMessage());
-    error.initCause(e);
-    throw error;
+ catch (  SAXException ex) {
+    IOException e=new IOException(ex.getMessage());
+    e.initCause(ex);
+    throw e;
   }
 }

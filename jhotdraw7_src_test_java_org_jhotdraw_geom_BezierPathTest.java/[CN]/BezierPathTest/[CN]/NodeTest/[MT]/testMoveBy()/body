@@ -1,0 +1,8 @@
+{
+  System.out.println("moveBy");
+  double dx=0.0;
+  double dy=0.0;
+  BezierPath.Node instance=new BezierPath.Node();
+  instance.moveBy(dx,dy);
+  fail("The test case is a prototype.");
+}

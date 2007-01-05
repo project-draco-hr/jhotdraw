@@ -1,4 +1,3 @@
 {
-  setEnabled(super.isEnabled());
-  firePropertyChange("projectEnabled",oldValue,newValue);
+  firePropertyChange("enabled",oldValue,newValue);
 }

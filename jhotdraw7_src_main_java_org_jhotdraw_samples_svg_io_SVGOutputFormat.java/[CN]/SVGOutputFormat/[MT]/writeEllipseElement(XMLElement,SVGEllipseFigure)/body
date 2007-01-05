@@ -1,9 +1,0 @@
-{
-  XMLElement elem=new XMLElement("ellipse");
-  writeAttribute(elem,"cx",f.getX() + f.getWidth() / 2d,0d);
-  writeAttribute(elem,"cy",f.getY() + f.getHeight() / 2d,0d);
-  writeAttribute(elem,"rx",f.getWidth() / 2d,0d);
-  writeAttribute(elem,"ry",f.getHeight() / 2d,0d);
-  writeShapeAttributes(elem,f);
-  parent.addChild(elem);
-}

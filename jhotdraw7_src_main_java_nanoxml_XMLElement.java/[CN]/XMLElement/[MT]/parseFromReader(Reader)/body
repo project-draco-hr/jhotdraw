@@ -1,3 +1,0 @@
-{
-  this.parseFromReader(reader,1);
-}

@@ -1,5 +1,0 @@
-{
-  XMLElement elem=new XMLElement("polyline");
-  writeShapeAttributes(elem,f);
-  parent.addChild(elem);
-}

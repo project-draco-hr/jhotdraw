@@ -1,17 +1,5 @@
 {
-  OutputStream out=null;
-  try {
-    out=new BufferedOutputStream(new FileOutputStream(f));
-    NanoXMLLiteDOMOutput domo=new NanoXMLLiteDOMOutput(view.getDOMFactory());
-    domo.writeObject(view.getDrawing());
-    domo.save(out);
-  }
-  finally {
-    if (out != null)     try {
-      out.close();
-    }
- catch (    IOException e) {
-    }
-    ;
-  }
+  Drawing drawing=view.getDrawing();
+  OutputFormat outputFormat=drawing.getOutputFormats().get(0);
+  outputFormat.write(f,drawing);
 }

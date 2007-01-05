@@ -1,0 +1,6 @@
+{
+  System.out.println("invalidatePath");
+  BezierPath instance=new BezierPath();
+  instance.invalidatePath();
+  fail("The test case is a prototype.");
+}

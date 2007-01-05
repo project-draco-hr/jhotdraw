@@ -1,0 +1,8 @@
+{
+  System.out.println("lineTo");
+  double x1=0.0;
+  double y1=0.0;
+  BezierPath instance=new BezierPath();
+  instance.lineTo(x1,y1);
+  fail("The test case is a prototype.");
+}

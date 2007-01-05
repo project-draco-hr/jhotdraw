@@ -11,6 +11,7 @@
   m.putAction(SaveAction.ID,new SaveAction(this));
   m.putAction(SaveAsAction.ID,new SaveAsAction(this));
   m.putAction(CloseAction.ID,new CloseAction(this));
+  m.putAction(PrintAction.ID,new PrintAction(this));
   m.putAction(UndoAction.ID,new UndoAction(this));
   m.putAction(RedoAction.ID,new RedoAction(this));
   m.putAction(CutAction.ID,new CutAction());

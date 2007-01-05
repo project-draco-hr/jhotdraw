@@ -1,0 +1,10 @@
+{
+  System.out.println("quadTo");
+  double x1=0.0;
+  double y1=0.0;
+  double x2=0.0;
+  double y2=0.0;
+  BezierPath instance=new BezierPath();
+  instance.quadTo(x1,y1,x2,y2);
+  fail("The test case is a prototype.");
+}

@@ -16,13 +16,12 @@
       doc.insertString(0,toText(elem,elem.getContent()),null);
     }
  else {
-      for (      Object childObj : elem.getChildren()) {
-        IXMLElement node=(IXMLElement)childObj;
+      for (      IXMLElement node : elem.getChildren()) {
         if (node.getName() == null) {
           doc.insertString(0,toText(elem,node.getContent()),null);
         }
  else         if (node.getName().equals("tspan")) {
-          readTSpanElement(node,doc);
+          readTSpanElement((IXMLElement)node,doc);
         }
  else {
           System.out.println("  text node " + node.getName());

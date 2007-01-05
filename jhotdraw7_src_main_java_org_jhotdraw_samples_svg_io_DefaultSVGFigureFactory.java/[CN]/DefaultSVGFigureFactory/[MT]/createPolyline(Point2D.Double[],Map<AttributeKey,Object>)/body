@@ -6,6 +6,6 @@
     bf.addNode(new BezierPath.Node(points[i].x,points[i].y));
   }
   figure.add(bf);
-  figure.setAttributes(a);
+  figure.basicSetAttributes(a);
   return figure;
 }

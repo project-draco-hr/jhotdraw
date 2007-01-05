@@ -2,14 +2,9 @@
   OutputStream out=null;
   try {
     out=new BufferedOutputStream(new FileOutputStream(f));
-    new SVGOutputFormat().write(f.toURL(),out,view.getDrawing(),view.getDrawing().getFigures());
+    new SVGOutputFormat().write(f,view.getDrawing());
   }
   finally {
-    if (out != null)     try {
-      out.close();
-    }
- catch (    IOException e) {
-    }
-    ;
+    if (out != null)     out.close();
   }
 }

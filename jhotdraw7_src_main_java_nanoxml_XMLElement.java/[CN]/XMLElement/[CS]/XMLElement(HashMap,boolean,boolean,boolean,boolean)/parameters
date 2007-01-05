@@ -1,5 +1,0 @@
-HashMap entities
-boolean skipLeadingWhitespace
-boolean fillBasicConversionTable
-boolean ignoreCase
-boolean encodeUnicodeCharacters

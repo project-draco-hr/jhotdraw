@@ -1,0 +1,7 @@
+{
+  System.out.println("moveTo");
+  Point2D.Double p=null;
+  BezierPath.Node instance=new BezierPath.Node();
+  instance.moveTo(p);
+  fail("The test case is a prototype.");
+}

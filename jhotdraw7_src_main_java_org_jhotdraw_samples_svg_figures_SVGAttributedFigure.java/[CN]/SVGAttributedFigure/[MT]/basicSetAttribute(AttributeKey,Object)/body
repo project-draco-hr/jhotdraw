@@ -1,0 +1,7 @@
+{
+  if (key == STROKE_MITER_LIMIT && (Double)newValue < 1d) {
+    System.out.println(this + ".basicSetAttribute(" + key+ ","+ newValue);
+    new Throwable().printStackTrace();
+  }
+  super.basicSetAttribute(key,newValue);
+}

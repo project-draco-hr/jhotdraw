@@ -1,6 +1,6 @@
 {
   AffineTransform t=new AffineTransform();
-  if (str != null) {
+  if (str != null && !str.equals("none")) {
     StreamTokenizer tt=new StreamTokenizer(new StringReader(str));
     tt.resetSyntax();
     tt.wordChars('a','z');

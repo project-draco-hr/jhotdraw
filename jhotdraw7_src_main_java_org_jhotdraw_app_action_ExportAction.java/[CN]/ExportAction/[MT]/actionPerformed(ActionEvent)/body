@@ -1,11 +1,11 @@
 {
-  final Project project=getCurrentProject();
+  final ExportableProject project=(ExportableProject)getCurrentProject();
   if (project.isEnabled()) {
     ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
     oldFocusOwner=SwingUtilities.getWindowAncestor(project.getComponent()).getFocusOwner();
     project.setEnabled(false);
     File saveToFile;
-    JFileChooser fileChooser=getExportChooser(project);
+    JFileChooser fileChooser=project.getExportChooser();
     JSheet.showSheet(fileChooser,project.getComponent(),labels.getString("filechooser.export"),new SheetListener(){
       public void optionSelected(      final SheetEvent evt){
         if (evt.getOption() == JFileChooser.APPROVE_OPTION) {

@@ -1,8 +1,0 @@
-{
-  if (doctype != null) {
-    out.write("<!DOCTYPE ");
-    out.write(doctype);
-    out.write(">\n");
-  }
-  ((XMLElement)document.getChildren().get(0)).write(out);
-}

@@ -1,0 +1,4 @@
+{
+  this.flavors=flavors;
+  this.data=data;
+}

@@ -1,5 +1,6 @@
 {
   this.app=app;
+  this.enabled=true;
   if (app != null) {
     app.addPropertyChangeListener(applicationListener);
     updateProject(null,app.getCurrentProject());

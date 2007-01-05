@@ -1,3 +1,0 @@
-{
-  return TRANSFORM.get(this) == null ? new AffineTransform() : TRANSFORM.get(this).clone();
-}

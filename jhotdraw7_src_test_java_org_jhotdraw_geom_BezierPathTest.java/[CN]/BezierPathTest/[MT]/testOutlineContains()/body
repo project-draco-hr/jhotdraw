@@ -1,0 +1,10 @@
+{
+  System.out.println("outlineContains");
+  Point2D.Double p=null;
+  double tolerance=0.0;
+  BezierPath instance=new BezierPath();
+  boolean expResult=true;
+  boolean result=instance.outlineContains(p,tolerance);
+  assertEquals(expResult,result);
+  fail("The test case is a prototype.");
+}

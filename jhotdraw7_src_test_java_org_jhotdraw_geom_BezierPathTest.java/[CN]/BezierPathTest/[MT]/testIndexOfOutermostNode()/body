@@ -1,0 +1,8 @@
+{
+  System.out.println("indexOfOutermostNode");
+  BezierPath instance=new BezierPath();
+  int expResult=0;
+  int result=instance.indexOfOutermostNode();
+  assertEquals(expResult,result);
+  fail("The test case is a prototype.");
+}

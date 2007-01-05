@@ -1,5 +1,6 @@
 {
   final File file=fileChooser.getSelectedFile();
+  project.setEnabled(false);
   project.execute(new Worker(){
     public Object construct(){
       try {

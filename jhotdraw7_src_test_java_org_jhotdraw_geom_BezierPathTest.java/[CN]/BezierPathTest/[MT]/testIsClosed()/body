@@ -1,0 +1,8 @@
+{
+  System.out.println("isClosed");
+  BezierPath instance=new BezierPath();
+  boolean expResult=true;
+  boolean result=instance.isClosed();
+  assertEquals(expResult,result);
+  fail("The test case is a prototype.");
+}

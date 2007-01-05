@@ -1,0 +1,7 @@
+{
+  System.out.println("setMask");
+  int newValue=0;
+  BezierPath.Node instance=new BezierPath.Node();
+  instance.setMask(newValue);
+  fail("The test case is a prototype.");
+}

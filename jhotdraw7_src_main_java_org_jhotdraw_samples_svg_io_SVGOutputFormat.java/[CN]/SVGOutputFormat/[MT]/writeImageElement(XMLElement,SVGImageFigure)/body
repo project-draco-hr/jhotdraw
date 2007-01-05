@@ -1,9 +1,0 @@
-{
-  XMLElement elem=new XMLElement("image");
-  writeAttribute(elem,"x",f.getX(),0d);
-  writeAttribute(elem,"y",f.getY(),0d);
-  writeAttribute(elem,"width",f.getWidth(),0d);
-  writeAttribute(elem,"height",f.getHeight(),0d);
-  writeAttribute(elem,"xlink:href","data:image;base64," + Base64.encodeBytes(f.getImageData()),"");
-  parent.addChild(elem);
-}

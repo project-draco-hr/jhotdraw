@@ -1,3 +1,0 @@
-{
-  TRANSFORM.set(this,(geometry == null) ? null : (AffineTransform)((AffineTransform)geometry).clone());
-}

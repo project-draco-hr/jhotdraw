@@ -1,0 +1,7 @@
+{
+  IXMLElement elem=document.createElement("g");
+  for (  Figure child : f.getChildren()) {
+    writeElement(elem,child);
+  }
+  parent.addChild(elem);
+}

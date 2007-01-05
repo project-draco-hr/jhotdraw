@@ -1,3 +1,11 @@
 {
-  return FONT_SIZE.get(this).floatValue();
+  Point2D.Double p=new Point2D.Double(0,FONT_SIZE.get(this));
+  AffineTransform tx=TRANSFORM.get(this);
+  if (tx != null) {
+    tx.transform(p,p);
+    Point2D.Double p0=new Point2D.Double(0,0);
+    tx.transform(p0,p0);
+    p.y-=p0.y;
+  }
+  return (float)Math.abs(p.y);
 }

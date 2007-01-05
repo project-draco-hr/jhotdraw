@@ -1,9 +1,0 @@
-{
-  if (value != defaultValue) {
-    String str=Double.toString(value);
-    if (str.endsWith(".0")) {
-      str=str.substring(0,str.length() - 2);
-    }
-    elem.setAttribute(name,str);
-  }
-}

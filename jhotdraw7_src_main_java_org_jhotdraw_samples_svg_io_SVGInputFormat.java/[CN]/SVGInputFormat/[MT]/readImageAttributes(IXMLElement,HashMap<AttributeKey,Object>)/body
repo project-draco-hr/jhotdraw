@@ -1,5 +1,7 @@
 {
-  Object value;
-  value=readAttribute(elem,"opacity","1");
-  System.out.println("  opacity=" + value);
+  double value;
+  value=toDouble(elem,readAttribute(elem,"opacity","1"),1,0,1);
+  if (value != 1) {
+    System.out.println("  opacity=" + value);
+  }
 }

@@ -21,6 +21,10 @@
   if (mo.getAction(ExportAction.ID) != null) {
     mi=m.add(mo.getAction(ExportAction.ID));
   }
+  if (mo.getAction(PrintAction.ID) != null) {
+    m.addSeparator();
+    m.add(mo.getAction(PrintAction.ID));
+  }
   m.addSeparator();
   m.add(mo.getAction(ExitAction.ID));
   mb.add(m);

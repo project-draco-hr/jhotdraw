@@ -12,7 +12,8 @@
     project.setMultipleOpenId(multiOpenId);
   }
  else {
-    JSheet.showMessageSheet(project.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>Couldn't save to the file \""+ file+ "\".<p>"+ "Reason: "+ value,JOptionPane.ERROR_MESSAGE);
+    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+    JSheet.showMessageSheet(project.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + labels.getFormatted("couldntSave",file,value),JOptionPane.ERROR_MESSAGE);
   }
   project.setEnabled(true);
   SwingUtilities.getWindowAncestor(project.getComponent()).toFront();

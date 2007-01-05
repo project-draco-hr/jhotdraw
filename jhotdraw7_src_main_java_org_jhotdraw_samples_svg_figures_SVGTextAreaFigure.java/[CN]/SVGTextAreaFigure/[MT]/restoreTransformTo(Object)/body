@@ -1,0 +1,11 @@
+{
+  invalidateTransformedShape();
+  Object[] o=(Object[])geometry;
+  rectangle=(Rectangle2D.Double)((Rectangle2D.Double)o[0]).clone();
+  if (o[1] == null) {
+    TRANSFORM.set(this,null);
+  }
+ else {
+    TRANSFORM.set(this,(AffineTransform)((AffineTransform)o[1]).clone());
+  }
+}

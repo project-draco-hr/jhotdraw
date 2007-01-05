@@ -2,13 +2,13 @@
   SVGTextAreaFigure figure=new SVGTextAreaFigure();
   figure.basicSetBounds(new Point2D.Double(x,y),new Point2D.Double(x + w,y + h));
   try {
-    figure.setText(doc.getText(0,doc.getLength()));
+    figure.basicSetText(doc.getText(0,doc.getLength()));
   }
  catch (  BadLocationException e) {
     InternalError ex=new InternalError(e.getMessage());
     ex.initCause(e);
     throw ex;
   }
-  figure.setAttributes(attributes);
+  figure.basicSetAttributes(attributes);
   return figure;
 }

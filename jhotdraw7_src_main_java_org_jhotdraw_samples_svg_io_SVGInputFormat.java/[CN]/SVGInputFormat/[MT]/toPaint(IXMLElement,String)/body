@@ -29,7 +29,8 @@
  else   if (str.startsWith("url(")) {
     String href=value.substring(4,value.length() - 1);
     if (identifiedElements.containsKey(href.substring(1))) {
-      return elementObjects.get(identifiedElements.get(href.substring(1)));
+      Object obj=elementObjects.get(identifiedElements.get(href.substring(1)));
+      return obj;
     }
     System.out.println("toPaint " + href);
     return null;

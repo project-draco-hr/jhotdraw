@@ -1,0 +1,64 @@
+{
+  Color color;
+  String value;
+  int intValue;
+  Object gradient=FILL_GRADIENT.get(f);
+  if (gradient != null) {
+    IXMLElement gradientElem;
+    if (gradient instanceof LinearGradient) {
+      LinearGradient lg=(LinearGradient)gradient;
+      gradientElem=createLinearGradient(document,lg.getX1(),lg.getY1(),lg.getX2(),lg.getY2(),lg.getStopOffsets(),lg.getStopColors(),lg.isRelativeToFigureBounds());
+    }
+ else {
+      RadialGradient rg=(RadialGradient)gradient;
+      gradientElem=createRadialGradient(document,rg.getCX(),rg.getCY(),rg.getR(),rg.getStopOffsets(),rg.getStopColors(),rg.isRelativeToFigureBounds());
+    }
+    String id=getId(gradientElem);
+    gradientElem.setAttribute("id","xml",id);
+    defs.addChild(gradientElem);
+    writeAttribute(elem,"fill","url(#" + id + ")","#000");
+  }
+ else {
+    writeAttribute(elem,"fill",toColor(FILL_COLOR.get(f)),"#000");
+  }
+  writeAttribute(elem,"fill-opacity",FILL_OPACITY.get(f),1d);
+  if (WINDING_RULE.get(f) != WindingRule.NON_ZERO) {
+    writeAttribute(elem,"fill-rule","evenodd","nonzero");
+  }
+  gradient=STROKE_GRADIENT.get(f);
+  if (gradient != null) {
+    IXMLElement gradientElem;
+    if (gradient instanceof LinearGradient) {
+      LinearGradient lg=(LinearGradient)gradient;
+      gradientElem=createLinearGradient(document,lg.getX1(),lg.getY1(),lg.getX2(),lg.getY2(),lg.getStopOffsets(),lg.getStopColors(),lg.isRelativeToFigureBounds());
+    }
+ else {
+      RadialGradient rg=(RadialGradient)gradient;
+      gradientElem=createRadialGradient(document,rg.getCX(),rg.getCY(),rg.getR(),rg.getStopOffsets(),rg.getStopColors(),rg.isRelativeToFigureBounds());
+    }
+    String id=getId(gradientElem);
+    gradientElem.setAttribute("id","xml",id);
+    defs.addChild(gradientElem);
+    writeAttribute(elem,"stroke","url(#" + id + ")","none");
+  }
+ else {
+    writeAttribute(elem,"stroke",toColor(STROKE_COLOR.get(f)),"none");
+  }
+  double[] dashes=STROKE_DASHES.get(f);
+  if (dashes != null) {
+    StringBuilder buf=new StringBuilder();
+    for (int i=0; i < dashes.length; i++) {
+      if (i != 0) {
+        buf.append(',');
+      }
+      buf.append(toNumber(dashes[i]));
+    }
+    writeAttribute(elem,"stroke-dasharray",buf.toString(),null);
+  }
+  writeAttribute(elem,"stroke-dashoffset",STROKE_DASH_PHASE.get(f),0d);
+  writeAttribute(elem,"stroke-linecap",strokeLinecapMap.get(STROKE_CAP.get(f)),"butt");
+  writeAttribute(elem,"stroke-linejoin",strokeLinejoinMap.get(STROKE_JOIN.get(f)),"miter");
+  writeAttribute(elem,"stroke-miterlimit",STROKE_MITER_LIMIT.get(f),4d);
+  writeAttribute(elem,"stroke-opacity",STROKE_OPACITY.get(f),1d);
+  writeAttribute(elem,"stroke-width",STROKE_WIDTH.get(f),1d);
+}

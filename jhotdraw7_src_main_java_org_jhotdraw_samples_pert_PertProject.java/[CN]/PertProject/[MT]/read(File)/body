@@ -1,11 +1,8 @@
 {
-  InputStream in=null;
   try {
-    in=new BufferedInputStream(new FileInputStream(f));
-    NanoXMLLiteDOMInput domi=new NanoXMLLiteDOMInput(view.getDOMFactory(),in);
-    domi.openElement("PertDiagram");
-    final Drawing drawing=(Drawing)domi.readObject();
-    domi.closeElement();
+    final Drawing drawing=createDrawing();
+    InputFormat inputFormat=drawing.getInputFormats().get(0);
+    inputFormat.read(f,drawing);
     SwingUtilities.invokeAndWait(new Runnable(){
       public void run(){
         view.getDrawing().removeUndoableEditListener(undo);
@@ -25,13 +22,5 @@ catch (  InvocationTargetException e) {
     InternalError error=new InternalError();
     e.initCause(e);
     throw error;
-  }
- finally {
-    if (in != null)     try {
-      in.close();
-    }
- catch (    IOException e) {
-    }
-    ;
   }
 }

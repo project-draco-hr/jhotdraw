@@ -1,18 +1,14 @@
 {
   validatePath();
-  if (FILL_COLOR.get(this) != null || FILL_GRADIENT.get(this) != null) {
-    g.setColor(AttributeKeys.FILL_COLOR.get(this));
-    if (FILL_GRADIENT.get(this) != null) {
-      g.setPaint(FILL_GRADIENT.get(this).getPaint(this));
-    }
+  Paint paint=SVGAttributeKeys.getFillPaint(this);
+  if (paint != null) {
+    g.setPaint(paint);
     drawFill(g);
   }
-  if ((STROKE_COLOR.get(this) != null || STROKE_GRADIENT.get(this) != null) && STROKE_WIDTH.get(this) > 0) {
-    g.setStroke(AttributeKeys.getStroke(this));
-    g.setColor(STROKE_COLOR.get(this));
-    if (STROKE_GRADIENT.get(this) != null) {
-      g.setPaint(STROKE_GRADIENT.get(this).getPaint(this));
-    }
+  paint=SVGAttributeKeys.getStrokePaint(this);
+  if (paint != null) {
+    g.setPaint(paint);
+    g.setStroke(SVGAttributeKeys.getStroke(this));
     drawStroke(g);
   }
   if (isConnectorsVisible()) {

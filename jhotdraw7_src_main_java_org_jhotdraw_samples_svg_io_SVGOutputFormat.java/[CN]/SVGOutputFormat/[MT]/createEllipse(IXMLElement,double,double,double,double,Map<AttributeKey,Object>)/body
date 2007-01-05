@@ -1,0 +1,10 @@
+{
+  IXMLElement elem=doc.createElement("ellipse");
+  writeAttribute(elem,"cx",cx,0d);
+  writeAttribute(elem,"cy",cy,0d);
+  writeAttribute(elem,"rx",rx,0d);
+  writeAttribute(elem,"ry",ry,0d);
+  writeShapeAttributes(elem,attributes);
+  writeTransformAttribute(elem,attributes);
+  return elem;
+}

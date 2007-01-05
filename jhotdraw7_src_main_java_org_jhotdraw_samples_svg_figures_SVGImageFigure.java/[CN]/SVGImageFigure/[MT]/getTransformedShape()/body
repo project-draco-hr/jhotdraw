@@ -1,6 +1,6 @@
 {
   if (cachedTransformedShape == null) {
-    cachedTransformedShape=(Shape)rect.clone();
+    cachedTransformedShape=(Shape)rectangle.clone();
     if (TRANSFORM.get(this) != null) {
       cachedTransformedShape=TRANSFORM.get(this).createTransformedShape(cachedTransformedShape);
     }

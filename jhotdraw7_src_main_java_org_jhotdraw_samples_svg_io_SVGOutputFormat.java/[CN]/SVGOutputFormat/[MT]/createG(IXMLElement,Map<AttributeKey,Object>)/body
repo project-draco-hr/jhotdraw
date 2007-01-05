@@ -1,0 +1,4 @@
+{
+  IXMLElement elem=doc.createElement("g");
+  return elem;
+}

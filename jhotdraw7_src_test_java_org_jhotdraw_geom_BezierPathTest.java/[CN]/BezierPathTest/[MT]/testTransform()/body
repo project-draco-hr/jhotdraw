@@ -1,0 +1,7 @@
+{
+  System.out.println("transform");
+  AffineTransform tx=null;
+  BezierPath instance=new BezierPath();
+  instance.transform(tx);
+  fail("The test case is a prototype.");
+}

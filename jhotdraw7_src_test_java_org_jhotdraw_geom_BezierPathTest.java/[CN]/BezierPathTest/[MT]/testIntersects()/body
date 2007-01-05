@@ -1,0 +1,9 @@
+{
+  System.out.println("intersects");
+  Rectangle2D r=null;
+  BezierPath instance=new BezierPath();
+  boolean expResult=true;
+  boolean result=instance.intersects(r);
+  assertEquals(expResult,result);
+  fail("The test case is a prototype.");
+}

@@ -46,7 +46,10 @@
       f=null;
     }
  else     if (name.equals("svg")) {
-      f=readGElement(elem);
+      f=readSVGElement(elem);
+    }
+ else     if (name.equals("switch")) {
+      f=readSwitchElement(elem);
     }
  else     if (name.equals("text")) {
       f=readTextElement(elem);
@@ -54,13 +57,14 @@
  else     if (name.equals("use")) {
       f=readUseElement(elem);
     }
+ else     if (name.equals("style")) {
+    }
  else {
       System.out.println("<" + name + ">");
     }
   }
   if (f instanceof SVGFigure) {
     if (((SVGFigure)f).isEmpty()) {
-      System.out.println("Empty figure " + f);
       return null;
     }
   }

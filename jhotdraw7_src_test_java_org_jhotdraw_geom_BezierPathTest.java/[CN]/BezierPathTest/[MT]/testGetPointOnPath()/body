@@ -1,0 +1,10 @@
+{
+  System.out.println("getPointOnPath");
+  double relative=0.0;
+  double flatness=0.0;
+  BezierPath instance=new BezierPath();
+  Point2D.Double expResult=null;
+  Point2D.Double result=instance.getPointOnPath(relative,flatness);
+  assertEquals(expResult,result);
+  fail("The test case is a prototype.");
+}

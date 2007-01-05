@@ -1,0 +1,12 @@
+{
+  document=new XMLElement("svg",SVG_NAMESPACE);
+  document.setAttribute("xmlns:xlink","http://www.w3.org/1999/xlink");
+  nextId=0;
+  identifiedElements=new HashMap<IXMLElement,String>();
+  defs=new XMLElement("defs");
+  document.addChild(defs);
+  for (  Figure f : figures) {
+    writeElement(document,f);
+  }
+  new XMLWriter(out).write(document);
+}

@@ -1,13 +1,3 @@
 {
   this.factory=factory;
-  try {
-    objectids=new HashMap<Object,String>();
-    document=DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
-    current=document;
-  }
- catch (  ParserConfigurationException e) {
-    IOException error=new IOException(e.getMessage());
-    error.initCause(e);
-    throw error;
-  }
 }

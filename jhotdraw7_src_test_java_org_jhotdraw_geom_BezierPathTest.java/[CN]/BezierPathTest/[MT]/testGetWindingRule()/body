@@ -1,0 +1,8 @@
+{
+  System.out.println("getWindingRule");
+  BezierPath instance=new BezierPath();
+  int expResult=0;
+  int result=instance.getWindingRule();
+  assertEquals(expResult,result);
+  fail("The test case is a prototype.");
+}

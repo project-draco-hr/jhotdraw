@@ -1,5 +1,0 @@
-{
-  XMLElement elem=new XMLElement("polygon");
-  writeShapeAttributes(elem,f);
-  parent.addChild(elem);
-}

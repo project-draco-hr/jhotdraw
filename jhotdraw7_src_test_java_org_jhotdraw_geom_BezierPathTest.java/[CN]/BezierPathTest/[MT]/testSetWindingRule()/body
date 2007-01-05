@@ -1,0 +1,7 @@
+{
+  System.out.println("setWindingRule");
+  int newValue=0;
+  BezierPath instance=new BezierPath();
+  instance.setWindingRule(newValue);
+  fail("The test case is a prototype.");
+}

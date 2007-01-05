@@ -2,7 +2,7 @@
   if (text != null && text.length() > 0) {
     StringReader in=new StringReader(text);
     try {
-      NanoXMLLiteDOMInput domi=new NanoXMLLiteDOMInput(new PertFactory(),in);
+      NanoXMLDOMInput domi=new NanoXMLDOMInput(new PertFactory(),in);
       domi.openElement("Pert");
       setDrawing((Drawing)domi.readObject(0));
     }

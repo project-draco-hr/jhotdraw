@@ -1,0 +1,43 @@
+{
+  StringBuilder buf=new StringBuilder();
+switch (t.getType()) {
+case AffineTransform.TYPE_IDENTITY:
+    buf.append("none");
+  break;
+case AffineTransform.TYPE_TRANSLATION:
+buf.append("translate(");
+buf.append(toNumber(t.getTranslateX()));
+if (t.getTranslateY() != 0d) {
+buf.append(' ');
+buf.append(toNumber(t.getTranslateY()));
+}
+buf.append(')');
+break;
+case AffineTransform.TYPE_UNIFORM_SCALE:
+buf.append("scale(");
+buf.append(toNumber(t.getScaleX()));
+buf.append(')');
+break;
+case AffineTransform.TYPE_GENERAL_SCALE:
+case AffineTransform.TYPE_MASK_SCALE:
+buf.append("scale(");
+buf.append(toNumber(t.getScaleX()));
+buf.append(' ');
+buf.append(toNumber(t.getScaleY()));
+buf.append(')');
+break;
+default :
+buf.append("matrix(");
+double[] matrix=new double[6];
+t.getMatrix(matrix);
+for (int i=0; i < matrix.length; i++) {
+if (i != 0) {
+buf.append(' ');
+}
+buf.append(toNumber(matrix[i]));
+}
+buf.append(')');
+break;
+}
+return buf.toString();
+}

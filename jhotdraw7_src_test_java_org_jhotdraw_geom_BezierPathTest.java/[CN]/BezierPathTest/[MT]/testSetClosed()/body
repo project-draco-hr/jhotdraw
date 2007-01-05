@@ -1,0 +1,7 @@
+{
+  System.out.println("setClosed");
+  boolean newValue=true;
+  BezierPath instance=new BezierPath();
+  instance.setClosed(newValue);
+  fail("The test case is a prototype.");
+}

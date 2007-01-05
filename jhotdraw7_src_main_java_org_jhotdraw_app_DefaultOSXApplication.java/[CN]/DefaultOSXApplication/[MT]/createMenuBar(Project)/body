@@ -27,6 +27,10 @@
     mi=m.add(model.getAction(ExportAction.ID));
     mi.setIcon(null);
   }
+  if (model.getAction(PrintAction.ID) != null) {
+    m.addSeparator();
+    m.add(model.getAction(PrintAction.ID));
+  }
   mb.add(m);
   m=new JMenu();
   labels.configureMenu(m,"edit");

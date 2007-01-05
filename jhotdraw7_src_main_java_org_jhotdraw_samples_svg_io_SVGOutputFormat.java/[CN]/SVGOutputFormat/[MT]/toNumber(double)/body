@@ -1,0 +1,7 @@
+{
+  String str=Double.toString(number);
+  if (str.endsWith(".0")) {
+    str=str.substring(0,str.length() - 2);
+  }
+  return str;
+}

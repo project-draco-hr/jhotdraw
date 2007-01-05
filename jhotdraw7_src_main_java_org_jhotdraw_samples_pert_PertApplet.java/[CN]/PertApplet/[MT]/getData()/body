@@ -1,7 +1,7 @@
 {
   CharArrayWriter out=new CharArrayWriter();
   try {
-    NanoXMLLiteDOMOutput domo=new NanoXMLLiteDOMOutput(new PertFactory());
+    NanoXMLDOMOutput domo=new NanoXMLDOMOutput(new PertFactory());
     domo.openElement("Pert");
     domo.writeObject(getDrawing());
     domo.closeElement();

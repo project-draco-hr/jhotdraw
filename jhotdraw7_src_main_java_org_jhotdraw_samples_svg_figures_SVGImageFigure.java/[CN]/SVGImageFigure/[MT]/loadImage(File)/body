@@ -1,22 +1,16 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-  DataInputStream in=null;
-  byte[] buf=null;
-  BufferedImage img=null;
+  InputStream in=null;
   try {
-    in=new DataInputStream(new FileInputStream(file));
-    buf=new byte[(int)file.length()];
-    in.readFully(buf);
-    img=ImageIO.read(new ByteArrayInputStream(buf));
+    in=new FileInputStream(file);
+    loadImage(in);
   }
  catch (  Throwable t) {
-    IOException ex=new IOException(labels.getFormatted("failedToLoadImage",file.getName()));
-    ex.initCause(t);
-    throw ex;
+    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+    IOException e=new IOException(labels.getFormatted("failedToLoadImage",file.getName()));
+    e.initCause(t);
+    throw e;
   }
-  if (img == null) {
-    throw new IOException(labels.getFormatted("failedToLoadImage",file.getName()));
+ finally {
+    if (in != null)     in.close();
   }
-  imageData=buf;
-  bufferedImage=img;
 }

@@ -1,4 +1,5 @@
 {
+  reset();
   try {
     if (doctype != null) {
       OutputStreamWriter w=new OutputStreamWriter(out,"UTF8");

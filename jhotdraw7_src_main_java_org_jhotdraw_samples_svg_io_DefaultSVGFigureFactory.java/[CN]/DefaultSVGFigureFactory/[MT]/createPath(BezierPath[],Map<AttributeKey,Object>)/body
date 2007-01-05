@@ -6,6 +6,6 @@
     bf.basicSetBezierPath(beziers[i]);
     figure.add(bf);
   }
-  figure.setAttributes(a);
+  figure.basicSetAttributes(a);
   return figure;
 }
