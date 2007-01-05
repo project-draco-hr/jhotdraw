@@ -1,7 +1,0 @@
-{
-  if (figures.remove(figure)) {
-    figures.add(figure);
-    invalidateSortOrder();
-    fireAreaInvalidated(figure.getDrawBounds());
-  }
-}

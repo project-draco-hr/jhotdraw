@@ -1,9 +1,0 @@
-{
-  ArrayList<Figure> contained=new ArrayList<Figure>();
-  for (  Figure f : figures) {
-    if (f.isVisible() && bounds.contains(f.getBounds())) {
-      contained.add(f);
-    }
-  }
-  return contained;
-}
