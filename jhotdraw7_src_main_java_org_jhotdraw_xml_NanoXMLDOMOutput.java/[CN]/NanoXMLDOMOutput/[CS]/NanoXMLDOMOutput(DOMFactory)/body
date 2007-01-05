@@ -1,0 +1,8 @@
+{
+  this.factory=factory;
+  objectids=new HashMap<Object,String>();
+  document=new XMLElement();
+  current=document;
+  stack=new Stack<XMLElement>();
+  stack.push(current);
+}

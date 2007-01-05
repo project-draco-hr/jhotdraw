@@ -1,0 +1,11 @@
+{
+  XMLWriter writer=new XMLWriter(out);
+  try {
+    writer.write((XMLElement)document.getChildren().get(0),true);
+  }
+ catch (  IOException e) {
+    InternalError error=new InternalError();
+    error.initCause(e);
+    throw error;
+  }
+}

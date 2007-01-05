@@ -1,0 +1,9 @@
+{
+  String old=current.getContent();
+  if (old == null) {
+    current.setContent(text);
+  }
+ else {
+    current.setContent(old + text);
+  }
+}
