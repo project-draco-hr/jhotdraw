@@ -1,0 +1,3 @@
+{
+  return figures.contains(f);
+}

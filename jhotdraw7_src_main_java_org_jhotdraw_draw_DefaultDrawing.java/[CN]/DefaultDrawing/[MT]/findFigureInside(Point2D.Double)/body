@@ -1,0 +1,4 @@
+{
+  Figure f=findFigure(p);
+  return (f == null) ? null : f.findFigureInside(p);
+}

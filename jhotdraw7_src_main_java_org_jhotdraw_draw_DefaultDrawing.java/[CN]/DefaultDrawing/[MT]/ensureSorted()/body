@@ -1,0 +1,6 @@
+{
+  if (needsSorting) {
+    Collections.sort(figures,FigureLayerComparator.INSTANCE);
+    needsSorting=false;
+  }
+}
