@@ -1,9 +1,0 @@
-{
-  LinkedList<Figure> contained=new LinkedList<Figure>();
-  for (  Figure f : figures) {
-    if (f.isVisible() && bounds.contains(f.getBounds())) {
-      contained.add(f);
-    }
-  }
-  return contained;
-}

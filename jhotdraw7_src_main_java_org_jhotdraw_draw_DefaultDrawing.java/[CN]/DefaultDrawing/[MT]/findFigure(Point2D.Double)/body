@@ -1,8 +1,0 @@
-{
-  for (  Figure f : getFiguresFrontToBack()) {
-    if (f.isVisible() && f.contains(p)) {
-      return f;
-    }
-  }
-  return null;
-}
