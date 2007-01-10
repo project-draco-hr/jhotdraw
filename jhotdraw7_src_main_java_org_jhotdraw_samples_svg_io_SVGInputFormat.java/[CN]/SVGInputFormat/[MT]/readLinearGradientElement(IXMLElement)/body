@@ -10,6 +10,18 @@
   if (stops.size() == 0) {
     stops=elem.getChildrenNamed("stop");
   }
+  if (stops.size() == 0) {
+    String xlink=readAttribute(elem,"xlink:href","");
+    if (xlink.startsWith("#") && elementObjects.get(identifiedElements.get(xlink.substring(1))) != null) {
+      stops=identifiedElements.get(xlink.substring(1)).getChildrenNamed("stop",SVG_NAMESPACE);
+      if (stops.size() == 0) {
+        stops=identifiedElements.get(xlink.substring(1)).getChildrenNamed("stop");
+      }
+    }
+  }
+  if (stops.size() == 0) {
+    System.out.println("SVGInpuFormat: Warning no stops in linearGradient " + elem);
+  }
   AffineTransform tx=toTransform(elem,readAttribute(elem,"gradientTransform","none"));
   if (tx != null) {
     Point2D.Double p=new Point2D.Double(x1,y1);
@@ -26,7 +38,13 @@
   Color[] stopColors=new Color[stops.size()];
   for (int i=0; i < stops.size(); i++) {
     IXMLElement stopElem=stops.get(i);
-    stopOffsets[i]=toDouble(stopElem,readAttribute(stopElem,"offset","0"),0,0,1);
+    String offsetStr=readAttribute(stopElem,"offset","0");
+    if (offsetStr.endsWith("%")) {
+      stopOffsets[i]=toDouble(stopElem,offsetStr.substring(0,offsetStr.length() - 1),0,0,100) / 100d;
+    }
+ else {
+      stopOffsets[i]=toDouble(stopElem,offsetStr,0,0,1);
+    }
     stopColors[i]=toColor(stopElem,readAttribute(stopElem,"stop-color","black"));
     double doubleValue=toDouble(stopElem,readAttribute(stopElem,"stop-opacity","1"),1,0,1);
     if (doubleValue != 1) {

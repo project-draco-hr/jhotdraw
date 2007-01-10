@@ -14,7 +14,7 @@
   }
  else {
     FILL_COLOR.set(a,null);
-    System.out.println("  fill=" + objectValue);
+    System.out.println("SVGInputFormat not implemented  fill=" + objectValue);
   }
   objectValue=readInheritAttribute(elem,"fill-opacity",null);
   if (objectValue == null) {
@@ -35,7 +35,7 @@
   }
  else {
     STROKE_COLOR.set(a,null);
-    System.out.println("  stroke=" + objectValue);
+    System.out.println("SVGInputFormat not implemented  stroke=" + objectValue);
   }
   value=readInheritAttribute(elem,"stroke-dasharray","none");
   if (!value.equals("none")) {

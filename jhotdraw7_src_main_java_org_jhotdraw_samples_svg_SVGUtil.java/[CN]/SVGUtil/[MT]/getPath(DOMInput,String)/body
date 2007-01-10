@@ -1,3 +1,0 @@
-{
-  return fromPathData(in.getAttribute(attributeName,""));
-}

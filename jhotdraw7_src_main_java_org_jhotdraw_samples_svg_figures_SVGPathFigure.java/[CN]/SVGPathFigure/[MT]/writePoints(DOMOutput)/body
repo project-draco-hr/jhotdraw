@@ -1,8 +1,0 @@
-{
-  StringBuilder buf=new StringBuilder();
-  for (  Figure child : getChildren()) {
-    BezierFigure b=(BezierFigure)child;
-    buf.append(SVGUtil.toPathData(b.getBezierPath()));
-  }
-  out.addAttribute("d",buf.toString());
-}

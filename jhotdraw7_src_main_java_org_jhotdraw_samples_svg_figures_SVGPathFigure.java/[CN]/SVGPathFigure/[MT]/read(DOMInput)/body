@@ -1,6 +1,3 @@
 {
-  readPoints(in);
-  readAttributes(in);
-  AffineTransform tx=SVGUtil.getTransform(in,"transform");
-  basicTransform(tx);
+  throw new UnsupportedOperationException("Use SVGStorableInput to read this Figure.");
 }

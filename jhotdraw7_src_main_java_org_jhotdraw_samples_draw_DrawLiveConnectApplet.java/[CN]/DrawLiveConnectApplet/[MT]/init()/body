@@ -16,7 +16,6 @@
       try {
         if (getParameter("data") != null && getParameter("data").length() > 0) {
           NanoXMLDOMInput domi=new NanoXMLDOMInput(new DrawFigureFactory(),new StringReader(getParameter("data")));
-          domi.openElement("PlasmaDraw");
           result=domi.readObject(0);
         }
  else         if (getParameter("datafile") != null) {
@@ -25,7 +24,6 @@
             URL url=new URL(getDocumentBase(),getParameter("datafile"));
             in=url.openConnection().getInputStream();
             NanoXMLDOMInput domi=new NanoXMLDOMInput(new DrawFigureFactory(),in);
-            domi.openElement("PlasmaDraw");
             result=domi.readObject(0);
           }
   finally {

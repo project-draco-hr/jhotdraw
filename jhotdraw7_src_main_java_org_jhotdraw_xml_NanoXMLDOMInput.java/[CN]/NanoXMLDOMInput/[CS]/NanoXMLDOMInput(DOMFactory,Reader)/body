@@ -6,7 +6,9 @@
     parser.setReader(reader);
     document=new XMLElement();
     current=(XMLElement)parser.parse();
-    document.addChild(current);
+    if (current != null) {
+      document.addChild(current);
+    }
     current=document;
   }
  catch (  Exception e) {

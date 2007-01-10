@@ -5,7 +5,7 @@
   }
   try {
     Transferable transfer=getToolkit().getSystemClipboard().getContents(this);
-    for (    InputFormat format : drawing.getInputFormats()) {
+    ImportLoop:     for (    InputFormat format : drawing.getInputFormats()) {
       for (      DataFlavor flavor : transfer.getTransferDataFlavors()) {
         if (format.isDataFlavorSupported(flavor)) {
           CompositeEdit ce=new CompositeEdit("Paste");
@@ -15,7 +15,7 @@
           getDrawing().addAll(toBeSelected);
           addToSelection(toBeSelected);
           getDrawing().fireUndoableEditHappened(ce);
-          break;
+          break ImportLoop;
         }
       }
     }

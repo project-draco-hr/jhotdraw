@@ -1,8 +1,14 @@
 {
   if (getOwner() != null && isShowAsSheet()) {
-    setUndecorated(true);
-    getRootPane().setWindowDecorationStyle(JRootPane.NONE);
-    getRootPane().setBorder(UIManager.getBorder("Sheet.border"));
+    if (isNativeSheet()) {
+      getRootPane().putClientProperty("apple.awt.documentModalSheet",Boolean.TRUE);
+      Methods.invokeIfExistsWithEnum(this,"setModalityType","java.awt.Dialog$ModalityType","DOCUMENT_MODAL");
+    }
+ else {
+      setUndecorated(true);
+      getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+      getRootPane().setBorder(UIManager.getBorder("Sheet.border"));
+    }
   }
   ownerMovementHandler=new ComponentAdapter(){
     public void componentMoved(    ComponentEvent evt){

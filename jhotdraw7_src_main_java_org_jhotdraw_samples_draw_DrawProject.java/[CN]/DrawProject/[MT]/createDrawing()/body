@@ -1,5 +1,5 @@
 {
-  DefaultDrawing drawing=new DefaultDrawing();
+  Drawing drawing=new QuadTreeDrawing();
   DOMStorableInputOutputFormat ioFormat=new DOMStorableInputOutputFormat(new DrawFigureFactory());
   LinkedList<InputFormat> inputFormats=new LinkedList<InputFormat>();
   inputFormats.add(ioFormat);

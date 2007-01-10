@@ -2,9 +2,7 @@
   CharArrayWriter out=new CharArrayWriter();
   try {
     NanoXMLDOMOutput domo=new NanoXMLDOMOutput(new PertFactory());
-    domo.openElement("Pert");
     domo.writeObject(getDrawing());
-    domo.closeElement();
     domo.save(out);
   }
  catch (  IOException e) {

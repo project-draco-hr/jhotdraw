@@ -1,9 +1,7 @@
 {
   NanoXMLDOMOutput domo=new NanoXMLDOMOutput(factory);
   domo.openElement(factory.getName(drawing));
-  for (  Figure f : drawing.getFigures()) {
-    domo.writeObject(f);
-  }
+  drawing.write(domo);
   domo.closeElement();
   domo.save(out);
 }

@@ -15,7 +15,6 @@
       if (obj instanceof Figure) {
         Figure figure=(Figure)((Figure)obj).clone();
         for (        Map.Entry<AttributeKey,Object> entry : a2.entrySet()) {
-          System.out.println(entry);
           figure.basicSetAttribute(entry.getKey(),entry.getValue());
         }
         AffineTransform tx=new AffineTransform();

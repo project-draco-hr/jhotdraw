@@ -5,6 +5,7 @@
     javax.swing.filechooser.FileFilter ff=format.getFileFilter();
     fileFilterOutputFormatMap.put(ff,format);
     c.addChoosableFileFilter(ff);
+    break;
   }
   return c;
 }

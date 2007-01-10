@@ -1,21 +1,15 @@
 {
-  CharArrayWriter out=new CharArrayWriter();
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
   try {
-    NanoXMLDOMOutput domo=new NanoXMLDOMOutput(new SVGFigureFactoryOld());
-    domo.openElement("SVGDraw");
-    domo.writeObject(getDrawing());
-    domo.closeElement();
-    domo.save(out);
+    getDrawing().getOutputFormats().get(0).write(out,getDrawing());
+    return out.toString("UTF8");
   }
  catch (  IOException e) {
-    TextFigure tf=new TextFigure();
+    SVGTextFigure tf=new SVGTextFigure();
     tf.setText(e.getMessage());
     tf.setBounds(new Point2D.Double(10,10),new Point2D.Double(100,100));
     getDrawing().add(tf);
     e.printStackTrace();
+    return "";
   }
- finally {
-    if (out != null)     out.close();
-  }
-  return out.toString();
 }

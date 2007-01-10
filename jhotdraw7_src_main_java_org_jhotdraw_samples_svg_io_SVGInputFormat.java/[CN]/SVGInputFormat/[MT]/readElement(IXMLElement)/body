@@ -54,13 +54,15 @@
  else     if (name.equals("text")) {
       f=readTextElement(elem);
     }
+ else     if (name.equals("title")) {
+    }
  else     if (name.equals("use")) {
       f=readUseElement(elem);
     }
  else     if (name.equals("style")) {
     }
  else {
-      System.out.println("<" + name + ">");
+      System.out.println("SVGInputFormat not implemented for <" + name + ">");
     }
   }
   if (f instanceof SVGFigure) {
@@ -69,7 +71,7 @@
     }
   }
  else   if (f != null) {
-    System.out.println("not an SVGFigure " + f);
+    System.out.println("SVGInputFormat warning: not an SVGFigure " + f);
   }
   return f;
 }

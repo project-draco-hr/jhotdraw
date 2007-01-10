@@ -1,4 +1,0 @@
-{
-  writeBounds(out);
-  writeAttributes(out);
-}

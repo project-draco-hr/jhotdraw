@@ -1,6 +1,5 @@
 {
   if (bufferedImage == null && imageData != null) {
-    System.out.println("recreateing bufferedImage");
     try {
       bufferedImage=ImageIO.read(new ByteArrayInputStream(imageData));
     }

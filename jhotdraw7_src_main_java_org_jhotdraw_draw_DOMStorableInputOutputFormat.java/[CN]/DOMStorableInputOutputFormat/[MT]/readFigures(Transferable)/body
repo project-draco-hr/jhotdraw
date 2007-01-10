@@ -4,7 +4,7 @@
   NanoXMLDOMInput domi=new NanoXMLDOMInput(factory,in);
   domi.openElement("Drawing-Clip");
   for (int i=0, n=domi.getElementCount(); i < n; i++) {
-    Figure f=(Figure)domi.readObject();
+    Figure f=(Figure)domi.readObject(i);
     figures.add(f);
   }
   domi.closeElement();

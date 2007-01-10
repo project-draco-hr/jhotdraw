@@ -1,4 +1,3 @@
 {
-  writePoints(out);
-  writeAttributes(out);
+  throw new UnsupportedOperationException("Use SVGStorableOutput to write this Figure.");
 }

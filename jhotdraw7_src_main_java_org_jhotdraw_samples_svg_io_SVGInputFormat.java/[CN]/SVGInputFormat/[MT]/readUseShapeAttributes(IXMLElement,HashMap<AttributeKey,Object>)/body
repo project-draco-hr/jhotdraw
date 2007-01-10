@@ -16,7 +16,7 @@
     }
  else {
       FILL_COLOR.set(a,null);
-      System.out.println("  fill=" + objectValue);
+      System.out.println("SVGInputFormat not implemented  fill=" + objectValue);
     }
   }
   objectValue=readInheritAttribute(elem,"fill-opacity",null);

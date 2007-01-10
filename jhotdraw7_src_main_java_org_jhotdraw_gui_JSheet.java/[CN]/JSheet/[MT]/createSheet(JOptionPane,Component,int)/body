@@ -7,8 +7,11 @@
  else {
     sheet=new JSheet((Dialog)window);
   }
-  Container contentPane=sheet.getContentPane();
+  JComponent contentPane=(JComponent)sheet.getContentPane();
   contentPane.setLayout(new BorderLayout());
+  if (isNativeSheet()) {
+    contentPane.setBorder(new EmptyBorder(12,0,0,0));
+  }
   contentPane.add(pane,BorderLayout.CENTER);
   sheet.setResizable(false);
   sheet.addWindowListener(new WindowAdapter(){

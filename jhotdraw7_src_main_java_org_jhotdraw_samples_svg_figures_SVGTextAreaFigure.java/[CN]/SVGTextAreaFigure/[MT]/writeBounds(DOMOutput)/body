@@ -1,6 +1,0 @@
-{
-  out.addAttribute("x",rectangle.x);
-  out.addAttribute("y",rectangle.y);
-  out.addAttribute("w",rectangle.width);
-  out.addAttribute("h",rectangle.height);
-}

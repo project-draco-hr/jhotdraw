@@ -1,5 +1,0 @@
-{
-  readBounds(in);
-  readAttributes(in);
-  invalidateTransformedShape();
-}

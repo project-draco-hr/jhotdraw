@@ -3,7 +3,6 @@
     StringReader in=new StringReader(text);
     try {
       NanoXMLDOMInput domi=new NanoXMLDOMInput(new DrawFigureFactory(),in);
-      domi.openElement("PlasmaDraw");
       setDrawing((Drawing)domi.readObject(0));
     }
  catch (    Throwable e) {

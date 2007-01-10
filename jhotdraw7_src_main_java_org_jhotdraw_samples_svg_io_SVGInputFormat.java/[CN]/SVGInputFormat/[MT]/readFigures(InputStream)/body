@@ -1,5 +1,4 @@
 {
-  long start=System.currentTimeMillis();
   this.figures=new LinkedList<Figure>();
   IXMLParser parser;
   try {
@@ -43,15 +42,8 @@
   if (svg.getName() == null || !svg.getName().equals("svg") || (svg.getNamespace() != null && !svg.getNamespace().equals(SVG_NAMESPACE))) {
     throw new IOException("'svg' element expected: " + svg.getName());
   }
-  long end1=System.currentTimeMillis();
   initStorageContext();
   flattenStyles(svg);
-  long end2=System.currentTimeMillis();
   readSVGElement(svg);
-  long end=System.currentTimeMillis();
-  System.out.println("elapsed:" + (end - start));
-  System.out.println("read:" + (end1 - start));
-  System.out.println("flatten:" + (end2 - end1));
-  System.out.println("build:" + (end - end2));
   return figures;
 }

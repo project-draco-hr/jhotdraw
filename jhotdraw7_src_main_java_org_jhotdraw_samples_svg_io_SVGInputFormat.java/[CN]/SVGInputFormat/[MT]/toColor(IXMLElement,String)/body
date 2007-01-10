@@ -24,7 +24,7 @@
     return c;
   }
  else   if (str.startsWith("url")) {
-    System.out.println("toColor " + str);
+    System.out.println("SVGInputFormat.toColor not implemented for " + str);
     return null;
   }
  else {

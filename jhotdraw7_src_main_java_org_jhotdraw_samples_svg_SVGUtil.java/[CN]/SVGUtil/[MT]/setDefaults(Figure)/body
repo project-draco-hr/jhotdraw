@@ -1,5 +1,0 @@
-{
-  FILL_COLOR.set(f,Color.black);
-  STROKE_COLOR.set(f,null);
-  IS_STROKE_DASH_FACTOR.set(f,false);
-}

@@ -1,8 +1,0 @@
-{
-  Rectangle2D.Double r=getBounds();
-  out.addAttribute("cx",r.x + r.width / 2d);
-  out.addAttribute("cy",r.y + r.height / 2d);
-  out.addAttribute("rx",r.width / 2);
-  out.addAttribute("ry",r.height / 2);
-  writeAttributes(out);
-}

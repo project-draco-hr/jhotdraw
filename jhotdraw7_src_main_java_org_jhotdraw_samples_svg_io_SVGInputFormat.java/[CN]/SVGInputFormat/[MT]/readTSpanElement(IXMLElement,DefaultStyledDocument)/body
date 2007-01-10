@@ -7,11 +7,11 @@
       for (      IXMLElement node : elem.getChildren()) {
         if (node instanceof IXMLElement) {
           IXMLElement child=(IXMLElement)node;
-          if (node.getName().equals("tspan")) {
+          if (node.getName() != null && node.getName().equals("tspan")) {
             readTSpanElement((IXMLElement)node,doc);
           }
  else {
-            System.out.println("  text node " + node.getName());
+            System.out.println("SVGInputFormat unknown text node " + node.getName());
           }
         }
  else {

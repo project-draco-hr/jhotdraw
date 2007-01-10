@@ -17,7 +17,6 @@
         System.out.println("getParameter.datafile:" + getParameter("datafile"));
         if (getParameter("data") != null) {
           NanoXMLDOMInput domi=new NanoXMLDOMInput(new PertFactory(),new StringReader(getParameter("data")));
-          domi.openElement("PertDiagram");
           result=domi.readObject(0);
         }
  else         if (getParameter("datafile") != null) {
@@ -26,7 +25,6 @@
             URL url=new URL(getDocumentBase(),getParameter("datafile"));
             in=url.openConnection().getInputStream();
             NanoXMLDOMInput domi=new NanoXMLDOMInput(new PertFactory(),in);
-            domi.openElement("PertDiagram");
             result=domi.readObject(0);
           }
   finally {
