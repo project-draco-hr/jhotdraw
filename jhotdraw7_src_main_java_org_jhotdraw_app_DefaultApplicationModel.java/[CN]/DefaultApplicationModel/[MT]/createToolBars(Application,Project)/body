@@ -1,3 +1,26 @@
 {
-  return new LinkedList<JToolBar>();
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("ch.randelshofer.cubetwister.Labels");
+  JToolBar tb=new JToolBar();
+  tb.setName(labels.getString("standardToolBarTitle"));
+  JButton b;
+  b=tb.add(getAction(NewAction.ID));
+  b.setFocusable(false);
+  b=tb.add(getAction(OpenAction.ID));
+  b.setFocusable(false);
+  b=tb.add(getAction(SaveAction.ID));
+  tb.addSeparator();
+  b=tb.add(getAction(UndoAction.ID));
+  b.setFocusable(false);
+  b=tb.add(getAction(RedoAction.ID));
+  b.setFocusable(false);
+  tb.addSeparator();
+  b=tb.add(getAction(CutAction.ID));
+  b.setFocusable(false);
+  b=tb.add(getAction(CopyAction.ID));
+  b.setFocusable(false);
+  b=tb.add(getAction(PasteAction.ID));
+  b.setFocusable(false);
+  LinkedList<JToolBar> list=new LinkedList<JToolBar>();
+  list.add(tb);
+  return list;
 }

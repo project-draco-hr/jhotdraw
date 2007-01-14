@@ -1,0 +1,17 @@
+{
+  LineFigure lf=new LineFigure();
+  lf.basicSetBounds(new Point2D.Double(40,40),new Point2D.Double(200,40));
+  Drawing drawing=new DefaultDrawing();
+  drawing.add(lf);
+  JFrame f=new JFrame("UltraMini");
+  f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  f.setSize(600,300);
+  DrawingView view=new DefaultDrawingView();
+  view.setDrawing(drawing);
+  f.getContentPane().add(view.getComponent());
+  DrawingEditor editor=new DefaultDrawingEditor();
+  editor.add(view);
+  view.selectAll();
+  editor.setTool(new HandleTracker(view.findHandle(view.drawingToView(lf.getStartPoint()))));
+  f.show();
+}
