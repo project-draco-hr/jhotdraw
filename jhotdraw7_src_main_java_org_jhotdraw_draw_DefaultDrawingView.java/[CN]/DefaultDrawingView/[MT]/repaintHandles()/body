@@ -1,0 +1,14 @@
+{
+  Rectangle bounds=null;
+  for (  Handle handle : selectionHandles) {
+    if (bounds == null) {
+      bounds=handle.getDrawBounds();
+    }
+ else {
+      bounds.add(handle.getDrawBounds());
+    }
+  }
+  if (bounds != null) {
+    repaint(bounds);
+  }
+}

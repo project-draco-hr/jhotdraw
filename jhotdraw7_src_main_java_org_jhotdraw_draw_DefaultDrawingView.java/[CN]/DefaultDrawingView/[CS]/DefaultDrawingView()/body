@@ -4,10 +4,10 @@
   setFocusable(true);
   addFocusListener(new FocusListener(){
     public void focusGained(    FocusEvent e){
-      repaint();
+      repaintHandles();
     }
     public void focusLost(    FocusEvent e){
-      repaint();
+      repaintHandles();
     }
   }
 );
