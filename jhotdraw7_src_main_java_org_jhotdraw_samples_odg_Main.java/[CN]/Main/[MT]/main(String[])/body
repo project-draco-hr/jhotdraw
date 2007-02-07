@@ -1,0 +1,6 @@
+{
+  Application app=new DefaultOSXApplication();
+  ApplicationModel appModel=new ODGApplicationModel();
+  app.setModel(appModel);
+  app.launch(args);
+}

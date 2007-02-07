@@ -36,6 +36,7 @@
       for (      JFrame p : palettes) {
         addPalette(p);
       }
+      firePropertyChange("paletteCount",0,palettes.size());
     }
   }
 );

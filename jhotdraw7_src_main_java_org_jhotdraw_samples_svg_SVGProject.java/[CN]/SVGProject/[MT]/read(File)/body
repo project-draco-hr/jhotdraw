@@ -1,7 +1,11 @@
 {
   try {
-    InputFormat sf=new SVGInputFormat();
+    JFileChooser fc=getOpenChooser();
     final Drawing drawing=createDrawing();
+    InputFormat sf=fileFilterInputFormatMap.get(fc.getFileFilter());
+    if (sf == null) {
+      sf=drawing.getInputFormats().get(0);
+    }
     sf.read(f,drawing);
     SwingUtilities.invokeAndWait(new Runnable(){
       public void run(){

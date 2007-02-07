@@ -1,5 +1,24 @@
 {
-  JFileChooser c=super.createOpenChooser();
-  c.addChoosableFileFilter(new ExtensionFileFilter("SVG Drawing","svg"));
+  final JFileChooser c=super.createOpenChooser();
+  fileFilterInputFormatMap=new HashMap<javax.swing.filechooser.FileFilter,InputFormat>();
+  javax.swing.filechooser.FileFilter firstFF=null;
+  for (  InputFormat format : view.getDrawing().getInputFormats()) {
+    javax.swing.filechooser.FileFilter ff=format.getFileFilter();
+    if (firstFF == null) {
+      firstFF=ff;
+    }
+    fileFilterInputFormatMap.put(ff,format);
+    c.addChoosableFileFilter(ff);
+  }
+  c.setFileFilter(firstFF);
+  c.addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      if (evt.getPropertyName().equals("fileFilterChanged")) {
+        InputFormat inputFormat=fileFilterInputFormatMap.get(evt.getNewValue());
+        c.setAccessory(inputFormat.getInputFormatAccessory());
+      }
+    }
+  }
+);
   return c;
 }

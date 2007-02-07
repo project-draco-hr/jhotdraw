@@ -82,7 +82,7 @@
   addPropertyChangeListener(new PropertyChangeListener(){
     public void propertyChange(    PropertyChangeEvent evt){
       String name=evt.getPropertyName();
-      if (name == "projectCount") {
+      if (name == "projectCount" || name == "paletteCount") {
         if (p == null || projects().contains(p)) {
           JMenu m=windowMenu;
           m.removeAll();

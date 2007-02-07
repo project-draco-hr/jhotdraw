@@ -1,7 +1,7 @@
 {
   Drawing drawing=new SVGDrawing();
   LinkedList<InputFormat> inputFormats=new LinkedList<InputFormat>();
-  inputFormats.add(new SVGInputFormat());
+  inputFormats.add(new SVGZInputFormat());
   inputFormats.add(new ImageInputFormat(new SVGImageFigure()));
   drawing.setInputFormats(inputFormats);
   LinkedList<OutputFormat> outputFormats=new LinkedList<OutputFormat>();
