@@ -1,5 +1,5 @@
 {
-  Component c=p.getComponent();
+  JComponent c=p.getComponent();
   if (getModel() != null) {
     LinkedList<Action> toolBarActions=new LinkedList();
     int id=0;
@@ -12,6 +12,7 @@
       PreferencesUtil.installToolBarPrefsHandler(prefs,"toolbar." + id,tb);
       toolBarActions.addFirst(new ToggleVisibleAction(tb,tb.getName()));
     }
+    c.putClientProperty("toolBarActions",toolBarActions);
   }
   return c;
 }

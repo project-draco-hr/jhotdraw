@@ -7,7 +7,7 @@
       out.addAttribute("visible",true);
     }
   }
-  out.openElement("owner");
+  out.openElement("Owner");
   out.writeObject(getOwner());
   out.closeElement();
 }

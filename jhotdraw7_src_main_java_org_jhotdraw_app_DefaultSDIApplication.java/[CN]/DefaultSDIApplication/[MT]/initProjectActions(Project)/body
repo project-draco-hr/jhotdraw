@@ -1,2 +1,4 @@
 {
+  ApplicationModel m=getModel();
+  p.putAction(LoadAction.ID,m.getAction(LoadAction.ID));
 }
