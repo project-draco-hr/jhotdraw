@@ -159,5 +159,8 @@ path.get(2).moveTo(ep.x,ep.y + slantSize);
 path.get(2).moveTo(ep.x,ep.y - slantSize);
 }
 }
+for (BezierPath.Node node : path) {
+node.setMask(BezierPath.C0_MASK);
+}
 path.invalidatePath();
 }

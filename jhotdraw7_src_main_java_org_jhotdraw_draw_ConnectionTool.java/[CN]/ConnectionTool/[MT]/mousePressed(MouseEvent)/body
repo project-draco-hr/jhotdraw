@@ -3,6 +3,7 @@
   isPressed=true;
   getView().clearSelection();
   Point2D.Double ap=viewToDrawing(anchor);
+  getView().getConstrainer().constrainPoint(ap);
   if (getTargetFigure() != null) {
     getTargetFigure().setConnectorsVisible(false,null);
   }

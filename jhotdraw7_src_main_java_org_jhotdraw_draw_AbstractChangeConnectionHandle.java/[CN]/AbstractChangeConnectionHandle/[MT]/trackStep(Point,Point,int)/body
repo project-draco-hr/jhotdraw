@@ -1,5 +1,6 @@
 {
   Point2D.Double p=view.viewToDrawing(lead);
+  view.getConstrainer().constrainPoint(p);
   Figure f=findConnectableFigure(p,view.getDrawing());
   if (f != getTargetFigure()) {
     if (getTargetFigure() != null) {

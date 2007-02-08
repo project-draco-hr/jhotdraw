@@ -4,4 +4,7 @@
     liner=(Liner)in.readObject();
     in.closeElement();
   }
+ else {
+    liner=null;
+  }
 }

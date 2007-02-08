@@ -1,0 +1,4 @@
+{
+  int index=getBezierNodeIndex();
+  return getBezierFigure().getPointCount() > index ? getBezierFigure().getNode(index) : null;
+}

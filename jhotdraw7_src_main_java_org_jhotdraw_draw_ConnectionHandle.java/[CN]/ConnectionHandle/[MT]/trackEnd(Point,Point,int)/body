@@ -1,5 +1,6 @@
 {
   Point2D.Double p=view.viewToDrawing(lead);
+  view.getConstrainer().constrainPoint(p);
   Connector target=findConnectionTarget(p,view.getDrawing());
   if (target != null) {
     getConnection().setStartConnector(getStartConnector());

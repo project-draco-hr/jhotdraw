@@ -3,6 +3,7 @@
   isWorking=false;
   Figure c=null;
   Point2D.Double p=viewToDrawing(new Point(e.getX(),e.getY()));
+  getView().getConstrainer().constrainPoint(p);
   if (getStartConnector() != null) {
     c=findTarget(p,getDrawing());
   }

@@ -1,5 +1,6 @@
 {
   Point2D.Double p=viewToDrawing(new Point(e.getX(),e.getY()));
+  getView().getConstrainer().constrainPoint(p);
   Figure c=null;
   if (getStartConnector() == null) {
     c=findSource(p,getDrawing());
