@@ -6,7 +6,7 @@
       RectangleFigure tb=new RectangleFigure();
       tb.basicSetBounds(new Point2D.Double(210,110),new Point2D.Double(300,200));
       LabeledLineConnectionFigure cf=new LabeledLineConnectionFigure();
-      cf.setLiner(new ElbowLiner());
+      cf.basicSetLiner(new ElbowLiner());
       cf.setLayouter(new LocatorLayouter());
       TextFigure startLabel=new TextFigure();
       startLabel.setAttribute(LocatorLayouter.LAYOUT_LOCATOR,new BezierLabelLocator(0,-Math.PI / 4,8));

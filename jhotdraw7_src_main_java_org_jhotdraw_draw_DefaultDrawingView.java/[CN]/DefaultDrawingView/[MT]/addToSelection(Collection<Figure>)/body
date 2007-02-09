@@ -1,5 +1,8 @@
 {
   selectedFigures.addAll(figures);
+  for (  Figure f : figures) {
+    f.addFigureListener(handleInvalidator);
+  }
   invalidateHandles();
   fireSelectionChanged();
   repaint();

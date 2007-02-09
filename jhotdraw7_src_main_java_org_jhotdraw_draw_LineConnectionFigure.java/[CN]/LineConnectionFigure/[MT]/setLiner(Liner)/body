@@ -1,5 +1,0 @@
-{
-  willChange();
-  this.liner=newValue;
-  changed();
-}

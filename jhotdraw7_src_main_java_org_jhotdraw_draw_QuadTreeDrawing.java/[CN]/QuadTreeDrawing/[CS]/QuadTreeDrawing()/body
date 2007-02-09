@@ -1,2 +1,3 @@
 {
+  figureHandler=new FigureHandler();
 }

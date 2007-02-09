@@ -1,6 +1,7 @@
 {
   if (selectedFigures.remove(figure)) {
     invalidateHandles();
+    figure.removeFigureListener(handleInvalidator);
     fireSelectionChanged();
   }
   repaint();

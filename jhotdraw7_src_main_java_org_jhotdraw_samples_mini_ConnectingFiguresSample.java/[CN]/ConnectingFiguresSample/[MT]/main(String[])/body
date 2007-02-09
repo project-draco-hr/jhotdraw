@@ -6,7 +6,7 @@
       TextAreaFigure tb=new TextAreaFigure();
       tb.basicSetBounds(new Point2D.Double(210,110),new Point2D.Double(300,200));
       ConnectionFigure cf=new LineConnectionFigure();
-      cf.setLiner(new ElbowLiner());
+      cf.basicSetLiner(new ElbowLiner());
       cf.setStartConnector(ta.findConnector(Geom.center(ta.getBounds()),cf));
       cf.setEndConnector(tb.findConnector(Geom.center(tb.getBounds()),cf));
       Drawing drawing=new DefaultDrawing();
