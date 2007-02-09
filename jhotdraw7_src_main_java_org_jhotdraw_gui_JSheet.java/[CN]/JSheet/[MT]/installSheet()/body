@@ -30,7 +30,6 @@
       }
       setLocation(sheetLoc);
       oldFocusOwner=owner.getFocusOwner();
-      owner.setFocusableWindowState(false);
       owner.setEnabled(false);
       if (UIManager.getBoolean("Sheet.showAsSheet")) {
         owner.addComponentListener(ownerMovementHandler);

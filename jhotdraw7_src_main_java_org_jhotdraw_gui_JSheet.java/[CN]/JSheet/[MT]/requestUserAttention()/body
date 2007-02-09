@@ -1,9 +1,2 @@
 {
-  try {
-    Object app=Methods.invokeStatic("com.apple.cocoa.application.NSApplication","sharedApplication");
-    Methods.invoke(app,"requestUserAttention",app.getClass().getDeclaredField("UserAttentionRequestInformational").getInt(app));
-  }
- catch (  Throwable ex) {
-    System.err.println("Quaqua Warning: Couldn't invoke NSApplication.requestUserAttention");
-  }
 }

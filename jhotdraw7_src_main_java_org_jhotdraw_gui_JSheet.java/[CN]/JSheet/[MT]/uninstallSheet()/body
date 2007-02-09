@@ -2,7 +2,6 @@
   if (isInstalled) {
     Window owner=getOwner();
     if (owner != null) {
-      owner.setFocusableWindowState(true);
       owner.setEnabled(true);
       owner.removeComponentListener(ownerMovementHandler);
       if (shiftBackLocation != null) {
