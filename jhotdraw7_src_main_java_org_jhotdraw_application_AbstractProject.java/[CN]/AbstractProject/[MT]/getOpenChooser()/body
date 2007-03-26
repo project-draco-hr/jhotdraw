@@ -1,0 +1,6 @@
+{
+  if (openChooser == null) {
+    openChooser=createOpenChooser();
+  }
+  return openChooser;
+}

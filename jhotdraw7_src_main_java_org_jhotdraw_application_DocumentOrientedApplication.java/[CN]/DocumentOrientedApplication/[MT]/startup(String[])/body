@@ -1,0 +1,6 @@
+{
+  WindowManager.getInstance().preInit();
+  init(args);
+  WindowManager.getInstance().preStart();
+  start(args);
+}

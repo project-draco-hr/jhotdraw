@@ -1,87 +1,10 @@
 {
-  ApplicationModel model=getModel();
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
   JMenuBar mb=new JMenuBar();
-  JMenu m, m2;
-  JMenuItem mi;
-  JCheckBoxMenuItem cbmi;
-  final JMenu openRecentMenu;
-  m=new JMenu();
-  labels.configureMenu(m,labels.getString("file"));
-  m.add(model.getAction(ClearAction.ID));
-  m.add(model.getAction(NewAction.ID));
-  m.add(model.getAction(LoadAction.ID));
-  openRecentMenu=new JMenu();
-  labels.configureMenu(openRecentMenu,"openRecent");
-  openRecentMenu.add(model.getAction(ClearRecentFilesAction.ID));
-  updateOpenRecentMenu(openRecentMenu);
-  m.add(openRecentMenu);
-  m.addSeparator();
-  m.add(model.getAction(SaveAction.ID));
-  m.add(model.getAction(SaveAsAction.ID));
-  if (model.getAction(ExportAction.ID) != null) {
-    mi=m.add(model.getAction(ExportAction.ID));
-  }
-  if (model.getAction(PrintAction.ID) != null) {
-    m.addSeparator();
-    m.add(model.getAction(PrintAction.ID));
-  }
-  m.addSeparator();
-  m.add(model.getAction(ExitAction.ID));
-  mb.add(m);
-  m=new JMenu();
-  labels.configureMenu(m,labels.getString("edit"));
-  m.add(model.getAction(UndoAction.ID));
-  m.add(model.getAction(RedoAction.ID));
-  m.addSeparator();
-  m.add(model.getAction(CutAction.ID));
-  m.add(model.getAction(CopyAction.ID));
-  m.add(model.getAction(PasteAction.ID));
-  m.add(model.getAction(DuplicateAction.ID));
-  m.add(model.getAction(DeleteAction.ID));
-  m.addSeparator();
-  m.add(model.getAction(SelectAllAction.ID));
-  mb.add(m);
-  JMenu viewMenu=null;
-  for (  JMenu mm : model.createMenus(this,p)) {
+  mb.add(createFileMenu(p));
+  for (  JMenu mm : getModel().createMenus(this,p)) {
     mb.add(mm);
-    if (mm.getText().equals(labels.getString("view"))) {
-      viewMenu=mm;
-    }
   }
-  if (toolBarActions != null && toolBarActions.size() > 0) {
-    m=(viewMenu != null) ? viewMenu : new JMenu();
-    m2=(toolBarActions.size() == 1) ? m : new JMenu(labels.getString("toolBars"));
-    labels.configureMenu(m,labels.getString("view"));
-    for (    Action a : toolBarActions) {
-      cbmi=new JCheckBoxMenuItem(a);
-      Actions.configureJCheckBoxMenuItem(cbmi,a);
-      m2.add(cbmi);
-    }
-    if (m2 != m) {
-      m.add(m2);
-    }
-    mb.add(m);
-  }
-  m=new JMenu();
-  labels.configureMenu(m,labels.getString("help"));
-  m.add(model.getAction(AboutAction.ID));
-  mb.add(m);
-  addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
-      String name=evt.getPropertyName();
-      if (name == "projectCount") {
-        if (p == null || projects().contains(p)) {
-        }
- else {
-          removePropertyChangeListener(this);
-        }
-      }
- else       if (name == "recentFiles") {
-        updateOpenRecentMenu(openRecentMenu);
-      }
-    }
-  }
-);
+  mb.add(createViewMenu(p,toolBarActions));
+  mb.add(createHelpMenu(p));
   return mb;
 }

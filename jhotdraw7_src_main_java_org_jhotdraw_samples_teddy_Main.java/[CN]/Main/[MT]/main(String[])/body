@@ -1,0 +1,19 @@
+{
+  TeddyApplicationModel tam=new TeddyApplicationModel();
+  tam.setCopyright("?? 2005-2007 Werner Randelshofer");
+  tam.setName("Teddy");
+  tam.setProjectClassName("org.jhotdraw.samples.teddy.TeddyProject");
+  tam.setVersion("2.0");
+  AbstractApplication app;
+  if (System.getProperty("os.name").toLowerCase().startsWith("mac os x")) {
+    app=new DefaultOSXApplication();
+  }
+ else   if (System.getProperty("os.name").toLowerCase().startsWith("win")) {
+    app=new DefaultMDIApplication();
+  }
+ else {
+    app=new DefaultSDIApplication();
+  }
+  app.setModel(tam);
+  app.launch(args);
+}

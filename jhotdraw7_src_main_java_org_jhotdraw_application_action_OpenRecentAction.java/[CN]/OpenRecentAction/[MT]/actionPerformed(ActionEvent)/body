@@ -1,0 +1,20 @@
+{
+  final DocumentOrientedApplication app=getApplication();
+  if (app.isEnabled()) {
+    app.setEnabled(false);
+    Project emptyProject=WindowManager.getInstance().getCurrentProject();
+    if (emptyProject == null || emptyProject.getFile() != null || emptyProject.hasUnsavedChanges()) {
+      emptyProject=null;
+    }
+    final Project p;
+    if (emptyProject == null) {
+      p=app.createProject();
+      WindowManager.getInstance().add(p);
+      WindowManager.getInstance().show(p);
+    }
+ else {
+      p=emptyProject;
+    }
+    openFile(p);
+  }
+}

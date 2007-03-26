@@ -1,0 +1,7 @@
+{
+  java.util.List<File> oldValue=(java.util.List<File>)recentFiles.clone();
+  recentFiles.clear();
+  Preferences prefs=Preferences.userNodeForPackage(getApplication().getClass());
+  prefs.putInt("recentFileCount",recentFiles.size());
+  firePropertyChange("recentFiles",Collections.unmodifiableList(oldValue),Collections.unmodifiableList(recentFiles));
+}

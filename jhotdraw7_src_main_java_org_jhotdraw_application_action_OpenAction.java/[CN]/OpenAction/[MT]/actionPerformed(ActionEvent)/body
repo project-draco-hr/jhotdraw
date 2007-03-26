@@ -1,0 +1,26 @@
+{
+  final DocumentOrientedApplication app=getApplication();
+  if (app.isEnabled()) {
+    app.setEnabled(false);
+    Project emptyProject=WindowManager.getInstance().getCurrentProject();
+    if (emptyProject == null || emptyProject.getFile() != null || emptyProject.hasUnsavedChanges()) {
+      emptyProject=null;
+    }
+    final Project p;
+    if (emptyProject == null) {
+      p=app.createProject();
+      WindowManager.getInstance().add(p);
+    }
+ else {
+      p=emptyProject;
+    }
+    JFileChooser fileChooser=p.getOpenChooser();
+    if (fileChooser.showOpenDialog(WindowManager.getInstance().getComponent()) == JFileChooser.APPROVE_OPTION) {
+      WindowManager.getInstance().show(p);
+      openFile(fileChooser,p);
+    }
+ else {
+      app.setEnabled(true);
+    }
+  }
+}

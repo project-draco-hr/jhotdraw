@@ -1,0 +1,5 @@
+{
+  this.enabled=true;
+  WindowManager.getInstance().addPropertyChangeListener(windowManagerListener);
+  updateProject(null,WindowManager.getInstance().getCurrentProject());
+}

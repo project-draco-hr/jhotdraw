@@ -1,0 +1,9 @@
+{
+  Component focusOwner=KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
+  if (focusOwner != null && focusOwner instanceof EditableComponent) {
+    ((EditableComponent)focusOwner).paste();
+  }
+ else {
+    super.actionPerformed(evt);
+  }
+}

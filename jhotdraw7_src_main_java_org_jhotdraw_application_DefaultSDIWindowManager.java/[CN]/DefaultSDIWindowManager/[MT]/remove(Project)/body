@@ -1,0 +1,6 @@
+{
+  super.remove(p);
+  if (projects().size() == 0) {
+    disposeAllProjects();
+  }
+}

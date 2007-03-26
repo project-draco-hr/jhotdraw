@@ -1,0 +1,23 @@
+{
+  TeddyProject project=((TeddyProject)app.getCurrentProject());
+  if (project != null) {
+    updateMatcher();
+    if (matcher != null) {
+      int pos=matcher.findNext((wrapAroundCheck.isSelected()) ? 0 : project.getSelectionEnd());
+      if (pos == -1) {
+        getToolkit().beep();
+      }
+ else {
+        CompositeEdit edit=new CompositeEdit("Replace All");
+        project.fireEdit(edit);
+        project.select(pos,matcher.getFindString().length() + pos);
+        do {
+          project.replaceRange(replaceField.getText(),pos,pos + matcher.getFindString().length());
+          pos=matcher.findNext(pos + replaceField.getText().length());
+        }
+ while (pos != -1);
+        project.fireEdit(edit);
+      }
+    }
+  }
+}

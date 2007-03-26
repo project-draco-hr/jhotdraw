@@ -1,0 +1,17 @@
+{
+  JMenuBar mb=new JMenuBar();
+  JMenu m;
+  mb.add(createFileMenu(p));
+  for (  JMenu mm : getApplication().createMenus(this,p)) {
+    mb.add(mm);
+  }
+  m=createViewMenu(p,toolBarActions);
+  if (m != null) {
+    mb.add(m);
+  }
+  m=createHelpMenu(p);
+  if (m != null) {
+    mb.add(m);
+  }
+  return mb;
+}

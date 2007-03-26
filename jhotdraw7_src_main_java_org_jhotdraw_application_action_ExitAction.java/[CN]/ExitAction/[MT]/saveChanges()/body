@@ -1,0 +1,24 @@
+{
+  if (unsavedProject.getFile() == null) {
+    JFileChooser fileChooser=unsavedProject.getSaveChooser();
+    JSheet.showSaveSheet(fileChooser,unsavedProject.getComponent(),new SheetListener(){
+      public void optionSelected(      final SheetEvent evt){
+        if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
+          final File file=evt.getFileChooser().getSelectedFile();
+          saveToFile(file);
+        }
+ else {
+          unsavedProject.setEnabled(true);
+          if (oldFocusOwner != null) {
+            oldFocusOwner.requestFocus();
+          }
+          getApplication().setEnabled(true);
+        }
+      }
+    }
+);
+  }
+ else {
+    saveToFile(unsavedProject.getFile());
+  }
+}

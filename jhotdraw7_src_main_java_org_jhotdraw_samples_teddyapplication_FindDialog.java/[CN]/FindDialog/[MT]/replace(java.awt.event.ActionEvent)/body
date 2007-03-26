@@ -1,0 +1,9 @@
+{
+  TeddyProject project=((TeddyProject)WindowManager.getInstance().getCurrentProject());
+  if (project != null) {
+    CompositeEdit edit=new CompositeEdit("Replace");
+    project.fireEdit(edit);
+    project.replaceRange(replaceField.getText(),project.getSelectionStart(),project.getSelectionEnd());
+    project.fireEdit(edit);
+  }
+}

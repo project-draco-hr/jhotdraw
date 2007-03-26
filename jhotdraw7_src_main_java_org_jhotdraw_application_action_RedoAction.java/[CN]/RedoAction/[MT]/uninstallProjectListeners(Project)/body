@@ -1,0 +1,6 @@
+{
+  super.uninstallProjectListeners(p);
+  if (p.getAction("redo") != null) {
+    p.getAction("redo").removePropertyChangeListener(redoActionPropertyListener);
+  }
+}

@@ -1,0 +1,7 @@
+{
+  WindowManager wm;
+  wm=new DefaultSDIWindowManager();
+  WindowManager.setInstance(wm);
+  WindowManager.getInstance().preLaunch();
+  DocumentOrientedApplication.launch(TeddyApplication.class,args);
+}

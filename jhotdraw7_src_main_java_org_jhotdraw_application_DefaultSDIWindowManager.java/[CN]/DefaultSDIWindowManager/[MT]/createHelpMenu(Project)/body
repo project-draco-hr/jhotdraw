@@ -1,0 +1,10 @@
+{
+  DocumentOrientedApplication model=getApplication();
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+  JMenu m;
+  JMenuItem mi;
+  m=new JMenu();
+  labels.configureMenu(m,labels.getString("help"));
+  m.add(model.getAction(AboutAction.ID));
+  return m;
+}

@@ -1,0 +1,8 @@
+{
+  if (key == Action.NAME && project != null) {
+    return getTitle();
+  }
+ else {
+    return super.getValue(key);
+  }
+}

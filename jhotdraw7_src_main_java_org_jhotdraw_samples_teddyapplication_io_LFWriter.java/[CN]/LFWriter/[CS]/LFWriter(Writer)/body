@@ -1,0 +1,4 @@
+{
+  super(out);
+  lineSeparator=(String)System.getProperty("line.separator");
+}

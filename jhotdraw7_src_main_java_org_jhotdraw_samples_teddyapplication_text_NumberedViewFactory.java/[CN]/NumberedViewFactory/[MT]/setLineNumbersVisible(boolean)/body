@@ -1,0 +1,4 @@
+{
+  boolean oldValue=isLineNumbersVisible;
+  isLineNumbersVisible=newValue;
+}

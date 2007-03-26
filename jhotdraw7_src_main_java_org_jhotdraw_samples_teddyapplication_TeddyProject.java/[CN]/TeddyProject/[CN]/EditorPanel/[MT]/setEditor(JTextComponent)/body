@@ -1,0 +1,8 @@
+{
+  editor=newValue;
+  removeAll();
+  setLayout(new BorderLayout());
+  add(editor);
+  setBackground(UIManager.getColor("TextField.background"));
+  setOpaque(true);
+}

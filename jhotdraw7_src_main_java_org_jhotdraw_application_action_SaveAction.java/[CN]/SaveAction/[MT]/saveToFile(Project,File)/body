@@ -1,0 +1,17 @@
+{
+  project.execute(new Worker(){
+    public Object construct(){
+      try {
+        project.write(file);
+        return null;
+      }
+ catch (      IOException e) {
+        return e;
+      }
+    }
+    public void finished(    Object value){
+      fileSaved(project,file,value);
+    }
+  }
+);
+}

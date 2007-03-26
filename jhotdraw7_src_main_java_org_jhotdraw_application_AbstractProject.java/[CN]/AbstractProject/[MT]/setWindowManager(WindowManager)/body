@@ -1,0 +1,5 @@
+{
+  WindowManager oldValue=windowManager;
+  windowManager=newValue;
+  firePropertyChange("windowManager",oldValue,newValue);
+}

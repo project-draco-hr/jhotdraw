@@ -1,0 +1,7 @@
+{
+  JFileChooser c=new JFileChooser();
+  if (prefs != null) {
+    c.setCurrentDirectory(new File(prefs.get("projectFile",System.getProperty("user.home"))));
+  }
+  return c;
+}

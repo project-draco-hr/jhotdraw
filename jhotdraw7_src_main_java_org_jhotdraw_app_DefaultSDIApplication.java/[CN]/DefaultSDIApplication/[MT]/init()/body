@@ -1,7 +1,7 @@
 {
+  initLookAndFeel();
   super.init();
   prefs=Preferences.userNodeForPackage((getModel() == null) ? getClass() : getModel().getClass());
   initLabels();
-  initLookAndFeel();
   initApplicationActions();
 }

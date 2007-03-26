@@ -1,0 +1,9 @@
+{
+  Project project=getCurrentProject();
+  try {
+    Methods.invoke(project,"find");
+  }
+ catch (  NoSuchMethodException ex) {
+    ex.printStackTrace();
+  }
+}

@@ -1,0 +1,2 @@
+java.lang.Class<? extends DocumentOrientedApplication> applicationClass
+String[] args

@@ -1,0 +1,5 @@
+{
+  super(app);
+  labels.configureAction(this,ID);
+  setPropertyName("lineNumbersVisible");
+}

@@ -1,0 +1,5 @@
+{
+  boolean oldValue=this.enabled;
+  this.enabled=newValue;
+  firePropertyChange("enabled",Boolean.valueOf(oldValue && getApplication().isEnabled()),Boolean.valueOf(newValue && getApplication().isEnabled()));
+}

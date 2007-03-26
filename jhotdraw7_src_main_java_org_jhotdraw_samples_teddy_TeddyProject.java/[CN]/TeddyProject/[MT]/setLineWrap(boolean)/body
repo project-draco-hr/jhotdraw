@@ -1,0 +1,6 @@
+{
+  boolean oldValue=editorViewport.getLineWrap();
+  editorViewport.setLineWrap(newValue);
+  prefs.putBoolean("lineWrap",newValue);
+  firePropertyChange("lineWrap",oldValue,newValue);
+}

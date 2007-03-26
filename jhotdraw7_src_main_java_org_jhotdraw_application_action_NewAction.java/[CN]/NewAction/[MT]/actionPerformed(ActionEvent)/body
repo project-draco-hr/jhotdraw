@@ -1,0 +1,13 @@
+{
+  DocumentOrientedApplication app=getApplication();
+  Project newP=app.createProject();
+  int multiOpenId=1;
+  for (  Project existingP : WindowManager.getInstance().projects()) {
+    if (existingP.getFile() == null) {
+      multiOpenId=Math.max(multiOpenId,existingP.getMultipleOpenId() + 1);
+    }
+  }
+  newP.setMultipleOpenId(multiOpenId);
+  WindowManager.getInstance().add(newP);
+  WindowManager.getInstance().show(newP);
+}

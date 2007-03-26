@@ -1,0 +1,6 @@
+{
+  editor.getDocument().removeUndoableEditListener(undoManager);
+  editor.setDocument(createDocument());
+  editor.getDocument().addUndoableEditListener(undoManager);
+  setHasUnsavedChanges(false);
+}

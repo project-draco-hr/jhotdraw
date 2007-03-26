@@ -1,0 +1,23 @@
+{
+  DocumentOrientedApplication model=getApplication();
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+  JMenu m, m2;
+  JMenuItem mi;
+  JCheckBoxMenuItem cbmi;
+  final JMenu openRecentMenu;
+  if (toolBarActions != null && toolBarActions.size() > 0) {
+    m=new JMenu();
+    labels.configureMenu(m,labels.getString("view"));
+    m2=(toolBarActions.size() == 1) ? m : new JMenu(labels.getString("toolBars"));
+    for (    Action a : toolBarActions) {
+      cbmi=new JCheckBoxMenuItem(a);
+      Actions.configureJCheckBoxMenuItem(cbmi,a);
+      m2.add(cbmi);
+    }
+    m.add(m2);
+  }
+ else {
+    m=null;
+  }
+  return m;
+}

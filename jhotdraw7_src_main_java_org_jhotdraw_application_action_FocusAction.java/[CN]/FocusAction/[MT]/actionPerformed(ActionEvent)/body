@@ -1,0 +1,18 @@
+{
+  Component rpContainer=getRootPaneContainer();
+  if (rpContainer instanceof Frame) {
+    Frame frame=(Frame)rpContainer;
+    frame.setExtendedState(frame.getExtendedState() & ~Frame.ICONIFIED);
+    frame.toFront();
+  }
+ else   if (rpContainer instanceof JInternalFrame) {
+    JInternalFrame frame=(JInternalFrame)rpContainer;
+    frame.toFront();
+    try {
+      frame.setSelected(true);
+    }
+ catch (    PropertyVetoException e) {
+    }
+  }
+  project.getComponent().requestFocusInWindow();
+}

@@ -1,0 +1,41 @@
+{
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+  DocumentOrientedApplication mo=getApplication();
+  JMenuBar mb=new JMenuBar();
+  JMenu m;
+  JMenuItem mi;
+  final JMenu openRecentMenu;
+  m=new JMenu();
+  labels.configureMenu(m,"file");
+  m.add(mo.getAction(NewAction.ID));
+  m.add(mo.getAction(OpenAction.ID));
+  openRecentMenu=new JMenu();
+  labels.configureMenu(openRecentMenu,"openRecent");
+  openRecentMenu.add(mo.getAction(ClearRecentFilesAction.ID));
+  updateOpenRecentMenu(openRecentMenu);
+  m.add(openRecentMenu);
+  m.addSeparator();
+  m.add(mo.getAction(CloseAction.ID));
+  m.add(mo.getAction(SaveAction.ID));
+  m.add(mo.getAction(SaveAsAction.ID));
+  if (mo.getAction(ExportAction.ID) != null) {
+    mi=m.add(mo.getAction(ExportAction.ID));
+  }
+  if (mo.getAction(PrintAction.ID) != null) {
+    m.addSeparator();
+    m.add(mo.getAction(PrintAction.ID));
+  }
+  m.addSeparator();
+  m.add(mo.getAction(ExitAction.ID));
+  addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      String name=evt.getPropertyName();
+      DocumentOrientedApplication mo=getApplication();
+      if (name == "recentFiles") {
+        updateOpenRecentMenu(openRecentMenu);
+      }
+    }
+  }
+);
+  return m;
+}

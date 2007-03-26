@@ -1,0 +1,6 @@
+{
+  if (viewFactory == null) {
+    viewFactory=new NumberedViewFactory();
+  }
+  return viewFactory;
+}

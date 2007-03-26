@@ -1,0 +1,13 @@
+{
+  this.document=document;
+  this.findString=findString;
+  startIndex=0;
+  if (matchCase) {
+    matchLowerCase=matchUpperCase=findString.toCharArray();
+  }
+ else {
+    matchUpperCase=findString.toUpperCase().toCharArray();
+    matchLowerCase=findString.toLowerCase().toCharArray();
+  }
+  this.matchType=matchType;
+}

@@ -1,0 +1,16 @@
+{
+switch (c) {
+case '\r':
+    out.write(lineSeparator);
+  skipLF=true;
+break;
+case '\n':
+if (!skipLF) out.write(lineSeparator);
+skipLF=false;
+break;
+default :
+out.write(c);
+skipLF=false;
+break;
+}
+}

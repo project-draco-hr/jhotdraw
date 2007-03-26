@@ -10,17 +10,6 @@
       PreferencesUtil.installToolBarPrefsHandler(prefs,"toolbar." + id,tb);
       toolBarActions.addFirst(new ToggleToolBarAction(tb,tb.getName()));
     }
-    JToolBar tb=new JToolBar();
-    tb.setName(labels.getString("standardToolBarTitle"));
-    addStandardActionsTo(tb);
-    id++;
-    JPanel panel=new JPanel(new BorderLayout());
-    panel.add(tb,BorderLayout.NORTH);
-    panel.add(c,BorderLayout.CENTER);
-    c=panel;
-    PreferencesUtil.installToolBarPrefsHandler(prefs,"toolbar." + id,tb);
-    toolBarActions.addFirst(new ToggleToolBarAction(tb,tb.getName()));
-    panel.putClientProperty("toolBarActions",toolBarActions);
   }
   return c;
 }

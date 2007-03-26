@@ -1,0 +1,22 @@
+{
+  TeddyProject project=((TeddyProject)app.getCurrentProject());
+  if (project != null) {
+    MatchType matchType;
+switch (modeCombo.getSelectedIndex()) {
+case 0:
+      matchType=MatchType.CONTAINS;
+    break;
+case 1:
+  matchType=MatchType.STARTS_WITH;
+break;
+case 2:
+default :
+matchType=MatchType.FULL_WORD;
+break;
+}
+matcher=new Matcher(project.getDocument(),findField.getText(),!ignoreCaseCheck.isSelected(),matchType);
+}
+ else {
+matcher=null;
+}
+}

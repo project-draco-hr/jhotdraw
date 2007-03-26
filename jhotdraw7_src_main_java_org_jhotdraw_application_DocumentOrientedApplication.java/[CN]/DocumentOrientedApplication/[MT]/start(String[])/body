@@ -1,0 +1,6 @@
+{
+  Project p=createProject();
+  getWindowManager().add(p);
+  getWindowManager().show(p);
+  setEnabled(true);
+}

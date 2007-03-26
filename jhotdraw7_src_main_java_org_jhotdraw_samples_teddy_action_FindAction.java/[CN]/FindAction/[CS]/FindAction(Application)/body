@@ -1,0 +1,4 @@
+{
+  this.app=app;
+  labels.configureAction(this,ID);
+}

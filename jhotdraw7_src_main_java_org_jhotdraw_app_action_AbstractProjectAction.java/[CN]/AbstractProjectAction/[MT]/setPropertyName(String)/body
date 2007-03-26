@@ -1,0 +1,6 @@
+{
+  this.propertyName=name;
+  if (name != null) {
+    updateProperty();
+  }
+}

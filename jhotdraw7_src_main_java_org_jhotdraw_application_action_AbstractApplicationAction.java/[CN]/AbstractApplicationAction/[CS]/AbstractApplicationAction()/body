@@ -1,0 +1,4 @@
+{
+  installApplicationListeners(getApplication());
+  updateApplicationEnabled();
+}

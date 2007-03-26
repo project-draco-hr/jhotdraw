@@ -1,0 +1,6 @@
+{
+  super.installProjectListeners(p);
+  if (p.getAction("redo") != null) {
+    p.getAction("redo").addPropertyChangeListener(redoActionPropertyListener);
+  }
+}

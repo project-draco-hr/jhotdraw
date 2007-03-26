@@ -1,0 +1,11 @@
+{
+  if (actions == null) {
+    actions=new HashMap();
+  }
+  if (action == null) {
+    actions.remove(id);
+  }
+ else {
+    actions.put(id,action);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  component.setVisible(!component.isVisible());
+}

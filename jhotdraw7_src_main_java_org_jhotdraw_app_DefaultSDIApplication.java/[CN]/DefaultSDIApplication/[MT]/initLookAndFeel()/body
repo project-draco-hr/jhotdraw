@@ -1,10 +1,14 @@
 {
-  System.setProperty("apple.laf.useScreenMenuBar","false");
-  System.setProperty("com.apple.macos.useScreenMenuBar","false");
-  System.setProperty("apple.awt.graphics.UseQuartz","false");
-  System.setProperty("swing.aatext","true");
   try {
-    String lafName=UIManager.getSystemLookAndFeelClassName();
+    String lafName;
+    if (System.getProperty("os.name").toLowerCase().startsWith("mac os x")) {
+      JFrame.setDefaultLookAndFeelDecorated(true);
+      JDialog.setDefaultLookAndFeelDecorated(true);
+      lafName=UIManager.getCrossPlatformLookAndFeelClassName();
+    }
+ else {
+      lafName=UIManager.getSystemLookAndFeelClassName();
+    }
     UIManager.setLookAndFeel(lafName);
   }
  catch (  Exception e) {

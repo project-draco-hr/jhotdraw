@@ -1,0 +1,8 @@
+{
+  boolean oldValue=wrap;
+  if (oldValue != newValue) {
+    this.wrap=newValue;
+    firePropertyChange("lineWrap",oldValue,newValue);
+    rebuildView();
+  }
+}

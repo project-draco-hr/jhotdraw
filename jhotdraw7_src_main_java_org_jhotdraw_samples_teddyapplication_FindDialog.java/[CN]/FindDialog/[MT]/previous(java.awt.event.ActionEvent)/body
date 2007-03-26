@@ -1,0 +1,19 @@
+{
+  TeddyProject project=((TeddyProject)WindowManager.getInstance().getCurrentProject());
+  if (project != null) {
+    updateMatcher();
+    if (matcher != null) {
+      matcher.setStartIndex(project.getSelectionStart() - 1);
+      int pos=matcher.findPrevious();
+      if (pos == -1 && wrapAroundCheck.isSelected()) {
+        pos=matcher.findPrevious(project.getDocument().getLength());
+      }
+      if (pos == -1) {
+        getToolkit().beep();
+      }
+ else {
+        project.select(pos,matcher.getFindString().length() + pos);
+      }
+    }
+  }
+}

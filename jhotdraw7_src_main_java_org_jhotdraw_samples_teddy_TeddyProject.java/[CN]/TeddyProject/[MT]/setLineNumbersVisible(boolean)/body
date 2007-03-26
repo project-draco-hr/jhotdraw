@@ -1,0 +1,11 @@
+{
+  NumberedViewFactory viewFactory=(NumberedViewFactory)editor.getEditorKit().getViewFactory();
+  boolean oldValue=viewFactory.isLineNumbersVisible();
+  if (oldValue != newValue) {
+    viewFactory.setLineNumbersVisible(newValue);
+    prefs.putBoolean("lineNumbersVisible",newValue);
+    firePropertyChange("lineNumbersVisible",oldValue,newValue);
+    editor.revalidate();
+    editor.repaint();
+  }
+}

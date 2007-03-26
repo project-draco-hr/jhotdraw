@@ -1,0 +1,7 @@
+{
+  if (WindowManager.getInstance() == null) {
+    WindowManager.setInstance(new DefaultSDIWindowManager());
+    WindowManager.getInstance().preLaunch();
+  }
+  Application.launch(applicationClass,args);
+}

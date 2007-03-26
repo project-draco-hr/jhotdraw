@@ -1,0 +1,78 @@
+{
+  final DocumentOrientedApplication app=getApplication();
+  if (app.isEnabled()) {
+    app.setEnabled(false);
+    int unsavedProjectsCount=0;
+    Project documentToBeReviewed=null;
+    for (    Project p : WindowManager.getInstance().projects()) {
+      if (p.hasUnsavedChanges()) {
+        if (p.isEnabled()) {
+          documentToBeReviewed=p;
+        }
+        unsavedProjectsCount++;
+      }
+    }
+    if (unsavedProjectsCount > 0 && documentToBeReviewed == null) {
+      app.setEnabled(true);
+      return;
+    }
+switch (unsavedProjectsCount) {
+case 0:
+{
+        doExit();
+        break;
+      }
+case 1:
+{
+      unsavedProject=documentToBeReviewed;
+      oldFocusOwner=SwingUtilities.getWindowAncestor(unsavedProject.getComponent()).getFocusOwner();
+      unsavedProject.setEnabled(false);
+      JOptionPane pane=new JOptionPane("<html>" + UIManager.getString("OptionPane.css") + "<b>Do you want to save changes to this document "+ "before exiting?</b><p>"+ "If you don't save, your changes will be lost.",JOptionPane.WARNING_MESSAGE);
+      Object[] options={"Save","Cancel","Don't Save"};
+      pane.setOptions(options);
+      pane.setInitialValue(options[0]);
+      pane.putClientProperty("Quaqua.OptionPane.destructiveOption",new Integer(2));
+      JSheet.showSheet(pane,unsavedProject.getComponent(),new SheetListener(){
+        public void optionSelected(        SheetEvent evt){
+          Object value=evt.getValue();
+          if (value == null || value.equals("Cancel")) {
+            unsavedProject.setEnabled(true);
+            app.setEnabled(true);
+          }
+ else           if (value.equals("Don't Save")) {
+            doExit();
+            unsavedProject.setEnabled(true);
+          }
+ else           if (value.equals("Save")) {
+            saveChanges();
+          }
+        }
+      }
+);
+      break;
+    }
+default :
+{
+    JOptionPane pane=new JOptionPane("<html>" + UIManager.get("OptionPane.css") + "<b>You have "+ unsavedProjectsCount+ " documents with unsaved changes. "+ "Do you want to "+ "review these changes before quitting?</b><p>"+ "If you don't review your documents, "+ "all your changes will be lost.",JOptionPane.QUESTION_MESSAGE);
+    Object[] options={"Review Changes","Cancel","Discard Changes"};
+    pane.setOptions(options);
+    pane.setInitialValue(options[0]);
+    pane.putClientProperty("Quaqua.OptionPane.destructiveOption",new Integer(2));
+    JDialog dialog=pane.createDialog(WindowManager.getInstance().getComponent(),null);
+    dialog.setVisible(true);
+    Object value=pane.getValue();
+    if (value == null || value.equals("Cancel")) {
+      app.setEnabled(true);
+    }
+ else     if (value.equals("Discard Changes")) {
+      doExit();
+      app.setEnabled(true);
+    }
+ else     if (value.equals("Review Changes")) {
+      unsavedProject=documentToBeReviewed;
+      reviewChanges();
+    }
+  }
+}
+}
+}

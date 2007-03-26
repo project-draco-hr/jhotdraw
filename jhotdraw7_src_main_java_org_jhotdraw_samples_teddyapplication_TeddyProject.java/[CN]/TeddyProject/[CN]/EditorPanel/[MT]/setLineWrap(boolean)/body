@@ -1,0 +1,5 @@
+{
+  isLineWrap=newValue;
+  editor.revalidate();
+  editor.repaint();
+}

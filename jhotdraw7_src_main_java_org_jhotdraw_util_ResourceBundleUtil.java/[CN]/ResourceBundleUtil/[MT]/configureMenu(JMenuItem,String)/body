@@ -4,4 +4,5 @@
     menu.setAccelerator(getAcc(argument));
   }
   menu.setMnemonic(getMnem(argument));
+  menu.setIcon(getImageIcon(argument,baseClass));
 }

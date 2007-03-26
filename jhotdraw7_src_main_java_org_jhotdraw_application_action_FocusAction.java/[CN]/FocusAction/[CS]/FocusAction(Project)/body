@@ -1,0 +1,16 @@
+{
+  this.project=project;
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.application.Labels");
+  labels.configureAction(this,ID);
+  setEnabled(project != null);
+  project.addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.application.Labels");
+      String name=evt.getPropertyName();
+      if (name.equals("file")) {
+        putValue(Action.NAME,(evt.getNewValue() == null) ? labels.getString("unnamedFile") : ((File)evt.getNewValue()).getName());
+      }
+    }
+  }
+);
+}

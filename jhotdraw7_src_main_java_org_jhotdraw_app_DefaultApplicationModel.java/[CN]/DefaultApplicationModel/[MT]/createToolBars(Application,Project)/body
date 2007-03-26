@@ -1,12 +1,21 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("ch.randelshofer.cubetwister.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
   JToolBar tb=new JToolBar();
   tb.setName(labels.getString("standardToolBarTitle"));
   JButton b;
-  b=tb.add(getAction(NewAction.ID));
-  b.setFocusable(false);
-  b=tb.add(getAction(OpenAction.ID));
-  b.setFocusable(false);
+  Action a;
+  if (null != (a=getAction(NewAction.ID))) {
+    b=tb.add(a);
+    b.setFocusable(false);
+  }
+  if (null != (a=getAction(OpenAction.ID))) {
+    b=tb.add(a);
+    b.setFocusable(false);
+  }
+  if (null != (a=getAction(LoadAction.ID))) {
+    b=tb.add(a);
+    b.setFocusable(false);
+  }
   b=tb.add(getAction(SaveAction.ID));
   tb.addSeparator();
   b=tb.add(getAction(UndoAction.ID));

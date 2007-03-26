@@ -1,0 +1,19 @@
+{
+  this.arrangeable=arrangeable;
+  this.arrangement=arrangement;
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.application.Labels");
+  String labelID;
+switch (arrangement) {
+case VERTICAL:
+    labelID=VERTICAL_ID;
+  break;
+case HORIZONTAL:
+labelID=HORIZONTAL_ID;
+break;
+case CASCADE:
+default :
+labelID=CASCADE_ID;
+break;
+}
+labels.configureAction(this,labelID);
+}

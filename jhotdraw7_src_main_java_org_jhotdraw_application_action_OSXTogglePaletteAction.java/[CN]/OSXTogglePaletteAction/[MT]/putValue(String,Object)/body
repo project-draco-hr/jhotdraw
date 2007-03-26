@@ -1,0 +1,16 @@
+{
+  super.putValue(key,newValue);
+  if (key == Actions.SELECTED_KEY) {
+    if (palette != null) {
+      boolean b=(Boolean)newValue;
+      if (b) {
+        ((DefaultOSXWindowManager)WindowManager.getInstance()).addPalette(palette);
+        palette.setVisible(true);
+      }
+ else {
+        ((DefaultOSXWindowManager)WindowManager.getInstance()).removePalette(palette);
+        palette.setVisible(false);
+      }
+    }
+  }
+}

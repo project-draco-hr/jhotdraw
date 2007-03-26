@@ -1,0 +1,19 @@
+{
+  final File file=fileChooser.getSelectedFile();
+  project.setEnabled(false);
+  project.execute(new Worker(){
+    public Object construct(){
+      try {
+        project.read(file);
+        return null;
+      }
+ catch (      IOException e) {
+        return e;
+      }
+    }
+    public void finished(    Object value){
+      fileOpened(project,file,value);
+    }
+  }
+);
+}

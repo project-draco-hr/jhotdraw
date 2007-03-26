@@ -1,0 +1,4 @@
+{
+  super.uninstallApplicationListeners(app);
+  WindowManager.getInstance().removePropertyChangeListener(applicationListener);
+}

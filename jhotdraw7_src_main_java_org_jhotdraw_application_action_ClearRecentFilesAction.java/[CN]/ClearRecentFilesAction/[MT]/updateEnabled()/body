@@ -1,0 +1,3 @@
+{
+  setEnabled(WindowManager.getInstance().recentFiles().size() > 0);
+}

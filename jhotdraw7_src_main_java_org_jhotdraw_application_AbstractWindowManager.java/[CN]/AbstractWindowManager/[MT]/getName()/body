@@ -1,0 +1,5 @@
+{
+  ApplicationContext ac=ApplicationContext.getInstance();
+  ResourceMap rm=ac.getResourceMap();
+  return rm.getString("Application.title");
+}

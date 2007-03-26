@@ -1,0 +1,15 @@
+{
+  charSetLabel=new javax.swing.JLabel();
+  charSetCombo=new javax.swing.JComboBox();
+  lineSepLabel=new javax.swing.JLabel();
+  lineSepCombo=new javax.swing.JComboBox();
+  setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+  charSetLabel.setText("Character Set:");
+  charSetCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"Item 1","Item 2","Item 3","Item 4"}));
+  lineSepLabel.setText("Line Separator:");
+  lineSepCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"CR","LF","CR LF"}));
+  org.jdesktop.layout.GroupLayout layout=new org.jdesktop.layout.GroupLayout(this);
+  this.setLayout(layout);
+  layout.setHorizontalGroup(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING).add(charSetLabel).add(charSetCombo,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE).add(lineSepLabel).add(lineSepCombo,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE));
+  layout.setVerticalGroup(layout.createSequentialGroup().add(charSetLabel).add(charSetCombo,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED).add(lineSepLabel).add(lineSepCombo,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE));
+}

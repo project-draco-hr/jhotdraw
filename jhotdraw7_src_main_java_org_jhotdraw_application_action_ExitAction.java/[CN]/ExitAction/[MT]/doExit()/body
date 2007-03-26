@@ -1,0 +1,4 @@
+{
+  getApplication().exit();
+  System.exit(0);
+}

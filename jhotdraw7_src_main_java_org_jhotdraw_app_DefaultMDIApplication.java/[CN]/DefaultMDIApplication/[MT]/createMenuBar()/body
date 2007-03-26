@@ -1,105 +1,10 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
-  ApplicationModel mo=getModel();
   JMenuBar mb=new JMenuBar();
-  JMenu m;
-  JMenuItem mi;
-  final JMenu openRecentMenu;
-  m=new JMenu();
-  labels.configureMenu(m,"file");
-  m.add(mo.getAction(NewAction.ID));
-  m.add(mo.getAction(OpenAction.ID));
-  openRecentMenu=new JMenu();
-  labels.configureMenu(openRecentMenu,"openRecent");
-  openRecentMenu.add(mo.getAction(ClearRecentFilesAction.ID));
-  updateOpenRecentMenu(openRecentMenu);
-  m.add(openRecentMenu);
-  m.addSeparator();
-  m.add(mo.getAction(CloseAction.ID));
-  m.add(mo.getAction(SaveAction.ID));
-  m.add(mo.getAction(SaveAsAction.ID));
-  if (mo.getAction(ExportAction.ID) != null) {
-    mi=m.add(mo.getAction(ExportAction.ID));
-  }
-  if (mo.getAction(PrintAction.ID) != null) {
-    m.addSeparator();
-    m.add(mo.getAction(PrintAction.ID));
-  }
-  m.addSeparator();
-  m.add(mo.getAction(ExitAction.ID));
-  mb.add(m);
-  m=new JMenu();
-  labels.configureMenu(m,"edit");
-  m.add(mo.getAction(UndoAction.ID));
-  m.add(mo.getAction(RedoAction.ID));
-  m.addSeparator();
-  m.add(mo.getAction(CutAction.ID));
-  m.add(mo.getAction(CopyAction.ID));
-  m.add(mo.getAction(PasteAction.ID));
-  m.add(mo.getAction(DuplicateAction.ID));
-  m.add(mo.getAction(DeleteAction.ID));
-  m.addSeparator();
-  m.add(mo.getAction(SelectAllAction.ID));
-  mb.add(m);
-  for (  JMenu mm : mo.createMenus(this,null)) {
+  mb.add(createFileMenu());
+  for (  JMenu mm : getModel().createMenus(this,null)) {
     mb.add(mm);
   }
-  m=new JMenu();
-  final JMenu windowMenu=m;
-  labels.configureMenu(m,"window");
-  m.add(mo.getAction(ArrangeAction.CASCADE_ID));
-  m.add(mo.getAction(ArrangeAction.VERTICAL_ID));
-  m.add(mo.getAction(ArrangeAction.HORIZONTAL_ID));
-  m.addSeparator();
-  for (  Project pr : projects()) {
-    if (pr.getAction(FocusAction.ID) != null) {
-      windowMenu.add(pr.getAction(FocusAction.ID));
-    }
-  }
-  if (toolBarActions.size() > 0) {
-    m.addSeparator();
-    for (    Action a : toolBarActions) {
-      JCheckBoxMenuItem cbmi=new JCheckBoxMenuItem(a);
-      Actions.configureJCheckBoxMenuItem(cbmi,a);
-      m.add(cbmi);
-    }
-  }
-  mb.add(m);
-  m=new JMenu();
-  labels.configureMenu(m,labels.getString("help"));
-  m.add(mo.getAction(AboutAction.ID));
-  mb.add(m);
-  addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
-      String name=evt.getPropertyName();
-      ApplicationModel mo=getModel();
-      if (name == "projectCount") {
-        JMenu m=windowMenu;
-        m.removeAll();
-        m.add(mo.getAction(ArrangeAction.CASCADE_ID));
-        m.add(mo.getAction(ArrangeAction.VERTICAL_ID));
-        m.add(mo.getAction(ArrangeAction.HORIZONTAL_ID));
-        m.addSeparator();
-        for (Iterator i=projects().iterator(); i.hasNext(); ) {
-          Project pr=(Project)i.next();
-          if (pr.getAction(FocusAction.ID) != null) {
-            m.add(pr.getAction(FocusAction.ID));
-          }
-        }
-        if (toolBarActions.size() > 0) {
-          m.addSeparator();
-          for (          Action a : toolBarActions) {
-            JCheckBoxMenuItem cbmi=new JCheckBoxMenuItem(a);
-            Actions.configureJCheckBoxMenuItem(cbmi,a);
-            m.add(cbmi);
-          }
-        }
-      }
- else       if (name == "recentFiles") {
-        updateOpenRecentMenu(openRecentMenu);
-      }
-    }
-  }
-);
+  mb.add(createWindowMenu());
+  mb.add(createHelpMenu());
   return mb;
 }

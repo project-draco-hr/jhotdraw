@@ -1,0 +1,5 @@
+{
+  JFileChooser chooser=super.getOpenChooser();
+  chooser.setAccessory(getAccessory());
+  return chooser;
+}
