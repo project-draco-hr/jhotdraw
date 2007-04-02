@@ -15,11 +15,11 @@
   tb.setName(labels.getString("drawToolBarTitle"));
   list.add(tb);
   tb=new JToolBar();
-  ToolBarButtonFactory.addAttributesButtonsTo(tb,editor);
+  ButtonFactory.addAttributesButtonsTo(tb,editor);
   tb.setName(labels.getString("attributesToolBarTitle"));
   list.add(tb);
   tb=new JToolBar();
-  ToolBarButtonFactory.addAlignmentButtonsTo(tb,editor);
+  ButtonFactory.addAlignmentButtonsTo(tb,editor);
   tb.setName(labels.getString("alignmentToolBarTitle"));
   list.add(tb);
   return list;

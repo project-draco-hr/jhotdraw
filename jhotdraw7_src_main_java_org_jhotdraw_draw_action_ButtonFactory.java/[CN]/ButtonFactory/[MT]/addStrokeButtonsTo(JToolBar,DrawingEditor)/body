@@ -1,0 +1,9 @@
+{
+  bar.add(createStrokeDecorationButton(editor));
+  bar.add(createStrokeWidthButton(editor));
+  bar.add(createStrokeDashesButton(editor));
+  bar.add(createStrokeTypeButton(editor));
+  bar.add(createStrokePlacementButton(editor));
+  bar.add(createStrokeCapButton(editor));
+  bar.add(createStrokeJoinButton(editor));
+}

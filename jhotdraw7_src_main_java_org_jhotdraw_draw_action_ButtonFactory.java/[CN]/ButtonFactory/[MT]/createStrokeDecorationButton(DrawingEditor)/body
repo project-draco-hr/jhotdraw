@@ -1,0 +1,13 @@
+{
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  JPopupButton strokeDecorationPopupButton=new JPopupButton();
+  labels.configureToolBarButton(strokeDecorationPopupButton,"attributeStrokeDecoration");
+  strokeDecorationPopupButton.setFocusable(false);
+  strokeDecorationPopupButton.setColumnCount(2,false);
+  LineDecoration[] decorations={new ArrowTip(0.35,12,11.3),new ArrowTip(0.35,13,7),new ArrowTip(Math.PI / 5,12,9.8,true,true,false),new ArrowTip(Math.PI / 6,12,0,false,true,false),new ArrowTip(Math.PI / 11,13,0,false,true,true),new ArrowTip(Math.PI / 6,10,18,false,true,false),new ArrowTip(Math.PI / 6,10,18,true,true,true),null};
+  for (int i=0; i < decorations.length; i++) {
+    strokeDecorationPopupButton.add(new AttributeAction(editor,START_DECORATION,decorations[i],null,new LineDecorationIcon(decorations[i],true)));
+    strokeDecorationPopupButton.add(new AttributeAction(editor,END_DECORATION,decorations[i],null,new LineDecorationIcon(decorations[i],false)));
+  }
+  return strokeDecorationPopupButton;
+}

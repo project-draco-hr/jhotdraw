@@ -1,6 +1,6 @@
 {
-  ToolBarButtonFactory.addStrokeWidthButtonTo(bar,editor);
-  ToolBarButtonFactory.addStrokeDashesButtonTo(bar,editor);
-  ToolBarButtonFactory.addStrokeCapButtonTo(bar,editor);
-  ToolBarButtonFactory.addStrokeJoinButtonTo(bar,editor);
+  bar.add(ButtonFactory.createStrokeWidthButton(editor));
+  bar.add(ButtonFactory.createStrokeDashesButton(editor));
+  bar.add(ButtonFactory.createStrokeCapButton(editor));
+  bar.add(ButtonFactory.createStrokeJoinButton(editor));
 }

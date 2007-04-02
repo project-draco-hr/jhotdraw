@@ -1,0 +1,6 @@
+{
+  bar.add(createFontButton(editor));
+  bar.add(createFontStyleBoldButton(editor));
+  bar.add(createFontStyleItalicButton(editor));
+  bar.add(createFontStyleUnderlineButton(editor));
+}

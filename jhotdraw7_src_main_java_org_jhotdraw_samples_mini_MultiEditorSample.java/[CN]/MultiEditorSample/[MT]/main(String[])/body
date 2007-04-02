@@ -16,8 +16,8 @@
       editor.add(view3);
       editor.add(view4);
       JToolBar tb=new JToolBar();
-      ToolBarButtonFactory.addSelectionToolTo(tb,editor);
-      ToolBarButtonFactory.addToolTo(tb,editor,new CreationTool(new RectangleFigure()),"createRectangle",labels);
+      ButtonFactory.addSelectionToolTo(tb,editor);
+      ButtonFactory.addToolTo(tb,editor,new CreationTool(new RectangleFigure()),"createRectangle",labels);
       tb.setOrientation(JToolBar.VERTICAL);
       JFrame f=new JFrame("Multi-Editor");
       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -1,0 +1,9 @@
+{
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  JButton boldToggleButton;
+  boldToggleButton=new JButton();
+  labels.configureToolBarButton(boldToggleButton,"attributeFontBold");
+  boldToggleButton.setFocusable(false);
+  boldToggleButton.addActionListener(new AttributeToggler(editor,FONT_BOLD,Boolean.TRUE,Boolean.FALSE,new StyledEditorKit.BoldAction()));
+  return boldToggleButton;
+}

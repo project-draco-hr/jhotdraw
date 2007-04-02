@@ -5,7 +5,7 @@
   editor=new DefaultDrawingEditor();
   editor.add(view);
   addCreationButtonsTo(creationToolbar,editor);
-  ToolBarButtonFactory.addAttributesButtonsTo(attributesToolbar,editor);
+  ButtonFactory.addAttributesButtonsTo(attributesToolbar,editor);
   JPopupButton pb=new JPopupButton();
   pb.setItemFont(UIManager.getFont("MenuItem.font"));
   labels.configureToolBarButton(pb,"actions");

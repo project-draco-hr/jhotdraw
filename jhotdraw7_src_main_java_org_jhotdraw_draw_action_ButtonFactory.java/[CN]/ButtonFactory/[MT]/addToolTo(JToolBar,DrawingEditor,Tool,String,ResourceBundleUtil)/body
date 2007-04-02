@@ -1,0 +1,12 @@
+{
+  ButtonGroup group=(ButtonGroup)tb.getClientProperty("toolButtonGroup");
+  ToolListener toolHandler=(ToolListener)tb.getClientProperty("toolHandler");
+  JToggleButton t=new JToggleButton();
+  labels.configureToolBarButton(t,labelKey);
+  t.addItemListener(new ToolButtonListener(tool,editor));
+  t.setFocusable(false);
+  tool.addToolListener(toolHandler);
+  group.add(t);
+  tb.add(t);
+  return t;
+}

@@ -1,3 +1,0 @@
-{
-  addSelectionToolTo(tb,editor,createDrawingActions(editor),createSelectionActions(editor));
-}

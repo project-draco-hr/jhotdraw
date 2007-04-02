@@ -10,5 +10,5 @@
   bar.addSeparator();
   addStrokeButtonsTo(bar,editor);
   bar.addSeparator();
-  ToolBarButtonFactory.addFontButtonsTo(bar,editor);
+  ButtonFactory.addFontButtonsTo(bar,editor);
 }
