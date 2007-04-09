@@ -1,6 +1,6 @@
 {
   if (exportChooser == null) {
-    exportChooser=createSaveChooser();
+    exportChooser=createExportChooser();
   }
   return exportChooser;
 }

@@ -1,0 +1,3 @@
+{
+  if (ch >= 0 && ch < ctype.length)   ctype[ch]=CT_COMMENT;
+}

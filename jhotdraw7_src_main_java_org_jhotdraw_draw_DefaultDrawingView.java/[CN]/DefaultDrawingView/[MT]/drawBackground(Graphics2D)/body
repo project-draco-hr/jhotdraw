@@ -11,6 +11,18 @@
   }
   if (x > 0) {
     g.setColor(new Color(0xf0f0f0));
-    g.fillRect(0,0,x,h);
+    g.fillRect(0,y,x,h - y);
+  }
+  Dimension2DDouble canvasSize=getDrawing().getCanvasSize();
+  if (canvasSize != null) {
+    Point lowerRight=drawingToView(new Point2D.Double(canvasSize.width,canvasSize.height));
+    if (lowerRight.x < w) {
+      g.setColor(new Color(0xf0f0f0));
+      g.fillRect(lowerRight.x,y,w - lowerRight.x,h - y);
+    }
+    if (lowerRight.y < h) {
+      g.setColor(new Color(0xf0f0f0));
+      g.fillRect(x,lowerRight.y,w - x,h - lowerRight.y);
+    }
   }
 }

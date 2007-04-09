@@ -15,7 +15,7 @@
     public void propertyChange(    PropertyChangeEvent evt){
       if (evt.getPropertyName().equals("fileFilterChanged")) {
         InputFormat inputFormat=fileFilterInputFormatMap.get(evt.getNewValue());
-        c.setAccessory(inputFormat.getInputFormatAccessory());
+        c.setAccessory((inputFormat == null) ? null : inputFormat.getInputFormatAccessory());
       }
     }
   }

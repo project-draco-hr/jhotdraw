@@ -4,14 +4,15 @@
   Point2D.Double p=new Point2D.Double();
   Point2D.Double c1=new Point2D.Double();
   Point2D.Double c2=new Point2D.Double();
-  StreamTokenizer tt=new StreamTokenizer(new StringReader(str));
+  StreamPosTokenizer tt=new StreamPosTokenizer(new StringReader(str));
   tt.resetSyntax();
   tt.parseNumbers();
+  tt.parseExponent();
   tt.whitespaceChars(0,' ');
   tt.whitespaceChars(',',',');
   char nextCommand='M';
   char command='M';
-  Commands:   while (tt.nextToken() != StreamTokenizer.TT_EOF) {
+  Commands:   while (tt.nextToken() != StreamPosTokenizer.TT_EOF) {
     if (tt.ttype > 0) {
       command=(char)tt.ttype;
     }
@@ -26,11 +27,11 @@ case 'M':
         paths.add(path);
       }
     path=new BezierPath();
-  if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+  if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
     throw new IOException("x coordinate missing for 'M' in " + str);
   }
 p.x=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y coordinate missing for 'M' in " + str);
 }
 p.y=tt.nval;
@@ -42,11 +43,11 @@ if (path != null) {
 paths.add(path);
 }
 path=new BezierPath();
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dx coordinate missing for 'm' in " + str);
 }
 p.x+=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dy coordinate missing for 'm' in " + str);
 }
 p.y+=tt.nval;
@@ -60,11 +61,11 @@ p.y=path.get(0).y[0];
 path.setClosed(true);
 break;
 case 'L':
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x coordinate missing for 'L' in " + str);
 }
 p.x=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y coordinate missing for 'L' in " + str);
 }
 p.y=tt.nval;
@@ -72,11 +73,11 @@ path.lineTo(p.x,p.y);
 nextCommand='L';
 break;
 case 'l':
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dx coordinate missing for 'l' in " + str);
 }
 p.x+=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dy coordinate missing for 'l' in " + str);
 }
 p.y+=tt.nval;
@@ -84,7 +85,7 @@ path.lineTo(p.x,p.y);
 nextCommand='l';
 break;
 case 'H':
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x coordinate missing for 'H' in " + str);
 }
 p.x=tt.nval;
@@ -92,7 +93,7 @@ path.lineTo(p.x,p.y);
 nextCommand='H';
 break;
 case 'h':
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dx coordinate missing for 'h' in " + str);
 }
 p.x+=tt.nval;
@@ -100,7 +101,7 @@ path.lineTo(p.x,p.y);
 nextCommand='h';
 break;
 case 'V':
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y coordinate missing for 'V' in " + str);
 }
 p.y=tt.nval;
@@ -108,7 +109,7 @@ path.lineTo(p.x,p.y);
 nextCommand='V';
 break;
 case 'v':
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dy coordinate missing for 'v' in " + str);
 }
 p.y+=tt.nval;
@@ -116,27 +117,27 @@ path.lineTo(p.x,p.y);
 nextCommand='v';
 break;
 case 'C':
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x1 coordinate missing for 'C' in " + str);
 }
 c1.x=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y1 coordinate missing for 'C' in " + str);
 }
 c1.y=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x2 coordinate missing for 'C' in " + str);
 }
 c2.x=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y2 coordinate missing for 'C' in " + str);
 }
 c2.y=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x coordinate missing for 'C' in " + str);
 }
 p.x=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y coordinate missing for 'C' in " + str);
 }
 p.y=tt.nval;
@@ -144,27 +145,27 @@ path.curveTo(c1.x,c1.y,c2.x,c2.y,p.x,p.y);
 nextCommand='C';
 break;
 case 'c':
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dx1 coordinate missing for 'c' in " + str);
 }
 c1.x=p.x + tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dy1 coordinate missing for 'c' in " + str);
 }
 c1.y=p.y + tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dx2 coordinate missing for 'c' in " + str);
 }
 c2.x=p.x + tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dy2 coordinate missing for 'c' in " + str);
 }
 c2.y=p.y + tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dx coordinate missing for 'c' in " + str);
 }
 p.x+=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dy coordinate missing for 'c' in " + str);
 }
 p.y+=tt.nval;
@@ -175,19 +176,19 @@ case 'S':
 node=path.get(path.size() - 1);
 c1.x=node.x[0] * 2d - node.x[1];
 c1.y=node.y[0] * 2d - node.y[1];
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x2 coordinate missing for 'S' in " + str);
 }
 c2.x=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y2 coordinate missing for 'S' in " + str);
 }
 c2.y=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x coordinate missing for 'S' in " + str);
 }
 p.x=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y coordinate missing for 'S' in " + str);
 }
 p.y=tt.nval;
@@ -198,19 +199,19 @@ case 's':
 node=path.get(path.size() - 1);
 c1.x=node.x[0] * 2d - node.x[1];
 c1.y=node.y[0] * 2d - node.y[1];
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dx2 coordinate missing for 's' in " + str);
 }
 c2.x=p.x + tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dy2 coordinate missing for 's' in " + str);
 }
 c2.y=p.y + tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dx coordinate missing for 's' in " + str);
 }
 p.x+=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dy coordinate missing for 's' in " + str);
 }
 p.y+=tt.nval;
@@ -218,19 +219,19 @@ path.curveTo(c1.x,c1.y,c2.x,c2.y,p.x,p.y);
 nextCommand='s';
 break;
 case 'Q':
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x1 coordinate missing for 'Q' in " + str);
 }
 c1.x=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y1 coordinate missing for 'Q' in " + str);
 }
 c1.y=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x coordinate missing for 'Q' in " + str);
 }
 p.x=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y coordinate missing for 'Q' in " + str);
 }
 p.y=tt.nval;
@@ -238,19 +239,19 @@ path.quadTo(c1.x,c1.y,p.x,p.y);
 nextCommand='Q';
 break;
 case 'q':
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dx1 coordinate missing for 'q' in " + str);
 }
 c1.x=p.x + tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dy1 coordinate missing for 'q' in " + str);
 }
 c1.y=p.y + tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dx coordinate missing for 'q' in " + str);
 }
 p.x+=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dy coordinate missing for 'q' in " + str);
 }
 p.y+=tt.nval;
@@ -261,11 +262,11 @@ case 'T':
 node=path.get(path.size() - 1);
 c1.x=node.x[0] * 2d - node.x[1];
 c1.y=node.y[0] * 2d - node.y[1];
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x coordinate missing for 'T' in " + str);
 }
 p.x=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y coordinate missing for 'T' in " + str);
 }
 p.y=tt.nval;
@@ -276,11 +277,11 @@ case 't':
 node=path.get(path.size() - 1);
 c1.x=node.x[0] * 2d - node.x[1];
 c1.y=node.y[0] * 2d - node.y[1];
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dx coordinate missing for 't' in " + str);
 }
 p.x+=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("dy coordinate missing for 't' in " + str);
 }
 p.y+=tt.nval;
@@ -289,31 +290,31 @@ nextCommand='s';
 break;
 case 'A':
 {
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("rx coordinate missing for 'A' in " + str);
 }
 double rx=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("ry coordinate missing for 'A' in " + str);
 }
 double ry=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x-axis-rotation missing for 'A' in " + str);
 }
 double xAxisRotation=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("large-arc-flag missing for 'A' in " + str);
 }
 boolean largeArcFlag=tt.nval != 0;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("sweep-flag missing for 'A' in " + str);
 }
 boolean sweepFlag=tt.nval != 0;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x coordinate missing for 'A' in " + str);
 }
 p.x=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y coordinate missing for 'A' in " + str);
 }
 p.y=tt.nval;
@@ -323,31 +324,31 @@ break;
 }
 case 'a':
 {
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("rx coordinate missing for 'A' in " + str);
 }
 double rx=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("ry coordinate missing for 'A' in " + str);
 }
 double ry=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x-axis-rotation missing for 'A' in " + str);
 }
 double xAxisRotation=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("large-arc-flag missing for 'A' in " + str);
 }
 boolean largeArcFlag=tt.nval != 0;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("sweep-flag missing for 'A' in " + str);
 }
 boolean sweepFlag=tt.nval != 0;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("x coordinate missing for 'A' in " + str);
 }
 p.x+=tt.nval;
-if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y coordinate missing for 'A' in " + str);
 }
 p.y+=tt.nval;

@@ -1,7 +1,7 @@
 {
   AffineTransform t=new AffineTransform();
   if (str != null && !str.equals("none")) {
-    StreamTokenizer tt=new StreamTokenizer(new StringReader(str));
+    StreamPosTokenizer tt=new StreamPosTokenizer(new StringReader(str));
     tt.resetSyntax();
     tt.wordChars('a','z');
     tt.wordChars('A','Z');
@@ -9,8 +9,8 @@
     tt.whitespaceChars(0,' ');
     tt.whitespaceChars(',',',');
     tt.parseNumbers();
-    while (tt.nextToken() != StreamTokenizer.TT_EOF) {
-      if (tt.ttype != StreamTokenizer.TT_WORD) {
+    while (tt.nextToken() != StreamPosTokenizer.TT_EOF) {
+      if (tt.ttype != StreamPosTokenizer.TT_WORD) {
         throw new IOException("Illegal transform " + str);
       }
       String type=tt.sval;
@@ -20,11 +20,11 @@
       if (type.equals("matrix")) {
         double[] m=new double[6];
         for (int i=0; i < 6; i++) {
-          if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+          if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
             throw new IOException("Matrix value " + i + " not found in transform "+ str+ " token:"+ tt.ttype+ " "+ tt.sval);
           }
           m[i]=tt.nval;
-          if (tt.nextToken() == StreamTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
+          if (tt.nextToken() == StreamPosTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
             double mantissa=tt.nval;
             m[i]=Double.valueOf(m[i] + tt.sval);
           }
@@ -36,20 +36,20 @@
       }
  else       if (type.equals("translate")) {
         double tx, ty;
-        if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+        if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
           throw new IOException("X-translation value not found in transform " + str);
         }
         tx=tt.nval;
-        if (tt.nextToken() == StreamTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
+        if (tt.nextToken() == StreamPosTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
           double mantissa=tt.nval;
           tx=Double.valueOf(tx + tt.sval);
         }
  else {
           tt.pushBack();
         }
-        if (tt.nextToken() == StreamTokenizer.TT_NUMBER) {
+        if (tt.nextToken() == StreamPosTokenizer.TT_NUMBER) {
           ty=tt.nval;
-          if (tt.nextToken() == StreamTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
+          if (tt.nextToken() == StreamPosTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
             double mantissa=tt.nval;
             ty=Double.valueOf(ty + tt.sval);
           }
@@ -65,20 +65,20 @@
       }
  else       if (type.equals("scale")) {
         double sx, sy;
-        if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+        if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
           throw new IOException("X-scale value not found in transform " + str);
         }
         sx=tt.nval;
-        if (tt.nextToken() == StreamTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
+        if (tt.nextToken() == StreamPosTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
           double mantissa=tt.nval;
           sx=Double.valueOf(sx + tt.sval);
         }
  else {
           tt.pushBack();
         }
-        if (tt.nextToken() == StreamTokenizer.TT_NUMBER) {
+        if (tt.nextToken() == StreamPosTokenizer.TT_NUMBER) {
           sy=tt.nval;
-          if (tt.nextToken() == StreamTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
+          if (tt.nextToken() == StreamPosTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
             double mantissa=tt.nval;
             sy=Double.valueOf(sy + tt.sval);
           }
@@ -94,31 +94,31 @@
       }
  else       if (type.equals("rotate")) {
         double angle, cx, cy;
-        if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+        if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
           throw new IOException("Angle value not found in transform " + str);
         }
         angle=tt.nval;
-        if (tt.nextToken() == StreamTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
+        if (tt.nextToken() == StreamPosTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
           double mantissa=tt.nval;
           angle=Double.valueOf(angle + tt.sval);
         }
  else {
           tt.pushBack();
         }
-        if (tt.nextToken() == StreamTokenizer.TT_NUMBER) {
+        if (tt.nextToken() == StreamPosTokenizer.TT_NUMBER) {
           cx=tt.nval;
-          if (tt.nextToken() == StreamTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
+          if (tt.nextToken() == StreamPosTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
             double mantissa=tt.nval;
             cx=Double.valueOf(cx + tt.sval);
           }
  else {
             tt.pushBack();
           }
-          if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+          if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
             throw new IOException("Y-center value not found in transform " + str);
           }
           cy=tt.nval;
-          if (tt.nextToken() == StreamTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
+          if (tt.nextToken() == StreamPosTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
             double mantissa=tt.nval;
             cy=Double.valueOf(cy + tt.sval);
           }
@@ -134,11 +134,11 @@
       }
  else       if (type.equals("skewX")) {
         double angle;
-        if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+        if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
           throw new IOException("Skew angle not found in transform " + str);
         }
         angle=tt.nval;
-        if (tt.nextToken() == StreamTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
+        if (tt.nextToken() == StreamPosTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
           double mantissa=tt.nval;
           angle=Double.valueOf(angle + tt.sval);
         }
@@ -149,11 +149,11 @@
       }
  else       if (type.equals("skewY")) {
         double angle;
-        if (tt.nextToken() != StreamTokenizer.TT_NUMBER) {
+        if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
           throw new IOException("Skew angle not found in transform " + str);
         }
         angle=tt.nval;
-        if (tt.nextToken() == StreamTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
+        if (tt.nextToken() == StreamPosTokenizer.TT_WORD && (tt.sval.startsWith("E") || tt.sval.startsWith("e"))) {
           double mantissa=tt.nval;
           angle=Double.valueOf(angle + tt.sval);
         }

@@ -1,0 +1,4 @@
+{
+  unread.addElement(new Integer(c));
+  readpos--;
+}
