@@ -13,6 +13,6 @@
   }
   value=readInheritAttribute(elem,"text-align","start");
   if (!value.equals("start")) {
-    TEXT_ANCHOR.set(a,textAnchorMap.get(value));
+    TEXT_ALIGN.set(a,textAlignMap.get(value));
   }
 }

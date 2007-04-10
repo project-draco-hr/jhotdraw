@@ -1,11 +1,8 @@
 {
   invalidateTransformedShape();
-  Object[] o=(Object[])geometry;
-  roundrect=(RoundRectangle2D.Double)((RoundRectangle2D.Double)o[0]).clone();
-  if (o[1] == null) {
-    TRANSFORM.set(this,null);
-  }
- else {
-    TRANSFORM.set(this,(AffineTransform)((AffineTransform)o[1]).clone());
-  }
+  Object[] restoreData=(Object[])geometry;
+  roundrect=(RoundRectangle2D.Double)((RoundRectangle2D.Double)restoreData[0]).clone();
+  TRANSFORM.basicSetClone(this,(AffineTransform)restoreData[1]);
+  FILL_GRADIENT.basicSetClone(this,(Gradient)restoreData[2]);
+  STROKE_GRADIENT.basicSetClone(this,(Gradient)restoreData[3]);
 }

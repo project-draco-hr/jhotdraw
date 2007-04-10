@@ -1,4 +1,0 @@
-{
-  parseNumbers();
-  isParseExponent=true;
-}

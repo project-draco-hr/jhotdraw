@@ -1,8 +1,8 @@
 {
   HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
   readCoreAttributes(elem,a);
-  double cx=toNumber(elem,readAttribute(elem,"cx","0"));
-  double cy=toNumber(elem,readAttribute(elem,"cy","0"));
+  double cx=toNumber(elem,readAttribute(elem,"cx","0.5"));
+  double cy=toNumber(elem,readAttribute(elem,"cy","0.5"));
   double r=toNumber(elem,readAttribute(elem,"r","0.5"));
   boolean isRelativeToFigureBounds=readAttribute(elem,"gradientUnits","objectBoundingBox").equals("objectBoundingBox");
   ArrayList<IXMLElement> stops=elem.getChildrenNamed("stop",SVG_NAMESPACE);
@@ -30,6 +30,9 @@
       stopOffsets[i]=toDouble(stopElem,offsetStr,0,0,1);
     }
     stopColors[i]=toColor(stopElem,readAttribute(stopElem,"stop-color","black"));
+    if (stopColors[i] == null) {
+      stopColors[i]=new Color(0x0,true);
+    }
     double doubleValue=toDouble(stopElem,readAttribute(stopElem,"stop-opacity","1"),1,0,1);
     if (doubleValue != 1) {
       stopColors[i]=new Color(((int)(doubleValue * 255) << 24) | (stopColors[i].getRGB() & 0xffffff),true);

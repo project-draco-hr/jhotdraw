@@ -13,4 +13,10 @@
     Point2D.Double lead=getEndPoint();
     basicSetBounds((Point2D.Double)tx.transform(anchor,anchor),(Point2D.Double)tx.transform(lead,lead));
   }
+  if (FILL_GRADIENT.get(this) != null && !FILL_GRADIENT.get(this).isRelativeToFigureBounds()) {
+    FILL_GRADIENT.get(this).transform(tx);
+  }
+  if (STROKE_GRADIENT.get(this) != null && !STROKE_GRADIENT.get(this).isRelativeToFigureBounds()) {
+    STROKE_GRADIENT.get(this).transform(tx);
+  }
 }

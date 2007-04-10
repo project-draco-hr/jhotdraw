@@ -1,0 +1,10 @@
+{
+  Point2D.Double topLeft=new Point2D.Double(x1,y1);
+  Point2D.Double bottomRight=new Point2D.Double(x2,y2);
+  tx.transform(topLeft,topLeft);
+  tx.transform(bottomRight,bottomRight);
+  x1=topLeft.getX();
+  y1=topLeft.getY();
+  x2=bottomRight.getX();
+  y2=bottomRight.getY();
+}

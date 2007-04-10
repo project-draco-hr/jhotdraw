@@ -7,7 +7,7 @@
     FILL_COLOR.set(a,(Color)objectValue);
   }
  else   if (objectValue instanceof Gradient) {
-    FILL_GRADIENT.set(a,(Gradient)objectValue);
+    FILL_GRADIENT.set(a,(Gradient)((Gradient)objectValue).clone());
   }
  else   if (objectValue == null) {
     FILL_COLOR.set(a,null);
@@ -39,7 +39,7 @@
   }
   value=readInheritAttribute(elem,"stroke-dasharray","none");
   if (!value.equals("none")) {
-    String[] values=toCommaSeparatedArray(value);
+    String[] values=toWSOrCommaSeparatedArray(value);
     double[] dashes=new double[values.length];
     for (int i=0; i < values.length; i++) {
       dashes[i]=toNumber(elem,values[i]);

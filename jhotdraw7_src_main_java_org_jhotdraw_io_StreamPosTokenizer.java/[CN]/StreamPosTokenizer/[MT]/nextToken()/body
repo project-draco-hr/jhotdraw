@@ -154,8 +154,8 @@
       }
     }
  else {
-      if (isParseExponent) {
-        if (c == 'E') {
+      if (isParseExponents) {
+        if (c == 'E' || c == 'e') {
           c=read();
           digits=0;
           neg=false;

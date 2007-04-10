@@ -1,0 +1,3 @@
+{
+  return new Object[]{super.getTransformRestoreData(),FILL_GRADIENT.getClone(this),STROKE_GRADIENT.getClone(this)};
+}

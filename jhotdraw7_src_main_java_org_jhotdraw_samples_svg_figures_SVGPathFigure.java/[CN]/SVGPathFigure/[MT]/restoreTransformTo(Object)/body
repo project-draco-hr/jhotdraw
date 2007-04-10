@@ -1,6 +1,6 @@
 {
   Object[] restoreData=(Object[])geometry;
-  TRANSFORM.basicSetClone(this,(AffineTransform)restoreData[0]);
+  super.restoreTransformTo(restoreData[0]);
   FILL_GRADIENT.basicSetClone(this,(Gradient)restoreData[1]);
   STROKE_GRADIENT.basicSetClone(this,(Gradient)restoreData[2]);
 }
