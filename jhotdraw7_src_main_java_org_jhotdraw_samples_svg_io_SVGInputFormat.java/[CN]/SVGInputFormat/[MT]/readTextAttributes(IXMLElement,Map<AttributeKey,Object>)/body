@@ -1,7 +1,7 @@
 {
   Object value;
   value=readInheritAttribute(elem,"text-anchor","start");
-  TEXT_ANCHOR.set(a,textAnchorMap.get(value));
+  TEXT_ANCHOR.set(a,SVG_TEXT_ANCHORS.get(value));
   value=readInheritAttribute(elem,"display-align","auto");
   if (!value.equals("auto")) {
     if (value.equals("center")) {
@@ -13,6 +13,6 @@
   }
   value=readInheritAttribute(elem,"text-align","start");
   if (!value.equals("start")) {
-    TEXT_ALIGN.set(a,textAlignMap.get(value));
+    TEXT_ALIGN.set(a,SVG_TEXT_ALIGNS.get(value));
   }
 }

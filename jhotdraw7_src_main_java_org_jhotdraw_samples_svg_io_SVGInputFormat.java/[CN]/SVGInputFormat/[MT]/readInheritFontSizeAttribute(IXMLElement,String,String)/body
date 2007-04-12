@@ -12,11 +12,11 @@
   if (value.equals("inherit")) {
     return readInheritFontSizeAttribute(elem.getParent(),attributeName,defaultValue);
   }
- else   if (absoluteFontSizeMap.containsKey(value)) {
-    return absoluteFontSizeMap.get(value);
+ else   if (SVG_ABSOLUTE_FONT_SIZES.containsKey(value)) {
+    return SVG_ABSOLUTE_FONT_SIZES.get(value);
   }
- else   if (relativeFontSizeMap.containsKey(value)) {
-    return relativeFontSizeMap.get(value) * readInheritFontSizeAttribute(elem.getParent(),attributeName,defaultValue);
+ else   if (SVG_RELATIVE_FONT_SIZES.containsKey(value)) {
+    return SVG_RELATIVE_FONT_SIZES.get(value) * readInheritFontSizeAttribute(elem.getParent(),attributeName,defaultValue);
   }
  else   if (value.endsWith("%")) {
     double factor=Double.valueOf(value.substring(0,value.length() - 1));

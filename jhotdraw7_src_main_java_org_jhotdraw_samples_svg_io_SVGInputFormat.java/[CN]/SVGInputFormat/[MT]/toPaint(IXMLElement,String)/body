@@ -32,7 +32,7 @@
       Object obj=elementObjects.get(identifiedElements.get(href.substring(1)));
       return obj;
     }
-    System.out.println("SVGInputFormat.toPaint not implemented for " + href);
+    if (DEBUG)     System.out.println("SVGInputFormat.toPaint not implemented for " + href);
     return null;
   }
  else {

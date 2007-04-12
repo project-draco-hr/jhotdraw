@@ -1,0 +1,8 @@
+{
+  for (  IXMLElement node : elem.getChildren()) {
+    if (node instanceof IXMLElement) {
+      IXMLElement child=(IXMLElement)node;
+      readElement(child);
+    }
+  }
+}

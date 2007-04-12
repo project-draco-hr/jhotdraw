@@ -1,17 +1,17 @@
 {
   Object value;
   value=readAttribute(elem,"display","inline");
-  System.out.println("SVGInputFormat not implemented display=" + value);
+  if (DEBUG)   System.out.println("SVGInputFormat not implemented display=" + value);
   value=readInheritAttribute(elem,"image-rendering","auto");
-  System.out.println("SVGInputFormat not implemented image-rendering=" + value);
+  if (DEBUG)   System.out.println("SVGInputFormat not implemented image-rendering=" + value);
   value=readInheritAttribute(elem,"pointer-events","visiblePainted");
-  System.out.println("SVGInputFormat not implemented pointer-events=" + value);
+  if (DEBUG)   System.out.println("SVGInputFormat not implemented pointer-events=" + value);
   value=readInheritAttribute(elem,"shape-rendering","auto");
-  System.out.println("SVGInputFormat not implemented shape-rendering=" + value);
+  if (DEBUG)   System.out.println("SVGInputFormat not implemented shape-rendering=" + value);
   value=readInheritAttribute(elem,"text-rendering","auto");
-  System.out.println("SVGInputFormat not implemented text-rendering=" + value);
+  if (DEBUG)   System.out.println("SVGInputFormat not implemented text-rendering=" + value);
   value=readAttribute(elem,"vector-effect","none");
-  System.out.println("SVGInputFormat not implemented vector-effect=" + value);
+  if (DEBUG)   System.out.println("SVGInputFormat not implemented vector-effect=" + value);
   value=readInheritAttribute(elem,"visibility",null);
-  System.out.println("SVGInputFormat not implemented visibility=" + value);
+  if (DEBUG)   System.out.println("SVGInputFormat not implemented visibility=" + value);
 }

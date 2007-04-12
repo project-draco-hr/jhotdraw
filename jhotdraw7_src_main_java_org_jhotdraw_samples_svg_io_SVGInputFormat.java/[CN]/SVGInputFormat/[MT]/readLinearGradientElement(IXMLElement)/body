@@ -20,7 +20,7 @@
     }
   }
   if (stops.size() == 0) {
-    System.out.println("SVGInpuFormat: Warning no stops in linearGradient " + elem);
+    if (DEBUG)     System.out.println("SVGInpuFormat: Warning no stops in linearGradient " + elem);
   }
   AffineTransform tx=toTransform(elem,readAttribute(elem,"gradientTransform","none"));
   if (tx != null) {

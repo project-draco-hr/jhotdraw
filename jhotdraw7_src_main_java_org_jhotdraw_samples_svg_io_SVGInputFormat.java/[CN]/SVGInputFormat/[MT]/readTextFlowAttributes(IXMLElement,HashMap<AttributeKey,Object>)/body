@@ -1,5 +1,5 @@
 {
   Object value;
   value=readInheritAttribute(elem,"line-increment","auto");
-  System.out.println("SVGInputFormat not implemented line-increment=" + value);
+  if (DEBUG)   System.out.println("SVGInputFormat not implemented line-increment=" + value);
 }

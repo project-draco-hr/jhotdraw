@@ -62,7 +62,7 @@
  else     if (name.equals("style")) {
     }
  else {
-      System.out.println("SVGInputFormat not implemented for <" + name + ">");
+      if (DEBUG)       System.out.println("SVGInputFormat not implemented for <" + name + ">");
     }
   }
   if (f instanceof SVGFigure) {
@@ -71,7 +71,7 @@
     }
   }
  else   if (f != null) {
-    System.out.println("SVGInputFormat warning: not an SVGFigure " + f);
+    if (DEBUG)     System.out.println("SVGInputFormat warning: not an SVGFigure " + f);
   }
   return f;
 }

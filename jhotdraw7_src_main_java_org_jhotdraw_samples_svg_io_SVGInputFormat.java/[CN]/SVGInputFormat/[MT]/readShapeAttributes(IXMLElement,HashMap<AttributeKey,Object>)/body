@@ -14,7 +14,7 @@
   }
  else {
     FILL_COLOR.set(a,null);
-    System.out.println("SVGInputFormat not implemented  fill=" + objectValue);
+    if (DEBUG)     System.out.println("SVGInputFormat not implemented  fill=" + objectValue);
   }
   objectValue=readInheritAttribute(elem,"fill-opacity",null);
   if (objectValue == null) {
@@ -22,7 +22,7 @@
   }
   FILL_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
   value=readInheritAttribute(elem,"fill-rule","nonzero");
-  WINDING_RULE.set(a,fillRuleMap.get(value));
+  WINDING_RULE.set(a,SVG_FILL_RULES.get(value));
   objectValue=toPaint(elem,readInheritAttribute(elem,"stroke","none"));
   if (objectValue instanceof Color) {
     STROKE_COLOR.set(a,(Color)objectValue);
@@ -35,7 +35,7 @@
   }
  else {
     STROKE_COLOR.set(a,null);
-    System.out.println("SVGInputFormat not implemented  stroke=" + objectValue);
+    if (DEBUG)     System.out.println("SVGInputFormat not implemented  stroke=" + objectValue);
   }
   value=readInheritAttribute(elem,"stroke-dasharray","none");
   if (!value.equals("none")) {
@@ -50,9 +50,9 @@
   STROKE_DASH_PHASE.set(a,doubleValue);
   IS_STROKE_DASH_FACTOR.set(a,false);
   value=readInheritAttribute(elem,"stroke-linecap","butt");
-  STROKE_CAP.set(a,strokeLinecapMap.get(value));
+  STROKE_CAP.set(a,SVG_STROKE_LINECAPS.get(value));
   value=readInheritAttribute(elem,"stroke-linejoin","miter");
-  STROKE_JOIN.set(a,strokeLinejoinMap.get(value));
+  STROKE_JOIN.set(a,SVG_STROKE_LINEJOINS.get(value));
   doubleValue=toDouble(elem,readInheritAttribute(elem,"stroke-miterlimit","4"),4d,1d,Double.MAX_VALUE);
   STROKE_MITER_LIMIT.set(a,doubleValue);
   IS_STROKE_MITER_LIMIT_FACTOR.set(a,false);

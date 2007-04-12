@@ -2,6 +2,6 @@
   double value;
   value=toDouble(elem,readAttribute(elem,"opacity","1"),1,0,1);
   if (value != 1) {
-    System.out.println("SVGInputFormat not implemented  opacity=" + value);
+    if (DEBUG)     System.out.println("SVGInputFormat not implemented  opacity=" + value);
   }
 }
