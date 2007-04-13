@@ -14,7 +14,6 @@
     public Object construct(){
       Object result;
       try {
-        System.out.println("getParameter.datafile:" + getParameter("datafile"));
         if (getParameter("data") != null) {
           NanoXMLDOMInput domi=new NanoXMLDOMInput(new DrawFigureFactory(),new StringReader(getParameter("data")));
           result=domi.readObject(0);
@@ -52,13 +51,15 @@
       initComponents();
       if (result != null) {
         if (result instanceof Drawing) {
-          setDrawing((Drawing)result);
+          Drawing drawing=(Drawing)result;
+          setDrawing(drawing);
         }
  else         if (result instanceof Throwable) {
           getDrawing().add(new TextFigure(result.toString()));
           ((Throwable)result).printStackTrace();
         }
       }
+      initDrawing(getDrawing());
       c.validate();
     }
   }

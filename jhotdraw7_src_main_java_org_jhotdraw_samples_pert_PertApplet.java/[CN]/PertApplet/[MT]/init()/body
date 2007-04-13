@@ -58,6 +58,7 @@
           ((Throwable)result).printStackTrace();
         }
       }
+      initDrawing(getDrawing());
       c.validate();
     }
   }

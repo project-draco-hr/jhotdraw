@@ -1,0 +1,23 @@
+{
+  String text=(String)t.getTransferData(DataFlavor.stringFlavor);
+  LinkedList list=new LinkedList<Figure>();
+  if (isMultiline) {
+    TextHolderFigure figure=(TextHolderFigure)prototype.clone();
+    figure.setText(text);
+    Dimension2DDouble s=figure.getPreferredSize();
+    figure.basicSetBounds(new Point2D.Double(0,0),new Point2D.Double(s.width,s.height));
+    list.add(figure);
+  }
+ else {
+    double y=0;
+    for (    String line : text.split("\n")) {
+      TextHolderFigure figure=(TextHolderFigure)prototype.clone();
+      figure.setText(line);
+      Dimension2DDouble s=figure.getPreferredSize();
+      figure.basicSetBounds(new Point2D.Double(0,y),new Point2D.Double(s.width,s.height));
+      list.add(figure);
+      y+=s.height;
+    }
+  }
+  return list;
+}

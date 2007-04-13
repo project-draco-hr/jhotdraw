@@ -1,0 +1,12 @@
+{
+  LinkedList<InputFormat> inputFormats=new LinkedList<InputFormat>();
+  LinkedList<OutputFormat> outputFormats=new LinkedList<OutputFormat>();
+  DOMStorableInputOutputFormat ioFormat=new DOMStorableInputOutputFormat(new DrawFigureFactory());
+  inputFormats.add(ioFormat);
+  outputFormats.add(ioFormat);
+  inputFormats.add(new ImageInputFormat(new ImageFigure()));
+  inputFormats.add(new TextInputFormat(new TextFigure()));
+  outputFormats.add(new ImageOutputFormat());
+  d.setInputFormats(inputFormats);
+  d.setOutputFormats(outputFormats);
+}

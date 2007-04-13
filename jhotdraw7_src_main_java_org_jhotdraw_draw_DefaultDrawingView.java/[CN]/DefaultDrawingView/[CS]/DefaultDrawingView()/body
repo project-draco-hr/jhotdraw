@@ -11,4 +11,5 @@
     }
   }
 );
+  setTransferHandler(new DrawingViewTransferHandler());
 }

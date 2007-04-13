@@ -1,0 +1,12 @@
+{
+  if (DEBUG)   System.out.println(this + ".getSourceActions");
+  int retValue;
+  if (c instanceof DrawingView) {
+    DrawingView view=(DrawingView)c;
+    retValue=(view.getDrawing().getOutputFormats().size() > 0 && view.getSelectionCount() > 0) ? COPY | MOVE : NONE;
+  }
+ else {
+    retValue=super.getSourceActions(c);
+  }
+  return retValue;
+}

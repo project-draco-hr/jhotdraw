@@ -49,7 +49,7 @@
       Container c=getContentPane();
       c.setLayout(new BorderLayout());
       c.removeAll();
-      c.add(drawingPanel=new SVGPanel());
+      c.add(drawingPanel=new SVGDrawingPanel());
       initComponents();
       if (result != null) {
         if (result instanceof Drawing) {

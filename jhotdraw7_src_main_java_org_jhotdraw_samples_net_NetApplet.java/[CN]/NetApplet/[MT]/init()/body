@@ -51,13 +51,15 @@
       initComponents();
       if (result != null) {
         if (result instanceof Drawing) {
-          setDrawing((Drawing)result);
+          Drawing drawing=(Drawing)result;
+          setDrawing(drawing);
         }
  else         if (result instanceof Throwable) {
           getDrawing().add(new TextFigure(result.toString()));
           ((Throwable)result).printStackTrace();
         }
       }
+      initDrawing(getDrawing());
       c.validate();
     }
   }

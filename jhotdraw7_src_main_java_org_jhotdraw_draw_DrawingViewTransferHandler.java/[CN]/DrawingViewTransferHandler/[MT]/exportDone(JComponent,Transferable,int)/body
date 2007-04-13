@@ -1,0 +1,16 @@
+{
+  if (DEBUG)   System.out.println(this + ".exportDone " + action+ " move="+ MOVE);
+  if (source instanceof DrawingView) {
+    DrawingView view=(DrawingView)source;
+    Drawing drawing=view.getDrawing();
+    if (action == MOVE) {
+      CompositeEdit ce=new CompositeEdit("Remove");
+      drawing.fireUndoableEditHappened(ce);
+      drawing.removeAll(view.getSelectedFigures());
+      drawing.fireUndoableEditHappened(ce);
+    }
+  }
+ else {
+    super.exportDone(source,data,action);
+  }
+}

@@ -1,0 +1,49 @@
+{
+  if (DEBUG)   System.out.println(this + ".importData");
+  boolean retValue;
+  if (comp instanceof DrawingView) {
+    DrawingView view=(DrawingView)comp;
+    Drawing drawing=view.getDrawing();
+    if (drawing.getInputFormats() == null || drawing.getInputFormats().size() == 0) {
+      retValue=false;
+    }
+ else {
+      retValue=false;
+      try {
+        SearchLoop:         for (        InputFormat format : drawing.getInputFormats()) {
+          for (          DataFlavor flavor : t.getTransferDataFlavors()) {
+            if (format.isDataFlavorSupported(flavor)) {
+              CompositeEdit ce=new CompositeEdit("Paste");
+              drawing.fireUndoableEditHappened(ce);
+              java.util.List<Figure> toBeSelected=format.readFigures(t);
+              view.clearSelection();
+              drawing.addAll(toBeSelected);
+              view.addToSelection(toBeSelected);
+              drawing.fireUndoableEditHappened(ce);
+              retValue=true;
+              break SearchLoop;
+            }
+          }
+        }
+        if (retValue == false && t.isDataFlavorSupported(DataFlavor.javaFileListFlavor)) {
+          List<File> files=(List<File>)t.getTransferData(DataFlavor.javaFileListFlavor);
+          retValue=true;
+          for (          File file : files) {
+            FileFormatLoop:             for (            InputFormat format : drawing.getInputFormats()) {
+              if (file.isFile() && format.getFileFilter().accept(file)) {
+                format.read(file,drawing);
+              }
+            }
+          }
+        }
+      }
+ catch (      Throwable e) {
+        if (DEBUG)         e.printStackTrace();
+      }
+    }
+  }
+ else {
+    retValue=super.importData(comp,t);
+  }
+  return retValue;
+}

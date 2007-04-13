@@ -1,9 +1,10 @@
 {
   Component focusOwner=KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
-  if (focusOwner != null && focusOwner instanceof EditableComponent) {
-    ((EditableComponent)focusOwner).paste();
-  }
- else {
-    super.actionPerformed(evt);
+  if (focusOwner != null && focusOwner instanceof JComponent) {
+    JComponent component=(JComponent)focusOwner;
+    Transferable t=component.getToolkit().getSystemClipboard().getContents(component);
+    if (t != null) {
+      component.getTransferHandler().importData(component,t);
+    }
   }
 }

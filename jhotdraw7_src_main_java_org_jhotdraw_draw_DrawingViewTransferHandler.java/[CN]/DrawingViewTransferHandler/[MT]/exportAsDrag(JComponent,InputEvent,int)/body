@@ -1,0 +1,9 @@
+{
+  if (DEBUG)   System.out.println(this + ".exportAsDrag");
+  if (comp instanceof DrawingView) {
+    DrawingView view=(DrawingView)comp;
+  }
+ else {
+    super.exportAsDrag(comp,e,action);
+  }
+}
