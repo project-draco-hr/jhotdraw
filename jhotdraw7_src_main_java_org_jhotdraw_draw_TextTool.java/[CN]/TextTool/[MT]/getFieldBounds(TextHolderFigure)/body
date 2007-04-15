@@ -1,5 +1,5 @@
 {
-  Rectangle box=getView().drawingToView(figure.getBounds());
+  Rectangle box=getView().drawingToView(figure.getDrawingArea());
   Insets insets=textField.getInsets();
   return new Rectangle(box.x - insets.left,box.y - insets.top,box.width + insets.left + insets.right,box.height + insets.top + insets.bottom);
 }

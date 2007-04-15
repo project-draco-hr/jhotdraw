@@ -1,8 +1,6 @@
 {
   HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
   readCoreAttributes(elem,a);
-  readTransformAttribute(elem,a);
-  AffineTransform transform=(AffineTransform)a.get(TRANSFORM);
   CompositeFigure g=factory.createG(a);
   for (  IXMLElement node : elem.getChildren()) {
     if (node instanceof IXMLElement) {
@@ -15,8 +13,8 @@
       }
     }
   }
-  if (transform != null) {
-    g.basicTransform(transform);
+  if (TRANSFORM.get(a) != null) {
+    g.basicTransform(TRANSFORM.get(a));
   }
   return g;
 }

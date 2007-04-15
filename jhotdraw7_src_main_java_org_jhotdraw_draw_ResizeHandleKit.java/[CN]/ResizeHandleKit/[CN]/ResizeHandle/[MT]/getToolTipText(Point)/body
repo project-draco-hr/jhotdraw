@@ -1,0 +1,4 @@
+{
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  return labels.getString("resizeHandle.tip");
+}

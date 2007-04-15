@@ -1,4 +1,4 @@
 {
-  add(new BezierFigure());
+  add(new SVGBezierFigure());
   SVGAttributeKeys.setDefaults(this);
 }

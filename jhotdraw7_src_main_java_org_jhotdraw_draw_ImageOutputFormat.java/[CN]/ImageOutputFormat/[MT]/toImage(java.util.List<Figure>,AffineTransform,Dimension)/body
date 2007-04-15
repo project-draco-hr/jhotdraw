@@ -1,0 +1,25 @@
+{
+  BufferedImage buf=new BufferedImage(imageSize.width,imageSize.height,BufferedImage.TYPE_INT_ARGB);
+  Graphics2D g=buf.createGraphics();
+  Composite savedComposite=g.getComposite();
+  g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC));
+  g.setColor(new Color(0x00ffffff,true));
+  g.fillRect(0,0,buf.getWidth(),buf.getHeight());
+  g.setComposite(savedComposite);
+  setRenderingHints(g);
+  g.transform(transform);
+  for (  Figure f : figures) {
+    f.draw(g);
+  }
+  g.dispose();
+  if (imageType != BufferedImage.TYPE_INT_ARGB) {
+    BufferedImage buf2=new BufferedImage(buf.getWidth(),buf.getHeight(),imageType);
+    g=buf2.createGraphics();
+    g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC));
+    g.drawImage(buf,0,0,null);
+    g.dispose();
+    buf.flush();
+    buf=buf2;
+  }
+  return buf;
+}

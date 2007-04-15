@@ -1,4 +1,5 @@
 {
+  if (DEBUG)   System.out.println("BezierTool.mouseReleased " + evt);
   if (finishWhenMouseReleased == Boolean.TRUE) {
     if (createdFigure.getNodeCount() > 2) {
       BezierPath fittedPath=Bezier.fitBezierCurve(createdFigure.getBezierPath(),1);

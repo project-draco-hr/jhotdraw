@@ -1,0 +1,4 @@
+OutputStream out
+Drawing drawing
+AffineTransform drawingTransform
+Dimension imageSize

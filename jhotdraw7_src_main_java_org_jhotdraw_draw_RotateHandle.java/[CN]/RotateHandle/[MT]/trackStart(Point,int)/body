@@ -1,7 +1,7 @@
 {
   location=new Point(anchor.x,anchor.y);
   restoreData=getOwner().getTransformRestoreData();
-  Rectangle2D.Double bounds=getOwner().getBounds();
+  Rectangle2D.Double bounds=getTransformedBounds();
   transform=new AffineTransform();
   center=new Point2D.Double(bounds.getCenterX(),bounds.getCenterY());
   Point2D.Double anchorPoint=view.viewToDrawing(anchor);

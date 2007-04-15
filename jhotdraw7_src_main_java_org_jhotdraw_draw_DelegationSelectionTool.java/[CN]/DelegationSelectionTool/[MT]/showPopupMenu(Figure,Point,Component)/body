@@ -1,4 +1,5 @@
 {
+  if (DEBUG)   System.out.println("DelegationSelectionTool.showPopupMenu " + figure);
   JPopupMenu menu=new JPopupMenu();
   popupMenu=menu;
   JMenu submenu=null;

@@ -1,4 +1,5 @@
 {
+  if (DEBUG)   System.out.println("PathTool.finishCreation " + createdFigure);
   getDrawing().remove(createdFigure);
   SVGPathFigure createdPath=createPath();
   createdPath.removeAllChildren();

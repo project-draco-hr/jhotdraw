@@ -2,10 +2,12 @@
   invalidateTransformedShape();
   if (TRANSFORM.get(this) != null || (tx.getType() & (AffineTransform.TYPE_TRANSLATION | AffineTransform.TYPE_MASK_SCALE)) != tx.getType()) {
     if (TRANSFORM.get(this) == null) {
-      TRANSFORM.basicSet(this,(AffineTransform)tx.clone());
+      TRANSFORM.basicSetClone(this,tx);
     }
  else {
-      TRANSFORM.get(this).preConcatenate(tx);
+      AffineTransform t=TRANSFORM.getClone(this);
+      t.preConcatenate(tx);
+      TRANSFORM.basicSet(this,t);
     }
   }
  else {

@@ -2,10 +2,11 @@
   LinkedList<Handle> handles=new LinkedList<Handle>();
 switch (detailLevel) {
 case 0:
-    for (int i=0, n=path.size(); i < n; i++) {
-      handles.add(new BezierNodeHandle(this,i));
-    }
-  break;
+    handles.add(new BezierOutlineHandle(this));
+  for (int i=0, n=path.size(); i < n; i++) {
+    handles.add(new BezierNodeHandle(this,i));
+  }
+break;
 }
 return handles;
 }

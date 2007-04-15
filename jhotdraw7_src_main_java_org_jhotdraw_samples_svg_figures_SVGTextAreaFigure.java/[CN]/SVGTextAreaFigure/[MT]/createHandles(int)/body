@@ -1,8 +1,15 @@
 {
-  LinkedList<Handle> handles=(LinkedList<Handle>)super.createHandles(detailLevel);
-  if (detailLevel == 0) {
-    handles.add(new FontSizeHandle(this));
-    handles.add(new RotateHandle(this));
-  }
-  return handles;
+  LinkedList<Handle> handles=new LinkedList<Handle>();
+switch (detailLevel % 2) {
+case 0:
+    ResizeHandleKit.addResizeHandles(this,handles);
+  handles.add(new FontSizeHandle(this));
+break;
+case 1:
+TransformHandleKit.addTransformHandles(this,handles);
+break;
+default :
+break;
+}
+return handles;
 }

@@ -3,6 +3,7 @@
 switch (detailLevel) {
 case 0:
     if (getLiner() == null) {
+      handles.add(new BezierOutlineHandle(this));
       for (int i=1, n=getNodeCount() - 1; i < n; i++) {
         handles.add(new BezierNodeHandle(this,i));
       }

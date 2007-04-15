@@ -1,0 +1,6 @@
+{
+  if (createdFigure != null && rubberbandColor != null) {
+    g.setColor(rubberbandColor);
+    g.draw(getView().drawingToView(createdFigure.getBounds()));
+  }
+}

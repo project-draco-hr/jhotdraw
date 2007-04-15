@@ -1,4 +1,3 @@
 {
-  this.relativeX=relativeX;
-  this.relativeY=relativeY;
+  this(relativeX,relativeY,false);
 }

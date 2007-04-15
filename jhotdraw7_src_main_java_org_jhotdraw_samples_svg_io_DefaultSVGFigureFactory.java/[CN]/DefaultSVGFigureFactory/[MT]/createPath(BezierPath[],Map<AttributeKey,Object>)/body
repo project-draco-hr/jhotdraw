@@ -2,7 +2,7 @@
   SVGPathFigure figure=new SVGPathFigure();
   figure.removeAllChildren();
   for (int i=0; i < beziers.length; i++) {
-    BezierFigure bf=new BezierFigure();
+    SVGBezierFigure bf=new SVGBezierFigure();
     bf.basicSetBezierPath(beziers[i]);
     figure.add(bf);
   }

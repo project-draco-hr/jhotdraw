@@ -8,26 +8,13 @@
       drawBounds.add(f.getDrawingArea());
     }
   }
-  BufferedImage buf=new BufferedImage((int)(drawBounds.width * scaleFactor),(int)(drawBounds.height * scaleFactor),BufferedImage.TYPE_INT_ARGB);
-  Graphics2D g=buf.createGraphics();
-  g.translate(-drawBounds.x * scaleFactor,-drawBounds.y * scaleFactor);
-  g.scale(scaleFactor,scaleFactor);
-  setRenderingHints(g);
-  for (  Figure f : figures) {
-    f.draw(g);
+  AffineTransform transform=new AffineTransform();
+  if (drawBounds.x < 0) {
+    transform.translate(-drawBounds.x * scaleFactor,0);
   }
-  g.dispose();
-  if (imageType != BufferedImage.TYPE_INT_ARGB) {
-    BufferedImage buf2=new BufferedImage(buf.getWidth(),buf.getHeight(),imageType);
-    g=buf2.createGraphics();
-    if (buf2.getTransparency() == BufferedImage.OPAQUE) {
-      g.setBackground(Color.white);
-      g.fillRect(0,0,buf2.getWidth(),buf2.getHeight());
-    }
-    g.drawImage(buf,0,0,null);
-    g.dispose();
-    buf.flush();
-    buf=buf2;
+  if (drawBounds.y < 0) {
+    transform.translate(0,-drawBounds.y * scaleFactor);
   }
-  return buf;
+  transform.scale(scaleFactor,scaleFactor);
+  return toImage(figures,transform,new Dimension((int)((Math.max(0,drawBounds.x) + drawBounds.width) * scaleFactor),(int)((Math.max(0,drawBounds.y) + drawBounds.height) * scaleFactor)));
 }

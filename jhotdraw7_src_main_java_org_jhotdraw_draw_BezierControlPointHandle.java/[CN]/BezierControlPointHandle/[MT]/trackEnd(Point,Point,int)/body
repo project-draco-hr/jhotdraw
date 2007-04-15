@@ -1,6 +1,6 @@
 {
   BezierFigure figure=getBezierFigure();
-  if ((modifiersEx & (InputEvent.META_DOWN_MASK | InputEvent.CTRL_DOWN_MASK)) != 0) {
+  if ((modifiersEx & (InputEvent.META_DOWN_MASK | InputEvent.CTRL_DOWN_MASK | InputEvent.ALT_DOWN_MASK| InputEvent.SHIFT_DOWN_MASK)) != 0) {
     figure.willChange();
     BezierPath.Node v=figure.getNode(index);
     v.keepColinear=!v.keepColinear;

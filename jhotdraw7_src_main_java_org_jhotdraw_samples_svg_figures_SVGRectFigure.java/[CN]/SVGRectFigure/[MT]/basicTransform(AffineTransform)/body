@@ -5,7 +5,9 @@
       TRANSFORM.basicSet(this,(AffineTransform)tx.clone());
     }
  else {
-      TRANSFORM.get(this).preConcatenate(tx);
+      AffineTransform t=TRANSFORM.getClone(this);
+      t.preConcatenate(tx);
+      TRANSFORM.basicSet(this,t);
     }
   }
  else {

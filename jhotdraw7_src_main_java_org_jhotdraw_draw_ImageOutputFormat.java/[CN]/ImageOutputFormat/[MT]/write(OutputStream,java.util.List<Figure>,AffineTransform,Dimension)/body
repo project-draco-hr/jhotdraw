@@ -1,0 +1,11 @@
+{
+  BufferedImage img;
+  if (drawingTransform == null || imageSize == null) {
+    img=toImage(figures,1d);
+  }
+ else {
+    img=toImage(figures,drawingTransform,imageSize);
+  }
+  ImageIO.write(img,formatName,out);
+  img.flush();
+}

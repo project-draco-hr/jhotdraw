@@ -1,0 +1,5 @@
+{
+  this.relativeX=relativeX;
+  this.relativeY=relativeY;
+  this.isTransform=isTransform;
+}

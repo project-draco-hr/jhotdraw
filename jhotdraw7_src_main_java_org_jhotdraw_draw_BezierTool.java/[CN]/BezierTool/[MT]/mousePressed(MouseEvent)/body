@@ -1,4 +1,5 @@
 {
+  if (DEBUG)   System.out.println("BezierTool.mousePressed " + evt);
   super.mousePressed(evt);
   if (createdFigure == null) {
     finishWhenMouseReleased=null;

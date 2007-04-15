@@ -1,5 +1,5 @@
 {
-  g.setStroke(new BasicStroke());
-  g.setColor(Color.black);
-  g.drawRect(rubberBand.x,rubberBand.y,rubberBand.width - 1,rubberBand.height - 1);
+  g.setStroke(rubberbandStroke);
+  g.setColor(rubberbandColor);
+  g.drawRect(rubberband.x,rubberband.y,rubberband.width - 1,rubberband.height - 1);
 }

@@ -1,10 +1,11 @@
 {
-  if (evt.getClickCount() == 2 && view.getHandleDetailLevel() == 1) {
+  if (evt.getClickCount() == 2 && view.getHandleDetailLevel() % 2 == 0) {
     for (    Figure child : getChildren()) {
-      BezierFigure bf=(BezierFigure)child;
+      SVGBezierFigure bf=(SVGBezierFigure)child;
       int index=bf.getBezierPath().findSegment(p,(float)(5f / view.getScaleFactor()));
       if (index != -1) {
         bf.handleMouseClick(p,evt,view);
+        evt.consume();
         return true;
       }
     }

@@ -1,0 +1,3 @@
+java.util.List<Figure> figures
+AffineTransform transform
+Dimension imageSize

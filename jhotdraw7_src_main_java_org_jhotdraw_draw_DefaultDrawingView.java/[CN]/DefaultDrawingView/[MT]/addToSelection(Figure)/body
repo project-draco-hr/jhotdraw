@@ -1,4 +1,5 @@
 {
+  if (DEBUG)   System.out.println("DefaultDrawingView" + ".addToSelection(" + figure + ")");
   selectedFigures.add(figure);
   figure.addFigureListener(handleInvalidator);
   invalidateHandles();

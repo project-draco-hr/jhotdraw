@@ -3,7 +3,7 @@
     path=new GeneralPath();
     path.setWindingRule(WINDING_RULE.get(this) == WindingRule.EVEN_ODD ? GeneralPath.WIND_EVEN_ODD : GeneralPath.WIND_NON_ZERO);
     for (    Figure child : getChildren()) {
-      BezierFigure b=(BezierFigure)child;
+      SVGBezierFigure b=(SVGBezierFigure)child;
       path.append(b.getBezierPath(),false);
     }
   }

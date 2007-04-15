@@ -1,5 +1,5 @@
 {
-  Rectangle2D.Double r=figure.getBounds();
+  Rectangle2D.Double r=figure.getDrawingArea();
   Insets2D.Double insets=figure.getInsets();
   insets.subtractTo(r);
   r.x-=1;

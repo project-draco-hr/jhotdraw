@@ -1,0 +1,5 @@
+{
+  addCornerTransformHandles(f,handles);
+  addEdgeTransformHandles(f,handles);
+  handles.add(new RotateHandle(f));
+}

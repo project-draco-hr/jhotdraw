@@ -1,4 +1,5 @@
 {
-  Rectangle2D.Double bounds=getOwner().getBounds();
-  return new Point2D.Double(bounds.getCenterX(),bounds.y - getHandlesize() / view.getScaleFactor());
+  Rectangle2D.Double bounds=getTransformedBounds();
+  Point2D.Double origin=new Point2D.Double(bounds.getCenterX(),bounds.y - getHandlesize() / view.getScaleFactor());
+  return origin;
 }

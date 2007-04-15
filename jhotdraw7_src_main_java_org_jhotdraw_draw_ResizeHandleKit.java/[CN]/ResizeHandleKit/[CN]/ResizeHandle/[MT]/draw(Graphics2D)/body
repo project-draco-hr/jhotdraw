@@ -1,0 +1,3 @@
+{
+  drawRectangle(g,HANDLE_FILL_COLOR,HANDLE_STROKE_COLOR);
+}

@@ -1,0 +1,9 @@
+{
+  if (DEBUG)   System.out.println("DelegationSelectionTool.handleMultiClick " + evt);
+  DrawingView v=getView();
+  Point pos=new Point(evt.getX(),evt.getY());
+  Handle handle=v.findHandle(pos);
+  if (handle == null) {
+    v.setHandleDetailLevel(v.getHandleDetailLevel() + 1);
+  }
+}

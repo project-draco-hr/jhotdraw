@@ -5,7 +5,9 @@
     TextHolderFigure figure=(TextHolderFigure)prototype.clone();
     figure.setText(text);
     Dimension2DDouble s=figure.getPreferredSize();
+    figure.willChange();
     figure.basicSetBounds(new Point2D.Double(0,0),new Point2D.Double(s.width,s.height));
+    figure.changed();
     list.add(figure);
   }
  else {
@@ -14,9 +16,11 @@
       TextHolderFigure figure=(TextHolderFigure)prototype.clone();
       figure.setText(line);
       Dimension2DDouble s=figure.getPreferredSize();
-      figure.basicSetBounds(new Point2D.Double(0,y),new Point2D.Double(s.width,s.height));
-      list.add(figure);
       y+=s.height;
+      figure.willChange();
+      figure.basicSetBounds(new Point2D.Double(0,0 + y),new Point2D.Double(s.width,s.height + y));
+      figure.changed();
+      list.add(figure);
     }
   }
   return list;

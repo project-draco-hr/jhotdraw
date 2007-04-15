@@ -1,6 +1,6 @@
 {
-  if (getChildCount() == 1 && ((BezierFigure)getChild(0)).getNodeCount() <= 2) {
-    BezierFigure b=(BezierFigure)getChild(0);
+  if (getChildCount() == 1 && ((SVGBezierFigure)getChild(0)).getNodeCount() <= 2) {
+    SVGBezierFigure b=(SVGBezierFigure)getChild(0);
     b.basicSetBounds(anchor,lead);
     invalidate();
   }

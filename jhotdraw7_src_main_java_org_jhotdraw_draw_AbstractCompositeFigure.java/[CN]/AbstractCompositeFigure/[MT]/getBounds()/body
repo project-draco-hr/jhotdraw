@@ -2,11 +2,15 @@
   if (bounds == null) {
     for (    Figure child : getChildrenFrontToBack()) {
       if (child.isVisible()) {
+        Rectangle2D r=child.getBounds();
+        if (AttributeKeys.TRANSFORM.get(child) != null) {
+          r=AttributeKeys.TRANSFORM.get(child).createTransformedShape(r).getBounds2D();
+        }
         if (bounds == null) {
-          bounds=child.getBounds();
+          bounds=new Rectangle2D.Double(r.getX(),r.getY(),r.getWidth(),r.getHeight());
         }
  else {
-          bounds.add(child.getBounds());
+          bounds.add(r);
         }
       }
     }

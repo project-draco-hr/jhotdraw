@@ -3,12 +3,12 @@
   if (f.getPointCount() > index) {
     BezierPath.Node v=f.getNode(index);
     if (v.keepColinear && v.mask == BezierPath.C1C2_MASK && (index > 0 && index < f.getNodeCount() || f.isClosed())) {
-      drawCircle(g,Color.white,Color.blue);
+      drawCircle(g,HANDLE_STROKE_COLOR,HANDLE_FILL_COLOR);
     }
  else {
-      drawCircle(g,Color.blue,Color.white);
+      drawCircle(g,HANDLE_FILL_COLOR,HANDLE_STROKE_COLOR);
     }
-    g.setColor(Color.blue);
+    g.setColor(HANDLE_FILL_COLOR);
     g.draw(new Line2D.Double(view.drawingToView(new Point2D.Double(v.x[0],v.y[0])),view.drawingToView(new Point2D.Double(v.x[controlPointIndex],v.y[controlPointIndex]))));
   }
 }

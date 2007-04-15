@@ -1,4 +1,0 @@
-{
-  addLeadHandles(f,handles);
-  addEdgeHandles(f,handles);
-}

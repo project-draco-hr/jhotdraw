@@ -1,8 +1,10 @@
 {
+  if (DEBUG)   System.out.println("DelegationSelectionTool.handleDoubleClick " + evt);
   DrawingView v=getView();
   Point pos=new Point(evt.getX(),evt.getY());
   Handle handle=v.findHandle(pos);
   if (handle != null) {
+    if (DEBUG)     System.out.println("DelegationSelectionTool.handleDoubleClick by handle");
     handle.trackDoubleClick(pos,evt.getModifiersEx());
   }
  else {
@@ -10,6 +12,7 @@
     Figure outerFigure=getView().findFigure(pos);
     Figure figure=outerFigure;
     if (figure != null) {
+      if (DEBUG)       System.out.println("DelegationSelectionTool.handleDoubleClick by figure");
       Tool figureTool=figure.getTool(p);
       if (figureTool == null) {
         figure=getDrawing().findFigureInside(p);
@@ -34,4 +37,5 @@
       }
     }
   }
+  evt.consume();
 }

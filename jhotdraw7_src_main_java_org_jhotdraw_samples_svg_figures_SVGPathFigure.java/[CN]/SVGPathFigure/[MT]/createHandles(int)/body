@@ -1,14 +1,16 @@
 {
-  LinkedList<Handle> handles;
-  if (detailLevel == 0) {
-    handles=(LinkedList<Handle>)super.createHandles(detailLevel);
-    handles.add(new RotateHandle(this));
-  }
- else {
-    handles=new LinkedList<Handle>();
+  LinkedList<Handle> handles=new LinkedList<Handle>();
+switch (detailLevel % 2) {
+case 0:
     for (    Figure child : getChildren()) {
       handles.addAll(child.createHandles(detailLevel));
     }
-  }
-  return handles;
+  break;
+case 1:
+TransformHandleKit.addTransformHandles(this,handles);
+break;
+default :
+break;
+}
+return handles;
 }

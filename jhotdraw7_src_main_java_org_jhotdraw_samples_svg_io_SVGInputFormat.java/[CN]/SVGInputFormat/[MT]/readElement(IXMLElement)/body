@@ -1,4 +1,5 @@
 {
+  if (DEBUG)   System.out.println("SVGInputFormat.readElement " + elem.getName());
   Figure f=null;
   if (elem.getNamespace() == null || elem.getNamespace().equals(SVG_NAMESPACE)) {
     String name=elem.getName();

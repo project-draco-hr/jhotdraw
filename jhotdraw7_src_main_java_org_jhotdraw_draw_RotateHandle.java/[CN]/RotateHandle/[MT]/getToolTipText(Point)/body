@@ -1,3 +1,4 @@
 {
-  return ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels").getString("rotateHandle.tip");
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  return labels.getString("rotateHandle.tip");
 }

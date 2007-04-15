@@ -1,6 +1,6 @@
 {
   double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2);
-  if (isClosed() || FILL_COLOR.get(this) != null) {
+  if (isClosed() || FILL_COLOR.get(this) != null && FILL_OPEN_PATH.get(this)) {
     double grow=AttributeKeys.getPerpendicularHitGrowth(this);
     if (grow == 0d) {
       if (path.contains(p)) {

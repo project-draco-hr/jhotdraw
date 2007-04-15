@@ -1,14 +1,15 @@
 {
   LinkedList<Handle> handles=new LinkedList<Handle>();
-switch (detailLevel) {
+switch (detailLevel % 2) {
 case 0:
-    BoxHandleKit.addBoxHandles(this,handles);
-  handles.add(new BezierScaleHandle(this));
+    handles.add(new BezierOutlineHandle(this));
+  for (int i=0, n=path.size(); i < n; i++) {
+    handles.add(new BezierNodeHandle(this,i));
+  }
 break;
 case 1:
-for (int i=0, n=path.size(); i < n; i++) {
-handles.add(new BezierNodeHandle(this,i));
-}
+TransformHandleKit.addTransformHandles(this,handles);
+handles.add(new BezierScaleHandle(this));
 break;
 }
 return handles;

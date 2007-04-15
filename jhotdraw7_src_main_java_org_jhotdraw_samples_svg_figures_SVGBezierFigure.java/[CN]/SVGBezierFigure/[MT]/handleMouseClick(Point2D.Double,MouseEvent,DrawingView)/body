@@ -1,0 +1,28 @@
+{
+  if (evt.getClickCount() == 2) {
+    willChange();
+    final int index=basicSplitSegment(p,(float)(5f / view.getScaleFactor()));
+    if (index != -1) {
+      final BezierPath.Node newNode=getNode(index);
+      fireUndoableEditHappened(new AbstractUndoableEdit(){
+        public void redo() throws CannotRedoException {
+          super.redo();
+          willChange();
+          basicAddNode(index,newNode);
+          changed();
+        }
+        public void undo() throws CannotUndoException {
+          super.undo();
+          willChange();
+          basicRemoveNode(index);
+          changed();
+        }
+      }
+);
+      changed();
+      evt.consume();
+      return true;
+    }
+  }
+  return false;
+}

@@ -1,3 +1,4 @@
 {
   cachedTransformedShape=null;
+  cachedBounds=null;
 }
