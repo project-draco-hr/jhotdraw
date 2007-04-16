@@ -2,6 +2,7 @@
   document=new XMLElement("svg",SVG_NAMESPACE);
   document.setAttribute("xmlns:xlink","http://www.w3.org/1999/xlink");
   document.setAttribute("version","1.2");
+  document.setAttribute("baseProfile","tiny");
   nextId=0;
   identifiedElements=new HashMap<IXMLElement,String>();
   defs=new XMLElement("defs");
@@ -9,5 +10,8 @@
   for (  Figure f : figures) {
     writeElement(document,f);
   }
-  new XMLWriter(out).write(document);
+  PrintWriter writer=new PrintWriter(new OutputStreamWriter(out,"UTF-8"));
+  writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+  new XMLWriter(writer).write(document);
+  writer.flush();
 }
