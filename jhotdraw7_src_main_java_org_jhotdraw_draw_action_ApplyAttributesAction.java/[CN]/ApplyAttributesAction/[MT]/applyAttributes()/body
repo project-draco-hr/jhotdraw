@@ -1,6 +1,14 @@
 {
   DrawingEditor editor=getEditor();
-  for (  Figure figure : getView().getSelectedFigures()) {
-    editor.applyDefaultAttributesTo(figure);
+  CompositeEdit edit=new CompositeEdit(labels.getString("attributesApply"));
+  DrawingView view=getView();
+  view.getDrawing().fireUndoableEditHappened(edit);
+  for (  Map.Entry<AttributeKey,Object> entry : editor.getDefaultAttributes().entrySet()) {
+    if (!excludedAttributes.contains(entry.getKey())) {
+      for (      Figure figure : view.getSelectedFigures()) {
+        figure.setAttribute(entry.getKey(),entry.getValue());
+      }
+    }
   }
+  view.getDrawing().fireUndoableEditHappened(edit);
 }

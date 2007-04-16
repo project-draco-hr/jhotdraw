@@ -1,6 +1,6 @@
 {
   LinkedList<Handle> handles=new LinkedList<Handle>();
-switch (detailLevel) {
+switch (detailLevel % 2) {
 case 0:
     ResizeHandleKit.addResizeHandles(this,handles);
   break;
