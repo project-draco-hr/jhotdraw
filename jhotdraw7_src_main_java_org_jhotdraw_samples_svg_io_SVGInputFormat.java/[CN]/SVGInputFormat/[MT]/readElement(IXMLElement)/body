@@ -58,6 +58,9 @@
  else     if (name.equals("text")) {
       f=readTextElement(elem);
     }
+ else     if (name.equals("textArea")) {
+      f=readTextAreaElement(elem);
+    }
  else     if (name.equals("title")) {
     }
  else     if (name.equals("use")) {

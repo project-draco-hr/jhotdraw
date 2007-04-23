@@ -14,6 +14,9 @@
     }
   }
   PrintWriter writer=new PrintWriter(new OutputStreamWriter(out,"UTF-8"));
-  new XMLWriter(writer).write(document);
+  for (  Object o : document.getChildren()) {
+    XMLElement child=(XMLElement)o;
+    new XMLWriter(writer).write(child);
+  }
   writer.flush();
 }

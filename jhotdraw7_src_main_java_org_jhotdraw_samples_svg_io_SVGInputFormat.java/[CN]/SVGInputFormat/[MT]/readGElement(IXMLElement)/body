@@ -13,6 +13,7 @@
       }
     }
   }
+  readTransformAttribute(elem,a);
   if (TRANSFORM.get(a) != null) {
     g.basicTransform(TRANSFORM.get(a));
   }

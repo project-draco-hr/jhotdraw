@@ -47,9 +47,9 @@
  else {
           if ((current.mask & BezierPath.C1_MASK) == 0) {
             buf.append(" Q ");
-            buf.append(current.x[2]);
+            buf.append(previous.x[2]);
             buf.append(' ');
-            buf.append(current.y[2]);
+            buf.append(previous.y[2]);
             buf.append(' ');
             buf.append(current.x[0]);
             buf.append(' ');
