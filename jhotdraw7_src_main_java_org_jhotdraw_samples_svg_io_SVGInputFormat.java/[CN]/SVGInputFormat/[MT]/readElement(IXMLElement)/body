@@ -3,7 +3,10 @@
   Figure f=null;
   if (elem.getNamespace() == null || elem.getNamespace().equals(SVG_NAMESPACE)) {
     String name=elem.getName();
-    if (name.equals("circle")) {
+    if (name.equals("a")) {
+      f=readAElement(elem);
+    }
+ else     if (name.equals("circle")) {
       f=readCircleElement(elem);
     }
  else     if (name.equals("defs")) {

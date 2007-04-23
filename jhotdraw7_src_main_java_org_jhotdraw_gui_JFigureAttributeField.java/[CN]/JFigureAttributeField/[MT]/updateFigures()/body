@@ -1,0 +1,13 @@
+{
+  if (isUpdatingText == 0) {
+    String text=getText().trim();
+    if (text.length() == 0) {
+      text=null;
+    }
+    if (getView() != null && attributeKey != null) {
+      for (      Figure f : getView().getSelectedFigures()) {
+        attributeKey.set(f,text);
+      }
+    }
+  }
+}

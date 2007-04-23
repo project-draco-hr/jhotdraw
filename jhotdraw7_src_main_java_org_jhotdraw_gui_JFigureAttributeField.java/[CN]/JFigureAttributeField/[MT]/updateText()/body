@@ -1,0 +1,30 @@
+{
+  if (DEBUG)   System.out.println("JFigureAttributeField.updateText");
+  isUpdatingText++;
+  if (getView() == null || attributeKey == null) {
+    setText("");
+  }
+ else {
+    String href=null;
+    boolean isFirst=true;
+    isMultipleValues=false;
+    for (    Figure f : getView().getSelectedFigures()) {
+      if (isFirst) {
+        isFirst=false;
+        href=attributeKey.get(f);
+      }
+ else {
+        String figureHref=attributeKey.get(f);
+        if (figureHref == href || figureHref != null && href != null && figureHref.equals(href)) {
+        }
+ else {
+          href=null;
+          isMultipleValues=true;
+        }
+      }
+    }
+    setText(href);
+  }
+  repaint();
+  isUpdatingText--;
+}

@@ -1,0 +1,3 @@
+{
+  getCurrentProject().setPropertiesPanelVisible(!getCurrentProject().isPropertiesPanelVisible());
+}

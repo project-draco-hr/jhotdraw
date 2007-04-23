@@ -1,0 +1,5 @@
+{
+  this.editor=editor;
+  linkField.setEditor(editor);
+  linkField.setAttributeKey(LINK);
+}

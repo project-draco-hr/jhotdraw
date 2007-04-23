@@ -1,0 +1,2 @@
+OutputStream out
+java.util.List<Figure> figures

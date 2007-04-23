@@ -1,0 +1,9 @@
+{
+  IXMLElement elem=parent.createElement("AREA");
+  Rectangle2D.Double r=f.getBounds();
+  double grow=getPerpendicularHitGrowth(f);
+  Ellipse2D.Double ellipse=new Ellipse2D.Double(r.x - grow,r.y - grow,r.width + grow,r.height + grow);
+  if (writeCircleAttributes(elem,f,ellipse)) {
+    parent.addChild(elem);
+  }
+}

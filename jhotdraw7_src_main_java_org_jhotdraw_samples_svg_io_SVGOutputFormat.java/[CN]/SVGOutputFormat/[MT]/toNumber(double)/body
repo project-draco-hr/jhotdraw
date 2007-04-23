@@ -1,5 +1,5 @@
 {
-  String str=Double.toString(number);
+  String str=(isFloatPrecision) ? Float.toString((float)number) : Double.toString(number);
   if (str.endsWith(".0")) {
     str=str.substring(0,str.length() - 2);
   }

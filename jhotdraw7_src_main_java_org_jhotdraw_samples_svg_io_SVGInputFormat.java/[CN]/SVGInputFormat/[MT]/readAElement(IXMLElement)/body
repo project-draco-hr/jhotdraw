@@ -1,0 +1,23 @@
+{
+  HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+  readCoreAttributes(elem,a);
+  CompositeFigure g=factory.createG(a);
+  String href=readAttribute(elem,"xlink:href",null);
+  if (href == null) {
+    href=readAttribute(elem,"href",null);
+  }
+  if (DEBUG)   System.out.println("SVGInputFormat.readAElement href=" + href);
+  for (  IXMLElement node : elem.getChildren()) {
+    if (node instanceof IXMLElement) {
+      IXMLElement child=(IXMLElement)node;
+      Figure childFigure=readElement(child);
+      if (readAttribute(child,"visibility","visible").equals("visible") && !readAttribute(child,"display","inline").equals("none")) {
+        if (childFigure != null) {
+          g.basicAdd(childFigure);
+        }
+      }
+      LINK.basicSet(childFigure,href);
+    }
+  }
+  return (g.getChildCount() == 1) ? g.getChild(0) : g;
+}

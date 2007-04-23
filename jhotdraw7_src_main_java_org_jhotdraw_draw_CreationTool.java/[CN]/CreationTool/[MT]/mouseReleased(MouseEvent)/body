@@ -6,7 +6,9 @@
     }
  else {
       if (Math.abs(anchor.x - evt.getX()) < minimalSizeTreshold.width && Math.abs(anchor.y - evt.getY()) < minimalSizeTreshold.height) {
+        createdFigure.willChange();
         createdFigure.basicSetBounds(constrainPoint(new Point(anchor.x,anchor.y)),constrainPoint(new Point(anchor.x + (int)Math.max(bounds.width,minimalSize.width),anchor.y + (int)Math.max(bounds.height,minimalSize.height))));
+        createdFigure.changed();
       }
       getView().addToSelection(createdFigure);
     }

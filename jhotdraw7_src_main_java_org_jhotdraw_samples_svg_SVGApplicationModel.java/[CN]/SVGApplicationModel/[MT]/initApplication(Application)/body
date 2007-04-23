@@ -9,4 +9,5 @@
     putAction((int)(sf * 100) + "%",aa=new ProjectPropertyAction(a,"scaleFactor",Double.TYPE,new Double(sf)));
     aa.putValue(Action.NAME,(int)(sf * 100) + " %");
   }
+  putAction("togglePropertiesPanel",new TogglePropertiesPanelAction(a));
 }

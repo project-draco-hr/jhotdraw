@@ -21,6 +21,8 @@
     m2.add(cbmi);
   }
   m.add(m2);
+  cbmi=new JCheckBoxMenuItem(getAction("togglePropertiesPanel"));
+  m.add(cbmi);
   mb.add(m);
   return mb;
 }

@@ -11,6 +11,7 @@
   outputFormats.add(new ImageOutputFormat());
   outputFormats.add(new ImageOutputFormat("JPG","Joint Photographics Experts Group (JPEG)","jpg",BufferedImage.TYPE_INT_RGB));
   outputFormats.add(new ImageOutputFormat("BMP","Windows Bitmap (BMP)","bmp",BufferedImage.TYPE_BYTE_INDEXED));
+  outputFormats.add(new ImageMapOutputFormat());
   drawing.setOutputFormats(outputFormats);
   return drawing;
 }

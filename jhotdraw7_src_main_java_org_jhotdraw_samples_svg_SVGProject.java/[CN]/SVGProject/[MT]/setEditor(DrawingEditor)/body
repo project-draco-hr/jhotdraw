@@ -4,6 +4,7 @@
     oldValue.remove(view);
   }
   editor=newValue;
+  propertiesPanel.setEditor(editor);
   if (newValue != null) {
     newValue.add(view);
   }

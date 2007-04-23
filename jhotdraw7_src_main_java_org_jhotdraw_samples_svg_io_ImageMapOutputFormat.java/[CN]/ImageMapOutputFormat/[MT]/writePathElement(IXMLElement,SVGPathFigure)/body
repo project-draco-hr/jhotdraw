@@ -1,0 +1,15 @@
+{
+  GrowStroke growStroke=new GrowStroke((float)(getStrokeTotalWidth(f) / 2d),(float)getStrokeTotalWidth(f));
+  BasicStroke basicStroke=new BasicStroke((float)getStrokeTotalWidth(f));
+  for (  Figure child : f.getChildren()) {
+    SVGBezierFigure bezier=(SVGBezierFigure)child;
+    IXMLElement elem=parent.createElement("AREA");
+    if (bezier.isClosed()) {
+      writePolyAttributes(elem,f,growStroke.createStrokedShape(bezier.getBezierPath()));
+    }
+ else {
+      writePolyAttributes(elem,f,basicStroke.createStrokedShape(bezier.getBezierPath()));
+    }
+    parent.addChild(elem);
+  }
+}
