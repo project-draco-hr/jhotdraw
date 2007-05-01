@@ -1,5 +1,5 @@
 {
   for (  Figure child : children) {
-    child.basicSetAttribute(name,value);
+    child.basicSetAttribute(key,value);
   }
 }

@@ -1,0 +1,5 @@
+DrawingEditor editor
+AttributeKey[] keys
+String name
+Icon icon
+Map<AttributeKey,Object> fixedAttributes

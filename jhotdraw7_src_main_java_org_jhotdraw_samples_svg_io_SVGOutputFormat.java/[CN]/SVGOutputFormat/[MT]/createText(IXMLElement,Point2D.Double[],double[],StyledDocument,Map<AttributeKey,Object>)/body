@@ -33,6 +33,7 @@
   }
   elem.setContent(str);
   writeShapeAttributes(elem,attributes);
+  writeOpacityAttribute(elem,attributes);
   writeTransformAttribute(elem,attributes);
   writeFontAttributes(elem,attributes);
   return elem;

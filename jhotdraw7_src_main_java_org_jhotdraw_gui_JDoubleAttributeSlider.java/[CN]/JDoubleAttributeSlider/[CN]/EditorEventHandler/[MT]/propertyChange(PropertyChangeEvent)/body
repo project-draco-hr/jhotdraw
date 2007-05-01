@@ -1,0 +1,20 @@
+{
+  String name=evt.getPropertyName();
+  if (name.equals("focusedView")) {
+    if (evt.getOldValue() != null) {
+      DrawingView view=((DrawingView)evt.getOldValue());
+      view.removeFigureSelectionListener(this);
+      view.removePropertyChangeListener(viewEventHandler);
+    }
+    if (evt.getNewValue() != null) {
+      DrawingView view=((DrawingView)evt.getNewValue());
+      view.addFigureSelectionListener(this);
+      view.addPropertyChangeListener(viewEventHandler);
+    }
+    updateEnabledState();
+    updateSlider();
+  }
+ else   if (name.equals(attributeKey.getKey())) {
+    updateSlider();
+  }
+}

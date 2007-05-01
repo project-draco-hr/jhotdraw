@@ -1,4 +1,4 @@
 {
   super(editor,-1,0);
-  labels.configureAction(this,"moveWest");
+  labels.configureAction(this,ID);
 }

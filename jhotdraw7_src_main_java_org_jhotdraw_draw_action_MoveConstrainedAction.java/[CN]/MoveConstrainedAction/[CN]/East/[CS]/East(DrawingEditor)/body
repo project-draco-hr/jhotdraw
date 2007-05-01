@@ -1,0 +1,4 @@
+{
+  super(editor,Direction.EAST);
+  labels.configureAction(this,ID);
+}

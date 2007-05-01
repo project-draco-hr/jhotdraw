@@ -1,0 +1,12 @@
+{
+  if (isUpdatingSlider++ == 0) {
+    double value=getValue() / scaleFactor;
+    if (getView() != null && attributeKey != null) {
+      for (      Figure f : getView().getSelectedFigures()) {
+        attributeKey.set(f,value);
+      }
+    }
+    editor.setDefaultAttribute(attributeKey,value);
+  }
+  isUpdatingSlider--;
+}

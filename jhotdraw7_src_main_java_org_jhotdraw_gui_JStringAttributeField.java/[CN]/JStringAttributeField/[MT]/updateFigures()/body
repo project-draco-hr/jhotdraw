@@ -1,0 +1,15 @@
+{
+  if (isUpdatingField++ == 0) {
+    String fieldValue=getText().trim();
+    if (fieldValue.length() == 0) {
+      fieldValue=null;
+    }
+    if (getView() != null && attributeKey != null) {
+      for (      Figure f : getView().getSelectedFigures()) {
+        attributeKey.set(f,fieldValue);
+      }
+    }
+    editor.setDefaultAttribute(attributeKey,fieldValue);
+  }
+  isUpdatingField--;
+}

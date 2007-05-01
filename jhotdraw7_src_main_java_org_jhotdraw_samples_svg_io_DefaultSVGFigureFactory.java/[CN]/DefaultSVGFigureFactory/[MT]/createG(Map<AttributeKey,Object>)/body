@@ -1,4 +1,5 @@
 {
   SVGGroupFigure figure=new SVGGroupFigure();
+  figure.basicSetAttributes(a);
   return figure;
 }

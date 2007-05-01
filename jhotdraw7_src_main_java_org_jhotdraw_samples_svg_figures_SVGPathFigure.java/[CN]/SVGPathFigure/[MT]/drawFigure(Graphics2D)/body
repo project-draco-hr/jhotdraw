@@ -1,0 +1,17 @@
+{
+  validatePath();
+  Paint paint=SVGAttributeKeys.getFillPaint(this);
+  if (paint != null) {
+    g.setPaint(paint);
+    drawFill(g);
+  }
+  paint=SVGAttributeKeys.getStrokePaint(this);
+  if (paint != null) {
+    g.setPaint(paint);
+    g.setStroke(SVGAttributeKeys.getStroke(this));
+    drawStroke(g);
+  }
+  if (isConnectorsVisible()) {
+    drawConnectors(g);
+  }
+}

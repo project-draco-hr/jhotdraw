@@ -1,0 +1,8 @@
+{
+  forwarder=new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      firePropertyChange(evt.getPropertyName(),evt.getOldValue(),evt.getNewValue());
+    }
+  }
+;
+}

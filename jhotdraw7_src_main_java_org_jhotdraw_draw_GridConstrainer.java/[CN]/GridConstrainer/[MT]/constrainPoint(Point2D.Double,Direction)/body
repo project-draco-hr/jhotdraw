@@ -1,0 +1,18 @@
+{
+  Point2D.Double p0=constrainPoint((Point2D.Double)p.clone());
+switch (dir) {
+case NORTH:
+    p.y=p0.y - height;
+  break;
+case WEST:
+p.x=p0.x - width;
+break;
+case SOUTH:
+p.y=p0.y + height;
+break;
+case EAST:
+p.x=p0.x + width;
+break;
+}
+return p;
+}

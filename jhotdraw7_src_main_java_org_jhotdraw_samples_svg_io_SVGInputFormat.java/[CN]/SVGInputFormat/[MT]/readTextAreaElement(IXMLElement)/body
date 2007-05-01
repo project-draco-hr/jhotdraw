@@ -2,6 +2,7 @@
   HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
   readCoreAttributes(elem,a);
   readTransformAttribute(elem,a);
+  readOpacityAttribute(elem,a);
   readShapeAttributes(elem,a);
   readFontAttributes(elem,a);
   readTextAttributes(elem,a);

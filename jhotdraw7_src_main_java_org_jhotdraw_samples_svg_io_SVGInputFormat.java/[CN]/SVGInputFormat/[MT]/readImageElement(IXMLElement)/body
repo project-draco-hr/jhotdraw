@@ -2,7 +2,7 @@
   HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
   readCoreAttributes(elem,a);
   readTransformAttribute(elem,a);
-  readImageAttributes(elem,a);
+  readOpacityAttribute(elem,a);
   double x=toNumber(elem,readAttribute(elem,"x","0"));
   double y=toNumber(elem,readAttribute(elem,"y","0"));
   double w=toWidth(elem,readAttribute(elem,"width","0"));

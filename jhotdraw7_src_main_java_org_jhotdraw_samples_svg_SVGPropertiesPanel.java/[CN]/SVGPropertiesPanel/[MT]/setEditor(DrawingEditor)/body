@@ -1,5 +1,6 @@
 {
   this.editor=editor;
   linkField.setEditor(editor);
-  linkField.setAttributeKey(LINK);
+  opacitySlider.setEditor(editor);
+  opacityField.setEditor(editor);
 }

@@ -1,4 +1,5 @@
 {
   this.editor=editor;
+  editorProxy.setTarget(editor);
   isActive=true;
 }

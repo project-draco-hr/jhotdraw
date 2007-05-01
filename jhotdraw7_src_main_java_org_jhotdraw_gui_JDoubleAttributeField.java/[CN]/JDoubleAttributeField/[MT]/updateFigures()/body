@@ -1,0 +1,12 @@
+{
+  if (isUpdatingField++ == 0) {
+    Double fieldValue=Math.min(Math.max(min,(Double)getValue()),max) / scaleFactor;
+    if (getView() != null && attributeKey != null) {
+      for (      Figure f : getView().getSelectedFigures()) {
+        attributeKey.set(f,fieldValue);
+      }
+    }
+    editor.setDefaultAttribute(attributeKey,fieldValue);
+  }
+  isUpdatingField--;
+}

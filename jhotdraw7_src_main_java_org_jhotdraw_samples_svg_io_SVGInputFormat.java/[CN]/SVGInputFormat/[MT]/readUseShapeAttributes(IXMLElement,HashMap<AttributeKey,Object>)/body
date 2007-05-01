@@ -20,9 +20,6 @@
     }
   }
   objectValue=readInheritAttribute(elem,"fill-opacity",null);
-  if (objectValue == null) {
-    objectValue=readInheritAttribute(elem,"opacity",null);
-  }
   if (objectValue != null) {
     FILL_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
   }
@@ -69,9 +66,6 @@
     IS_STROKE_MITER_LIMIT_FACTOR.set(a,false);
   }
   objectValue=readInheritAttribute(elem,"stroke-opacity",null);
-  if (objectValue == null) {
-    objectValue=readInheritAttribute(elem,"opacity",null);
-  }
   if (objectValue != null) {
     STROKE_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
   }

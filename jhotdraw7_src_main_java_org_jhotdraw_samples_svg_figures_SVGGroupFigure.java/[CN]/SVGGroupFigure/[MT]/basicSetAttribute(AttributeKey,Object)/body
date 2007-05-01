@@ -1,0 +1,8 @@
+{
+  if (key == OPACITY) {
+    attributes.put(key,value);
+  }
+ else {
+    super.basicSetAttribute(key,value);
+  }
+}

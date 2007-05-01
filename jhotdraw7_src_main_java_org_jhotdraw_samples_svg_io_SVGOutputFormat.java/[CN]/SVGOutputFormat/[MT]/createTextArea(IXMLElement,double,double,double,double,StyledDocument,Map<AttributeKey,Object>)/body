@@ -22,6 +22,7 @@
   }
   writeShapeAttributes(elem,attributes);
   writeTransformAttribute(elem,attributes);
+  writeOpacityAttribute(elem,attributes);
   writeFontAttributes(elem,attributes);
   return elem;
 }

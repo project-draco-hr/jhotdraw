@@ -1,9 +1,15 @@
 {
+  CompositeEdit edit=new CompositeEdit("attributes");
+  fireUndoableEditHappened(edit);
   Drawing drawing=getDrawing();
   Iterator i=getView().getSelectedFigures().iterator();
   while (i.hasNext()) {
     Figure figure=(Figure)i.next();
     figure.setAttribute(key,value);
+    for (    Map.Entry<AttributeKey,Object> entry : fixedAttributes.entrySet()) {
+      entry.getKey().set(figure,entry.getValue());
+    }
   }
   getEditor().setDefaultAttribute(key,value);
+  fireUndoableEditHappened(edit);
 }

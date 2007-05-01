@@ -1,0 +1,3 @@
+{
+  this(editor,new AttributeKey[]{key},null,null,fixedAttributes);
+}

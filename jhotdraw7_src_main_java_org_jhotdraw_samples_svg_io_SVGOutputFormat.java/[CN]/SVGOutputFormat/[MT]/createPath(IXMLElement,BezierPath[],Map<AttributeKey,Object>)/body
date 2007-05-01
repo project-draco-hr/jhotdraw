@@ -1,6 +1,7 @@
 {
   IXMLElement elem=doc.createElement("path");
   writeShapeAttributes(elem,attributes);
+  writeOpacityAttribute(elem,attributes);
   writeTransformAttribute(elem,attributes);
   writeAttribute(elem,"d",toPath(beziers),null);
   return elem;

@@ -1,4 +1,5 @@
 {
   IXMLElement elem=doc.createElement("g");
+  writeOpacityAttribute(elem,attributes);
   return elem;
 }

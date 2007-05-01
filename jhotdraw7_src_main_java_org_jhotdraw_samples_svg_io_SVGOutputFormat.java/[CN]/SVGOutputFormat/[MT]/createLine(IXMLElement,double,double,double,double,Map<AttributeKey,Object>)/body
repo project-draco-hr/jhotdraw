@@ -5,6 +5,7 @@
   writeAttribute(elem,"x2",x2,0d);
   writeAttribute(elem,"y2",y2,0d);
   writeShapeAttributes(elem,attributes);
+  writeOpacityAttribute(elem,attributes);
   writeTransformAttribute(elem,attributes);
   return elem;
 }

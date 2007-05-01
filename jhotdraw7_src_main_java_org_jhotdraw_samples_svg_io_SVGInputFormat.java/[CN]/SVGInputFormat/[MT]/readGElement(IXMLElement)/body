@@ -1,6 +1,7 @@
 {
   HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
   readCoreAttributes(elem,a);
+  readOpacityAttribute(elem,a);
   CompositeFigure g=factory.createG(a);
   for (  IXMLElement node : elem.getChildren()) {
     if (node instanceof IXMLElement) {

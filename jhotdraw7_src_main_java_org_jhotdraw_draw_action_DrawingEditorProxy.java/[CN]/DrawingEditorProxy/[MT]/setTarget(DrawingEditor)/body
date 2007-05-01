@@ -1,0 +1,9 @@
+{
+  if (target != null) {
+    target.removePropertyChangeListener(forwarder);
+  }
+  this.target=newValue;
+  if (target != null) {
+    target.addPropertyChangeListener(forwarder);
+  }
+}

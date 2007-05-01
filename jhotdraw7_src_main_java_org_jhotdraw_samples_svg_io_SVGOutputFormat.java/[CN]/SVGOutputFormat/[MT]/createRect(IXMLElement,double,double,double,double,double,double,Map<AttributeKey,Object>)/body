@@ -7,6 +7,7 @@
   writeAttribute(elem,"rx",rx,0d);
   writeAttribute(elem,"ry",ry,0d);
   writeShapeAttributes(elem,attributes);
+  writeOpacityAttribute(elem,attributes);
   writeTransformAttribute(elem,attributes);
   return elem;
 }

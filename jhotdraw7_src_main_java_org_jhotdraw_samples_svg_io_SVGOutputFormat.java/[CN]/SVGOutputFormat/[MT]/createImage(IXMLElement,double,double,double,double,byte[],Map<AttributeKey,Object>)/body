@@ -5,6 +5,7 @@
   writeAttribute(elem,"width",w,0d);
   writeAttribute(elem,"height",h,0d);
   writeAttribute(elem,"xlink:href","data:image;base64," + Base64.encodeBytes(imageData),"");
+  writeOpacityAttribute(elem,attributes);
   writeTransformAttribute(elem,attributes);
   return elem;
 }

@@ -1,3 +1,3 @@
 {
-  return AttributeKeys.getFont(this);
+  return SVGAttributeKeys.getFont(this);
 }

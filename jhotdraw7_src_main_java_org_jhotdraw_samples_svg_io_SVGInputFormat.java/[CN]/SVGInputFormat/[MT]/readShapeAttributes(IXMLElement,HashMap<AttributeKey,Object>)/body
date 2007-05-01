@@ -16,10 +16,7 @@
     FILL_COLOR.set(a,null);
     if (DEBUG)     System.out.println("SVGInputFormat not implemented  fill=" + objectValue);
   }
-  objectValue=readInheritAttribute(elem,"fill-opacity",null);
-  if (objectValue == null) {
-    objectValue=readInheritAttribute(elem,"opacity","1");
-  }
+  objectValue=readInheritAttribute(elem,"fill-opacity","1");
   FILL_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
   value=readInheritAttribute(elem,"fill-rule","nonzero");
   WINDING_RULE.set(a,SVG_FILL_RULES.get(value));
@@ -56,10 +53,7 @@
   doubleValue=toDouble(elem,readInheritAttribute(elem,"stroke-miterlimit","4"),4d,1d,Double.MAX_VALUE);
   STROKE_MITER_LIMIT.set(a,doubleValue);
   IS_STROKE_MITER_LIMIT_FACTOR.set(a,false);
-  objectValue=readInheritAttribute(elem,"stroke-opacity",null);
-  if (objectValue == null) {
-    objectValue=readInheritAttribute(elem,"opacity","1");
-  }
+  objectValue=readInheritAttribute(elem,"stroke-opacity","1");
   STROKE_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
   doubleValue=toScaledNumber(elem,readInheritAttribute(elem,"stroke-width","1"));
   STROKE_WIDTH.set(a,doubleValue);

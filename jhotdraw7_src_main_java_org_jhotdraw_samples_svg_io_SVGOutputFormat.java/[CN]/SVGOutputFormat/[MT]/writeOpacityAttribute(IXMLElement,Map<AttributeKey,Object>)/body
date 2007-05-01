@@ -1,0 +1,3 @@
+{
+  writeAttribute(elem,"opacity",OPACITY.get(f),1d);
+}

@@ -2,7 +2,8 @@
   HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
   readCoreAttributes(elem,a);
   HashMap<AttributeKey,Object> a2=new HashMap<AttributeKey,Object>();
-  readTransformAttribute(elem,a2);
+  readTransformAttribute(elem,a);
+  readOpacityAttribute(elem,a2);
   readUseShapeAttributes(elem,a2);
   String href=readAttribute(elem,"xlink:href",null);
   if (href != null && href.startsWith("#")) {
@@ -17,7 +18,7 @@
         for (        Map.Entry<AttributeKey,Object> entry : a2.entrySet()) {
           figure.basicSetAttribute(entry.getKey(),entry.getValue());
         }
-        AffineTransform tx=new AffineTransform();
+        AffineTransform tx=(TRANSFORM.get(a) == null) ? new AffineTransform() : TRANSFORM.get(a);
         double x=toNumber(elem,readAttribute(elem,"x","0"));
         double y=toNumber(elem,readAttribute(elem,"y","0"));
         tx.translate(x,y);
