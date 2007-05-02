@@ -1,18 +1,21 @@
 {
-  if (evt.getSource() instanceof Container) {
-    editor.setView(editor.findView((Container)evt.getSource()));
-  }
-  if (inputMap != null) {
-    Object obj=inputMap.get(KeyStroke.getKeyStroke(evt.getKeyCode(),evt.getModifiers(),false));
-    ActionListener al=null;
-    if (obj instanceof ActionListener) {
-      al=(ActionListener)obj;
+  if (!evt.isConsumed()) {
+    if (evt.getSource() instanceof Container) {
+      editor.setView(editor.findView((Container)evt.getSource()));
     }
- else     if (obj != null && actionMap != null) {
-      al=actionMap.get(obj);
-    }
-    if (al != null) {
-      al.actionPerformed(new ActionEvent(this,ActionEvent.ACTION_PERFORMED,"tool",evt.getWhen(),evt.getModifiers()));
+    if (inputMap != null) {
+      Object obj=inputMap.get(KeyStroke.getKeyStroke(evt.getKeyCode(),evt.getModifiers(),false));
+      ActionListener al=null;
+      if (obj instanceof ActionListener) {
+        al=(ActionListener)obj;
+      }
+ else       if (obj != null && actionMap != null) {
+        al=actionMap.get(obj);
+      }
+      if (al != null) {
+        evt.consume();
+        al.actionPerformed(new ActionEvent(this,ActionEvent.ACTION_PERFORMED,"tool",evt.getWhen(),evt.getModifiers()));
+      }
     }
   }
 }

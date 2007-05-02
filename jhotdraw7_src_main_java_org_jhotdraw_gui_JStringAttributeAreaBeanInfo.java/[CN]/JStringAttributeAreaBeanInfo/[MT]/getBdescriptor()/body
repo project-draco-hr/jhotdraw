@@ -1,0 +1,6 @@
+{
+  if (beanDescriptor == null)   beanDescriptor=new BeanDescriptor(JStringAttributeAreaBeanInfo.class);
+  beanDescriptor.setValue("isContainer",Boolean.FALSE);
+  beanDescriptor.setDisplayName("JFigureAttributeArea");
+  return beanDescriptor;
+}

@@ -5,7 +5,7 @@
     basicSetEndConnector(newEnd);
     fireUndoableEditHappened(new AbstractUndoableEdit(){
       public String getPresentationName(){
-        return "End-Verbindung setzen";
+        return ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels").getString("ConnectionFigure.undoConnect");
       }
       public void undo() throws CannotUndoException {
         super.undo();

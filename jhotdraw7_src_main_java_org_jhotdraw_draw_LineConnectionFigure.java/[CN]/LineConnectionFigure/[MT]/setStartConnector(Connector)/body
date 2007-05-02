@@ -5,7 +5,7 @@
     basicSetStartConnector(newStart);
     fireUndoableEditHappened(new AbstractUndoableEdit(){
       public String getPresentationName(){
-        return "Start-Verbindung setzen";
+        return ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels").getString("ConnectionFigure.undoConnect");
       }
       public void undo() throws CannotUndoException {
         super.undo();
