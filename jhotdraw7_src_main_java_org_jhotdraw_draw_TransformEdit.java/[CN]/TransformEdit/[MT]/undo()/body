@@ -4,7 +4,7 @@
     AffineTransform inverse=tx.createInverse();
     for (    Figure f : figures) {
       f.willChange();
-      f.basicTransform(inverse);
+      f.transform(inverse);
       f.changed();
     }
   }

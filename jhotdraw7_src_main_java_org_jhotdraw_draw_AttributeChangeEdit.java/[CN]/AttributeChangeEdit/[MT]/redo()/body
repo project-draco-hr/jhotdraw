@@ -1,6 +1,6 @@
 {
   super.redo();
   owner.willChange();
-  owner.basicSetAttribute(name,newValue);
+  owner.setAttribute(name,newValue);
   owner.changed();
 }

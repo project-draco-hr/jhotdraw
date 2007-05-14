@@ -7,7 +7,9 @@
     if (i != 0)     buf.append(',');
     buf.append(stopOffsets[i]);
     buf.append('=');
-    buf.append(stopColors[i]);
+    buf.append(stopOpacities[i]);
+    buf.append(' ');
+    buf.append(Integer.toHexString(stopColors[i].getRGB()));
   }
   buf.append(')');
   return buf.toString();

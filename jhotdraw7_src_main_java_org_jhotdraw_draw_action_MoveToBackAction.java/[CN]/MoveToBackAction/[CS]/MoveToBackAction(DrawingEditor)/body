@@ -1,4 +1,4 @@
 {
   super(editor);
-  labels.configureAction(this,"moveToBack");
+  labels.configureAction(this,ID);
 }

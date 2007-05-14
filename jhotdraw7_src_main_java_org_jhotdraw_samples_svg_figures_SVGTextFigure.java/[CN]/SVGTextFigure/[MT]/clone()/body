@@ -6,7 +6,7 @@
   }
   that.rotates=(double[])this.rotates.clone();
   that.cachedBounds=null;
-  that.cachedTransformedBounds=null;
-  that.cachedTransformedShape=null;
+  that.cachedDrawingArea=null;
+  that.cachedTextShape=null;
   return that;
 }

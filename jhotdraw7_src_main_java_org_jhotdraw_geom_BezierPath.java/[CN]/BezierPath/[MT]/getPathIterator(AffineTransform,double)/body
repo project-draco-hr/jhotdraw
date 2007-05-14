@@ -1,4 +1,3 @@
 {
-  validatePath();
-  return generalPath.getPathIterator(at,flatness);
+  return new FlatteningPathIterator(new BezierPathIterator(this,at),flatness);
 }

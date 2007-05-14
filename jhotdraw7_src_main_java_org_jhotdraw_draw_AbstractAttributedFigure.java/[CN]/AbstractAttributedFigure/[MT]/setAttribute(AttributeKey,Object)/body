@@ -1,12 +1,5 @@
 {
   if (forbiddenAttributes == null || !forbiddenAttributes.contains(key)) {
-    Object oldValue=attributes.get(key);
-    if (!attributes.containsKey(key) || oldValue != newValue || oldValue != null && newValue != null && !oldValue.equals(newValue)) {
-      willChange();
-      basicSetAttribute(key,newValue);
-      fireAttributeChanged(key,oldValue,newValue);
-      fireUndoableEditHappened(new AttributeChangeEdit(this,key,oldValue,newValue));
-      changed();
-    }
+    attributes.put(key,newValue);
   }
 }

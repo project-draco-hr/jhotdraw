@@ -1,4 +1,3 @@
 {
-  validatePath();
-  return generalPath.getBounds();
+  return getBounds2D().getBounds();
 }

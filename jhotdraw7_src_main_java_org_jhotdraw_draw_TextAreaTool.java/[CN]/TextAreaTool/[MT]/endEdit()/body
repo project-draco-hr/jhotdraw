@@ -1,5 +1,6 @@
 {
   if (typingTarget != null) {
+    typingTarget.willChange();
     if (textArea.getText().length() > 0) {
       typingTarget.setText(textArea.getText());
       if (createdFigure != null) {
@@ -15,6 +16,7 @@
         typingTarget.setText("");
       }
     }
+    typingTarget.changed();
     typingTarget=null;
     textArea.endOverlay();
   }

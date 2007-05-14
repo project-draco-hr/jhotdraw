@@ -5,6 +5,7 @@
   }
  else {
     basicRemoveChild(index);
+    invalidate();
     return true;
   }
 }

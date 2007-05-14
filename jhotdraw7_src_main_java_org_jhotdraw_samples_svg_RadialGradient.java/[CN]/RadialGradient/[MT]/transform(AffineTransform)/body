@@ -1,12 +1,10 @@
 {
-  Point2D.Double center=new Point2D.Double(cx,cy);
-  double r2sqr=Math.sqrt(r * r / 2d);
-  Point2D.Double radius=new Point2D.Double(cx + r2sqr,cy + r2sqr);
-  tx.transform(center,center);
-  cx=center.getX();
-  cy=center.getY();
-  if ((tx.getType() & AffineTransform.TYPE_MASK_SCALE) != 0) {
-    tx.transform(radius,radius);
-    r=Math.sqrt((radius.getX() - cx) * (radius.getX() - cx) + (radius.getY() - cy) * (radius.getY() - cy));
+  if (tx != null) {
+    if (transform == null) {
+      transform=(AffineTransform)tx.clone();
+    }
+ else {
+      transform.preConcatenate(tx);
+    }
   }
 }

@@ -1,4 +1,5 @@
 {
   generalPath=null;
+  bounds=null;
   outer=-1;
 }

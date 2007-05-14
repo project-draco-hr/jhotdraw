@@ -1,5 +1,0 @@
-{
-  if (forbiddenAttributes == null || !forbiddenAttributes.contains(key)) {
-    attributes.put(key,newValue);
-  }
-}

@@ -3,9 +3,9 @@
   figure.removeAllChildren();
   for (int i=0; i < beziers.length; i++) {
     SVGBezierFigure bf=new SVGBezierFigure();
-    bf.basicSetBezierPath(beziers[i]);
+    bf.setBezierPath(beziers[i]);
     figure.add(bf);
   }
-  figure.basicSetAttributes(a);
+  figure.setAttributes(a);
   return figure;
 }

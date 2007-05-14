@@ -9,7 +9,7 @@
     ConnectionFigure f=getConnection();
     fireAreaInvalidated(f.getDrawingArea());
     f.willChange();
-    f.basicSetBounds(f.getStartPoint(),p);
+    f.setBounds(f.getStartPoint(),p);
     f.changed();
     fireAreaInvalidated(f.getDrawingArea());
   }

@@ -1,6 +1,6 @@
 {
   ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-  bar.add(createColorButton(editor,STROKE_COLOR,DEFAULT_COLORS,8,"attributeStrokeColor",labels,new HashMap<AttributeKey,Object>()));
-  bar.add(createColorButton(editor,FILL_COLOR,DEFAULT_COLORS,8,"attributeFillColor",labels,new HashMap<AttributeKey,Object>()));
-  bar.add(createColorButton(editor,TEXT_COLOR,DEFAULT_COLORS,8,"attributeTextColor",labels,new HashMap<AttributeKey,Object>()));
+  bar.add(createEditorColorButton(editor,STROKE_COLOR,DEFAULT_COLORS,8,"attributeStrokeColor",labels,new HashMap<AttributeKey,Object>()));
+  bar.add(createEditorColorButton(editor,FILL_COLOR,DEFAULT_COLORS,8,"attributeFillColor",labels,new HashMap<AttributeKey,Object>()));
+  bar.add(createEditorColorButton(editor,TEXT_COLOR,DEFAULT_COLORS,8,"attributeTextColor",labels,new HashMap<AttributeKey,Object>()));
 }

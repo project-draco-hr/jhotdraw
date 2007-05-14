@@ -10,7 +10,7 @@
   createdFigure=createFigure();
   Point2D.Double p=constrainPoint(viewToDrawing(anchor));
   createdFigure.willChange();
-  createdFigure.basicSetBounds(p,new Point2D.Double(p.x + 20,p.y + 20));
+  createdFigure.setBounds(p,new Point2D.Double(p.x + 20,p.y + 20));
   createdFigure.changed();
   getDrawing().add(createdFigure);
   getDrawing().fireUndoableEditHappened(creationEdit);

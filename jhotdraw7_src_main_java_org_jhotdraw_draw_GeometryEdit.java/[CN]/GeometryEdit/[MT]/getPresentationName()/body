@@ -1,3 +1,4 @@
 {
-  return "Geometry changed";
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels",Locale.getDefault());
+  return labels.getString("transformFigure");
 }

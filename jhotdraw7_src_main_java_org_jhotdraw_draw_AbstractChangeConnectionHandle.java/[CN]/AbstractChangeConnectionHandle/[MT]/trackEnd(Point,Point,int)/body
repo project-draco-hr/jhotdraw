@@ -14,7 +14,7 @@
  else {
       v.mask=((v.mask & BezierPath.C1_MASK) == 0) ? BezierPath.C1_MASK : 0;
     }
-    f.basicSetNode(index,v);
+    f.setNode(index,v);
     f.changed();
     fireHandleRequestSecondaryHandles();
   }
@@ -29,7 +29,7 @@
     disconnect();
     connect(target);
   }
-  connection.basicSetLiner(liner);
+  connection.setLiner(liner);
   getConnection().updateConnection();
   if (getTargetFigure() != null) {
     getTargetFigure().setConnectorsVisible(false,null);

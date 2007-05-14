@@ -8,6 +8,7 @@
   tt.resetSyntax();
   tt.parseNumbers();
   tt.parseExponents();
+  tt.parsePlusAsNumber();
   tt.whitespaceChars(0,' ');
   tt.whitespaceChars(',',',');
   char nextCommand='M';
@@ -58,6 +59,18 @@ case 'Z':
 case 'z':
 p.x=path.get(0).x[0];
 p.y=path.get(0).y[0];
+if (path.size() > 1) {
+BezierPath.Node first=path.get(0);
+BezierPath.Node last=path.get(path.size() - 1);
+if (first.x[0] == last.x[0] && first.y[0] == last.y[0]) {
+if ((last.mask & BezierPath.C1_MASK) != 0) {
+first.mask|=BezierPath.C1_MASK;
+first.x[1]=last.x[1];
+first.y[1]=last.y[1];
+}
+path.remove(path.size() - 1);
+}
+}
 path.setClosed(true);
 break;
 case 'L':

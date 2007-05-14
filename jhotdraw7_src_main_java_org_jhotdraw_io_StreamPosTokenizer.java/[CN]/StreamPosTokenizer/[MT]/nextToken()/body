@@ -111,6 +111,22 @@
       }
       neg=true;
     }
+ else     if (c == '+') {
+      c=read();
+      if (c != '.' && (c < '0' || c > '9')) {
+        peekc=c;
+        if (('+' & CT_ALPHA) != 0) {
+          unread(c);
+          c='+';
+          break digit;
+        }
+ else {
+          endpos=readpos - 1;
+          return ttype='-';
+        }
+      }
+      neg=false;
+    }
     double v=0;
     int decexp=0;
     int seendot=0;

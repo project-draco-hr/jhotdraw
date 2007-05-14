@@ -2,10 +2,18 @@
   BezierFigure figure=getBezierFigure();
   figure.willChange();
   Point2D.Double p=view.getConstrainer().constrainPoint(view.viewToDrawing(lead));
+  if (TRANSFORM.get(getTransformOwner()) != null) {
+    try {
+      TRANSFORM.get(getTransformOwner()).inverseTransform(p,p);
+    }
+ catch (    NoninvertibleTransformException ex) {
+      ex.printStackTrace();
+    }
+  }
   BezierPath.Node n=figure.getNode(index);
   fireAreaInvalidated(n);
   n.moveTo(p);
   fireAreaInvalidated(n);
-  figure.basicSetNode(index,n);
+  figure.setNode(index,n);
   figure.changed();
 }

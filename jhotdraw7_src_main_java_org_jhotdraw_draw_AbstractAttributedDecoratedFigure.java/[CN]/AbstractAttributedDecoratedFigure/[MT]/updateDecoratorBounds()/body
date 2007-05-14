@@ -7,6 +7,6 @@
     sp.y-=decoratorInsets.top;
     ep.x+=decoratorInsets.right;
     ep.y+=decoratorInsets.bottom;
-    decorator.basicSetBounds(sp,ep);
+    decorator.setBounds(sp,ep);
   }
 }

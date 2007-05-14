@@ -4,7 +4,7 @@
   if (STROKE_JOIN.get(this) == BasicStroke.JOIN_MITER) {
     width*=STROKE_MITER_LIMIT.get(this);
   }
-  if (STROKE_CAP.get(this) != BasicStroke.CAP_BUTT) {
+ else   if (STROKE_CAP.get(this) != BasicStroke.CAP_BUTT) {
     width+=strokeTotalWidth * 2;
   }
   width++;

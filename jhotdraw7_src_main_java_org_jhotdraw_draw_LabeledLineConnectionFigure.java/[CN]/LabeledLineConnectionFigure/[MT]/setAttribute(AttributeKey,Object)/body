@@ -1,5 +1,4 @@
 {
-  willChange();
   super.setAttribute(key,newValue);
   if (isAttributeEnabled(key)) {
     if (children != null) {
@@ -8,5 +7,4 @@
       }
     }
   }
-  changed();
 }

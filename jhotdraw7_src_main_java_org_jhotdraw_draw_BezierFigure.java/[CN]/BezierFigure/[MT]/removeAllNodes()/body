@@ -1,5 +1,0 @@
-{
-  willChange();
-  basicRemoveAllNodes();
-  changed();
-}

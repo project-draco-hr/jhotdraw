@@ -1,0 +1,3 @@
+{
+  ctype['+']|=CT_DIGIT;
+}

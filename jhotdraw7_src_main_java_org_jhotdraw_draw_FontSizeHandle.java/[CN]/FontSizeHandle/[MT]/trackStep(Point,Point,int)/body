@@ -11,6 +11,8 @@
       ex.printStackTrace();
     }
   }
-  float newSize=(float)Math.max(1,oldSize + lead2D.y - anchor2D.y);
+  newSize=(float)Math.max(1,oldSize + lead2D.y - anchor2D.y);
+  textOwner.willChange();
   textOwner.setFontSize(newSize);
+  textOwner.changed();
 }

@@ -1,4 +1,6 @@
 {
   super.invalidate();
-  invalidateTransformedShape();
+  cachedTextShape=null;
+  cachedBounds=null;
+  cachedDrawingArea=null;
 }

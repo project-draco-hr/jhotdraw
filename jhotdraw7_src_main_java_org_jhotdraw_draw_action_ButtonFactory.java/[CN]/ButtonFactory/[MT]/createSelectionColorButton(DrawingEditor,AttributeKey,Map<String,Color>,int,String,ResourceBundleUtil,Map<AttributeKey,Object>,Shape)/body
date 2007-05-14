@@ -1,0 +1,46 @@
+{
+  final JPopupButton popupButton=new JPopupButton();
+  if (defaultAttributes == null) {
+    defaultAttributes=new HashMap<AttributeKey,Object>();
+  }
+  popupButton.setColumnCount(columnCount,false);
+  for (  Map.Entry<String,Color> entry : colorMap.entrySet()) {
+    AttributeAction a;
+    HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);
+    attributes.put(attributeKey,entry.getValue());
+    popupButton.add(a=new AttributeAction(editor,attributes,labels.getString(labelKey),new ColorIcon(entry.getValue())));
+    a.putValue(Action.SHORT_DESCRIPTION,entry.getKey());
+  }
+  ImageIcon chooserIcon=new ImageIcon(ButtonFactory.class.getResource("/org/jhotdraw/draw/action/images/showColorChooser.png"));
+  popupButton.add(new ColorChooserAction(editor,attributeKey,"color",chooserIcon,defaultAttributes));
+  labels.configureToolBarButton(popupButton,labelKey);
+  Icon icon=new SelectionColorIcon(editor,attributeKey,labels.getImageIcon(labelKey,ButtonFactory.class).getImage(),colorShape);
+  popupButton.setIcon(icon);
+  popupButton.setDisabledIcon(icon);
+  popupButton.setFocusable(false);
+  final FigureSelectionListener selectionHandler=new FigureSelectionListener(){
+    public void selectionChanged(    FigureSelectionEvent evt){
+      popupButton.repaint();
+    }
+  }
+;
+  editor.addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      String name=evt.getPropertyName();
+      if (name == DrawingEditor.PROP_FOCUSED_VIEW) {
+        if (evt.getOldValue() != null) {
+          ((DrawingView)evt.getOldValue()).removeFigureSelectionListener(selectionHandler);
+        }
+        if (evt.getNewValue() != null) {
+          ((DrawingView)evt.getNewValue()).addFigureSelectionListener(selectionHandler);
+        }
+        popupButton.repaint();
+      }
+ else {
+        popupButton.repaint();
+      }
+    }
+  }
+);
+  return popupButton;
+}

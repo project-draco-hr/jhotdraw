@@ -3,6 +3,7 @@
     RadialGradient that=(RadialGradient)super.clone();
     that.stopOffsets=this.stopOffsets.clone();
     that.stopColors=this.stopColors.clone();
+    that.stopOpacities=this.stopOpacities.clone();
     return that;
   }
  catch (  CloneNotSupportedException ex) {

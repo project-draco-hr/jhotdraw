@@ -1,5 +1,9 @@
 {
-  validatePath();
+  AffineTransform savedTransform=null;
+  if (TRANSFORM.get(this) != null) {
+    savedTransform=g.getTransform();
+    g.transform(TRANSFORM.get(this));
+  }
   Paint paint=SVGAttributeKeys.getFillPaint(this);
   if (paint != null) {
     g.setPaint(paint);
@@ -10,6 +14,9 @@
     g.setPaint(paint);
     g.setStroke(SVGAttributeKeys.getStroke(this));
     drawStroke(g);
+  }
+  if (TRANSFORM.get(this) != null) {
+    g.setTransform(savedTransform);
   }
   if (isConnectorsVisible()) {
     drawConnectors(g);

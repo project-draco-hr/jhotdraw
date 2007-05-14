@@ -1,5 +1,5 @@
 {
   SVGTextAreaFigure that=(SVGTextAreaFigure)super.clone();
-  that.rectangle=(Rectangle2D.Double)this.rectangle.clone();
+  that.bounds=(Rectangle2D.Double)this.bounds.clone();
   return that;
 }

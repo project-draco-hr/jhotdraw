@@ -1,0 +1,6 @@
+{
+  super(owner);
+  this.index=index;
+  this.transformOwner=transformOwner;
+  transformOwner.addFigureListener(this);
+}

@@ -1,0 +1,7 @@
+DrawingEditor editor
+AttributeKey attributeKey
+Map<String,Color> colorMap
+int columnCount
+String labelKey
+ResourceBundleUtil labels
+Map<AttributeKey,Object> defaultAttributes

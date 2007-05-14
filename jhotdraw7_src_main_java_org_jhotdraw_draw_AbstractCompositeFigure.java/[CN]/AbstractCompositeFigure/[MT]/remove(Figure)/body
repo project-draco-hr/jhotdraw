@@ -4,12 +4,10 @@
     return false;
   }
  else {
-    willChange();
     basicRemoveChild(index);
     if (getDrawing() != null) {
       figure.removeNotify(getDrawing());
     }
-    changed();
     return true;
   }
 }

@@ -3,7 +3,7 @@
     Rectangle2D.Double bounds=getBounds();
     Point2D.Double p=new Point2D.Double(bounds.x,bounds.y);
     Rectangle2D.Double r=getLayouter().layout(this,p,p);
-    basicSetBounds(new Point2D.Double(r.x,r.y),new Point2D.Double(r.x + r.width,r.y + r.height));
+    setBounds(new Point2D.Double(r.x,r.y),new Point2D.Double(r.x + r.width,r.y + r.height));
     invalidateBounds();
   }
 }

@@ -74,7 +74,7 @@
       left.lineTo((float)currentCorners[2],(float)currentCorners[3]);
     }
   }
-  if (bp.isClosed()) {
+  if (bp.isClosed() && bp.size() > 0) {
     double[] tmp=prevCorners;
     prevCorners=currentCorners;
     currentCorners=computeThickLine(bp.get(bp.size() - 1).x[0],bp.get(bp.size() - 1).y[0],bp.get(0).x[0],bp.get(0).y[0],innerWidth,tmp);

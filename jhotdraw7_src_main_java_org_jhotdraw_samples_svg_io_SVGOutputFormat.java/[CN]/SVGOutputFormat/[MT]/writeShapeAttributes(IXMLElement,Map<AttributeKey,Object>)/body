@@ -7,11 +7,11 @@
     IXMLElement gradientElem;
     if (gradient instanceof LinearGradient) {
       LinearGradient lg=(LinearGradient)gradient;
-      gradientElem=createLinearGradient(document,lg.getX1(),lg.getY1(),lg.getX2(),lg.getY2(),lg.getStopOffsets(),lg.getStopColors(),lg.isRelativeToFigureBounds());
+      gradientElem=createLinearGradient(document,lg.getX1(),lg.getY1(),lg.getX2(),lg.getY2(),lg.getStopOffsets(),lg.getStopColors(),lg.getStopOpacities(),lg.isRelativeToFigureBounds());
     }
  else {
       RadialGradient rg=(RadialGradient)gradient;
-      gradientElem=createRadialGradient(document,rg.getCX(),rg.getCY(),rg.getR(),rg.getStopOffsets(),rg.getStopColors(),rg.isRelativeToFigureBounds());
+      gradientElem=createRadialGradient(document,rg.getCX(),rg.getCY(),rg.getR(),rg.getStopOffsets(),rg.getStopColors(),rg.getStopOpacities(),rg.isRelativeToFigureBounds());
     }
     String id=getId(gradientElem);
     gradientElem.setAttribute("id","xml",id);
@@ -30,11 +30,11 @@
     IXMLElement gradientElem;
     if (gradient instanceof LinearGradient) {
       LinearGradient lg=(LinearGradient)gradient;
-      gradientElem=createLinearGradient(document,lg.getX1(),lg.getY1(),lg.getX2(),lg.getY2(),lg.getStopOffsets(),lg.getStopColors(),lg.isRelativeToFigureBounds());
+      gradientElem=createLinearGradient(document,lg.getX1(),lg.getY1(),lg.getX2(),lg.getY2(),lg.getStopOffsets(),lg.getStopColors(),lg.getStopOpacities(),lg.isRelativeToFigureBounds());
     }
  else {
       RadialGradient rg=(RadialGradient)gradient;
-      gradientElem=createRadialGradient(document,rg.getCX(),rg.getCY(),rg.getR(),rg.getStopOffsets(),rg.getStopColors(),rg.isRelativeToFigureBounds());
+      gradientElem=createRadialGradient(document,rg.getCX(),rg.getCY(),rg.getR(),rg.getStopOffsets(),rg.getStopColors(),rg.getStopOpacities(),rg.isRelativeToFigureBounds());
     }
     String id=getId(gradientElem);
     gradientElem.setAttribute("id","xml",id);

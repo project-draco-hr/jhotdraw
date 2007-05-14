@@ -1,5 +1,0 @@
-{
-  BezierPath.Node cp=new BezierPath.Node(path.get(index));
-  cp.setControlPoint(coord,p);
-  basicSetNode(index,cp);
-}

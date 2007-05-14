@@ -2,5 +2,5 @@
   originalTarget=getTarget();
   start=anchor;
   liner=connection.getLiner();
-  connection.basicSetLiner(null);
+  connection.setLiner(null);
 }

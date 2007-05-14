@@ -3,7 +3,7 @@
   if (f.getNodeCount() > 2 && (modifiersEx & (InputEvent.META_DOWN_MASK | InputEvent.CTRL_DOWN_MASK | InputEvent.ALT_DOWN_MASK)) == 0) {
     Rectangle invalidatedArea=getDrawBounds();
     f.willChange();
-    f.basicRemoveNode(index);
+    f.removeNode(index);
     f.changed();
     fireHandleRequestRemove(invalidatedArea);
   }

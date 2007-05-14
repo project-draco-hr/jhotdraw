@@ -1,8 +1,0 @@
-{
-  if (key == SVGAttributeKeys.TRANSFORM) {
-    basicTransform((AffineTransform)newValue);
-  }
- else {
-    super.basicSetAttribute(key,newValue);
-  }
-}

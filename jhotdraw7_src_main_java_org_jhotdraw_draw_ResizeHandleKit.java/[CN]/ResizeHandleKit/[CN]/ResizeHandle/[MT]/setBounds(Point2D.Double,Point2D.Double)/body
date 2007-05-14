@@ -1,6 +1,6 @@
 {
   Figure f=getOwner();
   f.willChange();
-  f.basicSetBounds(anchor,lead);
+  f.setBounds(anchor,lead);
   f.changed();
 }

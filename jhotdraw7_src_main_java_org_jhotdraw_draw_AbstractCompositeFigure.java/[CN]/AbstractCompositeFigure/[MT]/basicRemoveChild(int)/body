@@ -2,5 +2,6 @@
   Figure figure=children.remove(index);
   figure.removeFigureListener(childHandler);
   figure.removeUndoableEditListener(childHandler);
+  invalidate();
   return figure;
 }

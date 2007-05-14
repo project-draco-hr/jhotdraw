@@ -1,5 +1,0 @@
-{
-  Point2D.Double anchor=getStartPoint();
-  Point2D.Double lead=getEndPoint();
-  basicSetBounds((Point2D.Double)tx.transform(anchor,anchor),(Point2D.Double)tx.transform(lead,lead));
-}

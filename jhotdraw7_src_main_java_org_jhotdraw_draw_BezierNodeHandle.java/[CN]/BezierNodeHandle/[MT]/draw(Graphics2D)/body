@@ -1,11 +1,13 @@
 {
   BezierFigure f=getBezierFigure();
-  if (f.getPointCount() > index) {
+  int size=f.getPointCount();
+  boolean isClosed=f.isClosed();
+  if (size > index) {
     BezierPath.Node v=f.getNode(index);
-    if (v.mask == 0) {
+    if (v.mask == 0 || index == 0 && v.mask == BezierPath.C1_MASK && !isClosed || index == size - 1 && v.mask == BezierPath.C2_MASK && !isClosed) {
       drawRectangle(g,HANDLE_FILL_COLOR,HANDLE_STROKE_COLOR);
     }
- else     if (v.mask == BezierPath.C1_MASK || v.mask == BezierPath.C2_MASK || !f.isClosed() && v.mask == (BezierPath.C1_MASK | BezierPath.C2_MASK) && index == 0 || index == f.getNodeCount() - 1) {
+ else     if (v.mask == BezierPath.C1_MASK || v.mask == BezierPath.C2_MASK || index == 0 && !isClosed || index == size - 1 && !isClosed) {
       drawDiamond(g,HANDLE_FILL_COLOR,HANDLE_STROKE_COLOR);
     }
  else {

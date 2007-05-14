@@ -1,4 +1,3 @@
 {
-  validatePath();
-  return generalPath.getPathIterator(at);
+  return new BezierPathIterator(this,at);
 }

@@ -1,4 +1,0 @@
-{
-  super.basicTransform(tx);
-  updateConnection();
-}

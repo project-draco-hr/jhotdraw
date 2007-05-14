@@ -7,7 +7,7 @@ case ALL:
 case ELEMENT_NAME:
 {
   String name=elem.getName();
-  isMatch=name.equals(selector);
+  isMatch=name != null && name.equals(selector);
   break;
 }
 case CLASS_ATTRIBUTE:

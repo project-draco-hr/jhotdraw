@@ -1,0 +1,8 @@
+{
+  JButton italicToggleButton;
+  italicToggleButton=new JButton();
+  labels.configureToolBarButton(italicToggleButton,"attributeFontItalic");
+  italicToggleButton.setFocusable(false);
+  italicToggleButton.addActionListener(new AttributeToggler(editor,FONT_ITALIC,Boolean.TRUE,Boolean.FALSE,new StyledEditorKit.ItalicAction()));
+  return italicToggleButton;
+}

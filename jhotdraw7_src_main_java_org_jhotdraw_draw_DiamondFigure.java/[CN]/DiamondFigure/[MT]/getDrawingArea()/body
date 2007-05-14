@@ -1,6 +1,6 @@
 {
   Rectangle2D.Double r=(Rectangle2D.Double)rectangle.clone();
-  if (isQuadratic()) {
+  if (IS_QUADRATIC.get(this)) {
     double side=Math.max(r.width,r.height);
     r.x-=(side - r.width) / 2;
     r.y-=(side - r.height) / 2;

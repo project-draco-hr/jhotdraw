@@ -1,0 +1,18 @@
+{
+  invalidateTransformedShape();
+  if (TRANSFORM.get(this) != null || (tx.getType() & (AffineTransform.TYPE_TRANSLATION)) != tx.getType()) {
+    if (TRANSFORM.get(this) == null) {
+      TRANSFORM.set(this,(AffineTransform)tx.clone());
+    }
+ else {
+      AffineTransform t=TRANSFORM.getClone(this);
+      t.preConcatenate(tx);
+      TRANSFORM.set(this,t);
+    }
+  }
+ else {
+    Point2D.Double anchor=getStartPoint();
+    Point2D.Double lead=getEndPoint();
+    setBounds((Point2D.Double)tx.transform(anchor,anchor),(Point2D.Double)tx.transform(lead,lead));
+  }
+}

@@ -24,7 +24,7 @@
   }
 catch (  InvocationTargetException e) {
     InternalError error=new InternalError();
-    e.initCause(e);
+    error.initCause(e);
     throw error;
   }
 }

@@ -1,0 +1,8 @@
+double cx
+double cy
+double r
+double[] stopOffsets
+Color[] stopColors
+double[] stopOpacities
+boolean isRelativeToFigureBounds
+AffineTransform tx

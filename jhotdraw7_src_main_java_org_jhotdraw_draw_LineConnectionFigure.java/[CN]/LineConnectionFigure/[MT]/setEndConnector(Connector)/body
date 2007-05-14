@@ -1,26 +1,18 @@
 {
-  final Connector oldEnd=endConnector;
-  if (newEnd != oldEnd) {
-    willChange();
-    basicSetEndConnector(newEnd);
-    fireUndoableEditHappened(new AbstractUndoableEdit(){
-      public String getPresentationName(){
-        return ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels").getString("ConnectionFigure.undoConnect");
-      }
-      public void undo() throws CannotUndoException {
-        super.undo();
-        willChange();
-        basicSetEndConnector(oldEnd);
-        changed();
-      }
-      public void redo() throws CannotUndoException {
-        super.redo();
-        willChange();
-        basicSetEndConnector(newEnd);
-        changed();
+  if (newEnd != endConnector) {
+    if (endConnector != null) {
+      getEndFigure().removeFigureListener(connectionHandler);
+      if (getStartFigure() != null) {
+        handleDisconnect(getStartFigure(),getEndFigure());
       }
     }
-);
-    changed();
+    endConnector=newEnd;
+    if (endConnector != null) {
+      getEndFigure().addFigureListener(connectionHandler);
+      if (getStartFigure() != null && getEndFigure() != null) {
+        handleConnect(getStartFigure(),getEndFigure());
+        updateConnection();
+      }
+    }
   }
 }

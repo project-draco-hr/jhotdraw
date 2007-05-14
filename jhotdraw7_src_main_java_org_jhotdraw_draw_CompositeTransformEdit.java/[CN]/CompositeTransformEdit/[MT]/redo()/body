@@ -1,6 +1,6 @@
 {
   super.redo();
   owner.willChange();
-  owner.basicTransform(tx);
+  owner.transform(tx);
   owner.changed();
 }

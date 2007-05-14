@@ -1,0 +1,4 @@
+{
+  attributes.clear();
+  setAttributes((HashMap<AttributeKey,Object>)restoreData);
+}

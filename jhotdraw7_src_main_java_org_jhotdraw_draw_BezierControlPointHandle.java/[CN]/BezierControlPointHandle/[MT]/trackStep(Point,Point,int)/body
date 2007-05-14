@@ -4,8 +4,16 @@
   BezierPath.Node v=figure.getNode(index);
   fireAreaInvalidated(v);
   figure.willChange();
+  if (TRANSFORM.get(getTransformOwner()) != null) {
+    try {
+      TRANSFORM.get(getTransformOwner()).inverseTransform(p,p);
+    }
+ catch (    NoninvertibleTransformException ex) {
+      ex.printStackTrace();
+    }
+  }
   if (!v.keepColinear) {
-    figure.basicSetPoint(index,controlPointIndex,p);
+    figure.setPoint(index,controlPointIndex,p);
   }
  else {
     double a=Math.PI + Math.atan2(p.y - v.y[0],p.x - v.x[0]);
@@ -14,8 +22,8 @@
     double sina=Math.sin(a);
     double cosa=Math.cos(a);
     Point2D.Double p2=new Point2D.Double(r * cosa + v.x[0],r * sina + v.y[0]);
-    figure.basicSetPoint(index,controlPointIndex,p);
-    figure.basicSetPoint(index,c2,p2);
+    figure.setPoint(index,controlPointIndex,p);
+    figure.setPoint(index,c2,p2);
   }
   figure.changed();
   fireAreaInvalidated(figure.getNode(index));

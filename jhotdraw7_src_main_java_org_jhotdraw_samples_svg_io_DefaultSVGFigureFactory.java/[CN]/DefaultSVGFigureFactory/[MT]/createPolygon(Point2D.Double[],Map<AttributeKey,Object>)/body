@@ -7,6 +7,6 @@
   }
   bf.setClosed(true);
   figure.add(bf);
-  figure.basicSetAttributes(a);
+  figure.setAttributes(a);
   return figure;
 }

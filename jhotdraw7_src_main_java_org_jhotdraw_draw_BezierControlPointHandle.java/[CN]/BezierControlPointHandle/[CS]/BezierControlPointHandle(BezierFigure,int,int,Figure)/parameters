@@ -1,0 +1,4 @@
+BezierFigure owner
+int index
+int coord
+Figure transformOwner

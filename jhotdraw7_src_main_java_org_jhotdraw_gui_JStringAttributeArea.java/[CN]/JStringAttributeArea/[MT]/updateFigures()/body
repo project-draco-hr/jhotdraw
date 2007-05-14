@@ -9,7 +9,6 @@
         attributeKey.set(f,fieldValue);
       }
     }
-    editor.setDefaultAttribute(attributeKey,fieldValue);
   }
   isUpdatingField--;
 }

@@ -6,10 +6,11 @@
   group.willChange();
   ((SVGPathFigure)group).removeAllChildren();
   for (  Map.Entry<AttributeKey,Object> entry : figures.iterator().next().getAttributes().entrySet()) {
-    group.basicSetAttribute(entry.getKey(),entry.getValue());
+    group.setAttribute(entry.getKey(),entry.getValue());
   }
   for (  Figure f : sorted) {
     SVGPathFigure path=(SVGPathFigure)f;
+    path.flattenTransform();
     for (    Figure child : path.getChildren()) {
       group.basicAdd(child);
     }

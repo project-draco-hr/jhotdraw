@@ -20,7 +20,7 @@
   }
   ImageHolderFigure figure=(ImageHolderFigure)prototype.clone();
   figure.setBufferedImage((BufferedImage)img);
-  figure.basicSetBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
+  figure.setBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
   LinkedList list=new LinkedList<Figure>();
   list.add(figure);
   return list;

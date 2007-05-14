@@ -1,4 +1,5 @@
 {
   super.invalidate();
-  invalidatePath();
+  cachedPath=null;
+  cachedDrawingArea=null;
 }

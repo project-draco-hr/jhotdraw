@@ -4,7 +4,7 @@
     if (createdFigure.getNodeCount() > 2) {
       BezierPath fittedPath=Bezier.fitBezierCurve(createdFigure.getBezierPath(),1);
       createdFigure.willChange();
-      createdFigure.basicSetBezierPath(fittedPath);
+      createdFigure.setBezierPath(fittedPath);
       createdFigure.changed();
       finishCreation(createdFigure);
       createdFigure=null;
@@ -22,11 +22,11 @@
     BezierPath fittedPath=new BezierPath();
     for (int i=nodeCountBeforeDrag, n=createdFigure.getNodeCount(); i < n; i++) {
       fittedPath.add(createdFigure.getNode(nodeCountBeforeDrag));
-      createdFigure.basicRemoveNode(nodeCountBeforeDrag);
+      createdFigure.removeNode(nodeCountBeforeDrag);
     }
     fittedPath=Bezier.fitBezierCurve(fittedPath,1);
     for (    BezierPath.Node node : fittedPath) {
-      createdFigure.basicAddNode(node);
+      createdFigure.addNode(node);
     }
     nodeCountBeforeDrag=createdFigure.getNodeCount();
     createdFigure.changed();

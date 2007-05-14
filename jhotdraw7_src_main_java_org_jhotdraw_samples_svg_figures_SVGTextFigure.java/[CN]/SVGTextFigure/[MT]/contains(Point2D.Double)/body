@@ -1,3 +1,11 @@
 {
-  return getTransformedShape().getBounds2D().contains(p);
+  if (TRANSFORM.get(this) != null) {
+    try {
+      p=(Point2D.Double)TRANSFORM.get(this).inverseTransform(p,new Point2D.Double());
+    }
+ catch (    NoninvertibleTransformException ex) {
+      ex.printStackTrace();
+    }
+  }
+  return getTextShape().getBounds2D().contains(p);
 }

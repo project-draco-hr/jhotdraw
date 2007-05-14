@@ -1,19 +1,19 @@
 {
-  if (bounds == null) {
+  if (cachedBounds == null) {
     for (    Figure child : getChildrenFrontToBack()) {
       if (child.isVisible()) {
         Rectangle2D r=child.getBounds();
         if (AttributeKeys.TRANSFORM.get(child) != null) {
           r=AttributeKeys.TRANSFORM.get(child).createTransformedShape(r).getBounds2D();
         }
-        if (bounds == null) {
-          bounds=new Rectangle2D.Double(r.getX(),r.getY(),r.getWidth(),r.getHeight());
+        if (cachedBounds == null) {
+          cachedBounds=new Rectangle2D.Double(r.getX(),r.getY(),r.getWidth(),r.getHeight());
         }
  else {
-          bounds.add(r);
+          cachedBounds.add(r);
         }
       }
     }
   }
-  return (bounds == null) ? new Rectangle2D.Double(0,0,-1,-1) : (Rectangle2D.Double)bounds.clone();
+  return (cachedBounds == null) ? new Rectangle2D.Double(0,0,-1,-1) : (Rectangle2D.Double)cachedBounds.clone();
 }

@@ -1,0 +1,8 @@
+{
+  JButton underlineToggleButton;
+  underlineToggleButton=new JButton();
+  labels.configureToolBarButton(underlineToggleButton,"attributeFontUnderline");
+  underlineToggleButton.setFocusable(false);
+  underlineToggleButton.addActionListener(new AttributeToggler(editor,FONT_UNDERLINED,Boolean.TRUE,Boolean.FALSE,new StyledEditorKit.UnderlineAction()));
+  return underlineToggleButton;
+}

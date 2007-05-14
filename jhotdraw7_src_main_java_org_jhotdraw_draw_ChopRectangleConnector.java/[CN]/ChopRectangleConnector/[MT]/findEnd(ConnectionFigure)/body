@@ -15,7 +15,7 @@
     }
   }
  else {
-    from=connection.getPoint(connection.getPointCount() - 2);
+    from=connection.getPoint(0);
   }
   return chop(endFigure,from);
 }

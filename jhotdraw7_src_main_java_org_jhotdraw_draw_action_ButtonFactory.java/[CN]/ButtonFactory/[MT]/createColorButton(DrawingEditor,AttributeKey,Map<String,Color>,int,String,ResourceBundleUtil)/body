@@ -1,3 +1,0 @@
-{
-  return createColorButton(editor,attributeKey,colorMap,columnCount,labelKey,labels,(Map<AttributeKey,Object>)new HashMap<AttributeKey,Object>());
-}

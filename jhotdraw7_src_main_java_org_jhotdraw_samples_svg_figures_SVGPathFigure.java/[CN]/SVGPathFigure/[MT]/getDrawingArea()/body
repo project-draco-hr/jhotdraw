@@ -1,0 +1,24 @@
+{
+  if (cachedDrawingArea == null) {
+    double strokeTotalWidth=AttributeKeys.getStrokeTotalWidth(this);
+    double width=strokeTotalWidth / 2d;
+    if (STROKE_JOIN.get(this) == BasicStroke.JOIN_MITER) {
+      width*=STROKE_MITER_LIMIT.get(this);
+    }
+ else     if (STROKE_CAP.get(this) != BasicStroke.CAP_BUTT) {
+      width+=strokeTotalWidth * 2;
+    }
+    GeneralPath gp=(GeneralPath)getPath();
+    Rectangle2D strokeRect=new Rectangle2D.Double(0,0,width,width);
+    if (TRANSFORM.get(this) != null) {
+      gp=(GeneralPath)gp.clone();
+      gp.transform(TRANSFORM.get(this));
+      strokeRect=TRANSFORM.get(this).createTransformedShape(strokeRect).getBounds2D();
+    }
+    Rectangle2D rx=gp.getBounds2D();
+    Rectangle2D.Double r=(rx instanceof Rectangle2D.Double) ? (Rectangle2D.Double)rx : new Rectangle2D.Double(rx.getX(),rx.getY(),rx.getWidth(),rx.getHeight());
+    Geom.grow(r,strokeRect.getWidth(),strokeRect.getHeight());
+    cachedDrawingArea=r;
+  }
+  return (Rectangle2D.Double)cachedDrawingArea.clone();
+}

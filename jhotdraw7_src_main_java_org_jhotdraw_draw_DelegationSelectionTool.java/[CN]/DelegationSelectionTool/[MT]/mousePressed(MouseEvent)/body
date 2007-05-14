@@ -4,6 +4,7 @@
     popupTimer=null;
   }
   if (evt.isPopupTrigger()) {
+    getView().requestFocus();
     handlePopupMenu(evt);
   }
  else {

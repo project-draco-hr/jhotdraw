@@ -9,6 +9,13 @@
   }
   invalidateDimension();
   invalidate();
-  if (getParent() != null)   getParent().validate();
+  if (getParent() != null) {
+    getParent().validate();
+    if (getParent() instanceof JViewport) {
+      JViewport vp=(JViewport)getParent();
+      Rectangle2D.Double r=getDrawingArea();
+      vp.setViewPosition(drawingToView(new Point2D.Double(Math.min(0,-r.x),Math.min(0,-r.y))));
+    }
+  }
   repaint();
 }

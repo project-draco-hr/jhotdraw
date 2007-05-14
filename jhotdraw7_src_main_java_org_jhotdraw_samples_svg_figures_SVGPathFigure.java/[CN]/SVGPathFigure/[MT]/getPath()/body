@@ -1,0 +1,11 @@
+{
+  if (cachedPath == null) {
+    cachedPath=new GeneralPath();
+    cachedPath.setWindingRule(WINDING_RULE.get(this) == WindingRule.EVEN_ODD ? GeneralPath.WIND_EVEN_ODD : GeneralPath.WIND_NON_ZERO);
+    for (    Figure child : getChildren()) {
+      SVGBezierFigure b=(SVGBezierFigure)child;
+      cachedPath.append(b.getBezierPath(),false);
+    }
+  }
+  return cachedPath;
+}

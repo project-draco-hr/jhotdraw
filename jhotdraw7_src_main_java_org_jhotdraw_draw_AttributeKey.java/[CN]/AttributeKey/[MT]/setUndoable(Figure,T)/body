@@ -1,0 +1,28 @@
+{
+  if (value == null && !isNullValueAllowed) {
+    throw new NullPointerException("Null value not allowed for AttributeKey " + key);
+  }
+  final Object restoreData=figure.getAttributesRestoreData();
+  figure.willChange();
+  figure.setAttribute(this,value);
+  figure.changed();
+  UndoableEdit edit=new AbstractUndoableEdit(){
+    public String getPresentationName(){
+      ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels",Locale.getDefault());
+      return labels.getString("drawAttributeChange");
+    }
+    public void undo(){
+      super.undo();
+      figure.willChange();
+      figure.restoreAttributesTo(restoreData);
+      figure.changed();
+    }
+    public void redo(){
+      figure.willChange();
+      figure.setAttribute(AttributeKey.this,value);
+      figure.changed();
+    }
+  }
+;
+  return edit;
+}

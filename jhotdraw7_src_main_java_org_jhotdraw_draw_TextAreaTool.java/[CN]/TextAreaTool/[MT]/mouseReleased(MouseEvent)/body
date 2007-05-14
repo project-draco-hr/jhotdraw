@@ -8,7 +8,7 @@
  else {
       if (bounds.width < 5 && bounds.height < 5) {
         createdFigure.willChange();
-        createdFigure.basicSetBounds(new Point2D.Double(bounds.x,bounds.y),new Point2D.Double(bounds.x + 100,bounds.y + 100));
+        createdFigure.setBounds(new Point2D.Double(bounds.x,bounds.y),new Point2D.Double(bounds.x + 100,bounds.y + 100));
         createdFigure.changed();
       }
       getView().addToSelection(createdFigure);

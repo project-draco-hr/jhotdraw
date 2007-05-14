@@ -1,8 +1,5 @@
 {
   DrawingView oldValue=activeView;
   activeView=newValue;
-  firePropertyChange("view",oldValue,newValue);
-  for (  DrawingView v : views) {
-    v.getComponent().repaint();
-  }
+  firePropertyChange(PROP_VIEW,oldValue,newValue);
 }

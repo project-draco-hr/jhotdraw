@@ -1,0 +1,3 @@
+{
+  return createEditorColorButton(editor,attributeKey,colorMap,columnCount,labelKey,labels,defaultAttributes,new Rectangle(1,17,20,4));
+}

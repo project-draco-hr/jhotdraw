@@ -1,3 +1,3 @@
 {
-  g.fill(getTransformedShape());
+  g.fill(roundrect);
 }

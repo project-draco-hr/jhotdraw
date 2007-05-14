@@ -8,13 +8,13 @@
   AffineTransform tx=new AffineTransform();
   tx.translate(-oldBounds.x,-oldBounds.y);
   if (!Double.isNaN(sx) && !Double.isNaN(sy) && (sx != 1d || sy != 1d)&& !(sx < 0.0001)&& !(sy < 0.0001)) {
-    f.basicTransform(tx);
+    f.transform(tx);
     tx.setToIdentity();
     tx.scale(sx,sy);
-    f.basicTransform(tx);
+    f.transform(tx);
     tx.setToIdentity();
   }
   tx.translate(newBounds.x,newBounds.y);
-  f.basicTransform(tx);
+  f.transform(tx);
   f.changed();
 }

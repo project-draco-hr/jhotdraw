@@ -1,13 +1,9 @@
 {
   if (forbiddenAttributes == null || !forbiddenAttributes.contains(key)) {
-    willChange();
     if (getPresentationFigure() != null) {
       getPresentationFigure().setAttribute(key,newValue);
     }
     super.setAttribute(key,newValue);
     Object oldValue=attributes.put(key,newValue);
-    fireAttributeChanged(key,oldValue,newValue);
-    fireUndoableEditHappened(new AttributeChangeEdit(this,key,oldValue,newValue));
-    changed();
   }
 }

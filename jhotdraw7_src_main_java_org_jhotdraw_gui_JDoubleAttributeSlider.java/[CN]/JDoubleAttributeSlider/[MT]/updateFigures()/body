@@ -6,7 +6,9 @@
         attributeKey.set(f,value);
       }
     }
-    editor.setDefaultAttribute(attributeKey,value);
+    if (editor != null) {
+      editor.setDefaultAttribute(attributeKey,value);
+    }
   }
   isUpdatingSlider--;
 }

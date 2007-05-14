@@ -2,7 +2,7 @@
   int pointCount=createdFigure.getNodeCount();
   createdFigure.willChange();
   if (pointCount < 2) {
-    createdFigure.basicAddNode(new BezierPath.Node(newPoint));
+    createdFigure.addNode(new BezierPath.Node(newPoint));
   }
  else {
     Point2D.Double endPoint=createdFigure.getEndPoint();
@@ -10,10 +10,10 @@
     if (newPoint.equals(endPoint)) {
     }
  else     if (pointCount > 1 && Geom.lineContainsPoint(newPoint.x,newPoint.y,secondLastPoint.x,secondLastPoint.y,endPoint.x,endPoint.y,0.9f / getView().getScaleFactor())) {
-      createdFigure.basicSetPoint(pointCount - 1,0,newPoint);
+      createdFigure.setPoint(pointCount - 1,0,newPoint);
     }
  else {
-      createdFigure.basicAddNode(new BezierPath.Node(newPoint));
+      createdFigure.addNode(new BezierPath.Node(newPoint));
     }
   }
   createdFigure.changed();

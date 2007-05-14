@@ -1,5 +1,5 @@
 {
-  for (  CSSRule rule : rules) {
+  for (  CSSRule rule : new ReversedList<CSSRule>(rules)) {
     if (rule.matches(elem)) {
       rule.apply(elem);
     }

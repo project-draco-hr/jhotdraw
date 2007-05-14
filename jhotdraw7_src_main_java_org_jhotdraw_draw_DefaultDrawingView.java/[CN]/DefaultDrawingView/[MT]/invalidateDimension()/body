@@ -1,3 +1,4 @@
 {
-  preferredSize=null;
+  cachedPreferredSize=null;
+  cachedDrawingArea=null;
 }

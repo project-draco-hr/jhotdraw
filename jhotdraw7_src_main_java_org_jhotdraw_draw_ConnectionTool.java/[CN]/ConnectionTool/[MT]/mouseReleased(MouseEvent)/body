@@ -16,7 +16,7 @@
       f.willChange();
       f.setStartConnector(getStartConnector());
       f.setEndConnector(getEndConnector());
-      f.basicSetBounds(f.getStartPoint(),p);
+      f.setBounds(f.getStartPoint(),p);
       f.updateConnection();
       f.changed();
       f.removeFigureListener(this);

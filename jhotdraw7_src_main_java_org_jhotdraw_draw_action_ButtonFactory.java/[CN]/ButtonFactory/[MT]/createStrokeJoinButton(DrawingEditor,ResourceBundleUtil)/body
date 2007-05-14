@@ -1,0 +1,16 @@
+{
+  JPopupButton popupButton=new JPopupButton();
+  labels.configureToolBarButton(popupButton,"attributeStrokeJoin");
+  popupButton.setFocusable(false);
+  HashMap<AttributeKey,Object> attr;
+  attr=new HashMap<AttributeKey,Object>();
+  attr.put(STROKE_JOIN,BasicStroke.JOIN_BEVEL);
+  popupButton.add(new AttributeAction(editor,attr,labels.getString("attributeStrokeJoinBevel"),null));
+  attr=new HashMap<AttributeKey,Object>();
+  attr.put(STROKE_JOIN,BasicStroke.JOIN_ROUND);
+  popupButton.add(new AttributeAction(editor,attr,labels.getString("attributeStrokeJoinRound"),null));
+  attr=new HashMap<AttributeKey,Object>();
+  attr.put(STROKE_JOIN,BasicStroke.JOIN_MITER);
+  popupButton.add(new AttributeAction(editor,attr,labels.getString("attributeStrokeJoinMiter"),null));
+  return popupButton;
+}

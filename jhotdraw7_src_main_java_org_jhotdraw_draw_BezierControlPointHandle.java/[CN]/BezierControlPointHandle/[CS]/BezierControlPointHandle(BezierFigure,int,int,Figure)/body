@@ -1,0 +1,7 @@
+{
+  super(owner);
+  this.index=index;
+  this.controlPointIndex=coord;
+  this.transformOwner=transformOwner;
+  transformOwner.addFigureListener(this);
+}

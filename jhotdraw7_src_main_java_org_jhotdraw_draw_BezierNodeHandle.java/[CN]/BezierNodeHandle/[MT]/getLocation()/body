@@ -1,3 +1,12 @@
 {
-  return getBezierFigure().getPointCount() > index ? view.drawingToView(getBezierFigure().getPoint(index,0)) : new Point(10,10);
+  if (getBezierFigure().getPointCount() > index) {
+    Point2D.Double p=getBezierFigure().getPoint(index,0);
+    if (TRANSFORM.get(getTransformOwner()) != null) {
+      TRANSFORM.get(getTransformOwner()).transform(p,p);
+    }
+    return view.drawingToView(p);
+  }
+ else {
+    return new Point(10,10);
+  }
 }

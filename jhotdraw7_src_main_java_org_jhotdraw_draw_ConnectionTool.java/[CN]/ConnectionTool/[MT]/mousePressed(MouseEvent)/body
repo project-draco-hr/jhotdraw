@@ -13,7 +13,7 @@
     if (getStartConnector() != null && canConnect(getTargetFigure())) {
       Point2D.Double p=getStartConnector().getAnchor();
       setConnection(createFigure());
-      getConnection().basicSetBounds(p,p);
+      getConnection().setBounds(p,p);
       getConnection().addFigureListener(this);
       setCreatedFigure(getConnection());
     }

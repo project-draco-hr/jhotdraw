@@ -16,7 +16,12 @@
           g.basicAdd(childFigure);
         }
       }
-      LINK.basicSet(childFigure,href);
+      if (childFigure != null) {
+        LINK.set(childFigure,href);
+      }
+ else {
+        if (DEBUG)         System.out.println("SVGInputFormat <a> has no child figure");
+      }
     }
   }
   return (g.getChildCount() == 1) ? g.getChild(0) : g;

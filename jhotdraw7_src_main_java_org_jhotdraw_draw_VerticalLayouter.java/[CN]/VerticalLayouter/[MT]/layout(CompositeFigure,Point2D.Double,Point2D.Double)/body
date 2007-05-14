@@ -7,7 +7,7 @@
     if (child.isVisible()) {
       Insets2D.Double insets=getInsets(child);
       double height=child.getPreferredSize().height;
-      child.basicSetBounds(new Point2D.Double(layoutBounds.x + layoutInsets.left + insets.left,y + insets.top),new Point2D.Double(layoutBounds.x + layoutBounds.width - layoutInsets.right - insets.right,y + insets.top + height));
+      child.setBounds(new Point2D.Double(layoutBounds.x + layoutInsets.left + insets.left,y + insets.top),new Point2D.Double(layoutBounds.x + layoutBounds.width - layoutInsets.right - insets.right,y + insets.top + height));
       y+=height + insets.top + insets.bottom;
     }
   }

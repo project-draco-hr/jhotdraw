@@ -16,7 +16,7 @@
   }
   readTransformAttribute(elem,a);
   if (TRANSFORM.get(a) != null) {
-    g.basicTransform(TRANSFORM.get(a));
+    g.transform(TRANSFORM.get(a));
   }
   return g;
 }

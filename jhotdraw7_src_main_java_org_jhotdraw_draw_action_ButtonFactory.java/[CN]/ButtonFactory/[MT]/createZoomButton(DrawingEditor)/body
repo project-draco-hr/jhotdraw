@@ -11,7 +11,7 @@
   }
   editor.addPropertyChangeListener(new PropertyChangeListener(){
     public void propertyChange(    PropertyChangeEvent evt){
-      if (evt.getPropertyName() == "focusedView") {
+      if (evt.getPropertyName() == DrawingEditor.PROP_FOCUSED_VIEW) {
         if (evt.getNewValue() == null) {
           zoomPopupButton.setText("100 %");
         }

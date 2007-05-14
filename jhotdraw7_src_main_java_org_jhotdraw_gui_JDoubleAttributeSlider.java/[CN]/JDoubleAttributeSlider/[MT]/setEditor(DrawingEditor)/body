@@ -8,5 +8,10 @@
   this.editor=editor;
   if (this.editor != null) {
     this.editor.addPropertyChangeListener(eventHandler);
+    if (getView() != null) {
+      getView().addFigureSelectionListener(eventHandler);
+    }
+    updateEnabledState();
+    updateSlider();
   }
 }

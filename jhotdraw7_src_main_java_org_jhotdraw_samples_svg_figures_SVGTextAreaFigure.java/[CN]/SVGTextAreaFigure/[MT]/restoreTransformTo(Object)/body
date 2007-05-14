@@ -1,8 +1,6 @@
 {
-  invalidateTransformedShape();
   Object[] restoreData=(Object[])geometry;
-  rectangle=(Rectangle2D.Double)((Rectangle2D.Double)restoreData[0]).clone();
-  TRANSFORM.basicSetClone(this,(AffineTransform)restoreData[1]);
-  FILL_GRADIENT.basicSetClone(this,(Gradient)restoreData[2]);
-  STROKE_GRADIENT.basicSetClone(this,(Gradient)restoreData[3]);
+  bounds=(Rectangle2D.Double)((Rectangle2D.Double)restoreData[0]).clone();
+  TRANSFORM.setClone(this,(AffineTransform)restoreData[1]);
+  invalidate();
 }

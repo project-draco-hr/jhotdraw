@@ -33,7 +33,7 @@
       Figure childFigure=readElement(child);
       if (readAttribute(child,"visibility","visible").equals("visible") && !readAttribute(child,"display","inline").equals("none")) {
         if (childFigure != null) {
-          childFigure.basicTransform(viewBoxTransform);
+          childFigure.transform(viewBoxTransform);
           figures.add(childFigure);
         }
       }

@@ -7,7 +7,7 @@
     FILL_COLOR.set(a,(Color)objectValue);
   }
  else   if (objectValue instanceof Gradient) {
-    FILL_GRADIENT.set(a,(Gradient)((Gradient)objectValue).clone());
+    FILL_GRADIENT.setClone(a,(Gradient)objectValue);
   }
  else   if (objectValue == null) {
     FILL_COLOR.set(a,null);
@@ -25,7 +25,7 @@
     STROKE_COLOR.set(a,(Color)objectValue);
   }
  else   if (objectValue instanceof Gradient) {
-    STROKE_GRADIENT.set(a,(Gradient)objectValue);
+    STROKE_GRADIENT.setClone(a,(Gradient)objectValue);
   }
  else   if (objectValue == null) {
     STROKE_COLOR.set(a,null);

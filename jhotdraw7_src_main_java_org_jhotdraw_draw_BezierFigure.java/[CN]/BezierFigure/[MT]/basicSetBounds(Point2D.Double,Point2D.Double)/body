@@ -1,5 +1,0 @@
-{
-  basicSetStartPoint(anchor);
-  basicSetEndPoint(lead);
-  invalidate();
-}

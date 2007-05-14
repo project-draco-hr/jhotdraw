@@ -4,4 +4,5 @@
     item.setUI(new PaletteMenuItemUI());
   }
   item.setFont(itemFont);
+  return item;
 }

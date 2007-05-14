@@ -1,5 +1,5 @@
 {
   DrawingView oldValue=focusedView;
   focusedView=newValue;
-  firePropertyChange("focusedView",oldValue,newValue);
+  firePropertyChange(PROP_FOCUSED_VIEW,oldValue,newValue);
 }

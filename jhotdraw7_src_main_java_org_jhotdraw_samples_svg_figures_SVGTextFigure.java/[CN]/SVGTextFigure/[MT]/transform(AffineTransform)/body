@@ -1,0 +1,18 @@
+{
+  if (TRANSFORM.get(this) != null || tx.getType() != (tx.getType() & AffineTransform.TYPE_TRANSLATION)) {
+    if (TRANSFORM.get(this) == null) {
+      TRANSFORM.set(this,(AffineTransform)tx.clone());
+    }
+ else {
+      AffineTransform t=TRANSFORM.getClone(this);
+      t.preConcatenate(tx);
+      TRANSFORM.set(this,t);
+    }
+  }
+ else {
+    for (int i=0; i < coordinates.length; i++) {
+      tx.transform(coordinates[i],coordinates[i]);
+    }
+  }
+  invalidate();
+}

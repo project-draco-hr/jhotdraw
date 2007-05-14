@@ -1,5 +1,6 @@
 {
-  willChange();
-  basicSetAttribute(key,value);
-  changed();
+  for (  Figure child : children) {
+    child.setAttribute(key,value);
+  }
+  invalidate();
 }

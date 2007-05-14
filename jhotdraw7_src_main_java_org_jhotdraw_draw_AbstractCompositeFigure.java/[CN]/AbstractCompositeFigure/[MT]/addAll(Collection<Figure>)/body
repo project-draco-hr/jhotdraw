@@ -1,10 +1,9 @@
 {
-  willChange();
   for (  Figure f : newFigures) {
     basicAdd(getChildCount(),f);
     if (getDrawing() != null) {
       f.addNotify(getDrawing());
     }
   }
-  changed();
+  invalidate();
 }

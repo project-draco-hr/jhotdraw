@@ -9,7 +9,7 @@
   tx.translate(newPoint.x - oldPoint.x,newPoint.y - oldPoint.y);
   for (  Figure f : view.getSelectedFigures()) {
     f.willChange();
-    f.basicTransform(tx);
+    f.transform(tx);
     f.changed();
   }
   oldPoint=newPoint;

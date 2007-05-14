@@ -45,5 +45,16 @@
   initStorageContext();
   flattenStyles(svg);
   readSVGElement(svg);
+  for (  Object o : elementObjects.values()) {
+    if (o instanceof Figure) {
+      Figure f=(Figure)o;
+      if (FILL_GRADIENT.get(f) != null) {
+        FILL_GRADIENT.get(f).makeRelativeToFigureBounds(f);
+      }
+      if (STROKE_GRADIENT.get(f) != null) {
+        STROKE_GRADIENT.get(f).makeRelativeToFigureBounds(f);
+      }
+    }
+  }
   return figures;
 }

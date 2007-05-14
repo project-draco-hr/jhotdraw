@@ -1,4 +1,3 @@
 {
-  super(owner);
-  this.index=index;
+  this(owner,index,owner);
 }

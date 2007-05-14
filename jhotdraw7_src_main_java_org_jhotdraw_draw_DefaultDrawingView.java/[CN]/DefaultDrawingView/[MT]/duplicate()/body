@@ -8,7 +8,7 @@
   tx.translate(5,5);
   for (  Figure f : sorted) {
     Figure d=(Figure)f.clone();
-    d.basicTransform(tx);
+    d.transform(tx);
     duplicates.add(d);
     originalToDuplicateMap.put(f,d);
     drawing.add(d);

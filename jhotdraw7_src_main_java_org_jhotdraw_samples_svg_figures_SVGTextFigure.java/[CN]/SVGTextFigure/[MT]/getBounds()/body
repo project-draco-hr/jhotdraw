@@ -1,28 +1,7 @@
 {
   if (cachedBounds == null) {
-    String text=getText();
-    if (text == null || text.length() == 0) {
-      text=" ";
-    }
-    FontRenderContext frc=getFontRenderContext();
-    HashMap<TextAttribute,Object> textAttributes=new HashMap<TextAttribute,Object>();
-    textAttributes.put(TextAttribute.FONT,getFont());
-    if (FONT_UNDERLINED.get(this)) {
-      textAttributes.put(TextAttribute.UNDERLINE,TextAttribute.UNDERLINE_LOW_ONE_PIXEL);
-    }
-    TextLayout textLayout=new TextLayout(text,textAttributes,frc);
-    Rectangle2D r=textLayout.getBounds();
-    cachedBounds=new Rectangle2D.Double(coordinates[0].x + r.getX(),coordinates[0].y + r.getY(),r.getWidth(),r.getHeight());
-switch (TEXT_ANCHOR.get(this)) {
-case END:
-      cachedBounds.x-=textLayout.getAdvance();
-    break;
-case MIDDLE:
-  cachedBounds.x-=textLayout.getAdvance() / 2d;
-break;
-case START:
-break;
-}
-}
-return (Rectangle2D.Double)cachedBounds.clone();
+    cachedBounds=new Rectangle2D.Double();
+    cachedBounds.setRect(getTextShape().getBounds2D());
+  }
+  return (Rectangle2D.Double)cachedBounds.clone();
 }

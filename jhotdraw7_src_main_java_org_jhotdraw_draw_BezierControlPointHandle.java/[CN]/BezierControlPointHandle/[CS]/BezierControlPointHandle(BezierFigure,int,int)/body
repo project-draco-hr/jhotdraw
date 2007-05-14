@@ -1,5 +1,3 @@
 {
-  super(owner);
-  this.index=index;
-  this.controlPointIndex=coord;
+  this(owner,index,coord,owner);
 }

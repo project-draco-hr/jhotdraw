@@ -20,6 +20,7 @@
   }
   double[] stopOffsets=new double[stops.size()];
   Color[] stopColors=new Color[stops.size()];
+  double[] stopOpacities=new double[stops.size()];
   for (int i=0; i < stops.size(); i++) {
     IXMLElement stopElem=stops.get(i);
     String offsetStr=readAttribute(stopElem,"offset","0");
@@ -33,11 +34,9 @@
     if (stopColors[i] == null) {
       stopColors[i]=new Color(0x0,true);
     }
-    double doubleValue=toDouble(stopElem,readAttribute(stopElem,"stop-opacity","1"),1,0,1);
-    if (doubleValue != 1) {
-      stopColors[i]=new Color(((int)(doubleValue * 255) << 24) | (stopColors[i].getRGB() & 0xffffff),true);
-    }
+    stopOpacities[i]=toDouble(stopElem,readAttribute(stopElem,"stop-opacity","1"),1,0,1);
   }
-  Gradient gradient=factory.createRadialGradient(cx,cy,r,stopOffsets,stopColors,isRelativeToFigureBounds);
+  AffineTransform tx=toTransform(elem,readAttribute(elem,"gradientTransform","none"));
+  Gradient gradient=factory.createRadialGradient(cx,cy,r,stopOffsets,stopColors,stopOpacities,isRelativeToFigureBounds,tx);
   elementObjects.put(elem,gradient);
 }

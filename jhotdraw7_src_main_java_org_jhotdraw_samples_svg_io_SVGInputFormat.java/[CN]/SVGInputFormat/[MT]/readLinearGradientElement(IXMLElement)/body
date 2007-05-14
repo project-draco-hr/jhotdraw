@@ -22,20 +22,9 @@
   if (stops.size() == 0) {
     if (DEBUG)     System.out.println("SVGInpuFormat: Warning no stops in linearGradient " + elem);
   }
-  AffineTransform tx=toTransform(elem,readAttribute(elem,"gradientTransform","none"));
-  if (tx != null) {
-    Point2D.Double p=new Point2D.Double(x1,y1);
-    tx.transform(p,p);
-    x1=p.x;
-    y1=p.y;
-    p.x=x2;
-    p.y=y2;
-    tx.transform(p,p);
-    x2=p.x;
-    y2=p.y;
-  }
   double[] stopOffsets=new double[stops.size()];
   Color[] stopColors=new Color[stops.size()];
+  double[] stopOpacities=new double[stops.size()];
   for (int i=0; i < stops.size(); i++) {
     IXMLElement stopElem=stops.get(i);
     String offsetStr=readAttribute(stopElem,"offset","0");
@@ -49,11 +38,9 @@
     if (stopColors[i] == null) {
       stopColors[i]=new Color(0x0,true);
     }
-    double doubleValue=toDouble(stopElem,readAttribute(stopElem,"stop-opacity","1"),1,0,1);
-    if (doubleValue != 1) {
-      stopColors[i]=new Color(((int)(doubleValue * 255) << 24) | (stopColors[i].getRGB() & 0xffffff),true);
-    }
+    stopOpacities[i]=toDouble(stopElem,readAttribute(stopElem,"stop-opacity","1"),1,0,1);
   }
-  Gradient gradient=factory.createLinearGradient(x1,y1,x2,y2,stopOffsets,stopColors,isRelativeToFigureBounds);
+  AffineTransform tx=toTransform(elem,readAttribute(elem,"gradientTransform","none"));
+  Gradient gradient=factory.createLinearGradient(x1,y1,x2,y2,stopOffsets,stopColors,stopOpacities,isRelativeToFigureBounds,tx);
   elementObjects.put(elem,gradient);
 }

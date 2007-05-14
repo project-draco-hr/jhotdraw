@@ -1,8 +1,43 @@
 {
-  if (getView() != null && getView().getSelectionCount() > 0) {
-    CompositeEdit edit=new CompositeEdit(labels.getString("drawAttributeChange"));
-    fireUndoableEditHappened(edit);
-    changeAttributes();
-    fireUndoableEditHappened(edit);
+  for (  Map.Entry<AttributeKey,Object> entry : attributes.entrySet()) {
+    getEditor().setDefaultAttribute(entry.getKey(),entry.getValue());
   }
+  final ArrayList<Figure> selectedFigures=new ArrayList(getView().getSelectedFigures());
+  final ArrayList<Object> restoreData=new ArrayList<Object>(selectedFigures.size());
+  Iterator i=selectedFigures.iterator();
+  for (  Figure figure : selectedFigures) {
+    restoreData.add(figure.getAttributesRestoreData());
+    figure.willChange();
+    for (    Map.Entry<AttributeKey,Object> entry : attributes.entrySet()) {
+      entry.getKey().set(figure,entry.getValue());
+    }
+    figure.changed();
+  }
+  UndoableEdit edit=new AbstractUndoableEdit(){
+    public String getPresentationName(){
+      return labels.getString("drawAttributeChange");
+    }
+    public void undo(){
+      super.undo();
+      Iterator<Object> iRestore=restoreData.iterator();
+      for (      Figure figure : selectedFigures) {
+        figure.willChange();
+        figure.restoreAttributesTo(iRestore.next());
+        figure.changed();
+      }
+    }
+    public void redo(){
+      super.redo();
+      for (      Figure figure : selectedFigures) {
+        restoreData.add(figure.getAttributesRestoreData());
+        figure.willChange();
+        for (        Map.Entry<AttributeKey,Object> entry : attributes.entrySet()) {
+          entry.getKey().set(figure,entry.getValue());
+        }
+        figure.changed();
+      }
+    }
+  }
+;
+  fireUndoableEditHappened(edit);
 }

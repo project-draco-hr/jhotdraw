@@ -6,7 +6,7 @@
     Rectangle2D.Double b=f.getBounds();
     AffineTransform tx=new AffineTransform();
     tx.translate(x - b.x - b.width / 2,0);
-    f.basicTransform(tx);
+    f.transform(tx);
     f.changed();
     fireUndoableEditHappened(new TransformEdit(f,tx));
   }

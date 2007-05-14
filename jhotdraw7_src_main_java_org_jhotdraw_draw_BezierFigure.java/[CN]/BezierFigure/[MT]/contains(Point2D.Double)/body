@@ -1,10 +1,10 @@
 {
-  double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2);
+  double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2d);
   if (isClosed() || FILL_COLOR.get(this) != null && FILL_OPEN_PATH.get(this)) {
     if (path.contains(p)) {
       return true;
     }
-    double grow=AttributeKeys.getPerpendicularHitGrowth(this);
+    double grow=AttributeKeys.getPerpendicularHitGrowth(this) * 2d;
     GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT.get(this)));
     if (gs.createStrokedShape(path).contains(p)) {
       return true;

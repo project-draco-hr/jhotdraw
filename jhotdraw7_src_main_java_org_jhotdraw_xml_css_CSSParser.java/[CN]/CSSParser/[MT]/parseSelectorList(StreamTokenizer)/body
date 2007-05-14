@@ -15,6 +15,7 @@ selector.setLength(0);
 needsWhitespace=false;
 break;
 default :
+if (needsWhitespace) selector.append(' ');
 selector.append((char)tt.ttype);
 needsWhitespace=false;
 break;

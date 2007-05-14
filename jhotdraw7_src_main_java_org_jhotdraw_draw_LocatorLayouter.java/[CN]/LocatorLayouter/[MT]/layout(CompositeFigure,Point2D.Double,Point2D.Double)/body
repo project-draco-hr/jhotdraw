@@ -12,7 +12,7 @@
       r=new Rectangle2D.Double(p.x,p.y,d.width,d.height);
     }
     child.willChange();
-    child.basicSetBounds(new Point2D.Double(r.getMinX(),r.getMinY()),new Point2D.Double(r.getMaxX(),r.getMaxY()));
+    child.setBounds(new Point2D.Double(r.getMinX(),r.getMinY()),new Point2D.Double(r.getMaxX(),r.getMaxY()));
     child.changed();
     if (!r.isEmpty()) {
       if (bounds == null) {

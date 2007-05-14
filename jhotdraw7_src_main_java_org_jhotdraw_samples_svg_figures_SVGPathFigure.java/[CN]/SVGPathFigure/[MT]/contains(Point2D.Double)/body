@@ -1,0 +1,34 @@
+{
+  getPath();
+  if (TRANSFORM.get(this) != null) {
+    try {
+      p=(Point2D.Double)TRANSFORM.get(this).inverseTransform(p,new Point2D.Double());
+    }
+ catch (    NoninvertibleTransformException ex) {
+      ex.printStackTrace();
+    }
+  }
+  boolean isClosed=BezierFigure.CLOSED.get(getChild(0));
+  double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2d);
+  if (isClosed || FILL_COLOR.get(this) != null) {
+    if (getPath().contains(p)) {
+      return true;
+    }
+    double grow=AttributeKeys.getPerpendicularHitGrowth(this) * 2d;
+    GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT.get(this)));
+    if (gs.createStrokedShape(getPath()).contains(p)) {
+      return true;
+    }
+ else {
+      if (isClosed) {
+        return false;
+      }
+    }
+  }
+  if (!isClosed) {
+    if (Shapes.outlineContains(getPath(),p,tolerance)) {
+      return true;
+    }
+  }
+  return false;
+}

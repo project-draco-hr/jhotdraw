@@ -2,7 +2,7 @@
   willChange();
   decorator=newValue;
   if (decorator != null) {
-    decorator.basicSetBounds(getStartPoint(),getEndPoint());
+    decorator.setBounds(getStartPoint(),getEndPoint());
   }
   changed();
 }

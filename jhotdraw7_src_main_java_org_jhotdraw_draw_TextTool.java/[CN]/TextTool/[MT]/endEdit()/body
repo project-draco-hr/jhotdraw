@@ -1,5 +1,6 @@
 {
   if (typingTarget != null) {
+    typingTarget.willChange();
     if (textField.getText().length() > 0) {
       typingTarget.setText(textField.getText());
       if (createdFigure != null) {
@@ -13,8 +14,10 @@
       }
  else {
         typingTarget.setText("");
+        typingTarget.changed();
       }
     }
+    typingTarget.changed();
     typingTarget=null;
     textField.endOverlay();
   }

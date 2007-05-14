@@ -1,3 +1,3 @@
 {
-  return (Rectangle2D.Double)rectangle.clone();
+  return (Rectangle2D.Double)bounds.clone();
 }

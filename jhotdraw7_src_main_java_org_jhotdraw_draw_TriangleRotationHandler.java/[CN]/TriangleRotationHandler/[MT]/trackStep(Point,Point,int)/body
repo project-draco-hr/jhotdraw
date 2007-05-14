@@ -28,7 +28,7 @@ newValue=AttributeKeys.Orientation.NORTH_WEST;
 break;
 }
 getOwner().willChange();
-ORIENTATION.basicSet(getOwner(),newValue);
+ORIENTATION.set(getOwner(),newValue);
 getOwner().changed();
 updateBounds();
 }

@@ -1,6 +1,0 @@
-double cx
-double cy
-double r
-double[] stopOffsets
-Color[] stopColors
-boolean isRelativeToFigureBounds

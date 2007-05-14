@@ -1,6 +1,6 @@
 {
   String name=evt.getPropertyName();
-  if (name.equals("focusedView")) {
+  if (name == DrawingEditor.PROP_FOCUSED_VIEW) {
     if (evt.getOldValue() != null) {
       DrawingView view=((DrawingView)evt.getOldValue());
       view.removeFigureSelectionListener(this);
@@ -14,7 +14,7 @@
     updateEnabledState();
     updateField();
   }
- else   if (name.equals(attributeKey.getKey())) {
+ else   if (attributeKey != null && name.equals(attributeKey.getKey())) {
     updateField();
   }
 }

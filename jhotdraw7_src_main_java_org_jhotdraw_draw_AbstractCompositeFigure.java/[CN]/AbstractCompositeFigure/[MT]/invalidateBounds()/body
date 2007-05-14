@@ -1,4 +1,4 @@
 {
-  bounds=null;
-  drawBounds=null;
+  cachedBounds=null;
+  cachedDrawingArea=null;
 }

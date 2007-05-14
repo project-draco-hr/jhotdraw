@@ -1,3 +1,3 @@
 {
-  g.draw(path);
+  g.draw(getPath());
 }

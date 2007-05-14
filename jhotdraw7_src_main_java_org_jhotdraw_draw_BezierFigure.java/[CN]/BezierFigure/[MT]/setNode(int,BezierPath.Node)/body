@@ -1,8 +1,4 @@
 {
-  willChange();
-  BezierPath.Node oldValue=path.get(index);
-  BezierPath.Node newValue=new BezierPath.Node(p);
-  basicSetNode(index,newValue);
-  changed();
-  fireUndoableEditHappened(new BezierNodeEdit(this,index,oldValue,newValue));
+  path.set(index,p);
+  invalidate();
 }

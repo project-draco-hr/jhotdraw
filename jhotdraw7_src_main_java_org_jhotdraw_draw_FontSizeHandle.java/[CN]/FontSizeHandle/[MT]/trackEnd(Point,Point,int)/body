@@ -1,3 +1,25 @@
 {
-  view.getDrawing().fireUndoableEditHappened(edit);
+  final TextHolderFigure textOwner=(TextHolderFigure)getOwner();
+  final Object editRestoreData=restoreData;
+  final float editNewSize=newSize;
+  UndoableEdit edit=new AbstractUndoableEdit(){
+    public String getPresentationName(){
+      ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels",Locale.getDefault());
+      return labels.getString("fontSize");
+    }
+    public void undo(){
+      super.undo();
+      textOwner.willChange();
+      textOwner.restoreAttributesTo(editRestoreData);
+      textOwner.changed();
+    }
+    public void redo(){
+      super.redo();
+      textOwner.willChange();
+      textOwner.setFontSize(newSize);
+      textOwner.changed();
+    }
+  }
+;
+  fireUndoableEditHappened(edit);
 }

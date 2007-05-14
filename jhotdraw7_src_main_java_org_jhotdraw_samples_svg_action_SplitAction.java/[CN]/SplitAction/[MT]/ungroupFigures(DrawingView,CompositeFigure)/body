@@ -7,7 +7,7 @@
     SVGPathFigure path=new SVGPathFigure();
     path.removeAllChildren();
     for (    Map.Entry<AttributeKey,Object> entry : group.getAttributes().entrySet()) {
-      path.basicSetAttribute(entry.getKey(),entry.getValue());
+      path.setAttribute(entry.getKey(),entry.getValue());
     }
     path.add(f);
     view.getDrawing().basicAdd(path);

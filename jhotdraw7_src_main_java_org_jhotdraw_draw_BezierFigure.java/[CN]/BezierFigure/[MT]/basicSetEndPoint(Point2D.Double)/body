@@ -1,6 +1,0 @@
-{
-  for (int i=getNodeCount(); i < 2; i++) {
-    basicAddNode(0,new BezierPath.Node(p.x,p.y));
-  }
-  basicSetPoint(getPointCount() - 1,p);
-}
