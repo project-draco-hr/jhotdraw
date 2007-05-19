@@ -1,8 +1,5 @@
 {
-  CompositeEdit edit=new CompositeEdit("Figuren hinzuf\u00fcgen");
-  fireUndoableEditHappened(edit);
   for (  Figure f : figures) {
     add(f);
   }
-  fireUndoableEditHappened(edit);
 }

@@ -1,12 +1,5 @@
 {
-  UndoableEditEvent event=null;
-  if (listenerList.getListenerCount() > 0) {
-    Object[] listeners=listenerList.getListenerList();
-    for (int i=listeners.length - 2; i >= 0; i-=2) {
-      if (event == null)       event=new UndoableEditEvent(this,edit);
-      if (listeners[i] == UndoableEditListener.class) {
-        ((UndoableEditListener)listeners[i + 1]).undoableEditHappened(event);
-      }
-    }
+  if (getDrawing() != null) {
+    getDrawing().fireUndoableEditHappened(edit);
   }
 }

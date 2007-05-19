@@ -3,7 +3,7 @@
   readCoreAttributes(elem,a);
   readTransformAttribute(elem,a);
   readOpacityAttribute(elem,a);
-  readShapeAttributes(elem,a);
+  readLineAttributes(elem,a);
   Point2D.Double[] points=toPoints(elem,readAttribute(elem,"points",""));
   Figure figure=factory.createPolyline(points,a);
   elementObjects.put(elem,figure);

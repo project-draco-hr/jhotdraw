@@ -1,0 +1,12 @@
+{
+  this.cx=cx;
+  this.cy=cy;
+  this.fx=fx;
+  this.fy=fy;
+  this.r=r;
+  this.stopOffsets=stopOffsets;
+  this.stopColors=stopColors;
+  this.stopOpacities=stopOpacities;
+  this.isRelativeToFigureBounds=isRelativeToFigureBounds;
+  this.transform=tx;
+}

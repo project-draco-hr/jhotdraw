@@ -1,0 +1,19 @@
+{
+  Point2D.Double p=view.viewToDrawing(lead);
+  view.getConstrainer().constrainPoint(p);
+  Figure f=findConnectableFigure(p,view.getDrawing());
+  if (f != getTargetFigure()) {
+    setTargetFigure(f);
+  }
+  Rectangle r=new Rectangle(view.drawingToView(getCreatedConnection().getEndPoint()));
+  r.grow(ANCHOR_WIDTH,ANCHOR_WIDTH);
+  fireAreaInvalidated(r);
+  targetConnector=findConnectionTarget(p,view.getDrawing());
+  if (targetConnector != null) {
+    p=targetConnector.getAnchor();
+  }
+  getCreatedConnection().setEndPoint(p);
+  r=new Rectangle(view.drawingToView(p));
+  r.grow(ANCHOR_WIDTH,ANCHOR_WIDTH);
+  fireAreaInvalidated(r);
+}

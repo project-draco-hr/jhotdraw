@@ -1,21 +1,27 @@
 {
-  Point2D.Double p=viewToDrawing(new Point(e.getX(),e.getY()));
-  getView().getConstrainer().constrainPoint(p);
-  if (getConnection() != null) {
-    trackConnectors(e);
-    if (getTargetConnector() != null) {
-      p=getTargetConnector().getAnchor();
+  updateTarget(e);
+  if (createdFigure != null) {
+    Point2D.Double endPoint=viewToDrawing(new Point(e.getX(),e.getY()));
+    getView().getConstrainer().constrainPoint(endPoint);
+    createdFigure.willChange();
+    Figure endFigure=getDrawing().findFigureExcept(endPoint,createdFigure);
+    if (endConnector != null) {
+      Point2D.Double anchor=endConnector.getAnchor();
+      Rectangle r=new Rectangle(getView().drawingToView(anchor));
+      r.grow(ANCHOR_WIDTH,ANCHOR_WIDTH);
+      fireAreaInvalidated(r);
     }
-    ConnectionFigure f=getConnection();
-    fireAreaInvalidated(f.getDrawingArea());
-    f.willChange();
-    f.setBounds(f.getStartPoint(),p);
-    f.changed();
-    fireAreaInvalidated(f.getDrawingArea());
-  }
- else   if (editedConnection != null) {
-    editedConnection.willChange();
-    editedConnection.setPoint(splitPoint,p);
-    editedConnection.changed();
+    endConnector=(endFigure == null) ? null : endFigure.findConnector(endPoint,prototype);
+    if (endConnector != null && createdFigure.canConnect(startConnector,endConnector)) {
+      Point2D.Double anchor=endConnector.getAnchor();
+      createdFigure.setEndPoint(anchor);
+      Rectangle r=new Rectangle(getView().drawingToView(anchor));
+      r.grow(ANCHOR_WIDTH,ANCHOR_WIDTH);
+      fireAreaInvalidated(r);
+    }
+ else {
+      createdFigure.setEndPoint(endPoint);
+    }
+    createdFigure.changed();
   }
 }

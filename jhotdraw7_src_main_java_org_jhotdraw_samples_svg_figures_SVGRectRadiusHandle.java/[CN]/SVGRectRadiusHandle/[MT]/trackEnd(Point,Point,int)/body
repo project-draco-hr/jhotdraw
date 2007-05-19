@@ -1,3 +1,24 @@
 {
-  view.getDrawing().fireUndoableEditHappened(edit);
+  final SVGRectFigure svgRect=(SVGRectFigure)getOwner();
+  final Dimension2DDouble oldValue=originalArc2D;
+  final Dimension2DDouble newValue=svgRect.getArc();
+  view.getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
+    public String getPresentationName(){
+      ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.samples.svg.Labels");
+      return labels.getString("arc");
+    }
+    public void undo() throws CannotUndoException {
+      super.undo();
+      svgRect.willChange();
+      svgRect.setArc(oldValue);
+      svgRect.changed();
+    }
+    public void redo() throws CannotRedoException {
+      super.redo();
+      svgRect.willChange();
+      svgRect.setArc(newValue);
+      svgRect.changed();
+    }
+  }
+);
 }

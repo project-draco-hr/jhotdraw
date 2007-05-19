@@ -1,10 +1,8 @@
 {
-  if (tx != null) {
-    if (transform == null) {
-      transform=(AffineTransform)tx.clone();
-    }
+  if (transform == null) {
+    transform=(AffineTransform)tx.clone();
+  }
  else {
-      transform.preConcatenate(tx);
-    }
+    transform.preConcatenate(tx);
   }
 }

@@ -3,7 +3,7 @@
   boolean retValue;
   if (comp instanceof DrawingView) {
     DrawingView view=(DrawingView)comp;
-    Drawing drawing=view.getDrawing();
+    final Drawing drawing=view.getDrawing();
     if (drawing.getInputFormats() == null || drawing.getInputFormats().size() == 0) {
       retValue=false;
     }
@@ -13,27 +13,61 @@
         SearchLoop:         for (        InputFormat format : drawing.getInputFormats()) {
           for (          DataFlavor flavor : t.getTransferDataFlavors()) {
             if (format.isDataFlavorSupported(flavor)) {
-              CompositeEdit ce=new CompositeEdit("Paste");
-              drawing.fireUndoableEditHappened(ce);
-              java.util.List<Figure> toBeSelected=format.readFigures(t);
+              final java.util.List<Figure> importedFigures=format.readFigures(t);
               view.clearSelection();
-              drawing.addAll(toBeSelected);
-              view.addToSelection(toBeSelected);
-              drawing.fireUndoableEditHappened(ce);
+              drawing.addAll(importedFigures);
+              view.addToSelection(importedFigures);
+              drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
+                public String getPresentationName(){
+                  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+                  return labels.getString("editPaste");
+                }
+                public void undo() throws CannotUndoException {
+                  super.undo();
+                  drawing.removeAll(importedFigures);
+                }
+                public void redo() throws CannotRedoException {
+                  super.redo();
+                  drawing.addAll(importedFigures);
+                }
+              }
+);
               retValue=true;
               break SearchLoop;
             }
           }
         }
         if (retValue == false && t.isDataFlavorSupported(DataFlavor.javaFileListFlavor)) {
-          List<File> files=(List<File>)t.getTransferData(DataFlavor.javaFileListFlavor);
+          java.util.List<File> files=(java.util.List<File>)t.getTransferData(DataFlavor.javaFileListFlavor);
           retValue=true;
+          final java.util.List<Figure> storedFigures=new LinkedList<Figure>(drawing.getFigures());
           for (          File file : files) {
             FileFormatLoop:             for (            InputFormat format : drawing.getInputFormats()) {
               if (file.isFile() && format.getFileFilter().accept(file)) {
                 format.read(file,drawing);
               }
             }
+          }
+          final LinkedList<Figure> importedFigures=new LinkedList<Figure>(drawing.getFigures());
+          importedFigures.removeAll(storedFigures);
+          if (importedFigures.size() > 0) {
+            view.clearSelection();
+            view.addToSelection(importedFigures);
+            drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
+              public String getPresentationName(){
+                ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+                return labels.getString("editPaste");
+              }
+              public void undo() throws CannotUndoException {
+                super.undo();
+                drawing.removeAll(importedFigures);
+              }
+              public void redo() throws CannotRedoException {
+                super.redo();
+                drawing.addAll(importedFigures);
+              }
+            }
+);
           }
         }
       }

@@ -1,6 +1,5 @@
 {
   figures.remove(figure);
   figure.removeFigureListener(figureHandler);
-  figure.removeUndoableEditListener(figureHandler);
   invalidateSortOrder();
 }

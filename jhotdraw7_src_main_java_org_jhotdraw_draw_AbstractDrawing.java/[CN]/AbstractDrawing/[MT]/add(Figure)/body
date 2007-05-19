@@ -3,22 +3,5 @@
   basicAdd(index,figure);
   figure.addNotify(this);
   fireFigureAdded(figure);
-  fireUndoableEditHappened(new AbstractUndoableEdit(){
-    public String getPresentationName(){
-      return "Figur einf\u00fcgen";
-    }
-    public void undo() throws CannotUndoException {
-      super.undo();
-      basicRemove(figure);
-      figure.removeNotify(AbstractDrawing.this);
-      fireFigureRemoved(figure);
-    }
-    public void redo() throws CannotUndoException {
-      super.redo();
-      basicAdd(index,figure);
-      figure.addNotify(AbstractDrawing.this);
-      fireFigureAdded(figure);
-    }
-  }
-);
+  fireAreaInvalidated(figure.getDrawingArea());
 }

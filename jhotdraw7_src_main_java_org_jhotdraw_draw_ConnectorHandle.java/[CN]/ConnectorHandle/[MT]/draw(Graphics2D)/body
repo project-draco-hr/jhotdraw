@@ -1,0 +1,13 @@
+{
+  if (createdConnection == null) {
+    drawCircle(g,Color.blue,Color.blue.darker());
+  }
+ else {
+    drawCircle(g,Color.GREEN,Color.BLACK);
+    Point p=view.drawingToView(createdConnection.getEndPoint());
+    g.setColor(Color.GREEN);
+    g.fillOval(p.x - ANCHOR_WIDTH / 2,p.y - ANCHOR_WIDTH / 2,ANCHOR_WIDTH,ANCHOR_WIDTH);
+    g.setColor(Color.BLACK);
+    g.drawOval(p.x - ANCHOR_WIDTH / 2,p.y - ANCHOR_WIDTH / 2,ANCHOR_WIDTH,ANCHOR_WIDTH);
+  }
+}

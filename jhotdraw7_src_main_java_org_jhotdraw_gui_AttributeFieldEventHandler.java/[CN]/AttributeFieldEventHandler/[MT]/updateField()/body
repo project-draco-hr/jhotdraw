@@ -1,0 +1,3 @@
+{
+  field.updateField(getCurrentView().getSelectedFigures());
+}

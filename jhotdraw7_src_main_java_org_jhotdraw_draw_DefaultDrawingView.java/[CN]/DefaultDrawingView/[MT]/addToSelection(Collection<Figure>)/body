@@ -1,9 +1,12 @@
 {
-  selectedFigures.addAll(figures);
-  for (  Figure f : figures) {
-    f.addFigureListener(handleInvalidator);
+  Set<Figure> oldSelection=new HashSet<Figure>(selectedFigures);
+  if (selectedFigures.addAll(figures)) {
+    Set<Figure> newSelection=new HashSet<Figure>(selectedFigures);
+    for (    Figure f : figures) {
+      f.addFigureListener(handleInvalidator);
+    }
+    invalidateHandles();
+    fireSelectionChanged(oldSelection,newSelection);
+    repaint();
   }
-  invalidateHandles();
-  fireSelectionChanged();
-  repaint();
 }

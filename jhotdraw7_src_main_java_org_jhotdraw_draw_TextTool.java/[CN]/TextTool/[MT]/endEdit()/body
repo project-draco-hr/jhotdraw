@@ -3,10 +3,6 @@
     typingTarget.willChange();
     if (textField.getText().length() > 0) {
       typingTarget.setText(textField.getText());
-      if (createdFigure != null) {
-        getDrawing().fireUndoableEditHappened(creationEdit);
-        createdFigure=null;
-      }
     }
  else {
       if (createdFigure != null) {

@@ -1,0 +1,10 @@
+{
+  for (  Figure f : evt.getOldSelection()) {
+    f.removeFigureListener(this);
+  }
+  for (  Figure f : evt.getNewSelection()) {
+    f.addFigureListener(this);
+  }
+  updateFieldEnabledState();
+  updateField();
+}

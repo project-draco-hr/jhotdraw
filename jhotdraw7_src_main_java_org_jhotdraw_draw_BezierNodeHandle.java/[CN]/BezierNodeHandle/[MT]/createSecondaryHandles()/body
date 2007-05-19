@@ -1,5 +1,5 @@
 {
-  BezierFigure f=getBezierFigure();
+  BezierFigure f=getOwner();
   LinkedList<Handle> list=new LinkedList<Handle>();
   BezierPath.Node v=f.getNode(index);
   if ((v.mask & BezierPath.C1_MASK) != 0 && (index != 0 || f.isClosed())) {

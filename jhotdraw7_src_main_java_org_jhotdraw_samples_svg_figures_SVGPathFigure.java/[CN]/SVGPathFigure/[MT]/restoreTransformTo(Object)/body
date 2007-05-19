@@ -6,4 +6,6 @@
     getChild(i).setBezierPath(paths.get(i));
   }
   TRANSFORM.setClone(this,(AffineTransform)restoreData[1]);
+  FILL_GRADIENT.setClone(this,(Gradient)restoreData[2]);
+  STROKE_GRADIENT.setClone(this,(Gradient)restoreData[3]);
 }

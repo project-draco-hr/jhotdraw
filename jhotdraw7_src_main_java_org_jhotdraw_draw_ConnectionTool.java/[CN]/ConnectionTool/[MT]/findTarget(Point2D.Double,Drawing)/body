@@ -1,8 +1,0 @@
-{
-  Figure target=findConnectableFigure(p,drawing);
-  Figure start=getStartConnector().getOwner();
-  if (target != null && getConnection() != null && canConnect(target) && canConnect(start,target)) {
-    return target;
-  }
-  return null;
-}

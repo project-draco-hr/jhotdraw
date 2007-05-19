@@ -1,3 +1,0 @@
-{
-  return toLength(elem,str,Math.min(viewportStack.peek().widthPercentFactor,viewportStack.peek().heightPercentFactor)) * viewportStack.peek().numberFactor;
-}

@@ -1,5 +1,5 @@
 {
-  BezierFigure figure=getBezierFigure();
+  BezierFigure figure=getOwner();
   figure.willChange();
   Point2D.Double p=view.getConstrainer().constrainPoint(view.viewToDrawing(lead));
   if (TRANSFORM.get(getTransformOwner()) != null) {

@@ -1,0 +1,31 @@
+{
+  String name=evt.getPropertyName();
+  Object src=evt.getSource();
+  if (src == editor) {
+    if (name == DrawingEditor.PROP_FOCUSED_VIEW && getView() != null) {
+      if (evt.getOldValue() != null) {
+        DrawingView view=((DrawingView)evt.getOldValue());
+        for (        Figure f : view.getSelectedFigures()) {
+          f.removeFigureListener(this);
+        }
+        view.removeFigureSelectionListener(this);
+        view.removePropertyChangeListener(this);
+      }
+      if (evt.getNewValue() != null) {
+        DrawingView view=((DrawingView)evt.getNewValue());
+        for (        Figure f : view.getSelectedFigures()) {
+          f.addFigureListener(this);
+        }
+        view.addFigureSelectionListener(this);
+        view.addPropertyChangeListener(this);
+      }
+      updateFieldEnabledState();
+      updateField();
+    }
+  }
+ else   if (src == getCurrentView()) {
+    if (name == "enabled") {
+      updateFieldEnabledState();
+    }
+  }
+}

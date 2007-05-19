@@ -1,6 +1,6 @@
 {
-  BezierFigure f=getBezierFigure();
-  int size=f.getPointCount();
+  BezierFigure f=getOwner();
+  int size=f.getNodeCount();
   boolean isClosed=f.isClosed();
   if (size > index) {
     BezierPath.Node v=f.getNode(index);

@@ -1,0 +1,37 @@
+{
+  Point2D.Double p=view.viewToDrawing(lead);
+  view.getConstrainer().constrainPoint(p);
+  targetConnector=findConnectionTarget(p,view.getDrawing());
+  if (targetConnector != null) {
+    final Drawing drawing=view.getDrawing();
+    final ConnectionFigure createdConnection=getCreatedConnection();
+    getCreatedConnection().setStartConnector(connector);
+    getCreatedConnection().setEndConnector(targetConnector);
+    getCreatedConnection().updateConnection();
+    view.clearSelection();
+    view.addToSelection(createdConnection);
+    view.getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
+      @Override public String getPresentationName(){
+        ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+        return labels.getString("createConnectionFigure");
+      }
+      @Override public void undo() throws CannotUndoException {
+        super.undo();
+        drawing.remove(createdConnection);
+      }
+      @Override public void redo() throws CannotRedoException {
+        super.redo();
+        drawing.add(createdConnection);
+        view.clearSelection();
+        view.addToSelection(createdConnection);
+      }
+    }
+);
+  }
+ else {
+    view.getDrawing().remove(getCreatedConnection());
+  }
+  targetConnector=null;
+  setConnection(null);
+  setTargetFigure(null);
+}

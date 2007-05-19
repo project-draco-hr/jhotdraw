@@ -1,6 +1,5 @@
 {
   Figure figure=children.remove(index);
   figure.removeFigureListener(childHandler);
-  figure.removeUndoableEditListener(childHandler);
   return figure;
 }

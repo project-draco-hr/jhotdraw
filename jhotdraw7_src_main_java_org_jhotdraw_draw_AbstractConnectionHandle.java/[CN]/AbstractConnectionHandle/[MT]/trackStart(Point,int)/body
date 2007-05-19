@@ -1,0 +1,7 @@
+{
+  savedTarget=getTarget();
+  start=anchor;
+  savedLiner=getOwner().getLiner();
+  getOwner().setLiner(null);
+  fireHandleRequestSecondaryHandles();
+}

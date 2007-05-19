@@ -1,28 +1,4 @@
 {
-  willChange();
-  final double oldWidth=roundrect.getArcWidth();
-  final double oldHeight=roundrect.getArcHeight();
   roundrect.arcwidth=Math.max(0d,Math.min(roundrect.width,w * 2d));
   roundrect.archeight=Math.max(0d,Math.min(roundrect.height,h * 2d));
-  fireUndoableEditHappened(new AbstractUndoableEdit(){
-    public String getPresentationName(){
-      return "Arc";
-    }
-    public void undo() throws CannotUndoException {
-      super.undo();
-      willChange();
-      roundrect.arcwidth=oldWidth;
-      roundrect.archeight=oldHeight;
-      changed();
-    }
-    public void redo() throws CannotRedoException {
-      super.redo();
-      willChange();
-      roundrect.arcwidth=w * 2d;
-      roundrect.archeight=h * 2d;
-      changed();
-    }
-  }
-);
-  changed();
 }

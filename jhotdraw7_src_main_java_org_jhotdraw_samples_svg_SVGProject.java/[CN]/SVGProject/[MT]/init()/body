@@ -32,4 +32,5 @@
   placardPanel.add(pButton,BorderLayout.EAST);
   scrollPane.add(placardPanel,JScrollPane.LOWER_LEFT_CORNER);
   propertiesPanel.setVisible(prefs.getBoolean("propertiesPanelVisible",false));
+  propertiesPanel.setView(view);
 }

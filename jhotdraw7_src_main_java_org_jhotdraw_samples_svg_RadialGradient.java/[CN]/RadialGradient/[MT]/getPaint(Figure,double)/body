@@ -1,17 +1,6 @@
 {
-  if (stopColors.length == 0) {
+  if (stopColors.length == 0 || r <= 0) {
     return new Color(0xa0a0a000,true);
-  }
-  Point2D.Double cp;
-  double rr;
-  if (isRelativeToFigureBounds) {
-    Rectangle2D.Double bounds=f.getBounds();
-    cp=new Point2D.Double(bounds.x + bounds.width * cx,bounds.y + bounds.height * cy);
-    rr=r * Math.sqrt(bounds.width * bounds.width / 2d + bounds.height * bounds.height / 2d);
-  }
- else {
-    cp=new Point2D.Double(cx,cy);
-    rr=r;
   }
   Color[] colors=new Color[stopColors.length];
   float[] fractions=new float[stopColors.length];
@@ -19,17 +8,20 @@
     fractions[i]=(float)stopOffsets[i];
     colors[i]=new Color((stopColors[i].getRGB() & 0xffffff) | ((int)(opacity * stopOpacities[i] * 255) << 24),true);
   }
-  if (rr <= 0) {
-    System.err.println("RadialGradient: radius should be > 0");
-    return new Color(0xa0a0aa00,true);
+  Point2D.Double cp, fp;
+  double rr;
+  cp=new Point2D.Double(cx,cy);
+  fp=new Point2D.Double(fx,fy);
+  rr=r;
+  AffineTransform t=transform;
+  if (isRelativeToFigureBounds) {
+    if (!t.isIdentity())     System.out.println("RadialGradient " + hashCode() + " t="+ t);
+    t=new AffineTransform();
+    Rectangle2D.Double bounds=f.getBounds();
+    t.translate(bounds.x,bounds.y);
+    t.scale(bounds.width,bounds.height);
   }
-  Point2D.Double focus=cp;
   org.apache.batik.ext.awt.RadialGradientPaint gp;
-  if (transform != null) {
-    gp=new org.apache.batik.ext.awt.RadialGradientPaint(cp,(float)rr,focus,fractions,colors,RadialGradientPaint.NO_CYCLE,RadialGradientPaint.SRGB,transform);
-  }
- else {
-    gp=new org.apache.batik.ext.awt.RadialGradientPaint(cp,(float)rr,focus,fractions,colors);
-  }
+  gp=new org.apache.batik.ext.awt.RadialGradientPaint(cp,(float)rr,fp,fractions,colors,RadialGradientPaint.NO_CYCLE,RadialGradientPaint.SRGB,t);
   return gp;
 }

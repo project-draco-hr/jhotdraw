@@ -8,8 +8,8 @@ case 0:
         handles.add(new BezierNodeHandle(this,i));
       }
     }
-  handles.add(new ChangeConnectionStartHandle(this));
-handles.add(new ChangeConnectionEndHandle(this));
+  handles.add(new ConnectionStartHandle(this));
+handles.add(new ConnectionEndHandle(this));
 break;
 }
 return handles;

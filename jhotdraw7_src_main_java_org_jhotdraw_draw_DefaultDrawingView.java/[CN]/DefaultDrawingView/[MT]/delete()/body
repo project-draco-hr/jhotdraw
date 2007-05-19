@@ -1,5 +1,35 @@
 {
-  ArrayList<Figure> toBeDeleted=new ArrayList<Figure>(getSelectedFigures());
+  final ArrayList<Figure> deletedFigures=new ArrayList<Figure>(getSelectedFigures());
   clearSelection();
-  getDrawing().removeAll(toBeDeleted);
+  DrawingListener removeListener=new DrawingListener(){
+    public void areaInvalidated(    DrawingEvent e){
+    }
+    public void figureAdded(    DrawingEvent e){
+    }
+    public void figureRemoved(    DrawingEvent e){
+      if (!deletedFigures.contains(e.getFigure())) {
+        deletedFigures.add(e.getFigure());
+      }
+    }
+  }
+;
+  getDrawing().addDrawingListener(removeListener);
+  getDrawing().removeAll(deletedFigures);
+  getDrawing().removeDrawingListener(removeListener);
+  getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
+    public String getPresentationName(){
+      ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+      return labels.getString("delete");
+    }
+    public void undo() throws CannotUndoException {
+      super.undo();
+      getDrawing().addAll(deletedFigures);
+      addToSelection(deletedFigures);
+    }
+    public void redo() throws CannotRedoException {
+      super.redo();
+      getDrawing().removeAll(deletedFigures);
+    }
+  }
+);
 }

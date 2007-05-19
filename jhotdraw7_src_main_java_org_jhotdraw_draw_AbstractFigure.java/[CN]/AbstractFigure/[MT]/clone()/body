@@ -2,8 +2,6 @@
   try {
     AbstractFigure that=(AbstractFigure)super.clone();
     that.listenerList=new EventListenerList();
-    that.isConnectorsVisible=false;
-    that.courtingConnection=null;
     return that;
   }
  catch (  CloneNotSupportedException e) {

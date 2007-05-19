@@ -1,5 +1,0 @@
-{
-  setAttributeEnabled(STROKE_TYPE,true);
-  STROKE_TYPE.set(this,(start == end) ? StrokeType.DOUBLE : StrokeType.BASIC);
-  setAttributeEnabled(STROKE_TYPE,false);
-}

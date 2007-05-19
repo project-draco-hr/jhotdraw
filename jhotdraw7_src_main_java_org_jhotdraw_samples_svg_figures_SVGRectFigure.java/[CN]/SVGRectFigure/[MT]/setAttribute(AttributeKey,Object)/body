@@ -1,6 +1,0 @@
-{
-  if (key == SVGAttributeKeys.TRANSFORM) {
-    invalidate();
-  }
-  super.setAttribute(key,newValue);
-}

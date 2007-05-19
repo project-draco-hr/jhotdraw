@@ -8,5 +8,9 @@
     throw error;
   }
   this.prototypeAttributes=attributes;
-  this.name=name;
+  if (name == null) {
+    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+    name=labels.getString("createFigure");
+  }
+  this.presentationName=name;
 }

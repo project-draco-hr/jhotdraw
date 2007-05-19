@@ -55,6 +55,6 @@
   IS_STROKE_MITER_LIMIT_FACTOR.set(a,false);
   objectValue=readInheritAttribute(elem,"stroke-opacity","1");
   STROKE_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
-  doubleValue=toScaledNumber(elem,readInheritAttribute(elem,"stroke-width","1"));
+  doubleValue=toNumber(elem,readInheritAttribute(elem,"stroke-width","1"));
   STROKE_WIDTH.set(a,doubleValue);
 }

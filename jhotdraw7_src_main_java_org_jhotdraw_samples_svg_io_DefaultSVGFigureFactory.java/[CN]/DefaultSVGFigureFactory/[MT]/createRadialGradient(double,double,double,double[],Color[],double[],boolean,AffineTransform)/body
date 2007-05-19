@@ -1,8 +1,0 @@
-{
-  RadialGradient g=new RadialGradient();
-  g.setGradientCircle(cx,cy,r);
-  g.setStops(stopOffsets,stopColors,stopOpacities);
-  g.setRelativeToFigureBounds(isRelativeToFigureBounds);
-  g.transform(tx);
-  return g;
-}

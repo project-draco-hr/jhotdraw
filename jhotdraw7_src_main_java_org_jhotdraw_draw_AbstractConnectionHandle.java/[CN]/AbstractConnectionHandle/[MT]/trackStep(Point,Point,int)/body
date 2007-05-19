@@ -1,0 +1,12 @@
+{
+  Point2D.Double p=view.viewToDrawing(lead);
+  view.getConstrainer().constrainPoint(p);
+  Figure f=findConnectableFigure(p,view.getDrawing());
+  if (f != null) {
+    Connector aTarget=findConnectionTarget(p,view.getDrawing());
+    if (aTarget != null) {
+      p=aTarget.getAnchor();
+    }
+  }
+  setLocation(p);
+}

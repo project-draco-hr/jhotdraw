@@ -3,14 +3,14 @@
     if (startConnector != null) {
       getStartFigure().removeFigureListener(connectionHandler);
       if (getEndFigure() != null) {
-        handleDisconnect(getStartFigure(),getEndFigure());
+        handleDisconnect(getStartConnector(),getEndConnector());
       }
     }
     startConnector=newStart;
     if (startConnector != null) {
       getStartFigure().addFigureListener(connectionHandler);
       if (getStartFigure() != null && getEndFigure() != null) {
-        handleConnect(getStartFigure(),getEndFigure());
+        handleConnect(getStartConnector(),getEndConnector());
         updateConnection();
       }
     }

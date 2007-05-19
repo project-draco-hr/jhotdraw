@@ -18,7 +18,4 @@
   if (TRANSFORM.get(this) != null) {
     g.setTransform(savedTransform);
   }
-  if (isConnectorsVisible()) {
-    drawConnectors(g);
-  }
 }

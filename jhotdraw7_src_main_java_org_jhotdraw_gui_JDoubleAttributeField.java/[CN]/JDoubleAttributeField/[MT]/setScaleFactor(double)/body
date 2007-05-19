@@ -1,3 +1,4 @@
 {
   this.scaleFactor=newValue;
+  updateField(eventHandler.getCurrentSelection());
 }

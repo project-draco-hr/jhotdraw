@@ -1,6 +1,5 @@
 {
   figures.add(index,figure);
   figure.addFigureListener(figureHandler);
-  figure.addUndoableEditListener(figureHandler);
   invalidateSortOrder();
 }

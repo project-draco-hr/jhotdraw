@@ -1,8 +1,11 @@
 {
   if (DEBUG)   System.out.println("DefaultDrawingView" + ".addToSelection(" + figure + ")");
-  selectedFigures.add(figure);
-  figure.addFigureListener(handleInvalidator);
-  invalidateHandles();
-  fireSelectionChanged();
-  repaint();
+  Set<Figure> oldSelection=new HashSet<Figure>(selectedFigures);
+  if (selectedFigures.add(figure)) {
+    figure.addFigureListener(handleInvalidator);
+    Set<Figure> newSelection=new HashSet<Figure>(selectedFigures);
+    invalidateHandles();
+    fireSelectionChanged(oldSelection,newSelection);
+    repaint();
+  }
 }

@@ -1,8 +1,8 @@
 {
   ConnectionFigure f=(ConnectionFigure)prototype.clone();
   getEditor().applyDefaultAttributesTo(f);
-  if (attributes != null) {
-    for (    Map.Entry<AttributeKey,Object> entry : attributes.entrySet()) {
+  if (prototypeAttributes != null) {
+    for (    Map.Entry<AttributeKey,Object> entry : prototypeAttributes.entrySet()) {
       f.setAttribute((AttributeKey)entry.getKey(),entry.getValue());
     }
   }

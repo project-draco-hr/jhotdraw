@@ -3,9 +3,6 @@
     if (isConnectToDecorator) {
       out.addAttribute("connectToDecorator",true);
     }
-    if (isVisible) {
-      out.addAttribute("visible",true);
-    }
   }
   out.openElement("Owner");
   out.writeObject(getOwner());

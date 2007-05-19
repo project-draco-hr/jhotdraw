@@ -6,7 +6,6 @@
     Figure thatChild=(Figure)thisChild.clone();
     that.children.add(thatChild);
     thatChild.addFigureListener(that.childHandler);
-    thatChild.addUndoableEditListener(that.childHandler);
   }
   return that;
 }

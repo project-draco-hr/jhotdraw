@@ -1,0 +1,32 @@
+{
+  if (isUpdatingField++ == 0) {
+    if (currentSelection.isEmpty() || attributeKey == null) {
+      setValue(0d);
+    }
+ else {
+      Double fieldValue=null;
+      boolean isFirst=true;
+      isMultipleValues=false;
+      for (      Figure f : currentSelection) {
+        if (isFirst) {
+          isFirst=false;
+          fieldValue=attributeKey.get(f);
+        }
+ else {
+          Double figureValue=attributeKey.get(f);
+          if (figureValue == fieldValue || figureValue != null && fieldValue != null && figureValue.equals(fieldValue)) {
+          }
+ else {
+            fieldValue=null;
+            isMultipleValues=true;
+          }
+        }
+      }
+      if (fieldValue != null) {
+        setValue(fieldValue * scaleFactor);
+      }
+    }
+    repaint();
+  }
+  isUpdatingField--;
+}

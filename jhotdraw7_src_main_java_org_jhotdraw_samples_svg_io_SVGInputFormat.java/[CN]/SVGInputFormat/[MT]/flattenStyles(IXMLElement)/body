@@ -1,5 +1,5 @@
 {
-  if (elem.getName() != null && elem.getName().equals("style") && readAttribute(elem,"type","").equals("text/css")) {
+  if (elem.getName() != null && elem.getName().equals("style") && readAttribute(elem,"type","").equals("text/css") && elem.getContent() != null) {
     CSSParser cssParser=new CSSParser();
     cssParser.parse(elem.getContent(),styleManager);
   }

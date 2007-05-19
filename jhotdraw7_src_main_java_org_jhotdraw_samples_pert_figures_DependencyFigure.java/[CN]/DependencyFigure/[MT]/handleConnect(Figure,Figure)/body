@@ -1,6 +1,0 @@
-{
-  TaskFigure sf=(TaskFigure)start;
-  TaskFigure ef=(TaskFigure)end;
-  sf.addDependency(this);
-  ef.addDependency(this);
-}

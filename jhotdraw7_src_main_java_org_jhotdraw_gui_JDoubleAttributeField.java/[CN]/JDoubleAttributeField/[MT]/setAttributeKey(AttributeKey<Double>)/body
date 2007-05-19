@@ -1,3 +1,6 @@
 {
-  this.attributeKey=attributeKey;
+  AttributeKey<Double> oldValue=attributeKey;
+  attributeKey=newValue;
+  updateField(eventHandler.getCurrentSelection());
+  firePropertyChange("attributeKey",oldValue,newValue);
 }

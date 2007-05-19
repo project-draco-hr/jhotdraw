@@ -1,6 +1,7 @@
 {
   if (forbiddenAttributes == null || !forbiddenAttributes.contains(key)) {
-    attributes.put(key,newValue);
+    Object oldValue=attributes.put(key,newValue);
+    setAttributeOnChildren(key,newValue);
+    fireAttributeChanged(key,oldValue,newValue);
   }
-  setAttributeOnChildren(key,newValue);
 }

@@ -1,6 +1,6 @@
 {
   BezierFigure f=getBezierFigure();
-  if (f.getPointCount() > index) {
+  if (f.getNodeCount() > index) {
     BezierPath.Node v=f.getNode(index);
     if (v.keepColinear && v.mask == BezierPath.C1C2_MASK && (index > 0 && index < f.getNodeCount() - 1 || f.isClosed())) {
       drawCircle(g,HANDLE_STROKE_COLOR,HANDLE_FILL_COLOR);

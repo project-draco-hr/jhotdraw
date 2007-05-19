@@ -2,6 +2,5 @@
   figures.remove(figure);
   quadTree.remove(figure);
   figure.removeFigureListener(figureHandler);
-  figure.removeUndoableEditListener(figureHandler);
   needsSorting=true;
 }

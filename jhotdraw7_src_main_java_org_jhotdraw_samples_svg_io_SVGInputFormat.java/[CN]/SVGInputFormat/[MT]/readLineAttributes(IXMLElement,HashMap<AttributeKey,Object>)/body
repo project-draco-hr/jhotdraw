@@ -1,0 +1,60 @@
+{
+  Object objectValue;
+  String value;
+  double doubleValue;
+  objectValue=toPaint(elem,readInheritAttribute(elem,"fill","none"));
+  if (objectValue instanceof Color) {
+    FILL_COLOR.set(a,(Color)objectValue);
+  }
+ else   if (objectValue instanceof Gradient) {
+    FILL_GRADIENT.setClone(a,(Gradient)objectValue);
+  }
+ else   if (objectValue == null) {
+    FILL_COLOR.set(a,null);
+  }
+ else {
+    FILL_COLOR.set(a,null);
+    if (DEBUG)     System.out.println("SVGInputFormat not implemented  fill=" + objectValue);
+  }
+  objectValue=readInheritAttribute(elem,"fill-opacity","1");
+  FILL_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
+  value=readInheritAttribute(elem,"fill-rule","nonzero");
+  WINDING_RULE.set(a,SVG_FILL_RULES.get(value));
+  objectValue=toPaint(elem,readInheritAttribute(elem,"stroke","black"));
+  if (objectValue instanceof Color) {
+    STROKE_COLOR.set(a,(Color)objectValue);
+  }
+ else   if (objectValue instanceof Gradient) {
+    STROKE_GRADIENT.setClone(a,(Gradient)objectValue);
+  }
+ else   if (objectValue == null) {
+    STROKE_COLOR.set(a,null);
+  }
+ else {
+    STROKE_COLOR.set(a,null);
+    if (DEBUG)     System.out.println("SVGInputFormat not implemented  stroke=" + objectValue);
+  }
+  value=readInheritAttribute(elem,"stroke-dasharray","none");
+  if (!value.equals("none")) {
+    String[] values=toWSOrCommaSeparatedArray(value);
+    double[] dashes=new double[values.length];
+    for (int i=0; i < values.length; i++) {
+      dashes[i]=toNumber(elem,values[i]);
+    }
+    STROKE_DASHES.set(a,dashes);
+  }
+  doubleValue=toNumber(elem,readInheritAttribute(elem,"stroke-dashoffset","0"));
+  STROKE_DASH_PHASE.set(a,doubleValue);
+  IS_STROKE_DASH_FACTOR.set(a,false);
+  value=readInheritAttribute(elem,"stroke-linecap","butt");
+  STROKE_CAP.set(a,SVG_STROKE_LINECAPS.get(value));
+  value=readInheritAttribute(elem,"stroke-linejoin","miter");
+  STROKE_JOIN.set(a,SVG_STROKE_LINEJOINS.get(value));
+  doubleValue=toDouble(elem,readInheritAttribute(elem,"stroke-miterlimit","4"),4d,1d,Double.MAX_VALUE);
+  STROKE_MITER_LIMIT.set(a,doubleValue);
+  IS_STROKE_MITER_LIMIT_FACTOR.set(a,false);
+  objectValue=readInheritAttribute(elem,"stroke-opacity","1");
+  STROKE_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
+  doubleValue=toNumber(elem,readInheritAttribute(elem,"stroke-width","1"));
+  STROKE_WIDTH.set(a,doubleValue);
+}

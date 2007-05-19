@@ -1,0 +1,12 @@
+{
+  if (editor != null) {
+    editor.removePropertyChangeListener(this);
+    if (getCurrentView() != null) {
+      getCurrentView().removeFigureSelectionListener(this);
+    }
+  }
+  editor=newValue;
+  if (editor != null) {
+    editor.addPropertyChangeListener(this);
+  }
+}

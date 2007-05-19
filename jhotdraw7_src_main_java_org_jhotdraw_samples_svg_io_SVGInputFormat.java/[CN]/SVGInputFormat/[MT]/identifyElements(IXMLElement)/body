@@ -1,0 +1,7 @@
+{
+  identifiedElements.put(elem.getAttribute("id"),elem);
+  identifiedElements.put(elem.getAttribute("xml:id"),elem);
+  for (  IXMLElement child : elem.getChildren()) {
+    identifyElements(child);
+  }
+}

@@ -1,8 +1,0 @@
-{
-  if (isVisible) {
-    Rectangle2D.Double bounds=getBounds();
-    Ellipse2D.Double circle=new Ellipse2D.Double(bounds.x + bounds.width / 2 - 3,bounds.y + bounds.height / 2 - 3,6,6);
-    g.setColor(Color.blue);
-    g.fill(circle);
-  }
-}

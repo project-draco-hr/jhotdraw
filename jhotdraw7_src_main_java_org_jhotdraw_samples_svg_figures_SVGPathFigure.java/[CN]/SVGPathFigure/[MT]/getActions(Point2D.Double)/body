@@ -4,7 +4,10 @@
   if (TRANSFORM.get(this) != null) {
     actions.add(new AbstractAction(labels.getString("removeTransform")){
       public void actionPerformed(      ActionEvent evt){
-        TRANSFORM.set(SVGPathFigure.this,null);
+        ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.samples.svg.Labels");
+        SVGPathFigure.this.willChange();
+        fireUndoableEditHappened(TRANSFORM.setUndoable(SVGPathFigure.this,null,labels));
+        SVGPathFigure.this.changed();
       }
     }
 );
@@ -41,8 +44,9 @@
   actions.add(new AbstractAction(labels.getString("closePath")){
     public void actionPerformed(    ActionEvent evt){
       for (      Figure child : getChildren()) {
-        SVGBezierFigure b=(SVGBezierFigure)child;
-        b.setClosed(true);
+        SVGPathFigure.this.willChange();
+        getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,true,labels));
+        SVGPathFigure.this.changed();
       }
     }
   }
@@ -50,21 +54,27 @@
   actions.add(new AbstractAction(labels.getString("openPath")){
     public void actionPerformed(    ActionEvent evt){
       for (      Figure child : getChildren()) {
-        SVGBezierFigure b=(SVGBezierFigure)child;
-        b.setClosed(false);
+        SVGPathFigure.this.willChange();
+        getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,false,labels));
+        SVGPathFigure.this.changed();
       }
     }
   }
 );
   actions.add(new AbstractAction(labels.getString("windingEvenOdd")){
     public void actionPerformed(    ActionEvent evt){
-      WINDING_RULE.set(SVGPathFigure.this,WindingRule.EVEN_ODD);
+      SVGPathFigure.this.willChange();
+      getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.EVEN_ODD,labels));
+      SVGPathFigure.this.changed();
     }
   }
 );
   actions.add(new AbstractAction(labels.getString("windingNonZero")){
     public void actionPerformed(    ActionEvent evt){
       WINDING_RULE.set(SVGPathFigure.this,WindingRule.NON_ZERO);
+      SVGPathFigure.this.willChange();
+      getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.EVEN_ODD,labels));
+      SVGPathFigure.this.changed();
     }
   }
 );

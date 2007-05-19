@@ -1,7 +1,6 @@
 {
   if (this.presentationFigure != null) {
     this.presentationFigure.removeFigureListener(presentationFigureHandler);
-    this.presentationFigure.removeUndoableEditListener(presentationFigureHandler);
     if (getDrawing() != null) {
       this.presentationFigure.removeNotify(getDrawing());
     }
@@ -9,7 +8,6 @@
   this.presentationFigure=newPresentationFigure;
   if (this.presentationFigure != null) {
     this.presentationFigure.addFigureListener(presentationFigureHandler);
-    this.presentationFigure.addUndoableEditListener(presentationFigureHandler);
     if (getDrawing() != null) {
       this.presentationFigure.addNotify(getDrawing());
     }

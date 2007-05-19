@@ -3,7 +3,15 @@
   readCoreAttributes(elem,a);
   readTransformAttribute(elem,a);
   readOpacityAttribute(elem,a);
-  readShapeAttributes(elem,a);
+  readLineAttributes(elem,a);
+  if (FILL_COLOR.get(a) != null && STROKE_COLOR.get(a) == null) {
+    STROKE_COLOR.set(a,FILL_COLOR.get(a));
+  }
+  if (FILL_GRADIENT.get(a) != null && STROKE_GRADIENT.get(a) == null) {
+    STROKE_GRADIENT.set(a,FILL_GRADIENT.get(a));
+  }
+  FILL_COLOR.set(a,null);
+  FILL_GRADIENT.set(a,null);
   double x1=toNumber(elem,readAttribute(elem,"x1","0"));
   double y1=toNumber(elem,readAttribute(elem,"y1","0"));
   double x2=toNumber(elem,readAttribute(elem,"x2","0"));

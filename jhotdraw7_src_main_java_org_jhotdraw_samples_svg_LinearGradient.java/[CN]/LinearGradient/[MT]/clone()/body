@@ -4,6 +4,7 @@
     that.stopOffsets=this.stopOffsets.clone();
     that.stopColors=this.stopColors.clone();
     that.stopOpacities=this.stopOpacities.clone();
+    that.transform=(AffineTransform)this.transform.clone();
     return that;
   }
  catch (  CloneNotSupportedException ex) {

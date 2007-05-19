@@ -1,8 +1,10 @@
 {
   if (getSelectionCount() > 0) {
+    Set<Figure> oldSelection=new HashSet<Figure>(selectedFigures);
     selectedFigures.clear();
+    Set<Figure> newSelection=new HashSet<Figure>(selectedFigures);
     invalidateHandles();
-    fireSelectionChanged();
+    fireSelectionChanged(oldSelection,newSelection);
   }
   repaint();
 }

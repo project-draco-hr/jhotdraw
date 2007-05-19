@@ -14,7 +14,4 @@
       }
     }
   }
-  if (isConnectorsVisible()) {
-    drawConnectors(g);
-  }
 }

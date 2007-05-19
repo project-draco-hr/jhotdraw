@@ -1,8 +1,0 @@
-{
-  for (  Figure f : drawing.getFiguresFrontToBack()) {
-    if (f != null && (f instanceof ConnectionFigure)) {
-      return (ConnectionFigure)f;
-    }
-  }
-  return null;
-}

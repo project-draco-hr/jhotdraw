@@ -1,0 +1,8 @@
+{
+  if (o instanceof RadialGradient) {
+    return equals((RadialGradient)o);
+  }
+ else {
+    return false;
+  }
+}

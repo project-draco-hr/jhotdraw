@@ -1,5 +1,5 @@
 {
-  if (getPointCount() > 1) {
+  if (getNodeCount() > 1) {
     if (START_DECORATION.get(this) != null) {
       BezierPath cp=getCappedPath();
       Point2D.Double p1=path.get(0,0);

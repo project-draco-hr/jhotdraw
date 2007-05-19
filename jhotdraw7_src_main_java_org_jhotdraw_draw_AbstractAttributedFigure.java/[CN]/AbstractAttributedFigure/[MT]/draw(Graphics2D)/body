@@ -19,7 +19,4 @@
     g.setColor(TEXT_COLOR.get(this));
     drawText(g);
   }
-  if (isConnectorsVisible()) {
-    drawConnectors(g);
-  }
 }

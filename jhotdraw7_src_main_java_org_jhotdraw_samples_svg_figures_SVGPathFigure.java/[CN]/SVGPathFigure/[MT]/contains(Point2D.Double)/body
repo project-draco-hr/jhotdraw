@@ -8,7 +8,7 @@
       ex.printStackTrace();
     }
   }
-  boolean isClosed=BezierFigure.CLOSED.get(getChild(0));
+  boolean isClosed=CLOSED.get(getChild(0));
   double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2d);
   if (isClosed || FILL_COLOR.get(this) != null) {
     if (getPath().contains(p)) {

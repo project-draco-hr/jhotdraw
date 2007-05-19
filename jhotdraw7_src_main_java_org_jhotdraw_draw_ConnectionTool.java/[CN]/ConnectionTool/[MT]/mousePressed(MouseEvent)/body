@@ -1,21 +1,22 @@
 {
   super.mousePressed(evt);
-  isPressed=true;
   getView().clearSelection();
-  Point2D.Double ap=viewToDrawing(anchor);
-  getView().getConstrainer().constrainPoint(ap);
-  if (getTargetFigure() != null) {
-    getTargetFigure().setConnectorsVisible(false,null);
+  Point2D.Double startPoint=viewToDrawing(anchor);
+  Figure startFigure=getDrawing().findFigure(startPoint);
+  startConnector=(startFigure == null) ? null : startFigure.findConnector(startPoint,prototype);
+  if (startConnector != null && prototype.canConnect(startConnector)) {
+    Point2D.Double anchor=startConnector.getAnchor();
+    createdFigure=createFigure();
+    createdFigure.setStartPoint(anchor);
+    createdFigure.setEndPoint(anchor);
+    getDrawing().add(createdFigure);
+    Rectangle r=new Rectangle(getView().drawingToView(anchor));
+    r.grow(ANCHOR_WIDTH,ANCHOR_WIDTH);
+    fireAreaInvalidated(r);
   }
-  setTargetFigure(findConnectionStart(ap,getDrawing()));
-  if (getTargetFigure() != null) {
-    setStartConnector(findConnector(ap,target,prototype));
-    if (getStartConnector() != null && canConnect(getTargetFigure())) {
-      Point2D.Double p=getStartConnector().getAnchor();
-      setConnection(createFigure());
-      getConnection().setBounds(p,p);
-      getConnection().addFigureListener(this);
-      setCreatedFigure(getConnection());
-    }
+ else {
+    startConnector=null;
+    createdFigure=null;
   }
+  endConnector=null;
 }

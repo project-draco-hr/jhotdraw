@@ -10,7 +10,7 @@
       CompositeEdit creationEdit=new CompositeEdit("Verbindung erstellen");
       getDrawing().fireUndoableEditHappened(creationEdit);
       getDrawing().add(getConnection());
-      if (getConnection().canConnect(getStartConnector().getOwner(),getEndConnector().getOwner())) {
+      if (getConnection().canConnect(getStartConnector(),getEndConnector())) {
         getConnection().setStartConnector(getStartConnector());
         getConnection().setEndConnector(getEndConnector());
       }

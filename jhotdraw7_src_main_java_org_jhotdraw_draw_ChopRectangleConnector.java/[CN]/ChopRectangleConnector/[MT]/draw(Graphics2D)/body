@@ -1,0 +1,5 @@
+{
+  g.setColor(Color.BLUE);
+  Point2D.Double anchor=getAnchor();
+  g.draw(new Rectangle2D.Double(anchor.x - 1,anchor.y - 1,2,2));
+}

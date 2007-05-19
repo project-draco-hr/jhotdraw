@@ -1,7 +1,7 @@
 {
   Figure endFigure=connection.getEndConnector().getOwner();
   Point2D.Double from;
-  if (connection.getPointCount() <= 2 || connection.getLiner() != null) {
+  if (connection.getNodeCount() <= 3 && connection.getStartFigure() == connection.getEndFigure() || connection.getNodeCount() <= 2 || connection.getLiner() != null) {
     if (connection.getStartConnector() == null) {
       from=connection.getStartPoint();
     }
@@ -15,7 +15,7 @@
     }
   }
  else {
-    from=connection.getPoint(0);
+    from=connection.getPoint(connection.getNodeCount() - 2);
   }
   return chop(endFigure,from);
 }

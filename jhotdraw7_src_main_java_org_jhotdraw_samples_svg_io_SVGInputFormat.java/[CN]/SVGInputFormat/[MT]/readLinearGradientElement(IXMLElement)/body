@@ -1,10 +1,10 @@
 {
   HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
   readCoreAttributes(elem,a);
-  double x1=toNumber(elem,readAttribute(elem,"x1","0"));
-  double y1=toNumber(elem,readAttribute(elem,"y1","0"));
-  double x2=toNumber(elem,readAttribute(elem,"x2","1"));
-  double y2=toNumber(elem,readAttribute(elem,"y2","0"));
+  double x1=toLength(elem,readAttribute(elem,"x1","0"),0.01);
+  double y1=toLength(elem,readAttribute(elem,"y1","0"),0.01);
+  double x2=toLength(elem,readAttribute(elem,"x2","1"),0.01);
+  double y2=toLength(elem,readAttribute(elem,"y2","0"),0.01);
   boolean isRelativeToFigureBounds=readAttribute(elem,"gradientUnits","objectBoundingBox").equals("objectBoundingBox");
   ArrayList<IXMLElement> stops=elem.getChildrenNamed("stop",SVG_NAMESPACE);
   if (stops.size() == 0) {
@@ -12,7 +12,7 @@
   }
   if (stops.size() == 0) {
     String xlink=readAttribute(elem,"xlink:href","");
-    if (xlink.startsWith("#") && elementObjects.get(identifiedElements.get(xlink.substring(1))) != null) {
+    if (xlink.startsWith("#") && identifiedElements.get(xlink.substring(1)) != null) {
       stops=identifiedElements.get(xlink.substring(1)).getChildrenNamed("stop",SVG_NAMESPACE);
       if (stops.size() == 0) {
         stops=identifiedElements.get(xlink.substring(1)).getChildrenNamed("stop");

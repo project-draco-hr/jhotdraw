@@ -3,8 +3,7 @@
   document.setAttribute("xmlns:xlink","http://www.w3.org/1999/xlink");
   document.setAttribute("version","1.2");
   document.setAttribute("baseProfile","tiny");
-  nextId=0;
-  identifiedElements=new HashMap<IXMLElement,String>();
+  initStorageContext(document);
   defs=new XMLElement("defs");
   document.addChild(defs);
   for (  Figure f : figures) {

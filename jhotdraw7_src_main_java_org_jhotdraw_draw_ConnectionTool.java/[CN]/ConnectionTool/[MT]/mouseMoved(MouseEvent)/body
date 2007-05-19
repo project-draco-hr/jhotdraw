@@ -1,3 +1,3 @@
 {
-  trackConnectors(evt);
+  updateTarget(evt);
 }

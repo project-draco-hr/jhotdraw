@@ -1,5 +1,4 @@
 {
-  view.getDrawing().fireUndoableEditHappened(edit=new CompositeEdit("Mehrfachaenderung"));
-  SVGRectFigure owner=(SVGRectFigure)getOwner();
-  originalArc=view.drawingToView(new Point2D.Double(owner.getArcWidth(),owner.getArcHeight()));
+  SVGRectFigure svgRect=(SVGRectFigure)getOwner();
+  originalArc2D=svgRect.getArc();
 }

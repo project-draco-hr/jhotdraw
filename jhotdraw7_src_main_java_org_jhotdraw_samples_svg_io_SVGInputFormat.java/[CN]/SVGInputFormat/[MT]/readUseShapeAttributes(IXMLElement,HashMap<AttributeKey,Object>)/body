@@ -71,7 +71,7 @@
   }
   objectValue=readInheritAttribute(elem,"stroke-width",null);
   if (objectValue != null) {
-    doubleValue=toScaledNumber(elem,(String)objectValue);
+    doubleValue=toNumber(elem,(String)objectValue);
     STROKE_WIDTH.set(a,doubleValue);
   }
 }

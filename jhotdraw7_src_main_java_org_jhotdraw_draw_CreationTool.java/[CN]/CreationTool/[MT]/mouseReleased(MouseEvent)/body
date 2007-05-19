@@ -3,6 +3,7 @@
     Rectangle2D.Double bounds=createdFigure.getBounds();
     if (bounds.width == 0 && bounds.height == 0) {
       getDrawing().remove(createdFigure);
+      fireToolDone();
     }
  else {
       if (Math.abs(anchor.x - evt.getX()) < minimalSizeTreshold.width && Math.abs(anchor.y - evt.getY()) < minimalSizeTreshold.height) {
@@ -11,12 +12,29 @@
         createdFigure.changed();
       }
       getView().addToSelection(createdFigure);
+      if (createdFigure instanceof CompositeFigure) {
+        ((CompositeFigure)createdFigure).layout();
+      }
+      final Figure addedFigure=createdFigure;
+      final Drawing addedDrawing=getDrawing();
+      getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
+        public String getPresentationName(){
+          return presentationName;
+        }
+        public void undo() throws CannotUndoException {
+          super.undo();
+          addedDrawing.remove(addedFigure);
+        }
+        public void redo() throws CannotRedoException {
+          super.redo();
+          addedDrawing.add(addedFigure);
+        }
+      }
+);
+      creationFinished(createdFigure);
     }
-    if (createdFigure instanceof CompositeFigure) {
-      ((CompositeFigure)createdFigure).layout();
-    }
-    getDrawing().fireUndoableEditHappened(creationEdit);
-    creationFinished(createdFigure);
-    createdFigure=null;
+  }
+ else {
+    fireToolDone();
   }
 }

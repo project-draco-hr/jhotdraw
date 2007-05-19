@@ -1,4 +1,0 @@
-{
-  Point2D.Double p=getLocationOnDrawing();
-  return getOwner().findConnector(p,getConnection());
-}

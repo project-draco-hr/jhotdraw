@@ -1,16 +1,18 @@
 {
   int dx=lead.x - anchor.x;
   int dy=lead.y - anchor.y;
-  SVGRectFigure owner=(SVGRectFigure)getOwner();
+  SVGRectFigure svgRect=(SVGRectFigure)getOwner();
+  svgRect.willChange();
   Point2D.Double p=view.viewToDrawing(lead);
-  if (TRANSFORM.get(owner) != null) {
+  if (TRANSFORM.get(svgRect) != null) {
     try {
-      TRANSFORM.get(owner).inverseTransform(p,p);
+      TRANSFORM.get(svgRect).inverseTransform(p,p);
     }
  catch (    NoninvertibleTransformException ex) {
       if (DEBUG)       ex.printStackTrace();
     }
   }
-  Rectangle2D.Double r=owner.getBounds();
-  owner.setArc(p.x - r.x,p.y - r.y);
+  Rectangle2D.Double r=svgRect.getBounds();
+  svgRect.setArc(p.x - r.x,p.y - r.y);
+  svgRect.changed();
 }

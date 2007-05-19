@@ -8,7 +8,29 @@
       newTracker=createHandleTracker(handle);
     }
  else {
-      Figure figure=view.findFigure(anchor);
+      Figure figure;
+      if ((evt.getModifiersEx() & (InputEvent.ALT_DOWN_MASK | InputEvent.CTRL_DOWN_MASK)) != 0) {
+        figure=view.findFigure(anchor);
+        HashSet<Figure> ignoredFigures=new HashSet<Figure>(view.getSelectedFigures());
+        ignoredFigures.add(figure);
+        Figure figureBehind=view.getDrawing().findFigureBehind(view.viewToDrawing(anchor),ignoredFigures);
+        if (figureBehind != null) {
+          figure=figureBehind;
+        }
+      }
+ else {
+        Point2D.Double p=view.viewToDrawing(anchor);
+        figure=null;
+        for (        Figure f : view.getSelectedFigures()) {
+          if (f.contains(p)) {
+            figure=f;
+            break;
+          }
+        }
+        if (figure == null) {
+          figure=view.findFigure(anchor);
+        }
+      }
       if (figure != null) {
         newTracker=createDragTracker(figure);
       }

@@ -7,27 +7,15 @@
  else {
     c=findTarget(p,getDrawing());
   }
-  if (c != getTargetFigure()) {
-    if (getTargetFigure() != null) {
-      getTargetFigure().setConnectorsVisible(false,null);
-    }
-    setTargetFigure(c);
-    if (getStartConnector() != null) {
-      if (getTargetFigure() != null && (prototype.canConnect(getStartConnector().getOwner(),getTargetFigure()) || prototype.canConnect(getTargetFigure(),getStartConnector().getOwner()))) {
-        getTargetFigure().setConnectorsVisible(true,getConnection());
-      }
-    }
- else {
-      if (getTargetFigure() != null && prototype.canConnect(getTargetFigure())) {
-        getTargetFigure().setConnectorsVisible(true,getConnection());
-      }
-    }
-  }
   Connector cc=null;
   if (c != null) {
     cc=findConnector(p,c,prototype);
   }
   if (cc != getTargetConnector()) {
     setTargetConnector(cc);
+  }
+  if (c != getTargetFigure()) {
+    setTargetFigure(c);
+    Connector targetConnector=getTargetConnector();
   }
 }

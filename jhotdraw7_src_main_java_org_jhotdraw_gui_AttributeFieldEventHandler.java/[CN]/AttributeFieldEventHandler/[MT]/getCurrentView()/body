@@ -1,0 +1,3 @@
+{
+  return (view != null) ? view : ((editor == null) ? null : editor.getFocusedView());
+}
