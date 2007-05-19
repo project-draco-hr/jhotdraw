@@ -11,6 +11,7 @@
   }
   PrintWriter writer=new PrintWriter(new OutputStreamWriter(out,"UTF-8"));
   writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-  new XMLWriter(writer).write(document);
+  XMLWriter xmlWriter=new XMLWriter(writer);
+  xmlWriter.write(document,isPrettyPrint);
   writer.flush();
 }

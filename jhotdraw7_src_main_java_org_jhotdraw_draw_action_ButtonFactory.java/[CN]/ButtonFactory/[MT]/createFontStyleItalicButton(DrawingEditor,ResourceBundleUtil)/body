@@ -1,8 +1,10 @@
 {
-  JButton italicToggleButton;
-  italicToggleButton=new JButton();
-  labels.configureToolBarButton(italicToggleButton,"attributeFontItalic");
-  italicToggleButton.setFocusable(false);
-  italicToggleButton.addActionListener(new AttributeToggler(editor,FONT_ITALIC,Boolean.TRUE,Boolean.FALSE,new StyledEditorKit.ItalicAction()));
-  return italicToggleButton;
+  JButton btn;
+  btn=new JButton();
+  labels.configureToolBarButton(btn,"attributeFontItalic");
+  btn.setFocusable(false);
+  AbstractAction a=new AttributeToggler(editor,FONT_ITALIC,Boolean.TRUE,Boolean.FALSE,new StyledEditorKit.BoldAction());
+  a.putValue(Actions.UNDO_PRESENTATION_NAME_KEY,labels.getString("attributeFontItalic"));
+  btn.addActionListener(a);
+  return btn;
 }

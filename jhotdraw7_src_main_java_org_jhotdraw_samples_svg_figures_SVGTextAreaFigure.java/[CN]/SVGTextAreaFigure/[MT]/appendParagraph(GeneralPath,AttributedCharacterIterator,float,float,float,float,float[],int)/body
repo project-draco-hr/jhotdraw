@@ -54,8 +54,10 @@
       float nextPosition=positionEnum.next();
       AffineTransform tx=new AffineTransform();
       tx.translate(nextPosition,verticalPos);
-      Shape outline=nextLayout.getOutline(tx);
-      shape.append(outline,false);
+      if (shape != null) {
+        Shape outline=nextLayout.getOutline(tx);
+        shape.append(outline,false);
+      }
     }
     verticalPos+=maxDescent;
   }

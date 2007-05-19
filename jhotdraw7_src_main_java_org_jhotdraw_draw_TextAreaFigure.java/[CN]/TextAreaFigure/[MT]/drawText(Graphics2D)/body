@@ -1,7 +1,7 @@
 {
   if (getText() != null || isEditable()) {
     Font font=getFont();
-    boolean isUnderlined=FONT_UNDERLINED.get(this);
+    boolean isUnderlined=FONT_UNDERLINE.get(this);
     Insets2D.Double insets=getInsets();
     Rectangle2D.Double textRect=new Rectangle2D.Double(bounds.x + insets.left,bounds.y + insets.top,bounds.width - insets.left - insets.right,bounds.height - insets.top - insets.bottom);
     float leftMargin=(float)textRect.x;
@@ -9,7 +9,7 @@
     float verticalPos=(float)textRect.y;
     float maxVerticalPos=(float)(textRect.y + textRect.height);
     if (leftMargin < rightMargin) {
-      float tabWidth=(float)(getTabSize() * g.getFontMetrics(font).charWidth('m'));
+      float tabWidth=(float)(getTabSize() * font.getStringBounds("m",getFontRenderContext()).getWidth());
       float[] tabStops=new float[(int)(textRect.width / tabWidth)];
       for (int i=0; i < tabStops.length; i++) {
         tabStops[i]=(float)(textRect.x + (int)(tabWidth * (i + 1)));
@@ -33,11 +33,6 @@
         }
         g.setClip(savedClipArea);
       }
-    }
-    if (leftMargin >= rightMargin || verticalPos > textRect.y + textRect.height) {
-      g.setColor(Color.red);
-      g.setStroke(dashes);
-      g.draw(new Line2D.Double(textRect.x,textRect.y + textRect.height - 1,textRect.x + textRect.width - 1,textRect.y + textRect.height - 1));
     }
   }
 }

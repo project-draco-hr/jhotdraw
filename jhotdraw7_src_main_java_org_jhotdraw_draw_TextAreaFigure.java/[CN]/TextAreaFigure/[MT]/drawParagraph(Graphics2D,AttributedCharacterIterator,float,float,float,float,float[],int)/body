@@ -49,7 +49,9 @@
     while (layoutEnum.hasNext()) {
       TextLayout nextLayout=layoutEnum.next();
       float nextPosition=positionEnum.next();
-      nextLayout.draw(g,nextPosition,verticalPos);
+      if (g != null) {
+        nextLayout.draw(g,nextPosition,verticalPos);
+      }
     }
     verticalPos+=maxDescent;
   }

@@ -1,0 +1,23 @@
+{
+  SVGProject p=(SVGProject)getCurrentProject();
+  SVGOutputFormat format=new SVGOutputFormat();
+  format.setPrettyPrint(true);
+  ByteArrayOutputStream buf=new ByteArrayOutputStream();
+  try {
+    format.write(buf,p.getDrawing());
+    String source=buf.toString("UTF-8");
+    JDialog dialog=new JDialog((Frame)SwingUtilities.getWindowAncestor(p.getComponent()));
+    dialog.setTitle(labels.getFormatted(ID + ".dialogTitle",p.getFile() == null ? "unnamed" : p.getFile().getName()));
+    dialog.setResizable(true);
+    dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+    JTextArea ta=new JTextArea(source);
+    ta.setWrapStyleWord(true);
+    dialog.getContentPane().add(new JScrollPane(ta));
+    dialog.setSize(400,400);
+    dialog.setLocationByPlatform(true);
+    dialog.setVisible(true);
+  }
+ catch (  IOException ex) {
+    ex.printStackTrace();
+  }
+}

@@ -1,0 +1,9 @@
+{
+  if (getOwner().isTextOverflow()) {
+    g.setColor(Color.RED);
+    Rectangle r=basicGetBounds();
+    g.draw(r);
+    g.drawLine(r.x,r.y,r.x + r.width,r.y + r.height);
+    g.drawLine(r.x + r.width,r.y,r.x,r.y + r.height);
+  }
+}

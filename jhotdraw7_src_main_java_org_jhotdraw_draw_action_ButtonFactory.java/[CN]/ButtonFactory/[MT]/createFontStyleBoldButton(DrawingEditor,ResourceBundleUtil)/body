@@ -1,8 +1,10 @@
 {
-  JButton boldToggleButton;
-  boldToggleButton=new JButton();
-  labels.configureToolBarButton(boldToggleButton,"attributeFontBold");
-  boldToggleButton.setFocusable(false);
-  boldToggleButton.addActionListener(new AttributeToggler(editor,FONT_BOLD,Boolean.TRUE,Boolean.FALSE,new StyledEditorKit.BoldAction()));
-  return boldToggleButton;
+  JButton btn;
+  btn=new JButton();
+  labels.configureToolBarButton(btn,"attributeFontBold");
+  btn.setFocusable(false);
+  AbstractAction a=new AttributeToggler(editor,FONT_BOLD,Boolean.TRUE,Boolean.FALSE,new StyledEditorKit.BoldAction());
+  a.putValue(Actions.UNDO_PRESENTATION_NAME_KEY,labels.getString("attributeFontBold"));
+  btn.addActionListener(a);
+  return btn;
 }

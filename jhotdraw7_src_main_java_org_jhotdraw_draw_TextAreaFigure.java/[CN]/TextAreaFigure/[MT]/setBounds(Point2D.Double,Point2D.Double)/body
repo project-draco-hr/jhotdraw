@@ -3,5 +3,4 @@
   bounds.y=Math.min(anchor.y,lead.y);
   bounds.width=Math.max(1,Math.abs(lead.x - anchor.x));
   bounds.height=Math.max(1,Math.abs(lead.y - anchor.y));
-  textLayout=null;
 }

@@ -4,6 +4,7 @@ switch (detailLevel % 2) {
 case 0:
     ResizeHandleKit.addResizeHandles(this,handles);
   handles.add(new FontSizeHandle(this));
+handles.add(new TextOverflowHandle(this));
 break;
 case 1:
 TransformHandleKit.addTransformHandles(this,handles);

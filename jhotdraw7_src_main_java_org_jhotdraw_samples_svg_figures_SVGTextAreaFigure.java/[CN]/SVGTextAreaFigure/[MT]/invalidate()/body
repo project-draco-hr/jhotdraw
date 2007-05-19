@@ -2,4 +2,5 @@
   super.invalidate();
   cachedDrawingArea=null;
   cachedTextShape=null;
+  isTextOverflow=null;
 }

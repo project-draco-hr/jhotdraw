@@ -7,5 +7,6 @@
       ex.printStackTrace();
     }
   }
-  return getTextShape().getBounds2D().contains(p);
+  Rectangle2D r=getTextShape().getBounds2D();
+  return r.isEmpty() ? getBounds().contains(p) : r.contains(p);
 }

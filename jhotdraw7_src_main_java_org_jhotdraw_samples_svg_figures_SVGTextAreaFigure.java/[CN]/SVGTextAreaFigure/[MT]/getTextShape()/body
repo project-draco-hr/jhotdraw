@@ -4,7 +4,7 @@
     cachedTextShape=shape=new GeneralPath();
     if (getText() != null || isEditable()) {
       Font font=getFont();
-      boolean isUnderlined=FONT_UNDERLINED.get(this);
+      boolean isUnderlined=FONT_UNDERLINE.get(this);
       Insets2D.Double insets=getInsets();
       Rectangle2D.Double textRect=new Rectangle2D.Double(bounds.x + insets.left,bounds.y + insets.top,bounds.width - insets.left - insets.right,bounds.height - insets.top - insets.bottom);
       float leftMargin=(float)textRect.x;
@@ -33,13 +33,6 @@
             }
           }
         }
-      }
-      if (leftMargin >= rightMargin || verticalPos > textRect.y + textRect.height) {
-        shape.moveTo((float)textRect.x,(float)(textRect.y + textRect.height - 1));
-        shape.lineTo((float)(textRect.x + textRect.width - 1),(float)(textRect.y + textRect.height - 1));
-        shape.lineTo((float)(textRect.x + textRect.width - 1),(float)(textRect.y + textRect.height));
-        shape.lineTo((float)(textRect.x),(float)(textRect.y + textRect.height));
-        shape.closePath();
       }
     }
   }

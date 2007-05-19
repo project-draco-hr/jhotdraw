@@ -1,8 +1,12 @@
 {
   Rectangle r=getBounds();
-  g.setColor(fill);
-  g.fill(r);
-  g.setStroke(new BasicStroke());
-  g.setColor(stroke);
-  g.draw(r);
+  if (fill != null) {
+    g.setColor(fill);
+    g.fill(r);
+  }
+  if (stroke != null) {
+    g.setStroke(new BasicStroke());
+    g.setColor(stroke);
+    g.draw(r);
+  }
 }
