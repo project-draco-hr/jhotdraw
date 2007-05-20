@@ -1,3 +1,7 @@
 {
   super.addNotify(drawing);
+  if (getStartConnector() != null && getEndConnector() != null) {
+    handleConnect(getStartConnector(),getEndConnector());
+    updateConnection();
+  }
 }

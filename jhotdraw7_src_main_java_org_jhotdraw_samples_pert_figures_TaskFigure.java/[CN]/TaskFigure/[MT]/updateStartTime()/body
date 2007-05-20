@@ -1,4 +1,5 @@
 {
+  willChange();
   int oldValue=getStartTime();
   int newValue=0;
   for (  TaskFigure pre : getPredecessors()) {
@@ -12,7 +13,5 @@
       }
     }
   }
-  if (oldValue != newValue) {
-    fireAreaInvalidated();
-  }
+  changed();
 }

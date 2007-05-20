@@ -13,7 +13,6 @@
     that.getEndFigure().addFigureListener(that.connectionHandler);
   }
   if (that.startConnector != null && that.endConnector != null) {
-    that.handleConnect(that.getStartConnector(),that.getEndConnector());
     that.updateConnection();
   }
   return that;
