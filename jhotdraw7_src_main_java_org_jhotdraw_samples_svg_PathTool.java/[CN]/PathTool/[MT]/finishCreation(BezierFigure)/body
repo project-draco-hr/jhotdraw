@@ -6,4 +6,5 @@
   createdPath.add(createdFigure);
   getDrawing().add(createdPath);
   getView().addToSelection(createdPath);
+  fireUndoEvent(createdPath);
 }

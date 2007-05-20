@@ -4,6 +4,5 @@
   if (createdFigure != null) {
     finishCreation(createdFigure);
     createdFigure=null;
-    getDrawing().fireUndoableEditHappened(creationEdit);
   }
 }

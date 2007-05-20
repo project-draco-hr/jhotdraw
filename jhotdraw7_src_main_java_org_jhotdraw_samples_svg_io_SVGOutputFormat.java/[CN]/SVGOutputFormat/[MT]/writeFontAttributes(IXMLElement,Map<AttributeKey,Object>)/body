@@ -6,4 +6,5 @@
   writeAttribute(elem,"font-style",(FONT_ITALIC.get(a)) ? "italic" : "normal","normal");
   writeAttribute(elem,"font-variant","normal","normal");
   writeAttribute(elem,"font-weight",(FONT_BOLD.get(a)) ? "bold" : "normal","normal");
+  writeAttribute(elem,"text-decoration",(FONT_UNDERLINE.get(a)) ? "underline" : "none","none");
 }

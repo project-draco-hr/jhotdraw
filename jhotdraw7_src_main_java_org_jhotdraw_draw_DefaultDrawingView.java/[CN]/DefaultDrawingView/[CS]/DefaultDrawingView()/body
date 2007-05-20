@@ -11,5 +11,5 @@
     }
   }
 );
-  setTransferHandler(new DrawingViewTransferHandler());
+  setTransferHandler(new DefaultDrawingViewTransferHandler());
 }

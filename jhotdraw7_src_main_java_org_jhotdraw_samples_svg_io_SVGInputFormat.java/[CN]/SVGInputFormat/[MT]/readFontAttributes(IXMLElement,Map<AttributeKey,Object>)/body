@@ -10,4 +10,6 @@
   value=readInheritAttribute(elem,"font-variant","normal");
   value=readInheritAttribute(elem,"font-weight","normal");
   FONT_BOLD.set(a,value.equals("bold") || value.equals("bolder") || value.equals("400")|| value.equals("500")|| value.equals("600")|| value.equals("700")|| value.equals("800")|| value.equals("900"));
+  value=readAttribute(elem,"text-decoration","none");
+  FONT_UNDERLINE.set(a,value.equals("underline"));
 }

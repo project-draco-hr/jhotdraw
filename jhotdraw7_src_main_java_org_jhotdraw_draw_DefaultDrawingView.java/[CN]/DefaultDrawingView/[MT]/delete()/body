@@ -23,6 +23,7 @@
     }
     public void undo() throws CannotUndoException {
       super.undo();
+      clearSelection();
       getDrawing().addAll(deletedFigures);
       addToSelection(deletedFigures);
     }

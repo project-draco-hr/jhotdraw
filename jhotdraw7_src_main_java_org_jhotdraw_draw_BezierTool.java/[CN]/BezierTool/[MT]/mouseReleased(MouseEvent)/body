@@ -8,7 +8,6 @@
       createdFigure.changed();
       finishCreation(createdFigure);
       createdFigure=null;
-      getDrawing().fireUndoableEditHappened(creationEdit);
       finishWhenMouseReleased=null;
       fireToolDone();
       return;
