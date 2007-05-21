@@ -1,11 +1,11 @@
 {
   Object[] restoreData=(Object[])geometry;
-  TRANSFORM.setClone(this,(AffineTransform)restoreData[0]);
+  TRANSFORM.basicSetClone(this,(AffineTransform)restoreData[0]);
   Point2D.Double[] restoredCoordinates=(Point2D.Double[])restoreData[1];
   for (int i=0; i < this.coordinates.length; i++) {
     coordinates[i]=(Point2D.Double)restoredCoordinates[i].clone();
   }
-  FILL_GRADIENT.setClone(this,(Gradient)restoreData[2]);
-  STROKE_GRADIENT.setClone(this,(Gradient)restoreData[3]);
+  FILL_GRADIENT.basicSetClone(this,(Gradient)restoreData[2]);
+  STROKE_GRADIENT.basicSetClone(this,(Gradient)restoreData[3]);
   invalidate();
 }

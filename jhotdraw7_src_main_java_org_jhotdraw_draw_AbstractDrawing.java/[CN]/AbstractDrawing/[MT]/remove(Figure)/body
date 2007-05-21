@@ -3,7 +3,7 @@
     final int index=indexOf(figure);
     basicRemove(figure);
     figure.removeNotify(this);
-    fireFigureRemoved(figure);
+    fireFigureRemoved(figure,index);
   }
  else {
     fireAreaInvalidated(figure.getDrawingArea());

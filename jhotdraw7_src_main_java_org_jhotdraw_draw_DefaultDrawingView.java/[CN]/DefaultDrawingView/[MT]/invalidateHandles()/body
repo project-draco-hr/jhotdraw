@@ -5,10 +5,10 @@
     for (    Handle handle : selectionHandles) {
       handle.removeHandleListener(this);
       if (invalidatedArea == null) {
-        invalidatedArea=handle.getDrawBounds();
+        invalidatedArea=handle.getDrawingArea();
       }
  else {
-        invalidatedArea.add(handle.getDrawBounds());
+        invalidatedArea.add(handle.getDrawingArea());
       }
       handle.dispose();
     }

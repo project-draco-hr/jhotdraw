@@ -1,5 +1,5 @@
 {
   pressed=basicGetBounds().contains(lead);
   if (pressed)   getOwner().requestRemove();
-  fireAreaInvalidated(getDrawBounds());
+  fireAreaInvalidated(getDrawingArea());
 }

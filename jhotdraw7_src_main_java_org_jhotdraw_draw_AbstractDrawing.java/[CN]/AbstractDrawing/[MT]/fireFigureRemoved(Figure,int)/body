@@ -3,8 +3,8 @@
   Object[] listeners=listenerList.getListenerList();
   for (int i=listeners.length - 2; i >= 0; i-=2) {
     if (listeners[i] == DrawingListener.class) {
-      if (event == null)       event=new DrawingEvent(this,f,f.getDrawingArea());
-      ((DrawingListener)listeners[i + 1]).figureAdded(event);
+      if (event == null)       event=new DrawingEvent(this,f,f.getDrawingArea(),zIndex);
+      ((DrawingListener)listeners[i + 1]).figureRemoved(event);
     }
   }
 }

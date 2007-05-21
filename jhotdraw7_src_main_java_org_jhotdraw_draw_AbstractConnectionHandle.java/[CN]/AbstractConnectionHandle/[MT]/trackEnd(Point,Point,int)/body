@@ -30,4 +30,6 @@
   }
   getOwner().setLiner(savedLiner);
   getOwner().updateConnection();
+  connectableConnector=null;
+  connectors=Collections.emptyList();
 }

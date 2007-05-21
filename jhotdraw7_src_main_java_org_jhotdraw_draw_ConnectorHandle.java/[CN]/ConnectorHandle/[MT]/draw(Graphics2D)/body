@@ -1,6 +1,11 @@
 {
+  Graphics2D gg=(Graphics2D)g.create();
+  gg.transform(view.getDrawingToViewTransform());
+  for (  Connector c : connectors) {
+    c.draw(gg);
+  }
   if (createdConnection == null) {
-    drawCircle(g,Color.blue,Color.blue.darker());
+    drawCircle(g,Color.blue,Color.black);
   }
  else {
     drawCircle(g,Color.GREEN,Color.BLACK);

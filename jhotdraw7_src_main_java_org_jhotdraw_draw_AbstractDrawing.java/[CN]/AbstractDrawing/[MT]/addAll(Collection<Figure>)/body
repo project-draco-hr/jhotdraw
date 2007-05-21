@@ -1,5 +1,3 @@
 {
-  for (  Figure f : figures) {
-    add(f);
-  }
+  addAll(getFigureCount(),figures);
 }

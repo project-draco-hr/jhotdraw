@@ -2,7 +2,7 @@
   setConnection(createConnection());
   ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
   Point2D.Double p=getLocationOnDrawing();
-  getCreatedConnection().setStartPoint(p);
-  getCreatedConnection().setEndPoint(p);
-  view.getDrawing().add(getCreatedConnection());
+  getConnection().setStartPoint(p);
+  getConnection().setEndPoint(p);
+  view.getDrawing().add(getConnection());
 }

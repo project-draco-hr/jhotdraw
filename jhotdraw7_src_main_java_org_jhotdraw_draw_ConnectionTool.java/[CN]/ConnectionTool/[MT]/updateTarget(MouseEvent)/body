@@ -1,5 +1,0 @@
-{
-  Point2D.Double targetPoint=viewToDrawing(new Point(evt.getX(),evt.getY()));
-  Figure aFigure=getDrawing().findFigure(targetPoint);
-  targetFigure=aFigure;
-}

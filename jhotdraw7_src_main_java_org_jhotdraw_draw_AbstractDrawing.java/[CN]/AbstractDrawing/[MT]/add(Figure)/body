@@ -1,7 +1,3 @@
 {
-  final int index=getFigureCount();
-  basicAdd(index,figure);
-  figure.addNotify(this);
-  fireFigureAdded(figure);
-  fireAreaInvalidated(figure.getDrawingArea());
+  add(getFigureCount(),figure);
 }

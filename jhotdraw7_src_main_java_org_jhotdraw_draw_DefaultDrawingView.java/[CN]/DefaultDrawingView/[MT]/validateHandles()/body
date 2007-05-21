@@ -10,10 +10,10 @@
           selectionHandles.add(handle);
           handle.addHandleListener(this);
           if (invalidatedArea == null) {
-            invalidatedArea=handle.getBounds();
+            invalidatedArea=handle.getDrawingArea();
           }
  else {
-            invalidatedArea.add(handle.getBounds());
+            invalidatedArea.add(handle.getDrawingArea());
           }
         }
       }

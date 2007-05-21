@@ -1,3 +1,9 @@
 {
+  Graphics2D gg=(Graphics2D)g.create();
+  gg.transform(view.getDrawingToViewTransform());
+  for (  Connector c : connectors) {
+    c.draw(gg);
+  }
+  gg.dispose();
   drawCircle(g,(getTarget() == null) ? Color.red : Color.green,Color.black);
 }

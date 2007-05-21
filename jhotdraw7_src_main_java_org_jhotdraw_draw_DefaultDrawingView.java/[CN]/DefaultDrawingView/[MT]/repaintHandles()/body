@@ -2,10 +2,10 @@
   Rectangle bounds=null;
   for (  Handle handle : selectionHandles) {
     if (bounds == null) {
-      bounds=handle.getDrawBounds();
+      bounds=handle.getDrawingArea();
     }
  else {
-      bounds.add(handle.getDrawBounds());
+      bounds.add(handle.getDrawingArea());
     }
   }
   if (bounds != null) {

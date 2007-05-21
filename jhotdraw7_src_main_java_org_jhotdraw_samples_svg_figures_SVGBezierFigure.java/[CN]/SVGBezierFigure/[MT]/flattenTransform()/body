@@ -1,7 +1,7 @@
 {
   if (TRANSFORM.get(this) != null) {
     path.transform(TRANSFORM.get(this));
-    TRANSFORM.set(this,null);
+    TRANSFORM.basicSet(this,null);
   }
   invalidate();
 }

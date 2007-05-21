@@ -1,0 +1,5 @@
+{
+  LinkedList connectors=new LinkedList<Connector>();
+  connectors.add(new ChopRectangleConnector(this));
+  return connectors;
+}

@@ -1,13 +1,14 @@
 {
   Point2D.Double p=view.viewToDrawing(lead);
   view.getConstrainer().constrainPoint(p);
-  targetConnector=findConnectionTarget(p,view.getDrawing());
-  if (targetConnector != null) {
+  Figure f=findConnectableFigure(p,view.getDrawing());
+  connectableConnector=findConnectableConnector(f,p);
+  if (connectableConnector != null) {
     final Drawing drawing=view.getDrawing();
-    final ConnectionFigure createdConnection=getCreatedConnection();
-    getCreatedConnection().setStartConnector(connector);
-    getCreatedConnection().setEndConnector(targetConnector);
-    getCreatedConnection().updateConnection();
+    final ConnectionFigure createdConnection=getConnection();
+    getConnection().setStartConnector(connector);
+    getConnection().setEndConnector(connectableConnector);
+    getConnection().updateConnection();
     view.clearSelection();
     view.addToSelection(createdConnection);
     view.getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
@@ -29,9 +30,10 @@
 );
   }
  else {
-    view.getDrawing().remove(getCreatedConnection());
+    view.getDrawing().remove(getConnection());
   }
-  targetConnector=null;
+  connectableConnector=null;
+  connectors=Collections.emptyList();
   setConnection(null);
   setTargetFigure(null);
 }

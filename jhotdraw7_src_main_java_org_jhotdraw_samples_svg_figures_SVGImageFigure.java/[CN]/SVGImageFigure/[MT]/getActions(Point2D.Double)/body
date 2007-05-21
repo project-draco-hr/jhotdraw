@@ -4,7 +4,7 @@
   if (TRANSFORM.get(this) != null) {
     actions.add(new AbstractAction(labels.getString("removeTransform")){
       public void actionPerformed(      ActionEvent evt){
-        TRANSFORM.set(SVGImageFigure.this,null);
+        TRANSFORM.basicSet(SVGImageFigure.this,null);
       }
     }
 );

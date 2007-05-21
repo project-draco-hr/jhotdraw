@@ -1,4 +1,5 @@
 {
+  willChange();
   AffineTransform tx=TRANSFORM.get(this);
   if (tx != null) {
     for (    Figure child : getChildren()) {
@@ -6,6 +7,6 @@
       ((SVGBezierFigure)child).flattenTransform();
     }
   }
-  TRANSFORM.set(this,null);
-  invalidate();
+  TRANSFORM.basicSet(this,null);
+  changed();
 }

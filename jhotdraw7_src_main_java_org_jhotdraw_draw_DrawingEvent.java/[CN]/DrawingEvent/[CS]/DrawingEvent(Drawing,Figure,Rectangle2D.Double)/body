@@ -1,5 +1,3 @@
 {
-  super(source);
-  this.figure=figure;
-  this.invalidatedArea=invalidatedArea;
+  this(source,figure,invalidatedArea,-1);
 }
