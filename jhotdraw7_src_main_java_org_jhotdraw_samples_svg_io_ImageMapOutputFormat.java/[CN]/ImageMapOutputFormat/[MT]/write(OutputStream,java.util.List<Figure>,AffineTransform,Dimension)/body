@@ -1,7 +1,7 @@
 {
   this.drawingTransform=(drawingTransform == null) ? new AffineTransform() : drawingTransform;
   this.bounds=(imageSize == null) ? new Rectangle(0,0,Integer.MAX_VALUE,Integer.MAX_VALUE) : new Rectangle(0,0,imageSize.width,imageSize.height);
-  XMLElement document=new XMLElement("MAP");
+  XMLElement document=new XMLElement("map");
   for (  Figure f : new ReversedList<Figure>(figures)) {
     writeElement(document,f);
   }

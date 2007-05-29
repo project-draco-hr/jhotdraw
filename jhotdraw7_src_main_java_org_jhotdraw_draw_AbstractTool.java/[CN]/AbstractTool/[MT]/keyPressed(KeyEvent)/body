@@ -1,7 +1,7 @@
 {
   if (!evt.isConsumed()) {
     if (evt.getSource() instanceof Container) {
-      editor.setView(editor.findView((Container)evt.getSource()));
+      editor.setActiveView(editor.findView((Container)evt.getSource()));
     }
     if (inputMap != null) {
       Object obj=inputMap.get(KeyStroke.getKeyStroke(evt.getKeyCode(),evt.getModifiers(),false));

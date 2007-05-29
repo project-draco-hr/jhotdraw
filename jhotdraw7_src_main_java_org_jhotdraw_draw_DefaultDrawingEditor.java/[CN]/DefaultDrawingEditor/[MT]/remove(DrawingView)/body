@@ -10,5 +10,5 @@
   if (activeView == view) {
     view=(views.size() > 0) ? views.iterator().next() : null;
   }
-  updateFocusedView();
+  updateActiveView();
 }

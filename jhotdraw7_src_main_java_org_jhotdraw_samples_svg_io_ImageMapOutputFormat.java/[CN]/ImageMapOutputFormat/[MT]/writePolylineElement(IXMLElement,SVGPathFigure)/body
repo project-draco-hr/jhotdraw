@@ -1,5 +1,5 @@
 {
-  IXMLElement elem=parent.createElement("AREA");
+  IXMLElement elem=parent.createElement("area");
   if (writePolyAttributes(elem,f,new BasicStroke((float)getStrokeTotalWidth(f)).createStrokedShape(f.getChild(0).getBezierPath()))) {
     parent.addChild(elem);
   }

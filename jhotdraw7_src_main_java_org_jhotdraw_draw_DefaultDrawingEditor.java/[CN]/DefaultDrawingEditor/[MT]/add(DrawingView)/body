@@ -7,5 +7,5 @@
     view.addMouseMotionListener(tool);
     view.addKeyListener(tool);
   }
-  updateFocusedView();
+  updateActiveView();
 }

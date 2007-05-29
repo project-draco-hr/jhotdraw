@@ -13,7 +13,7 @@
     t.transform(end,end);
     Rectangle r=new Rectangle((int)Math.min(start.x,end.x),(int)Math.min(start.y,end.y),(int)Math.abs(start.x - end.x),(int)Math.abs(start.y - end.y));
     elem.setAttribute("shape","rect");
-    elem.setAttribute("coords",r.x + "," + r.y+ ","+ r.x+ r.width+ ","+ r.y+ r.height);
+    elem.setAttribute("coords",r.x + "," + r.y+ ","+ (r.x + r.width)+ ","+ (r.y + r.height));
     writeHrefAttribute(elem,f);
     return bounds.intersects(r);
   }

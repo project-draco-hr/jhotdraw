@@ -8,5 +8,8 @@
   editor=newValue;
   if (editor != null) {
     editor.addPropertyChangeListener(this);
+    if (getCurrentView() != null) {
+      getCurrentView().addFigureSelectionListener(this);
+    }
   }
 }

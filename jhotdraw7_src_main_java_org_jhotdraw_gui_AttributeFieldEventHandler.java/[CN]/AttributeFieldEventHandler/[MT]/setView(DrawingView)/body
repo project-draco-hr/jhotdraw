@@ -1,13 +1,13 @@
 {
-  if (view != null) {
-    view.removeFigureSelectionListener(this);
-    for (    Figure f : view.getSelectedFigures()) {
+  if (getCurrentView() != null) {
+    getCurrentView().removeFigureSelectionListener(this);
+    for (    Figure f : getCurrentView().getSelectedFigures()) {
       f.removeFigureListener(this);
     }
   }
   view=newValue;
   if (getCurrentView() != null) {
-    view.addFigureSelectionListener(this);
+    getCurrentView().addFigureSelectionListener(this);
     for (    Figure f : getCurrentView().getSelectedFigures()) {
       f.addFigureListener(this);
     }

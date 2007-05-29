@@ -1,0 +1,3 @@
+{
+  return (activeView != null) ? activeView : (views.size() == 0) ? null : views.iterator().next();
+}

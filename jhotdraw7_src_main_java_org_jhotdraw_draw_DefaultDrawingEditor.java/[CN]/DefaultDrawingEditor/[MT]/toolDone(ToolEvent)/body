@@ -1,5 +1,5 @@
 {
-  DrawingView v=getView();
+  DrawingView v=getActiveView();
   if (v != null) {
     Container c=v.getComponent();
     c.invalidate();

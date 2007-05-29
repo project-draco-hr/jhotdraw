@@ -11,12 +11,12 @@
   }
   editor.addPropertyChangeListener(new PropertyChangeListener(){
     public void propertyChange(    PropertyChangeEvent evt){
-      if (evt.getPropertyName() == DrawingEditor.PROP_FOCUSED_VIEW) {
+      if (evt.getPropertyName() == DrawingEditor.PROP_ACTIVE_VIEW) {
         if (evt.getNewValue() == null) {
           zoomPopupButton.setText("100 %");
         }
  else {
-          zoomPopupButton.setText((int)(editor.getFocusedView().getScaleFactor() * 100) + " %");
+          zoomPopupButton.setText((int)(editor.getActiveView().getScaleFactor() * 100) + " %");
         }
       }
     }
@@ -27,7 +27,7 @@
     zoomPopupButton.add(new ZoomEditorAction(editor,factors[i],zoomPopupButton){
       public void actionPerformed(      java.awt.event.ActionEvent e){
         super.actionPerformed(e);
-        zoomPopupButton.setText((int)(editor.getView().getScaleFactor() * 100) + " %");
+        zoomPopupButton.setText((int)(editor.getActiveView().getScaleFactor() * 100) + " %");
       }
     }
 );

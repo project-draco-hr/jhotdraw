@@ -1,5 +1,5 @@
 {
-  if (evt.getPropertyName() == DrawingEditor.PROP_FOCUSED_VIEW) {
+  if (evt.getPropertyName() == DrawingEditor.PROP_ACTIVE_VIEW) {
     if (evt.getOldValue() != null) {
       DrawingView view=((DrawingView)evt.getOldValue());
       view.removeFigureSelectionListener(this);

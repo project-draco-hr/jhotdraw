@@ -3,7 +3,7 @@
   BasicStroke basicStroke=new BasicStroke((float)getStrokeTotalWidth(f));
   for (  Figure child : f.getChildren()) {
     SVGBezierFigure bezier=(SVGBezierFigure)child;
-    IXMLElement elem=parent.createElement("AREA");
+    IXMLElement elem=parent.createElement("area");
     if (bezier.isClosed()) {
       writePolyAttributes(elem,f,growStroke.createStrokedShape(bezier.getBezierPath()));
     }
