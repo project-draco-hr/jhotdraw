@@ -1,9 +1,0 @@
-{
-  JMenuBar mb=new JMenuBar();
-  mb.add(createFileMenu(p));
-  for (  JMenu mm : createMenus(p)) {
-    mb.add(mm);
-  }
-  mb.add(createWindowMenu(p));
-  return mb;
-}

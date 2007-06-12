@@ -1,4 +1,0 @@
-{
-  DocumentView p=getCurrentView();
-  return (p == null) ? null : p.getComponent();
-}

@@ -1,6 +1,0 @@
-{
-  super.remove(p);
-  if (getViews().size() == 0) {
-    exit();
-  }
-}

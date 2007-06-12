@@ -1,5 +1,0 @@
-{
-  boolean oldValue=isEnabled;
-  isEnabled=newValue;
-  firePropertyChange("enabled",oldValue,newValue);
-}

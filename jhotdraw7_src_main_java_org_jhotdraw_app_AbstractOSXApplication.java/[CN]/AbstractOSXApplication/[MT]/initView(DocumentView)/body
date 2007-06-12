@@ -1,4 +1,0 @@
-{
-  super.initView(v);
-  v.putAction(FocusAction.ID,new FocusAction(v));
-}

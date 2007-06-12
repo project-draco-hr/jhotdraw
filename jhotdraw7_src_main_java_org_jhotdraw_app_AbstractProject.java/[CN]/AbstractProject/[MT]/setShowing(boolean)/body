@@ -1,0 +1,5 @@
+{
+  boolean oldValue=isShowing;
+  isShowing=newValue;
+  firePropertyChange("showing",oldValue,newValue);
+}

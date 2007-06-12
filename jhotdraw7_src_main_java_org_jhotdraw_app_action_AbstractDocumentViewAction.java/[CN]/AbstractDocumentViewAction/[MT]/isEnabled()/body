@@ -1,3 +1,0 @@
-{
-  return getCurrentView() != null && getCurrentView().isEnabled() && this.enabled;
-}

@@ -1,6 +1,0 @@
-{
-  super.setName(n);
-  if (n != null && n.startsWith("null")) {
-    new Throwable().printStackTrace();
-  }
-}

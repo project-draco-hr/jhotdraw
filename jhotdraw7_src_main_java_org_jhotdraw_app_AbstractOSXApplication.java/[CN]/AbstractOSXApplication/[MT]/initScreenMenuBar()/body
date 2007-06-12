@@ -1,8 +1,0 @@
-{
-  net.roydesign.app.Application mrjapp=net.roydesign.app.Application.getInstance();
-  mrjapp.setFramelessJMenuBar(createMenuBar(null));
-  paletteHandler.add(SwingUtilities.getWindowAncestor(mrjapp.getFramelessJMenuBar()),null);
-  mrjapp.getAboutJMenuItem().setAction(getAction(AboutAction.ID));
-  mrjapp.getQuitJMenuItem().setAction(getAction(ExitAction.ID));
-  mrjapp.addOpenDocumentListener(getAction(OSXDropOnDockAction.ID));
-}

@@ -1,7 +1,0 @@
-{
-  JMenuBar mb=new JMenuBar();
-  for (  JMenu mm : createMenus(v)) {
-    if (mm != null)     mb.add(mm);
-  }
-  return mb;
-}

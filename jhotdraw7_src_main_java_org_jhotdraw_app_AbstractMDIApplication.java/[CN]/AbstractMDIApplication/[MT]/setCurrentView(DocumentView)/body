@@ -1,5 +1,0 @@
-{
-  DocumentView oldValue=currentView;
-  currentView=newValue;
-  firePropertyChange(PROP_CURRENT_VIEW,oldValue,newValue);
-}

@@ -1,7 +1,0 @@
-{
-  hide(v);
-  int oldCount=views.size();
-  views.remove(v);
-  destroyView(v);
-  firePropertyChange(PROP_VIEW_COUNT,oldCount,views.size());
-}
