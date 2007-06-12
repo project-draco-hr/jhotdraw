@@ -1,0 +1,25 @@
+{
+  final DocumentOrientedApplication application=getApplication();
+  if (value == null) {
+    documentView.setFile(file);
+    documentView.setEnabled(true);
+    Frame w=(Frame)SwingUtilities.getWindowAncestor(documentView.getComponent());
+    if (w != null) {
+      w.setExtendedState(w.getExtendedState() & ~Frame.ICONIFIED);
+      w.toFront();
+    }
+    documentView.getComponent().requestFocus();
+    application.addRecentFile(file);
+    application.setEnabled(true);
+  }
+ else {
+    if (value instanceof Throwable) {
+      ((Throwable)value).printStackTrace();
+    }
+    JSheet.showMessageSheet(documentView.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>Couldn't open the file \""+ file+ "\".</b><br>"+ value,JOptionPane.ERROR_MESSAGE,new SheetListener(){
+      public void optionSelected(      SheetEvent evt){
+      }
+    }
+);
+  }
+}
