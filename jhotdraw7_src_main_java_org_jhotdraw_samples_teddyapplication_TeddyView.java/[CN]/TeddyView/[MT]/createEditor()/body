@@ -1,0 +1,4 @@
+{
+  JTextPane p=new JTextPane();
+  return p;
+}

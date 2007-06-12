@@ -1,0 +1,18 @@
+{
+  super(parent,modal);
+  labels=ApplicationContext.getInstance().getResourceMap(TeddyView.class);
+  initComponents();
+  Preferences prefs=Preferences.userNodeForPackage(getClass());
+  PreferencesUtil.installFramePrefsHandler(prefs,"Preferences.Dialog",this);
+  String ui=prefs.get("UserInterface","SDI");
+  if (ui.equals("SDI")) {
+    sdiRadio.setSelected(true);
+  }
+ else   if (ui.equals("MDI")) {
+    mdiRadio.setSelected(true);
+  }
+ else {
+    osxRadio.setSelected(true);
+  }
+  uiLabel.setFont(Fonts.getEmphasizedDialogFont());
+}

@@ -1,0 +1,9 @@
+{
+  JFrame f=new JFrame();
+  TeddyView v=new TeddyView();
+  f.add(v);
+  v.init();
+  f.pack();
+  f.show();
+  v.start();
+}

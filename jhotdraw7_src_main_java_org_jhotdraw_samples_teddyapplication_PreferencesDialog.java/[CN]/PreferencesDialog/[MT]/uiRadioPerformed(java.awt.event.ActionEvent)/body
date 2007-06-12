@@ -1,0 +1,12 @@
+{
+  Preferences prefs=Preferences.userNodeForPackage(getClass());
+  if (sdiRadio.isSelected()) {
+    prefs.put("UserInterface","SDI");
+  }
+ else   if (mdiRadio.isSelected()) {
+    prefs.put("UserInterface","MDI");
+  }
+ else {
+    prefs.put("UserInterface","OSX");
+  }
+}

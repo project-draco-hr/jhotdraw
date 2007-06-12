@@ -1,0 +1,8 @@
+{
+  java.awt.EventQueue.invokeLater(new Runnable(){
+    public void run(){
+      new PreferencesDialog(new javax.swing.JFrame(),true).setVisible(true);
+    }
+  }
+);
+}

@@ -1,0 +1,16 @@
+{
+  if (preferencesDialog == null) {
+    preferencesDialog=new PreferencesDialog();
+    preferencesDialog.addWindowListener(new WindowAdapter(){
+      @Override public void windowClosing(      WindowEvent evt){
+        if (preferencesDialog != null) {
+          getApplication().removePalette(preferencesDialog);
+          preferencesDialog.setVisible(false);
+        }
+      }
+    }
+);
+  }
+  preferencesDialog.setVisible(true);
+  getApplication().addPalette(preferencesDialog);
+}

@@ -1,4 +1,3 @@
 {
-  labels.configureAction(this,ID);
-  setPropertyName("statusBarVisible");
+  initActionProperties(ID);
 }

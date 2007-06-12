@@ -1,15 +1,15 @@
 {
-  WindowManager wm;
-  if (System.getProperty("os.name").toLowerCase().startsWith("mac os x")) {
-    wm=new DefaultOSXWindowManager();
+  Class app;
+  Preferences prefs=Preferences.userNodeForPackage(TeddyView.class);
+  String ui=prefs.get("UserInterface","SDI");
+  if (ui.equals("SDI")) {
+    app=TeddySDIApplication.class;
   }
- else   if (System.getProperty("os.name").toLowerCase().startsWith("win")) {
-    wm=new DefaultMDIWindowManager();
+ else   if (ui.equals("MDI")) {
+    app=TeddyMDIApplication.class;
   }
  else {
-    wm=new DefaultSDIWindowManager();
+    app=null;
   }
-  WindowManager.setInstance(wm);
-  WindowManager.getInstance().preLaunch();
-  DocumentOrientedApplication.launch(TeddyApplication.class,args);
+  AbstractDocumentOrientedApplication.launch(app,args);
 }

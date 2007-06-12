@@ -1,5 +1,5 @@
 {
-  TeddyProject project=((TeddyProject)WindowManager.getInstance().getCurrentProject());
+  TeddyView project=getProject();
   if (project != null) {
     updateMatcher();
     if (matcher != null) {

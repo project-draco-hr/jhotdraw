@@ -1,4 +1,7 @@
 {
   short left=super.getLeftInset();
-  return (viewFactory.isLineNumbersVisible()) ? (short)(left + NUMBERS_WIDTH) : left;
+  int digits=(int)Math.log10(getDocument().getDefaultRootElement().getElementCount()) + 2;
+  FontMetrics fm=getGraphics().getFontMetrics();
+  short numbersWidth=(short)(fm.getStringBounds("0",getGraphics()).getWidth() * digits);
+  return (viewFactory.isLineNumbersVisible()) ? (short)(left + numbersWidth) : left;
 }

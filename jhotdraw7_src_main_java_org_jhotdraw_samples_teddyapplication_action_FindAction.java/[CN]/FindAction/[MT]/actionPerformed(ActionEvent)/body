@@ -1,20 +1,16 @@
 {
   if (findDialog == null) {
     findDialog=new FindDialog();
-    if (WindowManager.getInstance() instanceof DefaultOSXWindowManager) {
-      findDialog.addWindowListener(new WindowAdapter(){
-        @Override public void windowClosing(        WindowEvent evt){
-          if (findDialog != null) {
-            ((DefaultOSXWindowManager)WindowManager.getInstance()).removePalette(findDialog);
-            findDialog.setVisible(false);
-          }
+    findDialog.addWindowListener(new WindowAdapter(){
+      @Override public void windowClosing(      WindowEvent evt){
+        if (findDialog != null) {
+          getApplication().removePalette(findDialog);
+          findDialog.setVisible(false);
         }
       }
-);
     }
+);
   }
   findDialog.setVisible(true);
-  if (app instanceof DefaultOSXApplication) {
-    ((DefaultOSXApplication)app).addPalette(findDialog);
-  }
+  getApplication().addPalette(findDialog);
 }

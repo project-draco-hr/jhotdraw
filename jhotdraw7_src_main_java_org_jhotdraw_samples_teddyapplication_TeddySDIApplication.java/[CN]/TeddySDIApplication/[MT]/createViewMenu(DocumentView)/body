@@ -1,0 +1,21 @@
+{
+  ResourceMap labels=getResourceMap();
+  JMenu m;
+  JCheckBoxMenuItem cbmi;
+  m=super.createViewMenu(p);
+  if (m == null) {
+    m=new JMenu();
+    m.setName("View.Menu");
+    getFrameworkResourceMap().injectComponent(m);
+  }
+  cbmi=new JCheckBoxMenuItem(getAction(ToggleLineWrapAction.ID));
+  Actions.configureJCheckBoxMenuItem(cbmi,getAction(ToggleLineWrapAction.ID));
+  m.add(cbmi);
+  cbmi=new JCheckBoxMenuItem(getAction(ToggleLineNumbersAction.ID));
+  Actions.configureJCheckBoxMenuItem(cbmi,getAction(ToggleLineNumbersAction.ID));
+  m.add(cbmi);
+  cbmi=new JCheckBoxMenuItem(getAction(ToggleStatusBarAction.ID));
+  Actions.configureJCheckBoxMenuItem(cbmi,getAction(ToggleStatusBarAction.ID));
+  m.add(cbmi);
+  return m;
+}

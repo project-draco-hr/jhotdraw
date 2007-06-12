@@ -1,0 +1,10 @@
+{
+  boolean oldValue=statusBar.isVisible();
+  statusBar.setVisible(newValue);
+  validate();
+  if (getParent() != null) {
+    getParent().repaint();
+  }
+  prefs.putBoolean("statusBarVisible",newValue);
+  firePropertyChange("statusBarVisible",oldValue,newValue);
+}
