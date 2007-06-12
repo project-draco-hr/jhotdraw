@@ -1,16 +1,18 @@
 {
-  final Application app=getApplication();
-  if (app.isEnabled()) {
-    app.setEnabled(false);
-    Project emptyProject=app.getCurrentProject();
-    if (emptyProject == null || emptyProject.getFile() != null || emptyProject.hasUnsavedChanges()) {
+  final DocumentOrientedApplication application=getApplication();
+  if (application.isEnabled()) {
+    application.setEnabled(false);
+    DocumentView emptyProject=application.getCurrentView();
+    if (emptyProject == null || emptyProject.getFile() != null || emptyProject.isModified()) {
       emptyProject=null;
     }
-    final Project p;
+    final DocumentView p;
+    boolean removeMe;
     boolean removeMe;
     if (emptyProject == null) {
-      p=app.createProject();
-      app.add(p);
+      p=application.createView();
+      application.add(p);
+      removeMe=true;
       removeMe=true;
     }
  else {
@@ -18,15 +20,15 @@
       removeMe=false;
     }
     JFileChooser fileChooser=p.getOpenChooser();
-    if (fileChooser.showOpenDialog(app.getComponent()) == JFileChooser.APPROVE_OPTION) {
-      app.show(p);
+    if (fileChooser.showOpenDialog(application.getComponent()) == JFileChooser.APPROVE_OPTION) {
+      application.show(p);
       openFile(fileChooser,p);
     }
  else {
       if (removeMe) {
-        app.remove(p);
+        application.remove(p);
       }
-      app.setEnabled(true);
+      application.setEnabled(true);
     }
   }
 }

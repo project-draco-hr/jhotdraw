@@ -1,6 +1,0 @@
-{
-  if (unmodifiableDocuments == null) {
-    unmodifiableDocuments=Collections.unmodifiableCollection(projects);
-  }
-  return unmodifiableDocuments;
-}

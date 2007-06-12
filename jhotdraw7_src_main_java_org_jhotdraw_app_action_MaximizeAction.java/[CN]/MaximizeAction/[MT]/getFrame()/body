@@ -1,3 +1,3 @@
 {
-  return (JFrame)SwingUtilities.getWindowAncestor(getCurrentProject().getComponent());
+  return (JFrame)SwingUtilities.getWindowAncestor(getCurrentView().getComponent());
 }

@@ -1,0 +1,10 @@
+{
+  this.application=application;
+  timer=new javax.swing.Timer(60,new ActionListener(){
+    public void actionPerformed(    ActionEvent evt){
+      maybeHidePalettes();
+    }
+  }
+);
+  timer.setRepeats(false);
+}

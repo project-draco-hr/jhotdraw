@@ -1,6 +1,0 @@
-{
-  Project p=createProject();
-  add(p);
-  p.clear();
-  show(p);
-}

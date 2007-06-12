@@ -1,4 +1,5 @@
 {
-  Application app=getApplication();
-  JOptionPane.showMessageDialog(app.getComponent(),app.getName() + " " + app.getVersion()+ "\n"+ app.getCopyright()+ "\n\nRunning on Java "+ System.getProperty("java.vm.version")+ ", "+ System.getProperty("java.vendor"),"About",JOptionPane.PLAIN_MESSAGE);
+  DocumentOrientedApplication application=getApplication();
+  ResourceMap r=getResourceMap();
+  JOptionPane.showMessageDialog(application.getComponent(),r.getString("Application.name") + " " + r.getString("Application.version")+ "\n"+ r.getString("Application.vendor")+ "\n\nRunning on Java "+ System.getProperty("java.vm.version")+ ", "+ System.getProperty("java.vendor"),"About",JOptionPane.PLAIN_MESSAGE);
 }

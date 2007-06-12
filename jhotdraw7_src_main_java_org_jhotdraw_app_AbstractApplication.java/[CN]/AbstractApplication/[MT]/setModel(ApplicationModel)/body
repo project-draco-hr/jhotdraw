@@ -1,5 +1,0 @@
-{
-  ApplicationModel oldValue=model;
-  model=newValue;
-  firePropertyChange("model",oldValue,newValue);
-}

@@ -1,4 +1,0 @@
-{
-  applet.getContentPane().removeAll();
-  this.project=null;
-}

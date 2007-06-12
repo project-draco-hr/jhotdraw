@@ -1,0 +1,19 @@
+{
+  final File file=fileChooser.getSelectedFile();
+  documentView.setEnabled(false);
+  documentView.execute(new Worker(){
+    public Object construct(){
+      try {
+        documentView.read(file);
+        return null;
+      }
+ catch (      IOException e) {
+        return e;
+      }
+    }
+    public void finished(    Object value){
+      fileOpened(documentView,file,value);
+    }
+  }
+);
+}

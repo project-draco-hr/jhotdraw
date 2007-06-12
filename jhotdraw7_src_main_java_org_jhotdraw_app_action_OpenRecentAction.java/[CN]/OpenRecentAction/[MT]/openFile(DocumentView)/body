@@ -1,0 +1,20 @@
+{
+  final DocumentOrientedApplication application=getApplication();
+  application.setEnabled(true);
+  documentView.setEnabled(false);
+  documentView.execute(new Worker(){
+    public Object construct(){
+      try {
+        documentView.read(file);
+        return null;
+      }
+ catch (      Throwable e) {
+        return e;
+      }
+    }
+    public void finished(    Object value){
+      fileOpened(documentView,file,value);
+    }
+  }
+);
+}

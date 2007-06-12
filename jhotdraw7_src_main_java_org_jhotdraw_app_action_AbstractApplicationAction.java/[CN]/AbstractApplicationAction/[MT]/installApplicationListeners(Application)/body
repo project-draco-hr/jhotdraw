@@ -1,6 +1,0 @@
-{
-  if (applicationListener == null) {
-    applicationListener=createApplicationListener();
-  }
-  app.addPropertyChangeListener(applicationListener);
-}

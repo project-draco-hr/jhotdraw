@@ -1,0 +1,3 @@
+{
+  initActionProperties(getResourceMap(),baseName);
+}

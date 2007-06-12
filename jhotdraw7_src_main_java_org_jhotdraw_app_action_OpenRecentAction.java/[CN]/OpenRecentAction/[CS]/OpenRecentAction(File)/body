@@ -1,0 +1,4 @@
+{
+  this.file=file;
+  putValue(Action.NAME,file.getName());
+}

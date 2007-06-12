@@ -2,13 +2,14 @@
   super.putValue(key,newValue);
   if (key == Actions.SELECTED_KEY) {
     if (palette != null) {
+      AbstractOSXApplication application=getApplication();
       boolean b=(Boolean)newValue;
       if (b) {
-        app.addPalette(palette);
+        application.addPalette(palette);
         palette.setVisible(true);
       }
  else {
-        app.removePalette(palette);
+        application.removePalette(palette);
         palette.setVisible(false);
       }
     }

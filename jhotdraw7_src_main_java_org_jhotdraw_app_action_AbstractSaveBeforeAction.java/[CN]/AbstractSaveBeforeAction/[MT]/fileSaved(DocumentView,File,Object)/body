@@ -1,0 +1,15 @@
+{
+  if (value == null) {
+    p.setFile(file);
+    p.setModified(false);
+    doIt(p);
+  }
+ else {
+    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.application.Labels");
+    JSheet.showMessageSheet(p.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + labels.getFormatted("couldntSave",file,value),JOptionPane.ERROR_MESSAGE);
+  }
+  p.setEnabled(true);
+  if (oldFocusOwner != null) {
+    oldFocusOwner.requestFocus();
+  }
+}

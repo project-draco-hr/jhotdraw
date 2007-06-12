@@ -1,4 +1,0 @@
-{
-  super.uninstallApplicationListeners(app);
-  app.removePropertyChangeListener(applicationListener);
-}

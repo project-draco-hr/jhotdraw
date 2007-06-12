@@ -1,0 +1,14 @@
+{
+  if (value == null) {
+  }
+ else {
+    System.out.flush();
+    ((Throwable)value).printStackTrace();
+    JSheet.showMessageSheet(documentView.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>Couldn't export to the file \""+ file+ "\".<p>"+ "Reason: "+ value,JOptionPane.ERROR_MESSAGE);
+  }
+  documentView.setEnabled(true);
+  SwingUtilities.getWindowAncestor(documentView.getComponent()).toFront();
+  if (oldFocusOwner != null) {
+    oldFocusOwner.requestFocus();
+  }
+}

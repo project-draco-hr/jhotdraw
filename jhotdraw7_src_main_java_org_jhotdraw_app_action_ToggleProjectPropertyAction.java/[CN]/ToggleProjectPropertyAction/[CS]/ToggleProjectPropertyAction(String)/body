@@ -1,0 +1,3 @@
+{
+  this(propertyName,Boolean.TYPE,true,false);
+}

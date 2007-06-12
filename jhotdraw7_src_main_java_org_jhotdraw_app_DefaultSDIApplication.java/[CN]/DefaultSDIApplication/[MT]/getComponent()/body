@@ -1,4 +1,0 @@
-{
-  Project p=getCurrentProject();
-  return (p == null) ? null : p.getComponent();
-}

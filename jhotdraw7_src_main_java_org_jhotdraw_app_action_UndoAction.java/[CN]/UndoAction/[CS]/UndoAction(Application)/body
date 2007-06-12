@@ -1,4 +1,0 @@
-{
-  super(app);
-  labels.configureAction(this,ID);
-}

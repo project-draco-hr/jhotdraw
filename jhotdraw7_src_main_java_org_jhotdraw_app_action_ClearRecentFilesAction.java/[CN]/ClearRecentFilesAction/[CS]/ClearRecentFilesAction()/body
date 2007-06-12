@@ -1,0 +1,4 @@
+{
+  initActionProperties("Menu.clearMenu");
+  updateEnabled();
+}

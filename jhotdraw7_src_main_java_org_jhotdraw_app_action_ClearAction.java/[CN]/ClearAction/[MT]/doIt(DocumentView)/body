@@ -1,0 +1,20 @@
+{
+  documentView.setFile(null);
+  documentView.setEnabled(false);
+  documentView.execute(new Worker(){
+    public Object construct(){
+      try {
+        documentView.clear();
+        return null;
+      }
+ catch (      IOException ex) {
+        return ex;
+      }
+    }
+    public void finished(    Object result){
+      documentView.setModified(false);
+      documentView.setEnabled(true);
+    }
+  }
+);
+}

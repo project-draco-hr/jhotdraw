@@ -1,0 +1,6 @@
+{
+  int oldCount=views.size();
+  views.add(v);
+  initView(v);
+  firePropertyChange(PROP_VIEW_COUNT,oldCount,views.size());
+}

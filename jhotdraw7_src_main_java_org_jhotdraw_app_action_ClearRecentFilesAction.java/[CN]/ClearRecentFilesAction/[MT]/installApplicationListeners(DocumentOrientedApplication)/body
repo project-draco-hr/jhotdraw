@@ -1,0 +1,7 @@
+{
+  super.installApplicationListeners(application);
+  if (applicationListener == null) {
+    applicationListener=createApplicationListener();
+  }
+  application.addPropertyChangeListener(applicationListener);
+}
