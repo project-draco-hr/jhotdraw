@@ -1,0 +1,9 @@
+{
+  ActionMap am=createActionMap();
+  if (am != null) {
+    ActionMap acam=ApplicationContext.getInstance().getActionMap();
+    for (    Object key : am.keys()) {
+      acam.put(key,am.get(key));
+    }
+  }
+}

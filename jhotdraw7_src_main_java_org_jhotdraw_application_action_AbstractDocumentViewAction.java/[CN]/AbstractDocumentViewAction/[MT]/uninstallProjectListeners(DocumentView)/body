@@ -1,0 +1,3 @@
+{
+  p.removePropertyChangeListener(viewListener);
+}

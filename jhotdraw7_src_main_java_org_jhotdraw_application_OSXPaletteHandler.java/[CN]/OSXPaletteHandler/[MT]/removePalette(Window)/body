@@ -1,0 +1,4 @@
+{
+  palettes.remove(palette);
+  palette.removeWindowFocusListener(focusHandler);
+}

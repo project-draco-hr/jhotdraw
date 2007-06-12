@@ -1,0 +1,5 @@
+{
+  LinkedList<JMenu> list=new LinkedList<JMenu>();
+  list.add(createEditMenu(a,p));
+  return list;
+}

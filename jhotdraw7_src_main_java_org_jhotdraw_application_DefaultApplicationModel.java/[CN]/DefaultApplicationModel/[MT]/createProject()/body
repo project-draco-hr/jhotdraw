@@ -1,0 +1,10 @@
+{
+  try {
+    return (DocumentView)getProjectClass().newInstance();
+  }
+ catch (  Exception e) {
+    InternalError error=new InternalError("unable to create documentView");
+    error.initCause(e);
+    throw error;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  java.util.List<File> oldValue=(java.util.List<File>)recentFiles.clone();
+  recentFiles.clear();
+  prefs.putInt("recentFileCount",recentFiles.size());
+  firePropertyChange("recentFiles",Collections.unmodifiableList(oldValue),Collections.unmodifiableList(recentFiles));
+}

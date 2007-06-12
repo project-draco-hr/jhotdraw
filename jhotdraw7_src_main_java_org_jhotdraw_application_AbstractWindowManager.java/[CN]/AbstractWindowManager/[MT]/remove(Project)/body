@@ -1,7 +1,0 @@
-{
-  hide(p);
-  int oldCount=projects.size();
-  projects.remove(p);
-  p.setWindowManager(null);
-  firePropertyChange("projectCount",oldCount,projects.size());
-}

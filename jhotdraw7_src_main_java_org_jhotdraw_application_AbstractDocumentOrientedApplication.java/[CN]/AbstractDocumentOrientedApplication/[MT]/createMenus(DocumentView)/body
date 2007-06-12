@@ -1,0 +1,20 @@
+{
+  LinkedList<JMenu> l=new LinkedList<JMenu>();
+  JMenu m;
+  if (null != (m=createFileMenu(v))) {
+    l.add(m);
+  }
+  if (null != (m=createEditMenu(v))) {
+    l.add(m);
+  }
+  if (null != (m=createViewMenu(v))) {
+    l.add(m);
+  }
+  if (null != (m=createWindowMenu(v))) {
+    l.add(m);
+  }
+  if (null != (m=createHelpMenu(v))) {
+    l.add(m);
+  }
+  return l;
+}

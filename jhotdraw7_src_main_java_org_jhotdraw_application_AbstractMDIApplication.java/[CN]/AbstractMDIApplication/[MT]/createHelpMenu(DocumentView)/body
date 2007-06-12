@@ -1,0 +1,10 @@
+{
+  ResourceMap labels=getFrameworkResourceMap();
+  JMenu m;
+  JMenuItem mi;
+  m=new JMenu();
+  m.setName("Help.Menu");
+  labels.injectComponent(m);
+  m.add(getAction(AboutAction.ID));
+  return m;
+}

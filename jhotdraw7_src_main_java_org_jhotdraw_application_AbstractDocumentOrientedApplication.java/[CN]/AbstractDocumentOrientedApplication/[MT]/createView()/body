@@ -1,0 +1,15 @@
+{
+  try {
+    return (DocumentView)getViewClass().newInstance();
+  }
+ catch (  IllegalAccessException ex) {
+    InternalError error=new InternalError(ex.getMessage());
+    error.initCause(ex);
+    throw error;
+  }
+catch (  InstantiationException ex) {
+    InternalError error=new InternalError(ex.getMessage());
+    error.initCause(ex);
+    throw error;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  int vk=(int)c;
+  if ((vk >= 'a') && (vk <= 'z')) {
+    vk-=('a' - 'A');
+  }
+  return vk;
+}

@@ -1,4 +1,0 @@
-{
-  DocumentOrientedApplication m=getApplication();
-  p.putAction(LoadAction.ID,m.getAction(LoadAction.ID));
-}

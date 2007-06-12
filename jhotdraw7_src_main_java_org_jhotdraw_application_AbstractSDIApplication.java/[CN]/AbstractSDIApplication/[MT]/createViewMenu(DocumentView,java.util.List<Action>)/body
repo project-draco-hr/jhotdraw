@@ -1,0 +1,21 @@
+{
+  ResourceMap labels=getResourceMap();
+  JMenuBar mb=new JMenuBar();
+  JMenu m, m2;
+  JMenuItem mi;
+  JCheckBoxMenuItem cbmi;
+  final JMenu openRecentMenu;
+  m=new JMenu();
+  m.setName("View.Menu");
+  labels.injectComponent(m);
+  if (toolBarActions != null && toolBarActions.size() > 0) {
+    m2=(toolBarActions.size() == 1) ? m : new JMenu(labels.getString("toolBars"));
+    for (    Action a : toolBarActions) {
+      cbmi=new JCheckBoxMenuItem(a);
+      Actions.configureJCheckBoxMenuItem(cbmi,a);
+      m2.add(cbmi);
+    }
+    m.add(m2);
+  }
+  return m;
+}

@@ -1,8 +1,0 @@
-{
-  if (p.getWindowManager() != this) {
-    int oldCount=projects.size();
-    projects.add(p);
-    p.setWindowManager(this);
-    firePropertyChange("projectCount",oldCount,projects.size());
-  }
-}

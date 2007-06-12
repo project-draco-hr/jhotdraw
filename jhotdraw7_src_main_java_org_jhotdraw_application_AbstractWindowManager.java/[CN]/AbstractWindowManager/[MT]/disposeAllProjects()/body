@@ -1,5 +1,0 @@
-{
-  for (  Project p : new LinkedList<Project>(projects())) {
-    dispose(p);
-  }
-}

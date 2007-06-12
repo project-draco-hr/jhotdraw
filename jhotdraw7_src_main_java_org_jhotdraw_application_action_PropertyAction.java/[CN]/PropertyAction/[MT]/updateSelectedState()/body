@@ -1,0 +1,16 @@
+{
+  boolean isSelected=false;
+  DocumentView p=getCurrentView();
+  if (p != null) {
+    try {
+      Object value=p.getClass().getMethod(getterName,(Class[])null).invoke(p);
+      isSelected=value == propertyValue || value != null && propertyValue != null && value.equals(propertyValue);
+    }
+ catch (    Throwable e) {
+      InternalError error=new InternalError("Method invocation failed");
+      error.initCause(e);
+      throw error;
+    }
+  }
+  putValue(Actions.SELECTED_KEY,isSelected);
+}

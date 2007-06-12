@@ -1,5 +1,0 @@
-{
-  Project oldValue=currentProject;
-  currentProject=newValue;
-  firePropertyChange("currentProject",oldValue,newValue);
-}

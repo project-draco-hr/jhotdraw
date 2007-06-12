@@ -1,0 +1,5 @@
+{
+  target.setText(text);
+  target.setDisplayedMnemonic(key);
+  target.setDisplayedMnemonicIndex(index);
+}

@@ -1,0 +1,6 @@
+{
+  if (desktopPane == null) {
+    desktopPane=new MDIDesktopPane();
+  }
+  return desktopPane;
+}

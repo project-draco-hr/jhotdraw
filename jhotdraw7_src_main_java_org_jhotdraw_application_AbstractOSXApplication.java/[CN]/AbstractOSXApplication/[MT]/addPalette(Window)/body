@@ -1,0 +1,3 @@
+{
+  paletteHandler.addPalette(palette);
+}
