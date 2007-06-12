@@ -1,11 +1,11 @@
 {
-  Project project=getCurrentProject();
-  project.setEnabled(false);
+  DocumentView documentView=getCurrentView();
+  documentView.setEnabled(false);
   if (System.getProperty("apple.awt.graphics.UseQuartz","false").equals("true")) {
     printQuartz();
   }
  else {
     printJava2D();
   }
-  project.setEnabled(true);
+  documentView.setEnabled(true);
 }

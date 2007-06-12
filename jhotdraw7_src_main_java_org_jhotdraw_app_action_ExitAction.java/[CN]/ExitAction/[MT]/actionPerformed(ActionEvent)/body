@@ -1,11 +1,11 @@
 {
-  final DocumentOrientedApplication application=getApplication();
-  if (application.isEnabled()) {
-    application.setEnabled(false);
+  final Application app=getApplication();
+  if (app.isEnabled()) {
+    app.setEnabled(false);
     int unsavedProjectsCount=0;
-    DocumentView documentToBeReviewed=null;
-    for (    DocumentView p : application.getViews()) {
-      if (p.isModified()) {
+    Project documentToBeReviewed=null;
+    for (    Project p : app.projects()) {
+      if (p.hasUnsavedChanges()) {
         if (p.isEnabled()) {
           documentToBeReviewed=p;
         }
@@ -13,7 +13,7 @@
       }
     }
     if (unsavedProjectsCount > 0 && documentToBeReviewed == null) {
-      application.setEnabled(true);
+      app.setEnabled(true);
       return;
     }
 switch (unsavedProjectsCount) {
@@ -37,7 +37,7 @@ case 1:
           Object value=evt.getValue();
           if (value == null || value.equals("Cancel")) {
             unsavedProject.setEnabled(true);
-            application.setEnabled(true);
+            app.setEnabled(true);
           }
  else           if (value.equals("Don't Save")) {
             doExit();
@@ -58,15 +58,15 @@ default :
     pane.setOptions(options);
     pane.setInitialValue(options[0]);
     pane.putClientProperty("Quaqua.OptionPane.destructiveOption",new Integer(2));
-    JDialog dialog=pane.createDialog(application.getComponent(),null);
+    JDialog dialog=pane.createDialog(app.getComponent(),null);
     dialog.setVisible(true);
     Object value=pane.getValue();
     if (value == null || value.equals("Cancel")) {
-      application.setEnabled(true);
+      app.setEnabled(true);
     }
  else     if (value.equals("Discard Changes")) {
       doExit();
-      application.setEnabled(true);
+      app.setEnabled(true);
     }
  else     if (value.equals("Review Changes")) {
       unsavedProject=documentToBeReviewed;

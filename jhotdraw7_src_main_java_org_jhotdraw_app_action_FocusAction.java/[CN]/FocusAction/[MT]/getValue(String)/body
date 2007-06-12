@@ -1,5 +1,5 @@
 {
-  if (key == Action.NAME && documentView != null) {
+  if (key == Action.NAME && project != null) {
     return getTitle();
   }
  else {

@@ -1,19 +1,19 @@
 {
-  final ExportableDocumentView documentView=(ExportableDocumentView)getCurrentView();
-  if (documentView.isEnabled()) {
-    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.application.Labels");
-    oldFocusOwner=SwingUtilities.getWindowAncestor(documentView.getComponent()).getFocusOwner();
-    documentView.setEnabled(false);
+  final ExportableProject project=(ExportableProject)getCurrentProject();
+  if (project.isEnabled()) {
+    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+    oldFocusOwner=SwingUtilities.getWindowAncestor(project.getComponent()).getFocusOwner();
+    project.setEnabled(false);
     File saveToFile;
-    JFileChooser fileChooser=documentView.getExportChooser();
-    JSheet.showSheet(fileChooser,documentView.getComponent(),labels.getString("filechooser.export"),new SheetListener(){
+    JFileChooser fileChooser=project.getExportChooser();
+    JSheet.showSheet(fileChooser,project.getComponent(),labels.getString("filechooser.export"),new SheetListener(){
       public void optionSelected(      final SheetEvent evt){
         if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
           final File file=evt.getFileChooser().getSelectedFile();
-          exportToFile(documentView,file,evt.getFileChooser().getFileFilter(),evt.getFileChooser().getAccessory());
+          exportToFile(project,file,evt.getFileChooser().getFileFilter(),evt.getFileChooser().getAccessory());
         }
  else {
-          documentView.setEnabled(true);
+          project.setEnabled(true);
           if (oldFocusOwner != null) {
             oldFocusOwner.requestFocus();
           }

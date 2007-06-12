@@ -1,10 +1,10 @@
 {
-  final DocumentOrientedApplication app=getApplication();
+  final DocumentOrientedApplication application=getApplication();
   if (evt instanceof ApplicationEvent) {
     final ApplicationEvent ae=(ApplicationEvent)evt;
-    final Project p=app.createProject();
+    final DocumentView p=application.createView();
     p.setEnabled(false);
-    WindowManager.getInstance().add(p);
+    application.add(p);
     p.execute(new Worker(){
       public Object construct(){
         try {
@@ -21,7 +21,7 @@
           p.setEnabled(true);
         }
  else {
-          WindowManager.getInstance().dispose(p);
+          application.remove(p);
           JOptionPane.showMessageDialog(null,"<html>" + UIManager.getString("OptionPane.css") + "<b>Can't open file "+ ae.getFile()+ "</b><p>"+ value,"",JOptionPane.ERROR_MESSAGE);
         }
       }

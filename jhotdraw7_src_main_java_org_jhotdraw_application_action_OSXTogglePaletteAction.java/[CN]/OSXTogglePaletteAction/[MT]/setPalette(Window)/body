@@ -1,4 +1,5 @@
 {
+  AbstractOSXApplication application=getApplication();
   if (palette != null) {
     palette.removeWindowListener(windowHandler);
   }
@@ -6,11 +7,11 @@
   if (palette != null) {
     palette.addWindowListener(windowHandler);
     if (getValue(Actions.SELECTED_KEY) == Boolean.TRUE) {
-      ((DefaultOSXWindowManager)WindowManager.getInstance()).addPalette(palette);
+      application.addPalette(palette);
       palette.setVisible(true);
     }
  else {
-      ((DefaultOSXWindowManager)WindowManager.getInstance()).removePalette(palette);
+      application.removePalette(palette);
       palette.setVisible(false);
     }
   }

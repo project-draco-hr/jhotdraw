@@ -1,6 +1,0 @@
-{
-  Project p=basicCreateProject();
-  p.init();
-  initProject(p);
-  return p;
-}

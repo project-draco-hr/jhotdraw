@@ -15,7 +15,7 @@
           getApplication().setEnabled(true);
         }
  else         if (value.equals("Don't Save")) {
-          getApplication().remove(unsavedProject);
+          getApplication().dispose(unsavedProject);
           reviewNext();
         }
  else         if (value.equals("Save")) {

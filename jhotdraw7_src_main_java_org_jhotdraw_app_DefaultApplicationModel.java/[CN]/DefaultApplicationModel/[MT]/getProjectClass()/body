@@ -5,7 +5,7 @@
         projectClass=Class.forName(projectClassName);
       }
  catch (      Exception e) {
-        InternalError error=new InternalError("unable to get documentView class");
+        InternalError error=new InternalError("unable to get project class");
         error.initCause(e);
         throw error;
       }

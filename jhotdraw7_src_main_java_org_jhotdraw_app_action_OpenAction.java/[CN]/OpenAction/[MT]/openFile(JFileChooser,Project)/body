@@ -1,0 +1,29 @@
+{
+  final Application app=getApplication();
+  final File file=fileChooser.getSelectedFile();
+  app.setEnabled(true);
+  project.setEnabled(false);
+  int multipleOpenId=1;
+  for (  Project aProject : app.projects()) {
+    if (aProject != project && aProject.getFile() != null && aProject.getFile().equals(file)) {
+      multipleOpenId=Math.max(multipleOpenId,aProject.getMultipleOpenId() + 1);
+    }
+  }
+  project.setMultipleOpenId(multipleOpenId);
+  project.setEnabled(false);
+  project.execute(new Worker(){
+    public Object construct(){
+      try {
+        project.read(file);
+        return null;
+      }
+ catch (      Throwable e) {
+        return e;
+      }
+    }
+    public void finished(    Object value){
+      fileOpened(project,file,value);
+    }
+  }
+);
+}

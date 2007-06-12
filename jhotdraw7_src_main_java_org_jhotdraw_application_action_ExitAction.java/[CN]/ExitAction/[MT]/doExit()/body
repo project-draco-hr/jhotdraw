@@ -1,4 +1,4 @@
 {
-  getApplication().exit();
+  getApplication().shutdown();
   System.exit(0);
 }

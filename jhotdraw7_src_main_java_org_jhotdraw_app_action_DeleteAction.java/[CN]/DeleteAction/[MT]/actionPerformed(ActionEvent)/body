@@ -3,7 +3,7 @@
   if (focusOwner != null && focusOwner instanceof EditableComponent) {
     ((EditableComponent)focusOwner).delete();
   }
- else   if (focusOwner instanceof JTextComponent) {
-    deleteNextChar(evt,(JTextComponent)focusOwner);
+ else {
+    deleteNextChar(evt);
   }
 }

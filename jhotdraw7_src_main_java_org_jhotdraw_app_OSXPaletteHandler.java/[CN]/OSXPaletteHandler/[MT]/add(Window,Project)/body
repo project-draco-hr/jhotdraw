@@ -1,0 +1,4 @@
+{
+  window.addWindowFocusListener(focusHandler);
+  windows.put(window,project);
+}

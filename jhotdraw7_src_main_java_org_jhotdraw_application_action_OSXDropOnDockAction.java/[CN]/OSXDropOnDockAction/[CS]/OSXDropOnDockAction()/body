@@ -1,4 +1,3 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.application.Labels");
-  putValue(Action.NAME,"OSX Drop On Dock");
+  initActionProperties(ID);
 }

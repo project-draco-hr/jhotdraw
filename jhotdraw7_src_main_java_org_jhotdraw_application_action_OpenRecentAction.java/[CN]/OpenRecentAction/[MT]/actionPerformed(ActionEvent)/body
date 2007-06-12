@@ -1,16 +1,16 @@
 {
-  final DocumentOrientedApplication app=getApplication();
-  if (app.isEnabled()) {
-    app.setEnabled(false);
-    Project emptyProject=WindowManager.getInstance().getCurrentProject();
-    if (emptyProject == null || emptyProject.getFile() != null || emptyProject.hasUnsavedChanges()) {
+  final DocumentOrientedApplication application=getApplication();
+  if (application.isEnabled()) {
+    application.setEnabled(false);
+    DocumentView emptyProject=application.getCurrentView();
+    if (emptyProject == null || emptyProject.getFile() != null || emptyProject.isModified()) {
       emptyProject=null;
     }
-    final Project p;
+    final DocumentView p;
     if (emptyProject == null) {
-      p=app.createProject();
-      WindowManager.getInstance().add(p);
-      WindowManager.getInstance().show(p);
+      p=application.createView();
+      application.add(p);
+      application.show(p);
     }
  else {
       p=emptyProject;

@@ -1,5 +1,5 @@
 {
-  Pageable pageable=(Pageable)Methods.invokeGetter(getCurrentProject(),"createPageable",null);
+  Pageable pageable=(Pageable)Methods.invokeGetter(getCurrentView(),"createPageable",null);
   if (pageable == null) {
     throw new InternalError("Project does not have a method named java.awt.Pageable createPageable()");
   }
@@ -14,7 +14,7 @@
       }
  catch (      PrinterException e) {
         ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.application.Labels");
-        JSheet.showMessageSheet(getCurrentProject().getComponent(),labels.getFormatted("couldntPrint",e));
+        JSheet.showMessageSheet(getCurrentView().getComponent(),labels.getFormatted("couldntPrint",e));
       }
     }
  else {

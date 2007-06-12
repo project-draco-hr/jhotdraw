@@ -1,6 +1,6 @@
 {
   boolean isSelected=false;
-  Project p=getCurrentProject();
+  DocumentView p=getCurrentView();
   if (p != null) {
     try {
       Object value=p.getClass().getMethod(getterName,(Class[])null).invoke(p);

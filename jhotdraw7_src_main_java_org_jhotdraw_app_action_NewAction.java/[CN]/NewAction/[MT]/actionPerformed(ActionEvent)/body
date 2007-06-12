@@ -1,22 +1,14 @@
 {
-  DocumentOrientedApplication application=getApplication();
-  final DocumentView newP=application.createView();
-  application.add(newP);
-  newP.setEnabled(false);
-  newP.execute(new Worker(){
-    public Object construct(){
-      try {
-        newP.clear();
-        return null;
-      }
- catch (      IOException ex) {
-        return ex;
-      }
-    }
-    public void finished(    Object result){
-      newP.setEnabled(true);
+  Application app=getApplication();
+  Project newP=app.createProject();
+  int multiOpenId=1;
+  for (  Project existingP : app.projects()) {
+    if (existingP.getFile() == null) {
+      multiOpenId=Math.max(multiOpenId,existingP.getMultipleOpenId() + 1);
     }
   }
-);
-  application.show(newP);
+  newP.setMultipleOpenId(multiOpenId);
+  app.add(newP);
+  newP.clear();
+  app.show(newP);
 }

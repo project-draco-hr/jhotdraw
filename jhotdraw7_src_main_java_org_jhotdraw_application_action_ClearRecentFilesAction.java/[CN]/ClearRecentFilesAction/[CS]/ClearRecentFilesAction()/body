@@ -1,5 +1,4 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.application.Labels");
-  labels.configureAction(this,"clearMenu");
+  initActionProperties("Menu.clearMenu");
   updateEnabled();
 }

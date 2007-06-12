@@ -1,3 +1,4 @@
 {
-  initActionProperties(ID);
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+  labels.configureAction(this,ID);
 }

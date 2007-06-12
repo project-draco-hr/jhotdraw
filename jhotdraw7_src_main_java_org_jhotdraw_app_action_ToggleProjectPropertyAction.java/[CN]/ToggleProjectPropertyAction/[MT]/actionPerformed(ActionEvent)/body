@@ -1,5 +1,5 @@
 {
-  DocumentView p=getCurrentView();
+  Project p=getCurrentProject();
   Object value=getCurrentValue();
   Object newValue=(value == selectedPropertyValue || value != null && selectedPropertyValue != null && value.equals(selectedPropertyValue)) ? deselectedPropertyValue : selectedPropertyValue;
   try {

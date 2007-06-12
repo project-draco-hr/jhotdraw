@@ -1,5 +1,5 @@
 {
-  DocumentView p=getCurrentView();
+  Project p=getCurrentProject();
   if (p != null) {
     try {
       return p.getClass().getMethod(getterName,(Class[])null).invoke(p);

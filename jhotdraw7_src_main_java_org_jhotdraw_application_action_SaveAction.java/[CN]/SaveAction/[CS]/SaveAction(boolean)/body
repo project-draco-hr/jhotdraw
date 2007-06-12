@@ -1,5 +1,4 @@
 {
   this.saveAs=saveAs;
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.application.Labels");
-  labels.configureAction(this,ID);
+  initActionProperties(ID);
 }

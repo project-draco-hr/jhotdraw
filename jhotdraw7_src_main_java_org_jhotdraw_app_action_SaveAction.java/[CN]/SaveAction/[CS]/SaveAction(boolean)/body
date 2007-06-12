@@ -1,4 +1,0 @@
-{
-  this.saveAs=saveAs;
-  initActionProperties(ID);
-}
