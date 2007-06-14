@@ -1,4 +1,4 @@
 DrawingEditor editor
-AttributeKey key
+AttributeKey<Color> key
 String name
 Icon icon

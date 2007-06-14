@@ -2,10 +2,7 @@
   if (colorChooser == null) {
     colorChooser=new JColorChooser();
   }
-  Color initialColor=(Color)getEditor().getDefaultAttribute(key);
-  if (initialColor == null) {
-    initialColor=Color.red;
-  }
+  Color initialColor=getInitialColor();
   Color chosenColor=colorChooser.showDialog((Component)e.getSource(),labels.getString("drawColor"),initialColor);
   if (chosenColor != null) {
     changeAttribute(chosenColor);

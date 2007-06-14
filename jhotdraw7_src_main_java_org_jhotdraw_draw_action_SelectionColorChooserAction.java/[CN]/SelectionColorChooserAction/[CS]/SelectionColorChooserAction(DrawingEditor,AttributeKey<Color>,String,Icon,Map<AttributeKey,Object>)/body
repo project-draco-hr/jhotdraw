@@ -1,0 +1,3 @@
+{
+  super(editor,key,name,icon,fixedAttributes);
+}

@@ -3,7 +3,7 @@
   super.paintIcon(c,g,x,y);
   Color color;
   DrawingView view=editor.getActiveView();
-  if (view != null && view.getSelectedFigures().size() != 0) {
+  if (view != null && view.getSelectedFigures().size() == 1) {
     color=key.get(view.getSelectedFigures().iterator().next());
   }
  else {
