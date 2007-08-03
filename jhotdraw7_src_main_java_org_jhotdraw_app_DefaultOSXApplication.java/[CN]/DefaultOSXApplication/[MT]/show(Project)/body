@@ -10,7 +10,8 @@
  else {
       title=file.getName();
     }
-    f.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
+    p.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
+    f.setTitle(p.getTitle());
     f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     f.setPreferredSize(new Dimension(400,400));
     PreferencesUtil.installFramePrefsHandler(prefs,"project",f);
@@ -30,7 +31,6 @@
     }
  while (moved);
     f.setLocation(loc);
-    paletteHandler.add(f,p);
     f.addWindowListener(new WindowAdapter(){
       public void windowClosing(      final WindowEvent evt){
         setCurrentProject(p);
@@ -45,12 +45,21 @@
           f.getRootPane().putClientProperty("windowModified",new Boolean(p.hasUnsavedChanges()));
         }
  else         if (name.equals("file")) {
-          f.setTitle((p.getFile() == null) ? "Unnamed" : p.getFile().getName());
+          String title;
+          File file=(File)evt.getNewValue();
+          if (file == null) {
+            title=labels.getString("unnamedFile");
+          }
+ else {
+            title=file.getName();
+          }
+          p.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
+          f.setTitle(p.getTitle());
         }
       }
     }
 );
-    f.setJMenuBar(createMenuBar(p));
+    addWindow(f,p);
     f.getContentPane().add(p.getComponent());
     f.setVisible(true);
   }

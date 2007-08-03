@@ -1,5 +1,5 @@
 {
   super.installProjectListeners(p);
   p.addPropertyChangeListener(projectListener);
-  updateSelectedState();
+  updateProperty();
 }

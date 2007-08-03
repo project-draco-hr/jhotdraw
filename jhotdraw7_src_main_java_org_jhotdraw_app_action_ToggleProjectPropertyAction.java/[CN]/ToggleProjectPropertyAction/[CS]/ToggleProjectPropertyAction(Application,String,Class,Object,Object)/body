@@ -6,5 +6,5 @@
   this.deselectedPropertyValue=deselectedPropertyValue;
   setterName="set" + Character.toUpperCase(propertyName.charAt(0)) + propertyName.substring(1);
   getterName=((propertyClass == Boolean.TYPE || propertyClass == Boolean.class) ? "is" : "get") + Character.toUpperCase(propertyName.charAt(0)) + propertyName.substring(1);
-  updateSelectedState();
+  updateProperty();
 }

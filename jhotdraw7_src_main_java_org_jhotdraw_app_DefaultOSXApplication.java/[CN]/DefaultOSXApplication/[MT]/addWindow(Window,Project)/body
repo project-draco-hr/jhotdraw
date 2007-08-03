@@ -1,0 +1,8 @@
+{
+  if (window instanceof JFrame) {
+    ((JFrame)window).setJMenuBar(createMenuBar(p));
+  }
+ else   if (window instanceof JDialog) {
+  }
+  paletteHandler.add(window,p);
+}

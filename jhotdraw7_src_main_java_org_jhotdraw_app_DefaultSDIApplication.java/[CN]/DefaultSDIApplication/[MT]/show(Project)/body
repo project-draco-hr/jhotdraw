@@ -13,7 +13,8 @@
     if (p.hasUnsavedChanges()) {
       title+="*";
     }
-    f.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
+    p.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
+    f.setTitle(p.getTitle());
     f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     JPanel panel=(JPanel)wrapProjectComponent(p);
     f.add(panel);
@@ -62,7 +63,8 @@
           if (p.hasUnsavedChanges()) {
             title+="*";
           }
-          f.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
+          p.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
+          f.setTitle(p.getTitle());
         }
       }
     }

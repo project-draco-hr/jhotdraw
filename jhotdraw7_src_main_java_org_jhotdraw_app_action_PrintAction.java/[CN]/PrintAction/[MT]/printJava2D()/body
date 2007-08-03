@@ -1,5 +1,5 @@
 {
-  Pageable pageable=(Pageable)Methods.invokeGetter(getCurrentProject(),"createPageable",null);
+  Pageable pageable=((PrintableProject)getCurrentProject()).createPageable();
   if (pageable == null) {
     throw new InternalError("Project does not have a method named java.awt.Pageable createPageable()");
   }
