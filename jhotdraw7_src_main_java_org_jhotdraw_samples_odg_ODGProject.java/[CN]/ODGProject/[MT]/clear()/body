@@ -1,0 +1,6 @@
+{
+  view.getDrawing().removeUndoableEditListener(undo);
+  view.setDrawing(createDrawing());
+  view.getDrawing().addUndoableEditListener(undo);
+  undo.discardAllEdits();
+}

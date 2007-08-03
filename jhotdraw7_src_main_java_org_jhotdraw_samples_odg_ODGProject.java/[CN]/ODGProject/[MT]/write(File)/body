@@ -1,0 +1,10 @@
+{
+  OutputStream out=null;
+  try {
+    out=new BufferedOutputStream(new FileOutputStream(f));
+    new SVGOutputFormat().write(f,view.getDrawing());
+  }
+  finally {
+    if (out != null)     out.close();
+  }
+}

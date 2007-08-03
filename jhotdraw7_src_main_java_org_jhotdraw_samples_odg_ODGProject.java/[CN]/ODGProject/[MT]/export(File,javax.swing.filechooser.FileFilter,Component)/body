@@ -1,0 +1,9 @@
+{
+  OutputFormat format=fileFilterOutputFormatMap.get(filter);
+  if (!f.getName().endsWith("." + format.getFileExtension())) {
+    f=new File(f.getPath() + "." + format.getFileExtension());
+  }
+  format.write(f,view.getDrawing());
+  prefs.put("projectExportFile",f.getPath());
+  prefs.put("projectExportFormat",filter.getDescription());
+}
