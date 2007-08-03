@@ -1,0 +1,3 @@
+{
+  return (type.hashCode() << 24) | Arrays.hashCode(coords) & 0x0fff0000 | Arrays.hashCode(modifiers) & 0xffff;
+}

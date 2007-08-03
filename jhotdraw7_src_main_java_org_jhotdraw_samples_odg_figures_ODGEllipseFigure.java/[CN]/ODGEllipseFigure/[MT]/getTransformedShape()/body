@@ -1,0 +1,11 @@
+{
+  if (cachedTransformedShape == null) {
+    if (TRANSFORM.get(this) == null) {
+      cachedTransformedShape=ellipse;
+    }
+ else {
+      cachedTransformedShape=TRANSFORM.get(this).createTransformedShape(ellipse);
+    }
+  }
+  return cachedTransformedShape;
+}

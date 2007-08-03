@@ -1,0 +1,3 @@
+{
+  return (Rectangle2D.Double)roundrect.getBounds2D();
+}

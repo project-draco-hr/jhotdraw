@@ -1,0 +1,5 @@
+{
+  if (a.isSharingToolsAmongProjects()) {
+    ((ODGProject)p).setEditor(getSharedEditor());
+  }
+}

@@ -5,7 +5,7 @@
       if (child.getNamespace() == null || child.getNamespace().equals(DRAWING_NAMESPACE)) {
         String name=child.getName();
         if (name.equals("page")) {
-          readPageElement(elem);
+          readPageElement(child);
         }
       }
     }

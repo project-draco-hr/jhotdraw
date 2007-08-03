@@ -1,0 +1,18 @@
+{
+  int dx=lead.x - anchor.x;
+  int dy=lead.y - anchor.y;
+  ODGRectFigure odgRect=(ODGRectFigure)getOwner();
+  odgRect.willChange();
+  Point2D.Double p=view.viewToDrawing(lead);
+  if (TRANSFORM.get(odgRect) != null) {
+    try {
+      TRANSFORM.get(odgRect).inverseTransform(p,p);
+    }
+ catch (    NoninvertibleTransformException ex) {
+      if (DEBUG)       ex.printStackTrace();
+    }
+  }
+  Rectangle2D.Double r=odgRect.getBounds();
+  odgRect.setArc(p.x - r.x,p.y - r.y);
+  odgRect.changed();
+}

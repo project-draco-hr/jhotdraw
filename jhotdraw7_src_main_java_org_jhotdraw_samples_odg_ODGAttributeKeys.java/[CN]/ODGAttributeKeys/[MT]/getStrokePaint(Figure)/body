@@ -1,0 +1,13 @@
+{
+  double opacity=STROKE_OPACITY.get(f);
+  if (STROKE_GRADIENT.get(f) != null) {
+    return STROKE_GRADIENT.get(f).getPaint(f,opacity);
+  }
+  Color color=STROKE_COLOR.get(f);
+  if (color != null) {
+    if (opacity != 1) {
+      color=new Color((color.getRGB() & 0xffffff) | (int)(opacity * 255) << 24,true);
+    }
+  }
+  return color;
+}

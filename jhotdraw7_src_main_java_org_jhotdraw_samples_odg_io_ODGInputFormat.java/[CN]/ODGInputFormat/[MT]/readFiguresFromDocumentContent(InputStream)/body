@@ -19,6 +19,10 @@
     e.initCause(ex);
     throw e;
   }
+  if (styles == null) {
+    styles=new ODGStylesReader();
+  }
+  styles.read(document);
   IXMLElement drawing=document;
   Stack<Iterator> stack=new Stack<Iterator>();
   LinkedList<IXMLElement> ll=new LinkedList<IXMLElement>();

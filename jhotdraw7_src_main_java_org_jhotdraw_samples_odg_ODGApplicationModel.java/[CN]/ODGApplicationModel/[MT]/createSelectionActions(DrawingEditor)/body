@@ -1,0 +1,13 @@
+{
+  LinkedList<Action> a=new LinkedList<Action>();
+  a.add(new DuplicateAction());
+  a.add(null);
+  a.add(new GroupAction(editor,new ODGGroupFigure()));
+  a.add(new UngroupAction(editor,new ODGGroupFigure()));
+  a.add(new CombineAction(editor));
+  a.add(new SplitAction(editor));
+  a.add(null);
+  a.add(new MoveToFrontAction(editor));
+  a.add(new MoveToBackAction(editor));
+  return a;
+}

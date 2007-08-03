@@ -1,0 +1,4 @@
+{
+  ODGPathFigure that=(ODGPathFigure)super.clone();
+  return that;
+}

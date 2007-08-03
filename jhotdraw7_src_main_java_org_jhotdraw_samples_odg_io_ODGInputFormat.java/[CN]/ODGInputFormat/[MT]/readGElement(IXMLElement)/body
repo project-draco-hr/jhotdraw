@@ -1,3 +1,13 @@
 {
-  return null;
+  CompositeFigure g=createGroupFigure();
+  for (  IXMLElement node : elem.getChildren()) {
+    if (node instanceof IXMLElement) {
+      IXMLElement child=(IXMLElement)node;
+      Figure childFigure=readElement(child);
+      if (childFigure != null) {
+        g.basicAdd(childFigure);
+      }
+    }
+  }
+  return (ODGFigure)g;
 }

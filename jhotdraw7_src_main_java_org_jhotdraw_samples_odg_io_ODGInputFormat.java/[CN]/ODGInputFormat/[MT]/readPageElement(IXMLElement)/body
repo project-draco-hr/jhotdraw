@@ -2,7 +2,10 @@
   for (  IXMLElement node : elem.getChildren()) {
     if (node instanceof IXMLElement) {
       IXMLElement child=(IXMLElement)node;
-      readElement(child);
+      ODGFigure figure=readElement(child);
+      if (figure != null) {
+        figures.add(figure);
+      }
     }
   }
 }

@@ -1,0 +1,7 @@
+{
+  double strokeWidth=STROKE_WIDTH.get(f);
+  if (strokeWidth == 0) {
+    strokeWidth=1;
+  }
+  return new BasicStroke((float)strokeWidth);
+}

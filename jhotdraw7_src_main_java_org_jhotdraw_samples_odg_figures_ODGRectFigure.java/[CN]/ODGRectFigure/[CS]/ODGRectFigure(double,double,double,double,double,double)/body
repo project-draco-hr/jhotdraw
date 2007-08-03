@@ -1,0 +1,4 @@
+{
+  roundrect=new RoundRectangle2D.Double(x,y,width,height,rx,ry);
+  ODGAttributeKeys.setDefaults(this);
+}

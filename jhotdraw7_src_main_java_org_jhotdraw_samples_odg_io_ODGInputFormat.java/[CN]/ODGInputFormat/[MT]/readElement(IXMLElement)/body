@@ -1,5 +1,5 @@
 {
-  Figure f=null;
+  ODGFigure f=null;
   if (elem.getNamespace() == null || elem.getNamespace().equals(DRAWING_NAMESPACE)) {
     String name=elem.getName();
     if (name.equals("caption")) {
@@ -11,11 +11,14 @@
  else     if (name.equals("connector")) {
       f=readCircleElement(elem);
     }
- else     if (name.equals("customShape")) {
+ else     if (name.equals("custom-shape")) {
       f=readCustomShapeElement(elem);
     }
  else     if (name.equals("ellipse")) {
       f=readEllipseElement(elem);
+    }
+ else     if (name.equals("frame")) {
+      f=readFrameElement(elem);
     }
  else     if (name.equals("g")) {
       f=readGElement(elem);
@@ -42,16 +45,15 @@
       f=readRegularPolygonElement(elem);
     }
  else {
-      if (DEBUG)       System.out.println("ODGInputFormat not implemented for <" + name + ">");
+      if (DEBUG)       System.out.println("ODGInputFormat.readElement(" + elem + ") not implemented.");
     }
   }
-  if (f instanceof ODGFigure) {
-    if (((ODGFigure)f).isEmpty()) {
+  if (f != null) {
+    if (f.isEmpty()) {
+      if (DEBUG)       System.out.println("ODGInputFormat.readElement():null - discarded empty figure " + f);
       return null;
     }
-  }
- else   if (f != null) {
-    if (DEBUG)     System.out.println("ODGInputFormat warning: not an ODGFigure " + f);
+    if (DEBUG)     System.out.println("ODGInputFormat.readElement():" + f + ".");
   }
   return f;
 }

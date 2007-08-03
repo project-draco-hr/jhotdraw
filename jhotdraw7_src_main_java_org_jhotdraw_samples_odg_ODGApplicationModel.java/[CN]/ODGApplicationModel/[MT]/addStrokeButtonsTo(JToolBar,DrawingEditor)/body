@@ -1,0 +1,6 @@
+{
+  bar.add(ButtonFactory.createStrokeWidthButton(editor));
+  bar.add(ButtonFactory.createStrokeDashesButton(editor));
+  bar.add(ButtonFactory.createStrokeCapButton(editor));
+  bar.add(ButtonFactory.createStrokeJoinButton(editor));
+}

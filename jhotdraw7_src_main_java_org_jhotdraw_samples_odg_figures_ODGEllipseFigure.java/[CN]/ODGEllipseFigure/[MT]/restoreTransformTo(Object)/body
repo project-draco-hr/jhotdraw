@@ -1,0 +1,8 @@
+{
+  Object[] restoreData=(Object[])geometry;
+  ellipse=(Ellipse2D.Double)((Ellipse2D.Double)restoreData[0]).clone();
+  TRANSFORM.basicSetClone(this,(AffineTransform)restoreData[1]);
+  FILL_GRADIENT.basicSetClone(this,(Gradient)restoreData[2]);
+  STROKE_GRADIENT.basicSetClone(this,(Gradient)restoreData[3]);
+  invalidate();
+}

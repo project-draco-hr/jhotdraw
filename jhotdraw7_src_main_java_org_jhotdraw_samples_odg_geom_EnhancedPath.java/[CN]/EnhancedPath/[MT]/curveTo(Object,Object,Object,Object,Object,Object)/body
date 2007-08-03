@@ -1,0 +1,6 @@
+{
+  if (size() == 0 || get(size() - 1).type == SegType.CLOSE) {
+    throw new IllegalPathStateException("curveTo is only allowed when a path segment is open");
+  }
+  add(new Segment(SegType.CURVETO,x1,y1,x2,y2,x3,y3));
+}

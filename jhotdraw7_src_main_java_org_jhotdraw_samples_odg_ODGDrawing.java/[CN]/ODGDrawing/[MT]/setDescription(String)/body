@@ -1,0 +1,5 @@
+{
+  String oldValue=description;
+  description=newValue;
+  firePropertyChange("description",oldValue,newValue);
+}
