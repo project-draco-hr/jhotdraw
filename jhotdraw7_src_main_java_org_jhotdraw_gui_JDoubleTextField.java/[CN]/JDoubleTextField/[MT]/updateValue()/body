@@ -1,0 +1,10 @@
+{
+  try {
+    double newValue=Double.valueOf(getText());
+    if (newValue >= minimum && newValue <= maximum) {
+      setValue(newValue);
+    }
+  }
+ catch (  NumberFormatException ex) {
+  }
+}

@@ -1,0 +1,5 @@
+{
+  int oldValue=value;
+  minimum=newValue;
+  firePropertyChange("minimum",oldValue,newValue);
+}

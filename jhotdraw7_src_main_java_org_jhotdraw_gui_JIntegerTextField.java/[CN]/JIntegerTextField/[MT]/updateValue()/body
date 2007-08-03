@@ -1,0 +1,10 @@
+{
+  try {
+    int newValue=Integer.decode(getText());
+    if (newValue >= minimum && newValue <= maximum) {
+      setValue(newValue);
+    }
+  }
+ catch (  NumberFormatException ex) {
+  }
+}

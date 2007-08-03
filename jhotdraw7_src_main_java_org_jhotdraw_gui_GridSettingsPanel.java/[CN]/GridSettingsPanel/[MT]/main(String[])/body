@@ -1,0 +1,7 @@
+{
+  JFrame f=new JFrame();
+  f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  f.getContentPane().add(new GridSettingsPanel());
+  f.pack();
+  f.show();
+}

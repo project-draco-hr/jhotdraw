@@ -1,0 +1,14 @@
+{
+  Document oldValue=getDocument();
+  super.setDocument(newValue);
+  if (documentHandler == null) {
+    documentHandler=new DocumentHandler();
+  }
+  if (oldValue != null) {
+    oldValue.removeDocumentListener(documentHandler);
+  }
+  if (newValue != null) {
+    newValue.addDocumentListener(documentHandler);
+  }
+  updateValue();
+}

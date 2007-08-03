@@ -1,0 +1,5 @@
+{
+  constrainer=newValue;
+  widthField.setValue(constrainer.getWidth());
+  heightField.setValue(constrainer.getHeight());
+}
