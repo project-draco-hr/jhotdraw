@@ -1,6 +1,0 @@
-{
-  super.removeNotify(drawing);
-  for (  Figure child : new LinkedList<Figure>(children)) {
-    child.removeNotify(drawing);
-  }
-}

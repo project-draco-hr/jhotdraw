@@ -1,7 +1,0 @@
-{
-  in.openElement("children");
-  for (int i=0; i < in.getElementCount(); i++) {
-    basicAdd((Figure)in.readObject(i));
-  }
-  in.closeElement();
-}

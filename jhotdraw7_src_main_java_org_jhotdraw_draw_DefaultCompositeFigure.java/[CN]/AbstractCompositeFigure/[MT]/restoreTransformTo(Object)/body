@@ -1,8 +1,0 @@
-{
-  LinkedList list=(LinkedList)geometry;
-  Iterator i=list.iterator();
-  for (  Figure child : children) {
-    child.restoreTransformTo(i.next());
-  }
-  invalidateBounds();
-}

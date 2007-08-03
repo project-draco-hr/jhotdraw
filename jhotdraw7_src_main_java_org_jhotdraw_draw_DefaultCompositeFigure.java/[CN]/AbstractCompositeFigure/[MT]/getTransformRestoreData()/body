@@ -1,7 +1,0 @@
-{
-  LinkedList<Object> list=new LinkedList<Object>();
-  for (  Figure child : children) {
-    list.add(child.getTransformRestoreData());
-  }
-  return list;
-}

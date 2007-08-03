@@ -1,5 +1,0 @@
-{
-  if (owner.getDrawing() != null) {
-    owner.remove(e.getFigure());
-  }
-}

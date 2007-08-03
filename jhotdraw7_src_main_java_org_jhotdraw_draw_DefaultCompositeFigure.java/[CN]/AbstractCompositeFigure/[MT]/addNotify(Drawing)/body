@@ -1,6 +1,0 @@
-{
-  super.addNotify(drawing);
-  for (  Figure child : children) {
-    child.addNotify(drawing);
-  }
-}

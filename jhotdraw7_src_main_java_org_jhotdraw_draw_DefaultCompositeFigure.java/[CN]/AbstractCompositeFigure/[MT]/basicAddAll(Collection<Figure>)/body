@@ -1,5 +1,0 @@
-{
-  for (  Figure f : newFigures) {
-    basicAdd(getChildCount(),f);
-  }
-}

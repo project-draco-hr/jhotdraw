@@ -1,4 +1,0 @@
-{
-  children.add(index,figure);
-  figure.addFigureListener(childHandler);
-}
