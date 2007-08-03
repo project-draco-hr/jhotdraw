@@ -11,7 +11,7 @@
   LinkedList<JToolBar> list=new LinkedList<JToolBar>();
   JToolBar tb;
   tb=new JToolBar();
-  addCreationButtonsTo(tb,editor);
+  addCreationButtonsTo(a,tb,editor);
   tb.setName(labels.getString("drawToolBarTitle"));
   list.add(tb);
   tb=new JToolBar();

@@ -31,7 +31,7 @@
       if (f instanceof SVGDrawing) {
         SVGGroupFigure g=new SVGGroupFigure();
         g.willChange();
-        for (        Figure child : ((SVGDrawing)f).getFigures()) {
+        for (        Figure child : ((SVGDrawing)f).getChildren()) {
           g.basicAdd(child);
         }
         g.changed();

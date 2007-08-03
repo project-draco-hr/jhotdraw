@@ -1,6 +1,7 @@
 {
   SVGProject p=(SVGProject)pr;
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+  ResourceBundleUtil appLabels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+  ResourceBundleUtil drawLabels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
   LinkedList<JMenu> mb=new LinkedList<JMenu>();
   JMenu m, m2;
   JMenuItem mi;
@@ -9,11 +10,17 @@
   ButtonGroup group;
   mb.add(createEditMenu(a,pr));
   m=new JMenu();
-  labels.configureMenu(m,"view");
-  cbmi=new JCheckBoxMenuItem(getAction("toggleGrid"));
-  Actions.configureJCheckBoxMenuItem(cbmi,getAction("toggleGrid"));
-  m.add(cbmi);
-  m2=new JMenu("Zoom");
+  appLabels.configureMenu(m,"view");
+  m2=new JMenu();
+  drawLabels.configureMenu(m2,"grid");
+  cbmi=new JCheckBoxMenuItem(getAction(ToggleGridAction.ID));
+  Actions.configureJCheckBoxMenuItem(cbmi,getAction(ToggleGridAction.ID));
+  m2.add(cbmi);
+  cbmi.setIcon(null);
+  m2.add(getAction(EditGridAction.ID));
+  m.add(m2);
+  m2=new JMenu();
+  drawLabels.configureMenu(m2,"zoom");
   for (  double sf : scaleFactors) {
     String id=(int)(sf * 100) + "%";
     cbmi=new JCheckBoxMenuItem(getAction(id));

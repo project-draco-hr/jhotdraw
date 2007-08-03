@@ -2,7 +2,7 @@
   HashMap<AttributeKey,Object> attributes;
   ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.samples.svg.Labels");
   ResourceBundleUtil drawLabels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-  ButtonFactory.addSelectionToolTo(tb,editor,createDrawingActions(editor),createSelectionActions(editor));
+  ButtonFactory.addSelectionToolTo(tb,editor,createDrawingActions(a,editor),createSelectionActions(editor));
   tb.addSeparator();
   attributes=new HashMap<AttributeKey,Object>();
   ButtonFactory.addToolTo(tb,editor,new CreationTool(new SVGRectFigure(),attributes),"createRectangle",drawLabels);

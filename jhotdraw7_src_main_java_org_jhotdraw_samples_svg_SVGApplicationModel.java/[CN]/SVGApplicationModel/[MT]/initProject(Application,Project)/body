@@ -2,4 +2,6 @@
   if (a.isSharingToolsAmongProjects()) {
     ((SVGProject)p).setEditor(getSharedEditor());
   }
+  p.putAction(EditGridAction.ID,getAction(EditGridAction.ID));
+  p.putAction(SelectSameAction.ID,new SelectSameAction(((SVGProject)p).getEditor()));
 }

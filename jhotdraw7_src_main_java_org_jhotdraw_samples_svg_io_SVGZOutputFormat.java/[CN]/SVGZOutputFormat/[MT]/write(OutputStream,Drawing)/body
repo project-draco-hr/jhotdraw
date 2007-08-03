@@ -1,5 +1,5 @@
 {
   GZIPOutputStream gout=new GZIPOutputStream(out);
-  super.write(gout,drawing.getFigures());
+  super.write(gout,drawing.getChildren());
   gout.finish();
 }

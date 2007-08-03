@@ -6,8 +6,8 @@
   try {
     format.write(buf,p.getDrawing());
     String source=buf.toString("UTF-8");
-    JDialog dialog=new JDialog((Frame)SwingUtilities.getWindowAncestor(p.getComponent()));
-    dialog.setTitle(labels.getFormatted(ID + ".dialogTitle",p.getFile() == null ? "unnamed" : p.getFile().getName()));
+    final JDialog dialog=new JDialog((Frame)SwingUtilities.getWindowAncestor(p.getComponent()));
+    dialog.setTitle(p.getTitle());
     dialog.setResizable(true);
     dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
     JTextArea ta=new JTextArea(source);
@@ -17,6 +17,15 @@
     dialog.getContentPane().add(sp);
     dialog.setSize(400,400);
     dialog.setLocationByPlatform(true);
+    Preferences prefs=Preferences.userNodeForPackage(getClass());
+    PreferencesUtil.installFramePrefsHandler(prefs,"viewSource",dialog);
+    dialog.addWindowListener(new WindowAdapter(){
+      @Override public void windowClosed(      WindowEvent evt){
+        getApplication().removeWindow(dialog);
+      }
+    }
+);
+    getApplication().addWindow(dialog,getCurrentProject());
     dialog.setVisible(true);
   }
  catch (  IOException ex) {
