@@ -1,5 +1,0 @@
-{
-  figures.add(index,figure);
-  figure.addFigureListener(figureHandler);
-  invalidateSortOrder();
-}

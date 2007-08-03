@@ -1,20 +1,26 @@
 {
-  final LinkedList<DrawingEvent> deletionEvents=new LinkedList<DrawingEvent>();
+  final LinkedList<CompositeFigureEvent> deletionEvents=new LinkedList<CompositeFigureEvent>();
   final LinkedList<Figure> selectedFigures=new LinkedList<Figure>(getSelectedFigures());
+  for (  Figure f : selectedFigures) {
+    if (!f.isRemovable()) {
+      getToolkit().beep();
+      return;
+    }
+  }
   clearSelection();
-  DrawingListener removeListener=new DrawingListener(){
-    public void areaInvalidated(    DrawingEvent e){
+  CompositeFigureListener removeListener=new CompositeFigureListener(){
+    public void areaInvalidated(    CompositeFigureEvent e){
     }
-    public void figureAdded(    DrawingEvent e){
+    public void figureAdded(    CompositeFigureEvent e){
     }
-    public void figureRemoved(    DrawingEvent evt){
+    public void figureRemoved(    CompositeFigureEvent evt){
       deletionEvents.addFirst(evt);
     }
   }
 ;
-  getDrawing().addDrawingListener(removeListener);
+  getDrawing().addCompositeFigureListener(removeListener);
   getDrawing().removeAll(selectedFigures);
-  getDrawing().removeDrawingListener(removeListener);
+  getDrawing().removeCompositeFigureListener(removeListener);
   getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
     public String getPresentationName(){
       ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
@@ -24,15 +30,15 @@
       super.undo();
       clearSelection();
       Drawing d=getDrawing();
-      for (      DrawingEvent evt : deletionEvents) {
-        d.add(evt.getIndex(),evt.getFigure());
+      for (      CompositeFigureEvent evt : deletionEvents) {
+        d.add(evt.getIndex(),evt.getChildFigure());
       }
       addToSelection(selectedFigures);
     }
     public void redo() throws CannotRedoException {
       super.redo();
-      for (      DrawingEvent evt : new ReversedList<DrawingEvent>(deletionEvents)) {
-        getDrawing().remove(evt.getFigure());
+      for (      CompositeFigureEvent evt : new ReversedList<CompositeFigureEvent>(deletionEvents)) {
+        getDrawing().remove(evt.getChildFigure());
       }
     }
   }

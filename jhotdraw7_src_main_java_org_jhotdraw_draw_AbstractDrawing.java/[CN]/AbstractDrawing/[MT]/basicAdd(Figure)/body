@@ -1,3 +1,0 @@
-{
-  basicAdd(getFigureCount(),figure);
-}

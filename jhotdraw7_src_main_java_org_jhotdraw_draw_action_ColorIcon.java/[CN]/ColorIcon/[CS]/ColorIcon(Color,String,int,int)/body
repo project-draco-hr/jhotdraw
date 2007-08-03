@@ -1,0 +1,7 @@
+{
+  this.fillColor=color;
+  borderColor=(color == null) ? new Color(0,0,0,38) : Colors.shadow(color,38);
+  this.name=name;
+  this.width=width;
+  this.height=height;
+}

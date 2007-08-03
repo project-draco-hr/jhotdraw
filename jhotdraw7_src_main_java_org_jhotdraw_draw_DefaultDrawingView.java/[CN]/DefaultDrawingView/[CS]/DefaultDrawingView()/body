@@ -1,15 +1,8 @@
 {
   initComponents();
+  eventHandler=createEventHandler();
   setToolTipText("dummy");
   setFocusable(true);
-  addFocusListener(new FocusListener(){
-    public void focusGained(    FocusEvent e){
-      repaintHandles();
-    }
-    public void focusLost(    FocusEvent e){
-      repaintHandles();
-    }
-  }
-);
+  addFocusListener(eventHandler);
   setTransferHandler(new DefaultDrawingViewTransferHandler());
 }

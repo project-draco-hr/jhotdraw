@@ -1,0 +1,3 @@
+{
+  return children == null ? new LinkedList<Figure>() : new ReversedList<Figure>(children);
+}

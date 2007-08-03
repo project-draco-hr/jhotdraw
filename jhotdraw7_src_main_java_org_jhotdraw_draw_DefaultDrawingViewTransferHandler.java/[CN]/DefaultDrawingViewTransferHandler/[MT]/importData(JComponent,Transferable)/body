@@ -5,6 +5,7 @@
     DrawingView view=(DrawingView)comp;
     final Drawing drawing=view.getDrawing();
     if (drawing.getInputFormats() == null || drawing.getInputFormats().size() == 0) {
+      if (DEBUG)       System.out.println(this + ".importData failed - drawing has no import formats");
       retValue=false;
     }
  else {
@@ -12,7 +13,9 @@
       try {
         SearchLoop:         for (        InputFormat format : drawing.getInputFormats()) {
           for (          DataFlavor flavor : t.getTransferDataFlavors()) {
+            if (DEBUG)             System.out.println(this + ".importData trying to match " + format+ " to flavor "+ flavor);
             if (format.isDataFlavorSupported(flavor)) {
+              if (DEBUG)               System.out.println(this + ".importData importing flavor " + flavor);
               final java.util.List<Figure> importedFigures=format.readFigures(t);
               view.clearSelection();
               drawing.addAll(importedFigures);
@@ -40,15 +43,16 @@
         if (retValue == false && t.isDataFlavorSupported(DataFlavor.javaFileListFlavor)) {
           java.util.List<File> files=(java.util.List<File>)t.getTransferData(DataFlavor.javaFileListFlavor);
           retValue=true;
-          final java.util.List<Figure> storedFigures=new LinkedList<Figure>(drawing.getFigures());
+          final java.util.List<Figure> storedFigures=new LinkedList<Figure>(drawing.getChildren());
           for (          File file : files) {
             FileFormatLoop:             for (            InputFormat format : drawing.getInputFormats()) {
               if (file.isFile() && format.getFileFilter().accept(file)) {
+                if (DEBUG)                 System.out.println(this + ".importData importing file " + file);
                 format.read(file,drawing);
               }
             }
           }
-          final LinkedList<Figure> importedFigures=new LinkedList<Figure>(drawing.getFigures());
+          final LinkedList<Figure> importedFigures=new LinkedList<Figure>(drawing.getChildren());
           importedFigures.removeAll(storedFigures);
           if (importedFigures.size() > 0) {
             view.clearSelection();

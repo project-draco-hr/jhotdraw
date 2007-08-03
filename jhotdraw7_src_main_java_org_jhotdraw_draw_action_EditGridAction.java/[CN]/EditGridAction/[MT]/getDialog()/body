@@ -1,0 +1,16 @@
+{
+  if (dialog == null) {
+    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.samples.svg.Labels");
+    dialog=new JDialog();
+    dialog.setTitle(labels.getString("gridSettings"));
+    dialog.setResizable(false);
+    settingsPanel=new GridSettingsPanel();
+    dialog.add(settingsPanel);
+    dialog.pack();
+    Preferences prefs=Preferences.userNodeForPackage(getClass());
+    PreferencesUtil.installFramePrefsHandler(prefs,"gridSettings",dialog);
+    getApplication().addWindow(dialog,null);
+  }
+  settingsPanel.setConstrainer(((GridProject)getCurrentProject()).getGridConstrainer());
+  return dialog;
+}

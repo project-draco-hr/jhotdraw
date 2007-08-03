@@ -1,0 +1,10 @@
+{
+  if (evt.getCompositeFigure().getChildCount() == 0) {
+    repaint();
+  }
+ else {
+    repaint(evt.getInvalidatedArea());
+  }
+  removeFromSelection(evt.getChildFigure());
+  invalidateDimension();
+}

@@ -11,6 +11,11 @@
     popupButton.add(a=new AttributeAction(editor,attributes,labels.getString(labelKey),new ColorIcon(entry.getValue())));
     a.putValue(Action.SHORT_DESCRIPTION,entry.getKey());
   }
+  AttributeAction a;
+  HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);
+  attributes.put(attributeKey,null);
+  popupButton.add(a=new AttributeAction(editor,attributes,labels.getString("noColor"),new ColorIcon(null,"---")));
+  a.putValue(Action.SHORT_DESCRIPTION,"---");
   ImageIcon chooserIcon=new ImageIcon(ButtonFactory.class.getResource("/org/jhotdraw/draw/action/images/showColorChooser.png"));
   popupButton.add(new SelectionColorChooserAction(editor,attributeKey,"color",chooserIcon,defaultAttributes));
   labels.configureToolBarButton(popupButton,labelKey);

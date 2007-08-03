@@ -1,5 +1,6 @@
 {
-  Dimension2DDouble oldValue=canvasSize;
-  canvasSize=newValue;
+  Dimension2DDouble oldValue=new Dimension2DDouble(canvasBounds.width,canvasBounds.height);
+  canvasBounds.width=newValue == null ? -1 : newValue.width;
+  canvasBounds.height=newValue == null ? -1 : newValue.height;
   firePropertyChange("canvasSize",oldValue,newValue);
 }

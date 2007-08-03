@@ -1,11 +1,11 @@
 {
   AbstractCompositeFigure that=(AbstractCompositeFigure)super.clone();
-  that.childHandler=new ChildHandler(that);
-  that.children=new LinkedList<Figure>();
+  that.children=new ArrayList<Figure>();
+  that.eventHandler=that.createEventHandler();
   for (  Figure thisChild : this.children) {
     Figure thatChild=(Figure)thisChild.clone();
     that.children.add(thatChild);
-    thatChild.addFigureListener(that.childHandler);
+    thatChild.addFigureListener(that.eventHandler);
   }
   return that;
 }

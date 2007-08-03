@@ -1,0 +1,9 @@
+{
+  DefaultDrawing that=(DefaultDrawing)super.clone();
+  that.children=new ArrayList<Figure>();
+  that.canvasBounds=(Rectangle2D.Double)this.canvasBounds.clone();
+  for (  Figure f : this.children) {
+    that.children.add((Figure)f.clone());
+  }
+  return that;
+}

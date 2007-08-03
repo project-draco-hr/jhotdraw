@@ -1,10 +1,10 @@
 {
   willChange();
-  while (children.size() > 0) {
-    Figure f=basicRemoveChild(children.size() - 1);
+  for (  Figure f : new LinkedList<Figure>(getChildren())) {
     if (getDrawing() != null) {
-      f.addNotify(getDrawing());
+      f.removeNotify(getDrawing());
     }
+    int index=basicRemove(f);
   }
   changed();
 }

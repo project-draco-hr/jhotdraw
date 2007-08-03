@@ -1,14 +1,14 @@
 {
-  if (drawBounds == null) {
-    drawBounds=super.getDrawingArea();
+  if (cachedDrawingArea == null) {
+    cachedDrawingArea=super.getDrawingArea();
     for (    Figure child : getChildrenFrontToBack()) {
       if (child.isVisible()) {
         Rectangle2D.Double childBounds=child.getDrawingArea();
         if (!childBounds.isEmpty()) {
-          drawBounds.add(childBounds);
+          cachedDrawingArea.add(childBounds);
         }
       }
     }
   }
-  return (Rectangle2D.Double)drawBounds.clone();
+  return (Rectangle2D.Double)cachedDrawingArea.clone();
 }

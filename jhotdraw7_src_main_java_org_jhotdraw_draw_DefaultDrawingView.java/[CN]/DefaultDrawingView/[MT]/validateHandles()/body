@@ -8,7 +8,7 @@
         for (        Handle handle : figure.createHandles(level)) {
           handle.setView(this);
           selectionHandles.add(handle);
-          handle.addHandleListener(this);
+          handle.addHandleListener(eventHandler);
           if (invalidatedArea == null) {
             invalidatedArea=handle.getDrawingArea();
           }

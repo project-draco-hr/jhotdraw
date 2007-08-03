@@ -1,31 +1,3 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-  final JToggleButton toggleButton;
-  toggleButton=new JToggleButton();
-  labels.configureToolBarButton(toggleButton,"alignGrid");
-  toggleButton.setFocusable(false);
-  toggleButton.addItemListener(new ItemListener(){
-    public void itemStateChanged(    ItemEvent event){
-      Constrainer c;
-      if (toggleButton.isSelected()) {
-        c=new GridConstrainer(10,10);
-      }
- else {
-        c=new GridConstrainer(1,1);
-      }
-      view.setConstrainer(c);
-      view.getComponent().repaint();
-    }
-  }
-);
-  view.addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
-      if (evt.getPropertyName() == "gridConstrainer") {
-        Constrainer c=(Constrainer)evt.getNewValue();
-        toggleButton.setSelected(c.isVisible());
-      }
-    }
-  }
-);
-  return toggleButton;
+  return createToggleGridButton(view,new GridConstrainer(0,0),new GridConstrainer(10,10));
 }

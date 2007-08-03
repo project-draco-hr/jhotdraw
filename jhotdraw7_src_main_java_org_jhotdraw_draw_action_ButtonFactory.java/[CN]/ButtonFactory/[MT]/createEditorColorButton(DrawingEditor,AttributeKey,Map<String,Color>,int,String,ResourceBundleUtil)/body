@@ -1,3 +1,0 @@
-{
-  return createEditorColorButton(editor,attributeKey,colorMap,columnCount,labelKey,labels,null);
-}

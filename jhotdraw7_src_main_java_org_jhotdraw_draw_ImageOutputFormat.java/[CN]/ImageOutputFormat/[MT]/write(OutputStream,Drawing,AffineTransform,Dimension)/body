@@ -1,3 +1,3 @@
 {
-  write(out,drawing.getFigures(),drawingTransform,imageSize);
+  write(out,drawing.getChildren(),drawingTransform,imageSize);
 }

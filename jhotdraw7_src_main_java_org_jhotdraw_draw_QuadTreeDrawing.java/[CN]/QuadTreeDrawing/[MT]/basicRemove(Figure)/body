@@ -1,6 +1,6 @@
 {
-  figures.remove(figure);
+  int index=super.basicRemove(figure);
   quadTree.remove(figure);
-  figure.removeFigureListener(figureHandler);
   needsSorting=true;
+  return index;
 }

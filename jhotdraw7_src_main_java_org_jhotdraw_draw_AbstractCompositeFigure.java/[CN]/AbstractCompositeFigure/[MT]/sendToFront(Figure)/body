@@ -1,6 +1,6 @@
 {
-  if (children.remove(figure)) {
-    children.add(figure);
+  if (basicRemove(figure) != -1) {
+    basicAdd(figure);
     figure.invalidate();
   }
 }

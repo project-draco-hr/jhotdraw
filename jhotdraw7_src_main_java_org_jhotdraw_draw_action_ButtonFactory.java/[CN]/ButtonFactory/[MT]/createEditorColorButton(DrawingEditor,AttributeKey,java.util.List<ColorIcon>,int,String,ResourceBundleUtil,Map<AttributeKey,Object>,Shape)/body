@@ -1,0 +1,34 @@
+{
+  final JPopupButton popupButton=new JPopupButton();
+  if (defaultAttributes == null) {
+    defaultAttributes=new HashMap<AttributeKey,Object>();
+  }
+  popupButton.setAction(new DefaultAttributeAction(editor,attributeKey,defaultAttributes),new Rectangle(0,0,22,22));
+  popupButton.setColumnCount(columnCount,false);
+  for (  ColorIcon swatch : swatches) {
+    AttributeAction a;
+    HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);
+    attributes.put(attributeKey,swatch.getColor());
+    popupButton.add(a=new AttributeAction(editor,attributes,labels.getString(labelKey),swatch));
+    a.putValue(Action.SHORT_DESCRIPTION,swatch.getName());
+  }
+  AttributeAction a;
+  HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);
+  attributes.put(attributeKey,null);
+  popupButton.add(a=new AttributeAction(editor,attributes,labels.getString("noColor"),new ColorIcon(null,"---",swatches.get(0).getIconWidth(),swatches.get(0).getIconHeight())));
+  a.putValue(Action.SHORT_DESCRIPTION,"---");
+  ImageIcon chooserIcon=new ImageIcon(ButtonFactory.class.getResource("/org/jhotdraw/draw/action/images/showColorChooser.png"));
+  popupButton.add(new EditorColorChooserAction(editor,attributeKey,"color",chooserIcon,defaultAttributes));
+  labels.configureToolBarButton(popupButton,labelKey);
+  Icon icon=new EditorColorIcon(editor,attributeKey,labels.getImageIcon(labelKey,ButtonFactory.class).getImage(),colorShape);
+  popupButton.setIcon(icon);
+  popupButton.setDisabledIcon(icon);
+  popupButton.setFocusable(false);
+  editor.addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      popupButton.repaint();
+    }
+  }
+);
+  return popupButton;
+}

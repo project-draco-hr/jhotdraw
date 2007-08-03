@@ -1,9 +1,9 @@
 {
 synchronized (getLock()) {
     ensureSorted();
-    ArrayList<Figure> toDraw=new ArrayList<Figure>(figures.size());
+    ArrayList<Figure> toDraw=new ArrayList<Figure>(getChildren().size());
     Rectangle clipRect=g.getClipBounds();
-    for (    Figure f : figures) {
+    for (    Figure f : getChildren()) {
       if (f.getDrawingArea().intersects(clipRect)) {
         toDraw.add(f);
       }

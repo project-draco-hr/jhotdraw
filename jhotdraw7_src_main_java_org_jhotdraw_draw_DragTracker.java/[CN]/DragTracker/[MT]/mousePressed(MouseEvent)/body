@@ -13,15 +13,15 @@
     view.clearSelection();
     view.addToSelection(anchorFigure);
   }
-  Point2D.Double origin=new Point2D.Double(Double.MAX_VALUE,Double.MAX_VALUE);
+  dragRect=null;
   for (  Figure f : view.getSelectedFigures()) {
-    Rectangle2D.Double b=f.getBounds();
-    origin.x=Math.min(origin.x,b.x);
-    origin.y=Math.min(origin.y,b.y);
+    if (dragRect == null) {
+      dragRect=f.getBounds();
+    }
+ else {
+      dragRect.add(f.getBounds());
+    }
   }
-  Point2D.Double constrainedOrigin=view.getConstrainer().constrainPoint(new Point2D.Double(origin.x,origin.y));
-  oldPoint=view.getConstrainer().constrainPoint(view.viewToDrawing(new Point(evt.getX(),evt.getY())));
-  oldPoint.x+=origin.x - constrainedOrigin.x;
-  oldPoint.y+=origin.y - constrainedOrigin.y;
-  anchorPoint=oldPoint;
+  anchorPoint=previousPoint=view.viewToDrawing(anchor);
+  anchorOrigin=previousOrigin=new Point2D.Double(dragRect.x,dragRect.y);
 }

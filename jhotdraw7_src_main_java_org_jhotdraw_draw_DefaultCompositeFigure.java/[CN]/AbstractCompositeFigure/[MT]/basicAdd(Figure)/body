@@ -1,0 +1,3 @@
+{
+  basicAdd(getChildCount(),figure);
+}

@@ -1,4 +1,0 @@
-{
-  super.setBounds(anchor,lead);
-  invalidate();
-}

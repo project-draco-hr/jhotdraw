@@ -1,0 +1,10 @@
+{
+  willChange();
+  while (children.size() > 0) {
+    Figure f=basicRemoveChild(children.size() - 1);
+    if (getDrawing() != null) {
+      f.addNotify(getDrawing());
+    }
+  }
+  changed();
+}

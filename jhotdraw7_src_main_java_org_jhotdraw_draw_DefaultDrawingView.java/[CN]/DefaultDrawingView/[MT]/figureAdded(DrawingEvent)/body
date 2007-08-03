@@ -1,9 +1,0 @@
-{
-  if (evt.getDrawing().getFigureCount() == 1) {
-    repaint();
-  }
- else {
-    repaint(evt.getInvalidatedArea());
-  }
-  invalidateDimension();
-}

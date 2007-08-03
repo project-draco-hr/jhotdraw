@@ -1,0 +1,3 @@
+{
+  this(new Color(rgb),Integer.toHexString(0xff000000 | rgb).substring(2),14,10);
+}

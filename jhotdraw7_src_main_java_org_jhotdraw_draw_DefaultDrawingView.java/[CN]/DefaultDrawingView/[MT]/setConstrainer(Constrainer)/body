@@ -1,6 +1,12 @@
 {
+  if (constrainer != null) {
+    constrainer.removeChangeListener(changeHandler);
+  }
   Constrainer oldValue=constrainer;
   constrainer=newValue;
-  repaint();
+  if (constrainer != null) {
+    constrainer.addChangeListener(changeHandler);
+  }
   firePropertyChange("constrainer",oldValue,newValue);
+  repaint();
 }

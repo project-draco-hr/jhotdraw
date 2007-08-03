@@ -1,13 +1,6 @@
 {
-  try {
-    AbstractFigure that=(AbstractFigure)super.clone();
-    that.listenerList=new EventListenerList();
-    that.drawing=null;
-    return that;
-  }
- catch (  CloneNotSupportedException e) {
-    InternalError error=new InternalError(e.getMessage());
-    error.initCause(e);
-    throw error;
-  }
+  AbstractFigure that=(AbstractFigure)super.clone();
+  that.listenerList=new EventListenerList();
+  that.drawing=null;
+  return that;
 }

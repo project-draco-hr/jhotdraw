@@ -1,0 +1,5 @@
+{
+  for (  Figure f : figures) {
+    basicRemove(f);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  super.validate();
+  layout();
+  invalidateBounds();
+}

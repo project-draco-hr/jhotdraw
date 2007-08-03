@@ -1,4 +1,4 @@
 {
-  path=newValue.clone();
+  path=(BezierPath)newValue.clone();
   this.setClosed(newValue.isClosed());
 }

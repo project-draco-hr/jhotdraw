@@ -1,7 +1,7 @@
 {
   super.willChange();
   if (getChangingDepth() == 1) {
-    for (    Figure child : children) {
+    for (    Figure child : getChildren()) {
       child.willChange();
     }
   }

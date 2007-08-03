@@ -1,7 +1,7 @@
 {
   Set<Figure> oldSelection=new HashSet<Figure>(selectedFigures);
   selectedFigures.clear();
-  selectedFigures.addAll(drawing.getFigures());
+  selectedFigures.addAll(drawing.getChildren());
   Set<Figure> newSelection=new HashSet<Figure>(selectedFigures);
   invalidateHandles();
   fireSelectionChanged(oldSelection,newSelection);

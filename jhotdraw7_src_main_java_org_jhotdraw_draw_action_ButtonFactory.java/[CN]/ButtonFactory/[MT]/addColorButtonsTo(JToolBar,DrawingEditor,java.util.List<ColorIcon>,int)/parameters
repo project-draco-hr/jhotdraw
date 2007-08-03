@@ -1,0 +1,4 @@
+JToolBar bar
+DrawingEditor editor
+java.util.List<ColorIcon> colors
+int columnCount

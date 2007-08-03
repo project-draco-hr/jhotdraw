@@ -1,0 +1,8 @@
+{
+  super.willChange();
+  if (getChangingDepth() == 1) {
+    for (    Figure child : children) {
+      child.willChange();
+    }
+  }
+}

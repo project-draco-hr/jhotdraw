@@ -1,10 +1,7 @@
 {
   int index=children.indexOf(figure);
-  if (index == -1) {
-    return false;
-  }
- else {
+  if (index != -1) {
     basicRemoveChild(index);
-    return true;
   }
+  return index;
 }

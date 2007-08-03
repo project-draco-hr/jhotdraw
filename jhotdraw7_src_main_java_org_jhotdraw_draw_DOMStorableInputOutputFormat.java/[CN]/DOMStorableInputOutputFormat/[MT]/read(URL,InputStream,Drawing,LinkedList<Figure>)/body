@@ -9,5 +9,5 @@
   }
   domi.closeElement();
   domi.closeElement();
-  drawing.basicAddAll(drawing.getFigureCount(),figures);
+  drawing.basicAddAll(drawing.getChildCount(),figures);
 }

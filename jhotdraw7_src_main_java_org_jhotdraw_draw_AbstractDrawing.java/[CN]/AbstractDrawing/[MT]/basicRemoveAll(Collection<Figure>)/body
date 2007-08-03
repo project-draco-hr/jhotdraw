@@ -1,5 +1,0 @@
-{
-  for (  Figure f : new ArrayList<Figure>(toBeOrphaned)) {
-    basicRemove(f);
-  }
-}

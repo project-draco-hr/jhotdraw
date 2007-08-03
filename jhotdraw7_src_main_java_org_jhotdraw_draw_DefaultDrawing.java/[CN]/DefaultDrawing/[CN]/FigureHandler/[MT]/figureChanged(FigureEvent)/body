@@ -1,4 +1,0 @@
-{
-  invalidateSortOrder();
-  fireAreaInvalidated(e.getInvalidatedArea());
-}

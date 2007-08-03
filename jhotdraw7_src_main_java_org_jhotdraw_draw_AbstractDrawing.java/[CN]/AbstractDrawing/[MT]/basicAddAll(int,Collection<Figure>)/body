@@ -1,5 +1,0 @@
-{
-  for (  Figure f : figures) {
-    basicAdd(index++,f);
-  }
-}

@@ -1,0 +1,10 @@
+{
+  secondaryHandleOwner=e.getHandle();
+  secondaryHandles.clear();
+  secondaryHandles.addAll(secondaryHandleOwner.createSecondaryHandles());
+  for (  Handle h : secondaryHandles) {
+    h.setView(DefaultDrawingView.this);
+    h.addHandleListener(eventHandler);
+  }
+  repaint();
+}

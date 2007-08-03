@@ -1,0 +1,10 @@
+{
+  CompositeFigureEvent event=null;
+  Object[] listeners=listenerList.getListenerList();
+  for (int i=listeners.length - 2; i >= 0; i-=2) {
+    if (listeners[i] == CompositeFigureListener.class) {
+      if (event == null)       event=new CompositeFigureEvent(this,f,f.getDrawingArea(),zIndex);
+      ((CompositeFigureListener)listeners[i + 1]).figureAdded(event);
+    }
+  }
+}

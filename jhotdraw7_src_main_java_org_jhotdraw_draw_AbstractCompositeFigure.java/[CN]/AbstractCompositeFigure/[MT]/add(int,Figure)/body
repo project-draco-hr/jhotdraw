@@ -3,5 +3,6 @@
   if (getDrawing() != null) {
     figure.addNotify(getDrawing());
   }
+  fireFigureAdded(figure,index);
   invalidate();
 }

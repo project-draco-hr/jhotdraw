@@ -1,0 +1,4 @@
+{
+  QuadTreeDrawing that=(QuadTreeDrawing)super.clone();
+  return that;
+}

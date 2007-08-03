@@ -1,0 +1,7 @@
+{
+  LinkedList<Handle> handles=new LinkedList<Handle>();
+  if (detailLevel == 0) {
+    TransformHandleKit.addScaleMoveTransformHandles(this,handles);
+  }
+  return handles;
+}

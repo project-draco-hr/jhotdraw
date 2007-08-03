@@ -1,6 +1,6 @@
 {
-  if (figures.remove(figure)) {
-    figures.add(0,figure);
+  if (basicRemove(figure) != -1) {
+    basicAdd(0,figure);
     invalidateSortOrder();
     fireAreaInvalidated(figure.getDrawingArea());
   }

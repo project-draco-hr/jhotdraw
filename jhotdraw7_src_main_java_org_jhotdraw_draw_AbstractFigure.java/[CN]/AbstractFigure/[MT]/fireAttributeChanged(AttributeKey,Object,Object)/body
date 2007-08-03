@@ -5,7 +5,7 @@
     for (int i=listeners.length - 2; i >= 0; i-=2) {
       if (listeners[i] == FigureListener.class) {
         if (event == null)         event=new FigureEvent(this,attribute,oldValue,newValue);
-        ((FigureListener)listeners[i + 1]).figureAttributeChanged(event);
+        ((FigureListener)listeners[i + 1]).attributeChanged(event);
       }
     }
   }

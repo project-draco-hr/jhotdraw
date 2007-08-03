@@ -1,6 +1,6 @@
 {
   if (needsSorting) {
-    Collections.sort(figures,FigureLayerComparator.INSTANCE);
+    Collections.sort(children,FigureLayerComparator.INSTANCE);
     needsSorting=false;
   }
 }

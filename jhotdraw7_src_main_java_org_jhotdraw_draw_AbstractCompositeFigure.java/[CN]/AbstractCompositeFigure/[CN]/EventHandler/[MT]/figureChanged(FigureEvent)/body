@@ -1,0 +1,7 @@
+{
+  if (!isChanging()) {
+    willChange();
+    fireFigureChanged(e);
+    changed();
+  }
+}

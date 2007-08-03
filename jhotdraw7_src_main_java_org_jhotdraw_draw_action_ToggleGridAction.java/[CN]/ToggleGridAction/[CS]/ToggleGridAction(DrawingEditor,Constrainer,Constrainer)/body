@@ -1,4 +1,0 @@
-{
-  this((DrawingView)null,new GridConstrainer(10,10),new GridConstrainer(1,1));
-  setEditor(editor);
-}

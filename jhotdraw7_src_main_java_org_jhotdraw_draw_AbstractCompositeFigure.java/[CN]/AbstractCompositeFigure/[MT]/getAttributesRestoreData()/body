@@ -1,6 +1,6 @@
 {
   LinkedList<Object> data=new LinkedList<Object>();
-  for (  Figure child : children) {
+  for (  Figure child : getChildren()) {
     data.add(child.getAttributesRestoreData());
   }
   return data;

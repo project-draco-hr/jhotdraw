@@ -1,20 +1,17 @@
 {
   if (cachedDrawingArea == null) {
-    for (    Figure child : getChildren()) {
-      if (child.isVisible()) {
-        Rectangle2D.Double childBounds=child.getDrawingArea();
-        if (!childBounds.isEmpty()) {
-          if (cachedDrawingArea == null) {
-            cachedDrawingArea=childBounds;
-          }
+    if (getChildCount() == 0) {
+      cachedDrawingArea=new Rectangle2D.Double();
+    }
  else {
-            cachedDrawingArea.add(childBounds);
-          }
+      for (      Figure f : children) {
+        if (cachedDrawingArea == null || cachedDrawingArea.isEmpty()) {
+          cachedDrawingArea=f.getDrawingArea();
+        }
+ else {
+          cachedDrawingArea.add(f.getDrawingArea());
         }
       }
-    }
-    if (cachedDrawingArea == null) {
-      cachedDrawingArea=new Rectangle2D.Double(0,0,-1,-1);
     }
   }
   return (Rectangle2D.Double)cachedDrawingArea.clone();

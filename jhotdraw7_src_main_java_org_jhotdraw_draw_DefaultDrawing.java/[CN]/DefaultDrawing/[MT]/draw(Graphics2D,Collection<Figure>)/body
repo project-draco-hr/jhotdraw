@@ -1,14 +1,14 @@
 {
   Rectangle2D clipBounds=g.getClipBounds();
   if (clipBounds != null) {
-    for (    Figure f : figures) {
+    for (    Figure f : children) {
       if (f.isVisible() && f.getDrawingArea().intersects(clipBounds)) {
         f.draw(g);
       }
     }
   }
  else {
-    for (    Figure f : figures) {
+    for (    Figure f : children) {
       if (f.isVisible()) {
         f.draw(g);
       }

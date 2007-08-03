@@ -1,8 +1,0 @@
-{
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-  final JToggleButton toggleGridButton;
-  toggleGridButton=new JToggleButton();
-  toggleGridButton.setAction(new ToggleGridAction(editor));
-  toggleGridButton.setFocusable(false);
-  return toggleGridButton;
-}

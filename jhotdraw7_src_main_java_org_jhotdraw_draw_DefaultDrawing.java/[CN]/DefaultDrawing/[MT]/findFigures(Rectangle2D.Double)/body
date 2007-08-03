@@ -1,6 +1,6 @@
 {
   LinkedList<Figure> intersection=new LinkedList<Figure>();
-  for (  Figure f : figures) {
+  for (  Figure f : getChildren()) {
     if (f.isVisible() && f.getBounds().intersects(bounds)) {
       intersection.add(f);
     }

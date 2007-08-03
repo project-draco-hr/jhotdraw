@@ -1,6 +1,0 @@
-{
-  CompositeEdit edit=new CompositeEdit("Figuren entfernen");
-  for (  Figure f : new ArrayList<Figure>(toBeRemoved)) {
-    remove(f);
-  }
-}

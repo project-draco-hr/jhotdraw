@@ -1,2 +1,2 @@
 Point2D.Double p
-Collection<Figure> figures
+Collection<Figure> children

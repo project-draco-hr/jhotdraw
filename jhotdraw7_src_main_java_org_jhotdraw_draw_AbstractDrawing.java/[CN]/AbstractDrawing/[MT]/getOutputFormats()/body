@@ -1,3 +1,4 @@
 {
+  if (DEBUG)   System.out.println(this + ".getOutputFormats size:" + outputFormats.size());
   return outputFormats;
 }

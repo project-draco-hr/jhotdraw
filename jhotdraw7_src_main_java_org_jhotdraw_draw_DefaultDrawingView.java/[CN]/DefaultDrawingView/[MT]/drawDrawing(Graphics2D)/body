@@ -1,6 +1,6 @@
 {
   if (drawing != null) {
-    if (drawing.getFigureCount() == 0 && emptyDrawingLabel != null) {
+    if (drawing.getChildCount() == 0 && emptyDrawingLabel != null) {
       emptyDrawingLabel.setBounds(0,0,getWidth(),getHeight());
       emptyDrawingLabel.paint(gr);
     }

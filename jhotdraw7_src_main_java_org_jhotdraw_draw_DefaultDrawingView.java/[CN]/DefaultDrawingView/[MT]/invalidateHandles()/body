@@ -3,7 +3,7 @@
     handlesAreValid=false;
     Rectangle invalidatedArea=null;
     for (    Handle handle : selectionHandles) {
-      handle.removeHandleListener(this);
+      handle.removeHandleListener(eventHandler);
       if (invalidatedArea == null) {
         invalidatedArea=handle.getDrawingArea();
       }

@@ -1,3 +1,3 @@
 {
-  this.inputFormats=formats;
+  this.inputFormats=new LinkedList<InputFormat>(formats);
 }

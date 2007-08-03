@@ -1,0 +1,3 @@
+{
+  oldPoint=view.getConstrainer().constrainPoint(view.viewToDrawing(anchor));
+}

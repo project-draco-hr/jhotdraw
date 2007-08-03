@@ -1,8 +1,6 @@
 {
-  if (getView().getConstrainer() == onConstrainer) {
-    getView().setConstrainer(offConstrainer);
-  }
- else {
-    getView().setConstrainer(onConstrainer);
+  if (getCurrentProject() instanceof GridProject) {
+    GridProject p=(GridProject)getCurrentProject();
+    p.setGridVisible(!p.isGridVisible());
   }
 }

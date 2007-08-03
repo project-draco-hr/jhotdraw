@@ -1,6 +1,6 @@
 {
   Figure figure=children.remove(index);
-  figure.removeFigureListener(childHandler);
+  figure.removeFigureListener(eventHandler);
   invalidate();
   return figure;
 }

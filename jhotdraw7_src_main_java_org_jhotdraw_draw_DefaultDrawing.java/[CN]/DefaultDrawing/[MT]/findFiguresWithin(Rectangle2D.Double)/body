@@ -1,6 +1,6 @@
 {
   LinkedList<Figure> contained=new LinkedList<Figure>();
-  for (  Figure f : figures) {
+  for (  Figure f : getChildren()) {
     Rectangle2D r=f.getBounds();
     if (AttributeKeys.TRANSFORM.get(f) != null) {
       r=AttributeKeys.TRANSFORM.get(f).createTransformedShape(r).getBounds2D();

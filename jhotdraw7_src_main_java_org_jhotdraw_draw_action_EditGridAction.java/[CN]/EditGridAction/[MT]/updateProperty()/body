@@ -1,0 +1,5 @@
+{
+  if (getCurrentProject() != null && settingsPanel != null) {
+    settingsPanel.setConstrainer(getCurrentProject().getGridConstrainer());
+  }
+}

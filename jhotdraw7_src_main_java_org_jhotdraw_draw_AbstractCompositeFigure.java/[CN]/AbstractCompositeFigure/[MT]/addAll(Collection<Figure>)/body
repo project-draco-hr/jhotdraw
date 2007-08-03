@@ -1,9 +1,3 @@
 {
-  for (  Figure f : newFigures) {
-    basicAdd(getChildCount(),f);
-    if (getDrawing() != null) {
-      f.addNotify(getDrawing());
-    }
-  }
-  invalidate();
+  addAll(getChildCount(),figures);
 }

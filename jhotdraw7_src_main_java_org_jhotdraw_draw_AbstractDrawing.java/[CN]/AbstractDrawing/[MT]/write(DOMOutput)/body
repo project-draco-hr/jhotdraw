@@ -1,6 +1,6 @@
 {
   out.openElement("figures");
-  for (  Figure f : getFigures()) {
+  for (  Figure f : getChildren()) {
     out.writeObject(f);
   }
   out.closeElement();

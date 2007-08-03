@@ -3,5 +3,5 @@
   for (  Figure f : children) {
     f.transform(tx);
   }
-  invalidateBounds();
+  invalidate();
 }

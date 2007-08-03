@@ -1,0 +1,6 @@
+{
+  Iterator<Object> data=((LinkedList<Object>)newData).iterator();
+  for (  Figure child : children) {
+    child.restoreAttributesTo(data.next());
+  }
+}

@@ -1,6 +1,0 @@
-{
-  basicAdd(index,figure);
-  figure.addNotify(this);
-  fireFigureAdded(figure,index);
-  fireAreaInvalidated(figure.getDrawingArea());
-}

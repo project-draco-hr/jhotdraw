@@ -1,11 +1,13 @@
 {
   if (this.drawing != null) {
-    this.drawing.removeDrawingListener(this);
+    this.drawing.removeCompositeFigureListener(eventHandler);
+    this.drawing.removeFigureListener(eventHandler);
     clearSelection();
   }
   this.drawing=d;
   if (this.drawing != null) {
-    this.drawing.addDrawingListener(this);
+    this.drawing.addCompositeFigureListener(eventHandler);
+    this.drawing.addFigureListener(eventHandler);
   }
   invalidateDimension();
   invalidate();

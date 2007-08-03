@@ -1,4 +1,5 @@
 {
   super.invalidate();
-  invalidateBounds();
+  cachedBounds=null;
+  cachedDrawingArea=null;
 }

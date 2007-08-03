@@ -3,7 +3,7 @@
   for (  Figure selected : getView().getSelectedFigures()) {
     selectedClasses.add(selected.getClass());
   }
-  for (  Figure f : getDrawing().getFigures()) {
+  for (  Figure f : getDrawing().getChildren()) {
     if (selectedClasses.contains(f.getClass())) {
       getView().addToSelection(f);
     }

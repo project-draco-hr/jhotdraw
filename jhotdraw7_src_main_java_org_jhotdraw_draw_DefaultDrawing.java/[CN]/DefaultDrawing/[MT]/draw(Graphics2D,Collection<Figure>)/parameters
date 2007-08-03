@@ -1,2 +1,2 @@
 Graphics2D g
-Collection<Figure> figures
+Collection<Figure> children

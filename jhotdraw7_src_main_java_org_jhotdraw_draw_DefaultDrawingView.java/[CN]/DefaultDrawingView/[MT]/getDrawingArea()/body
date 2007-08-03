@@ -2,7 +2,7 @@
   if (cachedDrawingArea == null) {
     cachedDrawingArea=new Rectangle2D.Double();
     if (drawing != null) {
-      for (      Figure f : drawing.getFigures()) {
+      for (      Figure f : drawing.getChildren()) {
         if (cachedDrawingArea == null) {
           cachedDrawingArea=f.getDrawingArea();
         }

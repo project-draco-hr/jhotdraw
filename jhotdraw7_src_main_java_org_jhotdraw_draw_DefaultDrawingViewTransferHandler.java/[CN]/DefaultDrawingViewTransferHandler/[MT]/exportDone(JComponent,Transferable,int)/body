@@ -4,22 +4,28 @@
     final DrawingView view=(DrawingView)source;
     final Drawing drawing=view.getDrawing();
     if (action == MOVE) {
-      final LinkedList<DrawingEvent> deletionEvents=new LinkedList<DrawingEvent>();
+      final LinkedList<CompositeFigureEvent> deletionEvents=new LinkedList<CompositeFigureEvent>();
       final LinkedList<Figure> selectedFigures=new LinkedList<Figure>(view.getSelectedFigures());
+      for (      Figure f : selectedFigures) {
+        if (!f.isRemovable()) {
+          source.getToolkit().beep();
+          return;
+        }
+      }
       view.clearSelection();
-      DrawingListener removeListener=new DrawingListener(){
-        public void areaInvalidated(        DrawingEvent e){
+      CompositeFigureListener removeListener=new CompositeFigureListener(){
+        public void areaInvalidated(        CompositeFigureEvent e){
         }
-        public void figureAdded(        DrawingEvent e){
+        public void figureAdded(        CompositeFigureEvent e){
         }
-        public void figureRemoved(        DrawingEvent evt){
+        public void figureRemoved(        CompositeFigureEvent evt){
           deletionEvents.addFirst(evt);
         }
       }
 ;
-      drawing.addDrawingListener(removeListener);
+      drawing.addCompositeFigureListener(removeListener);
       drawing.removeAll(selectedFigures);
-      drawing.removeDrawingListener(removeListener);
+      drawing.removeCompositeFigureListener(removeListener);
       drawing.removeAll(selectedFigures);
       drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
         public String getPresentationName(){
@@ -29,15 +35,15 @@
         public void undo() throws CannotUndoException {
           super.undo();
           view.clearSelection();
-          for (          DrawingEvent evt : deletionEvents) {
-            drawing.add(evt.getIndex(),evt.getFigure());
+          for (          CompositeFigureEvent evt : deletionEvents) {
+            drawing.add(evt.getIndex(),evt.getChildFigure());
           }
           view.addToSelection(selectedFigures);
         }
         public void redo() throws CannotRedoException {
           super.redo();
-          for (          DrawingEvent evt : new ReversedList<DrawingEvent>(deletionEvents)) {
-            drawing.remove(evt.getFigure());
+          for (          CompositeFigureEvent evt : new ReversedList<CompositeFigureEvent>(deletionEvents)) {
+            drawing.remove(evt.getChildFigure());
           }
         }
       }
