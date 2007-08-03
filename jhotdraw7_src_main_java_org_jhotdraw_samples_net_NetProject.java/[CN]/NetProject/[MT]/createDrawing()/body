@@ -1,13 +1,9 @@
 {
   DefaultDrawing drawing=new DefaultDrawing();
   DOMStorableInputOutputFormat ioFormat=new DOMStorableInputOutputFormat(new NetFactory());
-  LinkedList<InputFormat> inputFormats=new LinkedList<InputFormat>();
-  inputFormats.add(ioFormat);
-  inputFormats.add(new TextInputFormat(new NodeFigure()));
-  drawing.setInputFormats(inputFormats);
-  LinkedList<OutputFormat> outputFormats=new LinkedList<OutputFormat>();
-  outputFormats.add(ioFormat);
-  outputFormats.add(new ImageOutputFormat());
-  drawing.setOutputFormats(outputFormats);
+  drawing.addInputFormat(ioFormat);
+  drawing.addInputFormat(new TextInputFormat(new NodeFigure()));
+  drawing.addOutputFormat(ioFormat);
+  drawing.addOutputFormat(new ImageOutputFormat());
   return drawing;
 }
