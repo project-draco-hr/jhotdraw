@@ -1,7 +1,0 @@
-{
-  exportComp=(JTextComponent)comp;
-  shouldRemove=true;
-  p0=exportComp.getSelectionStart();
-  p1=exportComp.getSelectionEnd();
-  return (p0 != p1) ? (new TextTransferable(exportComp,p0,p1)) : null;
-}
