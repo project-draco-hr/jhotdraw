@@ -1,0 +1,6 @@
+{
+  if (c instanceof JPasswordField && c.getClientProperty("JPasswordField.cutCopyAllowed") != Boolean.TRUE) {
+    return NONE;
+  }
+  return ((JTextComponent)c).isEditable() ? COPY_OR_MOVE : COPY;
+}

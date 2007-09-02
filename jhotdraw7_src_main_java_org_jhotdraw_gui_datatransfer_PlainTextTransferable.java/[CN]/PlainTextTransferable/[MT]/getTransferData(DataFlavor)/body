@@ -1,0 +1,16 @@
+{
+  if (!isDataFlavorSupported(flavor)) {
+    throw new UnsupportedFlavorException(flavor);
+  }
+  plainText=(plainText == null) ? "" : plainText;
+  if (String.class.equals(flavor.getRepresentationClass())) {
+    return plainText;
+  }
+ else   if (Reader.class.equals(flavor.getRepresentationClass())) {
+    return new StringReader(plainText);
+  }
+ else   if (InputStream.class.equals(flavor.getRepresentationClass())) {
+    return new StringBufferInputStream(plainText);
+  }
+  throw new UnsupportedFlavorException(flavor);
+}

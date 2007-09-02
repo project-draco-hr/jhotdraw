@@ -1,0 +1,34 @@
+{
+  JTextComponent c=(JTextComponent)comp;
+  if (c == exportComp && c.getCaretPosition() >= p0 && c.getCaretPosition() <= p1) {
+    shouldRemove=false;
+    return true;
+  }
+  boolean imported=false;
+  DataFlavor importFlavor=getImportFlavor(t.getTransferDataFlavors(),c);
+  if (importFlavor != null) {
+    try {
+      boolean useRead=false;
+      if (comp instanceof JEditorPane) {
+        JEditorPane ep=(JEditorPane)comp;
+        if (!ep.getContentType().startsWith("text/plain") && importFlavor.getMimeType().startsWith(ep.getContentType())) {
+          useRead=true;
+        }
+      }
+      InputContext ic=c.getInputContext();
+      if (ic != null) {
+        ic.endComposition();
+      }
+      Reader r=importFlavor.getReaderForText(t);
+      handleReaderImport(r,c,useRead);
+      imported=true;
+    }
+ catch (    UnsupportedFlavorException ufe) {
+    }
+catch (    BadLocationException ble) {
+    }
+catch (    IOException ioe) {
+    }
+  }
+  return imported;
+}

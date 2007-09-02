@@ -1,0 +1,10 @@
+{
+  try {
+    return new DataFlavor[]{new DataFlavor("text/html;class=java.lang.String"),new DataFlavor("text/html;class=java.io.Reader"),new DataFlavor("text/html;charset=unicode;class=java.io.InputStream")};
+  }
+ catch (  ClassNotFoundException cle) {
+    InternalError ie=new InternalError("error initializing PlainTextTransferable");
+    ie.initCause(cle);
+    throw ie;
+  }
+}

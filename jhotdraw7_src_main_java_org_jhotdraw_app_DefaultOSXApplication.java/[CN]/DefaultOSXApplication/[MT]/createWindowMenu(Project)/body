@@ -7,10 +7,7 @@
   m=new JMenu();
   final JMenu windowMenu=m;
   labels.configureMenu(m,"window");
-  mi=m.add(model.getAction(MinimizeAction.ID));
-  mi.setIcon(null);
-  mi=m.add(model.getAction(MaximizeAction.ID));
-  mi.setIcon(null);
+  addProjectWindowMenuItems(m,p);
   m.addSeparator();
   for (  Project pr : projects()) {
     if (pr.getAction(FocusAction.ID) != null) {
@@ -33,8 +30,7 @@
         if (p == null || projects().contains(p)) {
           JMenu m=windowMenu;
           m.removeAll();
-          m.add(getModel().getAction(MinimizeAction.ID));
-          m.add(getModel().getAction(MaximizeAction.ID));
+          addProjectWindowMenuItems(m,p);
           m.addSeparator();
           for (Iterator i=projects().iterator(); i.hasNext(); ) {
             Project pr=(Project)i.next();

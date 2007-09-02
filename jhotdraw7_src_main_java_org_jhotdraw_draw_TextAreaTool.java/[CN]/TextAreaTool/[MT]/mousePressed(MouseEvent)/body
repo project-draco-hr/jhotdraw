@@ -12,7 +12,9 @@
   }
   if (typingTarget != null) {
     endEdit();
-    fireToolDone();
+    if (isToolDoneAfterCreation()) {
+      fireToolDone();
+    }
   }
  else {
     super.mousePressed(e);

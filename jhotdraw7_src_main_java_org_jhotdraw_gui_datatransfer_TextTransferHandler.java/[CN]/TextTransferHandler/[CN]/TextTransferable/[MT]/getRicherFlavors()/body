@@ -1,0 +1,15 @@
+{
+  if (richText == null) {
+    return null;
+  }
+  try {
+    DataFlavor[] flavors=new DataFlavor[3];
+    flavors[0]=new DataFlavor(mimeType + ";class=java.lang.String");
+    flavors[1]=new DataFlavor(mimeType + ";class=java.io.Reader");
+    flavors[2]=new DataFlavor(mimeType + ";class=java.io.InputStream;charset=unicode");
+    return flavors;
+  }
+ catch (  ClassNotFoundException cle) {
+  }
+  return null;
+}

@@ -1,0 +1,7 @@
+{
+  if (shouldRemove && action == MOVE) {
+    TextTransferable t=(TextTransferable)data;
+    t.removeText();
+  }
+  exportComp=null;
+}

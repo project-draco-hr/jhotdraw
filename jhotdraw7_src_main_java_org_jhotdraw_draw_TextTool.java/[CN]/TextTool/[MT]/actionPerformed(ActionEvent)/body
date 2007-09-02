@@ -1,4 +1,6 @@
 {
   endEdit();
-  fireToolDone();
+  if (isToolDoneAfterCreation()) {
+    fireToolDone();
+  }
 }

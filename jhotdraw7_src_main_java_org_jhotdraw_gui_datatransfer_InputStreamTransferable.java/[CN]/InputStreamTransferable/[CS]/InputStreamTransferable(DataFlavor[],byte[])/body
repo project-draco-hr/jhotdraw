@@ -1,4 +1,4 @@
 {
-  this.flavors=flavors;
+  super(flavors);
   this.data=data;
 }

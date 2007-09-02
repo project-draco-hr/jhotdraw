@@ -1,0 +1,10 @@
+{
+  if ((p0 != null) && (p1 != null) && (p0.getOffset() != p1.getOffset())) {
+    try {
+      Document doc=c.getDocument();
+      doc.remove(p0.getOffset(),p1.getOffset() - p0.getOffset());
+    }
+ catch (    BadLocationException e) {
+    }
+  }
+}

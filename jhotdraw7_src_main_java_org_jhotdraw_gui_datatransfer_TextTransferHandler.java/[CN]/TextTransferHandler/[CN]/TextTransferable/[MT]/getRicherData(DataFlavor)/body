@@ -1,0 +1,15 @@
+{
+  if (richText == null) {
+    return null;
+  }
+  if (String.class.equals(flavor.getRepresentationClass())) {
+    return richText;
+  }
+ else   if (Reader.class.equals(flavor.getRepresentationClass())) {
+    return new StringReader(richText);
+  }
+ else   if (InputStream.class.equals(flavor.getRepresentationClass())) {
+    return new StringBufferInputStream(richText);
+  }
+  throw new UnsupportedFlavorException(flavor);
+}

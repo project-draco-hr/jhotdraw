@@ -1,5 +1,5 @@
 {
   JFileChooser c=super.createOpenChooser();
-  c.addChoosableFileFilter(new ExtensionFileFilter("Drawing","xml"));
+  c.addChoosableFileFilter(new ExtensionFileFilter("Drawing .xml","xml"));
   return c;
 }
