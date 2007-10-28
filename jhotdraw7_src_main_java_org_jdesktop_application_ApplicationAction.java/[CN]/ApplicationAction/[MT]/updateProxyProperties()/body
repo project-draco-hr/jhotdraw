@@ -1,0 +1,10 @@
+{
+  javax.swing.Action proxy=getProxy();
+  if (proxy != null) {
+    setEnabled(proxy.isEnabled());
+    Object s=proxy.getValue(SELECTED_KEY);
+    setSelected((s instanceof Boolean) && ((Boolean)s).booleanValue());
+    maybePutDescriptionValue(javax.swing.Action.SHORT_DESCRIPTION,proxy);
+    maybePutDescriptionValue(javax.swing.Action.LONG_DESCRIPTION,proxy);
+  }
+}

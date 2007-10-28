@@ -1,0 +1,11 @@
+{
+  if (bundlesMapKeysP == null) {
+    Set<String> allKeys=new HashSet<String>(getResourceKeySet());
+    ResourceMap parent=getParent();
+    if (parent != null) {
+      allKeys.addAll(parent.keySet());
+    }
+    bundlesMapKeysP=Collections.unmodifiableSet(allKeys);
+  }
+  return bundlesMapKeysP;
+}

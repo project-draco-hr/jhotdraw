@@ -1,4 +1,0 @@
-{
-  NumberedViewFactory viewFactory=(NumberedViewFactory)editor.getEditorKit().getViewFactory();
-  return viewFactory.isLineNumbersVisible();
-}

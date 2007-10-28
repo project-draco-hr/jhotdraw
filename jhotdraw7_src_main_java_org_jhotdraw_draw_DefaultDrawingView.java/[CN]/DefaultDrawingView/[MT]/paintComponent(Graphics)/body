@@ -9,7 +9,7 @@
   g.setRenderingHint(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_SPEED);
   g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,(Options.isTextAntialiased()) ? RenderingHints.VALUE_TEXT_ANTIALIAS_ON : RenderingHints.VALUE_TEXT_ANTIALIAS_OFF);
   drawBackground(g);
-  drawGrid(g);
+  drawConstrainer(g);
   drawDrawing(g);
   drawHandles(g);
   drawTool(g);

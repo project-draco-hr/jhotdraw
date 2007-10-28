@@ -4,7 +4,7 @@
     p.getClass().getMethod(setterName,parameterClass).invoke(p,new Object[]{propertyValue});
   }
  catch (  Throwable e) {
-    InternalError error=new InternalError("Method invocation failed");
+    InternalError error=new InternalError("Method invocation failed. setter:" + setterName + " object:"+ p);
     error.initCause(e);
     throw error;
   }

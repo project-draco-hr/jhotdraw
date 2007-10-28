@@ -1,0 +1,7 @@
+{
+  checkSaveRestoreArgs(root,fileName);
+  Map<String,Object> stateMap=new HashMap<String,Object>();
+  saveTree(Collections.singletonList(root),stateMap);
+  LocalStorage lst=getContext().getLocalStorage();
+  lst.save(stateMap,fileName);
+}

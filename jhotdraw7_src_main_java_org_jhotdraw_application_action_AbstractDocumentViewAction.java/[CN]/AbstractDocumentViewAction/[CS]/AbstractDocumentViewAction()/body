@@ -1,8 +1,0 @@
-{
-  this.enabled=true;
-  DocumentOrientedApplication application=getApplication();
-  if (application != null) {
-    application.addPropertyChangeListener(applicationListener);
-    updateProject(null,application.getCurrentView());
-  }
-}

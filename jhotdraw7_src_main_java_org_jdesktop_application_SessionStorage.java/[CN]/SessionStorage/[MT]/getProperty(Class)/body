@@ -1,0 +1,11 @@
+{
+  checkClassArg(cls);
+  while (cls != null) {
+    Property p=propertyMap.get(cls);
+    if (p != null) {
+      return p;
+    }
+    cls=cls.getSuperclass();
+  }
+  return null;
+}

@@ -1,0 +1,4 @@
+{
+  File path=new File(getDirectory(),fileName);
+  return path.delete();
+}

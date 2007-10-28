@@ -1,0 +1,9 @@
+{
+  TaskService oldTaskService, newTaskService;
+synchronized (this) {
+    oldTaskService=this.taskService;
+    this.taskService=taskService;
+    newTaskService=this.taskService;
+  }
+  firePropertyChange("taskService",oldTaskService,newTaskService);
+}

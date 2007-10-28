@@ -1,6 +1,0 @@
-{
-  for (  DocumentView v : new LinkedList<DocumentView>(getViews())) {
-    remove(v);
-  }
-  super.shutdown();
-}

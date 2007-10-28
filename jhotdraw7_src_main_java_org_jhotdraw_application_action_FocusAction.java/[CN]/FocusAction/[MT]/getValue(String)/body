@@ -1,8 +1,0 @@
-{
-  if (key == Action.NAME && documentView != null) {
-    return getTitle();
-  }
- else {
-    return super.getValue(key);
-  }
-}

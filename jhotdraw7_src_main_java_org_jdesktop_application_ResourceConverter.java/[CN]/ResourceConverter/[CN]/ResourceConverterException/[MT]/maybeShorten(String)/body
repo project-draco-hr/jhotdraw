@@ -1,0 +1,4 @@
+{
+  int n=s.length();
+  return (n < 128) ? s : s.substring(0,128) + "...[" + (n - 128)+ " more characters]";
+}

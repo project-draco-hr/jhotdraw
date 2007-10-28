@@ -1,5 +1,0 @@
-{
-  String oldValue=copyright;
-  copyright=newValue;
-  firePropertyChange("copyright",oldValue,newValue);
-}

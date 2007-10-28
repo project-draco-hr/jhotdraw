@@ -1,6 +1,6 @@
 {
-  if (getCurrentProject() instanceof GridProject) {
-    GridProject p=(GridProject)getCurrentProject();
-    p.setGridVisible(!p.isGridVisible());
+  DrawingView view=getView();
+  if (view != null) {
+    view.setConstrainerVisible(!view.isConstrainerVisible());
   }
 }

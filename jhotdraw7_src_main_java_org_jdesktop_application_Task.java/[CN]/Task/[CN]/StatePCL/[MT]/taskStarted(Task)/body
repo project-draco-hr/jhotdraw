@@ -1,0 +1,7 @@
+{
+synchronized (Task.this) {
+    startTime=System.currentTimeMillis();
+  }
+  firePropertyChange("started",false,true);
+  fireDoInBackgroundListeners();
+}

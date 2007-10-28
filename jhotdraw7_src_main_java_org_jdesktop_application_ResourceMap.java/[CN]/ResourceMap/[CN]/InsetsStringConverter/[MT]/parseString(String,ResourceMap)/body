@@ -1,0 +1,4 @@
+{
+  List<Double> tlbr=parseDoubles(s,4,"invalid top,left,bottom,right Insets string");
+  return new Insets(tlbr.get(0).intValue(),tlbr.get(1).intValue(),tlbr.get(2).intValue(),tlbr.get(3).intValue());
+}

@@ -1,0 +1,19 @@
+{
+  boolean qEmpty=false;
+  JPanel placeHolder=new JPanel();
+  EventQueue q=Toolkit.getDefaultToolkit().getSystemEventQueue();
+  while (!qEmpty) {
+    NotifyingEvent e=new NotifyingEvent(placeHolder);
+    q.postEvent(e);
+synchronized (e) {
+      while (!e.isDispatched()) {
+        try {
+          e.wait();
+        }
+ catch (        InterruptedException ie) {
+        }
+      }
+      qEmpty=e.isEventQEmpty();
+    }
+  }
+}

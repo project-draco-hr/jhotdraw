@@ -1,0 +1,3 @@
+{
+  return w.isVisible() && ((w instanceof JFrame) || (w instanceof JDialog) || (w instanceof JWindow));
+}

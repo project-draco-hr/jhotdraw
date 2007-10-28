@@ -1,0 +1,11 @@
+{
+  if (clipboard == null) {
+    try {
+      clipboard=Toolkit.getDefaultToolkit().getSystemClipboard();
+    }
+ catch (    SecurityException e) {
+      clipboard=new Clipboard("sandbox");
+    }
+  }
+  return clipboard;
+}

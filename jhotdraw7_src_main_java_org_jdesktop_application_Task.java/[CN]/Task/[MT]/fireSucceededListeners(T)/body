@@ -1,0 +1,6 @@
+{
+  TaskEvent<T> event=new TaskEvent(this,result);
+  for (  TaskListener<T,V> listener : taskListeners) {
+    listener.succeeded(event);
+  }
+}

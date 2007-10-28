@@ -1,0 +1,15 @@
+{
+  injectComponent(root);
+  if (root instanceof JMenu) {
+    JMenu menu=(JMenu)root;
+    for (    Component child : menu.getMenuComponents()) {
+      injectComponents(child);
+    }
+  }
+ else   if (root instanceof Container) {
+    Container container=(Container)root;
+    for (    Component child : container.getComponents()) {
+      injectComponents(child);
+    }
+  }
+}

@@ -1,0 +1,3 @@
+{
+  this.columnWidths=copyColumnWidths(columnWidths);
+}

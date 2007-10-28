@@ -1,0 +1,4 @@
+Rectangle bounds
+Rectangle gcBounds
+int screenCount
+int frameState

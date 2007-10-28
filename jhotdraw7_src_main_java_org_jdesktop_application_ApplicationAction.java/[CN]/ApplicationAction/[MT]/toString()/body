@@ -1,0 +1,31 @@
+{
+  StringBuilder sb=new StringBuilder();
+  sb.append(getClass().getName());
+  sb.append(" ");
+  boolean enabled=isEnabled();
+  if (!enabled) {
+    sb.append("(");
+  }
+  sb.append(getName());
+  Object selectedValue=getValue(SELECTED_KEY);
+  if (selectedValue instanceof Boolean) {
+    if (((Boolean)selectedValue).booleanValue()) {
+      sb.append("+");
+    }
+  }
+  if (!enabled) {
+    sb.append(")");
+  }
+  Object nameValue=getValue(javax.swing.Action.NAME);
+  if (nameValue instanceof String) {
+    sb.append(" \"");
+    sb.append((String)nameValue);
+    sb.append("\"");
+  }
+  proxy=getProxy();
+  if (proxy != null) {
+    sb.append(" Proxy for: ");
+    sb.append(proxy.toString());
+  }
+  return sb.toString();
+}

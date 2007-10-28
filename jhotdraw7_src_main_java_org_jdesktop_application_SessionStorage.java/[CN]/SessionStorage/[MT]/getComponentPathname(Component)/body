@@ -1,0 +1,28 @@
+{
+  String name=getComponentName(c);
+  if (name == null) {
+    return null;
+  }
+  StringBuilder path=new StringBuilder(name);
+  while ((c.getParent() != null) && !(c instanceof Window) && !(c instanceof Applet)) {
+    c=c.getParent();
+    name=getComponentName(c);
+    if (name == null) {
+      int n=c.getParent().getComponentZOrder(c);
+      if (n >= 0) {
+        Class cls=c.getClass();
+        name=cls.getSimpleName();
+        if (name.length() == 0) {
+          name="Anonymous" + cls.getSuperclass().getSimpleName();
+        }
+        name=name + n;
+      }
+ else {
+        logger.warning("Couldn't compute pathname for " + c);
+        return null;
+      }
+    }
+    path.append("/").append(name);
+  }
+  return path.toString();
+}

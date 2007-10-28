@@ -1,6 +1,0 @@
-{
-  initRecentFiles();
-  initActionMap();
-  initLookAndFeel();
-  initMainFrame();
-}

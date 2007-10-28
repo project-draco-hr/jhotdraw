@@ -1,0 +1,8 @@
+{
+  if (resourceManager == null) {
+    throw new IllegalArgumentException("null resourceManager");
+  }
+  Object oldValue=this.resourceManager;
+  this.resourceManager=resourceManager;
+  firePropertyChange("resourceManager",oldValue,this.resourceManager);
+}

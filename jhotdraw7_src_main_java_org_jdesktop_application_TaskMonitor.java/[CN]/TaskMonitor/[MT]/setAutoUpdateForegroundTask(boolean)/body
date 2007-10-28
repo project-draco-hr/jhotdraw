@@ -1,0 +1,5 @@
+{
+  boolean oldValue=this.autoUpdateForegroundTask;
+  this.autoUpdateForegroundTask=autoUpdateForegroundTask;
+  firePropertyChange("autoUpdateForegroundTask",oldValue,this.autoUpdateForegroundTask);
+}

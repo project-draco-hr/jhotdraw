@@ -1,0 +1,4 @@
+{
+  waitForEmptyEventQ();
+  return null;
+}

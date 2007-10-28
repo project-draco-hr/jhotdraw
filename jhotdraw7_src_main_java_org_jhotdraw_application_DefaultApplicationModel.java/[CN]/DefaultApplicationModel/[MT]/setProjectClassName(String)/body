@@ -1,5 +1,0 @@
-{
-  String oldValue=projectClassName;
-  projectClassName=newValue;
-  firePropertyChange("projectClassName",oldValue,newValue);
-}

@@ -1,0 +1,6 @@
+{
+  saveSession(getMainFrame());
+  for (  Window window : getVisibleSecondaryWindows()) {
+    saveSession(window);
+  }
+}

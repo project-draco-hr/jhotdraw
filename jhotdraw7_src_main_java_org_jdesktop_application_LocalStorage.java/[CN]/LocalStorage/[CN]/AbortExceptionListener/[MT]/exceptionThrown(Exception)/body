@@ -1,0 +1,5 @@
+{
+  if (exception == null) {
+    exception=e;
+  }
+}

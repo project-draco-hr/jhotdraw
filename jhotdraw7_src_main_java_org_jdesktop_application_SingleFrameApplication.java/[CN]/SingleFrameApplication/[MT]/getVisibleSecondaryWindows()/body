@@ -1,0 +1,36 @@
+{
+  List<Window> rv=new ArrayList<Window>();
+  Method getWindowsM=null;
+  try {
+    getWindowsM=Window.class.getMethod("getWindows");
+  }
+ catch (  Exception ignore) {
+  }
+  if (getWindowsM != null) {
+    Window[] windows=null;
+    try {
+      windows=(Window[])getWindowsM.invoke(null);
+    }
+ catch (    Exception e) {
+      throw new Error("HCTB - can't get top level windows list",e);
+    }
+    if (windows != null) {
+      for (      Window window : windows) {
+        if (isVisibleWindow(window)) {
+          rv.add(window);
+        }
+      }
+    }
+  }
+ else {
+    Frame[] frames=Frame.getFrames();
+    if (frames != null) {
+      for (      Frame frame : frames) {
+        if (isVisibleWindow(frame)) {
+          rv.add(frame);
+        }
+      }
+    }
+  }
+  return rv;
+}

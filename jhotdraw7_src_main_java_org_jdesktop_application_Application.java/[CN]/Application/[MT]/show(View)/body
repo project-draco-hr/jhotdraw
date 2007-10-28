@@ -1,0 +1,7 @@
+{
+  Window window=(Window)view.getRootPane().getParent();
+  if (window != null) {
+    window.pack();
+    window.setVisible(true);
+  }
+}

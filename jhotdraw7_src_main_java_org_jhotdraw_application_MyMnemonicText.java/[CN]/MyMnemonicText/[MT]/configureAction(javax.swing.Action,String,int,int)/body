@@ -1,5 +1,0 @@
-{
-  target.putValue(javax.swing.Action.NAME,text);
-  target.putValue(javax.swing.Action.MNEMONIC_KEY,key);
-  target.putValue(DISPLAYED_MNEMONIC_INDEX_KEY,index);
-}

@@ -1,0 +1,6 @@
+{
+  TaskEvent<InterruptedException> event=new TaskEvent(this,e);
+  for (  TaskListener<T,V> listener : taskListeners) {
+    listener.interrupted(event);
+  }
+}

@@ -1,5 +1,5 @@
 {
-  if (getCurrentProject() != null && settingsPanel != null) {
-    settingsPanel.setConstrainer(getCurrentProject().getGridConstrainer());
+  if (getView() != null && settingsPanel != null) {
+    settingsPanel.setConstrainer((GridConstrainer)getView().getVisibleConstrainer());
   }
 }

@@ -1,0 +1,12 @@
+{
+  String classResourceMapKey=startClass.getName() + stopClass.getName();
+  ResourceMap classResourceMap=resourceMaps.get(classResourceMapKey);
+  if (classResourceMap == null) {
+    List<String> classBundleNames=allBundleNames(startClass,stopClass);
+    ClassLoader classLoader=startClass.getClassLoader();
+    ResourceMap appRM=getResourceMap();
+    classResourceMap=createResourceMapChain(classLoader,appRM,classBundleNames.listIterator());
+    resourceMaps.put(classResourceMapKey,classResourceMap);
+  }
+  return classResourceMap;
+}

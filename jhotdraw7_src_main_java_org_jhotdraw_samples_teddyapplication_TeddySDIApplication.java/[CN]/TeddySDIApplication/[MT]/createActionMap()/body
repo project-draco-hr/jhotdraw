@@ -1,9 +1,0 @@
-{
-  ActionMap m=super.createActionMap();
-  m.put(ToggleLineWrapAction.ID,new ToggleLineWrapAction());
-  m.put(ToggleStatusBarAction.ID,new ToggleStatusBarAction());
-  m.put(ToggleLineNumbersAction.ID,new ToggleLineNumbersAction());
-  m.put(FindAction.ID,new FindAction());
-  m.put(PreferencesAction.ID,new PreferencesAction());
-  return m;
-}

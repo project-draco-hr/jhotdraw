@@ -32,7 +32,7 @@
   pButton.putClientProperty("Quaqua.Component.visualMargin",new Insets(0,0,0,0));
   pButton.setFont(UIManager.getFont("SmallSystemFont"));
   placardPanel.add(pButton,BorderLayout.WEST);
-  pButton=ButtonFactory.createToggleGridButton(view,invisibleConstrainer,visibleConstrainer);
+  pButton=ButtonFactory.createToggleGridButton(view);
   pButton.putClientProperty("Quaqua.Button.style","placard");
   pButton.putClientProperty("Quaqua.Component.visualMargin",new Insets(0,0,0,0));
   pButton.setFont(UIManager.getFont("SmallSystemFont"));

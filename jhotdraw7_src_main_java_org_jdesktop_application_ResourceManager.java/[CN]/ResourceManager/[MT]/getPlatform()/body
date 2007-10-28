@@ -1,0 +1,3 @@
+{
+  return getResourceMap().getString("platform");
+}

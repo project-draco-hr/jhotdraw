@@ -1,0 +1,6 @@
+{
+  if (resourceConverter == null) {
+    throw new IllegalArgumentException("null resourceConverter");
+  }
+  resourceConverters.add(resourceConverter);
+}

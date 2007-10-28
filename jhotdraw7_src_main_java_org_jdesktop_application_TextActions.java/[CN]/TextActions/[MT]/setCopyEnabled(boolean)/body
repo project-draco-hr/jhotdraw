@@ -1,0 +1,5 @@
+{
+  boolean oldValue=this.copyEnabled;
+  this.copyEnabled=copyEnabled;
+  firePropertyChange("copyEnabled",oldValue,this.copyEnabled);
+}

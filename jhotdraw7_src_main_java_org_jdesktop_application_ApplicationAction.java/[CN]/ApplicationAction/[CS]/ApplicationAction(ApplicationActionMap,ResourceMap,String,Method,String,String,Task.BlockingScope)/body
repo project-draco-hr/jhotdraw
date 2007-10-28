@@ -1,0 +1,41 @@
+{
+  if (appAM == null) {
+    throw new IllegalArgumentException("null appAM");
+  }
+  if (baseName == null) {
+    throw new IllegalArgumentException("null baseName");
+  }
+  this.appAM=appAM;
+  this.resourceMap=resourceMap;
+  this.actionName=baseName;
+  this.actionMethod=actionMethod;
+  this.enabledProperty=enabledProperty;
+  this.selectedProperty=selectedProperty;
+  this.block=block;
+  if (enabledProperty != null) {
+    setEnabledMethod=propertySetMethod(enabledProperty,boolean.class);
+    isEnabledMethod=propertyGetMethod(enabledProperty);
+    if (isEnabledMethod == null) {
+      throw newNoSuchPropertyException(enabledProperty);
+    }
+  }
+ else {
+    this.isEnabledMethod=null;
+    this.setEnabledMethod=null;
+  }
+  if (selectedProperty != null) {
+    setSelectedMethod=propertySetMethod(selectedProperty,boolean.class);
+    isSelectedMethod=propertyGetMethod(selectedProperty);
+    if (isSelectedMethod == null) {
+      throw newNoSuchPropertyException(selectedProperty);
+    }
+    super.putValue(SELECTED_KEY,Boolean.FALSE);
+  }
+ else {
+    this.isSelectedMethod=null;
+    this.setSelectedMethod=null;
+  }
+  if (resourceMap != null) {
+    initActionProperties(resourceMap,baseName);
+  }
+}

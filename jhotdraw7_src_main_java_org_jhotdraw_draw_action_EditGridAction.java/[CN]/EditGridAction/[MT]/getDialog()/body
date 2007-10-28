@@ -11,6 +11,6 @@
     PreferencesUtil.installFramePrefsHandler(prefs,"gridSettings",dialog);
     getApplication().addWindow(dialog,null);
   }
-  settingsPanel.setConstrainer(((GridProject)getCurrentProject()).getGridConstrainer());
+  settingsPanel.setConstrainer((GridConstrainer)getView().getVisibleConstrainer());
   return dialog;
 }

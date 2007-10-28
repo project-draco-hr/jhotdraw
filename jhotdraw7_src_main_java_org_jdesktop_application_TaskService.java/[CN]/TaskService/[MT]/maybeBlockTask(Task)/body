@@ -1,0 +1,20 @@
+{
+  final Task.InputBlocker inputBlocker=task.getInputBlocker();
+  if (inputBlocker == null) {
+    return;
+  }
+  if (inputBlocker.getScope() != Task.BlockingScope.NONE) {
+    if (SwingUtilities.isEventDispatchThread()) {
+      inputBlocker.block();
+    }
+ else {
+      Runnable doBlockTask=new Runnable(){
+        public void run(){
+          inputBlocker.block();
+        }
+      }
+;
+      SwingUtilities.invokeLater(doBlockTask);
+    }
+  }
+}

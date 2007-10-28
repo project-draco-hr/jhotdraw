@@ -1,0 +1,3 @@
+{
+  textActions=new TextActions(getContext());
+}

@@ -1,0 +1,18 @@
+{
+  String propertyName=event.getPropertyName();
+  Object[] keys=keys();
+  if (keys != null) {
+    for (    Object key : keys) {
+      javax.swing.Action value=get(key);
+      if (value instanceof ApplicationAction) {
+        ApplicationAction appAction=(ApplicationAction)value;
+        if (propertyName.equals(appAction.getEnabledProperty())) {
+          appAction.forwardPropertyChangeEvent(event,"enabled");
+        }
+ else         if (propertyName.equals(appAction.getSelectedProperty())) {
+          appAction.forwardPropertyChangeEvent(event,"selected");
+        }
+      }
+    }
+  }
+}

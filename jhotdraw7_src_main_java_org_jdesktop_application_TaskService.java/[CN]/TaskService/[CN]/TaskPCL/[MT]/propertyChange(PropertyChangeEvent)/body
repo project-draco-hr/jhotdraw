@@ -1,0 +1,20 @@
+{
+  String propertyName=e.getPropertyName();
+  if ("done".equals(propertyName)) {
+    Task task=(Task)(e.getSource());
+    if (task.isDone()) {
+      List<Task> oldTaskList, newTaskList;
+synchronized (tasks) {
+        oldTaskList=copyTasksList();
+        tasks.remove(task);
+        task.removePropertyChangeListener(taskPCL);
+        newTaskList=copyTasksList();
+      }
+      firePropertyChange("tasks",oldTaskList,newTaskList);
+      Task.InputBlocker inputBlocker=task.getInputBlocker();
+      if (inputBlocker != null) {
+        inputBlocker.unblock();
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  checkNullKey(key);
+  Map<String,Object> bundlesMap=getBundlesMap();
+  return (bundlesMap != null) && bundlesMap.containsKey(key);
+}

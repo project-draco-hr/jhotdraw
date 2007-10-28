@@ -1,0 +1,18 @@
+{
+  if (bundleNames != null) {
+    for (    String bundleName : bundleNames) {
+      if ((bundleName == null) || (bundleNames.size() == 0)) {
+        throw new IllegalArgumentException("invalid bundle name \"" + bundleName + "\"");
+      }
+    }
+  }
+  Object oldValue=applicationBundleNames;
+  if (bundleNames != null) {
+    applicationBundleNames=Collections.unmodifiableList(new ArrayList(bundleNames));
+  }
+ else {
+    applicationBundleNames=null;
+  }
+  resourceMaps.clear();
+  firePropertyChange("applicationBundleNames",oldValue,applicationBundleNames);
+}

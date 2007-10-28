@@ -1,0 +1,4 @@
+{
+  KeyStroke ks=getKeyStroke(key);
+  return (ks != null) ? new Integer(ks.getKeyCode()) : null;
+}

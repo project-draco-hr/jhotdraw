@@ -1,0 +1,7 @@
+{
+  if (context == null) {
+    throw new IllegalArgumentException("null context");
+  }
+  this.context=context;
+  resourceMaps=new ConcurrentHashMap<String,ResourceMap>();
+}

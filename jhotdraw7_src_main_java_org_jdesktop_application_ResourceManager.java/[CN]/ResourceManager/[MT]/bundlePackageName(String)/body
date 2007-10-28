@@ -1,0 +1,4 @@
+{
+  int i=bundleName.lastIndexOf(".");
+  return (i == -1) ? "" : bundleName.substring(0,i);
+}

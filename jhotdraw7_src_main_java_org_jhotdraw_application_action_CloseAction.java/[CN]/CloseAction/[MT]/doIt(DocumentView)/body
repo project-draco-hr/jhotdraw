@@ -1,5 +1,0 @@
-{
-  if (documentView != null) {
-    getApplication().remove(documentView);
-  }
-}

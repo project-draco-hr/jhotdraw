@@ -1,5 +1,0 @@
-{
-  if (UIManager.getString("OptionPane.css") == null) {
-    UIManager.put("OptionPane.css","");
-  }
-}

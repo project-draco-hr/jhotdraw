@@ -1,0 +1,20 @@
+{
+  if (toolBars == null) {
+    throw new IllegalArgumentException("null toolbars");
+  }
+  List<JToolBar> oldValue=getToolBars();
+  this.toolBars=Collections.unmodifiableList(new ArrayList(toolBars));
+  JComponent oldToolBarsPanel=this.toolBarsPanel;
+  JComponent newToolBarsPanel=null;
+  if (this.toolBars.size() == 1) {
+    newToolBarsPanel=toolBars.get(0);
+  }
+ else   if (this.toolBars.size() > 1) {
+    newToolBarsPanel=new JPanel();
+    for (    JComponent toolBar : this.toolBars) {
+      newToolBarsPanel.add(toolBar);
+    }
+  }
+  replaceContentPaneChild(oldToolBarsPanel,newToolBarsPanel,BorderLayout.NORTH);
+  firePropertyChange("toolBars",oldValue,this.toolBars);
+}

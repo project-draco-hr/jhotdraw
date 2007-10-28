@@ -1,0 +1,8 @@
+{
+  if ((mainView == null) && (view instanceof FrameView)) {
+    mainView=(FrameView)view;
+  }
+  RootPaneContainer c=(RootPaneContainer)view.getRootPane().getParent();
+  initRootPaneContainer(c);
+  ((Window)c).setVisible(true);
+}

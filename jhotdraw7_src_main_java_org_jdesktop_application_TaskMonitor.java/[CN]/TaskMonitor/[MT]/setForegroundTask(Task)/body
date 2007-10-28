@@ -1,0 +1,12 @@
+{
+  final Task oldTask=this.foregroundTask;
+  if (oldTask != null) {
+    oldTask.removePropertyChangeListener(taskPCL);
+  }
+  this.foregroundTask=foregroundTask;
+  Task newTask=this.foregroundTask;
+  if (newTask != null) {
+    newTask.addPropertyChangeListener(taskPCL);
+  }
+  firePropertyChange("foregroundTask",oldTask,newTask);
+}

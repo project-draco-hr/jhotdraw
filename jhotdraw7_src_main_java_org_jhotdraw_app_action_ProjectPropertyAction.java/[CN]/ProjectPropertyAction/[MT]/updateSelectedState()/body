@@ -7,7 +7,7 @@
       isSelected=value == propertyValue || value != null && propertyValue != null && value.equals(propertyValue);
     }
  catch (    Throwable e) {
-      InternalError error=new InternalError("Method invocation failed");
+      InternalError error=new InternalError("Method invocation failed. getter:" + getterName + " object:"+ p);
       error.initCause(e);
       throw error;
     }

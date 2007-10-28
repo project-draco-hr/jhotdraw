@@ -1,4 +1,0 @@
-{
-  super.uninstallProjectListeners(p);
-  p.removePropertyChangeListener(projectListener);
-}

@@ -1,0 +1,14 @@
+{
+  if ((getProxy() != null) || (isEnabledMethod == null)) {
+    return super.isEnabled();
+  }
+ else {
+    try {
+      Object b=isEnabledMethod.invoke(appAM.getActionsObject());
+      return (Boolean)b;
+    }
+ catch (    Exception e) {
+      throw newInvokeError(isEnabledMethod,e);
+    }
+  }
+}

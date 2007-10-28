@@ -1,0 +1,10 @@
+{
+synchronized (taskQueue) {
+    if (taskQueue.isEmpty()) {
+      return Collections.emptyList();
+    }
+ else {
+      return new ArrayList<Task>(taskQueue);
+    }
+  }
+}

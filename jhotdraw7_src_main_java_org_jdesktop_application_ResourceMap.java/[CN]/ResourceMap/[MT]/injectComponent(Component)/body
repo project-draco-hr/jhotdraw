@@ -1,0 +1,6 @@
+{
+  if (target == null) {
+    throw new IllegalArgumentException("null target");
+  }
+  injectComponentProperties(target);
+}

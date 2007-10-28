@@ -1,0 +1,19 @@
+{
+  Runnable doCreateAndShowGUI=new Runnable(){
+    public void run(){
+      try {
+        application=create(applicationClass);
+        application.initialize(args);
+        application.startup();
+        application.waitForReady();
+      }
+ catch (      Exception e) {
+        String msg=String.format("Application %s failed to launch",applicationClass);
+        logger.log(Level.SEVERE,msg,e);
+        throw (new Error(msg,e));
+      }
+    }
+  }
+;
+  SwingUtilities.invokeLater(doCreateAndShowGUI);
+}

@@ -1,0 +1,10 @@
+{
+  checkBasics("openInputFile");
+  URL fileURL=fileNameToURL(fileName);
+  try {
+    return new BufferedInputStream(ps.get(fileURL).getInputStream());
+  }
+ catch (  Exception e) {
+    throw new LSException("openInputFile \"" + fileName + "\" failed",e);
+  }
+}

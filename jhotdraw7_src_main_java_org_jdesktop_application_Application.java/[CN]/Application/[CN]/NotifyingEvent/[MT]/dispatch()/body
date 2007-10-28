@@ -1,0 +1,8 @@
+{
+  EventQueue q=Toolkit.getDefaultToolkit().getSystemEventQueue();
+synchronized (this) {
+    qEmpty=(q.peekEvent() == null);
+    dispatched=true;
+    notifyAll();
+  }
+}

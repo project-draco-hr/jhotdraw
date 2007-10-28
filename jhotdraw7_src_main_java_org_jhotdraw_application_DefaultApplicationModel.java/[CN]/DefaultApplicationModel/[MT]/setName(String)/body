@@ -1,5 +1,0 @@
-{
-  String oldValue=name;
-  name=newValue;
-  firePropertyChange("name",oldValue,newValue);
-}

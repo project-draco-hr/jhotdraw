@@ -1,0 +1,6 @@
+{
+  List<Double> xy=parseDoubles(s,2,"invalid x,y Dimension string");
+  Dimension d=new Dimension();
+  d.setSize(xy.get(0),xy.get(1));
+  return d;
+}

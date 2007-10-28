@@ -1,0 +1,7 @@
+{
+  if (s.contains("shortcut")) {
+    int k=Toolkit.getDefaultToolkit().getMenuShortcutKeyMask();
+    s=s.replaceAll("shortcut",(k == Event.META_MASK) ? "meta" : "control");
+  }
+  return KeyStroke.getKeyStroke(s);
+}

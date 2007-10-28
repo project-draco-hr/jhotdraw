@@ -1,5 +1,0 @@
-{
-  updateName(v);
-  v.putAction(FocusAction.ID,new FocusAction(v));
-  super.add(v);
-}

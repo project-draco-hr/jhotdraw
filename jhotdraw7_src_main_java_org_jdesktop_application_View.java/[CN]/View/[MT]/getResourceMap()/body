@@ -1,0 +1,6 @@
+{
+  if (resourceMap == null) {
+    resourceMap=getContext().getResourceMap(getClass(),View.class);
+  }
+  return resourceMap;
+}

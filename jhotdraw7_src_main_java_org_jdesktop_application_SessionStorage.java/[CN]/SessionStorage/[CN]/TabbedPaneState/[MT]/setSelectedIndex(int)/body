@@ -1,0 +1,6 @@
+{
+  if (selectedIndex < -1) {
+    throw new IllegalArgumentException("invalid selectedIndex");
+  }
+  this.selectedIndex=selectedIndex;
+}

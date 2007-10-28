@@ -1,0 +1,7 @@
+{
+  if (context == null) {
+    throw new IllegalArgumentException("null context");
+  }
+  this.context=context;
+  actionMaps=new WeakHashMap<Object,WeakReference<ApplicationActionMap>>();
+}

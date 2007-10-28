@@ -1,0 +1,9 @@
+{
+  Container contentPane=getRootPane().getContentPane();
+  if (oldChild != null) {
+    contentPane.remove(oldChild);
+  }
+  if (newChild != null) {
+    contentPane.add(newChild,constraint);
+  }
+}

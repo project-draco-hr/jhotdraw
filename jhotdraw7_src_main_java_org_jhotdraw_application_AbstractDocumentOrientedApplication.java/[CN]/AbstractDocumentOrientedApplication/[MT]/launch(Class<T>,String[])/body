@@ -1,4 +1,0 @@
-{
-  initAWT(args);
-  application.Application.launch(applicationClass,args);
-}

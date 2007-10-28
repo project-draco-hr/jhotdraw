@@ -1,0 +1,4 @@
+{
+  checkOrientation(orientation);
+  this.orientation=orientation;
+}

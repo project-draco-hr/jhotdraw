@@ -1,0 +1,4 @@
+{
+  KeyboardFocusManager kfm=KeyboardFocusManager.getCurrentKeyboardFocusManager();
+  kfm.addPropertyChangeListener(new KeyboardFocusPCL());
+}

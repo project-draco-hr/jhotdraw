@@ -1,3 +1,0 @@
-{
-  this(propertyName,propertyValue.getClass(),propertyValue);
-}

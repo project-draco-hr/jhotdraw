@@ -1,3 +1,0 @@
-{
-  return editor.getScrollableUnitIncrement(visibleRect,orientation,direction);
-}

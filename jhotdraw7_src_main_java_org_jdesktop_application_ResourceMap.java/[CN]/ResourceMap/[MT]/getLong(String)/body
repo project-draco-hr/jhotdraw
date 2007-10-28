@@ -1,0 +1,3 @@
+{
+  return (Long)getObject(key,Long.class);
+}

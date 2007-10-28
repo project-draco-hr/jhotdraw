@@ -1,0 +1,6 @@
+{
+  JComponent c=getFocusOwner();
+  if (c instanceof JTextComponent) {
+    updateTextActions((JTextComponent)c);
+  }
+}

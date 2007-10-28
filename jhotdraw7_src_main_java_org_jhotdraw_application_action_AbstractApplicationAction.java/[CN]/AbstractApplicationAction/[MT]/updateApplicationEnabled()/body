@@ -1,3 +1,0 @@
-{
-  firePropertyChange("enabled",Boolean.valueOf(!isEnabled()),Boolean.valueOf(isEnabled()));
-}

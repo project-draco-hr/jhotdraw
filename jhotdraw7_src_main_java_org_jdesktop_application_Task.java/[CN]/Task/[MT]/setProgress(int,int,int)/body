@@ -1,0 +1,10 @@
+{
+  if (min >= max) {
+    throw new IllegalArgumentException("invalid range: min >= max");
+  }
+  if ((value < min) || (value > max)) {
+    throw new IllegalArgumentException("invalid value");
+  }
+  float percentage=(float)(value - min) / (float)(max - min);
+  setProgress(Math.round(percentage * 100.0f));
+}

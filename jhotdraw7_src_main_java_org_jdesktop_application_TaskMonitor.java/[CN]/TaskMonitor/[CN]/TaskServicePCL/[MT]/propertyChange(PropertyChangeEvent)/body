@@ -1,0 +1,8 @@
+{
+  String propertyName=e.getPropertyName();
+  if ("tasks".equals(propertyName)) {
+    List<Task> oldList=(List<Task>)e.getOldValue();
+    List<Task> newList=(List<Task>)e.getNewValue();
+    updateTasks(oldList,newList);
+  }
+}

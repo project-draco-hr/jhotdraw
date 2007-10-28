@@ -1,0 +1,8 @@
+{
+  if (root == null) {
+    throw new IllegalArgumentException("null root");
+  }
+  if (fileName == null) {
+    throw new IllegalArgumentException("null fileName");
+  }
+}

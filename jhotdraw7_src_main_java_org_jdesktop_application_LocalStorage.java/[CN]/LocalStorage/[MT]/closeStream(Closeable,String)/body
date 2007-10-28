@@ -1,0 +1,10 @@
+{
+  if (st != null) {
+    try {
+      st.close();
+    }
+ catch (    java.io.IOException e) {
+      throw new LSException("close failed \"" + fileName + "\"",e);
+    }
+  }
+}

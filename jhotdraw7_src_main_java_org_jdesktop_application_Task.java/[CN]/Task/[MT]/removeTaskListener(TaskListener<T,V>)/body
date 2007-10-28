@@ -1,0 +1,6 @@
+{
+  if (listener == null) {
+    throw new IllegalArgumentException("null listener");
+  }
+  taskListeners.remove(listener);
+}

@@ -1,0 +1,18 @@
+{
+  if (taskService == null) {
+    throw new IllegalArgumentException("null taskService");
+  }
+  List<TaskService> oldValue=null, newValue=null;
+  boolean changed=false;
+synchronized (taskServices) {
+    if (!taskServices.contains(taskService)) {
+      oldValue=copyTaskServices();
+      taskServices.add(taskService);
+      newValue=copyTaskServices();
+      changed=true;
+    }
+  }
+  if (changed) {
+    firePropertyChange("taskServices",oldValue,newValue);
+  }
+}

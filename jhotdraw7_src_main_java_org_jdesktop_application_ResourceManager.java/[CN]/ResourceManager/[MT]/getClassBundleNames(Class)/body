@@ -1,0 +1,4 @@
+{
+  String bundleName=classBundleBaseName(cls);
+  return Collections.singletonList(bundleName);
+}

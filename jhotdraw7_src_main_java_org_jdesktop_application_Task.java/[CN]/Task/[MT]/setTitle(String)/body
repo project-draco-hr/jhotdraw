@@ -1,0 +1,9 @@
+{
+  String oldTitle, newTitle;
+synchronized (this) {
+    oldTitle=this.title;
+    this.title=title;
+    newTitle=this.title;
+  }
+  firePropertyChange("title",oldTitle,newTitle);
+}

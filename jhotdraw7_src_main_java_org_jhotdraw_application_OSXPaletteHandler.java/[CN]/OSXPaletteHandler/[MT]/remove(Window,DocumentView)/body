@@ -1,4 +1,0 @@
-{
-  windows.remove(window);
-  window.removeWindowFocusListener(focusHandler);
-}

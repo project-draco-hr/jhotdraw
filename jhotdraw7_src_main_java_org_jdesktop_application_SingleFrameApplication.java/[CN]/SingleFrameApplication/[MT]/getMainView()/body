@@ -1,0 +1,6 @@
+{
+  if (mainView == null) {
+    mainView=new FrameView(this);
+  }
+  return mainView;
+}

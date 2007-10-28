@@ -1,3 +1,0 @@
-{
-  return ApplicationContext.getInstance().getResourceMap(AbstractDocumentOrientedApplication.class);
-}

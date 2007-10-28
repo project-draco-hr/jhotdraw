@@ -1,7 +1,0 @@
-{
-  String title=documentView.getName();
-  if (documentView.isModified()) {
-    title+=" *";
-  }
-  return title;
-}

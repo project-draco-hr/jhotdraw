@@ -1,0 +1,10 @@
+{
+  ActionMap actionMap=text.getActionMap();
+  if (actionMap.get(markerActionKey) == null) {
+    actionMap.put(markerActionKey,markerAction);
+    ActionMap textActions=getContext().getActionMap(getClass(),this);
+    for (    Object key : textActions.keys()) {
+      actionMap.put(key,textActions.get(key));
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  JOptionPane optionPane=new JOptionPane();
+  if (getTask().getUserCanCancel()) {
+    JButton cancelButton=new JButton();
+    cancelButton.setName("BlockingDialog.cancelButton");
+    ActionListener doCancelTask=new ActionListener(){
+      public void actionPerformed(      ActionEvent ignore){
+        getTask().cancel(true);
+      }
+    }
+;
+    cancelButton.addActionListener(doCancelTask);
+    optionPane.setOptions(new Object[]{cancelButton});
+  }
+  Component dialogOwner=(Component)getTarget();
+  String taskTitle=getTask().getTitle();
+  String dialogTitle=(taskTitle == null) ? "BlockingDialog" : taskTitle;
+  JDialog dialog=optionPane.createDialog(dialogOwner,dialogTitle);
+  dialog.setModal(true);
+  dialog.setName("BlockingDialog");
+  optionPane.setName("BlockingDialog.optionPane");
+  ResourceMap resourceMap=getTask().getResourceMap();
+  if (resourceMap != null) {
+    resourceMap.injectComponents(dialog);
+  }
+  dialog.pack();
+  return dialog;
+}

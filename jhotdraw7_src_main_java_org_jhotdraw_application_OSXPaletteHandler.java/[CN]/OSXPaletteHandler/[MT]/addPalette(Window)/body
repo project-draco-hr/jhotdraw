@@ -1,4 +1,0 @@
-{
-  palette.addWindowFocusListener(focusHandler);
-  palettes.add(palette);
-}

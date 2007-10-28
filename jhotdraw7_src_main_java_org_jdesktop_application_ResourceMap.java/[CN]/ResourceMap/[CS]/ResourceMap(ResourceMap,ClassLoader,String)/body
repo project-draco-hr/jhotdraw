@@ -1,0 +1,3 @@
+{
+  this(parent,classLoader,Arrays.asList(bundleNames));
+}

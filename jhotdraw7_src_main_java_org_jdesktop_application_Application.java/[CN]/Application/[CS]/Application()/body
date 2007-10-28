@@ -1,0 +1,4 @@
+{
+  exitListeners=new CopyOnWriteArrayList<ExitListener>();
+  context=new ApplicationContext();
+}

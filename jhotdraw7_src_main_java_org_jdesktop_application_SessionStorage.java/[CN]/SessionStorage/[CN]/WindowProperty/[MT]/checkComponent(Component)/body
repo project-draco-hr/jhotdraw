@@ -1,0 +1,8 @@
+{
+  if (component == null) {
+    throw new IllegalArgumentException("null component");
+  }
+  if (!(component instanceof Window)) {
+    throw new IllegalArgumentException("invalid component");
+  }
+}

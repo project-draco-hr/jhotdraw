@@ -1,0 +1,20 @@
+{
+  String propertyName=e.getPropertyName();
+  if ("state".equals(propertyName)) {
+    StateValue state=(StateValue)(e.getNewValue());
+    Task task=(Task)(e.getSource());
+switch (state) {
+case STARTED:
+      taskStarted(task);
+    break;
+case DONE:
+  taskDone(task);
+break;
+}
+}
+ else if ("progress".equals(propertyName)) {
+synchronized (Task.this) {
+progressPropertyIsValid=true;
+}
+}
+}

@@ -1,0 +1,25 @@
+{
+  InputStream ist=null;
+  try {
+    ist=openInputFile(fileName);
+  }
+ catch (  IOException e) {
+    return null;
+  }
+  AbortExceptionListener el=new AbortExceptionListener();
+  XMLDecoder d=null;
+  try {
+    d=new XMLDecoder(ist);
+    d.setExceptionListener(el);
+    Object bean=d.readObject();
+    if (el.exception != null) {
+      throw new LSException("load failed \"" + fileName + "\"",el.exception);
+    }
+    return bean;
+  }
+  finally {
+    if (d != null) {
+      d.close();
+    }
+  }
+}

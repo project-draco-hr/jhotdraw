@@ -1,0 +1,3 @@
+{
+  return (Float)getObject(key,Float.class);
+}

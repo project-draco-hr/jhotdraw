@@ -1,0 +1,28 @@
+{
+  if (actionsClass == null) {
+    throw new IllegalArgumentException("null actionsClass");
+  }
+  if (actionsObject == null) {
+    throw new IllegalArgumentException("null actionsObject");
+  }
+  if (!actionsClass.isAssignableFrom(actionsObject.getClass())) {
+    throw new IllegalArgumentException("actionsObject not instanceof actionsClass");
+  }
+synchronized (actionMaps) {
+    WeakReference<ApplicationActionMap> ref=actionMaps.get(actionsObject);
+    ApplicationActionMap classActionMap=(ref != null) ? ref.get() : null;
+    if ((classActionMap == null) || (classActionMap.getActionsClass() != actionsClass)) {
+      ApplicationContext ctx=getContext();
+      Class actionsObjectClass=actionsObject.getClass();
+      ResourceMap resourceMap=ctx.getResourceMap(actionsObjectClass,actionsClass);
+      classActionMap=createActionMapChain(actionsObjectClass,actionsClass,actionsObject,resourceMap);
+      ActionMap lastActionMap=classActionMap;
+      while (lastActionMap.getParent() != null) {
+        lastActionMap=lastActionMap.getParent();
+      }
+      lastActionMap.setParent(getActionMap());
+      actionMaps.put(actionsObject,new WeakReference(classActionMap));
+    }
+    return classActionMap;
+  }
+}

@@ -32,7 +32,7 @@
   scrollPane.add(placardPanel,JScrollPane.LOWER_LEFT_CORNER);
   prefs=Preferences.userNodeForPackage(getClass());
   toggleGridButton.setSelected(prefs.getBoolean("project.gridVisible",false));
-  setScaleFactor(prefs.getDouble("project.scaleFactor",1d));
+  view.setScaleFactor(prefs.getDouble("project.scaleFactor",1d));
   view.addPropertyChangeListener(new PropertyChangeListener(){
     public void propertyChange(    PropertyChangeEvent evt){
       String name=evt.getPropertyName();

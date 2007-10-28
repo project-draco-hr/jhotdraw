@@ -1,6 +1,0 @@
-{
-  JMenu m=super.createEditMenu(v);
-  m.addSeparator();
-  m.add(getAction(PreferencesAction.ID));
-  return m;
-}

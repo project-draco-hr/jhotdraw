@@ -1,0 +1,7 @@
+{
+  StringBuffer sb=new StringBuffer(super.toString());
+  sb.append(" string: \"");
+  sb.append(badString);
+  sb.append("\"");
+  return sb.toString();
+}

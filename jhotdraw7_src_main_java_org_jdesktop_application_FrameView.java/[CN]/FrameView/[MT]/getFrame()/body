@@ -1,0 +1,8 @@
+{
+  if (frame == null) {
+    String title=getContext().getResourceMap().getString("Application.title");
+    frame=new JFrame(title);
+    frame.setName("mainFrame");
+  }
+  return frame;
+}

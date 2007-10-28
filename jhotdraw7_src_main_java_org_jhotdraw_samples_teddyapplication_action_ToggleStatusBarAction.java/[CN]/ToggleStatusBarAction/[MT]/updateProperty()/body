@@ -1,3 +1,0 @@
-{
-  putValue(Actions.SELECTED_KEY,getCurrentView() != null && getCurrentView().isStatusBarVisible());
-}

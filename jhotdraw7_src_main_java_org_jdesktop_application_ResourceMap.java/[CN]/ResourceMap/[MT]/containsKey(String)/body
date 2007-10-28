@@ -1,0 +1,10 @@
+{
+  checkNullKey(key);
+  if (containsResourceKey(key)) {
+    return true;
+  }
+ else {
+    ResourceMap parent=getParent();
+    return (parent != null) ? parent.containsKey(key) : false;
+  }
+}

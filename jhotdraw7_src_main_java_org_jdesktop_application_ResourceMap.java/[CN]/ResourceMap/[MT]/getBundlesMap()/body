@@ -1,0 +1,26 @@
+{
+  Locale defaultLocale=Locale.getDefault();
+  if (locale != defaultLocale) {
+    bundlesLoaded=false;
+    locale=defaultLocale;
+  }
+  if (!bundlesLoaded) {
+    Map<String,Object> bundlesMap=new ConcurrentHashMap<String,Object>();
+    for (int i=bundleNames.size() - 1; i >= 0; i--) {
+      try {
+        String bundleName=bundleNames.get(i);
+        ResourceBundle bundle=ResourceBundle.getBundle(bundleName,locale,classLoader);
+        Enumeration<String> keys=bundle.getKeys();
+        while (keys.hasMoreElements()) {
+          String key=keys.nextElement();
+          bundlesMap.put(key,bundle.getObject(key));
+        }
+      }
+ catch (      MissingResourceException ignore) {
+      }
+    }
+    bundlesMapP=bundlesMap;
+    bundlesLoaded=true;
+  }
+  return bundlesMapP;
+}

@@ -1,9 +1,0 @@
-{
-  JFileChooser fileChooser=documentView.getOpenChooser();
-  if (fileChooser.showOpenDialog(documentView.getComponent()) == JFileChooser.APPROVE_OPTION) {
-    openFile(documentView,fileChooser);
-  }
- else {
-    documentView.setEnabled(true);
-  }
-}

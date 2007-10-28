@@ -1,9 +1,0 @@
-{
-  DocumentView documentView=getCurrentView();
-  try {
-    Methods.invoke(documentView,"find");
-  }
- catch (  NoSuchMethodException ex) {
-    ex.printStackTrace();
-  }
-}

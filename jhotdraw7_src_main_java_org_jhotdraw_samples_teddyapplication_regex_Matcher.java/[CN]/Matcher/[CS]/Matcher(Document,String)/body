@@ -1,3 +1,0 @@
-{
-  this(document,findString,true,MatchType.CONTAINS);
-}

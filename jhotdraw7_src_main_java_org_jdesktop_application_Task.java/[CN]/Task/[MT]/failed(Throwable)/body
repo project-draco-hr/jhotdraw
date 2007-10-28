@@ -1,0 +1,4 @@
+{
+  String msg=String.format("%s failed: %s",this,cause);
+  logger.log(Level.SEVERE,msg,cause);
+}

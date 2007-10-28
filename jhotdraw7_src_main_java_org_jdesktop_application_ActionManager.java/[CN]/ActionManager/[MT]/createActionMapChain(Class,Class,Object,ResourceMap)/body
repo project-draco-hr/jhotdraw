@@ -1,0 +1,18 @@
+{
+  List<Class> classes=new ArrayList<Class>();
+  for (Class c=startClass; ; c=c.getSuperclass()) {
+    classes.add(c);
+    if (c.equals(stopClass)) {
+      break;
+    }
+  }
+  Collections.reverse(classes);
+  ApplicationContext ctx=getContext();
+  ApplicationActionMap parent=null;
+  for (  Class cls : classes) {
+    ApplicationActionMap appAM=new ApplicationActionMap(ctx,cls,actionsObject,resourceMap);
+    appAM.setParent(parent);
+    parent=appAM;
+  }
+  return parent;
+}

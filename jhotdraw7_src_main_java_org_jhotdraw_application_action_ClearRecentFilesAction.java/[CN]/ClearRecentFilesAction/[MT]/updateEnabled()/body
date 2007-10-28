@@ -1,3 +1,0 @@
-{
-  setEnabled(getApplication().recentFiles().size() > 0);
-}

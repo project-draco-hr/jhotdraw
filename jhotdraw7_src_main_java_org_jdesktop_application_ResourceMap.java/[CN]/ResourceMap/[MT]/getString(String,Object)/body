@@ -1,0 +1,9 @@
+{
+  if (args.length == 0) {
+    return (String)getObject(key,String.class);
+  }
+ else {
+    String format=(String)getObject(key,String.class);
+    return (format == null) ? null : String.format(format,args);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return (Color)getObject(key,Color.class);
+}

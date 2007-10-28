@@ -1,0 +1,17 @@
+{
+  long startTime, doneTime, dt;
+synchronized (this) {
+    startTime=this.startTime;
+    doneTime=this.doneTime;
+  }
+  if (startTime == -1L) {
+    dt=0L;
+  }
+ else   if (doneTime == -1L) {
+    dt=System.currentTimeMillis() - startTime;
+  }
+ else {
+    dt=doneTime - startTime;
+  }
+  return unit.convert(Math.max(0L,dt),TimeUnit.MILLISECONDS);
+}

@@ -1,5 +1,0 @@
-{
-  super.setEnabled(newValue);
-  editor.setEnabled(newValue);
-  scrollPane.setEnabled(newValue);
-}

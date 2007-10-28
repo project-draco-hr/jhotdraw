@@ -1,0 +1,6 @@
+{
+  if (application == null) {
+    application=new NoApplication();
+  }
+  return application;
+}

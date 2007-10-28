@@ -1,0 +1,6 @@
+{
+  JComponent oldValue=this.component;
+  this.component=component;
+  replaceContentPaneChild(oldValue,this.component,BorderLayout.CENTER);
+  firePropertyChange("component",oldValue,this.component);
+}

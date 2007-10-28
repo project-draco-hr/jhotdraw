@@ -1,0 +1,13 @@
+{
+  ResourceMap appResourceMap=getContext().getResourceMap();
+  String id=appResourceMap.getString(key);
+  if (id == null) {
+    logger.log(Level.WARNING,"unspecified resource " + key + " using "+ def);
+    id=def;
+  }
+ else   if (id.trim().length() == 0) {
+    logger.log(Level.WARNING,"empty resource " + key + " using "+ def);
+    id=def;
+  }
+  return id;
+}

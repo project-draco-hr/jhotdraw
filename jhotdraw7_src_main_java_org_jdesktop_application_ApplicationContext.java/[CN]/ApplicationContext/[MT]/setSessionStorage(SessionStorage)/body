@@ -1,0 +1,8 @@
+{
+  if (sessionStorage == null) {
+    throw new IllegalArgumentException("null sessionStorage");
+  }
+  Object oldValue=this.sessionStorage;
+  this.sessionStorage=sessionStorage;
+  firePropertyChange("sessionStorage",oldValue,this.sessionStorage);
+}

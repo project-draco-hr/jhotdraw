@@ -1,0 +1,6 @@
+{
+  if ("selected".equals(actionPropertyName) && (e.getNewValue() instanceof Boolean)) {
+    putValue(SELECTED_KEY,(Boolean)e.getNewValue());
+  }
+  firePropertyChange(actionPropertyName,e.getOldValue(),e.getNewValue());
+}

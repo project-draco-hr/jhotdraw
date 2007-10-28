@@ -1,0 +1,18 @@
+{
+  if (target == null) {
+    throw new IllegalArgumentException("null target");
+  }
+  Class targetType=target.getClass();
+  if (targetType.isArray()) {
+    throw new IllegalArgumentException("array target");
+  }
+  String keyPrefix=targetType.getSimpleName() + ".";
+  for (  Field field : targetType.getDeclaredFields()) {
+    Resource resource=field.getAnnotation(Resource.class);
+    if (resource != null) {
+      String rKey=resource.key();
+      String key=(rKey.length() > 0) ? rKey : keyPrefix + field.getName();
+      injectField(field,target,key);
+    }
+  }
+}

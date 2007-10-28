@@ -1,0 +1,5 @@
+{
+  File oldValue=this.directory;
+  this.directory=directory;
+  firePropertyChange("directory",oldValue,this.directory);
+}

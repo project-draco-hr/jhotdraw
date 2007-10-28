@@ -1,0 +1,6 @@
+{
+  if (dividerLocation < -1) {
+    throw new IllegalArgumentException("invalid dividerLocation");
+  }
+  this.dividerLocation=dividerLocation;
+}

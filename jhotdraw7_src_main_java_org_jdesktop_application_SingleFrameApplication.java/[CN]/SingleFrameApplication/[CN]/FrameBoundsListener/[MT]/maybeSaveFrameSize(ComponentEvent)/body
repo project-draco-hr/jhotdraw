@@ -1,0 +1,9 @@
+{
+  if (e.getComponent() instanceof JFrame) {
+    JFrame f=(JFrame)e.getComponent();
+    if ((f.getExtendedState() & Frame.MAXIMIZED_BOTH) == 0) {
+      String clientPropertyKey="WindowState.normalBounds";
+      f.getRootPane().putClientProperty(clientPropertyKey,f.getBounds());
+    }
+  }
+}

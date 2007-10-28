@@ -1,0 +1,3 @@
+{
+  return (ImageIcon)getObject(key,ImageIcon.class);
+}

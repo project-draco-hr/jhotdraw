@@ -1,0 +1,4 @@
+{
+  checkFileName(fileName);
+  return getLocalIO().deleteFile(fileName);
+}

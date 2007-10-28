@@ -1,0 +1,44 @@
+{
+  if (directory == unspecifiedFile) {
+    directory=null;
+    String userHome=null;
+    try {
+      userHome=System.getProperty("user.home");
+    }
+ catch (    SecurityException ignore) {
+    }
+    if (userHome != null) {
+      String applicationId=getApplicationId();
+      OSId osId=getOSId();
+      if (osId == OSId.WINDOWS) {
+        File appDataDir=null;
+        try {
+          String appDataEV=System.getenv("APPDATA");
+          if ((appDataEV != null) && (appDataEV.length() > 0)) {
+            appDataDir=new File(appDataEV);
+          }
+        }
+ catch (        SecurityException ignore) {
+        }
+        String vendorId=getVendorId();
+        if ((appDataDir != null) && appDataDir.isDirectory()) {
+          String path=vendorId + "\\" + applicationId+ "\\";
+          directory=new File(appDataDir,path);
+        }
+ else {
+          String path="Application Data\\" + vendorId + "\\"+ applicationId+ "\\";
+          directory=new File(userHome,path);
+        }
+      }
+ else       if (osId == OSId.OSX) {
+        String path="Library/Application Support/" + applicationId + "/";
+        directory=new File(userHome,path);
+      }
+ else {
+        String path="." + applicationId + "/";
+        directory=new File(userHome,path);
+      }
+    }
+  }
+  return directory;
+}

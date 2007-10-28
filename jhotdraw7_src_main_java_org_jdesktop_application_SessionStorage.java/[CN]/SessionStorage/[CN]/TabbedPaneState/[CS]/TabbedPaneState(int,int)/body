@@ -1,0 +1,10 @@
+{
+  if (tabCount < 0) {
+    throw new IllegalArgumentException("invalid tabCount");
+  }
+  if ((selectedIndex < -1) || (selectedIndex > tabCount)) {
+    throw new IllegalArgumentException("invalid selectedIndex");
+  }
+  this.selectedIndex=selectedIndex;
+  this.tabCount=tabCount;
+}

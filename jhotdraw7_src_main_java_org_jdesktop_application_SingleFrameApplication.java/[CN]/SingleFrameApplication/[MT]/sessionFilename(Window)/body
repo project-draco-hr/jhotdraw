@@ -1,0 +1,9 @@
+{
+  if (window == null) {
+    return null;
+  }
+ else {
+    String name=window.getName();
+    return (name == null) ? null : name + ".session.xml";
+  }
+}

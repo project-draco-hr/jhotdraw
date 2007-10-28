@@ -1,5 +1,0 @@
-{
-  String oldValue=version;
-  version=newValue;
-  firePropertyChange("version",oldValue,newValue);
-}

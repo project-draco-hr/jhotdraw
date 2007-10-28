@@ -1,0 +1,10 @@
+{
+synchronized (tasks) {
+    if (tasks.isEmpty()) {
+      return Collections.emptyList();
+    }
+ else {
+      return new ArrayList<Task>(tasks);
+    }
+  }
+}

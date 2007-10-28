@@ -1,0 +1,6 @@
+{
+  if (platform == null) {
+    throw new IllegalArgumentException("null platform");
+  }
+  getResourceMap().putResource("platform",platform);
+}

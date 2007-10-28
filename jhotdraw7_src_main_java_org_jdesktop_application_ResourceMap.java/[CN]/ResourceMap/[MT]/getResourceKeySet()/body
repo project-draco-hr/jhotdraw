@@ -1,0 +1,9 @@
+{
+  Map<String,Object> bundlesMap=getBundlesMap();
+  if (bundlesMap == null) {
+    return Collections.emptySet();
+  }
+ else {
+    return bundlesMap.keySet();
+  }
+}

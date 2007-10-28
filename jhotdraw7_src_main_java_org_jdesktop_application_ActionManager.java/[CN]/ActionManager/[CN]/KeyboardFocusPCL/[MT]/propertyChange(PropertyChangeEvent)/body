@@ -1,0 +1,10 @@
+{
+  if (e.getPropertyName() == "permanentFocusOwner") {
+    JComponent oldOwner=getContext().getFocusOwner();
+    Object newValue=e.getNewValue();
+    JComponent newOwner=(newValue instanceof JComponent) ? (JComponent)newValue : null;
+    textActions.updateFocusOwner(oldOwner,newOwner);
+    getContext().setFocusOwner(newOwner);
+    updateAllProxyActions(oldOwner,newOwner);
+  }
+}

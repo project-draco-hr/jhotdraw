@@ -1,0 +1,9 @@
+{
+  if (localIO == null) {
+    localIO=getPersistenceServiceIO();
+    if (localIO == null) {
+      localIO=new LocalFileIO();
+    }
+  }
+  return localIO;
+}

@@ -1,0 +1,26 @@
+{
+  try {
+    if (isCancelled()) {
+      cancelled();
+    }
+ else {
+      try {
+        succeeded(get());
+      }
+ catch (      InterruptedException e) {
+        interrupted(e);
+      }
+catch (      ExecutionException e) {
+        failed(e.getCause());
+      }
+    }
+  }
+  finally {
+    try {
+      finished();
+    }
+  finally {
+      setTaskService(null);
+    }
+  }
+}

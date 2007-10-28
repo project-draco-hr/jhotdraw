@@ -1,5 +1,0 @@
-{
-  if (prefs != null) {
-    prefs.putBoolean("find.ignoreCase",ignoreCaseCheck.isSelected());
-  }
-}

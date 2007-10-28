@@ -1,0 +1,19 @@
+{
+  if (task == null) {
+    throw new IllegalArgumentException("null task");
+  }
+  if (!task.isPending() || (task.getTaskService() != null)) {
+    throw new IllegalArgumentException("task has already been executed");
+  }
+  task.setTaskService(this);
+  List<Task> oldTaskList, newTaskList;
+synchronized (tasks) {
+    oldTaskList=copyTasksList();
+    tasks.add(task);
+    newTaskList=copyTasksList();
+    task.addPropertyChangeListener(taskPCL);
+  }
+  firePropertyChange("tasks",oldTaskList,newTaskList);
+  maybeBlockTask(task);
+  executorService.execute(task);
+}

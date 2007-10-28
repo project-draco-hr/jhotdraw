@@ -1,7 +1,0 @@
-{
-  super.updateProject(oldValue,newValue);
-  if (newValue != null && newValue.getAction("redo") != null) {
-    putValue(AbstractAction.NAME,newValue.getAction("redo").getValue(AbstractAction.NAME));
-    updateEnabledState();
-  }
-}

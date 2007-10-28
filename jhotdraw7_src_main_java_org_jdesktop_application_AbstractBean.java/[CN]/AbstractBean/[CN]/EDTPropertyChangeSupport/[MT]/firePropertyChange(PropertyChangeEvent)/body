@@ -1,0 +1,14 @@
+{
+  if (SwingUtilities.isEventDispatchThread()) {
+    super.firePropertyChange(e);
+  }
+ else {
+    Runnable doFirePropertyChange=new Runnable(){
+      public void run(){
+        firePropertyChange(e);
+      }
+    }
+;
+    SwingUtilities.invokeLater(doFirePropertyChange);
+  }
+}

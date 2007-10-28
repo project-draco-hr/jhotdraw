@@ -1,0 +1,18 @@
+{
+  javax.swing.Action oldProxy=this.proxy;
+  this.proxy=proxy;
+  if (oldProxy != null) {
+    oldProxy.removePropertyChangeListener(proxyPCL);
+    proxyPCL=null;
+  }
+  if (this.proxy != null) {
+    updateProxyProperties();
+    proxyPCL=new ProxyPCL();
+    proxy.addPropertyChangeListener(proxyPCL);
+  }
+ else   if (oldProxy != null) {
+    setEnabled(false);
+    setSelected(false);
+  }
+  firePropertyChange("proxy",oldProxy,this.proxy);
+}

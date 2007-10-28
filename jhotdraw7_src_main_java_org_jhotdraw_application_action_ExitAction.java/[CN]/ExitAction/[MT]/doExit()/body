@@ -1,4 +1,0 @@
-{
-  getApplication().shutdown();
-  System.exit(0);
-}

@@ -1,0 +1,14 @@
+{
+  checkComponent(c);
+  JTable table=(JTable)c;
+  int[] columnWidths=new int[table.getColumnCount()];
+  boolean resizableColumnExists=false;
+  for (int i=0; i < columnWidths.length; i++) {
+    TableColumn tc=table.getColumnModel().getColumn(i);
+    columnWidths[i]=(tc.getResizable()) ? tc.getWidth() : -1;
+    if (tc.getResizable()) {
+      resizableColumnExists=true;
+    }
+  }
+  return (resizableColumnExists) ? new TableState(columnWidths) : null;
+}

@@ -1,9 +1,0 @@
-{
-  editor.select(start,end);
-  try {
-    editor.scrollRectToVisible(editor.modelToView(start));
-  }
- catch (  BadLocationException e) {
-    e.printStackTrace();
-  }
-}

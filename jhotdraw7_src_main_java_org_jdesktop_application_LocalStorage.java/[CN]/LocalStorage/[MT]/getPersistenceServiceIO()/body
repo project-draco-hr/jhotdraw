@@ -1,0 +1,23 @@
+{
+  try {
+    Class smClass=Class.forName("javax.jnlp.ServiceManager");
+    Method getServiceNamesMethod=smClass.getMethod("getServiceNames");
+    String[] serviceNames=(String[])getServiceNamesMethod.invoke(null);
+    boolean psFound=false;
+    boolean bsFound=false;
+    for (    String serviceName : serviceNames) {
+      if (serviceName.equals("javax.jnlp.BasicService")) {
+        bsFound=true;
+      }
+ else       if (serviceName.equals("javax.jnlp.PersistenceService")) {
+        psFound=true;
+      }
+    }
+    if (bsFound && psFound) {
+      return new PersistenceServiceIO();
+    }
+  }
+ catch (  Exception ignore) {
+  }
+  return null;
+}

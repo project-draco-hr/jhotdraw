@@ -1,0 +1,4 @@
+{
+  javax.swing.Action action=(javax.swing.Action)getTarget();
+  action.setEnabled(!f);
+}

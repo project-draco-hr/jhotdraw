@@ -1,0 +1,10 @@
+{
+  applicationPCL=new ApplicationPCL();
+  taskServicePCL=new TaskServicePCL();
+  taskPCL=new TaskPCL();
+  taskQueue=new LinkedList<Task>();
+  context.addPropertyChangeListener(applicationPCL);
+  for (  TaskService taskService : context.getTaskServices()) {
+    taskService.addPropertyChangeListener(taskServicePCL);
+  }
+}

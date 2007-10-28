@@ -1,0 +1,9 @@
+{
+  target.setText(text);
+  if (key != KeyEvent.VK_UNDEFINED) {
+    target.setMnemonic(key);
+  }
+  if (index != -1) {
+    target.setDisplayedMnemonicIndex(index);
+  }
+}

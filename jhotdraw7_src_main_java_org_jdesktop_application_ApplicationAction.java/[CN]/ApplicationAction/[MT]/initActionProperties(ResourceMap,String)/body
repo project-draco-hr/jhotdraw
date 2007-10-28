@@ -1,0 +1,43 @@
+{
+  boolean iconOrNameSpecified=false;
+  String typedName=null;
+  String text=resourceMap.getString(baseName + ".Action.text");
+  if (text != null) {
+    MnemonicText.configure(this,text);
+    iconOrNameSpecified=true;
+  }
+  Integer mnemonic=resourceMap.getKeyCode(baseName + ".Action.mnemonic");
+  if (mnemonic != null) {
+    putValue(javax.swing.Action.MNEMONIC_KEY,mnemonic);
+  }
+  Integer index=resourceMap.getInteger(baseName + ".Action.displayedMnemonicIndex");
+  if (index != null) {
+    putValue(DISPLAYED_MNEMONIC_INDEX_KEY,index);
+  }
+  KeyStroke key=resourceMap.getKeyStroke(baseName + ".Action.accelerator");
+  if (key != null) {
+    putValue(javax.swing.Action.ACCELERATOR_KEY,key);
+  }
+  Icon icon=resourceMap.getIcon(baseName + ".Action.icon");
+  if (icon != null) {
+    putValue(javax.swing.Action.SMALL_ICON,icon);
+    putValue(LARGE_ICON_KEY,icon);
+    iconOrNameSpecified=true;
+  }
+  Icon smallIcon=resourceMap.getIcon(baseName + ".Action.smallIcon");
+  if (smallIcon != null) {
+    putValue(javax.swing.Action.SMALL_ICON,smallIcon);
+    iconOrNameSpecified=true;
+  }
+  Icon largeIcon=resourceMap.getIcon(baseName + ".Action.largeIcon");
+  if (largeIcon != null) {
+    putValue(LARGE_ICON_KEY,largeIcon);
+    iconOrNameSpecified=true;
+  }
+  putValue(javax.swing.Action.SHORT_DESCRIPTION,resourceMap.getString(baseName + ".Action.shortDescription"));
+  putValue(javax.swing.Action.LONG_DESCRIPTION,resourceMap.getString(baseName + ".Action.longDescription"));
+  putValue(javax.swing.Action.ACTION_COMMAND_KEY,resourceMap.getString(baseName + ".Action.command"));
+  if (!iconOrNameSpecified) {
+    putValue(javax.swing.Action.NAME,actionName);
+  }
+}

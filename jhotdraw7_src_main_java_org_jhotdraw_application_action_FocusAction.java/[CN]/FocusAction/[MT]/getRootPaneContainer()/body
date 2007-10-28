@@ -1,3 +1,0 @@
-{
-  return SwingUtilities.getRootPane(documentView.getComponent()).getParent();
-}

@@ -1,3 +1,0 @@
-{
-  getCurrentView().setStatusBarVisible(!getCurrentView().isStatusBarVisible());
-}

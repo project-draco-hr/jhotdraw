@@ -1,3 +1,0 @@
-{
-  getCurrentView().setLineWrap(!getCurrentView().isLineWrap());
-}

@@ -1,0 +1,21 @@
+{
+  try {
+    if (isCancelled()) {
+      fireCancelledListeners();
+    }
+ else {
+      try {
+        fireSucceededListeners(get());
+      }
+ catch (      InterruptedException e) {
+        fireInterruptedListeners(e);
+      }
+catch (      ExecutionException e) {
+        fireFailedListeners(e.getCause());
+      }
+    }
+  }
+  finally {
+    fireFinishedListeners();
+  }
+}

@@ -1,0 +1,12 @@
+{
+  if (bounds == null) {
+    throw new IllegalArgumentException("null bounds");
+  }
+  if (screenCount < 1) {
+    throw new IllegalArgumentException("invalid screenCount");
+  }
+  this.bounds=bounds;
+  this.gcBounds=gcBounds;
+  this.screenCount=screenCount;
+  this.frameState=frameState;
+}

@@ -1,0 +1,14 @@
+{
+  for (  ApplicationAction proxyAction : appAM.getProxyActions()) {
+    String proxyActionName=proxyAction.getName();
+    javax.swing.Action proxy=ownerActionMap.get(proxyActionName);
+    if (proxy != null) {
+      proxyAction.setProxy(proxy);
+      proxyAction.setProxySource(focusOwner);
+    }
+ else {
+      proxyAction.setProxy(null);
+      proxyAction.setProxySource(null);
+    }
+  }
+}

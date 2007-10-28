@@ -1,4 +1,0 @@
-{
-  prefs=Preferences.userNodeForPackage(getClass());
-  initComponents();
-}

@@ -1,0 +1,14 @@
+{
+switch (getScope()) {
+case ACTION:
+    setActionTargetBlocked(true);
+  break;
+case COMPONENT:
+setComponentTargetBlocked(true);
+break;
+case WINDOW:
+case APPLICATION:
+showBlockingDialog(true);
+break;
+}
+}

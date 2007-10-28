@@ -1,7 +1,0 @@
-{
-  JInternalFrame f=(JInternalFrame)SwingUtilities.getRootPane(p.getComponent()).getParent();
-  f.setVisible(false);
-  f.remove(p.getComponent());
-  desktopPane.remove(f);
-  f.dispose();
-}

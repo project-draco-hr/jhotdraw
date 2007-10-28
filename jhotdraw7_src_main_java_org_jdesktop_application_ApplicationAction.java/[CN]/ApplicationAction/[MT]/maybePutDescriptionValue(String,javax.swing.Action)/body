@@ -1,0 +1,6 @@
+{
+  Object s=proxy.getValue(key);
+  if (s instanceof String) {
+    putValue(key,(String)s);
+  }
+}

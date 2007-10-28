@@ -1,0 +1,16 @@
+{
+  if (c == null) {
+    throw new IllegalArgumentException("null component");
+  }
+  if (c instanceof Property) {
+    return (Property)c;
+  }
+ else {
+    Property p=null;
+    if (c instanceof JComponent) {
+      Object v=((JComponent)c).getClientProperty(Property.class);
+      p=(v instanceof Property) ? (Property)v : null;
+    }
+    return (p != null) ? p : getProperty(c.getClass());
+  }
+}

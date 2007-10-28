@@ -1,0 +1,26 @@
+{
+  List<Component> allChildren=new ArrayList<Component>();
+  for (  Component root : roots) {
+    if (root != null) {
+      Property p=getProperty(root);
+      if (p != null) {
+        String pathname=getComponentPathname(root);
+        if (pathname != null) {
+          Object state=p.getSessionState(root);
+          if (state != null) {
+            stateMap.put(pathname,state);
+          }
+        }
+      }
+    }
+    if (root instanceof Container) {
+      Component[] children=((Container)root).getComponents();
+      if ((children != null) && (children.length > 0)) {
+        Collections.addAll(allChildren,children);
+      }
+    }
+  }
+  if (allChildren.size() > 0) {
+    saveTree(allChildren,stateMap);
+  }
+}

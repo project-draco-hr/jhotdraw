@@ -1,5 +1,0 @@
-{
-  Class oldValue=projectClass;
-  projectClass=newValue;
-  firePropertyChange("projectClass",oldValue,newValue);
-}

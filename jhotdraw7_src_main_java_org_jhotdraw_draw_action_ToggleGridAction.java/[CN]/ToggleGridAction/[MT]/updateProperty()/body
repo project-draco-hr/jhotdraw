@@ -1,6 +1,0 @@
-{
-  if (getCurrentProject() instanceof GridProject) {
-    GridProject p=(GridProject)getCurrentProject();
-    putValue(Actions.SELECTED_KEY,p.isGridVisible());
-  }
-}
