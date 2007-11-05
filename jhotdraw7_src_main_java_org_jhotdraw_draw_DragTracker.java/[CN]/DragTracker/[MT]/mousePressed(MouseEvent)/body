@@ -13,15 +13,17 @@
     view.clearSelection();
     view.addToSelection(anchorFigure);
   }
-  dragRect=null;
-  for (  Figure f : view.getSelectedFigures()) {
-    if (dragRect == null) {
-      dragRect=f.getBounds();
-    }
+  if (!view.getSelectedFigures().isEmpty()) {
+    dragRect=null;
+    for (    Figure f : view.getSelectedFigures()) {
+      if (dragRect == null) {
+        dragRect=f.getBounds();
+      }
  else {
-      dragRect.add(f.getBounds());
+        dragRect.add(f.getBounds());
+      }
     }
+    anchorPoint=previousPoint=view.viewToDrawing(anchor);
+    anchorOrigin=previousOrigin=new Point2D.Double(dragRect.x,dragRect.y);
   }
-  anchorPoint=previousPoint=view.viewToDrawing(anchor);
-  anchorOrigin=previousOrigin=new Point2D.Double(dragRect.x,dragRect.y);
 }
