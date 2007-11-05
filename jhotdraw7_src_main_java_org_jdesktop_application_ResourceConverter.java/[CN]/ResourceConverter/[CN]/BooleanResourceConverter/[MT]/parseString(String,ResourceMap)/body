@@ -1,9 +1,0 @@
-{
-  s=s.trim();
-  for (  String trueString : trueStrings) {
-    if (s.equalsIgnoreCase(trueString)) {
-      return Boolean.TRUE;
-    }
-  }
-  return Boolean.FALSE;
-}

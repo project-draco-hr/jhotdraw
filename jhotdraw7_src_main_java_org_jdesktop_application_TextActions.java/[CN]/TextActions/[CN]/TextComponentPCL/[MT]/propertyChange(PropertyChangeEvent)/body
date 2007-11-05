@@ -1,6 +1,0 @@
-{
-  String propertyName=e.getPropertyName();
-  if ((propertyName == null) || "editable".equals(propertyName)) {
-    updateTextActions((JTextComponent)(e.getSource()));
-  }
-}

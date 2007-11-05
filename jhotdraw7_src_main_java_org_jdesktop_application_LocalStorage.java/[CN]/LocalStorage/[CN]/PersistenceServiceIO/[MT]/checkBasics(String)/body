@@ -1,5 +1,0 @@
-{
-  if ((bs == null) || (ps == null)) {
-    throw new IOException(initFailedMessage(s));
-  }
-}

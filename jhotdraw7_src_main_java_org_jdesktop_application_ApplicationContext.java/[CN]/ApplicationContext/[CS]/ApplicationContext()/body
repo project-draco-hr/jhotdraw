@@ -1,9 +1,0 @@
-{
-  resourceManager=new ResourceManager(this);
-  actionManager=new ActionManager(this);
-  localStorage=new LocalStorage(this);
-  sessionStorage=new SessionStorage(this);
-  taskServices=new CopyOnWriteArrayList<TaskService>();
-  taskServices.add(new TaskService("default"));
-  taskServicesReadOnly=Collections.unmodifiableList(taskServices);
-}

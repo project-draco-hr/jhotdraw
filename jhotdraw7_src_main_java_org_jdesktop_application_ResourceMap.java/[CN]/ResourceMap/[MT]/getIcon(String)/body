@@ -1,3 +1,0 @@
-{
-  return (Icon)getObject(key,Icon.class);
-}

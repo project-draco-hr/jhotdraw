@@ -1,9 +1,0 @@
-{
-  ResourceMap resourceMap=getResourceMap();
-  if (resourceMap != null) {
-    setMessage(resourceMap.getString(resourceName(formatResourceKey),args));
-  }
- else {
-    setMessage(formatResourceKey);
-  }
-}

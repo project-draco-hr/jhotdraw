@@ -1,3 +1,0 @@
-{
-  return application.getContext().getResourceMap(getClass(),Task.class);
-}

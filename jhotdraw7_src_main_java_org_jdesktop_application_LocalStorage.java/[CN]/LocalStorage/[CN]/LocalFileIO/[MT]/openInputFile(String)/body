@@ -1,9 +1,0 @@
-{
-  File path=new File(getDirectory(),fileName);
-  try {
-    return new BufferedInputStream(new FileInputStream(path));
-  }
- catch (  IOException e) {
-    throw new LSException("couldn't open input file \"" + fileName + "\"",e);
-  }
-}

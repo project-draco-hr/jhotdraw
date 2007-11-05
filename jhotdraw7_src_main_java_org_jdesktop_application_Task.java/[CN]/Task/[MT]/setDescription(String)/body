@@ -1,9 +1,0 @@
-{
-  String oldDescription, newDescription;
-synchronized (this) {
-    oldDescription=this.description;
-    this.description=description;
-    newDescription=this.description;
-  }
-  firePropertyChange("description",oldDescription,newDescription);
-}

@@ -1,9 +1,0 @@
-{
-  JToolBar oldValue=getToolBar();
-  List<JToolBar> toolBars=Collections.emptyList();
-  if (toolBar != null) {
-    toolBars=Collections.singletonList(toolBar);
-  }
-  setToolBars(toolBars);
-  firePropertyChange("toolBar",oldValue,toolBar);
-}

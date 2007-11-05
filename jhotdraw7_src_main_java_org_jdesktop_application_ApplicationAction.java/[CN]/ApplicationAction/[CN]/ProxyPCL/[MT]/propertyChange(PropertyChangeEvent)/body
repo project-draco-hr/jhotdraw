@@ -1,6 +1,0 @@
-{
-  String propertyName=e.getPropertyName();
-  if ((propertyName == null) || "enabled".equals(propertyName) || "selected".equals(propertyName)|| javax.swing.Action.SHORT_DESCRIPTION.equals(propertyName)|| javax.swing.Action.LONG_DESCRIPTION.equals(propertyName)) {
-    updateProxyProperties();
-  }
-}

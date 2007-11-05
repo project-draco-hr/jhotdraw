@@ -1,3 +1,0 @@
-{
-  return pcs.getPropertyChangeListeners();
-}

@@ -1,3 +1,0 @@
-{
-  return testType.equals(type) || testType.equals(primitiveType);
-}

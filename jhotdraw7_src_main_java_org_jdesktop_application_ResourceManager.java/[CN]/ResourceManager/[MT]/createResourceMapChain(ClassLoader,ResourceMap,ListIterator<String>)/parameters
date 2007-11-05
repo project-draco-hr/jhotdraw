@@ -1,3 +1,0 @@
-ClassLoader cl
-ResourceMap root
-ListIterator<String> names

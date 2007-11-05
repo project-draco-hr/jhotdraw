@@ -1,6 +1,0 @@
-{
-  if (taskMonitor == null) {
-    taskMonitor=new TaskMonitor(this);
-  }
-  return taskMonitor;
-}

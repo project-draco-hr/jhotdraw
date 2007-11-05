@@ -1,9 +1,0 @@
-{
-  Class actionsClass=appAM.getActionsClass();
-  try {
-    return actionsClass.getMethod(propertyMethodName("set",propertyName),type);
-  }
- catch (  NoSuchMethodException ignore) {
-    return null;
-  }
-}

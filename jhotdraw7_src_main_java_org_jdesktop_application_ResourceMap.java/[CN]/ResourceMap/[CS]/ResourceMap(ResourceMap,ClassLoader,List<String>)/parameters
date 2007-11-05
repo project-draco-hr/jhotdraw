@@ -1,3 +1,0 @@
-ResourceMap parent
-ClassLoader classLoader
-List<String> bundleNames

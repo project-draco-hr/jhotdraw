@@ -1,4 +1,0 @@
-{
-  int size=exitListeners.size();
-  return exitListeners.toArray(new ExitListener[size]);
-}

@@ -1,4 +1,0 @@
-{
-  this.application=application;
-  initTask(defaultResourceMap(application),resourcePrefix);
-}

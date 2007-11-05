@@ -1,5 +1,0 @@
-{
-  checkComponent(c);
-  JSplitPane p=(JSplitPane)c;
-  return new SplitPaneState(p.getDividerLocation(),p.getOrientation());
-}

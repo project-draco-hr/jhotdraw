@@ -1,3 +1,0 @@
-{
-  return testType.equals(Boolean.class) || testType.equals(boolean.class);
-}

@@ -1,3 +1,0 @@
-{
-  return testType.equals(Icon.class) || testType.equals(ImageIcon.class);
-}

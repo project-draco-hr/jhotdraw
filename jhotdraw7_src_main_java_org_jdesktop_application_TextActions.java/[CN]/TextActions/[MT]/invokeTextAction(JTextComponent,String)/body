@@ -1,7 +1,0 @@
-{
-  ActionMap actionMap=text.getActionMap().getParent();
-  long eventTime=EventQueue.getMostRecentEventTime();
-  int eventMods=getCurrentEventModifiers();
-  ActionEvent actionEvent=new ActionEvent(text,ActionEvent.ACTION_PERFORMED,actionName,eventTime,eventMods);
-  actionMap.get(actionName).actionPerformed(actionEvent);
-}

@@ -1,3 +1,0 @@
-{
-  getMainView().setFrame(mainFrame);
-}

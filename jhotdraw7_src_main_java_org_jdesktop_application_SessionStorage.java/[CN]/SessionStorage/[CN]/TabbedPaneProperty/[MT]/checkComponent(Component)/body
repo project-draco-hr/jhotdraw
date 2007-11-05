@@ -1,8 +1,0 @@
-{
-  if (component == null) {
-    throw new IllegalArgumentException("null component");
-  }
-  if (!(component instanceof JTabbedPane)) {
-    throw new IllegalArgumentException("invalid component");
-  }
-}

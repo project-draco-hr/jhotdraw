@@ -1,3 +1,0 @@
-{
-  return applicationType.cast(application);
-}

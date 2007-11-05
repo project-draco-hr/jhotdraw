@@ -1,6 +1,0 @@
-{
-  if (actionsObject == null) {
-    throw new IllegalArgumentException("null actionsObject");
-  }
-  return getActionManager().getActionMap(actionsObject.getClass(),actionsObject);
-}

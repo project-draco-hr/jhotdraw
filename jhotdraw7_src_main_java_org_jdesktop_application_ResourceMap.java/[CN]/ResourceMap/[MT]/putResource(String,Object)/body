@@ -1,7 +1,0 @@
-{
-  checkNullKey(key);
-  Map<String,Object> bundlesMap=getBundlesMap();
-  if (bundlesMap != null) {
-    bundlesMap.put(key,(value == null) ? nullResource : value);
-  }
-}

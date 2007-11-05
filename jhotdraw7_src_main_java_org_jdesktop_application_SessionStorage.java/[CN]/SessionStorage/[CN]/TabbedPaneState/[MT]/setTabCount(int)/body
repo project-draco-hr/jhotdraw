@@ -1,6 +1,0 @@
-{
-  if (tabCount < 0) {
-    throw new IllegalArgumentException("invalid tabCount");
-  }
-  this.tabCount=tabCount;
-}

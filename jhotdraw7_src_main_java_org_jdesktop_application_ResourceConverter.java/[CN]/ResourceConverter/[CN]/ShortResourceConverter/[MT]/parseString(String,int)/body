@@ -1,3 +1,0 @@
-{
-  return (radix == -1) ? Short.decode(s) : Short.parseShort(s,radix);
-}

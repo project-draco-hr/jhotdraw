@@ -1,9 +1,0 @@
-{
-  target.putValue(javax.swing.Action.NAME,text);
-  if (key != KeyEvent.VK_UNDEFINED) {
-    target.putValue(javax.swing.Action.MNEMONIC_KEY,key);
-  }
-  if (index != -1) {
-    target.putValue(DISPLAYED_MNEMONIC_INDEX_KEY,index);
-  }
-}

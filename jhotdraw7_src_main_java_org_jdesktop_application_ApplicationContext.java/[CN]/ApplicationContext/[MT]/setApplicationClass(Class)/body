@@ -1,6 +1,0 @@
-{
-  if (this.application != null) {
-    throw new IllegalStateException("application has been launched");
-  }
-  this.applicationClass=applicationClass;
-}

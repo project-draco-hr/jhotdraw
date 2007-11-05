@@ -1,4 +1,0 @@
-{
-  List<JToolBar> toolBars=getToolBars();
-  return (toolBars.size() == 0) ? null : toolBars.get(0);
-}

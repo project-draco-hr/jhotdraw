@@ -1,6 +1,0 @@
-{
-  JComponent oldValue=this.statusBar;
-  this.statusBar=statusBar;
-  replaceContentPaneChild(oldValue,this.statusBar,BorderLayout.SOUTH);
-  firePropertyChange("statusBar",oldValue,this.statusBar);
-}

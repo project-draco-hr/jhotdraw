@@ -1,5 +1,0 @@
-{
-  String actionsClassName=appAM.getActionsClass().getName();
-  String msg=String.format("no property named %s in %s",propertyName,actionsClassName);
-  return new IllegalArgumentException(msg);
-}

@@ -1,8 +1,0 @@
-{
-  if (actionManager == null) {
-    throw new IllegalArgumentException("null actionManager");
-  }
-  Object oldValue=this.actionManager;
-  this.actionManager=actionManager;
-  firePropertyChange("actionManager",oldValue,this.actionManager);
-}

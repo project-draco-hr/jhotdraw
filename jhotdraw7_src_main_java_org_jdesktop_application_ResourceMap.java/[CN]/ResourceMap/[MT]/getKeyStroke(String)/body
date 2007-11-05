@@ -1,3 +1,0 @@
-{
-  return (KeyStroke)getObject(key,KeyStroke.class);
-}

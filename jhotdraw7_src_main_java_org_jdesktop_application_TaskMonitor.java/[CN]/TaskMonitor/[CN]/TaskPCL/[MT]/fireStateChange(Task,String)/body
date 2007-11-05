@@ -1,3 +1,0 @@
-{
-  firePropertyChange(new PropertyChangeEvent(task,propertyName,false,true));
-}

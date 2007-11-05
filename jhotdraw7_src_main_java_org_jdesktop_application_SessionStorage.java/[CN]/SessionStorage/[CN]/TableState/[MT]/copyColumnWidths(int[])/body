@@ -1,8 +1,0 @@
-{
-  if (columnWidths == null) {
-    throw new IllegalArgumentException("invalid columnWidths");
-  }
-  int[] copy=new int[columnWidths.length];
-  System.arraycopy(columnWidths,0,copy,0,columnWidths.length);
-  return copy;
-}

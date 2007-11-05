@@ -1,8 +1,0 @@
-{
-  if (localStorage == null) {
-    throw new IllegalArgumentException("null localStorage");
-  }
-  Object oldValue=this.localStorage;
-  this.localStorage=localStorage;
-  firePropertyChange("localStorage",oldValue,this.localStorage);
-}

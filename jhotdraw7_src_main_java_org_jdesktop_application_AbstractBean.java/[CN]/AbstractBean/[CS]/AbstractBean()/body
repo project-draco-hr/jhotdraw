@@ -1,3 +1,0 @@
-{
-  pcs=new EDTPropertyChangeSupport(this);
-}

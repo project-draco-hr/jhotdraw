@@ -1,5 +1,0 @@
-{
-  Object oldValue=this.focusOwner;
-  this.focusOwner=focusOwner;
-  firePropertyChange("focusOwner",oldValue,this.focusOwner);
-}

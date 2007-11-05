@@ -1,3 +1,0 @@
-{
-  updateTextActions((JTextComponent)(e.getSource()));
-}

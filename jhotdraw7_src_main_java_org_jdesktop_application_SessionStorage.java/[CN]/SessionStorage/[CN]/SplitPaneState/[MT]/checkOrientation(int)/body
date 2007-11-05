@@ -1,5 +1,0 @@
-{
-  if ((orientation != JSplitPane.HORIZONTAL_SPLIT) && (orientation != JSplitPane.VERTICAL_SPLIT)) {
-    throw new IllegalArgumentException("invalid orientation");
-  }
-}

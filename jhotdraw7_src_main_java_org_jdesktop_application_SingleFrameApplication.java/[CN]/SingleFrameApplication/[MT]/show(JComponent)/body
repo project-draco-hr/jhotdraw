@@ -1,9 +1,0 @@
-{
-  if (c == null) {
-    throw new IllegalArgumentException("null JComponent");
-  }
-  JFrame f=getMainFrame();
-  f.getContentPane().add(c,BorderLayout.CENTER);
-  initRootPaneContainer(f);
-  f.setVisible(true);
-}

@@ -1,3 +1,0 @@
-{
-  return (gcBounds == null) ? null : new Rectangle(gcBounds);
-}

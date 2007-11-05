@@ -1,4 +1,0 @@
-{
-  Component component=(Component)getTarget();
-  component.setEnabled(!f);
-}

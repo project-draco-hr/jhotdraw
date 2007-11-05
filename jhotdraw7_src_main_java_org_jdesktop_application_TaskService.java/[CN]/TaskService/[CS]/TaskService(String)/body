@@ -1,3 +1,0 @@
-{
-  this(name,new ThreadPoolExecutor(3,10,1L,TimeUnit.SECONDS,new LinkedBlockingQueue<Runnable>()));
-}

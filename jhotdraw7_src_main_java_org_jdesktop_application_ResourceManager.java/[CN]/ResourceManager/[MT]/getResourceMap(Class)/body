@@ -1,6 +1,0 @@
-{
-  if (cls == null) {
-    throw new IllegalArgumentException("null class");
-  }
-  return getResourceMap(cls,cls);
-}

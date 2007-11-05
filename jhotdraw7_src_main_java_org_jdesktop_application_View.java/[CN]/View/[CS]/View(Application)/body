@@ -1,6 +1,0 @@
-{
-  if (application == null) {
-    throw new IllegalArgumentException("null application");
-  }
-  this.application=application;
-}

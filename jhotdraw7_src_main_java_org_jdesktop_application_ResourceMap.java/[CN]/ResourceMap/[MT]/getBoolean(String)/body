@@ -1,3 +1,0 @@
-{
-  return (Boolean)getObject(key,Boolean.class);
-}

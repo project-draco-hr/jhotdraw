@@ -1,7 +1,0 @@
-{
-  if (rootPane == null) {
-    rootPane=new JRootPane();
-    rootPane.setOpaque(true);
-  }
-  return rootPane;
-}

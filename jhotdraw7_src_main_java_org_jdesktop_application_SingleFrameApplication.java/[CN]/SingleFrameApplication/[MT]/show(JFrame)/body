@@ -1,7 +1,0 @@
-{
-  if (c == null) {
-    throw new IllegalArgumentException("null JFrame");
-  }
-  initRootPaneContainer(c);
-  c.setVisible(true);
-}

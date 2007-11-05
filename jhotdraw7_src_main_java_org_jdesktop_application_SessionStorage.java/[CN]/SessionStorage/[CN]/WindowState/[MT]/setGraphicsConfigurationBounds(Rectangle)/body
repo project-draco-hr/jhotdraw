@@ -1,3 +1,0 @@
-{
-  this.gcBounds=(gcBounds == null) ? null : new Rectangle(gcBounds);
-}

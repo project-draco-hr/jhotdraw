@@ -1,9 +1,0 @@
-{
-  boolean oldValue, newValue;
-synchronized (this) {
-    oldValue=this.userCanCancel;
-    this.userCanCancel=userCanCancel;
-    newValue=this.userCanCancel;
-  }
-  firePropertyChange("userCanCancel",oldValue,newValue);
-}

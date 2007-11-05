@@ -1,3 +1,0 @@
-{
-  return getId("Application.id",getContext().getApplicationClass().getSimpleName());
-}

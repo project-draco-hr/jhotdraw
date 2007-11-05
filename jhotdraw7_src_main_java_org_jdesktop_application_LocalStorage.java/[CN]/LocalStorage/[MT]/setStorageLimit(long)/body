@@ -1,8 +1,0 @@
-{
-  if (storageLimit < -1L) {
-    throw new IllegalArgumentException("invalid storageLimit");
-  }
-  long oldValue=this.storageLimit;
-  this.storageLimit=storageLimit;
-  firePropertyChange("storageLimit",oldValue,this.storageLimit);
-}

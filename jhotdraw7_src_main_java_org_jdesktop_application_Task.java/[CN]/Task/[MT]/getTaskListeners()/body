@@ -1,3 +1,0 @@
-{
-  return taskListeners.toArray(new TaskListener[taskListeners.size()]);
-}

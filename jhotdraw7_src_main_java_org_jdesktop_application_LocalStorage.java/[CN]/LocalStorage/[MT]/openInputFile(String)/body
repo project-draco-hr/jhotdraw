@@ -1,4 +1,0 @@
-{
-  checkFileName(fileName);
-  return getLocalIO().openInputFile(fileName);
-}

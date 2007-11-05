@@ -1,5 +1,0 @@
-{
-  boolean oldValue=this.cutEnabled;
-  this.cutEnabled=cutEnabled;
-  firePropertyChange("cutEnabled",oldValue,this.cutEnabled);
-}

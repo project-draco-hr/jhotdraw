@@ -1,5 +1,0 @@
-{
-  checkComponent(c);
-  JTabbedPane p=(JTabbedPane)c;
-  return new TabbedPaneState(p.getSelectedIndex(),p.getTabCount());
-}

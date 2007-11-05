@@ -1,7 +1,0 @@
-{
-  Object target=event.getSource();
-  if (block == Task.BlockingScope.ACTION) {
-    target=this;
-  }
-  return new DefaultInputBlocker(task,block,target);
-}

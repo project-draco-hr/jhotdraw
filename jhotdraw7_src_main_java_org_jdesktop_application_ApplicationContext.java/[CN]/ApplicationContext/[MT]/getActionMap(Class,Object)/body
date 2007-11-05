@@ -1,3 +1,0 @@
-{
-  return getActionManager().getActionMap(actionsClass,actionsObject);
-}

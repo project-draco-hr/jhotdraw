@@ -1,9 +1,0 @@
-{
-  String argsString=(args.length == 0) ? "" : args[0].toString();
-  for (int i=1; i < args.length; i++) {
-    argsString+=", " + args[i];
-  }
-  String actionsClassName=appAM.getActionsObject().getClass().getName();
-  String msg=String.format("%s.%s(%s) failed",actionsClassName,m,argsString);
-  return new Error(msg,e);
-}

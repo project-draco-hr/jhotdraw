@@ -1,3 +1,0 @@
-{
-  return (Font)getObject(key,Font.class);
-}

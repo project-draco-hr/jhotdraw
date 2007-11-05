@@ -1,6 +1,0 @@
-{
-  super(String.format("%s: resource %s, field %s, target %s",msg,key,field,target));
-  this.field=field;
-  this.target=target;
-  this.key=key;
-}

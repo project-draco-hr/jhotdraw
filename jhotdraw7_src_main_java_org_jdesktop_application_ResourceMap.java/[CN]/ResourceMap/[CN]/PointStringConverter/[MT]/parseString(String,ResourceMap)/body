@@ -1,6 +1,0 @@
-{
-  List<Double> xy=parseDoubles(s,2,"invalid x,y Point string");
-  Point p=new Point();
-  p.setLocation(xy.get(0),xy.get(1));
-  return p;
-}

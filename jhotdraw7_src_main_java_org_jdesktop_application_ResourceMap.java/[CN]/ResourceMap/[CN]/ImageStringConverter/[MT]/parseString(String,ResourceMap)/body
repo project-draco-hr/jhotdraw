@@ -1,3 +1,0 @@
-{
-  return loadImageIcon(s,resourceMap).getImage();
-}

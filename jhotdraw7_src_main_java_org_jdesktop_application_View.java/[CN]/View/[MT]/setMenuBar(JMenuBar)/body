@@ -1,6 +1,0 @@
-{
-  JMenuBar oldValue=getMenuBar();
-  this.menuBar=menuBar;
-  getRootPane().setJMenuBar(menuBar);
-  firePropertyChange("menuBar",oldValue,menuBar);
-}

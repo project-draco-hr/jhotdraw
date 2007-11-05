@@ -1,3 +1,0 @@
-{
-  super(Byte.class,byte.class);
-}

@@ -1,3 +1,0 @@
-{
-  return (radix == -1) ? Long.decode(s) : Long.parseLong(s,radix);
-}

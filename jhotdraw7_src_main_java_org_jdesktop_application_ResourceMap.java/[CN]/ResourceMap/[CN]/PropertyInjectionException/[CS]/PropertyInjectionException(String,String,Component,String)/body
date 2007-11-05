@@ -1,6 +1,0 @@
-{
-  super(String.format("%s: resource %s, property %s, component %s",msg,key,propertyName,component));
-  this.key=key;
-  this.component=component;
-  this.propertyName=propertyName;
-}

@@ -1,5 +1,0 @@
-{
-  boolean oldValue=this.pasteEnabled;
-  this.pasteEnabled=pasteEnabled;
-  firePropertyChange("pasteEnabled",oldValue,this.pasteEnabled);
-}

@@ -1,5 +1,0 @@
-{
-  boolean oldValue=this.deleteEnabled;
-  this.deleteEnabled=deleteEnabled;
-  firePropertyChange("deleteEnabled",oldValue,this.deleteEnabled);
-}

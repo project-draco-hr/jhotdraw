@@ -1,4 +1,0 @@
-{
-  checkClassArg(cls);
-  propertyMap.put(cls,property);
-}

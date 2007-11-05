@@ -1,8 +1,0 @@
-{
-  long messageTime;
-synchronized (this) {
-    messageTime=this.messageTime;
-  }
-  long dt=(messageTime == -1L) ? 0L : Math.max(0L,System.currentTimeMillis() - messageTime);
-  return unit.convert(dt,TimeUnit.MILLISECONDS);
-}

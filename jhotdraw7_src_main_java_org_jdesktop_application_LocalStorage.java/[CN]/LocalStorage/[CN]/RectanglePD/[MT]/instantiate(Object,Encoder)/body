@@ -1,5 +1,0 @@
-{
-  Rectangle oldR=(Rectangle)oldInstance;
-  Object[] constructorArgs=new Object[]{oldR.x,oldR.y,oldR.width,oldR.height};
-  return new Expression(oldInstance,oldInstance.getClass(),"new",constructorArgs);
-}

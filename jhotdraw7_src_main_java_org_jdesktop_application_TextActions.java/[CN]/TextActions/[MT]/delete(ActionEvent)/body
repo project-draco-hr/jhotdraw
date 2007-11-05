@@ -1,6 +1,0 @@
-{
-  Object src=e.getSource();
-  if (src instanceof JTextComponent) {
-    invokeTextAction((JTextComponent)src,DefaultEditorKit.deleteNextCharAction);
-  }
-}

@@ -9,7 +9,7 @@
     }
  else {
       Figure figure;
-      if ((evt.getModifiersEx() & (InputEvent.ALT_DOWN_MASK | InputEvent.CTRL_DOWN_MASK)) != 0) {
+      if (isSelectBehindEnabled() && (evt.getModifiersEx() & (InputEvent.ALT_DOWN_MASK | InputEvent.CTRL_DOWN_MASK)) != 0) {
         figure=view.findFigure(anchor);
         HashSet<Figure> ignoredFigures=new HashSet<Figure>(view.getSelectedFigures());
         ignoredFigures.add(figure);
@@ -21,10 +21,12 @@
  else {
         Point2D.Double p=view.viewToDrawing(anchor);
         figure=null;
-        for (        Figure f : view.getSelectedFigures()) {
-          if (f.contains(p)) {
-            figure=f;
-            break;
+        if (isSelectBehindEnabled()) {
+          for (          Figure f : view.getSelectedFigures()) {
+            if (f.contains(p)) {
+              figure=f;
+              break;
+            }
           }
         }
         if (figure == null) {

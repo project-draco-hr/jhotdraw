@@ -1,6 +1,0 @@
-{
-  TaskEvent<List<V>> event=new TaskEvent(this,values);
-  for (  TaskListener<T,V> listener : taskListeners) {
-    listener.process(event);
-  }
-}

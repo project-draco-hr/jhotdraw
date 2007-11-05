@@ -1,6 +1,0 @@
-{
-  TaskEvent<Void> event=new TaskEvent(this,null);
-  for (  TaskListener<T,V> listener : taskListeners) {
-    listener.finished(event);
-  }
-}

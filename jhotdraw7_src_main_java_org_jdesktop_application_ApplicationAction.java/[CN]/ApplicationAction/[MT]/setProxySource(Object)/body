@@ -1,5 +1,0 @@
-{
-  Object oldValue=this.proxySource;
-  this.proxySource=source;
-  firePropertyChange("proxySource",oldValue,this.proxySource);
-}
