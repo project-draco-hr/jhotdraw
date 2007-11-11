@@ -1,0 +1,7 @@
+{
+  GeneralPath path=new GeneralPath();
+  double halfHeight=height / 2;
+  path.moveTo((float)+halfHeight,0);
+  path.lineTo((float)-halfHeight,0);
+  return path;
+}
