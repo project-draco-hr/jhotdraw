@@ -1,5 +1,5 @@
 {
   ByteArrayOutputStream buf=new ByteArrayOutputStream();
   write(buf,figures);
-  return new InputStreamTransferable(new DataFlavor("tex/html","HTML Image Map"),buf.toByteArray());
+  return new InputStreamTransferable(new DataFlavor("text/html","HTML Image Map"),buf.toByteArray());
 }
