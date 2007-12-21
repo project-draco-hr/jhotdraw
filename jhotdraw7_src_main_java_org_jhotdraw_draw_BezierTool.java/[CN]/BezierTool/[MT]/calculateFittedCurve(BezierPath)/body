@@ -1,0 +1,3 @@
+{
+  return Bezier.fitBezierCurve(path,1);
+}

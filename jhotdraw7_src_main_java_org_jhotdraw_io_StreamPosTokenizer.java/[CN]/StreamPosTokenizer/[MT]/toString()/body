@@ -25,5 +25,5 @@ ret=new String(s);
 break;
 }
 }
-return "Token[" + ret + "], line "+ LINENO;
+return "Token[" + ret + "], line "+ lineno;
 }

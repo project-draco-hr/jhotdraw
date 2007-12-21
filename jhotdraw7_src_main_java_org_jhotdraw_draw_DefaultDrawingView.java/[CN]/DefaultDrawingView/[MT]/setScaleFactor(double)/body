@@ -5,6 +5,8 @@
   firePropertyChange("scaleFactor",oldValue,newValue);
   invalidateDimension();
   invalidate();
-  if (getParent() != null)   getParent().validate();
+  if (getParent() != null) {
+    getParent().validate();
+  }
   repaint();
 }

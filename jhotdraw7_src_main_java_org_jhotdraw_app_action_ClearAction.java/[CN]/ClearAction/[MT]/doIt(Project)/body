@@ -1,4 +1,13 @@
 {
-  project.clear();
-  project.setFile(null);
+  project.setEnabled(false);
+  project.execute(new Worker(){
+    public Object construct(){
+      project.clear();
+      return null;
+    }
+    public void finished(    Object value){
+      project.setEnabled(true);
+    }
+  }
+);
 }

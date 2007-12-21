@@ -1,7 +1,10 @@
 {
   Object value;
-  value=readAttribute(elem,"viewport-fill","none");
-  if (DEBUG)   System.out.println("SVGInputFormat not implemented  viewport-fill=" + value);
-  value=readAttribute(elem,"viewport-fill-opacity","1.0");
-  if (DEBUG)   System.out.println("SVGInputFormat not implemented  viewport-fill-opacity=" + value);
+  Double doubleValue;
+  value=toPaint(elem,readInheritAttribute(elem,"viewport-fill","none"));
+  if (value == null || (value instanceof Color)) {
+    VIEWPORT_FILL.set(a,(Color)value);
+  }
+  doubleValue=toDouble(elem,readAttribute(elem,"viewport-fill-opacity","1.0"));
+  VIEWPORT_FILL_OPACITY.set(a,doubleValue);
 }

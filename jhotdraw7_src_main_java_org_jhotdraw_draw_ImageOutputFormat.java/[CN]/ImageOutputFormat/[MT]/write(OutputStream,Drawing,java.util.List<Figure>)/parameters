@@ -1,0 +1,3 @@
+OutputStream out
+Drawing drawing
+java.util.List<Figure> figures

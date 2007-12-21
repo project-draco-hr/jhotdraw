@@ -1,0 +1,29 @@
+{
+  java.awt.GridBagConstraints gridBagConstraints;
+  bgColorButtonGroup=new javax.swing.ButtonGroup();
+  colorLabel=new javax.swing.JLabel();
+  colorButton=new javax.swing.JButton();
+  opacityLabel=new javax.swing.JLabel();
+  opacityField=new org.jhotdraw.gui.JDoubleTextField();
+  opacityPopupButton=new org.jhotdraw.gui.JPopupButton();
+  setLayout(new java.awt.GridBagLayout());
+  colorLabel.setText(labels.getString("attribute.backgroundColor"));
+  add(colorLabel,new java.awt.GridBagConstraints());
+  colorButton.setText(" ");
+  colorButton.addActionListener(new java.awt.event.ActionListener(){
+    public void actionPerformed(    java.awt.event.ActionEvent evt){
+      colorButtonPerformed(evt);
+    }
+  }
+);
+  add(colorButton,new java.awt.GridBagConstraints());
+  opacityLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jhotdraw/draw/action/images/attributeOpacity.png")));
+  opacityLabel.setToolTipText(labels.getString("opacity"));
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.insets=new java.awt.Insets(0,10,0,0);
+  add(opacityLabel,gridBagConstraints);
+  opacityField.setColumns(4);
+  add(opacityField,new java.awt.GridBagConstraints());
+  opacityPopupButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jhotdraw/draw/action/images/popupIcon.png")));
+  add(opacityPopupButton,new java.awt.GridBagConstraints());
+}

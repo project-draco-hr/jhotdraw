@@ -1,5 +1,5 @@
 {
   int index=children.indexOf(child);
-  children.remove(index);
+  basicRemoveChild(index);
   return index;
 }

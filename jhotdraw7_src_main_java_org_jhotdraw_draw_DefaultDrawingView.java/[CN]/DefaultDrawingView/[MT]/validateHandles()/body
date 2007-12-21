@@ -1,6 +1,7 @@
 {
   if (!handlesAreValid) {
     handlesAreValid=true;
+    selectionHandles.clear();
     Rectangle invalidatedArea=null;
     int level=detailLevel;
     do {

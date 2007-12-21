@@ -1,5 +1,5 @@
 {
-  Drawing drawing=new SVGDrawing();
+  Drawing drawing=new QuadTreeDrawing();
   LinkedList<InputFormat> inputFormats=new LinkedList<InputFormat>();
   inputFormats.add(new SVGZInputFormat());
   inputFormats.add(new ImageInputFormat(new SVGImageFigure()));

@@ -1,0 +1,27 @@
+{
+  Image img=(Image)t.getTransferData(DataFlavor.imageFlavor);
+  if (!(img instanceof BufferedImage)) {
+    MediaTracker tracker=new MediaTracker(new JLabel());
+    tracker.addImage(img,0);
+    try {
+      tracker.waitForAll();
+    }
+ catch (    InterruptedException ex) {
+      IOException e=new IOException("MediaTracker interrupted");
+      e.initCause(ex);
+      throw e;
+    }
+    BufferedImage buf=new BufferedImage(img.getWidth(null),img.getHeight(null),BufferedImage.TYPE_INT_ARGB);
+    Graphics2D g=buf.createGraphics();
+    g.drawImage(img,0,0,null);
+    g.dispose();
+    img.flush();
+    img=buf;
+  }
+  ImageHolderFigure figure=(ImageHolderFigure)prototype.clone();
+  figure.setBufferedImage((BufferedImage)img);
+  figure.setBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
+  LinkedList list=new LinkedList<Figure>();
+  list.add(figure);
+  drawing.addAll(list);
+}

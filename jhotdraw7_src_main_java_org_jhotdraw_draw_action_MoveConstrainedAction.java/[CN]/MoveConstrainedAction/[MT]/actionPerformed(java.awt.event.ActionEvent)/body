@@ -10,7 +10,7 @@
   }
   Point2D.Double p0=new Point2D.Double(r.x,r.y);
   if (getView().getConstrainer() != null) {
-    getView().getConstrainer().moveRectangle(r,dir);
+    getView().getConstrainer().translateRectangle(r,dir);
   }
  else {
 switch (dir) {

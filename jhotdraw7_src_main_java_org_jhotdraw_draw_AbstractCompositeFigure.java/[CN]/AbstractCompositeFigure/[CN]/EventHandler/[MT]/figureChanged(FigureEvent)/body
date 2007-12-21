@@ -1,7 +1,4 @@
 {
-  if (!isChanging()) {
-    willChange();
-    fireFigureChanged(e);
-    changed();
-  }
+  invalidate();
+  fireFigureChanged(e.getInvalidatedArea());
 }

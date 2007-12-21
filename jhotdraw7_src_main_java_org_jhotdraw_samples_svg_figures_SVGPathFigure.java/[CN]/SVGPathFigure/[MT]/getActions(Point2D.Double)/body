@@ -41,40 +41,48 @@
     }
 );
   }
-  actions.add(new AbstractAction(labels.getString("closePath")){
-    public void actionPerformed(    ActionEvent evt){
-      for (      Figure child : getChildren()) {
+  if (CLOSED.get(getChild(getChildCount() - 1))) {
+    actions.add(new AbstractAction(labels.getString("openPath")){
+      public void actionPerformed(      ActionEvent evt){
         SVGPathFigure.this.willChange();
-        getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,true,labels));
+        for (        Figure child : getChildren()) {
+          getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,false,labels));
+        }
         SVGPathFigure.this.changed();
       }
     }
-  }
 );
-  actions.add(new AbstractAction(labels.getString("openPath")){
-    public void actionPerformed(    ActionEvent evt){
-      for (      Figure child : getChildren()) {
+  }
+ else {
+    actions.add(new AbstractAction(labels.getString("closePath")){
+      public void actionPerformed(      ActionEvent evt){
         SVGPathFigure.this.willChange();
-        getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,false,labels));
+        for (        Figure child : getChildren()) {
+          getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,true,labels));
+        }
         SVGPathFigure.this.changed();
       }
     }
-  }
 );
-  actions.add(new AbstractAction(labels.getString("windingEvenOdd")){
-    public void actionPerformed(    ActionEvent evt){
-      SVGPathFigure.this.willChange();
-      getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.EVEN_ODD,labels));
-      SVGPathFigure.this.changed();
+  }
+  if (WINDING_RULE.get(this) != WindingRule.EVEN_ODD) {
+    actions.add(new AbstractAction(labels.getString("windingRule.evenOdd")){
+      public void actionPerformed(      ActionEvent evt){
+        SVGPathFigure.this.willChange();
+        getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.EVEN_ODD,labels));
+        SVGPathFigure.this.changed();
+      }
     }
-  }
 );
-  actions.add(new AbstractAction(labels.getString("windingNonZero")){
-    public void actionPerformed(    ActionEvent evt){
-      WINDING_RULE.set(SVGPathFigure.this,WindingRule.NON_ZERO);
-      getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.EVEN_ODD,labels));
+  }
+ else {
+    actions.add(new AbstractAction(labels.getString("windingRule.nonZero")){
+      public void actionPerformed(      ActionEvent evt){
+        WINDING_RULE.set(SVGPathFigure.this,WindingRule.NON_ZERO);
+        getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.NON_ZERO,labels));
+      }
     }
-  }
 );
+  }
   return actions;
 }

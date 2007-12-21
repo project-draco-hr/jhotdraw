@@ -1,0 +1,14 @@
+{
+  widthLabel=new javax.swing.JLabel();
+  heightLabel=new javax.swing.JLabel();
+  widthField=new org.jhotdraw.gui.JDoubleTextField();
+  heightField=new org.jhotdraw.gui.JDoubleTextField();
+  widthLabel.setText(labels.getString("grid.width"));
+  heightLabel.setText(labels.getString("grid.height"));
+  widthField.setColumns(6);
+  heightField.setColumns(6);
+  org.jdesktop.layout.GroupLayout layout=new org.jdesktop.layout.GroupLayout(this);
+  this.setLayout(layout);
+  layout.setHorizontalGroup(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING).add(layout.createSequentialGroup().addContainerGap().add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING).add(widthLabel).add(heightLabel)).add(4,4,4).add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING).add(heightField,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE).add(widthField,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)).addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,Short.MAX_VALUE)));
+  layout.setVerticalGroup(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING).add(layout.createSequentialGroup().addContainerGap().add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE).add(widthLabel).add(widthField,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)).addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED).add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE).add(heightLabel).add(heightField,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)).addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,Short.MAX_VALUE)));
+}

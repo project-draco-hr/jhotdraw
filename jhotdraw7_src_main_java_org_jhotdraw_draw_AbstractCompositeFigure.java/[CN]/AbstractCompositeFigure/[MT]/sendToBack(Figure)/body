@@ -1,6 +1,6 @@
 {
   if (basicRemove(figure) != -1) {
     basicAdd(0,figure);
-    figure.invalidate();
+    fireAreaInvalidated(figure.getDrawingArea());
   }
 }

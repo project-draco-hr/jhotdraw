@@ -4,13 +4,21 @@
   Point2D.Double p=new Point2D.Double();
   Point2D.Double c1=new Point2D.Double();
   Point2D.Double c2=new Point2D.Double();
-  StreamPosTokenizer tt=new StreamPosTokenizer(new StringReader(str));
-  tt.resetSyntax();
-  tt.parseNumbers();
-  tt.parseExponents();
-  tt.parsePlusAsNumber();
-  tt.whitespaceChars(0,' ');
-  tt.whitespaceChars(',',',');
+  StreamPosTokenizer tt;
+  if (toPathTokenizer == null) {
+    tt=new StreamPosTokenizer(new StringReader(str));
+    tt.resetSyntax();
+    tt.parseNumbers();
+    tt.parseExponents();
+    tt.parsePlusAsNumber();
+    tt.whitespaceChars(0,' ');
+    tt.whitespaceChars(',',',');
+    toPathTokenizer=tt;
+  }
+ else {
+    tt=toPathTokenizer;
+    tt.setReader(new StringReader(str));
+  }
   char nextCommand='M';
   char command='M';
   Commands:   while (tt.nextToken() != StreamPosTokenizer.TT_EOF) {

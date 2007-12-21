@@ -1,17 +1,18 @@
 {
-  if (DEBUG)   System.out.println("BezierTool.mousePressed " + evt);
+  if (DEBUG) {
+    System.out.println("BezierTool.mousePressed " + evt);
+  }
   super.mousePressed(evt);
   if (createdFigure == null) {
     finishWhenMouseReleased=null;
     createdFigure=createFigure();
     createdFigure.addNode(new BezierPath.Node(getView().getConstrainer().constrainPoint(getView().viewToDrawing(anchor))));
     getDrawing().add(createdFigure);
-    nodeCountBeforeDrag=createdFigure.getNodeCount();
   }
  else {
     if (evt.getClickCount() == 1) {
       addPointToFigure(getView().getConstrainer().constrainPoint(getView().viewToDrawing(anchor)));
     }
-    nodeCountBeforeDrag=createdFigure.getNodeCount();
   }
+  nodeCountBeforeDrag=createdFigure.getNodeCount();
 }

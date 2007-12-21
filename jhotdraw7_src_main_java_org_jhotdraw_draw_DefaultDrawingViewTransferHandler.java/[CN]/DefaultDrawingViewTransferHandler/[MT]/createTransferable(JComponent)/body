@@ -13,7 +13,7 @@
         try {
           CompositeTransferable transfer=new CompositeTransferable();
           for (          OutputFormat format : drawing.getOutputFormats()) {
-            Transferable t=format.createTransferable(toBeCopied,view.getScaleFactor());
+            Transferable t=format.createTransferable(drawing,toBeCopied,view.getScaleFactor());
             if (!transfer.isDataFlavorSupported(t.getTransferDataFlavors()[0])) {
               transfer.add(t);
             }

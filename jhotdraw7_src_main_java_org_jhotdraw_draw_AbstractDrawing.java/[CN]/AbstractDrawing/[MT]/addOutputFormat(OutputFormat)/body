@@ -1,4 +1,6 @@
 {
   outputFormats.add(format);
-  if (DEBUG)   System.out.println(this + ".addOutputFormat(" + format+ ")");
+  if (DEBUG) {
+    System.out.println(this + ".addOutputFormat(" + format+ ")");
+  }
 }

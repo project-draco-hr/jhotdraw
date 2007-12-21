@@ -1,3 +1,8 @@
 {
-  return (isEditable() && contains(p)) ? new TextAreaTool(this) : null;
+  if (isEditable() && contains(p)) {
+    TextAreaTool tool=new TextAreaTool(this);
+    tool.setForCreationOnly(false);
+    return tool;
+  }
+  return null;
 }

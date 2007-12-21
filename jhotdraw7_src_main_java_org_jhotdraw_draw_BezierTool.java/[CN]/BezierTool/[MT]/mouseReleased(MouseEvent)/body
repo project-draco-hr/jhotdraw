@@ -1,11 +1,23 @@
 {
-  if (DEBUG)   System.out.println("BezierTool.mouseReleased " + evt);
+  if (DEBUG) {
+    System.out.println("BezierTool.mouseReleased " + evt);
+  }
+  if (createdFigure.getNodeCount() > nodeCountBeforeDrag + 1) {
+    createdFigure.willChange();
+    BezierPath figurePath=createdFigure.getBezierPath();
+    BezierPath fittedPath=new BezierPath();
+    for (int i=nodeCountBeforeDrag, n=figurePath.size(); i < n; i++) {
+      fittedPath.add(figurePath.get(nodeCountBeforeDrag));
+      figurePath.remove(nodeCountBeforeDrag);
+    }
+    fittedPath=calculateFittedCurve(fittedPath);
+    figurePath.addAll(fittedPath);
+    createdFigure.setBezierPath(figurePath);
+    createdFigure.changed();
+    nodeCountBeforeDrag=createdFigure.getNodeCount();
+  }
   if (finishWhenMouseReleased == Boolean.TRUE) {
     if (createdFigure.getNodeCount() > 2) {
-      BezierPath fittedPath=Bezier.fitBezierCurve(createdFigure.getBezierPath(),1);
-      createdFigure.willChange();
-      createdFigure.setBezierPath(fittedPath);
-      createdFigure.changed();
       finishCreation(createdFigure);
       createdFigure=null;
       finishWhenMouseReleased=null;
@@ -15,19 +27,5 @@
   }
  else   if (finishWhenMouseReleased == null) {
     finishWhenMouseReleased=Boolean.FALSE;
-  }
-  if (createdFigure.getNodeCount() > nodeCountBeforeDrag + 1) {
-    createdFigure.willChange();
-    BezierPath fittedPath=new BezierPath();
-    for (int i=nodeCountBeforeDrag, n=createdFigure.getNodeCount(); i < n; i++) {
-      fittedPath.add(createdFigure.getNode(nodeCountBeforeDrag));
-      createdFigure.removeNode(nodeCountBeforeDrag);
-    }
-    fittedPath=Bezier.fitBezierCurve(fittedPath,1);
-    for (    BezierPath.Node node : fittedPath) {
-      createdFigure.addNode(node);
-    }
-    nodeCountBeforeDrag=createdFigure.getNodeCount();
-    createdFigure.changed();
   }
 }

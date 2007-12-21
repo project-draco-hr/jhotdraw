@@ -1,11 +1,28 @@
 {
-  if (DEBUG)   System.out.println("DefaultDrawingView" + ".addToSelection(" + figure + ")");
+  if (DEBUG) {
+    System.out.println("DefaultDrawingView" + ".addToSelection(" + figure + ")");
+  }
   Set<Figure> oldSelection=new HashSet<Figure>(selectedFigures);
   if (selectedFigures.add(figure)) {
     figure.addFigureListener(handleInvalidator);
     Set<Figure> newSelection=new HashSet<Figure>(selectedFigures);
-    invalidateHandles();
+    Rectangle invalidatedArea=null;
+    if (handlesAreValid) {
+      for (      Handle h : figure.createHandles(detailLevel)) {
+        h.setView(this);
+        selectionHandles.add(h);
+        h.addHandleListener(eventHandler);
+        if (invalidatedArea == null) {
+          invalidatedArea=h.getDrawingArea();
+        }
+ else {
+          invalidatedArea.add(h.getDrawingArea());
+        }
+      }
+    }
     fireSelectionChanged(oldSelection,newSelection);
-    repaint();
+    if (invalidatedArea != null) {
+      repaint(invalidatedArea);
+    }
   }
 }

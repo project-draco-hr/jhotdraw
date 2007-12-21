@@ -10,7 +10,6 @@
       buf.append(toNumber(current.x[0]));
       buf.append(' ');
       buf.append(toNumber(current.y[0]));
-      buf.append(" L ");
       buf.append(toNumber(current.x[0]));
       buf.append(' ');
       buf.append(toNumber(current.y[0] + 1));
@@ -23,18 +22,31 @@
       buf.append(toNumber(current.x[0]));
       buf.append(' ');
       buf.append(toNumber(current.y[0]));
+      char nextCommand='L';
       for (int i=1, n=path.size(); i < n; i++) {
         previous=current;
         current=path.get(i);
         if ((previous.mask & BezierPath.C2_MASK) == 0) {
           if ((current.mask & BezierPath.C1_MASK) == 0) {
-            buf.append(" L ");
+            if (nextCommand != 'L') {
+              buf.append(" L ");
+              nextCommand='L';
+            }
+ else {
+              buf.append(' ');
+            }
             buf.append(toNumber(current.x[0]));
             buf.append(' ');
             buf.append(toNumber(current.y[0]));
           }
  else {
-            buf.append(" Q ");
+            if (nextCommand != 'Q') {
+              buf.append(" Q ");
+              nextCommand='Q';
+            }
+ else {
+              buf.append(' ');
+            }
             buf.append(toNumber(current.x[1]));
             buf.append(' ');
             buf.append(toNumber(current.y[1]));
@@ -46,7 +58,13 @@
         }
  else {
           if ((current.mask & BezierPath.C1_MASK) == 0) {
-            buf.append(" Q ");
+            if (nextCommand != 'Q') {
+              buf.append(" Q ");
+              nextCommand='Q';
+            }
+ else {
+              buf.append(' ');
+            }
             buf.append(toNumber(previous.x[2]));
             buf.append(' ');
             buf.append(toNumber(previous.y[2]));
@@ -56,7 +74,13 @@
             buf.append(toNumber(current.y[0]));
           }
  else {
-            buf.append(" C ");
+            if (nextCommand != 'C') {
+              buf.append(" C ");
+              nextCommand='C';
+            }
+ else {
+              buf.append(' ');
+            }
             buf.append(toNumber(previous.x[2]));
             buf.append(' ');
             buf.append(toNumber(previous.y[2]));
@@ -77,13 +101,25 @@
           current=path.get(0);
           if ((previous.mask & BezierPath.C2_MASK) == 0) {
             if ((current.mask & BezierPath.C1_MASK) == 0) {
-              buf.append(" L ");
+              if (nextCommand != 'L') {
+                buf.append(" L ");
+                nextCommand='L';
+              }
+ else {
+                buf.append(' ');
+              }
               buf.append(toNumber(current.x[0]));
               buf.append(' ');
               buf.append(toNumber(current.y[0]));
             }
  else {
-              buf.append(" Q ");
+              if (nextCommand != 'Q') {
+                buf.append(" Q ");
+                nextCommand='Q';
+              }
+ else {
+                buf.append(' ');
+              }
               buf.append(toNumber(current.x[1]));
               buf.append(' ');
               buf.append(toNumber(current.y[1]));
@@ -95,7 +131,13 @@
           }
  else {
             if ((current.mask & BezierPath.C1_MASK) == 0) {
-              buf.append(" Q ");
+              if (nextCommand != 'Q') {
+                buf.append(" Q ");
+                nextCommand='Q';
+              }
+ else {
+                buf.append(' ');
+              }
               buf.append(toNumber(previous.x[2]));
               buf.append(' ');
               buf.append(toNumber(previous.y[2]));
@@ -105,7 +147,13 @@
               buf.append(toNumber(current.y[0]));
             }
  else {
-              buf.append(" C ");
+              if (nextCommand != 'C') {
+                buf.append(" C ");
+                nextCommand='C';
+              }
+ else {
+                buf.append(' ');
+              }
               buf.append(toNumber(previous.x[2]));
               buf.append(' ');
               buf.append(toNumber(previous.y[2]));
@@ -121,6 +169,7 @@
           }
         }
         buf.append(" Z");
+        nextCommand='\0';
       }
     }
   }

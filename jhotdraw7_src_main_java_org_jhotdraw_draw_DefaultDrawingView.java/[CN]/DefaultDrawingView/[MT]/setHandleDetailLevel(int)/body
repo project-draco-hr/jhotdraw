@@ -1,5 +1,7 @@
 {
-  detailLevel=newValue;
-  invalidateHandles();
-  repaint();
+  if (newValue != detailLevel) {
+    detailLevel=newValue;
+    invalidateHandles();
+    validateHandles();
+  }
 }

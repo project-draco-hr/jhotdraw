@@ -1,0 +1,6 @@
+{
+  if (colorChooser == null) {
+    colorChooser=new JColorChooser();
+  }
+  return colorChooser;
+}

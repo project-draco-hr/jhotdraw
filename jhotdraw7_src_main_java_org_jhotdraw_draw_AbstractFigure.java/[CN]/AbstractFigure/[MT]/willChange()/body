@@ -1,4 +1,7 @@
 {
+  if (changingDepth == 0) {
+    fireAreaInvalidated();
+    invalidate();
+  }
   changingDepth++;
-  invalidate();
 }

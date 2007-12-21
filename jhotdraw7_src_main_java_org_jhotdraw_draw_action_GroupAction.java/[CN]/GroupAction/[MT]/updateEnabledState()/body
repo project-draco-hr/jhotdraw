@@ -1,6 +1,6 @@
 {
   if (getView() != null) {
-    setEnabled(canGroup());
+    setEnabled(isGroupingAction ? canGroup() : canUngroup());
   }
  else {
     setEnabled(false);

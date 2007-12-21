@@ -3,4 +3,5 @@
   ellipse.y=Math.min(anchor.y,lead.y);
   ellipse.width=Math.max(0.1,Math.abs(lead.x - anchor.x));
   ellipse.height=Math.max(0.1,Math.abs(lead.y - anchor.y));
+  invalidate();
 }

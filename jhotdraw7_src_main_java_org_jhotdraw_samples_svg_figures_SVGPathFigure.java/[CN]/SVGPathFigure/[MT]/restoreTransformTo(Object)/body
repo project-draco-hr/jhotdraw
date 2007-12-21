@@ -1,9 +1,9 @@
 {
   invalidate();
   Object[] restoreData=(Object[])geometry;
-  ArrayList<BezierPath> paths=(ArrayList<BezierPath>)restoreData[0];
+  ArrayList<Object> paths=(ArrayList<Object>)restoreData[0];
   for (int i=0, n=getChildCount(); i < n; i++) {
-    getChild(i).setBezierPath(paths.get(i));
+    getChild(i).restoreTransformTo(paths.get(i));
   }
   TRANSFORM.basicSetClone(this,(AffineTransform)restoreData[1]);
   FILL_GRADIENT.basicSetClone(this,(Gradient)restoreData[2]);

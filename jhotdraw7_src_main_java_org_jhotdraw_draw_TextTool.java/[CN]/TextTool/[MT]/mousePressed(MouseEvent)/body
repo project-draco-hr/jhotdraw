@@ -3,7 +3,7 @@
   Figure pressedFigure=getDrawing().findFigureInside(getView().viewToDrawing(new Point(e.getX(),e.getY())));
   if (pressedFigure instanceof TextHolderFigure) {
     textHolder=((TextHolderFigure)pressedFigure).getLabelFor();
-    if (!textHolder.isEditable())     textHolder=null;
+    if (!textHolder.isEditable() || isForCreationOnly)     textHolder=null;
   }
   if (textHolder != null) {
     beginEdit(textHolder);

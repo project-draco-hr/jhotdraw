@@ -13,7 +13,12 @@
     viewport.viewBox.width=toNumber(elem,viewBoxValues[2]);
     viewport.viewBox.height=toNumber(elem,viewBoxValues[3]);
   }
-  viewport.isPreserveAspectRatio=!readAttribute(elem,"preserveAspectRatio","none").equals("none");
+  if (viewportStack.size() == 1) {
+    viewport.isPreserveAspectRatio=true;
+  }
+ else {
+    viewport.isPreserveAspectRatio=!readAttribute(elem,"preserveAspectRatio","none").equals("none");
+  }
   viewport.widthPercentFactor=viewport.viewBox.width / 100d;
   viewport.heightPercentFactor=viewport.viewBox.height / 100d;
   viewport.numberFactor=Math.min(viewport.width / viewport.viewBox.width,viewport.height / viewport.viewBox.height);
@@ -26,6 +31,7 @@
  else {
     viewBoxTransform.scale(viewport.width / viewport.viewBox.width,viewport.height / viewport.viewBox.height);
   }
+  readViewportAttributes(elem,viewportStack.firstElement().attributes);
   viewportStack.push(viewport);
   for (  IXMLElement node : elem.getChildren()) {
     if (node instanceof IXMLElement) {

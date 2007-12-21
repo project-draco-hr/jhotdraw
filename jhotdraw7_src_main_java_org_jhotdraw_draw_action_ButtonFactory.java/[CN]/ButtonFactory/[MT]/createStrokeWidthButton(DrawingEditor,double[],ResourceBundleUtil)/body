@@ -1,6 +1,6 @@
 {
   JPopupButton strokeWidthPopupButton=new JPopupButton();
-  labels.configureToolBarButton(strokeWidthPopupButton,"attributeStrokeWidth");
+  labels.configureToolBarButton(strokeWidthPopupButton,"attribute.strokeWidth");
   strokeWidthPopupButton.setFocusable(false);
   NumberFormat formatter=NumberFormat.getInstance();
   if (formatter instanceof DecimalFormat) {
@@ -11,7 +11,7 @@
     String label=Double.toString(widths[i]);
     Icon icon=new StrokeIcon(new BasicStroke((float)widths[i],BasicStroke.CAP_BUTT,BasicStroke.JOIN_BEVEL));
     AttributeAction a=new AttributeAction(editor,STROKE_WIDTH,new Double(widths[i]),label,icon);
-    a.putValue(Actions.UNDO_PRESENTATION_NAME_KEY,labels.getString("attributeStrokeWidth"));
+    a.putValue(Actions.UNDO_PRESENTATION_NAME_KEY,labels.getString("attribute.strokeWidth"));
     AbstractButton btn=strokeWidthPopupButton.add(a);
     btn.setDisabledIcon(icon);
   }

@@ -1,8 +1,0 @@
-{
-  if (getView() != null) {
-    setEnabled(canUngroup());
-  }
- else {
-    setEnabled(false);
-  }
-}

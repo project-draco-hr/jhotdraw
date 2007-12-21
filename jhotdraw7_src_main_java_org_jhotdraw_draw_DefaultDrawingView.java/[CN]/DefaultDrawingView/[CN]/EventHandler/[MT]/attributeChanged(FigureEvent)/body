@@ -1,2 +1,8 @@
 {
+  if (e.getSource() == drawing) {
+    repaint();
+  }
+ else {
+    repaintDrawingArea(e.getInvalidatedArea());
+  }
 }

@@ -1,3 +1,5 @@
 {
-  repaintHandles();
+  if (editor != null) {
+    editor.setActiveView(DefaultDrawingView.this);
+  }
 }

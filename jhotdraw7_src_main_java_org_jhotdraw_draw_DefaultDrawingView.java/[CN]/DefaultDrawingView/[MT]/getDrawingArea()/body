@@ -2,17 +2,8 @@
   if (cachedDrawingArea == null) {
     cachedDrawingArea=new Rectangle2D.Double();
     if (drawing != null) {
-      for (      Figure f : drawing.getChildren()) {
-        if (cachedDrawingArea == null) {
-          cachedDrawingArea=f.getDrawingArea();
-        }
- else {
-          cachedDrawingArea.add(f.getDrawingArea());
-        }
-      }
-    }
-    if (cachedDrawingArea == null) {
-      cachedDrawingArea=new Rectangle2D.Double();
+      cachedDrawingArea=drawing.getDrawingArea();
+      cachedDrawingArea.add(0d,0d);
     }
   }
   return (Rectangle2D.Double)cachedDrawingArea.clone();

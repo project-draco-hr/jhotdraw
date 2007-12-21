@@ -1,5 +1,3 @@
 {
-  super(editor);
-  this.prototype=prototype;
-  labels.configureAction(this,ID);
+  this(editor,prototype,true);
 }

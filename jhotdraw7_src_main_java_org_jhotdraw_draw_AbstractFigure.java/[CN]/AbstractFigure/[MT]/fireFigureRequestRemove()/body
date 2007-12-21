@@ -4,7 +4,9 @@
     Object[] listeners=listenerList.getListenerList();
     for (int i=listeners.length - 2; i >= 0; i-=2) {
       if (listeners[i] == FigureListener.class) {
-        if (event == null)         event=new FigureEvent(this,getBounds());
+        if (event == null) {
+          event=new FigureEvent(this,getBounds());
+        }
         ((FigureListener)listeners[i + 1]).figureRequestRemove(event);
       }
     }

@@ -1,0 +1,13 @@
+{
+  try {
+    UIManager.setLookAndFeel(new QuaquaLookAndFeel());
+  }
+ catch (  UnsupportedLookAndFeelException ex) {
+    ex.printStackTrace();
+  }
+  JFrame f=new JFrame("Drawing Settings2");
+  f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  f.add(new EditDrawingPanel());
+  f.pack();
+  f.setVisible(true);
+}

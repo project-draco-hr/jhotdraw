@@ -1,6 +1,0 @@
-{
-  int index=super.basicRemove(figure);
-  quadTree.remove(figure);
-  needsSorting=true;
-  return index;
-}

@@ -1,13 +1,8 @@
 {
-  Set<Figure> oldSelection=new HashSet<Figure>(selectedFigures);
   if (selectedFigures.contains(figure)) {
-    selectedFigures.remove(figure);
+    removeFromSelection(figure);
   }
  else {
-    selectedFigures.add(figure);
+    addToSelection(figure);
   }
-  Set<Figure> newSelection=new HashSet<Figure>(selectedFigures);
-  fireSelectionChanged(oldSelection,newSelection);
-  invalidateHandles();
-  repaint();
 }

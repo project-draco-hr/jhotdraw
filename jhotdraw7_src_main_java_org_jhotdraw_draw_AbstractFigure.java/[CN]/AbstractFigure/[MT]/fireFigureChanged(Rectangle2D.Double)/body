@@ -4,7 +4,9 @@
     Object[] listeners=listenerList.getListenerList();
     for (int i=listeners.length - 2; i >= 0; i-=2) {
       if (listeners[i] == FigureListener.class) {
-        if (event == null)         event=new FigureEvent(this,changedArea);
+        if (event == null) {
+          event=new FigureEvent(this,changedArea);
+        }
         ((FigureListener)listeners[i + 1]).figureChanged(event);
       }
     }

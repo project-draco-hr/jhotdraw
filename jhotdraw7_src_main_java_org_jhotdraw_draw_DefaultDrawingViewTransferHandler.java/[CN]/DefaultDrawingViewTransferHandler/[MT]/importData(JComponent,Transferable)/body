@@ -16,7 +16,9 @@
             if (DEBUG)             System.out.println(this + ".importData trying to match " + format+ " to flavor "+ flavor);
             if (format.isDataFlavorSupported(flavor)) {
               if (DEBUG)               System.out.println(this + ".importData importing flavor " + flavor);
-              final java.util.List<Figure> importedFigures=format.readFigures(t);
+              Drawing d=new DefaultDrawing();
+              format.read(t,drawing);
+              final java.util.List<Figure> importedFigures=drawing.getChildren();
               view.clearSelection();
               drawing.addAll(importedFigures);
               view.addToSelection(importedFigures);

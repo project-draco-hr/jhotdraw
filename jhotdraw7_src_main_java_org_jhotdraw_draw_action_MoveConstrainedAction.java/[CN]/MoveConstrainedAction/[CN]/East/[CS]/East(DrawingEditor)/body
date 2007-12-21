@@ -1,4 +1,4 @@
 {
-  super(editor,Direction.EAST);
+  super(editor,TranslationDirection.EAST);
   labels.configureAction(this,ID);
 }

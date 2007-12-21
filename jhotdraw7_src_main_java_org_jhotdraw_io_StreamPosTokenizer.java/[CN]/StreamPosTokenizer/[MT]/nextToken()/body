@@ -27,7 +27,7 @@
   int ctype=c < 256 ? ct[c] : CT_ALPHA;
   while ((ctype & CT_WHITESPACE) != 0) {
     if (c == '\r') {
-      LINENO++;
+      lineno++;
       if (eolIsSignificantP) {
         peekc=SKIP_LF;
         startpos=endpos=readpos - 1;
@@ -38,7 +38,7 @@
     }
  else {
       if (c == '\n') {
-        LINENO++;
+        lineno++;
         if (eolIsSignificantP) {
           startpos=endpos=readpos - 1;
           return ttype=TT_EOL;
@@ -291,7 +291,7 @@ if (slashSlashCommentsP && c == slashSlash[0] || slashStarCommentsP && c == slas
 if (c == slashStar[0] && slashStar.length == 1) {
 while ((c=read()) != starSlash[0]) {
 if (c == '\r') {
-LINENO++;
+lineno++;
 c=read();
 if (c == '\n') {
 c=read();
@@ -299,7 +299,7 @@ c=read();
 }
  else {
 if (c == '\n') {
-LINENO++;
+lineno++;
 c=read();
 }
 }
@@ -321,7 +321,7 @@ if (c == slashStar[1] && slashStarCommentsP) {
 int prevc=0;
 while ((c=read()) != starSlash[1] || prevc != starSlash[0]) {
 if (c == '\r') {
-LINENO++;
+lineno++;
 c=read();
 if (c == '\n') {
 c=read();
@@ -329,7 +329,7 @@ c=read();
 }
  else {
 if (c == '\n') {
-LINENO++;
+lineno++;
 c=read();
 }
 }

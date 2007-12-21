@@ -1,10 +1,10 @@
 {
-  if (changingDepth <= 1) {
+  if (changingDepth == 1) {
     validate();
     fireFigureChanged(getDrawingArea());
-    changingDepth=0;
   }
- else {
-    changingDepth--;
+ else   if (changingDepth < 0) {
+    throw new InternalError("changed was called without a prior call to willChange.");
   }
+  changingDepth--;
 }

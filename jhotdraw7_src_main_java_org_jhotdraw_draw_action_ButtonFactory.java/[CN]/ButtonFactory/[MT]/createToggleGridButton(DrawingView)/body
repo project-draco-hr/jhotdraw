@@ -7,14 +7,12 @@
   toggleButton.addItemListener(new ItemListener(){
     public void itemStateChanged(    ItemEvent event){
       view.setConstrainerVisible(toggleButton.isSelected());
-      view.getComponent().repaint();
     }
   }
 );
   view.addPropertyChangeListener(new PropertyChangeListener(){
     public void propertyChange(    PropertyChangeEvent evt){
-      if (evt.getPropertyName() == "constrainer") {
-        Constrainer c=(Constrainer)evt.getNewValue();
+      if (evt.getPropertyName() == DrawingView.PROP_CONSTRAINER_VISIBLE) {
         toggleButton.setSelected(view.isConstrainerVisible());
       }
     }

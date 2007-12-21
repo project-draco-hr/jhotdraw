@@ -7,6 +7,5 @@
     }
     invalidateHandles();
     fireSelectionChanged(oldSelection,newSelection);
-    repaint();
   }
 }

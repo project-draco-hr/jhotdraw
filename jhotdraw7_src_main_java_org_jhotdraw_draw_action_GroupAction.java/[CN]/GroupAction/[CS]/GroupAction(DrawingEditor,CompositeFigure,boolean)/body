@@ -1,0 +1,6 @@
+{
+  super(editor);
+  this.prototype=prototype;
+  this.isGroupingAction=isGroupingAction;
+  labels.configureAction(this,ID);
+}

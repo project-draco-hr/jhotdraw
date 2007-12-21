@@ -1,14 +1,14 @@
 {
   if (dialog == null) {
-    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.samples.svg.Labels");
+    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
     dialog=new JDialog();
-    dialog.setTitle(labels.getString("gridSettings"));
+    dialog.setTitle(labels.getString("editGrid"));
     dialog.setResizable(false);
-    settingsPanel=new GridSettingsPanel();
+    settingsPanel=new EditGridPanel();
     dialog.add(settingsPanel);
     dialog.pack();
     Preferences prefs=Preferences.userNodeForPackage(getClass());
-    PreferencesUtil.installFramePrefsHandler(prefs,"gridSettings",dialog);
+    PreferencesUtil.installFramePrefsHandler(prefs,"editGrid",dialog);
     getApplication().addWindow(dialog,null);
   }
   settingsPanel.setConstrainer((GridConstrainer)getView().getVisibleConstrainer());

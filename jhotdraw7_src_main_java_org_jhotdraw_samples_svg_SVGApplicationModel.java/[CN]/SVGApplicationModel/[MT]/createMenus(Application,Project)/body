@@ -11,6 +11,7 @@
   mb.add(createEditMenu(a,pr));
   m=new JMenu();
   appLabels.configureMenu(m,"view");
+  m.add(getAction(EditDrawingAction.ID));
   m2=new JMenu();
   drawLabels.configureMenu(m2,"grid");
   cbmi=new JCheckBoxMenuItem(getAction(ToggleGridAction.ID));

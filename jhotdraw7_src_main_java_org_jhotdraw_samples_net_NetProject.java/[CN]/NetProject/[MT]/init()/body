@@ -36,11 +36,7 @@
   view.addPropertyChangeListener(new PropertyChangeListener(){
     public void propertyChange(    PropertyChangeEvent evt){
       String name=evt.getPropertyName();
-      if (name.equals("constrainer")) {
-        prefs.putBoolean("project.gridVisible",((Constrainer)evt.getNewValue()).isVisible());
-        firePropertyChange("gridVisible",((Constrainer)evt.getOldValue()).isVisible(),((Constrainer)evt.getNewValue()).isVisible());
-      }
- else       if (name.equals("scaleFactor")) {
+      if (name.equals("scaleFactor")) {
         prefs.putDouble("project.scaleFactor",(Double)evt.getNewValue());
         firePropertyChange("scaleFactor",evt.getOldValue(),evt.getNewValue());
       }

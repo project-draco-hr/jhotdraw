@@ -1,0 +1,30 @@
+{
+  labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  initComponents();
+  colorButton.putClientProperty("Quaqua.Button.style","colorWell");
+  backgroundOpacitySlider=new JSlider(JSlider.VERTICAL,0,100,100);
+  opacityPopupButton.add(backgroundOpacitySlider);
+  opacityPopupButton.putClientProperty("JButton.buttonType","toolbar");
+  add(opacityPopupButton);
+  backgroundOpacitySlider.addChangeListener(new ChangeListener(){
+    public void stateChanged(    ChangeEvent e){
+      opacityField.setValue(backgroundOpacitySlider.getValue());
+      if (!backgroundOpacitySlider.getModel().getValueIsAdjusting()) {
+        updateDrawing();
+      }
+    }
+  }
+);
+  opacityField.setMaximum(100);
+  opacityField.setMinimum(0);
+  opacityField.setValue(100);
+  opacityField.addPropertyChangeListener("value",new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      if (!backgroundOpacitySlider.getModel().getValueIsAdjusting()) {
+        backgroundOpacitySlider.setValue((int)opacityField.getValue());
+        updateDrawing();
+      }
+    }
+  }
+);
+}

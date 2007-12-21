@@ -1,0 +1,7 @@
+{
+  if (drawing != null) {
+    Color color=getColorChooser().showDialog(this,labels.getString("attribute.backgroundColor"),CANVAS_FILL_COLOR.get(drawing));
+    colorButton.setBackground(color);
+    updateDrawing();
+  }
+}

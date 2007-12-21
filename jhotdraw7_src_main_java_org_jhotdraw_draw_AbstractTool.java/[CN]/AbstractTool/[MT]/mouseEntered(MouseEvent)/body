@@ -1,5 +1,2 @@
 {
-  if (!isWorking) {
-    editor.setActiveView(editor.findView((Container)evt.getSource()));
-  }
 }

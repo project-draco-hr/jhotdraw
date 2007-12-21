@@ -1,7 +1,7 @@
 {
   JPopupButton fontPopupButton;
   fontPopupButton=new JPopupButton();
-  labels.configureToolBarButton(fontPopupButton,"attributeFont");
+  labels.configureToolBarButton(fontPopupButton,"attribute.font");
   fontPopupButton.setFocusable(false);
   Font[] allFonts=GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
   HashSet<String> fontExclusionList=new HashSet<String>(Arrays.asList(new String[]{"#GungSeo","#HeadLineA","#PCMyungjo","#PilGi","Al Bayan","Apple LiGothic","Apple LiSung","AppleMyungjo","Arial Hebrew","Ayuthaya","Baghdad","BiauKai","Charcoal CY","Corsiva Hebrew","DecoType Naskh","Devanagari MT","Fang Song","GB18030 Bitmap","Geeza Pro","Geezah","Geneva CY","Gujarati MT","Gurmukhi MT","Hei","Helvetica CY","Hiragino Kaku Gothic Std","Hiragino Maru Gothic Pro","Hiragino Mincho Pro","Hiragino Kaku Gothic Pro","InaiMathi","Kai","Krungthep","KufiStandardGK","LiHei Pro","LiSong Pro","Mshtakan","Monaco CY","Nadeem","New Peninim MT","Osaka","Plantagenet Cherokee","Raanana","STFangsong","STHeiti","STKaiti","STSong","Sathu","Silom","Thonburi","Times CY","Arial Unicode MS","Batang","Estrangelo Edessa","Gautami","Kartika","Latha","Lucida Sans Unicode","Mangal","Marlett","MS Mincho","MS Outlook","MV Boli","OCR-B-10 BT","Raavi","Shruti","SimSun","Sylfaen","Symbol","Tunga","Vrinda","Wingdings","Wingdings 2","Wingdings 3","ZWAdobeF"}));

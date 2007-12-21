@@ -1,9 +1,4 @@
 {
-  if (evt.getCompositeFigure().getChildCount() == 1) {
-    repaint();
-  }
- else {
-    repaint(evt.getInvalidatedArea());
-  }
+  repaintDrawingArea(evt.getInvalidatedArea());
   invalidateDimension();
 }

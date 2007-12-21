@@ -1,6 +1,16 @@
 {
-  Project p=createProject();
+  final Project p=createProject();
   add(p);
-  p.clear();
+  p.setEnabled(false);
   show(p);
+  p.execute(new Worker(){
+    public Object construct(){
+      p.clear();
+      return null;
+    }
+    public void finished(    Object result){
+      p.setEnabled(true);
+    }
+  }
+);
 }

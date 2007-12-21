@@ -10,7 +10,6 @@
   }
   for (  Figure f : sorted) {
     SVGPathFigure path=(SVGPathFigure)f;
-    path.flattenTransform();
     for (    Figure child : path.getChildren()) {
       group.basicAdd(child);
     }

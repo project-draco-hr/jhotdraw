@@ -14,20 +14,8 @@
     }
     selectionHandles.clear();
     secondaryHandles.clear();
-switch (selectedFigures.size()) {
-case 0:
-      if (invalidatedArea != null) {
-        repaint(invalidatedArea);
-      }
-    break;
-case 1:
-  if (invalidatedArea != null) {
-    repaint(invalidatedArea);
+    if (invalidatedArea != null) {
+      repaint(invalidatedArea);
+    }
   }
-break;
-default :
-repaint();
-break;
-}
-}
 }

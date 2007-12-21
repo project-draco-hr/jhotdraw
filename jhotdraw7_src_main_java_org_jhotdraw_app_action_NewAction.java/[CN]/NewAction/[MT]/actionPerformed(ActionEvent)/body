@@ -1,6 +1,6 @@
 {
   Application app=getApplication();
-  Project newP=app.createProject();
+  final Project newP=app.createProject();
   int multiOpenId=1;
   for (  Project existingP : app.projects()) {
     if (existingP.getFile() == null) {
@@ -9,6 +9,11 @@
   }
   newP.setMultipleOpenId(multiOpenId);
   app.add(newP);
-  newP.clear();
+  newP.execute(new Runnable(){
+    public void run(){
+      newP.clear();
+    }
+  }
+);
   app.show(newP);
 }

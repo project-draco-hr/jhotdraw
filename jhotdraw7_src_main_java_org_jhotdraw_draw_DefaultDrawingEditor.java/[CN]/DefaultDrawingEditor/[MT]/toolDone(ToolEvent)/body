@@ -1,8 +1,11 @@
 {
   DrawingView v=getActiveView();
   if (v != null) {
-    Container c=v.getComponent();
-    c.invalidate();
-    if (c.getParent() != null)     c.getParent().validate();
+    JComponent c=v.getComponent();
+    Dimension oldPreferredViewSize=preferredViewSize;
+    preferredViewSize=c.getPreferredSize();
+    if (oldPreferredViewSize == null || !oldPreferredViewSize.equals(preferredViewSize)) {
+      c.revalidate();
+    }
   }
 }

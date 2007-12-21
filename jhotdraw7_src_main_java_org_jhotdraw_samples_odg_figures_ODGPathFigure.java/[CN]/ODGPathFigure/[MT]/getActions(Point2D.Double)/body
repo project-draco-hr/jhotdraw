@@ -61,7 +61,7 @@
     }
   }
 );
-  actions.add(new AbstractAction(labels.getString("windingEvenOdd")){
+  actions.add(new AbstractAction(labels.getString("windingRule.evenOdd")){
     public void actionPerformed(    ActionEvent evt){
       ODGPathFigure.this.willChange();
       getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(ODGPathFigure.this,WindingRule.EVEN_ODD,labels));
@@ -69,7 +69,7 @@
     }
   }
 );
-  actions.add(new AbstractAction(labels.getString("windingNonZero")){
+  actions.add(new AbstractAction(labels.getString("windingRule.nonZero")){
     public void actionPerformed(    ActionEvent evt){
       WINDING_RULE.set(ODGPathFigure.this,WindingRule.NON_ZERO);
       getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(ODGPathFigure.this,WindingRule.EVEN_ODD,labels));
