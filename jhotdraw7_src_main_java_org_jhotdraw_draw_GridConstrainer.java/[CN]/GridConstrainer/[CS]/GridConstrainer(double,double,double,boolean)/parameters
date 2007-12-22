@@ -1,4 +1,4 @@
 double width
 double height
-double alpha
+double theta
 boolean visible

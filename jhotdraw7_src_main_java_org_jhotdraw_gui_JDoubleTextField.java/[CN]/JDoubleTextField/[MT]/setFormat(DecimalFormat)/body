@@ -1,0 +1,5 @@
+{
+  DecimalFormat oldValue=format;
+  format=newValue;
+  firePropertyChange("format",oldValue,newValue);
+}

@@ -1,4 +1,7 @@
 {
   view.getDrawing().fireUndoableEditHappened(new RestoreDataEdit(getOwner(),restoreData));
+  fireAreaInvalidated(getDrawingArea());
   location=null;
+  invalidate();
+  fireAreaInvalidated(getDrawingArea());
 }

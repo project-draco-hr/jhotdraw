@@ -1,5 +1,5 @@
 {
-  double oldValue=value;
+  double oldValue=maximum;
   maximum=newValue;
   firePropertyChange("maximum",oldValue,newValue);
 }

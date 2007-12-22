@@ -1,11 +1,12 @@
 {
   initComponents();
+  format=createFormat();
   addFocusListener(new FocusListener(){
     public void focusGained(    FocusEvent e){
       selectAll();
     }
     public void focusLost(    FocusEvent e){
-      updateText();
+      updateField();
     }
   }
 );

@@ -2,4 +2,5 @@
   constrainer=newValue;
   widthField.setValue(constrainer.getWidth());
   heightField.setValue(constrainer.getHeight());
+  thetaField.setValue(constrainer.getTheta() * 180d / Math.PI);
 }

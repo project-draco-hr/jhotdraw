@@ -1,10 +1,15 @@
 {
-  try {
-    double newValue=Double.valueOf(getText());
-    if (newValue >= minimum && newValue <= maximum) {
-      setValue(newValue);
+  if (updatingDepth++ == 0) {
+    if (format != null) {
+      try {
+        double newValue=format.parse(getText()).doubleValue();
+        if (newValue >= minimum && newValue <= maximum) {
+          setValue(newValue);
+        }
+      }
+ catch (      ParseException ex) {
+      }
     }
   }
- catch (  NumberFormatException ex) {
-  }
+  updatingDepth--;
 }

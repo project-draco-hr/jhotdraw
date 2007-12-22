@@ -1,9 +1,0 @@
-{
-  if (!isFocusOwner()) {
-    String text=Double.toString(value);
-    if (text.endsWith(".0")) {
-      text=text.substring(0,text.length() - 2);
-    }
-    setText(text);
-  }
-}
