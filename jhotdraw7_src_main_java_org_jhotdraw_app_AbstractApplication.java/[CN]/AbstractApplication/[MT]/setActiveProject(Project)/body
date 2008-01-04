@@ -1,0 +1,11 @@
+{
+  Project oldValue=activeProject;
+  if (activeProject != null) {
+    activeProject.deactivate();
+  }
+  activeProject=newValue;
+  if (activeProject != null) {
+    activeProject.activate();
+  }
+  firePropertyChange("activeProject",oldValue,newValue);
+}

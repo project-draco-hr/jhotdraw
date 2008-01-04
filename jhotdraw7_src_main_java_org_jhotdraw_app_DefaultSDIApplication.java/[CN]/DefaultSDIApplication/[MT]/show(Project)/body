@@ -1,21 +1,9 @@
 {
   if (!p.isShowing()) {
     p.setShowing(true);
-    File file=p.getFile();
     final JFrame f=new JFrame();
-    String title;
-    if (file == null) {
-      title=labels.getString("unnamedFile");
-    }
- else {
-      title=file.getName();
-    }
-    if (p.hasUnsavedChanges()) {
-      title+="*";
-    }
-    p.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
-    f.setTitle(p.getTitle());
     f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+    updateProjectTitle(p,f);
     JPanel panel=(JPanel)wrapProjectComponent(p);
     f.add(panel);
     f.setMinimumSize(new Dimension(200,200));
@@ -40,35 +28,29 @@
     f.setLocation(loc);
     f.addWindowListener(new WindowAdapter(){
       public void windowClosing(      final WindowEvent evt){
-        setCurrentProject(p);
         getModel().getAction(CloseAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
       }
+      @Override public void windowClosed(      final WindowEvent evt){
+        if (p == getActiveProject()) {
+          setActiveProject(null);
+        }
+        p.stop();
+      }
       public void windowActivated(      WindowEvent e){
-        setCurrentProject(p);
+        setActiveProject(p);
       }
     }
 );
     p.addPropertyChangeListener(new PropertyChangeListener(){
       public void propertyChange(      PropertyChangeEvent evt){
         String name=evt.getPropertyName();
-        if (name.equals("hasUnsavedChanges") || name.equals("file") || name.equals("multipleOpenId")) {
-          File file=p.getFile();
-          String title;
-          if (file == null) {
-            title=labels.getString("unnamedFile");
-          }
- else {
-            title=file.getName();
-          }
-          if (p.hasUnsavedChanges()) {
-            title+="*";
-          }
-          p.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
-          f.setTitle(p.getTitle());
+        if (name.equals(Project.HAS_UNSAVED_CHANGES_PROPERTY) || name.equals(Project.FILE_PROPERTY) || name.equals(Project.MULTIPLE_OPEN_ID_PROPERTY)) {
+          updateProjectTitle(p,f);
         }
       }
     }
 );
     f.setVisible(true);
+    p.start();
   }
 }

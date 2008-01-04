@@ -1,0 +1,13 @@
+{
+  String title;
+  File file=p.getFile();
+  if (file == null) {
+    title=labels.getString("unnamedFile");
+  }
+ else {
+    title=file.getName();
+  }
+  p.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
+  f.setTitle(p.getTitle());
+  f.getRootPane().putClientProperty("Window.documentFile",file);
+}

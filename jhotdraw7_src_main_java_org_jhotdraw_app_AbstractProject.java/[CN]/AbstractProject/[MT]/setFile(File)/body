@@ -4,5 +4,5 @@
   if (prefs != null && newValue != null) {
     prefs.put("projectFile",newValue.getPath());
   }
-  firePropertyChange("file",oldValue,newValue);
+  firePropertyChange(FILE_PROPERTY,oldValue,newValue);
 }

@@ -12,7 +12,7 @@
 );
   view.addPropertyChangeListener(new PropertyChangeListener(){
     public void propertyChange(    PropertyChangeEvent evt){
-      if (evt.getPropertyName() == DrawingView.PROP_CONSTRAINER_VISIBLE) {
+      if (evt.getPropertyName() == DrawingView.CONSTRAINER_VISIBLE_PROPERTY) {
         toggleButton.setSelected(view.isConstrainerVisible());
       }
     }

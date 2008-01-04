@@ -1,21 +1,13 @@
 {
   if (!p.isShowing()) {
     p.setShowing(true);
-    File file=p.getFile();
     final JInternalFrame f=new JInternalFrame();
-    String title;
-    if (file == null) {
-      title=labels.getString("unnamedFile");
-    }
- else {
-      title=file.getName();
-    }
-    f.setTitle(labels.getFormatted("internalFrameTitle",title,getName(),p.getMultipleOpenId()));
     f.setDefaultCloseOperation(JInternalFrame.DO_NOTHING_ON_CLOSE);
     f.setClosable(true);
     f.setMaximizable(true);
     f.setResizable(true);
     f.setIconifiable(false);
+    updateProjectTitle(p,f);
     PreferencesUtil.installInternalFramePrefsHandler(prefs,"project",f,desktopPane);
     Point loc=f.getLocation();
     boolean moved;
@@ -35,19 +27,21 @@
     f.setLocation(loc);
     f.addInternalFrameListener(new InternalFrameAdapter(){
       @Override public void internalFrameClosing(      final InternalFrameEvent evt){
-        setCurrentProject(p);
         getModel().getAction(CloseAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
+      }
+      @Override public void internalFrameClosed(      final InternalFrameEvent evt){
+        if (p == getActiveProject()) {
+          setActiveProject(null);
+        }
+        p.stop();
       }
     }
 );
     p.addPropertyChangeListener(new PropertyChangeListener(){
       public void propertyChange(      PropertyChangeEvent evt){
         String name=evt.getPropertyName();
-        if (name.equals("hasUnsavedChanges")) {
-          ((JInternalFrame)f.getRootPane().getParent()).putClientProperty("windowModified",new Boolean(p.hasUnsavedChanges()));
-        }
- else         if (name.equals("file")) {
-          f.setTitle((p.getFile() == null) ? "Unnamed" : p.getFile().getName());
+        if (name == Project.HAS_UNSAVED_CHANGES_PROPERTY || name == Project.FILE_PROPERTY) {
+          updateProjectTitle(p,f);
         }
       }
     }
@@ -57,7 +51,7 @@
         String name=evt.getPropertyName();
         if (name.equals("selected")) {
           if (evt.getNewValue().equals(Boolean.TRUE)) {
-            setCurrentProject(p);
+            setActiveProject(p);
           }
         }
       }
@@ -73,5 +67,6 @@
  catch (    PropertyVetoException e) {
     }
     p.getComponent().requestFocusInWindow();
+    p.start();
   }
 }

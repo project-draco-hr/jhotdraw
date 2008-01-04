@@ -1,0 +1,6 @@
+{
+  if (activeProject == null && projects.size() > 0) {
+    return projects.getLast();
+  }
+  return activeProject;
+}

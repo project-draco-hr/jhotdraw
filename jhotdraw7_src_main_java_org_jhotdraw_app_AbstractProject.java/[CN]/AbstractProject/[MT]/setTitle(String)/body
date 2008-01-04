@@ -1,5 +1,5 @@
 {
   String oldValue=title;
   title=newValue;
-  firePropertyChange("title",oldValue,newValue);
+  firePropertyChange(TITLE_PROPERTY,oldValue,newValue);
 }

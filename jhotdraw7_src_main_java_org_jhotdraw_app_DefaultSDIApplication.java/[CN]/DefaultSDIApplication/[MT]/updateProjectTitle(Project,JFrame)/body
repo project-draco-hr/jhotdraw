@@ -1,0 +1,15 @@
+{
+  File file=p.getFile();
+  String title;
+  if (file == null) {
+    title=labels.getString("unnamedFile");
+  }
+ else {
+    title=file.getName();
+  }
+  if (p.hasUnsavedChanges()) {
+    title+="*";
+  }
+  p.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
+  f.setTitle(p.getTitle());
+}

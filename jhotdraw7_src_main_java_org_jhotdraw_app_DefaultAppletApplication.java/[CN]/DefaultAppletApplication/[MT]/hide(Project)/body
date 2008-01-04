@@ -1,4 +1,6 @@
 {
+  p.deactivate();
+  p.stop();
   applet.getContentPane().removeAll();
   this.project=null;
 }

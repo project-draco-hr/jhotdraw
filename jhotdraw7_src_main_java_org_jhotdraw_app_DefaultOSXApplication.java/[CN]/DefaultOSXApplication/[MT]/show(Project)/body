@@ -1,19 +1,10 @@
 {
   if (!p.isShowing()) {
     p.setShowing(true);
-    File file=p.getFile();
     final JFrame f=new JFrame();
-    String title;
-    if (file == null) {
-      title=labels.getString("unnamedFile");
-    }
- else {
-      title=file.getName();
-    }
-    p.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
-    f.setTitle(p.getTitle());
     f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     f.setPreferredSize(new Dimension(400,400));
+    updateProjectTitle(p,f);
     PreferencesUtil.installFramePrefsHandler(prefs,"project",f);
     Point loc=f.getLocation();
     boolean moved;
@@ -32,29 +23,29 @@
  while (moved);
     f.setLocation(loc);
     f.addWindowListener(new WindowAdapter(){
-      public void windowClosing(      final WindowEvent evt){
-        setCurrentProject(p);
+      @Override public void windowClosing(      final WindowEvent evt){
+        setActiveProject(p);
         getModel().getAction(CloseAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
+      }
+      @Override public void windowClosed(      final WindowEvent evt){
+        if (p == getActiveProject()) {
+          setActiveProject(null);
+        }
+        p.stop();
+      }
+      @Override public void windowActivated(      WindowEvent evt){
+        setActiveProject(p);
       }
     }
 );
     p.addPropertyChangeListener(new PropertyChangeListener(){
       public void propertyChange(      PropertyChangeEvent evt){
         String name=evt.getPropertyName();
-        if (name.equals("hasUnsavedChanges")) {
+        if (name.equals(Project.HAS_UNSAVED_CHANGES_PROPERTY)) {
           f.getRootPane().putClientProperty("windowModified",new Boolean(p.hasUnsavedChanges()));
         }
- else         if (name.equals("file")) {
-          String title;
-          File file=(File)evt.getNewValue();
-          if (file == null) {
-            title=labels.getString("unnamedFile");
-          }
- else {
-            title=file.getName();
-          }
-          p.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
-          f.setTitle(p.getTitle());
+ else         if (name.equals(Project.FILE_PROPERTY)) {
+          updateProjectTitle(p,f);
         }
       }
     }
@@ -62,5 +53,6 @@
     addWindow(f,p);
     f.getContentPane().add(p.getComponent());
     f.setVisible(true);
+    p.start();
   }
 }

@@ -1,5 +1,5 @@
 {
   boolean oldValue=hasUnsavedChanges;
   hasUnsavedChanges=newValue;
-  firePropertyChange("hasUnsavedChanges",oldValue,newValue);
+  firePropertyChange(HAS_UNSAVED_CHANGES_PROPERTY,oldValue,newValue);
 }

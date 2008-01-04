@@ -1,5 +1,5 @@
 {
-  Project p=getCurrentProject();
+  Project p=getActiveProject();
   Object value=getCurrentValue();
   Object newValue=(value == selectedPropertyValue || value != null && selectedPropertyValue != null && value.equals(selectedPropertyValue)) ? deselectedPropertyValue : selectedPropertyValue;
   try {

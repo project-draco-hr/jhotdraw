@@ -1,5 +1,5 @@
 {
-  Project project=getCurrentProject();
+  Project project=getActiveProject();
   project.setEnabled(false);
   if (System.getProperty("apple.awt.graphics.UseQuartz","false").equals("true")) {
     printQuartz();

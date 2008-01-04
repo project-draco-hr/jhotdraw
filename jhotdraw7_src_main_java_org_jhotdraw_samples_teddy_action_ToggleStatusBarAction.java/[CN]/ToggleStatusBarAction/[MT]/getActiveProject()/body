@@ -1,0 +1,3 @@
+{
+  return (TeddyProject)super.getActiveProject();
+}

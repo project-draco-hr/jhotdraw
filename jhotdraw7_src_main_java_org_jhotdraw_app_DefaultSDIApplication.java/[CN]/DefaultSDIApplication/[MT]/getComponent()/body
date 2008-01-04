@@ -1,4 +1,4 @@
 {
-  Project p=getCurrentProject();
+  Project p=getActiveProject();
   return (p == null) ? null : p.getComponent();
 }

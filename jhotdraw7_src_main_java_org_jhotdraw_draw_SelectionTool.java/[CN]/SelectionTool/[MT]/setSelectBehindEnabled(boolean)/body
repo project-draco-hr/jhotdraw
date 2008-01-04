@@ -1,5 +1,5 @@
 {
   boolean oldValue=isSelectBehindEnabled;
   isSelectBehindEnabled=newValue;
-  firePropertyChange(PROP_SELECT_BEHIND_ENABLED,oldValue,newValue);
+  firePropertyChange(SELECT_BEHIND_ENABLED_PROPERTY,oldValue,newValue);
 }

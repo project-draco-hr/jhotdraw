@@ -1,6 +1,6 @@
 {
   boolean oldValue=this.enabled;
   this.enabled=newValue;
-  boolean projIsEnabled=getCurrentProject() != null && getCurrentProject().isEnabled();
+  boolean projIsEnabled=getActiveProject() != null && getActiveProject().isEnabled();
   firePropertyChange("enabled",Boolean.valueOf(oldValue && projIsEnabled),Boolean.valueOf(newValue && projIsEnabled));
 }

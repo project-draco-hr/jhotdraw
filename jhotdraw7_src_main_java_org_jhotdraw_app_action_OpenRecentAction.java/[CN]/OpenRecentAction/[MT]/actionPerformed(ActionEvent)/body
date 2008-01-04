@@ -2,7 +2,7 @@
   final Application app=getApplication();
   if (app.isEnabled()) {
     app.setEnabled(false);
-    Project emptyProject=app.getCurrentProject();
+    Project emptyProject=app.getActiveProject();
     if (emptyProject == null || emptyProject.getFile() != null || emptyProject.hasUnsavedChanges()) {
       emptyProject=null;
     }

@@ -1,5 +1,5 @@
 {
-  Project p=getCurrentProject();
+  Project p=getActiveProject();
   if (p != null) {
     try {
       return p.getClass().getMethod(getterName,(Class[])null).invoke(p);

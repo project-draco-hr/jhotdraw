@@ -3,6 +3,6 @@
   this.enabled=true;
   if (app != null) {
     app.addPropertyChangeListener(applicationListener);
-    updateProject(null,app.getCurrentProject());
+    updateProject(null,app.getActiveProject());
   }
 }

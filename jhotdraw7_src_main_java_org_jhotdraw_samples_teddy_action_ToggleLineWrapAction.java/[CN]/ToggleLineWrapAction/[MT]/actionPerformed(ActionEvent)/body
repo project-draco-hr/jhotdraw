@@ -1,3 +1,3 @@
 {
-  getCurrentProject().setLineWrap(!getCurrentProject().isLineWrap());
+  getActiveProject().setLineWrap(!getActiveProject().isLineWrap());
 }

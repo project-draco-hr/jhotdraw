@@ -1,5 +1,5 @@
 {
-  TeddyProject project=((TeddyProject)app.getCurrentProject());
+  TeddyProject project=((TeddyProject)app.getActiveProject());
   if (project != null) {
     MatchType matchType;
 switch (modeCombo.getSelectedIndex()) {

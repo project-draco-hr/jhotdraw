@@ -1,5 +1,5 @@
 {
   Constrainer oldValue=invisibleConstrainer;
   invisibleConstrainer=newValue;
-  firePropertyChange(PROP_INVISIBLE_CONSTRAINER,oldValue,newValue);
+  firePropertyChange(INVISIBLE_CONSTRAINER_PROPERTY,oldValue,newValue);
 }

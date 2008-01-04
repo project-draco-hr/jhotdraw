@@ -1,5 +1,5 @@
 {
-  TeddyProject project=((TeddyProject)app.getCurrentProject());
+  TeddyProject project=((TeddyProject)app.getActiveProject());
   if (project != null) {
     CompositeEdit edit=new CompositeEdit("Replace");
     project.fireEdit(edit);

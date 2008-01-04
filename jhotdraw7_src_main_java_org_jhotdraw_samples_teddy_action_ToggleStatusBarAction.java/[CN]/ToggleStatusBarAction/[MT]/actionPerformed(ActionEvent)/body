@@ -1,3 +1,3 @@
 {
-  getCurrentProject().setStatusBarVisible(!getCurrentProject().isStatusBarVisible());
+  getActiveProject().setStatusBarVisible(!getActiveProject().isStatusBarVisible());
 }

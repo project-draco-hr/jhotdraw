@@ -1,5 +1,5 @@
 {
   boolean oldValue=isShowing;
   isShowing=newValue;
-  firePropertyChange("showing",oldValue,newValue);
+  firePropertyChange(SHOWING_PROPERTY,oldValue,newValue);
 }
