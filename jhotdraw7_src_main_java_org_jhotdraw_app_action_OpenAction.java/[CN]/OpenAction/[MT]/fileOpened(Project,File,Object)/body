@@ -13,6 +13,8 @@
     app.setEnabled(true);
   }
  else {
+    project.setEnabled(true);
+    app.setEnabled(true);
     if (value instanceof Throwable) {
       ((Throwable)value).printStackTrace();
     }

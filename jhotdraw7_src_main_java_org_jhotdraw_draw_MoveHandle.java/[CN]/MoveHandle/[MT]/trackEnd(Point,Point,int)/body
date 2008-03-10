@@ -1,5 +1,7 @@
 {
-  AffineTransform tx=new AffineTransform();
-  tx.translate(lead.x - anchor.x,lead.y - anchor.y);
-  fireUndoableEditHappened(new TransformEdit(getOwner(),tx));
+  if (getOwner().isTransformable()) {
+    AffineTransform tx=new AffineTransform();
+    tx.translate(lead.x - anchor.x,lead.y - anchor.y);
+    fireUndoableEditHappened(new TransformEdit(getOwner(),tx));
+  }
 }

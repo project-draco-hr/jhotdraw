@@ -4,6 +4,7 @@
     bounds=AttributeKeys.TRANSFORM.get(getOwner()).createTransformedShape(bounds);
   }
   bounds=view.getDrawingToViewTransform().createTransformedShape(bounds);
+  g.setStroke(HANDLE_STROKE);
   g.setColor(HANDLE_FILL_COLOR);
   g.draw(bounds);
 }

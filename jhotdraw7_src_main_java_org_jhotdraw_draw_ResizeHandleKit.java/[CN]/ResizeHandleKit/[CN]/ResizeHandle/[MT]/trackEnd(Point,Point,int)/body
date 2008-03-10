@@ -1,3 +1,5 @@
 {
-  fireUndoableEditHappened(new GeometryEdit(getOwner(),geometry,getOwner().getTransformRestoreData()));
+  if (getOwner().isTransformable()) {
+    fireUndoableEditHappened(new GeometryEdit(getOwner(),geometry,getOwner().getTransformRestoreData()));
+  }
 }

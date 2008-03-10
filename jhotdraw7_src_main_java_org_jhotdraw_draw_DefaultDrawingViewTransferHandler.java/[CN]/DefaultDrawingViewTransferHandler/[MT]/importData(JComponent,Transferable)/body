@@ -20,7 +20,6 @@
               format.read(t,drawing);
               final java.util.List<Figure> importedFigures=drawing.getChildren();
               view.clearSelection();
-              drawing.addAll(importedFigures);
               view.addToSelection(importedFigures);
               drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
                 public String getPresentationName(){

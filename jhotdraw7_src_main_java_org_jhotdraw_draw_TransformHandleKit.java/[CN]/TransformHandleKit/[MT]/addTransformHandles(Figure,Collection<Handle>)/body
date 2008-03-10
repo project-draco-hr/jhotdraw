@@ -1,4 +1,5 @@
 {
+  handles.add(new BoundsOutlineHandle(f));
   addCornerTransformHandles(f,handles);
   addEdgeTransformHandles(f,handles);
   handles.add(new RotateHandle(f));

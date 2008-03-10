@@ -1,3 +1,3 @@
 {
-  drawRectangle(g,Color.white,Color.black);
+  drawRectangle(g,getOwner().isTransformable() ? Color.white : null,Color.black);
 }
