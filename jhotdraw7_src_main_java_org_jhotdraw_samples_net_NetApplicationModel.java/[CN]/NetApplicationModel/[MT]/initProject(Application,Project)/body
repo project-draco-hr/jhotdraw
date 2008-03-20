@@ -1,5 +1,0 @@
-{
-  if (a.isSharingToolsAmongProjects()) {
-    ((NetProject)p).setDrawingEditor(getSharedEditor());
-  }
-}

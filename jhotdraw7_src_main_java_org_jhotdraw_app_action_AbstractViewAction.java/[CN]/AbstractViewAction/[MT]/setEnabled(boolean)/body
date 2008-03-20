@@ -1,0 +1,6 @@
+{
+  boolean oldValue=this.enabled;
+  this.enabled=newValue;
+  boolean projIsEnabled=getActiveView() != null && getActiveView().isEnabled();
+  firePropertyChange(ENABLED_PROPERTY,Boolean.valueOf(oldValue && projIsEnabled),Boolean.valueOf(newValue && projIsEnabled));
+}

@@ -2,18 +2,18 @@
   final Application app=getApplication();
   if (app.isEnabled()) {
     app.setEnabled(false);
-    Project emptyProject=app.getActiveProject();
-    if (emptyProject == null || emptyProject.getFile() != null || emptyProject.hasUnsavedChanges()) {
-      emptyProject=null;
+    View emptyView=app.getActiveView();
+    if (emptyView == null || emptyView.getFile() != null || emptyView.hasUnsavedChanges()) {
+      emptyView=null;
     }
-    final Project p;
-    if (emptyProject == null) {
-      p=app.createProject();
+    final View p;
+    if (emptyView == null) {
+      p=app.createView();
       app.add(p);
       app.show(p);
     }
  else {
-      p=emptyProject;
+      p=emptyView;
     }
     openFile(p);
   }

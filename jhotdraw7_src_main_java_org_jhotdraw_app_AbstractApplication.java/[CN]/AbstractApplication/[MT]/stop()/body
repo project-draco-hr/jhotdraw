@@ -1,5 +1,5 @@
 {
-  for (  Project p : new LinkedList<Project>(projects())) {
+  for (  View p : new LinkedList<View>(views())) {
     dispose(p);
   }
   System.exit(0);

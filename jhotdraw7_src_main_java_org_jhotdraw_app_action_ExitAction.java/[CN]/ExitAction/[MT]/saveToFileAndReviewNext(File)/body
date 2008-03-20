@@ -1,8 +1,8 @@
 {
-  unsavedProject.execute(new Worker(){
+  unsavedView.execute(new Worker(){
     public Object construct(){
       try {
-        unsavedProject.write(file);
+        unsavedView.write(file);
         return null;
       }
  catch (      IOException e) {
@@ -10,7 +10,7 @@
       }
     }
     public void finished(    Object value){
-      fileSavedAndReviewNext(unsavedProject,file,value);
+      fileSavedAndReviewNext(unsavedView,file,value);
     }
   }
 );

@@ -1,0 +1,17 @@
+{
+  view.execute(new Worker(){
+    public Object construct(){
+      try {
+        view.export(file,filter,accessory);
+        return null;
+      }
+ catch (      Throwable e) {
+        return e;
+      }
+    }
+    public void finished(    Object value){
+      fileExported(view,file,value);
+    }
+  }
+);
+}

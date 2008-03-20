@@ -1,13 +1,13 @@
 {
-  Frame frame=(Frame)SwingUtilities.getWindowAncestor(getActiveProject().getComponent());
-  final Pageable pageable=(Pageable)Methods.invokeGetter(getActiveProject(),"createPageable",null);
+  Frame frame=(Frame)SwingUtilities.getWindowAncestor(getActiveView().getComponent());
+  final Pageable pageable=(Pageable)Methods.invokeGetter(getActiveView(),"createPageable",null);
   final double resolution=300d;
   JobAttributes jobAttr=new JobAttributes();
   PageAttributes pageAttr=new PageAttributes();
   pageAttr.setMedia(PageAttributes.MediaType.A4);
   pageAttr.setPrinterResolution((int)resolution);
   final PrintJob pj=frame.getToolkit().getPrintJob(frame,"Job Title",jobAttr,pageAttr);
-  getActiveProject().setEnabled(false);
+  getActiveView().setEnabled(false);
   new Worker(){
     public Object construct(){
       Paper paper=new Paper();
@@ -47,7 +47,7 @@
       return null;
     }
     public void finished(    Object value){
-      getActiveProject().setEnabled(true);
+      getActiveView().setEnabled(true);
     }
   }
 .start();

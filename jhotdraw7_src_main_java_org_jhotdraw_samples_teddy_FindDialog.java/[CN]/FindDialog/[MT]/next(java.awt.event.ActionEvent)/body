@@ -1,9 +1,9 @@
 {
-  TeddyProject project=((TeddyProject)app.getActiveProject());
-  if (project != null) {
+  TeddyView view=((TeddyView)app.getActiveView());
+  if (view != null) {
     updateMatcher();
     if (matcher != null) {
-      int pos=matcher.findNext(project.getSelectionEnd());
+      int pos=matcher.findNext(view.getSelectionEnd());
       if (pos == -1 && wrapAroundCheck.isSelected()) {
         pos=matcher.findNext(0);
       }
@@ -11,7 +11,7 @@
         getToolkit().beep();
       }
  else {
-        project.select(pos,matcher.getFindString().length() + pos);
+        view.select(pos,matcher.getFindString().length() + pos);
       }
     }
   }

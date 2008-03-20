@@ -1,18 +1,18 @@
 {
-  TeddyProject project=((TeddyProject)app.getActiveProject());
-  if (project != null) {
+  TeddyView view=((TeddyView)app.getActiveView());
+  if (view != null) {
     updateMatcher();
     if (matcher != null) {
-      matcher.setStartIndex(project.getSelectionStart() - 1);
+      matcher.setStartIndex(view.getSelectionStart() - 1);
       int pos=matcher.findPrevious();
       if (pos == -1 && wrapAroundCheck.isSelected()) {
-        pos=matcher.findPrevious(project.getDocument().getLength());
+        pos=matcher.findPrevious(view.getDocument().getLength());
       }
       if (pos == -1) {
         getToolkit().beep();
       }
  else {
-        project.select(pos,matcher.getFindString().length() + pos);
+        view.select(pos,matcher.getFindString().length() + pos);
       }
     }
   }

@@ -1,0 +1,4 @@
+{
+  super.uninstallViewListeners(p);
+  p.removePropertyChangeListener(viewListener);
+}

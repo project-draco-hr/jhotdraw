@@ -1,0 +1,33 @@
+{
+  final Application app=getApplication();
+  app.setEnabled(true);
+  int multipleOpenId=1;
+  for (  View aView : app.views()) {
+    if (aView != view && aView.getFile() != null && aView.getFile().equals(file)) {
+      multipleOpenId=Math.max(multipleOpenId,aView.getMultipleOpenId() + 1);
+    }
+  }
+  view.setMultipleOpenId(multipleOpenId);
+  view.setEnabled(false);
+  view.execute(new Worker(){
+    public Object construct(){
+      try {
+        if (file.exists()) {
+          view.read(file);
+          return null;
+        }
+ else {
+          ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+          return new IOException(labels.getFormatted("errorFileDoesNotExist",file.getName()));
+        }
+      }
+ catch (      Throwable e) {
+        return e;
+      }
+    }
+    public void finished(    Object value){
+      fileOpened(view,file,value);
+    }
+  }
+);
+}

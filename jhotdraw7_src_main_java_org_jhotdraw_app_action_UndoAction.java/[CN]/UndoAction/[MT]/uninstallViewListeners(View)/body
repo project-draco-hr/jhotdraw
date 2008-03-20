@@ -1,0 +1,6 @@
+{
+  super.uninstallViewListeners(p);
+  if (p.getAction("undo") != null) {
+    p.getAction("undo").removePropertyChangeListener(redoActionPropertyListener);
+  }
+}

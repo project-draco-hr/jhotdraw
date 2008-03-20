@@ -1,0 +1,6 @@
+{
+  if (unmodifiableDocuments == null) {
+    unmodifiableDocuments=Collections.unmodifiableCollection(views);
+  }
+  return unmodifiableDocuments;
+}

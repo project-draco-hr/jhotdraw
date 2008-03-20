@@ -1,14 +1,14 @@
 {
-  if (unsavedProject.getFile() == null) {
-    JFileChooser fileChooser=unsavedProject.getSaveChooser();
-    JSheet.showSaveSheet(fileChooser,unsavedProject.getComponent(),new SheetListener(){
+  if (unsavedView.getFile() == null) {
+    JFileChooser fileChooser=unsavedView.getSaveChooser();
+    JSheet.showSaveSheet(fileChooser,unsavedView.getComponent(),new SheetListener(){
       public void optionSelected(      final SheetEvent evt){
         if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
           final File file=evt.getFileChooser().getSelectedFile();
           saveToFileAndReviewNext(file);
         }
  else {
-          unsavedProject.setEnabled(true);
+          unsavedView.setEnabled(true);
           if (oldFocusOwner != null) {
             oldFocusOwner.requestFocus();
           }
@@ -19,6 +19,6 @@
 );
   }
  else {
-    saveToFileAndReviewNext(unsavedProject.getFile());
+    saveToFileAndReviewNext(unsavedView.getFile());
   }
 }

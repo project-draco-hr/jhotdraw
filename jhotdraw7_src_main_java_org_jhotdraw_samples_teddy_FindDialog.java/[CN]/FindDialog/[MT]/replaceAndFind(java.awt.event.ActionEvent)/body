@@ -1,10 +1,10 @@
 {
-  TeddyProject project=((TeddyProject)app.getActiveProject());
-  if (project != null) {
+  TeddyView view=((TeddyView)app.getActiveView());
+  if (view != null) {
     CompositeEdit edit=new CompositeEdit("Replace And Find");
-    project.fireEdit(edit);
-    project.replaceRange(replaceField.getText(),project.getSelectionStart(),project.getSelectionEnd());
+    view.fireEdit(edit);
+    view.replaceRange(replaceField.getText(),view.getSelectionStart(),view.getSelectionEnd());
     next(evt);
-    project.fireEdit(edit);
+    view.fireEdit(edit);
   }
 }

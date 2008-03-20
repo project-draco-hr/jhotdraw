@@ -1,0 +1,10 @@
+{
+  try {
+    return (View)getViewClass().newInstance();
+  }
+ catch (  Exception e) {
+    InternalError error=new InternalError("unable to create view");
+    error.initCause(e);
+    throw error;
+  }
+}

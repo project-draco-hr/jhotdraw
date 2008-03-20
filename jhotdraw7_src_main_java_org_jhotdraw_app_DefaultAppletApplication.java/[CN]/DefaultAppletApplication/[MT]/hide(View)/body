@@ -1,0 +1,6 @@
+{
+  v.deactivate();
+  v.stop();
+  applet.getContentPane().removeAll();
+  this.view=null;
+}

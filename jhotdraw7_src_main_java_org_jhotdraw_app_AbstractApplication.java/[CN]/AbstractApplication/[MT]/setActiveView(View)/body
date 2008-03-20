@@ -1,0 +1,11 @@
+{
+  View oldValue=activeView;
+  if (activeView != null) {
+    activeView.deactivate();
+  }
+  activeView=newValue;
+  if (activeView != null) {
+    activeView.activate();
+  }
+  firePropertyChange(ACTIVE_VIEW_PROPERTY,oldValue,newValue);
+}

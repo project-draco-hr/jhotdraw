@@ -1,0 +1,7 @@
+{
+  if (a.isSharingToolsAmongViews()) {
+    ((SVGView)p).setEditor(getSharedEditor());
+  }
+  p.putAction(EditGridAction.ID,getAction(EditGridAction.ID));
+  p.putAction(SelectSameAction.ID,new SelectSameAction(((SVGView)p).getEditor()));
+}

@@ -1,0 +1,5 @@
+{
+  String oldValue=viewClassName;
+  viewClassName=newValue;
+  firePropertyChange(VIEW_CLASS_NAME_PROPERTY,oldValue,newValue);
+}

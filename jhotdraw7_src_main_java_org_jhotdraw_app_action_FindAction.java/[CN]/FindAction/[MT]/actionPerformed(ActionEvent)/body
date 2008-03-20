@@ -1,7 +1,7 @@
 {
-  Project project=getActiveProject();
+  View view=getActiveView();
   try {
-    Methods.invoke(project,"find");
+    Methods.invoke(view,"find");
   }
  catch (  NoSuchMethodException ex) {
     ex.printStackTrace();

@@ -1,3 +1,0 @@
-{
-  return getActiveProject() != null && getActiveProject().isEnabled() && this.enabled;
-}

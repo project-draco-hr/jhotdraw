@@ -1,5 +1,5 @@
 {
-  SVGProject p=(SVGProject)getActiveProject();
+  SVGView p=(SVGView)getActiveView();
   SVGOutputFormat format=new SVGOutputFormat();
   format.setPrettyPrint(true);
   ByteArrayOutputStream buf=new ByteArrayOutputStream();
@@ -25,7 +25,7 @@
       }
     }
 );
-    getApplication().addWindow(dialog,getActiveProject());
+    getApplication().addWindow(dialog,getActiveView());
     dialog.setVisible(true);
   }
  catch (  IOException ex) {

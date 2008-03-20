@@ -1,5 +1,0 @@
-{
-  super.installProjectListeners(p);
-  p.addPropertyChangeListener(projectListener);
-  updateProperty();
-}

@@ -14,5 +14,5 @@
  catch (    PropertyVetoException e) {
     }
   }
-  project.getComponent().requestFocusInWindow();
+  view.getComponent().requestFocusInWindow();
 }

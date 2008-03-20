@@ -1,22 +1,22 @@
 {
-  TeddyProject project=((TeddyProject)app.getActiveProject());
-  if (project != null) {
+  TeddyView view=((TeddyView)app.getActiveView());
+  if (view != null) {
     updateMatcher();
     if (matcher != null) {
-      int pos=matcher.findNext((wrapAroundCheck.isSelected()) ? 0 : project.getSelectionEnd());
+      int pos=matcher.findNext((wrapAroundCheck.isSelected()) ? 0 : view.getSelectionEnd());
       if (pos == -1) {
         getToolkit().beep();
       }
  else {
         CompositeEdit edit=new CompositeEdit("Replace All");
-        project.fireEdit(edit);
-        project.select(pos,matcher.getFindString().length() + pos);
+        view.fireEdit(edit);
+        view.select(pos,matcher.getFindString().length() + pos);
         do {
-          project.replaceRange(replaceField.getText(),pos,pos + matcher.getFindString().length());
+          view.replaceRange(replaceField.getText(),pos,pos + matcher.getFindString().length());
           pos=matcher.findNext(pos + replaceField.getText().length());
         }
  while (pos != -1);
-        project.fireEdit(edit);
+        view.fireEdit(edit);
       }
     }
   }

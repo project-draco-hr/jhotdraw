@@ -1,5 +1,0 @@
-{
-  if (project != null && project.getApplication() != null) {
-    project.getApplication().dispose(project);
-  }
-}

@@ -1,6 +1,6 @@
 {
-  TeddyProject project=((TeddyProject)app.getActiveProject());
-  if (project != null) {
+  TeddyView view=((TeddyView)app.getActiveView());
+  if (view != null) {
     MatchType matchType;
 switch (modeCombo.getSelectedIndex()) {
 case 0:
@@ -14,7 +14,7 @@ default :
 matchType=MatchType.FULL_WORD;
 break;
 }
-matcher=new Matcher(project.getDocument(),findField.getText(),!ignoreCaseCheck.isSelected(),matchType);
+matcher=new Matcher(view.getDocument(),findField.getText(),!ignoreCaseCheck.isSelected(),matchType);
 }
  else {
 matcher=null;

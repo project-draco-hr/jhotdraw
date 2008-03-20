@@ -1,0 +1,5 @@
+{
+  super.installViewListeners(p);
+  p.addPropertyChangeListener(viewListener);
+  updateSelectedState();
+}

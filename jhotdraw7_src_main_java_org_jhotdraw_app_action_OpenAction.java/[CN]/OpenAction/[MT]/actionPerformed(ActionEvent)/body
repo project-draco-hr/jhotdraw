@@ -2,19 +2,19 @@
   final Application app=getApplication();
   if (app.isEnabled()) {
     app.setEnabled(false);
-    Project emptyProject=app.getActiveProject();
-    if (emptyProject == null || emptyProject.getFile() != null || emptyProject.hasUnsavedChanges()) {
-      emptyProject=null;
+    View emptyView=app.getActiveView();
+    if (emptyView == null || emptyView.getFile() != null || emptyView.hasUnsavedChanges()) {
+      emptyView=null;
     }
-    final Project p;
+    final View p;
     boolean removeMe;
-    if (emptyProject == null) {
-      p=app.createProject();
+    if (emptyView == null) {
+      p=app.createView();
       app.add(p);
       removeMe=true;
     }
  else {
-      p=emptyProject;
+      p=emptyView;
       removeMe=false;
     }
     JFileChooser fileChooser=p.getOpenChooser();

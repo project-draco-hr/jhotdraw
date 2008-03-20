@@ -1,7 +1,7 @@
 {
-  Pageable pageable=((PrintableProject)getActiveProject()).createPageable();
+  Pageable pageable=((PrintableView)getActiveView()).createPageable();
   if (pageable == null) {
-    throw new InternalError("Project does not have a method named java.awt.Pageable createPageable()");
+    throw new InternalError("View does not have a method named java.awt.Pageable createPageable()");
   }
   try {
     PrinterJob job=PrinterJob.getPrinterJob();
@@ -14,9 +14,9 @@
       }
  catch (      PrinterException e) {
         String message=(e.getMessage() == null) ? e.toString() : e.getMessage();
-        Project project=getActiveProject();
+        View view=getActiveView();
         ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
-        JSheet.showMessageSheet(project.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>"+ labels.getString("couldntPrint")+ "</b><br>"+ ((message == null) ? "" : message));
+        JSheet.showMessageSheet(view.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>"+ labels.getString("couldntPrint")+ "</b><br>"+ ((message == null) ? "" : message));
       }
     }
  else {

@@ -1,5 +1,5 @@
 {
-  final Project p=getActiveProject();
+  final View p=getActiveView();
   if (p.isEnabled()) {
     final ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
     Window wAncestor=SwingUtilities.getWindowAncestor(p.getComponent());

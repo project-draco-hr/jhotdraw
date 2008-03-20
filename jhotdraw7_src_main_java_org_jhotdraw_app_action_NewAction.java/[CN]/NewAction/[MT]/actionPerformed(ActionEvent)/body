@@ -1,8 +1,8 @@
 {
   Application app=getApplication();
-  final Project newP=app.createProject();
+  final View newP=app.createView();
   int multiOpenId=1;
-  for (  Project existingP : app.projects()) {
+  for (  View existingP : app.views()) {
     if (existingP.getFile() == null) {
       multiOpenId=Math.max(multiOpenId,existingP.getMultipleOpenId() + 1);
     }

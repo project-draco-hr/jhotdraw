@@ -1,5 +1,5 @@
 {
-  final Project p=createProject();
+  final View p=createView();
   add(p);
   p.setEnabled(false);
   show(p);

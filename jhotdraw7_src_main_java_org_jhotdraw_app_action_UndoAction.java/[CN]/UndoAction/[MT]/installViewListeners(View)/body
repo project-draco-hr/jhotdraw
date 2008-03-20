@@ -1,0 +1,6 @@
+{
+  super.installViewListeners(p);
+  if (p.getAction("undo") != null) {
+    p.getAction("undo").addPropertyChangeListener(redoActionPropertyListener);
+  }
+}

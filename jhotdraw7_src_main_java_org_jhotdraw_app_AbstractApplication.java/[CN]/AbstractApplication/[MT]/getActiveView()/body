@@ -1,0 +1,6 @@
+{
+  if (activeView == null && views.size() > 0) {
+    return views.getLast();
+  }
+  return activeView;
+}

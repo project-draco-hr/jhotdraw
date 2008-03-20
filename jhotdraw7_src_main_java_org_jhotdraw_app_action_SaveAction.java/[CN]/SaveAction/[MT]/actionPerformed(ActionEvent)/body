@@ -1,15 +1,15 @@
 {
-  final Project project=getActiveProject();
-  if (project.isEnabled()) {
-    oldFocusOwner=SwingUtilities.getWindowAncestor(project.getComponent()).getFocusOwner();
-    project.setEnabled(false);
+  final View view=getActiveView();
+  if (view.isEnabled()) {
+    oldFocusOwner=SwingUtilities.getWindowAncestor(view.getComponent()).getFocusOwner();
+    view.setEnabled(false);
     File saveToFile;
-    if (!saveAs && project.getFile() != null) {
-      saveToFile(project,project.getFile());
+    if (!saveAs && view.getFile() != null) {
+      saveToFile(view,view.getFile());
     }
  else {
-      JFileChooser fileChooser=project.getSaveChooser();
-      JSheet.showSaveSheet(fileChooser,project.getComponent(),new SheetListener(){
+      JFileChooser fileChooser=view.getSaveChooser();
+      JSheet.showSaveSheet(fileChooser,view.getComponent(),new SheetListener(){
         public void optionSelected(        final SheetEvent evt){
           if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
             final File file;
@@ -19,10 +19,10 @@
  else {
               file=evt.getFileChooser().getSelectedFile();
             }
-            saveToFile(project,file);
+            saveToFile(view,file);
           }
  else {
-            project.setEnabled(true);
+            view.setEnabled(true);
             if (oldFocusOwner != null) {
               oldFocusOwner.requestFocus();
             }

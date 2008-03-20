@@ -2,7 +2,7 @@
   final Application app=getApplication();
   if (evt instanceof ApplicationEvent) {
     final ApplicationEvent ae=(ApplicationEvent)evt;
-    final Project p=app.createProject();
+    final View p=app.createView();
     p.setEnabled(false);
     app.add(p);
     p.execute(new Worker(){

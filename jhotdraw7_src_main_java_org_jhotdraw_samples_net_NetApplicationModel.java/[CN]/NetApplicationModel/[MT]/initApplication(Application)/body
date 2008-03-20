@@ -3,10 +3,10 @@
   ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.samples.net.Labels");
   AbstractAction aa;
   putAction(ExportAction.ID,new ExportAction(a));
-  putAction("toggleGrid",aa=new ToggleProjectPropertyAction(a,"gridVisible"));
+  putAction("toggleGrid",aa=new ToggleViewPropertyAction(a,"gridVisible"));
   drawLabels.configureAction(aa,"alignGrid");
   for (  double sf : scaleFactors) {
-    putAction((int)(sf * 100) + "%",aa=new ProjectPropertyAction(a,"scaleFactor",Double.TYPE,new Double(sf)));
+    putAction((int)(sf * 100) + "%",aa=new ViewPropertyAction(a,"scaleFactor",Double.TYPE,new Double(sf)));
     aa.putValue(Action.NAME,(int)(sf * 100) + " %");
   }
 }

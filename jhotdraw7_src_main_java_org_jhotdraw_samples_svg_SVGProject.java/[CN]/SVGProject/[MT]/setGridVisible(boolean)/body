@@ -1,6 +1,0 @@
-{
-  boolean oldValue=isGridVisible();
-  view.setConstrainerVisible(newValue);
-  firePropertyChange("gridVisible",oldValue,newValue);
-  prefs.putBoolean("project.gridVisible",newValue);
-}

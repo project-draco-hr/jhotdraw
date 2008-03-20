@@ -1,3 +1,3 @@
 {
-  return SwingUtilities.getRootPane(project.getComponent()).getParent();
+  return SwingUtilities.getRootPane(view.getComponent()).getParent();
 }
