@@ -1,8 +1,21 @@
 {
   try {
+    JFileChooser fc=getOpenChooser();
     final Drawing drawing=createDrawing();
-    InputFormat inputFormat=drawing.getInputFormats().get(0);
-    inputFormat.read(f,drawing);
+    boolean success=false;
+    for (    InputFormat sfi : drawing.getInputFormats()) {
+      try {
+        sfi.read(f,drawing);
+        success=true;
+        break;
+      }
+ catch (      Exception e) {
+      }
+    }
+    if (!success) {
+      ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+      throw new IOException(labels.getFormatted("errorUnsupportedFileFormat",f.getName()));
+    }
     SwingUtilities.invokeAndWait(new Runnable(){
       public void run(){
         view.getDrawing().removeUndoableEditListener(undo);
@@ -20,7 +33,7 @@
   }
 catch (  InvocationTargetException e) {
     InternalError error=new InternalError();
-    e.initCause(e);
+    error.initCause(e);
     throw error;
   }
 }

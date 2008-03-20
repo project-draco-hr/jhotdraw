@@ -14,8 +14,14 @@
   project.execute(new Worker(){
     public Object construct(){
       try {
-        project.read(file);
-        return null;
+        if (file.exists()) {
+          project.read(file);
+          return null;
+        }
+ else {
+          ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+          return new IOException(labels.getFormatted("errorFileDoesNotExist",file.getName()));
+        }
       }
  catch (      Throwable e) {
         return e;

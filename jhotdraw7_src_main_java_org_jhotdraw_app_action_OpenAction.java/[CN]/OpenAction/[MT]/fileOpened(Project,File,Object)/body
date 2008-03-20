@@ -15,13 +15,14 @@
  else {
     project.setEnabled(true);
     app.setEnabled(true);
-    if (value instanceof Throwable) {
-      ((Throwable)value).printStackTrace();
+    String message;
+    if ((value instanceof Throwable) && ((Throwable)value).getMessage() != null) {
+      message=((Throwable)value).getMessage();
     }
-    JSheet.showMessageSheet(project.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>Couldn't open the file \""+ file+ "\".</b><br>"+ value,JOptionPane.ERROR_MESSAGE,new SheetListener(){
-      public void optionSelected(      SheetEvent evt){
-      }
+ else {
+      message=value.toString();
     }
-);
+    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+    JSheet.showMessageSheet(project.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>"+ labels.getFormatted("couldntOpen",file.getName())+ "</b><br>"+ ((message == null) ? "" : message),JOptionPane.ERROR_MESSAGE);
   }
 }

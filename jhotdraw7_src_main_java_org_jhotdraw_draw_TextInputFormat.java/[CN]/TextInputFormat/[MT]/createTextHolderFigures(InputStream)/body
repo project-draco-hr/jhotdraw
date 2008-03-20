@@ -25,5 +25,8 @@
       y+=s.height;
     }
   }
+  if (list.size() == 0) {
+    throw new IOException("No text found");
+  }
   return list;
 }

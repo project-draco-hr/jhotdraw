@@ -1,0 +1,5 @@
+ImageHolderFigure prototype
+String formatName
+String description
+String fileExtension
+int bufferedImageType

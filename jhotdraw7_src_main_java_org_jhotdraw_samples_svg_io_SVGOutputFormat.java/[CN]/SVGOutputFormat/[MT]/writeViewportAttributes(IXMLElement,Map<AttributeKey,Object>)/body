@@ -2,5 +2,5 @@
   Object value;
   Double doubleValue;
   writeAttribute(elem,"viewport-fill",toColor(VIEWPORT_FILL.get(a)),"none");
-  writeAttribute(elem,"view-port-fill-opacity",VIEWPORT_FILL_OPACITY.get(a),1.0);
+  writeAttribute(elem,"viewport-fill-opacity",VIEWPORT_FILL_OPACITY.get(a),1.0);
 }

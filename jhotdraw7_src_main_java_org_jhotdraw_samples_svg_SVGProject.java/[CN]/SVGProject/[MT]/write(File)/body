@@ -5,6 +5,8 @@
     new SVGOutputFormat().write(f,view.getDrawing());
   }
   finally {
-    if (out != null)     out.close();
+    if (out != null) {
+      out.close();
+    }
   }
 }

@@ -1,24 +1,27 @@
 {
-  final Application app=getApplication();
   if (value == null) {
     project.setFile(file);
-    project.setEnabled(true);
     Frame w=(Frame)SwingUtilities.getWindowAncestor(project.getComponent());
     if (w != null) {
       w.setExtendedState(w.getExtendedState() & ~Frame.ICONIFIED);
       w.toFront();
     }
+    project.setEnabled(true);
     project.getComponent().requestFocus();
-    if (app != null) {
-      app.setEnabled(true);
-    }
   }
  else {
+    String message=null;
     if (value instanceof Throwable) {
       ((Throwable)value).printStackTrace();
+      message=((Throwable)value).getMessage();
+      if (message == null) {
+        message=value.toString();
+      }
     }
-    JSheet.showMessageSheet(project.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>Couldn't open the file \""+ file+ "\".</b><br>"+ value,JOptionPane.ERROR_MESSAGE,new SheetListener(){
+    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+    JSheet.showMessageSheet(project.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>"+ labels.getFormatted("couldntOpen",file.getName())+ "</b><br>"+ (message == null ? "" : message),JOptionPane.ERROR_MESSAGE,new SheetListener(){
       public void optionSelected(      SheetEvent evt){
+        project.setEnabled(true);
       }
     }
 );
