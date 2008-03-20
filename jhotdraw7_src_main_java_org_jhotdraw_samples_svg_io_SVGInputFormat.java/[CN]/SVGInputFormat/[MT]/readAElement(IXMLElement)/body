@@ -6,7 +6,9 @@
   if (href == null) {
     href=readAttribute(elem,"href",null);
   }
-  if (DEBUG)   System.out.println("SVGInputFormat.readAElement href=" + href);
+  if (DEBUG) {
+    System.out.println("SVGInputFormat.readAElement href=" + href);
+  }
   for (  IXMLElement node : elem.getChildren()) {
     if (node instanceof IXMLElement) {
       IXMLElement child=(IXMLElement)node;
@@ -20,7 +22,9 @@
         LINK.basicSet(childFigure,href);
       }
  else {
-        if (DEBUG)         System.out.println("SVGInputFormat <a> has no child figure");
+        if (DEBUG) {
+          System.out.println("SVGInputFormat <a> has no child figure");
+        }
       }
     }
   }

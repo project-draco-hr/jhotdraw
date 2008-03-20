@@ -378,7 +378,9 @@ nextCommand='a';
 break;
 }
 default :
-if (DEBUG) System.out.println("SVGInputFormat.toPath aborting after illegal path command: " + command + " found in path "+ str);
+if (DEBUG) {
+System.out.println("SVGInputFormat.toPath aborting after illegal path command: " + command + " found in path "+ str);
+}
 break Commands;
 }
 }

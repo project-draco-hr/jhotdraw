@@ -11,9 +11,7 @@
     }
   }
   BezierPath.Node n=figure.getNode(index);
-  fireAreaInvalidated(n);
   n.moveTo(p);
-  fireAreaInvalidated(n);
   figure.setNode(index,n);
   figure.changed();
 }

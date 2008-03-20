@@ -9,7 +9,9 @@
   if (href != null && href.startsWith("#")) {
     IXMLElement refElem=identifiedElements.get(href.substring(1));
     if (refElem == null) {
-      if (DEBUG)       System.out.println("SVGInputFormat couldn't find href for <use> element:" + href);
+      if (DEBUG) {
+        System.out.println("SVGInputFormat couldn't find href for <use> element:" + href);
+      }
     }
  else {
       Object obj=readElement(refElem);

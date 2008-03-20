@@ -14,7 +14,7 @@
     if (getPath().contains(p)) {
       return true;
     }
-    double grow=AttributeKeys.getPerpendicularHitGrowth(this) * 2d;
+    double grow=AttributeKeys.getPerpendicularHitGrowth(this);
     GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT.get(this)));
     if (gs.createStrokedShape(getPath()).contains(p)) {
       return true;

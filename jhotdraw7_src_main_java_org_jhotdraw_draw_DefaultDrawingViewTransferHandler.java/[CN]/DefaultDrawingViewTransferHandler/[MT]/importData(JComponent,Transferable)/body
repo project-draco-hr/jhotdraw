@@ -1,11 +1,15 @@
 {
-  if (DEBUG)   System.out.println(this + ".importData");
+  if (DEBUG) {
+    System.out.println(this + ".importData");
+  }
   boolean retValue;
   if (comp instanceof DrawingView) {
     DrawingView view=(DrawingView)comp;
     final Drawing drawing=view.getDrawing();
     if (drawing.getInputFormats() == null || drawing.getInputFormats().size() == 0) {
-      if (DEBUG)       System.out.println(this + ".importData failed - drawing has no import formats");
+      if (DEBUG) {
+        System.out.println(this + ".importData failed - drawing has no import formats");
+      }
       retValue=false;
     }
  else {
@@ -13,12 +17,17 @@
       try {
         SearchLoop:         for (        InputFormat format : drawing.getInputFormats()) {
           for (          DataFlavor flavor : t.getTransferDataFlavors()) {
-            if (DEBUG)             System.out.println(this + ".importData trying to match " + format+ " to flavor "+ flavor);
+            if (DEBUG) {
+              System.out.println(this + ".importData trying to match " + format+ " to flavor "+ flavor);
+            }
             if (format.isDataFlavorSupported(flavor)) {
-              if (DEBUG)               System.out.println(this + ".importData importing flavor " + flavor);
-              Drawing d=new DefaultDrawing();
+              if (DEBUG) {
+                System.out.println(this + ".importData importing flavor " + flavor);
+              }
+              LinkedList<Figure> existingFigures=new LinkedList<Figure>(drawing.getChildren());
               format.read(t,drawing);
-              final java.util.List<Figure> importedFigures=drawing.getChildren();
+              final LinkedList<Figure> importedFigures=new LinkedList<Figure>(drawing.getChildren());
+              importedFigures.removeAll(existingFigures);
               view.clearSelection();
               view.addToSelection(importedFigures);
               drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
@@ -44,17 +53,20 @@
         if (retValue == false && t.isDataFlavorSupported(DataFlavor.javaFileListFlavor)) {
           java.util.List<File> files=(java.util.List<File>)t.getTransferData(DataFlavor.javaFileListFlavor);
           retValue=true;
-          final java.util.List<Figure> storedFigures=new LinkedList<Figure>(drawing.getChildren());
+          LinkedList<Figure> existingFigures=new LinkedList<Figure>(drawing.getChildren());
           for (          File file : files) {
             FileFormatLoop:             for (            InputFormat format : drawing.getInputFormats()) {
               if (file.isFile() && format.getFileFilter().accept(file)) {
-                if (DEBUG)                 System.out.println(this + ".importData importing file " + file);
+                if (DEBUG) {
+                  System.out.println(this + ".importData importing file " + file);
+                }
                 format.read(file,drawing);
               }
             }
           }
           final LinkedList<Figure> importedFigures=new LinkedList<Figure>(drawing.getChildren());
-          importedFigures.removeAll(storedFigures);
+          importedFigures.removeAll(existingFigures);
+          importedFigures.removeAll(existingFigures);
           if (importedFigures.size() > 0) {
             view.clearSelection();
             view.addToSelection(importedFigures);
@@ -77,7 +89,9 @@
         }
       }
  catch (      Throwable e) {
-        if (DEBUG)         e.printStackTrace();
+        if (DEBUG) {
+          e.printStackTrace();
+        }
       }
     }
   }

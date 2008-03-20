@@ -2,7 +2,7 @@
   InputStream in=null;
   try {
     in=(InputStream)t.getTransferData(new DataFlavor("image/svg+xml","Image SVG"));
-    read(in,drawing);
+    read(in,drawing,false);
   }
   finally {
     if (in != null) {

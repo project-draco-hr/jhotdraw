@@ -1,5 +1,7 @@
 {
-  if (DEBUG)   System.out.println("SVGInputFormat.readElement " + elem.getName());
+  if (DEBUG) {
+    System.out.println("SVGInputFormat.readElement " + elem.getName());
+  }
   Figure f=null;
   if (elem.getNamespace() == null || elem.getNamespace().equals(SVG_NAMESPACE)) {
     String name=elem.getName();
@@ -69,7 +71,9 @@
  else     if (name.equals("style")) {
     }
  else {
-      if (DEBUG)       System.out.println("SVGInputFormat not implemented for <" + name + ">");
+      if (DEBUG) {
+        System.out.println("SVGInputFormat not implemented for <" + name + ">");
+      }
     }
   }
   if (f instanceof SVGFigure) {
@@ -78,7 +82,9 @@
     }
   }
  else   if (f != null) {
-    if (DEBUG)     System.out.println("SVGInputFormat warning: not an SVGFigure " + f);
+    if (DEBUG) {
+      System.out.println("SVGInputFormat warning: not an SVGFigure " + f);
+    }
   }
   return f;
 }

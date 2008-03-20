@@ -1,7 +1,7 @@
 {
   BufferedImage img;
   if (drawingTransform == null || imageSize == null) {
-    img=toImage(drawing,figures,1d);
+    img=toImage(drawing,figures,1d,false);
   }
  else {
     img=toImage(drawing,figures,drawingTransform,imageSize);

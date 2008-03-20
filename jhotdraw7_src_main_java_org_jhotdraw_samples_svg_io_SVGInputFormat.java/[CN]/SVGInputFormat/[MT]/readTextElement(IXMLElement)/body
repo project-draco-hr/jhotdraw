@@ -52,7 +52,9 @@
           readTSpanElement((IXMLElement)node,doc);
         }
  else {
-          if (DEBUG)           System.out.println("SVGInputFormat unsupported text node <" + node.getName() + ">");
+          if (DEBUG) {
+            System.out.println("SVGInputFormat unsupported text node <" + node.getName() + ">");
+          }
         }
       }
     }

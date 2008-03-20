@@ -1,5 +1,7 @@
 {
-  if (DEBUG)   System.out.println(this + ".canImport " + Arrays.asList(transferFlavors));
+  if (DEBUG) {
+    System.out.println(this + ".canImport " + Arrays.asList(transferFlavors));
+  }
   boolean retValue;
   if (comp instanceof DrawingView) {
     DrawingView view=(DrawingView)comp;

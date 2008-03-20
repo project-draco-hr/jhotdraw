@@ -25,7 +25,9 @@
           readTSpanElement((IXMLElement)node,doc);
         }
  else {
-          if (DEBUG)           System.out.println("SVGInputFormat unknown  text node " + node.getName());
+          if (DEBUG) {
+            System.out.println("SVGInputFormat unknown  text node " + node.getName());
+          }
         }
       }
     }

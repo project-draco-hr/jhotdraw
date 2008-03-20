@@ -20,7 +20,9 @@
     }
   }
   if (stops.size() == 0) {
-    if (DEBUG)     System.out.println("SVGInpuFormat: Warning no stops in linearGradient " + elem);
+    if (DEBUG) {
+      System.out.println("SVGInpuFormat: Warning no stops in linearGradient " + elem);
+    }
   }
   double[] stopOffsets=new double[stops.size()];
   Color[] stopColors=new Color[stops.size()];

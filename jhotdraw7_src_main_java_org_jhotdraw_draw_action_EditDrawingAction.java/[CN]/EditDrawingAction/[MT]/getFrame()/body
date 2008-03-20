@@ -1,0 +1,16 @@
+{
+  if (frame == null) {
+    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+    frame=new JFrame();
+    frame.setTitle(labels.getString("canvasSettings"));
+    frame.setResizable(false);
+    settingsPanel=new EditDrawingPanel();
+    frame.add(settingsPanel);
+    frame.pack();
+    Preferences prefs=Preferences.userNodeForPackage(getClass());
+    PreferencesUtil.installFramePrefsHandler(prefs,"canvasSettings",frame);
+    getApplication().addWindow(frame,null);
+  }
+  settingsPanel.setDrawing(getView().getDrawing());
+  return frame;
+}

@@ -14,16 +14,18 @@
       public void finished(      Object value){
         if (value instanceof Throwable) {
           Throwable t=(Throwable)value;
-          t.printStackTrace();
-          JOptionPane.showConfirmDialog(getView().getComponent(),t.getMessage(),null,JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showMessageDialog(getView().getComponent(),t.getMessage(),null,JOptionPane.ERROR_MESSAGE);
+          getDrawing().remove(createdFigure);
         }
-        BufferedImage img=((ImageHolderFigure)createdFigure).getBufferedImage();
-        if (img != null) {
-          Point2D.Double p1=createdFigure.getStartPoint();
-          Point2D.Double p2=new Point2D.Double(p1.x + img.getWidth(),p1.y + img.getHeight());
-          createdFigure.willChange();
-          createdFigure.setBounds(p1,p2);
-          createdFigure.changed();
+ else {
+          BufferedImage img=((ImageHolderFigure)createdFigure).getBufferedImage();
+          if (img != null) {
+            Point2D.Double p1=createdFigure.getStartPoint();
+            Point2D.Double p2=new Point2D.Double(p1.x + img.getWidth(),p1.y + img.getHeight());
+            createdFigure.willChange();
+            createdFigure.setBounds(p1,p2);
+            createdFigure.changed();
+          }
         }
         fireToolDone();
       }
@@ -31,6 +33,7 @@
 .start();
   }
  else {
+    getDrawing().remove(createdFigure);
     fireToolDone();
   }
 }

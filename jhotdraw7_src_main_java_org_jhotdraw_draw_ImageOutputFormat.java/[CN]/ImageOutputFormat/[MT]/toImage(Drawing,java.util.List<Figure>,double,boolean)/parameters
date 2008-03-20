@@ -1,3 +1,4 @@
 Drawing drawing
 java.util.List<Figure> figures
 double scaleFactor
+boolean clipToFigures

@@ -1,5 +1,7 @@
 {
-  if (DEBUG)   System.out.println(this + ".createTransferable");
+  if (DEBUG) {
+    System.out.println(this + ".createTransferable");
+  }
   Transferable retValue;
   if (c instanceof DrawingView) {
     DrawingView view=(DrawingView)c;
@@ -21,7 +23,9 @@
           retValue=transfer;
         }
  catch (        IOException e) {
-          if (DEBUG)           e.printStackTrace();
+          if (DEBUG) {
+            e.printStackTrace();
+          }
           retValue=null;
         }
       }

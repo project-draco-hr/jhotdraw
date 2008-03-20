@@ -2,12 +2,16 @@
   int retValue;
   if (c instanceof DrawingView) {
     DrawingView view=(DrawingView)c;
-    if (DEBUG)     System.out.println(this + ".getSourceActions outputFormats.size=" + view.getDrawing().getOutputFormats().size());
+    if (DEBUG) {
+      System.out.println(this + ".getSourceActions outputFormats.size=" + view.getDrawing().getOutputFormats().size());
+    }
     retValue=(view.getDrawing().getOutputFormats().size() > 0 && view.getSelectionCount() > 0) ? COPY | MOVE : NONE;
   }
  else {
     retValue=super.getSourceActions(c);
   }
-  if (DEBUG)   System.out.println(this + ".getSourceActions:" + retValue);
+  if (DEBUG) {
+    System.out.println(this + ".getSourceActions:" + retValue);
+  }
   return retValue;
 }

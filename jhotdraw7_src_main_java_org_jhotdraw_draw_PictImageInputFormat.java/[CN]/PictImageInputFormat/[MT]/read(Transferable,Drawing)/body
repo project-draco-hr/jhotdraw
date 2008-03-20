@@ -11,7 +11,7 @@
       ImageHolderFigure figure=(ImageHolderFigure)prototype.clone();
       figure.setBufferedImage(Images.toBufferedImage(img));
       figure.setBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
-      drawing.basicAdd(figure);
+      drawing.add(figure);
     }
   finally {
       in.close();

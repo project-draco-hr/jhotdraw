@@ -14,7 +14,9 @@
   }
  else {
     FILL_COLOR.set(a,null);
-    if (DEBUG)     System.out.println("SVGInputFormat not implemented  fill=" + objectValue);
+    if (DEBUG) {
+      System.out.println("SVGInputFormat not implemented  fill=" + objectValue);
+    }
   }
   objectValue=readInheritAttribute(elem,"fill-opacity","1");
   FILL_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
@@ -32,7 +34,9 @@
   }
  else {
     STROKE_COLOR.set(a,null);
-    if (DEBUG)     System.out.println("SVGInputFormat not implemented  stroke=" + objectValue);
+    if (DEBUG) {
+      System.out.println("SVGInputFormat not implemented  stroke=" + objectValue);
+    }
   }
   value=readInheritAttribute(elem,"stroke-dasharray","none");
   if (!value.equals("none")) {

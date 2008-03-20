@@ -34,12 +34,16 @@
       return c;
     }
  catch (    Exception e) {
-      if (DEBUG)       System.out.println("SVGInputFormat.toColor illegal RGB value " + str);
+      if (DEBUG) {
+        System.out.println("SVGInputFormat.toColor illegal RGB value " + str);
+      }
       return null;
     }
   }
  else   if (str.startsWith("url")) {
-    if (DEBUG)     System.out.println("SVGInputFormat.toColor not implemented for " + str);
+    if (DEBUG) {
+      System.out.println("SVGInputFormat.toColor not implemented for " + str);
+    }
     return null;
   }
  else {

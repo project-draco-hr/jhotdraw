@@ -21,6 +21,7 @@
  else {
       Shape shape=getTransformedShape();
       g.setColor(Color.red);
+      g.setStroke(new BasicStroke());
       g.draw(shape);
     }
     if (opacity != 1d) {

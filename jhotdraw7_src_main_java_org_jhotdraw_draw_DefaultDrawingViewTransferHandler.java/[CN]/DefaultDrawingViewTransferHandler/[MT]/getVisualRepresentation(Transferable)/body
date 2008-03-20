@@ -1,14 +1,20 @@
 {
-  if (DEBUG)   System.out.println(this + ".getVisualRepresentation");
+  if (DEBUG) {
+    System.out.println(this + ".getVisualRepresentation");
+  }
   Image image=null;
   try {
     image=(Image)t.getTransferData(DataFlavor.imageFlavor);
   }
  catch (  IOException ex) {
-    if (DEBUG)     ex.printStackTrace();
+    if (DEBUG) {
+      ex.printStackTrace();
+    }
   }
 catch (  UnsupportedFlavorException ex) {
-    if (DEBUG)     ex.printStackTrace();
+    if (DEBUG) {
+      ex.printStackTrace();
+    }
   }
   return (image == null) ? null : new ImageIcon(image);
 }

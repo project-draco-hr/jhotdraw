@@ -8,6 +8,15 @@
       p2.transform(TRANSFORM.get(this));
       cachedDrawingArea=p2.getBounds2D();
     }
+    double strokeTotalWidth=AttributeKeys.getStrokeTotalWidth(this);
+    double width=strokeTotalWidth / 2d;
+    if (STROKE_JOIN.get(this) == BasicStroke.JOIN_MITER) {
+      width*=STROKE_MITER_LIMIT.get(this);
+    }
+ else     if (STROKE_CAP.get(this) != BasicStroke.CAP_BUTT) {
+      width+=strokeTotalWidth * 2;
+    }
+    Geom.grow(cachedDrawingArea,width,width);
   }
   return (Rectangle2D.Double)cachedDrawingArea.clone();
 }
