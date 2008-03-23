@@ -4,7 +4,7 @@
     oldFocusOwner=SwingUtilities.getWindowAncestor(view.getComponent()).getFocusOwner();
     view.setEnabled(false);
     File saveToFile;
-    if (!saveAs && view.getFile() != null) {
+    if (!saveAs && view.getFile() != null && view.canSaveTo(view.getFile())) {
       saveToFile(view,view.getFile());
     }
  else {
