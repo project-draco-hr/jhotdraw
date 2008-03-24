@@ -2,6 +2,7 @@
   DefaultDrawing drawing=new DefaultDrawing();
   LinkedList<InputFormat> inputFormats=new LinkedList<InputFormat>();
   inputFormats.add(new SVGInputFormat());
+  inputFormats.add(new SVGZInputFormat());
   inputFormats.add(new ImageInputFormat(new SVGImageFigure()));
   inputFormats.add(new TextInputFormat(new SVGTextFigure()));
   LinkedList<OutputFormat> outputFormats=new LinkedList<OutputFormat>();

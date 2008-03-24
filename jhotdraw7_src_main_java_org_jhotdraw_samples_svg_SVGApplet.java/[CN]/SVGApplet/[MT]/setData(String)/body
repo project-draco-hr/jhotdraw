@@ -2,9 +2,22 @@
   if (text != null && text.length() > 0) {
     InputStream in=null;
     try {
-      in=new ByteArrayInputStream(text.getBytes("UTF8"));
+      Object result=null;
       Drawing drawing=createDrawing();
-      drawing.getInputFormats().get(0).read(in,drawing);
+      for (      InputFormat fmt : drawing.getInputFormats()) {
+        try {
+          fmt.read(in,drawing);
+          in=new ByteArrayInputStream(text.getBytes("UTF8"));
+          result=drawing;
+          break;
+        }
+ catch (        IOException e) {
+          result=e;
+        }
+      }
+      if (result instanceof IOException) {
+        throw (IOException)result;
+      }
       setDrawing(drawing);
     }
  catch (    Throwable e) {

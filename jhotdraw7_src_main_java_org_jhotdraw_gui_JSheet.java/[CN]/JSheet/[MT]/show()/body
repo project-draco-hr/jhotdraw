@@ -1,5 +1,5 @@
 {
-  if (isAnimated() && isShowAsSheet() && !isNativeSheet()) {
+  if (isAnimated() && isShowAsSheet() && !isNativeSheetSupported()) {
     installSheet();
     getContentPane().setVisible(false);
     final long startTime=System.currentTimeMillis();
@@ -8,6 +8,9 @@
     int parentWidth=getParent().getWidth();
     final Rectangle startBounds=new Rectangle((parentWidth < endBounds.width) ? endBounds.x + (endBounds.width - parentWidth) / 2 : endBounds.x,endBounds.y,Math.min(endBounds.width,parentWidth),0);
     setBounds(startBounds);
+    if (!isDocumentModalitySupported()) {
+      ((Window)getParent()).toFront();
+    }
     show0();
     final Timer timer=new Timer(20,null);
     timer.addActionListener(new ActionListener(){
@@ -23,8 +26,13 @@
           timer.stop();
           setBounds(endBounds);
           getContentPane().setVisible(true);
-          requestFocus();
-          ((Window)getParent()).toFront();
+          Component c=getFocusTraversalPolicy().getInitialComponent(JSheet.this);
+          if (c != null) {
+            c.requestFocus();
+          }
+ else {
+            getContentPane().requestFocus();
+          }
         }
  else {
           float ratio=(now - startTime) / (float)(endTime - startTime);
@@ -41,5 +49,5 @@
     installSheet();
     show0();
   }
-  requestUserAttention();
+  requestUserAttention(true);
 }

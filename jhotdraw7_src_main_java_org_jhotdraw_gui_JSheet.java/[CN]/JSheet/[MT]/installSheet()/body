@@ -1,5 +1,5 @@
 {
-  if (!isInstalled) {
+  if (!isNativeSheetSupported() && !isInstalled) {
     Window owner=getOwner();
     if (owner != null) {
       Point ownerLoc=owner.getLocation();
@@ -31,7 +31,7 @@
       setLocation(sheetLoc);
       oldFocusOwner=owner.getFocusOwner();
       owner.setEnabled(false);
-      if (UIManager.getBoolean("Sheet.showAsSheet")) {
+      if (isShowAsSheet()) {
         owner.addComponentListener(ownerMovementHandler);
       }
  else {

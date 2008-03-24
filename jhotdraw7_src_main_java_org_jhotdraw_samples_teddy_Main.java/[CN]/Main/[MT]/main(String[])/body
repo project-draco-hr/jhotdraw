@@ -1,9 +1,9 @@
 {
   TeddyApplicationModel tam=new TeddyApplicationModel();
-  tam.setCopyright("?? 2005-2007 Werner Randelshofer");
+  tam.setCopyright("?? 2005-2008 Werner Randelshofer");
   tam.setName("Teddy");
   tam.setViewClassName("org.jhotdraw.samples.teddy.TeddyView");
-  tam.setVersion("2.0");
+  tam.setVersion(Main.class.getPackage().getImplementationVersion());
   AbstractApplication app;
   if (System.getProperty("os.name").toLowerCase().startsWith("mac os x")) {
     app=new DefaultOSXApplication();

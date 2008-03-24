@@ -1,13 +1,15 @@
 {
   if (getOwner() != null && isShowAsSheet()) {
-    if (isNativeSheet()) {
+    if (isNativeSheetSupported()) {
       getRootPane().putClientProperty("apple.awt.documentModalSheet",Boolean.TRUE);
-      Methods.invokeIfExistsWithEnum(this,"setModalityType","java.awt.Dialog$ModalityType","DOCUMENT_MODAL");
     }
  else {
       setUndecorated(true);
       getRootPane().setWindowDecorationStyle(JRootPane.NONE);
       getRootPane().setBorder(UIManager.getBorder("Sheet.border"));
+    }
+    if (isDocumentModalitySupported()) {
+      Methods.invokeIfExistsWithEnum(this,"setModalityType","java.awt.Dialog$ModalityType","DOCUMENT_MODAL");
     }
   }
   ownerMovementHandler=new ComponentAdapter(){

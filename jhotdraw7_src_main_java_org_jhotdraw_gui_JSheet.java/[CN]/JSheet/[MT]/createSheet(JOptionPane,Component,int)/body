@@ -9,7 +9,7 @@
   }
   JComponent contentPane=(JComponent)sheet.getContentPane();
   contentPane.setLayout(new BorderLayout());
-  if (isNativeSheet()) {
+  if (isNativeSheetSupported()) {
     contentPane.setBorder(new EmptyBorder(12,0,0,0));
   }
   contentPane.add(pane,BorderLayout.CENTER);

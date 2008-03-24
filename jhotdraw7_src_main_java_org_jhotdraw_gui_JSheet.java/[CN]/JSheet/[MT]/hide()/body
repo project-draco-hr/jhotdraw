@@ -1,5 +1,5 @@
 {
-  if (isAnimated() && isShowAsSheet() && !isNativeSheet()) {
+  if (isAnimated() && isShowAsSheet() && !isNativeSheetSupported()) {
     getContentPane().setVisible(false);
     final Rectangle startBounds=getBounds();
     int parentWidth=getParent().getWidth();

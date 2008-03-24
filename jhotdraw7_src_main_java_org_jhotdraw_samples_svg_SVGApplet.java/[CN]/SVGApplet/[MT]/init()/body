@@ -15,17 +15,25 @@
       Object result=null;
       InputStream in=null;
       try {
-        if (getParameter("data") != null) {
-          in=new ByteArrayInputStream(getParameter("data").getBytes("UTF8"));
-        }
- else         if (getParameter("datafile") != null) {
-          URL url=new URL(getDocumentBase(),getParameter("datafile"));
-          in=url.openConnection().getInputStream();
-        }
-        if (in != null) {
-          Drawing drawing=createDrawing();
-          drawing.getInputFormats().get(0).read(in,drawing);
-          result=drawing;
+        Drawing drawing=createDrawing();
+        for (        InputFormat fmt : drawing.getInputFormats()) {
+          try {
+            if (getParameter("data") != null) {
+              in=new ByteArrayInputStream(getParameter("data").getBytes("UTF8"));
+            }
+ else             if (getParameter("datafile") != null) {
+              URL url=new URL(getDocumentBase(),getParameter("datafile"));
+              in=url.openConnection().getInputStream();
+            }
+            if (in != null) {
+              fmt.read(in,drawing);
+              result=drawing;
+              break;
+            }
+          }
+ catch (          IOException e) {
+            result=e;
+          }
         }
       }
  catch (      Throwable t) {
