@@ -4,12 +4,12 @@
     defaultAttributes=new HashMap<AttributeKey,Object>();
   }
   popupButton.setColumnCount(columnCount,false);
-  for (  Map.Entry<String,Color> entry : colorMap.entrySet()) {
+  for (  ColorIcon swatch : swatches) {
     AttributeAction a;
     HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);
-    attributes.put(attributeKey,entry.getValue());
-    popupButton.add(a=new AttributeAction(editor,attributes,labels.getString(labelKey),new ColorIcon(entry.getValue())));
-    a.putValue(Action.SHORT_DESCRIPTION,entry.getKey());
+    attributes.put(attributeKey,swatch.getColor());
+    popupButton.add(a=new AttributeAction(editor,attributes,labels.getString(labelKey),swatch));
+    a.putValue(Action.SHORT_DESCRIPTION,swatch.getName());
   }
   AttributeAction a;
   HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);

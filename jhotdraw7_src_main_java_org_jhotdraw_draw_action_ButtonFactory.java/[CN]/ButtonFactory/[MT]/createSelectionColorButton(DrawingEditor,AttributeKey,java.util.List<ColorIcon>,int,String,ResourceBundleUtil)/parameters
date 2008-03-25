@@ -1,6 +1,6 @@
 DrawingEditor editor
 AttributeKey attributeKey
-Map<String,Color> colorMap
+java.util.List<ColorIcon> swatches
 int columnCount
 String labelKey
 ResourceBundleUtil labels
