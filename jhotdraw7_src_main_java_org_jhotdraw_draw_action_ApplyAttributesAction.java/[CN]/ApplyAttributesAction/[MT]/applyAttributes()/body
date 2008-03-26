@@ -3,12 +3,14 @@
   CompositeEdit edit=new CompositeEdit(labels.getString("attributesApply"));
   DrawingView view=getView();
   view.getDrawing().fireUndoableEditHappened(edit);
-  for (  Map.Entry<AttributeKey,Object> entry : editor.getDefaultAttributes().entrySet()) {
-    if (!excludedAttributes.contains(entry.getKey())) {
-      for (      Figure figure : view.getSelectedFigures()) {
+  for (  Figure figure : view.getSelectedFigures()) {
+    figure.willChange();
+    for (    Map.Entry<AttributeKey,Object> entry : editor.getDefaultAttributes().entrySet()) {
+      if (!excludedAttributes.contains(entry.getKey())) {
         figure.setAttribute(entry.getKey(),entry.getValue());
       }
     }
+    figure.changed();
   }
   view.getDrawing().fireUndoableEditHappened(edit);
 }

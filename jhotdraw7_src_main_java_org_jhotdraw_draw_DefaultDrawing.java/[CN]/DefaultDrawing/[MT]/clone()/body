@@ -1,5 +1,5 @@
 {
   DefaultDrawing that=(DefaultDrawing)super.clone();
-  that.canvasBounds=(Rectangle2D.Double)this.canvasBounds.clone();
+  that.canvasSize=(this.canvasSize == null) ? null : (Dimension2DDouble)this.canvasSize.clone();
   return that;
 }

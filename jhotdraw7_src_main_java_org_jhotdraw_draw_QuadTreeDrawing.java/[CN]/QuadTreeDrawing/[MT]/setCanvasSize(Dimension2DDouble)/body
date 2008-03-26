@@ -1,5 +1,5 @@
 {
   Dimension2DDouble oldValue=canvasSize;
-  canvasSize=newValue;
+  canvasSize=(newValue == null) ? null : (Dimension2DDouble)newValue.clone();
   firePropertyChange("canvasSize",oldValue,newValue);
 }
