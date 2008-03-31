@@ -6,7 +6,7 @@
     getView().getConstrainer().constrainPoint(endPoint);
     Figure endFigure=getDrawing().findFigureExcept(endPoint,createdFigure);
     endConnector=(endFigure == null) ? null : endFigure.findConnector(endPoint,prototype);
-    if (endConnector != null && createdFigure.canConnect(startConnector,endConnector)) {
+    if (endConnector != null && canConnect(createdFigure,startConnector,endConnector)) {
       endPoint=endConnector.getAnchor();
     }
     Rectangle r=new Rectangle(getView().drawingToView(createdFigure.getEndPoint()));

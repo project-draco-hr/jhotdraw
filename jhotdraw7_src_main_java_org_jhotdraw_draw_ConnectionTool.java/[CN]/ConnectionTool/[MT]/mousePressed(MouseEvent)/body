@@ -4,7 +4,7 @@
   Point2D.Double startPoint=viewToDrawing(anchor);
   Figure startFigure=getDrawing().findFigure(startPoint);
   startConnector=(startFigure == null) ? null : startFigure.findConnector(startPoint,prototype);
-  if (startConnector != null && prototype.canConnect(startConnector)) {
+  if (startConnector != null && canConnect(prototype,startConnector)) {
     Point2D.Double anchor=startConnector.getAnchor();
     createdFigure=createFigure();
     createdFigure.setStartPoint(anchor);
