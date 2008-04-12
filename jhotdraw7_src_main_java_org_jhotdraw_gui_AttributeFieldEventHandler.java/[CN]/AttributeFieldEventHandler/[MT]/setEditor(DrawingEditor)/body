@@ -12,4 +12,5 @@
       getCurrentView().addFigureSelectionListener(this);
     }
   }
+  updateFieldEnabledState();
 }

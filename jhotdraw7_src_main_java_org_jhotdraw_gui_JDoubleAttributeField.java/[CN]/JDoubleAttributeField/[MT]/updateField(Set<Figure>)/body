@@ -1,7 +1,16 @@
 {
   if (isUpdatingField++ == 0) {
-    if (currentSelection.isEmpty() || attributeKey == null) {
+    if (attributeKey == null) {
       setValue(0d);
+    }
+ else     if (currentSelection.isEmpty()) {
+      if (getEditor() == null) {
+        setValue(0d);
+      }
+ else {
+        Double fieldValue=(Double)getEditor().getDefaultAttribute(attributeKey);
+        setValue(fieldValue * scaleFactor);
+      }
     }
  else {
       Double fieldValue=null;

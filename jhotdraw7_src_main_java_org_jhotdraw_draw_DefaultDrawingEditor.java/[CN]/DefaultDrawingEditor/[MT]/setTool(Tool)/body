@@ -1,5 +1,7 @@
 {
-  if (t == tool)   return;
+  if (t == tool) {
+    return;
+  }
   if (tool != null) {
     for (    DrawingView v : views) {
       v.removeMouseListener(tool);
