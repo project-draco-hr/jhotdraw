@@ -1,0 +1,15 @@
+{
+  x-=width / 2;
+  y-=height / 2;
+  float r=(float)Math.sqrt(x * x + y * y);
+  float theta=(float)Math.atan2(-y,x);
+  float radius=Math.min(width,height) / 2f;
+  float[] hsb;
+  float sat=(float)r / radius * wheelScaleFactor;
+  float hue=(float)(theta / Math.PI / 2d);
+  if (hue < 0) {
+    hue+=1f;
+  }
+  hsb=new float[]{hue,Math.min(1f,sat * 2f),Math.min(1f,1.5f - sat)};
+  return hsb;
+}

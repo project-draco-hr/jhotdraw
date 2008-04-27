@@ -1,0 +1,14 @@
+{
+  initComponents();
+  models=new LinkedList<ColorSliderModel>();
+  handler=new Handler();
+  previewLabel.setOpaque(true);
+  chooserPanel.add(createColorWheelChooser(new HSVRGBColorSystem()));
+  chooserPanel.add(createColorWheelChooser(new HSLRGBColorSystem()));
+  chooserPanel.add(createColorWheelChooser(new HSVRYBColorSystem()));
+  chooserPanel.add(createColorWheelChooser(new HSLRYBColorSystem()));
+  chooserPanel.add(createSliderChooser(new HSVRGBColorSystem()));
+  chooserPanel.add(createSliderChooser(new RGBColorSystem()));
+  chooserPanel.add(createSliderChooser(new CMYKICCColorSystem()));
+  chooserPanel.add(createSliderChooser(new CMYKNominalColorSystem()));
+}

@@ -1,0 +1,4 @@
+{
+  float[] rgb=colorSpace.toRGB(component);
+  return 0xff000000 | ((int)(rgb[0] * 255f) << 16) | ((int)(rgb[1] * 255f) << 8)| (int)(rgb[2] * 255f);
+}

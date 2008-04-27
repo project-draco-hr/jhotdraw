@@ -1,0 +1,3 @@
+{
+  return new HSLHarmonicColorWheelImageProducer(harmonicModel == null ? new HSLRYBColorSystem() : harmonicModel.getColorSystem(),w,h);
+}

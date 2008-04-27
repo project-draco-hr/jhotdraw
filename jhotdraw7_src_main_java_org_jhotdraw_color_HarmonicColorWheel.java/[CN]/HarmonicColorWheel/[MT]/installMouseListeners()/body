@@ -1,0 +1,5 @@
+{
+  mouseHandler=new MouseHandler();
+  addMouseListener(mouseHandler);
+  addMouseMotionListener(mouseHandler);
+}

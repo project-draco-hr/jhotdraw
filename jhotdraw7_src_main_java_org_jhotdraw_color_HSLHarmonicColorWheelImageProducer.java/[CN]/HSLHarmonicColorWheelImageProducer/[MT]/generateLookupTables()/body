@@ -1,0 +1,9 @@
+{
+  isDiscrete=false;
+  if (isDiscrete) {
+    generateDiscreteLookupTables();
+  }
+ else {
+    generateContiguousLookupTables();
+  }
+}

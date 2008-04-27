@@ -1,0 +1,4 @@
+{
+  setUI(PaletteToolBarUI.createUI(this));
+  initComponents();
+}

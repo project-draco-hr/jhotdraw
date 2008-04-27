@@ -1,0 +1,5 @@
+{
+  HarmonicRule oldValue=saturationRule;
+  saturationRule=newValue;
+  initRules();
+}

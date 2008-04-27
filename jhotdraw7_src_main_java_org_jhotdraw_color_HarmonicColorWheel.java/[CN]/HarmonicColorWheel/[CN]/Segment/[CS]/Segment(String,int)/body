@@ -1,0 +1,18 @@
+{
+  this.name=name;
+  index=index - 1;
+  this.hMin=(index / 8 - 0.5f) / 12f;
+  this.hMax=(index / 8 + 0.5f) / 12f;
+  if (index % 8 < 4) {
+    this.sMin=1;
+    this.sMax=1;
+    this.bMin=.5f + (index % 8) / 10f;
+    this.bMax=.5f + (index % 8 + 1) / 10f;
+  }
+ else {
+    this.sMin=1f - (index % 8 + 1) / 5f;
+    this.sMax=1f - (index % 8) / 5f;
+    this.bMin=1;
+    this.bMax=1;
+  }
+}

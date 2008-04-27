@@ -1,0 +1,24 @@
+{
+  UIDefaults defaults=getCachedDefaults();
+  Object value=defaults.get(key);
+  if (!(value instanceof ActiveValue) && !(value instanceof LazyValue)) {
+    return value;
+  }
+  if (value instanceof LazyValue) {
+    try {
+      value=((LazyValue)value).createValue(defaults);
+    }
+  finally {
+      if (value == null) {
+        defaults.remove(key);
+      }
+ else {
+        defaults.put(key,value);
+      }
+    }
+  }
+ else {
+    value=((ActiveValue)value).createValue(defaults);
+  }
+  return value;
+}

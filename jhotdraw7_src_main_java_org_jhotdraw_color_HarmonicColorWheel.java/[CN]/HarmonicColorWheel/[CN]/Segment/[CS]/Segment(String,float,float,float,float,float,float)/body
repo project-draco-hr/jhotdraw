@@ -1,0 +1,9 @@
+{
+  this.name=name;
+  this.hMin=hmin;
+  this.hMax=hmax;
+  this.sMin=smin;
+  this.sMax=smax;
+  this.bMin=bmin;
+  this.bMax=bmax;
+}

@@ -1,0 +1,10 @@
+{
+  Color bg=c.getBackground();
+  if (bg == null || bg instanceof UIResource) {
+    c.setBackground(getInstance().getColor(defaultBgName));
+  }
+  Color fg=c.getForeground();
+  if (fg == null || fg instanceof UIResource) {
+    c.setForeground(getInstance().getColor(defaultFgName));
+  }
+}

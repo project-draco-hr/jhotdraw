@@ -1,0 +1,4 @@
+{
+  this.icons=icons;
+  generateMissingIcons();
+}

@@ -1,0 +1,4 @@
+int w
+int h
+int trackBuffer
+boolean isHorizontal

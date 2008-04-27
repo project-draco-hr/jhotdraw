@@ -1,0 +1,6 @@
+{
+  if (!tb.isEnabled()) {
+    return;
+  }
+  isDragging=false;
+}

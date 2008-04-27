@@ -1,0 +1,7 @@
+{
+  String name=evt.getPropertyName();
+  if (name == HarmonicColorModel.COLOR_SYSTEM_PROPERTY) {
+    colorWheelProducer=createWheelProducer(getWidth(),getHeight());
+  }
+  repaint();
+}

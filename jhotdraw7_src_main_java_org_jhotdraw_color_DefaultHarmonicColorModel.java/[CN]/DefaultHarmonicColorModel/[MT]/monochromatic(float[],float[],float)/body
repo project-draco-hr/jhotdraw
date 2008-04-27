@@ -1,0 +1,45 @@
+{
+  System.arraycopy(orig,0,der,0,3);
+  if (adjust <= 0) {
+    if (orig[2] >= 1f && orig[1] + adjust < 0.2f) {
+      adjust=1.4f + adjust;
+    }
+  }
+ else {
+    if (orig[2] <= 1f && orig[2] - adjust / 2f <= 0.5f) {
+      adjust=adjust - 1.4f;
+    }
+  }
+  if (adjust <= 0) {
+    if (orig[2] < 1f) {
+      der[2]=orig[2] - adjust / 2;
+      if (der[2] > 1f) {
+        der[1]=3f - der[2] * 2f;
+        der[2]=1f;
+      }
+ else {
+        der[1]=1f;
+      }
+    }
+ else {
+      der[1]=orig[1] + adjust;
+      der[2]=1f;
+    }
+  }
+ else {
+    if (orig[2] < 1f) {
+      der[1]=1f;
+      der[2]=orig[2] - adjust / 2;
+    }
+ else {
+      der[1]=orig[1] + adjust;
+      if (der[1] > 1f) {
+        der[2]=1.5f - der[1] / 2f;
+        der[1]=1f;
+      }
+ else {
+        der[2]=1f;
+      }
+    }
+  }
+}

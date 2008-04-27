@@ -1,0 +1,3 @@
+{
+  return 0xff000000 | ((int)(components[0] * 255) << 16) | ((int)(components[1] * 255) << 8)| (int)(components[2] * 255);
+}

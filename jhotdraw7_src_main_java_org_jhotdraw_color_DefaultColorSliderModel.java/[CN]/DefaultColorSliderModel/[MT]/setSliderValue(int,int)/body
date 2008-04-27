@@ -1,0 +1,3 @@
+{
+  componentModels[componentIndex].setValue(value);
+}

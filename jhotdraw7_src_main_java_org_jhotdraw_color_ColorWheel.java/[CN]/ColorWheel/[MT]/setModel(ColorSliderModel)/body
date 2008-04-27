@@ -1,0 +1,11 @@
+{
+  if (model != null) {
+    model.removeChangeListener(modelHandler);
+  }
+  model=m;
+  if (model != null) {
+    model.addChangeListener(modelHandler);
+    colorWheelProducer=createWheelProducer(getWidth(),getHeight());
+    repaint();
+  }
+}

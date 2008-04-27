@@ -5,7 +5,13 @@
   while ((bytesRead=in.read(buf)) > 0) {
     baos.write(buf,0,bytesRead);
   }
-  BufferedImage img=ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
+  BufferedImage img;
+  try {
+    img=ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
+  }
+ catch (  Throwable t) {
+    img=null;
+  }
   if (img == null) {
     ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
     throw new IOException(labels.getFormatted("failedToLoadImage",in.toString()));

@@ -1,0 +1,11 @@
+{
+  if (component == null || component.length != 4) {
+    component=new float[4];
+  }
+  component[0]=r / 255f;
+  component[1]=g / 255f;
+  component[2]=b / 255f;
+  float[] cmyk=colorSpace.fromRGB(component);
+  System.arraycopy(cmyk,0,component,0,4);
+  return component;
+}

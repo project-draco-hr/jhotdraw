@@ -1,0 +1,8 @@
+{
+  if (slider.getOrientation() == JSlider.HORIZONTAL) {
+    return UIManager.getIcon("Slider.northThumb.small");
+  }
+ else {
+    return UIManager.getIcon("Slider.westThumb.small");
+  }
+}

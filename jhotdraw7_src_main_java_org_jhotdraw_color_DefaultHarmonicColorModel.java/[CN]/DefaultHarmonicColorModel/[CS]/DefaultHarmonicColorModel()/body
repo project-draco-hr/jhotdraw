@@ -1,0 +1,13 @@
+{
+  ColorSystem sys=new HSLRYBColorSystem();
+  sliderModel=new DefaultColorSliderModel(sys);
+  colors=new ArrayList<CompositeColor>();
+  base=0;
+  add(new CompositeColor(sys,Color.RED));
+  setHueRule(new HueHarmonicRule(30f / 360f));
+  setSaturationRule(null);
+  setLightnessRule(null);
+  initRules();
+  applyRules(get(0));
+  DefaultListModel x;
+}

@@ -1,0 +1,10 @@
+{
+  wheelScaleFactor=1.35f;
+  isDiscrete=false;
+  if (isDiscrete) {
+    generateDiscreteLookupTables();
+  }
+ else {
+    generateContiguousLookupTables();
+  }
+}

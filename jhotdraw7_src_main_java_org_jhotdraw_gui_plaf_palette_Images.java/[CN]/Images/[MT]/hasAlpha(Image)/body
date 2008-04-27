@@ -1,0 +1,14 @@
+{
+  if (image instanceof BufferedImage) {
+    BufferedImage bimage=(BufferedImage)image;
+    return bimage.getColorModel().hasAlpha();
+  }
+  PixelGrabber pg=new PixelGrabber(image,0,0,1,1,false);
+  try {
+    pg.grabPixels();
+  }
+ catch (  InterruptedException e) {
+  }
+  ColorModel cm=pg.getColorModel();
+  return cm.hasAlpha();
+}

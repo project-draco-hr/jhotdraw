@@ -1,0 +1,16 @@
+{
+  if (adjusting == 0) {
+    adjusting++;
+    if (index == base) {
+      return;
+    }
+    if (hueRule != null) {
+      hueRule.adjust(this,index);
+    }
+    if (lightnessRule != null) {
+      lightnessRule.adjust(this,index);
+    }
+    adjusting--;
+    fireContentsChanged(this,1,size() - 1);
+  }
+}

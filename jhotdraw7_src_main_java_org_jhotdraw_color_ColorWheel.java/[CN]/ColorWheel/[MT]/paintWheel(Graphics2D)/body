@@ -1,0 +1,14 @@
+{
+  int w=getWidth() - wheelInsets.left - wheelInsets.right;
+  int h=getHeight() - wheelInsets.top - wheelInsets.bottom;
+  if (colorWheelImage == null || colorWheelImage.getWidth(this) != w || colorWheelImage.getHeight(this) != h) {
+    if (colorWheelImage != null) {
+      colorWheelImage.flush();
+    }
+    colorWheelProducer=createWheelProducer(w,h);
+    colorWheelImage=createImage(colorWheelProducer);
+  }
+  colorWheelProducer.setBrightness(model.getComponentValue(2));
+  colorWheelProducer.regenerateColorWheel();
+  g.drawImage(colorWheelImage,wheelInsets.left,wheelInsets.top,this);
+}

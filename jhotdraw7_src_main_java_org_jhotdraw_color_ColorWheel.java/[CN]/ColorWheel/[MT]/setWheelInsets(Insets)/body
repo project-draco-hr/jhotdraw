@@ -1,0 +1,4 @@
+{
+  wheelInsets=newValue;
+  repaint();
+}

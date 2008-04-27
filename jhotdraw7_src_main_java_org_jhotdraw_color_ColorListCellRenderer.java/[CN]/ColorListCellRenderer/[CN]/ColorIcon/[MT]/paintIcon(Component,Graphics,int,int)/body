@@ -1,0 +1,10 @@
+{
+  if (color != null) {
+    g.setColor(new Color(0x333333));
+    g.drawRect(x,y,getIconWidth() - 1,getIconHeight() - 1);
+    g.setColor(Color.WHITE);
+    g.drawRect(x + 1,y + 1,getIconWidth() - 3,getIconHeight() - 3);
+    g.setColor(color);
+    g.fillRect(x + 2,y + 2,getIconWidth() - 4,getIconHeight() - 4);
+  }
+}

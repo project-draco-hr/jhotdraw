@@ -5,9 +5,9 @@
   }
   bounds=view.getDrawingToViewTransform().createTransformedShape(bounds);
   g.setStroke(HANDLE_STROKE1);
-  g.setColor(HANDLE_STROKE_COLOR1);
+  g.setColor(strokeColor1);
   g.draw(bounds);
   g.setStroke(HANDLE_STROKE2);
-  g.setColor(HANDLE_STROKE_COLOR2);
+  g.setColor(strokeColor2);
   g.draw(bounds);
 }

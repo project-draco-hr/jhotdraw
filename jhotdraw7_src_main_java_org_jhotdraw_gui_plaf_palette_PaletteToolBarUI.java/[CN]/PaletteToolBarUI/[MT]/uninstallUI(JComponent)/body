@@ -1,0 +1,11 @@
+{
+  uninstallDefaults();
+  uninstallComponents();
+  uninstallListeners();
+  uninstallKeyboardActions();
+  if (isFloating() == true)   setFloating(false,null);
+  floatingToolBar=null;
+  dragWindow=null;
+  dockingSource=null;
+  c.putClientProperty(FOCUSED_COMP_INDEX,new Integer(focusedCompIndex));
+}

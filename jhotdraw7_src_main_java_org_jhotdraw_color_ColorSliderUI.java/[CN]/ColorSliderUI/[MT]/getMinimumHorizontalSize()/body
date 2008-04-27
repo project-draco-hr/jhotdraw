@@ -1,0 +1,3 @@
+{
+  return MINIMUM_HORIZONTAL_SIZE;
+}

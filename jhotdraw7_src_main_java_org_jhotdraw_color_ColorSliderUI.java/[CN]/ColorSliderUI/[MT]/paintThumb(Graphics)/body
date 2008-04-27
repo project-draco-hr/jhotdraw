@@ -1,0 +1,6 @@
+{
+  Rectangle knobBounds=thumbRect;
+  int w=knobBounds.width;
+  int h=knobBounds.height;
+  getThumbIcon().paintIcon(slider,g,knobBounds.x,knobBounds.y);
+}

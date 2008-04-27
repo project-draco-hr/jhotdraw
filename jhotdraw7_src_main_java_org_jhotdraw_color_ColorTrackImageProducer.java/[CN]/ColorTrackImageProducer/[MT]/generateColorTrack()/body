@@ -1,0 +1,10 @@
+{
+  if (isHorizontal) {
+    generateHorizontalColorTrack();
+  }
+ else {
+    generateVerticalColorTrack();
+  }
+  newPixels();
+  isDirty=false;
+}

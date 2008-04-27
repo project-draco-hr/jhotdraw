@@ -1,0 +1,24 @@
+{
+  int cx, cy, cw, ch;
+  int pad;
+  Rectangle trackBounds=trackRect;
+  if (slider.getOrientation() == JSlider.HORIZONTAL) {
+    pad=trackBuffer;
+    cx=trackBounds.x - pad + 1;
+    cy=trackBounds.y;
+    cw=trackBounds.width + pad * 2 - 2;
+    ch=trackBounds.height;
+  }
+ else {
+    pad=trackBuffer;
+    cx=trackBounds.x;
+    cy=contentRect.y + 2;
+    cw=trackBounds.width - 1;
+    ch=trackBounds.height + pad * 2 - 5;
+  }
+  g.setColor(trackBackground);
+  g.fillRect(cx,cy,cw,ch);
+  g.setColor(foreground);
+  g.drawRect(cx,cy,cw - 1,ch - 1);
+  paintColorTrack(g,cx + 2,cy + 2,cw - 4,ch - 4,trackBuffer);
+}

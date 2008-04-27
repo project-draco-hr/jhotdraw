@@ -1,0 +1,12 @@
+{
+  if (slider.getClientProperty("colorSliderModel") != null) {
+    ((DefaultColorSliderModel)slider.getClientProperty("colorSliderModel")).unconfigureSlider(slider);
+  }
+  if (!(slider.getUI() instanceof ColorSliderUI)) {
+    slider.setUI((ColorSliderUI)ColorSliderUI.createUI(slider));
+  }
+  slider.setModel(getBoundedRangeModel(componentIndex));
+  slider.putClientProperty("colorSliderModel",this);
+  slider.putClientProperty("colorComponentIndex",new Integer(componentIndex));
+  addColorSlider(slider);
+}

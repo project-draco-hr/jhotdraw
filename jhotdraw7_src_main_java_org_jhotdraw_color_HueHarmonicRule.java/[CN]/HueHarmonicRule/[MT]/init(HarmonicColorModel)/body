@@ -1,0 +1,9 @@
+{
+  m.setSize(indices.length * 5 + 5);
+  CompositeColor bc=m.get(m.getBase());
+  float baseSat=bc.getComponent(1);
+  float baseVal=bc.getComponent(2);
+  for (int i=0; i < indices.length; i++) {
+    m.set(indices[i],new CompositeColor(m.getColorSystem(),0f,baseSat,baseVal));
+  }
+}

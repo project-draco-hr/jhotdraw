@@ -1,0 +1,4 @@
+{
+  this.componentIndex=index;
+  isDirty=true;
+}

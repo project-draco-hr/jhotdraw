@@ -1,0 +1,4 @@
+{
+  Border b=c.getBorder();
+  c.setBorder(getInstance().getBorder(defaultBorderName));
+}

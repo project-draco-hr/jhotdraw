@@ -1,0 +1,23 @@
+{
+  if (!slider.isEnabled())   return;
+  currentMouseX=e.getX();
+  currentMouseY=e.getY();
+  if (slider.isRequestFocusEnabled()) {
+    slider.requestFocus();
+  }
+  if (thumbRect.contains(currentMouseX,currentMouseY)) {
+    super.mousePressed(e);
+  }
+ else {
+    Dimension sbSize=slider.getSize();
+    int direction=POSITIVE_SCROLL;
+switch (slider.getOrientation()) {
+case JSlider.VERTICAL:
+      slider.setValue(valueForYPosition(currentMouseY));
+    break;
+case JSlider.HORIZONTAL:
+  slider.setValue(valueForXPosition(currentMouseX));
+break;
+}
+}
+}

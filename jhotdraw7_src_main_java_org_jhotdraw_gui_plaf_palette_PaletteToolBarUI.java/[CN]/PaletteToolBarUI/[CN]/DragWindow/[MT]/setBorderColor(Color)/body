@@ -1,0 +1,5 @@
+{
+  if (this.borderColor == c)   return;
+  this.borderColor=c;
+  repaint();
+}

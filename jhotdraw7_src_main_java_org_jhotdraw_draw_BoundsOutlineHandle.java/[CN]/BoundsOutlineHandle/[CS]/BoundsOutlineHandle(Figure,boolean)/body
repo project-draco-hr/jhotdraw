@@ -1,0 +1,11 @@
+{
+  super(owner);
+  if (isTransformHandle) {
+    strokeColor1=HANDLE_STROKE_TRANSFORM_COLOR1;
+    strokeColor2=HANDLE_STROKE_TRANSFORM_COLOR2;
+  }
+ else {
+    strokeColor1=HANDLE_STROKE_COLOR1;
+    strokeColor2=HANDLE_STROKE_COLOR2;
+  }
+}

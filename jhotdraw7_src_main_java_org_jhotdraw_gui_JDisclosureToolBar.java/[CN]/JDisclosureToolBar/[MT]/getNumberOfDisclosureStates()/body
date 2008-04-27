@@ -1,0 +1,4 @@
+{
+  Integer value=(Integer)disclosureButton.getClientProperty(DisclosureIcon.NUMBER_OF_STATES_PROPERTY);
+  return (value == null) ? 2 : value;
+}

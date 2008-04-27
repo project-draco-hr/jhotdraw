@@ -1,0 +1,3 @@
+float[] components
+int width
+int height

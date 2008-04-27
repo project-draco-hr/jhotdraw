@@ -1,0 +1,4 @@
+{
+  isDirty=isDirty || brightness != newValue;
+  brightness=newValue;
+}

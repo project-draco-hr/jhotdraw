@@ -1,0 +1,5 @@
+{
+  float radius=Math.min(width,height) / 2f;
+  Point p=new Point(width / 2 + (int)(radius * saturation * Math.cos(hue * Math.PI * 2d)),height / 2 - (int)(radius * saturation * Math.sin(hue * Math.PI * 2d)));
+  return p;
+}

@@ -1,0 +1,6 @@
+{
+  if (klass.isInstance(ui)) {
+    return ui;
+  }
+  return null;
+}

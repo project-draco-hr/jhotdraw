@@ -1,0 +1,47 @@
+{
+  Icon icon;
+  boolean isActive=true;
+  if (c instanceof JSlider) {
+    JSlider slider=(JSlider)c;
+    if (isActive) {
+      if (c.isEnabled()) {
+        if (slider.getModel().getValueIsAdjusting()) {
+          icon=icons[EP];
+        }
+ else {
+          icon=icons[E];
+        }
+      }
+ else {
+        icon=icons[D];
+      }
+    }
+ else {
+      if (c.isEnabled()) {
+        icon=icons[I];
+      }
+ else {
+        icon=icons[DI];
+      }
+    }
+  }
+ else {
+    if (isActive) {
+      if (c.isEnabled()) {
+        icon=icons[E];
+      }
+ else {
+        icon=icons[D];
+      }
+    }
+ else {
+      if (c.isEnabled()) {
+        icon=icons[I];
+      }
+ else {
+        icon=icons[DI];
+      }
+    }
+  }
+  return icon;
+}

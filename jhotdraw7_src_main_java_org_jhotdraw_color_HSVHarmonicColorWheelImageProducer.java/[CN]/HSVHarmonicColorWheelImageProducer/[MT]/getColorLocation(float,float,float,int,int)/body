@@ -1,0 +1,14 @@
+{
+  float radius=Math.min(width,height) / 2f;
+  float radiusH=radius / 2f;
+  saturation=Math.max(0f,Math.min(1f,saturation));
+  brightness=Math.max(0f,Math.min(1f,brightness));
+  Point p;
+  if (brightness == 1f) {
+    p=new Point(width / 2 + (int)(radiusH * saturation * Math.cos(hue * Math.PI * 2d) / wheelScaleFactor),height / 2 - (int)(radiusH * saturation * Math.sin(hue * Math.PI * 2d) / wheelScaleFactor));
+  }
+ else {
+    p=new Point(width / 2 + (int)((radius + radiusH - radius * brightness) * Math.cos(hue * Math.PI * 2d) / wheelScaleFactor),height / 2 - (int)((radius + radiusH - radius * brightness) * Math.sin(hue * Math.PI * 2d) / wheelScaleFactor));
+  }
+  return p;
+}

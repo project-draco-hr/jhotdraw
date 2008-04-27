@@ -1,0 +1,9 @@
+{
+  HarmonicColorModel m=harmonicWheel.getHarmonicColorModel();
+  if (monochromaticCheck.isSelected()) {
+    m.setLightnessRule(new MonochromaticHarmonicRule());
+  }
+ else {
+    m.setLightnessRule(null);
+  }
+}

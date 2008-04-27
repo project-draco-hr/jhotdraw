@@ -1,0 +1,3 @@
+{
+  return toComponents((rgb & 0xff0000) >> 16,(rgb & 0xff00) >> 8,rgb & 0xff,components);
+}

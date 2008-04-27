@@ -3,7 +3,7 @@
     try {
       bufferedImage=ImageIO.read(new ByteArrayInputStream(imageData));
     }
- catch (    IOException e) {
+ catch (    Throwable e) {
       e.printStackTrace();
       imageData=null;
     }

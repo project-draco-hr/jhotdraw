@@ -1,0 +1,4 @@
+{
+  System.arraycopy(orig,0,der,0,3);
+  der[0]+=adjust;
+}

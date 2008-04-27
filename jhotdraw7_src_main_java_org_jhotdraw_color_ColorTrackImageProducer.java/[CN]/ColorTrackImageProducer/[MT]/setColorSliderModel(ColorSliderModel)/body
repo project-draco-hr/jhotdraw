@@ -1,0 +1,4 @@
+{
+  this.colorizer=colorizer;
+  isDirty=true;
+}

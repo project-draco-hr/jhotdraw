@@ -1,0 +1,11 @@
+{
+  if (!tb.isEnabled()) {
+    return;
+  }
+  isDragging=true;
+  Point position=evt.getPoint();
+  if (origin == null) {
+    origin=evt.getComponent().getLocationOnScreen();
+  }
+  dragTo(position,origin);
+}

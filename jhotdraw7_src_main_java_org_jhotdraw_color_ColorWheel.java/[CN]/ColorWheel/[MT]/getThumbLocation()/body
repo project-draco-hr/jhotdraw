@@ -1,0 +1,3 @@
+{
+  return getColorLocation(model.getComponentValue(0),model.getComponentValue(1),model.getComponentValue(2));
+}

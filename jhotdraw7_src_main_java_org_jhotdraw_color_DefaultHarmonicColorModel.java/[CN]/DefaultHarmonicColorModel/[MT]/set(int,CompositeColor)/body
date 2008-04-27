@@ -1,0 +1,10 @@
+{
+  CompositeColor oldValue=colors.set(index,newValue);
+  fireContentsChanged(this,index,index);
+  if (index == base) {
+    applyRules(oldValue);
+  }
+ else {
+    adjustRule(index);
+  }
+}

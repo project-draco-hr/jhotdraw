@@ -1,0 +1,13 @@
+{
+  JPanel p=new JPanel(new BorderLayout());
+  DefaultColorSliderModel m=new DefaultColorSliderModel(sys);
+  models.add(m);
+  m.addChangeListener(handler);
+  ColorWheel w=new ColorWheel();
+  w.setModel(m);
+  JSlider s=new JSlider(JSlider.VERTICAL);
+  m.configureSlider(2,s);
+  p.add(w,BorderLayout.CENTER);
+  p.add(s,BorderLayout.EAST);
+  return p;
+}

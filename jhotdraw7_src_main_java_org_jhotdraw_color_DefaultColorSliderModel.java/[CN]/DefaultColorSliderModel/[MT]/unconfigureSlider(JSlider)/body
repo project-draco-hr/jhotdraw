@@ -1,0 +1,8 @@
+{
+  if (slider.getClientProperty("colorSliderModel") == this) {
+    slider.setModel(new DefaultBoundedRangeModel());
+    slider.putClientProperty("colorSliderModel",null);
+    slider.putClientProperty("colorComponentIndex",null);
+    removeColorSlider(slider);
+  }
+}

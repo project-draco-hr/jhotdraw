@@ -15,6 +15,11 @@
       TRANSFORM.get(getTransformOwner()).transform(p0,p0);
       TRANSFORM.get(getTransformOwner()).transform(pc,pc);
     }
+    g.setStroke(HANDLE_STROKE1);
+    g.setColor(HANDLE_STROKE_COLOR1);
+    g.draw(new Line2D.Double(view.drawingToView(p0),view.drawingToView(pc)));
+    g.setStroke(HANDLE_STROKE2);
+    g.setColor(HANDLE_STROKE_COLOR2);
     g.draw(new Line2D.Double(view.drawingToView(p0),view.drawingToView(pc)));
   }
 }

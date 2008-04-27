@@ -1,0 +1,9 @@
+{
+  this.constraint=constraint;
+  if (Math.abs(constraint) == 0.5f) {
+    indices=new int[]{5};
+  }
+ else {
+    indices=new int[]{5,10};
+  }
+}

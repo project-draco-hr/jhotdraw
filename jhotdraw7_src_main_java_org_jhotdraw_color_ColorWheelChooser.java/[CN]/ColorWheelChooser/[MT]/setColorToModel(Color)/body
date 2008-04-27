@@ -1,0 +1,5 @@
+{
+  if (updatingChooser == 0) {
+    getColorSelectionModel().setSelectedColor(color);
+  }
+}

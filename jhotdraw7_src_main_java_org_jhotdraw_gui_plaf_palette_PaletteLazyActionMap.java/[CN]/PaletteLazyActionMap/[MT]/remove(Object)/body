@@ -1,0 +1,4 @@
+{
+  loadIfNecessary();
+  super.remove(key);
+}

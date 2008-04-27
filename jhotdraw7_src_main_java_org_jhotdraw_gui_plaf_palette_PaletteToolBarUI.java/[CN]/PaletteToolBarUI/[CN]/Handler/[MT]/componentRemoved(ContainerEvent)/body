@@ -1,0 +1,7 @@
+{
+  Component c=evt.getChild();
+  if (toolBarFocusListener != null) {
+    c.removeFocusListener(toolBarFocusListener);
+  }
+  setBorderToNormal(c);
+}

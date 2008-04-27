@@ -1,0 +1,5 @@
+{
+  HarmonicRule oldValue=lightnessRule;
+  lightnessRule=newValue;
+  initRules();
+}

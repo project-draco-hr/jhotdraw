@@ -1,0 +1,31 @@
+{
+  initComponents();
+  getModel().getBoundedRangeModel(2).setValue(100);
+  setWheelInsets(new Insets(5,5,5,5));
+  modelHandler=new ModelHandler();
+  DefaultHarmonicColorModel p=new DefaultHarmonicColorModel();
+  setHarmonicColorModel(p);
+  setToolTipText("");
+  emotions=new ArrayList<Segment>();
+  emotions.add(new Segment("Powerful",4));
+  emotions.add(new Segment("Rich",1));
+  emotions.add(new Segment("Romantic",7));
+  emotions.add(new Segment("Vital",12));
+  emotions.add(new Segment("Earthy",10));
+  emotions.add(new Segment("Friendly",20));
+  emotions.add(new Segment("Soft",22));
+  emotions.add(new Segment("Welcoming",28));
+  emotions.add(new Segment("Moving",36));
+  emotions.add(new Segment("Elegant",39));
+  emotions.add(new Segment("Fresh",52));
+  emotions.add(new Segment("Traditional",49));
+  emotions.add(new Segment("Refreshing",60));
+  emotions.add(new Segment("Tropical",62));
+  emotions.add(new Segment("Classic",68));
+  emotions.add(new Segment("Dependable",65));
+  emotions.add(new Segment("Calm",70));
+  emotions.add(new Segment("Regal",76));
+  emotions.add(new Segment("Magical",84));
+  emotions.add(new Segment("Energetic",92));
+  emotions.add(new Segment("Subdued",94));
+}

@@ -1,0 +1,10 @@
+{
+  chooserPanel=new javax.swing.JPanel();
+  previewLabel=new javax.swing.JLabel();
+  setLayout(new java.awt.BorderLayout());
+  chooserPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10,10,10,10));
+  chooserPanel.setLayout(new java.awt.GridLayout(2,0,10,10));
+  add(chooserPanel,java.awt.BorderLayout.CENTER);
+  previewLabel.setText("Color");
+  add(previewLabel,java.awt.BorderLayout.SOUTH);
+}

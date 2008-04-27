@@ -1,0 +1,5 @@
+float hue
+float saturation
+float brightness
+int width
+int height

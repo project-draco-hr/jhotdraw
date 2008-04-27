@@ -1,0 +1,10 @@
+{
+  CompositeColor bc=m.get(m.getBase());
+  for (int i=0; i < indices.length; i++) {
+    if (indices[i] == index) {
+      float mo=(i == 0) ? -1 : 1;
+      CompositeColor cc=m.get(indices[i]);
+      m.set(indices[i],new CompositeColor(m.getColorSystem(),bc.getComponent(0) + constraint * mo,cc.getComponent(1),cc.getComponent(2)));
+    }
+  }
+}
