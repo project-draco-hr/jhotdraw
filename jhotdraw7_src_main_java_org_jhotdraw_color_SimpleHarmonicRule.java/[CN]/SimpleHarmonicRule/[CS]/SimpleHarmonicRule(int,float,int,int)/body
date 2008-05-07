@@ -1,0 +1,6 @@
+{
+  this.componentIndex=componentIndex;
+  this.difference=difference;
+  this.baseIndex=baseIndex;
+  this.derivedIndices=derivedIndices;
+}

@@ -1,0 +1,6 @@
+{
+  int oldValue=selectedIndex;
+  selectedIndex=newValue;
+  firePropertyChange(SELECTED_INDEX_PROPERTY,oldValue,newValue);
+  repaint();
+}

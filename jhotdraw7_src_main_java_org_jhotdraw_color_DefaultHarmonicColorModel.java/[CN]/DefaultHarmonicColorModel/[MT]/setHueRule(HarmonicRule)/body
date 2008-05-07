@@ -1,5 +1,0 @@
-{
-  HarmonicRule oldValue=hueRule;
-  hueRule=newValue;
-  initRules();
-}

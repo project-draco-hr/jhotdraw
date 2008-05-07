@@ -1,0 +1,11 @@
+{
+  this.sys=sys;
+  wheelInsets=new Insets(0,0,0,0);
+  model=new DefaultColorSliderModel(sys);
+  initComponents();
+  colorWheelProducer=createWheelProducer(0,0);
+  modelHandler=new ModelHandler();
+  model.addChangeListener(modelHandler);
+  installMouseListeners();
+  setOpaque(false);
+}

@@ -1,10 +1,14 @@
 {
+  adjusting++;
   CompositeColor oldValue=colors.set(index,newValue);
+  for (  HarmonicRule r : rules) {
+    r.colorChanged(this,index,oldValue,newValue);
+  }
+  for (  HarmonicRule r : rules) {
+    if (r.getBaseIndex() == index) {
+      r.apply(this);
+    }
+  }
+  adjusting--;
   fireContentsChanged(this,index,index);
-  if (index == base) {
-    applyRules(oldValue);
-  }
- else {
-    adjustRule(index);
-  }
 }

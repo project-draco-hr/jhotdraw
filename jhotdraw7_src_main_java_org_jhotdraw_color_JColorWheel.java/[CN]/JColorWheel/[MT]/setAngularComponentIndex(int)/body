@@ -1,0 +1,5 @@
+{
+  angularIndex=newValue;
+  colorWheelImage=null;
+  repaint();
+}

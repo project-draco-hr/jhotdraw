@@ -1,3 +1,0 @@
-{
-  return new ColorWheelImageProducer(model.getColorSystem(),w,h);
-}

@@ -1,3 +1,0 @@
-{
-  return hMin <= h && h <= hMax && sMin <= s && s <= sMax && bMin <= b && b <= bMax;
-}

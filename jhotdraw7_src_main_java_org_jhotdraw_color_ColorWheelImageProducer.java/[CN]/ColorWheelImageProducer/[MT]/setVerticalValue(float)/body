@@ -1,0 +1,4 @@
+{
+  isPixelsValid=isPixelsValid && verticalValue == newValue;
+  verticalValue=newValue;
+}

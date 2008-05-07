@@ -6,6 +6,18 @@
   if (hue < 0) {
     hue=1f + hue;
   }
+  if (saturation > 1f) {
+    saturation=1f;
+  }
+ else   if (saturation < 0f) {
+    saturation=0f;
+  }
+  if (lightness > 1f) {
+    lightness=1f;
+  }
+ else   if (lightness < 0f) {
+    lightness=0f;
+  }
   float hueDeg=hue * 360f;
   if (hueDeg < 0) {
     hueDeg+=360f;

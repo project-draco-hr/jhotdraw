@@ -1,3 +1,0 @@
-{
-  apply(model,model.get(model.getBase()));
-}

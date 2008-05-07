@@ -3,7 +3,10 @@
   y-=height / 2;
   float r=(float)Math.sqrt(x * x + y * y);
   float theta=(float)Math.atan2(y,-x);
-  float hue=(float)(0.5 + (theta / Math.PI / 2d));
-  float[] hsb={hue,Math.min(1f,(float)r / getRadius()),brightness};
+  float angular=(float)(0.5 + (theta / Math.PI / 2d));
+  float[] hsb=new float[3];
+  hsb[angularIndex]=angular;
+  hsb[radialIndex]=Math.min(1f,(float)r / getRadius());
+  hsb[verticalIndex]=verticalValue;
   return hsb;
 }

@@ -1,6 +1,0 @@
-{
-  float[] hsb=getColorAt(e.getX(),e.getY());
-  model.setComponentValue(0,hsb[0]);
-  model.setComponentValue(1,hsb[1]);
-  repaint();
-}

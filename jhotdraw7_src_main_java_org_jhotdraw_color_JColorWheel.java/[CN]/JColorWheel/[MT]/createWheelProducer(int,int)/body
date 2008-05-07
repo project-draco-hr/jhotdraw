@@ -1,0 +1,7 @@
+{
+  ColorWheelImageProducer p=new ColorWheelImageProducer(model.getColorSystem(),w,h);
+  p.setAngularComponentIndex(angularIndex);
+  p.setRadialComponentIndex(radialIndex);
+  p.setVerticalComponentIndex(verticalIndex);
+  return p;
+}

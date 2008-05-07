@@ -1,0 +1,5 @@
+{
+  verticalIndex=newValue;
+  colorWheelImage=null;
+  repaint();
+}

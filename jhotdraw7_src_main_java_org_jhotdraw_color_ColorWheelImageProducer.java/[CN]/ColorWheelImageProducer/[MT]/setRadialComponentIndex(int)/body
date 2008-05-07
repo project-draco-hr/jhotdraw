@@ -1,0 +1,4 @@
+{
+  radialIndex=newValue;
+  isPixelsValid=false;
+}

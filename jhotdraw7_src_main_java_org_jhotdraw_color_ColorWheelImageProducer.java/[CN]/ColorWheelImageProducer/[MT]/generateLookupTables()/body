@@ -1,6 +1,6 @@
 {
-  saturations=new float[w * h];
-  hues=new float[w * h];
+  radials=new float[w * h];
+  angulars=new float[w * h];
   alphas=new int[w * h];
   float radius=getRadius();
   float blend=(radius + 2f) / radius - 1f;
@@ -12,17 +12,18 @@
     for (int y=0; y < h; y++) {
       int ky=cy - y;
       int index=x + y * w;
-      saturations[index]=(float)Math.sqrt(squarekx + ky * ky) / radius;
-      if (saturations[index] <= 1f) {
+      radials[index]=(float)Math.sqrt(squarekx + ky * ky) / radius;
+      if (radials[index] <= 1f) {
         alphas[index]=0xff000000;
       }
  else {
-        alphas[index]=(int)((blend - Math.min(blend,saturations[index] - 1f)) * 255 / blend) << 24;
-        saturations[index]=1f;
+        alphas[index]=(int)((blend - Math.min(blend,radials[index] - 1f)) * 255 / blend) << 24;
+        radials[index]=1f;
       }
       if (alphas[index] != 0) {
-        hues[index]=(float)(Math.atan2(ky,kx) / Math.PI / 2d);
+        angulars[index]=(float)(Math.atan2(ky,kx) / Math.PI / 2d);
       }
     }
   }
+  isLookupValid=true;
 }

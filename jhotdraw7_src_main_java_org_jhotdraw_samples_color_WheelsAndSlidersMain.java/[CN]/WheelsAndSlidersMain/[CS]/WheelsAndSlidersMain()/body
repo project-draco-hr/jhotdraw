@@ -7,6 +7,7 @@
   chooserPanel.add(createColorWheelChooser(new HSLRGBColorSystem()));
   chooserPanel.add(createColorWheelChooser(new HSVRYBColorSystem()));
   chooserPanel.add(createColorWheelChooser(new HSLRYBColorSystem()));
+  chooserPanel.add(createColorWheelChooser(new HSLRYBColorSystem(),0,2,1));
   chooserPanel.add(createSliderChooser(new HSVRGBColorSystem()));
   chooserPanel.add(createSliderChooser(new RGBColorSystem()));
   chooserPanel.add(createSliderChooser(new CMYKICCColorSystem()));

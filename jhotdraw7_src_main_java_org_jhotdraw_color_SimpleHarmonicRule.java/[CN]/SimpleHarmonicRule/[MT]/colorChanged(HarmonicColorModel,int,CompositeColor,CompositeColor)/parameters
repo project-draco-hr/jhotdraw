@@ -1,0 +1,4 @@
+HarmonicColorModel model
+int index
+CompositeColor oldValue
+CompositeColor newValue

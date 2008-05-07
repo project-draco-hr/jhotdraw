@@ -1,7 +1,0 @@
-{
-  if (selectedIndex != -1) {
-    float[] hsb=getColorAt(e.getX(),e.getY());
-    harmonicModel.set(selectedIndex,new CompositeColor(harmonicModel.getColorSystem(),hsb));
-    repaint();
-  }
-}

@@ -1,0 +1,4 @@
+{
+  verticalIndex=newValue;
+  isPixelsValid=false;
+}

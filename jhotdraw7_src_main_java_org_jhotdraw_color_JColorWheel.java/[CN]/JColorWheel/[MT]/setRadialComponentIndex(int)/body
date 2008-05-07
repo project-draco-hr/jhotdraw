@@ -1,0 +1,5 @@
+{
+  radialIndex=newValue;
+  colorWheelImage=null;
+  repaint();
+}

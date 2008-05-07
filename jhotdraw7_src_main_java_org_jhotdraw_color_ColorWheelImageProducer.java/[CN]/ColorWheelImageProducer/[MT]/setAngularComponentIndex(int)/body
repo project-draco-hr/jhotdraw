@@ -1,0 +1,4 @@
+{
+  angularIndex=newValue;
+  isPixelsValid=false;
+}
