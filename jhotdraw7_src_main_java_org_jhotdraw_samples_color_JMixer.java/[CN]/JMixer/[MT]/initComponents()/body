@@ -116,7 +116,7 @@
 );
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=2;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(customHueRadio,gridBagConstraints);
   customHueLabel.setText("??");
   gridBagConstraints=new java.awt.GridBagConstraints();
@@ -128,7 +128,7 @@
   customHueField.setText("30");
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=4;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(customHueField,gridBagConstraints);
   customHueLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
   customHueLabel2.setText("??");
@@ -148,7 +148,7 @@
 );
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=2;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(analogousRadio,gridBagConstraints);
   analogousLabel1.setText("??");
   gridBagConstraints=new java.awt.GridBagConstraints();
@@ -161,7 +161,7 @@
   analogousField.setText("30");
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=4;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(analogousField,gridBagConstraints);
   analogousLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
   analogousLabel2.setText("??");
@@ -180,7 +180,7 @@
 );
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=2;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(primaryRadio,gridBagConstraints);
   primaryLabel1.setText("??");
   gridBagConstraints=new java.awt.GridBagConstraints();
@@ -190,10 +190,10 @@
   primaryField.setColumns(3);
   primaryField.setEditable(false);
   primaryField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-  primaryField.setText("60");
+  primaryField.setText("120");
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=4;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(primaryField,gridBagConstraints);
   primaryLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
   primaryLabel2.setText("??");
@@ -212,7 +212,7 @@
 );
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=2;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(clashRadio,gridBagConstraints);
   clashLabel1.setText("??");
   gridBagConstraints=new java.awt.GridBagConstraints();
@@ -225,7 +225,7 @@
   clashField.setText("90");
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=4;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(clashField,gridBagConstraints);
   clashLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
   clashLabel2.setText("??");
@@ -244,7 +244,7 @@
 );
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=2;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(triadRadio,gridBagConstraints);
   triadLabel1.setText("??");
   gridBagConstraints=new java.awt.GridBagConstraints();
@@ -257,7 +257,7 @@
   triadField.setText("120");
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=4;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(triadField,gridBagConstraints);
   triadLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
   triadLabel2.setText("??");
@@ -267,7 +267,7 @@
   gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(triadLabel2,gridBagConstraints);
   hueGroup.add(splitComplementaryRadio);
-  splitComplementaryRadio.setText("Split");
+  splitComplementaryRadio.setText("Split Complementary");
   splitComplementaryRadio.addActionListener(new java.awt.event.ActionListener(){
     public void actionPerformed(    java.awt.event.ActionEvent evt){
       ruleChangePerformed(evt);
@@ -276,7 +276,7 @@
 );
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=2;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(splitComplementaryRadio,gridBagConstraints);
   splitComplementaryLabel1.setText("??");
   gridBagConstraints=new java.awt.GridBagConstraints();
@@ -289,7 +289,7 @@
   splitField.setText("150");
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=4;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(splitField,gridBagConstraints);
   splitComplementaryLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
   splitComplementaryLabel2.setText("??");
@@ -308,7 +308,7 @@
 );
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=2;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(complementaryRadio,gridBagConstraints);
   complementaryLabel1.setText("+");
   gridBagConstraints=new java.awt.GridBagConstraints();
@@ -321,7 +321,7 @@
   complementaryField.setText("180");
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=4;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(complementaryField,gridBagConstraints);
   complementaryLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
   complementaryLabel2.setText("??");
@@ -351,7 +351,7 @@
   achromaticField.setText("10");
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=4;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(achromaticField,gridBagConstraints);
   achromaticLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
   achromaticLabel2.setText("%");
@@ -382,7 +382,7 @@
   monochromaticField.setText("10");
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=4;
-  gridBagConstraints.anchor=java.awt.GridBagConstraints.FIRST_LINE_START;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.LINE_START;
   mixerPanel.add(monochromaticField,gridBagConstraints);
   monochromaticLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
   monochromaticLabel2.setText("%");
