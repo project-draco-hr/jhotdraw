@@ -1,3 +1,8 @@
 {
-  drawRectangle(g,getOwner().isTransformable() ? HANDLE_FILL_COLOR : null,HANDLE_STROKE_COLOR);
+  if (getOwner().isTransformable()) {
+    drawRectangle(g,(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_HANDLE_FILL_COLOR),(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_HANDLE_STROKE_COLOR));
+  }
+ else {
+    drawRectangle(g,(Color)getEditor().getHandleAttribute(HandleAttributeKeys.NULL_HANDLE_FILL_COLOR),(Color)getEditor().getHandleAttribute(HandleAttributeKeys.NULL_HANDLE_STROKE_COLOR));
+  }
 }

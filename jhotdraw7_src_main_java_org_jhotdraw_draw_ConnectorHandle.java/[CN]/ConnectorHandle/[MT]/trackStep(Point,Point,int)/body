@@ -1,7 +1,7 @@
 {
   Point2D.Double p=view.viewToDrawing(lead);
   Rectangle r=new Rectangle(view.drawingToView(getConnection().getEndPoint()));
-  r.grow(ANCHOR_WIDTH,ANCHOR_WIDTH);
+  r.grow(getHandlesize(),getHandlesize());
   fireAreaInvalidated(r);
   Figure figure=findConnectableFigure(p,view.getDrawing());
   if (figure != connectableFigure) {
@@ -16,6 +16,6 @@
   getConnection().setEndPoint(p);
   getConnection().changed();
   r=new Rectangle(view.drawingToView(p));
-  r.grow(ANCHOR_WIDTH,ANCHOR_WIDTH);
+  r.grow(getHandlesize(),getHandlesize());
   fireAreaInvalidated(r);
 }

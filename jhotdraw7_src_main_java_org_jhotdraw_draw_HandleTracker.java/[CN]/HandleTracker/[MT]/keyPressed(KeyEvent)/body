@@ -1,3 +1,6 @@
 {
   multicaster.keyPressed(evt);
+  if (!evt.isConsumed()) {
+    super.keyPressed(evt);
+  }
 }

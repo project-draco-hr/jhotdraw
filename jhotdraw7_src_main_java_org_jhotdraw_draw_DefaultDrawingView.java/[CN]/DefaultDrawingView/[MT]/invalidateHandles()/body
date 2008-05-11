@@ -14,6 +14,7 @@
     }
     selectionHandles.clear();
     secondaryHandles.clear();
+    setActiveHandle(null);
     if (invalidatedArea != null) {
       repaint(invalidatedArea);
     }

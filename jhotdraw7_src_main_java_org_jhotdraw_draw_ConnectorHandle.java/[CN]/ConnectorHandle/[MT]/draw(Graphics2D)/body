@@ -5,14 +5,15 @@
     c.draw(gg);
   }
   if (createdConnection == null) {
-    drawCircle(g,Color.blue,Color.black);
+    drawCircle(g,(Color)getEditor().getHandleAttribute(HandleAttributeKeys.DISCONNECTED_CONNECTOR_HANDLE_FILL_COLOR),(Color)getEditor().getHandleAttribute(HandleAttributeKeys.DISCONNECTED_CONNECTOR_HANDLE_STROKE_COLOR));
   }
  else {
-    drawCircle(g,Color.GREEN,Color.BLACK);
+    drawCircle(g,(Color)getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTOR_HANDLE_FILL_COLOR),(Color)getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTOR_HANDLE_STROKE_COLOR));
     Point p=view.drawingToView(createdConnection.getEndPoint());
-    g.setColor(Color.GREEN);
-    g.fillOval(p.x - ANCHOR_WIDTH / 2,p.y - ANCHOR_WIDTH / 2,ANCHOR_WIDTH,ANCHOR_WIDTH);
-    g.setColor(Color.BLACK);
-    g.drawOval(p.x - ANCHOR_WIDTH / 2,p.y - ANCHOR_WIDTH / 2,ANCHOR_WIDTH,ANCHOR_WIDTH);
+    g.setColor((Color)getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTOR_HANDLE_FILL_COLOR));
+    int width=getHandlesize();
+    g.fillOval(p.x - width / 2,p.y - width / 2,width,width);
+    g.setColor((Color)getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTOR_HANDLE_STROKE_COLOR));
+    g.drawOval(p.x - width / 2,p.y - width / 2,width,width);
   }
 }

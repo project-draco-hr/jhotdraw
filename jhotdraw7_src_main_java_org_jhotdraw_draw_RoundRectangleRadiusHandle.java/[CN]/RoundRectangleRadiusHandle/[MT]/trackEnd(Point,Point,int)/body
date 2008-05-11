@@ -1,2 +1,28 @@
 {
+  int dx=lead.x - anchor.x;
+  int dy=lead.y - anchor.y;
+  final RoundRectangleFigure owner=(RoundRectangleFigure)getOwner();
+  Rectangle r=view.drawingToView(owner.getBounds());
+  Point viewArc=new Point(Geom.range(0,r.width,2 * (originalArc.x / 2 + dx)),Geom.range(0,r.height,2 * (originalArc.y / 2 + dy)));
+  final Point2D.Double oldArc=view.viewToDrawing(originalArc);
+  final Point2D.Double newArc=view.viewToDrawing(viewArc);
+  fireUndoableEditHappened(new AbstractUndoableEdit(){
+    @Override public String getPresentationName(){
+      ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels",Locale.getDefault());
+      return labels.getString("attribute.roundRectRadius");
+    }
+    @Override public void redo() throws CannotRedoException {
+      owner.willChange();
+      owner.setArc(newArc.x,newArc.y);
+      owner.changed();
+      super.redo();
+    }
+    @Override public void undo() throws CannotUndoException {
+      owner.willChange();
+      owner.setArc(oldArc.x,oldArc.y);
+      owner.changed();
+      super.undo();
+    }
+  }
+);
 }

@@ -1,0 +1,3 @@
+{
+  drawDiamond(g,Color.green.darker(),Color.white);
+}

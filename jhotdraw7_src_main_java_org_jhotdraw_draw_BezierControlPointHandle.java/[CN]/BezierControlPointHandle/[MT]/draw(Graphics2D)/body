@@ -2,24 +2,33 @@
   BezierFigure f=getBezierFigure();
   if (f.getNodeCount() > index) {
     BezierPath.Node v=f.getNode(index);
-    if (v.keepColinear && v.mask == BezierPath.C1C2_MASK && (index > 0 && index < f.getNodeCount() - 1 || f.isClosed())) {
-      drawCircle(g,HANDLE_STROKE_COLOR,HANDLE_FILL_COLOR);
-    }
- else {
-      drawCircle(g,HANDLE_FILL_COLOR,HANDLE_STROKE_COLOR);
-    }
-    g.setColor(HANDLE_FILL_COLOR);
     Point2D.Double p0=new Point2D.Double(v.x[0],v.y[0]);
     Point2D.Double pc=new Point2D.Double(v.x[controlPointIndex],v.y[controlPointIndex]);
     if (TRANSFORM.get(getTransformOwner()) != null) {
       TRANSFORM.get(getTransformOwner()).transform(p0,p0);
       TRANSFORM.get(getTransformOwner()).transform(pc,pc);
     }
-    g.setStroke(HANDLE_STROKE1);
-    g.setColor(HANDLE_STROKE_COLOR1);
-    g.draw(new Line2D.Double(view.drawingToView(p0),view.drawingToView(pc)));
-    g.setStroke(HANDLE_STROKE2);
-    g.setColor(HANDLE_STROKE_COLOR2);
-    g.draw(new Line2D.Double(view.drawingToView(p0),view.drawingToView(pc)));
+    Stroke stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.BEZIER_CONTROL_POINT_HANDLE_STROKE_1);
+    Color strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.BEZIER_CONTROL_POINT_HANDLE_STROKE_COLOR_1);
+    if (stroke != null && strokeColor != null) {
+      g.setStroke(stroke);
+      g.setColor(strokeColor);
+      g.draw(new Line2D.Double(view.drawingToView(p0),view.drawingToView(pc)));
+    }
+    stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.BEZIER_CONTROL_POINT_HANDLE_STROKE_2);
+    strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.BEZIER_CONTROL_POINT_HANDLE_STROKE_COLOR_2);
+    if (stroke != null && strokeColor != null) {
+      g.setStroke(stroke);
+      g.setColor(strokeColor);
+      g.draw(new Line2D.Double(view.drawingToView(p0),view.drawingToView(pc)));
+    }
+    Color fillColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.BEZIER_CONTROL_POINT_HANDLE_FILL_COLOR);
+    strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.BEZIER_CONTROL_POINT_HANDLE_STROKE_COLOR);
+    if (v.keepColinear && v.mask == BezierPath.C1C2_MASK && (index > 0 && index < f.getNodeCount() - 1 || f.isClosed())) {
+      drawCircle(g,strokeColor,fillColor);
+    }
+ else {
+      drawCircle(g,fillColor,strokeColor);
+    }
   }
 }

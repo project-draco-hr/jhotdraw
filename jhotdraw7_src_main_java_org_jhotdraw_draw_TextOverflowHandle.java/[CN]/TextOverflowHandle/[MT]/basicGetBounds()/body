@@ -5,8 +5,9 @@
     TRANSFORM.get(getOwner()).transform(p,p);
   }
   Rectangle r=new Rectangle(view.drawingToView(p));
-  r.x-=6;
-  r.y-=6;
-  r.width=r.height=6;
+  int h=getHandlesize();
+  r.x-=h;
+  r.y-=h;
+  r.width=r.height=h;
   return r;
 }
