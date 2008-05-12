@@ -2,6 +2,7 @@
   ActionMap m=new ActionMap();
   m.put(DeleteAction.ID,new DeleteAction());
   m.put(SelectAllAction.ID,new SelectAllAction());
+  m.put(IncreaseHandleDetailLevelAction.ID,new IncreaseHandleDetailLevelAction(editorProxy));
   m.put(MoveAction.East.ID,new MoveAction.East(editorProxy));
   m.put(MoveAction.West.ID,new MoveAction.West(editorProxy));
   m.put(MoveAction.North.ID,new MoveAction.North(editorProxy));

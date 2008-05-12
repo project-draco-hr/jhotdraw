@@ -5,6 +5,7 @@
   m.put(KeyStroke.getKeyStroke(KeyEvent.VK_A,0),SelectAllAction.ID);
   m.put(KeyStroke.getKeyStroke(KeyEvent.VK_A,InputEvent.CTRL_DOWN_MASK),SelectAllAction.ID);
   m.put(KeyStroke.getKeyStroke(KeyEvent.VK_A,InputEvent.META_DOWN_MASK),SelectAllAction.ID);
+  m.put(KeyStroke.getKeyStroke(KeyEvent.VK_SPACE,0),IncreaseHandleDetailLevelAction.ID);
   m.put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT,0),MoveConstrainedAction.West.ID);
   m.put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT,0),MoveConstrainedAction.East.ID);
   m.put(KeyStroke.getKeyStroke(KeyEvent.VK_UP,0),MoveConstrainedAction.North.ID);
