@@ -4,21 +4,24 @@
       final DrawingView view=getView();
       final LinkedList<Figure> ungroupedFigures=new LinkedList<Figure>(view.getSelectedFigures());
       final CompositeFigure group=(CompositeFigure)prototype.clone();
-      CompositeEdit edit=new CompositeEdit(labels.getString("selectionGroup")){
+      UndoableEdit edit=new AbstractUndoableEdit(){
+        @Override public String getPresentationName(){
+          ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels",Locale.getDefault());
+          return labels.getString("selectionGroup");
+        }
         public void redo() throws CannotRedoException {
           super.redo();
           groupFigures(view,group,ungroupedFigures);
         }
-        public void undo() throws CannotUndoException {
+        @Override public void undo() throws CannotUndoException {
           ungroupFigures(view,group);
           super.undo();
         }
-        public boolean addEdit(        UndoableEdit anEdit){
+        @Override public boolean addEdit(        UndoableEdit anEdit){
           return super.addEdit(anEdit);
         }
       }
 ;
-      fireUndoableEditHappened(edit);
       groupFigures(view,group,ungroupedFigures);
       fireUndoableEditHappened(edit);
     }
@@ -28,18 +31,21 @@
       final DrawingView view=getView();
       final CompositeFigure group=(CompositeFigure)getView().getSelectedFigures().iterator().next();
       final LinkedList<Figure> ungroupedFigures=new LinkedList<Figure>();
-      CompositeEdit edit=new CompositeEdit(labels.getString("selectionUngroup")){
-        public void redo() throws CannotRedoException {
+      UndoableEdit edit=new AbstractUndoableEdit(){
+        @Override public String getPresentationName(){
+          ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels",Locale.getDefault());
+          return labels.getString("selectionUngroup");
+        }
+        @Override public void redo() throws CannotRedoException {
           super.redo();
           ungroupFigures(view,group);
         }
-        public void undo() throws CannotUndoException {
+        @Override public void undo() throws CannotUndoException {
           groupFigures(view,group,ungroupedFigures);
           super.undo();
         }
       }
 ;
-      fireUndoableEditHappened(edit);
       ungroupedFigures.addAll(ungroupFigures(view,group));
       fireUndoableEditHappened(edit);
     }
