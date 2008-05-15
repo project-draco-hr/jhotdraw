@@ -14,8 +14,8 @@
   if (dgdXAbs > dgdYAbs)   pixSz=dgdXAbs;
  else   pixSz=dgdYAbs;
   gc=(a02 - start.x) * constX + (a12 - start.y) * constY;
-  Object colorRend=hints.get(RenderingHints.KEY_COLOR_RENDERING);
-  Object rend=hints.get(RenderingHints.KEY_RENDERING);
+  Object colorRend=(hints == null) ? RenderingHints.VALUE_COLOR_RENDER_QUALITY : hints.get(RenderingHints.KEY_COLOR_RENDERING);
+  Object rend=(hints == null) ? RenderingHints.VALUE_RENDER_QUALITY : hints.get(RenderingHints.KEY_RENDERING);
   fillMethod=DEFAULT_IMPL;
   if ((cycleMethod == MultipleGradientPaint.REPEAT) || hasDiscontinuity) {
     if (rend == RenderingHints.VALUE_RENDER_QUALITY)     fillMethod=ANTI_ALIAS_IMPL;
