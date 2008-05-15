@@ -3,7 +3,8 @@
     popupTimer.stop();
     popupTimer=null;
   }
-  if (evt.isPopupTrigger()) {
+  isMousePressedPopupTrigger=evt.isPopupTrigger();
+  if (isMousePressedPopupTrigger) {
     getView().requestFocus();
     handlePopupMenu(evt);
   }

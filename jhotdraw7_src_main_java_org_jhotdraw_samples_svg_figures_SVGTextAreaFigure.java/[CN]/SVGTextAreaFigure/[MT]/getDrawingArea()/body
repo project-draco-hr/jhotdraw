@@ -12,5 +12,5 @@
       cachedDrawingArea.setRect(TRANSFORM.get(this).createTransformedShape(r).getBounds2D());
     }
   }
-  return cachedDrawingArea;
+  return (Rectangle2D.Double)cachedDrawingArea.clone();
 }

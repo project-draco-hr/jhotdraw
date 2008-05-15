@@ -1,5 +1,7 @@
 {
-  if (DEBUG)   System.out.println("DelegationSelectionTool.showPopupMenu " + figure);
+  if (DEBUG) {
+    System.out.println("DelegationSelectionTool.showPopupMenu " + figure);
+  }
   JPopupMenu menu=new JPopupMenu();
   popupMenu=menu;
   JMenu submenu=null;
@@ -34,8 +36,12 @@
       submenu=null;
     }
     if (a == null) {
-      if (submenu != null)       submenu.addSeparator();
- else       menu.addSeparator();
+      if (submenu != null) {
+        submenu.addSeparator();
+      }
+ else {
+        menu.addSeparator();
+      }
     }
  else {
       AbstractButton button;
@@ -56,8 +62,12 @@
  else {
         button=new JMenuItem(a);
       }
-      if (submenu != null)       submenu.add(button);
- else       menu.add(button);
+      if (submenu != null) {
+        submenu.add(button);
+      }
+ else {
+        menu.add(button);
+      }
     }
   }
   menu.show(c,p.x,p.y);

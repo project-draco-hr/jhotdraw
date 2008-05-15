@@ -1,6 +1,6 @@
 {
   SVGTextFigure that=(SVGTextFigure)super.clone();
-  that.coordinates=(Point2D.Double[])this.coordinates.clone();
+  that.coordinates=new Point2D.Double[this.coordinates.length];
   for (int i=0; i < this.coordinates.length; i++) {
     that.coordinates[i]=(Point2D.Double)this.coordinates[i].clone();
   }

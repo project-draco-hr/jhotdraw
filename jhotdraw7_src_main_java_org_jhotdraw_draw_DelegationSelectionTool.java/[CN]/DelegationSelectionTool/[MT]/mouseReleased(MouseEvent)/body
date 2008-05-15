@@ -3,7 +3,12 @@
     popupTimer.stop();
     popupTimer=null;
   }
-  super.mouseReleased(evt);
+  if (isMousePressedPopupTrigger) {
+    isMousePressedPopupTrigger=false;
+  }
+ else {
+    super.mouseReleased(evt);
+  }
   if (evt.isPopupTrigger()) {
     handlePopupMenu(evt);
   }
