@@ -4,10 +4,14 @@
 switch (direction) {
 case EAST:
 case SOUTH:
-    if (focusedCompIndex < 0 || focusedCompIndex >= nComp)     break;
+    if (focusedCompIndex < 0 || focusedCompIndex >= nComp) {
+      break;
+    }
   j=focusedCompIndex + 1;
 while (j != focusedCompIndex) {
-  if (j >= nComp)   j=0;
+  if (j >= nComp) {
+    j=0;
+  }
   Component comp=toolBar.getComponentAtIndex(j++);
   if (comp != null && comp.isFocusTraversable() && comp.isEnabled()) {
     comp.requestFocus();
@@ -17,10 +21,14 @@ while (j != focusedCompIndex) {
 break;
 case WEST:
 case NORTH:
-if (focusedCompIndex < 0 || focusedCompIndex >= nComp) break;
+if (focusedCompIndex < 0 || focusedCompIndex >= nComp) {
+break;
+}
 j=focusedCompIndex - 1;
 while (j != focusedCompIndex) {
-if (j < 0) j=nComp - 1;
+if (j < 0) {
+j=nComp - 1;
+}
 Component comp=toolBar.getComponentAtIndex(j--);
 if (comp != null && comp.isFocusTraversable() && comp.isEnabled()) {
 comp.requestFocus();

@@ -1,4 +1,0 @@
-{
-  paintDragWindow(g);
-  super.paint(g);
-}

@@ -1,5 +1,7 @@
 {
-  if (true)   return;
+  if (true) {
+    return;
+  }
   if (c instanceof AbstractButton) {
     AbstractButton b=(AbstractButton)c;
     Border border=(Border)borderTable.remove(b);

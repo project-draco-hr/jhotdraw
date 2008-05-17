@@ -3,7 +3,9 @@
   uninstallComponents();
   uninstallListeners();
   uninstallKeyboardActions();
-  if (isFloating() == true)   setFloating(false,null);
+  if (isFloating() == true) {
+    setFloating(false,null);
+  }
   floatingToolBar=null;
   dragWindow=null;
   dockingSource=null;

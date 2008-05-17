@@ -1,10 +1,18 @@
 {
   PaletteLookAndFeel.installBorder(toolBar,"ToolBar.border");
   PaletteLookAndFeel.installColorsAndFont(toolBar,"ToolBar.background","ToolBar.foreground","ToolBar.font");
-  if (dockingColor == null || dockingColor instanceof UIResource)   dockingColor=UIManager.getColor("ToolBar.dockingBackground");
-  if (floatingColor == null || floatingColor instanceof UIResource)   floatingColor=UIManager.getColor("ToolBar.floatingBackground");
-  if (dockingBorderColor == null || dockingBorderColor instanceof UIResource)   dockingBorderColor=UIManager.getColor("ToolBar.dockingForeground");
-  if (floatingBorderColor == null || floatingBorderColor instanceof UIResource)   floatingBorderColor=UIManager.getColor("ToolBar.floatingForeground");
+  if (dockingColor == null || dockingColor instanceof UIResource) {
+    dockingColor=UIManager.getColor("ToolBar.dockingBackground");
+  }
+  if (floatingColor == null || floatingColor instanceof UIResource) {
+    floatingColor=UIManager.getColor("ToolBar.floatingBackground");
+  }
+  if (dockingBorderColor == null || dockingBorderColor instanceof UIResource) {
+    dockingBorderColor=UIManager.getColor("ToolBar.dockingForeground");
+  }
+  if (floatingBorderColor == null || floatingBorderColor instanceof UIResource) {
+    floatingBorderColor=UIManager.getColor("ToolBar.floatingForeground");
+  }
   Object rolloverProp=toolBar.getClientProperty(IS_ROLLOVER);
   if (rolloverProp == null) {
     rolloverProp=UIManager.get("ToolBar.isRollover");

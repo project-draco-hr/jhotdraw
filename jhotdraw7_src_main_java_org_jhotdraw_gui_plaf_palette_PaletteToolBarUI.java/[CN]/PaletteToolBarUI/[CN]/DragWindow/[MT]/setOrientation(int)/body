@@ -1,6 +1,8 @@
 {
   if (isShowing()) {
-    if (o == this.orientation)     return;
+    if (o == this.orientation) {
+      return;
+    }
     this.orientation=o;
     Dimension size=getSize();
     setSize(new Dimension(size.height,size.width));

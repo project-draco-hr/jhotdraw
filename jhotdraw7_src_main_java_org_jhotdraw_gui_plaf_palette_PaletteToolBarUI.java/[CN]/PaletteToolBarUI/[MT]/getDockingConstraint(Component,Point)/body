@@ -1,5 +1,7 @@
 {
-  if (p == null)   return constraintBeforeFloating;
+  if (p == null) {
+    return constraintBeforeFloating;
+  }
   if (c.contains(p)) {
     for (int i=0, n=dockingSource.getComponentCount(); i < n; i++) {
       Component child=dockingSource.getComponent(i);

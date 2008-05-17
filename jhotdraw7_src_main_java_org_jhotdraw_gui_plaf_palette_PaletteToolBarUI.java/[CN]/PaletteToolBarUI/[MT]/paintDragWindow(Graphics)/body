@@ -1,8 +1,9 @@
 {
-  g.setColor(dragWindow.getBackground());
+  Graphics g2=g.create();
+  toolBar.paint(g2);
+  g2.dispose();
   int w=dragWindow.getWidth();
   int h=dragWindow.getHeight();
-  g.fillRect(0,0,w,h);
   g.setColor(dragWindow.getBorderColor());
   g.drawRect(0,0,w - 1,h - 1);
 }
