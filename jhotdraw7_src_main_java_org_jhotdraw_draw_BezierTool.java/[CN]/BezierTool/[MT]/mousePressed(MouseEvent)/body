@@ -3,7 +3,15 @@
     System.out.println("BezierTool.mousePressed " + evt);
   }
   super.mousePressed(evt);
+  if (mouseLocation != null) {
+    Rectangle r=new Rectangle(mouseLocation);
+    r.add(evt.getPoint());
+    r.grow(1,1);
+    fireAreaInvalidated(r);
+  }
+  mouseLocation=evt.getPoint();
   if (createdFigure == null) {
+    getView().clearSelection();
     finishWhenMouseReleased=null;
     createdFigure=createFigure();
     createdFigure.addNode(new BezierPath.Node(getView().getConstrainer().constrainPoint(getView().viewToDrawing(anchor))));

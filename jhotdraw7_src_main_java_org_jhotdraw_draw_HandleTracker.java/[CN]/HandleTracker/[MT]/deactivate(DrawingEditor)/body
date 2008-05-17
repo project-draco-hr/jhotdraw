@@ -2,4 +2,5 @@
   super.deactivate(editor);
   getView().setCursor(Cursor.getDefaultCursor());
   getView().setActiveHandle(null);
+  clearHoverHandles();
 }

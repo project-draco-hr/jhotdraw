@@ -1,7 +1,12 @@
 {
   LinkedList<Handle> handles=new LinkedList<Handle>();
-  if (detailLevel == 0) {
-    TransformHandleKit.addTransformHandles(this,handles);
-  }
-  return handles;
+switch (detailLevel) {
+case -1:
+    handles.add(new BoundsOutlineHandle(this,true));
+  break;
+case 0:
+TransformHandleKit.addTransformHandles(this,handles);
+break;
+}
+return handles;
 }

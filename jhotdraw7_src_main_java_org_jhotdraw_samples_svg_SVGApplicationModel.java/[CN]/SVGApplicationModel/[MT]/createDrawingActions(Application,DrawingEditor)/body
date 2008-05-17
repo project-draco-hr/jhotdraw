@@ -4,6 +4,7 @@
   a.add(new CopyAction());
   a.add(new PasteAction());
   a.add(new SelectAllAction());
+  a.add(new ClearSelectionAction());
   a.add(new SelectSameAction(editor));
   return a;
 }

@@ -13,7 +13,6 @@
         createdFigure.setBounds(constrainPoint(new Point(anchor.x,anchor.y)),constrainPoint(new Point(anchor.x + (int)Math.max(bounds.width,minimalSize.width),anchor.y + (int)Math.max(bounds.height,minimalSize.height))));
         createdFigure.changed();
       }
-      getView().addToSelection(createdFigure);
       if (createdFigure instanceof CompositeFigure) {
         ((CompositeFigure)createdFigure).layout();
       }
@@ -34,6 +33,7 @@
       }
 );
       creationFinished(createdFigure);
+      createdFigure=null;
     }
   }
  else {

@@ -1,11 +1,14 @@
 {
   LinkedList<Handle> handles=new LinkedList<Handle>();
 switch (detailLevel % 2) {
-case 0:
+case -1:
     handles.add(new SVGPathOutlineHandle(this));
-  for (  Figure child : getChildren()) {
-    handles.addAll(((SVGBezierFigure)child).createHandles(this,detailLevel));
-  }
+  break;
+case 0:
+handles.add(new SVGPathOutlineHandle(this));
+for (Figure child : getChildren()) {
+handles.addAll(((SVGBezierFigure)child).createHandles(this,detailLevel));
+}
 break;
 case 1:
 TransformHandleKit.addTransformHandles(this,handles);

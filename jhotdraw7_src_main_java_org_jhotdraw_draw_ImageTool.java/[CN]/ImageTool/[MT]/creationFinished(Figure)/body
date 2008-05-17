@@ -27,13 +27,17 @@
             createdFigure.changed();
           }
         }
-        fireToolDone();
+        if (isToolDoneAfterCreation()) {
+          fireToolDone();
+        }
       }
     }
 .start();
   }
  else {
     getDrawing().remove(createdFigure);
-    fireToolDone();
+    if (isToolDoneAfterCreation()) {
+      fireToolDone();
+    }
   }
 }

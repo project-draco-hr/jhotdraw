@@ -1,4 +1,12 @@
 {
   clearRubberBand();
-  updateCursor(editor.findView((Container)evt.getSource()),new Point(evt.getX(),evt.getY()));
+  DrawingView view=editor.findView((Container)evt.getSource());
+  updateCursor(view,new Point(evt.getX(),evt.getY()));
+  if (view == null || editor.getActiveView() != view) {
+    clearHoverHandles();
+  }
+ else {
+    Figure f=view.findFigure(evt.getPoint());
+    updateHoverHandles(view,f);
+  }
 }

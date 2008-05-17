@@ -1,9 +1,12 @@
 {
   LinkedList<Handle> handles=new LinkedList<Handle>();
 switch (detailLevel % 2) {
-case 0:
+case -1:
     handles.add(new BoundsOutlineHandle(this));
-  handles.add(new MoveHandle(this,RelativeLocator.northWest()));
+  break;
+case 0:
+handles.add(new BoundsOutlineHandle(this));
+handles.add(new MoveHandle(this,RelativeLocator.northWest()));
 handles.add(new MoveHandle(this,RelativeLocator.northEast()));
 handles.add(new MoveHandle(this,RelativeLocator.southWest()));
 handles.add(new MoveHandle(this,RelativeLocator.southEast()));

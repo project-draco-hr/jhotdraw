@@ -1,0 +1,4 @@
+DrawingView view
+CompositeFigure group
+Collection<Figure> figures
+int groupIndex

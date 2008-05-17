@@ -2,6 +2,7 @@
   if (DEBUG) {
     System.out.println("BezierTool.mouseReleased " + evt);
   }
+  isWorking=false;
   if (createdFigure.getNodeCount() > nodeCountBeforeDrag + 1) {
     createdFigure.willChange();
     BezierPath figurePath=createdFigure.getBezierPath();
@@ -21,11 +22,18 @@
       finishCreation(createdFigure);
       createdFigure=null;
       finishWhenMouseReleased=null;
-      fireToolDone();
       return;
     }
   }
  else   if (finishWhenMouseReleased == null) {
     finishWhenMouseReleased=Boolean.FALSE;
   }
+  Rectangle r=new Rectangle(anchor);
+  r.add(mouseLocation);
+  r.add(evt.getPoint());
+  r.grow(1,1);
+  fireAreaInvalidated(r);
+  anchor.x=evt.getX();
+  anchor.y=evt.getY();
+  mouseLocation=evt.getPoint();
 }

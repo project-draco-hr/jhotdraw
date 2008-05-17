@@ -2,6 +2,8 @@
   ResourceBundleUtil drawLabels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
   JMenu m=super.createEditMenu(a,p);
   JMenuItem mi;
+  mi=m.add(getAction(ClearSelectionAction.ID));
+  mi.setIcon(null);
   if (p != null) {
     mi=m.add(p.getAction(SelectSameAction.ID));
   }

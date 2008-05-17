@@ -1,0 +1,8 @@
+{
+  hoverFigure=null;
+  for (  Handle h : hoverHandles) {
+    h.setView(null);
+    h.dispose();
+  }
+  hoverHandles.clear();
+}

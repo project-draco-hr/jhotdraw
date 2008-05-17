@@ -6,7 +6,6 @@
       final CompositeFigure group=(CompositeFigure)prototype.clone();
       UndoableEdit edit=new AbstractUndoableEdit(){
         @Override public String getPresentationName(){
-          ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels",Locale.getDefault());
           return labels.getString("selectionGroup");
         }
         public void redo() throws CannotRedoException {
@@ -33,7 +32,6 @@
       final LinkedList<Figure> ungroupedFigures=new LinkedList<Figure>();
       UndoableEdit edit=new AbstractUndoableEdit(){
         @Override public String getPresentationName(){
-          ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels",Locale.getDefault());
           return labels.getString("selectionUngroup");
         }
         @Override public void redo() throws CannotRedoException {

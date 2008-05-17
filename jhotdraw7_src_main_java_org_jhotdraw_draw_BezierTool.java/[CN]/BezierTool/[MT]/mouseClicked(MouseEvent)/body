@@ -9,7 +9,9 @@ case 1:
           createdFigure.setClosed(true);
           finishCreation(createdFigure);
           createdFigure=null;
-          fireToolDone();
+          if (isToolDoneAfterCreation) {
+            fireToolDone();
+          }
         }
       }
     break;
@@ -17,7 +19,6 @@ case 2:
   finishWhenMouseReleased=null;
 finishCreation(createdFigure);
 createdFigure=null;
-fireToolDone();
 break;
 }
 }

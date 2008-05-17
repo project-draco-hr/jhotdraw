@@ -3,6 +3,7 @@
   ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.samples.svg.Labels");
   AbstractAction aa;
   gridConstrainer=new GridConstrainer(12,12);
+  putAction(ClearSelectionAction.ID,new ClearSelectionAction());
   putAction(ViewSourceAction.ID,new ViewSourceAction(a));
   putAction(ExportAction.ID,new ExportAction(a));
   putAction(ToggleGridAction.ID,new ToggleGridAction(getSharedEditor()));

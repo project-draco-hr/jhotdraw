@@ -10,6 +10,7 @@
     if (image != null) {
       if (TRANSFORM.get(this) != null) {
         Graphics2D gx=(Graphics2D)g.create();
+        gx.setRenderingHints(g.getRenderingHints());
         gx.transform(TRANSFORM.get(this));
         gx.drawImage(image,(int)rectangle.x,(int)rectangle.y,(int)rectangle.width,(int)rectangle.height,null);
         gx.dispose();

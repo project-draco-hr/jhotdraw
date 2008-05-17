@@ -1,9 +1,12 @@
 {
   LinkedList<Handle> handles=new LinkedList<Handle>();
 switch (detailLevel % 2) {
-case 0:
-    ResizeHandleKit.addResizeHandles(this,handles);
+case -1:
+    handles.add(new BoundsOutlineHandle(this));
   break;
+case 0:
+ResizeHandleKit.addResizeHandles(this,handles);
+break;
 case 1:
 TransformHandleKit.addTransformHandles(this,handles);
 break;
