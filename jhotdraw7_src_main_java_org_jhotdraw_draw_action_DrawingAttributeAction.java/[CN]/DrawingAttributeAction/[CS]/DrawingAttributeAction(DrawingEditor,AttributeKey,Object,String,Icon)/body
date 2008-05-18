@@ -1,0 +1,3 @@
+{
+  this(editor,key,value,name,icon,null);
+}

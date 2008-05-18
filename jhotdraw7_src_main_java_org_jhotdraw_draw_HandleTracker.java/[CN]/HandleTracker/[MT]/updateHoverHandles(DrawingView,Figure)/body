@@ -2,7 +2,6 @@
   if (f != hoverFigure) {
     Rectangle r=null;
     if (hoverFigure != null) {
-      fireAreaInvalidated(view.drawingToView(hoverFigure.getDrawingArea()));
       for (      Handle h : hoverHandles) {
         if (r == null) {
           r=h.getDrawingArea();

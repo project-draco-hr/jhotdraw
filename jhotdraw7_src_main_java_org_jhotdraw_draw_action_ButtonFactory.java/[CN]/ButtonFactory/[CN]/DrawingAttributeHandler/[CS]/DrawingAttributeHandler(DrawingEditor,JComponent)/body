@@ -1,0 +1,11 @@
+{
+  this.editor=editor;
+  this.component=component;
+  if (editor.getActiveView() != null) {
+    DrawingView view=editor.getActiveView();
+    view.addPropertyChangeListener(this);
+    if (view.getDrawing() != null) {
+      view.getDrawing().addFigureListener(this);
+    }
+  }
+}

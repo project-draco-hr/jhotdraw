@@ -1,0 +1,41 @@
+{
+  final ArrayList<Object> restoreData=new ArrayList<Object>();
+  final Figure drawing=getView().getDrawing();
+  restoreData.add(drawing.getAttributesRestoreData());
+  drawing.willChange();
+  for (  Map.Entry<AttributeKey,Object> entry : attributes.entrySet()) {
+    entry.getKey().basicSet(drawing,entry.getValue());
+  }
+  drawing.changed();
+  UndoableEdit edit=new AbstractUndoableEdit(){
+    public String getPresentationName(){
+      String name=(String)getValue(Actions.UNDO_PRESENTATION_NAME_KEY);
+      if (name == null) {
+        name=(String)getValue(AbstractAction.NAME);
+      }
+      if (name == null) {
+        ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+        name=labels.getString("attribute");
+      }
+      return name;
+    }
+    public void undo(){
+      super.undo();
+      Iterator<Object> iRestore=restoreData.iterator();
+      drawing.willChange();
+      drawing.restoreAttributesTo(iRestore.next());
+      drawing.changed();
+    }
+    public void redo(){
+      super.redo();
+      restoreData.add(drawing.getAttributesRestoreData());
+      drawing.willChange();
+      for (      Map.Entry<AttributeKey,Object> entry : attributes.entrySet()) {
+        entry.getKey().basicSet(drawing,entry.getValue());
+      }
+      drawing.changed();
+    }
+  }
+;
+  fireUndoableEditHappened(edit);
+}

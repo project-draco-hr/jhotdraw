@@ -3,4 +3,15 @@
     return;
   }
   isDragging=false;
+  if (evt.getSource() instanceof JToolBar) {
+    JComponent c=(JComponent)evt.getSource();
+    Insets insets;
+    if (c.getBorder() instanceof PaletteToolBarBorder) {
+      insets=((PaletteToolBarBorder)c.getBorder()).getDragInsets(c);
+    }
+ else {
+      insets=c.getInsets();
+    }
+    isArmed=!(evt.getX() > insets.left && evt.getX() < c.getWidth() - insets.right && evt.getY() > insets.top && evt.getY() < c.getHeight() - insets.bottom);
+  }
 }

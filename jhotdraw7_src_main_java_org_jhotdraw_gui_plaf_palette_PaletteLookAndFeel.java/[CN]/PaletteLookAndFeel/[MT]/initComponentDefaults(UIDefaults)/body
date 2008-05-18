@@ -3,7 +3,7 @@
   Integer twelve=new Integer(12);
   Integer fontPlain=new Integer(Font.PLAIN);
   Integer fontBold=new Integer(Font.BOLD);
-  Object dialogPlain12=new ProxyLazyValue("javax.swing.plaf.FontUIResource",null,new Object[]{"Gill Sans",fontPlain,twelve});
+  Object dialogPlain12=new ProxyLazyValue("javax.swing.plaf.FontUIResource",null,new Object[]{"Dialog Sans",fontPlain,twelve});
   Object fieldPlain12=new ProxyLazyValue("javax.swing.plaf.FontUIResource",null,new Object[]{"Verdana",fontPlain,twelve});
   Object serifPlain12=new ProxyLazyValue("javax.swing.plaf.FontUIResource",null,new Object[]{"Serif",fontPlain,twelve});
   Object sansSerifPlain12=new ProxyLazyValue("javax.swing.plaf.FontUIResource",null,new Object[]{"SansSerif",fontPlain,twelve});

@@ -1,0 +1,4 @@
+{
+  boolean oldValue=isEnabledWithoutSelection;
+  firePropertyChange(ENABLED_WITHOUT_SELECTION_PROPERTY,oldValue,newValue);
+}

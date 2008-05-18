@@ -1,6 +1,6 @@
 {
   if (getView() != null) {
-    setEnabled(getView().isEnabled() && getView().getSelectionCount() > 0);
+    setEnabled(getView().isEnabled() && (isEnabledWithoutSelection || getView().getSelectionCount() > 0));
   }
  else {
     setEnabled(false);

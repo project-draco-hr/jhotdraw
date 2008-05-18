@@ -1,5 +1,0 @@
-{
-  int oldValue=getNumberOfDisclosureStates();
-  disclosureButton.putClientProperty(DisclosureIcon.NUMBER_OF_STATES_PROPERTY,newValue);
-  firePropertyChange(NUMBER_OF_DISCLOSURE_STATES_PROPERTY,oldValue,newValue);
-}

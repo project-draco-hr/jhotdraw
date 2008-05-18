@@ -6,7 +6,7 @@
  else {
       Double sliderValue=null;
       boolean isFirst=true;
-      isMultipleValues=false;
+      isSelectionHasMultipleValues=false;
       for (      Figure f : getView().getSelectedFigures()) {
         if (isFirst) {
           isFirst=false;
@@ -18,7 +18,7 @@
           }
  else {
             sliderValue=null;
-            isMultipleValues=true;
+            isSelectionHasMultipleValues=true;
           }
         }
       }

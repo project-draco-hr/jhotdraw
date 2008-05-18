@@ -1,0 +1,7 @@
+{
+  super(editor);
+  this.attributes=attributes;
+  putValue(AbstractAction.NAME,name);
+  putValue(AbstractAction.SMALL_ICON,icon);
+  updateEnabledState();
+}

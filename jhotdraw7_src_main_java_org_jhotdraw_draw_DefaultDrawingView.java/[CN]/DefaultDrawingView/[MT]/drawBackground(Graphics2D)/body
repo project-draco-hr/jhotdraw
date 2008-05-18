@@ -3,7 +3,16 @@
   int y=(int)(-translate.y * scaleFactor);
   int w=getWidth();
   int h=getHeight();
-  Color canvasColor=(drawing == null || CANVAS_FILL_COLOR.get(drawing) == null) ? getBackground() : new Color((CANVAS_FILL_COLOR.get(drawing).getRGB() & 0xffffff) | ((int)(CANVAS_FILL_OPACITY.get(drawing) * 255) << 24),true);
+  Color canvasColor;
+  if (drawing == null) {
+    canvasColor=getBackground();
+  }
+ else {
+    canvasColor=CANVAS_FILL_COLOR.get(drawing);
+    if (canvasColor != null) {
+      canvasColor=new Color((canvasColor.getRGB() & 0xffffff) | ((int)(CANVAS_FILL_OPACITY.get(drawing) * 255) << 24),true);
+    }
+  }
   if (canvasColor == null || canvasColor.getAlpha() != 255) {
     g.setPaint(getBackgroundPaint(x,y));
     g.fillRect(x,y,w - x,h - y);

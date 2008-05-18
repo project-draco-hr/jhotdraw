@@ -1,0 +1,6 @@
+{
+  super(editor,key,name,icon,fixedAttributes);
+  if (this.fixedAttributes == null) {
+    throw new NullPointerException();
+  }
+}

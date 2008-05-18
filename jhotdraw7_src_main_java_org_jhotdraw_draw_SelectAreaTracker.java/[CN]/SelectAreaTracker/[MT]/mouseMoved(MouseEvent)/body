@@ -1,12 +1,22 @@
 {
   clearRubberBand();
+  Point point=evt.getPoint();
   DrawingView view=editor.findView((Container)evt.getSource());
-  updateCursor(view,new Point(evt.getX(),evt.getY()));
+  updateCursor(view,point);
   if (view == null || editor.getActiveView() != view) {
     clearHoverHandles();
   }
  else {
-    Figure f=view.findFigure(evt.getPoint());
-    updateHoverHandles(view,f);
+    Figure hf=null;
+    Point2D.Double p=view.viewToDrawing(point);
+    for (    Figure f : view.getSelectedFigures()) {
+      if (f.contains(p)) {
+        hf=f;
+      }
+    }
+    if (hf == null) {
+      hf=view.findFigure(point);
+    }
+    updateHoverHandles(view,hf);
   }
 }

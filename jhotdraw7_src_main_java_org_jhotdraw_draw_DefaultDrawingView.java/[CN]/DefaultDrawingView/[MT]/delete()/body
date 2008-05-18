@@ -1,26 +1,18 @@
 {
   final LinkedList<CompositeFigureEvent> deletionEvents=new LinkedList<CompositeFigureEvent>();
-  final LinkedList<Figure> selectedFigures=new LinkedList<Figure>(getSelectedFigures());
-  for (  Figure f : selectedFigures) {
+  final java.util.List<Figure> deletedFigures=drawing.sort(getSelectedFigures());
+  for (  Figure f : deletedFigures) {
     if (!f.isRemovable()) {
       getToolkit().beep();
       return;
     }
   }
-  clearSelection();
-  CompositeFigureListener removeListener=new CompositeFigureListener(){
-    public void areaInvalidated(    CompositeFigureEvent e){
-    }
-    public void figureAdded(    CompositeFigureEvent e){
-    }
-    public void figureRemoved(    CompositeFigureEvent evt){
-      deletionEvents.addFirst(evt);
-    }
+  final int[] deletedFigureIndices=new int[deletedFigures.size()];
+  for (int i=0; i < deletedFigureIndices.length; i++) {
+    deletedFigureIndices[i]=drawing.indexOf(deletedFigures.get(i));
   }
-;
-  getDrawing().addCompositeFigureListener(removeListener);
-  getDrawing().removeAll(selectedFigures);
-  getDrawing().removeCompositeFigureListener(removeListener);
+  clearSelection();
+  getDrawing().removeAll(deletedFigures);
   getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
     public String getPresentationName(){
       ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
@@ -30,15 +22,15 @@
       super.undo();
       clearSelection();
       Drawing d=getDrawing();
-      for (      CompositeFigureEvent evt : deletionEvents) {
-        d.add(evt.getIndex(),evt.getChildFigure());
+      for (int i=0; i < deletedFigureIndices.length; i++) {
+        d.add(deletedFigureIndices[i],deletedFigures.get(i));
       }
-      addToSelection(selectedFigures);
+      addToSelection(deletedFigures);
     }
     public void redo() throws CannotRedoException {
       super.redo();
-      for (      CompositeFigureEvent evt : new ReversedList<CompositeFigureEvent>(deletionEvents)) {
-        getDrawing().remove(evt.getChildFigure());
+      for (int i=0; i < deletedFigureIndices.length; i++) {
+        drawing.remove(deletedFigures.get(i));
       }
     }
   }

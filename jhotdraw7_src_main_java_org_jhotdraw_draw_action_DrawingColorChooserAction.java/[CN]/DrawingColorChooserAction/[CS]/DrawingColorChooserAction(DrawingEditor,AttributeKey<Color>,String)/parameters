@@ -1,0 +1,3 @@
+DrawingEditor editor
+AttributeKey<Color> key
+String name

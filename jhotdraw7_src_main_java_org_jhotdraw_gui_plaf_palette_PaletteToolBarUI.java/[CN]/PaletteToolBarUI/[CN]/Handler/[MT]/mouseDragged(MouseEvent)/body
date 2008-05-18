@@ -2,6 +2,9 @@
   if (!tb.isEnabled()) {
     return;
   }
+  if (!isArmed) {
+    return;
+  }
   isDragging=true;
   Point position=evt.getPoint();
   if (origin == null) {

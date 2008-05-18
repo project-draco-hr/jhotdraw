@@ -1,6 +1,6 @@
 {
   JComponent c=(JComponent)component;
-  int nbOfStates=(c.getClientProperty(NUMBER_OF_STATES_PROPERTY) instanceof Integer) ? (Integer)c.getClientProperty(NUMBER_OF_STATES_PROPERTY) : 2;
+  int nbOfStates=(c.getClientProperty(STATE_COUNT_PROPERTY) instanceof Integer) ? (Integer)c.getClientProperty(STATE_COUNT_PROPERTY) : 2;
   int currentState=(c.getClientProperty(CURRENT_STATE_PROPERTY) instanceof Integer) ? (Integer)c.getClientProperty(CURRENT_STATE_PROPERTY) : 1;
   g.setColor(Color.black);
   g.drawRect(x,y,getIconWidth() - 1,getIconHeight() - 1);
