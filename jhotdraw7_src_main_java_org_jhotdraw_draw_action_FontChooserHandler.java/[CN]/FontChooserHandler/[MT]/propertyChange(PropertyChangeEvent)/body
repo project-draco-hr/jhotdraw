@@ -1,5 +1,8 @@
 {
-  if (evt.getPropertyName() == JFontChooser.SELECTED_FONT_PROPERTY) {
-    applySelectedFontToFigures();
+  if (isUpdating++ == 0) {
+    if (evt.getPropertyName() == JFontChooser.SELECTED_FONT_PROPERTY) {
+      applySelectedFontToFigures();
+    }
   }
+  isUpdating--;
 }
