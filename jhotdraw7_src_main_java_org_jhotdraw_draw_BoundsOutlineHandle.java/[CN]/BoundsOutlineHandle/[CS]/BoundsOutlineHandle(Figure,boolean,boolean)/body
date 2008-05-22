@@ -1,0 +1,5 @@
+{
+  super(owner);
+  this.isTransformHandle=isTransformHandle;
+  this.isHoverHandle=isHoverHandle;
+}

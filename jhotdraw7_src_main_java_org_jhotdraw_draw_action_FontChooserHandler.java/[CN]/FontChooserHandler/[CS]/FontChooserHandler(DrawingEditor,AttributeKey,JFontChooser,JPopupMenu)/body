@@ -1,0 +1,9 @@
+{
+  super(editor);
+  this.key=key;
+  this.fontChooser=fontChooser;
+  this.popupMenu=popupMenu;
+  fontChooser.addActionListener(this);
+  fontChooser.addPropertyChangeListener(this);
+  updateEnabledState();
+}

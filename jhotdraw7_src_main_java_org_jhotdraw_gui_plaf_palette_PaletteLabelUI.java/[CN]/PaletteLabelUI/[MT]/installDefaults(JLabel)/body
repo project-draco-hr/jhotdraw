@@ -1,0 +1,7 @@
+{
+  super.installDefaults(b);
+  LookAndFeel.installBorder(b,"Label.border");
+  if (b.getClass().getName().endsWith("LabelUIResource")) {
+    b.setFont(UIManager.getFont("Slider.labelFont"));
+  }
+}

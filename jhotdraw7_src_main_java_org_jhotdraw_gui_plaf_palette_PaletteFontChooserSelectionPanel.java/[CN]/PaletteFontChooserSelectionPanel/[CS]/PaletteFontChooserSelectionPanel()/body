@@ -1,0 +1,11 @@
+{
+  labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.gui.Labels");
+  initComponents();
+  collectionList.setModel(new DefaultListModel());
+  familyList.setModel(new DefaultListModel());
+  faceList.setModel(new DefaultListModel());
+  Font smallSystemFont=new Font("Dialog",Font.PLAIN,11);
+  collectionsScrollPane.setFont(smallSystemFont);
+  familiesScrollPane.setFont(smallSystemFont);
+  facesScrollPane.setFont(smallSystemFont);
+}

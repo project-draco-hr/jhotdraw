@@ -1,0 +1,11 @@
+{
+  String name=evt.getPropertyName();
+  if (name == JFontChooser.SELECTION_PATH_PROPERTY) {
+    updateCollectionList();
+    updateFamilyList();
+    updateFaceList();
+  }
+ else   if (name == JFontChooser.SELECTED_FONT_PROPERTY) {
+    updatePreview();
+  }
+}

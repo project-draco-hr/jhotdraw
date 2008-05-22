@@ -1,0 +1,3 @@
+{
+  return (TreeModelListener[])listenerList.getListeners(TreeModelListener.class);
+}

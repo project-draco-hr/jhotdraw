@@ -1,0 +1,13 @@
+{
+  FontFaceNode that;
+  try {
+    that=(FontFaceNode)super.clone();
+  }
+ catch (  CloneNotSupportedException ex) {
+    InternalError error=new InternalError("Clone failed");
+    error.initCause(ex);
+    throw error;
+  }
+  that.parent=null;
+  return that;
+}

@@ -1,0 +1,5 @@
+{
+  FontChooserModel oldValue=model;
+  this.model=newValue;
+  firePropertyChange(MODEL_PROPERTY,oldValue,newValue);
+}

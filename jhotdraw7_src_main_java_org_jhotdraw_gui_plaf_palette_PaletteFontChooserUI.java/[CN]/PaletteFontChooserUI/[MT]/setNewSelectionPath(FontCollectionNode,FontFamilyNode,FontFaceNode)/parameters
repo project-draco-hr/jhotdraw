@@ -1,0 +1,3 @@
+FontCollectionNode newCollection
+FontFamilyNode newFamily
+FontFaceNode newFace

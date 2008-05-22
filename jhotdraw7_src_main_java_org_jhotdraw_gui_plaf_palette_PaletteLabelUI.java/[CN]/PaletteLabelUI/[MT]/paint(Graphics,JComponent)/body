@@ -1,0 +1,6 @@
+{
+  Graphics2D g=(Graphics2D)gr;
+  Object oldHints=PaletteUtilities.beginGraphics(g);
+  super.paint(g,c);
+  PaletteUtilities.endGraphics(g,oldHints);
+}

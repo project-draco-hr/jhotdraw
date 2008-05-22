@@ -1,0 +1,14 @@
+{
+  selectionPanelHandler=new SelectionPanelHandler();
+  selectionPanel.getCollectionList().addListSelectionListener(selectionPanelHandler);
+  selectionPanel.getFamilyList().addListSelectionListener(selectionPanelHandler);
+  selectionPanel.getFaceList().addListSelectionListener(selectionPanelHandler);
+  selectionPanel.getCollectionList().addKeyListener(selectionPanelHandler);
+  selectionPanel.getFamilyList().addKeyListener(selectionPanelHandler);
+  selectionPanel.getFaceList().addKeyListener(selectionPanelHandler);
+  selectionPanel.getCollectionList().addMouseListener(selectionPanelHandler);
+  selectionPanel.getFamilyList().addMouseListener(selectionPanelHandler);
+  selectionPanel.getFaceList().addMouseListener(selectionPanelHandler);
+  chooserHandler=new FontChooserHandler();
+  fontChooser.addPropertyChangeListener(chooserHandler);
+}

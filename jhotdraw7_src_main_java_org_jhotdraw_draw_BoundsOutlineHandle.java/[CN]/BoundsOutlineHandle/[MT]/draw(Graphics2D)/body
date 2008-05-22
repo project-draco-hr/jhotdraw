@@ -7,12 +7,24 @@
   Stroke stroke;
   Color strokeColor;
   if (isTransformHandle) {
-    stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_OUTLINE_HANDLE_STROKE_1);
-    strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_OUTLINE_HANDLE_STROKE_COLOR_1);
+    if (isHoverHandle) {
+      stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_HOVER_STROKE_1);
+      strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_HOVER_COLOR_1);
+    }
+ else {
+      stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_1);
+      strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_1);
+    }
   }
  else {
-    stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_OUTLINE_HANDLE_STROKE_1);
-    strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_OUTLINE_HANDLE_STROKE_COLOR_1);
+    if (isHoverHandle) {
+      stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_HOVER_STROKE_1);
+      strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_HOVER_COLOR_1);
+    }
+ else {
+      stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_STROKE_1);
+      strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_COLOR_1);
+    }
   }
   if (stroke != null && strokeColor != null) {
     g.setStroke(stroke);
@@ -20,12 +32,24 @@
     g.draw(bounds);
   }
   if (isTransformHandle) {
-    stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_OUTLINE_HANDLE_STROKE_2);
-    strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_OUTLINE_HANDLE_STROKE_COLOR_2);
+    if (isHoverHandle) {
+      stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_HOVER_STROKE_2);
+      strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_HOVER_COLOR_2);
+    }
+ else {
+      stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_2);
+      strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_2);
+    }
   }
  else {
-    stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_OUTLINE_HANDLE_STROKE_2);
-    strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_OUTLINE_HANDLE_STROKE_COLOR_2);
+    if (isHoverHandle) {
+      stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_HOVER_STROKE_2);
+      strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_HOVER_COLOR_2);
+    }
+ else {
+      stroke=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_STROKE_2);
+      strokeColor=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_COLOR_2);
+    }
   }
   if (stroke != null && strokeColor != null) {
     g.setStroke(stroke);
