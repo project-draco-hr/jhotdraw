@@ -1,2 +1,2 @@
 Point2D.Double split
-float tolerance
+double tolerance

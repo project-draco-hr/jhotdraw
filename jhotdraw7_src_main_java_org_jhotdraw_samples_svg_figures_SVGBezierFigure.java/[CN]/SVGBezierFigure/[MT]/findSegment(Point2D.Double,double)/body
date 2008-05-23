@@ -1,0 +1,11 @@
+{
+  if (TRANSFORM.get(this) != null) {
+    try {
+      find=(Point2D.Double)TRANSFORM.get(this).inverseTransform(find,new Point2D.Double());
+    }
+ catch (    NoninvertibleTransformException ex) {
+      System.err.println("Warning: SVGBezierFigure.findSegment. Figure has noninvertible Transform.");
+    }
+  }
+  return getBezierPath().findSegment(find,tolerance);
+}

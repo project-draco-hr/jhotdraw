@@ -1,2 +1,2 @@
 Point2D.Double find
-float tolerance
+double tolerance

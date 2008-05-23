@@ -1,0 +1,15 @@
+{
+  if (TRANSFORM.get(this) != null) {
+    try {
+      split=(Point2D.Double)TRANSFORM.get(this).inverseTransform(split,new Point2D.Double());
+    }
+ catch (    NoninvertibleTransformException ex) {
+      System.err.println("Warning: SVGBezierFigure.findSegment. Figure has noninvertible Transform.");
+    }
+  }
+  int i=getBezierPath().findSegment(split,tolerance);
+  if (i != -1) {
+    addNode(i + 1,new BezierPath.Node(split));
+  }
+  return i + 1;
+}

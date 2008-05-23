@@ -7,9 +7,11 @@
     isMousePressedPopupTrigger=false;
   }
  else {
-    super.mouseReleased(evt);
-  }
-  if (evt.isPopupTrigger()) {
-    handlePopupMenu(evt);
+    if (evt.isPopupTrigger()) {
+      handlePopupMenu(evt);
+    }
+ else {
+      super.mouseReleased(evt);
+    }
   }
 }

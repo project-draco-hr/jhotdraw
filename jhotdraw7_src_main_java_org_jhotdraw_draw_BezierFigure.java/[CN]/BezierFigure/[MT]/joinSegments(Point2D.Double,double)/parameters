@@ -1,2 +1,2 @@
 Point2D.Double join
-float tolerance
+double tolerance
