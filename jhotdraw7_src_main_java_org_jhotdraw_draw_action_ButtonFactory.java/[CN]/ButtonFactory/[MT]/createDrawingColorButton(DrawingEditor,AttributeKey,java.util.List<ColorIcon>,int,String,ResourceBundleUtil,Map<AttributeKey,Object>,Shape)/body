@@ -23,6 +23,6 @@
   popupButton.setIcon(icon);
   popupButton.setDisabledIcon(icon);
   popupButton.setFocusable(false);
-  editor.addPropertyChangeListener(new DrawingAttributeHandler(editor,popupButton));
+  editor.addPropertyChangeListener(new SelectionComponentRepainter(editor,popupButton));
   return popupButton;
 }

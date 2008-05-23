@@ -23,29 +23,6 @@
   popupButton.setIcon(icon);
   popupButton.setDisabledIcon(icon);
   popupButton.setFocusable(false);
-  final FigureSelectionListener selectionHandler=new FigureSelectionListener(){
-    public void selectionChanged(    FigureSelectionEvent evt){
-      popupButton.repaint();
-    }
-  }
-;
-  editor.addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
-      String name=evt.getPropertyName();
-      if (name == DrawingEditor.ACTIVE_VIEW_PROPERTY) {
-        if (evt.getOldValue() != null) {
-          ((DrawingView)evt.getOldValue()).removeFigureSelectionListener(selectionHandler);
-        }
-        if (evt.getNewValue() != null) {
-          ((DrawingView)evt.getNewValue()).addFigureSelectionListener(selectionHandler);
-        }
-        popupButton.repaint();
-      }
- else {
-        popupButton.repaint();
-      }
-    }
-  }
-);
+  new SelectionComponentRepainter(editor,popupButton);
   return popupButton;
 }

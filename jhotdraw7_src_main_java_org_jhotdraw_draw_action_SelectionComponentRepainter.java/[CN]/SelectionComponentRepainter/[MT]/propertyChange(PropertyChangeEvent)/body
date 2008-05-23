@@ -4,6 +4,7 @@
     DrawingView view=(DrawingView)evt.getOldValue();
     if (view != null) {
       view.removePropertyChangeListener(this);
+      view.removeFigureSelectionListener(this);
       if (view.getDrawing() != null) {
         view.getDrawing().removeFigureListener(this);
       }
@@ -11,6 +12,7 @@
     view=(DrawingView)evt.getNewValue();
     if (view != null) {
       view.addPropertyChangeListener(this);
+      view.addFigureSelectionListener(this);
       if (view.getDrawing() != null) {
         view.getDrawing().addFigureListener(this);
       }
@@ -26,6 +28,9 @@
     if (drawing != null) {
       drawing.addFigureListener(this);
     }
+    component.repaint();
+  }
+ else {
     component.repaint();
   }
 }
