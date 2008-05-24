@@ -9,7 +9,6 @@
   }
   if (getFileChooser().showOpenDialog(getView().getComponent()) == JFileChooser.APPROVE_OPTION) {
     final File file=getFileChooser().getSelectedFile();
-    final ImageHolderFigure loaderFigure=((ImageHolderFigure)prototype.clone());
     Worker worker;
     if (file.getName().toLowerCase().endsWith(".svg") || file.getName().toLowerCase().endsWith(".svgz")) {
       prototype=groupPrototype;
@@ -56,6 +55,7 @@
     }
  else {
       prototype=imagePrototype;
+      final ImageHolderFigure loaderFigure=((ImageHolderFigure)prototype.clone());
       worker=new Worker(){
         public Object construct(){
           try {
