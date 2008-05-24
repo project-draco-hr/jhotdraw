@@ -1,3 +1,0 @@
-{
-  drawing.basicAddAll(0,createTextHolderFigures(in));
-}

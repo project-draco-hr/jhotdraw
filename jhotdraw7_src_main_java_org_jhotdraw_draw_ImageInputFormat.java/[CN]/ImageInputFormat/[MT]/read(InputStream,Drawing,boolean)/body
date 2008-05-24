@@ -1,0 +1,6 @@
+{
+  if (replace) {
+    drawing.removeAllChildren();
+  }
+  drawing.basicAdd(createImageHolder(in));
+}

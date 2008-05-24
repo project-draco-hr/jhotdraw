@@ -6,7 +6,7 @@
       Drawing drawing=createDrawing();
       for (      InputFormat fmt : drawing.getInputFormats()) {
         try {
-          fmt.read(in,drawing);
+          fmt.read(in,drawing,true);
           in=new ByteArrayInputStream(text.getBytes("UTF8"));
           result=drawing;
           break;

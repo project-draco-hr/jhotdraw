@@ -1,6 +1,0 @@
-{
-  NanoXMLDOMInput domi=new NanoXMLDOMInput(factory,in);
-  domi.openElement(factory.getName(drawing));
-  drawing.read(domi);
-  domi.closeElement();
-}

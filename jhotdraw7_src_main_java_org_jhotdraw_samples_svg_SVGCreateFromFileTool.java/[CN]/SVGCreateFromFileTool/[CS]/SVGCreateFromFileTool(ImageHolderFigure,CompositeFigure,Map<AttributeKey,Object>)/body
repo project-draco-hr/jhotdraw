@@ -1,0 +1,5 @@
+{
+  super(imagePrototype,attributes);
+  this.groupPrototype=groupPrototype;
+  this.imagePrototype=imagePrototype;
+}

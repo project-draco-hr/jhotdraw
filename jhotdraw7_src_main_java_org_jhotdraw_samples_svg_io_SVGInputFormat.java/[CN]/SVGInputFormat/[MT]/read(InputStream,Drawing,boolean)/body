@@ -50,8 +50,11 @@
   if (true) {
     System.out.println("SVGInputFormat elapsed:" + (end - start));
   }
+  if (replace) {
+    drawing.removeAllChildren();
+  }
   drawing.addAll(figures);
-  if (isSetAttributesOnDrawing) {
+  if (replace) {
     Viewport viewport=viewportStack.firstElement();
     VIEWPORT_FILL.set(drawing,VIEWPORT_FILL.get(viewport.attributes));
     VIEWPORT_FILL_OPACITY.set(drawing,VIEWPORT_FILL_OPACITY.get(viewport.attributes));

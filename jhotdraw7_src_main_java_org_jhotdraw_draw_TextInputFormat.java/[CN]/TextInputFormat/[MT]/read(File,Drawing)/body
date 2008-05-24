@@ -1,3 +1,3 @@
 {
-  read(new FileInputStream(file),drawing);
+  read(file,drawing,true);
 }

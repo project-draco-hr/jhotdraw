@@ -47,7 +47,6 @@
     workerThread.start();
   }
  else {
-    getDrawing().remove(createdFigure);
     if (isToolDoneAfterCreation()) {
       fireToolDone();
     }

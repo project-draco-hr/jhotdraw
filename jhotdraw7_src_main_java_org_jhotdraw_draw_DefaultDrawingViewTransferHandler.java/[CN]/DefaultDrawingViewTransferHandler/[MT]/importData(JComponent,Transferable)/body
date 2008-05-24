@@ -25,7 +25,7 @@
                 System.out.println(this + ".importData importing flavor " + flavor);
               }
               LinkedList<Figure> existingFigures=new LinkedList<Figure>(drawing.getChildren());
-              format.read(t,drawing);
+              format.read(t,drawing,false);
               final LinkedList<Figure> importedFigures=new LinkedList<Figure>(drawing.getChildren());
               importedFigures.removeAll(existingFigures);
               view.clearSelection();
@@ -60,7 +60,7 @@
                 if (DEBUG) {
                   System.out.println(this + ".importData importing file " + file);
                 }
-                format.read(file,drawing);
+                format.read(file,drawing,false);
               }
             }
           }

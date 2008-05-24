@@ -1,0 +1,45 @@
+{
+  if (t.isDataFlavorSupported(DataFlavor.imageFlavor)) {
+    try {
+      Image img=(Image)t.getTransferData(DataFlavor.imageFlavor);
+      img=Images.toBufferedImage(img);
+      ImageHolderFigure figure=(ImageHolderFigure)prototype.clone();
+      figure.setBufferedImage((BufferedImage)img);
+      figure.setBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
+      LinkedList list=new LinkedList<Figure>();
+      list.add(figure);
+      if (replace) {
+        drawing.removeAllChildren();
+      }
+      drawing.addAll(list);
+      return;
+    }
+ catch (    Throwable e) {
+    }
+  }
+  if (t.isDataFlavorSupported(ImageTransferable.IMAGE_PNG_FLAVOR)) {
+    try {
+      InputStream in=(InputStream)t.getTransferData(ImageTransferable.IMAGE_PNG_FLAVOR);
+      Image img=ImageIO.read(in);
+      img=Images.toBufferedImage(img);
+      ImageHolderFigure figure=(ImageHolderFigure)prototype.clone();
+      figure.setBufferedImage((BufferedImage)img);
+      figure.setBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
+      LinkedList list=new LinkedList<Figure>();
+      list.add(figure);
+      if (replace) {
+        drawing.removeAllChildren();
+      }
+      drawing.addAll(list);
+    }
+ catch (    Throwable e) {
+      e.printStackTrace();
+      IOException ex=new IOException("Couldn't import image as image/png flavor");
+      ex.initCause(e);
+      throw ex;
+    }
+  }
+ else {
+    throw new IOException("Couldn't import image.");
+  }
+}
