@@ -1,4 +1,4 @@
 {
   root=new DefaultMutableTreeNode();
-  init(fonts);
+  setFonts(fonts);
 }

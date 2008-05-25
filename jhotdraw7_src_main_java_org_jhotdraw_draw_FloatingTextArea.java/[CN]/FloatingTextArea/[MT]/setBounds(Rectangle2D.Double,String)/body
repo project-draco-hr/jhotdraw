@@ -1,7 +1,7 @@
 {
-  editWidget.setText(text);
+  textArea.setText(text);
   editScrollContainer.setBounds(view.drawingToView(r));
   editScrollContainer.setVisible(true);
-  editWidget.setCaretPosition(0);
-  editWidget.requestFocus();
+  textArea.setCaretPosition(0);
+  textArea.requestFocus();
 }

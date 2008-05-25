@@ -7,6 +7,7 @@
   }
   if (textHolder != null) {
     beginEdit(textHolder);
+    updateCursor(getView(),e.getPoint());
     return;
   }
   if (typingTarget != null) {
@@ -18,6 +19,9 @@
  else {
     super.mousePressed(e);
     textHolder=(TextHolderFigure)getCreatedFigure();
+    getView().clearSelection();
+    getView().addToSelection(textHolder);
     beginEdit(textHolder);
+    updateCursor(getView(),e.getPoint());
   }
 }

@@ -7,6 +7,10 @@
   FontCollectionNode newCollection=(FontCollectionNode)list.getSelectedValue();
   FontFamilyNode newFamily=null;
   FontFaceNode newFace=null;
+  if ((oldFamily == null || oldFace == null) && fontChooser.getSelectedFont() != null) {
+    oldFace=new FontFaceNode(fontChooser.getSelectedFont());
+    oldFamily=new FontFamilyNode(fontChooser.getSelectedFont().getFamily());
+  }
   if (newCollection != null && oldFamily != null) {
     for (int i=0, n=newCollection.getChildCount(); i < n; i++) {
       FontFamilyNode aFamily=newCollection.getChildAt(i);

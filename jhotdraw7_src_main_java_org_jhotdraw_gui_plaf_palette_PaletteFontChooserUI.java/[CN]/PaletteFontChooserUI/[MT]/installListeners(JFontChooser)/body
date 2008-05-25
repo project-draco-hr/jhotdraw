@@ -11,4 +11,7 @@
   selectionPanel.getFaceList().addMouseListener(selectionPanelHandler);
   chooserHandler=new FontChooserHandler();
   fontChooser.addPropertyChangeListener(chooserHandler);
+  if (fontChooser.getModel() != null) {
+    fontChooser.getModel().addTreeModelListener(chooserHandler);
+  }
 }

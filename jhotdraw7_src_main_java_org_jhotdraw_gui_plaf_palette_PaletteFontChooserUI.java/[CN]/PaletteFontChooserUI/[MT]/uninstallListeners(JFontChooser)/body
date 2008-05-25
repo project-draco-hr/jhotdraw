@@ -9,6 +9,9 @@
   selectionPanel.getCollectionList().removeMouseListener(selectionPanelHandler);
   selectionPanel.getFamilyList().removeMouseListener(selectionPanelHandler);
   selectionPanel.getFaceList().removeMouseListener(selectionPanelHandler);
+  if (fontChooser.getModel() != null) {
+    fontChooser.getModel().removeTreeModelListener(chooserHandler);
+  }
   chooserHandler=null;
   selectionPanelHandler=null;
 }

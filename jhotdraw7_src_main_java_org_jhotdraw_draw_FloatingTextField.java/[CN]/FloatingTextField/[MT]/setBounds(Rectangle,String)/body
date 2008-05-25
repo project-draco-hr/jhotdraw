@@ -1,7 +1,0 @@
-{
-  editWidget.setText(text);
-  editWidget.setBounds(r.x,r.y,r.width,r.height);
-  editWidget.setVisible(true);
-  editWidget.selectAll();
-  editWidget.requestFocus();
-}

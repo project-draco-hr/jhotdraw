@@ -1,5 +1,12 @@
 {
   FontChooserModel oldValue=model;
+  if (oldValue != null) {
+    oldValue.removeTreeModelListener(modelHandler);
+  }
   this.model=newValue;
+  if (newValue != null) {
+    newValue.addTreeModelListener(modelHandler);
+  }
   firePropertyChange(MODEL_PROPERTY,oldValue,newValue);
+  updateSelectionPath(selectedFont);
 }

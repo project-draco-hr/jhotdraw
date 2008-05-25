@@ -1,9 +1,10 @@
 {
-  view.getComponent().add(editWidget,0);
-  Font f=figure.getFont();
-  f=f.deriveFont(f.getStyle(),(float)(figure.getFontSize() * view.getScaleFactor()));
-  editWidget.setFont(f);
-  editWidget.setForeground(figure.getTextColor());
-  editWidget.setBackground(figure.getFillColor());
+  view.getComponent().add(textField,0);
+  textField.setText(figure.getText());
+  textField.setColumns(figure.getTextColumns());
+  textField.selectAll();
+  editedFigure=figure;
+  editedFigure.addFigureListener(figureHandler);
   this.view=view;
+  updateWidget();
 }

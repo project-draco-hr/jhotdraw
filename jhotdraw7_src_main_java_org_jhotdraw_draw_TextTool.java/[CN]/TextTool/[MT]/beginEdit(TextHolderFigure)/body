@@ -7,7 +7,6 @@
     endEdit();
   }
   textField.createOverlay(getView(),textHolder);
-  textField.setBounds(getFieldBounds(textHolder),textHolder.getText());
   textField.requestFocus();
   typingTarget=textHolder;
 }

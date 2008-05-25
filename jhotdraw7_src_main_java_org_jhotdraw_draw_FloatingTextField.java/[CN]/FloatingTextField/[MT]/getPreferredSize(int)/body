@@ -1,4 +1,4 @@
 {
-  editWidget.setColumns(cols);
-  return editWidget.getPreferredSize();
+  textField.setColumns(cols);
+  return textField.getPreferredSize();
 }

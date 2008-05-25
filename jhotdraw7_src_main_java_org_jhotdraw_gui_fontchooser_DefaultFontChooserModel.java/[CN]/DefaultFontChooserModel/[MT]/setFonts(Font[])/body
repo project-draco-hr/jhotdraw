@@ -42,4 +42,5 @@
   Collections.sort(otherFamilies);
   others.addAll(otherFamilies);
   root.add(others);
+  fireTreeStructureChanged(this,new TreePath(root));
 }
