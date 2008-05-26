@@ -2,4 +2,7 @@
   this.editor=editor;
   editorProxy.setTarget(editor);
   isActive=true;
+  for (  DrawingView v : editor.getDrawingViews()) {
+    v.getComponent().repaint();
+  }
 }
