@@ -1,6 +1,8 @@
 {
   Insets2D.Double layoutInsets=LAYOUT_INSETS.get(layoutable);
-  if (layoutInsets == null)   layoutInsets=new Insets2D.Double(0,0,0,0);
+  if (layoutInsets == null) {
+    layoutInsets=new Insets2D.Double(0,0,0,0);
+  }
   Rectangle2D.Double layoutBounds=new Rectangle2D.Double(anchor.x,anchor.y,0,0);
   for (  Figure child : layoutable.getChildren()) {
     if (child.isVisible()) {
