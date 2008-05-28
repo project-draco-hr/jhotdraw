@@ -7,8 +7,25 @@
  catch (    InterruptedException ex) {
     }
   }
-  if (getFileChooser().showOpenDialog(getView().getComponent()) == JFileChooser.APPROVE_OPTION) {
-    final File file=getFileChooser().getSelectedFile();
+  final File file;
+  if (useFileDialog) {
+    getFileDialog().setVisible(true);
+    if (getFileDialog().getFile() != null) {
+      file=new File(getFileDialog().getDirectory(),getFileDialog().getFile());
+    }
+ else {
+      file=null;
+    }
+  }
+ else {
+    if (getFileChooser().showOpenDialog(getView().getComponent()) == JFileChooser.APPROVE_OPTION) {
+      file=getFileChooser().getSelectedFile();
+    }
+ else {
+      file=null;
+    }
+  }
+  if (file != null) {
     Worker worker;
     if (file.getName().toLowerCase().endsWith(".svg") || file.getName().toLowerCase().endsWith(".svgz")) {
       prototype=groupPrototype;
