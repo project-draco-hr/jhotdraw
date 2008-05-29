@@ -17,6 +17,7 @@
     float horizontalPos=leftMargin;
     LinkedList<TextLayout> layouts=new LinkedList<TextLayout>();
     LinkedList<Float> penPositions=new LinkedList<Float>();
+    int first=layouts.size();
     while (!lineComplete && verticalPos <= maxVerticalPos) {
       float wrappingWidth=rightMargin - horizontalPos;
       TextLayout layout=null;
@@ -48,19 +49,34 @@
         horizontalPos=tabStops[j];
       }
     }
-    verticalPos+=maxAscent;
-    Iterator<TextLayout> layoutEnum=layouts.iterator();
-    Iterator<Float> positionEnum=penPositions.iterator();
-    while (layoutEnum.hasNext()) {
-      TextLayout nextLayout=layoutEnum.next();
-      float nextPosition=positionEnum.next();
-      if (g != null) {
-        nextLayout.draw(g,nextPosition,verticalPos);
-      }
-      paragraphBounds.add(nextLayout.getBounds());
-    }
-    verticalPos+=maxDescent;
-  }
-  paragraphBounds.height=verticalPos;
-  return paragraphBounds;
+    if (first == layouts.size() - 1 && g != null) {
+switch (TEXT_ALIGNMENT.get(this)) {
+case TRAILING:
+        penPositions.set(first,rightMargin - layouts.get(first).getVisibleAdvance() - 1);
+      break;
+case CENTER:
+    penPositions.set(first,(rightMargin - 1 - leftMargin- layouts.get(first).getVisibleAdvance()) / 2 + leftMargin);
+  break;
+case BLOCK:
+break;
+case LEADING:
+default :
+break;
+}
+}
+verticalPos+=maxAscent;
+Iterator<TextLayout> layoutEnum=layouts.iterator();
+Iterator<Float> positionEnum=penPositions.iterator();
+while (layoutEnum.hasNext()) {
+TextLayout nextLayout=layoutEnum.next();
+float nextPosition=positionEnum.next();
+if (g != null) {
+nextLayout.draw(g,nextPosition,verticalPos);
+}
+paragraphBounds.add(nextLayout.getBounds());
+}
+verticalPos+=maxDescent;
+}
+paragraphBounds.height=verticalPos;
+return paragraphBounds;
 }
