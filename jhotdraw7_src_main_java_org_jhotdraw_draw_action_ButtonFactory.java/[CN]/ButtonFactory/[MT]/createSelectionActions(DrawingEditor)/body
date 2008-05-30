@@ -5,7 +5,7 @@
   a.add(new GroupAction(editor));
   a.add(new UngroupAction(editor));
   a.add(null);
-  a.add(new MoveToFrontAction(editor));
-  a.add(new MoveToBackAction(editor));
+  a.add(new BringToFrontAction(editor));
+  a.add(new SendToBackAction(editor));
   return a;
 }

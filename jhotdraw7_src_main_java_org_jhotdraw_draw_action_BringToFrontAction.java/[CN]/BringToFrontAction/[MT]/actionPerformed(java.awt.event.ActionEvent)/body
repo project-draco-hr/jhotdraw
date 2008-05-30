@@ -3,16 +3,16 @@
   final LinkedList<Figure> figures=new LinkedList<Figure>(view.getSelectedFigures());
   bringToFront(view,figures);
   fireUndoableEditHappened(new AbstractUndoableEdit(){
-    public String getPresentationName(){
+    @Override public String getPresentationName(){
       return labels.getString(ID);
     }
-    public void redo() throws CannotRedoException {
+    @Override public void redo() throws CannotRedoException {
       super.redo();
-      MoveToFrontAction.bringToFront(view,figures);
+      BringToFrontAction.bringToFront(view,figures);
     }
-    public void undo() throws CannotUndoException {
+    @Override public void undo() throws CannotUndoException {
       super.undo();
-      MoveToBackAction.sendToBack(view,figures);
+      SendToBackAction.sendToBack(view,figures);
     }
   }
 );
