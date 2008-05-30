@@ -1,3 +1,4 @@
 {
-  return origin.y - getBounds().y;
+  TextLayout layout=getTextLayout();
+  return origin.y + layout.getAscent() - getBounds().y;
 }
