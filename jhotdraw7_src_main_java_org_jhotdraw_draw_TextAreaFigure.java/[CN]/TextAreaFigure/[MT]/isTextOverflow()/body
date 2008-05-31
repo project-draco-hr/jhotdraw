@@ -1,6 +1,7 @@
 {
   if (isTextOverflow == null) {
-    isTextOverflow=getPreferredTextSize(getBounds().width).height > getBounds().height;
+    Insets2D.Double insets=getInsets();
+    isTextOverflow=getPreferredTextSize(getBounds().width - insets.left - insets.right).height > getBounds().height - insets.top - insets.bottom;
   }
   return isTextOverflow;
 }

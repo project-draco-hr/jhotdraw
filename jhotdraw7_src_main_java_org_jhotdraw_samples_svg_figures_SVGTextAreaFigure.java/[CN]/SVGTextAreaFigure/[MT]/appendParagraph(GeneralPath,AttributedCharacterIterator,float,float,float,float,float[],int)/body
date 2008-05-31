@@ -1,4 +1,5 @@
 {
+  Rectangle2D.Double paragraphBounds=new Rectangle2D.Double(leftMargin,verticalPos,0,0);
   int[] tabLocations=new int[tabCount + 1];
   int i=0;
   for (char c=styledText.first(); c != styledText.DONE; c=styledText.next()) {
@@ -34,8 +35,12 @@
       if (measurer.getPosition() == tabLocations[currentTab] + 1) {
         currentTab++;
       }
-      if (measurer.getPosition() == styledText.getEndIndex())       lineComplete=true;
- else       if (tabStops.length == 0 || horizontalPos >= tabStops[tabStops.length - 1])       lineComplete=true;
+      if (measurer.getPosition() == styledText.getEndIndex()) {
+        lineComplete=true;
+      }
+ else       if (tabStops.length == 0 || horizontalPos >= tabStops[tabStops.length - 1]) {
+        lineComplete=true;
+      }
       if (!lineComplete) {
         int j;
         for (j=0; horizontalPos >= tabStops[j]; j++) {
@@ -58,8 +63,10 @@
         Shape outline=nextLayout.getOutline(tx);
         shape.append(outline,false);
       }
+      Rectangle2D layoutBounds=nextLayout.getBounds();
+      paragraphBounds.add(new Rectangle2D.Double(layoutBounds.getX() + nextPosition,layoutBounds.getY() + verticalPos,layoutBounds.getWidth(),layoutBounds.getHeight()));
     }
     verticalPos+=maxDescent;
   }
-  return verticalPos;
+  return paragraphBounds;
 }

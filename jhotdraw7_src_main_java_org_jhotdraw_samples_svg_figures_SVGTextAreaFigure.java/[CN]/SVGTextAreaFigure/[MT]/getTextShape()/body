@@ -20,14 +20,17 @@
         if (getText() != null) {
           String[] paragraphs=getText().split("\n");
           for (int i=0; i < paragraphs.length; i++) {
-            if (paragraphs[i].length() == 0)             paragraphs[i]=" ";
+            if (paragraphs[i].length() == 0) {
+              paragraphs[i]=" ";
+            }
             AttributedString as=new AttributedString(paragraphs[i]);
             as.addAttribute(TextAttribute.FONT,font);
             if (isUnderlined) {
               as.addAttribute(TextAttribute.UNDERLINE,TextAttribute.UNDERLINE_LOW_ONE_PIXEL);
             }
             int tabCount=new StringTokenizer(paragraphs[i],"\t").countTokens() - 1;
-            verticalPos=appendParagraph(shape,as.getIterator(),verticalPos,maxVerticalPos,leftMargin,rightMargin,tabStops,tabCount);
+            Rectangle2D.Double paragraphBounds=appendParagraph(shape,as.getIterator(),verticalPos,maxVerticalPos,leftMargin,rightMargin,tabStops,tabCount);
+            verticalPos=(float)(paragraphBounds.y + paragraphBounds.height);
             if (verticalPos > textRect.y + textRect.height) {
               break;
             }

@@ -73,10 +73,10 @@ float nextPosition=positionEnum.next();
 if (g != null) {
 nextLayout.draw(g,nextPosition,verticalPos);
 }
-paragraphBounds.add(nextLayout.getBounds());
+Rectangle2D layoutBounds=nextLayout.getBounds();
+paragraphBounds.add(new Rectangle2D.Double(layoutBounds.getX() + nextPosition,layoutBounds.getY() + verticalPos,layoutBounds.getWidth(),layoutBounds.getHeight()));
 }
 verticalPos+=maxDescent;
 }
-paragraphBounds.height=verticalPos;
 return paragraphBounds;
 }

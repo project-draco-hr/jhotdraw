@@ -13,24 +13,22 @@
       for (int i=0; i < tabStops.length; i++) {
         tabStops[i]=(float)(textRect.x + (int)(tabWidth * (i + 1)));
       }
-      if (getText() != null) {
-        String[] paragraphs=getText().split("\n");
-        for (int i=0; i < paragraphs.length; i++) {
-          if (paragraphs[i].length() == 0) {
-            paragraphs[i]=" ";
-          }
-          AttributedString as=new AttributedString(paragraphs[i]);
-          as.addAttribute(TextAttribute.FONT,font);
-          if (isUnderlined) {
-            as.addAttribute(TextAttribute.UNDERLINE,TextAttribute.UNDERLINE_LOW_ONE_PIXEL);
-          }
-          int tabCount=new StringTokenizer(paragraphs[i],"\t").countTokens() - 1;
-          Rectangle2D.Double paragraphBounds=drawParagraph(null,as.getIterator(),verticalPos,maxVerticalPos,leftMargin,rightMargin,tabStops,tabCount);
-          verticalPos=(float)(paragraphBounds.y + paragraphBounds.height);
-          textRect.add(paragraphBounds);
+      String[] paragraphs=getText().split("\n");
+      for (int i=0; i < paragraphs.length; i++) {
+        if (paragraphs[i].length() == 0) {
+          paragraphs[i]=" ";
         }
+        AttributedString as=new AttributedString(paragraphs[i]);
+        as.addAttribute(TextAttribute.FONT,font);
+        if (isUnderlined) {
+          as.addAttribute(TextAttribute.UNDERLINE,TextAttribute.UNDERLINE_LOW_ONE_PIXEL);
+        }
+        int tabCount=new StringTokenizer(paragraphs[i],"\t").countTokens() - 1;
+        Rectangle2D.Double paragraphBounds=drawParagraph(null,as.getIterator(),verticalPos,maxVerticalPos,leftMargin,rightMargin,tabStops,tabCount);
+        verticalPos=(float)(paragraphBounds.y + paragraphBounds.height);
+        textRect.add(paragraphBounds);
       }
     }
   }
-  return new Dimension2DDouble(textRect.width,textRect.height);
+  return new Dimension2DDouble(-Math.min(textRect.x,0) + textRect.width,-Math.min(textRect.y,0) + textRect.height);
 }
