@@ -1,0 +1,3 @@
+{
+  return fitBezierPath(Arrays.asList(digitizedPoints),error);
+}

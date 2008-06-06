@@ -1,6 +1,0 @@
-Point2D.Double[] d
-int first
-int last
-Point2D.Double[] bezCurve
-double[] u
-int[] splitPoint

@@ -1,0 +1,3 @@
+{
+  return zoomSlider.getValue() / 100d;
+}

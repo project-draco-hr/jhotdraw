@@ -1,0 +1,6 @@
+{
+  Point2D.Double tHat2=new Point2D.Double();
+  tHat2=v2SubII(d.get(end - 1),d.get(end));
+  tHat2=v2Normalize(tHat2);
+  return tHat2;
+}

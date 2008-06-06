@@ -12,6 +12,8 @@
     List<Figure> children=new LinkedList<Figure>(path.getChildren());
     path.basicRemoveAllChildren();
     for (    Figure child : children) {
+      SVGBezierFigure bez=(SVGBezierFigure)child;
+      bez.flattenTransform();
       group.basicAdd(child);
     }
   }

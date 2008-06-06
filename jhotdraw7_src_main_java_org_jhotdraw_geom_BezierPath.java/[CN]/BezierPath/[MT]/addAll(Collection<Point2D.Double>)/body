@@ -1,0 +1,5 @@
+{
+  for (  Point2D.Double c0 : points) {
+    add(new Node(0,c0,c0,c0));
+  }
+}

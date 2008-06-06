@@ -1,7 +1,0 @@
-{
-  Point2D.Double[] d=new Point2D.Double[p.npoints];
-  for (int i=0; i < d.length; i++) {
-    d[i]=new Point2D.Double(p.xpoints[i],p.ypoints[i]);
-  }
-  return fitCurve(d,error);
-}

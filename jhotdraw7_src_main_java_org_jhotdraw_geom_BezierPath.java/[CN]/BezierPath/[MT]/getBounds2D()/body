@@ -13,65 +13,129 @@
       if (isClosed && (node.mask & C1_MASK) != 0) {
         y=node.y[1];
         x=node.x[1];
-        if (x < x1)         x1=x;
-        if (y < y1)         y1=y;
-        if (x > x2)         x2=x;
-        if (y > y2)         y2=y;
+        if (x < x1) {
+          x1=x;
+        }
+        if (y < y1) {
+          y1=y;
+        }
+        if (x > x2) {
+          x2=x;
+        }
+        if (y > y2) {
+          y2=y;
+        }
       }
       if ((node.mask & C2_MASK) != 0) {
         y=node.y[2];
         x=node.x[2];
-        if (x < x1)         x1=x;
-        if (y < y1)         y1=y;
-        if (x > x2)         x2=x;
-        if (y > y2)         y2=y;
+        if (x < x1) {
+          x1=x;
+        }
+        if (y < y1) {
+          y1=y;
+        }
+        if (x > x2) {
+          x2=x;
+        }
+        if (y > y2) {
+          y2=y;
+        }
       }
       node=get(size - 1);
       y=node.y[0];
       x=node.x[0];
-      if (x < x1)       x1=x;
-      if (y < y1)       y1=y;
-      if (x > x2)       x2=x;
-      if (y > y2)       y2=y;
+      if (x < x1) {
+        x1=x;
+      }
+      if (y < y1) {
+        y1=y;
+      }
+      if (x > x2) {
+        x2=x;
+      }
+      if (y > y2) {
+        y2=y;
+      }
       if ((node.mask & C1_MASK) != 0) {
         y=node.y[1];
         x=node.x[1];
-        if (x < x1)         x1=x;
-        if (y < y1)         y1=y;
-        if (x > x2)         x2=x;
-        if (y > y2)         y2=y;
+        if (x < x1) {
+          x1=x;
+        }
+        if (y < y1) {
+          y1=y;
+        }
+        if (x > x2) {
+          x2=x;
+        }
+        if (y > y2) {
+          y2=y;
+        }
       }
       if (isClosed && (node.mask & C2_MASK) != 0) {
         y=node.y[2];
         x=node.x[2];
-        if (x < x1)         x1=x;
-        if (y < y1)         y1=y;
-        if (x > x2)         x2=x;
-        if (y > y2)         y2=y;
+        if (x < x1) {
+          x1=x;
+        }
+        if (y < y1) {
+          y1=y;
+        }
+        if (x > x2) {
+          x2=x;
+        }
+        if (y > y2) {
+          y2=y;
+        }
       }
       for (int i=1, n=size - 1; i < n; i++) {
         node=get(i);
         y=node.y[0];
         x=node.x[0];
-        if (x < x1)         x1=x;
-        if (y < y1)         y1=y;
-        if (x > x2)         x2=x;
-        if (y > y2)         y2=y;
+        if (x < x1) {
+          x1=x;
+        }
+        if (y < y1) {
+          y1=y;
+        }
+        if (x > x2) {
+          x2=x;
+        }
+        if (y > y2) {
+          y2=y;
+        }
         if ((node.mask & C1_MASK) != 0) {
           y=node.y[1];
           x=node.x[1];
-          if (x < x1)           x1=x;
-          if (y < y1)           y1=y;
-          if (x > x2)           x2=x;
-          if (y > y2)           y2=y;
+          if (x < x1) {
+            x1=x;
+          }
+          if (y < y1) {
+            y1=y;
+          }
+          if (x > x2) {
+            x2=x;
+          }
+          if (y > y2) {
+            y2=y;
+          }
         }
         if ((node.mask & C2_MASK) != 0) {
           y=node.y[2];
           x=node.x[2];
-          if (x < x1)           x1=x;
-          if (y < y1)           y1=y;
-          if (x > x2)           x2=x;
-          if (y > y2)           y2=y;
+          if (x < x1) {
+            x1=x;
+          }
+          if (y < y1) {
+            y1=y;
+          }
+          if (x > x2) {
+            x2=x;
+          }
+          if (y > y2) {
+            y2=y;
+          }
         }
       }
     }

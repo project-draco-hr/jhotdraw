@@ -3,7 +3,6 @@
   AffineTransform tx=TRANSFORM.get(this);
   if (tx != null) {
     for (    Figure child : getChildren()) {
-      ((SVGBezierFigure)child).transform(tx);
       ((SVGBezierFigure)child).flattenTransform();
     }
   }

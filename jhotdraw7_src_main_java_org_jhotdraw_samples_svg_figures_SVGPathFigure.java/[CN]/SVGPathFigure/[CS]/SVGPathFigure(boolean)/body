@@ -1,0 +1,6 @@
+{
+  if (!isEmpty) {
+    add(new SVGBezierFigure());
+  }
+  SVGAttributeKeys.setDefaults(this);
+}

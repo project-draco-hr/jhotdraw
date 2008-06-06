@@ -1,0 +1,62 @@
+{
+  Point2D.Double[] bezCurve;
+  double[] u;
+  double maxError;
+  int[] splitPoint=new int[1];
+  int nPts;
+  double iterationError;
+  int maxIterations=4;
+  Point2D.Double tHatCenter=new Point2D.Double();
+  int i;
+  tHat1=(Point2D.Double)tHat1.clone();
+  tHat2=(Point2D.Double)tHat2.clone();
+  iterationError=errorSquared * errorSquared;
+  nPts=last - first + 1;
+  if (nPts == 2) {
+    double dist=v2DistanceBetween2Points(d.get(last),d.get(first)) / 3.0;
+    bezCurve=new Point2D.Double[4];
+    for (i=0; i < bezCurve.length; i++) {
+      bezCurve[i]=new Point2D.Double();
+    }
+    bezCurve[0]=d.get(first);
+    bezCurve[3]=d.get(last);
+    v2Add(bezCurve[0],v2Scale(tHat1,dist),bezCurve[1]);
+    v2Add(bezCurve[3],v2Scale(tHat2,dist),bezCurve[2]);
+    bezierPath.curveTo(bezCurve[1].x,bezCurve[1].y,bezCurve[2].x,bezCurve[2].y,bezCurve[3].x,bezCurve[3].y);
+    return;
+  }
+  u=chordLengthParameterize(d,first,last);
+  bezCurve=generateBezier(d,first,last,u,tHat1,tHat2);
+  maxError=computeMaxError(d,first,last,bezCurve,u,splitPoint);
+  if (maxError < errorSquared) {
+    addCurveTo(bezCurve,bezierPath,errorSquared,first == 0 && last == d.size() - 1);
+    return;
+  }
+  if (maxError < iterationError) {
+    double[] uPrime;
+    for (i=0; i < maxIterations; i++) {
+      uPrime=reparameterize(d,first,last,u,bezCurve);
+      bezCurve=generateBezier(d,first,last,uPrime,tHat1,tHat2);
+      maxError=computeMaxError(d,first,last,bezCurve,uPrime,splitPoint);
+      if (maxError < errorSquared) {
+        addCurveTo(bezCurve,bezierPath,errorSquared,first == 0 && last == d.size() - 1);
+        return;
+      }
+      u=uPrime;
+    }
+  }
+  tHatCenter=computeCenterTangent(d,splitPoint[0]);
+  if (first < splitPoint[0]) {
+    fitCubic(d,first,splitPoint[0],tHat1,tHatCenter,errorSquared,bezierPath);
+  }
+ else {
+    bezierPath.lineTo(d.get(splitPoint[0]).x,d.get(splitPoint[0]).y);
+  }
+  v2Negate(tHatCenter);
+  if (splitPoint[0] < last) {
+    fitCubic(d,splitPoint[0],last,tHatCenter,tHat2,errorSquared,bezierPath);
+  }
+ else {
+    bezierPath.lineTo(d.get(last).x,d.get(last).y);
+  }
+}
