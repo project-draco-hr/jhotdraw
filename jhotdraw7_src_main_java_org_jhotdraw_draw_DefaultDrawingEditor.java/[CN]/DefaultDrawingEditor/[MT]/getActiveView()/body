@@ -1,3 +1,6 @@
 {
-  return (activeView != null) ? activeView : (views.size() == 0) ? null : views.iterator().next();
+  if (activeView == null && views.size() != 0) {
+    setActiveView(views.iterator().next());
+  }
+  return activeView;
 }

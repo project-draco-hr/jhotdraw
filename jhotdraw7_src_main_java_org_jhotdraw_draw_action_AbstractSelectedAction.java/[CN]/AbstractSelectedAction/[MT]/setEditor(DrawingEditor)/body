@@ -1,12 +1,16 @@
 {
   if (this.editor != null) {
     this.editor.removePropertyChangeListener(eventHandler);
-    if (getView() != null) {
-      getView().removeFigureSelectionListener(eventHandler);
+    if (this.editor.getActiveView() != null) {
+      this.editor.getActiveView().removeFigureSelectionListener(eventHandler);
     }
   }
   this.editor=editor;
   if (this.editor != null) {
     this.editor.addPropertyChangeListener(eventHandler);
+    if (this.editor.getActiveView() != null) {
+      this.editor.getActiveView().addFigureSelectionListener(eventHandler);
+    }
   }
+  updateEnabledState();
 }

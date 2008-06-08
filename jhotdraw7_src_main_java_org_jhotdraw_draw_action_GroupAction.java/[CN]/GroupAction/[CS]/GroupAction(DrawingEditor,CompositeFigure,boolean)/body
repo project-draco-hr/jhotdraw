@@ -3,4 +3,5 @@
   this.prototype=prototype;
   this.isGroupingAction=isGroupingAction;
   labels.configureAction(this,ID);
+  updateEnabledState();
 }
