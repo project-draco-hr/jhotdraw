@@ -43,5 +43,6 @@ break;
 }
 }
 }
+System.out.println("Bezier.fitBezierPath(): " + fittedPath);
 return fittedPath;
 }

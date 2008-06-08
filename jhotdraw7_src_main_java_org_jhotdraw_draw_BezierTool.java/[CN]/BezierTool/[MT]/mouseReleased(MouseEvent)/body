@@ -7,9 +7,9 @@
     createdFigure.willChange();
     BezierPath figurePath=createdFigure.getBezierPath();
     BezierPath fittedPath=new BezierPath();
-    for (int i=nodeCountBeforeDrag, n=figurePath.size(); i < n; i++) {
-      fittedPath.add(figurePath.get(nodeCountBeforeDrag));
-      figurePath.remove(nodeCountBeforeDrag);
+    for (int i=nodeCountBeforeDrag - 1, n=figurePath.size(); i < n; i++) {
+      fittedPath.add(figurePath.get(nodeCountBeforeDrag - 1));
+      figurePath.remove(nodeCountBeforeDrag - 1);
     }
     fittedPath=calculateFittedCurve(fittedPath);
     figurePath.addAll(fittedPath);
