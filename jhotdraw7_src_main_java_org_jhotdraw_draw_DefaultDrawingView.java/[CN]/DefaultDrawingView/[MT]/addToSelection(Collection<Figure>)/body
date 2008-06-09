@@ -8,7 +8,7 @@
       selectionChanged=true;
       newSelection.add(figure);
       figure.addFigureListener(handleInvalidator);
-      if (handlesAreValid) {
+      if (handlesAreValid && getEditor() != null) {
         for (        Handle h : figure.createHandles(detailLevel)) {
           h.setView(this);
           selectionHandles.add(h);

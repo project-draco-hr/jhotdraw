@@ -7,7 +7,7 @@
     figure.addFigureListener(handleInvalidator);
     Set<Figure> newSelection=new HashSet<Figure>(selectedFigures);
     Rectangle invalidatedArea=null;
-    if (handlesAreValid) {
+    if (handlesAreValid && getEditor() != null) {
       for (      Handle h : figure.createHandles(detailLevel)) {
         h.setView(this);
         selectionHandles.add(h);
