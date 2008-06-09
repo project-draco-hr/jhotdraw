@@ -2,5 +2,6 @@
   DrawingEditor oldValue=editor;
   this.editor=editor;
   firePropertyChange("editor",oldValue,editor);
+  invalidateHandles();
   repaint();
 }
