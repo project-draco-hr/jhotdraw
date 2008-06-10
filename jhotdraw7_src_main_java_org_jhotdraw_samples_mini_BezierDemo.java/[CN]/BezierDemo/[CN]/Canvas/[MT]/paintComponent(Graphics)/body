@@ -1,4 +1,5 @@
 {
+  long start=System.currentTimeMillis();
   super.paintComponent(gr);
   Graphics2D g=(Graphics2D)gr;
   for (  Example ex : examples) {
@@ -113,4 +114,7 @@
       }
     }
   }
+  long end=System.currentTimeMillis();
+  g.setColor(Color.BLACK);
+  g.drawString((end - start) + " ms",5,g.getFontMetrics().getHeight());
 }
