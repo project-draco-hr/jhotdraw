@@ -90,6 +90,7 @@
     }
  else {
       unread(c);
+      c='0';
     }
   }
   digit:   if ((ctype & CT_DIGIT) != 0) {
