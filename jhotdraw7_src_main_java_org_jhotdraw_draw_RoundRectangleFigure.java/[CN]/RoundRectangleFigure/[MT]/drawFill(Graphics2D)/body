@@ -1,6 +1,6 @@
 {
   RoundRectangle2D.Double r=(RoundRectangle2D.Double)roundrect.clone();
-  double grow=2;
+  double grow=AttributeKeys.getPerpendicularFillGrowth(this);
   r.x-=grow;
   r.y-=grow;
   r.width+=grow * 2;
