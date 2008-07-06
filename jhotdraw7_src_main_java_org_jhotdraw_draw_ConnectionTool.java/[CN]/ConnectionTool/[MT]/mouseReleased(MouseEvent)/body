@@ -1,5 +1,5 @@
 {
-  if (createdFigure != null && startConnector != null && endConnector != null) {
+  if (createdFigure != null && startConnector != null && endConnector != null && createdFigure.canConnect(startConnector,endConnector)) {
     createdFigure.willChange();
     createdFigure.setStartConnector(startConnector);
     createdFigure.setEndConnector(endConnector);
