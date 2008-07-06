@@ -5,13 +5,13 @@
     if (index != -1) {
       final BezierPath.Node newNode=getNode(index);
       fireUndoableEditHappened(new AbstractUndoableEdit(){
-        public void redo() throws CannotRedoException {
+        @Override public void redo() throws CannotRedoException {
           super.redo();
           willChange();
           addNode(index,newNode);
           changed();
         }
-        public void undo() throws CannotUndoException {
+        @Override public void undo() throws CannotUndoException {
           super.undo();
           willChange();
           removeNode(index);
