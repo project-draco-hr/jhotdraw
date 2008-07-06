@@ -1,25 +1,26 @@
 {
-  Rectangle2D.Double r=null;
-  for (  Figure f : getView().getSelectedFigures()) {
-    if (r == null) {
-      r=f.getBounds();
-    }
+  if (getView().getSelectionCount() > 0) {
+    Rectangle2D.Double r=null;
+    for (    Figure f : getView().getSelectedFigures()) {
+      if (r == null) {
+        r=f.getBounds();
+      }
  else {
-      r.add(f.getBounds());
+        r.add(f.getBounds());
+      }
     }
-  }
-  Point2D.Double p0=new Point2D.Double(r.x,r.y);
-  if (getView().getConstrainer() != null) {
-    getView().getConstrainer().translateRectangle(r,dir);
-  }
+    Point2D.Double p0=new Point2D.Double(r.x,r.y);
+    if (getView().getConstrainer() != null) {
+      getView().getConstrainer().translateRectangle(r,dir);
+    }
  else {
 switch (dir) {
 case NORTH:
-      r.y-=1;
-    break;
+        r.y-=1;
+      break;
 case SOUTH:
-  r.y+=1;
-break;
+    r.y+=1;
+  break;
 case WEST:
 r.x-=1;
 break;
@@ -39,4 +40,5 @@ f.changed();
 }
 CompositeEdit edit;
 fireUndoableEditHappened(new TransformEdit(getView().getSelectedFigures(),tx));
+}
 }
