@@ -7,13 +7,15 @@
     lastMenu=mm;
   }
   JMenu viewMenu=createViewMenu(p,toolBarActions);
-  if (lastMenu != null && lastMenu.getText().equals(viewMenu.getText())) {
-    for (    Component c : lastMenu.getMenuComponents()) {
-      viewMenu.add(c);
+  if (viewMenu != null) {
+    if (lastMenu != null && lastMenu.getText().equals(viewMenu.getText())) {
+      for (      Component c : lastMenu.getMenuComponents()) {
+        viewMenu.add(c);
+      }
+      mb.remove(lastMenu);
     }
-    mb.remove(lastMenu);
+    mb.add(viewMenu);
   }
-  mb.add(viewMenu);
   mb.add(createHelpMenu(p));
   return mb;
 }

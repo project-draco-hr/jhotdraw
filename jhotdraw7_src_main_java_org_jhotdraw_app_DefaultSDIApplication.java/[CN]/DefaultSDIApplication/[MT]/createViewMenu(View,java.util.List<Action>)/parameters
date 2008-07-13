@@ -1,2 +1,2 @@
 View p
-java.util.List<Action> toolBarActions
+java.util.List<Action> viewActions
