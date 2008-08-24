@@ -1,3 +1,9 @@
 {
-  return "Punkt verschieben";
+  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  if (oldValue.mask != newValue.mask) {
+    return labels.getString("bezierNode.changeType");
+  }
+ else {
+    return labels.getString("bezierNode.movePoint");
+  }
 }

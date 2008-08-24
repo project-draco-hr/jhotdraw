@@ -7,11 +7,11 @@
     f.changed();
     fireHandleRequestRemove(invalidatedArea);
     fireUndoableEditHappened(new AbstractUndoableEdit(){
-      public String getPresentationName(){
+      @Override public String getPresentationName(){
         ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
         return labels.getString("bezierPath.joinSegment");
       }
-      public void redo() throws CannotRedoException {
+      @Override public void redo() throws CannotRedoException {
         super.redo();
         view.removeFromSelection(f);
         f.willChange();
@@ -19,7 +19,7 @@
         f.changed();
         view.addToSelection(f);
       }
-      public void undo() throws CannotUndoException {
+      @Override public void undo() throws CannotUndoException {
         super.undo();
         view.removeFromSelection(f);
         f.willChange();

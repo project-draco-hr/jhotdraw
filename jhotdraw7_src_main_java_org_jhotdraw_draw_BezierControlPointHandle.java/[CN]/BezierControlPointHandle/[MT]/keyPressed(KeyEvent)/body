@@ -30,5 +30,9 @@ f.changed();
 view.getDrawing().fireUndoableEditHappened(new BezierNodeEdit(f,index,oldNode,f.getNode(index)));
 evt.consume();
 break;
+case KeyEvent.VK_DELETE:
+case KeyEvent.VK_BACK_SPACE:
+evt.consume();
+break;
 }
 }
