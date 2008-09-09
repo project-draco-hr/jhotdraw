@@ -7,16 +7,19 @@
     clearHoverHandles();
   }
  else {
-    Figure hf=null;
+    Figure figure=null;
     Point2D.Double p=view.viewToDrawing(point);
     for (    Figure f : view.getSelectedFigures()) {
       if (f.contains(p)) {
-        hf=f;
+        figure=f;
       }
     }
-    if (hf == null) {
-      hf=view.findFigure(point);
+    if (figure == null) {
+      figure=view.findFigure(point);
+      while (figure != null && !figure.isSelectable()) {
+        figure=view.getDrawing().findFigureBehind(p,figure);
+      }
     }
-    updateHoverHandles(view,hf);
+    updateHoverHandles(view,figure);
   }
 }

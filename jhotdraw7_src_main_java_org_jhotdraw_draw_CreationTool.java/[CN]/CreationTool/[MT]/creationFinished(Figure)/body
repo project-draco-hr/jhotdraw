@@ -1,5 +1,7 @@
 {
-  getView().addToSelection(createdFigure);
+  if (createdFigure.isSelectable()) {
+    getView().addToSelection(createdFigure);
+  }
   if (isToolDoneAfterCreation()) {
     fireToolDone();
   }

@@ -1,7 +1,7 @@
 {
   if (f != hoverFigure) {
     Rectangle r=null;
-    if (hoverFigure != null) {
+    if (hoverFigure != null && hoverFigure.isSelectable()) {
       for (      Handle h : hoverHandles) {
         if (r == null) {
           r=h.getDrawingArea();

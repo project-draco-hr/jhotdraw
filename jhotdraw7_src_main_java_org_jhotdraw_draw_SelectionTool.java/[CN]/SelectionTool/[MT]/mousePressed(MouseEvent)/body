@@ -9,8 +9,13 @@
     }
  else {
       Figure figure;
+      Drawing drawing=view.getDrawing();
+      Point2D.Double p=view.viewToDrawing(anchor);
       if (isSelectBehindEnabled() && (evt.getModifiersEx() & (InputEvent.ALT_DOWN_MASK | InputEvent.CTRL_DOWN_MASK)) != 0) {
         figure=view.findFigure(anchor);
+        while (figure != null && !figure.isSelectable()) {
+          figure=drawing.findFigureBehind(p,figure);
+        }
         HashSet<Figure> ignoredFigures=new HashSet<Figure>(view.getSelectedFigures());
         ignoredFigures.add(figure);
         Figure figureBehind=view.getDrawing().findFigureBehind(view.viewToDrawing(anchor),ignoredFigures);
@@ -19,7 +24,6 @@
         }
       }
  else {
-        Point2D.Double p=view.viewToDrawing(anchor);
         figure=null;
         if (isSelectBehindEnabled()) {
           for (          Figure f : view.getSelectedFigures()) {
@@ -31,6 +35,9 @@
         }
         if (figure == null) {
           figure=view.findFigure(anchor);
+          while (figure != null && !figure.isSelectable()) {
+            figure=drawing.findFigureBehind(p,figure);
+          }
         }
       }
       if (figure != null && figure.isSelectable()) {
