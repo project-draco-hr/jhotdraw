@@ -16,9 +16,11 @@
     tx.translate(constrainedRect.x - previousOrigin.x,constrainedRect.y - previousOrigin.y);
     Constrainer c=view.getConstrainer();
     for (    Figure f : view.getSelectedFigures()) {
-      f.willChange();
-      f.transform(tx);
-      f.changed();
+      if (f.isSelectable()) {
+        f.willChange();
+        f.transform(tx);
+        f.changed();
+      }
     }
     previousPoint=currentPoint;
     previousOrigin=new Point2D.Double(constrainedRect.x,constrainedRect.y);

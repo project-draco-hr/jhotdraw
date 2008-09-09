@@ -33,7 +33,7 @@
           figure=view.findFigure(anchor);
         }
       }
-      if (figure != null) {
+      if (figure != null && figure.isSelectable()) {
         newTracker=createDragTracker(figure);
       }
  else {
