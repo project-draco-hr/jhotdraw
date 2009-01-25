@@ -1,7 +1,10 @@
 {
   String s;
   try {
-    s=resource.getString(key + ".mnem");
+    s=resource.getString(key + ".mnemonic");
+    if (s == null) {
+      s=resource.getString(key + ".mnem");
+    }
   }
  catch (  MissingResourceException e) {
     s=null;

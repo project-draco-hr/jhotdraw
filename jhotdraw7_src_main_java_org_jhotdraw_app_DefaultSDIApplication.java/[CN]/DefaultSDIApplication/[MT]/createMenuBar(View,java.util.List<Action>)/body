@@ -16,6 +16,19 @@
     }
     mb.add(viewMenu);
   }
-  mb.add(createHelpMenu(p));
+  JMenu helpMenu=createHelpMenu(p);
+  for (  Component mc : mb.getComponents()) {
+    JMenu m=(JMenu)mc;
+    if (m.getText().equals(helpMenu.getText())) {
+      for (      Component c : helpMenu.getMenuComponents()) {
+        m.add(c);
+      }
+      helpMenu=null;
+      break;
+    }
+  }
+  if (helpMenu != null) {
+    mb.add(helpMenu);
+  }
   return mb;
 }

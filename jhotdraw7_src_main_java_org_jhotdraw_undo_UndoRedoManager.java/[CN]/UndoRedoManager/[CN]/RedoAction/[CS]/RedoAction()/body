@@ -1,4 +1,4 @@
 {
-  labels.configureAction(this,"redo");
+  labels.configureAction(this,"edit.redo");
   setEnabled(false);
 }

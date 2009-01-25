@@ -1,12 +1,12 @@
 {
-  Icon icon=getImageIcon(argument,baseClass);
+  Icon icon=getIconProperty(argument,baseClass);
   if (icon != null) {
-    button.setIcon(getImageIcon(argument,baseClass));
+    button.setIcon(getIconProperty(argument,baseClass));
     button.setText(null);
   }
  else {
     button.setIcon(null);
     button.setText(getString(argument));
   }
-  button.setToolTipText(getTip(argument));
+  button.setToolTipText(getToolTipTextProperty(argument));
 }

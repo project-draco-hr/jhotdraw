@@ -1,8 +1,8 @@
 {
-  menu.setText(getString(argument));
+  menu.setText(getTextProperty(argument));
   if (!(menu instanceof JMenu)) {
-    menu.setAccelerator(getAcc(argument));
+    menu.setAccelerator(getAcceleratorProperty(argument));
   }
-  menu.setMnemonic(getMnem(argument));
-  menu.setIcon(getImageIcon(argument,baseClass));
+  menu.setMnemonic(getMnemonicProperty(argument));
+  menu.setIcon(getIconProperty(argument,baseClass));
 }

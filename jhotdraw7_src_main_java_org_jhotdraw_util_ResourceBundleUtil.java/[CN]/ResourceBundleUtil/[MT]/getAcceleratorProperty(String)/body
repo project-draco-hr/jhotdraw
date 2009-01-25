@@ -1,7 +1,11 @@
 {
   KeyStroke ks=null;
   try {
-    String s=resource.getString(key + ".acc");
+    String s;
+    s=resource.getString(key + ".accelerator");
+    if (s == null) {
+      s=resource.getString(key + ".acc");
+    }
     ks=(s == null) ? (KeyStroke)null : KeyStroke.getKeyStroke(s);
   }
  catch (  MissingResourceException e) {

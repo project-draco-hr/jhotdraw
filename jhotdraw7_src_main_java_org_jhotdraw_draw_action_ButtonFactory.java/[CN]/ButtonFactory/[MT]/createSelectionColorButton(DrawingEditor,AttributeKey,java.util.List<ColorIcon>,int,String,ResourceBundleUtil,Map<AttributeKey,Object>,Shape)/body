@@ -19,7 +19,7 @@
   ImageIcon chooserIcon=new ImageIcon(ButtonFactory.class.getResource("/org/jhotdraw/draw/action/images/showColorChooser.png"));
   popupButton.add(new SelectionColorChooserAction(editor,attributeKey,"color",chooserIcon,defaultAttributes));
   labels.configureToolBarButton(popupButton,labelKey);
-  Icon icon=new SelectionColorIcon(editor,attributeKey,labels.getImageIcon(labelKey,ButtonFactory.class).getImage(),colorShape);
+  Icon icon=new SelectionColorIcon(editor,attributeKey,labels.getIconProperty(labelKey,ButtonFactory.class).getImage(),colorShape);
   popupButton.setIcon(icon);
   popupButton.setDisabledIcon(icon);
   popupButton.setFocusable(false);

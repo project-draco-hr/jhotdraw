@@ -1,0 +1,3 @@
+{
+  return new Formatter(resource.getLocale()).format(resource.getString(key),arguments).toString();
+}

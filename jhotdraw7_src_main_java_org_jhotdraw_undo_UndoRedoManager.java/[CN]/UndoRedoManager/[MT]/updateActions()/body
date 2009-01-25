@@ -7,7 +7,7 @@
   }
  else {
     undoAction.setEnabled(false);
-    label=labels.getString("undo");
+    label=labels.getString("edit.undo.text");
   }
   undoAction.putValue(Action.NAME,label);
   undoAction.putValue(Action.SHORT_DESCRIPTION,label);
@@ -17,7 +17,7 @@
   }
  else {
     redoAction.setEnabled(false);
-    label=labels.getString("redo");
+    label=labels.getString("edit.redo.text");
   }
   redoAction.putValue(Action.NAME,label);
   redoAction.putValue(Action.SHORT_DESCRIPTION,label);

@@ -1,8 +1,0 @@
-{
-  try {
-    return resource.getString(key + ".tip");
-  }
- catch (  MissingResourceException e) {
-    return null;
-  }
-}

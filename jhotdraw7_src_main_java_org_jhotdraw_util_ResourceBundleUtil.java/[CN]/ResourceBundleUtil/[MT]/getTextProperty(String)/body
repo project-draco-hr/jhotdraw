@@ -1,0 +1,13 @@
+{
+  try {
+    String s;
+    s=resource.getString(key + ".text");
+    if (s == null) {
+      s=resource.getString(key);
+    }
+    return s;
+  }
+ catch (  MissingResourceException e) {
+    return null;
+  }
+}

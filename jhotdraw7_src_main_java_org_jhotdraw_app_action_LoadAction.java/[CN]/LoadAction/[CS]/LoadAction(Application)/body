@@ -1,5 +1,5 @@
 {
   super(app);
   ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
-  labels.configureAction(this,"open");
+  labels.configureAction(this,"file.open");
 }

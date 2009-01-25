@@ -1,0 +1,13 @@
+{
+  try {
+    String s;
+    s=resource.getString(key + ".toolTipText");
+    if (s == null) {
+      s=resource.getString(key + ".tip");
+    }
+    return s;
+  }
+ catch (  MissingResourceException e) {
+    return null;
+  }
+}

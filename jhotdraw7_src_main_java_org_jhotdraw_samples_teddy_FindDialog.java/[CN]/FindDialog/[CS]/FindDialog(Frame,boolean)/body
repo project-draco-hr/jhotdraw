@@ -6,7 +6,7 @@
   setAlwaysOnTop(true);
   prefs=Preferences.userNodeForPackage(getClass());
   PreferencesUtil.installFramePrefsHandler(prefs,"find",this);
-  modeCombo.setModel(new DefaultComboBoxModel(new Object[]{labels.getString("find.contains"),labels.getString("find.startsWith"),labels.getString("find.word")}));
+  modeCombo.setModel(new DefaultComboBoxModel(new Object[]{labels.getString("find.contains.text"),labels.getString("find.startsWith.text"),labels.getString("find.word.text")}));
   ignoreCaseCheck.setSelected(prefs.getBoolean("find.ignoreCase",true));
   wrapAroundCheck.setSelected(prefs.getBoolean("find.wrapAround",true));
   modeCombo.setSelectedIndex(Math.min(0,Math.max(modeCombo.getModel().getSize() - 1,prefs.getInt("find.mode",0))));

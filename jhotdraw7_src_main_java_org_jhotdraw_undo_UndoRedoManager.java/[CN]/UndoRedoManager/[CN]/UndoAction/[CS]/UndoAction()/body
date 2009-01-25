@@ -1,4 +1,4 @@
 {
-  labels.configureAction(this,"undo");
+  labels.configureAction(this,"edit.undo");
   setEnabled(false);
 }

@@ -4,6 +4,15 @@
   for (  JMenu mm : getModel().createMenus(this,p)) {
     mb.add(mm);
   }
-  mb.add(createWindowMenu(p));
+  String helpMenuText=labels.getString("help.text");
+  int index=mb.getComponentCount();
+  for (int i=0, n=mb.getComponentCount(); i < n; i++) {
+    JMenu m=(JMenu)mb.getComponent(i);
+    if (m.getText() != null && m.getText().equals(helpMenuText)) {
+      index=i;
+      break;
+    }
+  }
+  mb.add(createWindowMenu(p),index);
   return mb;
 }

@@ -1,6 +1,7 @@
 {
-  action.putValue(Action.NAME,getString(argument));
-  action.putValue(Action.ACCELERATOR_KEY,getAcc(argument));
-  action.putValue(Action.MNEMONIC_KEY,new Integer(getMnem(argument)));
-  action.putValue(Action.SMALL_ICON,getImageIcon(argument,baseClass));
+  action.putValue(Action.NAME,getTextProperty(argument));
+  action.putValue(Action.SHORT_DESCRIPTION,getToolTipTextProperty(argument));
+  action.putValue(Action.ACCELERATOR_KEY,getAcceleratorProperty(argument));
+  action.putValue(Action.MNEMONIC_KEY,new Integer(getMnemonicProperty(argument)));
+  action.putValue(Action.SMALL_ICON,getIconProperty(argument,baseClass));
 }
