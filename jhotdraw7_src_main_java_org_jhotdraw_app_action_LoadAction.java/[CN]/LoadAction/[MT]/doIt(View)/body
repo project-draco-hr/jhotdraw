@@ -1,5 +1,5 @@
 {
-  JFileChooser fileChooser=view.getOpenChooser();
+  JFileChooser fileChooser=getFileChooser(view);
   if (fileChooser.showOpenDialog(view.getComponent()) == JFileChooser.APPROVE_OPTION) {
     openFile(view,fileChooser);
   }
