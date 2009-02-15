@@ -1,5 +1,5 @@
 {
   if (a.isSharingToolsAmongViews()) {
-    ((PertView)p).setDrawingEditor(getSharedEditor());
+    ((PertView)p).setEditor(getSharedEditor());
   }
 }

@@ -7,7 +7,7 @@ case 1:
         r.grow(2,2);
         if (r.contains(evt.getX(),evt.getY())) {
           createdFigure.setClosed(true);
-          finishCreation(createdFigure);
+          finishCreation(createdFigure,creationView);
           createdFigure=null;
           if (isToolDoneAfterCreation) {
             fireToolDone();
@@ -17,7 +17,7 @@ case 1:
     break;
 case 2:
   finishWhenMouseReleased=null;
-finishCreation(createdFigure);
+finishCreation(createdFigure,creationView);
 createdFigure=null;
 break;
 }

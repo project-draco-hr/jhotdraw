@@ -2,7 +2,6 @@
   if (DEBUG) {
     System.out.println("BezierTool.mousePressed " + evt);
   }
-  super.mousePressed(evt);
   if (mouseLocation != null) {
     Rectangle r=new Rectangle(mouseLocation);
     r.add(evt.getPoint());
@@ -10,16 +9,22 @@
     fireAreaInvalidated(r);
   }
   mouseLocation=evt.getPoint();
+  super.mousePressed(evt);
+  if (createdFigure != null && creationView != getView()) {
+    finishCreation(createdFigure,creationView);
+    createdFigure=null;
+  }
   if (createdFigure == null) {
-    getView().clearSelection();
+    creationView=getView();
+    creationView.clearSelection();
     finishWhenMouseReleased=null;
     createdFigure=createFigure();
-    createdFigure.addNode(new BezierPath.Node(getView().getConstrainer().constrainPoint(getView().viewToDrawing(anchor))));
+    createdFigure.addNode(new BezierPath.Node(creationView.getConstrainer().constrainPoint(creationView.viewToDrawing(anchor))));
     getDrawing().add(createdFigure);
   }
  else {
     if (evt.getClickCount() == 1) {
-      addPointToFigure(getView().getConstrainer().constrainPoint(getView().viewToDrawing(anchor)));
+      addPointToFigure(creationView.getConstrainer().constrainPoint(creationView.viewToDrawing(anchor)));
     }
   }
   nodeCountBeforeDrag=createdFigure.getNodeCount();

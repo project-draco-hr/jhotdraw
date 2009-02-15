@@ -10,7 +10,7 @@
       }
       fireAreaInvalidated(r);
     }
-    finishCreation(createdFigure);
+    finishCreation(createdFigure,creationView);
     createdFigure=null;
   }
 }

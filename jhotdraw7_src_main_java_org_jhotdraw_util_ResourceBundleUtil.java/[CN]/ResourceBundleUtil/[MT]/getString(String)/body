@@ -6,7 +6,6 @@
  catch (  MissingResourceException e) {
     if (isVerbose) {
       System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ "\" not found.");
-      e.printStackTrace();
     }
     return key;
   }

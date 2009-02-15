@@ -7,6 +7,8 @@
   scrollPane.setBorder(new EmptyBorder(0,0,0,0));
   scrollPane.getViewport().setScrollMode(JViewport.BACKINGSTORE_SCROLL_MODE);
   setEditor(new DefaultDrawingEditor());
+  editor.add(view);
+  System.out.println("SVGView " + editor + " "+ editor.getActiveView());
   undo=new UndoRedoManager();
   view.setDrawing(createDrawing());
   view.getDrawing().addUndoableEditListener(undo);

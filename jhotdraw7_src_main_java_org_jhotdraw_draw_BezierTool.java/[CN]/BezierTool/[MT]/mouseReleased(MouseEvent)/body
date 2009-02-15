@@ -19,7 +19,7 @@
   }
   if (finishWhenMouseReleased == Boolean.TRUE) {
     if (createdFigure.getNodeCount() > 1) {
-      finishCreation(createdFigure);
+      finishCreation(createdFigure,creationView);
       createdFigure=null;
       finishWhenMouseReleased=null;
       return;

@@ -14,7 +14,7 @@
     mi.setIcon(null);
   }
   openRecentMenu=new JMenu();
-  labels.configureMenu(openRecentMenu,"openRecent");
+  labels.configureMenu(openRecentMenu,"file.openRecent");
   openRecentMenu.add(model.getAction(ClearRecentFilesAction.ID));
   updateOpenRecentMenu(openRecentMenu);
   m.add(openRecentMenu);
