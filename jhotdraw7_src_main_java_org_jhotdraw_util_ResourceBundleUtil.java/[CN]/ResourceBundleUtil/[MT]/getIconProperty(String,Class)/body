@@ -5,11 +5,14 @@
       return null;
     }
     URL url=baseClass.getResource(rsrcName);
+    if (isVerbose && url == null) {
+      System.err.println("Warning ResourceBundleUtil[" + baseName + "].getIconProperty \""+ key+ ".icon\" not found.");
+    }
     return (url == null) ? null : new ImageIcon(url);
   }
  catch (  MissingResourceException e) {
     if (isVerbose) {
-      System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ ".icon\" not found.");
+      System.err.println("Warning ResourceBundleUtil[" + baseName + "].getIconProperty \""+ key+ ".icon\" not found.");
     }
     return null;
   }
