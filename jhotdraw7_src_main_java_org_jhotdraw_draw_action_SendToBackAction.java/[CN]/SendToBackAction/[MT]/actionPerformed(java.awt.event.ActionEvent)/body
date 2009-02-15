@@ -4,7 +4,7 @@
   sendToBack(view,figures);
   fireUndoableEditHappened(new AbstractUndoableEdit(){
     @Override public String getPresentationName(){
-      return labels.getString(ID);
+      return labels.getTextProperty(ID);
     }
     @Override public void redo() throws CannotRedoException {
       super.redo();

@@ -15,7 +15,7 @@
     combinePaths(view,group,ungroupedPaths,ungroupedPathsIndices[0]);
     UndoableEdit edit=new AbstractUndoableEdit(){
       @Override public String getPresentationName(){
-        return labels.getString("selectionCombine");
+        return labels.getTextProperty("edit.combinePaths");
       }
       @Override public void redo() throws CannotRedoException {
         super.redo();

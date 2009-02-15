@@ -21,7 +21,7 @@
     splitPath(view,group,ungroupedPaths,ungroupedPathsIndices,ungroupedPathsChildCounts);
     UndoableEdit edit=new AbstractUndoableEdit(){
       @Override public String getPresentationName(){
-        return labels.getString("selectionSplit");
+        return labels.getTextProperty("edit.splitPath");
       }
       @Override public void redo() throws CannotRedoException {
         super.redo();

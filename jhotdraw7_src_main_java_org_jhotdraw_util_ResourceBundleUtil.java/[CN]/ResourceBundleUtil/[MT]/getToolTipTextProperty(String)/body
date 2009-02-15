@@ -1,13 +1,12 @@
 {
   try {
-    String s;
-    s=resource.getString(key + ".toolTipText");
-    if (s == null) {
-      s=resource.getString(key + ".tip");
-    }
-    return s;
+    String value=getStringRecursive(key + ".toolTipText");
+    return value;
   }
  catch (  MissingResourceException e) {
+    if (isVerbose) {
+      System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ ".toolTipText\" not found.");
+    }
     return null;
   }
 }

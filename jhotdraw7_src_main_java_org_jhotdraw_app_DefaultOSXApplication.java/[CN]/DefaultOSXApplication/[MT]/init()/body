@@ -1,4 +1,5 @@
 {
+  ResourceBundleUtil.putPropertyNameModifier("os","mac","default");
   super.init();
   prefs=Preferences.userNodeForPackage((getModel() == null) ? getClass() : getModel().getClass());
   initLookAndFeel();

@@ -1,8 +1,11 @@
 {
   try {
-    return Integer.valueOf(resource.getString(key));
+    return Integer.valueOf(getStringRecursive(key));
   }
  catch (  MissingResourceException e) {
+    if (isVerbose) {
+      System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ "\" not found.");
+    }
     return new Integer(-1);
   }
 }

@@ -19,8 +19,8 @@
   addToSelection(duplicates);
   getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
     public String getPresentationName(){
-      ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-      return labels.getString("duplicate");
+      ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+      return labels.getString("edit.duplicate.text");
     }
     public void undo() throws CannotUndoException {
       super.undo();

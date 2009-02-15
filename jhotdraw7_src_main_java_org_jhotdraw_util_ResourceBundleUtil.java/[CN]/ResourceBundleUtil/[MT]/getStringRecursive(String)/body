@@ -1,0 +1,26 @@
+{
+  String value=resource.getString(key);
+  for (int p1=value.indexOf("${"); p1 != -1; p1=value.indexOf("${")) {
+    int p2=value.indexOf('}',p1 + 2);
+    if (p2 == -1) {
+      break;
+    }
+    String placeholderKey=value.substring(p1 + 2,p2);
+    ArrayList<String> fallbackKeys=new ArrayList<String>();
+    generateFallbackKeys(placeholderKey,fallbackKeys);
+    boolean resourceFound=false;
+    for (    String fk : fallbackKeys) {
+      try {
+        value=value.substring(0,p1) + getStringRecursive(fk) + value.substring(p2 + 1);
+        resourceFound=true;
+        break;
+      }
+ catch (      MissingResourceException e) {
+      }
+    }
+    if (resourceFound == false) {
+      throw new MissingResourceException("Resource not found.",baseName,key);
+    }
+  }
+  return value;
+}

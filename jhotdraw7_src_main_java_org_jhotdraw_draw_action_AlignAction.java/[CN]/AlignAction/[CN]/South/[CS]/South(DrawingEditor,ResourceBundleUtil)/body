@@ -1,4 +1,4 @@
 {
   super(editor);
-  labels.configureAction(this,"alignSouth");
+  labels.configureAction(this,"edit.alignSouth");
 }

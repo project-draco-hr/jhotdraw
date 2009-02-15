@@ -1,5 +1,5 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
   JToolBar tb=new JToolBar();
   tb.setName(labels.getString("standardToolBarTitle"));
   JButton b;

@@ -1,5 +1,5 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   JButton b;
   b=bar.add(new PickAttributesAction(editor));
   b.setFocusable(false);

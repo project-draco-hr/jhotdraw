@@ -7,7 +7,7 @@
  else {
     title=file.getName();
   }
-  p.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
+  p.setTitle(labels.getFormatted("frame.title",title,getName(),p.getMultipleOpenId()));
   f.setTitle(p.getTitle());
   f.getRootPane().putClientProperty("Window.documentFile",file);
 }

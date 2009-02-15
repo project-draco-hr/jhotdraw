@@ -1,11 +1,16 @@
 {
   if (DEBUG) {
-    System.out.println("SVGInputFormat.readElement " + elem.getName());
+    System.out.println("SVGInputFormat.readElement " + elem.getName() + " line:"+ elem.getLineNr());
   }
   Figure f=null;
   if (elem.getNamespace() == null || elem.getNamespace().equals(SVG_NAMESPACE)) {
     String name=elem.getName();
-    if (name.equals("a")) {
+    if (name == null) {
+      if (DEBUG) {
+        System.out.println("SVGInputFormat skipping nameless element at line " + elem.getLineNr());
+      }
+    }
+ else     if (name.equals("a")) {
       f=readAElement(elem);
     }
  else     if (name.equals("circle")) {

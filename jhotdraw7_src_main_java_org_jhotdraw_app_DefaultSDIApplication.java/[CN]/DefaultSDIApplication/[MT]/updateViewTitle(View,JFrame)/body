@@ -10,6 +10,6 @@
   if (p.hasUnsavedChanges()) {
     title+="*";
   }
-  p.setTitle(labels.getFormatted("frameTitle",title,getName(),p.getMultipleOpenId()));
+  p.setTitle(labels.getFormatted("frame.title",title,getName(),p.getMultipleOpenId()));
   f.setTitle(p.getTitle());
 }

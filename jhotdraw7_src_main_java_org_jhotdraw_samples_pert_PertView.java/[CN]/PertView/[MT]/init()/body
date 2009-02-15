@@ -15,7 +15,7 @@
     }
   }
 );
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   JPanel placardPanel=new JPanel(new BorderLayout());
   javax.swing.AbstractButton pButton;
   pButton=ButtonFactory.createZoomButton(view);
@@ -27,7 +27,7 @@
   pButton.putClientProperty("Quaqua.Button.style","placard");
   pButton.putClientProperty("Quaqua.Component.visualMargin",new Insets(0,0,0,0));
   pButton.setFont(UIManager.getFont("SmallSystemFont"));
-  labels.configureToolBarButton(pButton,"alignGridSmall");
+  labels.configureToolBarButton(pButton,"view.toggleGrid.placard");
   placardPanel.add(pButton,BorderLayout.EAST);
   scrollPane.add(placardPanel,JScrollPane.LOWER_LEFT_CORNER);
   prefs=Preferences.userNodeForPackage(getClass());

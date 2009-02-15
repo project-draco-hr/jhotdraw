@@ -8,8 +8,8 @@
     fireHandleRequestRemove(invalidatedArea);
     fireUndoableEditHappened(new AbstractUndoableEdit(){
       @Override public String getPresentationName(){
-        ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-        return labels.getString("bezierPath.joinSegment");
+        ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        return labels.getString("edit.bezierPath.joinSegments.text");
       }
       @Override public void redo() throws CannotRedoException {
         super.redo();

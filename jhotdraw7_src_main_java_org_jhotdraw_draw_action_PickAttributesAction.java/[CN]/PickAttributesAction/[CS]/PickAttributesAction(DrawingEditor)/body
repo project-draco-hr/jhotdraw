@@ -1,5 +1,5 @@
 {
   super(editor);
-  labels.configureAction(this,"attributesPick");
+  labels.configureAction(this,"edit.pickAttributes");
   setEnabled(true);
 }

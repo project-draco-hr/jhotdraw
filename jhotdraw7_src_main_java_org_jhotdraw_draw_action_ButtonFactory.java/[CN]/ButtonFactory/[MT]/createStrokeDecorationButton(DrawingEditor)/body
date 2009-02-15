@@ -1,5 +1,5 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   JPopupButton strokeDecorationPopupButton=new JPopupButton();
   labels.configureToolBarButton(strokeDecorationPopupButton,"attribute.strokeDecoration");
   strokeDecorationPopupButton.setFocusable(false);

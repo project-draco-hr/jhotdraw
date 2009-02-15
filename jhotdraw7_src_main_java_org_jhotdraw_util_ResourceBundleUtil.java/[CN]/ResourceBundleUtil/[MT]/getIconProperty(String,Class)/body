@@ -1,26 +1,16 @@
 {
   try {
-    String rsrcName=resource.getString(key + ".icon");
+    String rsrcName=getStringRecursive(key + ".icon");
     if (rsrcName.equals("")) {
       return null;
-    }
-    if (!rsrcName.startsWith("/")) {
-      String imageDir;
-      try {
-        imageDir=resource.getString("$imageDir");
-        if (!imageDir.endsWith("/")) {
-          imageDir=imageDir + "/";
-        }
-      }
- catch (      MissingResourceException e) {
-        imageDir="";
-      }
-      rsrcName=imageDir + rsrcName;
     }
     URL url=baseClass.getResource(rsrcName);
     return (url == null) ? null : new ImageIcon(url);
   }
  catch (  MissingResourceException e) {
+    if (isVerbose) {
+      System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ ".icon\" not found.");
+    }
     return null;
   }
 }

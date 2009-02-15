@@ -6,7 +6,7 @@
       final CompositeFigure group=(CompositeFigure)prototype.clone();
       UndoableEdit edit=new AbstractUndoableEdit(){
         @Override public String getPresentationName(){
-          return labels.getString("selectionGroup");
+          return labels.getString("edit.groupSelection.text");
         }
         public void redo() throws CannotRedoException {
           super.redo();
@@ -32,7 +32,7 @@
       final LinkedList<Figure> ungroupedFigures=new LinkedList<Figure>();
       UndoableEdit edit=new AbstractUndoableEdit(){
         @Override public String getPresentationName(){
-          return labels.getString("selectionUngroup");
+          return labels.getString("edit.ungroupSelection.text");
         }
         @Override public void redo() throws CannotRedoException {
           super.redo();

@@ -1,8 +1,8 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   final JToggleButton toggleButton;
   toggleButton=new JToggleButton();
-  labels.configureToolBarButton(toggleButton,"alignGrid");
+  labels.configureToolBarButton(toggleButton,"view.toggleGrid");
   toggleButton.setFocusable(false);
   toggleButton.addItemListener(new ItemListener(){
     public void itemStateChanged(    ItemEvent event){

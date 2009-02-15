@@ -2,13 +2,13 @@
   KeyStroke ks=null;
   try {
     String s;
-    s=resource.getString(key + ".accelerator");
-    if (s == null) {
-      s=resource.getString(key + ".acc");
-    }
+    s=getStringRecursive(key + ".accelerator");
     ks=(s == null) ? (KeyStroke)null : KeyStroke.getKeyStroke(s);
   }
  catch (  MissingResourceException e) {
+    if (isVerbose) {
+      System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ ".accelerator\" not found.");
+    }
   }
 catch (  NoSuchElementException e) {
   }

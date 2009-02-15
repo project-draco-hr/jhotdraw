@@ -1,4 +1,4 @@
 {
   super(editor);
-  labels.configureAction(this,"alignVertical");
+  labels.configureAction(this,"edit.alignVertical");
 }

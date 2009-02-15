@@ -1,5 +1,5 @@
 {
-  ResourceBundleUtil appLabels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+  ResourceBundleUtil appLabels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
   ApplicationModel m=getModel();
   m.putAction(AboutAction.ID,new AboutAction(this));
   m.putAction(ExitAction.ID,new ExitAction(this));

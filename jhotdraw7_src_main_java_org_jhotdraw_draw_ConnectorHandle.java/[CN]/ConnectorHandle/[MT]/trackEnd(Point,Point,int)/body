@@ -13,8 +13,8 @@
     view.addToSelection(createdConnection);
     view.getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
       @Override public String getPresentationName(){
-        ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-        return labels.getString("createConnectionFigure");
+        ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        return labels.getString("edit.createConnectionFigure.text");
       }
       @Override public void undo() throws CannotUndoException {
         super.undo();

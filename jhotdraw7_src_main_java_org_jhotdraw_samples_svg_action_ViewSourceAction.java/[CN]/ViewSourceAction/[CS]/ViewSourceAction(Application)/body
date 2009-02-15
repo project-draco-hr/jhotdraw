@@ -1,4 +1,5 @@
 {
   super(app);
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
   labels.configureAction(this,ID);
 }

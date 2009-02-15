@@ -1,5 +1,5 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.gui.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
   ArrayList<FontFamilyNode> families=new ArrayList<FontFamilyNode>();
   HashMap<String,FontFamilyNode> familyMap=new HashMap<String,FontFamilyNode>();
   for (  Font f : fonts) {

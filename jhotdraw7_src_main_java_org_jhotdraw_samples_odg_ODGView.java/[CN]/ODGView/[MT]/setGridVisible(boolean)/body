@@ -1,5 +1,5 @@
 {
   boolean oldValue=isGridVisible();
   view.setConstrainerVisible(newValue);
-  firePropertyChange("gridVisible",oldValue,newValue);
+  firePropertyChange(GRID_VISIBLE_PROPERTY,oldValue,newValue);
 }

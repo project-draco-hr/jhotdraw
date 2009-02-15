@@ -1,5 +1,5 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   bar.add(new AlignAction.West(editor)).setFocusable(false);
   bar.add(new AlignAction.East(editor)).setFocusable(false);
   bar.add(new AlignAction.Horizontal(editor)).setFocusable(false);

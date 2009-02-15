@@ -1,4 +1,4 @@
 {
-  putAction("undo",undoManager.getUndoAction());
-  putAction("redo",undoManager.getRedoAction());
+  putAction(UndoAction.ID,undoManager.getUndoAction());
+  putAction(RedoAction.ID,undoManager.getRedoAction());
 }

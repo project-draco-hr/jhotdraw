@@ -1,5 +1,5 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
   String title=labels.getString("unnamedFile");
   if (view != null) {
     File file=view.getFile();
@@ -12,7 +12,7 @@
     if (view.hasUnsavedChanges()) {
       title+="*";
     }
-    title=(labels.getFormatted("internalFrameTitle",title,view.getApplication().getName(),view.getMultipleOpenId()));
+    title=(labels.getFormatted("internalFrame.title",title,view.getApplication().getName(),view.getMultipleOpenId()));
   }
   return title;
 }

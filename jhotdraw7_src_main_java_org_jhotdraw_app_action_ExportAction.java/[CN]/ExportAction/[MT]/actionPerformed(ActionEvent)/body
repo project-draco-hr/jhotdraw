@@ -1,7 +1,7 @@
 {
   final ExportableView view=(ExportableView)getActiveView();
   if (view.isEnabled()) {
-    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+    ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
     oldFocusOwner=SwingUtilities.getWindowAncestor(view.getComponent()).getFocusOwner();
     view.setEnabled(false);
     File saveToFile;

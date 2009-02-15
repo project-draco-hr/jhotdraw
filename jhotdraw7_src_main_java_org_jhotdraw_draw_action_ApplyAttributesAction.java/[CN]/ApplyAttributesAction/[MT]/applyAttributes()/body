@@ -1,6 +1,6 @@
 {
   DrawingEditor editor=getEditor();
-  CompositeEdit edit=new CompositeEdit(labels.getString("attributesApply"));
+  CompositeEdit edit=new CompositeEdit(labels.getString("edit.applyAttrbutes.text"));
   DrawingView view=getView();
   view.getDrawing().fireUndoableEditHappened(edit);
   for (  Figure figure : view.getSelectedFigures()) {

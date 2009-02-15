@@ -1,5 +1,5 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   SVGView p=(SVGView)pr;
   DrawingEditor editor;
   if (p == null) {
@@ -12,15 +12,15 @@
   JToolBar tb;
   tb=new JToolBar();
   addCreationButtonsTo(a,tb,editor);
-  tb.setName(labels.getString("drawToolBarTitle"));
+  tb.setName(labels.getString("window.drawToolBar.title"));
   list.add(tb);
   tb=new JToolBar();
   addAttributesButtonsTo(tb,editor);
-  tb.setName(labels.getString("attributesToolBarTitle"));
+  tb.setName(labels.getString("window.attributesToolBar.title"));
   list.add(tb);
   tb=new JToolBar();
   ButtonFactory.addAlignmentButtonsTo(tb,editor);
-  tb.setName(labels.getString("alignmentToolBarTitle"));
+  tb.setName(labels.getString("window.alignmentToolBar.title"));
   list.add(tb);
   return list;
 }

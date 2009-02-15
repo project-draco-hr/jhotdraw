@@ -19,8 +19,8 @@
           return null;
         }
  else {
-          ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
-          return new IOException(labels.getFormatted("errorFileDoesNotExist",file.getName()));
+          ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+          return new IOException(labels.getFormatted("file.open.fileDoesNotExist.message",file.getName()));
         }
       }
  catch (      Throwable e) {

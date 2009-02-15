@@ -1,4 +1,4 @@
 {
   super(editor);
-  labels.configureAction(this,"alignHorizontal");
+  labels.configureAction(this,"edit.alignHorizontal");
 }

@@ -22,10 +22,10 @@
       final LinkedList<Object> editUndoData=new LinkedList<Object>(attributeRestoreData);
       final double editRedoValue=value;
       UndoableEdit edit=new AbstractUndoableEdit(){
-        public String getPresentationName(){
-          return labels.getString(attributeKey.getKey());
+        @Override public String getPresentationName(){
+          return labels.getString("attribute." + attributeKey.getKey() + ".text");
         }
-        public void undo() throws CannotRedoException {
+        @Override public void undo() throws CannotRedoException {
           super.undo();
           Iterator<Object> di=editUndoData.iterator();
           for (          Figure f : editedFigures) {
@@ -34,7 +34,7 @@
             f.changed();
           }
         }
-        public void redo() throws CannotRedoException {
+        @Override public void redo() throws CannotRedoException {
           super.redo();
           for (          Figure f : editedFigures) {
             f.willChange();

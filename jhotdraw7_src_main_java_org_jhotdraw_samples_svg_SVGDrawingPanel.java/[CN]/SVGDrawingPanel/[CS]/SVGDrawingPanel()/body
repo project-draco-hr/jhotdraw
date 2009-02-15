@@ -1,5 +1,5 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   initComponents();
   undoManager=new UndoRedoManager();
   editor=new DefaultDrawingEditor();
@@ -26,7 +26,7 @@
   pb.addSeparator();
   pb.add(undoManager.getUndoAction());
   pb.add(undoManager.getRedoAction());
-  JMenu m=new JMenu(labels.getString("zoom"));
+  JMenu m=new JMenu(labels.getString("view.zoomFactor.text"));
   JRadioButtonMenuItem rbmi;
   ButtonGroup group=new ButtonGroup();
   for (  double factor : new double[]{0.1,0.25,0.5,0.75,1.0,1.25,1.5,2,3,4}) {

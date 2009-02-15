@@ -19,7 +19,7 @@
  else {
       message=value.toString();
     }
-    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+    ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
     JSheet.showMessageSheet(getActiveView().getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>"+ labels.getFormatted("couldntSave",file.getName())+ "</b><br>"+ ((message == null) ? "" : message),JOptionPane.ERROR_MESSAGE);
   }
   view.setEnabled(true);

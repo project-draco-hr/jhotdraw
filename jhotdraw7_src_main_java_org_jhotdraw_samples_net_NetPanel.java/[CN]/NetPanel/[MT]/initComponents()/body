@@ -14,12 +14,14 @@
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=0;
   gridBagConstraints.gridy=0;
+  gridBagConstraints.fill=java.awt.GridBagConstraints.HORIZONTAL;
   gridBagConstraints.anchor=java.awt.GridBagConstraints.WEST;
   jPanel1.add(creationToolbar,gridBagConstraints);
   attributesToolbar.setFloatable(false);
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.gridx=0;
   gridBagConstraints.gridy=1;
+  gridBagConstraints.fill=java.awt.GridBagConstraints.HORIZONTAL;
   gridBagConstraints.anchor=java.awt.GridBagConstraints.WEST;
   jPanel1.add(attributesToolbar,gridBagConstraints);
   add(jPanel1,java.awt.BorderLayout.SOUTH);

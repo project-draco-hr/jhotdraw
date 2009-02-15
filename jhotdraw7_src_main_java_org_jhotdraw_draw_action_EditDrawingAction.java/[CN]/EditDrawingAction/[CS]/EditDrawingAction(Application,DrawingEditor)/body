@@ -1,6 +1,0 @@
-{
-  super(editor);
-  this.app=app;
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-  labels.configureAction(this,ID);
-}

@@ -1,6 +1,6 @@
 {
   ApplicationModel model=getModel();
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
   JMenu m;
   JMenuItem mi;
   m=new JMenu();

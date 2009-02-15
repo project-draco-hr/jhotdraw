@@ -5,8 +5,8 @@
     loadImage(in);
   }
  catch (  Throwable t) {
-    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-    IOException e=new IOException(labels.getFormatted("failedToLoadImage",file.getName()));
+    ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    IOException e=new IOException(labels.getFormatted("file.failedToLoadImage.message",file.getName()));
     e.initCause(t);
     throw e;
   }

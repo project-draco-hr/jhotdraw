@@ -1,13 +1,12 @@
 {
   try {
-    String s;
-    s=resource.getString(key + ".text");
-    if (s == null) {
-      s=resource.getString(key);
-    }
-    return s;
+    String value=getStringRecursive(key + ".text");
+    return value;
   }
  catch (  MissingResourceException e) {
+    if (isVerbose) {
+      System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ ".text\" not found.");
+    }
     return null;
   }
 }

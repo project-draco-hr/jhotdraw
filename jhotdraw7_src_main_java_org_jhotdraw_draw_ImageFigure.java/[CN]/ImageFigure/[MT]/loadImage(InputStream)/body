@@ -7,8 +7,8 @@
   }
   BufferedImage img=ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
   if (img == null) {
-    ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-    throw new IOException(labels.getFormatted("failedToLoadImage",in.toString()));
+    ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    throw new IOException(labels.getFormatted("file.failedToLoadImage.message",in.toString()));
   }
   imageData=baos.toByteArray();
   bufferedImage=img;

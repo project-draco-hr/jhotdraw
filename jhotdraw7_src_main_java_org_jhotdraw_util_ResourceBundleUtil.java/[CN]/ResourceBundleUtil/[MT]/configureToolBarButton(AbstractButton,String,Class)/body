@@ -6,7 +6,7 @@
   }
  else {
     button.setIcon(null);
-    button.setText(getString(argument));
+    button.setText(getTextProperty(argument));
   }
   button.setToolTipText(getToolTipTextProperty(argument));
 }

@@ -32,8 +32,8 @@
   startTimeFigure.setAttributeEnabled(FONT_BOLD,false);
   applyAttributes(this);
   setAttributeEnabled(STROKE_DASHES,false);
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.samples.pert.Labels");
-  setName(labels.getString("taskDefaultName"));
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.pert.Labels");
+  setName(labels.getString("pert.task.defaultName"));
   setDuration(0);
   startTime=0;
   dependencies=new HashSet<DependencyFigure>();

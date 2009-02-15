@@ -1,6 +1,6 @@
 {
-  ResourceBundleUtil drawLabels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.samples.net.Labels");
+  ResourceBundleUtil drawLabels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.net.Labels");
   NetView p=(NetView)pr;
   DrawingEditor editor;
   if (p == null) {
@@ -13,15 +13,15 @@
   JToolBar tb;
   tb=new JToolBar();
   addCreationButtonsTo(tb,editor);
-  tb.setName(drawLabels.getString("drawToolBarTitle"));
+  tb.setName(drawLabels.getString("window.drawToolBar.title"));
   list.add(tb);
   tb=new JToolBar();
   ButtonFactory.addAttributesButtonsTo(tb,editor);
-  tb.setName(drawLabels.getString("attributesToolBarTitle"));
+  tb.setName(drawLabels.getString("window.attributesToolBar.title"));
   list.add(tb);
   tb=new JToolBar();
   ButtonFactory.addAlignmentButtonsTo(tb,editor);
-  tb.setName(drawLabels.getString("alignmentToolBarTitle"));
+  tb.setName(drawLabels.getString("window.alignmentToolBar.title"));
   list.add(tb);
   return list;
 }

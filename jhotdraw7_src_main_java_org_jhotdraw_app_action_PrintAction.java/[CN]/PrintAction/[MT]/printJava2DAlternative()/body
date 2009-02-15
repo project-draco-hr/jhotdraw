@@ -13,7 +13,7 @@
         job.print();
       }
  catch (      PrinterException e) {
-        ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
         JSheet.showMessageSheet(getActiveView().getComponent(),labels.getFormatted("couldntPrint",e));
       }
     }

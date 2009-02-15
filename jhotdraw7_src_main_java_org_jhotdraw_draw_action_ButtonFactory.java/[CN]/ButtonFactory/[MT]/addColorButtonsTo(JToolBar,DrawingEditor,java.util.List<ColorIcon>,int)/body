@@ -1,5 +1,5 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getLAFBundle("org.jhotdraw.draw.Labels");
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   bar.add(createEditorColorButton(editor,STROKE_COLOR,colors,columnCount,"attribute.strokeColor",labels,new HashMap<AttributeKey,Object>()));
   bar.add(createEditorColorButton(editor,FILL_COLOR,colors,columnCount,"attribute.fillColor",labels,new HashMap<AttributeKey,Object>()));
   bar.add(createEditorColorButton(editor,TEXT_COLOR,colors,columnCount,"attribute.textColor",labels,new HashMap<AttributeKey,Object>()));
