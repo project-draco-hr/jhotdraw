@@ -1,2 +1,2 @@
-String key
-String fallbackValues
+String name
+String fallbackChain
