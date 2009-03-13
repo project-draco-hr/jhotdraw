@@ -4,7 +4,7 @@
   }
   boolean retValue;
   if (comp instanceof DrawingView) {
-    DrawingView view=(DrawingView)comp;
+    final DrawingView view=(DrawingView)comp;
     final Drawing drawing=view.getDrawing();
     if (drawing.getInputFormats() == null || drawing.getInputFormats().size() == 0) {
       if (DEBUG) {
@@ -51,41 +51,61 @@
           }
         }
         if (retValue == false && t.isDataFlavorSupported(DataFlavor.javaFileListFlavor)) {
-          java.util.List<File> files=(java.util.List<File>)t.getTransferData(DataFlavor.javaFileListFlavor);
+          final java.util.List<File> files=(java.util.List<File>)t.getTransferData(DataFlavor.javaFileListFlavor);
           retValue=true;
-          LinkedList<Figure> existingFigures=new LinkedList<Figure>(drawing.getChildren());
-          for (          File file : files) {
-            FileFormatLoop:             for (            InputFormat format : drawing.getInputFormats()) {
-              if (file.isFile() && format.getFileFilter().accept(file)) {
-                if (DEBUG) {
-                  System.out.println(this + ".importData importing file " + file);
+          final LinkedList<Figure> existingFigures=new LinkedList<Figure>(drawing.getChildren());
+          view.getEditor().setEnabled(false);
+          new Worker(){
+            @Override public Object construct(){
+              try {
+                for (                File file : files) {
+                  FileFormatLoop:                   for (                  InputFormat format : drawing.getInputFormats()) {
+                    if (file.isFile() && format.getFileFilter().accept(file)) {
+                      if (DEBUG) {
+                        System.out.println(this + ".importData importing file " + file);
+                      }
+                      format.read(file,drawing,false);
+                    }
+                  }
                 }
-                format.read(file,drawing,false);
+                return new LinkedList<Figure>(drawing.getChildren());
+              }
+ catch (              Throwable t) {
+                return t;
               }
             }
-          }
-          final LinkedList<Figure> importedFigures=new LinkedList<Figure>(drawing.getChildren());
-          importedFigures.removeAll(existingFigures);
-          importedFigures.removeAll(existingFigures);
-          if (importedFigures.size() > 0) {
-            view.clearSelection();
-            view.addToSelection(importedFigures);
-            drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
-              public String getPresentationName(){
-                ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
-                return labels.getString("editPaste");
+            @Override public void finished(            Object value){
+              if (value instanceof Throwable) {
+                ((Throwable)value).printStackTrace();
               }
-              public void undo() throws CannotUndoException {
-                super.undo();
-                drawing.removeAll(importedFigures);
-              }
-              public void redo() throws CannotRedoException {
-                super.redo();
-                drawing.addAll(importedFigures);
-              }
-            }
+ else {
+                final LinkedList<Figure> importedFigures=(LinkedList<Figure>)value;
+                importedFigures.removeAll(existingFigures);
+                importedFigures.removeAll(existingFigures);
+                if (importedFigures.size() > 0) {
+                  view.clearSelection();
+                  view.addToSelection(importedFigures);
+                  drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
+                    public String getPresentationName(){
+                      ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                      return labels.getString("editPaste");
+                    }
+                    public void undo() throws CannotUndoException {
+                      super.undo();
+                      drawing.removeAll(importedFigures);
+                    }
+                    public void redo() throws CannotRedoException {
+                      super.redo();
+                      drawing.addAll(importedFigures);
+                    }
+                  }
 );
+                }
+              }
+              view.getEditor().setEnabled(true);
+            }
           }
+.start();
         }
       }
  catch (      Throwable e) {
