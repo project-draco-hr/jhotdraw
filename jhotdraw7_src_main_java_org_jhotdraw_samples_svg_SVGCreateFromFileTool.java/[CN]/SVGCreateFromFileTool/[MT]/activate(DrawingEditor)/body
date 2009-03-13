@@ -28,8 +28,7 @@
   if (file != null) {
     Worker worker;
     if (file.getName().toLowerCase().endsWith(".svg") || file.getName().toLowerCase().endsWith(".svgz")) {
-      prototype=groupPrototype;
-      final Figure loaderFigure=((Figure)prototype.clone());
+      prototype=((Figure)groupPrototype.clone());
       worker=new Worker(){
         public Object construct(){
           Drawing drawing=new DefaultDrawing();
@@ -53,7 +52,7 @@
             Drawing drawing=(Drawing)value;
             CompositeFigure parent;
             if (createdFigure == null) {
-              parent=(CompositeFigure)loaderFigure;
+              parent=(CompositeFigure)prototype;
               for (              Figure f : drawing.getChildren()) {
                 parent.basicAdd(f);
               }
