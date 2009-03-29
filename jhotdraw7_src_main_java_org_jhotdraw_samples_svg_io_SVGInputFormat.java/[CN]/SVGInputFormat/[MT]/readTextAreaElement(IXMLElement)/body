@@ -19,7 +19,10 @@
  else {
       for (      IXMLElement node : elem.getChildren()) {
         if (node.getName() == null) {
-          doc.insertString(0,toText(elem,node.getContent()),null);
+          doc.insertString(doc.getLength(),toText(elem,node.getContent()),null);
+        }
+ else         if (node.getName().equals("tbreak")) {
+          doc.insertString(doc.getLength(),"\n",null);
         }
  else         if (node.getName().equals("tspan")) {
           readTSpanElement((IXMLElement)node,doc);

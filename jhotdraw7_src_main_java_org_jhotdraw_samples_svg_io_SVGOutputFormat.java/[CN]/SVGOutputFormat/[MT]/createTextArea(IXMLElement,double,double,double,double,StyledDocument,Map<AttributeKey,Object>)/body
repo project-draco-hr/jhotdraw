@@ -18,7 +18,9 @@
     if (i != 0) {
       elem.addChild(doc.createElement("tbreak"));
     }
-    elem.setContent(lines[i]);
+    IXMLElement contentElement=doc.createElement(null);
+    contentElement.setContent(lines[i]);
+    elem.addChild(contentElement);
   }
   writeShapeAttributes(elem,attributes);
   writeTransformAttribute(elem,attributes);

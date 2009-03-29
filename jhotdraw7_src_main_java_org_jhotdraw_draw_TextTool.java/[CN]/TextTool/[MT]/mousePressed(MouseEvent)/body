@@ -1,6 +1,19 @@
 {
   TextHolderFigure textHolder=null;
-  Figure pressedFigure=getDrawing().findFigureInside(getView().viewToDrawing(new Point(e.getX(),e.getY())));
+  DrawingView v=getView();
+  Point2D.Double p=v.viewToDrawing(e.getPoint());
+  Figure pressedFigure=null;
+  if (true) {
+    for (    Figure f : v.getSelectedFigures()) {
+      if (f.contains(p)) {
+        pressedFigure=f;
+        break;
+      }
+    }
+  }
+  if (pressedFigure == null) {
+    pressedFigure=getDrawing().findFigureInside(p);
+  }
   if (pressedFigure instanceof TextHolderFigure) {
     textHolder=((TextHolderFigure)pressedFigure).getLabelFor();
     if (!textHolder.isEditable() || isForCreationOnly)     textHolder=null;
