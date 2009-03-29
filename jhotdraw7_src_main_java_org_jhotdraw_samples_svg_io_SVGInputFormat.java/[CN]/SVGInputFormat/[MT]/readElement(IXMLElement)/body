@@ -7,7 +7,7 @@
     String name=elem.getName();
     if (name == null) {
       if (DEBUG) {
-        System.out.println("SVGInputFormat skipping nameless element at line " + elem.getLineNr());
+        System.err.println("SVGInputFormat warning: skipping nameless element at line " + elem.getLineNr());
       }
     }
  else     if (name.equals("a")) {

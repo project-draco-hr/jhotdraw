@@ -4,11 +4,18 @@
   double dashFactor=IS_STROKE_DASH_FACTOR.get(f) ? strokeWidth : 1d;
   double[] ddashes=STROKE_DASHES.get(f);
   float[] dashes=null;
+  boolean isAllZeroes=true;
   if (ddashes != null) {
     dashes=new float[ddashes.length];
     for (int i=0; i < dashes.length; i++) {
       dashes[i]=(float)(ddashes[i] * dashFactor);
+      if (isAllZeroes && dashes[i] != 0) {
+        isAllZeroes=false;
+      }
     }
+  }
+  if (isAllZeroes) {
+    dashes=null;
   }
 switch (STROKE_TYPE.get(f)) {
 case BASIC:

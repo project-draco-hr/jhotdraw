@@ -51,7 +51,13 @@
   }
   BufferedImage bufferedImage=null;
   if (imageData != null) {
-    bufferedImage=ImageIO.read(new ByteArrayInputStream(imageData));
+    try {
+      bufferedImage=ImageIO.read(new ByteArrayInputStream(imageData));
+    }
+ catch (    IIOException e) {
+      System.err.println("SVGInputFormat warning: skipped unsupported image format.");
+      e.printStackTrace();
+    }
   }
   if (bufferedImage == null) {
     imageData=null;

@@ -1,6 +1,6 @@
 {
   double scaleFactor=1d;
-  if (str == null || str.length() == 0) {
+  if (str == null || str.length() == 0 || str.equals("none")) {
     return 0d;
   }
   if (str.endsWith("%")) {

@@ -93,8 +93,14 @@
         angle=tt.nval;
         t.concatenate(new AffineTransform(1,Math.tan(angle * Math.PI / 180),0,1,0,0));
       }
+ else       if (type.equals("ref")) {
+        System.err.println("SVGInputFormat warning: ignored ref(...) transform attribute in element " + elem);
+        while (tt.nextToken() != ')' && tt.ttype != StreamPosTokenizer.TT_EOF) {
+        }
+        tt.pushBack();
+      }
  else {
-        throw new IOException("Unknown transform " + type + " in "+ str);
+        throw new IOException("Unknown transform " + type + " in "+ str+ " in element "+ elem);
       }
       if (tt.nextToken() != ')') {
         throw new IOException("')' not found in transform " + str);
