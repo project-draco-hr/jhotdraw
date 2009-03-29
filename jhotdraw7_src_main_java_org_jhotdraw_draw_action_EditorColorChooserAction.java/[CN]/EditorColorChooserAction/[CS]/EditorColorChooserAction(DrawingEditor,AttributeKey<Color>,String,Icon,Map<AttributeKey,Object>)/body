@@ -4,5 +4,5 @@
   putValue(AbstractAction.NAME,name);
   putValue(AbstractAction.SMALL_ICON,icon);
   setEnabled(true);
-  this.fixedAttributes=fixedAttributes;
+  this.fixedAttributes=(fixedAttributes != null) ? fixedAttributes : new HashMap<AttributeKey,Object>();
 }
