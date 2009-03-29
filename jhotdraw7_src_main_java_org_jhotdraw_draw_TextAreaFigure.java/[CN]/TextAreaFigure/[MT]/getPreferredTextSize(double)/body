@@ -23,7 +23,7 @@
         if (isUnderlined) {
           as.addAttribute(TextAttribute.UNDERLINE,TextAttribute.UNDERLINE_LOW_ONE_PIXEL);
         }
-        int tabCount=new StringTokenizer(paragraphs[i],"\t").countTokens() - 1;
+        int tabCount=paragraphs[i].split("\t").length - 1;
         Rectangle2D.Double paragraphBounds=drawParagraph(null,as.getIterator(),verticalPos,maxVerticalPos,leftMargin,rightMargin,tabStops,tabCount);
         verticalPos=(float)(paragraphBounds.y + paragraphBounds.height);
         textRect.add(paragraphBounds);
