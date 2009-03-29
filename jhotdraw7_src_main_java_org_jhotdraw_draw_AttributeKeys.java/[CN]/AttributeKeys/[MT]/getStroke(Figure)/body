@@ -20,8 +20,8 @@
 switch (STROKE_TYPE.get(f)) {
 case BASIC:
 default :
-    return new BasicStroke((float)strokeWidth,STROKE_CAP.get(f),STROKE_JOIN.get(f),miterLimit,dashes,(float)(STROKE_DASH_PHASE.get(f) * dashFactor));
+    return new BasicStroke((float)strokeWidth,STROKE_CAP.get(f),STROKE_JOIN.get(f),miterLimit,dashes,Math.max(0,(float)(STROKE_DASH_PHASE.get(f) * dashFactor)));
 case DOUBLE:
-  return new DoubleStroke((float)(STROKE_INNER_WIDTH_FACTOR.get(f) * strokeWidth),(float)strokeWidth,STROKE_CAP.get(f),STROKE_JOIN.get(f),miterLimit,dashes,(float)(STROKE_DASH_PHASE.get(f).floatValue() * dashFactor));
+  return new DoubleStroke((float)(STROKE_INNER_WIDTH_FACTOR.get(f) * strokeWidth),(float)strokeWidth,STROKE_CAP.get(f),STROKE_JOIN.get(f),miterLimit,dashes,Math.max(0,(float)(STROKE_DASH_PHASE.get(f).floatValue() * dashFactor)));
 }
 }
