@@ -1,3 +1,5 @@
 {
-  g.fill(ellipse);
+  if (ellipse.width > 0 && ellipse.height > 0) {
+    g.fill(ellipse);
+  }
 }

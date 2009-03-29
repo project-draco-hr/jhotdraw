@@ -33,7 +33,7 @@
       String r=tt.nextToken();
       String g=tt.nextToken();
       String b=tt.nextToken();
-      Color c=new Color(r.endsWith("%") ? (int)(Integer.decode(r.substring(0,r.length() - 1)) * 2.55) : Integer.decode(r),g.endsWith("%") ? (int)(Integer.decode(g.substring(0,g.length() - 1)) * 2.55) : Integer.decode(g),b.endsWith("%") ? (int)(Integer.decode(b.substring(0,b.length() - 1)) * 2.55) : Integer.decode(b));
+      Color c=new Color(r.endsWith("%") ? (int)(Double.parseDouble(r.substring(0,r.length() - 1)) * 2.55) : Integer.decode(r),g.endsWith("%") ? (int)(Double.parseDouble(g.substring(0,g.length() - 1)) * 2.55) : Integer.decode(g),b.endsWith("%") ? (int)(Double.parseDouble(b.substring(0,b.length() - 1)) * 2.55) : Integer.decode(b));
       return c;
     }
  catch (    Exception e) {
