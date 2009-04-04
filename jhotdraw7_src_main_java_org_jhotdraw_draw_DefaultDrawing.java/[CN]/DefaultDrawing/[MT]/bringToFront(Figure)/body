@@ -1,7 +1,0 @@
-{
-  if (basicRemove(figure) != -1) {
-    basicAdd(figure);
-    invalidateSortOrder();
-    fireAreaInvalidated(figure.getDrawingArea());
-  }
-}
