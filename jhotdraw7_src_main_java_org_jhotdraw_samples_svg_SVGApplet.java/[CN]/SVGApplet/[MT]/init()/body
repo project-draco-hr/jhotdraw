@@ -1,74 +1,85 @@
 {
+  if (getParameter("Locale") != null) {
+    Locale.setDefault(new Locale(getParameter("Locale")));
+  }
+  final ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
   try {
     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
   }
  catch (  Throwable e) {
   }
   Container c=getContentPane();
-  c.setLayout(new BoxLayout(c,BoxLayout.Y_AXIS));
-  String[] labels=getAppletInfo().split("\n");
-  for (int i=0; i < labels.length; i++) {
-    c.add(new JLabel((labels[i].length() == 0) ? " " : labels[i]));
-  }
+  final ProgressIndicator progress=new ProgressIndicator(getName(),labels.getString("progressInitializing"));
+  c.add(progress);
+  progress.revalidate();
   new Worker(){
     public Object construct(){
-      Object result=null;
-      InputStream in=null;
       try {
-        Drawing drawing=createDrawing();
-        for (        InputFormat fmt : drawing.getInputFormats()) {
-          try {
-            if (getParameter("data") != null) {
-              in=new ByteArrayInputStream(getParameter("data").getBytes("UTF8"));
-            }
- else             if (getParameter("datafile") != null) {
-              URL url=new URL(getDocumentBase(),getParameter("datafile"));
-              in=url.openConnection().getInputStream();
-            }
-            if (in != null) {
-              fmt.read(in,drawing,true);
-              result=drawing;
-              break;
-            }
-          }
- catch (          IOException e) {
-            result=e;
+        Thread t=new Thread(){
+          public void run(){
+            drawingComponent=createDrawingComponent();
           }
         }
+;
+        t.start();
+        progress.setNote(labels.getString("progressLoading"));
+        Object drawing=loadDrawing(progress);
+        progress.setNote(labels.getString("progressOpeningEditor"));
+        progress.setIndeterminate(true);
+        t.join();
+        return drawing;
       }
  catch (      Throwable t) {
-        result=t;
+        return t;
       }
- finally {
-        if (in != null) {
-          try {
-            in.close();
-          }
- catch (          IOException ex) {
-          }
-        }
-      }
-      return result;
     }
     public void finished(    Object result){
-      if (result instanceof Throwable) {
-        ((Throwable)result).printStackTrace();
-      }
       Container c=getContentPane();
       c.setLayout(new BorderLayout());
       c.removeAll();
-      c.add(drawingPanel=new SVGDrawingPanel());
-      initComponents();
-      if (result != null) {
-        if (result instanceof Drawing) {
-          setDrawing((Drawing)result);
+      if (result instanceof Throwable) {
+        Throwable error=(Throwable)result;
+        error.printStackTrace();
+        String message=(error.getMessage() == null) ? error.toString() : error.getMessage();
+        MessagePanel mp=new MessagePanel(UIManager.getIcon("OptionPane.errorIcon"),labels.getFormatted("messageLoadFailed",htmlencode(getParameter("DrawingURL")),htmlencode(message)));
+        c.add(mp);
+        mp.addActionListener(new ActionListener(){
+          public void actionPerformed(          ActionEvent evt){
+            if (evt.getActionCommand().equals("close")) {
+              close();
+            }
+          }
         }
- else         if (result instanceof Throwable) {
-          getDrawing().add(new SVGTextFigure(result.toString()));
-          ((Throwable)result).printStackTrace();
+);
+      }
+ else {
+        c.add(drawingComponent.getComponent());
+        drawingComponent.addActionListener(new ActionListener(){
+          public void actionPerformed(          ActionEvent evt){
+            if (evt.getActionCommand().equals("save")) {
+              save();
+            }
+ else             if (evt.getActionCommand().equals("cancel")) {
+              cancel();
+            }
+          }
+        }
+);
+        initComponents();
+        if (result != null) {
+          if (result instanceof Drawing) {
+            setDrawing((Drawing)result);
+          }
+ else           if (result instanceof Throwable) {
+            setDrawing(createDrawing());
+            getDrawing().add(new SVGTextFigure(result.toString()));
+            ((Throwable)result).printStackTrace();
+          }
         }
       }
       c.validate();
+      long end=System.currentTimeMillis();
+      System.out.println("AbstractDrawingApplet startup latency:" + (end - start));
     }
   }
 .start();

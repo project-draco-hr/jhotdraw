@@ -1,3 +1,0 @@
-{
-  return getName() + "\nVersion " + getVersion()+ "\n\nCopyright (c) by the authors of JHotDraw.org"+ "\nThis software is licensed under LGPL or"+ "\nCreative Commons 2.5 BY";
-}

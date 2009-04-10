@@ -13,7 +13,7 @@
   gridBagConstraints.weightx=1.0;
   gridBagConstraints.insets=new java.awt.Insets(0,10,0,0);
   add(messageLabel,gridBagConstraints);
-  closeButton.setText(labels.getString("close"));
+  closeButton.setText("null");
   closeButton.setActionCommand("close");
   closeButton.addActionListener(new java.awt.event.ActionListener(){
     public void actionPerformed(    java.awt.event.ActionEvent evt){

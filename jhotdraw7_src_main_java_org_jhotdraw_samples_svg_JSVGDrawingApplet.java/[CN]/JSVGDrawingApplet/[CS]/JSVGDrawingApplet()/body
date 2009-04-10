@@ -1,3 +1,0 @@
-{
-  setName(MessageFormat.format("JSVGDrawingApplet {0}",getVersion()));
-}

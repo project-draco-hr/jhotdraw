@@ -1,3 +1,0 @@
-{
-  return (JSVGDrawingAppletPanel)super.getDrawingComponent();
-}
