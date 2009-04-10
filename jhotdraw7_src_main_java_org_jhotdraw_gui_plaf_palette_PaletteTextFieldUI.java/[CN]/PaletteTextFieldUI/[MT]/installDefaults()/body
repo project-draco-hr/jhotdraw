@@ -38,4 +38,5 @@
   if (margin == null || margin instanceof UIResource) {
     editor.setMargin(plaf.getInsets(prefix + ".margin"));
   }
+  editor.setOpaque(plaf.getBoolean(prefix + ".opaque"));
 }

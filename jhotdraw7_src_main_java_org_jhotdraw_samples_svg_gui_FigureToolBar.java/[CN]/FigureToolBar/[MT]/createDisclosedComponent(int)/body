@@ -26,6 +26,8 @@ case 1:
       gbc.anchor=GridBagConstraints.SOUTHWEST;
       p.add(linkLabel,gbc);
       scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+      scrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+      scrollPane.putClientProperty("JComponent.sizeVariant","small");
       linkField.setColumns(8);
       linkField.setLineWrap(true);
       linkField.setRows(3);
@@ -88,6 +90,8 @@ case 2:
   gbc.anchor=GridBagConstraints.SOUTHWEST;
   p.add(linkLabel,gbc);
   scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+  scrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+  scrollPane.putClientProperty("JComponent.sizeVariant","small");
   linkField.setColumns(12);
   linkField.setLineWrap(true);
   linkField.setRows(3);
