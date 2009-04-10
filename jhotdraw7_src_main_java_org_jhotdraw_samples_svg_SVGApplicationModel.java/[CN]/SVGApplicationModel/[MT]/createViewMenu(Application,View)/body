@@ -7,31 +7,9 @@
   Action action;
   ResourceBundleUtil appLabels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
   ResourceBundleUtil drawLabels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+  ResourceBundleUtil svgLabels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
   m=new JMenu();
   appLabels.configureMenu(m,"view");
-  action=(p != null) ? p.getAction(EditCanvasAction.ID) : getAction(EditCanvasAction.ID);
-  m.add(action);
-  m2=new JMenu();
-  drawLabels.configureMenu(m2,"view.grid");
-  action=(p != null) ? p.getAction(ToggleGridAction.ID) : getAction(ToggleGridAction.ID);
-  cbmi=new JCheckBoxMenuItem(action);
-  Actions.configureJCheckBoxMenuItem(cbmi,action);
-  m2.add(cbmi);
-  cbmi.setIcon(null);
-  action=(p != null) ? p.getAction(EditGridAction.ID) : getAction(EditGridAction.ID);
-  m2.add(action);
-  m.add(m2);
-  m2=new JMenu();
-  drawLabels.configureMenu(m2,"view.zoomFactor");
-  for (  double sf : scaleFactors) {
-    String id=(int)(sf * 100) + "%";
-    cbmi=new JCheckBoxMenuItem(getAction(id));
-    Actions.configureJCheckBoxMenuItem(cbmi,getAction(id));
-    m2.add(cbmi);
-  }
-  m.add(m2);
-  cbmi=new JCheckBoxMenuItem(getAction("togglePropertiesPanel"));
   m.add(getAction(ViewSourceAction.ID));
-  m.add(cbmi);
   return m;
 }

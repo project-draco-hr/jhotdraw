@@ -1,6 +1,0 @@
-{
-  if (beanDescriptor == null)   beanDescriptor=new BeanDescriptor(JSVGDrawingPanelBeanInfo.class);
-  beanDescriptor.setValue("isContainer",Boolean.FALSE);
-  beanDescriptor.setDisplayName("SVGDrawingPanel");
-  return beanDescriptor;
-}

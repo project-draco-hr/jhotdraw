@@ -1,27 +1,37 @@
 {
-  SVGView p=(SVGView)getActiveView();
+  final SVGView p=(SVGView)getActiveView();
   SVGOutputFormat format=new SVGOutputFormat();
   format.setPrettyPrint(true);
   ByteArrayOutputStream buf=new ByteArrayOutputStream();
   try {
     format.write(buf,p.getDrawing());
     String source=buf.toString("UTF-8");
-    final JDialog dialog=new JDialog((Frame)SwingUtilities.getWindowAncestor(p.getComponent()));
-    dialog.setTitle(p.getTitle());
-    dialog.setResizable(true);
-    dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-    JTextArea ta=new JTextArea(source);
-    ta.setWrapStyleWord(true);
-    ta.setLineWrap(true);
-    JScrollPane sp=new JScrollPane(ta);
-    dialog.getContentPane().add(sp);
-    dialog.setSize(400,400);
-    dialog.setLocationByPlatform(true);
+    final JDialog dialog;
+    if (p.getClientProperty(DIALOG_CLIENT_PROPERTY) == null) {
+      dialog=new JDialog((Frame)SwingUtilities.getWindowAncestor(p.getComponent()));
+      p.putClientProperty(DIALOG_CLIENT_PROPERTY,dialog);
+      dialog.setTitle(p.getTitle());
+      dialog.setResizable(true);
+      dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+      JTextArea ta=new JTextArea(source);
+      ta.setWrapStyleWord(true);
+      ta.setLineWrap(true);
+      JScrollPane sp=new JScrollPane(ta);
+      dialog.getContentPane().add(sp);
+      dialog.setSize(400,400);
+      dialog.setLocationByPlatform(true);
+    }
+ else {
+      dialog=(JDialog)p.getClientProperty(DIALOG_CLIENT_PROPERTY);
+      JTextArea ta=(JTextArea)((JScrollPane)dialog.getContentPane().getComponent(0)).getViewport().getView();
+      ta.setText(source);
+    }
     Preferences prefs=Preferences.userNodeForPackage(getClass());
     PreferencesUtil.installFramePrefsHandler(prefs,"viewSource",dialog);
     dialog.addWindowListener(new WindowAdapter(){
       @Override public void windowClosed(      WindowEvent evt){
         getApplication().removeWindow(dialog);
+        p.putClientProperty(DIALOG_CLIENT_PROPERTY,null);
       }
     }
 );

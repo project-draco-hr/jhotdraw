@@ -54,17 +54,6 @@
       }
  else {
         c.add(drawingComponent.getComponent());
-        drawingComponent.addActionListener(new ActionListener(){
-          public void actionPerformed(          ActionEvent evt){
-            if (evt.getActionCommand().equals("save")) {
-              save();
-            }
- else             if (evt.getActionCommand().equals("cancel")) {
-              cancel();
-            }
-          }
-        }
-);
         initComponents();
         if (result != null) {
           if (result instanceof Drawing) {

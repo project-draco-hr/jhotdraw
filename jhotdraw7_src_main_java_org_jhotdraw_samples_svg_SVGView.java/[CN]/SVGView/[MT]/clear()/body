@@ -3,9 +3,9 @@
   try {
     SwingUtilities.invokeAndWait(new Runnable(){
       public void run(){
-        view.getDrawing().removeUndoableEditListener(undo);
-        view.setDrawing(newDrawing);
-        view.getDrawing().addUndoableEditListener(undo);
+        svgPanel.getDrawing().removeUndoableEditListener(undo);
+        svgPanel.setDrawing(newDrawing);
+        svgPanel.getDrawing().addUndoableEditListener(undo);
         undo.discardAllEdits();
       }
     }

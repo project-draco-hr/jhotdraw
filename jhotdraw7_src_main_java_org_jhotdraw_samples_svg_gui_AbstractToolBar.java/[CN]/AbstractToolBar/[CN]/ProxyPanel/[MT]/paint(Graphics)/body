@@ -4,10 +4,7 @@
   if (runner == null) {
     runner=new Runnable(){
       public void run(){
-        long start=System.currentTimeMillis();
         panels[state]=createDisclosedComponent(state);
-        long end=System.currentTimeMillis();
-        System.out.println(AbstractToolBar.this.getClass() + " state:" + state+ " elapsed:"+ (end - start));
         JComponent parent=(JComponent)getParent();
         if (getDisclosureState() == state && parent != null) {
           GridBagLayout layout=(GridBagLayout)parent.getLayout();

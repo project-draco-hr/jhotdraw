@@ -3,15 +3,9 @@
   prefs=Preferences.userNodeForPackage(getClass());
   initComponents();
   JPanel zoomButtonPanel=new JPanel(new BorderLayout());
-  scrollPane.setLayout(new PlacardScrollPaneLayout());
-  scrollPane.setBorder(new EmptyBorder(0,0,0,0));
-  scrollPane.getViewport().setScrollMode(JViewport.BACKINGSTORE_SCROLL_MODE);
-  setEditor(new DefaultDrawingEditor());
-  editor.add(view);
-  System.out.println("SVGView " + editor + " "+ editor.getActiveView());
   undo=new UndoRedoManager();
-  view.setDrawing(createDrawing());
-  view.getDrawing().addUndoableEditListener(undo);
+  svgPanel.setDrawing(createDrawing());
+  svgPanel.getDrawing().addUndoableEditListener(undo);
   initActions();
   undo.addPropertyChangeListener(new PropertyChangeListener(){
     public void propertyChange(    PropertyChangeEvent evt){
@@ -19,29 +13,4 @@
     }
   }
 );
-  view.addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
-      if (evt.getPropertyName() == "scaleFactor") {
-        firePropertyChange(evt.getPropertyName(),evt.getOldValue(),evt.getNewValue());
-      }
-    }
-  }
-);
-  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
-  JPanel placardPanel=new JPanel(new BorderLayout());
-  javax.swing.AbstractButton pButton;
-  pButton=ButtonFactory.createZoomButton(view);
-  pButton.putClientProperty("Quaqua.Button.style","placard");
-  pButton.putClientProperty("Quaqua.Component.visualMargin",new Insets(0,0,0,0));
-  pButton.setFont(UIManager.getFont("SmallSystemFont"));
-  placardPanel.add(pButton,BorderLayout.WEST);
-  pButton=ButtonFactory.createToggleGridButton(view);
-  pButton.putClientProperty("Quaqua.Button.style","placard");
-  pButton.putClientProperty("Quaqua.Component.visualMargin",new Insets(0,0,0,0));
-  pButton.setFont(UIManager.getFont("SmallSystemFont"));
-  labels.configureToolBarButton(pButton,"view.toggleGrid.placard");
-  placardPanel.add(pButton,BorderLayout.EAST);
-  scrollPane.add(placardPanel,JScrollPane.LOWER_LEFT_CORNER);
-  propertiesPanel.setVisible(prefs.getBoolean("propertiesPanelVisible",false));
-  propertiesPanel.setView(view);
 }

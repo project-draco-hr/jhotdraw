@@ -2,9 +2,9 @@
   Drawing drawing=createDrawing();
   InputStream in=null;
   try {
-    if (getParameter("DrawingURL") != null) {
+    if (getParameter("datafile") != null) {
       ByteArrayOutputStream buf=new ByteArrayOutputStream();
-      URL url=new URL(getDocumentBase(),getParameter("DrawingURL"));
+      URL url=new URL(getDocumentBase(),getParameter("datafile"));
       URLConnection uc=url.openConnection();
       if (uc instanceof HttpURLConnection) {
         ((HttpURLConnection)uc).setUseCaches(false);

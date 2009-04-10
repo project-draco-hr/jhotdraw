@@ -2,7 +2,7 @@
   JFileChooser c=new JFileChooser();
   fileFilterOutputFormatMap=new HashMap<javax.swing.filechooser.FileFilter,OutputFormat>();
   javax.swing.filechooser.FileFilter currentFilter=null;
-  for (  OutputFormat format : view.getDrawing().getOutputFormats()) {
+  for (  OutputFormat format : svgPanel.getDrawing().getOutputFormats()) {
     javax.swing.filechooser.FileFilter ff=format.getFileFilter();
     fileFilterOutputFormatMap.put(ff,format);
     c.addChoosableFileFilter(ff);
