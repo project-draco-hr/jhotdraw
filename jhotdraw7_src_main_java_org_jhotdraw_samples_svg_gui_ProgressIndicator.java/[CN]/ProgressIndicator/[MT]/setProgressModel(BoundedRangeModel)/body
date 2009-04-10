@@ -1,0 +1,4 @@
+{
+  progressModel=m;
+  progressBar.setModel(m);
+}

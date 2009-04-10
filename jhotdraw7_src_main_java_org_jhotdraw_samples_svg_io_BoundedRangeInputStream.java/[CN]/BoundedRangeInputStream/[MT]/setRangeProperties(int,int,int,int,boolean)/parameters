@@ -1,0 +1,5 @@
+int value
+int extent
+int min
+int max
+boolean adjusting

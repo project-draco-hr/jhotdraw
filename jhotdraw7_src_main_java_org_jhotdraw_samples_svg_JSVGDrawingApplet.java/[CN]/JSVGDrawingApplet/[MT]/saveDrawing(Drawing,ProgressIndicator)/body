@@ -1,0 +1,226 @@
+{
+  progress.setMaximum(4);
+  progress.setProgress(0);
+  progress.setIndeterminate(false);
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  String imageExtension=getParameter("DrawingName");
+  imageExtension=(imageExtension == null) ? "" : imageExtension.substring(imageExtension.lastIndexOf('.') + 1);
+  if (imageExtension.equals("")) {
+    imageExtension="svg";
+  }
+  byte[] drawingData=null;
+  for (  OutputFormat format : drawing.getOutputFormats()) {
+    if (imageExtension.equals(format.getFileExtension())) {
+      format.write(out,drawing);
+      drawingData=out.toByteArray();
+      break;
+    }
+  }
+  if (drawingData == null) {
+    throw new IOException("Unsupported file format.");
+  }
+  Dimension renderedSize=new Dimension(-1,-1);
+  try {
+    renderedSize.width=Integer.parseInt(getParameter("DrawingWidth"));
+  }
+ catch (  Exception e) {
+  }
+  try {
+    renderedSize.height=Integer.parseInt(getParameter("DrawingHeight"));
+  }
+ catch (  Exception e) {
+  }
+  if (renderedSize.width == -1 || renderedSize.height == -1) {
+    Rectangle2D.Double drawBounds=null;
+    for (    Figure f : drawing.getChildren()) {
+      if (drawBounds == null) {
+        drawBounds=f.getDrawingArea();
+      }
+ else {
+        drawBounds.add(f.getDrawingArea());
+      }
+    }
+    if (drawBounds == null) {
+      drawBounds=new Rectangle2D.Double(0,0,400,300);
+    }
+    ;
+    if (renderedSize.width == -1) {
+      renderedSize.width=(int)(Math.abs(drawBounds.x) + drawBounds.getWidth());
+    }
+    if (renderedSize.height == -1) {
+      renderedSize.height=(int)(Math.abs(drawBounds.y) + drawBounds.getHeight());
+    }
+  }
+  byte[] renderedData=null;
+  byte[] imageMapData=null;
+  if (imageExtension.startsWith("svg")) {
+    out=new ByteArrayOutputStream();
+    ImageOutputFormat imgOut=new ImageOutputFormat();
+    imgOut.write(out,drawing,new AffineTransform(),renderedSize);
+    renderedData=out.toByteArray();
+    out=new ByteArrayOutputStream();
+    OutputStreamWriter w=new OutputStreamWriter(out,"UTF-8");
+    w.write("<map name=\"" + getParameter("DrawingName") + "\" id=\""+ getParameter("DrawingName")+ "\">");
+    w.flush();
+    ImageMapOutputFormat imgMapOut=new ImageMapOutputFormat();
+    imgMapOut.write(out,drawing,new AffineTransform(),renderedSize);
+    w.write("</map>");
+    w.flush();
+    imageMapData=out.toByteArray();
+  }
+  progress.setProgress(1);
+  HttpURLConnection conn=null;
+  BufferedReader response=null;
+  try {
+    URL url=new URL(getDocumentBase(),getParameter("UploadURL"));
+    conn=(HttpURLConnection)url.openConnection();
+    ClientHttpRequest request=new ClientHttpRequest(conn);
+    request.setParameter("filecomment",getDrawingComponent().getSummary());
+    request.setParameter("filename",getParameter("DrawingName"));
+    request.setParameter("noredirect","1");
+    request.setParameter("filepath",getParameter("DrawingName"),new ByteArrayInputStream(drawingData));
+    request.post();
+    int responseCode=conn.getResponseCode();
+    response=new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
+    StringBuilder responseText=new StringBuilder();
+    for (String line; null != (line=response.readLine()); ) {
+      responseText.append(line);
+    }
+    response.close();
+    response=null;
+    conn=null;
+    if (responseText.length() > 0) {
+      IOException e2=new IOException(responseText.toString());
+      throw e2;
+    }
+  }
+ catch (  IOException e) {
+    if (conn != null) {
+      StringBuilder responseText=new StringBuilder();
+      try {
+        response=new BufferedReader(new InputStreamReader(conn.getErrorStream(),"UTF-8"));
+        for (String line; null != (line=response.readLine()); ) {
+          responseText.append(line);
+        }
+      }
+  finally {
+        if (response != null) {
+          response.close();
+          response=null;
+        }
+      }
+      if (responseText.length() > 0) {
+        IOException e2=new IOException(responseText.toString());
+        e2.initCause(e);
+        throw e2;
+      }
+ else {
+        throw e;
+      }
+    }
+  }
+catch (  Throwable e) {
+    IOException e2=new IOException(e.getMessage());
+    e2.initCause(e);
+    throw e2;
+  }
+  progress.setProgress(2);
+  if (renderedData != null) {
+    conn=null;
+    response=null;
+    try {
+      URL url=new URL(getDocumentBase(),getParameter("UploadURL"));
+      conn=(HttpURLConnection)url.openConnection();
+      ClientHttpRequest request=new ClientHttpRequest(conn);
+      request.setParameter("filecomment",getDrawingComponent().getSummary());
+      request.setParameter("filename",getParameter("DrawingName") + ".png");
+      request.setParameter("noredirect","1");
+      request.setParameter("filepath",getParameter("DrawingName") + ".png",new ByteArrayInputStream(renderedData));
+      request.post();
+      int responseCode=conn.getResponseCode();
+      response=new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
+      StringBuilder responseText=new StringBuilder();
+      for (String line; null != (line=response.readLine()); ) {
+        responseText.append(line);
+      }
+      response.close();
+      response=null;
+      conn=null;
+    }
+ catch (    IOException e) {
+      if (conn != null) {
+        StringBuilder responseText=new StringBuilder();
+        try {
+          response=new BufferedReader(new InputStreamReader(conn.getErrorStream(),"UTF-8"));
+          for (String line; null != (line=response.readLine()); ) {
+            responseText.append(line);
+          }
+        }
+  finally {
+          if (response != null) {
+            response.close();
+            response=null;
+          }
+        }
+        if (responseText.length() > 0) {
+          IOException e2=new IOException(responseText.toString());
+          e2.initCause(e);
+          throw e2;
+        }
+ else {
+          throw e;
+        }
+      }
+    }
+  }
+  progress.setProgress(3);
+  if (imageMapData != null) {
+    conn=null;
+    response=null;
+    try {
+      URL url=new URL(getDocumentBase(),getParameter("UploadURL"));
+      conn=(HttpURLConnection)url.openConnection();
+      ClientHttpRequest request=new ClientHttpRequest(conn);
+      request.setParameter("filecomment",getDrawingComponent().getSummary());
+      request.setParameter("filename",getParameter("DrawingName") + ".map");
+      request.setParameter("noredirect","1");
+      request.setParameter("filepath",getParameter("DrawingName") + ".map",new ByteArrayInputStream(imageMapData));
+      request.post();
+      int responseCode=conn.getResponseCode();
+      response=new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
+      StringBuilder responseText=new StringBuilder();
+      for (String line; null != (line=response.readLine()); ) {
+        responseText.append(line);
+      }
+      response.close();
+      response=null;
+      conn=null;
+    }
+ catch (    IOException e) {
+      if (conn != null) {
+        StringBuilder responseText=new StringBuilder();
+        try {
+          response=new BufferedReader(new InputStreamReader(conn.getErrorStream(),"UTF-8"));
+          for (String line; null != (line=response.readLine()); ) {
+            responseText.append(line);
+          }
+        }
+  finally {
+          if (response != null) {
+            response.close();
+            response=null;
+          }
+        }
+        if (responseText.length() > 0) {
+          IOException e2=new IOException(responseText.toString());
+          e2.initCause(e);
+          throw e2;
+        }
+ else {
+          throw e;
+        }
+      }
+    }
+  }
+  progress.setProgress(4);
+}

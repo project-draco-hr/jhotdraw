@@ -1,0 +1,6 @@
+{
+  setCookies(cookies);
+  postCookies();
+  setParameters(parameters);
+  return doPost();
+}

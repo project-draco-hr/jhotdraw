@@ -1,0 +1,4 @@
+{
+  setOpaque(false);
+  setLayout(new FlowLayout(FlowLayout.LEFT,1,1));
+}

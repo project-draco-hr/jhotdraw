@@ -1,0 +1,46 @@
+{
+  JPanel p=null;
+switch (state) {
+case 1:
+{
+      p=new JPanel();
+      p.setOpaque(false);
+      p.setBorder(new EmptyBorder(5,5,5,8));
+      ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+      GridBagLayout layout=new GridBagLayout();
+      p.setLayout(layout);
+      GridBagConstraints gbc;
+      AbstractButton btn;
+      btn=ButtonFactory.createFontButton(editor,labels);
+      btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
+      gbc=new GridBagConstraints();
+      gbc.gridwidth=GridBagConstraints.REMAINDER;
+      gbc.anchor=GridBagConstraints.WEST;
+      p.add(btn,gbc);
+      btn=ButtonFactory.createFontStyleBoldButton(editor,labels);
+      btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
+      btn.putClientProperty("Palette.Component.segmentPosition","first");
+      gbc=new GridBagConstraints();
+      gbc.gridy=1;
+      gbc.insets=new Insets(3,0,0,0);
+      p.add(btn,gbc);
+      btn=ButtonFactory.createFontStyleItalicButton(editor,labels);
+      btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
+      btn.putClientProperty("Palette.Component.segmentPosition","middle");
+      gbc=new GridBagConstraints();
+      gbc.gridy=1;
+      gbc.insets=new Insets(3,0,0,0);
+      p.add(btn,gbc);
+      btn=ButtonFactory.createFontStyleUnderlineButton(editor,labels);
+      btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
+      btn.putClientProperty("Palette.Component.segmentPosition","last");
+      gbc=new GridBagConstraints();
+      gbc.gridy=1;
+      gbc.insets=new Insets(3,0,0,0);
+      gbc.anchor=GridBagConstraints.WEST;
+      p.add(btn,gbc);
+    }
+  break;
+}
+return p;
+}

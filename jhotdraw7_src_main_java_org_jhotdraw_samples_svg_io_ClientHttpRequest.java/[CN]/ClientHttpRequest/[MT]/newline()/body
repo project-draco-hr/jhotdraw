@@ -1,0 +1,4 @@
+{
+  connect();
+  write("\r\n");
+}

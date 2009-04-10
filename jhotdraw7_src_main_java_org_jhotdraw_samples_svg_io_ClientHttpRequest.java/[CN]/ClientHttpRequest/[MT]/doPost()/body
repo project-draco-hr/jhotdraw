@@ -1,0 +1,6 @@
+{
+  boundary();
+  writeln("--");
+  _os.close();
+  return _connection.getInputStream();
+}

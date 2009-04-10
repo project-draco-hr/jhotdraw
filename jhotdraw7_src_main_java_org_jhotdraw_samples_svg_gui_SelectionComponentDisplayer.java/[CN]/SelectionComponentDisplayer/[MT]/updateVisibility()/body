@@ -1,0 +1,11 @@
+{
+  boolean newValue=editor != null && editor.getActiveView() != null && (isVisibleIfCreationTool && editor.getTool() != null && !(editor.getTool() instanceof SelectionTool) || editor.getActiveView().getSelectionCount() >= minSelectionCount);
+  component.setVisible(newValue);
+  if (newValue) {
+    component.setPreferredSize(null);
+  }
+ else {
+    component.setPreferredSize(new Dimension(0,0));
+  }
+  component.revalidate();
+}

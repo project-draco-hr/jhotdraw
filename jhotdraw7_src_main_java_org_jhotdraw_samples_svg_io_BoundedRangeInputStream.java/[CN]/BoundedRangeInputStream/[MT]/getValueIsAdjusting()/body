@@ -1,0 +1,3 @@
+{
+  return valueIsAdjusting_;
+}

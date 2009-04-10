@@ -1,0 +1,102 @@
+{
+  JPanel p=null;
+switch (state) {
+case 1:
+{
+      p=new JPanel();
+      p.setOpaque(false);
+      p.setBorder(new EmptyBorder(5,5,5,8));
+      ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+      GridBagLayout layout=new GridBagLayout();
+      p.setLayout(layout);
+      GridBagConstraints gbc;
+      AbstractButton btn;
+      Map<AttributeKey,Object> defaultAttributes=new HashMap<AttributeKey,Object>();
+      FILL_GRADIENT.set(defaultAttributes,null);
+      btn=ButtonFactory.createSelectionColorButton(editor,FILL_COLOR,ButtonFactory.WEBSAVE_COLORS,ButtonFactory.WEBSAVE_COLORS_COLUMN_COUNT,"attribute.fillColor",labels,defaultAttributes,new Rectangle(3,3,10,10));
+      btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
+      ((JPopupButton)btn).setAction(null,null);
+      gbc=new GridBagConstraints();
+      gbc.gridx=0;
+      gbc.gridwidth=2;
+      gbc.anchor=GridBagConstraints.FIRST_LINE_START;
+      p.add(btn,gbc);
+      JPopupButton opacityPopupButton=new JPopupButton();
+      JDoubleAttributeSlider opacitySlider=new JDoubleAttributeSlider(JSlider.VERTICAL,0,100,100);
+      opacityPopupButton.add(opacitySlider);
+      labels.configureToolBarButton(opacityPopupButton,"attribute.fillOpacity");
+      opacityPopupButton.setUI((PaletteButtonUI)PaletteButtonUI.createUI(opacityPopupButton));
+      opacityPopupButton.setIcon(new SelectionOpacityIcon(editor,FILL_OPACITY,FILL_COLOR,null,getClass().getResource(labels.getString("attribute.fillOpacity.icon")),new Rectangle(5,5,6,6),new Rectangle(4,4,7,7)));
+      opacityPopupButton.setPopupAnchor(SOUTH_EAST);
+      new SelectionComponentRepainter(editor,opacityPopupButton);
+      gbc=new GridBagConstraints();
+      gbc.gridx=0;
+      gbc.anchor=GridBagConstraints.FIRST_LINE_START;
+      gbc.weighty=1f;
+      gbc.insets=new Insets(3,0,0,0);
+      p.add(opacityPopupButton,gbc);
+      opacitySlider.setUI((SliderUI)PaletteSliderUI.createUI(opacitySlider));
+      opacitySlider.setScaleFactor(100d);
+      opacitySlider.setAttributeKey(FILL_OPACITY);
+      opacitySlider.setEditor(editor);
+    }
+  break;
+case 2:
+{
+  p=new JPanel();
+  p.setOpaque(false);
+  p.setBorder(new EmptyBorder(5,5,5,8));
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+  GridBagLayout layout=new GridBagLayout();
+  p.setLayout(layout);
+  GridBagConstraints gbc;
+  AbstractButton btn;
+  btn=ButtonFactory.createSelectionColorButton(editor,FILL_COLOR,ButtonFactory.WEBSAVE_COLORS,ButtonFactory.WEBSAVE_COLORS_COLUMN_COUNT,"attribute.fillColor",labels,null,new Rectangle(3,3,10,10));
+  btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
+  ((JPopupButton)btn).setAction(null,null);
+  gbc=new GridBagConstraints();
+  gbc.gridx=0;
+  gbc.gridwidth=2;
+  gbc.anchor=GridBagConstraints.FIRST_LINE_START;
+  p.add(btn,gbc);
+  JDoubleAttributeField opacityField=new JDoubleAttributeField();
+  opacityField.setColumns(2);
+  opacityField.setToolTipText(labels.getString("attribute.fillOpacity.toolTipText"));
+  opacityField.setHorizontalAlignment(JDoubleAttributeField.RIGHT);
+  opacityField.putClientProperty("Palette.Component.segmentPosition","first");
+  opacityField.setUI((PaletteTextFieldUI)PaletteTextFieldUI.createUI(opacityField));
+  opacityField.setScaleFactor(100d);
+  opacityField.setMinimum(0d);
+  opacityField.setMaximum(100d);
+  opacityField.setAttributeKey(FILL_OPACITY);
+  opacityField.setEditor(editor);
+  gbc=new GridBagConstraints();
+  gbc.gridx=0;
+  gbc.insets=new Insets(3,0,0,0);
+  gbc.fill=GridBagConstraints.HORIZONTAL;
+  gbc.anchor=GridBagConstraints.FIRST_LINE_START;
+  p.add(opacityField,gbc);
+  JPopupButton opacityPopupButton=new JPopupButton();
+  JDoubleAttributeSlider opacitySlider=new JDoubleAttributeSlider(JSlider.VERTICAL,0,100,100);
+  opacityPopupButton.add(opacitySlider);
+  labels.configureToolBarButton(opacityPopupButton,"attribute.fillOpacity");
+  opacityPopupButton.setUI((PaletteButtonUI)PaletteButtonUI.createUI(opacityPopupButton));
+  opacityPopupButton.setPopupAnchor(SOUTH_EAST);
+  opacityPopupButton.setIcon(new SelectionOpacityIcon(editor,FILL_OPACITY,FILL_COLOR,null,getClass().getResource(labels.getString("attribute.fillOpacity.icon")),new Rectangle(5,5,6,6),new Rectangle(4,4,7,7)));
+  opacityPopupButton.setPopupAnchor(SOUTH_EAST);
+  new SelectionComponentRepainter(editor,opacityPopupButton);
+  gbc=new GridBagConstraints();
+  gbc.gridx=1;
+  gbc.anchor=GridBagConstraints.FIRST_LINE_START;
+  gbc.weighty=1f;
+  gbc.insets=new Insets(3,0,0,0);
+  p.add(opacityPopupButton,gbc);
+  opacitySlider.setUI((SliderUI)PaletteSliderUI.createUI(opacitySlider));
+  opacitySlider.setScaleFactor(100d);
+  opacitySlider.setAttributeKey(FILL_OPACITY);
+  opacitySlider.setEditor(editor);
+}
+break;
+}
+return p;
+}

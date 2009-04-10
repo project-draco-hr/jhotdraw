@@ -1,0 +1,26 @@
+{
+  DefaultDrawing drawing=new DefaultDrawing();
+  LinkedList<InputFormat> inputFormats=new LinkedList<InputFormat>();
+  inputFormats.add(new SVGZInputFormat());
+  inputFormats.add(new ImageInputFormat(new SVGImageFigure()));
+  LinkedList<OutputFormat> outputFormats=new LinkedList<OutputFormat>();
+  outputFormats.add(new SVGOutputFormat());
+  outputFormats.add(new SVGZOutputFormat());
+  outputFormats.add(new ImageOutputFormat());
+  outputFormats.add(new ImageOutputFormat("JPG","Joint Photographics Experts Group (JPEG)","jpg",BufferedImage.TYPE_INT_RGB));
+  outputFormats.add(new ImageOutputFormat("BMP","Windows Bitmap (BMP)","bmp",BufferedImage.TYPE_BYTE_INDEXED));
+  drawing.setInputFormats(inputFormats);
+  drawing.setOutputFormats(outputFormats);
+  if (getParameter("DrawingWidth") != null && getParameter("DrawingHeight") != null) {
+    try {
+      int imageWidth=Integer.parseInt(getParameter("DrawingWidth"));
+      int imageHeight=Integer.parseInt(getParameter("DrawingHeight"));
+      if (imageWidth > 0 && imageHeight > 0) {
+        drawing.setCanvasSize(new Dimension2DDouble(imageWidth,imageHeight));
+      }
+    }
+ catch (    NumberFormatException e) {
+    }
+  }
+  return drawing;
+}

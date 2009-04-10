@@ -1,0 +1,8 @@
+{
+  summaryToolBar.setVisible(newValue);
+  GridBagConstraints gbc=new GridBagConstraints();
+  gbc.anchor=java.awt.GridBagConstraints.EAST;
+  gbc.insets=new java.awt.Insets(0,10,0,0);
+  gbc.weightx=(newValue) ? 0d : 1d;
+  ((GridBagLayout)toolsPanel.getLayout()).setConstraints(saveButton,gbc);
+}

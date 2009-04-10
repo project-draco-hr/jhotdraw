@@ -1,0 +1,27 @@
+{
+  super.paint(g);
+  final int state=getDisclosureState();
+  if (runner == null) {
+    runner=new Runnable(){
+      public void run(){
+        long start=System.currentTimeMillis();
+        panels[state]=createDisclosedComponent(state);
+        long end=System.currentTimeMillis();
+        System.out.println(AbstractToolBar.this.getClass() + " state:" + state+ " elapsed:"+ (end - start));
+        JComponent parent=(JComponent)getParent();
+        if (getDisclosureState() == state && parent != null) {
+          GridBagLayout layout=(GridBagLayout)parent.getLayout();
+          GridBagConstraints gbc=layout.getConstraints(ProxyPanel.this);
+          parent.remove(ProxyPanel.this);
+          if (panels[state] != null) {
+            parent.add(panels[state],gbc);
+          }
+          parent.revalidate();
+          ((JComponent)parent.getRootPane().getContentPane()).revalidate();
+        }
+      }
+    }
+;
+    SwingUtilities.invokeLater(runner);
+  }
+}

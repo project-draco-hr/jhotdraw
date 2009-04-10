@@ -1,0 +1,8 @@
+{
+  initComponents();
+  try {
+    prefs=Preferences.userNodeForPackage(getClass());
+  }
+ catch (  SecurityException e) {
+  }
+}

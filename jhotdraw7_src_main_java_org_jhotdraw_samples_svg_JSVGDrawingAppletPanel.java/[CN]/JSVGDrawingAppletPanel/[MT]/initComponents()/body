@@ -1,0 +1,46 @@
+{
+  java.awt.GridBagConstraints gridBagConstraints;
+  toolButtonGroup=new javax.swing.ButtonGroup();
+  drawingPanel=new org.jhotdraw.samples.svg.JSVGDrawingPanel();
+  toolsPanel=new javax.swing.JPanel();
+  summaryToolBar=new org.jhotdraw.samples.svg.gui.SummaryToolBar();
+  saveButton=new javax.swing.JButton();
+  cancelButton=new javax.swing.JButton();
+  setBackground(new java.awt.Color(255,255,255));
+  setLayout(new java.awt.BorderLayout());
+  add(drawingPanel,java.awt.BorderLayout.CENTER);
+  toolsPanel.setBackground(new java.awt.Color(255,255,255));
+  toolsPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
+  toolsPanel.setOpaque(true);
+  toolsPanel.setLayout(new java.awt.GridBagLayout());
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.fill=java.awt.GridBagConstraints.HORIZONTAL;
+  gridBagConstraints.weightx=1.0;
+  toolsPanel.add(summaryToolBar,gridBagConstraints);
+  saveButton.setFont(new java.awt.Font("Dialog",1,11));
+  saveButton.setText(labels.getString("saveDrawing"));
+  saveButton.setActionCommand("save");
+  saveButton.setOpaque(false);
+  saveButton.addActionListener(new java.awt.event.ActionListener(){
+    public void actionPerformed(    java.awt.event.ActionEvent evt){
+      fireActionPerformed(evt);
+    }
+  }
+);
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.EAST;
+  gridBagConstraints.insets=new java.awt.Insets(0,10,0,0);
+  toolsPanel.add(saveButton,gridBagConstraints);
+  cancelButton.setFont(new java.awt.Font("Dialog",0,11));
+  cancelButton.setText(labels.getString("cancel"));
+  cancelButton.setActionCommand("cancel");
+  cancelButton.setOpaque(false);
+  cancelButton.addActionListener(new java.awt.event.ActionListener(){
+    public void actionPerformed(    java.awt.event.ActionEvent evt){
+      fireActionPerformed(evt);
+    }
+  }
+);
+  toolsPanel.add(cancelButton,new java.awt.GridBagConstraints());
+  add(toolsPanel,java.awt.BorderLayout.SOUTH);
+}

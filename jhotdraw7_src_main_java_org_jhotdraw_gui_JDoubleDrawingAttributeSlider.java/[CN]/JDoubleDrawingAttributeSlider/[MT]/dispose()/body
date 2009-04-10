@@ -1,6 +1,0 @@
-{
-  if (this.editor != null) {
-    this.editor.removePropertyChangeListener(eventHandler);
-  }
-  this.editor=null;
-}

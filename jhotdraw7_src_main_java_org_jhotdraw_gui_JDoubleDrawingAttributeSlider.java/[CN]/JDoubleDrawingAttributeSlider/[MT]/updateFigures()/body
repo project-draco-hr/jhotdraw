@@ -26,7 +26,7 @@
             editedFigure.restoreAttributesTo(di.next());
             editedFigure.changed();
           }
-          public void redo() throws CannotRedoException {
+          @Override public void redo() throws CannotRedoException {
             super.redo();
             editedFigure.willChange();
             attributeKey.basicSet(editedFigure,editRedoValue);
