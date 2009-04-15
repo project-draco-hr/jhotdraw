@@ -1,0 +1,9 @@
+{
+  if (attributeEditor != null) {
+    attributeEditor.removePropertyChangeListener(eventHandler);
+  }
+  this.attributeEditor=newValue;
+  if (attributeEditor != null) {
+    attributeEditor.addPropertyChangeListener(eventHandler);
+  }
+}

@@ -1,0 +1,4 @@
+{
+  attributeValue=newValue;
+  setValue((int)(newValue * scaleFactor));
+}

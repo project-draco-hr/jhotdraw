@@ -1,0 +1,11 @@
+{
+  DrawingEditor oldValue=drawingEditor;
+  if (drawingEditor != null) {
+    drawingEditor.removePropertyChangeListener(eventHandler);
+  }
+  this.drawingEditor=newValue;
+  if (drawingEditor != null) {
+    drawingEditor.addPropertyChangeListener(eventHandler);
+  }
+  updateActiveView();
+}

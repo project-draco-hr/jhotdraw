@@ -1,0 +1,3 @@
+{
+  return (activeView == null) ? Collections.EMPTY_SET : activeView.getSelectedFigures();
+}

@@ -8,7 +8,7 @@
     AttributeAction a;
     HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);
     attributes.put(attributeKey,swatch.getColor());
-    popupButton.add(a=new AttributeAction(editor,attributes,labels.getString(labelKey),swatch));
+    popupButton.add(a=new AttributeAction(editor,attributes,labels.getToolTipTextProperty(labelKey),swatch));
     a.putValue(Action.SHORT_DESCRIPTION,swatch.getName());
   }
   AttributeAction a;

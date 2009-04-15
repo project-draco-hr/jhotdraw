@@ -1,12 +1,9 @@
 {
   labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   initComponents();
-  widthField.setMinimum(0);
-  widthField.setMaximum(1000);
-  heightField.setMinimum(0);
-  heightField.setMaximum(1000);
-  thetaField.setMinimum(0);
-  thetaField.setMaximum(180);
+  widthField.setFormatterFactory(ScalableNumberFormatter.createFormatterFactory(0,1000,1));
+  heightField.setFormatterFactory(ScalableNumberFormatter.createFormatterFactory(0,1000,1));
+  thetaField.setFormatterFactory(ScalableNumberFormatter.createFormatterFactory(0,180,1));
   constrainer=new GridConstrainer(10,10);
   widthField.addPropertyChangeListener(new PropertyChangeListener(){
     public void propertyChange(    PropertyChangeEvent evt){

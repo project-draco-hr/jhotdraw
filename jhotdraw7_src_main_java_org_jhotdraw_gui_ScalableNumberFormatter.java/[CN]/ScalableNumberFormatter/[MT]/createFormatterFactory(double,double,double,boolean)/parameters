@@ -1,0 +1,4 @@
+double min
+double max
+double scaleFactor
+boolean isNullValueAllowed

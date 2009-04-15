@@ -1,6 +1,0 @@
-{
-  DecimalFormat f=new DecimalFormat();
-  f.setParseBigDecimal(false);
-  f.setMinimumFractionDigits(0);
-  return f;
-}

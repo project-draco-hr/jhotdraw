@@ -1,4 +1,0 @@
-{
-  super(orientation,min,max,value);
-  getModel().addChangeListener(changeHandler);
-}

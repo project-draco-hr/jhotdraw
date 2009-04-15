@@ -24,10 +24,11 @@
   toolsPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
   toolsPanel.setOpaque(true);
   toolsPanel.setLayout(new java.awt.GridBagLayout());
-  toolsScrollPane.setBorder(null);
+  toolsScrollPane.setBorder(PaletteLookAndFeel.getInstance().getBorder("Ribbon.border"));
   toolsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
   toolsScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
   toolsScrollPane.setMinimumSize(new java.awt.Dimension(0,0));
+  toolsPane.setForeground(new java.awt.Color(153,153,153));
   toolsPane.add(creationToolBar);
   toolsPane.add(actionToolBar);
   toolsPane.add(fillToolBar);

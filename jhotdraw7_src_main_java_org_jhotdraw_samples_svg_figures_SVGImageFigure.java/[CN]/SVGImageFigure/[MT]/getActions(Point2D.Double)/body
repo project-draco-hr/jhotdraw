@@ -5,7 +5,7 @@
     actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")){
       public void actionPerformed(      ActionEvent evt){
         willChange();
-        fireUndoableEditHappened(TRANSFORM.setUndoable(SVGImageFigure.this,null,labels));
+        fireUndoableEditHappened(TRANSFORM.setUndoable(SVGImageFigure.this,null));
         changed();
       }
     }

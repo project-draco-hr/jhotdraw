@@ -1,5 +1,0 @@
-{
-  double oldValue=minimum;
-  minimum=newValue;
-  firePropertyChange("minimum",oldValue,newValue);
-}

@@ -1,0 +1,3 @@
+{
+  return new DefaultFormatterFactory(new ScalableNumberFormatter(min,max,scaleFactor,isNullValueAllowed));
+}

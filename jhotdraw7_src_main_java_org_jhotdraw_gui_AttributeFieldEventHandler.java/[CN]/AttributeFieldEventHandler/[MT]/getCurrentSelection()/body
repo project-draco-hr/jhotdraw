@@ -1,8 +1,0 @@
-{
-  if (getCurrentView() != null) {
-    return getCurrentView().getSelectedFigures();
-  }
- else {
-    return Collections.emptySet();
-  }
-}

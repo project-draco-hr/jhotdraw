@@ -1,6 +1,16 @@
 {
   Object value;
   Double doubleValue;
+  value=readAttribute(elem,"width",null);
+  if (value != null) {
+    doubleValue=toLength(elem,(String)value,1);
+    VIEWPORT_WIDTH.set(a,doubleValue);
+  }
+  value=readAttribute(elem,"height",null);
+  if (value != null) {
+    doubleValue=toLength(elem,(String)value,1);
+    VIEWPORT_HEIGHT.set(a,doubleValue);
+  }
   value=toPaint(elem,readInheritAttribute(elem,"viewport-fill","none"));
   if (value == null || (value instanceof Color)) {
     VIEWPORT_FILL.set(a,(Color)value);

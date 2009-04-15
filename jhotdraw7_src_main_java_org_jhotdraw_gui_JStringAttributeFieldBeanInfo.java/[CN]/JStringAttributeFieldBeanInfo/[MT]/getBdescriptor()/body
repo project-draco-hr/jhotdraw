@@ -1,6 +1,0 @@
-{
-  if (beanDescriptor == null)   beanDescriptor=new BeanDescriptor(JStringAttributeFieldBeanInfo.class);
-  beanDescriptor.setValue("isContainer",Boolean.FALSE);
-  beanDescriptor.setDisplayName("JStringAttributeField");
-  return beanDescriptor;
-}

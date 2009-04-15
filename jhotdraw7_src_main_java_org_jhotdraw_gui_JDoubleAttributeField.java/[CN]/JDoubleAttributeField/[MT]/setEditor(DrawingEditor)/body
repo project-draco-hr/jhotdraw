@@ -1,6 +1,0 @@
-{
-  DrawingEditor oldValue=eventHandler.getEditor();
-  eventHandler.setEditor(newValue);
-  updateField(eventHandler.getCurrentSelection());
-  firePropertyChange("editor",oldValue,newValue);
-}

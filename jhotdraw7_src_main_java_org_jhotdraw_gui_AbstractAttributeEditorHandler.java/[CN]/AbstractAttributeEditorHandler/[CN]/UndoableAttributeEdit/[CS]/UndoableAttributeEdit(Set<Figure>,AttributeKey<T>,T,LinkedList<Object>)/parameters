@@ -1,0 +1,4 @@
+Set<Figure> editedFigures
+AttributeKey<T> attributeKey
+T editRedoValue
+LinkedList<Object> editUndoData

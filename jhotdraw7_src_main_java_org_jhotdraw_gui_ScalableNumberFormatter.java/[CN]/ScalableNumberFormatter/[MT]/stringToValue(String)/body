@@ -1,0 +1,25 @@
+{
+  if ((text == null || text.length() == 0) && isNullValueAllowed()) {
+    return null;
+  }
+  Object value=super.stringToValue(text);
+  if (value instanceof Double) {
+    value=((Double)value) / scaleFactor;
+  }
+ else   if (value instanceof Float) {
+    value=(float)(((Float)value) / scaleFactor);
+  }
+ else   if (value instanceof Long) {
+    value=(long)(((Long)value) / scaleFactor);
+  }
+ else   if (value instanceof Integer) {
+    value=(int)(((Integer)value) / scaleFactor);
+  }
+ else   if (value instanceof Byte) {
+    value=(byte)(((Byte)value) / scaleFactor);
+  }
+ else   if (value instanceof Short) {
+    value=(short)(((Short)value) / scaleFactor);
+  }
+  return value;
+}

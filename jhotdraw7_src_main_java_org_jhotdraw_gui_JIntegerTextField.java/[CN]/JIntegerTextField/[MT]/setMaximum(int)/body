@@ -1,5 +1,0 @@
-{
-  int oldValue=value;
-  maximum=newValue;
-  firePropertyChange("maximum",oldValue,newValue);
-}

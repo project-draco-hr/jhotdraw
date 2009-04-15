@@ -1,6 +1,0 @@
-{
-  if (beanDescriptor == null)   beanDescriptor=new BeanDescriptor(JDoubleAttributeFieldBeanInfo.class);
-  beanDescriptor.setValue("isContainer",Boolean.FALSE);
-  beanDescriptor.setDisplayName("JDoubleDrawingAttributeSlider");
-  return beanDescriptor;
-}

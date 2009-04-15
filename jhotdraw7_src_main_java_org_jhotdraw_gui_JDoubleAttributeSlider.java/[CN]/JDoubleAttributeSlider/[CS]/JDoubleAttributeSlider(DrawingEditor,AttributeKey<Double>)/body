@@ -1,6 +1,0 @@
-{
-  initComponents();
-  this.attributeKey=attributeKey;
-  setEditor(editor);
-  this.setModel(new DefaultBoundedRangeModel());
-}

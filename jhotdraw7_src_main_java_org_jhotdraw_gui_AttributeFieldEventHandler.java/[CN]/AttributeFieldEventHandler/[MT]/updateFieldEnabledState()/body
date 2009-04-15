@@ -1,8 +1,0 @@
-{
-  if (getCurrentView() != null) {
-    field.getComponent().setEnabled(getCurrentView().isEnabled() && (field.isEnabledWithoutSelection() || getCurrentView().getSelectionCount() > 0));
-  }
- else {
-    field.getComponent().setEnabled(false);
-  }
-}

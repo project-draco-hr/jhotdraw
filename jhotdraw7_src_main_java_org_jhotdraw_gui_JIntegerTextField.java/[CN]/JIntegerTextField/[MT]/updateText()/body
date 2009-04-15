@@ -1,5 +1,0 @@
-{
-  if (!isFocusOwner()) {
-    setText(Integer.toString(value));
-  }
-}

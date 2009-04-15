@@ -1,6 +1,5 @@
 {
   if (drawing != null) {
-    opacityField.setValue(CANVAS_FILL_OPACITY.get(drawing) * 100d);
     colorButton.setBackground(CANVAS_FILL_COLOR.get(drawing));
   }
 }

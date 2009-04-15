@@ -1,5 +1,0 @@
-{
-  DrawingView oldValue=eventHandler.getView();
-  eventHandler.setView(newValue);
-  firePropertyChange("view",oldValue,newValue);
-}

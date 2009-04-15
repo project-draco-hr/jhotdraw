@@ -4,10 +4,10 @@
   colorLabel=new javax.swing.JLabel();
   colorButton=new javax.swing.JButton();
   opacityLabel=new javax.swing.JLabel();
-  opacityField=new org.jhotdraw.gui.JDoubleTextField();
+  opacityField=new org.jhotdraw.gui.JAttributeTextField<Double>();
   opacityPopupButton=new org.jhotdraw.gui.JPopupButton();
   setLayout(new java.awt.GridBagLayout());
-  colorLabel.setText(labels.getString("attribute.backgroundColor.text"));
+  colorLabel.setText(labels.getString("attribute.canvasFillColor.text"));
   colorLabel.setToolTipText(labels.getString("attribute.backgroundColor.toolTipText"));
   add(colorLabel,new java.awt.GridBagConstraints());
   colorButton.setText(" ");
@@ -24,8 +24,7 @@
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.insets=new java.awt.Insets(0,10,0,0);
   add(opacityLabel,gridBagConstraints);
-  opacityField.setColumns(4);
-  opacityField.setToolTipText(labels.getString("attribute.opacity.toolTipText"));
+  opacityField.setColumns(3);
   add(opacityField,new java.awt.GridBagConstraints());
   opacityPopupButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jhotdraw/draw/action/images/popupIcon.png")));
   opacityPopupButton.setToolTipText(labels.getString("attribute.opacity.toolTipText"));

@@ -5,6 +5,8 @@
   Color initialColor=getInitialColor();
   Color chosenColor=colorChooser.showDialog((Component)e.getSource(),labels.getString("drawColor"),initialColor);
   if (chosenColor != null) {
-    changeAttribute(chosenColor);
+    HashMap<AttributeKey,Object> attr=new HashMap<AttributeKey,Object>(attributes);
+    attr.put(key,chosenColor);
+    applyAttributesTo(attr,getView().getSelectedFigures());
   }
 }

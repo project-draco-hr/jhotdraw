@@ -1,0 +1,6 @@
+{
+  this.key=key;
+  this.defaultValue=defaultValue;
+  this.isNullValueAllowed=isNullValueAllowed;
+  this.labels=labels;
+}

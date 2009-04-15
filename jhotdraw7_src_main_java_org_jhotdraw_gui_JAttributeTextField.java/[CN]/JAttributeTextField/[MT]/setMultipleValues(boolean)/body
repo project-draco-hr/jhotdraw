@@ -1,0 +1,4 @@
+{
+  isMultipleValues=newValue;
+  repaint();
+}

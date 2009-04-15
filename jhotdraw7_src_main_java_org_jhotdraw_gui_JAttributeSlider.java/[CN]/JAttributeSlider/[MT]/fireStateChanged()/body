@@ -1,0 +1,6 @@
+{
+  super.fireStateChanged();
+  Double oldValue=attributeValue;
+  attributeValue=getValue() / scaleFactor;
+  firePropertyChange(ATTRIBUTE_VALUE_PROPERTY,oldValue,attributeValue);
+}

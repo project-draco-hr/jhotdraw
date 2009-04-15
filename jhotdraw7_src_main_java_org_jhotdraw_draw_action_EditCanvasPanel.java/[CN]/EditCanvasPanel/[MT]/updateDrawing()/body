@@ -1,6 +1,5 @@
 {
   if (drawing != null) {
-    drawing.fireUndoableEditHappened(CANVAS_FILL_OPACITY.setUndoable(drawing,opacityField.getValue() / 100d,labels));
-    drawing.fireUndoableEditHappened(CANVAS_FILL_COLOR.setUndoable(drawing,colorButton.getBackground(),labels));
+    drawing.fireUndoableEditHappened(CANVAS_FILL_COLOR.setUndoable(drawing,colorButton.getBackground()));
   }
 }

@@ -1,0 +1,14 @@
+{
+  if (colorChooser == null) {
+    colorChooser=new JColorChooser();
+  }
+  Color initialColor=getInitialColor();
+  Color chosenColor=colorChooser.showDialog((Component)e.getSource(),labels.getString("drawColor"),initialColor);
+  if (chosenColor != null) {
+    HashMap<AttributeKey,Object> attr=new HashMap<AttributeKey,Object>(attributes);
+    attr.put(key,chosenColor);
+    HashSet<Figure> figures=new HashSet<Figure>();
+    figures.add(getView().getDrawing());
+    applyAttributesTo(attr,figures);
+  }
+}

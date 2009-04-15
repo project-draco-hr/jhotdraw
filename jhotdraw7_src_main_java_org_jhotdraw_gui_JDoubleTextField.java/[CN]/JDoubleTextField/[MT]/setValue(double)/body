@@ -1,8 +1,0 @@
-{
-  double oldValue=value;
-  value=newValue;
-  if (newValue != oldValue) {
-    firePropertyChange("value",oldValue,newValue);
-    updateField();
-  }
-}

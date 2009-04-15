@@ -1,3 +1,5 @@
 {
-  opacityField.setView(view);
+  opacityFieldHandler.setView(view);
+  opacitySliderHandler.setView(view);
+  linkFieldHandler.setView(view);
 }

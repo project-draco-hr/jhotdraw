@@ -1,4 +1,6 @@
 {
   drawing=newValue;
+  opacitySliderHandler.setDrawing(drawing);
+  opacityFieldHandler.setDrawing(drawing);
   updatePanel();
 }

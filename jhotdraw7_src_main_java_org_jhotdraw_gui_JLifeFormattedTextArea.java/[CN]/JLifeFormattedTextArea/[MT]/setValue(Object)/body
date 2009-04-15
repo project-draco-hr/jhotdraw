@@ -1,0 +1,3 @@
+{
+  formattedTextFieldAdapter.setValue(value);
+}

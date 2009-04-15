@@ -6,7 +6,7 @@
       public void actionPerformed(      ActionEvent evt){
         ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
         SVGPathFigure.this.willChange();
-        fireUndoableEditHappened(TRANSFORM.setUndoable(SVGPathFigure.this,null,labels));
+        fireUndoableEditHappened(TRANSFORM.setUndoable(SVGPathFigure.this,null));
         SVGPathFigure.this.changed();
       }
     }
@@ -46,7 +46,7 @@
       public void actionPerformed(      ActionEvent evt){
         SVGPathFigure.this.willChange();
         for (        Figure child : getChildren()) {
-          getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,false,labels));
+          getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,false));
         }
         SVGPathFigure.this.changed();
       }
@@ -58,7 +58,7 @@
       public void actionPerformed(      ActionEvent evt){
         SVGPathFigure.this.willChange();
         for (        Figure child : getChildren()) {
-          getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,true,labels));
+          getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,true));
         }
         SVGPathFigure.this.changed();
       }
@@ -69,7 +69,7 @@
     actions.add(new AbstractAction(labels.getString("attribute.windingRule.evenOdd.text")){
       public void actionPerformed(      ActionEvent evt){
         SVGPathFigure.this.willChange();
-        getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.EVEN_ODD,labels));
+        getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.EVEN_ODD));
         SVGPathFigure.this.changed();
       }
     }
@@ -79,7 +79,7 @@
     actions.add(new AbstractAction(labels.getString("attribute.windingRule.nonZero.text")){
       public void actionPerformed(      ActionEvent evt){
         WINDING_RULE.set(SVGPathFigure.this,WindingRule.NON_ZERO);
-        getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.NON_ZERO,labels));
+        getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.NON_ZERO));
       }
     }
 );

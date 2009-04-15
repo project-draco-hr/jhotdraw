@@ -1,0 +1,8 @@
+{
+  if (beanDescriptor == null) {
+    beanDescriptor=new BeanDescriptor(JLifeFormattedTextFieldBeanInfo.class);
+  }
+  beanDescriptor.setValue("isContainer",Boolean.FALSE);
+  beanDescriptor.setDisplayName("JLifeFormattedTextField");
+  return beanDescriptor;
+}

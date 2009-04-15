@@ -22,7 +22,7 @@ case 1:
       gbc.anchor=GridBagConstraints.FIRST_LINE_START;
       p.add(btn,gbc);
       JPopupButton opacityPopupButton=new JPopupButton();
-      JDoubleAttributeSlider opacitySlider=new JDoubleAttributeSlider(JSlider.VERTICAL,0,100,100);
+      JAttributeSlider opacitySlider=new JAttributeSlider(JSlider.VERTICAL,0,100,100);
       opacityPopupButton.add(opacitySlider);
       labels.configureToolBarButton(opacityPopupButton,"attribute.fillOpacity");
       opacityPopupButton.setUI((PaletteButtonUI)PaletteButtonUI.createUI(opacityPopupButton));
@@ -37,8 +37,7 @@ case 1:
       p.add(opacityPopupButton,gbc);
       opacitySlider.setUI((SliderUI)PaletteSliderUI.createUI(opacitySlider));
       opacitySlider.setScaleFactor(100d);
-      opacitySlider.setAttributeKey(FILL_OPACITY);
-      opacitySlider.setEditor(editor);
+      new FigureAttributeEditorHandler(FILL_OPACITY,opacitySlider,editor);
     }
   break;
 case 2:
@@ -59,17 +58,14 @@ case 2:
   gbc.gridwidth=2;
   gbc.anchor=GridBagConstraints.FIRST_LINE_START;
   p.add(btn,gbc);
-  JDoubleAttributeField opacityField=new JDoubleAttributeField();
-  opacityField.setColumns(2);
+  JAttributeTextField opacityField=new JAttributeTextField();
+  opacityField.setColumns(3);
   opacityField.setToolTipText(labels.getString("attribute.fillOpacity.toolTipText"));
-  opacityField.setHorizontalAlignment(JDoubleAttributeField.RIGHT);
   opacityField.putClientProperty("Palette.Component.segmentPosition","first");
-  opacityField.setUI((PaletteTextFieldUI)PaletteTextFieldUI.createUI(opacityField));
-  opacityField.setScaleFactor(100d);
-  opacityField.setMinimum(0d);
-  opacityField.setMaximum(100d);
-  opacityField.setAttributeKey(FILL_OPACITY);
-  opacityField.setEditor(editor);
+  opacityField.setUI((PaletteFormattedTextFieldUI)PaletteFormattedTextFieldUI.createUI(opacityField));
+  opacityField.setFormatterFactory(ScalableNumberFormatter.createFormatterFactory(0d,100d,100d));
+  opacityField.setHorizontalAlignment(JTextField.LEFT);
+  new FigureAttributeEditorHandler<Double>(FILL_OPACITY,opacityField,editor);
   gbc=new GridBagConstraints();
   gbc.gridx=0;
   gbc.insets=new Insets(3,0,0,0);
@@ -77,7 +73,7 @@ case 2:
   gbc.anchor=GridBagConstraints.FIRST_LINE_START;
   p.add(opacityField,gbc);
   JPopupButton opacityPopupButton=new JPopupButton();
-  JDoubleAttributeSlider opacitySlider=new JDoubleAttributeSlider(JSlider.VERTICAL,0,100,100);
+  JAttributeSlider opacitySlider=new JAttributeSlider(JSlider.VERTICAL,0,100,100);
   opacityPopupButton.add(opacitySlider);
   labels.configureToolBarButton(opacityPopupButton,"attribute.fillOpacity");
   opacityPopupButton.setUI((PaletteButtonUI)PaletteButtonUI.createUI(opacityPopupButton));
@@ -93,8 +89,7 @@ case 2:
   p.add(opacityPopupButton,gbc);
   opacitySlider.setUI((SliderUI)PaletteSliderUI.createUI(opacitySlider));
   opacitySlider.setScaleFactor(100d);
-  opacitySlider.setAttributeKey(FILL_OPACITY);
-  opacitySlider.setEditor(editor);
+  new FigureAttributeEditorHandler(FILL_OPACITY,opacitySlider,editor);
 }
 break;
 }

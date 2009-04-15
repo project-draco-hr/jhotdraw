@@ -1,0 +1,13 @@
+{
+  if (updatingDepth++ == 0) {
+    if (getFormatter() != null) {
+      try {
+        String newText=getFormatter().valueToString(getValue());
+        setText(newText);
+      }
+ catch (      ParseException ex) {
+      }
+    }
+  }
+  updatingDepth--;
+}

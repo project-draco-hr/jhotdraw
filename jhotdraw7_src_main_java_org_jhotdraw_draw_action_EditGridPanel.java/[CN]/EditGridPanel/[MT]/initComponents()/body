@@ -1,10 +1,10 @@
 {
   widthLabel=new javax.swing.JLabel();
   heightLabel=new javax.swing.JLabel();
-  widthField=new org.jhotdraw.gui.JDoubleTextField();
-  heightField=new org.jhotdraw.gui.JDoubleTextField();
+  widthField=new org.jhotdraw.gui.JLifeFormattedTextField();
+  heightField=new org.jhotdraw.gui.JLifeFormattedTextField();
   thetaLabel=new javax.swing.JLabel();
-  thetaField=new org.jhotdraw.gui.JDoubleTextField();
+  thetaField=new org.jhotdraw.gui.JLifeFormattedTextField();
   widthLabel.setText(labels.getString("view.grid.width.text"));
   heightLabel.setText(labels.getString("view.grid.height.text"));
   widthField.setColumns(5);

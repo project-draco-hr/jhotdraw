@@ -1,16 +1,16 @@
 {
   initComponents();
-  opacitySlider=new JDoubleAttributeSlider(JSlider.VERTICAL,0,100,100);
+  opacitySlider=new JAttributeSlider(JSlider.VERTICAL,0,100,100);
   opacityPopupButton.add(opacitySlider);
   opacityPopupButton.putClientProperty("JButton.buttonType","toolbar");
   add(opacityPopupButton);
-  opacityField.setAttributeKey(OPACITY);
-  opacitySlider.setAttributeKey(OPACITY);
-  opacitySlider.setScaleFactor(100d);
-  opacityField.setScaleFactor(100d);
-  opacityField.setMinimum(0d);
-  opacityField.setMaximum(100d);
-  linkField.setAttributeKey(LINK);
+  NumberFormatter nf=new NumberFormatter();
+  nf.setMaximum(1d);
+  nf.setMinimum(0d);
+  opacityField.setFormatterFactory(ScalableNumberFormatter.createFormatterFactory(0d,100d,100d));
+  opacityFieldHandler=new FigureAttributeEditorHandler(OPACITY,opacityField,editor);
+  opacitySliderHandler=new FigureAttributeEditorHandler(OPACITY,opacitySlider,editor);
+  linkFieldHandler=new FigureAttributeEditorHandler(LINK,linkField,editor);
   Font font=getFont().deriveFont(11f);
   for (  Component c : getComponents()) {
     c.setFont(font);

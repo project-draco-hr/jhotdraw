@@ -1,0 +1,6 @@
+{
+  super.redo();
+  for (  Figure f : editedFigures) {
+    attributeKey.set(f,editRedoValue);
+  }
+}

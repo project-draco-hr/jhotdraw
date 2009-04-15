@@ -1,0 +1,4 @@
+AttributeKey<T> key
+AttributeEditor<T> attributeEditor
+DrawingEditor drawingEditor
+boolean updateDrawingEditorDefaults

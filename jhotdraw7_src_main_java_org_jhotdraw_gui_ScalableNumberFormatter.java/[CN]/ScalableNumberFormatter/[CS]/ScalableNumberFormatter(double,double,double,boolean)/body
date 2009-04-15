@@ -1,0 +1,7 @@
+{
+  super();
+  setMinimum(min);
+  setMaximum(max);
+  setScaleFactor(scaleFactor);
+  setNullValueAllowed(isNullValueAllowed);
+}

@@ -1,8 +1,7 @@
 {
-  super(editor);
+  super(editor,fixedAttributes,name,icon);
   this.key=key;
   putValue(AbstractAction.NAME,name);
   putValue(AbstractAction.SMALL_ICON,icon);
   setEnabled(true);
-  this.fixedAttributes=(fixedAttributes != null) ? fixedAttributes : new HashMap<AttributeKey,Object>();
 }

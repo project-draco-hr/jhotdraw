@@ -33,7 +33,7 @@
               drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
                 public String getPresentationName(){
                   ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
-                  return labels.getString("editPaste");
+                  return labels.getString("edit.paste.text");
                 }
                 public void undo() throws CannotUndoException {
                   super.undo();
@@ -88,7 +88,7 @@
                   drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
                     public String getPresentationName(){
                       ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
-                      return labels.getString("editPaste");
+                      return labels.getString("edit.paste.text");
                     }
                     public void undo() throws CannotUndoException {
                       super.undo();

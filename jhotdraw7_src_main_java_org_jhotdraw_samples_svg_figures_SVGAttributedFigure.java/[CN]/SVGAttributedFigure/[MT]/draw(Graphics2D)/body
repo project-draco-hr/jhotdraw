@@ -9,7 +9,7 @@
         Rectangle2D.intersect(drawingArea,clipBounds,drawingArea);
       }
       if (!drawingArea.isEmpty()) {
-        BufferedImage buf=new BufferedImage((int)((2 + drawingArea.width) * g.getTransform().getScaleX()),(int)((2 + drawingArea.height) * g.getTransform().getScaleY()),BufferedImage.TYPE_INT_ARGB);
+        BufferedImage buf=new BufferedImage(Math.max(1,(int)((2 + drawingArea.width) * g.getTransform().getScaleX())),Math.max(1,(int)((2 + drawingArea.height) * g.getTransform().getScaleY())),BufferedImage.TYPE_INT_ARGB);
         Graphics2D gr=buf.createGraphics();
         gr.scale(g.getTransform().getScaleX(),g.getTransform().getScaleY());
         gr.translate((int)-drawingArea.x,(int)-drawingArea.y);

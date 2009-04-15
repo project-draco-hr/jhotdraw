@@ -1,19 +1,18 @@
 {
   java.awt.GridBagConstraints gridBagConstraints;
   linkLabel=new javax.swing.JLabel();
-  linkField=new org.jhotdraw.gui.JStringAttributeField();
+  linkField=new org.jhotdraw.gui.JAttributeTextField();
   opacityLabel=new javax.swing.JLabel();
-  opacityField=new org.jhotdraw.gui.JDoubleAttributeField();
+  opacityField=new org.jhotdraw.gui.JAttributeTextField();
   opacityPopupButton=new org.jhotdraw.gui.JPopupButton();
-  setLayout(new java.awt.GridBagLayout());
   setBorder(javax.swing.BorderFactory.createEmptyBorder(10,10,10,10));
+  setLayout(new java.awt.GridBagLayout());
   linkLabel.setLabelFor(linkField);
   linkLabel.setText(labels.getString("link"));
   add(linkLabel,new java.awt.GridBagConstraints());
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.fill=java.awt.GridBagConstraints.HORIZONTAL;
   gridBagConstraints.weightx=1.0;
-  gridBagConstraints.insets=new java.awt.Insets(0,10,0,0);
   add(linkField,gridBagConstraints);
   opacityLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/jhotdraw/draw/action/images/attributeOpacity.png")));
   opacityLabel.setToolTipText(labels.getString("opacity"));
