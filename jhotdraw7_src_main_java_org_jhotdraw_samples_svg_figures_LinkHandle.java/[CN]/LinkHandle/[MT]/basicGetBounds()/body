@@ -6,8 +6,9 @@
   }
   Rectangle r=new Rectangle(view.drawingToView(p));
   int h=getHandlesize();
-  r.x-=h;
+  r.x-=h * 4;
   r.y-=h;
-  r.width=r.height=h;
+  r.width=h * 2;
+  r.height=h;
   return r;
 }
