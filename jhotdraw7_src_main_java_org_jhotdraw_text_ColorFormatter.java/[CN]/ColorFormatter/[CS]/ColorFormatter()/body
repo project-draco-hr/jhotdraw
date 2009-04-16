@@ -1,0 +1,3 @@
+{
+  this(Format.RGB_INTEGER,true,true);
+}

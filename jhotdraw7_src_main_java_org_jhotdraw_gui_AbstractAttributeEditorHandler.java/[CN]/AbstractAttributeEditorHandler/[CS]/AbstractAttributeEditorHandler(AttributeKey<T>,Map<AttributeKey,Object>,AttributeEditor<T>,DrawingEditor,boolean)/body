@@ -1,0 +1,9 @@
+{
+  eventHandler=new EventHandler();
+  this.defaultAttributes=defaultAttributes == null ? Collections.EMPTY_MAP : defaultAttributes;
+  attributeEditor.setAttributeValue(key.getDefaultValue());
+  setAttributeKey(key);
+  setAttributeEditor(attributeEditor);
+  setDrawingEditor(drawingEditor);
+  isUpdateDrawingEditorDefaults=updateDrawingEditorDefaults;
+}

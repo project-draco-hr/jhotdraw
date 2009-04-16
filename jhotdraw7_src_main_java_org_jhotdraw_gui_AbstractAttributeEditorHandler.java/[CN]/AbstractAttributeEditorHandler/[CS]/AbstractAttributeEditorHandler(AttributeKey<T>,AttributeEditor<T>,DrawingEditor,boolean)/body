@@ -1,8 +1,3 @@
 {
-  eventHandler=new EventHandler();
-  attributeEditor.setAttributeValue(key.getDefaultValue());
-  setAttributeKey(key);
-  setAttributeEditor(attributeEditor);
-  setDrawingEditor(drawingEditor);
-  isUpdateDrawingEditorDefaults=updateDrawingEditorDefaults;
+  this(key,null,attributeEditor,drawingEditor,updateDrawingEditorDefaults);
 }

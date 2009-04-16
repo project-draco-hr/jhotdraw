@@ -1,0 +1,8 @@
+{
+  super();
+  setMinimum(min);
+  setMaximum(max);
+  setScaleFactor(scaleFactor);
+  setAllowsNullValue(allowsNullValue);
+  System.out.println("SCalableNumberFormatter " + ((DecimalFormat)getFormat()).toPattern());
+}

@@ -9,13 +9,15 @@
         attributeRestoreData=new LinkedList<Object>();
         for (        Figure f : figures) {
           attributeRestoreData.add(f.getAttributesRestoreData());
-          attributeKey.set(f,value);
         }
       }
- else {
-        for (        Figure f : figures) {
-          attributeKey.set(f,value);
+      for (      Figure f : figures) {
+        f.willChange();
+        attributeKey.basicSet(f,value);
+        for (        Map.Entry<AttributeKey,Object> entry : defaultAttributes.entrySet()) {
+          entry.getKey().basicSet(f,entry.getValue());
         }
+        f.changed();
       }
       if (drawingEditor != null && isUpdateDrawingEditorDefaults) {
         drawingEditor.setDefaultAttribute(attributeKey,value);

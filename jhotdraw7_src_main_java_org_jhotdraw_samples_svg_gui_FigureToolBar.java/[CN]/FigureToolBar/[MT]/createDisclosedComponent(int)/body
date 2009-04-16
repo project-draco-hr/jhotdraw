@@ -22,7 +22,7 @@ case 1:
       linkLabel.setLabelFor(linkField);
       gbc=new GridBagConstraints();
       gbc.gridx=0;
-      gbc.insets=new Insets(3,0,0,0);
+      gbc.insets=new Insets(3,0,-2,0);
       gbc.anchor=GridBagConstraints.SOUTHWEST;
       p.add(linkLabel,gbc);
       scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -87,7 +87,7 @@ case 2:
   linkLabel.setFont(PaletteLookAndFeel.getInstance().getFont("SmallSystemFont"));
   gbc=new GridBagConstraints();
   gbc.gridx=0;
-  gbc.insets=new Insets(3,0,0,0);
+  gbc.insets=new Insets(3,0,-2,0);
   gbc.anchor=GridBagConstraints.SOUTHWEST;
   p.add(linkLabel,gbc);
   scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);

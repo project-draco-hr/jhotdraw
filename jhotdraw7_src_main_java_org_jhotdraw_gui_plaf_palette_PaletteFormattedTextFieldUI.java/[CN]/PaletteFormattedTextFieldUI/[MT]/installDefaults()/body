@@ -38,5 +38,6 @@
   if (margin == null || margin instanceof UIResource) {
     editor.setMargin(plaf.getInsets(prefix + ".margin"));
   }
+  errorIndicatorForeground=plaf.getColor(prefix + ".errorIndicatorForeground");
   editor.setOpaque(plaf.getBoolean(prefix + ".opaque"));
 }
