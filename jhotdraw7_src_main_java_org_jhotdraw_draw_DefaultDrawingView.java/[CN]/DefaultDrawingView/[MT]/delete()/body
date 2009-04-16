@@ -16,7 +16,7 @@
   getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
     @Override public String getPresentationName(){
       ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
-      return labels.getString("delete");
+      return labels.getString("edit.delete.text");
     }
     @Override public void undo() throws CannotUndoException {
       super.undo();

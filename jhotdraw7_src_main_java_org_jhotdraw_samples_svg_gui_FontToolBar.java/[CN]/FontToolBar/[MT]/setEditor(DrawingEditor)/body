@@ -8,7 +8,7 @@
   if (newValue != null) {
     displayer=new SelectionComponentDisplayer(editor,this){
       @Override public void updateVisibility(){
-        boolean newValue=editor != null && editor.getActiveView() != null && (isVisibleIfCreationTool && ((editor.getTool() instanceof TextTool) || editor.getTool() instanceof TextAreaTool) || containsTextHolderFigure(editor.getActiveView().getSelectedFigures()));
+        boolean newValue=editor != null && editor.getActiveView() != null && (isVisibleIfCreationTool && ((editor.getTool() instanceof TextCreationTool) || editor.getTool() instanceof TextAreaCreationTool) || containsTextHolderFigure(editor.getActiveView().getSelectedFigures()));
         component.setVisible(newValue);
         if (newValue) {
           component.setPreferredSize(null);

@@ -5,7 +5,7 @@
   double sy=newBounds.height / oldBounds.height;
   AffineTransform tx=new AffineTransform();
   tx.translate(-oldBounds.x,-oldBounds.y);
-  if (!Double.isNaN(sx) && !Double.isNaN(sy) && (sx != 1d || sy != 1d)&& !(sx < 0.0001)&& !(sy < 0.0001)) {
+  if (!Double.isNaN(sx) && !Double.isNaN(sy) && !Double.isInfinite(sx)&& !Double.isInfinite(sy)&& (sx != 1d || sy != 1d)&& !(sx < 0.0001)&& !(sy < 0.0001)) {
     transform(tx);
     tx.setToIdentity();
     tx.scale(sx,sy);

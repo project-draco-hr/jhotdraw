@@ -3,6 +3,7 @@
   textField.setText(figure.getText());
   textField.setColumns(figure.getTextColumns());
   textField.selectAll();
+  textField.setVisible(true);
   editedFigure=figure;
   editedFigure.addFigureListener(figureHandler);
   this.view=view;
