@@ -16,7 +16,7 @@
     public Object construct(){
       try {
         Thread t=new Thread(){
-          public void run(){
+          @Override public void run(){
             drawingComponent=createDrawingComponent();
           }
         }
