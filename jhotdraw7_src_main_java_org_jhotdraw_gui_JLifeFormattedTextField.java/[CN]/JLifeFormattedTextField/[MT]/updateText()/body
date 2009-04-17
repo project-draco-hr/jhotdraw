@@ -4,6 +4,10 @@
       try {
         String newText=getFormatter().valueToString(getValue());
         setText(newText);
+        if (!isFocusOwner()) {
+          setCaretPosition(getDocument().getLength());
+          moveCaretPosition(0);
+        }
       }
  catch (      ParseException ex) {
       }

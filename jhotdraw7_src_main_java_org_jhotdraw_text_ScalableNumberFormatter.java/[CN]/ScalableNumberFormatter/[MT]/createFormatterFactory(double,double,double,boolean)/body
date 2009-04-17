@@ -4,6 +4,5 @@
   sym.setGroupingSeparator('\'');
   sym.setDecimalSeparator('.');
   sym.setMinusSign('-');
-  sym.setExponentSeparator("E");
   return new DefaultFormatterFactory(new ScalableNumberFormatter(df,min,max,scaleFactor,allowsNullValue));
 }

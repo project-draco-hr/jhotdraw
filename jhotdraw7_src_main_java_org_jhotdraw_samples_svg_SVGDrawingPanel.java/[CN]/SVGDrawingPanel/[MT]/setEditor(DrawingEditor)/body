@@ -15,6 +15,10 @@
   alignToolBar.setEditor(editor);
   arrangeToolBar.setEditor(editor);
   fontToolBar.setEditor(editor);
+  figureToolBar.setEditor(editor);
   linkToolBar.setEditor(editor);
+  DrawingView temp=editor.getActiveView();
+  editor.setActiveView(view);
   canvasToolBar.setEditor(editor);
+  editor.setActiveView(temp);
 }

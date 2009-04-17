@@ -6,6 +6,7 @@
   if (href == null) {
     href=readAttribute(elem,"href",null);
   }
+  String target=readAttribute(elem,"target",null);
   if (DEBUG) {
     System.out.println("SVGInputFormat.readAElement href=" + href);
   }
@@ -20,6 +21,7 @@
       }
       if (childFigure != null) {
         LINK.basicSet(childFigure,href);
+        LINK_TARGET.basicSet(childFigure,target);
       }
  else {
         if (DEBUG) {

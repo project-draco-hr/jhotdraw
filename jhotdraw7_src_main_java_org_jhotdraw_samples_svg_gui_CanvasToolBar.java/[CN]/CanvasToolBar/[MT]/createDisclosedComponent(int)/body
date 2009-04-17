@@ -18,7 +18,7 @@ case 1:
       p.setLayout(layout);
       GridBagConstraints gbc;
       AbstractButton btn;
-      btn=ButtonFactory.createDrawingColorButton(editor,CANVAS_FILL_COLOR,ButtonFactory.WEBSAVE_COLORS,ButtonFactory.WEBSAVE_COLORS_COLUMN_COUNT,"attribute.canvasFillColor",labels,null,new Rectangle(3,3,10,10));
+      btn=ButtonFactory.createDrawingColorButton(editor,CANVAS_FILL_COLOR,ButtonFactory.HSV_COLORS,ButtonFactory.HSV_COLORS_COLUMN_COUNT,"attribute.canvasFillColor",labels,null,new Rectangle(3,3,10,10));
       btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
       new DrawingComponentRepainter(editor,btn);
       ((JPopupButton)btn).setAction(null,null);
@@ -165,7 +165,7 @@ case 2:
   gbc.fill=GridBagConstraints.HORIZONTAL;
   gbc.anchor=GridBagConstraints.FIRST_LINE_START;
   p1.add(colorField,gbc);
-  btn=ButtonFactory.createDrawingColorButton(editor,CANVAS_FILL_COLOR,ButtonFactory.WEBSAVE_COLORS,ButtonFactory.WEBSAVE_COLORS_COLUMN_COUNT,"attribute.canvasFillColor",labels,null,new Rectangle(3,3,10,10));
+  btn=ButtonFactory.createDrawingColorButton(editor,CANVAS_FILL_COLOR,ButtonFactory.HSV_COLORS,ButtonFactory.HSV_COLORS_COLUMN_COUNT,"attribute.canvasFillColor",labels,null,new Rectangle(3,3,10,10));
   btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
   new DrawingComponentRepainter(editor,btn);
   ((JPopupButton)btn).setAction(null,null);

@@ -29,6 +29,17 @@
     }
  else {
       URL imageUrl=new URL(url,href);
+      if (imageUrl.getFile().endsWith("svg")) {
+        SVGInputFormat svgImage=new SVGInputFormat(factory);
+        Drawing svgDrawing=new DefaultDrawing();
+        svgImage.read(imageUrl,svgDrawing,true);
+        CompositeFigure svgImageGroup=factory.createG(a);
+        for (        Figure f : svgDrawing.getChildren()) {
+          svgImageGroup.add(f);
+        }
+        svgImageGroup.setBounds(new Point2D.Double(x,y),new Point2D.Double(x + w,y + h));
+        return svgImageGroup;
+      }
       ByteArrayOutputStream bout=new ByteArrayOutputStream();
       byte[] buf=new byte[512];
       int len=0;

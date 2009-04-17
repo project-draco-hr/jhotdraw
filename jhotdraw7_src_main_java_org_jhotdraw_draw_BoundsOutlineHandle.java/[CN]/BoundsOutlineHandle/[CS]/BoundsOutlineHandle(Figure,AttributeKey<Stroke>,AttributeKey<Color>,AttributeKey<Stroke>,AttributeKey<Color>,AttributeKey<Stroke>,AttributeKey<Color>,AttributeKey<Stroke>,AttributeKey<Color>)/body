@@ -1,0 +1,11 @@
+{
+  super(owner);
+  this.stroke1Enabled=stroke1Enabled;
+  this.strokeColor1Enabled=strokeColor1Enabled;
+  this.stroke2Enabled=stroke2Enabled;
+  this.strokeColor2Enabled=strokeColor2Enabled;
+  this.stroke1Disabled=stroke1Disabled;
+  this.strokeColor1Disabled=strokeColor1Disabled;
+  this.stroke2Disabled=stroke2Disabled;
+  this.strokeColor2Disabled=strokeColor2Disabled;
+}

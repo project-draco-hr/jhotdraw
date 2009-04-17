@@ -5,7 +5,14 @@
         long start=System.currentTimeMillis();
         Font[] fonts=GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
         long end=System.currentTimeMillis();
-        return fonts;
+        ArrayList<Font> goodFonts=new ArrayList<Font>(fonts.length);
+        for (        Font f : fonts) {
+          Font decoded=Font.decode(f.getFontName());
+          if (decoded.getFontName().equals(f.getFontName()) || decoded.getFontName().endsWith("-Derived")) {
+            goodFonts.add(f);
+          }
+        }
+        return goodFonts.toArray(new Font[goodFonts.size()]);
       }
     }
 );

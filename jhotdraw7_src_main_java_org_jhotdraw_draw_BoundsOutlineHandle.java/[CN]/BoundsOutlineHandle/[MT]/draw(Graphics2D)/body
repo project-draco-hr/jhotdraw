@@ -9,48 +9,16 @@
   Stroke stroke2;
   Color strokeColor2;
   if (getEditor().getTool().supportsHandleInteraction()) {
-    if (isTransformHandle) {
-      if (isHoverHandle) {
-        stroke1=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_1_HOVER);
-        strokeColor1=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_1_HOVER);
-        stroke2=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_2_HOVER);
-        strokeColor2=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_2_HOVER);
-      }
- else {
-        stroke1=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_1);
-        strokeColor1=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_1);
-        stroke2=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_2);
-        strokeColor2=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_2);
-      }
-    }
- else {
-      if (isHoverHandle) {
-        stroke1=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_STROKE_1_HOVER);
-        strokeColor1=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_COLOR_1_HOVER);
-        stroke2=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_STROKE_2_HOVER);
-        strokeColor2=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_COLOR_2_HOVER);
-      }
- else {
-        stroke1=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_STROKE_1);
-        strokeColor1=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_COLOR_1);
-        stroke2=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_STROKE_2);
-        strokeColor2=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_COLOR_2);
-      }
-    }
+    stroke1=(Stroke)getEditor().getHandleAttribute(stroke1Enabled);
+    strokeColor1=(Color)getEditor().getHandleAttribute(strokeColor1Enabled);
+    stroke2=(Stroke)getEditor().getHandleAttribute(stroke2Enabled);
+    strokeColor2=(Color)getEditor().getHandleAttribute(strokeColor2Enabled);
   }
  else {
-    if (isTransformHandle) {
-      stroke1=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_1_DISABLED);
-      strokeColor1=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_1_DISABLED);
-      stroke2=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_2_DISABLED);
-      strokeColor2=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_2_DISABLED);
-    }
- else {
-      stroke1=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_STROKE_1_DISABLED);
-      strokeColor1=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_COLOR_1_DISABLED);
-      stroke2=(Stroke)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_STROKE_2_DISABLED);
-      strokeColor2=(Color)getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_BOUNDS_COLOR_2_DISABLED);
-    }
+    stroke1=(Stroke)getEditor().getHandleAttribute(stroke1Disabled);
+    strokeColor1=(Color)getEditor().getHandleAttribute(strokeColor1Disabled);
+    stroke2=(Stroke)getEditor().getHandleAttribute(stroke2Disabled);
+    strokeColor2=(Color)getEditor().getHandleAttribute(strokeColor2Disabled);
   }
   if (stroke1 != null && strokeColor1 != null) {
     g.setStroke(stroke1);

@@ -9,8 +9,11 @@
     }
   }
   boolean isClosed=CLOSED.get(getChild(0));
+  if (isClosed && FILL_COLOR.get(this) == null && FILL_GRADIENT.get(this) == null) {
+    return getHitShape().contains(p);
+  }
   double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2d);
-  if (isClosed || FILL_COLOR.get(this) != null) {
+  if (isClosed || FILL_COLOR.get(this) != null && FILL_GRADIENT.get(this) != null) {
     if (getPath().contains(p)) {
       return true;
     }

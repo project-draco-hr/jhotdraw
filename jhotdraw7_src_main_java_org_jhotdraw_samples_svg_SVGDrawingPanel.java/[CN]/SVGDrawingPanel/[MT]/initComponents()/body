@@ -13,7 +13,8 @@
   fontToolBar=new org.jhotdraw.samples.svg.gui.FontToolBar();
   arrangeToolBar=new org.jhotdraw.samples.svg.gui.ArrangeToolBar();
   alignToolBar=new org.jhotdraw.samples.svg.gui.AlignToolBar();
-  linkToolBar=new org.jhotdraw.samples.svg.gui.FigureToolBar();
+  figureToolBar=new org.jhotdraw.samples.svg.gui.FigureToolBar();
+  linkToolBar=new org.jhotdraw.samples.svg.gui.LinkToolBar();
   canvasToolBar=new org.jhotdraw.samples.svg.gui.CanvasToolBar();
   setBackground(new java.awt.Color(255,255,255));
   setLayout(new java.awt.BorderLayout());
@@ -37,6 +38,8 @@
   toolsPane.add(fontToolBar);
   toolsPane.add(arrangeToolBar);
   toolsPane.add(alignToolBar);
+  toolsPane.add(figureToolBar);
+  linkToolBar.setRollover(true);
   toolsPane.add(linkToolBar);
   toolsPane.add(canvasToolBar);
   toolsScrollPane.setViewportView(toolsPane);

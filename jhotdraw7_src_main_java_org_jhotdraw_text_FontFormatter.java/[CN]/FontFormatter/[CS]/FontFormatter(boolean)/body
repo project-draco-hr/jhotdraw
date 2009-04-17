@@ -1,0 +1,4 @@
+{
+  this.allowsNullValue=allowsNullValue;
+  setOverwriteMode(false);
+}

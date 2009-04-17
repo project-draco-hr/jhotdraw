@@ -3,6 +3,9 @@
     elem.setAttribute("href",LINK.get(f));
     elem.setAttribute("title",LINK.get(f));
     elem.setAttribute("alt",LINK.get(f));
+    if (LINK_TARGET.get(f) != null && LINK_TARGET.get(f).trim().length() > 0) {
+      elem.setAttribute("target",LINK_TARGET.get(f));
+    }
   }
  else {
     elem.setAttribute("nohref","true");

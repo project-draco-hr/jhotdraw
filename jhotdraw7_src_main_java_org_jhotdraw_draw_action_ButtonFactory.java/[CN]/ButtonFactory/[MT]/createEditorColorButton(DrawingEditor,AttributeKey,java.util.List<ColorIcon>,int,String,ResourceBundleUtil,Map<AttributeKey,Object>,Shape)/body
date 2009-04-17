@@ -5,21 +5,29 @@
   }
   popupButton.setAction(new DefaultAttributeAction(editor,attributeKey,defaultAttributes),new Rectangle(0,0,22,22));
   popupButton.setColumnCount(columnCount,false);
+  boolean hasNullColor=false;
   for (  ColorIcon swatch : swatches) {
     AttributeAction a;
     HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);
     attributes.put(attributeKey,swatch.getColor());
+    if (swatch.getColor() == null) {
+      hasNullColor=true;
+    }
     popupButton.add(a=new AttributeAction(editor,attributes,labels.getToolTipTextProperty(labelKey),swatch));
     a.putValue(Action.SHORT_DESCRIPTION,swatch.getName());
   }
-  AttributeAction a;
-  HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);
-  attributes.put(attributeKey,null);
-  popupButton.add(a=new AttributeAction(editor,attributes,labels.getToolTipTextProperty("attribute.noColor"),new ColorIcon(null,"---",swatches.get(0).getIconWidth(),swatches.get(0).getIconHeight())));
-  a.putValue(Action.SHORT_DESCRIPTION,"---");
-  ImageIcon chooserIcon=new ImageIcon(ButtonFactory.class.getResource("/org/jhotdraw/draw/action/images/showColorChooser.png"));
-  popupButton.add(new EditorColorChooserAction(editor,attributeKey,"color",chooserIcon,defaultAttributes));
+  if (!hasNullColor) {
+    AttributeAction a;
+    HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);
+    attributes.put(attributeKey,null);
+    popupButton.add(a=new AttributeAction(editor,attributes,labels.getToolTipTextProperty("attribute.color.noColor"),new ColorIcon(null,labels.getToolTipTextProperty("attribute.color.noColor"),swatches.get(0).getIconWidth(),swatches.get(0).getIconHeight())));
+    a.putValue(Action.SHORT_DESCRIPTION,"---");
+  }
+  ImageIcon chooserIcon=new ImageIcon(ButtonFactory.class.getResource("/org/jhotdraw/draw/action/images/attribute.color.colorChooser.png"));
+  Action a;
+  popupButton.add(a=new EditorColorChooserAction(editor,attributeKey,"color",chooserIcon,defaultAttributes));
   labels.configureToolBarButton(popupButton,labelKey);
+  a.putValue(Action.SHORT_DESCRIPTION,labels.getToolTipTextProperty("attribute.color.colorChooser"));
   Icon icon=new EditorColorIcon(editor,attributeKey,labels.getIconProperty(labelKey,ButtonFactory.class).getImage(),colorShape);
   popupButton.setIcon(icon);
   popupButton.setDisabledIcon(icon);

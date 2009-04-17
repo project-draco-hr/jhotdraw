@@ -2,10 +2,10 @@
   LinkedList<Handle> handles=new LinkedList<Handle>();
 switch (detailLevel) {
 case -1:
-    handles.add(new BoundsOutlineHandle(this,true,true));
+    TransformHandleKit.addGroupHoverHandles(this,handles);
   break;
 case 0:
-TransformHandleKit.addTransformHandles(this,handles);
+TransformHandleKit.addGroupTransformHandles(this,handles);
 handles.add(new LinkHandle(this));
 break;
 }

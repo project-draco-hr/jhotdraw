@@ -1,0 +1,9 @@
+{
+  if (cachedHitShape == null) {
+    cachedHitShape=getPath();
+    if (FILL_COLOR.get(this) == null && FILL_GRADIENT.get(this) == null) {
+      cachedHitShape=SVGAttributeKeys.getHitStroke(this).createStrokedShape(cachedHitShape);
+    }
+  }
+  return cachedHitShape;
+}

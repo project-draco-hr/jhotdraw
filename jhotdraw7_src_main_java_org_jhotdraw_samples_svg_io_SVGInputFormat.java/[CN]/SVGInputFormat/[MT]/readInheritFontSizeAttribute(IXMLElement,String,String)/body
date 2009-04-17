@@ -6,6 +6,9 @@
  else   if (elem.hasAttribute(attributeName)) {
     value=elem.getAttribute(attributeName,null);
   }
+ else   if (elem.getParent() != null && (elem.getParent().getNamespace() == null || elem.getParent().getNamespace().equals(SVG_NAMESPACE))) {
+    return readInheritFontSizeAttribute(elem.getParent(),attributeName,defaultValue);
+  }
  else {
     value=defaultValue;
   }

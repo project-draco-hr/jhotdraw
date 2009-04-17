@@ -13,7 +13,7 @@
  * to be adjusted.
  * @return the allocation that the superclass should use.
  */
-    protected Shape adjustAllocation(    Shape a){
+    protected Shape adjustAllocationXX(    Shape a){
       if (a != null) {
         Rectangle bounds=a.getBounds();
         int vspan=(int)getPreferredSpan(Y_AXIS);
@@ -34,7 +34,7 @@
             value=max - extent;
           }
           vis.setRangeProperties(value,extent,vis.getMinimum(),max,false);
-          if (true) {
+          if (hspan < bounds.width) {
             int slop=bounds.width - 1 - hspan;
             int align=((JTextField)c).getHorizontalAlignment();
             if (true) {
