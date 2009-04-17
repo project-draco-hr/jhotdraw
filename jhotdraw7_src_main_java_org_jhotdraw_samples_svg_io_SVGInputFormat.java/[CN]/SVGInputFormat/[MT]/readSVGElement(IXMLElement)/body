@@ -1,7 +1,9 @@
 {
   Viewport viewport=new Viewport();
-  viewport.width=toWidth(elem,readAttribute(elem,"width","100%"));
-  viewport.height=toHeight(elem,readAttribute(elem,"height","100%"));
+  String widthValue=readAttribute(elem,"width","100%");
+  String heightValue=readAttribute(elem,"height","100%");
+  viewport.width=toWidth(elem,widthValue);
+  viewport.height=toHeight(elem,heightValue);
   if (readAttribute(elem,"viewBox","none").equals("none")) {
     viewport.viewBox.width=viewport.width;
     viewport.viewBox.height=viewport.height;
@@ -12,6 +14,12 @@
     viewport.viewBox.y=toNumber(elem,viewBoxValues[1]);
     viewport.viewBox.width=toNumber(elem,viewBoxValues[2]);
     viewport.viewBox.height=toNumber(elem,viewBoxValues[3]);
+    if (widthValue.indexOf('%') > 0) {
+      viewport.width=viewport.viewBox.width;
+    }
+    if (heightValue.indexOf('%') > 0) {
+      viewport.height=viewport.viewBox.height;
+    }
   }
   if (viewportStack.size() == 1) {
     viewport.isPreserveAspectRatio=true;
@@ -31,8 +39,8 @@
  else {
     viewBoxTransform.scale(viewport.width / viewport.viewBox.width,viewport.height / viewport.viewBox.height);
   }
-  readViewportAttributes(elem,viewportStack.firstElement().attributes);
   viewportStack.push(viewport);
+  readViewportAttributes(elem,viewportStack.firstElement().attributes);
   for (  IXMLElement node : elem.getChildren()) {
     if (node instanceof IXMLElement) {
       IXMLElement child=(IXMLElement)node;

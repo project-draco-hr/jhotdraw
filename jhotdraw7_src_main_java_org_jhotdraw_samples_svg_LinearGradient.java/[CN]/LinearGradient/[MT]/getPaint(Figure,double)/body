@@ -21,7 +21,7 @@
     t.translate(bounds.x,bounds.y);
     t.scale(bounds.width,bounds.height);
   }
-  if (stopColors.length == 1) {
+  if (stopColors.length == 1 || t.getDeterminant() == 0) {
     return colors[0];
   }
   org.apache.batik.ext.awt.LinearGradientPaint gp;

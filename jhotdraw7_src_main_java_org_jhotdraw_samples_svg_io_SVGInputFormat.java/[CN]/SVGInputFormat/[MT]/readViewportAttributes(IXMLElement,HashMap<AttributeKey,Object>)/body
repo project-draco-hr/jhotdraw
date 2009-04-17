@@ -2,16 +2,17 @@
   Object value;
   Double doubleValue;
   value=readAttribute(elem,"width",null);
+  System.out.println("SVGInputFormat READ viewport w/h factors:" + viewportStack.peek().widthPercentFactor + ","+ viewportStack.peek().heightPercentFactor);
   if (value != null) {
-    doubleValue=toLength(elem,(String)value,1);
+    doubleValue=toLength(elem,(String)value,viewportStack.peek().widthPercentFactor);
     VIEWPORT_WIDTH.set(a,doubleValue);
   }
   value=readAttribute(elem,"height",null);
   if (value != null) {
-    doubleValue=toLength(elem,(String)value,1);
+    doubleValue=toLength(elem,(String)value,viewportStack.peek().heightPercentFactor);
     VIEWPORT_HEIGHT.set(a,doubleValue);
   }
-  value=toPaint(elem,readInheritAttribute(elem,"viewport-fill","none"));
+  value=toPaint(elem,readInheritColorAttribute(elem,"viewport-fill","none"));
   if (value == null || (value instanceof Color)) {
     VIEWPORT_FILL.set(a,(Color)value);
   }

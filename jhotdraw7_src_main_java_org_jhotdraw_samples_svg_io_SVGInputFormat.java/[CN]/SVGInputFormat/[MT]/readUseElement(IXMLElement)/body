@@ -5,6 +5,7 @@
   readTransformAttribute(elem,a);
   readOpacityAttribute(elem,a2);
   readUseShapeAttributes(elem,a2);
+  readFontAttributes(elem,a2);
   String href=readAttribute(elem,"xlink:href",null);
   if (href != null && href.startsWith("#")) {
     IXMLElement refElem=identifiedElements.get(href.substring(1));

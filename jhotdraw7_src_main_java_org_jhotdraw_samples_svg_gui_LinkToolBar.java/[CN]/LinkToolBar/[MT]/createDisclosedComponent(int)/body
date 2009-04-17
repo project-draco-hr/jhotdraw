@@ -101,7 +101,7 @@ case 2:
   linkField.setWrapStyleWord(true);
   linkField.setFont(PaletteLookAndFeel.getInstance().getFont("SmallSystemFont"));
   linkField.setFormatterFactory(new DefaultFormatterFactory(new DefaultFormatter()));
-  new FigureAttributeEditorHandler<String>(LINK,linkField,editor,true);
+  new FigureAttributeEditorHandler<String>(LINK,linkField,editor,false);
   scrollPane.setViewportView(linkField);
   gbc=new GridBagConstraints();
   gbc.gridx=0;

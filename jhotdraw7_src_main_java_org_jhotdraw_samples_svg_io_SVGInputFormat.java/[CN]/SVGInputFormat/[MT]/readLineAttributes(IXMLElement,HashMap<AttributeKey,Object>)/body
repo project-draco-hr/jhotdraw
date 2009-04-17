@@ -2,7 +2,7 @@
   Object objectValue;
   String value;
   double doubleValue;
-  objectValue=toPaint(elem,readInheritAttribute(elem,"fill","none"));
+  objectValue=toPaint(elem,readInheritColorAttribute(elem,"fill","none"));
   if (objectValue instanceof Color) {
     FILL_COLOR.set(a,(Color)objectValue);
   }
@@ -22,7 +22,7 @@
   FILL_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
   value=readInheritAttribute(elem,"fill-rule","nonzero");
   WINDING_RULE.set(a,SVG_FILL_RULES.get(value));
-  objectValue=toPaint(elem,readInheritAttribute(elem,"stroke","black"));
+  objectValue=toPaint(elem,readInheritColorAttribute(elem,"stroke","black"));
   if (objectValue instanceof Color) {
     STROKE_COLOR.set(a,(Color)objectValue);
   }

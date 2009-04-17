@@ -1,8 +1,21 @@
 {
-  if (getArcHeight() == 0d && getArcWidth() == 0d) {
+  if (roundrect.archeight == 0 && roundrect.arcwidth == 0) {
     g.draw(roundrect.getBounds2D());
   }
  else {
-    g.draw(roundrect);
+    GeneralPath p=new GeneralPath();
+    double aw=roundrect.arcwidth / 2d;
+    double ah=roundrect.archeight / 2d;
+    p.moveTo(roundrect.x + aw,roundrect.y);
+    p.lineTo(roundrect.x + roundrect.width - aw,roundrect.y);
+    p.curveTo(roundrect.x + roundrect.width - aw * acv,roundrect.y,roundrect.x + roundrect.width,roundrect.y + ah * acv,roundrect.x + roundrect.width,roundrect.y + ah);
+    p.lineTo(roundrect.x + roundrect.width,roundrect.y + roundrect.height - ah);
+    p.curveTo(roundrect.x + roundrect.width,roundrect.y + roundrect.height - ah * acv,roundrect.x + roundrect.width - aw * acv,roundrect.y + roundrect.height,roundrect.x + roundrect.width - aw,roundrect.y + roundrect.height);
+    p.lineTo(roundrect.x + aw,roundrect.y + roundrect.height);
+    p.curveTo(roundrect.x + aw * acv,roundrect.y + roundrect.height,roundrect.x,roundrect.y + roundrect.height - ah * acv,roundrect.x,roundrect.y + roundrect.height - ah);
+    p.lineTo(roundrect.x,roundrect.y + ah);
+    p.curveTo(roundrect.x,roundrect.y + ah * acv,roundrect.x + aw * acv,roundrect.y,roundrect.x + aw,roundrect.y);
+    p.closePath();
+    g.draw(p);
   }
 }
