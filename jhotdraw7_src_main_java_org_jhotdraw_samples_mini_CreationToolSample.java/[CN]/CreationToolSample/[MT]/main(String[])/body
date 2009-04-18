@@ -1,0 +1,24 @@
+{
+  SwingUtilities.invokeLater(new Runnable(){
+    public void run(){
+      ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+      DrawingView view=new DefaultDrawingView();
+      view.setDrawing(new DefaultDrawing());
+      DrawingEditor editor=new DefaultDrawingEditor();
+      editor.add(view);
+      JToolBar tb=new JToolBar();
+      ButtonFactory.addSelectionToolTo(tb,editor);
+      ButtonFactory.addToolTo(tb,editor,new CreationTool(new RectangleFigure()),"edit.createRectangle",labels);
+      tb.setOrientation(JToolBar.VERTICAL);
+      JFrame f=new JFrame("Editor with Creation Tool");
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      f.setSize(400,300);
+      f.getContentPane().add(tb,BorderLayout.WEST);
+      JScrollPane sp=new JScrollPane(view.getComponent());
+      sp.setPreferredSize(new Dimension(200,200));
+      f.getContentPane().add(sp,BorderLayout.CENTER);
+      f.setVisible(true);
+    }
+  }
+);
+}
