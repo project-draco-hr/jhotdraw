@@ -46,7 +46,7 @@ case 1:
       sizeField.setHorizontalAlignment(JAttributeTextField.RIGHT);
       sizeField.putClientProperty("Palette.Component.segmentPosition","first");
       sizeField.setUI((PaletteFormattedTextFieldUI)PaletteFormattedTextFieldUI.createUI(sizeField));
-      sizeField.setFormatterFactory(ScalableNumberFormatter.createFormatterFactory(0d,Double.MAX_VALUE,1d));
+      sizeField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0d,1000d,1d));
       sizeField.setHorizontalAlignment(JTextField.LEADING);
       new FigureAttributeEditorHandler<Double>(FONT_SIZE,sizeField,editor);
       gbc=new GridBagConstraints();
@@ -151,7 +151,7 @@ case 2:
   sizeField.setHorizontalAlignment(JAttributeTextField.RIGHT);
   sizeField.putClientProperty("Palette.Component.segmentPosition","first");
   sizeField.setUI((PaletteFormattedTextFieldUI)PaletteFormattedTextFieldUI.createUI(sizeField));
-  sizeField.setFormatterFactory(ScalableNumberFormatter.createFormatterFactory(0d,Double.MAX_VALUE,1d));
+  sizeField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0d,1000d,1d));
   sizeField.setHorizontalAlignment(JTextField.LEADING);
   new FigureAttributeEditorHandler<Double>(FONT_SIZE,sizeField,editor);
   gbc=new GridBagConstraints();

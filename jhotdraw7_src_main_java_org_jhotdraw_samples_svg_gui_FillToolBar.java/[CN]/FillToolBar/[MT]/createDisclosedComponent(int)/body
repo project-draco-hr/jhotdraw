@@ -85,7 +85,7 @@ case 2:
   opacityField.setToolTipText(labels.getString("attribute.fillOpacity.toolTipText"));
   opacityField.putClientProperty("Palette.Component.segmentPosition","first");
   opacityField.setUI((PaletteFormattedTextFieldUI)PaletteFormattedTextFieldUI.createUI(opacityField));
-  opacityField.setFormatterFactory(ScalableNumberFormatter.createFormatterFactory(0d,100d,100d));
+  opacityField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0d,1d,100d));
   opacityField.setHorizontalAlignment(JTextField.LEFT);
   new FigureAttributeEditorHandler<Double>(FILL_OPACITY,opacityField,editor);
   gbc=new GridBagConstraints();

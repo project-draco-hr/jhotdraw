@@ -1,0 +1,9 @@
+{
+  super();
+  setMinimum(min);
+  setMaximum(max);
+  setScaleFactor(scaleFactor);
+  setAllowsNullValue(allowsNullValue);
+  setAppendsDotZero(appendsDotZero);
+  setOverwriteMode(false);
+}

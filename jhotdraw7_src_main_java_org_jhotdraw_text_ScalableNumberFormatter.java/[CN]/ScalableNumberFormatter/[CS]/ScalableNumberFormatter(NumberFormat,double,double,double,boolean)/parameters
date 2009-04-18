@@ -1,5 +1,0 @@
-NumberFormat format
-double min
-double max
-double scaleFactor
-boolean allowsNullValue
