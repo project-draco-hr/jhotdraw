@@ -1,5 +1,5 @@
 {
-  connectors=new LinkedList<AbstractConnector>();
+  connectors=new LinkedList<Connector>();
   connectors.add(new LocatorConnector(this,RelativeLocator.north()));
   connectors.add(new LocatorConnector(this,RelativeLocator.east()));
   connectors.add(new LocatorConnector(this,RelativeLocator.west()));

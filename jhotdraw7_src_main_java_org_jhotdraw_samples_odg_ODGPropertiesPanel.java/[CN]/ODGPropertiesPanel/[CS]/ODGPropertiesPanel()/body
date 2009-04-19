@@ -5,9 +5,9 @@
   opacityPopupButton.putClientProperty("JButton.buttonType","toolbar");
   add(opacityPopupButton);
   opacityField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0d,1d,100d));
-  opacityFieldHandler=new FigureAttributeEditorHandler(OPACITY,opacityField,editor);
-  opacitySliderHandler=new FigureAttributeEditorHandler(OPACITY,opacitySlider,editor);
-  linkFieldHandler=new FigureAttributeEditorHandler(LINK,linkField,editor);
+  opacityFieldHandler=new FigureAttributeEditorHandler<Double>(OPACITY,opacityField,editor);
+  opacitySliderHandler=new FigureAttributeEditorHandler<Double>(OPACITY,opacitySlider,editor);
+  linkFieldHandler=new FigureAttributeEditorHandler<String>(LINK,linkField,editor);
   Font font=getFont().deriveFont(11f);
   for (  Component c : getComponents()) {
     c.setFont(font);

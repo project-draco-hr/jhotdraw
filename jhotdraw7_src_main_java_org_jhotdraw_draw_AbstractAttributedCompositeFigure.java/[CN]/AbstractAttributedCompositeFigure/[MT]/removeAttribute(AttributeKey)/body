@@ -1,7 +1,0 @@
-{
-  if (hasAttribute(key)) {
-    Object oldValue=getAttribute(key);
-    attributes.remove(key);
-    fireAttributeChanged(key,oldValue,key.getDefaultValue());
-  }
-}

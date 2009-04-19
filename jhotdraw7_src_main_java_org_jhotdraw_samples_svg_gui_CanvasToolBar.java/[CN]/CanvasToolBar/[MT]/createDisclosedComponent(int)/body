@@ -31,7 +31,7 @@ case 1:
       JAttributeSlider opacitySlider=new JAttributeSlider(JSlider.VERTICAL,0,100,100);
       opacitySlider.setUI((SliderUI)PaletteSliderUI.createUI(opacitySlider));
       opacitySlider.setScaleFactor(100d);
-      new DrawingAttributeEditorHandler(CANVAS_FILL_OPACITY,opacitySlider,editor);
+      new DrawingAttributeEditorHandler<Double>(CANVAS_FILL_OPACITY,opacitySlider,editor);
       opacityPopupButton.add(opacitySlider);
       labels.configureToolBarButton(opacityPopupButton,"attribute.canvasFillOpacity");
       opacityPopupButton.setUI((PaletteButtonUI)PaletteButtonUI.createUI(opacityPopupButton));
@@ -66,11 +66,11 @@ case 1:
       gbc.insets=new Insets(3,3,0,0);
       p1.add(btn,gbc);
       JLabel widthLabel, heightLabel;
-      JAttributeTextField widthField, heightField;
+      JAttributeTextField<Double> widthField, heightField;
       widthLabel=new javax.swing.JLabel();
       heightLabel=new javax.swing.JLabel();
-      widthField=new JAttributeTextField();
-      heightField=new JAttributeTextField();
+      widthField=new JAttributeTextField<Double>();
+      heightField=new JAttributeTextField<Double>();
       widthLabel.setUI((LabelUI)PaletteLabelUI.createUI(widthLabel));
       widthLabel.setLabelFor(widthField);
       widthLabel.setToolTipText(labels.getString("attribute.canvasWidth.toolTipText"));
@@ -87,7 +87,7 @@ case 1:
       widthField.setToolTipText(labels.getString("attribute.canvasWidth.toolTipText"));
       widthField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(1d,4096d,1d,true,false));
       widthField.setHorizontalAlignment(JTextField.LEADING);
-      new DrawingAttributeEditorHandler(CANVAS_WIDTH,widthField,editor);
+      new DrawingAttributeEditorHandler<Double>(CANVAS_WIDTH,widthField,editor);
       gbc=new GridBagConstraints();
       gbc.gridx=1;
       gbc.gridy=2;
@@ -112,7 +112,7 @@ case 1:
       heightField.setToolTipText(labels.getString("attribute.canvasHeight.toolTipText"));
       heightField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(1d,4096d,1d,true,false));
       heightField.setHorizontalAlignment(JTextField.LEADING);
-      new DrawingAttributeEditorHandler(CANVAS_HEIGHT,heightField,editor);
+      new DrawingAttributeEditorHandler<Double>(CANVAS_HEIGHT,heightField,editor);
       gbc=new GridBagConstraints();
       gbc.gridx=4;
       gbc.gridy=2;
@@ -152,7 +152,7 @@ case 2:
   p.setLayout(layout);
   GridBagConstraints gbc;
   AbstractButton btn;
-  JAttributeTextField colorField=new JAttributeTextField();
+  JAttributeTextField<Color> colorField=new JAttributeTextField<Color>();
   colorField.setColumns(7);
   colorField.setToolTipText(labels.getString("attribute.canvasFillColor.toolTipText"));
   colorField.putClientProperty("Palette.Component.segmentPosition","first");
@@ -172,7 +172,7 @@ case 2:
   gbc=new GridBagConstraints();
   gbc.anchor=GridBagConstraints.FIRST_LINE_START;
   p1.add(btn,gbc);
-  JAttributeTextField opacityField=new JAttributeTextField();
+  JAttributeTextField<Double> opacityField=new JAttributeTextField<Double>();
   opacityField.setColumns(3);
   opacityField.setToolTipText(labels.getString("attribute.figureOpacity.toolTipText"));
   opacityField.setHorizontalAlignment(JAttributeTextField.RIGHT);
@@ -191,7 +191,7 @@ case 2:
   JAttributeSlider opacitySlider=new JAttributeSlider(JSlider.VERTICAL,0,100,100);
   opacitySlider.setUI((SliderUI)PaletteSliderUI.createUI(opacitySlider));
   opacitySlider.setScaleFactor(100d);
-  new DrawingAttributeEditorHandler(CANVAS_FILL_OPACITY,opacitySlider,editor);
+  new DrawingAttributeEditorHandler<Double>(CANVAS_FILL_OPACITY,opacitySlider,editor);
   opacityPopupButton.add(opacitySlider);
   labels.configureToolBarButton(opacityPopupButton,"attribute.canvasFillOpacity");
   opacityPopupButton.setUI((PaletteButtonUI)PaletteButtonUI.createUI(opacityPopupButton));
@@ -225,11 +225,11 @@ case 2:
   gbc.insets=new Insets(3,3,0,0);
   p1.add(btn,gbc);
   JLabel widthLabel, heightLabel;
-  JAttributeTextField widthField, heightField;
+  JAttributeTextField<Double> widthField, heightField;
   widthLabel=new javax.swing.JLabel();
   heightLabel=new javax.swing.JLabel();
-  widthField=new JAttributeTextField();
-  heightField=new JAttributeTextField();
+  widthField=new JAttributeTextField<Double>();
+  heightField=new JAttributeTextField<Double>();
   widthLabel.setUI((LabelUI)PaletteLabelUI.createUI(widthLabel));
   widthLabel.setLabelFor(widthField);
   widthLabel.setToolTipText(labels.getString("attribute.canvasWidth.toolTipText"));
@@ -246,7 +246,7 @@ case 2:
   widthField.setToolTipText(labels.getString("attribute.canvasWidth.toolTipText"));
   widthField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(1d,4096d,1d,true,false));
   widthField.setHorizontalAlignment(JTextField.LEADING);
-  new DrawingAttributeEditorHandler(CANVAS_WIDTH,widthField,editor);
+  new DrawingAttributeEditorHandler<Double>(CANVAS_WIDTH,widthField,editor);
   gbc=new GridBagConstraints();
   gbc.gridx=1;
   gbc.gridy=2;
@@ -271,7 +271,7 @@ case 2:
   heightField.setToolTipText(labels.getString("attribute.canvasHeight.toolTipText"));
   heightField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(1d,4096d,1d,true,false));
   heightField.setHorizontalAlignment(JTextField.LEADING);
-  new DrawingAttributeEditorHandler(CANVAS_HEIGHT,heightField,editor);
+  new DrawingAttributeEditorHandler<Double>(CANVAS_HEIGHT,heightField,editor);
   gbc=new GridBagConstraints();
   gbc.gridx=4;
   gbc.gridy=2;

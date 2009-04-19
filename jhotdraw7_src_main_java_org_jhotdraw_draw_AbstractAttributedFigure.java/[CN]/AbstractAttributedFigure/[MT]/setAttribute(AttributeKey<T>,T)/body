@@ -1,0 +1,6 @@
+{
+  if (forbiddenAttributes == null || !forbiddenAttributes.contains(key)) {
+    T oldValue=(T)key.put(attributes,newValue);
+    fireAttributeChanged(key,oldValue,newValue);
+  }
+}

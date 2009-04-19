@@ -1,0 +1,3 @@
+BezierFigure prototype
+Map<AttributeKey,Object> attributes
+String name

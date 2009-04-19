@@ -1,5 +1,0 @@
-{
-  for (  Figure child : getChildren()) {
-    child.setAttribute(key,newValue);
-  }
-}

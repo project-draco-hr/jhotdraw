@@ -1,4 +1,4 @@
 {
-  properties=new HashMap();
+  properties=new HashMap<String,String>();
   properties.put(name,value);
 }

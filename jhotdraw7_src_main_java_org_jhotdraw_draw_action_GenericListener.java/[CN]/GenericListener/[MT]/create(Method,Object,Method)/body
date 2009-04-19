@@ -1,6 +1,6 @@
 {
   InvocationHandler handler=new DefaultInvoker(){
-    public Object invoke(    Object proxy,    Method method,    Object[] args) throws Throwable {
+    @Override public Object invoke(    Object proxy,    Method method,    Object[] args) throws Throwable {
       if (listenerMethod.equals(method)) {
         if (targetMethod.getParameterTypes().length == 0) {
           return targetMethod.invoke(target,new Object[0]);

@@ -1,0 +1,3 @@
+{
+  return hasAttribute(key) ? key.get(attributes) : key.getDefaultValue();
+}

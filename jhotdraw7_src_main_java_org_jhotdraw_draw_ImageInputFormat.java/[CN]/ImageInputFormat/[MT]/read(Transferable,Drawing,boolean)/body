@@ -6,7 +6,7 @@
       ImageHolderFigure figure=(ImageHolderFigure)prototype.clone();
       figure.setBufferedImage((BufferedImage)img);
       figure.setBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
-      LinkedList list=new LinkedList<Figure>();
+      LinkedList<Figure> list=new LinkedList<Figure>();
       list.add(figure);
       if (replace) {
         drawing.removeAllChildren();
@@ -25,7 +25,7 @@
       ImageHolderFigure figure=(ImageHolderFigure)prototype.clone();
       figure.setBufferedImage((BufferedImage)img);
       figure.setBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
-      LinkedList list=new LinkedList<Figure>();
+      LinkedList<Figure> list=new LinkedList<Figure>();
       list.add(figure);
       if (replace) {
         drawing.removeAllChildren();

@@ -1,8 +1,0 @@
-{
-  if (defaultAttributes.containsKey(key)) {
-    return defaultAttributes.get(key);
-  }
- else {
-    return key.getDefaultValue();
-  }
-}

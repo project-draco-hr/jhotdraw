@@ -1,5 +1,5 @@
 {
-  final ArrayList<Figure> selectedFigures=new ArrayList(getView().getSelectedFigures());
+  final ArrayList<Figure> selectedFigures=new ArrayList<Figure>(getView().getSelectedFigures());
   final ArrayList<Object> restoreData=new ArrayList<Object>(selectedFigures.size());
   for (  Figure figure : selectedFigures) {
     restoreData.add(figure.getAttributesRestoreData());
@@ -8,10 +8,10 @@
   getEditor().setDefaultAttribute(key,fontChooser.getSelectedFont());
   final Font undoValue=fontChooser.getSelectedFont();
   UndoableEdit edit=new AbstractUndoableEdit(){
-    public String getPresentationName(){
+    @Override public String getPresentationName(){
       return AttributeKeys.FONT_FACE.getPresentationName();
     }
-    public void undo(){
+    @Override public void undo(){
       super.undo();
       Iterator<Object> iRestore=restoreData.iterator();
       for (      Figure figure : selectedFigures) {
@@ -20,7 +20,7 @@
         figure.changed();
       }
     }
-    public void redo(){
+    @Override public void redo(){
       super.redo();
       for (      Figure figure : selectedFigures) {
         restoreData.add(figure.getAttributesRestoreData());

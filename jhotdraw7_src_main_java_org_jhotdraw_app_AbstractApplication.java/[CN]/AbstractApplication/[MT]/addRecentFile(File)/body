@@ -1,5 +1,5 @@
 {
-  java.util.List<File> oldValue=(java.util.List<File>)recentFiles.clone();
+  @SuppressWarnings("unchecked") java.util.List<File> oldValue=(java.util.List<File>)recentFiles.clone();
   if (recentFiles.contains(file)) {
     recentFiles.remove(file);
   }

@@ -1,6 +1,0 @@
-DrawingEditor editor
-AttributeKey attributeKey
-java.util.List<ColorIcon> swatches
-int columnCount
-String labelKey
-ResourceBundleUtil labels

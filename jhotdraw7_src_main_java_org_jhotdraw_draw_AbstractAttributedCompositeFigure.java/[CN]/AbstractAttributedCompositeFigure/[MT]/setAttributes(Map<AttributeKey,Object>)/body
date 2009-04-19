@@ -1,6 +1,5 @@
 {
   for (  Map.Entry<AttributeKey,Object> entry : map.entrySet()) {
-    setAttribute(entry.getKey(),entry.getValue());
+    entry.getKey().basicSet(this,entry.getValue());
   }
-  fireAttributeChanged(null,false,true);
 }

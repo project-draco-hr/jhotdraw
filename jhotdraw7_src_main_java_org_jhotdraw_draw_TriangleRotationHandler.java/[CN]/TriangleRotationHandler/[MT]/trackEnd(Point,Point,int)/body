@@ -1,5 +1,5 @@
 {
   if (newValue != oldValue) {
-    fireUndoableEditHappened(new AttributeChangeEdit(getOwner(),ORIENTATION,oldValue,newValue));
+    fireUndoableEditHappened(new AttributeChangeEdit<AttributeKeys.Orientation>(getOwner(),ORIENTATION,oldValue,newValue));
   }
 }

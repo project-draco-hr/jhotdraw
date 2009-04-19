@@ -1,5 +1,5 @@
 {
-  LinkedList list=new LinkedList<Figure>();
+  LinkedList<Figure> list=new LinkedList<Figure>();
   BufferedReader r=new BufferedReader(new InputStreamReader(in,"UTF8"));
   if (isMultiline) {
     TextHolderFigure figure=(TextHolderFigure)prototype.clone();

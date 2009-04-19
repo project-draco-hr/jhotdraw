@@ -37,7 +37,7 @@ case 1:
       p.add(opacityPopupButton,gbc);
       opacitySlider.setUI((SliderUI)PaletteSliderUI.createUI(opacitySlider));
       opacitySlider.setScaleFactor(100d);
-      new FigureAttributeEditorHandler(FILL_OPACITY,opacitySlider,editor);
+      new FigureAttributeEditorHandler<Double>(FILL_OPACITY,opacitySlider,editor);
     }
   break;
 case 2:
@@ -59,7 +59,7 @@ case 2:
   AbstractButton btn;
   Map<AttributeKey,Object> defaultAttributes=new HashMap<AttributeKey,Object>();
   FILL_GRADIENT.set(defaultAttributes,null);
-  JAttributeTextField colorField=new JAttributeTextField();
+  JAttributeTextField<Color> colorField=new JAttributeTextField<Color>();
   colorField.setColumns(7);
   colorField.setToolTipText(labels.getString("attribute.fillColor.toolTipText"));
   colorField.putClientProperty("Palette.Component.segmentPosition","first");
@@ -80,7 +80,7 @@ case 2:
   gbc.gridwidth=2;
   gbc.anchor=GridBagConstraints.FIRST_LINE_START;
   p1.add(btn,gbc);
-  JAttributeTextField opacityField=new JAttributeTextField();
+  JAttributeTextField<Double> opacityField=new JAttributeTextField<Double>();
   opacityField.setColumns(3);
   opacityField.setToolTipText(labels.getString("attribute.fillOpacity.toolTipText"));
   opacityField.putClientProperty("Palette.Component.segmentPosition","first");
@@ -111,7 +111,7 @@ case 2:
   p2.add(opacityPopupButton,gbc);
   opacitySlider.setUI((SliderUI)PaletteSliderUI.createUI(opacitySlider));
   opacitySlider.setScaleFactor(100d);
-  new FigureAttributeEditorHandler(FILL_OPACITY,opacitySlider,editor);
+  new FigureAttributeEditorHandler<Double>(FILL_OPACITY,opacitySlider,editor);
   gbc=new GridBagConstraints();
   gbc.gridy=0;
   gbc.anchor=GridBagConstraints.FIRST_LINE_START;

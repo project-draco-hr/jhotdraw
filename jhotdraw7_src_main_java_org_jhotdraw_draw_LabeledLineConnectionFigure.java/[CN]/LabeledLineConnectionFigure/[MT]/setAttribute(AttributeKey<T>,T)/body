@@ -1,0 +1,10 @@
+{
+  super.setAttribute(key,newValue);
+  if (isAttributeEnabled(key)) {
+    if (children != null) {
+      for (      Figure child : children) {
+        key.basicSet(child,newValue);
+      }
+    }
+  }
+}

@@ -37,7 +37,7 @@ case 2:
   GridBagConstraints gbc;
   AbstractButton btn;
   p.setBorder(new EmptyBorder(5,5,5,8));
-  JAttributeTextField opacityField=new JAttributeTextField();
+  JAttributeTextField<Double> opacityField=new JAttributeTextField<Double>();
   opacityField.setColumns(3);
   opacityField.setToolTipText(labels.getString("attribute.figureOpacity.toolTipText"));
   opacityField.setHorizontalAlignment(JAttributeTextField.RIGHT);

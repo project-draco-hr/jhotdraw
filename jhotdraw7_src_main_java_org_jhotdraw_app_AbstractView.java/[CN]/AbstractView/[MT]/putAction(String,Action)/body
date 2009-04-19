@@ -1,6 +1,6 @@
 {
   if (actions == null) {
-    actions=new HashMap();
+    actions=new HashMap<String,Action>();
   }
   if (action == null) {
     actions.remove(id);

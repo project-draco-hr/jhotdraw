@@ -1,0 +1,5 @@
+{
+  for (  Figure child : getChildren()) {
+    key.basicSet(child,newValue);
+  }
+}

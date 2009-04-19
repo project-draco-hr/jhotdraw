@@ -1,7 +1,7 @@
 {
   JComponent c=p.getComponent();
   if (getModel() != null) {
-    LinkedList<Action> toolBarActions=new LinkedList();
+    LinkedList<Action> toolBarActions=new LinkedList<Action>();
     int id=0;
     for (    JToolBar tb : new ReversedList<JToolBar>(getModel().createToolBars(this,p))) {
       id++;

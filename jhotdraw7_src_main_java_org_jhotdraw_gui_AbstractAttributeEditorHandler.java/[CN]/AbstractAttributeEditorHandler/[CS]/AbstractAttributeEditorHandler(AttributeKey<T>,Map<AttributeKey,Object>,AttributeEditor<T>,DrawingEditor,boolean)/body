@@ -1,6 +1,6 @@
 {
   eventHandler=new EventHandler();
-  this.defaultAttributes=defaultAttributes == null ? Collections.EMPTY_MAP : defaultAttributes;
+  this.defaultAttributes=(Map<AttributeKey,Object>)((defaultAttributes == null) ? Collections.emptyMap() : defaultAttributes);
   attributeEditor.setAttributeValue(key.getDefaultValue());
   setAttributeKey(key);
   setAttributeEditor(attributeEditor);
