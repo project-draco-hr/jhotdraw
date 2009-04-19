@@ -1,6 +1,6 @@
 {
   DefaultDrawing drawing=new DefaultDrawing();
-  drawing.addInputFormat(new DOMStorableInputOutputFormat(new QuickAndDirtyDOMFactory()));
-  drawing.addOutputFormat(new DOMStorableInputOutputFormat(new QuickAndDirtyDOMFactory()));
+  drawing.addInputFormat(new SerializationInputOutputFormat());
+  drawing.addOutputFormat(new SerializationInputOutputFormat());
   return drawing;
 }

@@ -1,0 +1,11 @@
+{
+  BufferedOutputStream out=new BufferedOutputStream(new FileOutputStream(file));
+  try {
+    write(out,drawing);
+  }
+  finally {
+    if (out != null) {
+      out.close();
+    }
+  }
+}

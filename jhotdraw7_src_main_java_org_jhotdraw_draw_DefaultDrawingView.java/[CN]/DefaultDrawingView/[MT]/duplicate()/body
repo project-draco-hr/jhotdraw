@@ -13,7 +13,7 @@
     drawing.add(d);
   }
   for (  Figure f : duplicates) {
-    f.remap(originalToDuplicateMap);
+    f.remap(originalToDuplicateMap,false);
   }
   addToSelection(duplicates);
   getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
