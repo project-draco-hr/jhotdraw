@@ -1,7 +1,7 @@
 {
   T value=get(f);
   try {
-    return value == null ? null : (T)Methods.invoke(value,"clone");
+    return value == null ? null : clazz.cast(Methods.invoke(value,"clone"));
   }
  catch (  NoSuchMethodException ex) {
     InternalError e=new InternalError();

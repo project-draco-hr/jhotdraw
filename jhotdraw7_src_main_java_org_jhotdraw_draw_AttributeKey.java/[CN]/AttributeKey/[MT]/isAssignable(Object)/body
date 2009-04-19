@@ -2,11 +2,5 @@
   if (value == null) {
     return isNullValueAllowed();
   }
-  try {
-    T a=(T)value;
-    return true;
-  }
- catch (  ClassCastException e) {
-    return false;
-  }
+  return clazz.isInstance(value);
 }

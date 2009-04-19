@@ -1,4 +1,5 @@
 String key
+Class<T> clazz
 T defaultValue
 boolean isNullValueAllowed
 ResourceBundleUtil labels
