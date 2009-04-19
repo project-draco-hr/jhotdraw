@@ -3,13 +3,13 @@
     public void run(){
       ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
       DrawingView view1=new DefaultDrawingView();
-      view1.setDrawing(new DefaultDrawing());
+      view1.setDrawing(createDrawing());
       DrawingView view2=new DefaultDrawingView();
-      view2.setDrawing(new DefaultDrawing());
+      view2.setDrawing(createDrawing());
       DrawingView view3=new DefaultDrawingView();
-      view3.setDrawing(new DefaultDrawing());
+      view3.setDrawing(createDrawing());
       DrawingView view4=new DefaultDrawingView();
-      view4.setDrawing(new DefaultDrawing());
+      view4.setDrawing(createDrawing());
       DrawingEditor editor=new DefaultDrawingEditor();
       editor.add(view1);
       editor.add(view2);

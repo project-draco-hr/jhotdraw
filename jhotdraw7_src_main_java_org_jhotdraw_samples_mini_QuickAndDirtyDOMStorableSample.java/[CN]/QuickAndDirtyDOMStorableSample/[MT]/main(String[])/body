@@ -1,0 +1,19 @@
+{
+  try {
+    MyObject obj=new MyObject("Hello World");
+    System.out.println("The name of the original object is:" + obj.getName());
+    NanoXMLDOMOutput out=new NanoXMLDOMOutput(new QuickAndDirtyDOMFactory());
+    out.writeObject(obj);
+    StringWriter writer=new StringWriter();
+    out.save(writer);
+    String serializedString=writer.toString();
+    System.out.println("\nThe serialized representation of the object is:\n" + serializedString);
+    StringReader reader=new StringReader(serializedString);
+    NanoXMLDOMInput in=new NanoXMLDOMInput(new QuickAndDirtyDOMFactory(),reader);
+    MyObject obj2=(MyObject)in.readObject();
+    System.out.println("\nThe name of the restored object is:" + obj2.getName());
+  }
+ catch (  IOException ex) {
+    Logger.getLogger(QuickAndDirtyDOMStorableSample.class.getName()).log(Level.SEVERE,null,ex);
+  }
+}
