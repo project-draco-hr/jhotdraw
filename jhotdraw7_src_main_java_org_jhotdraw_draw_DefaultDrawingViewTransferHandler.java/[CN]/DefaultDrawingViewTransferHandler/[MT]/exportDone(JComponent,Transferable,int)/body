@@ -7,14 +7,13 @@
     final Drawing drawing=view.getDrawing();
     if (action == MOVE) {
       final LinkedList<CompositeFigureEvent> deletionEvents=new LinkedList<CompositeFigureEvent>();
-      final LinkedList<Figure> selectedFigures=new LinkedList<Figure>(view.getSelectedFigures());
+      final LinkedList<Figure> selectedFigures=new LinkedList<Figure>(exportedFigures);
       for (      Figure f : selectedFigures) {
         if (!f.isRemovable()) {
           source.getToolkit().beep();
           return;
         }
       }
-      view.clearSelection();
       CompositeFigureListener removeListener=new CompositeFigureListener(){
         public void areaInvalidated(        CompositeFigureEvent e){
         }
@@ -55,4 +54,5 @@
  else {
     super.exportDone(source,data,action);
   }
+  exportedFigures=null;
 }

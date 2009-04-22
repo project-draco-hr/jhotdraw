@@ -1,0 +1,2 @@
+DrawingView view
+java.util.Set<Figure> transferFigures
