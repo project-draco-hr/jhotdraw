@@ -1,5 +1,5 @@
 {
-  Tool newTracker=createAreaTracker();
+  Tool newTracker=getSelectAreaTracker();
   if (newTracker != null) {
     if (tracker != null) {
       tracker.deactivate(getEditor());

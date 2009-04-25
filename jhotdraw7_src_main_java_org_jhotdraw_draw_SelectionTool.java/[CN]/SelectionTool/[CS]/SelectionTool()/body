@@ -1,4 +1,4 @@
 {
-  tracker=createAreaTracker();
+  tracker=getSelectAreaTracker();
   tracker.addToolListener(this);
 }

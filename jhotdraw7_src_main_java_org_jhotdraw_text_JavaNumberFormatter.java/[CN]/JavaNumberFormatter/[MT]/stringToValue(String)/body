@@ -1,5 +1,5 @@
 {
-  if ((text == null || text.length() == 0) && getAppendsDotZero()) {
+  if ((text == null || text.length() == 0) && isAllowsNullValue()) {
     return null;
   }
   Class valueClass=getValueClass();

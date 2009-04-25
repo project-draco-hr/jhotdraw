@@ -16,7 +16,7 @@
       drawing.add(tb);
       drawing.add(tc);
       drawing.add(cf);
-      JFrame f=new JFrame("My Drawing");
+      JFrame f=new JFrame("'Smart' ConnectionFigure Sample");
       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       f.setSize(400,300);
       DrawingView view=new DefaultDrawingView();

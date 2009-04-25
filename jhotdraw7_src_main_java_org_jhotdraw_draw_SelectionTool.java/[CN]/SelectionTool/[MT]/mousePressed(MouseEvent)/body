@@ -5,7 +5,7 @@
     Handle handle=view.findHandle(anchor);
     Tool newTracker=null;
     if (handle != null) {
-      newTracker=createHandleTracker(handle);
+      newTracker=getHandleTracker(handle);
     }
  else {
       Figure figure;
@@ -41,14 +41,14 @@
         }
       }
       if (figure != null && figure.isSelectable()) {
-        newTracker=createDragTracker(figure);
+        newTracker=getDragTracker(figure);
       }
  else {
         if (!evt.isShiftDown()) {
           view.clearSelection();
           view.setHandleDetailLevel(0);
         }
-        newTracker=createAreaTracker();
+        newTracker=getSelectAreaTracker();
       }
     }
     if (newTracker != null) {

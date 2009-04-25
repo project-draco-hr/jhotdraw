@@ -1,7 +1,7 @@
 {
   double oldValue=scaleFactor;
   scaleFactor=newValue;
-  fireViewTransformChanged();
+  validateViewTranslation();
   firePropertyChange("scaleFactor",oldValue,newValue);
   invalidateDimension();
   invalidate();

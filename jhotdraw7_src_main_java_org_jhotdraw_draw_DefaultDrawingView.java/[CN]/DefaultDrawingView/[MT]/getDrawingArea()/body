@@ -1,9 +1,10 @@
 {
   if (cachedDrawingArea == null) {
-    cachedDrawingArea=new Rectangle2D.Double();
     if (drawing != null) {
       cachedDrawingArea=drawing.getDrawingArea();
-      cachedDrawingArea.add(0d,0d);
+    }
+ else {
+      cachedDrawingArea=new Rectangle2D.Double();
     }
   }
   return (Rectangle2D.Double)cachedDrawingArea.clone();

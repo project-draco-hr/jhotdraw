@@ -20,5 +20,6 @@
   DrawingView temp=editor.getActiveView();
   editor.setActiveView(view);
   canvasToolBar.setEditor(editor);
+  viewToolBar.setEditor(editor);
   editor.setActiveView(temp);
 }

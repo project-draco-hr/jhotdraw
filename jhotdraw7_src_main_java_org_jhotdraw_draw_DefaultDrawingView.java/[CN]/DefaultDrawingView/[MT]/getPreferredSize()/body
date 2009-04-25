@@ -1,15 +1,16 @@
 {
   if (cachedPreferredSize == null) {
-    double oldTx=translate.x;
-    double oldTy=translate.y;
     Rectangle2D.Double r=getDrawingArea();
-    translate.x=Math.min(0,r.x);
-    translate.y=Math.min(0,r.y);
-    cachedPreferredSize=new Dimension((int)((r.width + 10 - translate.x) * scaleFactor),(int)((r.height + 10 - translate.y) * scaleFactor));
-    fireViewTransformChanged();
-    if (oldTx != translate.x || oldTy != translate.y) {
-      repaint();
+    Double cw=getDrawing() == null ? null : CANVAS_WIDTH.get(getDrawing());
+    Double ch=getDrawing() == null ? null : CANVAS_HEIGHT.get(getDrawing());
+    Insets insets=getInsets();
+    if (cw == null || ch == null) {
+      cachedPreferredSize=new Dimension((int)((Math.max(0,r.x) + r.width) * scaleFactor) + insets.left + insets.right,(int)((Math.max(0,r.y) + r.height) * scaleFactor) + insets.top + insets.bottom);
     }
+ else {
+      cachedPreferredSize=new Dimension((int)(Math.max((Math.max(0,r.x) + r.width),cw) * scaleFactor) + insets.left + insets.right,(int)(Math.max((Math.max(0,r.y) + r.height),ch) * scaleFactor) + insets.top + insets.bottom);
+    }
+    validateViewTranslation();
   }
-  return cachedPreferredSize;
+  return (Dimension)cachedPreferredSize.clone();
 }

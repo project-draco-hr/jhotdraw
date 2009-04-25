@@ -16,6 +16,7 @@
   figureToolBar=new org.jhotdraw.samples.svg.gui.FigureToolBar();
   linkToolBar=new org.jhotdraw.samples.svg.gui.LinkToolBar();
   canvasToolBar=new org.jhotdraw.samples.svg.gui.CanvasToolBar();
+  viewToolBar=new org.jhotdraw.samples.svg.gui.ViewToolBar();
   setBackground(new java.awt.Color(255,255,255));
   setLayout(new java.awt.BorderLayout());
   scrollPane.setBorder(null);
@@ -42,6 +43,8 @@
   linkToolBar.setRollover(true);
   toolsPane.add(linkToolBar);
   toolsPane.add(canvasToolBar);
+  viewToolBar.setRollover(true);
+  toolsPane.add(viewToolBar);
   toolsScrollPane.setViewportView(toolsPane);
   gridBagConstraints=new java.awt.GridBagConstraints();
   gridBagConstraints.fill=java.awt.GridBagConstraints.BOTH;

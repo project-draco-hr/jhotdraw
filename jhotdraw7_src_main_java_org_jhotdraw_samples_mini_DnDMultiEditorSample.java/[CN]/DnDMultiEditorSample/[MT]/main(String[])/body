@@ -16,15 +16,8 @@
       editor.add(view3);
       editor.add(view4);
       JToolBar tb=new JToolBar();
-      DelegationSelectionTool selectionTool=new DelegationSelectionTool(){
-        /** 
- * Factory method to create a Drag tracker. It is used to drag a figure.
- */
-        @Override protected Tool createDragTracker(        Figure f){
-          return new DnDTracker(f);
-        }
-      }
-;
+      SelectionTool selectionTool=new SelectionTool();
+      selectionTool.setDragTracker(new DnDTracker());
       ButtonFactory.addSelectionToolTo(tb,editor,selectionTool);
       ButtonFactory.addToolTo(tb,editor,new CreationTool(new RectangleFigure()),"edit.createRectangle",labels);
       tb.setOrientation(JToolBar.VERTICAL);
