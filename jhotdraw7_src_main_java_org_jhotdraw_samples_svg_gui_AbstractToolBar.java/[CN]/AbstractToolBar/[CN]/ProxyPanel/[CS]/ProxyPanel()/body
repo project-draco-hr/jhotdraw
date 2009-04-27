@@ -1,4 +1,5 @@
 {
   setOpaque(false);
+  setBackground(Color.GREEN);
   setLayout(new FlowLayout(FlowLayout.LEFT,1,1));
 }

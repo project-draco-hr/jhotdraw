@@ -26,7 +26,9 @@
   gbc.gridx=0;
   gbc.insets=new Insets(0,1,0,1);
   gbc.anchor=GridBagConstraints.SOUTHWEST;
+  gbc.fill=GridBagConstraints.NONE;
   gbc.weighty=1d;
+  gbc.weightx=1d;
   add(btn,gbc);
   putClientProperty(PaletteToolBarUI.TOOLBAR_INSETS_OVERRIDE_PROPERTY,new Insets(0,0,0,0));
   putClientProperty(PaletteToolBarUI.TOOLBAR_ICON_PROPERTY,new EmptyIcon(10,8));

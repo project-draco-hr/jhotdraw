@@ -13,7 +13,6 @@
   }
   String fontName=f.getFontName();
   if (!fontName.equals(str) && !fontName.equals(str + "-Derived")) {
-    System.out.println("FontFormatter " + str + " != "+ f.getFontName());
     throw new ParseException(str,0);
   }
   return f;

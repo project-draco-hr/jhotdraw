@@ -29,11 +29,11 @@
       drawing.removeCompositeFigureListener(removeListener);
       drawing.removeAll(selectedFigures);
       drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
-        public String getPresentationName(){
+        @Override public String getPresentationName(){
           ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
           return labels.getString("edit.delete.text");
         }
-        public void undo() throws CannotUndoException {
+        @Override public void undo() throws CannotUndoException {
           super.undo();
           view.clearSelection();
           for (          CompositeFigureEvent evt : deletionEvents) {
@@ -41,7 +41,7 @@
           }
           view.addToSelection(selectedFigures);
         }
-        public void redo() throws CannotRedoException {
+        @Override public void redo() throws CannotRedoException {
           super.redo();
           for (          CompositeFigureEvent evt : new ReversedList<CompositeFigureEvent>(deletionEvents)) {
             drawing.remove(evt.getChildFigure());

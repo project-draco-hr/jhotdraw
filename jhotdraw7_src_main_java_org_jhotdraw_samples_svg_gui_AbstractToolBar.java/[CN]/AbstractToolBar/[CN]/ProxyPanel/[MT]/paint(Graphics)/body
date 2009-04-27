@@ -4,14 +4,27 @@
   if (runner == null) {
     runner=new Runnable(){
       public void run(){
-        panels[state]=createDisclosedComponent(state);
+        try {
+          panels[state]=createDisclosedComponent(state);
+        }
+ catch (        Throwable t) {
+          t.printStackTrace();
+          panels[state]=null;
+        }
         JComponent parent=(JComponent)getParent();
-        if (getDisclosureState() == state && parent != null) {
+        if (parent != null) {
           GridBagLayout layout=(GridBagLayout)parent.getLayout();
           GridBagConstraints gbc=layout.getConstraints(ProxyPanel.this);
           parent.remove(ProxyPanel.this);
-          if (panels[state] != null) {
-            parent.add(panels[state],gbc);
+          if (getDisclosureState() == state) {
+            if (panels[state] != null) {
+              parent.add(panels[state],gbc);
+            }
+ else {
+              JPanel empty=new JPanel(new BorderLayout());
+              empty.setOpaque(false);
+              parent.add(empty,gbc);
+            }
           }
           parent.revalidate();
           ((JComponent)parent.getRootPane().getContentPane()).revalidate();

@@ -1,19 +1,21 @@
 {
   Graphics2D g=(Graphics2D)gr;
   super.paintIcon(c,g,x,y);
-  Double opacity;
-  Color fillColor;
-  Color strokeColor;
-  DrawingView view=editor.getActiveView();
-  if (view != null && view.getDrawing() != null) {
-    opacity=opacityKey.get(view.getDrawing());
-    fillColor=(fillColorKey == null) ? null : fillColorKey.get(view.getDrawing());
-    strokeColor=(strokeColorKey == null) ? null : strokeColorKey.get(view.getDrawing());
-  }
+  Double opacity=0d;
+  Color fillColor=null;
+  Color strokeColor=null;
+  if (editor != null) {
+    DrawingView view=editor.getActiveView();
+    if (view != null && view.getDrawing() != null) {
+      opacity=opacityKey.get(view.getDrawing());
+      fillColor=(fillColorKey == null) ? null : fillColorKey.get(view.getDrawing());
+      strokeColor=(strokeColorKey == null) ? null : strokeColorKey.get(view.getDrawing());
+    }
  else {
-    opacity=opacityKey.get(editor.getDefaultAttributes());
-    fillColor=(fillColorKey == null) ? null : fillColorKey.get(editor.getDefaultAttributes());
-    strokeColor=(strokeColorKey == null) ? null : strokeColorKey.get(editor.getDefaultAttributes());
+      opacity=opacityKey.get(editor.getDefaultAttributes());
+      fillColor=(fillColorKey == null) ? null : fillColorKey.get(editor.getDefaultAttributes());
+      strokeColor=(strokeColorKey == null) ? null : strokeColorKey.get(editor.getDefaultAttributes());
+    }
   }
   if (fillColorKey != null && fillShape != null) {
     if (opacity != null) {

@@ -31,6 +31,8 @@
   popupButton.setIcon(icon);
   popupButton.setDisabledIcon(icon);
   popupButton.setFocusable(false);
-  editor.addPropertyChangeListener(new SelectionComponentRepainter(editor,popupButton));
+  if (editor != null) {
+    editor.addPropertyChangeListener(new SelectionComponentRepainter(editor,popupButton));
+  }
   return popupButton;
 }

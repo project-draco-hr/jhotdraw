@@ -1,3 +1,3 @@
 {
-  return (view != null) ? view : editor.getActiveView();
+  return (view != null) ? view : ((editor != null) ? editor.getActiveView() : null);
 }
