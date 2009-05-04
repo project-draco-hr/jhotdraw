@@ -1,0 +1,13 @@
+{
+  if (npoints > xpoints.length || npoints > ypoints.length) {
+    throw new IndexOutOfBoundsException("npoints > xpoints.length || " + "npoints > ypoints.length");
+  }
+  if (npoints < 0) {
+    throw new NegativeArraySizeException("npoints < 0");
+  }
+  this.npoints=npoints;
+  this.xpoints=new float[npoints];
+  System.arraycopy(xpoints,0,this.xpoints,0,npoints);
+  this.ypoints=new float[npoints];
+  System.arraycopy(ypoints,0,this.ypoints,0,npoints);
+}

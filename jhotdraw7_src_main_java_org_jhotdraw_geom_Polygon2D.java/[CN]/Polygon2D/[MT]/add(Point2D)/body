@@ -1,0 +1,3 @@
+{
+  addPoint(p.getX(),p.getY());
+}

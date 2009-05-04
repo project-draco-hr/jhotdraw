@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(getConvexHull(points.toArray(new Point[points.size()])));
+}

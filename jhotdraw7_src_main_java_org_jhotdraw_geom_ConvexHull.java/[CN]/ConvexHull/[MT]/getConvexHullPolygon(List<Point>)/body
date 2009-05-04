@@ -1,0 +1,7 @@
+{
+  Polygon convexHull=new Polygon();
+  for (  Point p : getConvexHull(points.toArray(new Point[points.size()]))) {
+    convexHull.addPoint(p.x,p.y);
+  }
+  return convexHull;
+}

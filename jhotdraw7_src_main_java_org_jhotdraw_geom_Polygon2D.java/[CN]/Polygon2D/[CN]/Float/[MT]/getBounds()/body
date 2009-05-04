@@ -1,0 +1,4 @@
+{
+  Polygon x;
+  throw new UnsupportedOperationException("Not supported yet.");
+}

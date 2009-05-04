@@ -1,0 +1,16 @@
+{
+  if (x < bounds.x) {
+    bounds.width=bounds.width + (bounds.x - x);
+    bounds.x=x;
+  }
+ else {
+    bounds.width=Math.max(bounds.width,x - bounds.x);
+  }
+  if (y < bounds.y) {
+    bounds.height=bounds.height + (bounds.y - y);
+    bounds.y=y;
+  }
+ else {
+    bounds.height=Math.max(bounds.height,y - bounds.y);
+  }
+}

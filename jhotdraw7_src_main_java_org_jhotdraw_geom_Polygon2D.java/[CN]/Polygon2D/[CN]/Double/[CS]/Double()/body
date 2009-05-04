@@ -1,0 +1,4 @@
+{
+  xpoints=new double[MIN_LENGTH];
+  ypoints=new double[MIN_LENGTH];
+}

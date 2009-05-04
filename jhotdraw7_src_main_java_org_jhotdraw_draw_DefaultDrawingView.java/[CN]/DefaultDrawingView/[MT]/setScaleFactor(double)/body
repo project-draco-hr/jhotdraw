@@ -3,8 +3,8 @@
   scaleFactor=newValue;
   validateViewTranslation();
   firePropertyChange("scaleFactor",oldValue,newValue);
-  invalidateDimension();
   invalidate();
+  invalidateHandles();
   if (getParent() != null) {
     getParent().validate();
   }

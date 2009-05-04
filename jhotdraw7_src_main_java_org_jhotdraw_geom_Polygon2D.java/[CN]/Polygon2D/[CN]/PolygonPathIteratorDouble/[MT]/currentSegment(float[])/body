@@ -1,0 +1,11 @@
+{
+  if (index >= poly.npoints) {
+    return SEG_CLOSE;
+  }
+  coords[0]=(float)poly.xpoints[index];
+  coords[1]=(float)poly.ypoints[index];
+  if (transform != null) {
+    transform.transform(coords,0,coords,0,1);
+  }
+  return (index == 0 ? SEG_MOVETO : SEG_LINETO);
+}

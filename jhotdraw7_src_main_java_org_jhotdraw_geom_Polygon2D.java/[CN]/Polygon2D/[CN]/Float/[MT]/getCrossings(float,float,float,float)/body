@@ -1,0 +1,16 @@
+{
+  Crossings cross=new Crossings.EvenOdd(xlo,ylo,xhi,yhi);
+  float lastx=xpoints[npoints - 1];
+  float lasty=ypoints[npoints - 1];
+  float curx, cury;
+  for (int i=0; i < npoints; i++) {
+    curx=xpoints[i];
+    cury=ypoints[i];
+    if (cross.accumulateLine(lastx,lasty,curx,cury)) {
+      return null;
+    }
+    lastx=curx;
+    lasty=cury;
+  }
+  return cross;
+}
