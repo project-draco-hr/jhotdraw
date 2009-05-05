@@ -13,7 +13,9 @@ case 1:
 default :
 {
   for (  Figure f : getFiguresFrontToBack()) {
-    if (f != ignore && f.contains(p))     return f;
+    if (f != ignore && f.contains(p)) {
+      return f;
+    }
   }
   return null;
 }

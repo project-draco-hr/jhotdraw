@@ -1,5 +1,5 @@
 {
-  double si=Math.sin(angle);
-  double co=Math.cos(angle);
+  double si=sin(angle);
+  double co=cos(angle);
   return new Point((int)(fx * co + 0.5),(int)(fy * si + 0.5));
 }

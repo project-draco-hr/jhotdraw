@@ -14,5 +14,5 @@
   double yi=ya + r * ydiff;
   double xd=xc - xi;
   double yd=yc - yi;
-  return Math.sqrt(xd * xd + yd * yd);
+  return sqrt(xd * xd + yd * yd);
 }
