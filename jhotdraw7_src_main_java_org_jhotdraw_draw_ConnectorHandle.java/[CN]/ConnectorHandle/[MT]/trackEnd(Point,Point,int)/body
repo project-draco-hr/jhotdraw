@@ -5,12 +5,12 @@
   connectableConnector=findConnectableConnector(f,p);
   if (connectableConnector != null) {
     final Drawing drawing=view.getDrawing();
-    final ConnectionFigure createdConnection=getConnection();
+    final ConnectionFigure c=getConnection();
     getConnection().setStartConnector(connector);
     getConnection().setEndConnector(connectableConnector);
     getConnection().updateConnection();
     view.clearSelection();
-    view.addToSelection(createdConnection);
+    view.addToSelection(c);
     view.getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
       @Override public String getPresentationName(){
         ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
@@ -18,19 +18,20 @@
       }
       @Override public void undo() throws CannotUndoException {
         super.undo();
-        drawing.remove(createdConnection);
+        drawing.remove(c);
       }
       @Override public void redo() throws CannotRedoException {
         super.redo();
-        drawing.add(createdConnection);
+        drawing.add(c);
         view.clearSelection();
-        view.addToSelection(createdConnection);
+        view.addToSelection(c);
       }
     }
 );
   }
  else {
     view.getDrawing().remove(getConnection());
+    fireAreaInvalidated(getDrawingArea());
   }
   connectableConnector=null;
   connectors=Collections.emptyList();

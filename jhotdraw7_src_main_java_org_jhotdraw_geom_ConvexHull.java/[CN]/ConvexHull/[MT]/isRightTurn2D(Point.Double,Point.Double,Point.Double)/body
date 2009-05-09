@@ -1,4 +1,7 @@
 {
+  if (p1.equals(p2) || p2.equals(p3)) {
+    return false;
+  }
   double val=(p2.x * p3.y + p1.x * p2.y + p3.x * p1.y) - (p2.x * p1.y + p3.x * p2.y + p1.x * p3.y);
   return val > 0;
 }
