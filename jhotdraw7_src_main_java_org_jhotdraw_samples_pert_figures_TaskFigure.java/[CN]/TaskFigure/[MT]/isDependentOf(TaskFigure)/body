@@ -1,5 +1,7 @@
 {
-  if (this == t)   return true;
+  if (this == t) {
+    return true;
+  }
   for (  TaskFigure pre : getPredecessors()) {
     if (pre.isDependentOf(t)) {
       return true;
