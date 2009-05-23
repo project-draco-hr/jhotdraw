@@ -1,6 +1,5 @@
 {
   super.init();
-  prefs=Preferences.userNodeForPackage(getClass());
   initComponents();
   JPanel zoomButtonPanel=new JPanel(new BorderLayout());
   undo=new UndoRedoManager();

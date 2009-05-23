@@ -2,7 +2,9 @@
   Object value;
   Double doubleValue;
   value=readAttribute(elem,"width",null);
-  System.out.println("SVGInputFormat READ viewport w/h factors:" + viewportStack.peek().widthPercentFactor + ","+ viewportStack.peek().heightPercentFactor);
+  if (DEBUG) {
+    System.out.println("SVGInputFormat READ viewport w/h factors:" + viewportStack.peek().widthPercentFactor + ","+ viewportStack.peek().heightPercentFactor);
+  }
   if (value != null) {
     doubleValue=toLength(elem,(String)value,viewportStack.peek().widthPercentFactor);
     VIEWPORT_WIDTH.set(a,doubleValue);

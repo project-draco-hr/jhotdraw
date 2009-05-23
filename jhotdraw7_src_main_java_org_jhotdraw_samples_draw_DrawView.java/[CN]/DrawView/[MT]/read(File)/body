@@ -13,7 +13,7 @@
       }
     }
     if (!success) {
-      ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+      ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
       throw new IOException(labels.getFormatted("file.open.unsupportedFileFormat.message",f.getName()));
     }
     SwingUtilities.invokeAndWait(new Runnable(){

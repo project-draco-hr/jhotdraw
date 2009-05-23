@@ -1,0 +1,4 @@
+{
+  Float value=(Float)getPopupMenu().getClientProperty("Quaqua.PopupMenu.alpha");
+  return (value == null) ? 0.75f : value.floatValue();
+}

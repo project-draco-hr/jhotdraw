@@ -1,5 +1,6 @@
 {
   final JPopupButton popupButton=new JPopupButton();
+  popupButton.setPopupAlpha(1f);
   if (defaultAttributes == null) {
     defaultAttributes=new HashMap<AttributeKey,Object>();
   }

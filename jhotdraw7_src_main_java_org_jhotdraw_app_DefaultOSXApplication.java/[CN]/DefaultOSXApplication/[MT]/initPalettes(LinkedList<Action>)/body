@@ -11,6 +11,9 @@
         tb.setOrientation(JToolBar.VERTICAL);
         tb.setFocusable(false);
         JFrame d=new JFrame();
+        d.getRootPane().putClientProperty("Window.style","small");
+        d.getRootPane().putClientProperty("Quaqua.RootPane.isVertical",Boolean.FALSE);
+        d.getRootPane().putClientProperty("Quaqua.RootPane.isPalette",Boolean.TRUE);
         d.setFocusable(false);
         d.setResizable(false);
         d.getContentPane().setLayout(new BorderLayout());
@@ -19,8 +22,6 @@
         d.setUndecorated(true);
         d.getRootPane().setWindowDecorationStyle(JRootPane.FRAME);
         d.getRootPane().setFont(new Font("Lucida Grande",Font.PLAIN,11));
-        d.getRootPane().putClientProperty("Quaqua.RootPane.isVertical",Boolean.FALSE);
-        d.getRootPane().putClientProperty("Quaqua.RootPane.isPalette",Boolean.TRUE);
         d.setJMenuBar(createMenuBar(null));
         d.pack();
         d.setFocusableWindowState(false);

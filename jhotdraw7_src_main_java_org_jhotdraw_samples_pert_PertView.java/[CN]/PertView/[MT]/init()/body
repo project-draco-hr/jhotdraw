@@ -30,7 +30,6 @@
   labels.configureToolBarButton(pButton,"view.toggleGrid.placard");
   placardPanel.add(pButton,BorderLayout.EAST);
   scrollPane.add(placardPanel,JScrollPane.LOWER_LEFT_CORNER);
-  prefs=Preferences.userNodeForPackage(getClass());
-  setGridVisible(prefs.getBoolean("view.gridVisible",false));
-  setScaleFactor(prefs.getDouble("view.scaleFactor",1d));
+  setGridVisible(preferences.getBoolean("view.gridVisible",false));
+  setScaleFactor(preferences.getDouble("view.scaleFactor",1d));
 }

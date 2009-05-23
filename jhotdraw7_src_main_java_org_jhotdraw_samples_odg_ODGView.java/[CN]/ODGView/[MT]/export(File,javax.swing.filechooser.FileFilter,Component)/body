@@ -4,6 +4,6 @@
     f=new File(f.getPath() + "." + format.getFileExtension());
   }
   format.write(f,view.getDrawing());
-  prefs.put("viewExportFile",f.getPath());
-  prefs.put("viewExportFormat",filter.getDescription());
+  preferences.put("viewExportFile",f.getPath());
+  preferences.put("viewExportFormat",filter.getDescription());
 }

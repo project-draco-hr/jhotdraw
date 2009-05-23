@@ -1,6 +1,5 @@
 {
   super.init();
-  prefs=Preferences.userNodeForPackage(getClass());
   initComponents();
   JPanel zoomButtonPanel=new JPanel(new BorderLayout());
   scrollPane.setLayout(new PlacardScrollPaneLayout());
@@ -31,6 +30,6 @@
   labels.configureToolBarButton(pButton,"view.toggleGrid.placard");
   placardPanel.add(pButton,BorderLayout.EAST);
   scrollPane.add(placardPanel,JScrollPane.LOWER_LEFT_CORNER);
-  propertiesPanel.setVisible(prefs.getBoolean("propertiesPanelVisible",false));
+  propertiesPanel.setVisible(preferences.getBoolean("propertiesPanelVisible",false));
   propertiesPanel.setView(view);
 }

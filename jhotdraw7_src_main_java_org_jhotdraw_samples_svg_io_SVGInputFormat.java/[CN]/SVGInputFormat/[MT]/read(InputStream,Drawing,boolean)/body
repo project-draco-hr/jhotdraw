@@ -47,7 +47,7 @@
   flattenStyles(svg);
   readElement(svg);
   long end=System.currentTimeMillis();
-  if (true) {
+  if (DEBUG) {
     System.out.println("SVGInputFormat elapsed:" + (end - start));
   }
   if (replace) {

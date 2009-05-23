@@ -2,6 +2,6 @@
   boolean oldValue=propertiesPanel.isVisible();
   propertiesPanel.setVisible(newValue);
   firePropertyChange("propertiesPanelVisible",oldValue,newValue);
-  prefs.putBoolean("propertiesPanelVisible",newValue);
+  preferences.putBoolean("propertiesPanelVisible",newValue);
   validate();
 }
