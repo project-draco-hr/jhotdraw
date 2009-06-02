@@ -1,7 +1,9 @@
 {
-  SVGView v=(SVGView)p;
+  SVGView v=(SVGView)view;
   if (a.isSharingToolsAmongViews()) {
     v.setEditor(getSharedEditor());
   }
-  p.putAction(SelectSameAction.ID,new SelectSameAction(v.getEditor()));
+  AbstractSelectedAction action;
+  view.putAction(SelectSameAction.ID,action=new SelectSameAction(v.getEditor()));
+  view.addDisposable(action);
 }

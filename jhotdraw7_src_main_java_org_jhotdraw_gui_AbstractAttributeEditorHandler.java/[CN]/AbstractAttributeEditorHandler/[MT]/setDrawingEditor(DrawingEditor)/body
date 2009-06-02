@@ -5,7 +5,7 @@
   }
   this.drawingEditor=newValue;
   if (drawingEditor != null) {
-    drawingEditor.addPropertyChangeListener(eventHandler);
+    drawingEditor.addPropertyChangeListener(new WeakPropertyChangeListener(eventHandler));
   }
   updateActiveView();
 }

@@ -1,7 +1,6 @@
 {
   String name=evt.getPropertyName();
   if (name == DrawingEditor.ACTIVE_VIEW_PROPERTY) {
-    DrawingView view=(DrawingView)evt.getOldValue();
     if (view != null) {
       view.removePropertyChangeListener(this);
       view.removeFigureSelectionListener(this);

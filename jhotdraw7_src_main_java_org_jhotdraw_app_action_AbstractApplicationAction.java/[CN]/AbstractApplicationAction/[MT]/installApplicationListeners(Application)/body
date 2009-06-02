@@ -2,5 +2,5 @@
   if (applicationListener == null) {
     applicationListener=createApplicationListener();
   }
-  app.addPropertyChangeListener(applicationListener);
+  app.addPropertyChangeListener(new WeakPropertyChangeListener(applicationListener));
 }

@@ -1,0 +1,3 @@
+{
+  this.weakRef=new WeakReference<PropertyChangeListener>(target);
+}

@@ -15,4 +15,5 @@
   XMLWriter xmlWriter=new XMLWriter(writer);
   xmlWriter.write(document,isPrettyPrint);
   writer.flush();
+  document.dispose();
 }

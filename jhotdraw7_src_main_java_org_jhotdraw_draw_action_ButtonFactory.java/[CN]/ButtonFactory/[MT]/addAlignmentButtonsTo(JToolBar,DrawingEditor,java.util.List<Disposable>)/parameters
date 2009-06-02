@@ -1,0 +1,3 @@
+JToolBar bar
+DrawingEditor editor
+java.util.List<Disposable> dsp

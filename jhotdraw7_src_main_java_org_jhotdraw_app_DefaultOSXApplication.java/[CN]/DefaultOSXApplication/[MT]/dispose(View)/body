@@ -1,0 +1,7 @@
+{
+  FocusAction a=(FocusAction)p.getAction(FocusAction.ID);
+  if (a != null) {
+    a.dispose();
+  }
+  super.dispose(p);
+}

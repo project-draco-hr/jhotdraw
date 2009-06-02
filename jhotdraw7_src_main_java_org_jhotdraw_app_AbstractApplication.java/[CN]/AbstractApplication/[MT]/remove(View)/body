@@ -1,4 +1,7 @@
 {
+  if (p == activeView) {
+    setActiveView(null);
+  }
   hide(p);
   int oldCount=views.size();
   views.remove(p);

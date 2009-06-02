@@ -6,7 +6,7 @@
   svgPanel.setDrawing(createDrawing());
   svgPanel.getDrawing().addUndoableEditListener(undo);
   initActions();
-  undo.addPropertyChangeListener(new PropertyChangeListener(){
+  undo.addPropertyChangeListener(propertyHandler=new PropertyChangeListener(){
     public void propertyChange(    PropertyChangeEvent evt){
       setHasUnsavedChanges(undo.hasSignificantEdits());
     }

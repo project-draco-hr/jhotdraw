@@ -3,4 +3,17 @@
     executor.shutdown();
     executor=null;
   }
+  if (openChooser != null) {
+    openChooser=null;
+  }
+  if (saveChooser != null) {
+    saveChooser=null;
+  }
+  if (disposables != null) {
+    for (    Disposable d : disposables) {
+      d.dispose();
+    }
+    disposables=null;
+  }
+  removeAll();
 }

@@ -1,12 +1,11 @@
 {
   if (editor != null) {
-    if (editor.getActiveView() != null) {
-      DrawingView view=editor.getActiveView();
-      view.removePropertyChangeListener(this);
-      view.removeFigureSelectionListener(this);
-    }
     editor.removePropertyChangeListener(this);
     editor=null;
   }
-  component=null;
+  if (view != null) {
+    view.removePropertyChangeListener(this);
+    view.removeFigureSelectionListener(this);
+    view=null;
+  }
 }

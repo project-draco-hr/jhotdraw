@@ -17,9 +17,13 @@
   fontToolBar.setEditor(editor);
   figureToolBar.setEditor(editor);
   linkToolBar.setEditor(editor);
-  DrawingView temp=editor.getActiveView();
-  editor.setActiveView(view);
+  DrawingView temp=(editor == null) ? null : editor.getActiveView();
+  if (editor != null) {
+    editor.setActiveView(view);
+  }
   canvasToolBar.setEditor(editor);
   viewToolBar.setEditor(editor);
-  editor.setActiveView(temp);
+  if (editor != null) {
+    editor.setActiveView(temp);
+  }
 }

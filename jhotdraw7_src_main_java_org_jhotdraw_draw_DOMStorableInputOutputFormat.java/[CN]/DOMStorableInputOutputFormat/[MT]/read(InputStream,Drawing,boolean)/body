@@ -6,4 +6,5 @@
   }
   drawing.read(domi);
   domi.closeElement();
+  domi.dispose();
 }

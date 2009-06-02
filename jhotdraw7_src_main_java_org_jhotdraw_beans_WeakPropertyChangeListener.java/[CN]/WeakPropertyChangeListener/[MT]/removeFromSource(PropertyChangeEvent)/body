@@ -1,0 +1,11 @@
+{
+  Object src=event.getSource();
+  try {
+    src.getClass().getMethod("removePropertyChangeListener",new Class[]{PropertyChangeListener.class}).invoke(src,this);
+  }
+ catch (  Exception ex) {
+    InternalError ie=new InternalError("Could not remove WeakPropertyChangeListener from " + src + ".");
+    ie.initCause(ex);
+    throw ie;
+  }
+}

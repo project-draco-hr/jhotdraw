@@ -1,6 +1,6 @@
 {
   if (editor != null) {
-    editor.removePropertyChangeListener(propertyChangeHandler);
+    editor.removePropertyChangeListener(new WeakPropertyChangeListener(propertyChangeHandler));
   }
   editor=newValue;
   if (editor != null) {

@@ -1,3 +1,3 @@
 {
-  return app.isEnabled() && enabled;
+  return app != null && app.isEnabled() && enabled;
 }

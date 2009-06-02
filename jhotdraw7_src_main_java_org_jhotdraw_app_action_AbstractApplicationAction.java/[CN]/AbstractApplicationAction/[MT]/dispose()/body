@@ -1,0 +1,6 @@
+{
+  if (app != null) {
+    uninstallApplicationListeners(app);
+    app=null;
+  }
+}

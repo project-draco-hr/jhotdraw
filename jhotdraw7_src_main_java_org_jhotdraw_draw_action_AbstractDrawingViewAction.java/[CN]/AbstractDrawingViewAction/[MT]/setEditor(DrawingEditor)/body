@@ -2,8 +2,15 @@
   if (editor != null) {
     editor.removePropertyChangeListener(propertyChangeHandler);
   }
+  if (activeView != null) {
+    activeView.removePropertyChangeListener(propertyChangeHandler);
+  }
   editor=newValue;
   if (editor != null) {
-    editor.addPropertyChangeListener(propertyChangeHandler);
+    editor.addPropertyChangeListener(new WeakPropertyChangeListener(propertyChangeHandler));
+    activeView=editor.getActiveView();
+    if (activeView != null) {
+      activeView.addPropertyChangeListener(propertyChangeHandler);
+    }
   }
 }

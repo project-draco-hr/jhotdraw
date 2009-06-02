@@ -1,0 +1,4 @@
+DrawingEditor editor
+double[][] dashes
+ResourceBundleUtil labels
+java.util.List<Disposable> dsp

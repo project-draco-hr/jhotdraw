@@ -37,7 +37,7 @@ case 1:
       linkField.setWrapStyleWord(true);
       linkField.setFont(PaletteLookAndFeel.getInstance().getFont("SmallSystemFont"));
       linkField.setFormatterFactory(new DefaultFormatterFactory(new DefaultFormatter()));
-      new FigureAttributeEditorHandler<String>(LINK,linkField,editor,false);
+      disposables.add(new FigureAttributeEditorHandler<String>(LINK,linkField,editor,false));
       scrollPane.setViewportView(linkField);
       gbc=new GridBagConstraints();
       gbc.gridx=0;
@@ -67,7 +67,7 @@ case 1:
       targetField.setColumns(4);
       targetField.setFormatterFactory(new DefaultFormatterFactory(new DefaultFormatter()));
       targetField.setUI((TextUI)PaletteFormattedTextFieldUI.createUI(targetField));
-      new FigureAttributeEditorHandler<String>(LINK_TARGET,targetField,editor,false);
+      disposables.add(new FigureAttributeEditorHandler<String>(LINK_TARGET,targetField,editor,false));
       gbc=new GridBagConstraints();
       gbc.gridx=1;
       gbc.gridy=2;
@@ -101,7 +101,7 @@ case 2:
   linkField.setWrapStyleWord(true);
   linkField.setFont(PaletteLookAndFeel.getInstance().getFont("SmallSystemFont"));
   linkField.setFormatterFactory(new DefaultFormatterFactory(new DefaultFormatter()));
-  new FigureAttributeEditorHandler<String>(LINK,linkField,editor,false);
+  disposables.add(new FigureAttributeEditorHandler<String>(LINK,linkField,editor,false));
   scrollPane.setViewportView(linkField);
   gbc=new GridBagConstraints();
   gbc.gridx=0;
@@ -131,7 +131,7 @@ case 2:
   targetField.setColumns(7);
   targetField.setFormatterFactory(new DefaultFormatterFactory(new DefaultFormatter()));
   targetField.setUI((TextUI)PaletteFormattedTextFieldUI.createUI(targetField));
-  new FigureAttributeEditorHandler<String>(LINK_TARGET,targetField,editor,true);
+  disposables.add(new FigureAttributeEditorHandler<String>(LINK_TARGET,targetField,editor,true));
   gbc=new GridBagConstraints();
   gbc.gridx=1;
   gbc.gridy=2;

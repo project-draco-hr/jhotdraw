@@ -1,4 +1,4 @@
 {
-  remove(p);
-  p.dispose();
+  remove(view);
+  view.dispose();
 }

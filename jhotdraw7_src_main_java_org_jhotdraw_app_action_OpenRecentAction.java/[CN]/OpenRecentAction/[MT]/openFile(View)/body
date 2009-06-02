@@ -9,6 +9,7 @@
   }
   view.setMultipleOpenId(multipleOpenId);
   view.setEnabled(false);
+  view.getOpenChooser();
   view.execute(new Worker(){
     public Object construct(){
       try {

@@ -1,0 +1,20 @@
+{
+  if (openRecentMenu.getItemCount() > 0) {
+    JMenuItem clearRecentFilesItem=(JMenuItem)openRecentMenu.getItem(openRecentMenu.getItemCount() - 1);
+    openRecentMenu.remove(openRecentMenu.getItemCount() - 1);
+    for (    OpenRecentAction action : openRecentActions) {
+      action.dispose();
+    }
+    openRecentActions.clear();
+    openRecentMenu.removeAll();
+    for (    File f : recentFiles()) {
+      OpenRecentAction action=new OpenRecentAction(DefaultOSXApplication.this,f);
+      openRecentMenu.add(action);
+      openRecentActions.add(action);
+    }
+    if (recentFiles().size() > 0) {
+      openRecentMenu.addSeparator();
+    }
+    openRecentMenu.add(clearRecentFilesItem);
+  }
+}

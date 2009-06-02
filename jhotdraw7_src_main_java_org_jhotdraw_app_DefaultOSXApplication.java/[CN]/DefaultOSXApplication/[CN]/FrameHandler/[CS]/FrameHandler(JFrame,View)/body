@@ -1,0 +1,7 @@
+{
+  this.frame=frame;
+  this.view=view;
+  view.addPropertyChangeListener(this);
+  frame.addWindowListener(this);
+  view.addDisposable(this);
+}

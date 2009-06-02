@@ -4,4 +4,5 @@
   drawing.write(domo);
   domo.closeElement();
   domo.save(out);
+  domo.dispose();
 }

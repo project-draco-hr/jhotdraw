@@ -1,21 +1,3 @@
 {
-  JPopupButton strokeDashesPopupButton=new JPopupButton();
-  labels.configureToolBarButton(strokeDashesPopupButton,"attribute.strokeDashes");
-  strokeDashesPopupButton.setFocusable(false);
-  for (int i=0; i < dashes.length; i++) {
-    float[] fdashes;
-    if (dashes[i] == null) {
-      fdashes=null;
-    }
- else {
-      fdashes=new float[dashes[i].length];
-      for (int j=0; j < dashes[i].length; j++) {
-        fdashes[j]=(float)dashes[i][j];
-      }
-    }
-    Icon icon=new StrokeIcon(new BasicStroke(2f,BasicStroke.CAP_BUTT,BasicStroke.JOIN_BEVEL,10f,fdashes,0));
-    AbstractButton btn=strokeDashesPopupButton.add(new AttributeAction(editor,STROKE_DASHES,dashes[i],null,icon));
-    btn.setDisabledIcon(icon);
-  }
-  return strokeDashesPopupButton;
+  return createStrokeDashesButton(editor,dashes,labels,new LinkedList<Disposable>());
 }

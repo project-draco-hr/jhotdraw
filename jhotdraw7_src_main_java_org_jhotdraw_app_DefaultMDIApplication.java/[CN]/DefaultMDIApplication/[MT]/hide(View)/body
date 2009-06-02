@@ -3,6 +3,7 @@
     JInternalFrame f=(JInternalFrame)SwingUtilities.getRootPane(p.getComponent()).getParent();
     f.setVisible(false);
     f.remove(p.getComponent());
+    f.setJMenuBar(null);
     desktopPane.remove(f);
     f.dispose();
   }

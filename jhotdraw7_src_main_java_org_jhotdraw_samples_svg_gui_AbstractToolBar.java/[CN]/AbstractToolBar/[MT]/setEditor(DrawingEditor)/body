@@ -1,6 +1,10 @@
 {
   if (this.editor != null) {
     this.removePropertyChangeListener(getEventHandler());
+    for (    Disposable d : disposables) {
+      d.dispose();
+    }
+    disposables.clear();
   }
   this.editor=editor;
   if (editor != null) {

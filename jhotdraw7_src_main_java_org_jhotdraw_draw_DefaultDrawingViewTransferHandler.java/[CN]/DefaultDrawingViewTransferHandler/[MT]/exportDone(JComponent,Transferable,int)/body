@@ -7,7 +7,7 @@
     final Drawing drawing=view.getDrawing();
     if (action == MOVE) {
       final LinkedList<CompositeFigureEvent> deletionEvents=new LinkedList<CompositeFigureEvent>();
-      final LinkedList<Figure> selectedFigures=new LinkedList<Figure>(exportedFigures);
+      final LinkedList<Figure> selectedFigures=(exportedFigures == null) ? new LinkedList<Figure>() : new LinkedList<Figure>(exportedFigures);
       for (      Figure f : selectedFigures) {
         if (!f.isRemovable()) {
           source.getToolkit().beep();

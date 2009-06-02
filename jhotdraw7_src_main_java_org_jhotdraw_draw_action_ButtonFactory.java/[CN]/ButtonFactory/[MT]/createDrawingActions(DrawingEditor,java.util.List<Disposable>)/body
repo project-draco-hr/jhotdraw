@@ -1,0 +1,10 @@
+{
+  LinkedList<Action> list=new LinkedList<Action>();
+  AbstractSelectedAction a;
+  list.add(new CutAction());
+  list.add(new CopyAction());
+  list.add(new PasteAction());
+  list.add(a=new SelectSameAction(editor));
+  dsp.add(a);
+  return list;
+}

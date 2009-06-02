@@ -1,13 +1,20 @@
 {
-  LinkedList<Action> a=new LinkedList<Action>();
-  a.add(new DuplicateAction());
-  a.add(null);
-  a.add(new GroupAction(editor,new SVGGroupFigure()));
-  a.add(new UngroupAction(editor,new SVGGroupFigure()));
-  a.add(new CombineAction(editor));
-  a.add(new SplitAction(editor));
-  a.add(null);
-  a.add(new BringToFrontAction(editor));
-  a.add(new SendToBackAction(editor));
-  return a;
+  LinkedList<Action> list=new LinkedList<Action>();
+  AbstractSelectedAction a;
+  list.add(new DuplicateAction());
+  list.add(null);
+  list.add(a=new GroupAction(editor,new SVGGroupFigure()));
+  disposables.add(a);
+  list.add(a=new UngroupAction(editor,new SVGGroupFigure()));
+  disposables.add(a);
+  list.add(a=new CombineAction(editor));
+  disposables.add(a);
+  list.add(a=new SplitAction(editor));
+  disposables.add(a);
+  list.add(null);
+  list.add(a=new BringToFrontAction(editor));
+  disposables.add(a);
+  list.add(a=new SendToBackAction(editor));
+  disposables.add(a);
+  return list;
 }

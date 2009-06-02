@@ -12,8 +12,6 @@
   toolsPane.setOpaque(true);
   viewToolBar.setView(view);
   undoManager=new UndoRedoManager();
-  setEditor(new DefaultDrawingEditor());
-  editor.setHandleAttribute(HandleAttributeKeys.HANDLE_SIZE,new Integer(7));
   DefaultDrawing drawing=new DefaultDrawing();
   view.setDrawing(drawing);
   drawing.addUndoableEditListener(undoManager);
@@ -35,7 +33,7 @@
   for (  JToolBar tb : sortme) {
     toolsPane.add(tb);
   }
-  toolsPane.addContainerListener(new ContainerListener(){
+  toolsPane.addContainerListener(containerHandler=new ContainerListener(){
     public void componentAdded(    ContainerEvent e){
       int i=0;
       for (      Component c : toolsPane.getComponents()) {

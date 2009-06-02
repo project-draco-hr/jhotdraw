@@ -1,0 +1,5 @@
+{
+  windowMenu.removeAll();
+  removePropertyChangeListener(this);
+  view=null;
+}

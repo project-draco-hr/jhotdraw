@@ -1,16 +1,3 @@
 {
-  JPopupButton popupButton=new JPopupButton();
-  labels.configureToolBarButton(popupButton,"attribute.strokeCap");
-  popupButton.setFocusable(false);
-  HashMap<AttributeKey,Object> attr;
-  attr=new HashMap<AttributeKey,Object>();
-  attr.put(STROKE_CAP,BasicStroke.CAP_BUTT);
-  popupButton.add(new AttributeAction(editor,attr,labels.getString("attribute.strokeCap.butt"),null));
-  attr=new HashMap<AttributeKey,Object>();
-  attr.put(STROKE_CAP,BasicStroke.CAP_ROUND);
-  popupButton.add(new AttributeAction(editor,attr,labels.getString("attribute.strokeCap.round"),null));
-  attr=new HashMap<AttributeKey,Object>();
-  attr.put(STROKE_CAP,BasicStroke.CAP_SQUARE);
-  popupButton.add(new AttributeAction(editor,attr,labels.getString("attribute.strokeCap.square"),null));
-  return popupButton;
+  return createStrokeCapButton(editor,labels,new LinkedList<Disposable>());
 }

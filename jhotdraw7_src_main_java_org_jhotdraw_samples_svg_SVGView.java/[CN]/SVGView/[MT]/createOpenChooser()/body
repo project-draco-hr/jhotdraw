@@ -2,7 +2,11 @@
   final JFileChooser c=new JFileChooser();
   fileFilterInputFormatMap=new HashMap<javax.swing.filechooser.FileFilter,InputFormat>();
   javax.swing.filechooser.FileFilter firstFF=null;
-  for (  InputFormat format : svgPanel.getDrawing().getInputFormats()) {
+  Drawing d=svgPanel.getDrawing();
+  if (d == null) {
+    d=createDrawing();
+  }
+  for (  InputFormat format : d.getInputFormats()) {
     javax.swing.filechooser.FileFilter ff=format.getFileFilter();
     if (firstFF == null) {
       firstFF=ff;

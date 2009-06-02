@@ -1,3 +1,6 @@
 {
-  return new SVGDrawingPanel();
+  SVGDrawingPanel p=new SVGDrawingPanel();
+  DefaultDrawingEditor editor=new DefaultDrawingEditor();
+  p.setEditor(new DefaultDrawingEditor());
+  return p;
 }

@@ -3,19 +3,19 @@
   if (app.isEnabled()) {
     app.setEnabled(false);
     View emptyView=app.getActiveView();
-    if (emptyView == null || emptyView.getFile() != null || emptyView.hasUnsavedChanges()) {
+    if (emptyView == null || emptyView.getFile() != null || emptyView.hasUnsavedChanges() || !emptyView.isEnabled()) {
       emptyView=null;
     }
     final View view;
-    boolean removeMe;
+    boolean disposeView;
     if (emptyView == null) {
       view=app.createView();
       app.add(view);
-      removeMe=true;
+      disposeView=true;
     }
  else {
       view=emptyView;
-      removeMe=false;
+      disposeView=false;
     }
     JFileChooser fileChooser=getFileChooser(view);
     if (fileChooser.showOpenDialog(app.getComponent()) == JFileChooser.APPROVE_OPTION) {
@@ -23,8 +23,8 @@
       openFile(fileChooser,view);
     }
  else {
-      if (removeMe) {
-        app.remove(view);
+      if (disposeView) {
+        app.dispose(view);
       }
       app.setEnabled(true);
     }

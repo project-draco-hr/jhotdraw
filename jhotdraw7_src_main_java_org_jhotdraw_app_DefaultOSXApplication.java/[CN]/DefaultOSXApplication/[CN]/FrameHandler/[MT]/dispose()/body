@@ -1,0 +1,4 @@
+{
+  frame.removeWindowListener(this);
+  view.removePropertyChangeListener(this);
+}

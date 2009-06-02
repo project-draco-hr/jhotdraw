@@ -1,9 +1,11 @@
 {
+  DrawingView aView=null;
   for (  DrawingView v : views) {
     if (v.getComponent().isFocusOwner()) {
       setActiveView(v);
       return;
     }
+    aView=v;
   }
-  setActiveView(null);
+  setActiveView(aView);
 }

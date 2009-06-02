@@ -1,0 +1,7 @@
+{
+  this.windowMenu=windowMenu;
+  this.view=view;
+  addPropertyChangeListener(this);
+  view.addDisposable(this);
+  updateViewWindowMenuItems(windowMenu,view);
+}

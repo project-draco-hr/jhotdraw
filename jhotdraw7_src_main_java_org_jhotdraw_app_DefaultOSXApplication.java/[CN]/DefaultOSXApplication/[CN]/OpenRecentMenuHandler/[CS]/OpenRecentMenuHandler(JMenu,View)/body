@@ -1,0 +1,8 @@
+{
+  this.openRecentMenu=openRecentMenu;
+  if (view != null) {
+    view.addDisposable(this);
+  }
+  updateOpenRecentMenu();
+  addPropertyChangeListener(this);
+}

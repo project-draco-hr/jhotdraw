@@ -1,7 +1,3 @@
 {
-  this.editor=editor;
-  if (editor != null) {
-    editor.addPropertyChangeListener(propertyChangeHandler);
-    updateEnabledState();
-  }
+  setEditor(editor);
 }

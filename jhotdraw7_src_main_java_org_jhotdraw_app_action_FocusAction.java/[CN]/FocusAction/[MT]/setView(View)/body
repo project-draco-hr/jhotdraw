@@ -1,0 +1,9 @@
+{
+  if (view != null) {
+    view.removePropertyChangeListener(ppc);
+  }
+  view=newValue;
+  if (view != null) {
+    view.addPropertyChangeListener(ppc);
+  }
+}

@@ -1,12 +1,3 @@
 {
-  JButton btn;
-  btn=new JButton(new ApplyAttributesAction(editor));
-  if (btn.getIcon() != null) {
-    btn.putClientProperty("hideActionText",Boolean.TRUE);
-  }
-  btn.setHorizontalTextPosition(JButton.CENTER);
-  btn.setVerticalTextPosition(JButton.BOTTOM);
-  btn.setText(null);
-  btn.setFocusable(false);
-  return btn;
+  return createApplyAttributesButton(editor,new LinkedList<Disposable>());
 }

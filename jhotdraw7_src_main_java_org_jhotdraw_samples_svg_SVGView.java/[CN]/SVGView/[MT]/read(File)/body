@@ -32,7 +32,9 @@
     }
     SwingUtilities.invokeAndWait(new Runnable(){
       public void run(){
-        svgPanel.getDrawing().removeUndoableEditListener(undo);
+        if (svgPanel.getDrawing() != null) {
+          svgPanel.getDrawing().removeUndoableEditListener(undo);
+        }
         svgPanel.setDrawing(drawing);
         svgPanel.getDrawing().addUndoableEditListener(undo);
         undo.discardAllEdits();

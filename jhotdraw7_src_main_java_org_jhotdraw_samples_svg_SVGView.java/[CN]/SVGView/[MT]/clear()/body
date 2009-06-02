@@ -1,15 +1,22 @@
 {
   final Drawing newDrawing=createDrawing();
   try {
-    SwingUtilities.invokeAndWait(new Runnable(){
+    Runnable r=new Runnable(){
       public void run(){
         svgPanel.getDrawing().removeUndoableEditListener(undo);
+        svgPanel.getDrawing().removeAllChildren();
         svgPanel.setDrawing(newDrawing);
         svgPanel.getDrawing().addUndoableEditListener(undo);
         undo.discardAllEdits();
       }
     }
-);
+;
+    if (SwingUtilities.isEventDispatchThread()) {
+      r.run();
+    }
+ else {
+      SwingUtilities.invokeAndWait(r);
+    }
   }
  catch (  InvocationTargetException ex) {
     ex.printStackTrace();

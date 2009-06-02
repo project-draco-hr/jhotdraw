@@ -1,0 +1,7 @@
+{
+  removePropertyChangeListener(this);
+  for (  OpenRecentAction action : openRecentActions) {
+    action.dispose();
+  }
+  openRecentActions.clear();
+}

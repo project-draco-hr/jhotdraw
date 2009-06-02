@@ -1,10 +1,10 @@
 {
-  if (!p.isShowing()) {
-    p.setShowing(true);
-    final JFrame f=new JFrame();
+  if (!view.isShowing()) {
+    view.setShowing(true);
+    JFrame f=new JFrame();
     f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     f.setPreferredSize(new Dimension(400,400));
-    updateViewTitle(p,f);
+    updateViewTitle(view,f);
     PreferencesUtil.installFramePrefsHandler(prefs,"view",f);
     Point loc=f.getLocation();
     boolean moved;
@@ -12,7 +12,7 @@
       moved=false;
       for (Iterator i=views().iterator(); i.hasNext(); ) {
         View aView=(View)i.next();
-        if (aView != p && aView.isShowing() && SwingUtilities.getWindowAncestor(aView.getComponent()).getLocation().equals(loc)) {
+        if (aView != view && aView.isShowing() && SwingUtilities.getWindowAncestor(aView.getComponent()).getLocation().equals(loc)) {
           loc.x+=22;
           loc.y+=22;
           moved=true;
@@ -22,37 +22,10 @@
     }
  while (moved);
     f.setLocation(loc);
-    f.addWindowListener(new WindowAdapter(){
-      @Override public void windowClosing(      final WindowEvent evt){
-        setActiveView(p);
-        getModel().getAction(CloseAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
-      }
-      @Override public void windowClosed(      final WindowEvent evt){
-        if (p == getActiveView()) {
-          setActiveView(null);
-        }
-        p.stop();
-      }
-      @Override public void windowActivated(      WindowEvent evt){
-        setActiveView(p);
-      }
-    }
-);
-    p.addPropertyChangeListener(new PropertyChangeListener(){
-      public void propertyChange(      PropertyChangeEvent evt){
-        String name=evt.getPropertyName();
-        if (name.equals(View.HAS_UNSAVED_CHANGES_PROPERTY)) {
-          f.getRootPane().putClientProperty("windowModified",new Boolean(p.hasUnsavedChanges()));
-        }
- else         if (name.equals(View.FILE_PROPERTY)) {
-          updateViewTitle(p,f);
-        }
-      }
-    }
-);
-    addWindow(f,p);
-    f.getContentPane().add(p.getComponent());
+    FrameHandler frameHandler=new FrameHandler(f,view);
+    addWindow(f,view);
+    f.getContentPane().add(view.getComponent());
     f.setVisible(true);
-    p.start();
+    view.start();
   }
 }

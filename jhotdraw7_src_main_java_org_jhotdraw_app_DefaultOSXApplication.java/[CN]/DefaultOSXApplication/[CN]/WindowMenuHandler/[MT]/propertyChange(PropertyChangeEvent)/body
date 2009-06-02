@@ -1,0 +1,29 @@
+{
+  String name=evt.getPropertyName();
+  if (name == "viewCount" || name == "paletteCount") {
+    if (view == null || views().contains(view)) {
+      JMenu m=windowMenu;
+      m.removeAll();
+      updateViewWindowMenuItems(m,view);
+      m.addSeparator();
+      for (Iterator i=views().iterator(); i.hasNext(); ) {
+        View pr=(View)i.next();
+        if (pr.getAction(FocusAction.ID) != null) {
+          m.add(pr.getAction(FocusAction.ID));
+        }
+      }
+      if (paletteActions.size() > 0) {
+        m.addSeparator();
+        for (        Action a : paletteActions) {
+          JCheckBoxMenuItem cbmi=new JCheckBoxMenuItem(a);
+          Actions.configureJCheckBoxMenuItem(cbmi,a);
+          cbmi.setIcon(null);
+          m.add(cbmi);
+        }
+      }
+    }
+ else {
+      removePropertyChangeListener(this);
+    }
+  }
+}

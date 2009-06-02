@@ -6,7 +6,7 @@
     }
     URL url=baseClass.getResource(rsrcName);
     if (isVerbose && url == null) {
-      System.err.println("Warning ResourceBundleUtil[" + baseName + "].getIconProperty \""+ key+ ".icon\" not found.");
+      System.err.println("Warning ResourceBundleUtil[" + baseName + "].getIconProperty \""+ key+ ".icon\" resource:"+ rsrcName+ " not found.");
     }
     return (url == null) ? null : new ImageIcon(url);
   }

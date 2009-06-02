@@ -1,8 +1,8 @@
 {
   this.editor=editor;
-  this.component=component;
+  this.weakRef=new WeakReference<JComponent>(component);
   if (editor.getActiveView() != null) {
-    DrawingView view=editor.getActiveView();
+    view=editor.getActiveView();
     view.addPropertyChangeListener(this);
     view.addFigureSelectionListener(this);
   }

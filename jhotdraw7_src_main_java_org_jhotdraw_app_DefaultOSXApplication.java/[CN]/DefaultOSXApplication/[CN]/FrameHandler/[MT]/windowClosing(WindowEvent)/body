@@ -1,0 +1,4 @@
+{
+  setActiveView(view);
+  getModel().getAction(CloseAction.ID).actionPerformed(new ActionEvent(frame,ActionEvent.ACTION_PERFORMED,"windowClosing"));
+}

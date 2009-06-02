@@ -1,0 +1,6 @@
+{
+  if (view == getActiveView()) {
+    setActiveView(null);
+  }
+  view.stop();
+}

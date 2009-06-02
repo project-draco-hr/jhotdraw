@@ -9,6 +9,11 @@
     displayer=new SelectionComponentDisplayer(editor,this){
       @Override public void updateVisibility(){
         boolean newValue=editor != null && editor.getActiveView() != null && (isVisibleIfCreationTool && ((editor.getTool() instanceof TextCreationTool) || editor.getTool() instanceof TextAreaCreationTool) || containsTextHolderFigure(editor.getActiveView().getSelectedFigures()));
+        JComponent component=getComponent();
+        if (component == null) {
+          dispose();
+          return;
+        }
         component.setVisible(newValue);
         if (newValue) {
           component.setPreferredSize(null);

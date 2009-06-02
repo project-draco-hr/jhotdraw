@@ -1,6 +1,6 @@
 {
-  if (unmodifiableDocuments == null) {
-    unmodifiableDocuments=Collections.unmodifiableCollection(views);
+  if (unmodifiableViews == null) {
+    unmodifiableViews=Collections.unmodifiableCollection(views);
   }
-  return unmodifiableDocuments;
+  return unmodifiableViews;
 }

@@ -2,7 +2,7 @@
   ApplicationModel model=getModel();
   JMenu m;
   JMenuItem mi;
-  final JMenu openRecentMenu;
+  JMenu openRecentMenu;
   m=new JMenu();
   labels.configureMenu(m,"file");
   mi=m.add(model.getAction(NewAction.ID));
@@ -17,7 +17,6 @@
   labels.configureMenu(openRecentMenu,"file.openRecent");
   openRecentMenu.setIcon(null);
   openRecentMenu.add(model.getAction(ClearRecentFilesAction.ID));
-  updateOpenRecentMenu(openRecentMenu);
   m.add(openRecentMenu);
   m.addSeparator();
   mi=m.add(model.getAction(CloseAction.ID));
@@ -35,14 +34,6 @@
     mi=m.add(model.getAction(PrintAction.ID));
     mi.setIcon(null);
   }
-  addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
-      String name=evt.getPropertyName();
-      if (name == "recentFiles") {
-        updateOpenRecentMenu(openRecentMenu);
-      }
-    }
-  }
-);
+  OpenRecentMenuHandler handler=new OpenRecentMenuHandler(openRecentMenu,view);
   return m;
 }
