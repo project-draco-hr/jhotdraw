@@ -1,7 +1,4 @@
 {
-  if (newValue == null) {
-    new Throwable().printStackTrace();
-  }
   DrawingView oldValue=activeView;
   activeView=newValue;
   if (newValue != null && newValue != oldValue) {

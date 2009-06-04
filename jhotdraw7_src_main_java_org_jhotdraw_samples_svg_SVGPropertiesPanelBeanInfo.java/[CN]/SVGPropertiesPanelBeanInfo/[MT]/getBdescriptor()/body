@@ -1,6 +1,0 @@
-{
-  if (beanDescriptor == null)   beanDescriptor=new BeanDescriptor(SVGPropertiesPanelBeanInfo.class);
-  beanDescriptor.setValue("isContainer",Boolean.FALSE);
-  beanDescriptor.setDisplayName("SVGPropertiesPanel");
-  return beanDescriptor;
-}
