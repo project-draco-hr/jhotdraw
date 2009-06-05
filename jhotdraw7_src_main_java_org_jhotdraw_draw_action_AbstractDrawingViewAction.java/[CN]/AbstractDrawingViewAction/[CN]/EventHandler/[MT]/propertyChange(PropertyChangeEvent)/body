@@ -1,0 +1,17 @@
+{
+  if (evt.getPropertyName().equals("enabled")) {
+    updateEnabledState();
+  }
+ else   if (evt.getPropertyName() == DrawingEditor.ACTIVE_VIEW_PROPERTY) {
+    if (activeView != null) {
+      activeView.removePropertyChangeListener(eventHandler);
+      activeView=null;
+    }
+    if (evt.getNewValue() != null) {
+      activeView=((DrawingView)evt.getNewValue());
+      activeView.addPropertyChangeListener(eventHandler);
+      updateEnabledState();
+    }
+    updateViewState();
+  }
+}

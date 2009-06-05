@@ -1,3 +1,5 @@
 {
-  setEnabled(getEditor().isEnabled());
+  if (getEditor() != null) {
+    setEnabled(getEditor().isEnabled());
+  }
 }

@@ -1,0 +1,14 @@
+{
+  if (editor != null) {
+    editor.addPropertyChangeListener(new WeakPropertyChangeListener(eventHandler));
+    if (activeView != null) {
+      activeView.removeFigureSelectionListener(eventHandler);
+      activeView.removePropertyChangeListener(eventHandler);
+    }
+    activeView=editor.getActiveView();
+    if (activeView != null) {
+      activeView.addFigureSelectionListener(eventHandler);
+      activeView.addPropertyChangeListener(eventHandler);
+    }
+  }
+}

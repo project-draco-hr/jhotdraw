@@ -1,16 +1,10 @@
 {
-  if (editor != null) {
-    editor.removePropertyChangeListener(propertyChangeHandler);
-  }
-  if (activeView != null) {
-    activeView.removePropertyChangeListener(propertyChangeHandler);
+  if (eventHandler != null) {
+    unregisterEventHandler();
   }
   editor=newValue;
-  if (editor != null) {
-    editor.addPropertyChangeListener(new WeakPropertyChangeListener(propertyChangeHandler));
-    activeView=editor.getActiveView();
-    if (activeView != null) {
-      activeView.addPropertyChangeListener(propertyChangeHandler);
-    }
+  if (eventHandler != null) {
+    registerEventHandler();
+    updateEnabledState();
   }
 }

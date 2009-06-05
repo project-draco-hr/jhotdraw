@@ -1,4 +1,4 @@
 {
   this.specificView=view;
-  specificView.addPropertyChangeListener(propertyChangeHandler);
+  registerEventHandler();
 }

@@ -1,0 +1,10 @@
+{
+  if (editor != null) {
+    editor.removePropertyChangeListener(eventHandler);
+  }
+  if (activeView != null) {
+    activeView.removeFigureSelectionListener(eventHandler);
+    activeView.removePropertyChangeListener(eventHandler);
+    activeView=null;
+  }
+}

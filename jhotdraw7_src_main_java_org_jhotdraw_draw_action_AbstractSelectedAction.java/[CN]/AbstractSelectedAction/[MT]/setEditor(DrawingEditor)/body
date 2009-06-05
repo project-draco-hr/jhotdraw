@@ -1,22 +1,10 @@
 {
-  if (this.editor != null) {
-    this.editor.removePropertyChangeListener(eventHandler);
-    if (this.editor.getActiveView() != null) {
-      this.editor.getActiveView().removeFigureSelectionListener(eventHandler);
-    }
-  }
-  if (activeView != null) {
-    activeView.removeFigureSelectionListener(eventHandler);
-    activeView.removePropertyChangeListener(eventHandler);
+  if (eventHandler != null) {
+    unregisterEventHandler();
   }
   this.editor=editor;
-  if (this.editor != null) {
-    this.editor.addPropertyChangeListener(new WeakPropertyChangeListener(eventHandler));
-    activeView=editor.getActiveView();
-    if (activeView != null) {
-      activeView.addFigureSelectionListener(eventHandler);
-      activeView.addPropertyChangeListener(eventHandler);
-    }
+  if (eventHandler != null) {
+    registerEventHandler();
     updateEnabledState();
   }
 }

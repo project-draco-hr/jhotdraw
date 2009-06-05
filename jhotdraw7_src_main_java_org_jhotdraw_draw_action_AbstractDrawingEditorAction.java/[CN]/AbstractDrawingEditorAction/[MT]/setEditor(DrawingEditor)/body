@@ -1,10 +1,10 @@
 {
-  if (editor != null) {
-    editor.removePropertyChangeListener(new WeakPropertyChangeListener(propertyChangeHandler));
+  if (eventHandler != null) {
+    unregisterEventHandler();
   }
   editor=newValue;
-  if (editor != null) {
-    editor.addPropertyChangeListener(propertyChangeHandler);
+  if (eventHandler != null) {
+    registerEventHandler();
     updateEnabledState();
   }
 }

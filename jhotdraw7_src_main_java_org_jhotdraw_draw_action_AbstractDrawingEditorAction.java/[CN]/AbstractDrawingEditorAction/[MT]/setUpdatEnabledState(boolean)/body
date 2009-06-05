@@ -1,0 +1,15 @@
+{
+  if (eventHandler != null != newValue) {
+    if (newValue) {
+      eventHandler=new EventHandler();
+      registerEventHandler();
+    }
+ else {
+      unregisterEventHandler();
+      eventHandler=null;
+    }
+  }
+  if (newValue) {
+    updateEnabledState();
+  }
+}

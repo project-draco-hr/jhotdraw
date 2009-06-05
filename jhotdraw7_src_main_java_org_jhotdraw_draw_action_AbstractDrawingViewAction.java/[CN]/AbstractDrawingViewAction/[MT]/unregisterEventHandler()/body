@@ -1,0 +1,12 @@
+{
+  if (editor != null) {
+    editor.removePropertyChangeListener(eventHandler);
+  }
+  if (activeView != null) {
+    activeView.removePropertyChangeListener(eventHandler);
+    activeView=null;
+  }
+  if (specificView != null) {
+    specificView.removePropertyChangeListener(eventHandler);
+  }
+}

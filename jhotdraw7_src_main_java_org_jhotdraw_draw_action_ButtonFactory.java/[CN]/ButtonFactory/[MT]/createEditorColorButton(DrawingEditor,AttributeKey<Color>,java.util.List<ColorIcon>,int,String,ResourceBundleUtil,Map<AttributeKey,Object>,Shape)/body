@@ -16,6 +16,7 @@
     }
     popupButton.add(a=new AttributeAction(editor,attributes,labels.getToolTipTextProperty(labelKey),swatch));
     a.putValue(Action.SHORT_DESCRIPTION,swatch.getName());
+    a.setUpdatEnabledState(false);
   }
   if (!hasNullColor) {
     AttributeAction a;
@@ -23,6 +24,7 @@
     attributes.put(attributeKey,null);
     popupButton.add(a=new AttributeAction(editor,attributes,labels.getToolTipTextProperty("attribute.color.noColor"),new ColorIcon(null,labels.getToolTipTextProperty("attribute.color.noColor"),swatches.get(0).getIconWidth(),swatches.get(0).getIconHeight())));
     a.putValue(Action.SHORT_DESCRIPTION,labels.getToolTipTextProperty("attribute.color.noColor"));
+    a.setUpdatEnabledState(false);
   }
   ImageIcon chooserIcon=new ImageIcon(Images.createImage(ButtonFactory.class,"/org/jhotdraw/draw/action/images/attribute.color.colorChooser.png"));
   Action a;
