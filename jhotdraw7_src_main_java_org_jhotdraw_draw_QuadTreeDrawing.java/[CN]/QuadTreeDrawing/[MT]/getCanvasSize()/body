@@ -1,3 +1,0 @@
-{
-  return (canvasSize == null) ? null : (Dimension2DDouble)canvasSize.clone();
-}
