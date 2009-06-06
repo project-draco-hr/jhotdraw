@@ -16,7 +16,7 @@
     popupButton.add(a=new DrawingAttributeAction(editor,attributes,labels.getToolTipTextProperty(labelKey),swatch));
     dsp.add(a);
     a.putValue(Action.SHORT_DESCRIPTION,swatch.getName());
-    a.setUpdatEnabledState(false);
+    a.setUpdateEnabledState(false);
   }
   if (!hasNullColor) {
     DrawingAttributeAction a;
@@ -25,7 +25,7 @@
     popupButton.add(a=new DrawingAttributeAction(editor,attributes,labels.getToolTipTextProperty("attribute.color.noColor"),new ColorIcon(null,labels.getToolTipTextProperty("attribute.color.noColor"))));
     dsp.add(a);
     a.putValue(Action.SHORT_DESCRIPTION,labels.getToolTipTextProperty("attribute.color.noColor"));
-    a.setUpdatEnabledState(false);
+    a.setUpdateEnabledState(false);
   }
   ImageIcon chooserIcon=new ImageIcon(Images.createImage(ButtonFactory.class,"/org/jhotdraw/draw/action/images/attribute.color.colorChooser.png"));
   DrawingColorChooserAction a;
