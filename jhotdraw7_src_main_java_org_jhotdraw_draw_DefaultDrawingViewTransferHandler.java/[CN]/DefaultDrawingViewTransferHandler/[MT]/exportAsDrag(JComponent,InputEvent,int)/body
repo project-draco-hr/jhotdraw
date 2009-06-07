@@ -5,7 +5,6 @@
   if (comp instanceof DrawingView) {
     DrawingView view=(DrawingView)comp;
     HashSet<Figure> transferFigures=new HashSet<Figure>();
-    exportedFigures=transferFigures;
     MouseEvent me=(MouseEvent)e;
     Figure f=view.findFigure(me.getPoint());
     if (view.getSelectedFigures().contains(f)) {

@@ -1,9 +1,10 @@
 {
   if (DEBUG) {
-    System.out.println(this + ".createTransferable");
+    System.out.println(this + ".createTransferable(" + view+ ","+ transferFigures+ ")");
   }
   Transferable retValue;
   Drawing drawing=view.getDrawing();
+  exportedFigures=null;
   if (drawing.getOutputFormats() == null || drawing.getOutputFormats().size() == 0) {
     retValue=null;
   }
@@ -18,6 +19,7 @@
             transfer.add(t);
           }
         }
+        exportedFigures=new HashSet<Figure>(transferFigures);
         retValue=transfer;
       }
  catch (      IOException e) {

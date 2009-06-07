@@ -1,6 +1,6 @@
 {
   if (DEBUG) {
-    System.out.println(this + ".createTransferable");
+    System.out.println(this + ".createTransferable(" + c+ ")");
   }
   Transferable retValue;
   if (c instanceof DrawingView) {
