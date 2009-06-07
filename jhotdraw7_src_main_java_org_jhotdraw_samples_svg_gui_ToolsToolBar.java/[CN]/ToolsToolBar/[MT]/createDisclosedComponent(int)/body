@@ -19,6 +19,7 @@ case 1:
       HashMap<AttributeKey,Object> attributes;
       btn=ButtonFactory.addSelectionToolTo(this,editor,ButtonFactory.createDrawingActions(editor,disposables),createSelectionActions(editor));
       btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
+      btn.addMouseListener(new SelectionToolButtonHandler(editor));
       gbc=new GridBagConstraints();
       gbc.gridx=0;
       gbc.gridy=0;

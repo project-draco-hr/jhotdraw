@@ -9,6 +9,7 @@
   this.editor=editor;
   if (editor != null) {
     init();
+    clearDisclosedComponents();
     setDisclosureState(Math.max(0,Math.min(getDisclosureStateCount(),prefs.getInt(getID() + ".disclosureState",getDefaultDisclosureState()))));
     this.addPropertyChangeListener(getEventHandler());
   }
