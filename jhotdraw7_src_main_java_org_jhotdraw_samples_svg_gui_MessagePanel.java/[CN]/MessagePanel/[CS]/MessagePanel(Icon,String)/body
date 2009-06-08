@@ -1,5 +1,5 @@
 {
-  labels=ResourceBundleUtil.getBundle("org.anywikidraw.any.Labels");
+  labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
   initComponents();
   setIcon(icon);
   setMessage(message);

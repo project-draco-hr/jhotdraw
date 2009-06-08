@@ -2,7 +2,7 @@
   this.outputFormat=outputFormat;
   this.allowsNullValue=allowsNullValue;
   this.isAdaptive=isAdaptive;
-  prefs=Preferences.userNodeForPackage(getClass());
+  prefs=PreferencesUtil.userNodeForPackage(getClass());
   try {
     lastUsedInputFormat=Format.valueOf(prefs.get("ColorFormatter.lastUsedInputFormat",Format.RGB_HEX.name()));
   }

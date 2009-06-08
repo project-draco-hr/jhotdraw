@@ -26,7 +26,7 @@
       JTextArea ta=(JTextArea)((JScrollPane)dialog.getContentPane().getComponent(0)).getViewport().getView();
       ta.setText(source);
     }
-    Preferences prefs=Preferences.userNodeForPackage(getClass());
+    Preferences prefs=PreferencesUtil.userNodeForPackage(getClass());
     PreferencesUtil.installFramePrefsHandler(prefs,"viewSource",dialog);
     dialog.addWindowListener(new WindowAdapter(){
       @Override public void windowClosed(      WindowEvent evt){

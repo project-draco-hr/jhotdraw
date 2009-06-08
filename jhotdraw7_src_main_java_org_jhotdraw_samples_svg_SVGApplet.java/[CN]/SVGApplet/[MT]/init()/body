@@ -51,6 +51,7 @@
           }
         }
 );
+        mp.revalidate();
       }
  else {
         c.add(drawingComponent.getComponent());
@@ -65,8 +66,8 @@
             ((Throwable)result).printStackTrace();
           }
         }
+        drawingComponent.revalidate();
       }
-      c.validate();
       long end=System.currentTimeMillis();
       System.out.println("AbstractDrawingApplet startup latency:" + (end - start));
     }

@@ -1,4 +1,3 @@
 {
-  T value=(T)a.get(this);
-  return (value == null && !isNullValueAllowed) ? defaultValue : value;
+  return a.containsKey(this) ? (T)a.get(this) : defaultValue;
 }

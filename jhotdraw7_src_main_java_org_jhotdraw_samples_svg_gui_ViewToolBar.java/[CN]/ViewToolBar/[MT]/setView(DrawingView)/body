@@ -1,6 +1,6 @@
 {
   this.view=view;
-  prefs=Preferences.userNodeForPackage(getClass());
+  prefs=PreferencesUtil.userNodeForPackage(getClass());
   GridConstrainer constrainer=(GridConstrainer)view.getVisibleConstrainer();
   constrainer.setHeight(prefs.getDouble("view.gridSize",8d));
   constrainer.setWidth(prefs.getDouble("view.gridSize",8d));

@@ -5,6 +5,7 @@
     writeAttribute(elem,"width",toNumber(VIEWPORT_WIDTH.get(a)),null);
     writeAttribute(elem,"height",toNumber(VIEWPORT_HEIGHT.get(a)),null);
   }
+  System.out.println(this + "viewport-fill:" + VIEWPORT_FILL.get(a)+ " garbl:"+ toColor(VIEWPORT_FILL.get(a)));
   writeAttribute(elem,"viewport-fill",toColor(VIEWPORT_FILL.get(a)),"none");
   writeAttribute(elem,"viewport-fill-opacity",VIEWPORT_FILL_OPACITY.get(a),1.0);
 }

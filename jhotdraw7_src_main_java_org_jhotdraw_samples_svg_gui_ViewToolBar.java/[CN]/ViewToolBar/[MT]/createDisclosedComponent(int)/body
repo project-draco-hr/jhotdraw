@@ -66,7 +66,7 @@ case 2:
         if (evt.getNewValue() != null) {
           constrainer.setWidth((Double)evt.getNewValue());
           constrainer.setHeight((Double)evt.getNewValue());
-          prefs=Preferences.userNodeForPackage(getClass());
+          prefs=PreferencesUtil.userNodeForPackage(getClass());
           prefs.putDouble("view.gridSize",(Double)evt.getNewValue());
           view.getComponent().repaint();
         }

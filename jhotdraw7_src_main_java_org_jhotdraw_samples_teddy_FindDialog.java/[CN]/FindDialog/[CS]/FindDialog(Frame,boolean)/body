@@ -4,7 +4,7 @@
   initComponents();
   buttonPanel.setBorder(new EmptyBorder(0,-5,0,-5));
   setAlwaysOnTop(true);
-  prefs=Preferences.userNodeForPackage(getClass());
+  prefs=PreferencesUtil.userNodeForPackage(getClass());
   PreferencesUtil.installFramePrefsHandler(prefs,"find",this);
   modeCombo.setModel(new DefaultComboBoxModel(new Object[]{labels.getString("find.contains.text"),labels.getString("find.startsWith.text"),labels.getString("find.word.text")}));
   ignoreCaseCheck.setSelected(prefs.getBoolean("find.ignoreCase",true));

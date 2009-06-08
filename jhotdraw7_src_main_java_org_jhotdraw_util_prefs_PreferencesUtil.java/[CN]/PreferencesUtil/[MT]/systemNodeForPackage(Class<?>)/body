@@ -1,0 +1,14 @@
+{
+  try {
+    return Preferences.systemNodeForPackage(c);
+  }
+ catch (  Throwable t) {
+    if (systemNodes == null) {
+      systemNodes=new HashMap<Package,Preferences>();
+    }
+    if (!systemNodes.containsKey(c.getPackage())) {
+      systemNodes.put(c.getPackage(),new PreferencesUtil(false));
+    }
+    return systemNodes.get(c.getPackage());
+  }
+}

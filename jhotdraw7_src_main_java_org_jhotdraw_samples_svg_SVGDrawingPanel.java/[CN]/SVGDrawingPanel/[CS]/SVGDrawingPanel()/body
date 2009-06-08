@@ -2,7 +2,7 @@
   labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
   ResourceBundleUtil drawLabels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   try {
-    prefs=Preferences.userNodeForPackage(getClass());
+    prefs=PreferencesUtil.userNodeForPackage(getClass());
   }
  catch (  SecurityException e) {
   }

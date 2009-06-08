@@ -1,5 +1,5 @@
 {
-  prefs=Preferences.userNodeForPackage((getModel() == null) ? getClass() : getModel().getClass());
+  prefs=PreferencesUtil.userNodeForPackage((getModel() == null) ? getClass() : getModel().getClass());
   int count=prefs.getInt("recentFileCount",0);
   for (int i=0; i < count; i++) {
     String path=prefs.get("recentFile." + i,null);

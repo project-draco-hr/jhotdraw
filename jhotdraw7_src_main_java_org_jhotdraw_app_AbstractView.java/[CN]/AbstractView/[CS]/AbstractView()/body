@@ -1,3 +1,3 @@
 {
-  preferences=Preferences.userNodeForPackage(getClass());
+  preferences=PreferencesUtil.userNodeForPackage(getClass());
 }

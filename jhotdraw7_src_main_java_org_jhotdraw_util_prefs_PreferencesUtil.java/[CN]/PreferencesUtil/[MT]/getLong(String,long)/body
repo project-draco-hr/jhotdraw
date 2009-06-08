@@ -1,0 +1,3 @@
+{
+  return (Long)(map.containsKey(key) ? map.get(key) : def);
+}

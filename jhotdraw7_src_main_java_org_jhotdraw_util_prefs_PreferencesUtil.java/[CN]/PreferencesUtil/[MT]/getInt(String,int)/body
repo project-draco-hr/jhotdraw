@@ -1,0 +1,3 @@
+{
+  return (Integer)(map.containsKey(key) ? map.get(key) : def);
+}

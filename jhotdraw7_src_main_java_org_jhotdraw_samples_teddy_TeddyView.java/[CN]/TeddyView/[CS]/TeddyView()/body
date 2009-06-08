@@ -1,3 +1,3 @@
 {
-  prefs=Preferences.userNodeForPackage(TeddyView.class);
+  prefs=PreferencesUtil.userNodeForPackage(TeddyView.class);
 }
