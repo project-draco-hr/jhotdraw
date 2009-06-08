@@ -1,4 +1,10 @@
 {
+  if (systemNodes != null) {
+    if (!systemNodes.containsKey(c.getPackage())) {
+      systemNodes.put(c.getPackage(),new PreferencesUtil(false));
+    }
+    return systemNodes.get(c.getPackage());
+  }
   try {
     return Preferences.systemNodeForPackage(c);
   }
@@ -6,9 +12,6 @@
     if (systemNodes == null) {
       systemNodes=new HashMap<Package,Preferences>();
     }
-    if (!systemNodes.containsKey(c.getPackage())) {
-      systemNodes.put(c.getPackage(),new PreferencesUtil(false));
-    }
-    return systemNodes.get(c.getPackage());
+    return systemNodeForPackage(c);
   }
 }

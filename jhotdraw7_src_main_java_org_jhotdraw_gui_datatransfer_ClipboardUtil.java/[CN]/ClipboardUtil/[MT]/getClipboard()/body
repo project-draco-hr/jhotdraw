@@ -1,0 +1,14 @@
+{
+  if (proxy != null) {
+    return proxy;
+  }
+  try {
+    return Toolkit.getDefaultToolkit().getSystemClipboard();
+  }
+ catch (  SecurityException e) {
+    if (proxy == null) {
+      proxy=new Clipboard("Clipboard Proxy");
+    }
+    return getClipboard();
+  }
+}

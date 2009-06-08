@@ -2,6 +2,6 @@
   Component focusOwner=KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
   if (focusOwner != null && focusOwner instanceof JComponent) {
     JComponent component=(JComponent)focusOwner;
-    component.getTransferHandler().exportToClipboard(component,component.getToolkit().getSystemClipboard(),TransferHandler.COPY);
+    component.getTransferHandler().exportToClipboard(component,ClipboardUtil.getClipboard(),TransferHandler.COPY);
   }
 }

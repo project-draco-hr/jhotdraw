@@ -3,9 +3,6 @@
   document.setAttribute("xmlns:xlink","http://www.w3.org/1999/xlink");
   document.setAttribute("version","1.2");
   document.setAttribute("baseProfile","tiny");
-  System.out.println(this + "d1:" + drawing.getAttribute(VIEWPORT_FILL));
-  System.out.println(this + "d2:" + drawing.getAttributes().get(VIEWPORT_FILL));
-  System.out.println(this + "d3:" + VIEWPORT_FILL.get(drawing.getAttributes()));
   writeViewportAttributes(document,drawing.getAttributes());
   initStorageContext(document);
   defs=new XMLElement("defs");
