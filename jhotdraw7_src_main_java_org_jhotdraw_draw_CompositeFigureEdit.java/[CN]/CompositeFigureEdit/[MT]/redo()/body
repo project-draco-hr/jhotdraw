@@ -1,0 +1,8 @@
+{
+  if (!canRedo()) {
+    throw new CannotRedoException();
+  }
+  figure.willChange();
+  super.redo();
+  figure.changed();
+}

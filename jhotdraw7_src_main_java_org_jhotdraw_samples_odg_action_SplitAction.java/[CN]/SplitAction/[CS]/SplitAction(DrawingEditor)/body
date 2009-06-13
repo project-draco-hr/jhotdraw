@@ -1,5 +1,5 @@
 {
   super(editor,new ODGPathFigure());
-  labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels",Locale.getDefault());
+  labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
   labels.configureAction(this,ID);
 }

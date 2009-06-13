@@ -28,6 +28,11 @@ if (!newArc.equals(oldArc)) {
 owner.willChange();
 owner.setArc(newArc.width,newArc.height);
 owner.changed();
-fireUndoableEditHappened(new SVGRectRadiusUndoableEdit(owner,oldArc,newArc));
+ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+CompositeFigureEdit edit=new CompositeFigureEdit(owner,labels.getString("attribute.roundRectRadius"));
+fireUndoableEditHappened(edit);
+fireUndoableEditHappened(new PropertyChangeEdit(owner,SVGRectFigure.ARC_WIDTH_PROPERTY,oldArc.width,newArc.width));
+fireUndoableEditHappened(new PropertyChangeEdit(owner,SVGRectFigure.ARC_HEIGHT_PROPERTY,oldArc.height,newArc.height));
+fireUndoableEditHappened(edit);
 }
 }

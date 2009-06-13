@@ -3,10 +3,8 @@
   try {
     Runnable r=new Runnable(){
       public void run(){
-        svgPanel.getDrawing().removeUndoableEditListener(undo);
         svgPanel.getDrawing().removeAllChildren();
         svgPanel.setDrawing(newDrawing);
-        svgPanel.getDrawing().addUndoableEditListener(undo);
         undo.discardAllEdits();
       }
     }

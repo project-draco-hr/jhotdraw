@@ -9,7 +9,9 @@
       TRANSFORM.get(svgRect).inverseTransform(p,p);
     }
  catch (    NoninvertibleTransformException ex) {
-      if (DEBUG)       ex.printStackTrace();
+      if (DEBUG) {
+        ex.printStackTrace();
+      }
     }
   }
   Rectangle2D.Double r=svgRect.getBounds();

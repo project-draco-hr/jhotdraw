@@ -1,0 +1,10 @@
+{
+  if (anEdit instanceof PropertyChangeEdit) {
+    PropertyChangeEdit that=(PropertyChangeEdit)anEdit;
+    if (that.source == this.source && that.propertyName.equals(this.propertyName)) {
+      this.newValue=that.newValue;
+      return true;
+    }
+  }
+  return false;
+}

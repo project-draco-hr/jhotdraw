@@ -7,7 +7,7 @@
   Point2D.Double oldArc=view.viewToDrawing(originalArc);
   Point2D.Double newArc=view.viewToDrawing(viewArc);
   ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
-  CompositeEdit edit=new CompositeEdit(labels.getString("attribute.roundRectRadius"));
+  CompositeFigureEdit edit=new CompositeFigureEdit(owner,labels.getString("attribute.roundRectRadius"));
   fireUndoableEditHappened(edit);
   fireUndoableEditHappened(new PropertyChangeEdit(owner,RoundRectangleFigure.ARC_WIDTH_PROPERTY,oldArc.x,newArc.x));
   fireUndoableEditHappened(new PropertyChangeEdit(owner,RoundRectangleFigure.ARC_HEIGHT_PROPERTY,oldArc.y,newArc.y));

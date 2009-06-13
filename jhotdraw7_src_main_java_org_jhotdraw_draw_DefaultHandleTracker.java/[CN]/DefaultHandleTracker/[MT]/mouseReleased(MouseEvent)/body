@@ -1,4 +1,3 @@
 {
   multicaster.trackEnd(anchor,new Point(evt.getX(),evt.getY()),evt.getModifiersEx(),getView());
-  fireToolDone();
 }

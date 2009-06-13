@@ -1,4 +1,4 @@
 {
   SVGRectFigure svgRect=(SVGRectFigure)getOwner();
-  originalArc2D=svgRect.getArc();
+  originalArc2D=new Dimension2DDouble(svgRect.getArcWidth(),svgRect.getArcHeight());
 }

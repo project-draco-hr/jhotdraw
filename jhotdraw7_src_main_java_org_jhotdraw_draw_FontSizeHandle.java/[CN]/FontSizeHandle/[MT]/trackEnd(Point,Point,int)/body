@@ -4,7 +4,7 @@
   final float editNewSize=newSize;
   UndoableEdit edit=new AbstractUndoableEdit(){
     @Override public String getPresentationName(){
-      ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels",Locale.getDefault());
+      ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
       return labels.getString("attribute.fontSize.text");
     }
     @Override public void undo(){

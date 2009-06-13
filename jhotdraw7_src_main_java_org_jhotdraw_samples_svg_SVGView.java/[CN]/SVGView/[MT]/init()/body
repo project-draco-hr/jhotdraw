@@ -2,7 +2,7 @@
   super.init();
   initComponents();
   JPanel zoomButtonPanel=new JPanel(new BorderLayout());
-  undo=new UndoRedoManager();
+  undo=svgPanel.getUndoRedoManager();
   svgPanel.setDrawing(createDrawing());
   svgPanel.getDrawing().addUndoableEditListener(undo);
   initActions();

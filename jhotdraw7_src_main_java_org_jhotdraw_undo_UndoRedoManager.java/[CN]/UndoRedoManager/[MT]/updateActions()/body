@@ -1,6 +1,6 @@
 {
   String label;
-  if (DEBUG)   System.out.println("UndoManager.updateActions " + editToBeUndone() + " canUndo="+ canUndo()+ " canRedo="+ canRedo());
+  if (DEBUG)   System.out.println("UndoRedoManager@" + hashCode() + ".updateActions "+ editToBeUndone()+ " canUndo="+ canUndo()+ " canRedo="+ canRedo());
   if (canUndo()) {
     undoAction.setEnabled(true);
     label=getUndoPresentationName();
