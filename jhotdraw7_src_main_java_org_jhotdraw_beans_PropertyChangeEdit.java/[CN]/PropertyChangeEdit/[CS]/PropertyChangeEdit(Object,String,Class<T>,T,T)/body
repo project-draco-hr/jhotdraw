@@ -1,6 +1,6 @@
 {
   this.source=source;
-  this.propertyName=propertyName;
+  this.propertyName=this.presentationName=propertyName;
   this.type=type;
   this.oldValue=oldValue;
   this.newValue=newValue;
