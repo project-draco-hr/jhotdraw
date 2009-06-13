@@ -1,0 +1,5 @@
+{
+  double oldValue=roundrect.archeight;
+  roundrect.archeight=newValue;
+  firePropertyChange(ARC_HEIGHT_PROPERTY,oldValue,newValue);
+}

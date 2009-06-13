@@ -1,0 +1,11 @@
+{
+  super.redo();
+  try {
+    getSetter().invoke(source,newValue);
+  }
+ catch (  Exception e) {
+    InternalError ie=new InternalError("Couldn't invoke setter for property \"" + propertyName + "\" in "+ source);
+    ie.initCause(e);
+    throw ie;
+  }
+}

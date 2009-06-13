@@ -1,6 +1,4 @@
 {
-  final double oldWidth=roundrect.getArcWidth();
-  final double oldHeight=roundrect.getArcHeight();
-  roundrect.arcwidth=w;
-  roundrect.archeight=h;
+  setArcWidth(width);
+  setArcHeight(height);
 }

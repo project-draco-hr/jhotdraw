@@ -1,6 +1,0 @@
-{
-  owner.willChange();
-  owner.setArc(newArc.x,newArc.y);
-  owner.changed();
-  super.redo();
-}

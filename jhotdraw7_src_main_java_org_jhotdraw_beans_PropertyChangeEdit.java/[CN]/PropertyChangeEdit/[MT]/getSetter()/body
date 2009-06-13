@@ -1,0 +1,10 @@
+{
+  try {
+    return source.getClass().getMethod("set" + Character.toUpperCase(propertyName.charAt(0)) + propertyName.substring(1),type);
+  }
+ catch (  Exception e) {
+    InternalError ie=new InternalError("Couldn't find setter for property \"" + propertyName + "\" in "+ source);
+    ie.initCause(e);
+    throw ie;
+  }
+}
