@@ -1,0 +1,10 @@
+{
+  try {
+    target.getClass().getMethod("setContents",Transferable.class).invoke(target,contents);
+  }
+ catch (  Exception ex) {
+    InternalError error=new InternalError("Failed to invoke setContents(Transferable) on " + target);
+    error.initCause(ex);
+    throw error;
+  }
+}

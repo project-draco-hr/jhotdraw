@@ -1,0 +1,3 @@
+{
+  target.setContents(contents,null);
+}
