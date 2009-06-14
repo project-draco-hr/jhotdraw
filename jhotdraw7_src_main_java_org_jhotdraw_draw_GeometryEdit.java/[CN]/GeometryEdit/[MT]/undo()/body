@@ -1,6 +1,0 @@
-{
-  super.undo();
-  owner.willChange();
-  owner.restoreTransformTo(oldGeometry);
-  owner.changed();
-}

@@ -23,5 +23,5 @@ transform(new Point2D.Double(r.x + 1,r.y),new Point2D.Double(r.x + r.width,r.y +
 evt.consume();
 break;
 }
-fireUndoableEditHappened(new GeometryEdit(getOwner(),geom,getOwner().getTransformRestoreData()));
+fireUndoableEditHappened(new TransformRestoreEdit(getOwner(),geom,getOwner().getTransformRestoreData()));
 }

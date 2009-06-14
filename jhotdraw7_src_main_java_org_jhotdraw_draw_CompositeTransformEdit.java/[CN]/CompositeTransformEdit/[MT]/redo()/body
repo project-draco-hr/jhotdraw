@@ -1,6 +1,0 @@
-{
-  super.redo();
-  owner.willChange();
-  owner.transform(tx);
-  owner.changed();
-}

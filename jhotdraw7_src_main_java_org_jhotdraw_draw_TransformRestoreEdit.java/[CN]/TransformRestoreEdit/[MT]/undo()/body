@@ -1,0 +1,6 @@
+{
+  super.undo();
+  owner.willChange();
+  owner.restoreTransformTo(oldTransformRestoreData);
+  owner.changed();
+}

@@ -19,5 +19,5 @@ case KeyEvent.VK_RIGHT:
 evt.consume();
 break;
 }
-fireUndoableEditHappened(new GeometryEdit(getOwner(),geom,getOwner().getTransformRestoreData()));
+fireUndoableEditHappened(new TransformRestoreEdit(getOwner(),geom,getOwner().getTransformRestoreData()));
 }
