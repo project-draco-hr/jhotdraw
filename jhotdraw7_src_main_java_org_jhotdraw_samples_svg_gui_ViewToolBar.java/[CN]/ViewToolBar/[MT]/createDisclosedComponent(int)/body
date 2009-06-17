@@ -67,7 +67,11 @@ case 2:
           constrainer.setWidth((Double)evt.getNewValue());
           constrainer.setHeight((Double)evt.getNewValue());
           prefs=PreferencesUtil.userNodeForPackage(getClass());
-          prefs.putDouble("view.gridSize",(Double)evt.getNewValue());
+          try {
+            prefs.putDouble("view.gridSize",(Double)evt.getNewValue());
+          }
+ catch (          IllegalStateException e) {
+          }
           view.getComponent().repaint();
         }
       }

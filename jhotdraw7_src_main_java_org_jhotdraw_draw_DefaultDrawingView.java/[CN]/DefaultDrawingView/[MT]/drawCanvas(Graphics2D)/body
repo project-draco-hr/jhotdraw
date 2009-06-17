@@ -1,0 +1,21 @@
+{
+  Rectangle cb=getCanvasViewBounds();
+  Color canvasColor;
+  if (drawing == null) {
+    canvasColor=CANVAS_FILL_COLOR.getDefaultValue();
+  }
+ else {
+    canvasColor=CANVAS_FILL_COLOR.get(drawing);
+    if (canvasColor != null) {
+      canvasColor=new Color((canvasColor.getRGB() & 0xffffff) | ((int)(CANVAS_FILL_OPACITY.get(drawing) * 255) << 24),true);
+    }
+  }
+  if (canvasColor == null || canvasColor.getAlpha() != 255) {
+    g.setPaint(getBackgroundPaint(cb.x,cb.y));
+    g.fillRect(cb.x,cb.y,cb.width,cb.height);
+  }
+  if (canvasColor != null) {
+    g.setColor(canvasColor);
+    g.fillRect(cb.x,cb.y,cb.width,cb.height);
+  }
+}

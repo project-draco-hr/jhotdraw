@@ -1,0 +1,16 @@
+{
+  int x=(int)(-translate.x * scaleFactor);
+  int y=(int)(-translate.y * scaleFactor);
+  int w=getWidth();
+  int h=getHeight();
+  if (getDrawing() != null) {
+    Double cw=CANVAS_WIDTH.get(getDrawing());
+    Double ch=CANVAS_HEIGHT.get(getDrawing());
+    if (cw != null && ch != null) {
+      Point lowerRight=drawingToView(new Point2D.Double(cw,ch));
+      w=lowerRight.x - x;
+      h=lowerRight.y - y;
+    }
+  }
+  return new Rectangle(x,y,w,h);
+}

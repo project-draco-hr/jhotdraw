@@ -10,8 +10,10 @@
     e.initCause(ex);
     throw e;
   }
+  System.out.println("SVGInputFormat parser created " + (System.currentTimeMillis() - start));
   IXMLReader reader=new StdXMLReader(in);
   parser.setReader(reader);
+  System.out.println("SVGInputFormat reader created " + (System.currentTimeMillis() - start));
   try {
     document=(IXMLElement)parser.parse();
   }
@@ -20,6 +22,7 @@
     e.initCause(ex);
     throw e;
   }
+  System.out.println("SVGInputFormat document created " + (System.currentTimeMillis() - start));
   IXMLElement svg=document;
   Stack<Iterator<IXMLElement>> stack=new Stack<Iterator<IXMLElement>>();
   LinkedList<IXMLElement> ll=new LinkedList<IXMLElement>();
