@@ -4,6 +4,8 @@
   figure.setBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
   if (replace) {
     drawing.removeAllChildren();
+    AttributeKeys.CANVAS_WIDTH.basicSet(drawing,figure.getBounds().width);
+    AttributeKeys.CANVAS_HEIGHT.basicSet(drawing,figure.getBounds().height);
   }
   drawing.basicAdd(figure);
 }
