@@ -1,3 +1,3 @@
 {
-  setLayout(new java.awt.BorderLayout());
+  setLayout(null);
 }
