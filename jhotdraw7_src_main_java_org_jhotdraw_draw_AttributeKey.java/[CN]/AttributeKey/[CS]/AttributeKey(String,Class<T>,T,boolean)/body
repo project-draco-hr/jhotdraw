@@ -1,6 +1,3 @@
 {
-  this.key=key;
-  this.clazz=clazz;
-  this.defaultValue=defaultValue;
-  this.isNullValueAllowed=isNullValueAllowed;
+  this(key,clazz,defaultValue,isNullValueAllowed,null);
 }

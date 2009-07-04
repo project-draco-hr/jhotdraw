@@ -15,6 +15,6 @@
     }
   }
   Rectangle2D.Double r=svgRect.getBounds();
-  svgRect.setArc(p.x - r.x,p.y - r.y);
+  svgRect.setArc(Math.min(svgRect.getWidth(),Math.max(0,p.x - r.x)),Math.min(svgRect.getHeight(),Math.max(0,p.y - r.y)));
   svgRect.changed();
 }
