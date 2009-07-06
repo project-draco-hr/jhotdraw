@@ -1,4 +1,8 @@
 {
+  Rectangle2D.Double invalidatedArea=getDrawingArea();
+  invalidatedArea.add(e.getInvalidatedArea());
   invalidate();
-  fireFigureChanged(e.getInvalidatedArea());
+  validate();
+  invalidatedArea.add(getDrawingArea());
+  fireFigureChanged(invalidatedArea);
 }

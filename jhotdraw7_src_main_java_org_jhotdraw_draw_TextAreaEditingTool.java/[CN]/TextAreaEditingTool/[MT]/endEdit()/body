@@ -4,12 +4,14 @@
     final TextHolderFigure editedFigure=typingTarget;
     final String oldText=typingTarget.getText();
     final String newText=textArea.getText();
+    typingTarget.willChange();
     if (newText.length() > 0) {
       typingTarget.setText(newText);
     }
  else {
       typingTarget.setText("");
     }
+    typingTarget.changed();
     UndoableEdit edit=new AbstractUndoableEdit(){
       @Override public String getPresentationName(){
         ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
