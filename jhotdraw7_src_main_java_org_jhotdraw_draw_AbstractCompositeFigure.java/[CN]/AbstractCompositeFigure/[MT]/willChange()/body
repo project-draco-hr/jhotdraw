@@ -1,0 +1,6 @@
+{
+  super.willChange();
+  for (  Figure child : children) {
+    child.willChange();
+  }
+}
