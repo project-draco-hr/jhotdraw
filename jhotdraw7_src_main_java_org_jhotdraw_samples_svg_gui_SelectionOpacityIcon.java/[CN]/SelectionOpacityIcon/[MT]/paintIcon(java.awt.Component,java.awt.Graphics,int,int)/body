@@ -4,16 +4,21 @@
   Double opacity;
   Color fillColor;
   Color strokeColor;
-  DrawingView view=editor.getActiveView();
+  DrawingView view=(editor == null) ? null : editor.getActiveView();
   if (view != null && view.getSelectedFigures().size() == 1) {
     opacity=opacityKey.get(view.getSelectedFigures().iterator().next());
     fillColor=(fillColorKey == null) ? null : fillColorKey.get(view.getSelectedFigures().iterator().next());
     strokeColor=(strokeColorKey == null) ? null : strokeColorKey.get(view.getSelectedFigures().iterator().next());
   }
- else {
+ else   if (editor != null) {
     opacity=opacityKey.get(editor.getDefaultAttributes());
     fillColor=(fillColorKey == null) ? null : fillColorKey.get(editor.getDefaultAttributes());
     strokeColor=(strokeColorKey == null) ? null : strokeColorKey.get(editor.getDefaultAttributes());
+  }
+ else {
+    opacity=opacityKey.getDefaultValue();
+    fillColor=(fillColorKey == null) ? null : fillColorKey.getDefaultValue();
+    strokeColor=(strokeColorKey == null) ? null : strokeColorKey.getDefaultValue();
   }
   if (fillColorKey != null && fillShape != null) {
     if (opacity != null) {

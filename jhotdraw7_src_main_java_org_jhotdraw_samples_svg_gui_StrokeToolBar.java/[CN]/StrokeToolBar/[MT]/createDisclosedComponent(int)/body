@@ -6,6 +6,9 @@ case 1:
       p=new JPanel();
       p.setOpaque(false);
       p.setBorder(new EmptyBorder(5,5,5,8));
+      if (editor == null) {
+        break;
+      }
       ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
       GridBagLayout layout=new GridBagLayout();
       p.setLayout(layout);
@@ -77,6 +80,9 @@ case 2:
   p=new JPanel();
   p.setOpaque(false);
   p.setBorder(new EmptyBorder(5,5,5,8));
+  if (editor == null) {
+    break;
+  }
   ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
   GridBagLayout layout=new GridBagLayout();
   p.setLayout(layout);

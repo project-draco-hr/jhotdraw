@@ -6,6 +6,9 @@ case 1:
       p=new JPanel();
       p.setOpaque(false);
       p.setBorder(new EmptyBorder(5,5,5,8));
+      if (editor == null) {
+        break;
+      }
       JPanel p1=new JPanel(new GridBagLayout());
       JPanel p2=new JPanel(new GridBagLayout());
       JPanel p3=new JPanel(new GridBagLayout());
@@ -111,6 +114,9 @@ case 2:
   p=new JPanel();
   p.setOpaque(false);
   p.setBorder(new EmptyBorder(5,5,5,8));
+  if (editor == null) {
+    break;
+  }
   JPanel p1=new JPanel(new GridBagLayout());
   JPanel p2=new JPanel(new GridBagLayout());
   JPanel p3=new JPanel(new GridBagLayout());

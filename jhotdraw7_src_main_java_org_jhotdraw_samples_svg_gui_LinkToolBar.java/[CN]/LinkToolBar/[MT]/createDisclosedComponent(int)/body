@@ -6,9 +6,12 @@ case 1:
       p=new JPanel();
       p.setOpaque(false);
       p.setLayout(new GridBagLayout());
+      p.setBorder(new EmptyBorder(5,5,5,8));
+      if (editor == null) {
+        break;
+      }
       GridBagConstraints gbc;
       AbstractButton btn;
-      p.setBorder(new EmptyBorder(5,5,5,8));
       JLabel linkLabel;
       JScrollPane scrollPane;
       JAttributeTextArea<String> linkField;
@@ -83,9 +86,12 @@ case 2:
   p=new JPanel();
   p.setOpaque(false);
   p.setLayout(new GridBagLayout());
+  p.setBorder(new EmptyBorder(5,5,5,8));
+  if (editor == null) {
+    break;
+  }
   GridBagConstraints gbc;
   AbstractButton btn;
-  p.setBorder(new EmptyBorder(5,5,5,8));
   JScrollPane scrollPane;
   JAttributeTextArea<String> linkField;
   scrollPane=new javax.swing.JScrollPane();
