@@ -12,7 +12,7 @@
   toolsPane.setOpaque(true);
   viewToolBar.setView(view);
   undoManager=new UndoRedoManager();
-  DefaultDrawing drawing=new DefaultDrawing();
+  Drawing drawing=createDrawing();
   view.setDrawing(drawing);
   drawing.addUndoableEditListener(undoManager);
   ArrayList<JToolBar> sortme=new ArrayList<JToolBar>();

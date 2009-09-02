@@ -1,0 +1,34 @@
+{
+  final Drawing[] helper=new Drawing[1];
+  Runnable r=new Runnable(){
+    public void run(){
+      helper[0]=(Drawing)getDrawing().clone();
+    }
+  }
+;
+  if (SwingUtilities.isEventDispatchThread()) {
+    r.run();
+  }
+ else {
+    try {
+      SwingUtilities.invokeAndWait(r);
+    }
+ catch (    InterruptedException ex) {
+    }
+catch (    InvocationTargetException ex) {
+      InternalError ie=new InternalError("Error getting drawing.");
+      ie.initCause(ex);
+      throw ie;
+    }
+  }
+  Drawing saveDrawing=helper[0];
+  if (saveDrawing.getOutputFormats().size() == 0) {
+    throw new InternalError("Drawing object has no output formats.");
+  }
+  for (  OutputFormat format : saveDrawing.getOutputFormats()) {
+    if (format.getFileFilter().accept(f)) {
+      format.write(f,saveDrawing);
+    }
+  }
+  throw new IOException("No output format for " + f.getName());
+}
