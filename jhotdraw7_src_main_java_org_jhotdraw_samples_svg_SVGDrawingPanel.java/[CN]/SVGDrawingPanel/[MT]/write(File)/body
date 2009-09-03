@@ -28,6 +28,7 @@ catch (    InvocationTargetException ex) {
   for (  OutputFormat format : saveDrawing.getOutputFormats()) {
     if (format.getFileFilter().accept(f)) {
       format.write(f,saveDrawing);
+      return;
     }
   }
   throw new IOException("No output format for " + f.getName());

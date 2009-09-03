@@ -6,24 +6,17 @@
     p.setEnabled(false);
     app.add(p);
     p.execute(new Worker(){
-      public Object construct(){
-        try {
-          p.read(ae.getFile());
-          return null;
-        }
- catch (        IOException e) {
-          return e;
-        }
+      public Object construct() throws IOException {
+        p.read(ae.getFile());
+        return null;
       }
-      public void finished(      Object value){
-        if (value == null) {
-          p.setFile(ae.getFile());
-          p.setEnabled(true);
-        }
- else {
-          app.dispose(p);
-          JOptionPane.showMessageDialog(null,"<html>" + UIManager.getString("OptionPane.css") + "<b>Can't open file "+ ae.getFile()+ "</b><p>"+ value,"",JOptionPane.ERROR_MESSAGE);
-        }
+      @Override protected void done(      Object value){
+        p.setFile(ae.getFile());
+        p.setEnabled(true);
+      }
+      @Override protected void failed(      Throwable value){
+        app.dispose(p);
+        JOptionPane.showMessageDialog(null,"<html>" + UIManager.getString("OptionPane.css") + "<b>Can't open file "+ ae.getFile()+ "</b><p>"+ value,"",JOptionPane.ERROR_MESSAGE);
       }
     }
 );

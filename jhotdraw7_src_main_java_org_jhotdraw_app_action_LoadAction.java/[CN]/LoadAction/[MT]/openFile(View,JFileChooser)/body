@@ -2,17 +2,23 @@
   final File file=fileChooser.getSelectedFile();
   view.setEnabled(false);
   view.execute(new Worker(){
-    public Object construct(){
-      try {
-        view.read(file);
-        return null;
-      }
- catch (      IOException e) {
-        return e;
-      }
+    protected Object construct() throws IOException {
+      view.read(file);
+      return null;
     }
-    public void finished(    Object value){
-      fileOpened(view,file,value);
+    @Override protected void done(    Object value){
+      view.setFile(file);
+      view.setEnabled(true);
+      getApplication().addRecentFile(file);
+    }
+    @Override protected void failed(    Throwable value){
+      JSheet.showMessageSheet(view.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>Couldn't open the file \""+ file+ "\".</b><br>"+ value,JOptionPane.ERROR_MESSAGE,new SheetListener(){
+        public void optionSelected(        SheetEvent evt){
+          view.clear();
+          view.setEnabled(true);
+        }
+      }
+);
     }
   }
 );

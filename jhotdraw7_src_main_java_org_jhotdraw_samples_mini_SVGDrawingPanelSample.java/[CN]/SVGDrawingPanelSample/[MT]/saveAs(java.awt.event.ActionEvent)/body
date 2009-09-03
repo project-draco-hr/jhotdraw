@@ -1,0 +1,35 @@
+{
+  JFileChooser fc=getSaveChooser();
+  if (file != null) {
+    fc.setSelectedFile(file);
+  }
+  if (fc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+    svgPanel.setEnabled(false);
+    final File selectedFile;
+    if (fc.getFileFilter() instanceof ExtensionFileFilter) {
+      selectedFile=((ExtensionFileFilter)fc.getFileFilter()).makeAcceptable(fc.getSelectedFile());
+    }
+ else {
+      selectedFile=fc.getSelectedFile();
+    }
+    final OutputFormat selectedFormat=fileFilterOutputFormatMap.get(fc.getFileFilter());
+    new Worker(){
+      @Override protected Object construct() throws IOException {
+        svgPanel.write(selectedFile,selectedFormat);
+        return null;
+      }
+      @Override protected void done(      Object value){
+        file=selectedFile;
+        setTitle(file.getName());
+      }
+      @Override protected void failed(      Throwable error){
+        error.printStackTrace();
+        JOptionPane.showMessageDialog(SVGDrawingPanelSample.this,"<html><b>Couldn't save to file \"" + selectedFile.getName() + "\"<br>"+ error.toString(),"Save As File",JOptionPane.ERROR_MESSAGE);
+      }
+      @Override protected void finished(){
+        svgPanel.setEnabled(true);
+      }
+    }
+.start();
+  }
+}

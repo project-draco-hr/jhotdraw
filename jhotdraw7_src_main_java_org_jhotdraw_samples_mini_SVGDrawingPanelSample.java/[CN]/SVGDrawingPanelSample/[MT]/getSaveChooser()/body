@@ -1,0 +1,27 @@
+{
+  if (saveChooser == null) {
+    saveChooser=new JFileChooser();
+    Drawing d=svgPanel.getDrawing();
+    fileFilterOutputFormatMap=new HashMap<javax.swing.filechooser.FileFilter,OutputFormat>();
+    javax.swing.filechooser.FileFilter firstFF=null;
+    for (    OutputFormat format : d.getOutputFormats()) {
+      javax.swing.filechooser.FileFilter ff=format.getFileFilter();
+      if (firstFF == null) {
+        firstFF=ff;
+      }
+      fileFilterOutputFormatMap.put(ff,format);
+      saveChooser.addChoosableFileFilter(ff);
+    }
+    saveChooser.setFileFilter(firstFF);
+    saveChooser.addPropertyChangeListener(new PropertyChangeListener(){
+      public void propertyChange(      PropertyChangeEvent evt){
+        if (evt.getPropertyName().equals("fileFilterChanged")) {
+          OutputFormat outputFormat=fileFilterOutputFormatMap.get(evt.getNewValue());
+          saveChooser.setAccessory((outputFormat == null) ? null : outputFormat.getOutputFormatAccessory());
+        }
+      }
+    }
+);
+  }
+  return saveChooser;
+}

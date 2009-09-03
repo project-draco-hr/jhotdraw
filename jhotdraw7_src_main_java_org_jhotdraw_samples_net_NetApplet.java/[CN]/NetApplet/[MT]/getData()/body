@@ -15,7 +15,9 @@
     e.printStackTrace();
   }
  finally {
-    if (out != null)     out.close();
+    if (out != null) {
+      out.close();
+    }
   }
   return out.toString();
 }

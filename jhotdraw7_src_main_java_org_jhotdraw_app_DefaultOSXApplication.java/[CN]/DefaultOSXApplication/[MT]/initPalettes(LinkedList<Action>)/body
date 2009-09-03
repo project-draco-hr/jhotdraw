@@ -1,6 +1,6 @@
 {
-  SwingUtilities.invokeLater(new Worker(){
-    public Object construct(){
+  SwingUtilities.invokeLater(new Worker<LinkedList<JFrame>>(){
+    public LinkedList<JFrame> construct(){
       LinkedList<JFrame> palettes=new LinkedList<JFrame>();
       LinkedList<JToolBar> toolBars=new LinkedList<JToolBar>(getModel().createToolBars(DefaultOSXApplication.this,null));
       int i=0;
@@ -32,7 +32,7 @@
       }
       return palettes;
     }
-    public void finished(    Object result){
+    @Override protected void done(    LinkedList<JFrame> result){
       @SuppressWarnings("unchecked") LinkedList<JFrame> palettes=(LinkedList<JFrame>)result;
       if (palettes != null) {
         for (        JFrame p : palettes) {

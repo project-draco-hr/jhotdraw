@@ -1,0 +1,8 @@
+{
+  if (evt.getSource() == openMenuItem) {
+    SVGDrawingPanelSample.this.open(evt);
+  }
+ else   if (evt.getSource() == saveAsMenuItem) {
+    SVGDrawingPanelSample.this.saveAs(evt);
+  }
+}

@@ -9,7 +9,7 @@
   final PrintJob pj=frame.getToolkit().getPrintJob(frame,"Job Title",jobAttr,pageAttr);
   getActiveView().setEnabled(false);
   new Worker(){
-    public Object construct(){
+    protected Object construct() throws PrinterException {
       Paper paper=new Paper();
       paper.setSize(pj.getPageDimension().width / resolution * 72d,pj.getPageDimension().height / resolution * 72d);
       paper.setImageableArea(64d,32d,paper.getWidth() - 96d,paper.getHeight() - 64);
@@ -38,15 +38,15 @@
           g.dispose();
         }
       }
- catch (      Throwable t) {
-        t.printStackTrace();
-      }
- finally {
+  finally {
         pj.end();
       }
       return null;
     }
-    public void finished(    Object value){
+    protected void failed(    Throwable error){
+      error.printStackTrace();
+    }
+    protected void finished(){
       getActiveView().setEnabled(true);
     }
   }

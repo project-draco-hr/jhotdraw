@@ -13,61 +13,59 @@
   c.add(progress);
   progress.revalidate();
   new Worker(){
-    public Object construct(){
-      try {
-        Thread t=new Thread(){
-          @Override public void run(){
-            drawingComponent=createDrawingComponent();
-          }
+    protected Object construct() throws Exception {
+      Thread t=new Thread(){
+        @Override public void run(){
+          drawingComponent=createDrawingComponent();
         }
+      }
 ;
-        t.start();
-        progress.setNote(labels.getString("progressLoading"));
-        Object drawing=loadDrawing(progress);
-        progress.setNote(labels.getString("progressOpeningEditor"));
-        progress.setIndeterminate(true);
-        t.join();
-        return drawing;
-      }
- catch (      Throwable t) {
-        return t;
-      }
+      t.start();
+      progress.setNote(labels.getString("progressLoading"));
+      Object drawing=loadDrawing(progress);
+      progress.setNote(labels.getString("progressOpeningEditor"));
+      progress.setIndeterminate(true);
+      t.join();
+      return drawing;
     }
-    public void finished(    Object result){
+    protected void done(    Object result){
       Container c=getContentPane();
       c.setLayout(new BorderLayout());
       c.removeAll();
-      if (result instanceof Throwable) {
-        Throwable error=(Throwable)result;
-        error.printStackTrace();
-        String message=(error.getMessage() == null) ? error.toString() : error.getMessage();
-        MessagePanel mp=new MessagePanel(UIManager.getIcon("OptionPane.errorIcon"),labels.getFormatted("messageLoadFailed",htmlencode(getParameter("DrawingURL")),htmlencode(message)));
-        c.add(mp);
-        mp.addActionListener(new ActionListener(){
-          public void actionPerformed(          ActionEvent evt){
-            if (evt.getActionCommand().equals("close")) {
-              close();
-            }
+      c.add(drawingComponent.getComponent());
+      initComponents();
+      if (result != null) {
+        if (result instanceof Drawing) {
+          setDrawing((Drawing)result);
+        }
+ else         if (result instanceof Throwable) {
+          setDrawing(createDrawing());
+          getDrawing().add(new SVGTextFigure(result.toString()));
+          ((Throwable)result).printStackTrace();
+        }
+      }
+      drawingComponent.revalidate();
+    }
+    protected void failed(    Throwable result){
+      Container c=getContentPane();
+      c.setLayout(new BorderLayout());
+      c.removeAll();
+      Throwable error=(Throwable)result;
+      error.printStackTrace();
+      String message=(error.getMessage() == null) ? error.toString() : error.getMessage();
+      MessagePanel mp=new MessagePanel(UIManager.getIcon("OptionPane.errorIcon"),labels.getFormatted("messageLoadFailed",htmlencode(getParameter("DrawingURL")),htmlencode(message)));
+      c.add(mp);
+      mp.addActionListener(new ActionListener(){
+        public void actionPerformed(        ActionEvent evt){
+          if (evt.getActionCommand().equals("close")) {
+            close();
           }
         }
+      }
 );
-        mp.revalidate();
-      }
- else {
-        c.add(drawingComponent.getComponent());
-        initComponents();
-        if (result != null) {
-          if (result instanceof Drawing) {
-            setDrawing((Drawing)result);
-          }
- else           if (result instanceof Throwable) {
-            setDrawing(createDrawing());
-            getDrawing().add(new SVGTextFigure(result.toString()));
-            ((Throwable)result).printStackTrace();
-          }
-        }
-        drawingComponent.revalidate();
-      }
+      mp.revalidate();
+    }
+    protected void finished(){
       long end=System.currentTimeMillis();
       System.out.println("AbstractDrawingApplet startup latency:" + (end - start));
     }

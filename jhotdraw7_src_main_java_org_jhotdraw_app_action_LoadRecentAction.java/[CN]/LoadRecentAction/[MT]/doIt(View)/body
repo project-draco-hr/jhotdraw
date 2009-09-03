@@ -9,17 +9,32 @@
   }
   view.setMultipleOpenId(multipleOpenId);
   view.execute(new Worker(){
-    public Object construct(){
-      try {
-        view.read(file);
-        return null;
+    protected Object construct() throws IOException {
+      view.read(file);
+      return null;
+    }
+    @Override protected void done(    Object value){
+      final Application app=getApplication();
+      view.setFile(file);
+      view.setEnabled(true);
+      Frame w=(Frame)SwingUtilities.getWindowAncestor(view.getComponent());
+      if (w != null) {
+        w.setExtendedState(w.getExtendedState() & ~Frame.ICONIFIED);
+        w.toFront();
       }
- catch (      Throwable e) {
-        return e;
+      view.getComponent().requestFocus();
+      if (app != null) {
+        app.setEnabled(true);
       }
     }
-    public void finished(    Object value){
-      fileOpened(view,file,value);
+    @Override protected void failed(    Throwable value){
+      final Application app=getApplication();
+      ((Throwable)value).printStackTrace();
+      JSheet.showMessageSheet(view.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>Couldn't open the file \""+ file+ "\".</b><br>"+ value,JOptionPane.ERROR_MESSAGE,new SheetListener(){
+        public void optionSelected(        SheetEvent evt){
+        }
+      }
+);
     }
   }
 );

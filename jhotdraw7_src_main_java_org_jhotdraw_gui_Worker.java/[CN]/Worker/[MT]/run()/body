@@ -1,17 +1,23 @@
 {
-  final Runnable doFinished=new Runnable(){
-    public void run(){
-      finished(getValue());
-    }
-  }
-;
   try {
     setValue(construct());
   }
  catch (  Throwable e) {
-    e.printStackTrace();
+    setError(e);
+    SwingUtilities.invokeLater(new Runnable(){
+      public void run(){
+        failed(getError());
+        finished();
+      }
+    }
+);
+    return;
   }
- finally {
-    SwingUtilities.invokeLater(doFinished);
+  SwingUtilities.invokeLater(new Runnable(){
+    public void run(){
+      done(getValue());
+      finished();
+    }
   }
+);
 }

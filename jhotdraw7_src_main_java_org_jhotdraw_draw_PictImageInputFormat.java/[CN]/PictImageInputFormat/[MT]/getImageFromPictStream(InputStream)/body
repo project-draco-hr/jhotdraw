@@ -14,7 +14,15 @@
       return null;
     }
     byte[] imgBytes=baos.toByteArray();
-    Class c=Class.forName("quicktime.QTSession");
+    Class c;
+    try {
+      c=Class.forName("quicktime.QTSession");
+    }
+ catch (    Throwable e) {
+      IOException error=new IOException("QuickTime for Java is not available.");
+      error.initCause(e);
+      throw error;
+    }
     Method m=c.getMethod("isInitialized");
     Boolean b=(Boolean)m.invoke(null,(Object[])null);
     if (b.booleanValue() == false) {
