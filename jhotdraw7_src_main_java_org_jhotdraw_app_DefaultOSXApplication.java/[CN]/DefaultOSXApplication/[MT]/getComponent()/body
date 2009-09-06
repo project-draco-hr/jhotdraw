@@ -1,3 +1,4 @@
 {
-  return null;
+  net.roydesign.app.Application mrjapp=net.roydesign.app.Application.getInstance();
+  return mrjapp.getFramelessJMenuBar().getParent();
 }
