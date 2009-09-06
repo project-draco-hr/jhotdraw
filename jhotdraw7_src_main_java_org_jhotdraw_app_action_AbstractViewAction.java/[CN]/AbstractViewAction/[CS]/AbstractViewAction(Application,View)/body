@@ -1,0 +1,9 @@
+{
+  this.app=app;
+  this.view=view;
+  this.enabled=true;
+  if (app != null) {
+    app.addPropertyChangeListener(applicationListener);
+    updateView(null,getActiveView());
+  }
+}

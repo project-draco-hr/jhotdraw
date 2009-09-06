@@ -20,7 +20,7 @@
     JFileChooser fileChooser=getFileChooser(view);
     if (fileChooser.showOpenDialog(app.getComponent()) == JFileChooser.APPROVE_OPTION) {
       app.show(view);
-      openFile(fileChooser,view);
+      openFile(view,fileChooser.getSelectedFile());
     }
  else {
       if (disposeView) {

@@ -1,6 +1,5 @@
 {
   final Application app=getApplication();
-  final File file=fileChooser.getSelectedFile();
   app.setEnabled(true);
   view.setEnabled(false);
   int multipleOpenId=1;
