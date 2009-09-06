@@ -2,6 +2,8 @@
   this.windowMenu=windowMenu;
   this.view=view;
   addPropertyChangeListener(this);
-  view.addDisposable(this);
+  if (view != null) {
+    view.addDisposable(this);
+  }
   updateWindowMenu();
 }
