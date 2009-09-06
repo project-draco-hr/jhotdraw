@@ -6,20 +6,6 @@
   JMenu windowMenu=m;
   labels.configureMenu(m,"window");
   m.addSeparator();
-  for (  View pr : views()) {
-    if (pr.getAction(FocusAction.ID) != null) {
-      windowMenu.add(pr.getAction(FocusAction.ID));
-    }
-  }
-  if (paletteActions.size() > 0) {
-    m.addSeparator();
-    for (    Action a : paletteActions) {
-      JCheckBoxMenuItem cbmi=new JCheckBoxMenuItem(a);
-      Actions.configureJCheckBoxMenuItem(cbmi,a);
-      cbmi.setIcon(null);
-      m.add(cbmi);
-    }
-  }
   if (view != null) {
     new WindowMenuHandler(windowMenu,view);
   }
