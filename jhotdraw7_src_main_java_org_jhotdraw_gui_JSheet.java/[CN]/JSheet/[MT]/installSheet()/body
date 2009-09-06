@@ -26,7 +26,7 @@
         }
       }
  else {
-        sheetLoc=new Point(ownerLoc.x + (owner.getWidth() - getWidth()) / 2,ownerLoc.y + (owner.getHeight() - getHeight()) / 2);
+        sheetLoc=new Point(ownerLoc.x + (owner.getWidth() - getWidth()) / 2,ownerLoc.y + (owner.getHeight() - getHeight()) / 3);
       }
       setLocation(sheetLoc);
       oldFocusOwner=owner.getFocusOwner();
@@ -41,5 +41,11 @@
       }
     }
     isInstalled=true;
+  }
+ else {
+    Window owner=getOwner();
+    Point ownerLoc=owner.getLocation();
+    Point sheetLoc=new Point(ownerLoc.x + (owner.getWidth() - getWidth()) / 2,ownerLoc.y + (owner.getHeight() - getHeight()) / 3);
+    setLocation(sheetLoc);
   }
 }

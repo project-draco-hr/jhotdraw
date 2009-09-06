@@ -1,15 +1,18 @@
 {
   Window window=getWindowForComponent(parentComponent);
   final JSheet sheet;
+  boolean isUndecorated;
   if (window instanceof Frame) {
+    isUndecorated=((Frame)window).isUndecorated();
     sheet=new JSheet((Frame)window);
   }
  else {
+    isUndecorated=((Dialog)window).isUndecorated();
     sheet=new JSheet((Dialog)window);
   }
   JComponent contentPane=(JComponent)sheet.getContentPane();
   contentPane.setLayout(new BorderLayout());
-  if (isNativeSheetSupported()) {
+  if (isNativeSheetSupported() && !isUndecorated) {
     contentPane.setBorder(new EmptyBorder(12,0,0,0));
   }
   contentPane.add(pane,BorderLayout.CENTER);

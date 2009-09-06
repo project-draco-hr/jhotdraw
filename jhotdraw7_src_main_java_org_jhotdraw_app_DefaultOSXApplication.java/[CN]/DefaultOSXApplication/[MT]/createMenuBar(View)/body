@@ -1,18 +1,19 @@
 {
   JMenuBar mb=new JMenuBar();
   mb.add(createFileMenu(p));
-  for (  JMenu mm : getModel().createMenus(this,p)) {
-    mb.add(mm);
-  }
+  JMenu helpMenu=null;
   String helpMenuText=labels.getString("help.text");
-  int index=mb.getComponentCount();
-  for (int i=0, n=mb.getComponentCount(); i < n; i++) {
-    JMenu m=(JMenu)mb.getComponent(i);
-    if (m.getText() != null && m.getText().equals(helpMenuText)) {
-      index=i;
-      break;
+  for (  JMenu mm : getModel().createMenus(this,p)) {
+    if (mm.getText().equals(helpMenuText)) {
+      helpMenu=mm;
+    }
+ else {
+      mb.add(mm);
     }
   }
-  mb.add(createWindowMenu(p),index);
+  mb.add(createWindowMenu(p));
+  if (helpMenu != null) {
+    mb.add(helpMenu);
+  }
   return mb;
 }

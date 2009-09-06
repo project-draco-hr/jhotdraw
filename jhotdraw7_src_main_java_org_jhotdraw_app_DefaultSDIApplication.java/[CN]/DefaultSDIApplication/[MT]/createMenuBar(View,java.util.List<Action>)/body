@@ -1,33 +1,66 @@
 {
   JMenuBar mb=new JMenuBar();
   mb.add(createFileMenu(p));
-  JMenu lastMenu=null;
-  for (  JMenu mm : getModel().createMenus(this,p)) {
+  JMenu editMenu=null;
+  JMenu viewMenu=null;
+  JMenu helpMenu=null;
+  String editMenuText=labels.getString("edit.text");
+  String viewMenuText=labels.getString("view.text");
+  String helpMenuText=labels.getString("help.text");
+  for (  JMenu mm : getModel().createMenus(this,null)) {
+    if (mm.getText().equals(editMenuText)) {
+      editMenu=mm;
+    }
+ else     if (mm.getText().equals(viewMenuText)) {
+      viewMenu=mm;
+    }
+ else     if (mm.getText().equals(helpMenuText)) {
+      helpMenu=mm;
+      continue;
+    }
     mb.add(mm);
-    lastMenu=mm;
   }
-  JMenu viewMenu=createViewMenu(p,toolBarActions);
-  if (viewMenu != null) {
-    if (lastMenu != null && lastMenu.getText().equals(viewMenu.getText())) {
-      for (      Component c : lastMenu.getMenuComponents()) {
+  if (editMenu == null) {
+    JMenu m=createEditMenu();
+    if (m != null) {
+      mb.add(m,1);
+    }
+  }
+ else {
+    JMenu m=createEditMenu();
+    if (m != null) {
+      editMenu.addSeparator();
+      for (      Component c : mb.getComponents()) {
+        editMenu.add(c);
+      }
+    }
+  }
+  if (viewMenu == null) {
+    JMenu m=createViewMenu(p,toolBarActions);
+    if (m != null) {
+      mb.add(m,1);
+    }
+  }
+ else {
+    JMenu m=createViewMenu(p,toolBarActions);
+    if (m != null) {
+      viewMenu.addSeparator();
+      for (      Component c : mb.getComponents()) {
         viewMenu.add(c);
       }
-      mb.remove(lastMenu);
     }
-    mb.add(viewMenu);
   }
-  JMenu helpMenu=createHelpMenu(p);
-  for (  Component mc : mb.getComponents()) {
-    JMenu m=(JMenu)mc;
-    if (m.getText().equals(helpMenu.getText())) {
-      for (      Component c : helpMenu.getMenuComponents()) {
-        m.add(c);
+  if (helpMenu == null) {
+    mb.add(createHelpMenu(p));
+  }
+ else {
+    JMenu m=createHelpMenu(p);
+    if (m != null) {
+      helpMenu.addSeparator();
+      for (      Component c : mb.getComponents()) {
+        helpMenu.add(c);
       }
-      helpMenu=null;
-      break;
     }
-  }
-  if (helpMenu != null) {
     mb.add(helpMenu);
   }
   return mb;

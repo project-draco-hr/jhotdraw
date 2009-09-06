@@ -1,10 +1,48 @@
 {
   JMenuBar mb=new JMenuBar();
   mb.add(createFileMenu());
+  JMenu editMenu=null;
+  JMenu helpMenu=null;
+  String editMenuText=labels.getString("edit.text");
+  String helpMenuText=labels.getString("help.text");
   for (  JMenu mm : getModel().createMenus(this,null)) {
+    if (mm.getText().equals(editMenuText)) {
+      editMenu=mm;
+    }
+ else     if (mm.getText().equals(helpMenuText)) {
+      helpMenu=mm;
+      continue;
+    }
     mb.add(mm);
   }
+  if (editMenu == null) {
+    JMenu m=createEditMenu();
+    if (m != null) {
+      mb.add(m,1);
+    }
+  }
+ else {
+    JMenu m=createEditMenu();
+    if (m != null) {
+      editMenu.addSeparator();
+      for (      Component c : mb.getComponents()) {
+        editMenu.add(c);
+      }
+    }
+  }
   mb.add(createWindowMenu());
-  mb.add(createHelpMenu());
+  if (helpMenu == null) {
+    mb.add(createHelpMenu());
+  }
+ else {
+    JMenu m=createHelpMenu();
+    if (m != null) {
+      helpMenu.addSeparator();
+      for (      Component c : mb.getComponents()) {
+        helpMenu.add(c);
+      }
+    }
+    mb.add(helpMenu);
+  }
   return mb;
 }
