@@ -9,7 +9,7 @@
       ((Throwable)value).printStackTrace();
       JSheet.showMessageSheet(view.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>Couldn't export to the file \""+ file+ "\".<p>"+ "Reason: "+ value,JOptionPane.ERROR_MESSAGE);
     }
-    protected void finished(    Throwable value){
+    protected void finished(){
       view.setEnabled(true);
       SwingUtilities.getWindowAncestor(view.getComponent()).toFront();
       if (oldFocusOwner != null) {

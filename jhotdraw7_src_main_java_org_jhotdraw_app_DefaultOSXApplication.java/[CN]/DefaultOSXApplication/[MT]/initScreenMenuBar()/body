@@ -5,8 +5,8 @@
   paletteHandler.add(SwingUtilities.getWindowAncestor(mrjapp.getFramelessJMenuBar()),null);
   mrjapp.getAboutJMenuItem().setAction(model.getAction(AboutAction.ID));
   mrjapp.getQuitJMenuItem().setAction(model.getAction(ExitAction.ID));
-  if (model.getAction(PreferencesAction.ID) != null) {
-    mrjapp.getPreferencesJMenuItem().setAction(model.getAction(PreferencesAction.ID));
+  if (model.getAction(AbstractPreferencesAction.ID) != null) {
+    mrjapp.getPreferencesJMenuItem().setAction(model.getAction(AbstractPreferencesAction.ID));
   }
   mrjapp.addOpenDocumentListener(model.getAction(OSXDropOnDockAction.ID));
 }
