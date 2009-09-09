@@ -30,38 +30,40 @@
     JMenu m=createEditMenu();
     if (m != null) {
       editMenu.addSeparator();
-      for (      Component c : mb.getComponents()) {
+      for (      Component c : m.getComponents()) {
         editMenu.add(c);
       }
     }
   }
   if (viewMenu == null) {
-    JMenu m=createViewMenu(p,toolBarActions);
-    if (m != null) {
-      mb.add(m,1);
+    viewMenu=createViewMenu(p,toolBarActions);
+    if (viewMenu != null) {
+      mb.add(viewMenu,1);
     }
   }
  else {
     JMenu m=createViewMenu(p,toolBarActions);
     if (m != null) {
       viewMenu.addSeparator();
-      for (      Component c : mb.getComponents()) {
+      for (      Component c : m.getComponents()) {
         viewMenu.add(c);
       }
     }
   }
   if (helpMenu == null) {
-    mb.add(createHelpMenu(p));
+    helpMenu=createHelpMenu(p);
+    if (helpMenu != null) {
+      mb.add(helpMenu);
+    }
   }
  else {
     JMenu m=createHelpMenu(p);
     if (m != null) {
       helpMenu.addSeparator();
-      for (      Component c : mb.getComponents()) {
+      for (      Component c : m.getComponents()) {
         helpMenu.add(c);
       }
     }
-    mb.add(helpMenu);
   }
   return mb;
 }

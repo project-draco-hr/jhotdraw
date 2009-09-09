@@ -1,7 +1,5 @@
 {
   ApplicationModel model=getModel();
-  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
-  JMenuBar mb=new JMenuBar();
   JMenu m;
   JMenuItem mi;
   JMenu openRecentMenu;
@@ -29,7 +27,6 @@
   }
   m.addSeparator();
   m.add(model.getAction(ExitAction.ID));
-  mb.add(m);
   addPropertyChangeListener(new OpenRecentMenuHandler(openRecentMenu));
   return m;
 }

@@ -4,7 +4,7 @@
   JMenu m;
   JMenuItem mi;
   m=new JMenu();
-  labels.configureMenu(m,labels.getString("help"));
+  labels.configureMenu(m,"help");
   m.add(mo.getAction(AboutAction.ID));
   return m;
 }
