@@ -19,6 +19,9 @@
   ButtonFactory.addToolTo(tb,editor,cnt=new ConnectionTool(new LineConnectionFigure()),"edit.createElbowConnection",labels);
   lc=cnt.getPrototype();
   lc.setLiner(new ElbowLiner());
+  ButtonFactory.addToolTo(tb,editor,cnt=new ConnectionTool(new LineConnectionFigure()),"edit.createCurvedConnection",labels);
+  lc=cnt.getPrototype();
+  lc.setLiner(new CurvedLiner());
   ButtonFactory.addToolTo(tb,editor,new BezierTool(new BezierFigure()),"edit.createScribble",labels);
   ButtonFactory.addToolTo(tb,editor,new BezierTool(new BezierFigure(true)),"edit.createPolygon",labels);
   ButtonFactory.addToolTo(tb,editor,new TextCreationTool(new TextFigure()),"edit.createText",labels);
