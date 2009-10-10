@@ -1,5 +1,5 @@
 {
-  T value=get(f);
+  T value=f.get(this);
   try {
     return value == null ? null : clazz.cast(Methods.invoke(value,"clone"));
   }

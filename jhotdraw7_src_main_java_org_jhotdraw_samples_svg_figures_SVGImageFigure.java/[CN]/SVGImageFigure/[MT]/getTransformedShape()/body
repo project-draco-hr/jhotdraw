@@ -1,8 +1,8 @@
 {
   if (cachedTransformedShape == null) {
     cachedTransformedShape=(Shape)rectangle.clone();
-    if (TRANSFORM.get(this) != null) {
-      cachedTransformedShape=TRANSFORM.get(this).createTransformedShape(cachedTransformedShape);
+    if (get(TRANSFORM) != null) {
+      cachedTransformedShape=get(TRANSFORM).createTransformedShape(cachedTransformedShape);
     }
   }
   return cachedTransformedShape;

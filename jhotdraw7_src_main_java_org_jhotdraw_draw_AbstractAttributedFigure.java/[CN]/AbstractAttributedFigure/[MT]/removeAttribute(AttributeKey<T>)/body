@@ -1,6 +1,6 @@
 {
   if (hasAttribute(key)) {
-    T oldValue=key.get(this);
+    T oldValue=get(key);
     attributes.remove(key);
     fireAttributeChanged(key,oldValue,key.getDefaultValue());
   }

@@ -5,7 +5,7 @@
   group.willChange();
   group.basicRemoveAllChildren();
   for (  Map.Entry<AttributeKey,Object> entry : figures.iterator().next().getAttributes().entrySet()) {
-    group.setAttribute(entry.getKey(),entry.getValue());
+    group.set(entry.getKey(),entry.getValue());
   }
   for (  Figure f : figures) {
     SVGPathFigure path=(SVGPathFigure)f;

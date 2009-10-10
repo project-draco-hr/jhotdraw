@@ -1,4 +1,4 @@
 {
   path=new BezierPath();
-  CLOSED.basicSet(this,isClosed);
+  set(CLOSED,isClosed);
 }

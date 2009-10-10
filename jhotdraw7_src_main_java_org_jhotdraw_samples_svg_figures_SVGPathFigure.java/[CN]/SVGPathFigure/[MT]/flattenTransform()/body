@@ -1,17 +1,17 @@
 {
   willChange();
-  AffineTransform tx=TRANSFORM.get(this);
+  AffineTransform tx=get(TRANSFORM);
   if (tx != null) {
     for (    Figure child : getChildren()) {
       ((SVGBezierFigure)child).flattenTransform();
     }
   }
-  if (FILL_GRADIENT.get(this) != null) {
-    FILL_GRADIENT.get(this).transform(tx);
+  if (get(FILL_GRADIENT) != null) {
+    get(FILL_GRADIENT).transform(tx);
   }
-  if (STROKE_GRADIENT.get(this) != null) {
-    STROKE_GRADIENT.get(this).transform(tx);
+  if (get(STROKE_GRADIENT) != null) {
+    get(STROKE_GRADIENT).transform(tx);
   }
-  TRANSFORM.basicSet(this,null);
+  set(TRANSFORM,null);
   changed();
 }

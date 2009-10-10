@@ -1,0 +1,6 @@
+{
+  for (  Figure child : getChildren()) {
+    child.set(key,value);
+  }
+  invalidate();
+}

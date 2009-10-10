@@ -1,22 +1,22 @@
 {
   double totalStrokeWidth=AttributeKeys.getStrokeTotalWidth(this);
   double width=0d;
-  if (STROKE_COLOR.get(this) != null) {
-switch (STROKE_PLACEMENT.get(this)) {
+  if (get(STROKE_COLOR) != null) {
+switch (get(STROKE_PLACEMENT)) {
 case INSIDE:
       width=0d;
     break;
 case OUTSIDE:
-  if (STROKE_JOIN.get(this) == BasicStroke.JOIN_MITER) {
-    width=totalStrokeWidth * STROKE_MITER_LIMIT.get(this);
+  if (get(STROKE_JOIN) == BasicStroke.JOIN_MITER) {
+    width=totalStrokeWidth * get(STROKE_MITER_LIMIT);
   }
  else {
     width=totalStrokeWidth;
   }
 break;
 case CENTER:
-if (STROKE_JOIN.get(this) == BasicStroke.JOIN_MITER) {
-width=totalStrokeWidth / 2d * STROKE_MITER_LIMIT.get(this);
+if (get(STROKE_JOIN) == BasicStroke.JOIN_MITER) {
+width=totalStrokeWidth / 2d * get(STROKE_MITER_LIMIT);
 }
  else {
 width=totalStrokeWidth / 2d;

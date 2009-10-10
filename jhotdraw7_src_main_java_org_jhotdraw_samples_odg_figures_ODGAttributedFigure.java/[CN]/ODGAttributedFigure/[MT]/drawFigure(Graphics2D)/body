@@ -1,17 +1,17 @@
 {
   AffineTransform savedTransform=null;
-  if (TRANSFORM.get(this) != null) {
+  if (get(TRANSFORM) != null) {
     savedTransform=g.getTransform();
-    g.transform(TRANSFORM.get(this));
+    g.transform(get(TRANSFORM));
   }
-  if (FILL_STYLE.get(this) != ODGConstants.FillStyle.NONE) {
+  if (get(FILL_STYLE) != ODGConstants.FillStyle.NONE) {
     Paint paint=ODGAttributeKeys.getFillPaint(this);
     if (paint != null) {
       g.setPaint(paint);
       drawFill(g);
     }
   }
-  if (STROKE_STYLE.get(this) != ODGConstants.StrokeStyle.NONE) {
+  if (get(STROKE_STYLE) != ODGConstants.StrokeStyle.NONE) {
     Paint paint=ODGAttributeKeys.getStrokePaint(this);
     if (paint != null) {
       g.setPaint(paint);
@@ -19,7 +19,7 @@
       drawStroke(g);
     }
   }
-  if (TRANSFORM.get(this) != null) {
+  if (get(TRANSFORM) != null) {
     g.setTransform(savedTransform);
   }
 }

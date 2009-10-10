@@ -1,5 +1,5 @@
 {
-  double strokeWidth=STROKE_WIDTH.get(f);
+  double strokeWidth=f.get(STROKE_WIDTH);
   double scaleFactor;
   if (strokeWidth > 1f) {
     scaleFactor=1d + (strokeWidth - 1d) / 2d;

@@ -1,10 +1,10 @@
 {
   double strokeTotalWidth=AttributeKeys.getStrokeTotalWidth(this);
   double width=strokeTotalWidth / 2d;
-  if (STROKE_JOIN.get(this) == BasicStroke.JOIN_MITER) {
-    width*=STROKE_MITER_LIMIT.get(this);
+  if (get(STROKE_JOIN) == BasicStroke.JOIN_MITER) {
+    width*=get(STROKE_MITER_LIMIT);
   }
- else   if (STROKE_CAP.get(this) != BasicStroke.CAP_BUTT) {
+ else   if (get(STROKE_CAP) != BasicStroke.CAP_BUTT) {
     width+=strokeTotalWidth * 2;
   }
   width++;

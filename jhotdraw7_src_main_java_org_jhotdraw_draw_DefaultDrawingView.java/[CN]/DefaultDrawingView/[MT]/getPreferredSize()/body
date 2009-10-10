@@ -1,8 +1,8 @@
 {
   if (cachedPreferredSize == null) {
     Rectangle2D.Double r=getDrawingArea();
-    Double cw=getDrawing() == null ? null : CANVAS_WIDTH.get(getDrawing());
-    Double ch=getDrawing() == null ? null : CANVAS_HEIGHT.get(getDrawing());
+    Double cw=getDrawing() == null ? null : getDrawing().get(CANVAS_WIDTH);
+    Double ch=getDrawing() == null ? null : getDrawing().get(CANVAS_HEIGHT);
     Insets insets=getInsets();
     if (cw == null || ch == null) {
       cachedPreferredSize=new Dimension((int)((Math.max(0,r.x) + r.width) * scaleFactor) + insets.left + insets.right,(int)((Math.max(0,r.y) + r.height) * scaleFactor) + insets.top + insets.bottom);

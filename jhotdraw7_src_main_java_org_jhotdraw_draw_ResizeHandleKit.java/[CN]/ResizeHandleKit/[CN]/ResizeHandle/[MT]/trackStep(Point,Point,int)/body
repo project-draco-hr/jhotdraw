@@ -2,9 +2,9 @@
   if (getOwner().isTransformable()) {
     Point2D.Double p=view.viewToDrawing(new Point(lead.x + dx,lead.y + dy));
     view.getConstrainer().constrainPoint(p);
-    if (AttributeKeys.TRANSFORM.get(getOwner()) != null) {
+    if (getOwner().get(TRANSFORM) != null) {
       try {
-        AttributeKeys.TRANSFORM.get(getOwner()).inverseTransform(p,p);
+        getOwner().get(TRANSFORM).inverseTransform(p,p);
       }
  catch (      NoninvertibleTransformException ex) {
         if (DEBUG) {

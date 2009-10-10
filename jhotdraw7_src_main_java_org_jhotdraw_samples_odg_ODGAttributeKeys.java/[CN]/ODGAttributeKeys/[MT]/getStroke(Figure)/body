@@ -1,5 +1,5 @@
 {
-  double strokeWidth=STROKE_WIDTH.get(f);
+  double strokeWidth=f.get(STROKE_WIDTH);
   if (strokeWidth == 0) {
     strokeWidth=1;
   }

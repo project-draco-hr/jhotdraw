@@ -6,7 +6,7 @@
     }
  else {
       if (cappedPath.size() > 1) {
-        if (START_DECORATION.get(this) != null) {
+        if (get(START_DECORATION) != null) {
           BezierPath.Node p0=cappedPath.get(0);
           BezierPath.Node p1=cappedPath.get(1);
           Point2D.Double pp;
@@ -19,11 +19,11 @@
  else {
             pp=p1.getControlPoint(0);
           }
-          double radius=START_DECORATION.get(this).getDecorationRadius(this);
+          double radius=get(START_DECORATION).getDecorationRadius(this);
           double lineLength=Geom.length(p0.getControlPoint(0),pp);
           cappedPath.set(0,0,Geom.cap(pp,p0.getControlPoint(0),-Math.min(radius,lineLength)));
         }
-        if (END_DECORATION.get(this) != null) {
+        if (get(END_DECORATION) != null) {
           BezierPath.Node p0=cappedPath.get(cappedPath.size() - 1);
           BezierPath.Node p1=cappedPath.get(cappedPath.size() - 2);
           Point2D.Double pp;
@@ -36,7 +36,7 @@
  else {
             pp=p1.getControlPoint(0);
           }
-          double radius=END_DECORATION.get(this).getDecorationRadius(this);
+          double radius=get(END_DECORATION).getDecorationRadius(this);
           double lineLength=Geom.length(p0.getControlPoint(0),pp);
           cappedPath.set(cappedPath.size() - 1,0,Geom.cap(pp,p0.getControlPoint(0),-Math.min(radius,lineLength)));
         }

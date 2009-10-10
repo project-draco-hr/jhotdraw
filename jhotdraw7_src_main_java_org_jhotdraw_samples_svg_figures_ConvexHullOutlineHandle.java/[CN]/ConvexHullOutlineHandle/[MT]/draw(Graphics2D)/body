@@ -1,8 +1,8 @@
 {
   if (outline == null) {
     Shape bounds=getOwner().getPath();
-    if (AttributeKeys.TRANSFORM.get(getOwner()) != null) {
-      bounds=AttributeKeys.TRANSFORM.get(getOwner()).createTransformedShape(bounds);
+    if (getOwner().get(TRANSFORM) != null) {
+      bounds=getOwner().get(TRANSFORM).createTransformedShape(bounds);
     }
     bounds=view.getDrawingToViewTransform().createTransformedShape(bounds);
     outline=ConvexHull.getConvexHullPath2D(bounds);

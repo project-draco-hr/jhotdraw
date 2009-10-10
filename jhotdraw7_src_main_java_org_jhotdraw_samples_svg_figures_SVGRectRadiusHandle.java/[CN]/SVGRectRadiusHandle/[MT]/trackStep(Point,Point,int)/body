@@ -1,12 +1,12 @@
 {
   int dx=lead.x - anchor.x;
   int dy=lead.y - anchor.y;
-  SVGRectFigure svgRect=(SVGRectFigure)getOwner();
-  svgRect.willChange();
+  SVGRectFigure owner=(SVGRectFigure)getOwner();
+  owner.willChange();
   Point2D.Double p=view.viewToDrawing(lead);
-  if (TRANSFORM.get(svgRect) != null) {
+  if (owner.get(TRANSFORM) != null) {
     try {
-      TRANSFORM.get(svgRect).inverseTransform(p,p);
+      owner.get(TRANSFORM).inverseTransform(p,p);
     }
  catch (    NoninvertibleTransformException ex) {
       if (DEBUG) {
@@ -14,7 +14,7 @@
       }
     }
   }
-  Rectangle2D.Double r=svgRect.getBounds();
-  svgRect.setArc(Math.min(svgRect.getWidth(),Math.max(0,p.x - r.x)),Math.min(svgRect.getHeight(),Math.max(0,p.y - r.y)));
-  svgRect.changed();
+  Rectangle2D.Double r=owner.getBounds();
+  owner.setArc(Math.min(owner.getWidth(),Math.max(0,p.x - r.x)),Math.min(owner.getHeight(),Math.max(0,p.y - r.y)));
+  owner.changed();
 }

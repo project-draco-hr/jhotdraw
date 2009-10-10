@@ -8,7 +8,7 @@
       AttributeKey key=getAttributeKey(name);
       if (key != null && key.isAssignable(value)) {
         if (forbiddenAttributes == null || !forbiddenAttributes.contains(key)) {
-          setAttribute(key,value);
+          set(key,value);
         }
       }
       in.closeElement();

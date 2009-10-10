@@ -19,7 +19,7 @@
       if (obj instanceof Figure) {
         Figure figure=(Figure)((Figure)obj).clone();
         for (        Map.Entry<AttributeKey,Object> entry : a2.entrySet()) {
-          figure.setAttribute(entry.getKey(),entry.getValue());
+          figure.set(entry.getKey(),entry.getValue());
         }
         AffineTransform tx=(TRANSFORM.get(a) == null) ? new AffineTransform() : TRANSFORM.get(a);
         double x=toNumber(elem,readAttribute(elem,"x","0"));

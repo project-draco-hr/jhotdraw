@@ -6,7 +6,7 @@
   group.willChange();
   ((ODGPathFigure)group).removeAllChildren();
   for (  Map.Entry<AttributeKey,Object> entry : figures.iterator().next().getAttributes().entrySet()) {
-    group.setAttribute(entry.getKey(),entry.getValue());
+    group.set(entry.getKey(),entry.getValue());
   }
   for (  Figure f : sorted) {
     ODGPathFigure path=(ODGPathFigure)f;

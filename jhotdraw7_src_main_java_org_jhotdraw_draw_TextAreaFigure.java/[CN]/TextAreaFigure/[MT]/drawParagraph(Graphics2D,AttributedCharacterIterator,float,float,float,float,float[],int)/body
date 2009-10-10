@@ -50,7 +50,7 @@
       }
     }
     if (first == layouts.size() - 1 && g != null) {
-switch (TEXT_ALIGNMENT.get(this)) {
+switch (get(TEXT_ALIGNMENT)) {
 case TRAILING:
         penPositions.set(first,rightMargin - layouts.get(first).getVisibleAdvance() - 1);
       break;

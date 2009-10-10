@@ -5,9 +5,9 @@
     canvasColor=CANVAS_FILL_COLOR.getDefaultValue();
   }
  else {
-    canvasColor=CANVAS_FILL_COLOR.get(drawing);
+    canvasColor=drawing.get(CANVAS_FILL_COLOR);
     if (canvasColor != null) {
-      canvasColor=new Color((canvasColor.getRGB() & 0xffffff) | ((int)(CANVAS_FILL_OPACITY.get(drawing) * 255) << 24),true);
+      canvasColor=new Color((canvasColor.getRGB() & 0xffffff) | ((int)(drawing.get(CANVAS_FILL_OPACITY) * 255) << 24),true);
     }
   }
   if (canvasColor == null || canvasColor.getAlpha() != 255) {

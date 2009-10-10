@@ -1,8 +1,8 @@
 {
   double grow;
   double strokeWidth=AttributeKeys.getStrokeTotalWidth(f);
-  StrokePlacement placement=STROKE_PLACEMENT.get(f);
-switch (FILL_UNDER_STROKE.get(f)) {
+  StrokePlacement placement=f.get(STROKE_PLACEMENT);
+switch (f.get(FILL_UNDER_STROKE)) {
 case FULL:
 switch (placement) {
 case INSIDE:

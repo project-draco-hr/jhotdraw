@@ -1,8 +1,8 @@
 {
   Rectangle2D.Double r=getBounds();
-  if (STROKE_COLOR.get(this) != null) {
+  if (get(STROKE_COLOR) != null) {
     double grow;
-switch (STROKE_PLACEMENT.get(this)) {
+switch (get(STROKE_PLACEMENT)) {
 case CENTER:
 default :
       grow=AttributeKeys.getStrokeTotalWidth(this);

@@ -4,8 +4,8 @@
   int w=getWidth();
   int h=getHeight();
   if (getDrawing() != null) {
-    Double cw=CANVAS_WIDTH.get(getDrawing());
-    Double ch=CANVAS_HEIGHT.get(getDrawing());
+    Double cw=getDrawing().get(CANVAS_WIDTH);
+    Double ch=getDrawing().get(CANVAS_HEIGHT);
     if (cw != null && ch != null) {
       Point lowerRight=drawingToView(new Point2D.Double(cw,ch));
       w=lowerRight.x - x;

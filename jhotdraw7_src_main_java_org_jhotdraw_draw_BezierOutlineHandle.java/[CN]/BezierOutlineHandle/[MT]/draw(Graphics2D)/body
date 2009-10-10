@@ -1,7 +1,8 @@
 {
-  Shape bounds=getOwner().getBezierPath();
-  if (AttributeKeys.TRANSFORM.get(getOwner()) != null) {
-    bounds=AttributeKeys.TRANSFORM.get(getOwner()).createTransformedShape(bounds);
+  BezierFigure owner=getOwner();
+  Shape bounds=owner.getBezierPath();
+  if (owner.get(TRANSFORM) != null) {
+    bounds=owner.get(TRANSFORM).createTransformedShape(bounds);
   }
   bounds=view.getDrawingToViewTransform().createTransformedShape(bounds);
   Stroke stroke1;

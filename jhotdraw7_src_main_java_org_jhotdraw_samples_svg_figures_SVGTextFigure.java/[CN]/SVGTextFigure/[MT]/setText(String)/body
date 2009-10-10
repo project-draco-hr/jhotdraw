@@ -1,3 +1,3 @@
 {
-  TEXT.set(this,newText);
+  set(TEXT,newText);
 }

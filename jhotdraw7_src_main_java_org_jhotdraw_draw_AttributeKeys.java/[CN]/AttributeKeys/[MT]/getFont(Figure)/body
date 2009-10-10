@@ -1,12 +1,12 @@
 {
-  Font prototype=FONT_FACE.get(f);
+  Font prototype=f.get(FONT_FACE);
   if (prototype == null) {
     return null;
   }
   if (getFontStyle(f) != Font.PLAIN) {
-    return prototype.deriveFont(getFontStyle(f),FONT_SIZE.get(f).floatValue());
+    return prototype.deriveFont(getFontStyle(f),f.get(FONT_SIZE).floatValue());
   }
  else {
-    return prototype.deriveFont(FONT_SIZE.get(f).floatValue());
+    return prototype.deriveFont(f.get(FONT_SIZE).floatValue());
   }
 }

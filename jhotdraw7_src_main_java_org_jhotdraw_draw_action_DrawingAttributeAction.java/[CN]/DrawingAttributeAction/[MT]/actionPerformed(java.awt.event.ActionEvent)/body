@@ -4,7 +4,7 @@
   restoreData.add(drawing.getAttributesRestoreData());
   drawing.willChange();
   for (  Map.Entry<AttributeKey,Object> entry : attributes.entrySet()) {
-    entry.getKey().basicSet(drawing,entry.getValue());
+    drawing.set(entry.getKey(),entry.getValue());
   }
   drawing.changed();
   UndoableEdit edit=new AbstractUndoableEdit(){
@@ -31,7 +31,7 @@
       restoreData.add(drawing.getAttributesRestoreData());
       drawing.willChange();
       for (      Map.Entry<AttributeKey,Object> entry : attributes.entrySet()) {
-        entry.getKey().basicSet(drawing,entry.getValue());
+        drawing.set(entry.getKey(),entry.getValue());
       }
       drawing.changed();
     }

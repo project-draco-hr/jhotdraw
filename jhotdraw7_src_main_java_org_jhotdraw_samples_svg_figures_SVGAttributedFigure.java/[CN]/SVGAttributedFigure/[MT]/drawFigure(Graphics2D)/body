@@ -1,8 +1,8 @@
 {
   AffineTransform savedTransform=null;
-  if (TRANSFORM.get(this) != null) {
+  if (get(TRANSFORM) != null) {
     savedTransform=g.getTransform();
-    g.transform(TRANSFORM.get(this));
+    g.transform(get(TRANSFORM));
   }
   Paint paint=SVGAttributeKeys.getFillPaint(this);
   if (paint != null) {
@@ -10,12 +10,12 @@
     drawFill(g);
   }
   paint=SVGAttributeKeys.getStrokePaint(this);
-  if (paint != null && STROKE_WIDTH.get(this) > 0) {
+  if (paint != null && get(STROKE_WIDTH) > 0) {
     g.setPaint(paint);
     g.setStroke(SVGAttributeKeys.getStroke(this));
     drawStroke(g);
   }
-  if (TRANSFORM.get(this) != null) {
+  if (get(TRANSFORM) != null) {
     g.setTransform(savedTransform);
   }
 }

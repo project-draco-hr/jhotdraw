@@ -1,5 +1,5 @@
 {
   if (drawing != null) {
-    colorButton.setBackground(CANVAS_FILL_COLOR.get(drawing));
+    colorButton.setBackground(drawing.get(CANVAS_FILL_COLOR));
   }
 }

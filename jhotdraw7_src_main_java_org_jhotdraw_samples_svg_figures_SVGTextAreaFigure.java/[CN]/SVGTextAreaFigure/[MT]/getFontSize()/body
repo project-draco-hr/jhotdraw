@@ -1,6 +1,6 @@
 {
-  Point2D.Double p=new Point2D.Double(0,FONT_SIZE.get(this));
-  AffineTransform tx=TRANSFORM.get(this);
+  Point2D.Double p=new Point2D.Double(0,get(FONT_SIZE));
+  AffineTransform tx=get(TRANSFORM);
   if (tx != null) {
     tx.transform(p,p);
     Point2D.Double p0=new Point2D.Double(0,0);

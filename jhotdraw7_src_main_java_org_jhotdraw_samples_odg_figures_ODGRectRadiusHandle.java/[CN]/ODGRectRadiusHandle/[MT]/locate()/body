@@ -2,8 +2,8 @@
   ODGRectFigure owner=(ODGRectFigure)getOwner();
   Rectangle2D.Double r=owner.getBounds();
   Point2D.Double p=new Point2D.Double(r.x + owner.getArcWidth(),r.y + owner.getArcHeight());
-  if (TRANSFORM.get(owner) != null) {
-    TRANSFORM.get(owner).transform(p,p);
+  if (owner.get(TRANSFORM) != null) {
+    owner.get(TRANSFORM).transform(p,p);
   }
   return view.drawingToView(p);
 }

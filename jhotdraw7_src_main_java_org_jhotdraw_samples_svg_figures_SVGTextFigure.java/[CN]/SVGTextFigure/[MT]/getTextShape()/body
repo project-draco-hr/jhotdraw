@@ -7,13 +7,13 @@
     FontRenderContext frc=getFontRenderContext();
     HashMap<TextAttribute,Object> textAttributes=new HashMap<TextAttribute,Object>();
     textAttributes.put(TextAttribute.FONT,getFont());
-    if (FONT_UNDERLINE.get(this)) {
+    if (get(FONT_UNDERLINE)) {
       textAttributes.put(TextAttribute.UNDERLINE,TextAttribute.UNDERLINE_ON);
     }
     TextLayout textLayout=new TextLayout(text,textAttributes,frc);
     AffineTransform tx=new AffineTransform();
     tx.translate(coordinates[0].x,coordinates[0].y);
-switch (TEXT_ANCHOR.get(this)) {
+switch (get(TEXT_ANCHOR)) {
 case END:
       tx.translate(-textLayout.getAdvance(),0);
     break;

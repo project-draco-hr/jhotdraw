@@ -6,16 +6,16 @@
   if (objectValue != null) {
     objectValue=toPaint(elem,(String)objectValue);
     if (objectValue instanceof Color) {
-      FILL_COLOR.set(a,(Color)objectValue);
+      FILL_COLOR.put(a,(Color)objectValue);
     }
  else     if (objectValue instanceof Gradient) {
-      FILL_GRADIENT.set(a,(Gradient)objectValue);
+      FILL_GRADIENT.put(a,(Gradient)objectValue);
     }
  else     if (objectValue == null) {
-      FILL_COLOR.set(a,null);
+      FILL_COLOR.put(a,null);
     }
  else {
-      FILL_COLOR.set(a,null);
+      FILL_COLOR.put(a,null);
       if (DEBUG) {
         System.out.println("SVGInputFormat not implemented  fill=" + objectValue);
       }
@@ -23,19 +23,19 @@
   }
   objectValue=readInheritAttribute(elem,"fill-opacity",null);
   if (objectValue != null) {
-    FILL_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
+    FILL_OPACITY.put(a,toDouble(elem,(String)objectValue,1d,0d,1d));
   }
   value=readInheritAttribute(elem,"fill-rule",null);
   if (value != null) {
-    WINDING_RULE.set(a,SVG_FILL_RULES.get(value));
+    WINDING_RULE.put(a,SVG_FILL_RULES.get(value));
   }
   objectValue=toPaint(elem,readInheritColorAttribute(elem,"stroke",null));
   if (objectValue != null) {
     if (objectValue instanceof Color) {
-      STROKE_COLOR.set(a,(Color)objectValue);
+      STROKE_COLOR.put(a,(Color)objectValue);
     }
  else     if (objectValue instanceof Gradient) {
-      STROKE_GRADIENT.set(a,(Gradient)objectValue);
+      STROKE_GRADIENT.put(a,(Gradient)objectValue);
     }
   }
   value=readInheritAttribute(elem,"stroke-dasharray",null);
@@ -45,35 +45,35 @@
     for (int i=0; i < values.length; i++) {
       dashes[i]=toNumber(elem,values[i]);
     }
-    STROKE_DASHES.set(a,dashes);
+    STROKE_DASHES.put(a,dashes);
   }
   objectValue=readInheritAttribute(elem,"stroke-dashoffset",null);
   if (objectValue != null) {
     doubleValue=toNumber(elem,(String)objectValue);
-    STROKE_DASH_PHASE.set(a,doubleValue);
-    IS_STROKE_DASH_FACTOR.set(a,false);
+    STROKE_DASH_PHASE.put(a,doubleValue);
+    IS_STROKE_DASH_FACTOR.put(a,false);
   }
   value=readInheritAttribute(elem,"stroke-linecap",null);
   if (value != null) {
-    STROKE_CAP.set(a,SVG_STROKE_LINECAPS.get(value));
+    STROKE_CAP.put(a,SVG_STROKE_LINECAPS.get(value));
   }
   value=readInheritAttribute(elem,"stroke-linejoin",null);
   if (value != null) {
-    STROKE_JOIN.set(a,SVG_STROKE_LINEJOINS.get(value));
+    STROKE_JOIN.put(a,SVG_STROKE_LINEJOINS.get(value));
   }
   objectValue=readInheritAttribute(elem,"stroke-miterlimit",null);
   if (objectValue != null) {
     doubleValue=toDouble(elem,(String)objectValue,4d,1d,Double.MAX_VALUE);
-    STROKE_MITER_LIMIT.set(a,doubleValue);
-    IS_STROKE_MITER_LIMIT_FACTOR.set(a,false);
+    STROKE_MITER_LIMIT.put(a,doubleValue);
+    IS_STROKE_MITER_LIMIT_FACTOR.put(a,false);
   }
   objectValue=readInheritAttribute(elem,"stroke-opacity",null);
   if (objectValue != null) {
-    STROKE_OPACITY.set(a,toDouble(elem,(String)objectValue,1d,0d,1d));
+    STROKE_OPACITY.put(a,toDouble(elem,(String)objectValue,1d,0d,1d));
   }
   objectValue=readInheritAttribute(elem,"stroke-width",null);
   if (objectValue != null) {
     doubleValue=toNumber(elem,(String)objectValue);
-    STROKE_WIDTH.set(a,doubleValue);
+    STROKE_WIDTH.put(a,doubleValue);
   }
 }

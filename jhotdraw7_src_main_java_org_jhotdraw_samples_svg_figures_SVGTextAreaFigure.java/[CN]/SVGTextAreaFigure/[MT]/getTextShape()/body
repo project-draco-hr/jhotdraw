@@ -4,7 +4,7 @@
     cachedTextShape=shape=new GeneralPath();
     if (getText() != null || isEditable()) {
       Font font=getFont();
-      boolean isUnderlined=FONT_UNDERLINE.get(this);
+      boolean isUnderlined=get(FONT_UNDERLINE);
       Insets2D.Double insets=getInsets();
       Rectangle2D.Double textRect=new Rectangle2D.Double(bounds.x + insets.left,bounds.y + insets.top,bounds.width - insets.left - insets.right,bounds.height - insets.top - insets.bottom);
       float leftMargin=(float)textRect.x;

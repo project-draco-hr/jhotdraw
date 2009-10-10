@@ -2,9 +2,9 @@
   BezierFigure figure=getOwner();
   figure.willChange();
   Point2D.Double p=view.getConstrainer().constrainPoint(view.viewToDrawing(lead));
-  if (TRANSFORM.get(getTransformOwner()) != null) {
+  if (getTransformOwner().get(TRANSFORM) != null) {
     try {
-      TRANSFORM.get(getTransformOwner()).inverseTransform(p,p);
+      getTransformOwner().get(TRANSFORM).inverseTransform(p,p);
     }
  catch (    NoninvertibleTransformException ex) {
       ex.printStackTrace();

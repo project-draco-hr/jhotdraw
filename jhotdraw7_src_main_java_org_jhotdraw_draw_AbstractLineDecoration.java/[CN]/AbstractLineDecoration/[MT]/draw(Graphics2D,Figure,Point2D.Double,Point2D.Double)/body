@@ -3,10 +3,10 @@
   Color color;
   if (isFilled) {
     if (isSolid) {
-      color=STROKE_COLOR.get(f);
+      color=f.get(STROKE_COLOR);
     }
  else {
-      color=FILL_COLOR.get(f);
+      color=f.get(FILL_COLOR);
     }
     if (color != null) {
       g.setColor(color);
@@ -14,7 +14,7 @@
     }
   }
   if (isStroked) {
-    color=STROKE_COLOR.get(f);
+    color=f.get(STROKE_COLOR);
     if (color != null) {
       g.setColor(color);
       g.setStroke(AttributeKeys.getStroke(f));

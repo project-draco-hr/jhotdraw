@@ -1,9 +1,9 @@
 {
   int style=Font.PLAIN;
-  if (FONT_BOLD.get(f)) {
+  if (f.get(FONT_BOLD)) {
     style|=Font.BOLD;
   }
-  if (FONT_ITALIC.get(f)) {
+  if (f.get(FONT_ITALIC)) {
     style|=Font.ITALIC;
   }
   return style;

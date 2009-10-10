@@ -3,9 +3,9 @@
   Object[] o=(Object[])geometry;
   rectangle=(Rectangle2D.Double)((Rectangle2D.Double)o[0]).clone();
   if (o[1] == null) {
-    TRANSFORM.basicSet(this,null);
+    set(TRANSFORM,null);
   }
  else {
-    TRANSFORM.basicSet(this,(AffineTransform)((AffineTransform)o[1]).clone());
+    set(TRANSFORM,(AffineTransform)((AffineTransform)o[1]).clone());
   }
 }

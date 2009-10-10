@@ -1,11 +1,11 @@
 {
   double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2d);
-  if (isClosed() || FILL_COLOR.get(this) != null && FILL_OPEN_PATH.get(this)) {
+  if (isClosed() || get(FILL_COLOR) != null && get(FILL_OPEN_PATH)) {
     if (path.contains(p)) {
       return true;
     }
     double grow=AttributeKeys.getPerpendicularHitGrowth(this) * 2d;
-    GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT.get(this)));
+    GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * get(STROKE_MITER_LIMIT)));
     if (gs.createStrokedShape(path).contains(p)) {
       return true;
     }
@@ -19,7 +19,7 @@
     if (getCappedPath().outlineContains(p,tolerance)) {
       return true;
     }
-    if (START_DECORATION.get(this) != null) {
+    if (get(START_DECORATION) != null) {
       BezierPath cp=getCappedPath();
       Point2D.Double p1=path.get(0,0);
       Point2D.Double p2=cp.get(0,0);
@@ -27,7 +27,7 @@
         return true;
       }
     }
-    if (END_DECORATION.get(this) != null) {
+    if (get(END_DECORATION) != null) {
       BezierPath cp=getCappedPath();
       Point2D.Double p1=path.get(path.size() - 1,0);
       Point2D.Double p2=cp.get(path.size() - 1,0);

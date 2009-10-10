@@ -20,8 +20,8 @@
         }
       }
       if (childFigure != null) {
-        LINK.basicSet(childFigure,href);
-        LINK_TARGET.basicSet(childFigure,target);
+        childFigure.set(LINK,href);
+        childFigure.set(LINK_TARGET,target);
       }
  else {
         if (DEBUG) {

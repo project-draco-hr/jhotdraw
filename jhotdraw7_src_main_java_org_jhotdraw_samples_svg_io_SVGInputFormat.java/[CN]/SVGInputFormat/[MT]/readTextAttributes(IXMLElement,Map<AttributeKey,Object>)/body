@@ -2,19 +2,19 @@
   Object value;
   value=readInheritAttribute(elem,"text-anchor","start");
   if (SVG_TEXT_ANCHORS.get(value) != null) {
-    TEXT_ANCHOR.set(a,SVG_TEXT_ANCHORS.get(value));
+    TEXT_ANCHOR.put(a,SVG_TEXT_ANCHORS.get(value));
   }
   value=readInheritAttribute(elem,"display-align","auto");
   if (!value.equals("auto")) {
     if (value.equals("center")) {
-      TEXT_ANCHOR.set(a,TextAnchor.MIDDLE);
+      TEXT_ANCHOR.put(a,TextAnchor.MIDDLE);
     }
  else     if (value.equals("before")) {
-      TEXT_ANCHOR.set(a,TextAnchor.END);
+      TEXT_ANCHOR.put(a,TextAnchor.END);
     }
   }
   value=readInheritAttribute(elem,"text-align","start");
   if (!value.equals("start")) {
-    TEXT_ALIGN.set(a,SVG_TEXT_ALIGNS.get(value));
+    TEXT_ALIGN.put(a,SVG_TEXT_ALIGNS.get(value));
   }
 }

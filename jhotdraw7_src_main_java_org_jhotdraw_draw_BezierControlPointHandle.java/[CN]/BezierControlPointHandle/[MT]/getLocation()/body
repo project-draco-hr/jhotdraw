@@ -1,8 +1,8 @@
 {
   if (getBezierFigure().getNodeCount() > index) {
     Point2D.Double p=getBezierFigure().getPoint(index,controlPointIndex);
-    if (TRANSFORM.get(getTransformOwner()) != null) {
-      TRANSFORM.get(getTransformOwner()).transform(p,p);
+    if (getTransformOwner().get(TRANSFORM) != null) {
+      getTransformOwner().get(TRANSFORM).transform(p,p);
     }
     return view.drawingToView(p);
   }

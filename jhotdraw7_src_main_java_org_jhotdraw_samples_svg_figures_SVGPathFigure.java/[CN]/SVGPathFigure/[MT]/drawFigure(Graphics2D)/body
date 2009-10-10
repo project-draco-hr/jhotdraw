@@ -1,8 +1,8 @@
 {
   AffineTransform savedTransform=null;
-  if (TRANSFORM.get(this) != null) {
+  if (get(TRANSFORM) != null) {
     savedTransform=g.getTransform();
-    g.transform(TRANSFORM.get(this));
+    g.transform(get(TRANSFORM));
   }
   Paint paint=SVGAttributeKeys.getFillPaint(this);
   if (paint != null) {
@@ -15,7 +15,7 @@
     g.setStroke(SVGAttributeKeys.getStroke(this));
     drawStroke(g);
   }
-  if (TRANSFORM.get(this) != null) {
+  if (get(TRANSFORM) != null) {
     g.setTransform(savedTransform);
   }
 }

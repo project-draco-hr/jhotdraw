@@ -1,5 +1,10 @@
 {
-  f.willChange();
-  basicSetClone(f,value);
-  f.changed();
+  try {
+    f.set(this,value == null ? null : clazz.cast(Methods.invoke(value,"clone")));
+  }
+ catch (  NoSuchMethodException ex) {
+    InternalError e=new InternalError();
+    e.initCause(ex);
+    throw e;
+  }
 }

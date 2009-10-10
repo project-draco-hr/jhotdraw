@@ -1,0 +1,9 @@
+{
+  if (forbiddenAttributes == null || !forbiddenAttributes.contains(key)) {
+    if (getPresentationFigure() != null) {
+      getPresentationFigure().set(key,newValue);
+    }
+    super.set(key,newValue);
+    Object oldValue=attributes.put(key,newValue);
+  }
+}

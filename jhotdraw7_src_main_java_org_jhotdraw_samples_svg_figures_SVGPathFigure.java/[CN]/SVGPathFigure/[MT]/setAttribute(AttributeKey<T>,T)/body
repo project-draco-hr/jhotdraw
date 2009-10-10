@@ -1,4 +1,0 @@
-{
-  super.setAttribute(key,newValue);
-  invalidate();
-}

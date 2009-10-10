@@ -1,5 +1,7 @@
 {
   setAttributeEnabled(STROKE_TYPE,true);
-  STROKE_TYPE.set(this,(start.getOwner() == end.getOwner()) ? StrokeType.DOUBLE : StrokeType.BASIC);
+  willChange();
+  set(STROKE_TYPE,(start.getOwner() == end.getOwner()) ? StrokeType.DOUBLE : StrokeType.BASIC);
+  changed();
   setAttributeEnabled(STROKE_TYPE,false);
 }

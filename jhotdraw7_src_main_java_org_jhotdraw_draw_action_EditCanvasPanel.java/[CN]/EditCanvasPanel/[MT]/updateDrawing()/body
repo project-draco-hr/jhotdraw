@@ -1,5 +1,7 @@
 {
   if (drawing != null) {
+    drawing.willChange();
     drawing.fireUndoableEditHappened(CANVAS_FILL_COLOR.setUndoable(drawing,colorButton.getBackground()));
+    drawing.changed();
   }
 }

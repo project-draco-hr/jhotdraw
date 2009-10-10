@@ -1,6 +1,6 @@
 {
   double grow;
-  if (STROKE_COLOR.get(f) == null && STROKE_GRADIENT.get(f) == null) {
+  if (f.get(STROKE_COLOR) == null && f.get(STROKE_GRADIENT) == null) {
     grow=getPerpendicularFillGrowth(f);
   }
  else {

@@ -2,8 +2,8 @@
   ImageHolderFigure figure=createImageHolder(in);
   if (replace) {
     drawing.removeAllChildren();
-    AttributeKeys.CANVAS_WIDTH.basicSet(drawing,figure.getBounds().width);
-    AttributeKeys.CANVAS_HEIGHT.basicSet(drawing,figure.getBounds().height);
+    drawing.set(CANVAS_WIDTH,figure.getBounds().width);
+    drawing.set(CANVAS_HEIGHT,figure.getBounds().height);
   }
   drawing.basicAdd(figure);
 }

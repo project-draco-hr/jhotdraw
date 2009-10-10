@@ -4,9 +4,10 @@
   BezierPath.Node v=figure.getNode(index);
   fireAreaInvalidated(v);
   figure.willChange();
-  if (TRANSFORM.get(getTransformOwner()) != null) {
+  Figure tOwner=getTransformOwner();
+  if (tOwner.get(TRANSFORM) != null) {
     try {
-      TRANSFORM.get(getTransformOwner()).inverseTransform(p,p);
+      tOwner.get(TRANSFORM).inverseTransform(p,p);
     }
  catch (    NoninvertibleTransformException ex) {
       ex.printStackTrace();

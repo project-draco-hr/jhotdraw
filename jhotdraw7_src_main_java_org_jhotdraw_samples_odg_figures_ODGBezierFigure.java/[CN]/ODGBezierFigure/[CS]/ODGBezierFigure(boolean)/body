@@ -1,4 +1,4 @@
 {
   super(isClosed);
-  FILL_OPEN_PATH.basicSet(this,true);
+  set(FILL_OPEN_PATH,true);
 }

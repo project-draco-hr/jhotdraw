@@ -1,13 +1,13 @@
 {
   LinkedList<Action> actions=new LinkedList<Action>();
-  if (TRANSFORM.get(this) != null) {
+  if (get(TRANSFORM) != null) {
     ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
     actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")){
       public void actionPerformed(      ActionEvent evt){
         ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
-        SVGAttributedFigure.this.willChange();
+        willChange();
         fireUndoableEditHappened(TRANSFORM.setUndoable(SVGAttributedFigure.this,null));
-        SVGAttributedFigure.this.changed();
+        changed();
       }
     }
 );

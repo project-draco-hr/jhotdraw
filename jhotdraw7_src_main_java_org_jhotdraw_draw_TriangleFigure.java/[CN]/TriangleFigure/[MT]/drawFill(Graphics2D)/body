@@ -3,7 +3,7 @@
   Shape triangle=getBezierPath();
   double grow=AttributeKeys.getPerpendicularFillGrowth(this);
   if (grow != 0d) {
-    GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT.get(this)));
+    GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * get(STROKE_MITER_LIMIT)));
     triangle=gs.createStrokedShape(triangle);
   }
   g.fill(triangle);

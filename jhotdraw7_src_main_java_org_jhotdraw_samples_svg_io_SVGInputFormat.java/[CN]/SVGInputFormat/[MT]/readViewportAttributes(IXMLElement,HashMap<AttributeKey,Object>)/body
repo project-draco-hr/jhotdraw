@@ -7,17 +7,17 @@
   }
   if (value != null) {
     doubleValue=toLength(elem,(String)value,viewportStack.peek().widthPercentFactor);
-    VIEWPORT_WIDTH.set(a,doubleValue);
+    VIEWPORT_WIDTH.put(a,doubleValue);
   }
   value=readAttribute(elem,"height",null);
   if (value != null) {
     doubleValue=toLength(elem,(String)value,viewportStack.peek().heightPercentFactor);
-    VIEWPORT_HEIGHT.set(a,doubleValue);
+    VIEWPORT_HEIGHT.put(a,doubleValue);
   }
   value=toPaint(elem,readInheritColorAttribute(elem,"viewport-fill","none"));
   if (value == null || (value instanceof Color)) {
-    VIEWPORT_FILL.set(a,(Color)value);
+    VIEWPORT_FILL.put(a,(Color)value);
   }
   doubleValue=toDouble(elem,readAttribute(elem,"viewport-fill-opacity","1.0"));
-  VIEWPORT_FILL_OPACITY.set(a,doubleValue);
+  VIEWPORT_FILL_OPACITY.put(a,doubleValue);
 }

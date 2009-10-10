@@ -2,7 +2,7 @@
   Rectangle2D.Double textRect=new Rectangle2D.Double();
   if (getText() != null) {
     Font font=getFont();
-    boolean isUnderlined=FONT_UNDERLINE.get(this);
+    boolean isUnderlined=get(FONT_UNDERLINE);
     float leftMargin=0;
     float rightMargin=(float)maxWidth - 1;
     float verticalPos=0;

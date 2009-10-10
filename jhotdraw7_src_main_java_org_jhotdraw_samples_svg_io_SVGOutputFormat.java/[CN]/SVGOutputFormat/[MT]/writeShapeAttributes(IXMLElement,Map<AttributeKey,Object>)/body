@@ -2,7 +2,7 @@
   Color color;
   String value;
   int intValue;
-  Gradient gradient=FILL_GRADIENT.get(f);
+  Gradient gradient=FILL_GRADIENT.get(m);
   if (gradient != null) {
     String id;
     if (gradientToIDMap.containsKey(gradient)) {
@@ -26,13 +26,13 @@
     writeAttribute(elem,"fill","url(#" + id + ")","#000");
   }
  else {
-    writeAttribute(elem,"fill",toColor(FILL_COLOR.get(f)),"#000");
+    writeAttribute(elem,"fill",toColor(FILL_COLOR.get(m)),"#000");
   }
-  writeAttribute(elem,"fill-opacity",FILL_OPACITY.get(f),1d);
-  if (WINDING_RULE.get(f) != WindingRule.NON_ZERO) {
+  writeAttribute(elem,"fill-opacity",FILL_OPACITY.get(m),1d);
+  if (WINDING_RULE.get(m) != WindingRule.NON_ZERO) {
     writeAttribute(elem,"fill-rule","evenodd","nonzero");
   }
-  gradient=STROKE_GRADIENT.get(f);
+  gradient=STROKE_GRADIENT.get(m);
   if (gradient != null) {
     String id;
     if (gradientToIDMap.containsKey(gradient)) {
@@ -56,9 +56,9 @@
     writeAttribute(elem,"stroke","url(#" + id + ")","none");
   }
  else {
-    writeAttribute(elem,"stroke",toColor(STROKE_COLOR.get(f)),"none");
+    writeAttribute(elem,"stroke",toColor(STROKE_COLOR.get(m)),"none");
   }
-  double[] dashes=STROKE_DASHES.get(f);
+  double[] dashes=STROKE_DASHES.get(m);
   if (dashes != null) {
     StringBuilder buf=new StringBuilder();
     for (int i=0; i < dashes.length; i++) {
@@ -69,10 +69,10 @@
     }
     writeAttribute(elem,"stroke-dasharray",buf.toString(),null);
   }
-  writeAttribute(elem,"stroke-dashoffset",STROKE_DASH_PHASE.get(f),0d);
-  writeAttribute(elem,"stroke-linecap",strokeLinecapMap.get(STROKE_CAP.get(f)),"butt");
-  writeAttribute(elem,"stroke-linejoin",strokeLinejoinMap.get(STROKE_JOIN.get(f)),"miter");
-  writeAttribute(elem,"stroke-miterlimit",STROKE_MITER_LIMIT.get(f),4d);
-  writeAttribute(elem,"stroke-opacity",STROKE_OPACITY.get(f),1d);
-  writeAttribute(elem,"stroke-width",STROKE_WIDTH.get(f),1d);
+  writeAttribute(elem,"stroke-dashoffset",STROKE_DASH_PHASE.get(m),0d);
+  writeAttribute(elem,"stroke-linecap",strokeLinecapMap.get(STROKE_CAP.get(m)),"butt");
+  writeAttribute(elem,"stroke-linejoin",strokeLinejoinMap.get(STROKE_JOIN.get(m)),"miter");
+  writeAttribute(elem,"stroke-miterlimit",STROKE_MITER_LIMIT.get(m),4d);
+  writeAttribute(elem,"stroke-opacity",STROKE_OPACITY.get(m),1d);
+  writeAttribute(elem,"stroke-width",STROKE_WIDTH.get(m),1d);
 }

@@ -3,7 +3,7 @@
   Rectangle2D.Double r=target.getBounds();
   if (getStrokeColor(target) != null) {
     double grow;
-switch (STROKE_PLACEMENT.get(target)) {
+switch (target.get(STROKE_PLACEMENT)) {
 case CENTER:
 default :
       grow=getStrokeTotalWidth(target) / 2d;

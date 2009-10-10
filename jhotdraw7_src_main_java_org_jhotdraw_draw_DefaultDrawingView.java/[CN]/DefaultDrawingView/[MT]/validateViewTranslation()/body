@@ -8,8 +8,8 @@
   int height=getHeight();
   Insets insets=getInsets();
   Rectangle2D.Double r=getDrawingArea();
-  Double cw=CANVAS_WIDTH.get(getDrawing());
-  Double ch=CANVAS_HEIGHT.get(getDrawing());
+  Double cw=getDrawing().get(CANVAS_WIDTH);
+  Double ch=getDrawing().get(CANVAS_HEIGHT);
   if (cw == null || ch == null) {
     translate.x=Math.min(0,r.x);
     translate.y=Math.min(0,r.y);

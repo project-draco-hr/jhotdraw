@@ -1,24 +1,24 @@
 {
   getPath();
-  if (TRANSFORM.get(this) != null) {
+  if (get(TRANSFORM) != null) {
     try {
-      p=(Point2D.Double)TRANSFORM.get(this).inverseTransform(p,new Point2D.Double());
+      p=(Point2D.Double)get(TRANSFORM).inverseTransform(p,new Point2D.Double());
     }
  catch (    NoninvertibleTransformException ex) {
       ex.printStackTrace();
     }
   }
-  boolean isClosed=CLOSED.get(getChild(0));
-  if (isClosed && FILL_COLOR.get(this) == null && FILL_GRADIENT.get(this) == null) {
+  boolean isClosed=getChild(0).get(CLOSED);
+  if (isClosed && get(FILL_COLOR) == null && get(FILL_GRADIENT) == null) {
     return getHitShape().contains(p);
   }
   double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2d);
-  if (isClosed || FILL_COLOR.get(this) != null || FILL_GRADIENT.get(this) != null) {
+  if (isClosed || get(FILL_COLOR) != null || get(FILL_GRADIENT) != null) {
     if (getPath().contains(p)) {
       return true;
     }
     double grow=AttributeKeys.getPerpendicularHitGrowth(this);
-    GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT.get(this)));
+    GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * get(STROKE_MITER_LIMIT)));
     if (gs.createStrokedShape(getPath()).contains(p)) {
       return true;
     }

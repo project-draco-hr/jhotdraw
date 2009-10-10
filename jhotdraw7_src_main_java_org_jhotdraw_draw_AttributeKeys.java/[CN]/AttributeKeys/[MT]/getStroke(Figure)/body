@@ -1,9 +1,9 @@
 {
-  double strokeWidth=STROKE_WIDTH.get(f);
+  double strokeWidth=f.get(STROKE_WIDTH);
   float miterLimit=(float)getStrokeTotalMiterLimit(f);
-  double dashFactor=IS_STROKE_DASH_FACTOR.get(f) ? strokeWidth : 1d;
-  double dashPhase=STROKE_DASH_PHASE.get(f);
-  double[] ddashes=STROKE_DASHES.get(f);
+  double dashFactor=f.get(IS_STROKE_DASH_FACTOR) ? strokeWidth : 1d;
+  double dashPhase=f.get(STROKE_DASH_PHASE);
+  double[] ddashes=f.get(STROKE_DASHES);
   float[] dashes=null;
   boolean isAllZeroes=true;
   if (ddashes != null) {
@@ -26,11 +26,11 @@
   if (isAllZeroes) {
     dashes=null;
   }
-switch (STROKE_TYPE.get(f)) {
+switch (f.get(STROKE_TYPE)) {
 case BASIC:
 default :
-    return new BasicStroke((float)strokeWidth,STROKE_CAP.get(f),STROKE_JOIN.get(f),miterLimit,dashes,Math.max(0,(float)(dashPhase * dashFactor)));
+    return new BasicStroke((float)strokeWidth,f.get(STROKE_CAP),f.get(STROKE_JOIN),miterLimit,dashes,Math.max(0,(float)(dashPhase * dashFactor)));
 case DOUBLE:
-  return new DoubleStroke((float)(STROKE_INNER_WIDTH_FACTOR.get(f) * strokeWidth),(float)strokeWidth,STROKE_CAP.get(f),STROKE_JOIN.get(f),miterLimit,dashes,Math.max(0,(float)(dashPhase * dashFactor)));
+  return new DoubleStroke((float)(f.get(STROKE_INNER_WIDTH_FACTOR) * strokeWidth),(float)strokeWidth,f.get(STROKE_CAP),f.get(STROKE_JOIN),miterLimit,dashes,Math.max(0,(float)(dashPhase * dashFactor)));
 }
 }

@@ -1,6 +1,6 @@
 {
   GeneralPath path=getDecoratorPath(f);
-  double strokeWidth=STROKE_WIDTH.get(f);
+  double strokeWidth=f.get(STROKE_WIDTH);
   AffineTransform transform=new AffineTransform();
   transform.translate(p1.x,p1.y);
   transform.rotate(Math.atan2(p1.x - p2.x,p2.y - p1.y));

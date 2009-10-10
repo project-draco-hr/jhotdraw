@@ -1,8 +1,9 @@
 {
-  Rectangle2D.Double r=getOwner().getBounds();
+  Figure owner=getOwner();
+  Rectangle2D.Double r=owner.getBounds();
   Point2D.Double p;
   double offset=getHandlesize();
-switch (ORIENTATION.get(getOwner())) {
+switch (owner.get(ORIENTATION)) {
 case NORTH:
 default :
     p=new Point2D.Double(r.x + r.width / 2d,r.y + offset);

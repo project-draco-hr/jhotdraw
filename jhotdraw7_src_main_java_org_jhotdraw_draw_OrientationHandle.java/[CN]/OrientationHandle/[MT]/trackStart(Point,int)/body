@@ -1,5 +1,5 @@
 {
-  oldValue=ORIENTATION.get(getOwner());
+  oldValue=getOwner().get(ORIENTATION);
   centerBox=view.drawingToView(getOwner().getBounds());
   centerBox.grow(centerBox.width / -3,centerBox.height / -3);
 }

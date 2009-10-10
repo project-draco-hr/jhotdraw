@@ -1,8 +1,8 @@
 {
-  if (IS_STROKE_MITER_LIMIT_FACTOR.get(f)) {
-    return STROKE_MITER_LIMIT.get(f) * STROKE_WIDTH.get(f);
+  if (f.get(IS_STROKE_MITER_LIMIT_FACTOR)) {
+    return f.get(STROKE_MITER_LIMIT) * f.get(STROKE_WIDTH);
   }
  else {
-    return STROKE_MITER_LIMIT.get(f);
+    return f.get(STROKE_MITER_LIMIT);
   }
 }

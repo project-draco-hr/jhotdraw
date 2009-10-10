@@ -1,5 +1,5 @@
 {
-  Insets2D.Double layoutInsets=LAYOUT_INSETS.get(layoutable);
+  Insets2D.Double layoutInsets=layoutable.get(LAYOUT_INSETS);
   if (layoutInsets == null) {
     layoutInsets=new Insets2D.Double(0,0,0,0);
   }

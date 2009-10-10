@@ -1,5 +1,5 @@
 {
-  Insets2D.Double layoutInsets=LAYOUT_INSETS.get(compositeFigure);
+  Insets2D.Double layoutInsets=compositeFigure.get(LAYOUT_INSETS);
   Rectangle2D.Double layoutBounds=new Rectangle2D.Double(anchor.x,anchor.y,0,0);
   for (  Figure child : compositeFigure.getChildren()) {
     if (child.isVisible()) {

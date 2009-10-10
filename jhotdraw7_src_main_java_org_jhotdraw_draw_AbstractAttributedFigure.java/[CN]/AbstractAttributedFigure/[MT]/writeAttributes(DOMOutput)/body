@@ -4,8 +4,8 @@
   for (  Map.Entry<AttributeKey,Object> entry : attributes.entrySet()) {
     AttributeKey key=entry.getKey();
     if (forbiddenAttributes == null || !forbiddenAttributes.contains(key)) {
-      Object prototypeValue=key.get(prototype);
-      Object attributeValue=key.get(this);
+      @SuppressWarnings("unchecked") Object prototypeValue=prototype.get(key);
+      @SuppressWarnings("unchecked") Object attributeValue=get(key);
       if (prototypeValue != attributeValue || (prototypeValue != null && attributeValue != null && !prototypeValue.equals(attributeValue))) {
         if (!isElementOpen) {
           out.openElement("a");

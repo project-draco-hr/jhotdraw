@@ -59,10 +59,10 @@
   drawing.addAll(figures);
   if (replace) {
     Viewport viewport=viewportStack.firstElement();
-    VIEWPORT_FILL.basicSet(drawing,VIEWPORT_FILL.get(viewport.attributes));
-    VIEWPORT_FILL_OPACITY.basicSet(drawing,VIEWPORT_FILL_OPACITY.get(viewport.attributes));
-    VIEWPORT_HEIGHT.basicSet(drawing,VIEWPORT_HEIGHT.get(viewport.attributes));
-    VIEWPORT_WIDTH.basicSet(drawing,VIEWPORT_WIDTH.get(viewport.attributes));
+    drawing.set(VIEWPORT_FILL,VIEWPORT_FILL.get(viewport.attributes));
+    drawing.set(VIEWPORT_FILL_OPACITY,VIEWPORT_FILL_OPACITY.get(viewport.attributes));
+    drawing.set(VIEWPORT_HEIGHT,VIEWPORT_HEIGHT.get(viewport.attributes));
+    drawing.set(VIEWPORT_WIDTH,VIEWPORT_WIDTH.get(viewport.attributes));
   }
   document.dispose();
   identifiedElements.clear();

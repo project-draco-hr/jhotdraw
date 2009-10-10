@@ -1,6 +1,6 @@
 {
   super.undo();
   owner.willChange();
-  owner.setAttribute(name,oldValue);
+  owner.set(name,oldValue);
   owner.changed();
 }

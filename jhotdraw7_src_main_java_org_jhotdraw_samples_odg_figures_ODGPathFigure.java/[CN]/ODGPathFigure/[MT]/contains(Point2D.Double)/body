@@ -1,21 +1,21 @@
 {
   getPath();
-  if (TRANSFORM.get(this) != null) {
+  if (get(TRANSFORM) != null) {
     try {
-      p=(Point2D.Double)TRANSFORM.get(this).inverseTransform(p,new Point2D.Double());
+      p=(Point2D.Double)get(TRANSFORM).inverseTransform(p,new Point2D.Double());
     }
  catch (    NoninvertibleTransformException ex) {
       ex.printStackTrace();
     }
   }
-  boolean isClosed=CLOSED.get(getChild(0));
+  boolean isClosed=getChild(0).get(CLOSED);
   double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2d);
   if (isClosed) {
     if (getPath().contains(p)) {
       return true;
     }
     double grow=AttributeKeys.getPerpendicularHitGrowth(this) * 2d;
-    GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * STROKE_MITER_LIMIT.get(this)));
+    GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * get(STROKE_MITER_LIMIT)));
     if (gs.createStrokedShape(getPath()).contains(p)) {
       return true;
     }

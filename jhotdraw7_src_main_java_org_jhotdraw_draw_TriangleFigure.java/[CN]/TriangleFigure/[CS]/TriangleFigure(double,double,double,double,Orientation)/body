@@ -1,4 +1,4 @@
 {
   rectangle=new Rectangle2D.Double(x,y,width,height);
-  ORIENTATION.basicSet(this,direction);
+  set(ORIENTATION,direction);
 }

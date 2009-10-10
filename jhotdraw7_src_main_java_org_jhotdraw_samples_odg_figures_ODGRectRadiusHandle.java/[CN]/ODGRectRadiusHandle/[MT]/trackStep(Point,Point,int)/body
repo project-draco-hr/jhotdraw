@@ -4,9 +4,9 @@
   ODGRectFigure odgRect=(ODGRectFigure)getOwner();
   odgRect.willChange();
   Point2D.Double p=view.viewToDrawing(lead);
-  if (TRANSFORM.get(odgRect) != null) {
+  if (odgRect.get(TRANSFORM) != null) {
     try {
-      TRANSFORM.get(odgRect).inverseTransform(p,p);
+      odgRect.get(TRANSFORM).inverseTransform(p,p);
     }
  catch (    NoninvertibleTransformException ex) {
       if (DEBUG)       ex.printStackTrace();

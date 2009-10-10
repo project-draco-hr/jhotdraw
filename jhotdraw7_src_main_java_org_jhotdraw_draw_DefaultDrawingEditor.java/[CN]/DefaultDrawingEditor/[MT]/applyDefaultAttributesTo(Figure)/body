@@ -1,5 +1,5 @@
 {
   for (  Map.Entry<AttributeKey,Object> entry : defaultAttributes.entrySet()) {
-    entry.getKey().basicSet(f,entry.getValue());
+    f.set(entry.getKey(),entry.getValue());
   }
 }

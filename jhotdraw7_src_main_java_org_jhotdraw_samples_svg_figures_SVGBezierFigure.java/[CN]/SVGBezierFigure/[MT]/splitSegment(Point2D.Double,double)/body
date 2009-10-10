@@ -1,7 +1,7 @@
 {
-  if (TRANSFORM.get(this) != null) {
+  if (get(TRANSFORM) != null) {
     try {
-      split=(Point2D.Double)TRANSFORM.get(this).inverseTransform(split,new Point2D.Double());
+      split=(Point2D.Double)get(TRANSFORM).inverseTransform(split,new Point2D.Double());
     }
  catch (    NoninvertibleTransformException ex) {
       System.err.println("Warning: SVGBezierFigure.findSegment. Figure has noninvertible Transform.");

@@ -1,7 +1,7 @@
 {
   double grow;
   double strokeWidth=AttributeKeys.getStrokeTotalWidth(f);
-switch (STROKE_PLACEMENT.get(f)) {
+switch (f.get(STROKE_PLACEMENT)) {
 case INSIDE:
     grow=strokeWidth / -2d;
   break;

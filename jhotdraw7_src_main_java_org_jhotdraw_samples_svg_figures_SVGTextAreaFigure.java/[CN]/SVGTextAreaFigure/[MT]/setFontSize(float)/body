@@ -1,6 +1,6 @@
 {
   Point2D.Double p=new Point2D.Double(0,size);
-  AffineTransform tx=TRANSFORM.get(this);
+  AffineTransform tx=get(TRANSFORM);
   if (tx != null) {
     try {
       tx.inverseTransform(p,p);
@@ -12,5 +12,5 @@
       ex.printStackTrace();
     }
   }
-  FONT_SIZE.set(this,Math.abs(p.y));
+  set(FONT_SIZE,Math.abs(p.y));
 }

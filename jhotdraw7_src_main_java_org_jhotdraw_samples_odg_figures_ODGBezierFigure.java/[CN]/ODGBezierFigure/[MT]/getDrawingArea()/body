@@ -1,11 +1,11 @@
 {
   if (cachedDrawingArea == null) {
-    if (TRANSFORM.get(this) == null) {
+    if (get(TRANSFORM) == null) {
       cachedDrawingArea=path.getBounds2D();
     }
  else {
       BezierPath p2=(BezierPath)path.clone();
-      p2.transform(TRANSFORM.get(this));
+      p2.transform(get(TRANSFORM));
       cachedDrawingArea=p2.getBounds2D();
     }
   }

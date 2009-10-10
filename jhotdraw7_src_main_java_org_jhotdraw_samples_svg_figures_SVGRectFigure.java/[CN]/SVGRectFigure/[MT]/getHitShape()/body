@@ -1,6 +1,6 @@
 {
   if (cachedHitShape == null) {
-    if (FILL_COLOR.get(this) != null || FILL_GRADIENT.get(this) != null) {
+    if (get(FILL_COLOR) != null || get(FILL_GRADIENT) != null) {
       cachedHitShape=new GrowStroke((float)SVGAttributeKeys.getStrokeTotalWidth(this) / 2f,(float)SVGAttributeKeys.getStrokeTotalMiterLimit(this)).createStrokedShape(getTransformedShape());
     }
  else {

@@ -1,13 +1,13 @@
 {
   final ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
   LinkedList<Action> actions=new LinkedList<Action>();
-  if (TRANSFORM.get(this) != null) {
+  if (get(TRANSFORM) != null) {
     actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")){
       public void actionPerformed(      ActionEvent evt){
         ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
-        SVGPathFigure.this.willChange();
+        willChange();
         fireUndoableEditHappened(TRANSFORM.setUndoable(SVGPathFigure.this,null));
-        SVGPathFigure.this.changed();
+        changed();
       }
     }
 );
@@ -41,14 +41,14 @@
     }
 );
   }
-  if (CLOSED.get(getChild(getChildCount() - 1))) {
+  if (getChild(getChildCount() - 1).get(CLOSED)) {
     actions.add(new AbstractAction(labels.getString("attribute.openPath.text")){
       public void actionPerformed(      ActionEvent evt){
-        SVGPathFigure.this.willChange();
+        willChange();
         for (        Figure child : getChildren()) {
           getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,false));
         }
-        SVGPathFigure.this.changed();
+        changed();
       }
     }
 );
@@ -56,21 +56,21 @@
  else {
     actions.add(new AbstractAction(labels.getString("attribute.closePath.text")){
       public void actionPerformed(      ActionEvent evt){
-        SVGPathFigure.this.willChange();
+        willChange();
         for (        Figure child : getChildren()) {
           getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,true));
         }
-        SVGPathFigure.this.changed();
+        changed();
       }
     }
 );
   }
-  if (WINDING_RULE.get(this) != WindingRule.EVEN_ODD) {
+  if (get(WINDING_RULE) != WindingRule.EVEN_ODD) {
     actions.add(new AbstractAction(labels.getString("attribute.windingRule.evenOdd.text")){
       public void actionPerformed(      ActionEvent evt){
-        SVGPathFigure.this.willChange();
+        willChange();
         getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.EVEN_ODD));
-        SVGPathFigure.this.changed();
+        changed();
       }
     }
 );
@@ -78,7 +78,9 @@
  else {
     actions.add(new AbstractAction(labels.getString("attribute.windingRule.nonZero.text")){
       public void actionPerformed(      ActionEvent evt){
-        WINDING_RULE.set(SVGPathFigure.this,WindingRule.NON_ZERO);
+        willChange();
+        set(WINDING_RULE,WindingRule.NON_ZERO);
+        changed();
         getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.NON_ZERO));
       }
     }

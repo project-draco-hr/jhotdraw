@@ -13,9 +13,9 @@
       }
       for (      Figure f : figures) {
         f.willChange();
-        attributeKey.basicSet(f,value);
+        f.set(attributeKey,value);
         for (        Map.Entry<AttributeKey,Object> entry : defaultAttributes.entrySet()) {
-          entry.getKey().basicSet(f,entry.getValue());
+          f.set(entry.getKey(),entry.getValue());
         }
         f.changed();
       }
