@@ -10,7 +10,7 @@
  else {
       cachedPreferredSize=new Dimension((int)(Math.max((Math.max(0,r.x) + r.width),cw) * scaleFactor) + insets.left + insets.right,(int)(Math.max((Math.max(0,r.y) + r.height),ch) * scaleFactor) + insets.top + insets.bottom);
     }
-    validateViewTranslation();
+    validateViewTranslation(true);
   }
   return (Dimension)cachedPreferredSize.clone();
 }

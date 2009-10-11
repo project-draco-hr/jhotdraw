@@ -40,6 +40,8 @@
   if (!oldTranslate.equals(translate)) {
     dirtyArea.setBounds(bufferedArea);
     fireViewTransformChanged();
-    repaint();
+    if (repaint) {
+      repaint();
+    }
   }
 }

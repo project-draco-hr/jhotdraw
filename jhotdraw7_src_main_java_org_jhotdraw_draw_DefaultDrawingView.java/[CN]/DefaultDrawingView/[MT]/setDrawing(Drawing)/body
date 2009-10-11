@@ -21,6 +21,6 @@
     }
   }
   firePropertyChange(DRAWING_PROPERTY,oldValue,newValue);
-  validateViewTranslation();
+  validateViewTranslation(false);
   revalidate();
 }
