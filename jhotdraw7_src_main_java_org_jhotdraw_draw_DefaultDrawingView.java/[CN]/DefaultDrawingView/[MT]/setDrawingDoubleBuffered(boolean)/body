@@ -1,0 +1,9 @@
+{
+  boolean oldValue=isDrawingDoubleBuffered;
+  isDrawingDoubleBuffered=newValue;
+  if (!isDrawingDoubleBuffered && drawingBuffer != null) {
+    drawingBuffer.flush();
+    drawingBuffer=null;
+  }
+  firePropertyChange(DRAWING_DOUBLE_BUFFERED_PROPERTY,oldValue,newValue);
+}

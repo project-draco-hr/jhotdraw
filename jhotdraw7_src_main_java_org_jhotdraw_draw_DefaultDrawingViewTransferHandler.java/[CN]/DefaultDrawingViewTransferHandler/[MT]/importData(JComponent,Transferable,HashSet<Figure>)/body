@@ -15,8 +15,8 @@
  else {
       retValue=false;
       try {
-        SearchLoop:         for (        DataFlavor flavor : t.getTransferDataFlavors()) {
-          for (          InputFormat format : drawing.getInputFormats()) {
+        SearchLoop:         for (        InputFormat format : drawing.getInputFormats()) {
+          for (          DataFlavor flavor : t.getTransferDataFlavors()) {
             if (DEBUG) {
               System.out.println(this + ".importData trying to match " + format+ " to flavor "+ flavor);
             }

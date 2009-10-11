@@ -1,5 +1,6 @@
 {
   ResourceBundleUtil.setVerbose(true);
+  System.setProperty("apple.awt.graphics.UseQuartz","false");
   Application app;
   String os=System.getProperty("os.name").toLowerCase();
   if (os.startsWith("mac")) {

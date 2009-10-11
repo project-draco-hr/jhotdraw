@@ -1,0 +1,68 @@
+{
+  Rectangle vr=getVisibleRect();
+  Point shift=new Point(0,0);
+  if (bufferedArea.contains(vr)) {
+  }
+ else   if (bufferedArea.width >= vr.width && bufferedArea.height >= vr.height) {
+    shift.x=bufferedArea.x - vr.x;
+    shift.y=bufferedArea.y - vr.y;
+    if (shift.x > 0) {
+      dirtyArea.add(new Rectangle(bufferedArea.x - shift.x,vr.y,shift.x + bufferedArea.width - vr.width,bufferedArea.height));
+    }
+ else     if (shift.x < 0) {
+      dirtyArea.add(new Rectangle(bufferedArea.x + vr.width,vr.y,-shift.x + bufferedArea.width - vr.width,bufferedArea.height));
+    }
+    if (shift.y > 0) {
+      dirtyArea.add(new Rectangle(vr.x,bufferedArea.y - shift.y,bufferedArea.width,shift.y + bufferedArea.height - vr.height));
+    }
+ else     if (shift.y < 0) {
+      dirtyArea.add(new Rectangle(vr.x,bufferedArea.y + vr.height,bufferedArea.width,-shift.y + bufferedArea.height - vr.height));
+    }
+    bufferedArea.x=vr.x;
+    bufferedArea.y=vr.y;
+  }
+ else {
+    bufferedArea.setBounds(vr);
+    dirtyArea.setBounds(vr);
+    if (drawingBuffer != null && (drawingBuffer.getWidth() != vr.width || drawingBuffer.getHeight() != vr.height)) {
+      drawingBuffer.flush();
+      drawingBuffer=null;
+    }
+  }
+  while (true) {
+    int valid=(drawingBuffer == null) ? VolatileImage.IMAGE_INCOMPATIBLE : drawingBuffer.validate(getGraphicsConfiguration());
+switch (valid) {
+case VolatileImage.IMAGE_INCOMPATIBLE:
+      drawingBuffer=getGraphicsConfiguration().createCompatibleVolatileImage(vr.width,vr.height,Transparency.TRANSLUCENT);
+    dirtyArea.setBounds(bufferedArea);
+  break;
+case VolatileImage.IMAGE_RESTORED:
+dirtyArea.setBounds(bufferedArea);
+break;
+}
+if (!dirtyArea.isEmpty()) {
+Graphics2D gBuf=drawingBuffer.createGraphics();
+setViewRenderingHints(gBuf);
+gBuf.setComposite(AlphaComposite.Src);
+if (shift.x != 0 || shift.y != 0) {
+gBuf.copyArea(0,0,drawingBuffer.getWidth(),drawingBuffer.getHeight(),shift.x,shift.y);
+shift.x=shift.y=0;
+}
+gBuf.translate(-bufferedArea.x,-bufferedArea.y);
+gBuf.clip(dirtyArea);
+gBuf.setBackground(new Color(0x0,true));
+gBuf.clearRect(dirtyArea.x,dirtyArea.y,dirtyArea.width,dirtyArea.height);
+gBuf.setComposite(AlphaComposite.SrcOver);
+drawDrawing(gBuf);
+gBuf.dispose();
+}
+g.drawImage(drawingBuffer,bufferedArea.x,bufferedArea.y,null);
+if (drawingBuffer.contentsLost()) {
+dirtyArea.setBounds(bufferedArea);
+}
+ else {
+dirtyArea.setSize(-1,-1);
+break;
+}
+}
+}

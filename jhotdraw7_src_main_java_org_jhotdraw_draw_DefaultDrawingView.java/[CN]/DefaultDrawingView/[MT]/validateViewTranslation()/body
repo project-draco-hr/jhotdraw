@@ -38,6 +38,7 @@
     }
   }
   if (!oldTranslate.equals(translate)) {
+    dirtyArea.setBounds(bufferedArea);
     fireViewTransformChanged();
     repaint();
   }

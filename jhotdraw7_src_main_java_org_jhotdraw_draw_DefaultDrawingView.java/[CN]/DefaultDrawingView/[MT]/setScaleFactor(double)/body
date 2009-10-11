@@ -2,6 +2,7 @@
   double oldValue=scaleFactor;
   scaleFactor=newValue;
   validateViewTranslation();
+  dirtyArea.setBounds(bufferedArea);
   firePropertyChange("scaleFactor",oldValue,newValue);
   invalidate();
   invalidateHandles();

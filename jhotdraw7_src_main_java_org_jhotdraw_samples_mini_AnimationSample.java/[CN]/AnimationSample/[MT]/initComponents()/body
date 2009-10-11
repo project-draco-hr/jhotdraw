@@ -1,0 +1,4 @@
+{
+  setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+  pack();
+}
