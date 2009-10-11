@@ -4,6 +4,11 @@
   }
  catch (  Throwable e) {
   }
+  try {
+    PopupFactory.setSharedInstance(new PopupFactory());
+  }
+ catch (  Throwable e) {
+  }
   Container c=getContentPane();
   c.setLayout(new BoxLayout(c,BoxLayout.Y_AXIS));
   String[] labels=getAppletInfo().split("\n");

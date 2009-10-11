@@ -8,6 +8,11 @@
   }
  catch (  Throwable e) {
   }
+  try {
+    PopupFactory.setSharedInstance(new PopupFactory());
+  }
+ catch (  Throwable e) {
+  }
   Container c=getContentPane();
   final ProgressIndicator progress=new ProgressIndicator(getName(),labels.getString("progressInitializing"));
   c.add(progress);
