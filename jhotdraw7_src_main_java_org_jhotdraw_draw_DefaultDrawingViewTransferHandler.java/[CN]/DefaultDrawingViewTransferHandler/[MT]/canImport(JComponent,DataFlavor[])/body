@@ -1,6 +1,6 @@
 {
   if (DEBUG) {
-    System.out.println(this + ".canImport " + Arrays.asList(transferFlavors));
+    System.out.println("DefaultDrawingViewTransferHandler .canImport " + Arrays.asList(transferFlavors));
   }
   boolean retValue;
   if (comp instanceof DrawingView) {

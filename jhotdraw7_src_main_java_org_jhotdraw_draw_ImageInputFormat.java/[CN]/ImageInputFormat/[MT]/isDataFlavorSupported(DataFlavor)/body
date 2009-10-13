@@ -1,3 +1,8 @@
 {
-  return flavor.equals(DataFlavor.imageFlavor) || flavor.equals(ImageTransferable.IMAGE_PNG_FLAVOR);
+  try {
+    return flavor.equals(DataFlavor.imageFlavor) || flavor.equals(ImageTransferable.IMAGE_PNG_FLAVOR) || flavor.equals(new DataFlavor("application/octet-stream; type=public.png"));
+  }
+ catch (  ClassNotFoundException ex) {
+    return false;
+  }
 }

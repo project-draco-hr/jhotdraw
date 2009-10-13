@@ -1,6 +1,6 @@
 {
   if (DEBUG) {
-    System.out.println(this + ".exportDone " + action+ " move="+ MOVE);
+    System.out.println("DefaultDrawingViewTransferHandler .exportDone " + action + " move="+ MOVE);
   }
   if (source instanceof DrawingView) {
     final DrawingView view=(DrawingView)source;

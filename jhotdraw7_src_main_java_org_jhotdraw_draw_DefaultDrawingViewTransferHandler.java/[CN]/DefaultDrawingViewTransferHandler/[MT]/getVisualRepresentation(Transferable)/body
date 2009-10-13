@@ -1,6 +1,6 @@
 {
   if (DEBUG) {
-    System.out.println(this + ".getVisualRepresentation");
+    System.out.println("DefaultDrawingViewTransferHandler .getVisualRepresentation");
   }
   Image image=null;
   try {

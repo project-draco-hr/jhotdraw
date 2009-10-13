@@ -3,7 +3,7 @@
   if (c instanceof DrawingView) {
     DrawingView view=(DrawingView)c;
     if (DEBUG) {
-      System.out.println(this + ".getSourceActions outputFormats.size=" + view.getDrawing().getOutputFormats().size());
+      System.out.println("DefaultDrawingViewTransferHandler .getSourceActions outputFormats.size=" + view.getDrawing().getOutputFormats().size());
     }
     retValue=(view.getDrawing().getOutputFormats().size() > 0 && view.getSelectionCount() > 0) ? COPY | MOVE : NONE;
   }
@@ -11,7 +11,7 @@
     retValue=super.getSourceActions(c);
   }
   if (DEBUG) {
-    System.out.println(this + ".getSourceActions:" + retValue);
+    System.out.println("DefaultDrawingViewTransferHandler .getSourceActions:" + retValue);
   }
   return retValue;
 }

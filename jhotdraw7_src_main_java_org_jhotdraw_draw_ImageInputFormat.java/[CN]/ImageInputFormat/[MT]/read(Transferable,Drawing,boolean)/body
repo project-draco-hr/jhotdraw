@@ -19,9 +19,22 @@
  catch (    Throwable e) {
     }
   }
-  if (t.isDataFlavorSupported(ImageTransferable.IMAGE_PNG_FLAVOR)) {
+  DataFlavor imgFlavor=null;
+  try {
+    DataFlavor[] flavors=new DataFlavor[]{ImageTransferable.IMAGE_PNG_FLAVOR,new DataFlavor("application/octet-stream; type=public.png")};
+    for (    DataFlavor f : flavors) {
+      if (t.isDataFlavorSupported(f)) {
+        imgFlavor=f;
+        break;
+      }
+    }
+  }
+ catch (  ClassNotFoundException ex) {
+    ex.printStackTrace();
+  }
+  if (imgFlavor != null) {
     try {
-      InputStream in=(InputStream)t.getTransferData(ImageTransferable.IMAGE_PNG_FLAVOR);
+      InputStream in=(InputStream)t.getTransferData(imgFlavor);
       Image img=ImageIO.read(in);
       img=Images.toBufferedImage(img);
       ImageHolderFigure figure=(ImageHolderFigure)prototype.clone();

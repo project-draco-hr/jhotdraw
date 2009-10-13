@@ -1,6 +1,6 @@
 {
   if (DEBUG) {
-    System.out.println(this + ".createTransferable(" + view+ ","+ transferFigures+ ")");
+    System.out.println("DefaultDrawingViewTransferHandler .createTransferable(" + view + ","+ transferFigures+ ")");
   }
   Transferable retValue;
   Drawing drawing=view.getDrawing();

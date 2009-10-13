@@ -3,7 +3,7 @@
     return instance;
   }
   try {
-    instance=new AWTClipboard(Toolkit.getDefaultToolkit().getSystemClipboard());
+    instance=new OSXClipboard(Toolkit.getDefaultToolkit().getSystemClipboard());
   }
  catch (  SecurityException e1) {
     try {

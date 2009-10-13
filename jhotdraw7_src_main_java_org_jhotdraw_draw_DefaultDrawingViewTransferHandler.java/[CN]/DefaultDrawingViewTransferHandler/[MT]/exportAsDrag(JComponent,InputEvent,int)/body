@@ -1,6 +1,6 @@
 {
   if (DEBUG) {
-    System.out.println(this + ".exportAsDrag");
+    System.out.println("DefaultDrawingViewTransferHandler .exportAsDrag");
   }
   if (comp instanceof DrawingView) {
     DrawingView view=(DrawingView)comp;
