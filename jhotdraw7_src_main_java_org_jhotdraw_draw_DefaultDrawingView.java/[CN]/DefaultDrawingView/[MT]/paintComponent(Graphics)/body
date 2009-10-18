@@ -6,7 +6,12 @@
   drawCanvas(g);
   drawConstrainer(g);
   if (isDrawingDoubleBuffered()) {
-    drawDrawingDoubleBuffered(g);
+    if (isWindows) {
+      drawDrawingNonvolatileBuffered(g);
+    }
+ else {
+      drawDrawingVolatileBuffered(g);
+    }
   }
  else {
     drawDrawing(g);

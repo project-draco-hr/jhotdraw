@@ -22,37 +22,33 @@
  else {
     bufferedArea.setBounds(vr);
     dirtyArea.setBounds(vr);
-    if (drawingBuffer != null && (drawingBuffer.getWidth() != vr.width || drawingBuffer.getHeight() != vr.height)) {
-      drawingBuffer.flush();
-      drawingBuffer=null;
+    if (drawingBufferNV != null && (drawingBufferNV.getWidth() != vr.width || drawingBufferNV.getHeight() != vr.height)) {
+      drawingBufferNV.flush();
+      drawingBufferNV=null;
     }
   }
-  while (true) {
-    int valid=(drawingBuffer == null) ? VolatileImage.IMAGE_INCOMPATIBLE : drawingBuffer.validate(getGraphicsConfiguration());
+  int valid=(drawingBufferNV == null) ? VolatileImage.IMAGE_INCOMPATIBLE : VolatileImage.IMAGE_OK;
 switch (valid) {
 case VolatileImage.IMAGE_INCOMPATIBLE:
-      try {
-        drawingBuffer=getGraphicsConfiguration().createCompatibleVolatileImage(vr.width,vr.height,Transparency.TRANSLUCENT);
-      }
- catch (      OutOfMemoryError e) {
-        drawingBuffer=null;
-      }
-    dirtyArea.setBounds(bufferedArea);
-  break;
-case VolatileImage.IMAGE_RESTORED:
-dirtyArea.setBounds(bufferedArea);
+    try {
+      drawingBufferNV=getGraphicsConfiguration().createCompatibleImage(vr.width,vr.height,Transparency.TRANSLUCENT);
+    }
+ catch (    OutOfMemoryError e) {
+      drawingBufferNV=null;
+    }
+  dirtyArea.setBounds(bufferedArea);
 break;
 }
-if (drawingBuffer == null) {
+if (drawingBufferNV == null) {
 drawDrawing(g);
-break;
+return;
 }
 if (!dirtyArea.isEmpty()) {
-Graphics2D gBuf=drawingBuffer.createGraphics();
+Graphics2D gBuf=drawingBufferNV.createGraphics();
 setViewRenderingHints(gBuf);
 gBuf.setComposite(AlphaComposite.Src);
 if (shift.x != 0 || shift.y != 0) {
-gBuf.copyArea(0,0,drawingBuffer.getWidth(),drawingBuffer.getHeight(),shift.x,shift.y);
+gBuf.copyArea(Math.max(0,-shift.x),Math.max(0,-shift.y),drawingBufferNV.getWidth() - Math.abs(shift.x),drawingBufferNV.getHeight() - Math.abs(shift.y),shift.x,shift.y);
 shift.x=shift.y=0;
 }
 gBuf.translate(-bufferedArea.x,-bufferedArea.y);
@@ -63,15 +59,6 @@ gBuf.setComposite(AlphaComposite.SrcOver);
 drawDrawing(gBuf);
 gBuf.dispose();
 }
-if (!drawingBuffer.contentsLost()) {
-g.drawImage(drawingBuffer,bufferedArea.x,bufferedArea.y,null);
-}
-if (drawingBuffer.contentsLost()) {
-dirtyArea.setBounds(bufferedArea);
-}
- else {
+g.drawImage(drawingBufferNV,bufferedArea.x,bufferedArea.y,null);
 dirtyArea.setSize(-1,-1);
-break;
-}
-}
 }

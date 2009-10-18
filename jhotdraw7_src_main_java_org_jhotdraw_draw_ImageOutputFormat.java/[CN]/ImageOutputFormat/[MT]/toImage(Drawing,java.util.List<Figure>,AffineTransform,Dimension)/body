@@ -7,7 +7,7 @@
  else {
     background=new Color(background.getRed(),background.getGreen(),background.getBlue(),(int)(background.getAlpha() * opacity));
   }
-  BufferedImage buf=new BufferedImage(imageSize.width,imageSize.height,(background.getAlpha() == 255) ? BufferedImage.TYPE_INT_RGB : BufferedImage.TYPE_INT_ARGB);
+  BufferedImage buf=new BufferedImage(Math.max(1,imageSize.width),Math.max(1,imageSize.height),(background.getAlpha() == 255) ? BufferedImage.TYPE_INT_RGB : BufferedImage.TYPE_INT_ARGB);
   Graphics2D g=buf.createGraphics();
   Composite savedComposite=g.getComposite();
   g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC));

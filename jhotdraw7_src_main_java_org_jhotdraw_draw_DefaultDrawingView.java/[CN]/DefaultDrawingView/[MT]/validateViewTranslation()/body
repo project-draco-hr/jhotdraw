@@ -9,33 +9,36 @@
   Insets insets=getInsets();
   Rectangle2D.Double da=getDrawingArea();
   Rectangle r=new Rectangle((int)(da.x * scaleFactor),(int)(da.y * scaleFactor),(int)(da.width * scaleFactor),(int)(da.height * scaleFactor));
+  int cw, ch;
   Double cwd=getDrawing().get(CANVAS_WIDTH);
   Double chd=getDrawing().get(CANVAS_HEIGHT);
   if (cwd == null || chd == null) {
-    translation.x=Math.min(0,r.x) - insets.left;
-    translation.y=Math.min(0,r.y) - insets.top;
+    cw=Math.max(width - insets.left - insets.right,(int)((Math.max(0,da.x) + da.width) * scaleFactor));
+    ch=Math.max(height - insets.top - insets.bottom,(int)((Math.max(0,da.y) + da.height) * scaleFactor));
+    translation.x=insets.top;
+    translation.y=insets.left;
   }
  else {
-    int cw=(int)(cwd * scaleFactor);
-    int ch=(int)(chd * scaleFactor);
+    cw=(int)(cwd * scaleFactor);
+    ch=(int)(chd * scaleFactor);
     if (cw < width) {
-      translation.x=(width - cw) / -2;
+      translation.x=insets.left + (width - insets.left - insets.right- cw) / -2;
     }
     if (ch < height) {
-      translation.y=(height - ch) / -2;
+      translation.y=insets.top + (height - insets.top - insets.bottom- ch) / -2;
     }
-    if (r.y + r.height - translation.y > (height - insets.bottom)) {
-      translation.y=r.y + r.height - (height - insets.bottom);
-    }
-    if (Math.min(0,r.y) - translation.y < insets.top) {
-      translation.y=Math.min(0,r.y) - insets.top;
-    }
-    if (r.x + r.width - translation.x > (width - insets.right)) {
-      translation.x=r.x + r.width - (width - insets.right);
-    }
-    if (Math.min(0,r.x) - translation.x < insets.left) {
-      translation.x=Math.min(0,r.x) - insets.left;
-    }
+  }
+  if (r.y + r.height - translation.y > (height - insets.bottom)) {
+    translation.y=r.y + r.height - (height - insets.bottom);
+  }
+  if (Math.min(0,r.y) - translation.y < insets.top) {
+    translation.y=Math.min(0,r.y) - insets.top;
+  }
+  if (r.x + r.width - translation.x > (width - insets.right)) {
+    translation.x=r.x + r.width - (width - insets.right);
+  }
+  if (Math.min(0,r.x) - translation.x < insets.left) {
+    translation.x=Math.min(0,r.x) - insets.left;
   }
   if (!oldTranslation.equals(translation)) {
     bufferedArea.translate(oldTranslation.x - translation.x,oldTranslation.y - translation.y);

@@ -2,10 +2,6 @@
   DrawingView v=getActiveView();
   if (v != null) {
     JComponent c=v.getComponent();
-    Dimension oldPreferredViewSize=preferredViewSize;
-    preferredViewSize=c.getPreferredSize();
-    if (oldPreferredViewSize == null || !oldPreferredViewSize.equals(preferredViewSize)) {
-      c.revalidate();
-    }
+    c.revalidate();
   }
 }
