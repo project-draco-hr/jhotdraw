@@ -1,9 +1,7 @@
 {
   Rectangle vr=getVisibleRect();
   Point shift=new Point(0,0);
-  if (bufferedArea.contains(vr)) {
-  }
- else   if (bufferedArea.width >= vr.width && bufferedArea.height >= vr.height) {
+  if (bufferedArea.contains(vr) || bufferedArea.width >= vr.width && bufferedArea.height >= vr.height) {
     shift.x=bufferedArea.x - vr.x;
     shift.y=bufferedArea.y - vr.y;
     if (shift.x > 0) {
@@ -33,11 +31,20 @@
     int valid=(drawingBuffer == null) ? VolatileImage.IMAGE_INCOMPATIBLE : drawingBuffer.validate(getGraphicsConfiguration());
 switch (valid) {
 case VolatileImage.IMAGE_INCOMPATIBLE:
-      drawingBuffer=getGraphicsConfiguration().createCompatibleVolatileImage(vr.width,vr.height,Transparency.TRANSLUCENT);
+      try {
+        drawingBuffer=getGraphicsConfiguration().createCompatibleVolatileImage(vr.width,vr.height,Transparency.TRANSLUCENT);
+      }
+ catch (      OutOfMemoryError e) {
+        drawingBuffer=null;
+      }
     dirtyArea.setBounds(bufferedArea);
   break;
 case VolatileImage.IMAGE_RESTORED:
 dirtyArea.setBounds(bufferedArea);
+break;
+}
+if (drawingBuffer == null) {
+drawDrawing(g);
 break;
 }
 if (!dirtyArea.isEmpty()) {
@@ -56,7 +63,9 @@ gBuf.setComposite(AlphaComposite.SrcOver);
 drawDrawing(gBuf);
 gBuf.dispose();
 }
+if (!drawingBuffer.contentsLost()) {
 g.drawImage(drawingBuffer,bufferedArea.x,bufferedArea.y,null);
+}
 if (drawingBuffer.contentsLost()) {
 dirtyArea.setBounds(bufferedArea);
 }

@@ -8,7 +8,7 @@
       ex.printStackTrace();
     }
   }
-  boolean isClosed=getChild(0).get(CLOSED);
+  boolean isClosed=getChild(0).get(PATH_CLOSED);
   if (isClosed && get(FILL_COLOR) == null && get(FILL_GRADIENT) == null) {
     return getHitShape().contains(p);
   }

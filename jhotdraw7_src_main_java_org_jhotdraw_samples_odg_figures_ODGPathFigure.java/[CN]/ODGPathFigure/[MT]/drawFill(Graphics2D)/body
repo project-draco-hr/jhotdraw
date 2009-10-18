@@ -1,5 +1,5 @@
 {
-  boolean isClosed=getChild(0).get(CLOSED);
+  boolean isClosed=getChild(0).get(PATH_CLOSED);
   if (isClosed) {
     g.fill(getPath());
   }

@@ -5,7 +5,7 @@
     }
  else {
       for (      Figure f : children) {
-        if (cachedDrawingArea == null || cachedDrawingArea.isEmpty()) {
+        if (cachedDrawingArea == null) {
           cachedDrawingArea=f.getDrawingArea();
         }
  else {

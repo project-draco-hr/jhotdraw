@@ -5,7 +5,7 @@
     }
  else {
       for (      Figure f : children) {
-        if (cachedBounds == null || cachedBounds.isEmpty()) {
+        if (cachedBounds == null) {
           cachedBounds=f.getBounds();
         }
  else {

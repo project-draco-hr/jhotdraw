@@ -1,9 +1,10 @@
 {
   double oldValue=scaleFactor;
   scaleFactor=newValue;
-  validateViewTranslation(false);
+  validateViewTranslation();
   dirtyArea.setBounds(bufferedArea);
   invalidateHandles();
   revalidate();
+  repaint();
   firePropertyChange("scaleFactor",oldValue,newValue);
 }

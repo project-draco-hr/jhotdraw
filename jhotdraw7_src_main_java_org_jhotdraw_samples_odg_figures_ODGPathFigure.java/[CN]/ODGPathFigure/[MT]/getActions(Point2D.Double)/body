@@ -44,7 +44,7 @@
     public void actionPerformed(    ActionEvent evt){
       for (      Figure child : getChildren()) {
         willChange();
-        getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,true));
+        getDrawing().fireUndoableEditHappened(PATH_CLOSED.setUndoable(child,true));
         changed();
       }
     }
@@ -54,7 +54,7 @@
     public void actionPerformed(    ActionEvent evt){
       for (      Figure child : getChildren()) {
         willChange();
-        getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,false));
+        getDrawing().fireUndoableEditHappened(PATH_CLOSED.setUndoable(child,false));
         changed();
       }
     }

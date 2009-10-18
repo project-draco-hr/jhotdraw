@@ -1,5 +1,5 @@
 {
-  if (isClosed() || get(FILL_OPEN_PATH)) {
+  if (isClosed() || get(UNCLOSED_PATH_FILLED)) {
     double grow=AttributeKeys.getPerpendicularFillGrowth(this);
     if (grow == 0d) {
       g.fill(path);

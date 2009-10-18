@@ -1,6 +1,6 @@
 {
   double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2d);
-  if (isClosed() || get(FILL_COLOR) != null && get(FILL_OPEN_PATH)) {
+  if (isClosed() || get(FILL_COLOR) != null && get(UNCLOSED_PATH_FILLED)) {
     if (path.contains(p)) {
       return true;
     }

@@ -1,0 +1,26 @@
+{
+  if (dropPoint != null) {
+    final DrawingView view=(DrawingView)component;
+    Point2D.Double drawingDropPoint=view.viewToDrawing(dropPoint);
+    Rectangle2D.Double drawingArea=null;
+    for (    Figure fig : transferFigures) {
+      if (drawingArea == null) {
+        drawingArea=fig.getDrawingArea();
+      }
+ else {
+        drawingArea.add(fig.getDrawingArea());
+      }
+    }
+    if (drawingArea != null) {
+      AffineTransform t=new AffineTransform();
+      t.translate(-drawingArea.x,-drawingArea.y);
+      t.translate(drawingDropPoint.x,drawingDropPoint.y);
+      t.translate(drawingArea.width / -2d,drawingArea.height / -2d);
+      for (      Figure fig : transferFigures) {
+        fig.willChange();
+        fig.transform(t);
+        fig.changed();
+      }
+    }
+  }
+}

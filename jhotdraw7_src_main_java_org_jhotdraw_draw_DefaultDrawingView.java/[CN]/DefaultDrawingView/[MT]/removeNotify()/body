@@ -1,0 +1,7 @@
+{
+  super.removeNotify();
+  if (drawingBuffer != null) {
+    drawingBuffer.flush();
+    drawingBuffer=null;
+  }
+}

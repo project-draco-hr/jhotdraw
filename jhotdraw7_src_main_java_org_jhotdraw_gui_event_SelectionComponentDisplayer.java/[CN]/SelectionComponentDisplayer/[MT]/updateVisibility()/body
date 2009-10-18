@@ -5,12 +5,14 @@
     dispose();
     return;
   }
-  component.setVisible(newValue);
-  if (newValue) {
-    component.setPreferredSize(null);
-  }
+  if (newValue != component.isVisible()) {
+    component.setVisible(newValue);
+    if (newValue) {
+      component.setPreferredSize(null);
+    }
  else {
-    component.setPreferredSize(new Dimension(0,0));
+      component.setPreferredSize(new Dimension(0,0));
+    }
+    component.revalidate();
   }
-  component.revalidate();
 }

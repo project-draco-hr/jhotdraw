@@ -7,7 +7,7 @@
  else {
       Graphics2D g=(Graphics2D)gr.create();
       AffineTransform tx=g.getTransform();
-      tx.translate(-translate.x * scaleFactor,-translate.y * scaleFactor);
+      tx.translate(-translation.x,-translation.y);
       tx.scale(scaleFactor,scaleFactor);
       g.setTransform(tx);
       drawing.setFontRenderContext(g.getFontRenderContext());

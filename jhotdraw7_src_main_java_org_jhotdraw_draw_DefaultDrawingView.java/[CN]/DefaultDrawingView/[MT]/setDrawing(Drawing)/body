@@ -11,16 +11,17 @@
     this.drawing.addFigureListener(eventHandler);
   }
   dirtyArea.add(bufferedArea);
-  invalidateDimension();
-  if (getParent() != null) {
-    getParent().validate();
-    if (getParent() instanceof JViewport) {
-      JViewport vp=(JViewport)getParent();
-      Rectangle2D.Double r=getDrawingArea();
-      vp.setViewPosition(drawingToView(new Point2D.Double(Math.min(0,-r.x),Math.min(0,-r.y))));
+  firePropertyChange(DRAWING_PROPERTY,oldValue,newValue);
+  revalidate();
+  validateViewTranslation();
+  paintEnabled=false;
+  javax.swing.Timer t=new javax.swing.Timer(10,new ActionListener(){
+    public void actionPerformed(    ActionEvent e){
+      repaint();
+      paintEnabled=true;
     }
   }
-  firePropertyChange(DRAWING_PROPERTY,oldValue,newValue);
-  validateViewTranslation(false);
-  revalidate();
+);
+  t.setRepeats(false);
+  t.start();
 }

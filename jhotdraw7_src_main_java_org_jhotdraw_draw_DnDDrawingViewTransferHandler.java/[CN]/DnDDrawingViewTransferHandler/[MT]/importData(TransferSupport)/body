@@ -1,31 +1,3 @@
 {
-  if (DEBUG) {
-    System.out.println(this + ".importData(support)");
-  }
-  HashSet<Figure> transferFigures=new HashSet<Figure>();
-  boolean success=support.getComponent() instanceof JComponent ? importData((JComponent)support.getComponent(),support.getTransferable(),transferFigures) : false;
-  if (success) {
-    final DrawingView view=(DrawingView)support.getComponent();
-    Point dropPoint=support.getDropLocation().getDropPoint();
-    Point2D.Double drawingDropPoint=view.viewToDrawing(dropPoint);
-    Rectangle2D.Double drawingArea=null;
-    for (    Figure fig : transferFigures) {
-      if (drawingArea == null) {
-        drawingArea=fig.getDrawingArea();
-      }
- else {
-        drawingArea.add(fig.getDrawingArea());
-      }
-    }
-    AffineTransform t=new AffineTransform();
-    t.translate(-drawingArea.x,-drawingArea.y);
-    t.translate(drawingDropPoint.x,drawingDropPoint.y);
-    t.translate(drawingArea.width / -2d,drawingArea.height / -2d);
-    for (    Figure fig : transferFigures) {
-      fig.willChange();
-      fig.transform(t);
-      fig.changed();
-    }
-  }
-  return success;
+  return importData((JComponent)support.getComponent(),support.getTransferable(),new HashSet<Figure>(),support.getDropLocation() == null ? null : support.getDropLocation().getDropPoint());
 }

@@ -8,7 +8,7 @@
       ex.printStackTrace();
     }
   }
-  boolean isClosed=getChild(0).get(CLOSED);
+  boolean isClosed=getChild(0).get(PATH_CLOSED);
   double tolerance=Math.max(2f,AttributeKeys.getStrokeTotalWidth(this) / 2d);
   if (isClosed) {
     if (getPath().contains(p)) {

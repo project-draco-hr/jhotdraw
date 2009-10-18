@@ -1,3 +1,3 @@
 {
-  return new Rectangle((int)((r.x - translate.x) * scaleFactor),(int)((r.y - translate.y) * scaleFactor),(int)(r.width * scaleFactor),(int)(r.height * scaleFactor));
+  return new Rectangle((int)(r.x * scaleFactor) - translation.x,(int)(r.y * scaleFactor) - translation.y,(int)(r.width * scaleFactor),(int)(r.height * scaleFactor));
 }

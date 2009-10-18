@@ -41,12 +41,12 @@
     }
 );
   }
-  if (getChild(getChildCount() - 1).get(CLOSED)) {
+  if (getChild(getChildCount() - 1).get(PATH_CLOSED)) {
     actions.add(new AbstractAction(labels.getString("attribute.openPath.text")){
       public void actionPerformed(      ActionEvent evt){
         willChange();
         for (        Figure child : getChildren()) {
-          getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,false));
+          getDrawing().fireUndoableEditHappened(PATH_CLOSED.setUndoable(child,false));
         }
         changed();
       }
@@ -58,7 +58,7 @@
       public void actionPerformed(      ActionEvent evt){
         willChange();
         for (        Figure child : getChildren()) {
-          getDrawing().fireUndoableEditHappened(CLOSED.setUndoable(child,true));
+          getDrawing().fireUndoableEditHappened(PATH_CLOSED.setUndoable(child,true));
         }
         changed();
       }

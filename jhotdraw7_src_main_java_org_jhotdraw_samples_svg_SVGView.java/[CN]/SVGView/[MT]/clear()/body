@@ -3,8 +3,11 @@
   try {
     Runnable r=new Runnable(){
       public void run(){
-        svgPanel.getDrawing().removeAllChildren();
+        Drawing oldDrawing=svgPanel.getDrawing();
         svgPanel.setDrawing(newDrawing);
+        if (oldDrawing != null) {
+          oldDrawing.removeAllChildren();
+        }
         undo.discardAllEdits();
       }
     }

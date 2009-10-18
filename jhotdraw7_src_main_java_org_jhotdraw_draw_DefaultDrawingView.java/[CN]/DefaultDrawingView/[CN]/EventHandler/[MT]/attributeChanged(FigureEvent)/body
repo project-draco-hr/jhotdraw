@@ -1,9 +1,16 @@
 {
   if (e.getSource() == drawing) {
-    if (e.getAttribute().equals(CANVAS_HEIGHT) || e.getAttribute().equals(CANVAS_WIDTH)) {
-      validateViewTranslation(false);
+    AttributeKey a=e.getAttribute();
+    if (a.equals(CANVAS_HEIGHT) || a.equals(CANVAS_WIDTH)) {
+      validateViewTranslation();
+      repaint();
     }
-    repaint();
+ else     if (a.equals(CANVAS_FILL_COLOR) || a.equals(CANVAS_FILL_OPACITY)) {
+      repaint();
+    }
+ else {
+      repaintDrawingArea(e.getInvalidatedArea());
+    }
   }
  else {
     repaintDrawingArea(e.getInvalidatedArea());
