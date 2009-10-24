@@ -18,7 +18,8 @@
       disposeView=false;
     }
     JFileChooser fileChooser=getFileChooser(view);
-    if (fileChooser.showOpenDialog(app.getComponent()) == JFileChooser.APPROVE_OPTION) {
+    fileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
+    if (showDialog(fileChooser,app.getComponent()) == JFileChooser.APPROVE_OPTION) {
       app.show(view);
       openFile(view,fileChooser.getSelectedFile());
     }

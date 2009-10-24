@@ -1,3 +1,12 @@
 {
-  return null;
+  if (invisibleFrame == null) {
+    invisibleFrame=new JFrame();
+    invisibleFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+    invisibleFrame.setUndecorated(true);
+    invisibleFrame.setLocation(10000,10000);
+    invisibleFrame.getRootPane().putClientProperty("Window.alpha",0f);
+    invisibleFrame.getRootPane().putClientProperty("Window.shadow",false);
+    invisibleFrame.setVisible(true);
+  }
+  return invisibleFrame;
 }

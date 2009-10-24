@@ -1,0 +1,4 @@
+{
+  ((JFrame)getComponent()).setJMenuBar(mb);
+  invisibleFrame.pack();
+}
