@@ -1,5 +1,11 @@
 {
-  if (dropPoint != null) {
+  if (dropPoint == null) {
+    for (    Figure fig : transferFigures) {
+      fig.willChange();
+      fig.changed();
+    }
+  }
+ else {
     final DrawingView view=(DrawingView)component;
     Point2D.Double drawingDropPoint=view.viewToDrawing(dropPoint);
     Rectangle2D.Double drawingArea=null;
