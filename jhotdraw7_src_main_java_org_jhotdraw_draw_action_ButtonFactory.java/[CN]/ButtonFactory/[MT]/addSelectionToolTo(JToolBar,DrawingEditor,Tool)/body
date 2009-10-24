@@ -19,13 +19,9 @@
     toolHandler=(ToolListener)tb.getClientProperty("toolHandler");
   }
  else {
-    toolHandler=new ToolListener(){
-      public void toolStarted(      ToolEvent event){
-      }
-      public void toolDone(      ToolEvent event){
+    toolHandler=new ToolAdapter(){
+      @Override public void toolDone(      ToolEvent event){
         defaultToolButton.setSelected(true);
-      }
-      public void areaInvalidated(      ToolEvent e){
       }
     }
 ;

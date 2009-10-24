@@ -1,0 +1,12 @@
+{
+  ToolEvent event=null;
+  Object[] listeners=listenerList.getListenerList();
+  for (int i=listeners.length - 2; i >= 0; i-=2) {
+    if (listeners[i] == ToolListener.class) {
+      if (event == null) {
+        event=new ToolEvent(this,getView(),invalidatedArea);
+      }
+      ((ToolListener)listeners[i + 1]).boundsInvalidated(event);
+    }
+  }
+}

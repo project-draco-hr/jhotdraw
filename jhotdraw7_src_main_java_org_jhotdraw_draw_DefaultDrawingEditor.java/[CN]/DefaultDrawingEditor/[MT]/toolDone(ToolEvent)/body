@@ -1,7 +1,0 @@
-{
-  DrawingView v=getActiveView();
-  if (v != null) {
-    JComponent c=v.getComponent();
-    c.revalidate();
-  }
-}

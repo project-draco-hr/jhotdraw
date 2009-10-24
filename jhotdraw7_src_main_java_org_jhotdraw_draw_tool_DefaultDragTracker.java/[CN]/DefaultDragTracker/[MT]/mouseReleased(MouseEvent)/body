@@ -20,6 +20,9 @@
           f.transform(tx);
           f.changed();
         }
+        Rectangle r=new Rectangle(anchor.x,anchor.y,0,0);
+        r.add(evt.getX(),evt.getY());
+        maybeFireBoundsInvalidated(r);
         fireToolDone();
         return;
       }
@@ -30,5 +33,8 @@
       getDrawing().fireUndoableEditHappened(new TransformEdit(draggedFigures,tx));
     }
   }
+  Rectangle r=new Rectangle(anchor.x,anchor.y,0,0);
+  r.add(evt.getX(),evt.getY());
+  maybeFireBoundsInvalidated(r);
   fireToolDone();
 }

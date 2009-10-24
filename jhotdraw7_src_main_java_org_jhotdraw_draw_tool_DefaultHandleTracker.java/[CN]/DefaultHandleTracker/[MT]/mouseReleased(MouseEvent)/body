@@ -1,4 +1,6 @@
 {
   multicaster.trackEnd(anchor,new Point(evt.getX(),evt.getY()),evt.getModifiersEx(),getView());
-  fireToolDone();
+  Rectangle r=new Rectangle(anchor.x,anchor.y,0,0);
+  r.add(evt.getX(),evt.getY());
+  maybeFireBoundsInvalidated(r);
 }

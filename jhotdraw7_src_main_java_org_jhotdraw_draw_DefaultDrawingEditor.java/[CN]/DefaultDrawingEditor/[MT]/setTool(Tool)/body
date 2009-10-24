@@ -10,7 +10,7 @@
       v.removeKeyListener(tool);
     }
     tool.deactivate(this);
-    tool.removeToolListener(this);
+    tool.removeToolListener(toolHandler);
   }
   tool=newValue;
   if (tool != null) {
@@ -20,7 +20,7 @@
       v.addMouseMotionListener(tool);
       v.addKeyListener(tool);
     }
-    tool.addToolListener(this);
+    tool.addToolListener(toolHandler);
   }
   firePropertyChange(TOOL_PROPERTY,oldValue,newValue);
 }
