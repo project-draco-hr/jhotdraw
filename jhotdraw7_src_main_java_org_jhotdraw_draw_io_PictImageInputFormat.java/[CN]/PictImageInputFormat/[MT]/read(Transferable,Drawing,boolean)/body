@@ -1,9 +1,8 @@
 {
   Object data=t.getTransferData(PICT_FLAVOR);
   if (data instanceof InputStream) {
-    InputStream in=null;
+    InputStream in=(InputStream)data;
     try {
-      in=(InputStream)data;
       Image img=getImageFromPictStream(in);
       if (img == null) {
         throw new IOException("Couldn't read pict image");

@@ -1,7 +1,6 @@
 {
-  InputStream in=null;
+  InputStream in=new BufferedInputStream(new FileInputStream(file));
   try {
-    in=new BufferedInputStream(new FileInputStream(file));
     Image img=getImageFromPictStream(in);
     if (img == null) {
       throw new IOException("Couldn't read pict image");

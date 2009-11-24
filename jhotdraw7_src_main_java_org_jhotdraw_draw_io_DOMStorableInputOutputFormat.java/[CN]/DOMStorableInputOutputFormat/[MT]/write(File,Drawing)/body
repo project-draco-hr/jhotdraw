@@ -4,8 +4,6 @@
     write(out,drawing);
   }
   finally {
-    if (out != null) {
-      out.close();
-    }
+    out.close();
   }
 }

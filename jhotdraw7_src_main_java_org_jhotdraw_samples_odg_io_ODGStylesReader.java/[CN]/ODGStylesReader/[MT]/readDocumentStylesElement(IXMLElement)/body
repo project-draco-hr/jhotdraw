@@ -1,5 +1,7 @@
 {
-  if (DEBUG)   System.out.println("ODGStylesReader <" + elem.getName() + " ...>");
+  if (DEBUG) {
+    System.out.println("ODGStylesReader <" + elem.getName() + " ...>");
+  }
   for (  IXMLElement child : elem.getChildren()) {
     String ns=child.getNamespace();
     String name=child.getName();
@@ -13,8 +15,12 @@
       readMasterStylesElement(child);
     }
  else {
-      if (DEBUG)       System.out.println("ODGStylesReader unsupported <" + elem.getName() + "> child "+ child);
+      if (DEBUG) {
+        System.out.println("ODGStylesReader unsupported <" + elem.getName() + "> child "+ child);
+      }
     }
   }
-  if (DEBUG)   System.out.println("ODGStylesReader </" + elem.getName() + ">");
+  if (DEBUG) {
+    System.out.println("ODGStylesReader </" + elem.getName() + ">");
+  }
 }

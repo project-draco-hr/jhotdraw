@@ -1,7 +1,6 @@
 {
-  InputStream in=null;
+  InputStream in=new FileInputStream(file);
   try {
-    in=new FileInputStream(file);
     loadImage(in);
   }
  catch (  Throwable t) {
@@ -11,8 +10,6 @@
     throw e;
   }
  finally {
-    if (in != null) {
-      in.close();
-    }
+    in.close();
   }
 }

@@ -24,7 +24,9 @@
       readStyleElement(child,styles);
     }
  else {
-      if (DEBUG)       System.out.println("ODGStylesReader unsupported <" + elem.getName() + "> child: "+ child);
+      if (DEBUG) {
+        System.out.println("ODGStylesReader unsupported <" + elem.getName() + "> child: "+ child);
+      }
     }
   }
 }

@@ -2,7 +2,9 @@
   String styleName=elem.getAttribute("name",STYLE_NAMESPACE,null);
   String family=elem.getAttribute("family",STYLE_NAMESPACE,null);
   String parentStyleName=elem.getAttribute("parent-style-name",STYLE_NAMESPACE,null);
-  if (DEBUG)   System.out.println("ODGStylesReader <style name=" + styleName + " ...>...</>");
+  if (DEBUG) {
+    System.out.println("ODGStylesReader <style name=" + styleName + " ...>...</>");
+  }
   if (styleName != null) {
     Style a=styles.get(styleName);
     if (a == null) {
@@ -28,7 +30,9 @@
         readTextPropertiesElement(child,a);
       }
  else {
-        if (DEBUG)         System.out.println("ODGStylesReader unsupported <" + elem.getName() + "> child "+ child);
+        if (DEBUG) {
+          System.out.println("ODGStylesReader unsupported <" + elem.getName() + "> child "+ child);
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 {
-  Ellipse2D.Double r=(Ellipse2D.Double)geometry;
-  ellipse.x=r.x;
-  ellipse.y=r.y;
-  ellipse.width=r.width;
-  ellipse.height=r.height;
+  Ellipse2D.Double e=(Ellipse2D.Double)geometry;
+  ellipse.x=e.x;
+  ellipse.y=e.y;
+  ellipse.width=e.width;
+  ellipse.height=e.height;
 }

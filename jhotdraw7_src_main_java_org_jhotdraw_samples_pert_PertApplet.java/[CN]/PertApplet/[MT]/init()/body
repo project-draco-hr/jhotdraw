@@ -24,17 +24,14 @@
         result=(Drawing)domi.readObject(0);
       }
  else       if (getParameter("datafile") != null) {
-        InputStream in=null;
+        URL url=new URL(getDocumentBase(),getParameter("datafile"));
+        InputStream in=url.openConnection().getInputStream();
         try {
-          URL url=new URL(getDocumentBase(),getParameter("datafile"));
-          in=url.openConnection().getInputStream();
           NanoXMLDOMInput domi=new NanoXMLDOMInput(new PertFactory(),in);
           result=(Drawing)domi.readObject(0);
         }
   finally {
-          if (in != null) {
-            in.close();
-          }
+          in.close();
         }
       }
  else {

@@ -14,9 +14,7 @@
       e.printStackTrace();
     }
  finally {
-      if (in != null) {
-        in.close();
-      }
+      in.close();
     }
   }
 }

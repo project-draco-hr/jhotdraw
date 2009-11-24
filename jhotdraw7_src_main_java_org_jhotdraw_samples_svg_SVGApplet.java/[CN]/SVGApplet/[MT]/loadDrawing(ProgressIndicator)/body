@@ -1,16 +1,15 @@
 {
   Drawing drawing=createDrawing();
-  InputStream in=null;
-  try {
-    if (getParameter("datafile") != null) {
-      ByteArrayOutputStream buf=new ByteArrayOutputStream();
-      URL url=new URL(getDocumentBase(),getParameter("datafile"));
-      URLConnection uc=url.openConnection();
-      if (uc instanceof HttpURLConnection) {
-        ((HttpURLConnection)uc).setUseCaches(false);
-      }
-      int contentLength=uc.getContentLength();
-      in=uc.getInputStream();
+  if (getParameter("datafile") != null) {
+    ByteArrayOutputStream buf=new ByteArrayOutputStream();
+    URL url=new URL(getDocumentBase(),getParameter("datafile"));
+    URLConnection uc=url.openConnection();
+    if (uc instanceof HttpURLConnection) {
+      ((HttpURLConnection)uc).setUseCaches(false);
+    }
+    int contentLength=uc.getContentLength();
+    InputStream in=uc.getInputStream();
+    try {
       if (contentLength != -1) {
         in=new BoundedRangeInputStream(in);
         ((BoundedRangeInputStream)in).setMaximum(contentLength + 1);
@@ -48,9 +47,7 @@
         throw formatException;
       }
     }
-  }
   finally {
-    if (in != null) {
       in.close();
     }
   }

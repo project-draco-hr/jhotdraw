@@ -8,6 +8,8 @@
     readDocumentStylesElement(root);
   }
  else {
-    if (DEBUG)     System.out.println("ODGStylesReader unsupported root element " + root);
+    if (DEBUG) {
+      System.out.println("ODGStylesReader unsupported root element " + root);
+    }
   }
 }

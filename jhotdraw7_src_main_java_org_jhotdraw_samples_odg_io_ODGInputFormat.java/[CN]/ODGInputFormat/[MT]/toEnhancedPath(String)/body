@@ -1,5 +1,7 @@
 {
-  if (DEBUG)   System.out.println("ODGInputFormat toEnhancedPath " + str);
+  if (DEBUG) {
+    System.out.println("ODGInputFormat toEnhancedPath " + str);
+  }
   EnhancedPath path=null;
   Object x, y;
   Object x1, y1, x2, y2, x3, y3;
@@ -137,7 +139,9 @@ y=nextEnhancedCoordinate(tt,str);
 path.quadTo(x1,y1,x,y);
 break;
 default :
-if (DEBUG) System.out.println("ODGInputFormat.toEnhancedPath aborting after illegal path command: " + command + " found in path "+ str);
+if (DEBUG) {
+System.out.println("ODGInputFormat.toEnhancedPath aborting after illegal path command: " + command + " found in path "+ str);
+}
 break Commands;
 }
 }

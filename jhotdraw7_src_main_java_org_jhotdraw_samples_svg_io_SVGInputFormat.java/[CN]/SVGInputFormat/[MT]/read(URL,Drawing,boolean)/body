@@ -1,14 +1,11 @@
 {
   this.url=url;
-  InputStream in=null;
+  InputStream in=url.openStream();
   try {
-    in=url.openStream();
     read(in,drawing,replace);
   }
   finally {
-    if (in != null) {
-      in.close();
-    }
+    in.close();
   }
   this.url=null;
 }

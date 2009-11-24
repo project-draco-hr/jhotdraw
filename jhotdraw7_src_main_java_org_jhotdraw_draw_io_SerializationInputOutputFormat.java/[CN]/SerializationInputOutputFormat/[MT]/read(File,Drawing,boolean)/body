@@ -1,12 +1,9 @@
 {
-  BufferedInputStream in=null;
+  BufferedInputStream in=new BufferedInputStream(new FileInputStream(file));
   try {
-    in=new BufferedInputStream(new FileInputStream(file));
     read(in,drawing,replace);
   }
   finally {
-    if (in != null) {
-      in.close();
-    }
+    in.close();
   }
 }

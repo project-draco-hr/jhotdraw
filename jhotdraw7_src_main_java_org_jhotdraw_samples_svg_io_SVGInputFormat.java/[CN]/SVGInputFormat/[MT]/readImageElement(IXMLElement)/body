@@ -43,9 +43,8 @@
       ByteArrayOutputStream bout=new ByteArrayOutputStream();
       byte[] buf=new byte[512];
       int len=0;
-      InputStream in=null;
+      InputStream in=imageUrl.openStream();
       try {
-        in=imageUrl.openStream();
         while ((len=in.read(buf)) > 0) {
           bout.write(buf,0,len);
         }
@@ -54,9 +53,7 @@
  catch (      FileNotFoundException e) {
       }
  finally {
-        if (in != null) {
-          in.close();
-        }
+        in.close();
       }
     }
   }
