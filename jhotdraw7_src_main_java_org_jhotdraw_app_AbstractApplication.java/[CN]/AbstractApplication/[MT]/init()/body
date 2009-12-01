@@ -7,7 +7,4 @@
       recentFiles.add(new File(path));
     }
   }
-  if (model != null) {
-    model.initApplication(this);
-  }
 }
