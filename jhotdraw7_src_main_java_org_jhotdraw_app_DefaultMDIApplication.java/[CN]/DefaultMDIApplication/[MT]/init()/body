@@ -10,6 +10,7 @@
   scrollPane.setViewportView(desktopPane);
   toolBarActions=new LinkedList<Action>();
   initApplicationActions();
+  getModel().initApplication(this);
   parentFrame.getContentPane().add(wrapDesktopPane(scrollPane,toolBarActions));
   parentFrame.addWindowListener(new WindowAdapter(){
     public void windowClosing(    final WindowEvent evt){
