@@ -30,7 +30,7 @@
     JMenu m=createEditMenu();
     if (m != null) {
       editMenu.addSeparator();
-      for (      Component c : m.getComponents()) {
+      for (      Component c : m.getPopupMenu().getComponents()) {
         editMenu.add(c);
       }
     }
@@ -45,7 +45,7 @@
     JMenu m=createViewMenu(p,toolBarActions);
     if (m != null) {
       viewMenu.addSeparator();
-      for (      Component c : m.getComponents()) {
+      for (      Component c : m.getPopupMenu().getComponents()) {
         viewMenu.add(c);
       }
     }
@@ -60,10 +60,11 @@
     JMenu m=createHelpMenu(p);
     if (m != null) {
       helpMenu.addSeparator();
-      for (      Component c : m.getComponents()) {
+      for (      Component c : m.getPopupMenu().getComponents()) {
         helpMenu.add(c);
       }
     }
+    mb.add(helpMenu);
   }
   return mb;
 }

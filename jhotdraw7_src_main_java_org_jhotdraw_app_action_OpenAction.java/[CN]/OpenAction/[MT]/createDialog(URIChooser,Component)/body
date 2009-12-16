@@ -1,0 +1,33 @@
+{
+  String title=chooser.getDialogTitle();
+  if (chooser instanceof JFileChooser) {
+    ((JFileChooser)chooser).getAccessibleContext().setAccessibleDescription(title);
+  }
+  JDialog dialog;
+  Window window=(parent instanceof Window) ? (Window)parent : SwingUtilities.getWindowAncestor(parent);
+  if (window instanceof Frame) {
+    dialog=new JDialog((Frame)window,title,true);
+  }
+ else {
+    dialog=new JDialog((Dialog)window,title,true);
+  }
+  dialog.setComponentOrientation(chooser.getComponent().getComponentOrientation());
+  Container contentPane=dialog.getContentPane();
+  contentPane.setLayout(new BorderLayout());
+  contentPane.add(chooser.getComponent(),BorderLayout.CENTER);
+  if (JDialog.isDefaultLookAndFeelDecorated()) {
+    boolean supportsWindowDecorations=UIManager.getLookAndFeel().getSupportsWindowDecorations();
+    if (supportsWindowDecorations) {
+      dialog.getRootPane().setWindowDecorationStyle(JRootPane.FILE_CHOOSER_DIALOG);
+    }
+  }
+  dialog.pack();
+  if (window.getBounds().isEmpty()) {
+    Rectangle screenBounds=window.getGraphicsConfiguration().getBounds();
+    dialog.setLocation(screenBounds.x + (screenBounds.width - dialog.getWidth()) / 2,screenBounds.y + (screenBounds.height - dialog.getHeight()) / 3);
+  }
+ else {
+    dialog.setLocationRelativeTo(parent);
+  }
+  return dialog;
+}

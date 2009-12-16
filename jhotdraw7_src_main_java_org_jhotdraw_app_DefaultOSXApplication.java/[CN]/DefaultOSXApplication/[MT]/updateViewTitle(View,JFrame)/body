@@ -1,13 +1,18 @@
 {
   String title;
-  File file=p.getFile();
-  if (file == null) {
+  URI uri=p.getURI();
+  if (uri == null) {
     title=labels.getString("unnamedFile");
   }
  else {
-    title=file.getName();
+    title=URIUtil.getName(uri);
   }
   p.setTitle(labels.getFormatted("frame.title",title,getName(),p.getMultipleOpenId()));
   f.setTitle(p.getTitle());
-  f.getRootPane().putClientProperty("Window.documentFile",file);
+  if (uri != null && uri.getScheme() != null && uri.getScheme().equals("file")) {
+    f.getRootPane().putClientProperty("Window.documentFile",new File(uri));
+  }
+ else {
+    f.getRootPane().putClientProperty("Window.documentFile",null);
+  }
 }

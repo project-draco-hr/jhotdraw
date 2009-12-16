@@ -4,13 +4,17 @@
     ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
     oldFocusOwner=SwingUtilities.getWindowAncestor(view.getComponent()).getFocusOwner();
     view.setEnabled(false);
-    File saveToFile;
-    JFileChooser fileChooser=view.getExportChooser();
+    URIChooser fileChooser=view.getExportChooser();
     JSheet.showSheet(fileChooser,view.getComponent(),labels.getString("filechooser.export"),new SheetListener(){
       public void optionSelected(      final SheetEvent evt){
         if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
-          final File file=evt.getFileChooser().getSelectedFile();
-          exportToFile(view,file,evt.getFileChooser().getFileFilter(),evt.getFileChooser().getAccessory());
+          final URI uri=evt.getChooser().getSelectedURI();
+          if (evt.getChooser() instanceof JFileURIChooser) {
+            exportView(view,uri,evt.getFileChooser().getFileFilter(),evt.getFileChooser().getAccessory());
+          }
+ else {
+            exportView(view,uri,null,null);
+          }
         }
  else {
           view.setEnabled(true);

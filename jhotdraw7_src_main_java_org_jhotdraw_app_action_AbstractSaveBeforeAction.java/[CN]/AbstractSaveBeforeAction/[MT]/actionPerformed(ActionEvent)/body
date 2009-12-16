@@ -6,7 +6,8 @@
     oldFocusOwner=(wAncestor == null) ? null : wAncestor.getFocusOwner();
     p.setEnabled(false);
     if (p.hasUnsavedChanges()) {
-      JOptionPane pane=new JOptionPane("<html>" + UIManager.getString("OptionPane.css") + labels.getString("file.saveBefore.doYouWantToSave.message"),JOptionPane.WARNING_MESSAGE);
+      URI unsavedURI=p.getURI();
+      JOptionPane pane=new JOptionPane("<html>" + UIManager.getString("OptionPane.css") + "<b>"+ labels.getFormatted("file.saveBefore.doYouWantToSave.message",(unsavedURI == null) ? labels.getString("unnamedFile") : URIUtil.getName(unsavedURI))+ "</b><p>"+ labels.getString("file.saveBefore.doYouWantToSave.details"),JOptionPane.WARNING_MESSAGE);
       Object[] options={labels.getString("file.saveBefore.saveOption.text"),labels.getString("file.saveBefore.cancelOption.text"),labels.getString("file.saveBefore.dontSaveOption.text")};
       pane.setOptions(options);
       pane.setInitialValue(options[0]);
@@ -22,7 +23,7 @@
             p.setEnabled(true);
           }
  else           if (value.equals(labels.getString("file.saveBefore.saveOption.text"))) {
-            saveChanges(p);
+            saveView(p);
           }
         }
       }

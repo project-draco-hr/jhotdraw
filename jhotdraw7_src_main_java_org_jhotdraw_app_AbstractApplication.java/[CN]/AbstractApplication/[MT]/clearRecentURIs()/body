@@ -1,0 +1,6 @@
+{
+  @SuppressWarnings("unchecked") java.util.List<URI> oldValue=(java.util.List<URI>)recentFiles.clone();
+  recentFiles.clear();
+  prefs.putInt("recentFileCount",recentFiles.size());
+  firePropertyChange("recentFiles",Collections.unmodifiableList(oldValue),Collections.unmodifiableList(recentFiles));
+}

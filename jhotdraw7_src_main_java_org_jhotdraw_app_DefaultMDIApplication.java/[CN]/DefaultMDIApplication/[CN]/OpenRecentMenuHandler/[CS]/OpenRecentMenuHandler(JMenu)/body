@@ -1,5 +1,0 @@
-{
-  this.openRecentMenu=openRecentMenu;
-  addPropertyChangeListener(this);
-  updateOpenRecentMenu();
-}

@@ -1,0 +1,8 @@
+{
+  URI oldValue=uri;
+  uri=newValue;
+  if (preferences != null && newValue != null) {
+    preferences.put("projectFile",newValue.toString());
+  }
+  firePropertyChange(URI_PROPERTY,oldValue,newValue);
+}

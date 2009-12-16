@@ -1,2 +1,24 @@
 {
+  putAction(AboutAction.ID,new AboutAction(a));
+  putAction(ExitAction.ID,new ExitAction(a));
+  putAction(OSXDropOnDockAction.ID,new OSXDropOnDockAction(a));
+  putAction(NewFileAction.ID,new NewFileAction(a));
+  putAction(NewWindowAction.ID,new NewWindowAction(a));
+  putAction(ClearAction.ID,new ClearAction(a));
+  putAction(OpenAction.ID,new OpenAction(a));
+  putAction(LoadAction.ID,new LoadAction(a));
+  putAction(ClearRecentFilesAction.ID,new ClearRecentFilesAction(a));
+  putAction(SaveAction.ID,new SaveAction(a));
+  putAction(SaveAsAction.ID,new SaveAsAction(a));
+  putAction(CloseAction.ID,new CloseAction(a));
+  putAction(UndoAction.ID,new UndoAction(a));
+  putAction(RedoAction.ID,new RedoAction(a));
+  putAction(CutAction.ID,new CutAction());
+  putAction(CopyAction.ID,new CopyAction());
+  putAction(PasteAction.ID,new PasteAction());
+  putAction(DeleteAction.ID,new DeleteAction());
+  putAction(DuplicateAction.ID,new DuplicateAction());
+  putAction(SelectAllAction.ID,new SelectAllAction());
+  putAction(MaximizeAction.ID,new MaximizeAction(a));
+  putAction(MinimizeAction.ID,new MinimizeAction(a));
 }

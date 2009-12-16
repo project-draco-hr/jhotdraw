@@ -5,4 +5,7 @@
  catch (  Exception e) {
     e.printStackTrace();
   }
+  if (UIManager.getString("OptionPane.css") == null) {
+    UIManager.put("OptionPane.css","<head>" + "<style type=\"text/css\">" + "b { font: 13pt \"Dialog\" }"+ "p { font: 11pt \"Dialog\"; margin-top: 8px }"+ "</style>"+ "</head>");
+  }
 }

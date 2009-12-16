@@ -44,7 +44,7 @@
     p.addPropertyChangeListener(new PropertyChangeListener(){
       public void propertyChange(      PropertyChangeEvent evt){
         String name=evt.getPropertyName();
-        if (name.equals(View.HAS_UNSAVED_CHANGES_PROPERTY) || name.equals(View.FILE_PROPERTY) || name.equals(View.MULTIPLE_OPEN_ID_PROPERTY)) {
+        if (name.equals(View.HAS_UNSAVED_CHANGES_PROPERTY) || name.equals(View.URI_PROPERTY) || name.equals(View.MULTIPLE_OPEN_ID_PROPERTY)) {
           updateViewTitle(p,f);
         }
       }

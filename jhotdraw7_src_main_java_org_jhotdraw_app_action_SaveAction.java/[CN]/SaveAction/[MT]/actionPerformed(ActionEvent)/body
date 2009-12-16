@@ -3,23 +3,22 @@
   if (view.isEnabled()) {
     oldFocusOwner=SwingUtilities.getWindowAncestor(view.getComponent()).getFocusOwner();
     view.setEnabled(false);
-    File saveToFile;
-    if (!saveAs && view.getFile() != null && view.canSaveTo(view.getFile())) {
-      saveToFile(view,view.getFile());
+    if (!saveAs && view.getURI() != null && view.canSaveTo(view.getURI())) {
+      saveViewToURI(view,view.getURI());
     }
  else {
-      JFileChooser fileChooser=view.getSaveChooser();
+      URIChooser fileChooser=view.getSaveChooser();
       JSheet.showSaveSheet(fileChooser,view.getComponent(),new SheetListener(){
         public void optionSelected(        final SheetEvent evt){
           if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
-            final File file;
-            if (evt.getFileChooser().getFileFilter() instanceof ExtensionFileFilter) {
-              file=((ExtensionFileFilter)evt.getFileChooser().getFileFilter()).makeAcceptable(evt.getFileChooser().getSelectedFile());
+            final URI uri;
+            if ((evt.getChooser() instanceof JFileURIChooser) && (evt.getFileChooser().getFileFilter() instanceof ExtensionFileFilter)) {
+              uri=((ExtensionFileFilter)evt.getFileChooser().getFileFilter()).makeAcceptable(evt.getFileChooser().getSelectedFile()).toURI();
             }
  else {
-              file=evt.getFileChooser().getSelectedFile();
+              uri=evt.getChooser().getSelectedURI();
             }
-            saveToFile(view,file);
+            saveViewToURI(view,uri);
           }
  else {
             view.setEnabled(true);

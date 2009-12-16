@@ -1,11 +1,11 @@
 {
-  File file=p.getFile();
+  URI uri=p.getURI();
   String title;
-  if (file == null) {
+  if (uri == null) {
     title=labels.getString("unnamedFile");
   }
  else {
-    title=file.getName();
+    title=URIUtil.getName(uri);
   }
   if (p.hasUnsavedChanges()) {
     title+="*";

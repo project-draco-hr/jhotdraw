@@ -9,15 +9,16 @@
     f.setIconifiable(false);
     updateViewTitle(p,f);
     PreferencesUtil.installInternalFramePrefsHandler(prefs,"view",f,desktopPane);
-    Point loc=f.getLocation();
+    Point loc=new Point(desktopPane.getInsets().left,desktopPane.getInsets().top);
     boolean moved;
     do {
       moved=false;
       for (Iterator i=views().iterator(); i.hasNext(); ) {
         View aView=(View)i.next();
         if (aView != p && aView.isShowing() && SwingUtilities.getRootPane(aView.getComponent()).getParent().getLocation().equals(loc)) {
-          loc.x+=22;
-          loc.y+=22;
+          Point offset=SwingUtilities.convertPoint(SwingUtilities.getRootPane(aView.getComponent()),0,0,SwingUtilities.getRootPane(aView.getComponent()).getParent());
+          loc.x+=Math.max(offset.x,offset.y);
+          loc.y+=Math.max(offset.x,offset.y);
           moved=true;
           break;
         }
@@ -40,7 +41,7 @@
     p.addPropertyChangeListener(new PropertyChangeListener(){
       public void propertyChange(      PropertyChangeEvent evt){
         String name=evt.getPropertyName();
-        if (name == View.HAS_UNSAVED_CHANGES_PROPERTY || name == View.FILE_PROPERTY) {
+        if (name == View.HAS_UNSAVED_CHANGES_PROPERTY || name == View.URI_PROPERTY) {
           updateViewTitle(p,f);
         }
       }

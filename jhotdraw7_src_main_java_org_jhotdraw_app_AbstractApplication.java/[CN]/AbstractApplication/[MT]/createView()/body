@@ -4,6 +4,5 @@
   if (getModel() != null) {
     getModel().initView(this,p);
   }
-  initViewActions(p);
   return p;
 }

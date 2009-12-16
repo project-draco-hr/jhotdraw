@@ -1,3 +1,3 @@
 {
-  setEnabled(getApplication().recentFiles().size() > 0);
+  setEnabled(getApplication().getRecentURIs().size() > 0);
 }

@@ -1,0 +1,29 @@
+{
+  if (p.getURI() == null) {
+    URIChooser fileChooser=p.getSaveChooser();
+    JSheet.showSaveSheet(fileChooser,p.getComponent(),new SheetListener(){
+      public void optionSelected(      final SheetEvent evt){
+        if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
+          final URI uri;
+          if ((evt.getChooser() instanceof JFileURIChooser) && evt.getFileChooser().getFileFilter() instanceof ExtensionFileFilter) {
+            uri=((ExtensionFileFilter)evt.getFileChooser().getFileFilter()).makeAcceptable(evt.getFileChooser().getSelectedFile()).toURI();
+          }
+ else {
+            uri=evt.getChooser().getSelectedURI();
+          }
+          saveViewToURI(p,uri);
+        }
+ else {
+          p.setEnabled(true);
+          if (oldFocusOwner != null) {
+            oldFocusOwner.requestFocus();
+          }
+        }
+      }
+    }
+);
+  }
+ else {
+    saveViewToURI(p,p.getURI());
+  }
+}

@@ -1,0 +1,10 @@
+{
+  JMenuItem mi;
+  JMenu m;
+  m=new JMenu();
+  labels.configureMenu(m,"file.openRecent");
+  m.setIcon(null);
+  m.add(getModel().getAction(ClearRecentFilesAction.ID));
+  OpenRecentMenuHandler handler=new OpenRecentMenuHandler(m,view);
+  return m;
+}

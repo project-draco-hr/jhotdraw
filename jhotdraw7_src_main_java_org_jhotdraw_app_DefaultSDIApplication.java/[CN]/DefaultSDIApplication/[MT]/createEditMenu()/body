@@ -7,6 +7,9 @@
   JMenuItem mi;
   m=new JMenu();
   labels.configureMenu(m,"edit");
-  m.add(mo.getAction(AbstractPreferencesAction.ID));
+  if (mo.getAction(AbstractPreferencesAction.ID) != null) {
+    mi=m.add(mo.getAction(AbstractPreferencesAction.ID));
+    mi.setIcon(null);
+  }
   return m;
 }

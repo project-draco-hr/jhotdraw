@@ -3,7 +3,7 @@
   if (name.equals(View.HAS_UNSAVED_CHANGES_PROPERTY)) {
     frame.getRootPane().putClientProperty("windowModified",new Boolean(view.hasUnsavedChanges()));
   }
- else   if (name.equals(View.FILE_PROPERTY)) {
+ else   if (name.equals(View.URI_PROPERTY)) {
     updateViewTitle(view,frame);
   }
 }

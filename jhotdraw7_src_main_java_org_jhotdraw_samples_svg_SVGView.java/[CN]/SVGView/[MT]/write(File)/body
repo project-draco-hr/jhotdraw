@@ -1,9 +1,0 @@
-{
-  OutputStream out=new BufferedOutputStream(new FileOutputStream(f));
-  try {
-    new SVGOutputFormat().write(f,svgPanel.getDrawing());
-  }
-  finally {
-    out.close();
-  }
-}

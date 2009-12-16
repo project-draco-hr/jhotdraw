@@ -1,6 +1,6 @@
 {
   String name=evt.getPropertyName();
-  if (name == "viewCount" || name == "paletteCount") {
+  if (name == VIEW_COUNT_PROPERTY || name == "paletteCount") {
     updateWindowMenu();
   }
 }

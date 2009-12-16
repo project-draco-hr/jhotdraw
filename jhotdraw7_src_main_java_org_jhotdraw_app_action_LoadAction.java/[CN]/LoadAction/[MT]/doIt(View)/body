@@ -1,7 +1,7 @@
 {
-  JFileChooser fileChooser=getFileChooser(view);
-  if (fileChooser.showOpenDialog(view.getComponent()) == JFileChooser.APPROVE_OPTION) {
-    loadFile(view,fileChooser.getSelectedFile());
+  URIChooser fileChooser=getFileChooser(view);
+  if (fileChooser.showOpenDialog(view.getComponent()) == URIChooser.APPROVE_OPTION) {
+    loadViewFromURI(view,fileChooser.getSelectedURI());
   }
  else {
     view.setEnabled(true);

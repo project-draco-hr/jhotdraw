@@ -4,7 +4,7 @@
   tb.setName(labels.getString("standardToolBarTitle"));
   JButton b;
   Action a;
-  if (null != (a=getAction(NewAction.ID))) {
+  if (null != (a=getAction(NewFileAction.ID))) {
     b=tb.add(a);
     b.setFocusable(false);
   }

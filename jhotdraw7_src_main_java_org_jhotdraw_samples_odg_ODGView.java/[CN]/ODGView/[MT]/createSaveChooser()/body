@@ -1,5 +1,5 @@
 {
-  JFileChooser c=new JFileChooser();
+  JFileURIChooser c=new JFileURIChooser();
   fileFilterOutputFormatMap=new HashMap<javax.swing.filechooser.FileFilter,OutputFormat>();
   for (  OutputFormat format : view.getDrawing().getOutputFormats()) {
     javax.swing.filechooser.FileFilter ff=format.getFileFilter();

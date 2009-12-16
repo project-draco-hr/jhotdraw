@@ -5,7 +5,8 @@
   initLabels();
   parentFrame=new JFrame(getName());
   parentFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-  desktopPane=new MDIDesktopPane();
+  desktopPane=new JMDIDesktopPane();
+  desktopPane.setTransferHandler(new DropFileTransferHandler());
   scrollPane=new JScrollPane();
   scrollPane.setViewportView(desktopPane);
   toolBarActions=new LinkedList<Action>();

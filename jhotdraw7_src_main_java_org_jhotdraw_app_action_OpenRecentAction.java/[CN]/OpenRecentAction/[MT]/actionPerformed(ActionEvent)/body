@@ -3,7 +3,7 @@
   if (app.isEnabled()) {
     app.setEnabled(false);
     View emptyView=app.getActiveView();
-    if (emptyView == null || emptyView.getFile() != null || emptyView.hasUnsavedChanges()) {
+    if (emptyView == null || emptyView.getURI() != null || emptyView.hasUnsavedChanges()) {
       emptyView=null;
     }
     final View p;
@@ -15,6 +15,6 @@
  else {
       p=emptyView;
     }
-    openFile(p);
+    openView(p);
   }
 }

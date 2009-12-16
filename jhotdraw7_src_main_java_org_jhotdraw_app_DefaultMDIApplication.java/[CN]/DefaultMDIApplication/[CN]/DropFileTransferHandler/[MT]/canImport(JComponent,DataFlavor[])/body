@@ -1,0 +1,8 @@
+{
+  for (  DataFlavor f : transferFlavors) {
+    if (f.isFlavorJavaFileListType()) {
+      return true;
+    }
+  }
+  return false;
+}

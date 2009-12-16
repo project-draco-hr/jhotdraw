@@ -3,6 +3,7 @@
     int oldCount=views.size();
     views.add(p);
     p.setApplication(this);
+    initViewActions(p);
     firePropertyChange(VIEW_COUNT_PROPERTY,oldCount,views.size());
   }
 }

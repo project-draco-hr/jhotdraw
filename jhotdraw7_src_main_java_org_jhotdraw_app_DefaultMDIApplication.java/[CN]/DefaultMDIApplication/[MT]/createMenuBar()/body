@@ -29,6 +29,7 @@
         editMenu.add(c);
       }
     }
+    mb.add(editMenu);
   }
   mb.add(createWindowMenu());
   if (helpMenu == null) {
@@ -42,6 +43,7 @@
         helpMenu.add(c);
       }
     }
+    mb.add(helpMenu);
   }
   return mb;
 }

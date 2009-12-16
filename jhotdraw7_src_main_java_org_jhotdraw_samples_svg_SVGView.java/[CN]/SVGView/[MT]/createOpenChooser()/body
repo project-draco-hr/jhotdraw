@@ -1,5 +1,5 @@
 {
-  final JFileChooser c=new JFileChooser();
+  final JFileURIChooser c=new JFileURIChooser();
   fileFilterInputFormatMap=new HashMap<javax.swing.filechooser.FileFilter,InputFormat>();
   javax.swing.filechooser.FileFilter firstFF=null;
   Drawing d=svgPanel.getDrawing();

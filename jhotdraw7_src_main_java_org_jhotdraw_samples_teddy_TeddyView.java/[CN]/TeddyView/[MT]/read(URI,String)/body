@@ -1,0 +1,21 @@
+{
+  final Document doc=readDocument(new File(f),characterSet);
+  try {
+    SwingUtilities.invokeAndWait(new Runnable(){
+      public void run(){
+        editor.getDocument().removeUndoableEditListener(undoManager);
+        editor.setDocument(doc);
+        doc.addUndoableEditListener(undoManager);
+        undoManager.discardAllEdits();
+      }
+    }
+);
+  }
+ catch (  InterruptedException e) {
+  }
+catch (  InvocationTargetException e) {
+    InternalError error=new InternalError(e.getMessage());
+    error.initCause(e);
+    throw error;
+  }
+}

@@ -5,8 +5,11 @@
   net.roydesign.app.Application mrjapp=net.roydesign.app.Application.getInstance();
   mrjapp.getAboutJMenuItem().setAction(model.getAction(AboutAction.ID));
   mrjapp.getQuitJMenuItem().setAction(model.getAction(ExitAction.ID));
-  if (model.getAction(AbstractPreferencesAction.ID) != null) {
-    mrjapp.getPreferencesJMenuItem().setAction(model.getAction(AbstractPreferencesAction.ID));
+  Action a;
+  if ((a=model.getAction(AbstractPreferencesAction.ID)) != null) {
+    mrjapp.getPreferencesJMenuItem().setAction(a);
   }
-  mrjapp.addOpenDocumentListener(model.getAction(OSXDropOnDockAction.ID));
+  if ((a=model.getAction(OSXDropOnDockAction.ID)) != null) {
+    mrjapp.addOpenDocumentListener(a);
+  }
 }

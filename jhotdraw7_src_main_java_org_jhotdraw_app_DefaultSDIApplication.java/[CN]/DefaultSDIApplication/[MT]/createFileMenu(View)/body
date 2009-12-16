@@ -2,31 +2,51 @@
   ApplicationModel model=getModel();
   JMenu m;
   JMenuItem mi;
-  JMenu openRecentMenu;
   m=new JMenu();
   labels.configureMenu(m,"file");
-  m.add(model.getAction(ClearAction.ID));
-  m.add(model.getAction(NewAction.ID));
-  m.add(model.getAction(LoadAction.ID));
-  if (model.getAction(LoadDirectoryAction.ID) != null) {
-    m.add(model.getAction(LoadDirectoryAction.ID));
+  if (model.getAction(ClearAction.ID) != null) {
+    mi=m.add(model.getAction(ClearAction.ID));
+    mi.setIcon(null);
   }
-  openRecentMenu=new JMenu();
-  labels.configureMenu(openRecentMenu,"file.openRecent");
-  openRecentMenu.add(model.getAction(ClearRecentFilesAction.ID));
-  m.add(openRecentMenu);
-  m.addSeparator();
-  m.add(model.getAction(SaveAction.ID));
-  m.add(model.getAction(SaveAsAction.ID));
+  if (model.getAction(NewWindowAction.ID) != null) {
+    mi=m.add(model.getAction(NewWindowAction.ID));
+    mi.setIcon(null);
+  }
+  if (model.getAction(LoadAction.ID) != null) {
+    mi=m.add(model.getAction(LoadAction.ID));
+    mi.setIcon(null);
+  }
+  if (model.getAction(LoadDirectoryAction.ID) != null) {
+    mi=m.add(model.getAction(LoadDirectoryAction.ID));
+    mi.setIcon(null);
+  }
+  if (model.getAction(OpenAction.ID) != null || model.getAction(OpenDirectoryAction.ID) != null) {
+    m.add(createOpenRecentFileMenu(view));
+  }
+  if (m.getPopupMenu().getComponentCount() > 0) {
+    m.addSeparator();
+  }
+  if (model.getAction(SaveAction.ID) != null) {
+    mi=m.add(model.getAction(SaveAction.ID));
+    mi.setIcon(null);
+  }
+  if (model.getAction(SaveAsAction.ID) != null) {
+    mi=m.add(model.getAction(SaveAsAction.ID));
+    mi.setIcon(null);
+  }
   if (model.getAction(ExportAction.ID) != null) {
     mi=m.add(model.getAction(ExportAction.ID));
+    mi.setIcon(null);
   }
   if (model.getAction(PrintAction.ID) != null) {
     m.addSeparator();
-    m.add(model.getAction(PrintAction.ID));
+    mi=m.add(model.getAction(PrintAction.ID));
+    mi.setIcon(null);
   }
-  m.addSeparator();
-  m.add(model.getAction(ExitAction.ID));
-  addPropertyChangeListener(new OpenRecentMenuHandler(openRecentMenu));
+  if (m.getPopupMenu().getComponentCount() > 0) {
+    m.addSeparator();
+  }
+  mi=m.add(model.getAction(CloseAction.ID));
+  mi.setIcon(null);
   return m;
 }
