@@ -24,7 +24,7 @@
   if (stopColors.length == 1 || t.getDeterminant() == 0) {
     return colors[0];
   }
-  org.apache.batik.ext.awt.RadialGradientPaint gp;
-  gp=new org.apache.batik.ext.awt.RadialGradientPaint(cp,(float)rr,fp,fractions,colors,org.apache.batik.ext.awt.RadialGradientPaint.NO_CYCLE,org.apache.batik.ext.awt.RadialGradientPaint.SRGB,t);
+  RadialGradientPaint gp;
+  gp=new RadialGradientPaint(cp,(float)rr,fp,fractions,colors,RadialGradientPaint.CycleMethod.NO_CYCLE,RadialGradientPaint.ColorSpaceType.SRGB,t);
   return gp;
 }

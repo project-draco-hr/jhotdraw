@@ -1,0 +1,17 @@
+{
+  setHandler(new OSXAdapter("handlePrintFile",fileHandler){
+    @Override public boolean callTarget(    Object appleEvent){
+      if (appleEvent != null) {
+        try {
+          Method getFilenameMethod=appleEvent.getClass().getDeclaredMethod("getFilename",(Class[])null);
+          String filename=(String)getFilenameMethod.invoke(appleEvent,(Object[])null);
+          targetAction.actionPerformed(new ActionEvent(this,ActionEvent.ACTION_PERFORMED,filename));
+        }
+ catch (        Exception ex) {
+        }
+      }
+      return true;
+    }
+  }
+);
+}

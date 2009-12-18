@@ -18,7 +18,7 @@
           Color[] stopColors=enabledStopColors;
           g.setColor(new Color(borderColor,true));
           g.drawRect(barX,barY,barW - 1,barH - 1);
-          LinearGradientPaint lgp=new LinearGradientPaint(new Point2D.Float(1,1),new Point2D.Float(19,1),stops,stopColors,MultipleGradientPaint.REPEAT,MultipleGradientPaint.LINEAR_RGB);
+          LinearGradientPaint lgp=new LinearGradientPaint(new Point2D.Float(1,1),new Point2D.Float(19,1),stops,stopColors,MultipleGradientPaint.CycleMethod.REPEAT);
           g.setPaint(lgp);
           g.fillRect(barX + 1,barX + 1,barW - 2,barH - 2);
           Icon icon=(Icon)c.getClientProperty(PaletteToolBarUI.TOOLBAR_ICON_PROPERTY);

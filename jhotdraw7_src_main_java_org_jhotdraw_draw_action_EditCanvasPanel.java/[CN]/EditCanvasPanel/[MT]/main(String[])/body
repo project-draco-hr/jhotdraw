@@ -1,8 +1,8 @@
 {
   try {
-    UIManager.setLookAndFeel(new QuaquaLookAndFeel());
+    UIManager.setLookAndFeel("ch.randelshofer.quaqua.QuaquaLookAndFeel");
   }
- catch (  UnsupportedLookAndFeelException ex) {
+ catch (  Exception ex) {
     ex.printStackTrace();
   }
   JFrame f=new JFrame("Drawing Settings2");

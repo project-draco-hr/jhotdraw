@@ -2,14 +2,29 @@
   ApplicationModel model=getModel();
   setScreenMenuBar(createMenuBar(null));
   paletteHandler.add((JFrame)getComponent(),null);
-  net.roydesign.app.Application mrjapp=net.roydesign.app.Application.getInstance();
-  mrjapp.getAboutJMenuItem().setAction(model.getAction(AboutAction.ID));
-  mrjapp.getQuitJMenuItem().setAction(model.getAction(ExitAction.ID));
   Action a;
-  if ((a=model.getAction(AbstractPreferencesAction.ID)) != null) {
-    mrjapp.getPreferencesJMenuItem().setAction(a);
+  if (null != (a=model.getAction(OSXOpenApplicationAction.ID))) {
+    OSXAdapter.setOpenApplicationHandler(a);
   }
-  if ((a=model.getAction(OSXDropOnDockAction.ID)) != null) {
-    mrjapp.addOpenDocumentListener(a);
+  if (null != (a=model.getAction(OSXReOpenApplicationAction.ID))) {
+    OSXAdapter.setReOpenApplicationHandler(a);
+  }
+  if (null != (a=model.getAction(OSXOpenFileAction.ID))) {
+    OSXAdapter.setOpenFileHandler(a);
+  }
+  if (null != (a=model.getAction(OSXPrintFileAction.ID))) {
+    OSXAdapter.setPrintFileHandler(a);
+  }
+  if (null != (a=model.getAction(AboutAction.ID))) {
+    OSXAdapter.setAboutHandler(a);
+  }
+  if (null != (a=model.getAction(AbstractPreferencesAction.ID))) {
+    OSXAdapter.setPreferencesHandler(a);
+  }
+  if (null != (a=model.getAction(ExitAction.ID))) {
+    OSXAdapter.setQuitHandler(a);
+  }
+  if (null != (a=model.getAction(OSXOpenFileAction.ID))) {
+    OSXAdapter.setOpenFileHandler(a);
   }
 }

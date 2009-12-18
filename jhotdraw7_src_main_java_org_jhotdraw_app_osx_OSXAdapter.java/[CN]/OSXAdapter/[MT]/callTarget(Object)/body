@@ -1,0 +1,13 @@
+{
+  if (targetAction != null) {
+    targetAction.actionPerformed(new ActionEvent(this,ActionEvent.ACTION_PERFORMED,proxySignature));
+    return true;
+  }
+ else {
+    Object result=targetMethod.invoke(targetObject,(Object[])null);
+    if (result == null) {
+      return true;
+    }
+    return Boolean.valueOf(result.toString()).booleanValue();
+  }
+}

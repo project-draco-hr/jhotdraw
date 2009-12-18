@@ -1,0 +1,7 @@
+{
+  if (isCorrectMethod(method,args)) {
+    boolean handled=callTarget(args[0]);
+    setApplicationEventHandled(args[0],handled);
+  }
+  return null;
+}

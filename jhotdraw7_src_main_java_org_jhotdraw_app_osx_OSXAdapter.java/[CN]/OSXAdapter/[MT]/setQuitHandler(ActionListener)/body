@@ -1,0 +1,9 @@
+{
+  setHandler(new OSXAdapter("handleQuit",aboutHandler){
+    @Override public boolean callTarget(    Object appleEvent) throws InvocationTargetException, IllegalAccessException {
+      super.callTarget(appleEvent);
+      return true;
+    }
+  }
+);
+}

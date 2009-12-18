@@ -1,11 +1,11 @@
 {
-  View view=getActiveView();
+  PrintableView view=(PrintableView)getActiveView();
   view.setEnabled(false);
   if (System.getProperty("apple.awt.graphics.UseQuartz","false").equals("true")) {
-    printQuartz();
+    printQuartz(view);
   }
  else {
-    printJava2D();
+    printJava2D(view);
   }
   view.setEnabled(true);
 }

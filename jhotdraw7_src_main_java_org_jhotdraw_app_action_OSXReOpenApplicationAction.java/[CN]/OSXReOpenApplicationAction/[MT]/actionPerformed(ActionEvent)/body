@@ -1,0 +1,14 @@
+{
+  Application a=getApplication();
+  View v=a.getActiveView();
+  if (v != null) {
+    Component c=SwingUtilities.getRootPane(v.getComponent()).getParent();
+    if (c instanceof JFrame) {
+      JFrame f=(JFrame)c;
+      if ((f.getExtendedState() & JFrame.ICONIFIED) != 0) {
+        f.setExtendedState(f.getExtendedState() ^ JFrame.ICONIFIED);
+      }
+      f.requestFocus();
+    }
+  }
+}

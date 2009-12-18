@@ -1,0 +1,14 @@
+{
+  boolean enablePrefsMenu=(prefsHandler != null);
+  if (enablePrefsMenu) {
+    setHandler(new OSXAdapter("handlePreferences",prefsHandler));
+  }
+  try {
+    Method enablePrefsMethod=macOSXApplication.getClass().getDeclaredMethod("setEnabledPreferencesMenu",new Class[]{boolean.class});
+    enablePrefsMethod.invoke(macOSXApplication,new Object[]{Boolean.valueOf(enablePrefsMenu)});
+  }
+ catch (  Exception ex) {
+    System.err.println("OSXAdapter could not access the Preferences Menu");
+    ex.printStackTrace();
+  }
+}

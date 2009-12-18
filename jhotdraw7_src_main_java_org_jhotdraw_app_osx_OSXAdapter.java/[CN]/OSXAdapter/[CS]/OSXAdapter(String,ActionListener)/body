@@ -1,0 +1,4 @@
+{
+  this.proxySignature=proxySignature;
+  this.targetAction=handler;
+}

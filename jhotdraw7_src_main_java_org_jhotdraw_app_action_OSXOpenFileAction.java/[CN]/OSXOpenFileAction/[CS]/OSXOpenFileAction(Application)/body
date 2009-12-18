@@ -1,0 +1,4 @@
+{
+  super(app);
+  putValue(Action.NAME,"OSX Open File");
+}

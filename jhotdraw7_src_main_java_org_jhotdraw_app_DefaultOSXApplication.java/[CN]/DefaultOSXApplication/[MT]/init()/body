@@ -5,7 +5,12 @@
   initLookAndFeel();
   paletteHandler=new OSXPaletteHandler(this);
   initLabels();
-  getModel().initApplication(this);
+  ApplicationModel m=getModel();
+  m.putAction(OSXOpenApplicationAction.ID,new OSXOpenApplicationAction(this));
+  m.putAction(OSXReOpenApplicationAction.ID,new OSXReOpenApplicationAction(this));
+  m.putAction(OSXOpenFileAction.ID,new OSXOpenFileAction(this));
+  m.putAction(OSXPrintFileAction.ID,new OSXPrintFileAction(this));
+  m.initApplication(this);
   paletteActions=new LinkedList<Action>();
   initPalettes(paletteActions);
   initScreenMenuBar();
