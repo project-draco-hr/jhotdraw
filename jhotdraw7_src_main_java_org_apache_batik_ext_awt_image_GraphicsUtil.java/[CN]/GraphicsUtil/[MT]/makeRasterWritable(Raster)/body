@@ -1,3 +1,0 @@
-{
-  return makeRasterWritable(ras,ras.getMinX(),ras.getMinY());
-}

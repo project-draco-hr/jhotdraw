@@ -1,9 +1,0 @@
-ColorModel cm
-Rectangle deviceBounds
-Rectangle2D userBounds
-AffineTransform t
-RenderingHints hints
-float[] fractions
-Color[] colors
-MultipleGradientPaint.CycleMethodEnum cycleMethod
-MultipleGradientPaint.ColorSpaceEnum colorSpace

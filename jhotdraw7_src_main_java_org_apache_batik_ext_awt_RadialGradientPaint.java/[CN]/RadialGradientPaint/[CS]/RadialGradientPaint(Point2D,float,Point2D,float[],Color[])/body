@@ -1,3 +1,0 @@
-{
-  this(center,radius,focus,fractions,colors,NO_CYCLE,SRGB);
-}

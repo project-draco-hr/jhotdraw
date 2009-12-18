@@ -1,5 +1,0 @@
-{
-  ColorModel cm=makeLinear_sRGBCM(premult);
-  WritableRaster wr=cm.createCompatibleWritableRaster(width,height);
-  return new BufferedImage(cm,wr,premult,null);
-}

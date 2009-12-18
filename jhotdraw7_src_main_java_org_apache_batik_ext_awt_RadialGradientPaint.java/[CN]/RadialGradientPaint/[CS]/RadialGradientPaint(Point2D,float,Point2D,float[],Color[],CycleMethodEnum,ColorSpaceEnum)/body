@@ -1,3 +1,0 @@
-{
-  this(center,radius,focus,fractions,colors,cycleMethod,colorSpace,new AffineTransform());
-}

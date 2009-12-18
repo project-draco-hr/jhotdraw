@@ -1,5 +1,0 @@
-Point2D center
-float radius
-Point2D focus
-float[] fractions
-Color[] colors

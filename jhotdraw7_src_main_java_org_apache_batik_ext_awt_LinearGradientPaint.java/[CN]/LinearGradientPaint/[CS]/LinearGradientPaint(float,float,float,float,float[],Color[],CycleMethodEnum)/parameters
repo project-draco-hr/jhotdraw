@@ -1,7 +1,0 @@
-float startX
-float startY
-float endX
-float endY
-float[] fractions
-Color[] colors
-CycleMethodEnum cycleMethod

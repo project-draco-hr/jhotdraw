@@ -1,5 +1,0 @@
-float cx
-float cy
-float radius
-float[] fractions
-Color[] colors
