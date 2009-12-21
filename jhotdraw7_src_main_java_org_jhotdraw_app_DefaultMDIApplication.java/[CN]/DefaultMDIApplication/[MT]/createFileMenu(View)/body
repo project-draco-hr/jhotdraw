@@ -1,0 +1,25 @@
+{
+  JMenuBar mb=new JMenuBar();
+  JMenu m;
+  m=new JMenu();
+  labels.configureMenu(m,"file");
+  addAction(m,ClearFileAction.ID);
+  addAction(m,NewFileAction.ID);
+  addAction(m,NewWindowAction.ID);
+  addAction(m,LoadFileAction.ID);
+  addAction(m,OpenFileAction.ID);
+  addAction(m,LoadDirectoryAction.ID);
+  addAction(m,OpenDirectoryAction.ID);
+  if (model.getAction(LoadFileAction.ID) != null || model.getAction(OpenFileAction.ID) != null || model.getAction(LoadDirectoryAction.ID) != null || model.getAction(OpenDirectoryAction.ID) != null) {
+    m.add(createOpenRecentFileMenu(null));
+  }
+  maybeAddSeparator(m);
+  addAction(m,CloseFileAction.ID);
+  addAction(m,SaveFileAction.ID);
+  addAction(m,SaveFileAsAction.ID);
+  addAction(m,ExportFileAction.ID);
+  addAction(m,PrintFileAction.ID);
+  maybeAddSeparator(m);
+  addAction(m,ExitAction.ID);
+  return m;
+}

@@ -1,0 +1,5 @@
+{
+  if (toolBar != null) {
+    putValue(ActionUtil.SELECTED_KEY,!toolBar.isVisible());
+  }
+}

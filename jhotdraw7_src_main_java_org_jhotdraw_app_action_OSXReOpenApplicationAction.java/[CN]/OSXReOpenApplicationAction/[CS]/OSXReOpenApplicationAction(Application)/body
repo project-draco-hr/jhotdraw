@@ -1,4 +1,0 @@
-{
-  super(app);
-  putValue(Action.NAME,"OSX Reopen Application");
-}

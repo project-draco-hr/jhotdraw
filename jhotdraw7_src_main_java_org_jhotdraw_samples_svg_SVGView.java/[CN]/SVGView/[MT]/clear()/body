@@ -5,6 +5,7 @@
       public void run(){
         Drawing oldDrawing=svgPanel.getDrawing();
         svgPanel.setDrawing(newDrawing);
+        firePropertyChange(DRAWING_PROPERTY,oldDrawing,newDrawing);
         if (oldDrawing != null) {
           oldDrawing.removeAllChildren();
         }

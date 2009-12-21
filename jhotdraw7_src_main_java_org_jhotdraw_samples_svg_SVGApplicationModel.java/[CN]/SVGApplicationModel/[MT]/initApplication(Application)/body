@@ -6,5 +6,5 @@
   gridConstrainer=new GridConstrainer(12,12);
   putAction(ClearSelectionAction.ID,new ClearSelectionAction());
   putAction(ViewSourceAction.ID,new ViewSourceAction(a));
-  putAction(ExportAction.ID,new ExportAction(a));
+  putAction(ExportFileAction.ID,new ExportFileAction(a));
 }

@@ -32,7 +32,9 @@
     }
     SwingUtilities.invokeAndWait(new Runnable(){
       public void run(){
+        Drawing oldDrawing=svgPanel.getDrawing();
         svgPanel.setDrawing(drawing);
+        firePropertyChange(DRAWING_PROPERTY,oldDrawing,svgPanel.getDrawing());
         undo.discardAllEdits();
       }
     }

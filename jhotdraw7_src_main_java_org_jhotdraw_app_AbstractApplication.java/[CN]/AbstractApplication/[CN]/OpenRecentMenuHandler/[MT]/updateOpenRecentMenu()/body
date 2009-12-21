@@ -2,13 +2,13 @@
   if (openRecentMenu.getItemCount() > 0) {
     JMenuItem clearRecentFilesItem=(JMenuItem)openRecentMenu.getItem(openRecentMenu.getItemCount() - 1);
     openRecentMenu.remove(openRecentMenu.getItemCount() - 1);
-    for (    OpenRecentAction action : openRecentActions) {
+    for (    OpenRecentFileAction action : openRecentActions) {
       action.dispose();
     }
     openRecentActions.clear();
     openRecentMenu.removeAll();
     for (    URI f : getRecentURIs()) {
-      OpenRecentAction action=new OpenRecentAction(AbstractApplication.this,f);
+      OpenRecentFileAction action=new OpenRecentFileAction(AbstractApplication.this,f);
       openRecentMenu.add(action);
       openRecentActions.add(action);
     }

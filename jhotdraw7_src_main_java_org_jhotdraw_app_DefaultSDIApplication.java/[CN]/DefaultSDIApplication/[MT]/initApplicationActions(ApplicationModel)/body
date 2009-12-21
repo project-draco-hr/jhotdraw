@@ -1,0 +1,7 @@
+{
+  m.putAction(AboutAction.ID,new AboutAction(this));
+  m.putAction(CloseFileAction.ID,new CloseFileAction(this));
+  m.putAction(WindowMaximizeAction.ID,new WindowMaximizeAction(this));
+  m.putAction(WindowMinimizeAction.ID,new WindowMinimizeAction(this));
+  m.putAction(ClearRecentFilesMenuAction.ID,new ClearRecentFilesMenuAction(this));
+}

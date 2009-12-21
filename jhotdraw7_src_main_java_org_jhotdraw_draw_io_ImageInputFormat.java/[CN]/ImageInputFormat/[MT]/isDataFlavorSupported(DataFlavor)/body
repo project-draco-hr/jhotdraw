@@ -1,8 +1,11 @@
 {
-  try {
-    return flavor.equals(DataFlavor.imageFlavor) || flavor.equals(ImageTransferable.IMAGE_PNG_FLAVOR) || flavor.equals(new DataFlavor("application/octet-stream; type=public.png"));
+  if (DataFlavor.imageFlavor.match(flavor)) {
+    return true;
   }
- catch (  ClassNotFoundException ex) {
-    return false;
+  for (  String mimeType : mimeTypes) {
+    if (flavor.isMimeTypeEqual(mimeType)) {
+      return true;
+    }
   }
+  return false;
 }

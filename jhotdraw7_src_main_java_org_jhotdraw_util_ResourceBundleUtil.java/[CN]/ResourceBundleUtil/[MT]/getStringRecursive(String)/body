@@ -6,21 +6,42 @@
       break;
     }
     String placeholderKey=value.substring(p1 + 2,p2);
+    String placeholderFormat;
+    int p3=placeholderKey.indexOf(',');
+    if (p3 != -1) {
+      placeholderFormat=placeholderKey.substring(p3 + 1);
+      placeholderKey=placeholderKey.substring(0,p3);
+    }
+ else {
+      placeholderFormat="string";
+    }
     ArrayList<String> fallbackKeys=new ArrayList<String>();
     generateFallbackKeys(placeholderKey,fallbackKeys);
-    boolean resourceFound=false;
+    String placeholderValue=null;
     for (    String fk : fallbackKeys) {
       try {
-        value=value.substring(0,p1) + getStringRecursive(fk) + value.substring(p2 + 1);
-        resourceFound=true;
+        placeholderValue=getStringRecursive(fk);
         break;
       }
  catch (      MissingResourceException e) {
       }
     }
-    if (resourceFound == false) {
+    if (placeholderValue == null) {
       throw new MissingResourceException("Resource not found.",baseName,key);
     }
+    if (placeholderFormat.equals("accelerator")) {
+      StringBuilder b=new StringBuilder();
+      for (      String s : placeholderValue.split(" ")) {
+        if (acceleratorKeys.contains(s)) {
+          b.append(getString("accelerator." + s));
+        }
+ else {
+          b.append(s);
+        }
+      }
+      placeholderValue=b.toString();
+    }
+    value=value.substring(0,p1) + placeholderValue + value.substring(p2 + 1);
   }
   return value;
 }

@@ -3,7 +3,9 @@
   initComponents();
   JPanel zoomButtonPanel=new JPanel(new BorderLayout());
   undo=svgPanel.getUndoRedoManager();
+  Drawing oldDrawing=svgPanel.getDrawing();
   svgPanel.setDrawing(createDrawing());
+  firePropertyChange(DRAWING_PROPERTY,oldDrawing,svgPanel.getDrawing());
   svgPanel.getDrawing().addUndoableEditListener(undo);
   initActions();
   undo.addPropertyChangeListener(propertyHandler=new PropertyChangeListener(){

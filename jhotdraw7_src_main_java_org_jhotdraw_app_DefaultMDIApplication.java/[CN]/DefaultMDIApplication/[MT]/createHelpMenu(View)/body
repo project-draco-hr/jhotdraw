@@ -1,0 +1,9 @@
+{
+  ApplicationModel mo=getModel();
+  JMenu m;
+  JMenuItem mi;
+  m=new JMenu();
+  labels.configureMenu(m,"help");
+  addAction(m,AboutAction.ID);
+  return m;
+}

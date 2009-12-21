@@ -3,16 +3,16 @@
   setScreenMenuBar(createMenuBar(null));
   paletteHandler.add((JFrame)getComponent(),null);
   Action a;
-  if (null != (a=model.getAction(OSXOpenApplicationAction.ID))) {
+  if (null != (a=model.getAction(OpenApplicationAction.ID))) {
     OSXAdapter.setOpenApplicationHandler(a);
   }
-  if (null != (a=model.getAction(OSXReOpenApplicationAction.ID))) {
+  if (null != (a=model.getAction(ReOpenApplicationAction.ID))) {
     OSXAdapter.setReOpenApplicationHandler(a);
   }
-  if (null != (a=model.getAction(OSXOpenFileAction.ID))) {
+  if (null != (a=model.getAction(OpenApplicationFileAction.ID))) {
     OSXAdapter.setOpenFileHandler(a);
   }
-  if (null != (a=model.getAction(OSXPrintFileAction.ID))) {
+  if (null != (a=model.getAction(PrintApplicationFileAction.ID))) {
     OSXAdapter.setPrintFileHandler(a);
   }
   if (null != (a=model.getAction(AboutAction.ID))) {
@@ -24,7 +24,7 @@
   if (null != (a=model.getAction(ExitAction.ID))) {
     OSXAdapter.setQuitHandler(a);
   }
-  if (null != (a=model.getAction(OSXOpenFileAction.ID))) {
+  if (null != (a=model.getAction(OpenApplicationFileAction.ID))) {
     OSXAdapter.setOpenFileHandler(a);
   }
 }

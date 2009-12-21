@@ -1,0 +1,13 @@
+{
+  mi.setSelected((Boolean)a.getValue(ActionUtil.SELECTED_KEY));
+  PropertyChangeListener propertyHandler=new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      if (evt.getPropertyName().equals(ActionUtil.SELECTED_KEY)) {
+        mi.setSelected((Boolean)a.getValue(ActionUtil.SELECTED_KEY));
+      }
+    }
+  }
+;
+  a.addPropertyChangeListener(propertyHandler);
+  mi.putClientProperty("actionPropertyHandler",propertyHandler);
+}

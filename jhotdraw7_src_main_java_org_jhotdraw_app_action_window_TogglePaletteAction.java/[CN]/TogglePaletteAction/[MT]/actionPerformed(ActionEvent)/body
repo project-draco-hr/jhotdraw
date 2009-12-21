@@ -1,0 +1,5 @@
+{
+  if (palette != null) {
+    putValue(ActionUtil.SELECTED_KEY,!palette.isVisible());
+  }
+}

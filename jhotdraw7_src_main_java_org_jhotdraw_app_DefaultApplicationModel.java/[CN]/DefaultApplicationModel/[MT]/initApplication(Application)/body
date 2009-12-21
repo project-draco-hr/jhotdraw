@@ -1,15 +1,9 @@
 {
-  putAction(AboutAction.ID,new AboutAction(a));
-  putAction(ExitAction.ID,new ExitAction(a));
   putAction(NewFileAction.ID,new NewFileAction(a));
-  putAction(NewWindowAction.ID,new NewWindowAction(a));
-  putAction(ClearAction.ID,new ClearAction(a));
-  putAction(OpenAction.ID,new OpenAction(a));
-  putAction(LoadAction.ID,new LoadAction(a));
-  putAction(ClearRecentFilesAction.ID,new ClearRecentFilesAction(a));
-  putAction(SaveAction.ID,new SaveAction(a));
-  putAction(SaveAsAction.ID,new SaveAsAction(a));
-  putAction(CloseAction.ID,new CloseAction(a));
+  putAction(OpenFileAction.ID,new OpenFileAction(a));
+  putAction(SaveFileAction.ID,new SaveFileAction(a));
+  putAction(SaveFileAsAction.ID,new SaveFileAsAction(a));
+  putAction(CloseFileAction.ID,new CloseFileAction(a));
   putAction(UndoAction.ID,new UndoAction(a));
   putAction(RedoAction.ID,new RedoAction(a));
   putAction(CutAction.ID,new CutAction());
@@ -18,6 +12,5 @@
   putAction(DeleteAction.ID,new DeleteAction());
   putAction(DuplicateAction.ID,new DuplicateAction());
   putAction(SelectAllAction.ID,new SelectAllAction());
-  putAction(MaximizeAction.ID,new MaximizeAction(a));
-  putAction(MinimizeAction.ID,new MinimizeAction(a));
+  putAction(ClearSelectionAction.ID,new ClearSelectionAction());
 }

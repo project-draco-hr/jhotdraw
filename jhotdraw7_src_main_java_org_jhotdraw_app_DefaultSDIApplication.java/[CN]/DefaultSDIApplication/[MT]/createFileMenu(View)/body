@@ -1,52 +1,24 @@
 {
-  ApplicationModel model=getModel();
+  JMenuBar mb=new JMenuBar();
   JMenu m;
-  JMenuItem mi;
   m=new JMenu();
   labels.configureMenu(m,"file");
-  if (model.getAction(ClearAction.ID) != null) {
-    mi=m.add(model.getAction(ClearAction.ID));
-    mi.setIcon(null);
+  addAction(m,ClearFileAction.ID);
+  addAction(m,NewFileAction.ID);
+  addAction(m,NewWindowAction.ID);
+  addAction(m,LoadFileAction.ID);
+  addAction(m,OpenFileAction.ID);
+  addAction(m,LoadDirectoryAction.ID);
+  addAction(m,OpenDirectoryAction.ID);
+  if (model.getAction(LoadFileAction.ID) != null || model.getAction(OpenFileAction.ID) != null || model.getAction(LoadDirectoryAction.ID) != null || model.getAction(OpenDirectoryAction.ID) != null) {
+    m.add(createOpenRecentFileMenu(null));
   }
-  if (model.getAction(NewWindowAction.ID) != null) {
-    mi=m.add(model.getAction(NewWindowAction.ID));
-    mi.setIcon(null);
-  }
-  if (model.getAction(LoadAction.ID) != null) {
-    mi=m.add(model.getAction(LoadAction.ID));
-    mi.setIcon(null);
-  }
-  if (model.getAction(LoadDirectoryAction.ID) != null) {
-    mi=m.add(model.getAction(LoadDirectoryAction.ID));
-    mi.setIcon(null);
-  }
-  if (model.getAction(OpenAction.ID) != null || model.getAction(OpenDirectoryAction.ID) != null) {
-    m.add(createOpenRecentFileMenu(view));
-  }
-  if (m.getPopupMenu().getComponentCount() > 0) {
-    m.addSeparator();
-  }
-  if (model.getAction(SaveAction.ID) != null) {
-    mi=m.add(model.getAction(SaveAction.ID));
-    mi.setIcon(null);
-  }
-  if (model.getAction(SaveAsAction.ID) != null) {
-    mi=m.add(model.getAction(SaveAsAction.ID));
-    mi.setIcon(null);
-  }
-  if (model.getAction(ExportAction.ID) != null) {
-    mi=m.add(model.getAction(ExportAction.ID));
-    mi.setIcon(null);
-  }
-  if (model.getAction(PrintAction.ID) != null) {
-    m.addSeparator();
-    mi=m.add(model.getAction(PrintAction.ID));
-    mi.setIcon(null);
-  }
-  if (m.getPopupMenu().getComponentCount() > 0) {
-    m.addSeparator();
-  }
-  mi=m.add(model.getAction(CloseAction.ID));
-  mi.setIcon(null);
+  maybeAddSeparator(m);
+  addAction(m,SaveFileAction.ID);
+  addAction(m,SaveFileAsAction.ID);
+  addAction(m,ExportFileAction.ID);
+  addAction(m,PrintFileAction.ID);
+  maybeAddSeparator(m);
+  addAction(m,CloseFileAction.ID);
   return m;
 }

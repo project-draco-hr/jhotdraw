@@ -4,7 +4,7 @@
     executor=null;
   }
   if (disposables != null) {
-    for (    Disposable d : disposables) {
+    for (    Disposable d : (LinkedList<Disposable>)disposables.clone()) {
       d.dispose();
     }
     disposables=null;

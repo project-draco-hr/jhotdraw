@@ -27,6 +27,8 @@ case Geom.OUT_TOP | Geom.OUT_LEFT:
 newValue=AttributeKeys.Orientation.NORTH_WEST;
 break;
 }
+getOwner().willChange();
 getOwner().set(ORIENTATION,newValue);
+getOwner().changed();
 updateBounds();
 }

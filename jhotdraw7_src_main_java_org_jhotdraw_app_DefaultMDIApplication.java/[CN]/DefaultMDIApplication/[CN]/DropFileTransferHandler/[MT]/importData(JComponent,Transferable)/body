@@ -1,26 +1,12 @@
 {
+  Action a=getModel().getAction(OpenApplicationFileAction.ID);
+  if (a == null) {
+    return false;
+  }
   try {
     @SuppressWarnings("unchecked") java.util.List<File> files=(java.util.List<File>)t.getTransferData(DataFlavor.javaFileListFlavor);
     for (    final File f : files) {
-      final View p=createView();
-      p.setEnabled(false);
-      add(p);
-      show(p);
-      p.execute(new Worker(){
-        public Object construct() throws IOException {
-          p.read(f.toURI());
-          return null;
-        }
-        @Override protected void done(        Object value){
-          p.setURI(f.toURI());
-          p.setEnabled(true);
-        }
-        @Override protected void failed(        Throwable value){
-          dispose(p);
-          JOptionPane.showMessageDialog(getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>"+ labels.getFormatted("file.open.couldntOpen.message",f.getName())+ "</b><p>"+ value,"",JOptionPane.ERROR_MESSAGE);
-        }
-      }
-);
+      a.actionPerformed(new ActionEvent(desktopPane,ActionEvent.ACTION_PERFORMED,f.toString()));
     }
     return true;
   }

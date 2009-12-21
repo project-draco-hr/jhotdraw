@@ -1,0 +1,14 @@
+{
+  this.component=c;
+  putValue(Action.NAME,name);
+  putValue(ActionUtil.SELECTED_KEY,c.isVisible());
+  c.addComponentListener(new ComponentAdapter(){
+    public void componentShown(    ComponentEvent e){
+      putValue(ActionUtil.SELECTED_KEY,component.isVisible());
+    }
+    public void componentHidden(    ComponentEvent e){
+      putValue(ActionUtil.SELECTED_KEY,component.isVisible());
+    }
+  }
+);
+}

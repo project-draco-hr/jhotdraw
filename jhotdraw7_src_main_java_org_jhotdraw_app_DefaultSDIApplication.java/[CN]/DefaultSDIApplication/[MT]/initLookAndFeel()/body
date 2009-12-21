@@ -1,14 +1,6 @@
 {
   try {
-    String lafName;
-    if (System.getProperty("os.name").toLowerCase().startsWith("mac os x")) {
-      JFrame.setDefaultLookAndFeelDecorated(true);
-      JDialog.setDefaultLookAndFeelDecorated(true);
-      lafName=UIManager.getCrossPlatformLookAndFeelClassName();
-    }
- else {
-      lafName=UIManager.getSystemLookAndFeelClassName();
-    }
+    String lafName=UIManager.getSystemLookAndFeelClassName();
     UIManager.setLookAndFeel(lafName);
   }
  catch (  Exception e) {

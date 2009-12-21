@@ -2,21 +2,21 @@
   JMenu m=windowMenu;
   ApplicationModel mo=getModel();
   m.removeAll();
-  m.add(mo.getAction(ArrangeAction.CASCADE_ID));
-  m.add(mo.getAction(ArrangeAction.VERTICAL_ID));
-  m.add(mo.getAction(ArrangeAction.HORIZONTAL_ID));
+  m.add(mo.getAction(WindowArrangeAction.CASCADE_ID));
+  m.add(mo.getAction(WindowArrangeAction.VERTICAL_ID));
+  m.add(mo.getAction(WindowArrangeAction.HORIZONTAL_ID));
   m.addSeparator();
   for (Iterator i=views().iterator(); i.hasNext(); ) {
     View pr=(View)i.next();
-    if (pr.getAction(FocusAction.ID) != null) {
-      m.add(pr.getAction(FocusAction.ID));
+    if (pr.getAction(WindowFocusAction.ID) != null) {
+      m.add(pr.getAction(WindowFocusAction.ID));
     }
   }
   if (toolBarActions.size() > 0) {
     m.addSeparator();
     for (    Action a : toolBarActions) {
       JCheckBoxMenuItem cbmi=new JCheckBoxMenuItem(a);
-      Actions.configureJCheckBoxMenuItem(cbmi,a);
+      ActionUtil.configureJCheckBoxMenuItem(cbmi,a);
       m.add(cbmi);
     }
   }

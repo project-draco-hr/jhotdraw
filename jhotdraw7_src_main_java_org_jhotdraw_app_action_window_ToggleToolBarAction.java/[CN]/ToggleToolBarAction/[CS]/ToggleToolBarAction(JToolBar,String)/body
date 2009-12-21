@@ -1,0 +1,14 @@
+{
+  super(label);
+  propertyHandler=new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent evt){
+      String name=evt.getPropertyName();
+      if (name.equals("visible")) {
+        putValue(ActionUtil.SELECTED_KEY,evt.getNewValue());
+      }
+    }
+  }
+;
+  putValue(ActionUtil.SELECTED_KEY,true);
+  setToolBar(toolBar);
+}

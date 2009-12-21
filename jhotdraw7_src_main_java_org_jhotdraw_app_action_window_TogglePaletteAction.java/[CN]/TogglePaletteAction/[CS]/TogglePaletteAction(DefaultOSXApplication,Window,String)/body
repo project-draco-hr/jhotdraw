@@ -1,0 +1,12 @@
+{
+  super(label);
+  this.app=app;
+  windowHandler=new WindowAdapter(){
+    public void windowClosing(    WindowEvent evt){
+      putValue(ActionUtil.SELECTED_KEY,false);
+    }
+  }
+;
+  setPalette(palette);
+  putValue(ActionUtil.SELECTED_KEY,true);
+}

@@ -1,0 +1,9 @@
+{
+  if (mi != null) {
+    if (m.getClientProperty("needsSeparator") == Boolean.TRUE) {
+      m.addSeparator();
+      m.putClientProperty("needsSeparator",null);
+    }
+    m.add(mi);
+  }
+}

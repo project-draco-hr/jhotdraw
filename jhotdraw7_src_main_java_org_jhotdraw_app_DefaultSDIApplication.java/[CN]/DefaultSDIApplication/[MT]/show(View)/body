@@ -8,7 +8,8 @@
     f.add(panel);
     f.setMinimumSize(new Dimension(200,200));
     f.setPreferredSize(new Dimension(600,400));
-    f.setJMenuBar(createMenuBar(p,(java.util.List<Action>)panel.getClientProperty("toolBarActions")));
+    f.setSize(f.getPreferredSize());
+    f.setJMenuBar(createMenuBar(p));
     PreferencesUtil.installFramePrefsHandler(prefs,"view",f);
     Point loc=f.getLocation();
     boolean moved;
@@ -28,7 +29,7 @@
     f.setLocation(loc);
     f.addWindowListener(new WindowAdapter(){
       public void windowClosing(      final WindowEvent evt){
-        getModel().getAction(CloseAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
+        getModel().getAction(CloseFileAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
       }
       @Override public void windowClosed(      final WindowEvent evt){
         if (p == getActiveView()) {

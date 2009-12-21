@@ -1,0 +1,16 @@
+{
+  super.putValue(key,newValue);
+  if (key == ActionUtil.SELECTED_KEY) {
+    if (palette != null) {
+      boolean b=(Boolean)newValue;
+      if (b) {
+        app.addPalette(palette);
+        palette.setVisible(true);
+      }
+ else {
+        app.removePalette(palette);
+        palette.setVisible(false);
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 {
+  ResourceBundleUtil.setVerbose(true);
   Application app;
   String os=System.getProperty("os.name").toLowerCase();
   if (os.startsWith("mac")) {

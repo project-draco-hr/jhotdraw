@@ -1,3 +1,0 @@
-{
-  this(prototype,"PICT","PICT (pct)","pct",BufferedImage.TYPE_INT_ARGB);
-}

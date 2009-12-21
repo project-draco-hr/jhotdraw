@@ -1,35 +1,3 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
-  JToolBar tb=new JToolBar();
-  tb.setName(labels.getString("standardToolBarTitle"));
-  JButton b;
-  Action a;
-  if (null != (a=getAction(NewFileAction.ID))) {
-    b=tb.add(a);
-    b.setFocusable(false);
-  }
-  if (null != (a=getAction(OpenAction.ID))) {
-    b=tb.add(a);
-    b.setFocusable(false);
-  }
-  if (null != (a=getAction(LoadAction.ID))) {
-    b=tb.add(a);
-    b.setFocusable(false);
-  }
-  b=tb.add(getAction(SaveAction.ID));
-  tb.addSeparator();
-  b=tb.add(getAction(UndoAction.ID));
-  b.setFocusable(false);
-  b=tb.add(getAction(RedoAction.ID));
-  b.setFocusable(false);
-  tb.addSeparator();
-  b=tb.add(getAction(CutAction.ID));
-  b.setFocusable(false);
-  b=tb.add(getAction(CopyAction.ID));
-  b.setFocusable(false);
-  b=tb.add(getAction(PasteAction.ID));
-  b.setFocusable(false);
-  LinkedList<JToolBar> list=new LinkedList<JToolBar>();
-  list.add(tb);
-  return list;
+  return Collections.emptyList();
 }

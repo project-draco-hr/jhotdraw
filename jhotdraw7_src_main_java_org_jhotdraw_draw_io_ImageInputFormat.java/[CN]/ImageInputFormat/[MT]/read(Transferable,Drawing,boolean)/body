@@ -1,62 +1,37 @@
 {
-  if (t.isDataFlavorSupported(DataFlavor.imageFlavor)) {
-    try {
-      Image img=(Image)t.getTransferData(DataFlavor.imageFlavor);
-      img=Images.toBufferedImage(img);
-      ImageHolderFigure figure=(ImageHolderFigure)prototype.clone();
-      figure.setBufferedImage((BufferedImage)img);
-      figure.setBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
-      LinkedList<Figure> list=new LinkedList<Figure>();
-      list.add(figure);
-      if (replace) {
-        drawing.removeAllChildren();
-        drawing.set(CANVAS_WIDTH,figure.getBounds().width);
-        drawing.set(CANVAS_HEIGHT,figure.getBounds().height);
-      }
-      drawing.addAll(list);
-      return;
+  DataFlavor importFlavor=null;
+  SearchLoop:   for (  DataFlavor flavor : t.getTransferDataFlavors()) {
+    if (DataFlavor.imageFlavor.match(flavor)) {
+      importFlavor=flavor;
+      break SearchLoop;
     }
- catch (    Throwable e) {
-    }
-  }
-  DataFlavor imgFlavor=null;
-  try {
-    DataFlavor[] flavors=new DataFlavor[]{ImageTransferable.IMAGE_PNG_FLAVOR,new DataFlavor("application/octet-stream; type=public.png")};
-    for (    DataFlavor f : flavors) {
-      if (t.isDataFlavorSupported(f)) {
-        imgFlavor=f;
-        break;
+    for (    String mimeType : mimeTypes) {
+      if (flavor.isMimeTypeEqual(mimeType)) {
+        importFlavor=flavor;
+        break SearchLoop;
       }
     }
   }
- catch (  ClassNotFoundException ex) {
-    ex.printStackTrace();
+  Object data=t.getTransferData(importFlavor);
+  Image img=null;
+  if (data instanceof Image) {
+    img=(Image)data;
   }
-  if (imgFlavor != null) {
-    try {
-      InputStream in=(InputStream)t.getTransferData(imgFlavor);
-      Image img=ImageIO.read(in);
-      img=Images.toBufferedImage(img);
-      ImageHolderFigure figure=(ImageHolderFigure)prototype.clone();
-      figure.setBufferedImage((BufferedImage)img);
-      figure.setBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
-      LinkedList<Figure> list=new LinkedList<Figure>();
-      list.add(figure);
-      if (replace) {
-        drawing.removeAllChildren();
-        drawing.set(CANVAS_WIDTH,figure.getBounds().width);
-        drawing.set(CANVAS_HEIGHT,figure.getBounds().height);
-      }
-      drawing.addAll(list);
-    }
- catch (    Throwable e) {
-      e.printStackTrace();
-      IOException ex=new IOException("Couldn't import image as image/png flavor");
-      ex.initCause(e);
-      throw ex;
-    }
+ else   if (data instanceof InputStream) {
+    img=ImageIO.read((InputStream)data);
   }
- else {
-    throw new IOException("Couldn't import image.");
+  if (img == null) {
+    throw new IOException("Unsupported data format " + importFlavor);
   }
+  ImageHolderFigure figure=(ImageHolderFigure)prototype.clone();
+  figure.setBufferedImage(Images.toBufferedImage(img));
+  figure.setBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
+  LinkedList<Figure> list=new LinkedList<Figure>();
+  list.add(figure);
+  if (replace) {
+    drawing.removeAllChildren();
+    drawing.set(CANVAS_WIDTH,figure.getBounds().width);
+    drawing.set(CANVAS_HEIGHT,figure.getBounds().height);
+  }
+  drawing.addAll(list);
 }

@@ -3,22 +3,22 @@
   JMenuItem mi;
   m.removeAll();
   ApplicationModel model=getModel();
-  mi=m.add(model.getAction(MinimizeAction.ID));
+  mi=m.add(model.getAction(WindowMinimizeAction.ID));
   mi.setIcon(null);
-  mi=m.add(model.getAction(MaximizeAction.ID));
+  mi=m.add(model.getAction(WindowMaximizeAction.ID));
   mi.setIcon(null);
   m.addSeparator();
   for (Iterator i=views().iterator(); i.hasNext(); ) {
     View pr=(View)i.next();
-    if (pr.getAction(FocusAction.ID) != null) {
-      mi=m.add(pr.getAction(FocusAction.ID));
+    if (pr.getAction(WindowFocusAction.ID) != null) {
+      mi=m.add(pr.getAction(WindowFocusAction.ID));
     }
   }
   if (paletteActions.size() > 0) {
     m.addSeparator();
     for (    Action a : paletteActions) {
       JCheckBoxMenuItem cbmi=new JCheckBoxMenuItem(a);
-      Actions.configureJCheckBoxMenuItem(cbmi,a);
+      ActionUtil.configureJCheckBoxMenuItem(cbmi,a);
       cbmi.setIcon(null);
       m.add(cbmi);
     }

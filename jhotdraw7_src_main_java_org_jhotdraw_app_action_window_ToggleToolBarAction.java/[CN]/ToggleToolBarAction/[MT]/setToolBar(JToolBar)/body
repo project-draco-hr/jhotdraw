@@ -1,0 +1,10 @@
+{
+  if (toolBar != null) {
+    toolBar.removePropertyChangeListener(propertyHandler);
+  }
+  toolBar=newValue;
+  if (toolBar != null) {
+    toolBar.addPropertyChangeListener(propertyHandler);
+    putValue(ActionUtil.SELECTED_KEY,toolBar.isVisible());
+  }
+}

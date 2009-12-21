@@ -3,10 +3,11 @@
     p.setShowing(true);
     final JInternalFrame f=new JInternalFrame();
     f.setDefaultCloseOperation(JInternalFrame.DO_NOTHING_ON_CLOSE);
-    f.setClosable(true);
+    f.setClosable(getModel().getAction(CloseFileAction.ID) != null);
     f.setMaximizable(true);
     f.setResizable(true);
     f.setIconifiable(false);
+    f.setPreferredSize(new Dimension(400,400));
     updateViewTitle(p,f);
     PreferencesUtil.installInternalFramePrefsHandler(prefs,"view",f,desktopPane);
     Point loc=new Point(desktopPane.getInsets().left,desktopPane.getInsets().top);
@@ -28,7 +29,7 @@
     f.setLocation(loc);
     f.addInternalFrameListener(new InternalFrameAdapter(){
       @Override public void internalFrameClosing(      final InternalFrameEvent evt){
-        getModel().getAction(CloseAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
+        getModel().getAction(CloseFileAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
       }
       @Override public void internalFrameClosed(      final InternalFrameEvent evt){
         if (p == getActiveView()) {
@@ -61,6 +62,13 @@
     f.getContentPane().add(p.getComponent());
     f.setVisible(true);
     desktopPane.add(f);
+    if (desktopPane.getComponentCount() == 1) {
+      try {
+        f.setMaximum(true);
+      }
+ catch (      PropertyVetoException ex) {
+      }
+    }
     f.toFront();
     try {
       f.setSelected(true);

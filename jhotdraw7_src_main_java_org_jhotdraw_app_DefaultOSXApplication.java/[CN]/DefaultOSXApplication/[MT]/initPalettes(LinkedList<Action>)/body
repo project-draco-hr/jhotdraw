@@ -27,7 +27,7 @@
         d.setFocusableWindowState(false);
         PreferencesUtil.installPalettePrefsHandler(prefs,"toolbar." + i,d,x);
         x+=d.getWidth();
-        paletteActions.add(new OSXTogglePaletteAction(DefaultOSXApplication.this,d,tb.getName()));
+        paletteActions.add(new TogglePaletteAction(DefaultOSXApplication.this,d,tb.getName()));
         palettes.add(d);
       }
       return palettes;

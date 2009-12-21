@@ -1,18 +1,17 @@
 {
+  ResourceBundleUtil appLabels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
   ResourceBundleUtil drawLabels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
-  JMenu m=super.createEditMenu(a,p);
+  JMenu m=a.createEditMenu(p);
+  if (m == null) {
+    m=new JMenu();
+    appLabels.configureMenu(m,"edit");
+  }
   JMenuItem mi;
-  mi=m.add(getAction(ClearSelectionAction.ID));
-  mi.setIcon(null);
   if (p != null) {
     mi=m.add(p.getAction(SelectSameAction.ID));
+    mi.setIcon(null);
   }
  else {
-    mi=new JMenuItem();
-    drawLabels.configureMenu(mi,SelectSameAction.ID);
-    mi.setEnabled(false);
-    m.add(mi);
   }
-  mi.setIcon(null);
   return m;
 }

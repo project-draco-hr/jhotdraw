@@ -12,7 +12,7 @@
       PreferencesUtil.installToolBarPrefsHandler(prefs,"toolbar." + id,tb);
       toolBarActions.addFirst(new ToggleVisibleAction(tb,tb.getName()));
     }
-    c.putClientProperty("toolBarActions",toolBarActions);
+    p.getComponent().putClientProperty("toolBarActions",toolBarActions);
   }
   return c;
 }

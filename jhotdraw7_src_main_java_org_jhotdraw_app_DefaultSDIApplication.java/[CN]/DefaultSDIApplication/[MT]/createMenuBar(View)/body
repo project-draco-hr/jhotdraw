@@ -1,0 +1,67 @@
+{
+  JMenuBar mb=new JMenuBar();
+  JMenu fileMenu=null;
+  JMenu editMenu=null;
+  JMenu helpMenu=null;
+  JMenu viewMenu=null;
+  JMenu windowMenu=null;
+  String fileMenuText=labels.getString("file.text");
+  String editMenuText=labels.getString("edit.text");
+  String viewMenuText=labels.getString("view.text");
+  String windowMenuText=labels.getString("window.text");
+  String helpMenuText=labels.getString("help.text");
+  for (  JMenu mm : getModel().createMenus(this,v)) {
+    if (mm.getText().equals(fileMenuText)) {
+      fileMenu=mm;
+      continue;
+    }
+ else     if (mm.getText().equals(editMenuText)) {
+      editMenu=mm;
+      continue;
+    }
+ else     if (mm.getText().equals(viewMenuText)) {
+      viewMenu=mm;
+      continue;
+    }
+ else     if (mm.getText().equals(windowMenuText)) {
+      windowMenu=mm;
+      continue;
+    }
+ else     if (mm.getText().equals(helpMenuText)) {
+      helpMenu=mm;
+      continue;
+    }
+    mb.add(mm);
+  }
+  if (fileMenu == null) {
+    fileMenu=createFileMenu(v);
+  }
+  if (editMenu == null) {
+    editMenu=createEditMenu(v);
+  }
+  if (viewMenu == null) {
+    viewMenu=createViewMenu(v);
+  }
+  if (windowMenu == null) {
+    windowMenu=createWindowMenu(v);
+  }
+  if (helpMenu == null) {
+    helpMenu=createHelpMenu(v);
+  }
+  if (fileMenu != null) {
+    mb.add(fileMenu,0);
+  }
+  if (editMenu != null) {
+    mb.add(editMenu,Math.min(1,mb.getComponentCount()));
+  }
+  if (viewMenu != null) {
+    mb.add(viewMenu,Math.min(2,mb.getComponentCount()));
+  }
+  if (windowMenu != null) {
+    mb.add(windowMenu);
+  }
+  if (helpMenu != null) {
+    mb.add(helpMenu);
+  }
+  return mb;
+}

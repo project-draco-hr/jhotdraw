@@ -1,4 +1,8 @@
 {
+  Action a=getModel().getAction(OpenApplicationFileAction.ID);
+  if (a == null) {
+    return false;
+  }
   for (  DataFlavor f : transferFlavors) {
     if (f.isFlavorJavaFileListType()) {
       return true;

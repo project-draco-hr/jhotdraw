@@ -1,0 +1,12 @@
+{
+  if (a != null) {
+    if (m.getClientProperty("needsSeparator") == Boolean.TRUE) {
+      m.addSeparator();
+      m.putClientProperty("needsSeparator",null);
+    }
+    JMenuItem mi;
+    mi=m.add(a);
+    mi.setIcon(null);
+    mi.setToolTipText(null);
+  }
+}

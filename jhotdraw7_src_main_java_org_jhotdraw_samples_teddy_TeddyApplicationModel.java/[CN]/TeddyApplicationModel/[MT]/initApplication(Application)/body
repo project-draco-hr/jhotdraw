@@ -4,5 +4,5 @@
   putAction(ToggleLineWrapAction.ID,new ToggleLineWrapAction(a));
   putAction(ToggleStatusBarAction.ID,new ToggleStatusBarAction(a));
   putAction(ToggleLineNumbersAction.ID,new ToggleLineNumbersAction(a));
-  putAction(PrintAction.ID,null);
+  putAction(PrintFileAction.ID,null);
 }
