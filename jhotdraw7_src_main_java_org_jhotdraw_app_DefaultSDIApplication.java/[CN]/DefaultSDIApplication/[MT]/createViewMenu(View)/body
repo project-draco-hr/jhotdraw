@@ -1,5 +1,5 @@
 {
-  Object object=p.getComponent().getClientProperty("toolBarActions");
+  Object object=view.getComponent().getClientProperty("toolBarActions");
   LinkedList<Action> viewActions=(LinkedList<Action>)object;
   ApplicationModel model=getModel();
   ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");

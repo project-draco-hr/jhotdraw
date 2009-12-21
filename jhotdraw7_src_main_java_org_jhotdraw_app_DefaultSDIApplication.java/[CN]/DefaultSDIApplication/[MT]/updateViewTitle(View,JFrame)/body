@@ -1,5 +1,5 @@
 {
-  URI uri=p.getURI();
+  URI uri=view.getURI();
   String title;
   if (uri == null) {
     title=labels.getString("unnamedFile");
@@ -7,9 +7,9 @@
  else {
     title=URIUtil.getName(uri);
   }
-  if (p.hasUnsavedChanges()) {
+  if (view.hasUnsavedChanges()) {
     title+="*";
   }
-  p.setTitle(labels.getFormatted("frame.title",title,getName(),p.getMultipleOpenId()));
-  f.setTitle(p.getTitle());
+  view.setTitle(labels.getFormatted("frame.title",title,getName(),view.getMultipleOpenId()));
+  f.setTitle(view.getTitle());
 }
