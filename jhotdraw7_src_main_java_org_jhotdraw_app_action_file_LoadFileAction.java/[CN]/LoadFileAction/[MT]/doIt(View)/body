@@ -1,9 +1,26 @@
 {
   URIChooser fileChooser=getFileChooser(view);
-  if (fileChooser.showOpenDialog(view.getComponent()) == URIChooser.APPROVE_OPTION) {
-    loadViewFromURI(view,fileChooser.getSelectedURI());
-  }
+  Window wAncestor=SwingUtilities.getWindowAncestor(view.getComponent());
+  final Component oldFocusOwner=(wAncestor == null) ? null : wAncestor.getFocusOwner();
+  JSheet.showOpenSheet(fileChooser,view.getComponent(),new SheetListener(){
+    public void optionSelected(    final SheetEvent evt){
+      if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
+        final URI uri;
+        if ((evt.getChooser() instanceof JFileURIChooser) && evt.getFileChooser().getFileFilter() instanceof ExtensionFileFilter) {
+          uri=((ExtensionFileFilter)evt.getFileChooser().getFileFilter()).makeAcceptable(evt.getFileChooser().getSelectedFile()).toURI();
+        }
  else {
-    view.setEnabled(true);
+          uri=evt.getChooser().getSelectedURI();
+        }
+        loadViewFromURI(view,uri);
+      }
+ else {
+        view.setEnabled(true);
+        if (oldFocusOwner != null) {
+          oldFocusOwner.requestFocus();
+        }
+      }
+    }
   }
+);
 }

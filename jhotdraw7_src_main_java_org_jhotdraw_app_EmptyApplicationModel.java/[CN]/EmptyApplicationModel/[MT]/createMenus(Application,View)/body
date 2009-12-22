@@ -1,3 +1,20 @@
 {
-  return Collections.emptyList();
+  LinkedList<JMenu> menus=new LinkedList<JMenu>();
+  JMenu m;
+  if ((m=createFileMenu(a,v)) != null) {
+    menus.add(m);
+  }
+  if ((m=createEditMenu(a,v)) != null) {
+    menus.add(m);
+  }
+  if ((m=createViewMenu(a,v)) != null) {
+    menus.add(m);
+  }
+  if ((m=createWindowMenu(a,v)) != null) {
+    menus.add(m);
+  }
+  if ((m=createHelpMenu(a,v)) != null) {
+    menus.add(m);
+  }
+  return menus;
 }

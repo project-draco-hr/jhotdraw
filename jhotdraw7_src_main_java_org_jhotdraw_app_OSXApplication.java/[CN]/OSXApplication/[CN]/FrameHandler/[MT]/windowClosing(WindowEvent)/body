@@ -1,0 +1,4 @@
+{
+  setActiveView(view);
+  getModel().getAction(CloseFileAction.ID).actionPerformed(new ActionEvent(evt.getSource(),ActionEvent.ACTION_PERFORMED,"windowClosing"));
+}

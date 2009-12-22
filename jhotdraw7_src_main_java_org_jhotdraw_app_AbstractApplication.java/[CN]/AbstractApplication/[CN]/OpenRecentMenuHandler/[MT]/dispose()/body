@@ -1,7 +1,9 @@
 {
   removePropertyChangeListener(this);
-  for (  OpenRecentFileAction action : openRecentActions) {
-    action.dispose();
+  for (  Action action : openRecentActions) {
+    if (action instanceof Disposable) {
+      ((Disposable)action).dispose();
+    }
   }
   openRecentActions.clear();
 }

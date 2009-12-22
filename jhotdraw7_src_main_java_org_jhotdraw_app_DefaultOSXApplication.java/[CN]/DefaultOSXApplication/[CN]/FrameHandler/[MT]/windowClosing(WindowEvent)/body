@@ -1,8 +1,0 @@
-{
-  setActiveView(view);
-  ApplicationModel m=getModel();
-  Action a=(m.getAction(NewFileAction.ID) == null || m.getAction(CloseFileAction.ID) == null) ? m.getAction(ExitAction.ID) : m.getAction(CloseFileAction.ID);
-  if (a != null) {
-    a.actionPerformed(new ActionEvent(frame,ActionEvent.ACTION_PERFORMED,"windowClosing"));
-  }
-}

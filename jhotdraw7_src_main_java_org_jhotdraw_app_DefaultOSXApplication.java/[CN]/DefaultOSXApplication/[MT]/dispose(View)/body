@@ -1,7 +1,0 @@
-{
-  WindowFocusAction a=(WindowFocusAction)p.getAction(WindowFocusAction.ID);
-  if (a != null) {
-    a.dispose();
-  }
-  super.dispose(p);
-}

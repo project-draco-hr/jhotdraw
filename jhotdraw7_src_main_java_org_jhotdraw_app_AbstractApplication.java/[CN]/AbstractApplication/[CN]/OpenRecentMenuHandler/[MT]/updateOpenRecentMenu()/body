@@ -2,15 +2,26 @@
   if (openRecentMenu.getItemCount() > 0) {
     JMenuItem clearRecentFilesItem=(JMenuItem)openRecentMenu.getItem(openRecentMenu.getItemCount() - 1);
     openRecentMenu.remove(openRecentMenu.getItemCount() - 1);
-    for (    OpenRecentFileAction action : openRecentActions) {
-      action.dispose();
+    for (    Action action : openRecentActions) {
+      if (action instanceof Disposable) {
+        ((Disposable)action).dispose();
+      }
     }
     openRecentActions.clear();
     openRecentMenu.removeAll();
-    for (    URI f : getRecentURIs()) {
-      OpenRecentFileAction action=new OpenRecentFileAction(AbstractApplication.this,f);
-      openRecentMenu.add(action);
-      openRecentActions.add(action);
+    if (model.getAction(LoadFileAction.ID) != null || model.getAction(LoadDirectoryAction.ID) != null) {
+      for (      URI f : getRecentURIs()) {
+        LoadRecentFileAction action=new LoadRecentFileAction(AbstractApplication.this,f);
+        openRecentMenu.add(action);
+        openRecentActions.add(action);
+      }
+    }
+ else {
+      for (      URI f : getRecentURIs()) {
+        OpenRecentFileAction action=new OpenRecentFileAction(AbstractApplication.this,f);
+        openRecentMenu.add(action);
+        openRecentActions.add(action);
+      }
     }
     if (getRecentURIs().size() > 0) {
       openRecentMenu.addSeparator();

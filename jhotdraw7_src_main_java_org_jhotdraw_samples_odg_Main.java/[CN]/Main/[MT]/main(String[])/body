@@ -1,5 +1,5 @@
 {
-  Application app=new DefaultOSXApplication();
+  Application app=new OSXApplication();
   ApplicationModel appModel=new ODGApplicationModel();
   app.setModel(appModel);
   app.launch(args);

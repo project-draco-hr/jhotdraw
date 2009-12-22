@@ -1,0 +1,9 @@
+{
+  m.putAction(AboutAction.ID,new AboutAction(this));
+  m.putAction(ExitAction.ID,new ExitAction((this)));
+  m.putAction(OpenApplicationAction.ID,new OpenApplicationAction(this));
+  m.putAction(ReOpenApplicationAction.ID,new ReOpenApplicationAction(this));
+  m.putAction(MaximizeWindowAction.ID,new MaximizeWindowAction(this));
+  m.putAction(MinimizeWindowAction.ID,new MinimizeWindowAction(this));
+  m.putAction(ClearRecentFilesMenuAction.ID,new ClearRecentFilesMenuAction(this));
+}

@@ -1,0 +1,10 @@
+{
+  mo.putAction(AboutAction.ID,new AboutAction(this));
+  mo.putAction(ExitAction.ID,new ExitAction(this));
+  mo.putAction(ClearRecentFilesMenuAction.ID,new ClearRecentFilesMenuAction(this));
+  mo.putAction(MaximizeWindowAction.ID,new MaximizeWindowAction(this));
+  mo.putAction(MinimizeWindowAction.ID,new MinimizeWindowAction(this));
+  mo.putAction(ArrangeWindowsAction.VERTICAL_ID,new ArrangeWindowsAction(desktopPane,Arrangeable.Arrangement.VERTICAL));
+  mo.putAction(ArrangeWindowsAction.HORIZONTAL_ID,new ArrangeWindowsAction(desktopPane,Arrangeable.Arrangement.HORIZONTAL));
+  mo.putAction(ArrangeWindowsAction.CASCADE_ID,new ArrangeWindowsAction(desktopPane,Arrangeable.Arrangement.CASCADE));
+}
