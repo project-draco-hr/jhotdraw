@@ -1,3 +1,0 @@
-{
-  p.putAction(FocusWindowAction.ID,new FocusWindowAction(p));
-}

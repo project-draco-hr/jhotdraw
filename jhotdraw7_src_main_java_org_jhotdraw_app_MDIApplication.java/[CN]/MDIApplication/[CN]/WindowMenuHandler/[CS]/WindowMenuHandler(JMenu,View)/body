@@ -1,0 +1,6 @@
+{
+  this.windowMenu=windowMenu;
+  this.view=view;
+  MDIApplication.this.addPropertyChangeListener(this);
+  updateWindowMenu();
+}

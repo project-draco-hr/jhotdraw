@@ -1,5 +1,5 @@
 {
-  Action a=getModel().getAction(OpenApplicationFileAction.ID);
+  Action a=getAction(null,OpenApplicationFileAction.ID);
   if (a == null) {
     return false;
   }

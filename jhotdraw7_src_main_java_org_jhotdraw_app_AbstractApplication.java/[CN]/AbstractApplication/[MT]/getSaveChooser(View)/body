@@ -1,0 +1,17 @@
+{
+  if (v == null) {
+    if (saveChooser == null) {
+      saveChooser=model.createSaveChooser(this,null);
+    }
+    return saveChooser;
+  }
+ else {
+    URIChooser chooser=(URIChooser)v.getComponent().getClientProperty("saveChooser");
+    if (chooser == null) {
+      chooser=model.createSaveChooser(this,v);
+      v.getComponent().putClientProperty("saveChooser",chooser);
+      chooser.setSelectedURI(v.getURI());
+    }
+    return chooser;
+  }
+}

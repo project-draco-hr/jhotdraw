@@ -2,8 +2,11 @@
   this.app=app;
   this.view=view;
   this.enabled=true;
-  if (app != null) {
+  if (view == null) {
     app.addPropertyChangeListener(applicationListener);
-    updateView(null,getActiveView());
   }
+ else {
+    view.addPropertyChangeListener(viewListener);
+  }
+  updateView(null,getActiveView());
 }

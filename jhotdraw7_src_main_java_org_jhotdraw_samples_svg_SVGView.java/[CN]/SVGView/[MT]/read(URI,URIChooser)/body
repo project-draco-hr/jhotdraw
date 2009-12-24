@@ -1,0 +1,53 @@
+{
+  try {
+    JFileURIChooser fc=(JFileURIChooser)chooser;
+    final Drawing drawing=createDrawing();
+    InputFormat selectedFormat=fileFilterInputFormatMap.get(fc.getFileFilter());
+    boolean success=false;
+    if (selectedFormat != null) {
+      try {
+        selectedFormat.read(new File(uri),drawing,true);
+        success=true;
+      }
+ catch (      Exception e) {
+        e.printStackTrace();
+      }
+    }
+    if (!success) {
+      for (      InputFormat sfi : drawing.getInputFormats()) {
+        if (sfi != selectedFormat) {
+          try {
+            sfi.read(new File(uri),drawing,true);
+            success=true;
+            break;
+          }
+ catch (          Exception e) {
+          }
+        }
+      }
+    }
+    if (!success) {
+      ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+      throw new IOException(labels.getFormatted("file.open.unsupportedFileFormat.message",URIUtil.getName(uri)));
+    }
+    SwingUtilities.invokeAndWait(new Runnable(){
+      public void run(){
+        Drawing oldDrawing=svgPanel.getDrawing();
+        svgPanel.setDrawing(drawing);
+        firePropertyChange(DRAWING_PROPERTY,oldDrawing,svgPanel.getDrawing());
+        undo.discardAllEdits();
+      }
+    }
+);
+  }
+ catch (  InterruptedException e) {
+    InternalError error=new InternalError();
+    e.initCause(e);
+    throw error;
+  }
+catch (  InvocationTargetException e) {
+    InternalError error=new InternalError();
+    error.initCause(e);
+    throw error;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  JFileURIChooser c=new JFileURIChooser();
+  final HashMap<FileFilter,OutputFormat> fileFilterOutputFormatMap=new HashMap<FileFilter,OutputFormat>();
+  c.putClientProperty("ffOutputFormatMap",fileFilterOutputFormatMap);
+  if (v == null) {
+    v=new SVGView();
+  }
+  Drawing d=((SVGView)v).getDrawing();
+  javax.swing.filechooser.FileFilter currentFilter=null;
+  for (  OutputFormat format : d.getOutputFormats()) {
+    javax.swing.filechooser.FileFilter ff=format.getFileFilter();
+    fileFilterOutputFormatMap.put(ff,format);
+    c.addChoosableFileFilter(ff);
+  }
+  if (currentFilter != null) {
+    c.setFileFilter(currentFilter);
+  }
+  return c;
+}

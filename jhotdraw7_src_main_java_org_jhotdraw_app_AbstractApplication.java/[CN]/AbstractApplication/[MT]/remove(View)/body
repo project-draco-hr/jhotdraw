@@ -1,10 +1,10 @@
 {
-  hide(p);
-  if (p == getActiveView()) {
+  hide(v);
+  if (v == getActiveView()) {
     setActiveView(null);
   }
   int oldCount=views.size();
-  views.remove(p);
-  p.setApplication(null);
+  views.remove(v);
+  v.setApplication(null);
   firePropertyChange(VIEW_COUNT_PROPERTY,oldCount,views.size());
 }

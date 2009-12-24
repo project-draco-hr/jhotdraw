@@ -1,6 +1,6 @@
 {
-  Action realRedoAction=getRealRedoAction();
-  if (realRedoAction != null) {
-    realRedoAction.actionPerformed(e);
+  Action realUndoAction=getRealUndoAction();
+  if (realUndoAction != null && realUndoAction != this) {
+    realUndoAction.actionPerformed(e);
   }
 }

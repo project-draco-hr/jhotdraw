@@ -1,0 +1,3 @@
+{
+  read(f,((CharacterSetAccessory)((JFileURIChooser)chooser).getAccessory()).getCharacterSet());
+}

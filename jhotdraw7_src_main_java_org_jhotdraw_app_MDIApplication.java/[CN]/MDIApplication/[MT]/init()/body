@@ -11,16 +11,16 @@
   scrollPane=new JScrollPane();
   scrollPane.setViewportView(desktopPane);
   toolBarActions=new LinkedList<Action>();
-  initApplicationActions(getModel());
-  getModel().initApplication(this);
+  setActionMap(createModelActionMap(model));
   parentFrame.getContentPane().add(wrapDesktopPane(scrollPane,toolBarActions));
   parentFrame.addWindowListener(new WindowAdapter(){
     public void windowClosing(    final WindowEvent evt){
-      getModel().getAction(ExitAction.ID).actionPerformed(new ActionEvent(parentFrame,ActionEvent.ACTION_PERFORMED,"windowClosing"));
+      getAction(null,ExitAction.ID).actionPerformed(new ActionEvent(parentFrame,ActionEvent.ACTION_PERFORMED,"windowClosing"));
     }
   }
 );
   parentFrame.setJMenuBar(createMenuBar(null));
   PreferencesUtil.installFramePrefsHandler(prefs,"parentFrame",parentFrame);
   parentFrame.setVisible(true);
+  model.initApplication(this);
 }

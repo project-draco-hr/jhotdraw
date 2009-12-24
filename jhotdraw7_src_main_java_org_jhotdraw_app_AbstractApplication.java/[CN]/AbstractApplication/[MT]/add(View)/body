@@ -1,9 +1,10 @@
 {
-  if (p.getApplication() != this) {
+  if (v.getApplication() != this) {
     int oldCount=views.size();
-    views.add(p);
-    p.setApplication(this);
-    initViewActions(p);
+    views.add(v);
+    v.setApplication(this);
+    v.init();
+    model.initView(this,v);
     firePropertyChange(VIEW_COUNT_PROPERTY,oldCount,views.size());
   }
 }

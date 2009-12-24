@@ -10,6 +10,7 @@
   ResourceBundleUtil svgLabels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
   m=new JMenu();
   appLabels.configureMenu(m,"view");
-  m.add(getAction(ViewSourceAction.ID));
+  ActionMap am=a.getActionMap(v);
+  m.add(am.get(ViewSourceAction.ID));
   return m;
 }

@@ -10,7 +10,7 @@
   String viewMenuText=labels.getString("view.text");
   String windowMenuText=labels.getString("window.text");
   String helpMenuText=labels.getString("help.text");
-  for (  JMenu mm : getModel().createMenus(this,null)) {
+  for (  JMenu mm : getModel().createMenus(this,v)) {
     if (mm.getText().equals(fileMenuText)) {
       fileMenu=mm;
       continue;

@@ -7,6 +7,6 @@
     }
   }
 ;
+  putValue(ActionUtil.SELECTED_KEY,false);
   setPalette(palette);
-  putValue(ActionUtil.SELECTED_KEY,true);
 }

@@ -1,11 +1,13 @@
 {
-  if (oldValue != null) {
-    uninstallViewListeners(oldValue);
+  if (view == null) {
+    if (oldValue != null) {
+      uninstallViewListeners(oldValue);
+    }
+    if (newValue != null) {
+      installViewListeners(newValue);
+    }
+    firePropertyChange(VIEW_PROPERTY,oldValue,newValue);
+    updateEnabled(oldValue != null && oldValue.isEnabled(),newValue != null && newValue.isEnabled());
+    updateView();
   }
-  if (newValue != null) {
-    installViewListeners(newValue);
-  }
-  firePropertyChange(VIEW_PROPERTY,oldValue,newValue);
-  updateEnabled(oldValue != null && oldValue.isEnabled(),newValue != null && newValue.isEnabled());
-  updateView();
 }

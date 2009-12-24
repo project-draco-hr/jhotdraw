@@ -4,6 +4,6 @@
   JMenuItem mi;
   m=new JMenu();
   labels.configureMenu(m,"help");
-  addAction(m,AboutAction.ID);
+  addAction(m,view,AboutAction.ID);
   return m;
 }

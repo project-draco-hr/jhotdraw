@@ -1,0 +1,8 @@
+{
+  ActionMap rootMap=new ActionMap();
+  rootMap.put(AboutAction.ID,new AboutAction(this));
+  rootMap.put(ClearRecentFilesMenuAction.ID,new ClearRecentFilesMenuAction(this));
+  ActionMap moMap=mo.createActionMap(this,null);
+  moMap.setParent(rootMap);
+  return moMap;
+}

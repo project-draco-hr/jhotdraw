@@ -1,15 +1,13 @@
 {
-  if (!p.isShowing()) {
-    p.setShowing(true);
+  if (!view.isShowing()) {
+    view.setShowing(true);
     final JFrame f=new JFrame();
     f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-    updateViewTitle(p,f);
-    JPanel panel=(JPanel)wrapViewComponent(p);
+    updateViewTitle(view,f);
+    JPanel panel=(JPanel)wrapViewComponent(view);
     f.add(panel);
-    f.setMinimumSize(new Dimension(200,200));
-    f.setPreferredSize(new Dimension(600,400));
-    f.setSize(f.getPreferredSize());
-    f.setJMenuBar(createMenuBar(p));
+    f.setSize(new Dimension(600,400));
+    f.setJMenuBar(createMenuBar(view));
     PreferencesUtil.installFramePrefsHandler(prefs,"view",f);
     Point loc=f.getLocation();
     boolean moved;
@@ -17,7 +15,7 @@
       moved=false;
       for (Iterator i=views().iterator(); i.hasNext(); ) {
         View aView=(View)i.next();
-        if (aView != p && SwingUtilities.getWindowAncestor(aView.getComponent()) != null && SwingUtilities.getWindowAncestor(aView.getComponent()).getLocation().equals(loc)) {
+        if (aView != view && SwingUtilities.getWindowAncestor(aView.getComponent()) != null && SwingUtilities.getWindowAncestor(aView.getComponent()).getLocation().equals(loc)) {
           loc.x+=22;
           loc.y+=22;
           moved=true;
@@ -29,29 +27,26 @@
     f.setLocation(loc);
     f.addWindowListener(new WindowAdapter(){
       public void windowClosing(      final WindowEvent evt){
-        getModel().getAction(CloseFileAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
+        getAction(view,CloseFileAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
       }
       @Override public void windowClosed(      final WindowEvent evt){
-        if (p == getActiveView()) {
-          setActiveView(null);
-        }
-        p.stop();
+        view.stop();
       }
-      public void windowActivated(      WindowEvent e){
-        setActiveView(p);
+      @Override public void windowGainedFocus(      WindowEvent e){
+        setActiveView(view);
       }
     }
 );
-    p.addPropertyChangeListener(new PropertyChangeListener(){
+    view.addPropertyChangeListener(new PropertyChangeListener(){
       public void propertyChange(      PropertyChangeEvent evt){
         String name=evt.getPropertyName();
-        if (name.equals(View.HAS_UNSAVED_CHANGES_PROPERTY) || name.equals(View.URI_PROPERTY) || name.equals(View.MULTIPLE_OPEN_ID_PROPERTY)) {
-          updateViewTitle(p,f);
+        if (name.equals(View.HAS_UNSAVED_CHANGES_PROPERTY) || name.equals(View.URI_PROPERTY) || name.equals(View.TITLE_PROPERTY)|| name.equals(View.MULTIPLE_OPEN_ID_PROPERTY)) {
+          updateViewTitle(view,f);
         }
       }
     }
 );
     f.setVisible(true);
-    p.start();
+    view.start();
   }
 }

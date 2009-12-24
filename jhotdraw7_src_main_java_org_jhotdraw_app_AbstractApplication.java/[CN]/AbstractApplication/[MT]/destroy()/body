@@ -1,0 +1,5 @@
+{
+  stop();
+  model.destroyApplication(this);
+  System.exit(0);
+}

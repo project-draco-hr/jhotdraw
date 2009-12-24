@@ -3,28 +3,28 @@
   setScreenMenuBar(createMenuBar(null));
   paletteHandler.add((JFrame)getComponent(),null);
   Action a;
-  if (null != (a=model.getAction(OpenApplicationAction.ID))) {
+  if (null != (a=getAction(null,OpenApplicationAction.ID))) {
     OSXAdapter.setOpenApplicationHandler(a);
   }
-  if (null != (a=model.getAction(ReOpenApplicationAction.ID))) {
+  if (null != (a=getAction(null,ReOpenApplicationAction.ID))) {
     OSXAdapter.setReOpenApplicationHandler(a);
   }
-  if (null != (a=model.getAction(OpenApplicationFileAction.ID))) {
+  if (null != (a=getAction(null,OpenApplicationFileAction.ID))) {
     OSXAdapter.setOpenFileHandler(a);
   }
-  if (null != (a=model.getAction(PrintApplicationFileAction.ID))) {
+  if (null != (a=getAction(null,PrintApplicationFileAction.ID))) {
     OSXAdapter.setPrintFileHandler(a);
   }
-  if (null != (a=model.getAction(AboutAction.ID))) {
+  if (null != (a=getAction(null,AboutAction.ID))) {
     OSXAdapter.setAboutHandler(a);
   }
-  if (null != (a=model.getAction(AbstractPreferencesAction.ID))) {
+  if (null != (a=getAction(null,AbstractPreferencesAction.ID))) {
     OSXAdapter.setPreferencesHandler(a);
   }
-  if (null != (a=model.getAction(ExitAction.ID))) {
+  if (null != (a=getAction(null,ExitAction.ID))) {
     OSXAdapter.setQuitHandler(a);
   }
-  if (null != (a=model.getAction(OpenApplicationFileAction.ID))) {
+  if (null != (a=getAction(null,OpenApplicationFileAction.ID))) {
     OSXAdapter.setOpenFileHandler(a);
   }
 }

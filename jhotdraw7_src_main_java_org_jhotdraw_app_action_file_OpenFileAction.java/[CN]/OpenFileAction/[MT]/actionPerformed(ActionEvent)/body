@@ -17,11 +17,11 @@
       view=emptyView;
       disposeView=false;
     }
-    URIChooser fileChooser=getChooser(view);
-    fileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
-    if (showDialog(fileChooser,app.getComponent()) == JFileChooser.APPROVE_OPTION) {
+    URIChooser chooser=getChooser(view);
+    chooser.setDialogType(JFileChooser.OPEN_DIALOG);
+    if (showDialog(chooser,app.getComponent()) == JFileChooser.APPROVE_OPTION) {
       app.show(view);
-      openViewFromURI(view,fileChooser.getSelectedURI());
+      openViewFromURI(view,chooser.getSelectedURI(),chooser);
     }
  else {
       if (disposeView) {

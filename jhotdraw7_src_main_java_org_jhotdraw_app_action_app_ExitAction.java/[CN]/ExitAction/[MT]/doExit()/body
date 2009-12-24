@@ -1,4 +1,3 @@
 {
-  getApplication().stop();
-  System.exit(0);
+  getApplication().destroy();
 }

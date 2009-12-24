@@ -7,6 +7,6 @@
     v.setEditor(new DefaultDrawingEditor());
   }
   AbstractSelectedAction action;
-  view.putAction(SelectSameAction.ID,action=new SelectSameAction(v.getEditor()));
+  view.getActionMap().put(SelectSameAction.ID,action=new SelectSameAction(v.getEditor()));
   view.addDisposable(action);
 }

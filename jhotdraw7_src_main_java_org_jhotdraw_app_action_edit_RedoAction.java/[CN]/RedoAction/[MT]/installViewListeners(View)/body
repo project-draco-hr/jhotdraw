@@ -1,6 +1,7 @@
 {
   super.installViewListeners(p);
-  if (p.getAction(ID) != null) {
-    p.getAction(ID).addPropertyChangeListener(redoActionPropertyListener);
+  Action redoActionInView=p.getActionMap().get(ID);
+  if (redoActionInView != null && redoActionInView != this) {
+    redoActionInView.addPropertyChangeListener(redoActionPropertyListener);
   }
 }

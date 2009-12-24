@@ -1,7 +1,7 @@
 {
   boolean isEnabled=false;
   Action realRedoAction=getRealRedoAction();
-  if (realRedoAction != null) {
+  if (realRedoAction != null && realRedoAction != this) {
     isEnabled=realRedoAction.isEnabled();
   }
   setEnabled(isEnabled);

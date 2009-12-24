@@ -1,7 +1,7 @@
 {
   super.updateView(oldValue,newValue);
-  if (newValue != null && newValue.getAction(ID) != null) {
-    putValue(AbstractAction.NAME,newValue.getAction(ID).getValue(AbstractAction.NAME));
+  if (newValue != null && newValue.getActionMap().get(ID) != null && newValue.getActionMap().get(ID) != this) {
+    putValue(AbstractAction.NAME,newValue.getActionMap().get(ID).getValue(AbstractAction.NAME));
     updateEnabledState();
   }
 }

@@ -1,2 +1,3 @@
 {
+  gridConstrainer=new GridConstrainer(12,12);
 }

@@ -1,19 +1,19 @@
 {
-  final ExportableView view=(ExportableView)getActiveView();
+  final View view=(View)getActiveView();
   if (view.isEnabled()) {
     ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
     oldFocusOwner=SwingUtilities.getWindowAncestor(view.getComponent()).getFocusOwner();
     view.setEnabled(false);
-    URIChooser fileChooser=view.getExportChooser();
+    URIChooser fileChooser=getApplication().getExportChooser(view);
     JSheet.showSheet(fileChooser,view.getComponent(),labels.getString("filechooser.export"),new SheetListener(){
       public void optionSelected(      final SheetEvent evt){
         if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
           final URI uri=evt.getChooser().getSelectedURI();
           if (evt.getChooser() instanceof JFileURIChooser) {
-            exportView(view,uri,evt.getFileChooser().getFileFilter(),evt.getFileChooser().getAccessory());
+            exportView(view,uri,evt.getChooser());
           }
  else {
-            exportView(view,uri,null,null);
+            exportView(view,uri,null);
           }
         }
  else {

@@ -1,5 +1,5 @@
 {
-  NetView p=(NetView)pr;
+  NetView p=(NetView)v;
   ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
   LinkedList<JMenu> mb=new LinkedList<JMenu>();
   JMenu m, m2;
@@ -7,19 +7,20 @@
   JRadioButtonMenuItem rbmi;
   JCheckBoxMenuItem cbmi;
   ButtonGroup group;
-  m=a.createViewMenu(pr);
+  m=a.createViewMenu(v);
   if (m == null) {
     m=new JMenu();
     labels.configureMenu(m,"view");
   }
-  cbmi=new JCheckBoxMenuItem(getAction("view.toggleGrid"));
-  ActionUtil.configureJCheckBoxMenuItem(cbmi,getAction("view.toggleGrid"));
+  ActionMap am=a.getActionMap(v);
+  cbmi=new JCheckBoxMenuItem(am.get("view.toggleGrid"));
+  ActionUtil.configureJCheckBoxMenuItem(cbmi,am.get("view.toggleGrid"));
   m.add(cbmi);
   m2=new JMenu("Zoom");
   for (  double sf : scaleFactors) {
     String id=(int)(sf * 100) + "%";
-    cbmi=new JCheckBoxMenuItem(getAction(id));
-    ActionUtil.configureJCheckBoxMenuItem(cbmi,getAction(id));
+    cbmi=new JCheckBoxMenuItem(am.get(id));
+    ActionUtil.configureJCheckBoxMenuItem(cbmi,am.get(id));
     m2.add(cbmi);
   }
   m.add(m2);

@@ -9,11 +9,5 @@
     }
     disposables=null;
   }
-  if (openChooser != null) {
-    openChooser=null;
-  }
-  if (saveChooser != null) {
-    saveChooser=null;
-  }
   removeAll();
 }

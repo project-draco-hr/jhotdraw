@@ -1,0 +1,24 @@
+{
+  if (v == null) {
+    if (openChooser == null) {
+      openChooser=model.createOpenChooser(this,null);
+      List<URI> ruris=getRecentURIs();
+      if (ruris.size() > 0) {
+        openChooser.setSelectedURI(ruris.get(0));
+      }
+    }
+    return openChooser;
+  }
+ else {
+    URIChooser chooser=(URIChooser)v.getComponent().getClientProperty("openChooser");
+    if (chooser == null) {
+      chooser=model.createOpenChooser(this,v);
+      v.getComponent().putClientProperty("openChooser",chooser);
+      List<URI> ruris=getRecentURIs();
+      if (ruris.size() > 0) {
+        chooser.setSelectedURI(ruris.get(0));
+      }
+    }
+    return chooser;
+  }
+}

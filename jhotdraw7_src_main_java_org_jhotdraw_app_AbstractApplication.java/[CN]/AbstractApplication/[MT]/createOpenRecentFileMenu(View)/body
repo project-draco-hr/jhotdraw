@@ -2,9 +2,9 @@
   JMenuItem mi;
   JMenu m;
   m=new JMenu();
-  labels.configureMenu(m,(model.getAction(LoadFileAction.ID) != null || model.getAction(LoadDirectoryAction.ID) != null) ? "file.loadRecent" : "file.openRecent");
+  labels.configureMenu(m,(getAction(view,LoadFileAction.ID) != null || getAction(view,LoadDirectoryAction.ID) != null) ? "file.loadRecent" : "file.openRecent");
   m.setIcon(null);
-  m.add(model.getAction(ClearRecentFilesMenuAction.ID));
+  m.add(getAction(view,ClearRecentFilesMenuAction.ID));
   OpenRecentMenuHandler handler=new OpenRecentMenuHandler(m,view);
   return m;
 }

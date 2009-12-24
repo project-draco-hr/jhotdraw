@@ -1,0 +1,42 @@
+{
+  GraphicsConfiguration conf=window.getGraphicsConfiguration();
+  Rectangle screenBounds=conf.getBounds();
+  Insets screenInsets=window.getToolkit().getScreenInsets(conf);
+  screenBounds.x+=screenInsets.left;
+  screenBounds.y+=screenInsets.top;
+  screenBounds.width-=screenInsets.left + screenInsets.right;
+  screenBounds.height-=screenInsets.top + screenInsets.bottom;
+  window.pack();
+  Dimension preferredSize=window.getPreferredSize();
+  boolean resizable=true;
+  if (window instanceof Frame) {
+    resizable=((Frame)window).isResizable();
+  }
+ else   if (window instanceof Dialog) {
+    resizable=((Dialog)window).isResizable();
+  }
+  Rectangle bounds;
+  if (resizable) {
+    bounds=new Rectangle(prefs.getInt(name + ".x",0),prefs.getInt(name + ".y",0),Math.max(defaultSize.width,prefs.getInt(name + ".width",preferredSize.width)),Math.max(defaultSize.height,prefs.getInt(name + ".height",preferredSize.height)));
+  }
+ else {
+    bounds=new Rectangle(prefs.getInt(name + ".x",0),prefs.getInt(name + ".y",0),window.getWidth(),window.getHeight());
+  }
+  if (!screenBounds.contains(bounds)) {
+    bounds.x=screenBounds.x + (screenBounds.width - bounds.width) / 2;
+    bounds.y=screenBounds.y + (screenBounds.height - bounds.height) / 2;
+    Rectangle.intersect(screenBounds,bounds,bounds);
+  }
+  window.setBounds(bounds);
+  window.addComponentListener(new ComponentAdapter(){
+    public void componentMoved(    ComponentEvent evt){
+      prefs.putInt(name + ".x",evt.getComponent().getX());
+      prefs.putInt(name + ".y",evt.getComponent().getY());
+    }
+    public void componentResized(    ComponentEvent evt){
+      prefs.putInt(name + ".width",evt.getComponent().getWidth());
+      prefs.putInt(name + ".height",evt.getComponent().getHeight());
+    }
+  }
+);
+}

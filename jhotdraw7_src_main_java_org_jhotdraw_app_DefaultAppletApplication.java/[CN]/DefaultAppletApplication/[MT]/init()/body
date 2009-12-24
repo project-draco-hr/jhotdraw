@@ -1,0 +1,6 @@
+{
+  super.init();
+  initLabels();
+  setActionMap(model.createActionMap(this,null));
+  model.initApplication(this);
+}

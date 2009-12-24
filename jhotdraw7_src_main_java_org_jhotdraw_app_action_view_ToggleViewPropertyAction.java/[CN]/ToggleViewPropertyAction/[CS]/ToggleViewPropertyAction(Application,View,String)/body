@@ -1,0 +1,3 @@
+{
+  this(app,view,propertyName,Boolean.TYPE,true,false);
+}

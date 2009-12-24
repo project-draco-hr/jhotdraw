@@ -9,7 +9,6 @@
   }
   view.setMultipleOpenId(multipleOpenId);
   view.setEnabled(false);
-  view.getOpenChooser();
   view.execute(new Worker(){
     protected Object construct() throws IOException {
       boolean exists=true;
@@ -20,7 +19,7 @@
  catch (      IllegalArgumentException e) {
       }
       if (exists) {
-        view.read(uri);
+        view.read(uri,null);
         return null;
       }
  else {

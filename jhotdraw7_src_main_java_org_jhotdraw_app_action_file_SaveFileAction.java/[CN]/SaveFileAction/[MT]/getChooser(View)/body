@@ -1,0 +1,8 @@
+{
+  URIChooser chsr=(URIChooser)(view.getComponent()).getClientProperty("saveChooser");
+  if (chsr == null) {
+    chsr=getApplication().getModel().createSaveChooser(getApplication(),view);
+    view.getComponent().putClientProperty("saveChooser",chsr);
+  }
+  return chsr;
+}

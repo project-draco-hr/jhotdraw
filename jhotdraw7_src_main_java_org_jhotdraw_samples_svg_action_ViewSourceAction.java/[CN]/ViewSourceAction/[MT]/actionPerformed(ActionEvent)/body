@@ -72,6 +72,6 @@
   }
   Preferences prefs=PreferencesUtil.userNodeForPackage(getClass());
   PreferencesUtil.installFramePrefsHandler(prefs,"viewSource",dialog);
-  getApplication().addWindow(dialog,getActiveView());
+  getApplication().addWindow(dialog,v);
   dialog.setVisible(true);
 }

@@ -3,23 +3,23 @@
   JMenu m;
   m=new JMenu();
   labels.configureMenu(m,"file");
-  addAction(m,ClearFileAction.ID);
-  addAction(m,NewFileAction.ID);
-  addAction(m,NewWindowAction.ID);
-  addAction(m,LoadFileAction.ID);
-  addAction(m,OpenFileAction.ID);
-  addAction(m,LoadDirectoryAction.ID);
-  addAction(m,OpenDirectoryAction.ID);
-  if (model.getAction(LoadFileAction.ID) != null || model.getAction(OpenFileAction.ID) != null || model.getAction(LoadDirectoryAction.ID) != null || model.getAction(OpenDirectoryAction.ID) != null) {
-    m.add(createOpenRecentFileMenu(null));
+  addAction(m,view,ClearFileAction.ID);
+  addAction(m,view,NewFileAction.ID);
+  addAction(m,view,NewWindowAction.ID);
+  addAction(m,view,LoadFileAction.ID);
+  addAction(m,view,OpenFileAction.ID);
+  addAction(m,view,LoadDirectoryAction.ID);
+  addAction(m,view,OpenDirectoryAction.ID);
+  if (getAction(view,LoadFileAction.ID) != null || getAction(view,OpenFileAction.ID) != null || getAction(view,LoadDirectoryAction.ID) != null || getAction(view,OpenDirectoryAction.ID) != null) {
+    m.add(createOpenRecentFileMenu(view));
   }
   maybeAddSeparator(m);
-  addAction(m,CloseFileAction.ID);
-  addAction(m,SaveFileAction.ID);
-  addAction(m,SaveFileAsAction.ID);
-  addAction(m,ExportFileAction.ID);
-  addAction(m,PrintFileAction.ID);
+  addAction(m,view,CloseFileAction.ID);
+  addAction(m,view,SaveFileAction.ID);
+  addAction(m,view,SaveFileAsAction.ID);
+  addAction(m,view,ExportFileAction.ID);
+  addAction(m,view,PrintFileAction.ID);
   maybeAddSeparator(m);
-  addAction(m,ExitAction.ID);
+  addAction(m,view,ExitAction.ID);
   return m;
 }

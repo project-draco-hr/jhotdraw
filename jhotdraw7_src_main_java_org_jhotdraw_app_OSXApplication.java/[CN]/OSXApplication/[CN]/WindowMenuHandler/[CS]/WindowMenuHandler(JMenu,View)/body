@@ -1,7 +1,7 @@
 {
   this.windowMenu=windowMenu;
   this.view=view;
-  addPropertyChangeListener(this);
+  OSXApplication.this.addPropertyChangeListener(this);
   if (view != null) {
     view.addDisposable(this);
   }

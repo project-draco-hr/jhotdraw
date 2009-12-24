@@ -3,6 +3,6 @@
   initLookAndFeel();
   prefs=PreferencesUtil.userNodeForPackage((getModel() == null) ? getClass() : getModel().getClass());
   initLabels();
-  initApplicationActions(getModel());
-  getModel().initApplication(this);
+  setActionMap(createModelActionMap(model));
+  model.initApplication(this);
 }

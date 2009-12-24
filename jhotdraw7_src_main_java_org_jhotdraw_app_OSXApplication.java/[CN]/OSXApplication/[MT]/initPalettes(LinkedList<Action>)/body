@@ -29,15 +29,15 @@
         x+=d.getWidth();
         paletteActions.add(new TogglePaletteAction(OSXApplication.this,d,tb.getName()));
         palettes.add(d);
+        if (prefs.getBoolean("toolbar." + i + ".visible",true)) {
+          addPalette(d);
+        }
       }
       return palettes;
     }
     @Override protected void done(    LinkedList<JFrame> result){
       @SuppressWarnings("unchecked") LinkedList<JFrame> palettes=(LinkedList<JFrame>)result;
       if (palettes != null) {
-        for (        JFrame p : palettes) {
-          addPalette(p);
-        }
         firePropertyChange("paletteCount",0,palettes.size());
       }
     }

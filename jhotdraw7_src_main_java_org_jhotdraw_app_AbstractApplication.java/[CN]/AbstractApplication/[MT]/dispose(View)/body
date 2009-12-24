@@ -1,4 +1,5 @@
 {
   remove(view);
+  model.destroyView(this,view);
   view.dispose();
 }

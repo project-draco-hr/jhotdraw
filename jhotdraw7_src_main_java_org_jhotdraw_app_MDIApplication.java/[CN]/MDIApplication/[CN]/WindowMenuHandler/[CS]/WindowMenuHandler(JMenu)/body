@@ -1,5 +1,0 @@
-{
-  this.windowMenu=windowMenu;
-  addPropertyChangeListener(this);
-  updateWindowMenu();
-}

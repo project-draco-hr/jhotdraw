@@ -18,7 +18,7 @@
  catch (      IllegalArgumentException e) {
       }
       if (exists) {
-        view.read(uri);
+        view.read(uri,null);
         return null;
       }
  else {

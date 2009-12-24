@@ -1,0 +1,18 @@
+{
+  ActionMap m=new ActionMap();
+  m.put(NewFileAction.ID,new NewFileAction(a));
+  m.put(OpenFileAction.ID,new OpenFileAction(a));
+  m.put(SaveFileAction.ID,new SaveFileAction(a,v));
+  m.put(SaveFileAsAction.ID,new SaveFileAsAction(a,v));
+  m.put(CloseFileAction.ID,new CloseFileAction(a,v));
+  m.put(UndoAction.ID,new UndoAction(a,v));
+  m.put(RedoAction.ID,new RedoAction(a,v));
+  m.put(CutAction.ID,new CutAction());
+  m.put(CopyAction.ID,new CopyAction());
+  m.put(PasteAction.ID,new PasteAction());
+  m.put(DeleteAction.ID,new DeleteAction());
+  m.put(DuplicateAction.ID,new DuplicateAction());
+  m.put(SelectAllAction.ID,new SelectAllAction());
+  m.put(ClearSelectionAction.ID,new ClearSelectionAction());
+  return m;
+}

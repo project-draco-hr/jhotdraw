@@ -4,10 +4,10 @@
     oldFocusOwner=SwingUtilities.getWindowAncestor(view.getComponent()).getFocusOwner();
     view.setEnabled(false);
     if (!saveAs && view.getURI() != null && view.canSaveTo(view.getURI())) {
-      saveViewToURI(view,view.getURI());
+      saveViewToURI(view,view.getURI(),null);
     }
  else {
-      URIChooser fileChooser=view.getSaveChooser();
+      URIChooser fileChooser=getChooser(view);
       JSheet.showSaveSheet(fileChooser,view.getComponent(),new SheetListener(){
         public void optionSelected(        final SheetEvent evt){
           if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
@@ -18,7 +18,7 @@
  else {
               uri=evt.getChooser().getSelectedURI();
             }
-            saveViewToURI(view,uri);
+            saveViewToURI(view,uri,evt.getChooser());
           }
  else {
             view.setEnabled(true);

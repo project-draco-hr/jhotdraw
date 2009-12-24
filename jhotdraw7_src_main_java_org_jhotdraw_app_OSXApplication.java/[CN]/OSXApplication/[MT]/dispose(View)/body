@@ -1,5 +1,5 @@
 {
-  FocusWindowAction a=(FocusWindowAction)p.getAction(FocusWindowAction.ID);
+  FocusWindowAction a=(FocusWindowAction)getAction(p,FocusWindowAction.ID);
   if (a != null) {
     a.dispose();
   }

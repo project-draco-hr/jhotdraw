@@ -1,7 +1,0 @@
-{
-  URIChooser c=new JFileURIChooser();
-  if (preferences != null) {
-    c.setSelectedURI(new File(preferences.get("projectFile",System.getProperty("user.home"))).toURI());
-  }
-  return c;
-}

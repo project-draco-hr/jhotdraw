@@ -1,4 +1,4 @@
 {
-  super(app);
+  super(app,null);
   putValue(Action.NAME,"OSX Print File");
 }

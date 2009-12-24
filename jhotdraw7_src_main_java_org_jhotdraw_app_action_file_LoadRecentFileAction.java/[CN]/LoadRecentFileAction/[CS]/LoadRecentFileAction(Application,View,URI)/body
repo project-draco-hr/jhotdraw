@@ -1,0 +1,5 @@
+{
+  super(app,view);
+  this.uri=uri;
+  putValue(Action.NAME,URIUtil.getName(uri));
+}

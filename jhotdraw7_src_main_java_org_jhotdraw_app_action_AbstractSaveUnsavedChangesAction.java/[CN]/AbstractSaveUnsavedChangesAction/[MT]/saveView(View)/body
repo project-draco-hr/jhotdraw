@@ -1,7 +1,7 @@
 {
   if (p.getURI() == null) {
-    URIChooser fileChooser=p.getSaveChooser();
-    JSheet.showSaveSheet(fileChooser,p.getComponent(),new SheetListener(){
+    URIChooser chooser=getChooser(p);
+    JSheet.showSaveSheet(chooser,p.getComponent(),new SheetListener(){
       public void optionSelected(      final SheetEvent evt){
         if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
           final URI uri;
@@ -11,7 +11,7 @@
  else {
             uri=evt.getChooser().getSelectedURI();
           }
-          saveViewToURI(p,uri);
+          saveViewToURI(p,uri,evt.getChooser());
         }
  else {
           p.setEnabled(true);
@@ -24,6 +24,6 @@
 );
   }
  else {
-    saveViewToURI(p,p.getURI());
+    saveViewToURI(p,p.getURI(),null);
   }
 }

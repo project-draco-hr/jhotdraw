@@ -1,0 +1,16 @@
+{
+  if (v == null) {
+    if (importChooser == null) {
+      importChooser=model.createImportChooser(this,null);
+    }
+    return importChooser;
+  }
+ else {
+    URIChooser chooser=(URIChooser)v.getComponent().getClientProperty("importChooser");
+    if (chooser == null) {
+      chooser=model.createImportChooser(this,v);
+      v.getComponent().putClientProperty("importChooser",chooser);
+    }
+    return chooser;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  ActionMap rootMap=new ActionMap();
+  rootMap.put(AboutAction.ID,new AboutAction(this));
+  rootMap.put(ExitAction.ID,new ExitAction(this));
+  rootMap.put(ClearRecentFilesMenuAction.ID,new ClearRecentFilesMenuAction(this));
+  rootMap.put(MaximizeWindowAction.ID,new MaximizeWindowAction(this,null));
+  rootMap.put(MinimizeWindowAction.ID,new MinimizeWindowAction(this,null));
+  rootMap.put(ArrangeWindowsAction.VERTICAL_ID,new ArrangeWindowsAction(desktopPane,Arrangeable.Arrangement.VERTICAL));
+  rootMap.put(ArrangeWindowsAction.HORIZONTAL_ID,new ArrangeWindowsAction(desktopPane,Arrangeable.Arrangement.HORIZONTAL));
+  rootMap.put(ArrangeWindowsAction.CASCADE_ID,new ArrangeWindowsAction(desktopPane,Arrangeable.Arrangement.CASCADE));
+  ActionMap moMap=mo.createActionMap(this,null);
+  moMap.setParent(rootMap);
+  return moMap;
+}

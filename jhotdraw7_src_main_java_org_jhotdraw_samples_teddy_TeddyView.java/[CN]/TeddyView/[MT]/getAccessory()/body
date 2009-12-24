@@ -1,6 +1,0 @@
-{
-  if (characterSetAccessory == null) {
-    characterSetAccessory=new CharacterSetAccessory();
-  }
-  return characterSetAccessory;
-}

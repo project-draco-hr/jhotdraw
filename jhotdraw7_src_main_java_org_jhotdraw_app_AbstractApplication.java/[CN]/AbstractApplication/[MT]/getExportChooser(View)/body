@@ -1,0 +1,16 @@
+{
+  if (v == null) {
+    if (exportChooser == null) {
+      exportChooser=model.createExportChooser(this,null);
+    }
+    return exportChooser;
+  }
+ else {
+    URIChooser chooser=(URIChooser)v.getComponent().getClientProperty("exportChooser");
+    if (chooser == null) {
+      chooser=model.createExportChooser(this,v);
+      v.getComponent().putClientProperty("exportChooser",chooser);
+    }
+    return chooser;
+  }
+}

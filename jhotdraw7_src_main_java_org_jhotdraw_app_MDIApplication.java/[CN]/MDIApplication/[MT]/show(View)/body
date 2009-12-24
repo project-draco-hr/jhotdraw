@@ -1,14 +1,14 @@
 {
-  if (!p.isShowing()) {
-    p.setShowing(true);
+  if (!v.isShowing()) {
+    v.setShowing(true);
     final JInternalFrame f=new JInternalFrame();
     f.setDefaultCloseOperation(JInternalFrame.DO_NOTHING_ON_CLOSE);
-    f.setClosable(getModel().getAction(CloseFileAction.ID) != null);
+    f.setClosable(getAction(v,CloseFileAction.ID) != null);
     f.setMaximizable(true);
     f.setResizable(true);
     f.setIconifiable(false);
-    f.setPreferredSize(new Dimension(400,400));
-    updateViewTitle(p,f);
+    f.setSize(new Dimension(400,400));
+    updateViewTitle(v,f);
     PreferencesUtil.installInternalFramePrefsHandler(prefs,"view",f,desktopPane);
     Point loc=new Point(desktopPane.getInsets().left,desktopPane.getInsets().top);
     boolean moved;
@@ -16,7 +16,7 @@
       moved=false;
       for (Iterator i=views().iterator(); i.hasNext(); ) {
         View aView=(View)i.next();
-        if (aView != p && aView.isShowing() && SwingUtilities.getRootPane(aView.getComponent()).getParent().getLocation().equals(loc)) {
+        if (aView != v && aView.isShowing() && SwingUtilities.getRootPane(aView.getComponent()).getParent().getLocation().equals(loc)) {
           Point offset=SwingUtilities.convertPoint(SwingUtilities.getRootPane(aView.getComponent()),0,0,SwingUtilities.getRootPane(aView.getComponent()).getParent());
           loc.x+=Math.max(offset.x,offset.y);
           loc.y+=Math.max(offset.x,offset.y);
@@ -29,21 +29,18 @@
     f.setLocation(loc);
     f.addInternalFrameListener(new InternalFrameAdapter(){
       @Override public void internalFrameClosing(      final InternalFrameEvent evt){
-        getModel().getAction(CloseFileAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
+        getAction(v,CloseFileAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
       }
       @Override public void internalFrameClosed(      final InternalFrameEvent evt){
-        if (p == getActiveView()) {
-          setActiveView(null);
-        }
-        p.stop();
+        v.stop();
       }
     }
 );
-    p.addPropertyChangeListener(new PropertyChangeListener(){
+    v.addPropertyChangeListener(new PropertyChangeListener(){
       public void propertyChange(      PropertyChangeEvent evt){
         String name=evt.getPropertyName();
         if (name == View.HAS_UNSAVED_CHANGES_PROPERTY || name == View.URI_PROPERTY) {
-          updateViewTitle(p,f);
+          updateViewTitle(v,f);
         }
       }
     }
@@ -53,13 +50,18 @@
         String name=evt.getPropertyName();
         if (name.equals("selected")) {
           if (evt.getNewValue().equals(Boolean.TRUE)) {
-            setActiveView(p);
+            setActiveView(v);
+          }
+ else {
+            if (v == getActiveView()) {
+              setActiveView(null);
+            }
           }
         }
       }
     }
 );
-    f.getContentPane().add(p.getComponent());
+    f.getContentPane().add(v.getComponent());
     f.setVisible(true);
     desktopPane.add(f);
     if (desktopPane.getComponentCount() == 1) {
@@ -75,7 +77,7 @@
     }
  catch (    PropertyVetoException e) {
     }
-    p.getComponent().requestFocusInWindow();
-    p.start();
+    v.getComponent().requestFocusInWindow();
+    v.start();
   }
 }

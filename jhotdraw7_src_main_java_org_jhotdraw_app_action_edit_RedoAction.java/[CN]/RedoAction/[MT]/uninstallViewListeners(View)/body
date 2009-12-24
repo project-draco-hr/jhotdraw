@@ -1,6 +1,7 @@
 {
   super.uninstallViewListeners(p);
-  if (p.getAction(ID) != null) {
-    p.getAction(ID).removePropertyChangeListener(redoActionPropertyListener);
+  Action redoActionInView=p.getActionMap().get(ID);
+  if (redoActionInView != null && redoActionInView != this) {
+    redoActionInView.removePropertyChangeListener(redoActionPropertyListener);
   }
 }

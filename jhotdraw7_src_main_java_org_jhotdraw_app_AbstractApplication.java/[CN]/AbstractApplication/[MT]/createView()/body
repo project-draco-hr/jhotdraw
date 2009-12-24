@@ -1,8 +1,5 @@
 {
-  View p=basicCreateView();
-  p.init();
-  if (getModel() != null) {
-    getModel().initView(this,p);
-  }
-  return p;
+  View v=basicCreateView();
+  v.setActionMap(createViewActionMap(v));
+  return v;
 }

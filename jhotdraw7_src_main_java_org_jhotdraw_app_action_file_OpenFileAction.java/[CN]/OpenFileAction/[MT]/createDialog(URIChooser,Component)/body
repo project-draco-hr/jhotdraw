@@ -21,13 +21,7 @@
       dialog.getRootPane().setWindowDecorationStyle(JRootPane.FILE_CHOOSER_DIALOG);
     }
   }
-  dialog.pack();
-  if (window.getBounds().isEmpty()) {
-    Rectangle screenBounds=window.getGraphicsConfiguration().getBounds();
-    dialog.setLocation(screenBounds.x + (screenBounds.width - dialog.getWidth()) / 2,screenBounds.y + (screenBounds.height - dialog.getHeight()) / 3);
-  }
- else {
-    dialog.setLocationRelativeTo(parent);
-  }
+  Preferences prefs=PreferencesUtil.userNodeForPackage(getApplication().getModel().getClass());
+  PreferencesUtil.installFramePrefsHandler(prefs,"openChooser",dialog);
   return dialog;
 }

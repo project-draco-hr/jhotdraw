@@ -1,5 +1,6 @@
 {
   this.openRecentMenu=openRecentMenu;
+  this.view=view;
   if (view != null) {
     view.addDisposable(this);
   }

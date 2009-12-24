@@ -1,3 +1,0 @@
-{
-  addAction(m,model.getAction(actionID));
-}

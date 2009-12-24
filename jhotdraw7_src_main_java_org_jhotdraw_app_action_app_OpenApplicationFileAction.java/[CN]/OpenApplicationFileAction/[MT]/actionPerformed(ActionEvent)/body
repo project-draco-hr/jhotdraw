@@ -7,7 +7,7 @@
   app.show(p);
   p.execute(new Worker(){
     @Override public Object construct() throws IOException {
-      p.read(new File(filename).toURI());
+      p.read(new File(filename).toURI(),null);
       return null;
     }
     @Override protected void done(    Object value){

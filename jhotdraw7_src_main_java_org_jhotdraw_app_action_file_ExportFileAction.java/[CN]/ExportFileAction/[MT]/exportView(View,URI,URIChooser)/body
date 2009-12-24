@@ -1,0 +1,21 @@
+{
+  view.execute(new Worker(){
+    protected Object construct() throws IOException {
+      view.write(uri,chooser);
+      return null;
+    }
+    protected void failed(    Throwable value){
+      System.out.flush();
+      ((Throwable)value).printStackTrace();
+      JSheet.showMessageSheet(view.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>Couldn't export to the file \""+ URIUtil.getName(uri)+ "\".<p>"+ "Reason: "+ value,JOptionPane.ERROR_MESSAGE);
+    }
+    protected void finished(){
+      view.setEnabled(true);
+      SwingUtilities.getWindowAncestor(view.getComponent()).toFront();
+      if (oldFocusOwner != null) {
+        oldFocusOwner.requestFocus();
+      }
+    }
+  }
+);
+}

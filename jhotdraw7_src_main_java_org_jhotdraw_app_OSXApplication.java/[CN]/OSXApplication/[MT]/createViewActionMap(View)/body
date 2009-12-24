@@ -1,0 +1,10 @@
+{
+  ActionMap intermediateMap=new ActionMap();
+  intermediateMap.put(FocusWindowAction.ID,new FocusWindowAction(v));
+  intermediateMap.put(MaximizeWindowAction.ID,new MaximizeWindowAction(this,v));
+  intermediateMap.put(MinimizeWindowAction.ID,new MinimizeWindowAction(this,v));
+  ActionMap vMap=model.createActionMap(this,v);
+  vMap.setParent(intermediateMap);
+  intermediateMap.setParent(getActionMap(null));
+  return vMap;
+}

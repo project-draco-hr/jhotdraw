@@ -3,8 +3,7 @@
     view.setShowing(true);
     JFrame f=new JFrame();
     f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-    f.setPreferredSize(new Dimension(600,400));
-    f.setSize(f.getPreferredSize());
+    f.setSize(new Dimension(600,400));
     updateViewTitle(view,f);
     PreferencesUtil.installFramePrefsHandler(prefs,"view",f);
     Point loc=f.getLocation();

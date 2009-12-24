@@ -9,9 +9,9 @@
     }
     openRecentActions.clear();
     openRecentMenu.removeAll();
-    if (model.getAction(LoadFileAction.ID) != null || model.getAction(LoadDirectoryAction.ID) != null) {
+    if (getAction(view,LoadFileAction.ID) != null || getAction(view,LoadDirectoryAction.ID) != null) {
       for (      URI f : getRecentURIs()) {
-        LoadRecentFileAction action=new LoadRecentFileAction(AbstractApplication.this,f);
+        LoadRecentFileAction action=new LoadRecentFileAction(AbstractApplication.this,view,f);
         openRecentMenu.add(action);
         openRecentActions.add(action);
       }

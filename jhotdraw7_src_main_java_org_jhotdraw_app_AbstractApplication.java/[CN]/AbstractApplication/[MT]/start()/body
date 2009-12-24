@@ -4,7 +4,7 @@
   p.setEnabled(false);
   show(p);
   p.execute(new Worker<Object>(){
-    public Object construct(){
+    @Override public Object construct(){
       p.clear();
       return null;
     }

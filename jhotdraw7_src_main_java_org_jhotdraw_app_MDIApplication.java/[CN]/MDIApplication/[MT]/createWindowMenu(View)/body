@@ -6,14 +6,12 @@
   m=new JMenu();
   JMenu windowMenu=m;
   labels.configureMenu(m,"window");
-  addAction(m,ArrangeWindowsAction.CASCADE_ID);
-  addAction(m,ArrangeWindowsAction.VERTICAL_ID);
-  addAction(m,ArrangeWindowsAction.HORIZONTAL_ID);
+  addAction(m,view,ArrangeWindowsAction.CASCADE_ID);
+  addAction(m,view,ArrangeWindowsAction.VERTICAL_ID);
+  addAction(m,view,ArrangeWindowsAction.HORIZONTAL_ID);
   maybeAddSeparator(m);
   for (  View pr : views()) {
-    if (pr.getAction(FocusWindowAction.ID) != null) {
-      addAction(m,pr.getAction(FocusWindowAction.ID));
-    }
+    addAction(m,view,FocusWindowAction.ID);
   }
   if (toolBarActions.size() > 0) {
     maybeAddSeparator(m);
@@ -23,6 +21,6 @@
       addMenuItem(m,cbmi);
     }
   }
-  addPropertyChangeListener(new WindowMenuHandler(windowMenu));
+  addPropertyChangeListener(new WindowMenuHandler(windowMenu,view));
   return m;
 }

@@ -1,0 +1,8 @@
+{
+  ActionMap intermediateMap=new ActionMap();
+  intermediateMap.put(CloseFileAction.ID,new CloseFileAction(this,v));
+  ActionMap vMap=model.createActionMap(this,v);
+  vMap.setParent(intermediateMap);
+  intermediateMap.setParent(getActionMap(null));
+  return vMap;
+}

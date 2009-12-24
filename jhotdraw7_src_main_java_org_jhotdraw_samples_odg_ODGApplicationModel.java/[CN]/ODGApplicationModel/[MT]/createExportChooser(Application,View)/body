@@ -1,0 +1,15 @@
+{
+  JFileURIChooser c=new JFileURIChooser();
+  final HashMap<javax.swing.filechooser.FileFilter,OutputFormat> fileFilterOutputFormatMap=new HashMap<javax.swing.filechooser.FileFilter,OutputFormat>();
+  c.putClientProperty("ffExportFormatMap",fileFilterOutputFormatMap);
+  if (view == null) {
+    view=new ODGView();
+  }
+  for (  OutputFormat format : ((ODGView)view).getDrawing().getOutputFormats()) {
+    javax.swing.filechooser.FileFilter ff=format.getFileFilter();
+    fileFilterOutputFormatMap.put(ff,format);
+    c.addChoosableFileFilter(ff);
+    break;
+  }
+  return c;
+}

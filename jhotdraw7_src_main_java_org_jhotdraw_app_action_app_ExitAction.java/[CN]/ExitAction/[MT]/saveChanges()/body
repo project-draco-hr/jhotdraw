@@ -1,12 +1,12 @@
 {
   View v=unsavedView;
   if (v.getURI() == null) {
-    URIChooser fileChooser=v.getSaveChooser();
-    JSheet.showSaveSheet(fileChooser,v.getComponent(),new SheetListener(){
+    URIChooser chooser=getChooser(v);
+    JSheet.showSaveSheet(chooser,v.getComponent(),new SheetListener(){
       public void optionSelected(      final SheetEvent evt){
         if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
           final URI uri=evt.getChooser().getSelectedURI();
-          saveToFile(uri);
+          saveToFile(uri,evt.getChooser());
         }
  else {
           unsavedView.setEnabled(true);
@@ -20,6 +20,6 @@
 );
   }
  else {
-    saveToFile(v.getURI());
+    saveToFile(v.getURI(),null);
   }
 }

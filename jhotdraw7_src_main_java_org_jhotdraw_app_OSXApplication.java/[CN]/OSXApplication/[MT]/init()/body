@@ -7,8 +7,8 @@
   initLabels();
   ApplicationModel m=getModel();
   paletteActions=new LinkedList<Action>();
-  initApplicationActions(getModel());
-  getModel().initApplication(this);
+  setActionMap(createModelActionMap(model));
   initPalettes(paletteActions);
   initScreenMenuBar();
+  model.initApplication(this);
 }

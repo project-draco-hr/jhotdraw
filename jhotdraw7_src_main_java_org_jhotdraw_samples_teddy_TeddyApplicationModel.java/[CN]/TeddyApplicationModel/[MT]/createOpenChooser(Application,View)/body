@@ -1,0 +1,5 @@
+{
+  JFileURIChooser chooser=new JFileURIChooser();
+  chooser.setAccessory(new CharacterSetAccessory());
+  return chooser;
+}
