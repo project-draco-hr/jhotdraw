@@ -17,6 +17,7 @@
       view.setMultipleOpenId(multiOpenId);
     }
     @Override protected void failed(    Throwable value){
+      value.printStackTrace();
       String message;
       if ((value instanceof Throwable) && ((Throwable)value).getMessage() != null) {
         message=((Throwable)value).getMessage();

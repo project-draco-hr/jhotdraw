@@ -11,23 +11,26 @@
   String windowMenuText=labels.getString("window.text");
   String helpMenuText=labels.getString("help.text");
   for (  JMenu mm : getModel().createMenus(this,v)) {
-    if (mm.getText().equals(fileMenuText)) {
+    String text=mm.getText();
+    if (text == null) {
+    }
+ else     if (text.equals(fileMenuText)) {
       fileMenu=mm;
       continue;
     }
- else     if (mm.getText().equals(editMenuText)) {
+ else     if (text.equals(editMenuText)) {
       editMenu=mm;
       continue;
     }
- else     if (mm.getText().equals(viewMenuText)) {
+ else     if (text.equals(viewMenuText)) {
       viewMenu=mm;
       continue;
     }
- else     if (mm.getText().equals(windowMenuText)) {
+ else     if (text.equals(windowMenuText)) {
       windowMenu=mm;
       continue;
     }
- else     if (mm.getText().equals(helpMenuText)) {
+ else     if (text.equals(helpMenuText)) {
       helpMenu=mm;
       continue;
     }

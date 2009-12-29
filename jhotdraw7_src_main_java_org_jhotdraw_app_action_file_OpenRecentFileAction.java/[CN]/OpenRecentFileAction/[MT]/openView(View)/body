@@ -38,6 +38,7 @@
       view.getComponent().requestFocus();
     }
     @Override protected void failed(    Throwable value){
+      value.printStackTrace();
       String message=null;
       if (value instanceof Throwable) {
         ((Throwable)value).printStackTrace();

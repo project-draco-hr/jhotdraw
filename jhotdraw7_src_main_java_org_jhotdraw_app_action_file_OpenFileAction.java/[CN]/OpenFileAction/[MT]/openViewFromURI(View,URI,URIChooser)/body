@@ -41,6 +41,7 @@
       app.setEnabled(true);
     }
     @Override protected void failed(    Throwable value){
+      value.printStackTrace();
       view.setEnabled(true);
       app.setEnabled(true);
       String message;

@@ -27,7 +27,7 @@
       }
     }
     if (placeholderValue == null) {
-      throw new MissingResourceException("Resource not found.",baseName,key);
+      throw new MissingResourceException("\"" + key + "\" not found in "+ baseName,baseName,key);
     }
     if (placeholderFormat.equals("accelerator")) {
       StringBuilder b=new StringBuilder();
