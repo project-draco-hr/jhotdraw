@@ -3,6 +3,7 @@
   rootMap.put(AboutAction.ID,new AboutAction(this));
   rootMap.put(ExitAction.ID,new ExitAction(this));
   rootMap.put(OpenApplicationAction.ID,new OpenApplicationAction(this));
+  rootMap.put(OpenApplicationFileAction.ID,new OpenApplicationFileAction(this));
   rootMap.put(ReOpenApplicationAction.ID,new ReOpenApplicationAction(this));
   rootMap.put(ClearRecentFilesMenuAction.ID,new ClearRecentFilesMenuAction(this));
   rootMap.put(MaximizeWindowAction.ID,new MaximizeWindowAction(this,null));

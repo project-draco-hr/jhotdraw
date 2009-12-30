@@ -24,7 +24,4 @@
   if (null != (a=getAction(null,ExitAction.ID))) {
     OSXAdapter.setQuitHandler(a);
   }
-  if (null != (a=getAction(null,OpenApplicationFileAction.ID))) {
-    OSXAdapter.setOpenFileHandler(a);
-  }
 }
