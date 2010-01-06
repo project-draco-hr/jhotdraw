@@ -1,0 +1,25 @@
+{
+  int w, h;
+  if (width < 0 && height < 0) {
+    w=image.getWidth(null);
+    h=image.getHeight(null);
+  }
+ else   if (width < 0) {
+    w=image.getWidth(null) * height / image.getHeight(null);
+    h=height;
+  }
+ else   if (height < 0) {
+    w=width;
+    h=image.getHeight(null) * width / image.getWidth(null);
+  }
+ else {
+    w=width;
+    h=height;
+  }
+  BufferedImage scaled=new BufferedImage(w,h,BufferedImage.TYPE_INT_ARGB);
+  Graphics2D g=scaled.createGraphics();
+  g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+  g.drawImage(image,0,0,w,h,null);
+  g.dispose();
+  return scaled;
+}
