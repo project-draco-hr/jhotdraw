@@ -1,6 +1,6 @@
 {
   for (  Figure figure : drawing.getFiguresFrontToBack()) {
-    if (!figure.includes(getConnection()) && figure.canConnect() && figure.contains(p)) {
+    if (!figure.includes(getConnection()) && figure.isConnectable() && figure.contains(p)) {
       return figure;
     }
   }

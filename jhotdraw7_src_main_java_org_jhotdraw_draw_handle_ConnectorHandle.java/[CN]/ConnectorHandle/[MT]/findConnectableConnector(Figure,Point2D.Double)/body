@@ -1,6 +1,6 @@
 {
   Connector target=(connectableFigure == null) ? null : connectableFigure.findConnector(p,getConnection());
-  if ((connectableFigure != null) && connectableFigure.canConnect() && !connectableFigure.includes(getOwner())&& getConnection().canConnect(connector,target)) {
+  if ((connectableFigure != null) && connectableFigure.isConnectable() && !connectableFigure.includes(getOwner())&& getConnection().canConnect(connector,target)) {
     return target;
   }
   return null;
