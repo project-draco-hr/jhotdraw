@@ -1,7 +1,10 @@
 {
-  Component focusOwner=KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
-  if (focusOwner != null && focusOwner instanceof EditableComponent) {
-    ((EditableComponent)focusOwner).delete();
+  JComponent c=target;
+  if (c == null && (KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner() instanceof JComponent)) {
+    c=(JComponent)KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
+  }
+  if (c != null) {
+    ((EditableComponent)c).delete();
   }
  else {
     deleteNextChar(evt);

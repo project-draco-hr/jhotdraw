@@ -1,10 +1,12 @@
 {
-  Component focusOwner=KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
-  if (focusOwner != null && focusOwner instanceof JComponent) {
-    JComponent component=(JComponent)focusOwner;
-    Transferable t=ClipboardUtil.getClipboard().getContents(component);
-    if (t != null && component.getTransferHandler() != null) {
-      component.getTransferHandler().importData(component,t);
+  JComponent c=target;
+  if (c == null && (KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner() instanceof JComponent)) {
+    c=(JComponent)KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
+  }
+  if (c != null) {
+    Transferable t=ClipboardUtil.getClipboard().getContents(c);
+    if (t != null && c.getTransferHandler() != null) {
+      c.getTransferHandler().importData(c,t);
     }
   }
 }

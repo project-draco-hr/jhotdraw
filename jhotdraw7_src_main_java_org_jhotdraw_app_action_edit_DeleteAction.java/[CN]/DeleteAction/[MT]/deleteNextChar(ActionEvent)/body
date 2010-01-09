@@ -1,10 +1,10 @@
 {
-  JTextComponent target=getTextComponent(e);
+  JTextComponent c=getTextComponent(e);
   boolean beep=true;
-  if ((target != null) && (target.isEditable())) {
+  if ((c != null) && (c.isEditable())) {
     try {
-      javax.swing.text.Document doc=target.getDocument();
-      Caret caret=target.getCaret();
+      javax.swing.text.Document doc=c.getDocument();
+      Caret caret=c.getCaret();
       int dot=caret.getDot();
       int mark=caret.getMark();
       if (dot != mark) {

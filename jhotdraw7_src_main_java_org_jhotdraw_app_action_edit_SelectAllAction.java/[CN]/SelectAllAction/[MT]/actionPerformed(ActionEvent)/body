@@ -1,14 +1,17 @@
 {
-  Component focusOwner=KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
-  if (focusOwner != null) {
-    if (focusOwner instanceof EditableComponent) {
-      ((EditableComponent)focusOwner).selectAll();
+  JComponent c=target;
+  if (c == null && (KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner() instanceof JComponent)) {
+    c=(JComponent)KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
+  }
+  if (c != null) {
+    if (c instanceof EditableComponent) {
+      ((EditableComponent)c).selectAll();
     }
- else     if (focusOwner instanceof JTextComponent) {
-      ((JTextComponent)focusOwner).selectAll();
+ else     if (c instanceof JTextComponent) {
+      ((JTextComponent)c).selectAll();
     }
  else {
-      focusOwner.getToolkit().beep();
+      c.getToolkit().beep();
     }
   }
 }
