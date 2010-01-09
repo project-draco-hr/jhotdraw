@@ -1,0 +1,5 @@
+{
+  boolean oldValue=isConnectable;
+  isConnectable=newValue;
+  firePropertyChange(CONNECTABLE_PROPERTY,oldValue,newValue);
+}

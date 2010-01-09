@@ -1,5 +1,5 @@
 {
   boolean oldValue=isSelectable;
   isSelectable=newValue;
-  firePropertyChange("selectable",oldValue,newValue);
+  firePropertyChange(SELECTABLE_PROPERTY,oldValue,newValue);
 }

@@ -1,4 +1,5 @@
 {
   setText(text);
   SVGAttributeKeys.setDefaults(this);
+  setConnectable(false);
 }

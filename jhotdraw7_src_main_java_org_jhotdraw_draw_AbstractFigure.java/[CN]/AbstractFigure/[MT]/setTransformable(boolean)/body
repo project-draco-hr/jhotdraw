@@ -1,5 +1,5 @@
 {
   boolean oldValue=isTransformable;
   isTransformable=newValue;
-  firePropertyChange("transformable",oldValue,newValue);
+  firePropertyChange(TRANSFORMABLE_PROPERTY,oldValue,newValue);
 }

@@ -3,4 +3,5 @@
     add(new SVGBezierFigure());
   }
   SVGAttributeKeys.setDefaults(this);
+  setConnectable(false);
 }

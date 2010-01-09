@@ -1,5 +1,5 @@
 {
   boolean oldValue=isRemovable;
   isRemovable=newValue;
-  firePropertyChange("removable",oldValue,newValue);
+  firePropertyChange(REMOVABLE_PROPERTY,oldValue,newValue);
 }
