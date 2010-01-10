@@ -2,7 +2,7 @@
   final Document doc=readDocument(new File(f),characterSet);
   try {
     SwingUtilities.invokeAndWait(new Runnable(){
-      public void run(){
+      @Override public void run(){
         editor.getDocument().removeUndoableEditListener(undoManager);
         editor.setDocument(doc);
         doc.addUndoableEditListener(undoManager);
