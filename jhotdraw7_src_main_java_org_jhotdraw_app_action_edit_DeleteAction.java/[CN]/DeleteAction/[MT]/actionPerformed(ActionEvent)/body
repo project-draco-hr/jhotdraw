@@ -3,10 +3,12 @@
   if (c == null && (KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner() instanceof JComponent)) {
     c=(JComponent)KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
   }
-  if (c != null) {
-    ((EditableComponent)c).delete();
-  }
+  if (c != null && c.isEnabled()) {
+    if (c instanceof EditableComponent) {
+      ((EditableComponent)c).delete();
+    }
  else {
-    deleteNextChar(evt);
+      deleteNextChar(evt);
+    }
   }
 }

@@ -1,0 +1,8 @@
+{
+  if (target instanceof EditableComponent) {
+    setEnabled(target.isEnabled() && !((EditableComponent)target).isSelectionEmpty());
+  }
+ else   if (target != null) {
+    setEnabled(target.isEnabled());
+  }
+}

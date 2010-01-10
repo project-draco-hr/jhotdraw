@@ -11,4 +11,5 @@
       }
     }
   }
+  firePropertyChange(EditableComponent.SELECTION_EMPTY_PROPERTY,oldValue.isEmpty(),newValue.isEmpty());
 }

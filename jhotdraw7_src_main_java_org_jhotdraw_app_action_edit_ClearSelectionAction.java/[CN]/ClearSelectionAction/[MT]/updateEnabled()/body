@@ -1,0 +1,5 @@
+{
+  if (target != null) {
+    setEnabled(target.isEnabled());
+  }
+}

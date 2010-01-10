@@ -1,5 +1,5 @@
 {
-  this.target=target;
+  super(target);
   ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
   labels.configureAction(this,ID);
 }

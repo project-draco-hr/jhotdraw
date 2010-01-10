@@ -3,7 +3,7 @@
   if (c == null && (KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner() instanceof JComponent)) {
     c=(JComponent)KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
   }
-  if (c != null) {
+  if (c != null && c.isEnabled()) {
     Transferable t=ClipboardUtil.getClipboard().getContents(c);
     if (t != null && c.getTransferHandler() != null) {
       c.getTransferHandler().importData(c,t);
