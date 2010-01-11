@@ -1,0 +1,5 @@
+{
+  JFileURIChooser c=new JFileURIChooser();
+  c.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+  return c;
+}

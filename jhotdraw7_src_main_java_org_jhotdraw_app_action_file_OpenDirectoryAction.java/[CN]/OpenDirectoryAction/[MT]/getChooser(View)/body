@@ -1,3 +1,3 @@
 {
-  return ((DirectoryView)view).getOpenDirectoryChooser();
+  return getApplication().getModel().createOpenDirectoryChooser(getApplication(),view);
 }
