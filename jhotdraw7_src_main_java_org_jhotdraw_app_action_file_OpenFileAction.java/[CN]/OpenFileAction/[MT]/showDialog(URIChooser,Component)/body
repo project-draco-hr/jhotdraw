@@ -3,13 +3,13 @@
   final int[] returnValue=new int[1];
   final JDialog dialog=createDialog(chooser,finalParent);
   dialog.addWindowListener(new WindowAdapter(){
-    public void windowClosing(    WindowEvent e){
+    @Override public void windowClosing(    WindowEvent e){
       returnValue[0]=JFileChooser.CANCEL_OPTION;
     }
   }
 );
   chooser.addActionListener(new ActionListener(){
-    public void actionPerformed(    ActionEvent e){
+    @Override public void actionPerformed(    ActionEvent e){
       if (e.getActionCommand().equals("CancelSelection")) {
         returnValue[0]=JFileChooser.CANCEL_OPTION;
         dialog.setVisible(false);

@@ -1,24 +1,21 @@
 {
   final Application app=getApplication();
   final String filename=evt.getActionCommand();
-  final View p=app.createView();
-  p.setEnabled(false);
-  app.add(p);
-  app.show(p);
-  p.execute(new Worker(){
-    @Override public Object construct() throws IOException {
-      p.read(new File(filename).toURI(),null);
-      return null;
+  if (app.isEnabled()) {
+    app.setEnabled(false);
+    View emptyView=app.getActiveView();
+    if (emptyView == null || emptyView.getURI() != null || emptyView.hasUnsavedChanges()) {
+      emptyView=null;
     }
-    @Override protected void done(    Object value){
-      p.setURI(new File(filename).toURI());
-      p.setEnabled(true);
+    final View p;
+    if (emptyView == null) {
+      p=app.createView();
+      app.add(p);
+      app.show(p);
     }
-    @Override protected void failed(    Throwable value){
-      ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
-      app.dispose(p);
-      JOptionPane.showMessageDialog(null,"<html>" + UIManager.getString("OptionPane.css") + "<b>"+ labels.getFormatted("file.open.couldntOpen.message",new File(filename).getName())+ "</b><p>"+ value,"",JOptionPane.ERROR_MESSAGE);
+ else {
+      p=emptyView;
     }
+    openView(p,new File(filename).toURI());
   }
-);
 }
