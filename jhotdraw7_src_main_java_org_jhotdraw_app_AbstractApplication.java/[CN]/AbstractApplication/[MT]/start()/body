@@ -1,15 +1,16 @@
 {
-  final View p=createView();
-  add(p);
-  p.setEnabled(false);
-  show(p);
-  p.execute(new Worker<Object>(){
+  final View v=createView();
+  add(v);
+  v.setEnabled(false);
+  show(v);
+  setActiveView(v);
+  v.execute(new Worker<Object>(){
     @Override public Object construct(){
-      p.clear();
+      v.clear();
       return null;
     }
     @Override public void finished(){
-      p.setEnabled(true);
+      v.setEnabled(true);
     }
   }
 );
