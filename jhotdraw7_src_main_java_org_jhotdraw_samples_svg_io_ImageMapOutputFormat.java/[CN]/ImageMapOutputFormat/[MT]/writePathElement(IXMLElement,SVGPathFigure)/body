@@ -1,5 +1,5 @@
 {
-  GrowStroke growStroke=new GrowStroke((float)(getStrokeTotalWidth(f) / 2d),(float)getStrokeTotalWidth(f));
+  GrowStroke growStroke=new GrowStroke((getStrokeTotalWidth(f) / 2d),getStrokeTotalWidth(f));
   BasicStroke basicStroke=new BasicStroke((float)getStrokeTotalWidth(f));
   for (  Figure child : f.getChildren()) {
     SVGBezierFigure bezier=(SVGBezierFigure)child;

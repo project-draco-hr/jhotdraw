@@ -8,7 +8,7 @@
   }
   StringBuilder buf=new StringBuilder();
   float[] coords=new float[6];
-  GeneralPath path=new GeneralPath();
+  Path2D.Double path=new Path2D.Double();
   for (PathIterator i=shape.getPathIterator(t,1.5f); !i.isDone(); i.next()) {
 switch (i.currentSegment(coords)) {
 case PathIterator.SEG_MOVETO:

@@ -31,26 +31,26 @@
     currentCorners=computeThickLine(bp.get(0).x[0],bp.get(0).y[0],bp.get(1).x[0],bp.get(1).y[0],innerWidth,currentCorners);
     intersect=Geom.intersect(prevCorners[0],prevCorners[1],prevCorners[4],prevCorners[5],currentCorners[0],currentCorners[1],currentCorners[4],currentCorners[5],miterLimit);
     if (intersect != null) {
-      right.moveTo((float)intersect.x,(float)intersect.y);
+      right.moveTo(intersect.x,intersect.y);
     }
  else {
-      right.moveTo((float)prevCorners[4],(float)prevCorners[5]);
-      right.lineTo((float)currentCorners[0],(float)currentCorners[1]);
+      right.moveTo(prevCorners[4],prevCorners[5]);
+      right.lineTo(currentCorners[0],currentCorners[1]);
     }
     intersect=Geom.intersect(prevCorners[2],prevCorners[3],prevCorners[6],prevCorners[7],currentCorners[2],currentCorners[3],currentCorners[6],currentCorners[7],miterLimit);
     if (intersect != null) {
-      left.moveTo((float)intersect.x,(float)intersect.y);
+      left.moveTo(intersect.x,intersect.y);
     }
  else {
-      left.moveTo((float)prevCorners[6],(float)prevCorners[7]);
-      left.lineTo((float)currentCorners[2],(float)currentCorners[3]);
+      left.moveTo(prevCorners[6],prevCorners[7]);
+      left.lineTo(currentCorners[2],currentCorners[3]);
     }
   }
  else {
     if (bp.size() > 1) {
       currentCorners=computeThickLine(bp.get(0).x[0],bp.get(0).y[0],bp.get(1).x[0],bp.get(1).y[0],innerWidth,currentCorners);
-      right.moveTo((float)currentCorners[0],(float)currentCorners[1]);
-      left.moveTo((float)currentCorners[2],(float)currentCorners[3]);
+      right.moveTo(currentCorners[0],currentCorners[1]);
+      left.moveTo(currentCorners[2],currentCorners[3]);
     }
   }
   for (int i=1, n=bp.size() - 1; i < n; i++) {
@@ -59,19 +59,19 @@
     currentCorners=computeThickLine(bp.get(i).x[0],bp.get(i).y[0],bp.get(i + 1).x[0],bp.get(i + 1).y[0],innerWidth,tmp);
     intersect=Geom.intersect(prevCorners[0],prevCorners[1],prevCorners[4],prevCorners[5],currentCorners[0],currentCorners[1],currentCorners[4],currentCorners[5],miterLimit);
     if (intersect != null) {
-      right.lineTo((float)intersect.x,(float)intersect.y);
+      right.lineTo(intersect.x,intersect.y);
     }
  else {
-      right.lineTo((float)prevCorners[4],(float)prevCorners[5]);
-      right.lineTo((float)currentCorners[0],(float)currentCorners[1]);
+      right.lineTo(prevCorners[4],prevCorners[5]);
+      right.lineTo(currentCorners[0],currentCorners[1]);
     }
     intersect=Geom.intersect(prevCorners[2],prevCorners[3],prevCorners[6],prevCorners[7],currentCorners[2],currentCorners[3],currentCorners[6],currentCorners[7],miterLimit);
     if (intersect != null) {
-      left.lineTo((float)intersect.x,(float)intersect.y);
+      left.lineTo(intersect.x,intersect.y);
     }
  else {
-      left.lineTo((float)prevCorners[6],(float)prevCorners[7]);
-      left.lineTo((float)currentCorners[2],(float)currentCorners[3]);
+      left.lineTo(prevCorners[6],prevCorners[7]);
+      left.lineTo(currentCorners[2],currentCorners[3]);
     }
   }
   if (bp.isClosed() && bp.size() > 0) {
@@ -80,27 +80,27 @@
     currentCorners=computeThickLine(bp.get(bp.size() - 1).x[0],bp.get(bp.size() - 1).y[0],bp.get(0).x[0],bp.get(0).y[0],innerWidth,tmp);
     intersect=Geom.intersect(prevCorners[0],prevCorners[1],prevCorners[4],prevCorners[5],currentCorners[0],currentCorners[1],currentCorners[4],currentCorners[5],miterLimit);
     if (intersect != null) {
-      right.lineTo((float)intersect.x,(float)intersect.y);
+      right.lineTo(intersect.x,intersect.y);
     }
  else {
-      right.lineTo((float)prevCorners[4],(float)prevCorners[5]);
-      right.lineTo((float)currentCorners[0],(float)currentCorners[1]);
+      right.lineTo(prevCorners[4],prevCorners[5]);
+      right.lineTo(currentCorners[0],currentCorners[1]);
     }
     intersect=Geom.intersect(prevCorners[2],prevCorners[3],prevCorners[6],prevCorners[7],currentCorners[2],currentCorners[3],currentCorners[6],currentCorners[7],miterLimit);
     if (intersect != null) {
-      left.lineTo((float)intersect.x,(float)intersect.y);
+      left.lineTo(intersect.x,intersect.y);
     }
  else {
-      left.lineTo((float)prevCorners[6],(float)prevCorners[7]);
-      left.lineTo((float)currentCorners[2],(float)currentCorners[3]);
+      left.lineTo(prevCorners[6],prevCorners[7]);
+      left.lineTo(currentCorners[2],currentCorners[3]);
     }
     right.closePath();
     left.closePath();
   }
  else {
     if (bp.size() > 1) {
-      right.lineTo((float)currentCorners[4],(float)currentCorners[5]);
-      left.lineTo((float)currentCorners[6],(float)currentCorners[7]);
+      right.lineTo(currentCorners[4],currentCorners[5]);
+      left.lineTo(currentCorners[6],currentCorners[7]);
     }
   }
 }

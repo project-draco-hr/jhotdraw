@@ -1,5 +1,5 @@
 {
-  GeneralPath path=getTransformedDecoratorPath(f,p1,p2);
+  Path2D.Double path=getTransformedDecoratorPath(f,p1,p2);
   Rectangle2D b=path.getBounds2D();
   Rectangle2D.Double area=new Rectangle2D.Double(b.getX(),b.getY(),b.getWidth(),b.getHeight());
   if (isStroked) {

@@ -1,4 +1,4 @@
-GeneralPath shape
+Path2D.Double shape
 AttributedCharacterIterator styledText
 float verticalPos
 float maxVerticalPos

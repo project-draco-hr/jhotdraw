@@ -1,4 +1,4 @@
-GeneralPath path
+Path2D.Double path
 double decorationRadius
 boolean isFilled
 boolean isStroked

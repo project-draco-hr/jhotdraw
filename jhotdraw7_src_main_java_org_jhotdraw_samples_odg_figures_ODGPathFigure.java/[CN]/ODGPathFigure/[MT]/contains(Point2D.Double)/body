@@ -15,7 +15,7 @@
       return true;
     }
     double grow=AttributeKeys.getPerpendicularHitGrowth(this) * 2d;
-    GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * get(STROKE_MITER_LIMIT)));
+    GrowStroke gs=new GrowStroke(grow,(AttributeKeys.getStrokeTotalWidth(this) * get(STROKE_MITER_LIMIT)));
     if (gs.createStrokedShape(getPath()).contains(p)) {
       return true;
     }

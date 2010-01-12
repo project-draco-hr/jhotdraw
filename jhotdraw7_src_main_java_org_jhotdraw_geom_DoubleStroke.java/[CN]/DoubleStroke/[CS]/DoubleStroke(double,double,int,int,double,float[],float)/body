@@ -1,0 +1,6 @@
+{
+  this.innerWidth=innerWidth;
+  this.outlineWidth=outlineWidth;
+  this.miterLimit=miterLimit;
+  outlineStroke=new BasicStroke((float)outlineWidth,cap,BasicStroke.JOIN_BEVEL,(float)miterLimit,dashes,dashPhase);
+}

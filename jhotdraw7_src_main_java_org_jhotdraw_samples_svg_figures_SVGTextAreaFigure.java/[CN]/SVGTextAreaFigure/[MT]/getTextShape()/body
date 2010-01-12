@@ -1,7 +1,7 @@
 {
   if (cachedTextShape == null) {
-    GeneralPath shape;
-    cachedTextShape=shape=new GeneralPath();
+    Path2D.Double shape;
+    cachedTextShape=shape=new Path2D.Double();
     if (getText() != null || isEditable()) {
       Font font=getFont();
       boolean isUnderlined=get(FONT_UNDERLINE);

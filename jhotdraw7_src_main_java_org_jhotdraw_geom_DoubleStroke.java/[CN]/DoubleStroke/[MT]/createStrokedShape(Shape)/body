@@ -1,7 +1,7 @@
 {
   BezierPath bp=new BezierPath();
-  GeneralPath left=new GeneralPath();
-  GeneralPath right=new GeneralPath();
+  Path2D.Double left=new Path2D.Double();
+  Path2D.Double right=new Path2D.Double();
   double[] coords=new double[6];
   for (PathIterator i=s.getPathIterator(null,0.1d); !i.isDone(); i.next()) {
     int type=i.currentSegment(coords);

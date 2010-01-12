@@ -1,10 +1,10 @@
 {
   BezierPath bp=new BezierPath();
-  GeneralPath left=new GeneralPath();
-  GeneralPath right=new GeneralPath();
-  if (s instanceof GeneralPath) {
-    left.setWindingRule(((GeneralPath)s).getWindingRule());
-    right.setWindingRule(((GeneralPath)s).getWindingRule());
+  Path2D.Double left=new Path2D.Double();
+  Path2D.Double right=new Path2D.Double();
+  if (s instanceof Path2D.Double) {
+    left.setWindingRule(((Path2D.Double)s).getWindingRule());
+    right.setWindingRule(((Path2D.Double)s).getWindingRule());
   }
  else   if (s instanceof BezierPath) {
     left.setWindingRule(((BezierPath)s).getWindingRule());

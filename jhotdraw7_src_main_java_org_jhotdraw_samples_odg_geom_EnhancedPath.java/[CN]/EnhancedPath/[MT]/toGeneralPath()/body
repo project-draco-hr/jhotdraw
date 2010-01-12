@@ -1,4 +1,4 @@
 {
-  GeneralPath gp=new GeneralPath();
+  Path2D.Double gp=new Path2D.Double();
   return gp;
 }
