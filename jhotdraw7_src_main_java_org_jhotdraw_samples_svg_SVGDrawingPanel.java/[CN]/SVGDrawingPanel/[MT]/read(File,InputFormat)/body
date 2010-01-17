@@ -10,7 +10,7 @@
   format.read(f,newDrawing);
   final Drawing loadedDrawing=newDrawing;
   Runnable r=new Runnable(){
-    public void run(){
+    @Override public void run(){
       setDrawing(loadedDrawing);
     }
   }

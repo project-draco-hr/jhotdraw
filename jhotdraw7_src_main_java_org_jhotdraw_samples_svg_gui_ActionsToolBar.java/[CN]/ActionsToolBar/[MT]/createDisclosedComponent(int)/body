@@ -9,13 +9,11 @@ case 1:
       if (editor == null) {
         break;
       }
-      Preferences prefs=PreferencesUtil.userNodeForPackage(getClass());
       ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
       GridBagLayout layout=new GridBagLayout();
       p.setLayout(layout);
       GridBagConstraints gbc;
       AbstractButton btn;
-      AbstractSelectedAction d;
       btn=new JButton(undoManager.getUndoAction());
       btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
       btn.setText(null);
@@ -52,22 +50,8 @@ case 1:
       pb.setUI((PaletteButtonUI)PaletteButtonUI.createUI(pb));
       pb.setItemFont(UIManager.getFont("MenuItem.font"));
       labels.configureToolBarButton(pb,"actions");
-      pb.add(new DuplicateAction());
-      pb.addSeparator();
-      pb.add(d=new GroupAction(editor,new SVGGroupFigure()));
-      disposables.add(d);
-      pb.add(d=new UngroupAction(editor,new SVGGroupFigure()));
-      disposables.add(d);
-      pb.addSeparator();
-      pb.add(new CutAction());
-      pb.add(new CopyAction());
-      pb.add(new PasteAction());
-      pb.add(new DeleteAction());
-      pb.addSeparator();
-      pb.add(new SelectAllAction());
-      pb.add(d=new SelectSameAction(editor));
-      disposables.add(d);
-      pb.add(new ClearSelectionAction());
+      popupButton=pb;
+      updatePopupMenu();
       gbc=new GridBagConstraints();
       gbc.gridy=2;
       gbc.insets=new Insets(3,0,0,0);

@@ -5,7 +5,7 @@
   }
   final Drawing[] helper=new Drawing[1];
   Runnable r=new Runnable(){
-    public void run(){
+    @Override public void run(){
       helper[0]=(Drawing)getDrawing().clone();
     }
   }

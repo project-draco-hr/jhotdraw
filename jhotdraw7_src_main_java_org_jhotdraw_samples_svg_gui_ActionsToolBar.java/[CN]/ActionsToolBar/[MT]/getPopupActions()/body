@@ -1,0 +1,6 @@
+{
+  if (actions == null) {
+    actions=new ArrayList<Action>();
+  }
+  return Collections.unmodifiableList(actions);
+}

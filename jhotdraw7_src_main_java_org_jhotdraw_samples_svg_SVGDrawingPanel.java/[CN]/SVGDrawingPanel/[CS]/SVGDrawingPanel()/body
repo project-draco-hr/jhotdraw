@@ -27,7 +27,7 @@
     }
   }
   Collections.sort(sortme,new Comparator<JToolBar>(){
-    public int compare(    JToolBar tb1,    JToolBar tb2){
+    @Override public int compare(    JToolBar tb1,    JToolBar tb2){
       int i1=prefs.getInt("toolBarIndex." + tb1.getName(),0);
       int i2=prefs.getInt("toolBarIndex." + tb2.getName(),0);
       return i1 - i2;
@@ -39,7 +39,7 @@
     toolsPane.add(tb);
   }
   toolsPane.addContainerListener(containerHandler=new ContainerListener(){
-    public void componentAdded(    ContainerEvent e){
+    @Override public void componentAdded(    ContainerEvent e){
       int i=0;
       for (      Component c : toolsPane.getComponents()) {
         if (c instanceof JToolBar) {
@@ -49,7 +49,7 @@
         }
       }
     }
-    public void componentRemoved(    ContainerEvent e){
+    @Override public void componentRemoved(    ContainerEvent e){
     }
   }
 );

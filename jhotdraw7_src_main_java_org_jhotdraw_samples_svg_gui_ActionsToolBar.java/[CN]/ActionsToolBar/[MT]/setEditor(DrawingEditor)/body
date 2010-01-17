@@ -5,6 +5,7 @@
   this.editor=newValue;
   if (editor != null && undoManager != null) {
     init();
+    updatePopupMenu();
     setDisclosureState(prefs.getInt(getID() + ".disclosureState",1));
     this.addPropertyChangeListener(getEventHandler());
   }
