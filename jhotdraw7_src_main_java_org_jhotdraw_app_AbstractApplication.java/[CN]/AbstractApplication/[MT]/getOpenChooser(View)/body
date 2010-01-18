@@ -4,7 +4,11 @@
       openChooser=model.createOpenChooser(this,null);
       List<URI> ruris=getRecentURIs();
       if (ruris.size() > 0) {
-        openChooser.setSelectedURI(ruris.get(0));
+        try {
+          openChooser.setSelectedURI(ruris.get(0));
+        }
+ catch (        IllegalArgumentException e) {
+        }
       }
     }
     return openChooser;
@@ -16,7 +20,11 @@
       v.getComponent().putClientProperty("openChooser",chooser);
       List<URI> ruris=getRecentURIs();
       if (ruris.size() > 0) {
-        chooser.setSelectedURI(ruris.get(0));
+        try {
+          chooser.setSelectedURI(ruris.get(0));
+        }
+ catch (        IllegalArgumentException e) {
+        }
       }
     }
     return chooser;

@@ -10,7 +10,11 @@
     if (chooser == null) {
       chooser=model.createSaveChooser(this,v);
       v.getComponent().putClientProperty("saveChooser",chooser);
-      chooser.setSelectedURI(v.getURI());
+      try {
+        chooser.setSelectedURI(v.getURI());
+      }
+ catch (      IllegalArgumentException e) {
+      }
     }
     return chooser;
   }
