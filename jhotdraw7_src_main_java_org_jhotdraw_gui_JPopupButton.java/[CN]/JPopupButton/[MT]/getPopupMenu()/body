@@ -2,6 +2,7 @@
   if (popupMenu == null) {
     popupMenu=new JPopupMenu();
     popupMenu.setLayout(new VerticalGridLayout(0,getColumnCount()));
+    popupMenu.addPopupMenuListener(actionPropertyHandler);
   }
   return popupMenu;
 }

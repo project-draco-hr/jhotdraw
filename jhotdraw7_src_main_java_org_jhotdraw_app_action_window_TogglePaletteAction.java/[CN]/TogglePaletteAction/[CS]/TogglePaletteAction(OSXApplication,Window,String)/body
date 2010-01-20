@@ -2,7 +2,7 @@
   super(label);
   this.app=app;
   windowHandler=new WindowAdapter(){
-    public void windowClosing(    WindowEvent evt){
+    @Override public void windowClosing(    WindowEvent evt){
       putValue(ActionUtil.SELECTED_KEY,false);
     }
   }

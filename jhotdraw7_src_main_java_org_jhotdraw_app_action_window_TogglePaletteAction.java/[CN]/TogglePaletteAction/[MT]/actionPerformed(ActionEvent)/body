@@ -1,5 +1,13 @@
 {
   if (palette != null) {
-    putValue(ActionUtil.SELECTED_KEY,!palette.isVisible());
+    boolean b=(Boolean)getValue(ActionUtil.SELECTED_KEY);
+    if (b) {
+      app.addPalette(palette);
+      palette.setVisible(true);
+    }
+ else {
+      app.removePalette(palette);
+      palette.setVisible(false);
+    }
   }
 }
