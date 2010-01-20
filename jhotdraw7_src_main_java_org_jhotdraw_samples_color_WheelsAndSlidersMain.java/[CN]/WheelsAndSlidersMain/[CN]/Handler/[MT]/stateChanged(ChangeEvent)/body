@@ -5,7 +5,14 @@
     previewLabel.setBackground(color);
     for (    ColorSliderModel c : models) {
       if (c != m) {
-        c.setColor(color);
+        if (c.getColorSystem().equals(m.getColorSystem())) {
+          for (int i=0; i < m.getComponentCount(); i++) {
+            c.setComponentValue(i,m.getComponentValue(i));
+          }
+        }
+ else {
+          c.setColor(color);
+        }
       }
     }
   }

@@ -1,10 +1,3 @@
 {
-  try {
-    read(getClass().getResourceAsStream("Generic CMYK Profile.icc"));
-  }
- catch (  IOException e) {
-    InternalError err=new InternalError("Couldn't load \"Generic CMYK Profile.icc\".");
-    err.initCause(e);
-    throw err;
-  }
+  super("Generic CMYK Profile.icc");
 }

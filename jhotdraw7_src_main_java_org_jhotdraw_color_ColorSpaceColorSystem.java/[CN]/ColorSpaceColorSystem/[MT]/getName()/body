@@ -1,0 +1,3 @@
+{
+  return (name == null) ? colorSpace.getClass().getSimpleName() + "ColorSystem" : name;
+}

@@ -1,0 +1,6 @@
+{
+  Point p=colorWheelProducer.getColorLocation(components);
+  p.x+=wheelInsets.left;
+  p.y+=wheelInsets.top;
+  return p;
+}

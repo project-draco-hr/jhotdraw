@@ -1,0 +1,31 @@
+{
+  radials=new float[w * h];
+  angulars=new float[w * h];
+  alphas=new int[w * h];
+  float radius=getRadius();
+  float blend=(radius + 2f) / radius - 1f;
+  int cx=w / 2;
+  int cy=h / 2;
+  float maxR=colorSystem.getMaxValue(radialIndex);
+  float minR=colorSystem.getMinValue(radialIndex);
+  float extentR=maxR - minR;
+  float maxA=colorSystem.getMaxValue(angularIndex);
+  float minA=colorSystem.getMinValue(angularIndex);
+  float extentA=maxA - minA;
+  int side=Math.min(w - 1,h - 1);
+  int xOffset=(w - side) / 2;
+  int yOffset=(h - side) / 2 * w;
+  float extentX=side - 1;
+  float extentY=extentX;
+  for (int x=0; x < side; x++) {
+    float xRatio=x / extentX;
+    for (int y=0; y < side; y++) {
+      float yRatio=y / extentY;
+      int index=x + y * w + xOffset + yOffset;
+      alphas[index]=0xff000000;
+      radials[index]=xRatio * extentR + minR;
+      angulars[index]=yRatio * extentA + minA;
+    }
+  }
+  isLookupValid=true;
+}

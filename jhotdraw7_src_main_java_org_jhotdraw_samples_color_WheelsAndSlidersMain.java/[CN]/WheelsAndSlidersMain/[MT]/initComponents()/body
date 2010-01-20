@@ -3,7 +3,7 @@
   previewLabel=new javax.swing.JLabel();
   setLayout(new java.awt.BorderLayout());
   chooserPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10,10,10,10));
-  chooserPanel.setLayout(new java.awt.GridLayout(0,3,10,10));
+  chooserPanel.setLayout(new java.awt.GridLayout(0,4,10,10));
   add(chooserPanel,java.awt.BorderLayout.CENTER);
   previewLabel.setText("Selected Color");
   add(previewLabel,java.awt.BorderLayout.SOUTH);

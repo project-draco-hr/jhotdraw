@@ -1,0 +1,4 @@
+{
+  this.colorSpace=colorSpace;
+  this.name=name;
+}

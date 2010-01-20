@@ -1,4 +1,4 @@
 {
-  BoundedRangeModel brm=componentModels[componentIndex];
-  return (brm.getValue() - brm.getMinimum()) / (float)(brm.getMaximum() - brm.getMinimum());
+  BoundedRangeModel brm=componentModels[i];
+  return (brm.getValue() - brm.getMinimum()) / (float)(brm.getMaximum() - brm.getMinimum()) * (system.getMaxValue(i) - system.getMinValue(i)) + system.getMinValue(i);
 }

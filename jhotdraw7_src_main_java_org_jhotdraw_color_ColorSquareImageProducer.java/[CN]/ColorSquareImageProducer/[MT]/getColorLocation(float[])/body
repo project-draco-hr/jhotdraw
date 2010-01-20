@@ -1,0 +1,9 @@
+{
+  float radial=(components[radialIndex] - colorSystem.getMinValue(radialIndex)) / (colorSystem.getMaxValue(radialIndex) - colorSystem.getMinValue(radialIndex));
+  float angular=(components[angularIndex] - colorSystem.getMinValue(angularIndex)) / (colorSystem.getMaxValue(angularIndex) - colorSystem.getMinValue(angularIndex));
+  int side=Math.min(w - 1,h - 1);
+  int xOffset=(w - side) / 2;
+  int yOffset=(h - side) / 2;
+  Point p=new Point((int)(side * radial) + xOffset,(int)(side * angular) + yOffset);
+  return p;
+}

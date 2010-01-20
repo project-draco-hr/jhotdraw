@@ -1,3 +1,0 @@
-{
-  return getColorLocation(components[0],components[1],components[2],width,height);
-}

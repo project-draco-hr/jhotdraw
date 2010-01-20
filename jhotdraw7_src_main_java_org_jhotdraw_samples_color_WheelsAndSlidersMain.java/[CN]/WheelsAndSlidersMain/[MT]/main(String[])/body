@@ -1,7 +1,7 @@
 {
   SwingUtilities.invokeLater(new Runnable(){
-    public void run(){
-      JFrame f=new JFrame("Wheel");
+    @Override public void run(){
+      JFrame f=new JFrame("Color Wheels, Squares and Sliders");
       f.add(new WheelsAndSlidersMain());
       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       f.pack();

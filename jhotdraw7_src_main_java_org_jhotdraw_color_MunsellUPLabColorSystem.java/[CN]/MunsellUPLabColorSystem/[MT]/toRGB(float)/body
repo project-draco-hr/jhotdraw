@@ -1,8 +1,0 @@
-{
-  float[] lab=new float[getComponentCount()];
-  for (int i=0; i < lab.length; i++) {
-    lab[i]=component[i] * (colorSpace.getMaxValue(i) - colorSpace.getMinValue(i)) + colorSpace.getMinValue(i);
-  }
-  float[] rgb=colorSpace.toRGB(lab);
-  return 0xff000000 | ((int)(rgb[0] * 255f) << 16) | ((int)(rgb[1] * 255f) << 8)| (int)(rgb[2] * 255f);
-}

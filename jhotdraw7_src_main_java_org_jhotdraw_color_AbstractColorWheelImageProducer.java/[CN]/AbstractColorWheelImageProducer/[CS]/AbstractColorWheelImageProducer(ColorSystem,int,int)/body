@@ -1,0 +1,10 @@
+{
+  super(w,h,null,0,w);
+  this.colorSystem=sys;
+  pixels=new int[w * h];
+  this.w=w;
+  this.h=h;
+  this.colorSystem=sys;
+  setAnimated(true);
+  newPixels(pixels,ColorModel.getRGBdefault(),0,w);
+}
