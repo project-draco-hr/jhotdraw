@@ -1,0 +1,13 @@
+{
+  x-=w / 2;
+  y-=h / 2;
+  float r=(float)Math.sqrt(x * x + y * y);
+  float theta=(float)Math.atan2(y,-x);
+  float angular=(float)(0.5 + (theta / Math.PI / 2d));
+  float radial=Math.min(1f,(float)r / getRadius());
+  float[] hsb=new float[3];
+  hsb[angularIndex]=angular * (colorSystem.getMaxValue(angularIndex) - colorSystem.getMinValue(angularIndex)) + colorSystem.getMinValue(angularIndex);
+  hsb[radialIndex]=radial * (colorSystem.getMaxValue(radialIndex) - colorSystem.getMinValue(radialIndex)) + colorSystem.getMinValue(radialIndex);
+  hsb[verticalIndex]=verticalValue;
+  return hsb;
+}
