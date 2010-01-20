@@ -1,0 +1,69 @@
+{
+  if (o == null) {
+    return "null";
+  }
+ else   if (o instanceof Boolean) {
+    return "boolean";
+  }
+ else   if (o instanceof Byte) {
+    return "byte";
+  }
+ else   if (o instanceof Character) {
+    return "char";
+  }
+ else   if (o instanceof Short) {
+    return "short";
+  }
+ else   if (o instanceof Integer) {
+    return "int";
+  }
+ else   if (o instanceof Long) {
+    return "long";
+  }
+ else   if (o instanceof Float) {
+    return "float";
+  }
+ else   if (o instanceof Double) {
+    return "double";
+  }
+ else   if (o instanceof Color) {
+    return "color";
+  }
+ else   if (o instanceof Font) {
+    return "font";
+  }
+ else   if (o instanceof byte[]) {
+    return "byteArray";
+  }
+ else   if (o instanceof char[]) {
+    return "charArray";
+  }
+ else   if (o instanceof short[]) {
+    return "shortArray";
+  }
+ else   if (o instanceof int[]) {
+    return "intArray";
+  }
+ else   if (o instanceof long[]) {
+    return "longArray";
+  }
+ else   if (o instanceof float[]) {
+    return "floatArray";
+  }
+ else   if (o instanceof double[]) {
+    return "doubleArray";
+  }
+ else   if (o instanceof String) {
+    return "string";
+  }
+ else   if (o instanceof Enum) {
+    return "enum";
+  }
+ else   if (o instanceof Color) {
+    return "color";
+  }
+ else   if (o instanceof Font) {
+    return "font";
+  }
+  return escape(o.getClass().getName());
+}

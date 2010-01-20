@@ -25,7 +25,7 @@
       DrawingEditor editor=new DefaultDrawingEditor();
       editor.add(view);
       editor.setTool(new DelegationSelectionTool());
-      f.show();
+      f.setVisible(true);
     }
   }
 );

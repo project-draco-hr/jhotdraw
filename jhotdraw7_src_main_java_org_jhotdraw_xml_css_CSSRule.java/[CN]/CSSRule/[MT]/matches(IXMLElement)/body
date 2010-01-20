@@ -12,7 +12,7 @@ case ELEMENT_NAME:
 }
 case CLASS_ATTRIBUTE:
 {
-String value=elem.getAttribute("class");
+String value=elem.getAttribute("class",null);
 if (value != null) {
   String[] clazzes=value.split(" ");
   for (  String clazz : clazzes) {
@@ -26,7 +26,7 @@ break;
 }
 case ID_ATTRIBUTE:
 {
-String name=elem.getAttribute("id");
+String name=elem.getAttribute("id",null);
 isMatch=name != null && name.equals(selector);
 break;
 }

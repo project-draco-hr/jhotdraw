@@ -24,7 +24,7 @@
         ((Window)floatingToolBar).setLocation(floatingX,floatingY);
       }
       if (floatingToolBar instanceof Window) {
-        ((Window)floatingToolBar).show();
+        ((Window)floatingToolBar).setVisible(true);
       }
     }
  else {

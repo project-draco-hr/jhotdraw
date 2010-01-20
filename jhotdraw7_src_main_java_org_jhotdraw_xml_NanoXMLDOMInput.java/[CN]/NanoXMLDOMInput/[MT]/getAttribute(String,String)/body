@@ -1,4 +1,3 @@
 {
-  String value=(String)current.getAttribute(name);
-  return (value == null || value.length() == 0) ? defaultValue : value;
+  return current.getAttribute(name,defaultValue);
 }

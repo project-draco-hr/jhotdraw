@@ -7,7 +7,7 @@
     }
   }
  else   if (elem.hasAttribute(attributeName)) {
-    value=elem.getAttribute(attributeName);
+    value=elem.getAttribute(attributeName,"");
     if (value.equals("inherit")) {
       return readInheritColorAttribute(elem.getParent(),attributeName,defaultValue);
     }

@@ -33,7 +33,7 @@
       if (dragWindow.isVisible() == false) {
         Dimension size=toolBar.getSize();
         dragWindow.setSize(size.width,size.height);
-        dragWindow.show();
+        dragWindow.setVisible(true);
       }
     }
  catch (    IllegalComponentStateException e) {

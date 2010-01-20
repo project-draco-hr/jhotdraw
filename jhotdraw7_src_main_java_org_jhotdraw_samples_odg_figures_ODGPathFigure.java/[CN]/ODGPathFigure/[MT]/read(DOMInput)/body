@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("Use ODGStorableInput to read this Figure.");
-}

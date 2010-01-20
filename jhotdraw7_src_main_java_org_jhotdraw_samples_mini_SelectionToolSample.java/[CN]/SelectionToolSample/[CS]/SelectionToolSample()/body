@@ -12,5 +12,5 @@
   DrawingEditor editor=new DefaultDrawingEditor();
   editor.add(view);
   editor.setTool(new SelectionTool());
-  f.show();
+  f.setVisible(true);
 }

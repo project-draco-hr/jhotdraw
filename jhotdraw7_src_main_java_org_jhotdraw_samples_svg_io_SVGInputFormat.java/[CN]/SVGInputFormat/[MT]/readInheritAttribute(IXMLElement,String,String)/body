@@ -9,7 +9,7 @@
     }
   }
  else   if (elem.hasAttribute(attributeName)) {
-    String value=elem.getAttribute(attributeName);
+    String value=elem.getAttribute(attributeName,"");
     if (value.equals("inherit")) {
       return readInheritAttribute(elem.getParent(),attributeName,defaultValue);
     }

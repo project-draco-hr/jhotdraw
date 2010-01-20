@@ -1,5 +1,5 @@
 {
-  this.url=file.toURL();
+  this.url=file.toURI().toURL();
   BufferedInputStream in=new BufferedInputStream(new FileInputStream(file));
   try {
     read(in,drawing,replace);

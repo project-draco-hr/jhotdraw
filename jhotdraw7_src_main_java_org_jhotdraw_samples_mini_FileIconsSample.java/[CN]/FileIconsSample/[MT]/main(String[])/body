@@ -62,7 +62,7 @@
       editor.setTool(new DelegationSelectionTool());
       editor.add(view);
       editor.setActiveView(view);
-      f.show();
+      f.setVisible(true);
     }
   }
 );

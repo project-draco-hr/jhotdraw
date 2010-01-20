@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("Use SVGStorableInput to read this Figure.");
-}

@@ -1,0 +1,107 @@
+{
+  if (o == null) {
+  }
+ else   if (o instanceof DOMStorable) {
+    ((DOMStorable)o).write(out);
+  }
+ else   if (o instanceof String) {
+    out.addText((String)o);
+  }
+ else   if (o instanceof Integer) {
+    out.addText(o.toString());
+  }
+ else   if (o instanceof Long) {
+    out.addText(o.toString());
+  }
+ else   if (o instanceof Double) {
+    out.addText(o.toString());
+  }
+ else   if (o instanceof Float) {
+    out.addText(o.toString());
+  }
+ else   if (o instanceof Boolean) {
+    out.addText(o.toString());
+  }
+ else   if (o instanceof Color) {
+    Color c=(Color)o;
+    out.addAttribute("rgba","#" + Integer.toHexString(c.getRGB()));
+  }
+ else   if (o instanceof byte[]) {
+    byte[] a=(byte[])o;
+    for (int i=0; i < a.length; i++) {
+      out.openElement("byte");
+      write(out,a[i]);
+      out.closeElement();
+    }
+  }
+ else   if (o instanceof boolean[]) {
+    boolean[] a=(boolean[])o;
+    for (int i=0; i < a.length; i++) {
+      out.openElement("boolean");
+      write(out,a[i]);
+      out.closeElement();
+    }
+  }
+ else   if (o instanceof char[]) {
+    char[] a=(char[])o;
+    for (int i=0; i < a.length; i++) {
+      out.openElement("char");
+      write(out,a[i]);
+      out.closeElement();
+    }
+  }
+ else   if (o instanceof short[]) {
+    short[] a=(short[])o;
+    for (int i=0; i < a.length; i++) {
+      out.openElement("short");
+      write(out,a[i]);
+      out.closeElement();
+    }
+  }
+ else   if (o instanceof int[]) {
+    int[] a=(int[])o;
+    for (int i=0; i < a.length; i++) {
+      out.openElement("int");
+      write(out,a[i]);
+      out.closeElement();
+    }
+  }
+ else   if (o instanceof long[]) {
+    long[] a=(long[])o;
+    for (int i=0; i < a.length; i++) {
+      out.openElement("long");
+      write(out,a[i]);
+      out.closeElement();
+    }
+  }
+ else   if (o instanceof float[]) {
+    float[] a=(float[])o;
+    for (int i=0; i < a.length; i++) {
+      out.openElement("float");
+      write(out,a[i]);
+      out.closeElement();
+    }
+  }
+ else   if (o instanceof double[]) {
+    double[] a=(double[])o;
+    for (int i=0; i < a.length; i++) {
+      out.openElement("double");
+      write(out,a[i]);
+      out.closeElement();
+    }
+  }
+ else   if (o instanceof Font) {
+    Font f=(Font)o;
+    out.addAttribute("name",f.getName());
+    out.addAttribute("style",f.getStyle());
+    out.addAttribute("size",f.getSize());
+  }
+ else   if (o instanceof Enum) {
+    Enum e=(Enum)o;
+    out.addAttribute("type",getEnumName(e));
+    out.addText(getEnumValue(e));
+  }
+ else {
+    throw new IllegalArgumentException("Unsupported object type:" + o);
+  }
+}

@@ -35,7 +35,7 @@
       sp.setPreferredSize(new Dimension(200,200));
       f.getContentPane().add(new JScrollPane(innerPane));
       f.getContentPane().add(tb,BorderLayout.WEST);
-      f.show();
+      f.setVisible(true);
     }
   }
 );
