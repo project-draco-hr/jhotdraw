@@ -1,0 +1,10 @@
+{
+  try {
+    read(getClass().getResourceAsStream("Munsell CIELab_to_UPLab2.icc"));
+  }
+ catch (  IOException e) {
+    InternalError err=new InternalError("Couldn't load \"Munsell CIELab_to_UPLab2.icc\".");
+    err.initCause(e);
+    throw err;
+  }
+}

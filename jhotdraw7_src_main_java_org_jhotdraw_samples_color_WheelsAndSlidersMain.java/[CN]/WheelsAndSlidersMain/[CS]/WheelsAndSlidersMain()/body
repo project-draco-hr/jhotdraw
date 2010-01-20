@@ -5,11 +5,14 @@
   previewLabel.setOpaque(true);
   chooserPanel.add(createColorWheelChooser(new HSVRGBColorSystem()));
   chooserPanel.add(createColorWheelChooser(new HSLRGBColorSystem()));
+  chooserPanel.add(new JPanel());
   chooserPanel.add(createColorWheelChooser(new HSVRYBColorSystem()));
   chooserPanel.add(createColorWheelChooser(new HSLRYBColorSystem()));
   chooserPanel.add(createColorWheelChooser(new HSLRYBColorSystem(),0,2,1));
   chooserPanel.add(createSliderChooser(new HSVRGBColorSystem()));
   chooserPanel.add(createSliderChooser(new RGBColorSystem()));
+  chooserPanel.add(new JPanel());
   chooserPanel.add(createSliderChooser(new CMYKICCColorSystem()));
   chooserPanel.add(createSliderChooser(new CMYKNominalColorSystem()));
+  chooserPanel.add(createSliderChooser(new MunsellUPLabColorSystem()));
 }

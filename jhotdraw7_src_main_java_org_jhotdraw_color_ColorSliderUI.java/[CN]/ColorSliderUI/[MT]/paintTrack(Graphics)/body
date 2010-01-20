@@ -7,7 +7,7 @@
     cx=trackBounds.x - pad + 1;
     cy=trackBounds.y;
     cw=trackBounds.width + pad * 2 - 2;
-    ch=trackBounds.height;
+    ch=trackBounds.height - 1;
   }
  else {
     pad=trackBuffer;

@@ -2,9 +2,12 @@
   JPanel p=new JPanel(new GridLayout(0,1));
   DefaultColorSliderModel m=new DefaultColorSliderModel(sys);
   models.add(m);
+  p.add(new JLabel("<html>" + sys.getClass().getSimpleName()),BorderLayout.NORTH);
   m.addChangeListener(handler);
   for (int i=0; i < m.getComponentCount(); i++) {
     JSlider s=new JSlider(JSlider.HORIZONTAL);
+    s.setMajorTickSpacing(50);
+    s.setPaintTicks(true);
     m.configureSlider(i,s);
     p.add(s);
   }

@@ -1,0 +1,13 @@
+{
+  if (component == null || component.length != getComponentCount()) {
+    component=new float[getComponentCount()];
+  }
+  component[0]=r / 255f;
+  component[1]=g / 255f;
+  component[2]=b / 255f;
+  float[] lab=colorSpace.fromRGB(component);
+  for (int i=0; i < lab.length; i++) {
+    component[i]=(lab[i] - colorSpace.getMinValue(i)) / (colorSpace.getMaxValue(i) - colorSpace.getMinValue(i));
+  }
+  return component;
+}

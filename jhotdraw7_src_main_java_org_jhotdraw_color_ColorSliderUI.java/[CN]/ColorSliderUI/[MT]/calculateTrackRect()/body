@@ -5,7 +5,7 @@
     if (slider.getPaintTicks())     centerSpacing+=getTickLength();
     if (slider.getPaintLabels())     centerSpacing+=getHeightOfTallestLabel();
     trackRect.x=contentRect.x + trackBuffer + 1;
-    trackRect.height=13;
+    trackRect.height=14;
     trackRect.y=contentRect.y + contentRect.height - trackRect.height;
     trackRect.width=contentRect.width - (trackBuffer * 2) - 1;
   }
