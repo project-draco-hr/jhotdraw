@@ -9,6 +9,14 @@
     colorWheelImage=createImage(colorWheelProducer);
   }
   colorWheelProducer.setVerticalValue(model.getComponentValue(verticalIndex));
-  colorWheelProducer.regenerateColorWheel();
+  if (colorWheelProducer.needsGeneration()) {
+    long latency=System.currentTimeMillis() - EventQueue.getMostRecentEventTime();
+    if (latency > 100) {
+      repaint();
+    }
+ else {
+      colorWheelProducer.regenerateColorWheel();
+    }
+  }
   g.drawImage(colorWheelImage,wheelInsets.left,wheelInsets.top,this);
 }

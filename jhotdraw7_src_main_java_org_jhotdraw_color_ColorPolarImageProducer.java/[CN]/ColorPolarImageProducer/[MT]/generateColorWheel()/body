@@ -1,0 +1,17 @@
+{
+  if (!isLookupValid) {
+    generateLookupTables();
+  }
+  float[] components=new float[colorSystem.getComponentCount()];
+  float radius=(float)Math.min(w,h);
+  for (int index=0; index < pixels.length; index++) {
+    if (alphas[index] != 0) {
+      components[angularIndex]=angulars[index];
+      components[radialIndex]=radials[index];
+      components[verticalIndex]=verticalValue;
+      pixels[index]=alphas[index] | 0xffffff & colorSystem.toRGB(components);
+    }
+  }
+  newPixels();
+  isPixelsValid=true;
+}

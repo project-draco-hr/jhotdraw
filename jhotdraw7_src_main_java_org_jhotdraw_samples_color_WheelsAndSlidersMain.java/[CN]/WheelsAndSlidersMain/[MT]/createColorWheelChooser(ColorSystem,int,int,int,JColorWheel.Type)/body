@@ -3,7 +3,8 @@
   DefaultColorSliderModel m=new DefaultColorSliderModel(sys);
   models.add(m);
   m.addChangeListener(handler);
-  JColorWheel w=(isSquare) ? new JColorSquare() : new JColorWheel();
+  JColorWheel w=new JColorWheel();
+  w.setType(type);
   w.setAngularComponentIndex(angularIndex);
   w.setRadialComponentIndex(radialIndex);
   w.setVerticalComponentIndex(verticalIndex);

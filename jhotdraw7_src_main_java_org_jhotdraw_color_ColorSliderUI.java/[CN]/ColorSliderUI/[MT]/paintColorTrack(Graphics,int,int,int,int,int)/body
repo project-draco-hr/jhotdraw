@@ -14,7 +14,15 @@
     colorTrackImage=slider.createImage(colorTrackImageProducer);
   }
  else {
-    colorTrackImageProducer.regenerateColorTrack();
+    if (colorTrackImageProducer.needsGeneration()) {
+      long latency=System.currentTimeMillis() - EventQueue.getMostRecentEventTime();
+      if (latency > 100) {
+        slider.repaint();
+      }
+ else {
+        colorTrackImageProducer.regenerateColorTrack();
+      }
+    }
   }
   g.drawImage(colorTrackImage,x,y,slider);
 }

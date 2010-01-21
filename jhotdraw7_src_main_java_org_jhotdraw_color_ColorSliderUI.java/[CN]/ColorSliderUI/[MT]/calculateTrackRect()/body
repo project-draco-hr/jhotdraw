@@ -2,8 +2,12 @@
   int centerSpacing=0;
   if (slider.getOrientation() == JSlider.HORIZONTAL) {
     centerSpacing=thumbRect.height;
-    if (slider.getPaintTicks())     centerSpacing+=getTickLength();
-    if (slider.getPaintLabels())     centerSpacing+=getHeightOfTallestLabel();
+    if (slider.getPaintTicks()) {
+      centerSpacing+=getTickLength();
+    }
+    if (slider.getPaintLabels()) {
+      centerSpacing+=getHeightOfTallestLabel();
+    }
     trackRect.x=contentRect.x + trackBuffer + 1;
     trackRect.height=14;
     trackRect.y=contentRect.y + contentRect.height - trackRect.height;

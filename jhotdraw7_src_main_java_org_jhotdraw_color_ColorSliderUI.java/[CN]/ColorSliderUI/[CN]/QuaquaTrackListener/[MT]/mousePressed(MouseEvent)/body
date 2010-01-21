@@ -1,5 +1,7 @@
 {
-  if (!slider.isEnabled())   return;
+  if (!slider.isEnabled()) {
+    return;
+  }
   currentMouseX=e.getX();
   currentMouseY=e.getY();
   if (slider.isRequestFocusEnabled()) {

@@ -1,7 +1,19 @@
 {
-  AbstractColorWheelImageProducer p=new ColorWheelImageProducer(model.getColorSystem(),w,h);
-  p.setAngularComponentIndex(angularIndex);
-  p.setRadialComponentIndex(radialIndex);
-  p.setVerticalComponentIndex(verticalIndex);
-  return p;
+  AbstractColorWheelImageProducer p;
+switch (type) {
+case WHEEL:
+default :
+    p=new ColorWheelImageProducer(model.getColorSystem(),w,h);
+  break;
+case SQUARE:
+p=new ColorSquareImageProducer(model.getColorSystem(),w,h,false,true);
+break;
+case POLAR:
+p=new ColorPolarImageProducer(model.getColorSystem(),w,h);
+break;
+}
+p.setAngularComponentIndex(angularIndex);
+p.setRadialComponentIndex(radialIndex);
+p.setVerticalComponentIndex(verticalIndex);
+return p;
 }

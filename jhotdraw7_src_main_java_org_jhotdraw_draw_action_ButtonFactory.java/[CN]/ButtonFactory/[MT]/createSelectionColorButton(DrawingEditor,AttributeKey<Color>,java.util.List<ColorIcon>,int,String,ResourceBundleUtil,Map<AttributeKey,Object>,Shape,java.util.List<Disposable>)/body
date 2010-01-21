@@ -9,14 +9,19 @@
   for (  ColorIcon swatch : swatches) {
     AttributeAction a;
     HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);
-    attributes.put(attributeKey,swatch.getColor());
-    if (swatch.getColor() == null) {
-      hasNullColor=true;
+    if (swatch != null) {
+      attributes.put(attributeKey,swatch.getColor());
+      if (swatch.getColor() == null) {
+        hasNullColor=true;
+      }
+      popupButton.add(a=new AttributeAction(editor,attributes,labels.getToolTipTextProperty(labelKey),swatch));
+      a.putValue(Action.SHORT_DESCRIPTION,swatch.getName());
+      a.setUpdateEnabledState(false);
+      dsp.add(a);
     }
-    popupButton.add(a=new AttributeAction(editor,attributes,labels.getToolTipTextProperty(labelKey),swatch));
-    a.putValue(Action.SHORT_DESCRIPTION,swatch.getName());
-    a.setUpdateEnabledState(false);
-    dsp.add(a);
+ else {
+      popupButton.add(new JPanel());
+    }
   }
   if (!hasNullColor) {
     AttributeAction a;
