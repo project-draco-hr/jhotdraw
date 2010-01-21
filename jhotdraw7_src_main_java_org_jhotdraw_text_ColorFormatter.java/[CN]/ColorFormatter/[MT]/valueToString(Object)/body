@@ -21,6 +21,10 @@ case RGB_HEX:
 case RGB_INTEGER:
 str=c.getRed() + "," + c.getGreen()+ ","+ c.getBlue();
 break;
+case HSB_INTEGER:
+float[] components=Color.RGBtoHSB(c.getRed(),c.getGreen(),c.getBlue(),new float[3]);
+str=(int)(components[0] * 360) + "??," + (int)(components[1] * 100)+ "%,"+ (int)(components[2] * 100)+ "%";
+break;
 }
 }
 return str;

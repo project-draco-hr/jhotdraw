@@ -45,5 +45,22 @@ catch (    IllegalArgumentException iae) {
       throw pe;
     }
   }
+  matcher=hsvIntegerPattern.matcher(str);
+  if (matcher.matches()) {
+    setLastUsedInputFormat(Format.HSB_INTEGER);
+    try {
+      return new Color(Color.HSBtoRGB(Integer.parseInt(matcher.group(1)) / 360f,Integer.parseInt(matcher.group(2)) / 100f,Integer.parseInt(matcher.group(3)) / 100f));
+    }
+ catch (    NumberFormatException nfe) {
+      ParseException pe=new ParseException(str,0);
+      pe.initCause(nfe);
+      throw pe;
+    }
+catch (    IllegalArgumentException iae) {
+      ParseException pe=new ParseException(str,0);
+      pe.initCause(iae);
+      throw pe;
+    }
+  }
   throw new ParseException(str,0);
 }
