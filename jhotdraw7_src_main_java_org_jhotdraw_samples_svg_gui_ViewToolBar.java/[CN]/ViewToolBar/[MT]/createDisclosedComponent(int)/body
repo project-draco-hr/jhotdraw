@@ -56,7 +56,7 @@ case 2:
   GridBagConstraints gbc;
   AbstractButton btn;
   JLifeFormattedTextField gridSizeField=new JLifeFormattedTextField();
-  gridSizeField.setColumns(3);
+  gridSizeField.setColumns(4);
   gridSizeField.setToolTipText(labels.getString("view.gridSize.toolTipText"));
   gridSizeField.setHorizontalAlignment(JLifeFormattedTextField.RIGHT);
   gridSizeField.putClientProperty("Palette.Component.segmentPosition","first");
@@ -100,16 +100,16 @@ case 2:
   gbc.insets=new Insets(0,0,0,0);
   p.add(btn,gbc);
   final JLifeFormattedTextField scaleFactorField=new JLifeFormattedTextField();
-  scaleFactorField.setColumns(3);
+  scaleFactorField.setColumns(4);
   scaleFactorField.setToolTipText(labels.getString("view.zoomFactor.toolTipText"));
   scaleFactorField.setHorizontalAlignment(JLifeFormattedTextField.RIGHT);
   scaleFactorField.putClientProperty("Palette.Component.segmentPosition","first");
   scaleFactorField.setUI((PaletteFormattedTextFieldUI)PaletteFormattedTextFieldUI.createUI(scaleFactorField));
-  scaleFactorField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0.01d,50d,100d,true,false));
+  scaleFactorField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0.01d,50d,100d,true,false,"%"));
   scaleFactorField.setHorizontalAlignment(JTextField.LEADING);
   scaleFactorField.setValue(view.getScaleFactor());
   scaleFactorField.addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
       if (evt.getPropertyName().equals("value")) {
         if (evt.getNewValue() != null) {
           view.setScaleFactor((Double)evt.getNewValue());
@@ -119,7 +119,7 @@ case 2:
   }
 );
   view.addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
       if (evt.getPropertyName() == DrawingView.SCALE_FACTOR_PROPERTY) {
         if (evt.getNewValue() != null) {
           scaleFactorField.setValue((Double)evt.getNewValue());

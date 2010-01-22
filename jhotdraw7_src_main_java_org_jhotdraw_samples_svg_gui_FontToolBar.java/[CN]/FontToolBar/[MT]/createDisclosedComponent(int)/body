@@ -129,7 +129,7 @@ case 2:
   GridBagConstraints gbc;
   AbstractButton btn;
   JAttributeTextField<Font> faceField=new JAttributeTextField<Font>();
-  faceField.setColumns(10);
+  faceField.setColumns(12);
   faceField.setToolTipText(labels.getString("attribute.font.toolTipText"));
   faceField.setHorizontalAlignment(JAttributeTextField.RIGHT);
   faceField.putClientProperty("Palette.Component.segmentPosition","first");
