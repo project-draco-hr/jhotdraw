@@ -3,7 +3,7 @@
   while (colors.size() > newValue) {
     colors.remove(colors.size() - 1);
   }
-  ColorSystem sys=sliderModel.getColorSystem();
+  ColorSpace sys=sliderModel.getColorSpace();
   while (colors.size() < newValue) {
     colors.add(null);
   }

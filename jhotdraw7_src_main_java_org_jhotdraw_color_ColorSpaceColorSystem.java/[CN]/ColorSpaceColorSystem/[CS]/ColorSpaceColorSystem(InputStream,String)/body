@@ -1,4 +1,0 @@
-{
-  read(iccProfile);
-  this.name=name;
-}

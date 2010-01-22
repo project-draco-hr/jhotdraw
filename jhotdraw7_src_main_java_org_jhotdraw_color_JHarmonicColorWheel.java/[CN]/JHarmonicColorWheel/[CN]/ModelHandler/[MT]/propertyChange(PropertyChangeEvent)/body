@@ -1,8 +1,8 @@
 {
   String name=evt.getPropertyName();
   if (name == HarmonicColorModel.COLOR_SYSTEM_PROPERTY) {
-    model.setColorSystem(harmonicModel.getColorSystem());
-    model.setComponentValue(1,1f);
+    model.setColorSpace(harmonicModel.getColorSpace());
+    model.setComponent(1,1f);
     colorWheelProducer=createWheelProducer(getWidth(),getHeight());
     colorWheelImage=null;
   }

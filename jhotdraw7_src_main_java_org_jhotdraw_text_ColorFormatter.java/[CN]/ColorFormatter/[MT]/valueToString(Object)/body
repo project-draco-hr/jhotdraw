@@ -13,18 +13,53 @@
       throw new ParseException("Value is not a color " + value,0);
     }
     Color c=(Color)value;
-switch (outputFormat) {
+    Format f=outputFormat;
+    if (isAdaptive) {
+      if (c.getColorSpace().equals(HSBColorSpace.getInstance())) {
+        f=Format.HSB_PERCENTAGE;
+      }
+ else       if (c.getColorSpace().equals(ColorSpace.getInstance(ColorSpace.CS_GRAY))) {
+        f=Format.GRAY_PERCENTAGE;
+      }
+ else {
+        f=Format.RGB_INTEGER;
+      }
+    }
+switch (f) {
 case RGB_HEX:
       str="000000" + Integer.toHexString(c.getRGB() & 0xffffff);
-    str="#" + str.substring(str.length() - 6);
+    str="rgb #" + str.substring(str.length() - 6);
   break;
 case RGB_INTEGER:
-str=c.getRed() + "," + c.getGreen()+ ","+ c.getBlue();
+str="rgb " + c.getRed() + " "+ c.getGreen()+ " "+ c.getBlue();
 break;
-case HSB_INTEGER:
-float[] components=Color.RGBtoHSB(c.getRed(),c.getGreen(),c.getBlue(),new float[3]);
-str=(int)(components[0] * 360) + "??," + (int)(components[1] * 100)+ "%,"+ (int)(components[2] * 100)+ "%";
+case RGB_PERCENTAGE:
+str="rgb " + numberFormat.format(c.getRed() / 255f) + "% "+ numberFormat.format(c.getGreen() / 255f)+ "% "+ numberFormat.format(c.getBlue() / 255f)+ "%";
 break;
+case HSB_PERCENTAGE:
+{
+float[] components;
+if (c.getColorSpace().equals(HSBColorSpace.getInstance())) {
+components=c.getComponents(null);
+}
+ else {
+components=Color.RGBtoHSB(c.getRed(),c.getGreen(),c.getBlue(),new float[3]);
+}
+str="hsb " + numberFormat.format(components[0] * 360) + "?? "+ numberFormat.format(components[1] * 100)+ "% "+ numberFormat.format(components[2] * 100)+ "%";
+break;
+}
+case GRAY_PERCENTAGE:
+{
+float[] components;
+if (c.getColorSpace().equals(ColorSpace.getInstance(ColorSpace.CS_GRAY))) {
+components=c.getComponents(null);
+}
+ else {
+components=c.getColorComponents(ColorSpace.getInstance(ColorSpace.CS_GRAY),null);
+}
+str="gray " + numberFormat.format(components[0] * 100) + "%";
+break;
+}
 }
 }
 return str;

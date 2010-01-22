@@ -1,0 +1,12 @@
+{
+  if ((a instanceof ICC_ColorSpace) && (b instanceof ICC_ColorSpace)) {
+    ICC_ColorSpace aicc=(ICC_ColorSpace)a;
+    ICC_ColorSpace bicc=(ICC_ColorSpace)b;
+    ICC_Profile ap=aicc.getProfile();
+    ICC_Profile bp=bicc.getProfile();
+    return ap.equals(bp);
+  }
+ else {
+    return a.equals(b);
+  }
+}

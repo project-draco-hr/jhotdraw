@@ -1,10 +1,10 @@
 {
-  float[] c=new float[system.getComponentCount()];
+  float[] c=new float[getComponentCount()];
   int j=0;
   for (  DefaultBoundedRangeModel brm : componentModels) {
-    c[j]=((brm.getValue() - brm.getMinimum()) / (float)(brm.getMaximum() - brm.getMinimum())) * (system.getMaxValue(j) - system.getMinValue(j)) + system.getMinValue(j);
+    c[j]=((brm.getValue() - brm.getMinimum()) / (float)(brm.getMaximum() - brm.getMinimum())) * (colorSpace.getMaxValue(j) - colorSpace.getMinValue(j)) + colorSpace.getMinValue(j);
     j++;
   }
   c[i]=componentValue;
-  return system.toRGB(c);
+  return ColorSpaceUtil.toRGB(colorSpace,c);
 }

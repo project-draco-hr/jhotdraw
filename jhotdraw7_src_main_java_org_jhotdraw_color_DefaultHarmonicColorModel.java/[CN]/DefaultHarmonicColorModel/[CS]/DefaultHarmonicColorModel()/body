@@ -1,9 +1,9 @@
 {
-  ColorSystem sys=new HSLRYBColorSystem();
+  ColorSpace sys=HSLPsychologicColorSpace.getInstance();
   sliderModel=new DefaultColorSliderModel(sys);
-  colors=new ArrayList<CompositeColor>();
+  colors=new ArrayList<Color>();
   rules=new ArrayList<HarmonicRule>();
   base=0;
-  add(new CompositeColor(sys,Color.RED));
+  add(Color.RED);
   DefaultListModel x;
 }

@@ -15,8 +15,8 @@
     for (int i=harmonicModel.size() - 1; i >= 0; i--) {
       if (harmonicModel.get(i) != null) {
         Point p=getColorLocation(harmonicModel.get(i));
-        CompositeColor mixerColor=harmonicModel.get(i);
-        comp=mixerColor.getComponents();
+        Color mixerColor=harmonicModel.get(i);
+        comp=ColorSpaceUtil.fromColor(harmonicModel.getColorSpace(),mixerColor);
         if (i == selectedIndex) {
           g.setColor(Color.white);
           oval.x=p.x - baseRadius;
@@ -25,7 +25,7 @@
           oval.height=baseRadius * 2f;
           g.fill(oval);
         }
-        g.setColor(mixerColor.getColor());
+        g.setColor(mixerColor);
         oval.x=p.x - handleRadius;
         oval.y=p.y - handleRadius;
         oval.width=handleRadius * 2f;

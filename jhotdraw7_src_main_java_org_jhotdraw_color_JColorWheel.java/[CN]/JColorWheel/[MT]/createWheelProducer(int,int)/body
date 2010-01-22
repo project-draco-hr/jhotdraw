@@ -1,15 +1,15 @@
 {
   AbstractColorWheelImageProducer p;
 switch (type) {
-case WHEEL:
+case POLAR:
 default :
-    p=new ColorWheelImageProducer(model.getColorSystem(),w,h);
+    p=new PolarColorWheelImageProducer(model.getColorSpace(),w,h);
   break;
 case SQUARE:
-p=new ColorSquareImageProducer(model.getColorSystem(),w,h,false,true);
+p=new ColorSquareImageProducer(model.getColorSpace(),w,h,isFlipX,isFlipY);
 break;
-case POLAR:
-p=new ColorPolarImageProducer(model.getColorSystem(),w,h);
+case COMPLEX:
+p=new ComplexColorWheelImageProducer(model.getColorSpace(),w,h,isFlipX,isFlipY);
 break;
 }
 p.setAngularComponentIndex(angularIndex);

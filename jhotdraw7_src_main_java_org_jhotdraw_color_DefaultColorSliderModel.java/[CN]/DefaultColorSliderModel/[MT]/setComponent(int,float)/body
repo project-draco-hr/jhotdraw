@@ -1,0 +1,4 @@
+{
+  BoundedRangeModel brm=componentModels[i];
+  brm.setValue((int)(((newValue - colorSpace.getMinValue(i)) / (colorSpace.getMaxValue(i) - colorSpace.getMinValue(i))) * (brm.getMaximum() - brm.getMinimum())) + brm.getMinimum());
+}

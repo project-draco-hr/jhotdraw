@@ -1,3 +1,17 @@
 {
-  return getCompositeColor().getColor();
+  float[] c=new float[getComponentCount()];
+  int i=0;
+  for (  DefaultBoundedRangeModel brm : componentModels) {
+    c[i]=(brm.getValue() - brm.getMinimum()) / (float)(brm.getMaximum() - brm.getMinimum()) * (colorSpace.getMaxValue(i) - colorSpace.getMinValue(i)) + colorSpace.getMinValue(i);
+    i++;
+  }
+  try {
+    return ColorSpaceUtil.toColor(colorSpace,c);
+  }
+ catch (  IllegalArgumentException e) {
+    for (i=0; i < c.length; i++) {
+      System.err.println(i + "=" + c[i]+ " "+ colorSpace.getMinValue(i)+ ".."+ colorSpace.getMaxValue(i));
+    }
+    throw e;
+  }
 }

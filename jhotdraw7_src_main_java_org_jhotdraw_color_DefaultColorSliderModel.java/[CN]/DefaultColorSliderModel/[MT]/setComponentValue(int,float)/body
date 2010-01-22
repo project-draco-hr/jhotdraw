@@ -1,4 +1,0 @@
-{
-  BoundedRangeModel brm=componentModels[i];
-  brm.setValue((int)(((newValue - system.getMinValue(i)) / (system.getMaxValue(i) - system.getMinValue(i))) * (brm.getMaximum() - brm.getMinimum())) + brm.getMinimum());
-}

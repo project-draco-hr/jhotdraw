@@ -6,11 +6,11 @@
   float blend=(radius + 2f) / radius - 1f;
   int cx=w / 2;
   int cy=h / 2;
-  float maxR=colorSystem.getMaxValue(radialIndex);
-  float minR=colorSystem.getMinValue(radialIndex);
+  float maxR=colorSpace.getMaxValue(radialIndex);
+  float minR=colorSpace.getMinValue(radialIndex);
   float extentR=maxR - minR;
-  float maxA=colorSystem.getMaxValue(angularIndex);
-  float minA=colorSystem.getMinValue(angularIndex);
+  float maxA=colorSpace.getMaxValue(angularIndex);
+  float minA=colorSpace.getMinValue(angularIndex);
   float extentA=maxA - minA;
   for (int x=0; x < w; x++) {
     int kx=x - cx;

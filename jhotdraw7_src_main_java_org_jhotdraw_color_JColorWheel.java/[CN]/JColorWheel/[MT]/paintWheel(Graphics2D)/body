@@ -8,7 +8,7 @@
     colorWheelProducer=createWheelProducer(w,h);
     colorWheelImage=createImage(colorWheelProducer);
   }
-  colorWheelProducer.setVerticalValue(model.getComponentValue(verticalIndex));
+  colorWheelProducer.setVerticalValue(model.getComponent(verticalIndex));
   if (colorWheelProducer.needsGeneration()) {
     long latency=System.currentTimeMillis() - EventQueue.getMostRecentEventTime();
     if (latency > 100) {

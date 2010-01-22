@@ -1,0 +1,4 @@
+{
+  isFlipX=newValue;
+  colorWheelProducer=createWheelProducer(0,0);
+}

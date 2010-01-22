@@ -1,0 +1,3 @@
+{
+  return Color.RGBtoHSB((int)(rgbvalue[0] * 255),(int)(rgbvalue[1] * 255),(int)(rgbvalue[2] * 255),new float[3]);
+}

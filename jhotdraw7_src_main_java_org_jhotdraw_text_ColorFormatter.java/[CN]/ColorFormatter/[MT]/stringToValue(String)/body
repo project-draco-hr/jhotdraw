@@ -45,11 +45,45 @@ catch (    IllegalArgumentException iae) {
       throw pe;
     }
   }
-  matcher=hsvIntegerPattern.matcher(str);
+  matcher=rgbPercentagePattern.matcher(str);
   if (matcher.matches()) {
-    setLastUsedInputFormat(Format.HSB_INTEGER);
+    setLastUsedInputFormat(Format.RGB_PERCENTAGE);
     try {
-      return new Color(Color.HSBtoRGB(Integer.parseInt(matcher.group(1)) / 360f,Integer.parseInt(matcher.group(2)) / 100f,Integer.parseInt(matcher.group(3)) / 100f));
+      return new Color(numberFormat.parse(matcher.group(1)).floatValue() / 100f,numberFormat.parse(matcher.group(2)).floatValue() / 100f,numberFormat.parse(matcher.group(3)).floatValue() / 100f);
+    }
+ catch (    NumberFormatException nfe) {
+      ParseException pe=new ParseException(str,0);
+      pe.initCause(nfe);
+      throw pe;
+    }
+catch (    IllegalArgumentException iae) {
+      ParseException pe=new ParseException(str,0);
+      pe.initCause(iae);
+      throw pe;
+    }
+  }
+  matcher=hsbPercentagePattern.matcher(str);
+  if (matcher.matches()) {
+    setLastUsedInputFormat(Format.HSB_PERCENTAGE);
+    try {
+      return new Color(HSBColorSpace.getInstance(),new float[]{matcher.group(1) == null ? 0f : numberFormat.parse(matcher.group(1)).floatValue() / 360f,matcher.group(2) == null ? 1f : numberFormat.parse(matcher.group(2)).floatValue() / 100f,matcher.group(3) == null ? 1f : numberFormat.parse(matcher.group(3)).floatValue() / 100f},1f);
+    }
+ catch (    NumberFormatException nfe) {
+      ParseException pe=new ParseException(str,0);
+      pe.initCause(nfe);
+      throw pe;
+    }
+catch (    IllegalArgumentException iae) {
+      ParseException pe=new ParseException(str,0);
+      pe.initCause(iae);
+      throw pe;
+    }
+  }
+  matcher=grayPercentagePattern.matcher(str);
+  if (matcher.matches()) {
+    setLastUsedInputFormat(Format.GRAY_PERCENTAGE);
+    try {
+      return ColorSpaceUtil.toColor(ColorSpace.getInstance(ColorSpace.CS_GRAY),new float[]{matcher.group(1) == null ? 0f : numberFormat.parse(matcher.group(1)).floatValue() / 100f});
     }
  catch (    NumberFormatException nfe) {
       ParseException pe=new ParseException(str,0);

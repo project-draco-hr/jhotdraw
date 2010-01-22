@@ -1,0 +1,3 @@
+{
+  labels=ResourceBundleUtil.getBundle("/org/jhotdraw.draw.Labels");
+}

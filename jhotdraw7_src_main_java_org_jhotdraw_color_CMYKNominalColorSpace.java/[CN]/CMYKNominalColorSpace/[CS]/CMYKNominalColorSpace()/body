@@ -1,0 +1,3 @@
+{
+  super(ColorSpace.TYPE_CMYK,4);
+}

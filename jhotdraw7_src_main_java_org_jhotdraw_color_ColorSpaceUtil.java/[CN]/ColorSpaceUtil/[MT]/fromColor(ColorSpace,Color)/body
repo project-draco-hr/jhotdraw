@@ -1,0 +1,9 @@
+{
+  if (isEqual(c.getColorSpace(),colorSpace)) {
+    float[] components=c.getComponents(null);
+    return components;
+  }
+ else {
+    return c.getComponents(colorSpace,null);
+  }
+}

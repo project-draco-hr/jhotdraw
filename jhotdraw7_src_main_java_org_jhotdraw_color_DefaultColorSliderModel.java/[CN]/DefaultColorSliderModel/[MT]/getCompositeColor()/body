@@ -1,9 +1,0 @@
-{
-  float[] c=new float[system.getComponentCount()];
-  int i=0;
-  for (  DefaultBoundedRangeModel brm : componentModels) {
-    c[i]=(brm.getValue() - brm.getMinimum()) / (float)(brm.getMaximum() - brm.getMinimum()) * (system.getMaxValue(i) - system.getMinValue(i)) + system.getMinValue(i);
-    i++;
-  }
-  return new CompositeColor(system,c);
-}

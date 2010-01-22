@@ -1,0 +1,20 @@
+{
+  JPanel p=new JPanel(new BorderLayout());
+  DefaultColorSliderModel m=new DefaultColorSliderModel(sys);
+  models.add(m);
+  m.addChangeListener(handler);
+  JColorWheel w=new JColorWheel();
+  w.setType(type);
+  w.setAngularComponentIndex(angularIndex);
+  w.setRadialComponentIndex(radialIndex);
+  w.setVerticalComponentIndex(verticalIndex);
+  w.setFlipX(flipX);
+  w.setFlipY(flipY);
+  w.setModel(m);
+  JSlider s=new JSlider(JSlider.VERTICAL);
+  m.configureSlider(verticalIndex,s);
+  p.add(new JLabel("<html>" + ColorSpaceUtil.getName(sys) + "<br>??:"+ angularIndex+ " r:"+ radialIndex+ " v:"+ verticalIndex),BorderLayout.NORTH);
+  p.add(w,BorderLayout.CENTER);
+  p.add(s,BorderLayout.EAST);
+  return p;
+}

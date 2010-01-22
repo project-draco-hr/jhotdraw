@@ -1,0 +1,4 @@
+{
+  int rgb=Color.HSBtoRGB(c[0],c[1],c[2]);
+  return new float[]{((rgb & 0xff0000) >> 16) / 255f,((rgb & 0xff00) >> 8) / 255f,(rgb & 0xff) / 255f};
+}

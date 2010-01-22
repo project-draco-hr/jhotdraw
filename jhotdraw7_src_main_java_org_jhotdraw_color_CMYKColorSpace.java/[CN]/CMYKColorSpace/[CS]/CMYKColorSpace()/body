@@ -1,0 +1,3 @@
+{
+  super(ICC_Profile.getInstance(CMYKColorSpace.class.getResourceAsStream("Generic CMYK Profile.icc")));
+}

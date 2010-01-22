@@ -1,0 +1,4 @@
+{
+  float[] rgb=toRGB(colorvalue);
+  return ColorSpace.getInstance(CS_sRGB).toCIEXYZ(rgb);
+}

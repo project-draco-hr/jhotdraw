@@ -1,6 +1,6 @@
 {
   Integer index=new Integer(componentIndex);
-  CompositeColor value=getCompositeColor();
+  Color value=getColor();
   for (  JSlider slider : sliders) {
     slider.putClientProperty("colorComponentChange",index);
     slider.putClientProperty("colorComponentValue",value);

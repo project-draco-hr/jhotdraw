@@ -1,0 +1,5 @@
+{
+  harmonicModel.setColorSpace(newValue);
+  getModel().setColorSpace(newValue);
+  getModel().setComponent(1,1f);
+}

@@ -1,16 +1,16 @@
 {
   HarmonicColorModel m=harmonicWheel.getHarmonicColorModel();
-  ColorSystem sys;
+  ColorSpace sys;
   if (sysRGBToggle.isSelected()) {
-    sys=new HSLRGBColorSystem();
+    sys=HSLColorSpace.getInstance();
   }
  else {
-    sys=new HSLRYBColorSystem();
+    sys=HSLPsychologicColorSpace.getInstance();
   }
-  m.setColorSystem(sys);
-  sliderModel.setColorSystem(sys);
+  m.setColorSpace(sys);
+  sliderModel.setColorSpace(sys);
   sliderModel.configureSlider(1,saturationSlider);
   if (harmonicWheel.getSelectedIndex() != -1) {
-    sliderModel.setCompositeColor(m.get(harmonicWheel.getSelectedIndex()));
+    sliderModel.setColor(m.get(harmonicWheel.getSelectedIndex()));
   }
 }

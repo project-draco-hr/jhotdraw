@@ -1,0 +1,3 @@
+{
+  return colorSpace.fromRGB(new float[]{r / 255f,g / 255f,b / 255f});
+}

@@ -1,0 +1,5 @@
+ColorSpace sys
+int angularIndex
+int radialIndex
+int verticalIndex
+JColorWheel.Type type

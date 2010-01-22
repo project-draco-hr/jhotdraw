@@ -1,9 +1,9 @@
 {
-  super(new HSLRYBColorSystem());
+  super(HSLPsychologicColorSpace.getInstance());
   initComponents();
   setRadialComponentIndex(2);
   setVerticalComponentIndex(1);
-  getModel().setComponentValue(1,1f);
+  getModel().setComponent(1,1f);
   setWheelInsets(new Insets(5,5,5,5));
   modelHandler=new ModelHandler();
   DefaultHarmonicColorModel p=new DefaultHarmonicColorModel();

@@ -1,12 +1,12 @@
 {
   if (derivedIndices != null) {
-    CompositeColor baseColor=model.get(getBaseIndex());
+    Color baseColor=model.get(getBaseIndex());
     if (baseColor != null) {
       float[] derivedComponents=null;
       for (int i=0; i < derivedIndices.length; i++) {
         derivedComponents=baseColor.getComponents(derivedComponents);
-        derivedComponents[componentIndex]=baseColor.getComponent(componentIndex) + difference * (i + 1);
-        model.set(derivedIndices[i],new CompositeColor(model.getColorSystem(),derivedComponents));
+        derivedComponents[componentIndex]+=difference * (i + 1);
+        model.set(derivedIndices[i],new Color(model.getColorSpace(),derivedComponents,1f));
       }
     }
   }

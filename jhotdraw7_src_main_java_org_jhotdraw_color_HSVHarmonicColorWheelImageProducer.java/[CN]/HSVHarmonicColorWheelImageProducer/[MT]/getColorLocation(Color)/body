@@ -1,5 +1,4 @@
 {
-  float[] hsb=new float[3];
-  hsb=colorSystem.toComponents(c.getRGB(),hsb);
+  float[] hsb=ColorSpaceUtil.fromColor(colorSpace,c);
   return getColorLocation(hsb);
 }

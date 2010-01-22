@@ -1,7 +1,0 @@
-{
-  if (obj instanceof ColorSystem) {
-    ColorSystem that=(ColorSystem)obj;
-    return that.getName().equals(getName());
-  }
-  return false;
-}

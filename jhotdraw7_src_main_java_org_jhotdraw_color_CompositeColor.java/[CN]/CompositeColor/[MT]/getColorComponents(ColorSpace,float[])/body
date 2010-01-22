@@ -1,0 +1,24 @@
+{
+  if (cs == null) {
+    cs=ColorSpace.getInstance(ColorSpace.CS_sRGB);
+  }
+  float f[];
+  if (fvalue == null) {
+    f=new float[3];
+    f[0]=((float)getRed()) / 255f;
+    f[1]=((float)getGreen()) / 255f;
+    f[2]=((float)getBlue()) / 255f;
+  }
+ else {
+    f=fvalue;
+  }
+  float tmp[]=cs.toCIEXYZ(f);
+  float tmpout[]=cspace.fromCIEXYZ(tmp);
+  if (compArray == null) {
+    return tmpout;
+  }
+  for (int i=0; i < tmpout.length; i++) {
+    compArray[i]=tmpout[i];
+  }
+  return compArray;
+}

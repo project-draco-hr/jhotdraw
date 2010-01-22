@@ -1,4 +1,0 @@
-{
-  this.system=system;
-  this.components=system.toComponents(color.getRGB(),null);
-}

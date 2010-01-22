@@ -1,0 +1,27 @@
+{
+  super(((int)(alpha * 255) << 24) | ColorSpaceUtil.toRGB(cspace,components),true);
+  boolean rangeError=false;
+  String badComponentString="";
+  int n=cspace.getNumComponents();
+  fvalue=new float[n];
+  for (int i=0; i < n; i++) {
+    if (components[i] < cspace.getMinValue(i) || components[i] > cspace.getMaxValue(i)) {
+      rangeError=true;
+      badComponentString=badComponentString + "Component " + i+ " ";
+    }
+ else {
+      fvalue[i]=components[i];
+    }
+  }
+  if (alpha < 0.0 || alpha > 1.0) {
+    rangeError=true;
+    badComponentString=badComponentString + "Alpha";
+  }
+ else {
+    falpha=alpha;
+  }
+  if (rangeError) {
+    throw new IllegalArgumentException("Color parameter outside of expected range: " + badComponentString);
+  }
+  cs=cspace;
+}

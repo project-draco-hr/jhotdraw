@@ -1,0 +1,12 @@
+{
+switch (idx) {
+case 0:
+    return "Hue";
+case 1:
+  return "Saturation";
+case 2:
+return "Brightness";
+default :
+throw new IllegalArgumentException("index must be between 0 and 2:" + idx);
+}
+}

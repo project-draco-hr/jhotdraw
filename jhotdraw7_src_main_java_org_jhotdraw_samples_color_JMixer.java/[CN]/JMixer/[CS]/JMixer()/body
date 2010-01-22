@@ -39,7 +39,7 @@
   swatchesList.setLayoutOrientation(javax.swing.JList.VERTICAL_WRAP);
   swatchesList.setVisibleRowCount(5);
   scrollPane.setViewportView(swatchesList);
-  harmonicWheel.setColorSystem(new HSLRGBColorSystem());
+  harmonicWheel.setColorSpace(HSLColorSpace.getInstance());
   ColorSliderModel m=harmonicWheel.getModel();
   scrollPane.setPreferredSize(new Dimension(100,100));
   swatchesList.setModel((ListModel)harmonicWheel.getHarmonicColorModel());
@@ -50,7 +50,7 @@
     }
   }
 );
-  sliderModel=new DefaultColorSliderModel(harmonicWheel.getHarmonicColorModel().getColorSystem());
+  sliderModel=new DefaultColorSliderModel(harmonicWheel.getHarmonicColorModel().getColorSpace());
   sliderModel.configureSlider(1,saturationSlider);
   harmonicWheel.getHarmonicColorModel().addListDataListener(new ListDataListener(){
     public void intervalAdded(    ListDataEvent e){
@@ -60,9 +60,9 @@
     public void contentsChanged(    ListDataEvent e){
       adjusting++;
       HarmonicColorModel hcm=harmonicWheel.getHarmonicColorModel();
-      CompositeColor cc=hcm.get(e.getIndex0());
+      Color cc=hcm.get(e.getIndex0());
       if (cc != null) {
-        sliderModel.setCompositeColor(cc);
+        sliderModel.setColor(cc);
       }
       adjusting--;
     }
@@ -76,7 +76,7 @@
         int index=harmonicWheel.getSelectedIndex();
         HarmonicColorModel hcm=harmonicWheel.getHarmonicColorModel();
         if (index != -1) {
-          sliderModel.setCompositeColor(hcm.get(index));
+          sliderModel.setColor(hcm.get(index));
         }
         adjusting--;
       }
@@ -90,9 +90,9 @@
         if (!hcm.isAdjusting()) {
           int index=harmonicWheel.getSelectedIndex();
           if (index != -1) {
-            CompositeColor cc=sliderModel.getCompositeColor();
-            CompositeColor oldValue=hcm.get(index);
-            CompositeColor newValue=new CompositeColor(oldValue.getSystem(),oldValue.getComponent(0),cc.getComponent(1),oldValue.getComponent(2));
+            Color cc=sliderModel.getColor();
+            Color oldValue=hcm.get(index);
+            Color newValue=new Color(oldValue.getColorSpace(),ColorSpaceUtil.fromColor(oldValue.getColorSpace(),cc),1f);
             hcm.set(index,newValue);
           }
         }
@@ -104,13 +104,13 @@
   harmonicWheel.setSelectedIndex(0);
   harmonicWheel.getHarmonicColorModel().setSize(25);
   HarmonicColorModel h=harmonicWheel.getHarmonicColorModel();
-  ColorSystem sys=h.getColorSystem();
-  h.set(0,new CompositeColor(sys,new Color(0,19,148)));
-  h.set(1,new CompositeColor(sys,new Color(218,37,26)));
-  h.set(2,new CompositeColor(sys,new Color(70,148,27)));
-  h.set(3,new CompositeColor(sys,new Color(174,46,248)));
-  h.set(4,new CompositeColor(sys,new Color(255,252,76)));
-  h.set(5,new CompositeColor(sys,new Color(234,155,65)));
-  h.set(6,new CompositeColor(sys,new Color(51,51,51)));
-  h.set(7,new CompositeColor(sys,new Color(153,153,153)));
+  ColorSpace sys=h.getColorSpace();
+  h.set(0,new Color(sys,ColorSpaceUtil.fromRGB(sys,0,19,148),1f));
+  h.set(1,new Color(sys,ColorSpaceUtil.fromRGB(sys,218,37,26),1f));
+  h.set(2,new Color(sys,ColorSpaceUtil.fromRGB(sys,70,148,27),1f));
+  h.set(3,new Color(sys,ColorSpaceUtil.fromRGB(sys,174,46,248),1f));
+  h.set(4,new Color(sys,ColorSpaceUtil.fromRGB(sys,255,252,76),1f));
+  h.set(5,new Color(sys,ColorSpaceUtil.fromRGB(sys,234,155,65),1f));
+  h.set(6,new Color(sys,ColorSpaceUtil.fromRGB(sys,51,51,51),1f));
+  h.set(7,new Color(sys,ColorSpaceUtil.fromRGB(sys,153,153,153),1f));
 }

@@ -1,8 +1,0 @@
-{
-  float[] c=newValue.getComponents();
-  int i=0;
-  for (  DefaultBoundedRangeModel brm : componentModels) {
-    brm.setValue((int)(((c[i] - system.getMinValue(i)) / (system.getMaxValue(i) - system.getMinValue(i))) * (brm.getMaximum() - brm.getMinimum()) + brm.getMinimum()));
-    i++;
-  }
-}
