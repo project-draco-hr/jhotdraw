@@ -8,4 +8,6 @@
   collectionsScrollPane.setFont(smallSystemFont);
   familiesScrollPane.setFont(smallSystemFont);
   facesScrollPane.setFont(smallSystemFont);
+  setOpaque(true);
+  setBackground(new Color(0xededed));
 }
