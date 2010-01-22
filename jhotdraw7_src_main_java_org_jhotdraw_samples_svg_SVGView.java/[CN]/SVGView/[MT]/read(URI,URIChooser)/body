@@ -2,7 +2,11 @@
   try {
     JFileURIChooser fc=(JFileURIChooser)chooser;
     final Drawing drawing=createDrawing();
-    InputFormat selectedFormat=fileFilterInputFormatMap.get(fc.getFileFilter());
+    HashMap<javax.swing.filechooser.FileFilter,InputFormat> fileFilterInputFormatMap=null;
+    if (fc != null) {
+      fileFilterInputFormatMap=(HashMap<javax.swing.filechooser.FileFilter,InputFormat>)fc.getClientProperty(SVGApplicationModel.INPUT_FORMAT_MAP_CLIENT_PROPERTY);
+    }
+    InputFormat selectedFormat=(fc == null) ? null : fileFilterInputFormatMap.get(fc.getFileFilter());
     boolean success=false;
     if (selectedFormat != null) {
       try {

@@ -1,7 +1,7 @@
 {
   JFileURIChooser c=new JFileURIChooser();
   final HashMap<FileFilter,OutputFormat> fileFilterOutputFormatMap=new HashMap<FileFilter,OutputFormat>();
-  c.putClientProperty("ffOutputFormatMap",fileFilterOutputFormatMap);
+  c.putClientProperty(OUTPUT_FORMAT_MAP_CLIENT_PROPERTY,fileFilterOutputFormatMap);
   if (v == null) {
     v=new SVGView();
   }
