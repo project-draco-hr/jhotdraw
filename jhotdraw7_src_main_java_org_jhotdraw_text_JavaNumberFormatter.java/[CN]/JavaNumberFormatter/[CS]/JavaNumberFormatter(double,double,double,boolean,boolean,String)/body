@@ -6,4 +6,5 @@
   setAllowsNullValue(allowsNullValue);
   setAppendsDotZero(appendsDotZero);
   setOverwriteMode(false);
+  setUnit(unit);
 }

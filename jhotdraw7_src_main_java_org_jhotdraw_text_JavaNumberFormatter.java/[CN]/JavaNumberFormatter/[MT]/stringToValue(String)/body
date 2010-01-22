@@ -2,6 +2,12 @@
   if ((text == null || text.length() == 0) && getAllowsNullValue()) {
     return null;
   }
+  if (unit != null) {
+    int p=text.lastIndexOf(unit);
+    if (p != -1) {
+      text=text.substring(0,p);
+    }
+  }
   Class valueClass=getValueClass();
   Object value;
   if (valueClass != null) {
