@@ -15,7 +15,7 @@
     final OutputFormat selectedFormat=fileFilterOutputFormatMap.get(fc.getFileFilter());
     new Worker(){
       @Override protected Object construct() throws IOException {
-        svgPanel.write(selectedFile,selectedFormat);
+        svgPanel.write(selectedFile.toURI(),selectedFormat);
         return null;
       }
       @Override protected void done(      Object value){

@@ -10,7 +10,7 @@
     boolean success=false;
     if (selectedFormat != null) {
       try {
-        selectedFormat.read(new File(uri),drawing,true);
+        selectedFormat.read(uri,drawing,true);
         success=true;
       }
  catch (      Exception e) {
@@ -21,7 +21,7 @@
       for (      InputFormat sfi : drawing.getInputFormats()) {
         if (sfi != selectedFormat) {
           try {
-            sfi.read(new File(uri),drawing,true);
+            sfi.read(uri,drawing,true);
             success=true;
             break;
           }
@@ -35,7 +35,7 @@
       throw new IOException(labels.getFormatted("file.open.unsupportedFileFormat.message",URIUtil.getName(uri)));
     }
     SwingUtilities.invokeAndWait(new Runnable(){
-      public void run(){
+      @Override public void run(){
         Drawing oldDrawing=svgPanel.getDrawing();
         svgPanel.setDrawing(drawing);
         firePropertyChange(DRAWING_PROPERTY,oldDrawing,svgPanel.getDrawing());

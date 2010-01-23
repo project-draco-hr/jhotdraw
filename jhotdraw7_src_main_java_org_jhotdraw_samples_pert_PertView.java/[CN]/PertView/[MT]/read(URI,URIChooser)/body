@@ -2,7 +2,7 @@
   try {
     final Drawing drawing=createDrawing();
     InputFormat inputFormat=drawing.getInputFormats().get(0);
-    inputFormat.read(new File(f),drawing,true);
+    inputFormat.read(f,drawing,true);
     SwingUtilities.invokeAndWait(new Runnable(){
       @Override public void run(){
         view.getDrawing().removeUndoableEditListener(undo);

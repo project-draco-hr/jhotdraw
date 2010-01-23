@@ -4,7 +4,7 @@
     boolean success=false;
     for (    InputFormat sfi : drawing.getInputFormats()) {
       try {
-        sfi.read(new File(f),drawing,true);
+        sfi.read(f,drawing,true);
         success=true;
         break;
       }
@@ -16,7 +16,7 @@
       throw new IOException(labels.getFormatted("file.open.unsupportedFileFormat.message",URIUtil.getName(f)));
     }
     SwingUtilities.invokeAndWait(new Runnable(){
-      public void run(){
+      @Override public void run(){
         view.getDrawing().removeUndoableEditListener(undo);
         view.setDrawing(drawing);
         view.getDrawing().addUndoableEditListener(undo);

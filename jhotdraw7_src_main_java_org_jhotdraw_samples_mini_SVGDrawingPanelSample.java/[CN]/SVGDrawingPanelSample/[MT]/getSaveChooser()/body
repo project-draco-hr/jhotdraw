@@ -14,7 +14,7 @@
     }
     saveChooser.setFileFilter(firstFF);
     saveChooser.addPropertyChangeListener(new PropertyChangeListener(){
-      public void propertyChange(      PropertyChangeEvent evt){
+      @Override public void propertyChange(      PropertyChangeEvent evt){
         if (evt.getPropertyName().equals("fileFilterChanged")) {
           OutputFormat outputFormat=fileFilterOutputFormatMap.get(evt.getNewValue());
           saveChooser.setAccessory((outputFormat == null) ? null : outputFormat.getOutputFormatAccessory());

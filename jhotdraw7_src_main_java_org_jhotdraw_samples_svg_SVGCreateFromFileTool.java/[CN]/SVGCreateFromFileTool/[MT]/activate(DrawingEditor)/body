@@ -30,10 +30,10 @@
     if (file.getName().toLowerCase().endsWith(".svg") || file.getName().toLowerCase().endsWith(".svgz")) {
       prototype=((Figure)groupPrototype.clone());
       worker=new Worker<Drawing>(){
-        public Drawing construct() throws IOException {
+        @Override public Drawing construct() throws IOException {
           Drawing drawing=new DefaultDrawing();
           InputFormat in=(file.getName().toLowerCase().endsWith(".svg")) ? new SVGInputFormat() : new SVGZInputFormat();
-          in.read(file,drawing);
+          in.read(file.toURI(),drawing);
           return drawing;
         }
         @Override protected void done(        Drawing drawing){
@@ -67,7 +67,7 @@
       prototype=imagePrototype;
       final ImageHolderFigure loaderFigure=((ImageHolderFigure)prototype.clone());
       worker=new Worker(){
-        protected Object construct() throws IOException {
+        @Override protected Object construct() throws IOException {
           ((ImageHolderFigure)loaderFigure).loadImage(file);
           return null;
         }

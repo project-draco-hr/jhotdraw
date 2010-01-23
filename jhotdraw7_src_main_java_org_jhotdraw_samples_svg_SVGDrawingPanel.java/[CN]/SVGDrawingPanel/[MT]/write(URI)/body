@@ -25,9 +25,10 @@ catch (    InvocationTargetException ex) {
   if (saveDrawing.getOutputFormats().size() == 0) {
     throw new InternalError("Drawing object has no output formats.");
   }
+  File f=new File(uri);
   for (  OutputFormat format : saveDrawing.getOutputFormats()) {
     if (format.getFileFilter().accept(f)) {
-      format.write(f,saveDrawing);
+      format.write(uri,saveDrawing);
       return;
     }
   }

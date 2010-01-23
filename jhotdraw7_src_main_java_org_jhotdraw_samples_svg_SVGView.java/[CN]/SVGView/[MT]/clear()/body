@@ -2,7 +2,7 @@
   final Drawing newDrawing=createDrawing();
   try {
     Runnable r=new Runnable(){
-      public void run(){
+      @Override public void run(){
         Drawing oldDrawing=svgPanel.getDrawing();
         svgPanel.setDrawing(newDrawing);
         firePropertyChange(DRAWING_PROPERTY,oldDrawing,newDrawing);

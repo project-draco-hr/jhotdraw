@@ -8,7 +8,7 @@
       drawingRect.add(f.getBounds());
     }
   }
-  AffineTransform drawingTransform=new AffineTransform();
-  drawingTransform.translate(-Math.min(0,drawingRect.x),-Math.min(0,drawingRect.y));
-  write(out,figures,drawingTransform,new Dimension((int)(Math.abs(drawingRect.x) + drawingRect.width),(int)(Math.abs(drawingRect.y) + drawingRect.height)));
+  AffineTransform tx=new AffineTransform();
+  tx.translate(-Math.min(0,drawingRect.x),-Math.min(0,drawingRect.y));
+  write(out,figures,tx,new Dimension((int)(Math.abs(drawingRect.x) + drawingRect.width),(int)(Math.abs(drawingRect.y) + drawingRect.height)));
 }

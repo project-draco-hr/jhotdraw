@@ -12,7 +12,7 @@
     f.remap(originalToDuplicateMap,true);
   }
   return new AbstractTransferable(dataFlavor){
-    public Object getTransferData(    DataFlavor flavor) throws UnsupportedFlavorException, IOException {
+    @Override public Object getTransferData(    DataFlavor flavor) throws UnsupportedFlavorException, IOException {
       if (isDataFlavorSupported(flavor)) {
         return d;
       }
