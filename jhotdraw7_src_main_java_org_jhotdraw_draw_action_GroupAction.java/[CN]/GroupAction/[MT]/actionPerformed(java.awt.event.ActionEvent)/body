@@ -8,7 +8,7 @@
         @Override public String getPresentationName(){
           return labels.getString("edit.groupSelection.text");
         }
-        public void redo() throws CannotRedoException {
+        @Override public void redo() throws CannotRedoException {
           super.redo();
           groupFigures(view,group,ungroupedFigures);
         }

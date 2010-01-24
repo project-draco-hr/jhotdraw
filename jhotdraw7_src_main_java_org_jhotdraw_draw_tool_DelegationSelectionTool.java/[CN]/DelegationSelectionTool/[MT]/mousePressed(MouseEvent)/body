@@ -11,7 +11,7 @@
  else {
     super.mousePressed(evt);
     popupTimer=new javax.swing.Timer(1000,new ActionListener(){
-      public void actionPerformed(      ActionEvent aevt){
+      @Override public void actionPerformed(      ActionEvent aevt){
         handlePopupMenu(evt);
         popupTimer=null;
       }

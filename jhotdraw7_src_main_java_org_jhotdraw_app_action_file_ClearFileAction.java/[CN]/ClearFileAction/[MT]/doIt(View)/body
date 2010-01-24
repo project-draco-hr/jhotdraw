@@ -1,11 +1,11 @@
 {
   view.setEnabled(false);
   view.execute(new Worker(){
-    public Object construct(){
+    @Override public Object construct(){
       view.clear();
       return null;
     }
-    public void finished(){
+    @Override public void finished(){
       view.setEnabled(true);
     }
   }

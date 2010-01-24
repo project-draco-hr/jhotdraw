@@ -37,7 +37,7 @@
     }
 );
     v.addPropertyChangeListener(new PropertyChangeListener(){
-      public void propertyChange(      PropertyChangeEvent evt){
+      @Override public void propertyChange(      PropertyChangeEvent evt){
         String name=evt.getPropertyName();
         if (name == View.HAS_UNSAVED_CHANGES_PROPERTY || name == View.URI_PROPERTY) {
           updateViewTitle(v,f);
@@ -46,7 +46,7 @@
     }
 );
     f.addPropertyChangeListener(new PropertyChangeListener(){
-      public void propertyChange(      PropertyChangeEvent evt){
+      @Override public void propertyChange(      PropertyChangeEvent evt){
         String name=evt.getPropertyName();
         if (name.equals("selected")) {
           if (evt.getNewValue().equals(Boolean.TRUE)) {

@@ -3,7 +3,7 @@
   noteLabel.setText(newValue);
   if (oldValue == null || newValue == null && oldValue != newValue) {
     Runnable r=new Runnable(){
-      public void run(){
+      @Override public void run(){
         noteLabel.setVisible(newValue != null);
         validate();
       }

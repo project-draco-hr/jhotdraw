@@ -1,6 +1,6 @@
 {
   SwingUtilities.invokeLater(new Runnable(){
-    public void run(){
+    @Override public void run(){
       JFileChooser fc=new JFileChooser();
       fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
       fc.setDialogTitle("Choose a directory");

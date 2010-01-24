@@ -10,7 +10,7 @@
   ccModel.configureSlider(2,brightnessSlider);
   colorWheel.setModel(ccModel);
   ccModel.addChangeListener(new ChangeListener(){
-    public void stateChanged(    ChangeEvent evt){
+    @Override public void stateChanged(    ChangeEvent evt){
       setColorToModel(ccModel.getColor());
     }
   }

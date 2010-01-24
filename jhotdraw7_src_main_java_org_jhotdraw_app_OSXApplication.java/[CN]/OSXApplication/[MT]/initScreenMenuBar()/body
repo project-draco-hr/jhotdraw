@@ -1,5 +1,4 @@
 {
-  ApplicationModel model=getModel();
   setScreenMenuBar(createMenuBar(null));
   paletteHandler.add((JFrame)getComponent(),null);
   Action a;

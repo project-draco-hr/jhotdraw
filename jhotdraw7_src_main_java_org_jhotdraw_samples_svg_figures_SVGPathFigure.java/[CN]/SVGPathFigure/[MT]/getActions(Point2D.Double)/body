@@ -3,7 +3,7 @@
   LinkedList<Action> actions=new LinkedList<Action>();
   if (get(TRANSFORM) != null) {
     actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")){
-      public void actionPerformed(      ActionEvent evt){
+      @Override public void actionPerformed(      ActionEvent evt){
         ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
         willChange();
         fireUndoableEditHappened(TRANSFORM.setUndoable(SVGPathFigure.this,null));
@@ -12,7 +12,7 @@
     }
 );
     actions.add(new AbstractAction(labels.getString("edit.flattenTransform.text")){
-      public void actionPerformed(      ActionEvent evt){
+      @Override public void actionPerformed(      ActionEvent evt){
         final Object restoreData=getTransformRestoreData();
         UndoableEdit edit=new AbstractUndoableEdit(){
           @Override public String getPresentationName(){
@@ -43,7 +43,7 @@
   }
   if (getChild(getChildCount() - 1).get(PATH_CLOSED)) {
     actions.add(new AbstractAction(labels.getString("attribute.openPath.text")){
-      public void actionPerformed(      ActionEvent evt){
+      @Override public void actionPerformed(      ActionEvent evt){
         willChange();
         for (        Figure child : getChildren()) {
           getDrawing().fireUndoableEditHappened(PATH_CLOSED.setUndoable(child,false));
@@ -55,7 +55,7 @@
   }
  else {
     actions.add(new AbstractAction(labels.getString("attribute.closePath.text")){
-      public void actionPerformed(      ActionEvent evt){
+      @Override public void actionPerformed(      ActionEvent evt){
         willChange();
         for (        Figure child : getChildren()) {
           getDrawing().fireUndoableEditHappened(PATH_CLOSED.setUndoable(child,true));
@@ -67,7 +67,7 @@
   }
   if (get(WINDING_RULE) != WindingRule.EVEN_ODD) {
     actions.add(new AbstractAction(labels.getString("attribute.windingRule.evenOdd.text")){
-      public void actionPerformed(      ActionEvent evt){
+      @Override public void actionPerformed(      ActionEvent evt){
         willChange();
         getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(SVGPathFigure.this,WindingRule.EVEN_ODD));
         changed();
@@ -77,7 +77,7 @@
   }
  else {
     actions.add(new AbstractAction(labels.getString("attribute.windingRule.nonZero.text")){
-      public void actionPerformed(      ActionEvent evt){
+      @Override public void actionPerformed(      ActionEvent evt){
         willChange();
         set(WINDING_RULE,WindingRule.NON_ZERO);
         changed();

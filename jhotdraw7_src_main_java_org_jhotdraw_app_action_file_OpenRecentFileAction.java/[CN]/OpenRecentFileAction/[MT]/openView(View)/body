@@ -10,7 +10,7 @@
   view.setMultipleOpenId(multipleOpenId);
   view.setEnabled(false);
   view.execute(new Worker(){
-    protected Object construct() throws IOException {
+    @Override protected Object construct() throws IOException {
       boolean exists=true;
       try {
         File f=new File(uri);
@@ -49,7 +49,7 @@
       }
       ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
       JSheet.showMessageSheet(view.getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>"+ labels.getFormatted("file.open.couldntOpen.message",URIUtil.getName(uri))+ "</b><p>"+ (message == null ? "" : message),JOptionPane.ERROR_MESSAGE,new SheetListener(){
-        public void optionSelected(        SheetEvent evt){
+        @Override public void optionSelected(        SheetEvent evt){
           view.setEnabled(true);
         }
       }

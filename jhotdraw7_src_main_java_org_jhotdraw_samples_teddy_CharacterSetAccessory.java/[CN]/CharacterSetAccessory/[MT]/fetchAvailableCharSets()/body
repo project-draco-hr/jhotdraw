@@ -1,7 +1,7 @@
 {
   if (availableCharSets == null) {
     new Worker(){
-      public Object construct(){
+      @Override public Object construct(){
         SortedMap<String,Charset> sm=Charset.availableCharsets();
         LinkedList<String> list=new LinkedList<String>();
         for (        String key : sm.keySet()) {

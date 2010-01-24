@@ -18,7 +18,7 @@
   c.add(progress);
   progress.revalidate();
   new Worker(){
-    protected Object construct() throws Exception {
+    @Override protected Object construct() throws Exception {
       Thread t=new Thread(){
         @Override public void run(){
           drawingComponent=createDrawingComponent();
@@ -33,7 +33,7 @@
       t.join();
       return drawing;
     }
-    protected void done(    Object result){
+    @Override protected void done(    Object result){
       Container c=getContentPane();
       c.setLayout(new BorderLayout());
       c.removeAll();
@@ -51,7 +51,7 @@
       }
       drawingComponent.revalidate();
     }
-    protected void failed(    Throwable result){
+    @Override protected void failed(    Throwable result){
       Container c=getContentPane();
       c.setLayout(new BorderLayout());
       c.removeAll();
@@ -61,7 +61,7 @@
       MessagePanel mp=new MessagePanel(UIManager.getIcon("OptionPane.errorIcon"),labels.getFormatted("messageLoadFailed",htmlencode(getParameter("DrawingURL")),htmlencode(message)));
       c.add(mp);
       mp.addActionListener(new ActionListener(){
-        public void actionPerformed(        ActionEvent evt){
+        @Override public void actionPerformed(        ActionEvent evt){
           if (evt.getActionCommand().equals("close")) {
             close();
           }
@@ -70,7 +70,7 @@
 );
       mp.revalidate();
     }
-    protected void finished(){
+    @Override protected void finished(){
       long end=System.currentTimeMillis();
       System.out.println("AbstractDrawingApplet startup latency:" + (end - start));
     }

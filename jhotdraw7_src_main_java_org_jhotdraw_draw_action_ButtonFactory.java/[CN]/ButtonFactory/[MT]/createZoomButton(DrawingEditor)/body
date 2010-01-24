@@ -10,7 +10,7 @@
     zoomPopupButton.setText((int)(editor.getDrawingViews().iterator().next().getScaleFactor() * 100) + " %");
   }
   editor.addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
       if (evt.getPropertyName() == DrawingEditor.ACTIVE_VIEW_PROPERTY) {
         if (evt.getNewValue() == null) {
           zoomPopupButton.setText("100 %");

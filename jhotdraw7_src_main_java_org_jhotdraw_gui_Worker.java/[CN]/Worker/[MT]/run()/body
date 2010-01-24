@@ -5,7 +5,7 @@
  catch (  Throwable e) {
     setError(e);
     SwingUtilities.invokeLater(new Runnable(){
-      public void run(){
+      @Override public void run(){
         failed(getError());
         finished();
       }
@@ -14,7 +14,7 @@
     return;
   }
   SwingUtilities.invokeLater(new Runnable(){
-    public void run(){
+    @Override public void run(){
       done(getValue());
       finished();
     }

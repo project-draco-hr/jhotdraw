@@ -1,7 +1,7 @@
 {
   super(label);
   propertyHandler=new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
       String name=evt.getPropertyName();
       if (name.equals("visible")) {
         putValue(ActionUtil.SELECTED_KEY,evt.getNewValue());

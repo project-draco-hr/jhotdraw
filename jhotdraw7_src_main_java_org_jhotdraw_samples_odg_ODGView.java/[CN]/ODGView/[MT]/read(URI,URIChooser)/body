@@ -9,7 +9,7 @@
     sf.read(f,drawing,true);
     System.out.println("ODCView read(" + f + ") drawing.childCount="+ drawing.getChildCount());
     SwingUtilities.invokeAndWait(new Runnable(){
-      public void run(){
+      @Override public void run(){
         view.getDrawing().removeUndoableEditListener(undo);
         view.setDrawing(drawing);
         view.getDrawing().addUndoableEditListener(undo);

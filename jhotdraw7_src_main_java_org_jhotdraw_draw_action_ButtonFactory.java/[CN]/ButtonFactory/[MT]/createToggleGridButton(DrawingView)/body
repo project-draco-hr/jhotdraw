@@ -5,13 +5,13 @@
   labels.configureToolBarButton(toggleButton,"view.toggleGrid");
   toggleButton.setFocusable(false);
   toggleButton.addItemListener(new ItemListener(){
-    public void itemStateChanged(    ItemEvent event){
+    @Override public void itemStateChanged(    ItemEvent event){
       view.setConstrainerVisible(toggleButton.isSelected());
     }
   }
 );
   view.addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
       if (evt.getPropertyName() == DrawingView.CONSTRAINER_VISIBLE_PROPERTY) {
         toggleButton.setSelected(view.isConstrainerVisible());
       }

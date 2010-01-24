@@ -65,7 +65,7 @@ case 2:
   gridSizeField.setHorizontalAlignment(JTextField.LEADING);
   final GridConstrainer constrainer=(GridConstrainer)view.getVisibleConstrainer();
   gridSizeField.addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
       if (evt.getPropertyName().equals("value")) {
         if (evt.getNewValue() != null) {
           constrainer.setWidth((Double)evt.getNewValue());

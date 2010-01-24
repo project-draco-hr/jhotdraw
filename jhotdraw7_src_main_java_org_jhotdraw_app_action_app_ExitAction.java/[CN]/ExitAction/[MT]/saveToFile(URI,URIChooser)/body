@@ -1,7 +1,7 @@
 {
   final View v=unsavedView;
   v.execute(new Worker(){
-    protected Object construct() throws IOException {
+    @Override protected Object construct() throws IOException {
       v.write(uri,chooser);
       return null;
     }

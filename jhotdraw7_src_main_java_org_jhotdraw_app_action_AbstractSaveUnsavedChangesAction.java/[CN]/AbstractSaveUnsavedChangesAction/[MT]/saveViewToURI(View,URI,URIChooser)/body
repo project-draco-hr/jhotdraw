@@ -1,6 +1,6 @@
 {
   p.execute(new Worker(){
-    protected Object construct() throws IOException {
+    @Override protected Object construct() throws IOException {
       p.write(uri,chooser);
       return null;
     }

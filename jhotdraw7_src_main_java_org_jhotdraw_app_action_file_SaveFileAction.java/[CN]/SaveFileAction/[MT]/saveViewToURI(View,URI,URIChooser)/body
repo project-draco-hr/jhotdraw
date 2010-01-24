@@ -1,6 +1,6 @@
 {
   view.execute(new Worker(){
-    protected Object construct() throws IOException {
+    @Override protected Object construct() throws IOException {
       view.write(file,chooser);
       return null;
     }

@@ -10,7 +10,7 @@
   newP.setMultipleOpenId(multiOpenId);
   app.add(newP);
   newP.execute(new Runnable(){
-    public void run(){
+    @Override public void run(){
       newP.clear();
     }
   }

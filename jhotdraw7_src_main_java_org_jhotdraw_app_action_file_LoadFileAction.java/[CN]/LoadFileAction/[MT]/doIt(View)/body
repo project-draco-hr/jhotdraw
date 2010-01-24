@@ -3,7 +3,7 @@
   Window wAncestor=SwingUtilities.getWindowAncestor(view.getComponent());
   final Component oldFocusOwner=(wAncestor == null) ? null : wAncestor.getFocusOwner();
   JSheet.showOpenSheet(fileChooser,view.getComponent(),new SheetListener(){
-    public void optionSelected(    final SheetEvent evt){
+    @Override public void optionSelected(    final SheetEvent evt){
       if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
         final URI uri;
         if ((evt.getChooser() instanceof JFileURIChooser) && evt.getFileChooser().getFileFilter() instanceof ExtensionFileFilter) {

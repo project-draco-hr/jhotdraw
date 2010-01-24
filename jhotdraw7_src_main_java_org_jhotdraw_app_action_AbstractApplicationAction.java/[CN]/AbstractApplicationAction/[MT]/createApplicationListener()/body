@@ -1,6 +1,6 @@
 {
   return new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
       if (evt.getPropertyName() == "enabled") {
         updateApplicationEnabled();
       }

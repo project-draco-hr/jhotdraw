@@ -6,7 +6,7 @@
     view.setEnabled(false);
     URIChooser fileChooser=getApplication().getExportChooser(view);
     JSheet.showSheet(fileChooser,view.getComponent(),labels.getString("filechooser.export"),new SheetListener(){
-      public void optionSelected(      final SheetEvent evt){
+      @Override public void optionSelected(      final SheetEvent evt){
         if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
           final URI uri=evt.getChooser().getSelectedURI();
           if (evt.getChooser() instanceof JFileURIChooser) {

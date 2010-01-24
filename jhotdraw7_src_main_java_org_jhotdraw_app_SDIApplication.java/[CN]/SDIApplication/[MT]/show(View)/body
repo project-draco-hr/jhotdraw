@@ -26,7 +26,7 @@
  while (moved);
     f.setLocation(loc);
     f.addWindowListener(new WindowAdapter(){
-      public void windowClosing(      final WindowEvent evt){
+      @Override public void windowClosing(      final WindowEvent evt){
         getAction(view,CloseFileAction.ID).actionPerformed(new ActionEvent(f,ActionEvent.ACTION_PERFORMED,"windowClosing"));
       }
       @Override public void windowClosed(      final WindowEvent evt){
@@ -38,7 +38,7 @@
     }
 );
     view.addPropertyChangeListener(new PropertyChangeListener(){
-      public void propertyChange(      PropertyChangeEvent evt){
+      @Override public void propertyChange(      PropertyChangeEvent evt){
         String name=evt.getPropertyName();
         if (name.equals(View.HAS_UNSAVED_CHANGES_PROPERTY) || name.equals(View.URI_PROPERTY) || name.equals(View.TITLE_PROPERTY)|| name.equals(View.MULTIPLE_OPEN_ID_PROPERTY)) {
           updateViewTitle(view,f);

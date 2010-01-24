@@ -9,7 +9,9 @@
       odgRect.get(TRANSFORM).inverseTransform(p,p);
     }
  catch (    NoninvertibleTransformException ex) {
-      if (DEBUG)       ex.printStackTrace();
+      if (DEBUG) {
+        ex.printStackTrace();
+      }
     }
   }
   Rectangle2D.Double r=odgRect.getBounds();

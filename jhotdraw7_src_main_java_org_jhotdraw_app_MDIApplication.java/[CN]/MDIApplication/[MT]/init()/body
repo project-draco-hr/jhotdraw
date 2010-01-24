@@ -14,7 +14,7 @@
   setActionMap(createModelActionMap(model));
   parentFrame.getContentPane().add(wrapDesktopPane(scrollPane,toolBarActions));
   parentFrame.addWindowListener(new WindowAdapter(){
-    public void windowClosing(    final WindowEvent evt){
+    @Override public void windowClosing(    final WindowEvent evt){
       getAction(null,ExitAction.ID).actionPerformed(new ActionEvent(parentFrame,ActionEvent.ACTION_PERFORMED,"windowClosing"));
     }
   }

@@ -1,7 +1,7 @@
 {
   if (eventHandler == null) {
     eventHandler=new PropertyChangeListener(){
-      public void propertyChange(      PropertyChangeEvent evt){
+      @Override public void propertyChange(      PropertyChangeEvent evt){
         String name=evt.getPropertyName();
         if (name == DISCLOSURE_STATE_PROPERTY) {
           try {

@@ -1,6 +1,6 @@
 {
   SwingUtilities.invokeLater(new Runnable(){
-    public void run(){
+    @Override public void run(){
       GraphicalCompositeFigure composite=new GraphicalCompositeFigure();
       composite.add(new TextFigure("Above the line"));
       composite.add(new LineFigure());

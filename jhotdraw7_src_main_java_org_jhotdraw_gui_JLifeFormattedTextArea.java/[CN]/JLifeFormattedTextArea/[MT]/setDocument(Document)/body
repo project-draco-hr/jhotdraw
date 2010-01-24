@@ -3,7 +3,7 @@
   if (formattedTextFieldAdapter == null) {
     formattedTextFieldAdapter=new JLifeFormattedTextField();
     handler=new PropertyChangeListener(){
-      public void propertyChange(      PropertyChangeEvent evt){
+      @Override public void propertyChange(      PropertyChangeEvent evt){
         if (evt.getSource() == formattedTextFieldAdapter && evt.getPropertyName() == "value") {
           firePropertyChange(evt.getPropertyName(),evt.getOldValue(),evt.getNewValue());
         }

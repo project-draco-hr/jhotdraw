@@ -1,5 +1,4 @@
 {
-  Comparable min=getMinimum();
   try {
     if (min != null && min.compareTo(value) > 0) {
       return false;
@@ -11,7 +10,6 @@
     }
     return false;
   }
-  Comparable max=getMaximum();
   try {
     if (max != null && max.compareTo(value) < 0) {
       return false;

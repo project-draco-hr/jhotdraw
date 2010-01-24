@@ -6,7 +6,7 @@
   final double oldFactor=getView().getScaleFactor();
   getView().setScaleFactor(scaleFactor);
   SwingUtilities.invokeLater(new Runnable(){
-    public void run(){
+    @Override public void run(){
       if (vRect != null) {
         vRect.x=(int)(vRect.x / oldFactor * scaleFactor);
         vRect.y=(int)(vRect.y / oldFactor * scaleFactor);

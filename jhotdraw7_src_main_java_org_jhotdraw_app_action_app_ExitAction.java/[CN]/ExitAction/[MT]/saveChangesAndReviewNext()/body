@@ -3,7 +3,7 @@
   if (v.getURI() == null) {
     URIChooser chooser=getChooser(v);
     JSheet.showSaveSheet(chooser,unsavedView.getComponent(),new SheetListener(){
-      public void optionSelected(      final SheetEvent evt){
+      @Override public void optionSelected(      final SheetEvent evt){
         if (evt.getOption() == URIChooser.APPROVE_OPTION) {
           final URI uri=evt.getChooser().getSelectedURI();
           saveToFileAndReviewNext(uri,evt.getChooser());

@@ -1,17 +1,16 @@
 {
-  if (get(TRANSFORM) != null) {
-    try {
-      p=(Point2D.Double)get(TRANSFORM).inverseTransform(p,new Point2D.Double());
-    }
- catch (    NoninvertibleTransformException ex) {
-      InternalError error=new InternalError(ex.getMessage());
-      error.initCause(ex);
-      throw error;
-    }
-  }
-  ;
   if (getDrawingArea().contains(p)) {
-    for (    Figure child : getChildrenFrontToBack()) {
+    if (get(TRANSFORM) != null) {
+      try {
+        p=(Point2D.Double)get(TRANSFORM).inverseTransform(p,new Point2D.Double());
+      }
+ catch (      NoninvertibleTransformException ex) {
+        InternalError error=new InternalError(ex.getMessage());
+        error.initCause(ex);
+        throw error;
+      }
+    }
+    for (    Figure child : getChildren()) {
       if (child.isVisible() && child.contains(p)) {
         return true;
       }

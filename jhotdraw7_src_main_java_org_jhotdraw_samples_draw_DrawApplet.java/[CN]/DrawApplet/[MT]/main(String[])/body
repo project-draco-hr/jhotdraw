@@ -1,6 +1,6 @@
 {
   SwingUtilities.invokeLater(new Runnable(){
-    public void run(){
+    @Override public void run(){
       JFrame f=new JFrame("JHotDraw Draw Applet");
       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       DrawApplet a=new DrawApplet();

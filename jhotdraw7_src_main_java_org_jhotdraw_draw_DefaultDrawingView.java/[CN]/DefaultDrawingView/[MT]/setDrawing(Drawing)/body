@@ -16,7 +16,7 @@
   validateViewTranslation();
   paintEnabled=false;
   javax.swing.Timer t=new javax.swing.Timer(10,new ActionListener(){
-    public void actionPerformed(    ActionEvent e){
+    @Override public void actionPerformed(    ActionEvent e){
       repaint();
       paintEnabled=true;
     }

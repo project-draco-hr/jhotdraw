@@ -2,7 +2,7 @@
   final Drawing newDrawing=createDrawing();
   try {
     SwingUtilities.invokeAndWait(new Runnable(){
-      public void run(){
+      @Override public void run(){
         view.getDrawing().removeUndoableEditListener(undo);
         view.setDrawing(newDrawing);
         view.getDrawing().addUndoableEditListener(undo);

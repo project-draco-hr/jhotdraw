@@ -11,7 +11,7 @@
     c.add(new JLabel(lines[i]));
   }
   new Worker<Drawing>(){
-    protected Drawing construct() throws IOException {
+    @Override protected Drawing construct() throws IOException {
       Drawing result;
       if (getParameter("data") != null && getParameter("data").length() > 0) {
         NanoXMLDOMInput domi=new NanoXMLDOMInput(new DrawFigureFactory(),new StringReader(getParameter("data")));
@@ -36,7 +36,7 @@
       }
       return result;
     }
-    protected void done(    Drawing result){
+    @Override protected void done(    Drawing result){
       Container c=getContentPane();
       c.setLayout(new BorderLayout());
       c.removeAll();
@@ -53,7 +53,7 @@
       getDrawing().add(new TextFigure(result.toString()));
       result.printStackTrace();
     }
-    protected void finished(){
+    @Override protected void finished(){
       Container c=getContentPane();
       boolean isLiveConnect;
       try {

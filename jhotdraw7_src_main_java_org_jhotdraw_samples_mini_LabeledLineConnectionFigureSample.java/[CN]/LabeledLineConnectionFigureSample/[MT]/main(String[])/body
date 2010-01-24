@@ -1,6 +1,6 @@
 {
   SwingUtilities.invokeLater(new Runnable(){
-    public void run(){
+    @Override public void run(){
       RectangleFigure ta=new RectangleFigure();
       ta.setBounds(new Point2D.Double(10,10),new Point2D.Double(100,100));
       RectangleFigure tb=new RectangleFigure();

@@ -28,7 +28,7 @@
   if (file != null) {
     final ImageHolderFigure loaderFigure=((ImageHolderFigure)prototype.clone());
     Worker worker=new Worker(){
-      protected Object construct() throws IOException {
+      @Override protected Object construct() throws IOException {
         ((ImageHolderFigure)loaderFigure).loadImage(file);
         return null;
       }

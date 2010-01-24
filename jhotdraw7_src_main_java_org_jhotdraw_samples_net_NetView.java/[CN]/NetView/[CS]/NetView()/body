@@ -9,7 +9,7 @@
   view.getDrawing().addUndoableEditListener(undo);
   initActions();
   undo.addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
       setHasUnsavedChanges(undo.hasSignificantEdits());
     }
   }
@@ -32,7 +32,7 @@
   toggleGridButton.setSelected(preferences.getBoolean("view.gridVisible",false));
   view.setScaleFactor(preferences.getDouble("view.scaleFactor",1d));
   view.addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
       String name=evt.getPropertyName();
       if (name.equals("scaleFactor")) {
         preferences.putDouble("view.scaleFactor",(Double)evt.getNewValue());

@@ -8,7 +8,7 @@
   editorViewport.setLineWrap(prefs.getBoolean("lineWrap",true));
   scrollPane.setViewportView(editorViewport);
   editor.addCaretListener(new CaretListener(){
-    public void caretUpdate(    CaretEvent evt){
+    @Override public void caretUpdate(    CaretEvent evt){
       TeddyView.this.caretUpdate(evt);
     }
   }

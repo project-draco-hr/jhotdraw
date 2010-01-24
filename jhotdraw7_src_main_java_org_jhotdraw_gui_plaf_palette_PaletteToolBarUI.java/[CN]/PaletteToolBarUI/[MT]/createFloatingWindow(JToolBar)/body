@@ -6,7 +6,7 @@ class ToolBarDialog extends JDialog {
     public ToolBarDialog(    Dialog owner,    String title,    boolean modal){
       super(owner,title,modal);
     }
-    protected JRootPane createRootPane(){
+    @Override protected JRootPane createRootPane(){
       JRootPane rootPane=new JRootPane(){
         private boolean packing=false;
         public void validate(){

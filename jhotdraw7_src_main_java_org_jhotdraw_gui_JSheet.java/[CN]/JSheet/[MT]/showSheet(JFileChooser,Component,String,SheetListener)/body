@@ -12,7 +12,7 @@
   contentPane.setLayout(new BorderLayout());
   contentPane.add(chooser,BorderLayout.CENTER);
   final ActionListener actionListener=new ActionListener(){
-    public void actionPerformed(    ActionEvent evt){
+    @Override public void actionPerformed(    ActionEvent evt){
       int option;
       if (evt.getActionCommand().equals("ApproveSelection")) {
         option=JFileChooser.APPROVE_OPTION;
@@ -28,7 +28,7 @@
 ;
   chooser.addActionListener(actionListener);
   sheet.addWindowListener(new WindowAdapter(){
-    public void windowClosing(    WindowEvent e){
+    @Override public void windowClosing(    WindowEvent e){
       sheet.fireOptionSelected(chooser,JFileChooser.CANCEL_OPTION);
       chooser.removeActionListener(actionListener);
     }

@@ -4,7 +4,7 @@
   }
   Point2D.Double[] sorted=points.clone();
   Arrays.sort(sorted,new Comparator<Point2D.Double>(){
-    public int compare(    Point2D.Double o1,    Point2D.Double o2){
+    @Override public int compare(    Point2D.Double o1,    Point2D.Double o2){
       double v=o1.x - o2.x;
       if (v == 0) {
         v=o1.y - o2.y;

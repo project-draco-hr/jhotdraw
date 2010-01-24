@@ -1,7 +1,7 @@
 {
   if (future == null) {
     future=new FutureTask<Font[]>(new Callable<Font[]>(){
-      public Font[] call() throws Exception {
+      @Override public Font[] call() throws Exception {
         long start=System.currentTimeMillis();
         Font[] fonts=GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
         long end=System.currentTimeMillis();

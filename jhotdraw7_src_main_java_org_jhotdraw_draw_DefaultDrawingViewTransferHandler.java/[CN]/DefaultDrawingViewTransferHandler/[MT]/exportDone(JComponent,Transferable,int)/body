@@ -15,11 +15,9 @@
         }
       }
       CompositeFigureListener removeListener=new CompositeFigureListener(){
-        public void areaInvalidated(        CompositeFigureEvent e){
+        @Override public void figureAdded(        CompositeFigureEvent e){
         }
-        public void figureAdded(        CompositeFigureEvent e){
-        }
-        public void figureRemoved(        CompositeFigureEvent evt){
+        @Override public void figureRemoved(        CompositeFigureEvent evt){
           deletionEvents.addFirst(evt);
         }
       }

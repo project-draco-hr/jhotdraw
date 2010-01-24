@@ -12,7 +12,9 @@
       gzos=new java.util.zip.GZIPOutputStream(b64os);
       oos=new java.io.ObjectOutputStream(gzos);
     }
- else     oos=new java.io.ObjectOutputStream(b64os);
+ else {
+      oos=new java.io.ObjectOutputStream(b64os);
+    }
     oos.writeObject(serializableObject);
   }
  catch (  java.io.IOException e) {

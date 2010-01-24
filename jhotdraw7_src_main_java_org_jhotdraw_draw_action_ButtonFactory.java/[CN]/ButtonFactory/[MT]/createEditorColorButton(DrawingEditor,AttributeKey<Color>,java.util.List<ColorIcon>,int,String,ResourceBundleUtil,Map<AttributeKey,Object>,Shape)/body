@@ -36,7 +36,7 @@
   popupButton.setDisabledIcon(icon);
   popupButton.setFocusable(false);
   editor.addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
       popupButton.repaint();
     }
   }

@@ -6,7 +6,7 @@
  catch (  IndexOutOfBoundsException e) {
   }
   tabbedPane.addChangeListener(new ChangeListener(){
-    public void stateChanged(    ChangeEvent e){
+    @Override public void stateChanged(    ChangeEvent e){
       prefs.putInt(name,tabbedPane.getSelectedIndex());
     }
   }

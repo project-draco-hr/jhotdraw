@@ -3,7 +3,7 @@
   LinkedList<Action> actions=new LinkedList<Action>();
   if (get(TRANSFORM) != null) {
     actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")){
-      public void actionPerformed(      ActionEvent evt){
+      @Override public void actionPerformed(      ActionEvent evt){
         willChange();
         fireUndoableEditHappened(TRANSFORM.setUndoable(SVGImageFigure.this,null));
         changed();
@@ -14,7 +14,7 @@
   if (bufferedImage != null) {
     if (rectangle.width != bufferedImage.getWidth() || rectangle.height != bufferedImage.getHeight()) {
       actions.add(new AbstractAction(labels.getString("edit.setToImageSize.text")){
-        public void actionPerformed(        ActionEvent evt){
+        @Override public void actionPerformed(        ActionEvent evt){
           Object geometry=getTransformRestoreData();
           willChange();
           rectangle=new Rectangle2D.Double(rectangle.x - (bufferedImage.getWidth() - rectangle.width) / 2d,rectangle.y - (bufferedImage.getHeight() - rectangle.height) / 2d,bufferedImage.getWidth(),bufferedImage.getHeight());
@@ -28,7 +28,7 @@
     double figureRatio=rectangle.height / rectangle.width;
     if (Math.abs(imageRatio - figureRatio) > 0.001) {
       actions.add(new AbstractAction(labels.getString("edit.adjustHeightToImageAspect.text")){
-        public void actionPerformed(        ActionEvent evt){
+        @Override public void actionPerformed(        ActionEvent evt){
           Object geometry=getTransformRestoreData();
           willChange();
           double newHeight=bufferedImage.getHeight() * rectangle.width / bufferedImage.getWidth();
@@ -39,7 +39,7 @@
       }
 );
       actions.add(new AbstractAction(labels.getString("edit.adjustWidthToImageAspect.text")){
-        public void actionPerformed(        ActionEvent evt){
+        @Override public void actionPerformed(        ActionEvent evt){
           Object geometry=getTransformRestoreData();
           willChange();
           double newWidth=bufferedImage.getWidth() * rectangle.height / bufferedImage.getHeight();

@@ -1,6 +1,6 @@
 {
   SwingUtilities.invokeLater(new Runnable(){
-    public void run(){
+    @Override public void run(){
       JFrame f=new JFrame("JHotDraw Net Applet");
       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       NetApplet a=new NetApplet();

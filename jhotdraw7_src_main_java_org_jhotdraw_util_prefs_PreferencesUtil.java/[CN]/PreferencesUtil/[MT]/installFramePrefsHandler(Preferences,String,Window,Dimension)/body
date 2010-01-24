@@ -29,11 +29,11 @@
   }
   window.setBounds(bounds);
   window.addComponentListener(new ComponentAdapter(){
-    public void componentMoved(    ComponentEvent evt){
+    @Override public void componentMoved(    ComponentEvent evt){
       prefs.putInt(name + ".x",evt.getComponent().getX());
       prefs.putInt(name + ".y",evt.getComponent().getY());
     }
-    public void componentResized(    ComponentEvent evt){
+    @Override public void componentResized(    ComponentEvent evt){
       prefs.putInt(name + ".width",evt.getComponent().getWidth());
       prefs.putInt(name + ".height",evt.getComponent().getHeight());
     }

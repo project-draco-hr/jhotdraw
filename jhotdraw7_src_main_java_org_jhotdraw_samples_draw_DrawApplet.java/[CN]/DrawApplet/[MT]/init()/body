@@ -16,7 +16,7 @@
     c.add(new JLabel((labels[i].length() == 0) ? " " : labels[i]));
   }
   new Worker<Drawing>(){
-    protected Drawing construct() throws IOException {
+    @Override protected Drawing construct() throws IOException {
       Drawing result;
       if (getParameter("data") != null) {
         NanoXMLDOMInput domi=new NanoXMLDOMInput(new DrawFigureFactory(),new StringReader(getParameter("data")));

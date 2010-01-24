@@ -45,7 +45,7 @@
   swatchesList.setModel((ListModel)harmonicWheel.getHarmonicColorModel());
   swatchesList.setCellRenderer(new ColorListCellRenderer());
   harmonicWheel.getHarmonicColorModel().addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
       String name=evt.getPropertyName();
     }
   }
@@ -53,11 +53,11 @@
   sliderModel=new DefaultColorSliderModel(harmonicWheel.getHarmonicColorModel().getColorSpace());
   sliderModel.configureSlider(1,saturationSlider);
   harmonicWheel.getHarmonicColorModel().addListDataListener(new ListDataListener(){
-    public void intervalAdded(    ListDataEvent e){
+    @Override public void intervalAdded(    ListDataEvent e){
     }
-    public void intervalRemoved(    ListDataEvent e){
+    @Override public void intervalRemoved(    ListDataEvent e){
     }
-    public void contentsChanged(    ListDataEvent e){
+    @Override public void contentsChanged(    ListDataEvent e){
       adjusting++;
       HarmonicColorModel hcm=harmonicWheel.getHarmonicColorModel();
       Color cc=hcm.get(e.getIndex0());
@@ -69,7 +69,7 @@
   }
 );
   harmonicWheel.addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent evt){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
       String name=evt.getPropertyName();
       if (name == JHarmonicColorWheel.SELECTED_INDEX_PROPERTY) {
         adjusting++;
@@ -84,7 +84,7 @@
   }
 );
   sliderModel.addChangeListener(new ChangeListener(){
-    public void stateChanged(    ChangeEvent e){
+    @Override public void stateChanged(    ChangeEvent e){
       if (adjusting++ == 0) {
         HarmonicColorModel hcm=harmonicWheel.getHarmonicColorModel();
         if (!hcm.isAdjusting()) {

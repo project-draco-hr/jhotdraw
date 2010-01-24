@@ -13,7 +13,7 @@
     }
   }
   ownerMovementHandler=new ComponentAdapter(){
-    public void componentMoved(    ComponentEvent evt){
+    @Override public void componentMoved(    ComponentEvent evt){
       Window owner=getOwner();
       Point newLocation=owner.getLocation();
       if (!newLocation.equals(oldLocation)) {
