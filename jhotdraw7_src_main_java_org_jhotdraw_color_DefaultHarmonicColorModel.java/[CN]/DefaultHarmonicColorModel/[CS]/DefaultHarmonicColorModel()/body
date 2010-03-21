@@ -1,5 +1,5 @@
 {
-  ColorSpace sys=HSLPsychologicColorSpace.getInstance();
+  ColorSpace sys=HSLPhysiologicColorSpace.getInstance();
   sliderModel=new DefaultColorSliderModel(sys);
   colors=new ArrayList<Color>();
   rules=new ArrayList<HarmonicRule>();

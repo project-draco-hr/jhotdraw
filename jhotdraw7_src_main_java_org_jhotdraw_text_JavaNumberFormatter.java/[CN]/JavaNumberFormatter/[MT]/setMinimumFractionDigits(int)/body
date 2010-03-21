@@ -1,0 +1,4 @@
+{
+  minFractionDigits=newValue;
+  decimalFormat.setMinimumFractionDigits(newValue);
+}

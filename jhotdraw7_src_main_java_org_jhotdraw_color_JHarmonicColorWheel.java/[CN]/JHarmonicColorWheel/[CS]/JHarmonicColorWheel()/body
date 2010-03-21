@@ -1,5 +1,5 @@
 {
-  super(HSLPsychologicColorSpace.getInstance());
+  super(HSLPhysiologicColorSpace.getInstance());
   initComponents();
   setRadialComponentIndex(2);
   setVerticalComponentIndex(1);

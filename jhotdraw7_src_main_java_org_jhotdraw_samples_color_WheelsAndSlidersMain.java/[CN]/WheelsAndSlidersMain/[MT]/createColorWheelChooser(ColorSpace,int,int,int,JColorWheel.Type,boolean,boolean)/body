@@ -13,7 +13,7 @@
   w.setModel(m);
   JSlider s=new JSlider(JSlider.VERTICAL);
   m.configureSlider(verticalIndex,s);
-  p.add(new JLabel("<html>" + ColorSpaceUtil.getName(sys) + "<br>??:"+ angularIndex+ " r:"+ radialIndex+ " v:"+ verticalIndex),BorderLayout.NORTH);
+  p.add(new JLabel("<html>" + ColorUtil.getName(sys) + "<br>??:"+ angularIndex+ " r:"+ radialIndex+ " v:"+ verticalIndex),BorderLayout.NORTH);
   p.add(w,BorderLayout.CENTER);
   p.add(s,BorderLayout.EAST);
   return p;

@@ -1,0 +1,13 @@
+{
+  if (instance == null) {
+    try {
+      instance=new CMYKGenericColorSpace();
+    }
+ catch (    IOException ex) {
+      InternalError error=new InternalError("Can't instanciate CMYKColorSpace");
+      error.initCause(ex);
+      throw error;
+    }
+  }
+  return instance;
+}

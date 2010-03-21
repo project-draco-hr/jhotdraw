@@ -91,7 +91,7 @@ case 2:
   Map<AttributeKey,Object> defaultAttributes=new HashMap<AttributeKey,Object>();
   STROKE_GRADIENT.put(defaultAttributes,null);
   JAttributeTextField<Color> colorField=new JAttributeTextField<Color>();
-  colorField.setColumns(12);
+  colorField.setColumns(10);
   colorField.setToolTipText(labels.getString("attribute.strokeColor.toolTipText"));
   colorField.putClientProperty("Palette.Component.segmentPosition","first");
   colorField.setUI((PaletteFormattedTextFieldUI)PaletteFormattedTextFieldUI.createUI(colorField));
@@ -117,8 +117,11 @@ case 2:
   opacityField.setHorizontalAlignment(JAttributeTextField.RIGHT);
   opacityField.putClientProperty("Palette.Component.segmentPosition","first");
   opacityField.setUI((PaletteFormattedTextFieldUI)PaletteFormattedTextFieldUI.createUI(opacityField));
-  opacityField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0d,1d,100d,false,false,"%"));
   opacityField.setHorizontalAlignment(JTextField.LEFT);
+  JavaNumberFormatter formatter=new JavaNumberFormatter(0d,100d,100d,false,"%");
+  formatter.setUsesScientificNotation(false);
+  formatter.setMaximumFractionDigits(1);
+  opacityField.setFormatterFactory(new DefaultFormatterFactory(formatter));
   disposables.add(new FigureAttributeEditorHandler<Double>(STROKE_OPACITY,opacityField,editor));
   gbc=new GridBagConstraints();
   gbc.gridx=0;
@@ -149,7 +152,10 @@ case 2:
   strokeWidthField.setHorizontalAlignment(JAttributeTextField.LEFT);
   strokeWidthField.putClientProperty("Palette.Component.segmentPosition","first");
   strokeWidthField.setUI((PaletteFormattedTextFieldUI)PaletteFormattedTextFieldUI.createUI(strokeWidthField));
-  strokeWidthField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0d,100d,1d));
+  formatter=new JavaNumberFormatter(0d,100d,1d);
+  formatter.setUsesScientificNotation(false);
+  formatter.setMaximumFractionDigits(1);
+  strokeWidthField.setFormatterFactory(new DefaultFormatterFactory(formatter));
   disposables.add(new FigureAttributeEditorHandler<Double>(STROKE_WIDTH,strokeWidthField,editor));
   gbc=new GridBagConstraints();
   gbc.gridx=0;

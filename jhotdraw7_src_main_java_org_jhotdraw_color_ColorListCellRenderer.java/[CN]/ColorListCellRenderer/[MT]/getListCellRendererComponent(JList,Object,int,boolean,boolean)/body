@@ -3,7 +3,7 @@
   if (value instanceof Color) {
     Color c=(Color)value;
     icon.setColor(c);
-    setToolTipText(ColorSpaceUtil.toToolTipText(c));
+    setToolTipText(ColorUtil.toToolTipText(c));
     setText("");
   }
  else {

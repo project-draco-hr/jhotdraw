@@ -1,0 +1,6 @@
+{
+  Rectangle2D.Double r=(Rectangle2D.Double)rectangle.clone();
+  double grow=AttributeKeys.getPerpendicularDrawGrowth(this);
+  Geom.grow(r,grow,grow);
+  g.draw(new Line2D.Double(r.x,r.y,r.x + r.width - 1,r.y));
+}

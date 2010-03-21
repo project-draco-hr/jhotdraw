@@ -83,7 +83,7 @@ catch (    IllegalArgumentException iae) {
   if (matcher.matches()) {
     setLastUsedInputFormat(Format.GRAY_PERCENTAGE);
     try {
-      return ColorSpaceUtil.toColor(ColorSpace.getInstance(ColorSpace.CS_GRAY),new float[]{matcher.group(1) == null ? 0f : numberFormat.parse(matcher.group(1)).floatValue() / 100f});
+      return ColorUtil.toColor(ColorSpace.getInstance(ColorSpace.CS_GRAY),new float[]{matcher.group(1) == null ? 0f : numberFormat.parse(matcher.group(1)).floatValue() / 100f});
     }
  catch (    NumberFormatException nfe) {
       ParseException pe=new ParseException(str,0);

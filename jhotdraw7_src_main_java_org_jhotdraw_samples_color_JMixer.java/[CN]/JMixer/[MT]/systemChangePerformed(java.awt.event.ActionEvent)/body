@@ -5,7 +5,7 @@
     sys=HSLColorSpace.getInstance();
   }
  else {
-    sys=HSLPsychologicColorSpace.getInstance();
+    sys=HSLPhysiologicColorSpace.getInstance();
   }
   m.setColorSpace(sys);
   sliderModel.setColorSpace(sys);

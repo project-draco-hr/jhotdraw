@@ -3,7 +3,7 @@
   DefaultColorSliderModel m=new DefaultColorSliderModel(sys);
   models.add(m);
   if (!vertical) {
-    p.add(new JLabel("<html>" + ColorSpaceUtil.getName(sys)),BorderLayout.NORTH);
+    p.add(new JLabel("<html>" + ColorUtil.getName(sys)),BorderLayout.NORTH);
   }
   m.addChangeListener(handler);
   for (int i=0; i < m.getComponentCount(); i++) {

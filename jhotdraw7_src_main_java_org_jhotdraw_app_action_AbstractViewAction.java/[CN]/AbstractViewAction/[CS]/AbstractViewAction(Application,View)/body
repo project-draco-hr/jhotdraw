@@ -8,5 +8,4 @@
  else {
     view.addPropertyChangeListener(viewListener);
   }
-  updateView(null,getActiveView());
 }

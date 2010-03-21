@@ -8,9 +8,9 @@
   chooserPanel.add(createColorWheelChooser(HSLColorSpace.getInstance()));
   chooserPanel.add(createColorWheelChooser(HSLColorSpace.getInstance(),0,2,1));
   chooserPanel.add(new JPanel());
-  chooserPanel.add(createColorWheelChooser(HSVPsychologicColorSpace.getInstance()));
-  chooserPanel.add(createColorWheelChooser(HSLPsychologicColorSpace.getInstance()));
-  chooserPanel.add(createColorWheelChooser(HSLPsychologicColorSpace.getInstance(),0,2,1));
+  chooserPanel.add(createColorWheelChooser(HSVPhysiologicColorSpace.getInstance()));
+  chooserPanel.add(createColorWheelChooser(HSLPhysiologicColorSpace.getInstance()));
+  chooserPanel.add(createColorWheelChooser(HSLPhysiologicColorSpace.getInstance(),0,2,1));
   chooserPanel.add(createColorWheelChooser(ICC_ColorSpace.getInstance(ICC_ColorSpace.CS_LINEAR_RGB),0,1,2,JColorWheel.Type.SQUARE));
   chooserPanel.add(createColorWheelChooser(ICC_ColorSpace.getInstance(ICC_ColorSpace.CS_CIEXYZ),1,0,2,JColorWheel.Type.SQUARE));
   chooserPanel.add(createColorWheelChooser(ICC_ColorSpace.getInstance(ICC_ColorSpace.CS_PYCC),1,2,0,JColorWheel.Type.SQUARE));
@@ -24,6 +24,6 @@
     ex.printStackTrace();
   }
   chooserPanel.add(createSliderChooser(ColorSpace.getInstance(ColorSpace.CS_sRGB)));
-  chooserPanel.add(createSliderChooser(CMYKColorSpace.getInstance()));
+  chooserPanel.add(createSliderChooser(CMYKGenericColorSpace.getInstance()));
   chooserPanel.add(createSliderChooser(CMYKNominalColorSpace.getInstance()));
 }

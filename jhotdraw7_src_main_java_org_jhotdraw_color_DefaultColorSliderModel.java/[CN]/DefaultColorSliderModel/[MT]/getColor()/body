@@ -6,7 +6,7 @@
     i++;
   }
   try {
-    return ColorSpaceUtil.toColor(colorSpace,c);
+    return ColorUtil.toColor(colorSpace,c);
   }
  catch (  IllegalArgumentException e) {
     for (i=0; i < c.length; i++) {

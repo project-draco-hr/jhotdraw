@@ -6,5 +6,5 @@
     j++;
   }
   c[i]=componentValue;
-  return ColorSpaceUtil.toRGB(colorSpace,c);
+  return ColorUtil.toRGB(colorSpace,c);
 }

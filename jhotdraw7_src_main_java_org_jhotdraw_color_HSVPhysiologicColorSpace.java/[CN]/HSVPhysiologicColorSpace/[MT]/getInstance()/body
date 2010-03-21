@@ -1,0 +1,6 @@
+{
+  if (instance == null) {
+    instance=new HSVPhysiologicColorSpace();
+  }
+  return instance;
+}

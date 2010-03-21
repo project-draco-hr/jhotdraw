@@ -14,7 +14,7 @@
     throw new IOException("Illegal ref attribute value: <" + getTagName() + " ref="+ ref+ ">");
   }
   if (ref != null) {
-    o=idobjects.get(id);
+    o=idobjects.get(ref);
   }
  else {
     o=factory.read(this);

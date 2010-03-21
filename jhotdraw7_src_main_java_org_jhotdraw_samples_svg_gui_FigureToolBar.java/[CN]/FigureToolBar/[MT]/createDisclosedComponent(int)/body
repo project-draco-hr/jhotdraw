@@ -49,7 +49,10 @@ case 2:
   opacityField.setHorizontalAlignment(JAttributeTextField.RIGHT);
   opacityField.putClientProperty("Palette.Component.segmentPosition","first");
   opacityField.setUI((PaletteFormattedTextFieldUI)PaletteFormattedTextFieldUI.createUI(opacityField));
-  opacityField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0d,1d,100d,false,false,"%"));
+  JavaNumberFormatter formatter=new JavaNumberFormatter(0d,100d,100d,false,"%");
+  formatter.setUsesScientificNotation(false);
+  formatter.setMaximumFractionDigits(1);
+  opacityField.setFormatterFactory(new DefaultFormatterFactory(formatter));
   opacityField.setHorizontalAlignment(JTextField.LEADING);
   disposables.add(new FigureAttributeEditorHandler<Double>(OPACITY,opacityField,editor));
   gbc=new GridBagConstraints();

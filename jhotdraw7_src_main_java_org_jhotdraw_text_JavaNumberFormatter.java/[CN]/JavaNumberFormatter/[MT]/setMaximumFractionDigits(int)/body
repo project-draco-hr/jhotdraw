@@ -1,0 +1,5 @@
+{
+  decimalFormat.setMaximumFractionDigits(newValue);
+  scientificFormat.setMaximumFractionDigits(newValue);
+  this.maxFractionDigits=newValue;
+}

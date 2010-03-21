@@ -67,7 +67,7 @@ case 2:
   Map<AttributeKey,Object> defaultAttributes=new HashMap<AttributeKey,Object>();
   FILL_GRADIENT.put(defaultAttributes,null);
   JAttributeTextField<Color> colorField=new JAttributeTextField<Color>();
-  colorField.setColumns(12);
+  colorField.setColumns(10);
   colorField.setToolTipText(labels.getString("attribute.fillColor.toolTipText"));
   colorField.putClientProperty("Palette.Component.segmentPosition","first");
   colorField.setUI((PaletteFormattedTextFieldUI)PaletteFormattedTextFieldUI.createUI(colorField));
@@ -92,7 +92,10 @@ case 2:
   opacityField.setToolTipText(labels.getString("attribute.fillOpacity.toolTipText"));
   opacityField.putClientProperty("Palette.Component.segmentPosition","first");
   opacityField.setUI((PaletteFormattedTextFieldUI)PaletteFormattedTextFieldUI.createUI(opacityField));
-  opacityField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0d,1d,100d,false,false,"%"));
+  JavaNumberFormatter formatter=new JavaNumberFormatter(0d,100d,100d,false,"%");
+  formatter.setUsesScientificNotation(false);
+  formatter.setMaximumFractionDigits(1);
+  opacityField.setFormatterFactory(new DefaultFormatterFactory(formatter));
   opacityField.setHorizontalAlignment(JTextField.LEFT);
   disposables.add(new FigureAttributeEditorHandler<Double>(FILL_OPACITY,opacityField,editor));
   gbc=new GridBagConstraints();

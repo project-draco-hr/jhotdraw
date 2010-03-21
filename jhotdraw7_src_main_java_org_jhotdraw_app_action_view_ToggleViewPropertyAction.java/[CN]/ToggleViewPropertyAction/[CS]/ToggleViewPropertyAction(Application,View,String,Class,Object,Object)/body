@@ -1,5 +1,8 @@
 {
   super(app,view);
+  if (propertyName == null) {
+    throw new IllegalArgumentException("Parameter propertyName must not be null");
+  }
   this.propertyName=propertyName;
   this.parameterClass=new Class[]{propertyClass};
   this.selectedPropertyValue=selectedPropertyValue;
