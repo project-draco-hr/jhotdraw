@@ -15,7 +15,7 @@ case 1:
       GridBagConstraints gbc;
       AbstractButton btn;
       AbstractSelectedAction d;
-      btn=ButtonFactory.createDrawingColorButton(editor,CANVAS_FILL_COLOR,ButtonFactory.HSB_COLORS,ButtonFactory.HSB_COLORS_COLUMN_COUNT,"attribute.canvasFillColor",labels,null,new Rectangle(3,3,10,10),disposables);
+      btn=ButtonFactory.createDrawingColorButton(editor,CANVAS_FILL_COLOR,ButtonFactory.HSB_COLORS_AS_RGB,ButtonFactory.HSB_COLORS_AS_RGB_COLUMN_COUNT,"attribute.canvasFillColor",labels,null,new Rectangle(3,3,10,10),disposables);
       btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
       disposables.add(new DrawingComponentRepainter(editor,btn));
       ((JPopupButton)btn).setAction(null,null);
@@ -123,7 +123,7 @@ case 2:
   GridBagConstraints gbc;
   AbstractButton btn;
   JAttributeTextField<Color> colorField=new JAttributeTextField<Color>();
-  colorField.setColumns(10);
+  colorField.setColumns(7);
   colorField.setToolTipText(labels.getString("attribute.canvasFillColor.toolTipText"));
   colorField.putClientProperty("Palette.Component.segmentPosition","first");
   colorField.setUI((PaletteFormattedTextFieldUI)PaletteFormattedTextFieldUI.createUI(colorField));
@@ -135,7 +135,7 @@ case 2:
   gbc.fill=GridBagConstraints.HORIZONTAL;
   gbc.anchor=GridBagConstraints.FIRST_LINE_START;
   p1.add(colorField,gbc);
-  btn=ButtonFactory.createDrawingColorButton(editor,CANVAS_FILL_COLOR,ButtonFactory.HSB_COLORS,ButtonFactory.HSB_COLORS_COLUMN_COUNT,"attribute.canvasFillColor",labels,null,new Rectangle(3,3,10,10),disposables);
+  btn=ButtonFactory.createDrawingColorButton(editor,CANVAS_FILL_COLOR,ButtonFactory.HSB_COLORS_AS_RGB,ButtonFactory.HSB_COLORS_AS_RGB_COLUMN_COUNT,"attribute.canvasFillColor",labels,null,new Rectangle(3,3,10,10),disposables);
   btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
   disposables.add(new DrawingComponentRepainter(editor,btn));
   ((JPopupButton)btn).setAction(null,null);

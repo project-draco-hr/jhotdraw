@@ -22,7 +22,7 @@
         f=Format.GRAY_PERCENTAGE;
       }
  else {
-        f=Format.RGB_INTEGER;
+        f=Format.RGB_INTEGER_SHORT;
       }
     }
 switch (f) {
@@ -30,6 +30,9 @@ case RGB_HEX:
       str="000000" + Integer.toHexString(c.getRGB() & 0xffffff);
     str="#" + str.substring(str.length() - 6);
   break;
+case RGB_INTEGER_SHORT:
+str=c.getRed() + " " + c.getGreen()+ " "+ c.getBlue();
+break;
 case RGB_INTEGER:
 str="rgb " + c.getRed() + " "+ c.getGreen()+ " "+ c.getBlue();
 break;

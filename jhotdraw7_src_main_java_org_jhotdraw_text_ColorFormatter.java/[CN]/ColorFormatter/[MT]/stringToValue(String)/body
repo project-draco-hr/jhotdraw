@@ -28,9 +28,17 @@
       throw pe;
     }
   }
-  matcher=rgbIntegerPattern.matcher(str);
+  matcher=rgbIntegerShortPattern.matcher(str);
   if (matcher.matches()) {
-    setLastUsedInputFormat(Format.RGB_INTEGER);
+    setLastUsedInputFormat(Format.RGB_INTEGER_SHORT);
+  }
+ else {
+    matcher=rgbIntegerPattern.matcher(str);
+    if (matcher.matches()) {
+      setLastUsedInputFormat(Format.RGB_INTEGER);
+    }
+  }
+  if (matcher.matches()) {
     try {
       return new Color(Integer.parseInt(matcher.group(1)),Integer.parseInt(matcher.group(2)),Integer.parseInt(matcher.group(3)));
     }
