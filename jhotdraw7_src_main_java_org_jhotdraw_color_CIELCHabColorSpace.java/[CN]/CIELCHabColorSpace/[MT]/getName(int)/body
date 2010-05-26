@@ -1,0 +1,11 @@
+{
+switch (component) {
+case 0:
+    return "L*";
+case 1:
+  return "a*";
+case 2:
+return "b*";
+}
+throw new IllegalArgumentException("Illegal component:" + component);
+}

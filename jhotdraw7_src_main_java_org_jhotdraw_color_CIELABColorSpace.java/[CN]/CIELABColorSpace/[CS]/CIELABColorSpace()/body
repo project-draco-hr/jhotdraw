@@ -1,0 +1,6 @@
+{
+  super(ColorSpace.TYPE_Lab,3);
+  Xw=D65[0];
+  Yw=D65[1];
+  Zw=D65[2];
+}

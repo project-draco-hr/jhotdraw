@@ -8,5 +8,8 @@
   red=1f - cyan * (1f - black) - black;
   green=1f - magenta * (1f - black) - black;
   blue=1f - yellow * (1f - black) - black;
+  red=Math.min(1f,Math.max(0f,red));
+  green=Math.min(1f,Math.max(0f,green));
+  blue=Math.min(1f,Math.max(0f,blue));
   return new float[]{red,green,blue};
 }

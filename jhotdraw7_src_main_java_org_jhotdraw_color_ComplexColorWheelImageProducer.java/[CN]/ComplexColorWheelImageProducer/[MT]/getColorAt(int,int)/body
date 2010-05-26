@@ -5,7 +5,7 @@
   float radial=(x - xOffset) / (float)side;
   float angular=(y - yOffset) / (float)side;
   if (flipX)   radial=1f - radial;
-  if (flipY)   angular=1f - angular;
+  if (!flipY)   angular=1f - angular;
   float[] hsb=new float[3];
   hsb[angularIndex]=angular * (colorSpace.getMaxValue(angularIndex) - colorSpace.getMinValue(angularIndex)) + colorSpace.getMinValue(angularIndex);
   hsb[radialIndex]=radial * (colorSpace.getMaxValue(radialIndex) - colorSpace.getMinValue(radialIndex)) + colorSpace.getMinValue(radialIndex);

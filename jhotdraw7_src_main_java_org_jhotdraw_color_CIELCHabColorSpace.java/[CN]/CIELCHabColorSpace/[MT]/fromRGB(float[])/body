@@ -1,0 +1,4 @@
+{
+  float[] ciexyz=sRGB.fromRGB(rgbvalue);
+  return fromCIEXYZ(ciexyz);
+}

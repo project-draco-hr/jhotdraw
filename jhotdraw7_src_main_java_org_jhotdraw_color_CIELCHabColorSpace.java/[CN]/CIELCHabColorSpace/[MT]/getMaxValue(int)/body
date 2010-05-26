@@ -1,0 +1,11 @@
+{
+switch (component) {
+case 0:
+    return 100f;
+case 1:
+  return 128f;
+case 2:
+return 320f;
+}
+throw new IllegalArgumentException("Illegal component:" + component);
+}

@@ -18,5 +18,9 @@
       yellow=(yellow - black) / (1 - black);
     }
   }
+  cyan=Math.min(1f,Math.max(0f,cyan));
+  yellow=Math.min(1f,Math.max(0f,yellow));
+  magenta=Math.min(1f,Math.max(0f,magenta));
+  black=Math.min(1f,Math.max(0f,black));
   return new float[]{cyan,magenta,yellow,black};
 }

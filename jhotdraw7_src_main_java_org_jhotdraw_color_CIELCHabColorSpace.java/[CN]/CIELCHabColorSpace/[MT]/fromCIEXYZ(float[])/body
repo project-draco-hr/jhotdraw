@@ -1,0 +1,33 @@
+{
+  double X=colorvalue[0];
+  double Y=colorvalue[1];
+  double Z=colorvalue[2];
+  double xr=X / Xr;
+  double yr=Y / Yr;
+  double zr=Z / Zr;
+  double fx, fy, fz;
+  if (xr > eps) {
+    fx=Math.pow(xr,1d / 3d);
+  }
+ else {
+    fx=(k * xr + 16d) / 116d;
+  }
+  if (yr > eps) {
+    fy=Math.pow(yr,1d / 3d);
+  }
+ else {
+    fy=(k * yr + 16d) / 116d;
+  }
+  if (zr > eps) {
+    fz=Math.pow(zr,1d / 3d);
+  }
+ else {
+    fz=(k * zr + 16) / 116;
+  }
+  double L=116d * fy - 16;
+  double a=500d * (fx - fy);
+  double b=200d * (fy - fz);
+  double C=Math.sqrt(a * a + b * b);
+  double H=Math.atan2(b,a);
+  return new float[]{(float)L,(float)C,(float)H};
+}

@@ -1,0 +1,9 @@
+{
+  super(w,h,null,0,w);
+  this.colorSpace=ICC_ColorSpace.getInstance(ICC_ColorSpace.CS_CIEXYZ);
+  pixels=new int[w * h];
+  this.w=w;
+  this.h=h;
+  setAnimated(true);
+  newPixels(pixels,ColorModel.getRGBdefault(),0,w);
+}

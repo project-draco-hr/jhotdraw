@@ -1,0 +1,6 @@
+{
+  super(ColorSpace.TYPE_Lab,3);
+  Xr=D65[0];
+  Yr=D65[1];
+  Zr=D65[2];
+}

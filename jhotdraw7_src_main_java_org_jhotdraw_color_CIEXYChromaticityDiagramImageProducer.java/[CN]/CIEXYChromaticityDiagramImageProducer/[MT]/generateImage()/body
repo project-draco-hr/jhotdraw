@@ -1,0 +1,36 @@
+{
+  float wf=0.8f / (float)w;
+  float hf=0.9f / (float)h;
+  Arrays.fill(pixels,0);
+  float[] rgb=new float[3];
+  for (int iY=0; iY <= 100; iY++) {
+    float Y=(100 - iY) / 100f;
+    float[] XYZ=new float[3];
+    for (int ix=0; ix < w; ix++) {
+      float x=ix * wf;
+      for (int iy=0; iy < h; iy++) {
+        if (pixels[ix + iy * w] != 0) {
+          continue;
+        }
+        float y=0.9f - iy * hf;
+        float z=1f - x - y;
+        if (y == 0) {
+          XYZ[0]=XYZ[1]=XYZ[2]=0;
+        }
+ else {
+          XYZ[1]=Y;
+          XYZ[0]=x * XYZ[1] / y;
+          XYZ[2]=z * XYZ[1] / y;
+        }
+        int alpha=XYZ[0] >= ceps && XYZ[1] >= ceps && XYZ[2] >= ceps && XYZ[0] <= 1 - ceps && XYZ[1] <= 1 - ceps && XYZ[2] <= 1 - ceps ? 255 : 0;
+        if (alpha == 255) {
+          toRGB(XYZ,rgb);
+          alpha=(rgb[0] >= eps && rgb[1] >= eps && rgb[2] >= eps && rgb[0] <= 1 - eps && rgb[1] <= 1 - eps && rgb[2] <= 1 - eps) ? 255 : 0;
+          if (alpha == 255) {
+            pixels[ix + iy * w]=(alpha << 24) | ((0xff & (int)(rgb[0] * 255f)) << 16) | ((0xff & (int)(rgb[1] * 255f)) << 8)| (0xff & (int)(rgb[2] * 255f));
+          }
+        }
+      }
+    }
+  }
+}

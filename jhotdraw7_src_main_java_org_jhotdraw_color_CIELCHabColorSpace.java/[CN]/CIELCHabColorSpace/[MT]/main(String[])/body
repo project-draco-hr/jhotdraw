@@ -1,0 +1,13 @@
+{
+  CIELCHabColorSpace cs=new CIELCHabColorSpace();
+  float[] lchab=cs.fromRGB(new float[]{1,1,1});
+  System.out.println("rgb->LCHab:" + lchab[0] + ","+ lchab[1]+ ","+ lchab[2]);
+  float[] xyz=cs.toCIEXYZ(new float[]{0.75f,0.25f,0.1f});
+  System.out.println("    lab->xyz:" + xyz[0] + ","+ xyz[1]+ ","+ xyz[2]);
+  lchab=cs.fromCIEXYZ(xyz);
+  System.out.println("R xyz->LCHab:" + lchab[0] + ","+ lchab[1]+ ","+ lchab[2]);
+  lchab=cs.fromCIEXYZ(new float[]{1,1,1});
+  System.out.println("xyz->LCHab:" + lchab[0] + ","+ lchab[1]+ ","+ lchab[2]);
+  lchab=cs.fromCIEXYZ(new float[]{0.5f,1,1});
+  System.out.println("xyz->LCHab:" + lchab[0] + ","+ lchab[1]+ ","+ lchab[2]);
+}
