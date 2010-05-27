@@ -1,4 +1,3 @@
 {
   g.fill(getTextShape());
-  g.draw(new Rectangle2D.Double(getBounds().x,getBounds().y,getPreferredTextSize(changingDepth).width,getPreferredTextSize(changingDepth).height));
 }
