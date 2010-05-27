@@ -1,6 +1,6 @@
 {
   try {
-    UIManager.setLookAndFeel(QuaquaManager.getLookAndFeel());
+    UIManager.setLookAndFeel("ch.randelshofer.quaqua.QuaquaLookAndFeel");
   }
  catch (  Exception e) {
     e.printStackTrace();

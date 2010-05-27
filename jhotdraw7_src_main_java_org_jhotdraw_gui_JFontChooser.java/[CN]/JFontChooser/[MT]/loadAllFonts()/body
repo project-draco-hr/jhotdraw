@@ -11,6 +11,8 @@
           if (decoded.getFontName().equals(f.getFontName()) || decoded.getFontName().endsWith("-Derived")) {
             goodFonts.add(f);
           }
+ else {
+          }
         }
         return goodFonts.toArray(new Font[goodFonts.size()]);
       }
