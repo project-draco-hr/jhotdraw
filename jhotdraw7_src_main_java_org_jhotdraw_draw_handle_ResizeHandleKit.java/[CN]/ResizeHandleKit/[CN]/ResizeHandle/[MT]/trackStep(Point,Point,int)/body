@@ -1,6 +1,6 @@
 {
   if (getOwner().isTransformable()) {
-    Point2D.Double p=view.viewToDrawing(new Point(lead.x + dx,lead.y + dy));
+    Point2D.Double p=view.viewToDrawing(new Point(lead.x + sx,lead.y + sy));
     view.getConstrainer().constrainPoint(p);
     if (getOwner().get(TRANSFORM) != null) {
       try {
@@ -12,6 +12,6 @@
         }
       }
     }
-    trackStepNormalized(p);
+    trackStepNormalized(p,(modifiersEx & (InputEvent.ALT_DOWN_MASK | InputEvent.CTRL_DOWN_MASK | InputEvent.SHIFT_DOWN_MASK)) != 0);
   }
 }

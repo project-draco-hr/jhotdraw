@@ -1,0 +1,14 @@
+{
+  double nx=Math.max(sb.x + 1,p.x);
+  double ny=Math.min(sb.y + sb.height - 1,p.y);
+  if (keepAspect) {
+    double nxx=sb.x + sb.width - 1 + Math.max(1,(sb.y - p.y) / aspectRatio);
+    if (nxx >= p.x) {
+      nx=nxx;
+    }
+ else {
+      ny=sb.y + sb.height - Math.max(1,(p.x - sb.x) * aspectRatio);
+    }
+  }
+  setBounds(new Point2D.Double(sb.x,ny),new Point2D.Double(nx,sb.y + sb.height));
+}

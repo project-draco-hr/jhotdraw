@@ -3,4 +3,5 @@
   getView().setCursor(Cursor.getDefaultCursor());
   getView().setActiveHandle(null);
   clearHoverHandles();
+  dragLocation=null;
 }

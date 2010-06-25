@@ -1,6 +1,8 @@
 {
-  multicaster.trackEnd(anchor,new Point(evt.getX(),evt.getY()),evt.getModifiersEx(),getView());
+  dragLocation=new Point(evt.getX(),evt.getY());
+  multicaster.trackEnd(anchor,dragLocation,evt.getModifiersEx(),getView());
   Rectangle r=new Rectangle(anchor.x,anchor.y,0,0);
   r.add(evt.getX(),evt.getY());
   maybeFireBoundsInvalidated(r);
+  dragLocation=null;
 }
