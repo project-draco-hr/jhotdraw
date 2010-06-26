@@ -1,8 +1,10 @@
 {
-  Rectangle2D.Double invalidatedArea=getDrawingArea();
-  invalidatedArea.add(e.getInvalidatedArea());
-  invalidate();
-  validate();
-  invalidatedArea.add(getDrawingArea());
-  fireFigureChanged(invalidatedArea);
+  if (!isChanging()) {
+    Rectangle2D.Double invalidatedArea=getDrawingArea();
+    invalidatedArea.add(e.getInvalidatedArea());
+    invalidate();
+    validate();
+    invalidatedArea.add(getDrawingArea());
+    fireFigureChanged(invalidatedArea);
+  }
 }
