@@ -1,21 +1,12 @@
 {
-  Rectangle cb=getCanvasViewBounds();
-  Color canvasColor;
-  if (drawing == null) {
-    canvasColor=CANVAS_FILL_COLOR.getDefaultValue();
-  }
- else {
-    canvasColor=drawing.get(CANVAS_FILL_COLOR);
-    if (canvasColor != null) {
-      canvasColor=new Color((canvasColor.getRGB() & 0xffffff) | ((int)(drawing.get(CANVAS_FILL_OPACITY) * 255) << 24),true);
-    }
-  }
-  if (canvasColor == null || canvasColor.getAlpha() != 255) {
-    g.setPaint(getBackgroundPaint(cb.x,cb.y));
-    g.fillRect(cb.x,cb.y,cb.width,cb.height);
-  }
-  if (canvasColor != null) {
-    g.setColor(canvasColor);
-    g.fillRect(cb.x,cb.y,cb.width,cb.height);
+  if (drawing != null) {
+    Graphics2D g=(Graphics2D)gr.create();
+    AffineTransform tx=g.getTransform();
+    tx.translate(-translation.x,-translation.y);
+    tx.scale(scaleFactor,scaleFactor);
+    g.setTransform(tx);
+    drawing.setFontRenderContext(g.getFontRenderContext());
+    drawing.drawCanvas(g);
+    g.dispose();
   }
 }
