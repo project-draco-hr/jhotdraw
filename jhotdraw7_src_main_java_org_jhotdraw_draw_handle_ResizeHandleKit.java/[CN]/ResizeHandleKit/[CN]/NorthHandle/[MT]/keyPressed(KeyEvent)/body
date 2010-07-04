@@ -12,8 +12,6 @@ setBounds(new Point2D.Double(r.x,r.y + 1),new Point2D.Double(r.x + r.width,r.y +
 evt.consume();
 break;
 case KeyEvent.VK_LEFT:
-evt.consume();
-break;
 case KeyEvent.VK_RIGHT:
 evt.consume();
 break;
