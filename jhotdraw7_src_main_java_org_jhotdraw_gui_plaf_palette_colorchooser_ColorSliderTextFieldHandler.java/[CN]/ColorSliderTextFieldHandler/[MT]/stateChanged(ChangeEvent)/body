@@ -1,0 +1,5 @@
+{
+  if (!textField.hasFocus()) {
+    textField.setText(Integer.toString(ccModel.getBoundedRangeModel(component).getValue()));
+  }
+}

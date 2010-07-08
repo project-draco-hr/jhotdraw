@@ -1,0 +1,179 @@
+{
+  java.awt.GridBagConstraints gridBagConstraints;
+  cyanLabel=new javax.swing.JLabel();
+  cyanSlider=new javax.swing.JSlider();
+  cyanFieldPanel=new javax.swing.JPanel();
+  cyanField=new javax.swing.JTextField();
+  cyanFieldLabel=new javax.swing.JLabel();
+  magentaLabel=new javax.swing.JLabel();
+  magentaSlider=new javax.swing.JSlider();
+  magentaFieldPanel=new javax.swing.JPanel();
+  magentaField=new javax.swing.JTextField();
+  magentaFieldLabel=new javax.swing.JLabel();
+  yellowLabel=new javax.swing.JLabel();
+  yellowSlider=new javax.swing.JSlider();
+  yellowFieldPanel=new javax.swing.JPanel();
+  yellowField=new javax.swing.JTextField();
+  yellowFieldLabel=new javax.swing.JLabel();
+  blackLabel=new javax.swing.JLabel();
+  blackSlider=new javax.swing.JSlider();
+  blackFieldPanel=new javax.swing.JPanel();
+  blackField=new javax.swing.JTextField();
+  blackFieldLabel=new javax.swing.JLabel();
+  springPanel=new javax.swing.JPanel();
+  setLayout(new java.awt.GridBagLayout());
+  cyanLabel.setText(labels.getString("ColorChooser.cmykCyanText"));
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=0;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.SOUTHWEST;
+  gridBagConstraints.insets=new java.awt.Insets(3,0,-4,0);
+  add(cyanLabel,gridBagConstraints);
+  cyanSlider.setMajorTickSpacing(100);
+  cyanSlider.setMinorTickSpacing(50);
+  cyanSlider.setPaintTicks(true);
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=0;
+  gridBagConstraints.fill=java.awt.GridBagConstraints.HORIZONTAL;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.WEST;
+  gridBagConstraints.weightx=1.0;
+  add(cyanSlider,gridBagConstraints);
+  cyanFieldPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER,0,0));
+  cyanField.setColumns(3);
+  cyanField.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+  cyanField.setText("0");
+  cyanField.addFocusListener(new java.awt.event.FocusAdapter(){
+    public void focusGained(    java.awt.event.FocusEvent evt){
+      fieldFocusGained(evt);
+    }
+    public void focusLost(    java.awt.event.FocusEvent evt){
+      cyanFieldFocusLost(evt);
+    }
+  }
+);
+  cyanFieldPanel.add(cyanField);
+  cyanFieldLabel.setText("%");
+  cyanFieldPanel.add(cyanFieldLabel);
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=1;
+  gridBagConstraints.gridy=0;
+  gridBagConstraints.gridheight=2;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.SOUTH;
+  add(cyanFieldPanel,gridBagConstraints);
+  magentaLabel.setText(labels.getString("ColorChooser.cmykMagentaText"));
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=0;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.SOUTHWEST;
+  gridBagConstraints.insets=new java.awt.Insets(3,0,-4,0);
+  add(magentaLabel,gridBagConstraints);
+  magentaSlider.setMajorTickSpacing(100);
+  magentaSlider.setMinorTickSpacing(50);
+  magentaSlider.setPaintTicks(true);
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=0;
+  gridBagConstraints.fill=java.awt.GridBagConstraints.HORIZONTAL;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.WEST;
+  gridBagConstraints.weightx=1.0;
+  add(magentaSlider,gridBagConstraints);
+  magentaFieldPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER,0,0));
+  magentaField.setColumns(3);
+  magentaField.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+  magentaField.setText("0");
+  magentaField.addFocusListener(new java.awt.event.FocusAdapter(){
+    public void focusGained(    java.awt.event.FocusEvent evt){
+      fieldFocusGained(evt);
+    }
+    public void focusLost(    java.awt.event.FocusEvent evt){
+      magentaFieldFocusLost(evt);
+    }
+  }
+);
+  magentaFieldPanel.add(magentaField);
+  magentaFieldLabel.setText("%");
+  magentaFieldPanel.add(magentaFieldLabel);
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=1;
+  gridBagConstraints.gridy=2;
+  gridBagConstraints.gridheight=2;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.SOUTH;
+  add(magentaFieldPanel,gridBagConstraints);
+  yellowLabel.setText(labels.getString("ColorChooser.cmykYellowText"));
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=0;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.SOUTHWEST;
+  gridBagConstraints.insets=new java.awt.Insets(3,0,-4,0);
+  add(yellowLabel,gridBagConstraints);
+  yellowSlider.setMajorTickSpacing(100);
+  yellowSlider.setMinorTickSpacing(50);
+  yellowSlider.setPaintTicks(true);
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=0;
+  gridBagConstraints.fill=java.awt.GridBagConstraints.HORIZONTAL;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.WEST;
+  gridBagConstraints.weightx=1.0;
+  add(yellowSlider,gridBagConstraints);
+  yellowFieldPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER,0,0));
+  yellowField.setColumns(3);
+  yellowField.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+  yellowField.setText("0");
+  yellowField.addFocusListener(new java.awt.event.FocusAdapter(){
+    public void focusGained(    java.awt.event.FocusEvent evt){
+      fieldFocusGained(evt);
+    }
+    public void focusLost(    java.awt.event.FocusEvent evt){
+      yellowFieldFocusLost(evt);
+    }
+  }
+);
+  yellowFieldPanel.add(yellowField);
+  yellowFieldLabel.setText("%");
+  yellowFieldPanel.add(yellowFieldLabel);
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=1;
+  gridBagConstraints.gridy=4;
+  gridBagConstraints.gridheight=2;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.SOUTH;
+  add(yellowFieldPanel,gridBagConstraints);
+  blackLabel.setText(labels.getString("ColorChooser.cmykBlackText"));
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=0;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.SOUTHWEST;
+  gridBagConstraints.insets=new java.awt.Insets(3,0,-4,0);
+  add(blackLabel,gridBagConstraints);
+  blackSlider.setMajorTickSpacing(100);
+  blackSlider.setMinorTickSpacing(50);
+  blackSlider.setPaintTicks(true);
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=0;
+  gridBagConstraints.fill=java.awt.GridBagConstraints.HORIZONTAL;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.WEST;
+  gridBagConstraints.weightx=1.0;
+  add(blackSlider,gridBagConstraints);
+  blackFieldPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER,0,0));
+  blackField.setColumns(3);
+  blackField.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+  blackField.setText("0");
+  blackField.addFocusListener(new java.awt.event.FocusAdapter(){
+    public void focusGained(    java.awt.event.FocusEvent evt){
+      fieldFocusGained(evt);
+    }
+    public void focusLost(    java.awt.event.FocusEvent evt){
+      blackFieldFocusLost(evt);
+    }
+  }
+);
+  blackFieldPanel.add(blackField);
+  blackFieldLabel.setText("%");
+  blackFieldPanel.add(blackFieldLabel);
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=1;
+  gridBagConstraints.gridy=6;
+  gridBagConstraints.gridheight=2;
+  gridBagConstraints.anchor=java.awt.GridBagConstraints.SOUTH;
+  add(blackFieldPanel,gridBagConstraints);
+  springPanel.setLayout(new java.awt.BorderLayout());
+  gridBagConstraints=new java.awt.GridBagConstraints();
+  gridBagConstraints.gridx=0;
+  gridBagConstraints.gridy=100;
+  gridBagConstraints.weighty=1.0;
+  add(springPanel,gridBagConstraints);
+}

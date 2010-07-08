@@ -1,0 +1,6 @@
+{
+  if (updateRecursion++ == 0) {
+    ccModel.setColor(getColorFromModel());
+  }
+  updateRecursion--;
+}

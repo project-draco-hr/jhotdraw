@@ -1,0 +1,7 @@
+{
+  PaletteLookAndFeel.installColorsAndFont(chooser,"ColorChooser.background","ColorChooser.foreground","ColorChooser.font");
+  TransferHandler th=chooser.getTransferHandler();
+  if (th == null || th instanceof UIResource) {
+    chooser.setTransferHandler(defaultTransferHandler);
+  }
+}

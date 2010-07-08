@@ -1,0 +1,24 @@
+{
+  String[] defaultChooserNames=(String[])PaletteLookAndFeel.getInstance().get("ColorChooser.defaultChoosers");
+  ArrayList<AbstractColorChooserPanel> panels=new ArrayList<AbstractColorChooserPanel>(defaultChooserNames.length);
+  for (int i=0; i < defaultChooserNames.length; i++) {
+    try {
+      panels.add((AbstractColorChooserPanel)Class.forName(defaultChooserNames[i]).newInstance());
+    }
+ catch (    AccessControlException e) {
+      System.err.println("PaletteColorChooserUI warning: unable to instantiate " + defaultChooserNames[i]);
+      e.printStackTrace();
+    }
+catch (    Exception e) {
+      System.err.println("PaletteColorChooserUI warning: unable to instantiate " + defaultChooserNames[i]);
+      e.printStackTrace();
+    }
+catch (    UnsupportedClassVersionError e) {
+      System.err.println("PaletteColorChooserUI warning: unable to instantiate " + defaultChooserNames[i]);
+    }
+catch (    Throwable t) {
+      System.err.println("PaletteColorChooserUI warning: unable to instantiate " + defaultChooserNames[i]);
+    }
+  }
+  return (AbstractColorChooserPanel[])panels.toArray(new AbstractColorChooserPanel[panels.size()]);
+}

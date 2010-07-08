@@ -1,0 +1,11 @@
+{
+  setEnabled(getEditor().isEnabled());
+  if (getView() != null && colorChooser != null && popupMenu != null) {
+    colorChooser.setEnabled(getView().getSelectionCount() > 0);
+    popupMenu.setEnabled(getView().getSelectionCount() > 0);
+    isUpdating++;
+    Color drawingColor=getView().getDrawing().get(key);
+    colorChooser.setColor(drawingColor == null ? new Color(0,true) : drawingColor);
+    isUpdating--;
+  }
+}

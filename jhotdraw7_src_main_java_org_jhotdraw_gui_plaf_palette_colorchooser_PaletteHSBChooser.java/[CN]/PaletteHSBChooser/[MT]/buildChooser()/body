@@ -1,0 +1,70 @@
+{
+  PaletteLookAndFeel plaf=labels=PaletteLookAndFeel.getInstance();
+  initComponents();
+  setUI(PalettePanelUI.createUI(this));
+  hueFieldPanel.setUI((PanelUI)PalettePanelUI.createUI(hueFieldPanel));
+  saturationFieldPanel.setUI((PanelUI)PalettePanelUI.createUI(saturationFieldPanel));
+  brightnessFieldPanel.setUI((PanelUI)PalettePanelUI.createUI(brightnessFieldPanel));
+  hueLabel.setUI((LabelUI)PaletteLabelUI.createUI(hueLabel));
+  saturationLabel.setUI((LabelUI)PaletteLabelUI.createUI(saturationLabel));
+  brightnessLabel.setUI((LabelUI)PaletteLabelUI.createUI(brightnessLabel));
+  hueFieldLabel.setUI((LabelUI)PaletteLabelUI.createUI(hueFieldLabel));
+  saturationFieldLabel.setUI((LabelUI)PaletteLabelUI.createUI(saturationFieldLabel));
+  brightnessFieldLabel.setUI((LabelUI)PaletteLabelUI.createUI(brightnessFieldLabel));
+  hueField.setUI((TextUI)PaletteTextFieldUI.createUI(hueField));
+  saturationField.setUI((TextUI)PaletteTextFieldUI.createUI(saturationField));
+  brightnessField.setUI((TextUI)PaletteTextFieldUI.createUI(brightnessField));
+  ccModel.getBoundedRangeModel(0).setMaximum(359);
+  ccModel.getBoundedRangeModel(1).setMaximum(100);
+  ccModel.getBoundedRangeModel(2).setMaximum(100);
+  Font font=plaf.getFont("ColorChooser.font");
+  hueLabel.setFont(font);
+  hueSlider.setFont(font);
+  hueField.setFont(font);
+  hueFieldLabel.setFont(font);
+  saturationLabel.setFont(font);
+  saturationSlider.setFont(font);
+  saturationField.setFont(font);
+  saturationFieldLabel.setFont(font);
+  brightnessLabel.setFont(font);
+  brightnessSlider.setFont(font);
+  brightnessField.setFont(font);
+  brightnessFieldLabel.setFont(font);
+  int textSliderGap=plaf.getInt("ColorChooser.textSliderGap");
+  if (textSliderGap != 0) {
+    Border fieldBorder=new EmptyBorder(0,textSliderGap,0,0);
+    hueFieldPanel.setBorder(fieldBorder);
+    saturationFieldPanel.setBorder(fieldBorder);
+    brightnessFieldPanel.setBorder(fieldBorder);
+  }
+  ccModel.configureSlider(0,hueSlider);
+  ccModel.configureSlider(1,saturationSlider);
+  ccModel.configureSlider(2,brightnessSlider);
+  hueField.setText(Integer.toString(hueSlider.getValue()));
+  saturationField.setText(Integer.toString(saturationSlider.getValue()));
+  brightnessField.setText(Integer.toString(brightnessSlider.getValue()));
+  Insets borderMargin=UIManager.getInsets("Component.visualMargin");
+  if (borderMargin != null) {
+    borderMargin=(Insets)borderMargin.clone();
+    borderMargin.left=3 - borderMargin.left;
+    hueFieldLabel.putClientProperty("Quaqua.Component.visualMargin",borderMargin);
+    saturationFieldLabel.putClientProperty("Quaqua.Component.visualMargin",borderMargin);
+    brightnessFieldLabel.putClientProperty("Quaqua.Component.visualMargin",borderMargin);
+  }
+  new ColorSliderTextFieldHandler(hueField,ccModel,0);
+  new ColorSliderTextFieldHandler(saturationField,ccModel,1);
+  new ColorSliderTextFieldHandler(brightnessField,ccModel,2);
+  ccModel.addChangeListener(new ChangeListener(){
+    @Override public void stateChanged(    ChangeEvent evt){
+      setColorToModel(ccModel.getColor());
+    }
+  }
+);
+  hueField.setMinimumSize(hueField.getPreferredSize());
+  saturationField.setMinimumSize(saturationField.getPreferredSize());
+  brightnessField.setMinimumSize(brightnessField.getPreferredSize());
+  VisualMargin bm=new VisualMargin(false,false,true,false);
+  hueLabel.setBorder(bm);
+  saturationLabel.setBorder(bm);
+  brightnessLabel.setBorder(bm);
+}

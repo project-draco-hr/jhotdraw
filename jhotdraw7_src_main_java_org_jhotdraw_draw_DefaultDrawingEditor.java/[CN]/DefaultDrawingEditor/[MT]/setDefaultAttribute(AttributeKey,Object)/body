@@ -1,4 +1,4 @@
 {
   Object oldValue=defaultAttributes.put(key,newValue);
-  firePropertyChange(key.getKey(),oldValue,newValue);
+  firePropertyChange(DEFAULT_ATTRIBUTE_PROPERTY_PREFIX + key.getKey(),oldValue,newValue);
 }

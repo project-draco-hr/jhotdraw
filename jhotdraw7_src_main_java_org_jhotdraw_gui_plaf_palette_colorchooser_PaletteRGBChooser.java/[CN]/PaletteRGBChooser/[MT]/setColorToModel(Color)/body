@@ -1,0 +1,3 @@
+{
+  getColorSelectionModel().setSelectedColor(color);
+}

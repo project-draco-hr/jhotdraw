@@ -15,21 +15,23 @@
     Color c=(Color)value;
     Format f=outputFormat;
     if (isAdaptive) {
-      if (c.getColorSpace().equals(HSBColorSpace.getInstance())) {
+switch (c.getColorSpace().getType()) {
+case ColorSpace.TYPE_HSV:
         f=Format.HSB_PERCENTAGE;
-      }
- else       if (c.getColorSpace().equals(ColorSpace.getInstance(ColorSpace.CS_GRAY))) {
-        f=Format.GRAY_PERCENTAGE;
-      }
- else {
-        f=Format.RGB_INTEGER_SHORT;
-      }
-    }
+      break;
+case ColorSpace.TYPE_GRAY:
+    f=Format.GRAY_PERCENTAGE;
+  break;
+case ColorSpace.TYPE_RGB:
+default :
+f=Format.RGB_INTEGER_SHORT;
+}
+}
 switch (f) {
 case RGB_HEX:
-      str="000000" + Integer.toHexString(c.getRGB() & 0xffffff);
-    str="#" + str.substring(str.length() - 6);
-  break;
+str="000000" + Integer.toHexString(c.getRGB() & 0xffffff);
+str="#" + str.substring(str.length() - 6);
+break;
 case RGB_INTEGER_SHORT:
 str=c.getRed() + " " + c.getGreen()+ " "+ c.getBlue();
 break;
@@ -42,7 +44,7 @@ break;
 case HSB_PERCENTAGE:
 {
 float[] components;
-if (c.getColorSpace().equals(HSBColorSpace.getInstance())) {
+if (c.getColorSpace().getType() == ColorSpace.TYPE_HSV) {
 components=c.getComponents(null);
 }
  else {
@@ -54,7 +56,7 @@ break;
 case GRAY_PERCENTAGE:
 {
 float[] components;
-if (c.getColorSpace().equals(ColorSpace.getInstance(ColorSpace.CS_GRAY))) {
+if (c.getColorSpace().getType() == ColorSpace.TYPE_GRAY) {
 components=c.getComponents(null);
 }
  else {

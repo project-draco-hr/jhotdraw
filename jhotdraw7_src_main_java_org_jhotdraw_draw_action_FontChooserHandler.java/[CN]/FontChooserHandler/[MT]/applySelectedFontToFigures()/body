@@ -25,7 +25,6 @@
     @Override public void redo(){
       super.redo();
       for (      Figure figure : selectedFigures) {
-        restoreData.add(figure.getAttributesRestoreData());
         figure.willChange();
         figure.set(key,undoValue);
         figure.changed();

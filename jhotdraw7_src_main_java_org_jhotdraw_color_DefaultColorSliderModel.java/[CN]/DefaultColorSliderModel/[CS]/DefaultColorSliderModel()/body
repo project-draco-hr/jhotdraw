@@ -1,3 +1,3 @@
 {
-  setColorSpace(HSBColorSpace.getInstance());
+  setColorSpace(ICC_ColorSpace.getInstance(ICC_ColorSpace.CS_sRGB));
 }

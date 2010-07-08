@@ -1,10 +1,11 @@
 {
+  PaletteLookAndFeel plaf=getInstance();
   Color bg=c.getBackground();
   if (bg == null || bg instanceof UIResource) {
-    c.setBackground(getInstance().getColor(defaultBgName));
+    c.setBackground(plaf.getColor(defaultBgName));
   }
   Color fg=c.getForeground();
   if (fg == null || fg instanceof UIResource) {
-    c.setForeground(getInstance().getColor(defaultFgName));
+    c.setForeground(plaf.getColor(defaultFgName));
   }
 }

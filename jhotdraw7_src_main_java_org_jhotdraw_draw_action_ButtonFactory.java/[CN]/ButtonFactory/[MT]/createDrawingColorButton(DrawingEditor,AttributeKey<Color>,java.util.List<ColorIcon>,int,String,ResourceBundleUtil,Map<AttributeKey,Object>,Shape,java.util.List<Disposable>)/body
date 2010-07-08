@@ -10,8 +10,9 @@
     DrawingAttributeAction a;
     HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);
     if (swatch != null) {
-      attributes.put(attributeKey,swatch.getColor());
-      if (swatch.getColor() == null) {
+      Color swatchColor=swatch.getColor();
+      attributes.put(attributeKey,swatchColor);
+      if (swatchColor == null || swatchColor.getAlpha() == 0) {
         hasNullColor=true;
       }
       popupButton.add(a=new DrawingAttributeAction(editor,attributes,labels.getToolTipTextProperty(labelKey),swatch));

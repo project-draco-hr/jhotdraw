@@ -6,5 +6,10 @@
   m.put(ClearSelectionAction.ID,new ClearSelectionAction());
   m.put(ViewSourceAction.ID,new ViewSourceAction(a,v));
   m.put(ExportFileAction.ID,new ExportFileAction(a,v));
+  if (v instanceof SVGView) {
+    SVGView svgView=(SVGView)v;
+    m.put(UndoAction.ID,svgView.getUndoManager().getUndoAction());
+    m.put(RedoAction.ID,svgView.getUndoManager().getRedoAction());
+  }
   return m;
 }

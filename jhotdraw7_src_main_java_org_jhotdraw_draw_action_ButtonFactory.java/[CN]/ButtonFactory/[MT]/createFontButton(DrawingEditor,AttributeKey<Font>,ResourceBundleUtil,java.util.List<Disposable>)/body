@@ -3,7 +3,7 @@
   fontPopupButton=new JPopupButton();
   labels.configureToolBarButton(fontPopupButton,"attribute.font");
   fontPopupButton.setFocusable(false);
-  JPopupMenu popupMenu=new JPopupMenu();
+  JComponentPopup popupMenu=new JComponentPopup();
   JFontChooser fontChooser=new JFontChooser();
   dsp.add(new FontChooserHandler(editor,key,fontChooser,popupMenu));
   popupMenu.add(fontChooser);

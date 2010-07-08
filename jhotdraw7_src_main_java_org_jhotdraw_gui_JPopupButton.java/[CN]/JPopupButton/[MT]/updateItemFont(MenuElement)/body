@@ -1,0 +1,6 @@
+{
+  menu.getComponent().setFont(itemFont);
+  for (  MenuElement child : menu.getSubElements()) {
+    updateItemFont(child);
+  }
+}

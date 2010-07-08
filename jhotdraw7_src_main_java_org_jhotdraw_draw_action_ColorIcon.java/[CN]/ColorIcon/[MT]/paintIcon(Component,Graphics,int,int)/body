@@ -1,5 +1,5 @@
 {
-  if (fillColor == null) {
+  if (fillColor == null || fillColor.getAlpha() == 0) {
     if (width == noColorImage.getWidth() && height == noColorImage.getHeight()) {
       g.drawImage(noColorImage,x,y,c);
     }

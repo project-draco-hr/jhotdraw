@@ -4,6 +4,9 @@
   if (src == drawingEditor && name == DrawingEditor.ACTIVE_VIEW_PROPERTY) {
     updateActiveView();
   }
+ else   if (src == drawingEditor && name.equals(DrawingEditor.DEFAULT_ATTRIBUTE_PROPERTY_PREFIX + attributeKey.getKey())) {
+    updateAttributeEditor();
+  }
  else   if (src == attributeEditor && name == AttributeEditor.ATTRIBUTE_VALUE_PROPERTY) {
     updateFigures();
   }

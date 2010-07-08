@@ -1,0 +1,4 @@
+{
+  Color color=getForeground();
+  return (color == null) ? null : color.getRed() + ", " + color.getGreen()+ ", "+ color.getBlue();
+}

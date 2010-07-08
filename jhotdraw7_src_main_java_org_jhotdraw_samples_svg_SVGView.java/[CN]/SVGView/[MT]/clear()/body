@@ -8,8 +8,10 @@
         firePropertyChange(DRAWING_PROPERTY,oldDrawing,newDrawing);
         if (oldDrawing != null) {
           oldDrawing.removeAllChildren();
+          oldDrawing.removeUndoableEditListener(undo);
         }
         undo.discardAllEdits();
+        newDrawing.addUndoableEditListener(undo);
       }
     }
 ;

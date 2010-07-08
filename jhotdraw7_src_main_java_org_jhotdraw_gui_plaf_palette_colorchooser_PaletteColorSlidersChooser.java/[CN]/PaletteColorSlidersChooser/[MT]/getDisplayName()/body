@@ -1,0 +1,4 @@
+{
+  PaletteLookAndFeel laf=PaletteLookAndFeel.getInstance();
+  return laf.getString("ColorChooser.colorSliders");
+}

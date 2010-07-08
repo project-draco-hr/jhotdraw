@@ -1,0 +1,50 @@
+{
+  JPopupButton popupButton;
+  popupButton=new JPopupButton();
+  labels.configureToolBarButton(popupButton,labelKey);
+  popupButton.setFocusable(true);
+  popupButton.setRequestFocusEnabled(false);
+  JComponentPopup popupMenu=new JComponentPopup(){
+    private JColorChooser colorChooser;
+    @Override public void show(    Component invoker,    int x,    int y){
+      if (colorChooser == null) {
+        initialize();
+      }
+      Color c;
+      if (editor.getActiveView() != null && editor.getActiveView().getSelectionCount() > 0) {
+        c=editor.getActiveView().getSelectedFigures().iterator().next().get(attributeKey);
+      }
+ else {
+        c=editor.getDefaultAttribute(attributeKey);
+      }
+      colorChooser.setColor(c == null ? new Color(0,true) : c);
+      super.show(invoker,x,y);
+    }
+    private void initialize(){
+      colorChooser=new JColorChooser();
+      colorChooser.setOpaque(true);
+      colorChooser.setBackground(Color.WHITE);
+      if (uiclass != null) {
+        try {
+          colorChooser.setUI((ColorChooserUI)Methods.invokeStatic(uiclass,"createUI",new Class[]{JComponent.class},new Object[]{colorChooser}));
+        }
+ catch (        NoSuchMethodException ex) {
+          ex.printStackTrace();
+        }
+      }
+      dsp.add(new SelectionColorChooserHandler(editor,attributeKey,colorChooser,this));
+      add(colorChooser);
+    }
+  }
+;
+  popupButton.setPopupMenu(popupMenu);
+  popupButton.setPopupAlpha(1.0f);
+  Icon icon=new SelectionColorIcon(editor,attributeKey,labels.getIconProperty(labelKey,ButtonFactory.class).getImage(),colorShape);
+  popupButton.setIcon(icon);
+  popupButton.setDisabledIcon(icon);
+  popupButton.setFocusable(false);
+  if (dsp != null) {
+    dsp.add(new SelectionComponentRepainter(editor,popupButton));
+  }
+  return popupButton;
+}

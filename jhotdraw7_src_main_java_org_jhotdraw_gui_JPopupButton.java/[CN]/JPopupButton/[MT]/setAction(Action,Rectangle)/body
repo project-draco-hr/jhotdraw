@@ -1,10 +1,10 @@
 {
   if (this.action != null) {
-    this.action.removePropertyChangeListener(actionPropertyHandler);
+    this.action.removePropertyChangeListener(handler);
   }
   this.action=action;
-  this.actionArea=actionArea;
+  this.actionArea=actionClickArea;
   if (action != null) {
-    action.addPropertyChangeListener(actionPropertyHandler);
+    action.addPropertyChangeListener(handler);
   }
 }

@@ -1,0 +1,17 @@
+{
+  recalculateIfInsetsChanged();
+  Dimension d;
+  if (slider.getOrientation() == JSlider.VERTICAL) {
+    d=new Dimension(getPreferredVerticalSize());
+    d.width+=insetCache.left + insetCache.right;
+    d.width+=focusInsets.left + focusInsets.right;
+    d.width+=trackRect.width + tickRect.width + labelRect.width;
+  }
+ else {
+    d=new Dimension(getPreferredHorizontalSize());
+    d.height+=insetCache.top + insetCache.bottom;
+    d.height+=focusInsets.top + focusInsets.bottom;
+    d.height+=trackRect.height + tickRect.height + labelRect.height;
+  }
+  return d;
+}

@@ -1,0 +1,15 @@
+{
+  chooser=(JColorChooser)c;
+  AbstractColorChooserPanel[] oldPanels=chooser.getChooserPanels();
+  installDefaults();
+  chooser.setLayout(new BorderLayout());
+  mainPanel=new PaletteColorChooserMainPanel();
+  chooser.add(mainPanel);
+  defaultChoosers=createDefaultChoosers();
+  chooser.setChooserPanels(defaultChoosers);
+  installPreviewPanel();
+  AbstractColorChooserPanel[] newPanels=(AbstractColorChooserPanel[])chooser.getChooserPanels();
+  updateColorChooserPanels(oldPanels,newPanels);
+  installListeners();
+  chooser.applyComponentOrientation(c.getComponentOrientation());
+}

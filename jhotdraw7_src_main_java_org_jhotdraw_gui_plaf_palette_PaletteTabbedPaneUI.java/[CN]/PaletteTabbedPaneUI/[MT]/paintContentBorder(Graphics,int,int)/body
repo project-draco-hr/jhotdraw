@@ -1,0 +1,64 @@
+{
+  int width=tabPane.getWidth();
+  int height=tabPane.getHeight();
+  Insets insets=tabPane.getInsets();
+  Insets tabAreaInsets=getTabAreaInsets(tabPlacement);
+  int x=insets.left;
+  int y=insets.top;
+  int w=width - insets.right - insets.left;
+  int h=height - insets.top - insets.bottom;
+switch (tabPlacement) {
+case LEFT:
+    x+=calculateTabAreaWidth(tabPlacement,runCount,maxTabWidth);
+  if (tabsOverlapBorder) {
+    x-=tabAreaInsets.right;
+  }
+w-=(x - insets.left);
+break;
+case RIGHT:
+w-=calculateTabAreaWidth(tabPlacement,runCount,maxTabWidth);
+if (tabsOverlapBorder) {
+w+=tabAreaInsets.left;
+}
+break;
+case BOTTOM:
+h-=calculateTabAreaHeight(tabPlacement,runCount,maxTabHeight);
+if (tabsOverlapBorder) {
+h+=tabAreaInsets.top;
+}
+break;
+case TOP:
+default :
+y+=calculateTabAreaHeight(tabPlacement,runCount,maxTabHeight);
+if (tabsOverlapBorder) {
+y-=tabAreaInsets.bottom;
+}
+h-=(y - insets.top);
+}
+if (tabPane.getTabCount() > 0 && (contentOpaque || tabPane.isOpaque())) {
+Color color=PaletteLookAndFeel.getInstance().getColor("TabbedPane.contentAreaColor");
+if (color != null) {
+g.setColor(color);
+}
+ else if (selectedColor == null || selectedIndex == -1) {
+g.setColor(tabPane.getBackground());
+}
+ else {
+g.setColor(selectedColor);
+}
+g.fillRect(x,y,w,h);
+}
+boolean paintBorder=tabPane.getClientProperty("Palette.TabbedPane.paintContentBorder") != Boolean.FALSE;
+if (tabPlacement == TOP || paintBorder) {
+paintContentBorderTopEdge(g,tabPlacement,selectedIndex,x,y,w,h);
+}
+if (tabPlacement == LEFT || paintBorder) {
+paintContentBorderLeftEdge(g,tabPlacement,selectedIndex,x,y,w,h);
+}
+if (tabPlacement == BOTTOM || paintBorder) {
+paintContentBorderBottomEdge(g,tabPlacement,selectedIndex,x,y,w,h);
+}
+if (tabPlacement == RIGHT || paintBorder) {
+paintContentBorderRightEdge(g,tabPlacement,selectedIndex,x,y,w,h);
+}
+}

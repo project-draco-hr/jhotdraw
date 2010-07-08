@@ -1,0 +1,3 @@
+{
+  ((JTextField)evt.getSource()).selectAll();
+}

@@ -1,0 +1,5 @@
+{
+  chooser.removePropertyChangeListener(propertyChangeListener);
+  chooser.getSelectionModel().removeChangeListener(previewListener);
+  previewPanel.removeMouseListener(previewMouseListener);
+}

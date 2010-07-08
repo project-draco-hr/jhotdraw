@@ -10,8 +10,9 @@
   for (  ColorIcon swatch : swatches) {
     AttributeAction a;
     HashMap<AttributeKey,Object> attributes=new HashMap<AttributeKey,Object>(defaultAttributes);
-    attributes.put(attributeKey,swatch.getColor());
-    if (swatch.getColor() == null) {
+    Color swatchColor=swatch.getColor();
+    attributes.put(attributeKey,swatchColor);
+    if (swatchColor == null || swatchColor.getAlpha() == 0) {
       hasNullColor=true;
     }
     popupButton.add(a=new AttributeAction(editor,attributes,labels.getToolTipTextProperty(labelKey),swatch));

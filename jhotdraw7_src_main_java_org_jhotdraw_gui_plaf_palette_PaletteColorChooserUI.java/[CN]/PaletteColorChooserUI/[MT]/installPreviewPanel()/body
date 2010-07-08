@@ -1,0 +1,20 @@
+{
+  if (previewPanel != null) {
+    previewPanel.removeMouseListener(previewMouseListener);
+  }
+  if (previewPanel != null) {
+    mainPanel.setPreviewPanel(null);
+  }
+  previewPanel=chooser.getPreviewPanel();
+  if ((previewPanel != null) && (mainPanel != null) && (chooser != null)&& (previewPanel.getSize().getHeight() + previewPanel.getSize().getWidth() == 0)) {
+    mainPanel.setPreviewPanel(null);
+    return;
+  }
+  if (previewPanel == null || previewPanel instanceof UIResource) {
+    previewPanel=new PaletteColorChooserPreviewPanel();
+    chooser.setPreviewPanel(previewPanel);
+  }
+  previewPanel.setForeground(chooser.getColor());
+  mainPanel.setPreviewPanel(previewPanel);
+  previewPanel.addMouseListener(previewMouseListener);
+}

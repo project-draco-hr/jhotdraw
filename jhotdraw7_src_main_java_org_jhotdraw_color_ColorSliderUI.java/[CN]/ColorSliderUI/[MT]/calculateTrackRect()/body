@@ -15,7 +15,7 @@
   }
  else {
     trackRect.width=14;
-    trackRect.x=contentRect.x + contentRect.width - trackRect.width;
+    trackRect.x=contentRect.x + (contentRect.width - trackRect.width) / 2;
     trackRect.y=contentRect.y + trackBuffer;
     trackRect.height=contentRect.height - (trackBuffer * 2) + 1;
   }

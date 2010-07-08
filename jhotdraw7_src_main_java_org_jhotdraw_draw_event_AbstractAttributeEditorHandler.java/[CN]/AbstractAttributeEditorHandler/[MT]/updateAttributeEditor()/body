@@ -1,8 +1,14 @@
 {
   if (updateDepth++ == 0) {
     Set<Figure> figures=getEditedFigures();
-    if (activeView == null || figures.isEmpty()) {
+    if (drawingEditor == null) {
       attributeEditor.getComponent().setEnabled(false);
+    }
+ else     if (activeView == null || figures.isEmpty()) {
+      attributeEditor.getComponent().setEnabled(true);
+      T value=drawingEditor.getDefaultAttribute(attributeKey);
+      attributeEditor.setAttributeValue(value);
+      attributeEditor.setMultipleValues(false);
     }
  else {
       attributeEditor.getComponent().setEnabled(true);

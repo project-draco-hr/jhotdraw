@@ -4,6 +4,14 @@
   componentModels=new DefaultBoundedRangeModel[colorSpace.getNumComponents()];
   for (int i=0; i < componentModels.length; i++) {
     componentModels[i]=new DefaultBoundedRangeModel();
+    if ((colorSpace.getMaxValue(i) - colorSpace.getMinValue(i)) >= 10f) {
+      componentModels[i].setMinimum((int)colorSpace.getMinValue(i));
+      componentModels[i].setMaximum((int)colorSpace.getMaxValue(i));
+    }
+ else {
+      componentModels[i].setMinimum((int)(colorSpace.getMinValue(i) * 100f));
+      componentModels[i].setMaximum((int)(colorSpace.getMaxValue(i) * 100f));
+    }
     final int componentIndex=i;
     componentModels[i].addChangeListener(new ChangeListener(){
       @Override public void stateChanged(      ChangeEvent e){
