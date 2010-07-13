@@ -32,14 +32,14 @@
           ex.printStackTrace();
         }
       }
-      dsp.add(new SelectionColorChooserHandler(editor,attributeKey,colorChooser,this));
+      dsp.add(new DrawingColorChooserHandler(editor,attributeKey,colorChooser,this));
       add(colorChooser);
     }
   }
 ;
   popupButton.setPopupMenu(popupMenu);
   popupButton.setPopupAlpha(1.0f);
-  Icon icon=new SelectionColorIcon(editor,attributeKey,labels.getIconProperty(labelKey,ButtonFactory.class).getImage(),colorShape);
+  Icon icon=new DrawingColorIcon(editor,attributeKey,labels.getIconProperty(labelKey,ButtonFactory.class).getImage(),colorShape);
   popupButton.setIcon(icon);
   popupButton.setDisabledIcon(icon);
   popupButton.setFocusable(false);

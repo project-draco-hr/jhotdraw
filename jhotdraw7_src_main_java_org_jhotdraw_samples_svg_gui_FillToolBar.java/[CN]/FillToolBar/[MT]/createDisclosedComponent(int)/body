@@ -17,7 +17,7 @@ case 1:
       AbstractButton btn;
       Map<AttributeKey,Object> defaultAttributes=new HashMap<AttributeKey,Object>();
       FILL_GRADIENT.put(defaultAttributes,null);
-      btn=ButtonFactory.createSelectionColorChooserButton(editor,FILL_COLOR,"attribute.fillColor",labels,defaultAttributes,new Rectangle(3,3,10,10),disposables,PaletteColorChooserUI.class);
+      btn=ButtonFactory.createSelectionColorChooserButton(editor,FILL_COLOR,"attribute.fillColor",labels,defaultAttributes,new Rectangle(3,3,10,10),PaletteColorChooserUI.class,disposables);
       btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
       gbc=new GridBagConstraints();
       gbc.gridx=0;
@@ -78,7 +78,7 @@ case 2:
   gbc.fill=GridBagConstraints.HORIZONTAL;
   gbc.anchor=GridBagConstraints.FIRST_LINE_START;
   p1.add(colorField,gbc);
-  btn=ButtonFactory.createSelectionColorChooserButton(editor,FILL_COLOR,"attribute.fillColor",labels,defaultAttributes,new Rectangle(3,3,10,10),disposables,PaletteColorChooserUI.class);
+  btn=ButtonFactory.createSelectionColorChooserButton(editor,FILL_COLOR,"attribute.fillColor",labels,defaultAttributes,new Rectangle(3,3,10,10),PaletteColorChooserUI.class,disposables);
   btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
   gbc=new GridBagConstraints();
   gbc.gridx=1;

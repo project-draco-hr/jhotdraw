@@ -4,5 +4,5 @@ String labelKey
 ResourceBundleUtil labels
 Map<AttributeKey,Object> defaultAttributes
 Shape colorShape
-java.util.List<Disposable> dsp
 Class uiclass
+java.util.List<Disposable> dsp
