@@ -94,7 +94,7 @@
   magentaField.setMinimumSize(magentaField.getPreferredSize());
   yellowField.setMinimumSize(yellowField.getPreferredSize());
   blackField.setMinimumSize(blackField.getPreferredSize());
-  VisualMargin bm=new VisualMargin(false,false,true,false);
+  EmptyBorder bm=new EmptyBorder(0,0,0,0);
   cyanLabel.setBorder(bm);
   magentaLabel.setBorder(bm);
   yellowLabel.setBorder(bm);

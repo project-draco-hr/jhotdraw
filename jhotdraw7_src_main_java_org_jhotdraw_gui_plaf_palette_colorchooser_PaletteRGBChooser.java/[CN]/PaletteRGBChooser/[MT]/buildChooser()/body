@@ -58,7 +58,7 @@
   redField.setMinimumSize(redField.getPreferredSize());
   greenField.setMinimumSize(greenField.getPreferredSize());
   blueField.setMinimumSize(blueField.getPreferredSize());
-  VisualMargin bm=new VisualMargin(false,false,true,false);
+  EmptyBorder bm=new EmptyBorder(0,0,0,0);
   redLabel.setBorder(bm);
   greenLabel.setBorder(bm);
   blueLabel.setBorder(bm);
