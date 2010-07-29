@@ -1,15 +1,17 @@
 {
   if (isVisible() != newValue) {
-    try {
-      if (newValue) {
-        Toolkit.getDefaultToolkit().addAWTEventListener(handler,AWTEvent.MOUSE_EVENT_MASK);
-      }
+    if (isAWTEventListenerPermitted) {
+      try {
+        if (newValue) {
+          Toolkit.getDefaultToolkit().addAWTEventListener(handler,AWTEvent.MOUSE_EVENT_MASK);
+        }
  else {
-        Toolkit.getDefaultToolkit().removeAWTEventListener(handler);
+          Toolkit.getDefaultToolkit().removeAWTEventListener(handler);
+        }
       }
-    }
- catch (    AccessControlException e) {
-      isAWTEventListenerPermitted=false;
+ catch (      AccessControlException e) {
+        isAWTEventListenerPermitted=false;
+      }
     }
     super.setVisible(newValue);
   }

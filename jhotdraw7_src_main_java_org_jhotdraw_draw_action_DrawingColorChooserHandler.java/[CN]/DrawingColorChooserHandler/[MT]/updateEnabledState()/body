@@ -1,5 +1,5 @@
 {
-  setEnabled(getEditor().isEnabled());
+  setEnabled(getEditor() != null && getEditor().isEnabled());
   if (getView() != null && colorChooser != null && popupMenu != null) {
     colorChooser.setEnabled(getView().getSelectionCount() > 0);
     popupMenu.setEnabled(getView().getSelectionCount() > 0);
