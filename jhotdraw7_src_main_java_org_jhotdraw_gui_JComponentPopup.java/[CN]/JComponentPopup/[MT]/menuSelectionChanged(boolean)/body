@@ -1,3 +1,8 @@
 {
-  return;
+  if (isAWTEventListenerPermitted) {
+    return;
+  }
+ else {
+    super.menuSelectionChanged(isIncluded);
+  }
 }

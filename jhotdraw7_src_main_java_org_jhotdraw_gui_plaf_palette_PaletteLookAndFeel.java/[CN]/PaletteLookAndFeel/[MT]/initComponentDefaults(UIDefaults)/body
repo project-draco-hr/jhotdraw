@@ -1,6 +1,13 @@
 {
   super.initComponentDefaults(table);
   table.addResourceBundle("org.jhotdraw.gui.Labels");
+  if (table.getString("ColorChooser.rgbSliders") == null) {
+    ResourceBundle rb=ResourceBundle.getBundle("org.jhotdraw.gui.Labels");
+    for (Enumeration<String> keys=rb.getKeys(); keys.hasMoreElements(); ) {
+      String key=keys.nextElement();
+      table.put(key,rb.getObject(key));
+    }
+  }
   Integer fontPlain=new Integer(Font.PLAIN);
   Integer fontBold=new Integer(Font.BOLD);
   Object dialogPlain11=new ProxyLazyValue("javax.swing.plaf.FontUIResource",null,new Object[]{"Dialog Sans",fontPlain,11});
