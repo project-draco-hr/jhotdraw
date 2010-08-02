@@ -1,5 +1,20 @@
 {
   final Application app=getApplication();
+  if (v == null) {
+    View emptyView=app.getActiveView();
+    if (emptyView == null || emptyView.getURI() != null || emptyView.hasUnsavedChanges()) {
+      emptyView=null;
+    }
+    if (emptyView == null) {
+      v=app.createView();
+      app.add(v);
+      app.show(v);
+    }
+ else {
+      v=emptyView;
+    }
+  }
+  final View view=v;
   app.setEnabled(true);
   int multipleOpenId=1;
   for (  View aView : app.views()) {

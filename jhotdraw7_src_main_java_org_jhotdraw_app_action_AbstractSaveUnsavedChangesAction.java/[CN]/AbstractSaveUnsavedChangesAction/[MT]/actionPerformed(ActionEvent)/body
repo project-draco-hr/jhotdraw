@@ -1,11 +1,13 @@
 {
   final View p=getActiveView();
-  if (p.isEnabled()) {
+  if (p == null || p.isEnabled()) {
     final ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
-    Window wAncestor=SwingUtilities.getWindowAncestor(p.getComponent());
+    Window wAncestor=(p == null) ? null : SwingUtilities.getWindowAncestor(p.getComponent());
     oldFocusOwner=(wAncestor == null) ? null : wAncestor.getFocusOwner();
-    p.setEnabled(false);
-    if (p.hasUnsavedChanges()) {
+    if (p != null) {
+      p.setEnabled(false);
+    }
+    if (p != null && p.hasUnsavedChanges()) {
       URI unsavedURI=p.getURI();
       JOptionPane pane=new JOptionPane("<html>" + UIManager.getString("OptionPane.css") + "<b>"+ labels.getFormatted("file.saveBefore.doYouWantToSave.message",(unsavedURI == null) ? labels.getString("unnamedFile") : URIUtil.getName(unsavedURI))+ "</b><p>"+ labels.getString("file.saveBefore.doYouWantToSave.details"),JOptionPane.WARNING_MESSAGE);
       Object[] options={labels.getString("file.saveBefore.saveOption.text"),labels.getString("file.saveBefore.cancelOption.text"),labels.getString("file.saveBefore.dontSaveOption.text")};
@@ -31,7 +33,9 @@
     }
  else {
       doIt(p);
-      p.setEnabled(true);
+      if (p != null) {
+        p.setEnabled(true);
+      }
       if (oldFocusOwner != null) {
         oldFocusOwner.requestFocus();
       }
