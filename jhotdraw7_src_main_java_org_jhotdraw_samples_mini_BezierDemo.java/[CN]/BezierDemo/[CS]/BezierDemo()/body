@@ -8,7 +8,7 @@
   add(canvas,BorderLayout.CENTER);
   Point2D.Double[] d={};
   BezierPath digi=new BezierPath();
-  digi.addAll(Arrays.asList(d));
+  digi.addPolyline(Arrays.asList(d));
   Example ex=new Example();
   examples.add(ex);
   ex.digitized=digi;

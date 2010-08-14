@@ -1,4 +1,3 @@
 {
-  validatePath();
-  return Geom.chop(generalPath,p);
+  return Geom.chop(this,p);
 }
