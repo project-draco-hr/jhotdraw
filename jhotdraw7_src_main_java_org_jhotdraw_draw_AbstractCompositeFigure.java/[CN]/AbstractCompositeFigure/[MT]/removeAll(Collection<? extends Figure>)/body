@@ -1,5 +1,7 @@
 {
-  for (  Figure f : figures) {
+  willChange();
+  for (  Figure f : new LinkedList<Figure>(figures)) {
     remove(f);
   }
+  changed();
 }
