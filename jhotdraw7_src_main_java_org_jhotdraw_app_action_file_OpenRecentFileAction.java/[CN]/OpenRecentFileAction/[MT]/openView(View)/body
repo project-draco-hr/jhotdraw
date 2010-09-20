@@ -3,7 +3,7 @@
   app.setEnabled(true);
   int multipleOpenId=1;
   for (  View aView : app.views()) {
-    if (aView != view && aView.getURI() != null && aView.getURI().equals(uri)) {
+    if (aView != view && aView.isEmpty()) {
       multipleOpenId=Math.max(multipleOpenId,aView.getMultipleOpenId() + 1);
     }
   }

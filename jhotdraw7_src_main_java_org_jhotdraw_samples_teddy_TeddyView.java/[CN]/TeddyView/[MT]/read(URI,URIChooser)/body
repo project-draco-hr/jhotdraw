@@ -1,3 +1,10 @@
 {
-  read(f,((CharacterSetAccessory)((JFileURIChooser)chooser).getAccessory()).getCharacterSet());
+  String characterSet;
+  if (chooser == null || !(chooser instanceof JFileURIChooser) || !(((JFileURIChooser)chooser).getAccessory() instanceof CharacterSetAccessory)) {
+    characterSet=prefs.get("characterSet","UTF-8");
+  }
+ else {
+    characterSet=((CharacterSetAccessory)((JFileURIChooser)chooser).getAccessory()).getCharacterSet();
+  }
+  read(f,characterSet);
 }

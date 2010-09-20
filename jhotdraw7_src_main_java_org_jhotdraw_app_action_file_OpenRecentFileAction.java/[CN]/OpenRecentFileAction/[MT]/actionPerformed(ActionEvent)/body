@@ -3,7 +3,7 @@
   if (app.isEnabled()) {
     app.setEnabled(false);
     View emptyView=app.getActiveView();
-    if (emptyView == null || emptyView.getURI() != null || emptyView.hasUnsavedChanges()) {
+    if (emptyView == null || !emptyView.isEmpty() || !emptyView.isEnabled()) {
       emptyView=null;
     }
     final View p;
