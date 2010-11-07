@@ -9,7 +9,7 @@
     node=(MutableTreeNode)node.getParent();
   }
   if (result && (node instanceof FontCollectionNode)) {
-    result&=((FontFamilyNode)node).isEditable();
+    result&=((FontCollectionNode)node).isEditable();
   }
   return result;
 }

@@ -6,8 +6,11 @@
   if (contentPane != null && contentPane.isVisible()) {
     rd=contentPane.getMinimumSize();
   }
- else {
+ else   if (contentPane != null) {
     rd=new Dimension(0,contentPane.getPreferredSize().height);
+  }
+ else {
+    rd=new Dimension(0,0);
   }
   if (menuBar != null && menuBar.isVisible()) {
     mbd=menuBar.getMinimumSize();
