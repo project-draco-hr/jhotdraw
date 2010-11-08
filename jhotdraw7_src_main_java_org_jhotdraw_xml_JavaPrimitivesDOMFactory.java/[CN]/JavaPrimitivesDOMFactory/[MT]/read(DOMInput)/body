@@ -81,7 +81,6 @@
   }
  else {
     o=create(in.getTagName());
-    ((DOMStorable)o).read(in);
   }
   return o;
 }
