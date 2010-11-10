@@ -1,4 +1,5 @@
 {
   super(editor,new GroupFigure(),false);
   labels.configureAction(this,ID);
+  updateEnabledState();
 }

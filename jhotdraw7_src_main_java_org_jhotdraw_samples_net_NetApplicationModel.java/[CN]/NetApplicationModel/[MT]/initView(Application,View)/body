@@ -1,5 +1,5 @@
 {
   if (a.isSharingToolsAmongViews()) {
-    ((NetView)p).setDrawingEditor(getSharedEditor());
+    ((NetView)p).setEditor(getSharedEditor());
   }
 }

@@ -1,8 +1,8 @@
 {
   if (inc > 0) {
-    nread_+=inc;
-    if (nread_ > size_) {
-      size_=nread_;
+    nread+=inc;
+    if (nread > size) {
+      size=nread;
     }
     fireStateChanged();
   }

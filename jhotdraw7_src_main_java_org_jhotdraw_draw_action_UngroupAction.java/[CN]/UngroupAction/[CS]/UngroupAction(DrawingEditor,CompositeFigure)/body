@@ -1,4 +1,5 @@
 {
   super(editor,prototype,false);
   labels.configureAction(this,ID);
+  updateEnabledState();
 }

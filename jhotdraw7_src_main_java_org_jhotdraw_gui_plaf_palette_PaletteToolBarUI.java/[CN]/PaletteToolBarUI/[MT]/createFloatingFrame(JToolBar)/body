@@ -4,7 +4,7 @@
     @Override protected JRootPane createRootPane(){
       JRootPane rootPane=new JRootPane(){
         private boolean packing=false;
-        public void validate(){
+        @Override public void validate(){
           super.validate();
           if (!packing) {
             packing=true;

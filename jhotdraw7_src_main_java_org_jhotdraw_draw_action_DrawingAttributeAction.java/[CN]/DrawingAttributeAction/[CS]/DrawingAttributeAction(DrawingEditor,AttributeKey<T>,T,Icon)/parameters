@@ -1,0 +1,4 @@
+DrawingEditor editor
+AttributeKey<T> key
+T value
+Icon icon

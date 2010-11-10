@@ -4,6 +4,6 @@
   attributeEditor.setAttributeValue(key.getDefaultValue());
   setAttributeKey(key);
   setAttributeEditor(attributeEditor);
-  setDrawingEditor(drawingEditor);
+  setEditor(drawingEditor);
   isUpdateDrawingEditorDefaults=updateDrawingEditorDefaults;
 }

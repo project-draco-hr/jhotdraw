@@ -1,5 +1,5 @@
 {
   super(editor);
   labels.configureAction(this,"edit.applyAttributes");
-  setEnabled(true);
+  updateEnabledState();
 }

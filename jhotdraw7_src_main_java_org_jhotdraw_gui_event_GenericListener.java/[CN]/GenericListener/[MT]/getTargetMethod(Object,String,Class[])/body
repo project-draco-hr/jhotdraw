@@ -2,11 +2,17 @@
   Method[] m=target.getClass().getMethods();
   Method result=null;
   eachMethod:   for (int i=0; i < m.length; i++) {
-    if (!targetMethodName.equals(m[i].getName()))     continue eachMethod;
+    if (!targetMethodName.equals(m[i].getName())) {
+      continue eachMethod;
+    }
     Class[] p=m[i].getParameterTypes();
-    if (p.length != parameterTypes.length)     continue eachMethod;
+    if (p.length != parameterTypes.length) {
+      continue eachMethod;
+    }
     for (int j=0; j < p.length; j++) {
-      if (!p[j].isAssignableFrom(parameterTypes[j]))       continue eachMethod;
+      if (!p[j].isAssignableFrom(parameterTypes[j])) {
+        continue eachMethod;
+      }
     }
     if (result != null) {
       throw new RuntimeException("ambiguous method: " + m[i] + " vs. "+ result);
@@ -17,6 +23,8 @@
     return null;
   }
   Method publicResult=raiseToPublicClass(result);
-  if (publicResult != null)   result=publicResult;
+  if (publicResult != null) {
+    result=publicResult;
+  }
   return result;
 }

@@ -1,15 +1,15 @@
 {
 class ToolBarDialog extends JDialog {
-    public ToolBarDialog(    Frame owner,    String title,    boolean modal){
+    public ToolBarDialog(    @Nullable Frame owner,    String title,    boolean modal){
       super(owner,title,modal);
     }
-    public ToolBarDialog(    Dialog owner,    String title,    boolean modal){
+    public ToolBarDialog(    @Nullable Dialog owner,    String title,    boolean modal){
       super(owner,title,modal);
     }
     @Override protected JRootPane createRootPane(){
       JRootPane rootPane=new JRootPane(){
         private boolean packing=false;
-        public void validate(){
+        @Override public void validate(){
           super.validate();
           if (!packing) {
             packing=true;

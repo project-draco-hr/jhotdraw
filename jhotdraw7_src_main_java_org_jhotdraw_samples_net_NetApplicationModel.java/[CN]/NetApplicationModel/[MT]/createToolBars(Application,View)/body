@@ -7,7 +7,7 @@
     editor=getSharedEditor();
   }
  else {
-    editor=p.getDrawingEditor();
+    editor=p.getEditor();
   }
   LinkedList<JToolBar> list=new LinkedList<JToolBar>();
   JToolBar tb;

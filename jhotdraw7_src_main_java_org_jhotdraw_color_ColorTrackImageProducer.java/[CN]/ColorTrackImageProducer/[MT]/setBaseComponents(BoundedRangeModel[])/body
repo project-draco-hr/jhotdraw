@@ -1,6 +1,0 @@
-{
-  isDirty=true;
-  for (int i=0; i < components.length; i++) {
-    baseComponents[i]=components[i].getValue() / (float)components[i].getMaximum();
-  }
-}

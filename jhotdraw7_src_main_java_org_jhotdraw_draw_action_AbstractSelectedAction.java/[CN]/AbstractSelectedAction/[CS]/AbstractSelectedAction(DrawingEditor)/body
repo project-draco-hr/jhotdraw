@@ -1,4 +1,3 @@
 {
   setEditor(editor);
-  updateEnabledState();
 }

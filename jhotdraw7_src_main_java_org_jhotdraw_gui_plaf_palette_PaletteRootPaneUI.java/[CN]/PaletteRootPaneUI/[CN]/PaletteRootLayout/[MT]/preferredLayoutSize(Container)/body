@@ -3,7 +3,7 @@
   Insets i=rootPane.getInsets();
   Container contentPane=rootPane.getContentPane();
   JMenuBar menuBar=rootPane.getJMenuBar();
-  if (contentPane != null && contentPane.isVisible()) {
+  if (contentPane.isVisible()) {
     rd=contentPane.getPreferredSize();
   }
  else {

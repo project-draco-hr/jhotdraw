@@ -1,9 +1,9 @@
 {
   super(in);
   try {
-    size_=in.available();
+    size=in.available();
   }
  catch (  IOException ioe) {
-    size_=0;
+    size=0;
   }
 }

@@ -13,4 +13,5 @@
   }
 );
   this.fixedAttributes=fixedAttributes;
+  updateEnabledState();
 }

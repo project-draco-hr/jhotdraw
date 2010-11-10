@@ -1,6 +1,3 @@
 {
-  if (DEBUG) {
-    System.out.println("ODGInputFormat.readFrameElement(" + elem + ") not implemented.");
-  }
-  return null;
+  throw new UnsupportedOperationException("not implemented.");
 }

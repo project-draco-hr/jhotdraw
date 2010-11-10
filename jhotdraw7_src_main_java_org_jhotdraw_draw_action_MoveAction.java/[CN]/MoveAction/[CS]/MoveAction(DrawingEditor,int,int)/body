@@ -2,4 +2,5 @@
   super(editor);
   this.dx=dx;
   this.dy=dy;
+  updateEnabledState();
 }

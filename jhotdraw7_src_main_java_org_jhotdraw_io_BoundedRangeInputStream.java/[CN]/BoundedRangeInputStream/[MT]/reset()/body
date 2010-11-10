@@ -1,5 +1,5 @@
 {
   in.reset();
-  nread_=size_ - in.available();
+  nread=size - in.available();
   fireStateChanged();
 }

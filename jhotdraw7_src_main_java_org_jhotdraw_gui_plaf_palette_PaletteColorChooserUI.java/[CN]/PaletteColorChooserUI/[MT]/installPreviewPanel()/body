@@ -6,7 +6,7 @@
     mainPanel.setPreviewPanel(null);
   }
   previewPanel=chooser.getPreviewPanel();
-  if ((previewPanel != null) && (mainPanel != null) && (chooser != null)&& (previewPanel.getSize().getHeight() + previewPanel.getSize().getWidth() == 0)) {
+  if ((previewPanel != null) && (mainPanel != null) && (previewPanel.getSize().getHeight() + previewPanel.getSize().getWidth() == 0)) {
     mainPanel.setPreviewPanel(null);
     return;
   }

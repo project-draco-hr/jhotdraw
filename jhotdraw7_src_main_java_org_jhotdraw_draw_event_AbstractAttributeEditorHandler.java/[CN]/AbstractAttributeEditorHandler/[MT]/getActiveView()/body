@@ -3,6 +3,6 @@
     return getView();
   }
  else {
-    return drawingEditor.getActiveView();
+    return editor.getActiveView();
   }
 }

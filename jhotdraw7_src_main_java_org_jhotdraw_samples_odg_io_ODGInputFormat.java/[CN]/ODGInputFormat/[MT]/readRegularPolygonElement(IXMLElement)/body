@@ -1,4 +1,3 @@
 {
-  System.out.println("ODGInputFormat.readRegularPolygonElement(" + elem + "):null - not implemented");
-  return null;
+  throw new UnsupportedOperationException("ODGInputFormat.readRegularPolygonElement(" + elem + "):null - not implemented");
 }
