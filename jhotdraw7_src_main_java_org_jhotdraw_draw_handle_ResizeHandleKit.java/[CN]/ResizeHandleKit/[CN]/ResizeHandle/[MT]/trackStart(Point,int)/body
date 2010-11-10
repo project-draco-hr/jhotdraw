@@ -1,4 +1,8 @@
 {
+  isTransformableCache=getOwner().isTransformable();
+  if (!isTransformableCache) {
+    return;
+  }
   geometry=getOwner().getTransformRestoreData();
   Point location=getLocation();
   sx=-anchor.x + location.x;

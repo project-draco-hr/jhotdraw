@@ -1,4 +1,8 @@
 {
+  if (!getOwner().isTransformable()) {
+    evt.consume();
+    return;
+  }
   Object geom=getOwner().getTransformRestoreData();
   Rectangle2D.Double r=getTransformedBounds();
 switch (evt.getKeyCode()) {

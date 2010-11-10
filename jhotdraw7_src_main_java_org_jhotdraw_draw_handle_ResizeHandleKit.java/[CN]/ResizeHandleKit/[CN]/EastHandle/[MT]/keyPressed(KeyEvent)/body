@@ -1,4 +1,8 @@
 {
+  if (!getOwner().isTransformable()) {
+    evt.consume();
+    return;
+  }
   Rectangle2D.Double r=getOwner().getBounds();
 switch (evt.getKeyCode()) {
 case KeyEvent.VK_UP:

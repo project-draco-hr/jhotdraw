@@ -1,13 +1,20 @@
 {
   if (getView().getSelectionCount() > 0) {
     Rectangle2D.Double r=null;
+    HashSet<Figure> transformedFigures=new HashSet<Figure>();
     for (    Figure f : getView().getSelectedFigures()) {
-      if (r == null) {
-        r=f.getBounds();
-      }
+      if (f.isTransformable()) {
+        transformedFigures.add(f);
+        if (r == null) {
+          r=f.getBounds();
+        }
  else {
-        r.add(f.getBounds());
+          r.add(f.getBounds());
+        }
       }
+    }
+    if (transformedFigures.isEmpty()) {
+      return;
     }
     Point2D.Double p0=new Point2D.Double(r.x,r.y);
     if (getView().getConstrainer() != null) {
@@ -31,14 +38,12 @@ break;
 }
 AffineTransform tx=new AffineTransform();
 tx.translate(r.x - p0.x,r.y - p0.y);
-for (Figure f : getView().getSelectedFigures()) {
-if (f.isTransformable()) {
+for (Figure f : transformedFigures) {
 f.willChange();
 f.transform(tx);
 f.changed();
 }
-}
 CompositeEdit edit;
-fireUndoableEditHappened(new TransformEdit(getView().getSelectedFigures(),tx));
+fireUndoableEditHappened(new TransformEdit(transformedFigures,tx));
 }
 }
