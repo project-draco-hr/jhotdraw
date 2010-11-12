@@ -31,8 +31,9 @@
     r.grow(ANCHOR_WIDTH,ANCHOR_WIDTH);
     fireAreaInvalidated(r);
     startConnector=endConnector=null;
-    creationFinished(createdFigure);
+    Figure finishedFigure=createdFigure;
     createdFigure=null;
+    creationFinished(finishedFigure);
   }
  else {
     if (isToolDoneAfterCreation()) {
