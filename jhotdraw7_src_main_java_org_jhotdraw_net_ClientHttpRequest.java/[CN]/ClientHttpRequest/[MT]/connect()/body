@@ -1,3 +1,5 @@
 {
-  if (os == null)   os=connection.getOutputStream();
+  if (os == null) {
+    os=connection.getOutputStream();
+  }
 }

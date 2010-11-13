@@ -1,3 +1,9 @@
 {
-  setParameter(name,file.getPath(),new FileInputStream(file));
+  FileInputStream in=new FileInputStream(file);
+  try {
+    setParameter(name,file.getPath(),in);
+  }
+  finally {
+    in.close();
+  }
 }

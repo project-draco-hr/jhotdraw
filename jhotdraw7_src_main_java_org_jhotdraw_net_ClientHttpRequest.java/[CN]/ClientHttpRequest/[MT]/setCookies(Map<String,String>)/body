@@ -1,4 +1,6 @@
 {
-  if (cookies == null)   return;
+  if (cookies == null) {
+    return;
+  }
   this.cookies.putAll(cookies);
 }

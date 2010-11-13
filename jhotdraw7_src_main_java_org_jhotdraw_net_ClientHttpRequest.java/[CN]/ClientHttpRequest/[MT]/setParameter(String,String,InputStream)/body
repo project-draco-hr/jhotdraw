@@ -7,7 +7,9 @@
   newline();
   write("Content-Type: ");
   String type=URLConnection.guessContentTypeFromName(filename);
-  if (type == null)   type="application/octet-stream";
+  if (type == null) {
+    type="application/octet-stream";
+  }
   writeln(type);
   newline();
   pipe(is,os);

@@ -1,3 +1,9 @@
 {
-  read(new FileInputStream(file),drawing,replace);
+  InputStream in=new FileInputStream(file);
+  try {
+    read(in,drawing,replace);
+  }
+  finally {
+    in.close();
+  }
 }
