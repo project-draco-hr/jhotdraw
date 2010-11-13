@@ -1,5 +1,7 @@
 {
-  if (fvalue == null)   return getRGBColorComponents(compArray);
+  if (fvalue == null) {
+    return getRGBColorComponents(compArray);
+  }
   float[] f;
   int n=fvalue.length;
   if (compArray == null) {
