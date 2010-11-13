@@ -1,5 +1,4 @@
 {
-  long start=System.currentTimeMillis();
   Graphics2D g=(Graphics2D)gr;
   setViewRenderingHints(g);
   drawBackground(g);

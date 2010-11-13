@@ -11,8 +11,6 @@
     super.mousePressed(e);
   }
  else {
-    Dimension sbSize=slider.getSize();
-    int direction=POSITIVE_SCROLL;
 switch (slider.getOrientation()) {
 case JSlider.VERTICAL:
       slider.setValue(valueForYPosition(currentMouseY));

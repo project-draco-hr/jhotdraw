@@ -3,9 +3,6 @@
   angulars=new float[w * h];
   alphas=new int[w * h];
   float radius=getRadius();
-  float blend=(radius + 2f) / radius - 1f;
-  int cx=w / 2;
-  int cy=h / 2;
   float maxR=colorSpace.getMaxValue(radialIndex);
   float minR=colorSpace.getMinValue(radialIndex);
   float extentR=maxR - minR;

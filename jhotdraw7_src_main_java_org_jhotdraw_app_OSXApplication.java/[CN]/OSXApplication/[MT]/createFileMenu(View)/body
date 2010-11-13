@@ -1,5 +1,4 @@
 {
-  JMenuBar mb=new JMenuBar();
   JMenu m;
   m=new JMenu();
   labels.configureMenu(m,"file");

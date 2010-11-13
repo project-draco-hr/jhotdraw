@@ -6,8 +6,6 @@
   int h=tickBounds.height;
   int centerEffect, tickHeight;
   g.setColor(foreground);
-  maj=slider.getMajorTickSpacing();
-  min=slider.getMinorTickSpacing();
   if (slider.getOrientation() == JSlider.HORIZONTAL) {
     g.translate(0,tickBounds.y);
     int value=slider.getMinimum();

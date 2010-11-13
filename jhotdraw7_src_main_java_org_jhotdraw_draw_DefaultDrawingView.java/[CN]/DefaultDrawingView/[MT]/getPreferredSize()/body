@@ -1,6 +1,5 @@
 {
   if (cachedPreferredSize == null) {
-    long start=System.currentTimeMillis();
     Rectangle2D.Double r=getDrawingArea();
     Double cw=getDrawing() == null ? null : getDrawing().get(CANVAS_WIDTH);
     Double ch=getDrawing() == null ? null : getDrawing().get(CANVAS_HEIGHT);

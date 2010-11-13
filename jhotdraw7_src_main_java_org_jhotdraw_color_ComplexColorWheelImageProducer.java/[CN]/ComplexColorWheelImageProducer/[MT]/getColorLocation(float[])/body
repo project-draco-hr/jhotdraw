@@ -6,9 +6,6 @@
   float angle=(float)Math.atan2(radial - 0.5f,angular - 0.5f);
   float scale=(float)Math.max(Math.abs(Math.sin(angle)),Math.abs(Math.cos(angle))) + 0.01f;
   int side=Math.min(w - 1,h - 1);
-  float radius=side / 2f;
-  int xOffset=(w - side) / 2;
-  int yOffset=(h - side) / 2;
   Point p=new Point((int)(side * (radial - 0.5f) * scale) + w / 2,(int)(side * (angular - 0.5f) * scale) + h / 2);
   return p;
 }

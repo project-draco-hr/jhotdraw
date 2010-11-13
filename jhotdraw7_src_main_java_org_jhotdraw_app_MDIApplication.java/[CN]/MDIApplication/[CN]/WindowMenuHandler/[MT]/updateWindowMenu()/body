@@ -1,6 +1,5 @@
 {
   JMenu m=windowMenu;
-  ApplicationModel mo=getModel();
   m.removeAll();
   m.add(getAction(view,ArrangeWindowsAction.CASCADE_ID));
   m.add(getAction(view,ArrangeWindowsAction.VERTICAL_ID));

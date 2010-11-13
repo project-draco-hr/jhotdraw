@@ -9,16 +9,14 @@
   Insets insets=getInsets();
   Rectangle2D.Double da=getDrawingArea();
   Rectangle r=new Rectangle((int)(da.x * scaleFactor),(int)(da.y * scaleFactor),(int)(da.width * scaleFactor),(int)(da.height * scaleFactor));
-  int cw, ch;
   Double cwd=getDrawing().get(CANVAS_WIDTH);
   Double chd=getDrawing().get(CANVAS_HEIGHT);
   if (cwd == null || chd == null) {
-    cw=Math.max(width - insets.left - insets.right,(int)((Math.max(0,da.x) + da.width) * scaleFactor));
-    ch=Math.max(height - insets.top - insets.bottom,(int)((Math.max(0,da.y) + da.height) * scaleFactor));
     translation.x=insets.top;
     translation.y=insets.left;
   }
  else {
+    int cw, ch;
     cw=(int)(cwd * scaleFactor);
     ch=(int)(chd * scaleFactor);
     if (cw < width) {

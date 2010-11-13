@@ -22,7 +22,7 @@
     }
  while (moved);
     f.setLocation(loc);
-    FrameHandler frameHandler=new FrameHandler(f,view);
+    new FrameHandler(f,view);
     addWindow(f,view);
     f.getContentPane().add(view.getComponent());
     f.setVisible(true);

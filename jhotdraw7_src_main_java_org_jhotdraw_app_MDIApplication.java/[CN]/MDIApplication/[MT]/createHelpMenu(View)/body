@@ -1,5 +1,4 @@
 {
-  ApplicationModel mo=getModel();
   JMenu m;
   JMenuItem mi;
   m=new JMenu();

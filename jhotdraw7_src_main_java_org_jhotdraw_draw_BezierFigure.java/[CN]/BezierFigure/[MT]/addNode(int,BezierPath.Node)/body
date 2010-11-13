@@ -1,5 +1,4 @@
 {
-  final BezierPath.Node newPoint=new BezierPath.Node(p);
   path.add(index,p);
   invalidate();
 }

@@ -2,7 +2,6 @@
   JMenu m=windowMenu;
   JMenuItem mi;
   m.removeAll();
-  ApplicationModel model=getModel();
   mi=m.add(getAction(view,MinimizeWindowAction.ID));
   mi.setIcon(null);
   mi=m.add(getAction(view,MaximizeWindowAction.ID));

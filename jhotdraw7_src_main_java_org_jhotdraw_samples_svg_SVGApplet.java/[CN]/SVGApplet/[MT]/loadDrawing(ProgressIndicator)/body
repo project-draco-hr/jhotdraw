@@ -1,7 +1,6 @@
 {
   Drawing drawing=createDrawing();
   if (getParameter("datafile") != null) {
-    ByteArrayOutputStream buf=new ByteArrayOutputStream();
     URL url=new URL(getDocumentBase(),getParameter("datafile"));
     URLConnection uc=url.openConnection();
     if (uc instanceof HttpURLConnection) {

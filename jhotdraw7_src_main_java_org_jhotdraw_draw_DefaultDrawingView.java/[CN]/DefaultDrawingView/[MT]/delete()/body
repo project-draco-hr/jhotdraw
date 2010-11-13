@@ -1,5 +1,4 @@
 {
-  final LinkedList<CompositeFigureEvent> deletionEvents=new LinkedList<CompositeFigureEvent>();
   final java.util.List<Figure> deletedFigures=drawing.sort(getSelectedFigures());
   for (  Figure f : deletedFigures) {
     if (!f.isRemovable()) {

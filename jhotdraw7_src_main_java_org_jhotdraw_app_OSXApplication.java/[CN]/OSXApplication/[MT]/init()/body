@@ -5,7 +5,6 @@
   initLookAndFeel();
   paletteHandler=new OSXPaletteHandler(this);
   initLabels();
-  ApplicationModel m=getModel();
   paletteActions=new LinkedList<Action>();
   setActionMap(createModelActionMap(model));
   initPalettes(paletteActions);

@@ -7,11 +7,8 @@
     r.width=r.height=side;
   }
   double grow=AttributeKeys.getPerpendicularDrawGrowth(this);
-  double growx, growy;
-  if (grow == 0d) {
-    growx=growy=0d;
-  }
- else {
+  if (grow != 0d) {
+    double growx, growy;
     double w=r.width / 2d;
     double h=r.height / 2d;
     double lineLength=Math.sqrt(w * w + h * h);
