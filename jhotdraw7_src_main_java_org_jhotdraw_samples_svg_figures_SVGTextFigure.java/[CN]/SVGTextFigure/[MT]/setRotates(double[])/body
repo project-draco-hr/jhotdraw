@@ -1,4 +1,4 @@
 {
-  this.rotates=rotates;
+  this.rotates=rotates.clone();
   invalidate();
 }

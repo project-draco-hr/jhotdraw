@@ -4,9 +4,9 @@
   this.fx=fx;
   this.fy=fy;
   this.r=r;
-  this.stopOffsets=stopOffsets;
-  this.stopColors=stopColors;
-  this.stopOpacities=stopOpacities;
+  this.stopOffsets=stopOffsets.clone();
+  this.stopColors=stopColors.clone();
+  this.stopOpacities=stopOpacities.clone();
   this.isRelativeToFigureBounds=isRelativeToFigureBounds;
   this.transform=tx;
 }

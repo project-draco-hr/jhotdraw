@@ -1,6 +1,6 @@
 {
   super(editor);
-  this.keys=keys;
+  this.keys=keys.clone();
   putValue(AbstractAction.NAME,name);
   putValue(AbstractAction.SMALL_ICON,icon);
   setEnabled(true);
