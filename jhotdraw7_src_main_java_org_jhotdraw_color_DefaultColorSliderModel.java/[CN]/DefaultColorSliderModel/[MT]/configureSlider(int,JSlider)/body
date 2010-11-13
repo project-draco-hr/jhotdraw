@@ -7,6 +7,6 @@
   }
   slider.setModel(getBoundedRangeModel(componentIndex));
   slider.putClientProperty("colorSliderModel",this);
-  slider.putClientProperty("colorComponentIndex",new Integer(componentIndex));
+  slider.putClientProperty("colorComponentIndex",componentIndex);
   addColorSlider(slider);
 }

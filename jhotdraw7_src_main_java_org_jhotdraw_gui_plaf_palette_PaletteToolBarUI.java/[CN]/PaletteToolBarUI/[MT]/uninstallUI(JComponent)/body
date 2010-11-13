@@ -9,5 +9,5 @@
   floatingToolBar=null;
   dragWindow=null;
   dockingSource=null;
-  c.putClientProperty(FOCUSED_COMP_INDEX,new Integer(focusedCompIndex));
+  c.putClientProperty(FOCUSED_COMP_INDEX,focusedCompIndex);
 }

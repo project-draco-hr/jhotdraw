@@ -7,7 +7,7 @@
       Component child=dockingSource.getComponent(i);
       Point childP=new Point(p.x - child.getX(),p.y - child.getY());
       if (child.contains(childP)) {
-        return new Integer(Math.min(n - 1,(childP.x <= child.getWidth()) ? i : i + 1));
+        return Math.min(n - 1,(childP.x <= child.getWidth()) ? i : i + 1);
       }
     }
     if (dockingSource.getComponentCount() == 0 || p.x < dockingSource.getComponent(0).getX()) {

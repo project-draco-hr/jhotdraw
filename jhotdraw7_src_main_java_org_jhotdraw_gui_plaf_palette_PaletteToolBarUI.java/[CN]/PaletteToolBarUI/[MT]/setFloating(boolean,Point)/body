@@ -37,7 +37,7 @@
       floatingToolBar.getContentPane().remove(toolBar);
       Integer constraint=getDockingConstraint(dockingSource,p);
       if (constraint == null) {
-        constraint=new Integer(0);
+        constraint=0;
       }
       int orientation=mapConstraintToOrientation(constraint);
       setOrientation(orientation);

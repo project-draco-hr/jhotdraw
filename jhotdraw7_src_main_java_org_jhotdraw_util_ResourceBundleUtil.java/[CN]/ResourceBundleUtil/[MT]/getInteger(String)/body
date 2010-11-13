@@ -6,6 +6,6 @@
     if (isVerbose) {
       System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ "\" not found.");
     }
-    return new Integer(-1);
+    return -1;
   }
 }
