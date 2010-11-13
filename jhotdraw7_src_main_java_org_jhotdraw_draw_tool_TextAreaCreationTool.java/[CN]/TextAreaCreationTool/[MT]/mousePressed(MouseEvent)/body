@@ -1,5 +1,4 @@
 {
-  TextHolderFigure textHolder=null;
   DrawingView v=getView();
   Point2D.Double p=v.viewToDrawing(e.getPoint());
   Figure pressedFigure=null;
@@ -13,15 +12,6 @@
   }
   if (pressedFigure == null) {
     pressedFigure=getDrawing().findFigureInside(p);
-  }
-  if (pressedFigure instanceof TextHolderFigure) {
-    textHolder=(TextHolderFigure)pressedFigure;
-    textHolder=null;
-  }
-  if (textHolder != null) {
-    createdFigure=null;
-    beginEdit(textHolder);
-    return;
   }
   if (typingTarget != null) {
     endEdit();

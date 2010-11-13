@@ -1,5 +1,4 @@
 {
-  TextHolderFigure textHolder=null;
   DrawingView v=getView();
   Point2D.Double p=v.viewToDrawing(e.getPoint());
   Figure pressedFigure=null;
@@ -14,15 +13,6 @@
   if (pressedFigure == null) {
     pressedFigure=getDrawing().findFigureInside(p);
   }
-  if (pressedFigure instanceof TextHolderFigure) {
-    textHolder=((TextHolderFigure)pressedFigure).getLabelFor();
-    textHolder=null;
-  }
-  if (textHolder != null) {
-    beginEdit(textHolder);
-    updateCursor(getView(),e.getPoint());
-    return;
-  }
   if (typingTarget != null) {
     endEdit();
     if (isToolDoneAfterCreation()) {
@@ -31,7 +21,7 @@
   }
  else {
     super.mousePressed(e);
-    textHolder=(TextHolderFigure)getCreatedFigure();
+    TextHolderFigure textHolder=(TextHolderFigure)getCreatedFigure();
     getView().clearSelection();
     getView().addToSelection(textHolder);
     beginEdit(textHolder);
