@@ -5,20 +5,12 @@
     }
  else {
       for (      IXMLElement node : elem.getChildren()) {
-        if (node instanceof IXMLElement) {
-          IXMLElement child=(IXMLElement)node;
-          if (node.getName() != null && node.getName().equals("tspan")) {
-            readTSpanElement((IXMLElement)node,doc);
-          }
- else {
-            if (DEBUG) {
-              System.out.println("SVGInputFormat unknown text node " + node.getName());
-            }
-          }
+        if (node.getName() != null && node.getName().equals("tspan")) {
+          readTSpanElement((IXMLElement)node,doc);
         }
  else {
-          if (node.getName() == null) {
-            doc.insertString(doc.getLength(),toText(elem,node.getContent()),null);
+          if (DEBUG) {
+            System.out.println("SVGInputFormat unknown text node " + node.getName());
           }
         }
       }

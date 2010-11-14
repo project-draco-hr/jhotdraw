@@ -41,15 +41,12 @@
   }
   viewportStack.push(viewport);
   readViewportAttributes(elem,viewportStack.firstElement().attributes);
-  for (  IXMLElement node : elem.getChildren()) {
-    if (node instanceof IXMLElement) {
-      IXMLElement child=(IXMLElement)node;
-      Figure childFigure=readElement(child);
-      if (readAttribute(child,"visibility","visible").equals("visible") && !readAttribute(child,"display","inline").equals("none")) {
-        if (childFigure != null) {
-          childFigure.transform(viewBoxTransform);
-          figures.add(childFigure);
-        }
+  for (  IXMLElement child : elem.getChildren()) {
+    Figure childFigure=readElement(child);
+    if (readAttribute(child,"visibility","visible").equals("visible") && !readAttribute(child,"display","inline").equals("none")) {
+      if (childFigure != null) {
+        childFigure.transform(viewBoxTransform);
+        figures.add(childFigure);
       }
     }
   }

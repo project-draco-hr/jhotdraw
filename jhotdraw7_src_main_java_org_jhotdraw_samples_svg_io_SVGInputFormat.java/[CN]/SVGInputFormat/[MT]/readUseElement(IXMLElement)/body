@@ -15,9 +15,9 @@
       }
     }
  else {
-      Object obj=readElement(refElem);
-      if (obj instanceof Figure) {
-        Figure figure=(Figure)((Figure)obj).clone();
+      Figure obj=readElement(refElem);
+      if (obj != null) {
+        Figure figure=(Figure)obj.clone();
         for (        Map.Entry<AttributeKey,Object> entry : a2.entrySet()) {
           figure.set(entry.getKey(),entry.getValue());
         }

@@ -3,14 +3,11 @@
   readCoreAttributes(elem,a);
   readOpacityAttribute(elem,a);
   CompositeFigure g=factory.createG(a);
-  for (  IXMLElement node : elem.getChildren()) {
-    if (node instanceof IXMLElement) {
-      IXMLElement child=(IXMLElement)node;
-      Figure childFigure=readElement(child);
-      if (readAttribute(child,"visibility","visible").equals("visible") && !readAttribute(child,"display","inline").equals("none")) {
-        if (childFigure != null) {
-          g.basicAdd(childFigure);
-        }
+  for (  IXMLElement child : elem.getChildren()) {
+    Figure childFigure=readElement(child);
+    if (readAttribute(child,"visibility","visible").equals("visible") && !readAttribute(child,"display","inline").equals("none")) {
+      if (childFigure != null) {
+        g.basicAdd(childFigure);
       }
     }
   }

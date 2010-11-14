@@ -1,12 +1,9 @@
 {
-  for (  IXMLElement node : elem.getChildren()) {
-    if (node instanceof IXMLElement) {
-      IXMLElement child=(IXMLElement)node;
-      if (child.getNamespace() == null || child.getNamespace().equals(DRAWING_NAMESPACE)) {
-        String name=child.getName();
-        if (name.equals("page")) {
-          readPageElement(child);
-        }
+  for (  IXMLElement child : elem.getChildren()) {
+    if (child.getNamespace() == null || child.getNamespace().equals(DRAWING_NAMESPACE)) {
+      String name=child.getName();
+      if (name.equals("page")) {
+        readPageElement(child);
       }
     }
   }

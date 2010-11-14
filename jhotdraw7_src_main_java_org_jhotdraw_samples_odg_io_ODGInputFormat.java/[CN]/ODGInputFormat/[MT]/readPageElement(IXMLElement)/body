@@ -1,11 +1,8 @@
 {
-  for (  IXMLElement node : elem.getChildren()) {
-    if (node instanceof IXMLElement) {
-      IXMLElement child=(IXMLElement)node;
-      ODGFigure figure=readElement(child);
-      if (figure != null) {
-        figures.add(figure);
-      }
+  for (  IXMLElement child : elem.getChildren()) {
+    ODGFigure figure=readElement(child);
+    if (figure != null) {
+      figures.add(figure);
     }
   }
 }

@@ -15,11 +15,8 @@
         }
       }
       styleManager.applyStylesTo(elem);
-      for (      IXMLElement node : elem.getChildren()) {
-        if (node instanceof IXMLElement) {
-          IXMLElement child=(IXMLElement)node;
-          flattenStyles(child);
-        }
+      for (      IXMLElement child : elem.getChildren()) {
+        flattenStyles(child);
       }
     }
   }
