@@ -1,6 +1,4 @@
 {
-  int dx=lead.x - anchor.x;
-  int dy=lead.y - anchor.y;
   ODGRectFigure odgRect=(ODGRectFigure)getOwner();
   odgRect.willChange();
   Point2D.Double p=view.viewToDrawing(lead);

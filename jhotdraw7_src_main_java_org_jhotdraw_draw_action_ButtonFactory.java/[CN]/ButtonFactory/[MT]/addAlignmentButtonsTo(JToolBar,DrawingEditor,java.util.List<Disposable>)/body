@@ -1,5 +1,4 @@
 {
-  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   AbstractSelectedAction d;
   bar.add(d=new AlignAction.West(editor)).setFocusable(false);
   dsp.add(d);

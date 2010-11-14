@@ -3,7 +3,6 @@
   disclosureButton.putClientProperty(DisclosureIcon.CURRENT_STATE_PROPERTY,newValue);
   removeAll();
   JComponent c=getDisclosedComponent(newValue);
-  GridBagLayout layout=(GridBagLayout)getLayout();
   GridBagConstraints gbc=new GridBagConstraints();
   if (c != null) {
     gbc=new GridBagConstraints();

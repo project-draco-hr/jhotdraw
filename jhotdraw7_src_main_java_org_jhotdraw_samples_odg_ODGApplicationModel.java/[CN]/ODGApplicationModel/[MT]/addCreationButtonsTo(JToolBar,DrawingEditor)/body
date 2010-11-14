@@ -1,6 +1,5 @@
 {
   HashMap<AttributeKey,Object> attributes;
-  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
   ResourceBundleUtil drawLabels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   ButtonFactory.addSelectionToolTo(tb,editor,createDrawingActions(editor),createSelectionActions(editor));
   tb.addSeparator();

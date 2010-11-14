@@ -1,5 +1,4 @@
 {
-  Rectangle2D.Double r=(Rectangle2D.Double)rectangle.clone();
   Shape triangle=getBezierPath();
   double grow=AttributeKeys.getPerpendicularFillGrowth(this);
   if (grow != 0d) {

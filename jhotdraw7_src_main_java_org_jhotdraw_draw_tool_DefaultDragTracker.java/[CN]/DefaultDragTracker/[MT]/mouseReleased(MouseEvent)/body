@@ -13,7 +13,6 @@
       if (snapBack) {
         AffineTransform tx=new AffineTransform();
         tx.translate(anchorOrigin.x - previousOrigin.x,anchorOrigin.y - previousOrigin.y);
-        Constrainer c=view.getConstrainer();
         for (        Figure f : transformedFigures) {
           f.willChange();
           f.transform(tx);

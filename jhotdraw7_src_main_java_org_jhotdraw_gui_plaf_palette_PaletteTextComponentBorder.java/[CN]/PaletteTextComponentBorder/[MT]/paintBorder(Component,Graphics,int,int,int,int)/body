@@ -1,6 +1,5 @@
 {
   Graphics2D g=(Graphics2D)gr;
-  JComponent jc=(JComponent)c;
   int borderColor;
   float[] stops;
   Color[] stopColors;

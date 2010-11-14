@@ -1,6 +1,5 @@
 {
   ResourceBundleUtil appLabels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
-  ResourceBundleUtil drawLabels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   JMenu m=a.createEditMenu(v);
   if (m == null) {
     m=new JMenu();

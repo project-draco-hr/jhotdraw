@@ -6,7 +6,7 @@
   int nPts;
   double iterationError;
   int maxIterations=4;
-  Point2D.Double tHatCenter=new Point2D.Double();
+  Point2D.Double tHatCenter;
   int i;
   tHat1=(Point2D.Double)tHat1.clone();
   tHat2=(Point2D.Double)tHat2.clone();

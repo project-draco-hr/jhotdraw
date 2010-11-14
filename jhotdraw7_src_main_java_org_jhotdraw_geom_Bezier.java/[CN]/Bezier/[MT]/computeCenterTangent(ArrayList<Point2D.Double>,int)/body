@@ -1,5 +1,5 @@
 {
-  Point2D.Double V1=new Point2D.Double(), V2=new Point2D.Double(), tHatCenter=new Point2D.Double();
+  Point2D.Double V1, V2, tHatCenter=new Point2D.Double();
   V1=v2SubII(d.get(center - 1),d.get(center));
   V2=v2SubII(d.get(center),d.get(center + 1));
   tHatCenter.x=(V1.x + V2.x) / 2.0;

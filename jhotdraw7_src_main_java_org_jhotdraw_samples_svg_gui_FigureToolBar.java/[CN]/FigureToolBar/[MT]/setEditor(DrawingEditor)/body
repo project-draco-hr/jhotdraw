@@ -1,5 +1,4 @@
 {
-  DrawingEditor oldValue=getEditor();
   if (displayer != null) {
     displayer.dispose();
     displayer=null;

@@ -1,5 +1,4 @@
 {
-  NetView p=(NetView)v;
   ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
   LinkedList<JMenu> mb=new LinkedList<JMenu>();
   JMenu m, m2;

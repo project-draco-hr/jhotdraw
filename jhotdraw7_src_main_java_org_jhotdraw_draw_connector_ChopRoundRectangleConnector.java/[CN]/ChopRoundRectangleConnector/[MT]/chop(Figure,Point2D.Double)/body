@@ -23,7 +23,6 @@ inner.x-=gw;
 inner.y-=gh;
 inner.width+=gw * 2;
 inner.height+=gh * 2;
-double angle=Geom.pointToAngle(outer,from);
 Point2D.Double p=Geom.angleToPoint(outer,Geom.pointToAngle(outer,from));
 if (p.x == outer.x || p.x == outer.x + outer.width) {
 p.y=Math.min(Math.max(p.y,inner.y),inner.y + inner.height);

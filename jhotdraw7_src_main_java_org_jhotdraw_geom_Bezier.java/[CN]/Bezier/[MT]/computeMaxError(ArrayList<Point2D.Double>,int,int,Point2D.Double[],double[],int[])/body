@@ -2,8 +2,8 @@
   int i;
   double maxDist;
   double dist;
-  Point2D.Double P=new Point2D.Double();
-  Point2D.Double v=new Point2D.Double();
+  Point2D.Double P;
+  Point2D.Double v;
   splitPoint[0]=(last - first + 1) / 2;
   maxDist=0.0;
   for (i=first + 1; i < last; i++) {

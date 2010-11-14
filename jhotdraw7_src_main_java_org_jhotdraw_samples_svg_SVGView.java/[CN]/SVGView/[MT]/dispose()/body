@@ -1,5 +1,4 @@
 {
-  DrawingEditor e=getEditor();
   clear();
   undo.removePropertyChangeListener(propertyHandler);
   propertyHandler=null;

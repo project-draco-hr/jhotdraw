@@ -14,11 +14,8 @@
   editor.setTool(selectionTool);
   t=new JToggleButton();
   final JToggleButton defaultToolButton=t;
-  ToolListener toolHandler;
-  if (tb.getClientProperty("toolHandler") instanceof ToolListener) {
-    toolHandler=(ToolListener)tb.getClientProperty("toolHandler");
-  }
- else {
+  if (!(tb.getClientProperty("toolHandler") instanceof ToolListener)) {
+    ToolListener toolHandler;
     toolHandler=new ToolAdapter(){
       @Override public void toolDone(      ToolEvent event){
         defaultToolButton.setSelected(true);

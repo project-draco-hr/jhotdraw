@@ -1,5 +1,5 @@
 {
-  ArrayList<ArrayList<Point2D.Double>> segments=new ArrayList<ArrayList<Point2D.Double>>();
+  ArrayList<ArrayList<Point2D.Double>> segments;
   segments=splitAtCorners(digitizedPoints,77 / 180d * Math.PI,error * error);
   for (int i=0, n=segments.size(); i < n; i++) {
     ArrayList<Point2D.Double> seg=segments.get(i);
@@ -34,8 +34,8 @@ default :
 if (fittedPath.isEmpty()) {
 fittedPath.add(new BezierPath.Node(seg.get(0)));
 }
-Point2D.Double tHat1=new Point2D.Double();
-Point2D.Double tHat2=new Point2D.Double();
+Point2D.Double tHat1;
+Point2D.Double tHat2;
 tHat1=computeLeftTangent(seg,0);
 tHat2=computeRightTangent(seg,seg.size() - 1);
 fitCubic(seg,0,seg.size() - 1,tHat1,tHat2,errorSquared,fittedPath);

@@ -2,9 +2,7 @@
   if (future == null) {
     future=new FutureTask<Font[]>(new Callable<Font[]>(){
       @Override public Font[] call() throws Exception {
-        long start=System.currentTimeMillis();
         Font[] fonts=GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
-        long end=System.currentTimeMillis();
         ArrayList<Font> goodFonts=new ArrayList<Font>(fonts.length);
         for (        Font f : fonts) {
           Font decoded=Font.decode(f.getFontName());

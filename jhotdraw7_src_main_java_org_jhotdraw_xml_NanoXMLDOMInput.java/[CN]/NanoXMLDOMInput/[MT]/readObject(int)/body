@@ -1,7 +1,6 @@
 {
   openElement(index);
   Object o;
-  String tagName=getTagName();
   String ref=getAttribute("ref",null);
   String id=getAttribute("id",null);
   if (ref != null && id != null) {

@@ -5,7 +5,6 @@
   fc.add(selectionPanel,BorderLayout.CENTER);
   previewPanel=new PaletteFontChooserPreviewPanel();
   fc.add(previewPanel,BorderLayout.NORTH);
-  FontChooserModel model=fontChooser.getModel();
   updateCollectionList();
   updateFamilyList();
   updateFaceList();

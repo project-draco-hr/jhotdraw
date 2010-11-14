@@ -1,7 +1,7 @@
 {
   double numerator, denominator;
   Point2D.Double[] Q1=new Point2D.Double[3], Q2=new Point2D.Double[2];
-  Point2D.Double Q_u=new Point2D.Double(), Q1_u=new Point2D.Double(), Q2_u=new Point2D.Double();
+  Point2D.Double Q_u, Q1_u, Q2_u;
   double uPrime;
   int i;
   Q_u=bezierII(3,Q,u);

@@ -3,6 +3,5 @@
   if (border != null) {
     return (Border)border;
   }
-  UIDefaults table=UIManager.getLookAndFeelDefaults();
   return new EmptyBorder(0,0,0,0);
 }

@@ -2,7 +2,6 @@
   if (!(ev instanceof MouseEvent) || !(ev.getSource() instanceof Component)) {
     return;
   }
-  MouseEvent me=(MouseEvent)ev;
   Component src=(Component)ev.getSource();
   if (ev.getID() == MouseEvent.MOUSE_PRESSED) {
     if (SwingUtilities.getWindowAncestor(src) == SwingUtilities.getWindowAncestor(JPopupButton.this)) {

@@ -1,4 +1,3 @@
 {
-  JMenuItem item=getPopupMenu().add(submenu);
   updateItemFont(submenu);
 }

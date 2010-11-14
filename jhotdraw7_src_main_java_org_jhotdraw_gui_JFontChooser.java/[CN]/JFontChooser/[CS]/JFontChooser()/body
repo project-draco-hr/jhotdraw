@@ -6,7 +6,6 @@
   addPropertyChangeListener(new PropertyChangeListener(){
     @Override public void propertyChange(    PropertyChangeEvent evt){
       if (evt.getPropertyName() == "ancestor" && evt.getNewValue() != null) {
-        Component ancestor=(Component)evt.getNewValue();
         try {
           ((DefaultFontChooserModel)model).setFonts(getAllFonts());
         }

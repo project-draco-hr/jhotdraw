@@ -5,7 +5,6 @@
       g.setColor(Color.gray);
       int lineAscent=g.getFontMetrics().getAscent();
       g.setFont(numberFont);
-      int numberAscent=g.getFontMetrics().getAscent();
       int lineNumber=getDocument().getDefaultRootElement().getElementIndex(getStartOffset());
       int numberX=r.x - getLeftInset();
       int numberY=r.y + lineAscent;

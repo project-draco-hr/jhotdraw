@@ -1,5 +1,4 @@
 {
-  FontChooserModel model=fontChooser.getModel();
   JList list=selectionPanel.getFamilyList();
   TreePath path=fontChooser.getSelectionPath();
   FontCollectionNode oldCollection=(path != null && path.getPathCount() > 1) ? (FontCollectionNode)path.getPathComponent(1) : null;
