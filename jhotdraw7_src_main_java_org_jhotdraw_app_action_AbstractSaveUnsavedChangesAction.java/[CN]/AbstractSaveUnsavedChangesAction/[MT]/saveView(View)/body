@@ -1,7 +1,7 @@
 {
-  if (p.getURI() == null) {
-    URIChooser chooser=getChooser(p);
-    JSheet.showSaveSheet(chooser,p.getComponent(),new SheetListener(){
+  if (v.getURI() == null) {
+    URIChooser chooser=getChooser(v);
+    JSheet.showSaveSheet(chooser,v.getComponent(),new SheetListener(){
       @Override public void optionSelected(      final SheetEvent evt){
         if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
           final URI uri;
@@ -11,10 +11,10 @@
  else {
             uri=evt.getChooser().getSelectedURI();
           }
-          saveViewToURI(p,uri,evt.getChooser());
+          saveViewToURI(v,uri,evt.getChooser());
         }
  else {
-          p.setEnabled(true);
+          v.setEnabled(true);
           if (oldFocusOwner != null) {
             oldFocusOwner.requestFocus();
           }
@@ -24,6 +24,6 @@
 );
   }
  else {
-    saveViewToURI(p,p.getURI(),null);
+    saveViewToURI(v,v.getURI(),null);
   }
 }

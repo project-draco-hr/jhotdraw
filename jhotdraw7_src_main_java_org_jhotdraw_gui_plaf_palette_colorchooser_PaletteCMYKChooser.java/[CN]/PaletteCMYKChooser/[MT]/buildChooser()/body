@@ -43,22 +43,12 @@
     yellowFieldPanel.setBorder(fieldBorder);
     blackFieldPanel.setBorder(fieldBorder);
   }
-  InputStream in=null;
   try {
     ccModel=new PaletteColorSliderModel(new CMYKGenericColorSpace());
   }
  catch (  IOException e) {
     System.err.println("Warning: " + getClass() + " couldn't load \"Generic CMYK Profile.icc\".");
     ccModel=new PaletteColorSliderModel(new CMYKNominalColorSpace());
-  }
- finally {
-    try {
-      if (in != null) {
-        in.close();
-      }
-    }
- catch (    IOException e) {
-    }
   }
   ccModel.configureSlider(0,cyanSlider);
   ccModel.configureSlider(1,magentaSlider);

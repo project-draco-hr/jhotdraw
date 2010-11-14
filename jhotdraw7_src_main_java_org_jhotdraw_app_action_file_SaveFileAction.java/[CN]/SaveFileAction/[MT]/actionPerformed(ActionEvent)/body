@@ -1,5 +1,8 @@
 {
   final View view=getActiveView();
+  if (view == null) {
+    return;
+  }
   if (view.isEnabled()) {
     oldFocusOwner=SwingUtilities.getWindowAncestor(view.getComponent()).getFocusOwner();
     view.setEnabled(false);

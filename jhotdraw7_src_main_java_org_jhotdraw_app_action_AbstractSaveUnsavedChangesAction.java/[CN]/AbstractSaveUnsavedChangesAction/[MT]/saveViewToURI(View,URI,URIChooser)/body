@@ -1,13 +1,13 @@
 {
-  p.execute(new Worker(){
+  v.execute(new Worker(){
     @Override protected Object construct() throws IOException {
-      p.write(uri,chooser);
+      v.write(uri,chooser);
       return null;
     }
     @Override protected void done(    Object value){
-      p.setURI(uri);
-      p.markChangesAsSaved();
-      doIt(p);
+      v.setURI(uri);
+      v.markChangesAsSaved();
+      doIt(v);
     }
     @Override protected void failed(    Throwable value){
       String message=(value.getMessage() != null) ? value.getMessage() : value.toString();
@@ -15,7 +15,7 @@
       JSheet.showMessageSheet(getActiveView().getComponent(),"<html>" + UIManager.getString("OptionPane.css") + "<b>"+ labels.getFormatted("file.save.couldntSave.message",URIUtil.getName(uri))+ "</b><p>"+ ((message == null) ? "" : message),JOptionPane.ERROR_MESSAGE);
     }
     @Override protected void finished(){
-      p.setEnabled(true);
+      v.setEnabled(true);
       if (oldFocusOwner != null) {
         oldFocusOwner.requestFocus();
       }
