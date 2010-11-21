@@ -1,3 +1,6 @@
 {
-  m.putClientProperty("needsSeparator",Boolean.TRUE);
+  JPopupMenu pm=m.getPopupMenu();
+  if (pm.getComponentCount() > 0 && !(pm.getComponent(pm.getComponentCount() - 1) instanceof JSeparator)) {
+    m.addSeparator();
+  }
 }

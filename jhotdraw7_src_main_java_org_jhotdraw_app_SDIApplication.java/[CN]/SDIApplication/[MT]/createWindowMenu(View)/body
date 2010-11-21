@@ -1,3 +1,7 @@
 {
-  return null;
+  JMenu m=new JMenu();
+  labels.configureMenu(m,"window");
+  MenuBuilder mb=model.getMenuBuilder();
+  mb.addOtherWindowItems(m,this,view);
+  return (m.getItemCount() > 0) ? m : null;
 }

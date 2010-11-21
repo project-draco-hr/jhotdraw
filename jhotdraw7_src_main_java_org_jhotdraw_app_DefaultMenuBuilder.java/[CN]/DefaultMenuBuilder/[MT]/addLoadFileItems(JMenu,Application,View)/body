@@ -1,0 +1,10 @@
+{
+  ActionMap am=app.getActionMap(v);
+  Action a;
+  if (null != (a=am.get(LoadFileAction.ID))) {
+    m.add(a);
+  }
+  if (null != (a=am.get(LoadDirectoryAction.ID))) {
+    m.add(a);
+  }
+}

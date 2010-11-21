@@ -1,0 +1,10 @@
+{
+  ActionMap am=app.getActionMap(v);
+  Action a;
+  if (null != (a=am.get(SelectAllAction.ID))) {
+    m.add(a);
+  }
+  if (null != (a=am.get(ClearSelectionAction.ID))) {
+    m.add(a);
+  }
+}

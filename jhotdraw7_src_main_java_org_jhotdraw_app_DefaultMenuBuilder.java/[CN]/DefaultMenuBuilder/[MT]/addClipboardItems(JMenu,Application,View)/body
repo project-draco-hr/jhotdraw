@@ -1,0 +1,19 @@
+{
+  ActionMap am=app.getActionMap(v);
+  Action a;
+  if (null != (a=am.get(CutAction.ID))) {
+    m.add(a);
+  }
+  if (null != (a=am.get(CopyAction.ID))) {
+    m.add(a);
+  }
+  if (null != (a=am.get(PasteAction.ID))) {
+    m.add(a);
+  }
+  if (null != (a=am.get(DuplicateAction.ID))) {
+    m.add(a);
+  }
+  if (null != (a=am.get(DeleteAction.ID))) {
+    m.add(a);
+  }
+}

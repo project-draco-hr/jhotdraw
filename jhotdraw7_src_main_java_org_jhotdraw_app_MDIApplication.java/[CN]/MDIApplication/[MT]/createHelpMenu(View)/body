@@ -1,8 +1,8 @@
 {
-  JMenu m;
-  JMenuItem mi;
-  m=new JMenu();
+  JMenu m=new JMenu();
   labels.configureMenu(m,"help");
-  addAction(m,view,AboutAction.ID);
-  return m;
+  MenuBuilder mb=model.getMenuBuilder();
+  mb.addHelpItems(m,this,view);
+  mb.addAboutItems(m,this,view);
+  return (m.getItemCount() == 0) ? null : m;
 }

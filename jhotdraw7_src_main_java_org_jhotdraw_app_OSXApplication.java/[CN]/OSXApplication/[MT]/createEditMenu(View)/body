@@ -4,18 +4,15 @@
   Action a;
   m=new JMenu();
   labels.configureMenu(m,"edit");
-  addAction(m,view,UndoAction.ID);
-  addAction(m,view,RedoAction.ID);
+  MenuBuilder mb=model.getMenuBuilder();
+  mb.addUndoItems(m,this,view);
   maybeAddSeparator(m);
-  addAction(m,view,CutAction.ID);
-  addAction(m,view,CopyAction.ID);
-  addAction(m,view,PasteAction.ID);
-  addAction(m,view,DuplicateAction.ID);
-  addAction(m,view,DeleteAction.ID);
+  mb.addClipboardItems(m,this,view);
   maybeAddSeparator(m);
-  addAction(m,view,SelectAllAction.ID);
-  addAction(m,view,ClearSelectionAction.ID);
+  mb.addSelectionItems(m,this,view);
   maybeAddSeparator(m);
-  addAction(m,view,AbstractFindAction.ID);
-  return (m.getPopupMenu().getComponentCount() == 0) ? null : m;
+  mb.addFindItems(m,this,view);
+  maybeAddSeparator(m);
+  mb.addOtherEditItems(m,this,view);
+  return (m.getItemCount() == 0) ? null : m;
 }

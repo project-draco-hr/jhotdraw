@@ -1,0 +1,10 @@
+{
+  ActionMap am=app.getActionMap(v);
+  Action a;
+  if (null != (a=am.get(UndoAction.ID))) {
+    m.add(a);
+  }
+  if (null != (a=am.get(RedoAction.ID))) {
+    m.add(a);
+  }
+}

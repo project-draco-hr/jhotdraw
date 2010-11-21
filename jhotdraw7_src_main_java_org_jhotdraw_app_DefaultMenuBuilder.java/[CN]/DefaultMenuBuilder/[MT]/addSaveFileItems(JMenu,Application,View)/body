@@ -1,0 +1,10 @@
+{
+  ActionMap am=app.getActionMap(v);
+  Action a;
+  if (null != (a=am.get(SaveFileAction.ID))) {
+    m.add(a);
+  }
+  if (null != (a=am.get(SaveFileAsAction.ID))) {
+    m.add(a);
+  }
+}

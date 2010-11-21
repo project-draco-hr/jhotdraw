@@ -19,6 +19,8 @@
       addMenuItem(m,cbmi);
     }
   }
+  MenuBuilder mb=model.getMenuBuilder();
+  mb.addOtherWindowItems(m,this,view);
   addPropertyChangeListener(new WindowMenuHandler(windowMenu,view));
-  return m;
+  return (m.getItemCount() == 0) ? null : m;
 }

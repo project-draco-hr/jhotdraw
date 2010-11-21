@@ -1,0 +1,6 @@
+{
+  if (menuBuilder == null) {
+    menuBuilder=createMenuBuilder();
+  }
+  return menuBuilder;
+}

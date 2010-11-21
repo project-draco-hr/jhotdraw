@@ -1,0 +1,7 @@
+{
+  ActionMap am=app.getActionMap(v);
+  Action a;
+  if (null != (a=am.get(NewWindowAction.ID))) {
+    m.add(a);
+  }
+}

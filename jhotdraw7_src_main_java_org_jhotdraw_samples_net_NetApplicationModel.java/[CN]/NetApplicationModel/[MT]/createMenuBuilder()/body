@@ -1,0 +1,20 @@
+{
+  return new DefaultMenuBuilder(){
+    @Override public void addOtherViewItems(    JMenu m,    Application app,    @Nullable View v){
+      ActionMap am=app.getActionMap(v);
+      JCheckBoxMenuItem cbmi;
+      cbmi=new JCheckBoxMenuItem(am.get("view.toggleGrid"));
+      ActionUtil.configureJCheckBoxMenuItem(cbmi,am.get("view.toggleGrid"));
+      m.add(cbmi);
+      JMenu m2=new JMenu("Zoom");
+      for (      double sf : scaleFactors) {
+        String id=(int)(sf * 100) + "%";
+        cbmi=new JCheckBoxMenuItem(am.get(id));
+        ActionUtil.configureJCheckBoxMenuItem(cbmi,am.get(id));
+        m2.add(cbmi);
+      }
+      m.add(m2);
+    }
+  }
+;
+}

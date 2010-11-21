@@ -1,0 +1,24 @@
+{
+  return new DefaultMenuBuilder(){
+    @Override public void addSelectionItems(    JMenu m,    Application app,    @Nullable View v){
+      ActionMap am=app.getActionMap(v);
+      super.addSelectionItems(m,app,v);
+      m.add(am.get(SelectSameAction.ID));
+    }
+    @Override public void addOtherEditItems(    JMenu m,    Application app,    @Nullable View v){
+      ActionMap am=app.getActionMap(v);
+      m.add(am.get(GroupAction.ID));
+      m.add(am.get(UngroupAction.ID));
+      m.add(am.get(CombineAction.ID));
+      m.add(am.get(SplitAction.ID));
+      m.addSeparator();
+      m.add(am.get(BringToFrontAction.ID));
+      m.add(am.get(SendToBackAction.ID));
+    }
+    @Override public void addOtherViewItems(    JMenu m,    Application app,    @Nullable View v){
+      ActionMap am=app.getActionMap(v);
+      m.add(am.get(ViewSourceAction.ID));
+    }
+  }
+;
+}

@@ -1,5 +1,6 @@
 {
   if (getView() != null && getView().getSelectionCount() > 0) {
+    ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
     CompositeEdit edit=new CompositeEdit(labels.getString("drawAttributeChange"));
     fireUndoableEditHappened(edit);
     changeAttribute();

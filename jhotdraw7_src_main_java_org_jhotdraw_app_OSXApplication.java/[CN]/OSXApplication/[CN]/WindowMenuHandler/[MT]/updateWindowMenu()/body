@@ -22,4 +22,6 @@
       m.add(cbmi);
     }
   }
+  MenuBuilder mb=model.getMenuBuilder();
+  mb.addOtherWindowItems(m,OSXApplication.this,view);
 }

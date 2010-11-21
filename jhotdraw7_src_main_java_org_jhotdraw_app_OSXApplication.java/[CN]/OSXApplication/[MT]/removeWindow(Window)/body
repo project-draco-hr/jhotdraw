@@ -1,5 +1,23 @@
 {
   if (window instanceof JFrame) {
+    JMenuBar mb=((JFrame)window).getJMenuBar();
+    Stack<JMenu> s=new Stack<JMenu>();
+    for (int i=0, n=mb.getMenuCount(); i < n; ++i) {
+      if (mb.getMenu(i) != null) {
+        s.push(mb.getMenu(i));
+      }
+    }
+    while (!s.isEmpty()) {
+      JPopupMenu m=s.pop().getPopupMenu();
+      for (int i=0, n=m.getComponentCount(); i < n; ++i) {
+        if (m.getComponent(i) instanceof JMenu) {
+          s.push((JMenu)m.getComponent(i));
+        }
+ else         if (m.getComponent(i) instanceof AbstractButton) {
+          ((AbstractButton)m.getComponent(i)).setAction(null);
+        }
+      }
+    }
     ((JFrame)window).setJMenuBar(null);
   }
   paletteHandler.remove(window);

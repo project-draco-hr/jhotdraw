@@ -6,7 +6,7 @@
   m.put("view.toggleGrid",aa=new ToggleViewPropertyAction(a,v,NetView.GRID_VISIBLE_PROPERTY));
   drawLabels.configureAction(aa,"view.toggleGrid");
   for (  double sf : scaleFactors) {
-    m.put((int)(sf * 100) + "%",aa=new ViewPropertyAction(a,v,"scaleFactor",Double.TYPE,new Double(sf)));
+    m.put((int)(sf * 100) + "%",aa=new ViewPropertyAction(a,v,DrawingView.SCALE_FACTOR_PROPERTY,Double.TYPE,new Double(sf)));
     aa.putValue(Action.NAME,(int)(sf * 100) + " %");
   }
   return m;

@@ -5,6 +5,8 @@
   JMenu windowMenu=m;
   labels.configureMenu(m,"window");
   m.addSeparator();
+  MenuBuilder mb=model.getMenuBuilder();
+  mb.addOtherWindowItems(m,this,view);
   new WindowMenuHandler(windowMenu,view);
-  return m;
+  return (m.getItemCount() == 0) ? null : m;
 }

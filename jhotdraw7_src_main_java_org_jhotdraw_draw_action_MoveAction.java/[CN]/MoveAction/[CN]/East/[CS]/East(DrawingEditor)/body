@@ -1,4 +1,5 @@
 {
   super(editor,1,0);
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   labels.configureAction(this,ID);
 }

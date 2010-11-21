@@ -2,22 +2,21 @@
   JMenu m;
   m=new JMenu();
   labels.configureMenu(m,"file");
-  addAction(m,view,ClearFileAction.ID);
-  addAction(m,view,NewFileAction.ID);
-  addAction(m,view,NewWindowAction.ID);
-  addAction(m,view,LoadFileAction.ID);
-  addAction(m,view,OpenFileAction.ID);
-  addAction(m,view,LoadDirectoryAction.ID);
-  addAction(m,view,OpenDirectoryAction.ID);
+  MenuBuilder mb=model.getMenuBuilder();
+  mb.addClearFileItems(m,this,view);
+  mb.addNewFileItems(m,this,view);
+  mb.addNewWindowItems(m,this,view);
+  mb.addLoadFileItems(m,this,view);
+  mb.addOpenFileItems(m,this,view);
   if (getAction(view,LoadFileAction.ID) != null || getAction(view,OpenFileAction.ID) != null || getAction(view,LoadDirectoryAction.ID) != null || getAction(view,OpenDirectoryAction.ID) != null) {
-    m.add(createOpenRecentFileMenu(null));
+    m.add(createOpenRecentFileMenu(view));
   }
   maybeAddSeparator(m);
-  addAction(m,view,SaveFileAction.ID);
-  addAction(m,view,SaveFileAsAction.ID);
-  addAction(m,view,ExportFileAction.ID);
-  addAction(m,view,PrintFileAction.ID);
+  mb.addSaveFileItems(m,this,view);
+  mb.addExportFileItems(m,this,view);
+  mb.addPrintFileItems(m,this,view);
+  mb.addOtherFileItems(m,this,view);
   maybeAddSeparator(m);
-  addAction(m,view,CloseFileAction.ID);
-  return m;
+  mb.addCloseFileItems(m,this,view);
+  return (m.getItemCount() == 0) ? null : m;
 }

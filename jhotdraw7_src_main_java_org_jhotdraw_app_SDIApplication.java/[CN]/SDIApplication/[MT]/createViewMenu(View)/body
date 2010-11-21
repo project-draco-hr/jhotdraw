@@ -17,5 +17,7 @@
       m.add(m2);
     }
   }
-  return (m.getPopupMenu().getComponentCount() > 0) ? m : null;
+  MenuBuilder mb=model.getMenuBuilder();
+  mb.addOtherViewItems(m,this,view);
+  return (m.getItemCount() > 0) ? m : null;
 }

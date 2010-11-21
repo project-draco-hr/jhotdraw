@@ -1,5 +1,6 @@
 {
   DrawingEditor editor=getEditor();
+  ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
   CompositeEdit edit=new CompositeEdit(labels.getString("edit.applyAttributes.text"));
   DrawingView view=getView();
   view.getDrawing().fireUndoableEditHappened(edit);
