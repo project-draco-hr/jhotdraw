@@ -2,8 +2,8 @@
   initComponents();
   setUI(PalettePanelUI.createUI(this));
   jList.setUI((ListUI)PaletteListUI.createUI(jList));
-  jList.setListData(ButtonFactory.HSB_COLORS_AS_RGB.toArray());
-  jList.setVisibleRowCount(ButtonFactory.HSB_COLORS_AS_RGB.size() / ButtonFactory.HSB_COLORS_AS_RGB_COLUMN_COUNT);
+  jList.setListData(HSB_COLORS_AS_RGB.toArray());
+  jList.setVisibleRowCount(HSB_COLORS_AS_RGB.size() / HSB_COLORS_AS_RGB_COLUMN_COUNT);
   jList.addListSelectionListener(new ListSelectionListener(){
     @Override public void valueChanged(    ListSelectionEvent e){
       if (updateRecursion++ == 0) {

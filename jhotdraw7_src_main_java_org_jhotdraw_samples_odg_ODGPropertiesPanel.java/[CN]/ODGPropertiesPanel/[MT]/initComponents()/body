@@ -1,9 +1,9 @@
 {
   java.awt.GridBagConstraints gridBagConstraints;
   linkLabel=new javax.swing.JLabel();
-  linkField=new org.jhotdraw.gui.JAttributeTextField();
+  linkField=new org.jhotdraw.draw.gui.JAttributeTextField();
   opacityLabel=new javax.swing.JLabel();
-  opacityField=new org.jhotdraw.gui.JAttributeTextField();
+  opacityField=new org.jhotdraw.draw.gui.JAttributeTextField();
   opacityPopupButton=new org.jhotdraw.gui.JPopupButton();
   setBorder(javax.swing.BorderFactory.createEmptyBorder(10,10,10,10));
   setLayout(new java.awt.GridBagLayout());

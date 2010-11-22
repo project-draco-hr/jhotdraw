@@ -4,7 +4,7 @@
   colorLabel=new javax.swing.JLabel();
   colorButton=new javax.swing.JButton();
   opacityLabel=new javax.swing.JLabel();
-  opacityField=new org.jhotdraw.gui.JAttributeTextField<Double>();
+  opacityField=new org.jhotdraw.draw.gui.JAttributeTextField<Double>();
   opacityPopupButton=new org.jhotdraw.gui.JPopupButton();
   setLayout(new java.awt.GridBagLayout());
   colorLabel.setText(labels.getString("attribute.canvasFillColor.text"));
