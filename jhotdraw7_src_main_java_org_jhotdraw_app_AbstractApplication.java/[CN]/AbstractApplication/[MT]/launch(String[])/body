@@ -1,9 +1,10 @@
 {
   configure(args);
+  final List<URI> uris=getOpenURIsFromMainArgs(args);
   SwingUtilities.invokeLater(new Runnable(){
     @Override public void run(){
       init();
-      start();
+      start(uris);
     }
   }
 );

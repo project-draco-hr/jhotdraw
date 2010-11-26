@@ -1,12 +1,19 @@
 {
   SVGView v=(SVGView)view;
+  DrawingEditor editor;
   if (a.isSharingToolsAmongViews()) {
-    v.setEditor(getSharedEditor());
+    v.setEditor(editor=getSharedEditor());
   }
  else {
-    v.setEditor(new DefaultDrawingEditor());
+    v.setEditor(editor=new DefaultDrawingEditor());
   }
   AbstractSelectedAction action;
-  view.getActionMap().put(SelectSameAction.ID,action=new SelectSameAction(v.getEditor()));
-  view.addDisposable(action);
+  ActionMap m=view.getActionMap();
+  m.put(SelectSameAction.ID,new SelectSameAction(editor));
+  m.put(GroupAction.ID,new GroupAction(editor,new SVGGroupFigure()));
+  m.put(UngroupAction.ID,new UngroupAction(editor,new SVGGroupFigure()));
+  m.put(CombineAction.ID,new CombineAction(editor));
+  m.put(SplitAction.ID,new SplitAction(editor));
+  m.put(BringToFrontAction.ID,new BringToFrontAction(editor));
+  m.put(SendToBackAction.ID,new SendToBackAction(editor));
 }

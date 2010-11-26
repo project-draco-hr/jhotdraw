@@ -1,0 +1,39 @@
+{
+  if (uris.isEmpty()) {
+    final View v=createView();
+    add(v);
+    v.setEnabled(false);
+    show(v);
+    setActiveView(v);
+    v.execute(new Worker<Object>(){
+      @Override public Object construct(){
+        v.clear();
+        return null;
+      }
+      @Override public void finished(){
+        v.setEnabled(true);
+      }
+    }
+);
+  }
+ else {
+    for (    final URI uri : uris) {
+      final View v=createView();
+      add(v);
+      v.setEnabled(false);
+      show(v);
+      setActiveView(v);
+      v.execute(new Worker<Object>(){
+        @Override public Object construct() throws Exception {
+          v.read(uri,null);
+          return null;
+        }
+        @Override public void finished(){
+          v.setURI(uri);
+          v.setEnabled(true);
+        }
+      }
+);
+    }
+  }
+}

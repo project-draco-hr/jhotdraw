@@ -1,4 +1,5 @@
 {
+  SVGView v=(SVGView)view;
   ActionMap m=super.createActionMap(a,v);
   AbstractAction aa;
   m.put(ClearSelectionAction.ID,new ClearSelectionAction());
@@ -9,5 +10,19 @@
     m.put(UndoAction.ID,svgView.getUndoManager().getUndoAction());
     m.put(RedoAction.ID,svgView.getUndoManager().getRedoAction());
   }
+  DrawingEditor editor;
+  if (a.isSharingToolsAmongViews()) {
+    editor=getSharedEditor();
+  }
+ else {
+    editor=(v == null) ? null : v.getEditor();
+  }
+  m.put(SelectSameAction.ID,new SelectSameAction(editor));
+  m.put(GroupAction.ID,new GroupAction(editor,new SVGGroupFigure()));
+  m.put(UngroupAction.ID,new UngroupAction(editor,new SVGGroupFigure()));
+  m.put(CombineAction.ID,new CombineAction(editor));
+  m.put(SplitAction.ID,new SplitAction(editor));
+  m.put(BringToFrontAction.ID,new BringToFrontAction(editor));
+  m.put(SendToBackAction.ID,new SendToBackAction(editor));
   return m;
 }
