@@ -1,19 +1,32 @@
 {
-  PathIterator i=shape.getPathIterator(new AffineTransform(),tolerance);
-  if (!i.isDone()) {
-    double[] coords=new double[6];
-    double prevX=coords[0];
-    double prevY=coords[1];
-    i.next();
-    while (!i.isDone()) {
-      i.currentSegment(coords);
-      if (Geom.lineContainsPoint(prevX,prevY,coords[0],coords[1],p.x,p.y,tolerance)) {
+  double[] coords=new double[6];
+  double prevX=0, prevY=0;
+  double moveX=0, moveY=0;
+  for (PathIterator i=new FlatteningPathIterator(shape.getPathIterator(new AffineTransform(),tolerance),tolerance); !i.isDone(); i.next()) {
+switch (i.currentSegment(coords)) {
+case PathIterator.SEG_CLOSE:
+      if (Geom.lineContainsPoint(prevX,prevY,moveX,moveY,p.x,p.y,tolerance)) {
         return true;
       }
-      prevX=coords[0];
-      prevY=coords[1];
-      i.next();
-    }
-  }
-  return false;
+    break;
+case PathIterator.SEG_CUBICTO:
+  break;
+case PathIterator.SEG_LINETO:
+if (Geom.lineContainsPoint(prevX,prevY,coords[0],coords[1],p.x,p.y,tolerance)) {
+  return true;
+}
+break;
+case PathIterator.SEG_MOVETO:
+moveX=coords[0];
+moveY=coords[1];
+break;
+case PathIterator.SEG_QUADTO:
+break;
+default :
+break;
+}
+prevX=coords[0];
+prevY=coords[1];
+}
+return false;
 }
