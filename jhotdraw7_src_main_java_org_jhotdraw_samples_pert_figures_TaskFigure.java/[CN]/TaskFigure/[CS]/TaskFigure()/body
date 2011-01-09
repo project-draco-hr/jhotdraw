@@ -9,7 +9,6 @@
   ListFigure nameCompartment=new ListFigure(nameCompartmentPF);
   ListFigure attributeCompartment=new ListFigure();
   SeparatorLineFigure separator1=new SeparatorLineFigure();
-  applyAttributes(getPresentationFigure());
   add(nameCompartment);
   add(separator1);
   add(attributeCompartment);
@@ -30,7 +29,6 @@
   startTimeFigure.setEditable(false);
   startTimeFigure.setText("0");
   startTimeFigure.setAttributeEnabled(FONT_BOLD,false);
-  applyAttributes(this);
   setAttributeEnabled(STROKE_DASHES,false);
   ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.pert.Labels");
   setName(labels.getString("pert.task.defaultName"));

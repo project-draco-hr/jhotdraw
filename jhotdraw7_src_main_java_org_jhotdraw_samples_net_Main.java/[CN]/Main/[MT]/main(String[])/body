@@ -10,7 +10,6 @@
  else {
     app=new SDIApplication();
   }
-  app=new MDIApplication();
   DefaultApplicationModel model=new NetApplicationModel();
   model.setName("JHotDraw Net");
   model.setVersion(Main.class.getPackage().getImplementationVersion());

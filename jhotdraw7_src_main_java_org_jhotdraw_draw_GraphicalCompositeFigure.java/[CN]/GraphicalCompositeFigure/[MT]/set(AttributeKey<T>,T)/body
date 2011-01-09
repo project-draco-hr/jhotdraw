@@ -3,6 +3,7 @@
     if (getPresentationFigure() != null) {
       getPresentationFigure().set(key,newValue);
     }
-    super.set(key,newValue);
+    T oldValue=(T)key.put(attributes,newValue);
+    fireAttributeChanged(key,oldValue,newValue);
   }
 }

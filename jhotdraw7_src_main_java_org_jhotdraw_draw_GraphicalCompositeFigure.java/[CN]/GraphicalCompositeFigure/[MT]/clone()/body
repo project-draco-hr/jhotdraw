@@ -4,5 +4,7 @@
   if (that.presentationFigure != null) {
     that.presentationFigure.addFigureListener(that.presentationFigureHandler);
   }
+  that.attributes=(HashMap<AttributeKey,Object>)this.attributes.clone();
+  that.forbiddenAttributes=this.forbiddenAttributes == null ? null : (HashSet<AttributeKey>)this.forbiddenAttributes.clone();
   return that;
 }
