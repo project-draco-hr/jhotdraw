@@ -5,7 +5,7 @@
     String path=prefs.get("recentFile." + i,null);
     if (path != null) {
       try {
-        recentFiles.add(new URI(path));
+        recentURIs.add(new URI(path));
       }
  catch (      URISyntaxException ex) {
       }

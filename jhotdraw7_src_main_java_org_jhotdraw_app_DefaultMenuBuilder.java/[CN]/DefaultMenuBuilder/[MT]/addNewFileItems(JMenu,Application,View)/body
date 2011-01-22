@@ -2,6 +2,6 @@
   ActionMap am=app.getActionMap(v);
   Action a;
   if (null != (a=am.get(NewFileAction.ID))) {
-    m.add(a);
+    add(m,a);
   }
 }

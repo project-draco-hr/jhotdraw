@@ -1,7 +1,7 @@
 {
   return new PropertyChangeListener(){
     @Override public void propertyChange(    PropertyChangeEvent evt){
-      if (evt.getPropertyName() == "recentFiles") {
+      if (evt.getPropertyName() == Application.RECENT_URIS_PROPERTY) {
         updateEnabled();
       }
     }

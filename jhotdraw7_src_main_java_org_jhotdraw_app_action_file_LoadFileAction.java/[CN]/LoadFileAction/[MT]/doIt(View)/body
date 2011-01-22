@@ -12,6 +12,14 @@
  else {
           uri=evt.getChooser().getSelectedURI();
         }
+        if (!getApplication().getModel().isAllowMultipleViewsPerURI()) {
+          for (          View v : getApplication().getViews()) {
+            if (v != view && v.getURI() != null && v.getURI().equals(uri)) {
+              v.getComponent().requestFocus();
+              return;
+            }
+          }
+        }
         loadViewFromURI(view,uri,evt.getChooser());
       }
  else {

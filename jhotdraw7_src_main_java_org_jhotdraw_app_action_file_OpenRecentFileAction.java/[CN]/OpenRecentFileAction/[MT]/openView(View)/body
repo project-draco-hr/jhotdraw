@@ -34,6 +34,7 @@
         w.setExtendedState(w.getExtendedState() & ~Frame.ICONIFIED);
         w.toFront();
       }
+      app.addRecentURI(uri);
       view.setEnabled(true);
       view.getComponent().requestFocus();
     }

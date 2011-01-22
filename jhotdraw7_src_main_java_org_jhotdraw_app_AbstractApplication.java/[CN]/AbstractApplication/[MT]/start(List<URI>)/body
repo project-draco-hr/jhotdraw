@@ -28,8 +28,13 @@
           v.read(uri,null);
           return null;
         }
-        @Override public void finished(){
+        @Override protected void done(        Object value){
           v.setURI(uri);
+        }
+        @Override protected void failed(        Throwable error){
+          v.clear();
+        }
+        @Override public void finished(){
           v.setEnabled(true);
         }
       }

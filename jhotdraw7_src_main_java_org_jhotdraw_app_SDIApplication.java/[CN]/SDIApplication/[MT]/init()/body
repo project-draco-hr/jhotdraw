@@ -4,5 +4,4 @@
   prefs=PreferencesUtil.userNodeForPackage((getModel() == null) ? getClass() : getModel().getClass());
   initLabels();
   setActionMap(createModelActionMap(model));
-  model.initApplication(this);
 }

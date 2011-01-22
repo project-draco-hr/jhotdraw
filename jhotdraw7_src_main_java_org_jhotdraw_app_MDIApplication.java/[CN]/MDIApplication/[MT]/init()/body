@@ -22,5 +22,4 @@
   parentFrame.setJMenuBar(createMenuBar(null));
   PreferencesUtil.installFramePrefsHandler(prefs,"parentFrame",parentFrame);
   parentFrame.setVisible(true);
-  model.initApplication(this);
 }

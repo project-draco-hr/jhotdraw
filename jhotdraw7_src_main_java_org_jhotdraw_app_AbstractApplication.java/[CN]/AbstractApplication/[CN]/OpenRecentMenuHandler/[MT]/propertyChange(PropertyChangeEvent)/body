@@ -1,6 +1,6 @@
 {
   String name=evt.getPropertyName();
-  if (name == "recentFiles") {
+  if (name == RECENT_URIS_PROPERTY) {
     updateOpenRecentMenu();
   }
 }

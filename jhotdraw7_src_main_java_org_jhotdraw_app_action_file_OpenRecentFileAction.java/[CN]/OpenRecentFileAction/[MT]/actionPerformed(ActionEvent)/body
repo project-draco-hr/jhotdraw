@@ -1,6 +1,14 @@
 {
   final Application app=getApplication();
   if (app.isEnabled()) {
+    if (!getApplication().getModel().isAllowMultipleViewsPerURI()) {
+      for (      View vw : getApplication().getViews()) {
+        if (vw.getURI() != null && vw.getURI().equals(uri)) {
+          vw.getComponent().requestFocus();
+          return;
+        }
+      }
+    }
     app.setEnabled(false);
     View emptyView=app.getActiveView();
     if (emptyView == null || !emptyView.isEmpty() || !emptyView.isEnabled()) {

@@ -1,0 +1,6 @@
+{
+  JPopupMenu pm=m.getPopupMenu();
+  for (int i=pm.getComponentCount() - 1; i > 0 && (pm.getComponent(i) instanceof JSeparator); i--) {
+    pm.remove(i);
+  }
+}

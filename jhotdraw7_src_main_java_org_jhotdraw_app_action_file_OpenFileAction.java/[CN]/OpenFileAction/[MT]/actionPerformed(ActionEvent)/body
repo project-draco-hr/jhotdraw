@@ -21,7 +21,20 @@
     chooser.setDialogType(JFileChooser.OPEN_DIALOG);
     if (showDialog(chooser,app.getComponent()) == JFileChooser.APPROVE_OPTION) {
       app.show(view);
-      openViewFromURI(view,chooser.getSelectedURI(),chooser);
+      URI uri=chooser.getSelectedURI();
+      if (!getApplication().getModel().isAllowMultipleViewsPerURI()) {
+        for (        View v : getApplication().getViews()) {
+          if (v.getURI() != null && v.getURI().equals(uri)) {
+            v.getComponent().requestFocus();
+            if (disposeView) {
+              app.dispose(view);
+            }
+            app.setEnabled(true);
+            return;
+          }
+        }
+      }
+      openViewFromURI(view,uri,chooser);
     }
  else {
       if (disposeView) {

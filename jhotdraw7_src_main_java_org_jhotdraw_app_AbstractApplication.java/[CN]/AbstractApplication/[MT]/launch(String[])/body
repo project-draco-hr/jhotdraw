@@ -1,10 +1,21 @@
 {
   configure(args);
-  final List<URI> uris=getOpenURIsFromMainArgs(args);
+  List<URI> uris=getOpenURIsFromMainArgs(args);
+  final LinkedList<URI> startUris;
+  if (uris.isEmpty()) {
+    startUris=new LinkedList<URI>();
+    if (model.isOpenLastURIOnLaunch() && !recentURIs.isEmpty()) {
+      startUris.add(recentURIs.getFirst());
+    }
+  }
+ else {
+    startUris=new LinkedList<URI>(uris);
+  }
   SwingUtilities.invokeLater(new Runnable(){
     @Override public void run(){
       init();
-      start(uris);
+      model.initApplication(AbstractApplication.this);
+      start(startUris);
     }
   }
 );

@@ -1,18 +1,18 @@
 {
-  @SuppressWarnings("unchecked") java.util.List<URI> oldValue=(java.util.List<URI>)recentFiles.clone();
-  if (recentFiles.contains(uri)) {
-    recentFiles.remove(uri);
+  @SuppressWarnings("unchecked") java.util.List<URI> oldValue=(java.util.List<URI>)recentURIs.clone();
+  if (recentURIs.contains(uri)) {
+    recentURIs.remove(uri);
   }
-  recentFiles.addFirst(uri);
-  if (recentFiles.size() > maxRecentFilesCount) {
-    recentFiles.removeLast();
+  recentURIs.addFirst(uri);
+  if (recentURIs.size() > maxRecentFilesCount) {
+    recentURIs.removeLast();
   }
-  prefs.putInt("recentFileCount",recentFiles.size());
+  prefs.putInt("recentFileCount",recentURIs.size());
   int i=0;
-  for (  URI f : recentFiles) {
+  for (  URI f : recentURIs) {
     prefs.put("recentFile." + i,f.toString());
     i++;
   }
-  firePropertyChange("recentFiles",oldValue,0);
-  firePropertyChange("recentFiles",Collections.unmodifiableList(oldValue),Collections.unmodifiableList(recentFiles));
+  firePropertyChange(RECENT_URIS_PROPERTY,oldValue,0);
+  firePropertyChange(RECENT_URIS_PROPERTY,Collections.unmodifiableList(oldValue),Collections.unmodifiableList(recentURIs));
 }

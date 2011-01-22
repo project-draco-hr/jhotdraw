@@ -2,6 +2,15 @@
   final Application app=getApplication();
   final String filename=evt.getActionCommand();
   if (app.isEnabled()) {
+    URI uri=new File(filename).toURI();
+    if (!app.getModel().isAllowMultipleViewsPerURI()) {
+      for (      View v : app.getViews()) {
+        if (v.getURI() != null && v.getURI().equals(uri)) {
+          v.getComponent().requestFocus();
+          return;
+        }
+      }
+    }
     app.setEnabled(false);
     View emptyView=app.getActiveView();
     if (emptyView == null || emptyView.getURI() != null || emptyView.hasUnsavedChanges()) {
@@ -16,6 +25,6 @@
  else {
       p=emptyView;
     }
-    openView(p,new File(filename).toURI());
+    openView(p,uri);
   }
 }

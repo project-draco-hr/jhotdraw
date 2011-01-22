@@ -9,5 +9,4 @@
   setActionMap(createModelActionMap(model));
   initPalettes(paletteActions);
   initScreenMenuBar();
-  model.initApplication(this);
 }

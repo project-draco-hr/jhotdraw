@@ -14,5 +14,6 @@
   mb.addFindItems(m,this,view);
   maybeAddSeparator(m);
   mb.addOtherEditItems(m,this,view);
+  removeTrailingSeparators(m);
   return (m.getItemCount() == 0) ? null : m;
 }
