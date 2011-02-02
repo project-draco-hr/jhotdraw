@@ -22,7 +22,7 @@
     chooserPanel.add(createColorWheelChooser(new ICC_ColorSpace(ICC_Profile.getInstance(WheelsAndSlidersMain.class.getResourceAsStream("/org/jhotdraw/color/Munsell CIELab_to_UPLab.icc"))),2,1,0,JColorWheel.Type.SQUARE));
     chooserPanel.add(createColorWheelChooser(new ICC_ColorSpace(ICC_Profile.getInstance(WheelsAndSlidersMain.class.getResourceAsStream("/org/jhotdraw/color/Munsell CIELab_to_UPLab2.icc"))),2,1,0,JColorWheel.Type.SQUARE));
   }
- catch (  IOException ex) {
+ catch (  Throwable ex) {
     ex.printStackTrace();
   }
   chooserPanel.add(createSliderChooser(ColorSpace.getInstance(ColorSpace.CS_sRGB)));
