@@ -1,5 +1,9 @@
 {
-  Window window=getWindowForComponent(parentComponent);
+  JPopupMenu popup=parent instanceof JPopupMenu ? (JPopupMenu)parent : (JPopupMenu)SwingUtilities.getAncestorOfClass(JPopupMenu.class,parent);
+  if (popup != null) {
+    parent=popup.getInvoker();
+  }
+  Window window=getWindowForComponent(parent);
   final JSheet sheet;
   boolean isUndecorated;
   if (window instanceof Frame) {

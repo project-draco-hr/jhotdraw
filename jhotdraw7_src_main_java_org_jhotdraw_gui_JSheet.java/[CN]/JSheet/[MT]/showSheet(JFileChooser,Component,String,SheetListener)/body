@@ -3,6 +3,10 @@
     chooser.setApproveButtonText(approveButtonText);
     chooser.setDialogType(JFileChooser.CUSTOM_DIALOG);
   }
+  JPopupMenu popup=parent instanceof JPopupMenu ? (JPopupMenu)parent : (JPopupMenu)SwingUtilities.getAncestorOfClass(JPopupMenu.class,parent);
+  if (popup != null) {
+    parent=popup.getInvoker();
+  }
   Frame frame=parent instanceof Frame ? (Frame)parent : (Frame)SwingUtilities.getAncestorOfClass(Frame.class,parent);
   String title=chooser.getUI().getDialogTitle(chooser);
   chooser.getAccessibleContext().setAccessibleDescription(title);
