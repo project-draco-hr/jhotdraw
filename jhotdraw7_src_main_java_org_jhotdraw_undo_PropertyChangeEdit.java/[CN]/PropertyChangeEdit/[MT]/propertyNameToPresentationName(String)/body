@@ -1,0 +1,17 @@
+{
+  StringBuilder b=new StringBuilder();
+  boolean wasUpperCase=true;
+  for (int i=0; i < s.length(); i++) {
+    if (Character.isUpperCase(s.charAt(i))) {
+      if (!wasUpperCase) {
+        b.append(' ');
+      }
+      wasUpperCase=true;
+    }
+ else {
+      wasUpperCase=false;
+    }
+    b.append(i == 0 ? Character.toUpperCase(s.charAt(i)) : s.charAt(i));
+  }
+  return b.toString();
+}

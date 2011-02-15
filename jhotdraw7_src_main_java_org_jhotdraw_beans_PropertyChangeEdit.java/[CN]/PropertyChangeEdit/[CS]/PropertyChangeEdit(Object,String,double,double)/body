@@ -1,3 +1,0 @@
-{
-  this(source,propertyName,Double.TYPE,oldValue,newValue);
-}

@@ -1,3 +1,0 @@
-{
-  this(source,propertyName,Integer.TYPE,oldValue,newValue);
-}

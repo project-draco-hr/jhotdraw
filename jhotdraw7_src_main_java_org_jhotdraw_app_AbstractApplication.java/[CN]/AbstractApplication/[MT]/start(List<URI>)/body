@@ -32,6 +32,7 @@
           v.setURI(uri);
         }
         @Override protected void failed(        Throwable error){
+          error.printStackTrace();
           v.clear();
         }
         @Override public void finished(){

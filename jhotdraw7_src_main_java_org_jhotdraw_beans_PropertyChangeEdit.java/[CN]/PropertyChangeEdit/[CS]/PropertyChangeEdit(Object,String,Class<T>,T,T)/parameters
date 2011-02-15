@@ -1,5 +1,0 @@
-Object source
-String propertyName
-Class<T> type
-T oldValue
-T newValue

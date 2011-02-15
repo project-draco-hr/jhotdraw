@@ -1,6 +1,7 @@
 {
   try {
-    return source.getClass().getMethod("set" + Character.toUpperCase(propertyName.charAt(0)) + propertyName.substring(1),type);
+    PropertyDescriptor desc=new PropertyDescriptor(propertyName,source.getClass());
+    return desc.getWriteMethod();
   }
  catch (  Exception e) {
     InternalError ie=new InternalError("Couldn't find setter for property \"" + propertyName + "\" in "+ source);

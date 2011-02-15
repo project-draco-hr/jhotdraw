@@ -1,3 +1,0 @@
-{
-  this(source,propertyName,String.class,oldValue,newValue);
-}

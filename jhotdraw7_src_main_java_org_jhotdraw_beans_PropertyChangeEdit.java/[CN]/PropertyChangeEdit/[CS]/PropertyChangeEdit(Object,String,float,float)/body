@@ -1,3 +1,0 @@
-{
-  this(source,propertyName,Float.TYPE,oldValue,newValue);
-}

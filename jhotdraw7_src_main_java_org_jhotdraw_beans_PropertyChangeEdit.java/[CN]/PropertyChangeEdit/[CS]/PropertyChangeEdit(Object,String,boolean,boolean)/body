@@ -1,3 +1,0 @@
-{
-  this(source,propertyName,Boolean.TYPE,oldValue,newValue);
-}

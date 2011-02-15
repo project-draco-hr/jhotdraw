@@ -1,3 +1,0 @@
-{
-  this(source,propertyName,Character.TYPE,oldValue,newValue);
-}
