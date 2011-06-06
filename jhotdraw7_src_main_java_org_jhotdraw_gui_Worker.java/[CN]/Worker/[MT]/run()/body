@@ -15,8 +15,12 @@
   }
   SwingUtilities.invokeLater(new Runnable(){
     @Override public void run(){
-      done(getValue());
-      finished();
+      try {
+        done(getValue());
+      }
+  finally {
+        finished();
+      }
     }
   }
 );
