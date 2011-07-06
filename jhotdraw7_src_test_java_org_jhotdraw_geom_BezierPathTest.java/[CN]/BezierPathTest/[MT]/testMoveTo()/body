@@ -1,8 +1,0 @@
-{
-  System.out.println("moveTo");
-  double x1=0.0;
-  double y1=0.0;
-  BezierPath instance=new BezierPath();
-  instance.moveTo(x1,y1);
-  fail("The test case is a prototype.");
-}

@@ -1,8 +1,0 @@
-{
-  System.out.println("getBounds2D");
-  BezierPath instance=new BezierPath();
-  Rectangle2D expResult=null;
-  Rectangle2D result=instance.getBounds2D();
-  assertEquals(expResult,result);
-  fail("The test case is a prototype.");
-}

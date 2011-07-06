@@ -1,8 +1,0 @@
-{
-  System.out.println("setControlPoint");
-  int index=0;
-  Point2D.Double p=null;
-  BezierPath.Node instance=new BezierPath.Node();
-  instance.setControlPoint(index,p);
-  fail("The test case is a prototype.");
-}

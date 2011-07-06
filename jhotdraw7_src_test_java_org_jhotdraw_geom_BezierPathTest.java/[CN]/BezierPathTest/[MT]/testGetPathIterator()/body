@@ -1,9 +1,0 @@
-{
-  System.out.println("getPathIterator");
-  AffineTransform at=null;
-  BezierPath instance=new BezierPath();
-  PathIterator expResult=null;
-  PathIterator result=instance.getPathIterator(at);
-  assertEquals(expResult,result);
-  fail("The test case is a prototype.");
-}

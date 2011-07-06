@@ -1,9 +1,0 @@
-{
-  System.out.println("chop");
-  Point2D.Double p=null;
-  BezierPath instance=new BezierPath();
-  Point2D.Double expResult=null;
-  Point2D.Double result=instance.chop(p);
-  assertEquals(expResult,result);
-  fail("The test case is a prototype.");
-}

@@ -1,9 +1,0 @@
-{
-  System.out.println("getControlPoint");
-  int index=0;
-  BezierPath.Node instance=new BezierPath.Node();
-  Point2D.Double expResult=null;
-  Point2D.Double result=instance.getControlPoint(index);
-  assertEquals(expResult,result);
-  fail("The test case is a prototype.");
-}

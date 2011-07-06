@@ -1,8 +1,0 @@
-{
-  System.out.println("clone");
-  BezierPath.Node instance=new BezierPath.Node();
-  Object expResult=null;
-  Object result=instance.clone();
-  assertEquals(expResult,result);
-  fail("The test case is a prototype.");
-}

@@ -1,7 +1,0 @@
-{
-  System.out.println("setTo");
-  BezierPath that=null;
-  BezierPath instance=new BezierPath();
-  instance.setTo(that);
-  fail("The test case is a prototype.");
-}

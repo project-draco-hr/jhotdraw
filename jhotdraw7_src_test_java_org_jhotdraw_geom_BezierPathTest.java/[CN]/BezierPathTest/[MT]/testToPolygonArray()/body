@@ -1,8 +1,0 @@
-{
-  System.out.println("toPolygonArray");
-  BezierPath instance=new BezierPath();
-  Point2D.Double[] expResult=null;
-  Point2D.Double[] result=instance.toPolygonArray();
-  assertEquals(expResult,result);
-  fail("The test case is a prototype.");
-}

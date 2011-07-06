@@ -1,8 +1,0 @@
-{
-  System.out.println("toString");
-  BezierPath.Node instance=new BezierPath.Node();
-  String expResult="";
-  String result=instance.toString();
-  assertEquals(expResult,result);
-  fail("The test case is a prototype.");
-}

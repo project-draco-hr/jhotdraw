@@ -1,7 +1,0 @@
-{
-  System.out.println("add");
-  Point2D.Double c0=null;
-  BezierPath instance=new BezierPath();
-  instance.add(c0);
-  fail("The test case is a prototype.");
-}

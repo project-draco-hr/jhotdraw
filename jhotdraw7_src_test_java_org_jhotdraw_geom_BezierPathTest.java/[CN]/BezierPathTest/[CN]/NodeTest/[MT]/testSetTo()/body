@@ -1,7 +1,0 @@
-{
-  System.out.println("setTo");
-  BezierPath.Node that=null;
-  BezierPath.Node instance=new BezierPath.Node();
-  instance.setTo(that);
-  fail("The test case is a prototype.");
-}

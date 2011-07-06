@@ -1,8 +1,0 @@
-{
-  System.out.println("getCenter");
-  BezierPath instance=new BezierPath();
-  Point2D.Double expResult=null;
-  Point2D.Double result=instance.getCenter();
-  assertEquals(expResult,result);
-  fail("The test case is a prototype.");
-}

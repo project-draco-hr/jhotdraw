@@ -1,9 +1,0 @@
-{
-  System.out.println("contains");
-  Point2D p=null;
-  BezierPath instance=new BezierPath();
-  boolean expResult=true;
-  boolean result=instance.contains(p);
-  assertEquals(expResult,result);
-  fail("The test case is a prototype.");
-}

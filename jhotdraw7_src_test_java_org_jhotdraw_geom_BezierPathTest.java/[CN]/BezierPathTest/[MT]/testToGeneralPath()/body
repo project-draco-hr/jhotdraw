@@ -1,8 +1,0 @@
-{
-  System.out.println("toGeneralPath");
-  BezierPath instance=new BezierPath();
-  GeneralPath expResult=null;
-  GeneralPath result=instance.toGeneralPath();
-  assertEquals(expResult,result);
-  fail("The test case is a prototype.");
-}
