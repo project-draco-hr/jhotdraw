@@ -2,6 +2,7 @@
   if (v == null) {
     if (importChooser == null) {
       importChooser=model.createImportChooser(this,null);
+      importChooser.getComponent().putClientProperty("application",this);
     }
     return importChooser;
   }
@@ -10,6 +11,8 @@
     if (chooser == null) {
       chooser=model.createImportChooser(this,v);
       v.getComponent().putClientProperty("importChooser",chooser);
+      chooser.getComponent().putClientProperty("view",v);
+      chooser.getComponent().putClientProperty("application",this);
     }
     return chooser;
   }

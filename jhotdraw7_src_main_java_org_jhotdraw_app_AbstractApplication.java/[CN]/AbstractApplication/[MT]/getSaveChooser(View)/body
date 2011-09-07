@@ -2,6 +2,7 @@
   if (v == null) {
     if (saveChooser == null) {
       saveChooser=model.createSaveChooser(this,null);
+      saveChooser.getComponent().putClientProperty("application",this);
     }
     return saveChooser;
   }
@@ -10,6 +11,8 @@
     if (chooser == null) {
       chooser=model.createSaveChooser(this,v);
       v.getComponent().putClientProperty("saveChooser",chooser);
+      chooser.getComponent().putClientProperty("view",v);
+      chooser.getComponent().putClientProperty("application",this);
       try {
         chooser.setSelectedURI(v.getURI());
       }

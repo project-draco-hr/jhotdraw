@@ -2,6 +2,7 @@
   if (v == null) {
     if (openChooser == null) {
       openChooser=model.createOpenChooser(this,null);
+      openChooser.getComponent().putClientProperty("application",this);
       List<URI> ruris=getRecentURIs();
       if (ruris.size() > 0) {
         try {
@@ -18,6 +19,8 @@
     if (chooser == null) {
       chooser=model.createOpenChooser(this,v);
       v.getComponent().putClientProperty("openChooser",chooser);
+      chooser.getComponent().putClientProperty("view",v);
+      chooser.getComponent().putClientProperty("application",this);
       List<URI> ruris=getRecentURIs();
       if (ruris.size() > 0) {
         try {
