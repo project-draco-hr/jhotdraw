@@ -1,0 +1,7 @@
+{
+  boolean b=model.isCancelable() && !model.isCanceled() && !model.isClosed();
+  if (cancelButton.isEnabled() != b) {
+    cancelButton.setEnabled(b);
+    revalidate();
+  }
+}

@@ -1,0 +1,5 @@
+{
+  String oldValue=warning;
+  this.warning=newValue;
+  firePropertyChange(WARNING_PROPERTY,oldValue,newValue);
+}

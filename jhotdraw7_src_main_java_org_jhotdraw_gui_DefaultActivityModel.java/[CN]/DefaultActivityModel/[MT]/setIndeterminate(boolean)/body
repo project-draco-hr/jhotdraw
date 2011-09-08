@@ -1,0 +1,5 @@
+{
+  boolean oldValue=isIndeterminate;
+  isIndeterminate=newValue;
+  firePropertyChange(INDETERMINATE_PROPERTY,oldValue,newValue);
+}

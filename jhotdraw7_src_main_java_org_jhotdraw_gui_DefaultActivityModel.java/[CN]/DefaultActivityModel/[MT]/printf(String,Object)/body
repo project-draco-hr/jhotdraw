@@ -1,0 +1,8 @@
+{
+  if ((formatter == null) || (formatter.locale() != Locale.getDefault())) {
+    formatter=new Formatter();
+  }
+  formatter.format(Locale.getDefault(),format,args);
+  StringBuilder buf=(StringBuilder)formatter.out();
+  setNote(buf.toString());
+}

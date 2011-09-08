@@ -1,0 +1,8 @@
+{
+  boolean b=model.isClosed();
+  if (progressBar.isEnabled() == b) {
+    closeButton.setVisible(model.getError() != null);
+    progressBar.setEnabled(!b);
+    revalidate();
+  }
+}

@@ -1,0 +1,10 @@
+{
+  if (views.containsKey(model)) {
+    JActivityView viewer=views.get(model);
+    viewer.removePropertyChangeListener(handler);
+    progressPanel.remove(viewer);
+    views.remove(model);
+    updateInfoPanel();
+    pack();
+  }
+}

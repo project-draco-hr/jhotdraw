@@ -1,0 +1,5 @@
+{
+  if (evt.getSource() == startButton) {
+    ActivityMonitorSample.this.startPerformed(evt);
+  }
+}

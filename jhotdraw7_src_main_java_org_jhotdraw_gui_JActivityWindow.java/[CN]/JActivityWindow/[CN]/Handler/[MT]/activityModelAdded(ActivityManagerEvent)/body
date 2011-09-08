@@ -1,0 +1,6 @@
+{
+  ActivityModel pm=evt.getActivityModel();
+  if (activityOwner == null || activityOwner.equals(pm.getOwner())) {
+    addActivityModel(pm);
+  }
+}

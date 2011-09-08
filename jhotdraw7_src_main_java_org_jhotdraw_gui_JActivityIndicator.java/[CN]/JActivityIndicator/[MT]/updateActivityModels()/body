@@ -1,0 +1,16 @@
+{
+  for (  ActivityModel pm : models) {
+    pm.removePropertyChangeListener(handler);
+  }
+  models.clear();
+  if (manager != null) {
+    for (    ActivityModel pm : manager.getActivityModels()) {
+      if (progressOwner == null || pm.getOwner() == progressOwner) {
+        models.add(pm);
+      }
+    }
+  }
+  updateProgressBar();
+  updateIndeterminate();
+  updateToolTip();
+}

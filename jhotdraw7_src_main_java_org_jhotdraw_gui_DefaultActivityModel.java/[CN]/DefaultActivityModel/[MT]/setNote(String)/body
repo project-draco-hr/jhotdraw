@@ -1,0 +1,5 @@
+{
+  String oldValue=note;
+  this.note=newValue;
+  firePropertyChange(NOTE_PROPERTY,oldValue,newValue);
+}

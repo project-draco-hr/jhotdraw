@@ -1,0 +1,8 @@
+{
+  super(min,0,min,max);
+  this.owner=owner;
+  this.title=title;
+  this.note=note;
+  this.isIndeterminate=isIndeterminate;
+  ActivityManager.getInstance().add(this);
+}

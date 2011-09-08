@@ -1,0 +1,5 @@
+{
+  String oldValue=error;
+  this.error=newValue;
+  firePropertyChange(ERROR_PROPERTY,oldValue,newValue);
+}

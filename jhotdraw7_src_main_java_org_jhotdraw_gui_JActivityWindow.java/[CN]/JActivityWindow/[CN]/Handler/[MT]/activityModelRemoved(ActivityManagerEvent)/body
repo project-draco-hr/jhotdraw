@@ -1,0 +1,22 @@
+{
+  final ActivityModel pm=evt.getActivityModel();
+  int delay=(pm.getError() != null) ? errorRemovalDelay : ((pm.getWarning() != null) ? warningRemovalDelay : normalRemovalDelay);
+  if (delay == -1) {
+    JActivityWindow.this.setVisible(true);
+    return;
+  }
+  ActionListener tt=new ActionListener(){
+    @Override public void actionPerformed(    ActionEvent e){
+      removeActivityModel(pm);
+    }
+  }
+;
+  if (delay == 0) {
+    tt.actionPerformed(null);
+  }
+ else {
+    Timer t=new Timer(pm.getError() != null ? delay : delay,tt);
+    t.setRepeats(false);
+    t.start();
+  }
+}

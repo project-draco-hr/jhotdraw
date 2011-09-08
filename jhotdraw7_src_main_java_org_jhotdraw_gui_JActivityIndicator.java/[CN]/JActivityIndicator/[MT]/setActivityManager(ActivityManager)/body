@@ -1,0 +1,10 @@
+{
+  if (manager != null) {
+    manager.removeActivityManagerListener(handler);
+  }
+  this.manager=newValue;
+  if (manager != null) {
+    manager.addActivityManagerListener(handler);
+  }
+  updateActivityModels();
+}

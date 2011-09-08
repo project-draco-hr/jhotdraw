@@ -1,0 +1,3 @@
+{
+  this(owner,title,note,0,100,isIndeterminate);
+}

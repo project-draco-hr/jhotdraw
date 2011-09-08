@@ -1,0 +1,6 @@
+{
+  ActivityModel pm=evt.getActivityModel();
+  if (progressOwner == null || progressOwner.equals(pm.getOwner())) {
+    addActivityModel(pm);
+  }
+}

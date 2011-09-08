@@ -1,0 +1,16 @@
+{
+  if (model != null) {
+    model.removeChangeListener(handler);
+    model.removePropertyChangeListener(handler);
+    progressBar.setModel(new DefaultBoundedRangeModel());
+  }
+  model=newValue;
+  progressBar.setModel(newValue);
+  if (model != null) {
+    model.addChangeListener(handler);
+    model.addPropertyChangeListener(handler);
+    updateTitle();
+    updateProperties(null);
+    progressBar.setModel(model);
+  }
+}
