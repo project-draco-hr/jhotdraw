@@ -6,6 +6,24 @@
     view.setEnabled(false);
     try {
       URIChooser fileChooser=getApplication().getExportChooser(view);
+      if (proposeFileName) {
+        URI uri=view.getURI();
+        if (uri != null) {
+          try {
+            File file=new File(uri);
+            String name=file.getName();
+            int p=name.lastIndexOf('.');
+            if (p != -1) {
+              name=name.substring(0,p);
+              file=new File(file.getParent(),name);
+              uri=file.toURI();
+            }
+          }
+ catch (          IllegalArgumentException e) {
+          }
+        }
+        fileChooser.setSelectedURI(uri);
+      }
       JSheet.showSheet(fileChooser,view.getComponent(),labels.getString("filechooser.export"),new SheetListener(){
         @Override public void optionSelected(        final SheetEvent evt){
           if (evt.getOption() == JFileChooser.APPROVE_OPTION) {
