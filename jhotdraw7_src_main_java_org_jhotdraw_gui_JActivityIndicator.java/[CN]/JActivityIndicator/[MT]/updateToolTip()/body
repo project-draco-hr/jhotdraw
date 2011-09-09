@@ -3,7 +3,7 @@
     setToolTipText(labels.getString("ActivityIndicator.noActivities.toolTipText"));
   }
  else   if (models.size() == 1) {
-    setToolTipText(labels.getString("ActivityIndicator.oneActivity.toolTipText"));
+    setToolTipText(models.get(0).getTitle());
   }
  else {
     setToolTipText(labels.getFormatted("ActivityIndicator.nActivities.toolTipText",models.size()));

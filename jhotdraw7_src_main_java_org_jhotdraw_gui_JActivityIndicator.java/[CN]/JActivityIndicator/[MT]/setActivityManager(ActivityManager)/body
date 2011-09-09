@@ -7,4 +7,6 @@
     manager.addActivityManagerListener(handler);
   }
   updateActivityModels();
+  updateProgressBar();
+  updateToolTip();
 }
