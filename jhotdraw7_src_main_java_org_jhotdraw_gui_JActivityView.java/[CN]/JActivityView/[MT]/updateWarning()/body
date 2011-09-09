@@ -1,9 +1,5 @@
 {
   String txt=model.getWarning();
   warningLabel.setText(txt);
-  boolean b=txt != null;
-  if (warningLabel.isVisible() != b) {
-    warningLabel.setVisible(b);
-    revalidate();
-  }
+  updateLabelVisibility();
 }

@@ -1,9 +1,5 @@
 {
   String txt=model.getError();
   errorLabel.setText(txt);
-  boolean b=txt != null;
-  if (errorLabel.isVisible() != b) {
-    errorLabel.setVisible(b);
-    revalidate();
-  }
+  updateLabelVisibility();
 }
