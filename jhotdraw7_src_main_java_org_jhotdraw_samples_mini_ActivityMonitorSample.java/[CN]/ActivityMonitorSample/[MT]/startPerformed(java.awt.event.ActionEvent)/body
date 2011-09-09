@@ -3,8 +3,8 @@
   final boolean willFail=errorCheckBox.isSelected();
   final boolean willWarn=warningCheckBox.isSelected();
   String owner=ownerGroup.getSelection().getActionCommand();
-  final ActivityModel pm=new DefaultActivityModel(owner,"Task in " + owner + (willFail ? " will fail" : "")+ (willWarn ? " will warn" : ""));
-  pm.setIndeterminate(true);
+  final ActivityModel pm=new DefaultActivityModel(owner,"Task #" + (++count) + ", in group "+ owner+ (willFail ? ", will fail" : "")+ (willWarn ? ", will warn" : ""));
+  pm.setIndeterminate(false);
   pm.setCancelable(cancelableCheckBox.isSelected());
   pm.setNote("Waiting for processor");
   Runnable r=new Runnable(){
@@ -26,7 +26,7 @@
           }
  catch (          InterruptedException ex) {
           }
-          if (willFail & Math.random() < 0.5)           break;
+          if (willFail & Math.random() < 0.3)           break;
         }
         if (pm.isCanceled()) {
           pm.setNote("Canceled.");
