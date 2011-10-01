@@ -1,6 +1,6 @@
 {
-  boolean oldValue=this.enabled;
+  boolean oldValue=combinedEnabled;
   this.enabled=newValue;
-  boolean projIsEnabled=getActiveView() != null && getActiveView().isEnabled();
-  firePropertyChange(ENABLED_PROPERTY,Boolean.valueOf(oldValue && projIsEnabled),Boolean.valueOf(newValue && projIsEnabled));
+  combinedEnabled=getApplication().isEnabled() && (isMayCreateView() || getActiveView() != null && getActiveView().isEnabled()) && this.enabled;
+  firePropertyChange(ENABLED_PROPERTY,oldValue,combinedEnabled);
 }
