@@ -11,7 +11,7 @@
       int closestIndex=-1;
       for (int i=0, n=m.getSize(); i < n; i++) {
         ColorIcon item=(ColorIcon)m.getElementAt(i);
-        Color ic=item.getColor();
+        Color ic=item == null ? null : item.getColor();
         int squaredDistance;
         if (ic == null || ic.getAlpha() != ma) {
           squaredDistance=Integer.MAX_VALUE;
