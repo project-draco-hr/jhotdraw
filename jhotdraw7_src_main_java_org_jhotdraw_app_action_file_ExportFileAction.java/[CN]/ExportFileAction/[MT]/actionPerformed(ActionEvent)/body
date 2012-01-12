@@ -72,5 +72,9 @@
       view.setEnabled(true);
       throw err;
     }
+catch (    Throwable err) {
+      view.setEnabled(true);
+      err.printStackTrace();
+    }
   }
 }
