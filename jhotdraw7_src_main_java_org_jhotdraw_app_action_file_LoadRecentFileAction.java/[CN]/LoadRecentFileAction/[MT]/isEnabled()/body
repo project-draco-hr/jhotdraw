@@ -1,3 +1,0 @@
-{
-  return getApplication().isEnabled() && (getActiveView() == null || getActiveView().isEnabled()) && this.enabled;
-}
