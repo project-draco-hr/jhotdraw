@@ -1,6 +1,7 @@
 {
   labels=ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
   initComponents();
+  setFocusable(false);
   setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
   progressPanel=new javax.swing.JPanel(){
     @Override public Dimension getPreferredSize(){
