@@ -1,5 +1,5 @@
 {
-  if (key == Action.NAME && view != null) {
+  if (Action.NAME.equals(key) && view != null) {
     return getTitle();
   }
  else {
