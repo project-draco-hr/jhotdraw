@@ -1,6 +1,9 @@
 {
   super.activate(editor);
-  getView().setCursor(masterHandle.getCursor());
-  getView().setActiveHandle(masterHandle);
+  DrawingView v=getView();
+  if (v != null) {
+    v.setCursor(masterHandle.getCursor());
+    v.setActiveHandle(masterHandle);
+  }
   clearHoverHandles();
 }
