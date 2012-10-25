@@ -9,7 +9,7 @@
   }
   v.setTitle(labels.getFormatted("frame.title",title,getName(),v.getMultipleOpenId()));
   f.setTitle(v.getTitle());
-  if (uri != null && uri.getScheme() != null && uri.getScheme().equals("file")) {
+  if (uri != null && uri.getScheme() != null && "file".equals(uri.getScheme())) {
     f.getRootPane().putClientProperty("Window.documentFile",new File(uri));
   }
  else {

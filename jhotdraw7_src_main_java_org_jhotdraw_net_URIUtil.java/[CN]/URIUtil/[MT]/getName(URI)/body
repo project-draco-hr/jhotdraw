@@ -1,5 +1,5 @@
 {
-  if (uri.getScheme() != null && uri.getScheme().equals("file")) {
+  if (uri.getScheme() != null && "file".equals(uri.getScheme())) {
     return new File(uri).getName();
   }
   return uri.toString();

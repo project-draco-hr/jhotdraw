@@ -17,10 +17,10 @@
   boolean mirrorVertical=elem.getAttribute("mirror-vertical",DRAWING_NAMESPACE,"false").equals("true");
   boolean mirrorHorizontal=elem.getAttribute("mirror-horizontal",DRAWING_NAMESPACE,"false").equals("true");
   ODGFigure figure;
-  if (type.equals("rectangle")) {
+  if ("rectangle".equals(type)) {
     figure=createEnhancedGeometryRectangleFigure(figureBounds,a);
   }
- else   if (type.equals("ellipse")) {
+ else   if ("ellipse".equals(type)) {
     figure=createEnhancedGeometryEllipseFigure(figureBounds,a);
   }
  else {

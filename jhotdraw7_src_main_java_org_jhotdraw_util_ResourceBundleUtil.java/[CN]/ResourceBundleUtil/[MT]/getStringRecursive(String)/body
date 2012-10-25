@@ -29,7 +29,7 @@
     if (placeholderValue == null) {
       throw new MissingResourceException("\"" + key + "\" not found in "+ baseName,baseName,key);
     }
-    if (placeholderFormat.equals("accelerator")) {
+    if ("accelerator".equals(placeholderFormat)) {
       StringBuilder b=new StringBuilder();
       for (      String s : placeholderValue.split(" ")) {
         if (acceleratorKeys.contains(s)) {

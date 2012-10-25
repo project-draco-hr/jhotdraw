@@ -17,16 +17,16 @@
     for (    IXMLElement child : elem.getChildren()) {
       String ns=child.getNamespace();
       String name=child.getName();
-      if (name.equals("drawing-page-properties") && (ns == null || ns.equals(STYLE_NAMESPACE))) {
+      if ("drawing-page-properties".equals(name) && (ns == null || ns.equals(STYLE_NAMESPACE))) {
         readDrawingPagePropertiesElement(child,a);
       }
- else       if (name.equals("graphic-properties") && (ns == null || ns.equals(STYLE_NAMESPACE))) {
+ else       if ("graphic-properties".equals(name) && (ns == null || ns.equals(STYLE_NAMESPACE))) {
         readGraphicPropertiesElement(child,a);
       }
- else       if (name.equals("paragraph-properties") && (ns == null || ns.equals(STYLE_NAMESPACE))) {
+ else       if ("paragraph-properties".equals(name) && (ns == null || ns.equals(STYLE_NAMESPACE))) {
         readParagraphPropertiesElement(child,a);
       }
- else       if (name.equals("text-properties") && (ns == null || ns.equals(STYLE_NAMESPACE))) {
+ else       if ("text-properties".equals(name) && (ns == null || ns.equals(STYLE_NAMESPACE))) {
         readTextPropertiesElement(child,a);
       }
  else {

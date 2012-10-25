@@ -30,7 +30,7 @@
     if (index2 < 0) {
       break;
     }
-    if (key.toString().equals("encoding")) {
+    if ("encoding".equals(key.toString())) {
       return str.substring(index,index2);
     }
     index=index2 + 1;

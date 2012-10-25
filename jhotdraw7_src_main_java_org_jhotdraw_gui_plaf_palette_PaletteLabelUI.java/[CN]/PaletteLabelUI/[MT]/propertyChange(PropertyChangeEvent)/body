@@ -1,6 +1,6 @@
 {
   String name=evt.getPropertyName();
-  if (name.equals("JComponent.sizeVariant")) {
+  if ("JComponent.sizeVariant".equals(name)) {
   }
  else {
     super.propertyChange(evt);

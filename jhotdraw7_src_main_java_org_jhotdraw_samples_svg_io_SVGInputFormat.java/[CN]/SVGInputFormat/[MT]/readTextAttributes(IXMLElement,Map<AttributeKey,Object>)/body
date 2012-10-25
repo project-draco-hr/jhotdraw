@@ -6,10 +6,10 @@
   }
   value=readInheritAttribute(elem,"display-align","auto");
   if (!value.equals("auto")) {
-    if (value.equals("center")) {
+    if ("center".equals(value)) {
       TEXT_ANCHOR.put(a,TextAnchor.MIDDLE);
     }
- else     if (value.equals("before")) {
+ else     if ("before".equals(value)) {
       TEXT_ANCHOR.put(a,TextAnchor.END);
     }
   }

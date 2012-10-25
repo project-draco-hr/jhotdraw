@@ -1,7 +1,7 @@
 {
   PrintableView view=(PrintableView)getActiveView();
   view.setEnabled(false);
-  if (System.getProperty("apple.awt.graphics.UseQuartz","false").equals("true")) {
+  if ("true".equals(System.getProperty("apple.awt.graphics.UseQuartz","false"))) {
     printQuartz(view);
   }
  else {

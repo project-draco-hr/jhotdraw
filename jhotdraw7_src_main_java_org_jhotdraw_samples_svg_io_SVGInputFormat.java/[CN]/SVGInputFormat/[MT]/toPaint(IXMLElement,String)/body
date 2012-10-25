@@ -4,10 +4,10 @@
     return null;
   }
   str=str.trim().toLowerCase();
-  if (str.equals("none")) {
+  if ("none".equals(str)) {
     return null;
   }
- else   if (str.equals("currentcolor")) {
+ else   if ("currentcolor".equals(str)) {
     String currentColor=readInheritAttribute(elem,"color","black");
     if (currentColor == null || currentColor.trim().toLowerCase().equals("currentColor")) {
       return null;

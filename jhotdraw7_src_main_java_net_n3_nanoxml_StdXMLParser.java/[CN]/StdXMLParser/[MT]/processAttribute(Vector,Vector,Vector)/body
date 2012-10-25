@@ -1,7 +1,7 @@
 {
   String key=XMLUtil.scanIdentifier(this.reader);
   XMLUtil.skipWhitespace(this.reader,null);
-  if (!XMLUtil.read(this.reader,'&').equals("=")) {
+  if (!"=".equals(XMLUtil.read(this.reader,'&'))) {
     XMLUtil.errorExpectedInput(reader.getSystemID(),reader.getLineNr(),"`='");
   }
   XMLUtil.skipWhitespace(this.reader,null);

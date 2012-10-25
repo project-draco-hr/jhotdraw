@@ -1,10 +1,10 @@
 {
   String name=root.getName();
   String ns=root.getNamespace();
-  if (name.equals("document-content") && (ns == null || ns.equals(OFFICE_NAMESPACE))) {
+  if ("document-content".equals(name) && (ns == null || ns.equals(OFFICE_NAMESPACE))) {
     readDocumentContentElement(root);
   }
- else   if (name.equals("document-styles") && (ns == null || ns.equals(OFFICE_NAMESPACE))) {
+ else   if ("document-styles".equals(name) && (ns == null || ns.equals(OFFICE_NAMESPACE))) {
     readDocumentStylesElement(root);
   }
  else {

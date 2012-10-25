@@ -2,7 +2,7 @@
   for (  IXMLElement child : elem.getChildren()) {
     if (child.getNamespace() == null || child.getNamespace().equals(DRAWING_NAMESPACE)) {
       String name=child.getName();
-      if (name.equals("page")) {
+      if ("page".equals(name)) {
         readPageElement(child);
       }
     }

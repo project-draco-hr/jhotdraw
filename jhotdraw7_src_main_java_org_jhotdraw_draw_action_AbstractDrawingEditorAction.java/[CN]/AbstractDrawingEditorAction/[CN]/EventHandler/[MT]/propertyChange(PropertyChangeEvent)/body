@@ -1,5 +1,5 @@
 {
-  if (evt.getPropertyName().equals("enabled")) {
+  if ("enabled".equals(evt.getPropertyName())) {
     updateEnabledState();
   }
 }

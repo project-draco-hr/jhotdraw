@@ -5,13 +5,13 @@
   for (  IXMLElement child : elem.getChildren()) {
     String ns=child.getNamespace();
     String name=child.getName();
-    if (name.equals("styles") && (ns == null || ns.equals(OFFICE_NAMESPACE))) {
+    if ("styles".equals(name) && (ns == null || ns.equals(OFFICE_NAMESPACE))) {
       readStylesElement(child);
     }
- else     if (name.equals("automatic-styles") && (ns == null || ns.equals(OFFICE_NAMESPACE))) {
+ else     if ("automatic-styles".equals(name) && (ns == null || ns.equals(OFFICE_NAMESPACE))) {
       readAutomaticStylesElement(child);
     }
- else     if (name.equals("master-styles") && (ns == null || ns.equals(OFFICE_NAMESPACE))) {
+ else     if ("master-styles".equals(name) && (ns == null || ns.equals(OFFICE_NAMESPACE))) {
       readMasterStylesElement(child);
     }
  else {

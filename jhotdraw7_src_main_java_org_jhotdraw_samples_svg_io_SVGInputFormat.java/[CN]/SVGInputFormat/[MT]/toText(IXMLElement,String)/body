@@ -1,6 +1,6 @@
 {
   String space=readInheritAttribute(elem,"xml:space","default");
-  if (space.equals("default")) {
+  if ("default".equals(space)) {
     return value.trim().replaceAll("\\s++"," ");
   }
  else {

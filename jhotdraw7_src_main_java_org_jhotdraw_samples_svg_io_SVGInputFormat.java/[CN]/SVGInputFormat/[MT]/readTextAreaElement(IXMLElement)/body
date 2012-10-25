@@ -21,10 +21,10 @@
         if (node.getName() == null) {
           doc.insertString(doc.getLength(),toText(elem,node.getContent()),null);
         }
- else         if (node.getName().equals("tbreak")) {
+ else         if ("tbreak".equals(node.getName())) {
           doc.insertString(doc.getLength(),"\n",null);
         }
- else         if (node.getName().equals("tspan")) {
+ else         if ("tspan".equals(node.getName())) {
           readTSpanElement((IXMLElement)node,doc);
         }
  else {

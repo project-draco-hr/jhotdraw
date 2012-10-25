@@ -62,7 +62,7 @@
       c.add(mp);
       mp.addActionListener(new ActionListener(){
         @Override public void actionPerformed(        ActionEvent evt){
-          if (evt.getActionCommand().equals("close")) {
+          if ("close".equals(evt.getActionCommand())) {
             close();
           }
         }

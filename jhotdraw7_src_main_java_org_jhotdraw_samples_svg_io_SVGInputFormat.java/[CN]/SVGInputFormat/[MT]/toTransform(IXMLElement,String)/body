@@ -18,7 +18,7 @@
       if (tt.nextToken() != '(') {
         throw new IOException("'(' not found in transform " + str);
       }
-      if (type.equals("matrix")) {
+      if ("matrix".equals(type)) {
         double[] m=new double[6];
         for (int i=0; i < 6; i++) {
           if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
@@ -28,7 +28,7 @@
         }
         t.concatenate(new AffineTransform(m));
       }
- else       if (type.equals("translate")) {
+ else       if ("translate".equals(type)) {
         double tx, ty;
         if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
           throw new IOException("X-translation value not found in transform " + str);
@@ -43,7 +43,7 @@
         }
         t.translate(tx,ty);
       }
- else       if (type.equals("scale")) {
+ else       if ("scale".equals(type)) {
         double sx, sy;
         if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
           throw new IOException("X-scale value not found in transform " + str);
@@ -58,7 +58,7 @@
         }
         t.scale(sx,sy);
       }
- else       if (type.equals("rotate")) {
+ else       if ("rotate".equals(type)) {
         double angle, cx, cy;
         if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
           throw new IOException("Angle value not found in transform " + str);
@@ -77,7 +77,7 @@
         }
         t.rotate(angle * Math.PI / 180d,cx,cy);
       }
- else       if (type.equals("skewX")) {
+ else       if ("skewX".equals(type)) {
         double angle;
         if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
           throw new IOException("Skew angle not found in transform " + str);
@@ -85,7 +85,7 @@
         angle=tt.nval;
         t.concatenate(new AffineTransform(1,0,Math.tan(angle * Math.PI / 180),1,0,0));
       }
- else       if (type.equals("skewY")) {
+ else       if ("skewY".equals(type)) {
         double angle;
         if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
           throw new IOException("Skew angle not found in transform " + str);
@@ -93,7 +93,7 @@
         angle=tt.nval;
         t.concatenate(new AffineTransform(1,Math.tan(angle * Math.PI / 180),0,1,0,0));
       }
- else       if (type.equals("ref")) {
+ else       if ("ref".equals(type)) {
         System.err.println("SVGInputFormat warning: ignored ref(...) transform attribute in element " + elem);
         while (tt.nextToken() != ')' && tt.ttype != StreamPosTokenizer.TT_EOF) {
         }

@@ -1,5 +1,5 @@
 {
-  if ((text == null) || (text.equals(""))) {
+  if ((text == null) || ("".equals(text))) {
     return "";
   }
   int textWidth=SwingUtilities.computeStringWidth(fm,text);

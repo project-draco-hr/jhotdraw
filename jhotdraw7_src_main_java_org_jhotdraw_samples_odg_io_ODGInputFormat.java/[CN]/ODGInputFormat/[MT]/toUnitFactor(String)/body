@@ -1,6 +1,6 @@
 {
   double scaleFactor;
-  if (str.equals("px")) {
+  if ("px".equals(str)) {
     scaleFactor=1d;
   }
  else   if (str.endsWith("pt")) {

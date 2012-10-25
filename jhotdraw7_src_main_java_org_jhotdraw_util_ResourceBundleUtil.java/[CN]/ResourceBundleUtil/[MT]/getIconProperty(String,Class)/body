@@ -1,7 +1,7 @@
 {
   try {
     String rsrcName=getStringRecursive(key + ".icon");
-    if (rsrcName.equals("")) {
+    if ("".equals(rsrcName)) {
       return null;
     }
     URL url=baseClass.getResource(rsrcName);

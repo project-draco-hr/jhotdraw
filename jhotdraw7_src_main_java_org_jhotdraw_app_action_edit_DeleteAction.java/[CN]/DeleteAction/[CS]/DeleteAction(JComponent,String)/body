@@ -4,7 +4,7 @@
   if (target != null) {
     propertyHandler=new PropertyChangeListener(){
       @Override public void propertyChange(      PropertyChangeEvent evt){
-        if (evt.getPropertyName().equals("enabled")) {
+        if ("enabled".equals(evt.getPropertyName())) {
           setEnabled((Boolean)evt.getNewValue());
         }
       }

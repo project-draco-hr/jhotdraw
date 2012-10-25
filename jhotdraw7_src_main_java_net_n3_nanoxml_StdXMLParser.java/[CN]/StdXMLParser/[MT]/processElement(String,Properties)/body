@@ -36,7 +36,7 @@
     String key=(String)attrNames.elementAt(i);
     String value=(String)attrValues.elementAt(i);
     String type=(String)attrTypes.elementAt(i);
-    if (key.equals("xmlns")) {
+    if ("xmlns".equals(key)) {
       defaultNamespace=value;
     }
  else     if (key.startsWith("xmlns:")) {

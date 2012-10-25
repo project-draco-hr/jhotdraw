@@ -2,13 +2,13 @@
   String value=null;
   if (elem.hasAttribute(attributeName,SVG_NAMESPACE)) {
     value=elem.getAttribute(attributeName,SVG_NAMESPACE,null);
-    if (value.equals("inherit")) {
+    if ("inherit".equals(value)) {
       return readInheritColorAttribute(elem.getParent(),attributeName,defaultValue);
     }
   }
  else   if (elem.hasAttribute(attributeName)) {
     value=elem.getAttribute(attributeName,"");
-    if (value.equals("inherit")) {
+    if ("inherit".equals(value)) {
       return readInheritColorAttribute(elem.getParent(),attributeName,defaultValue);
     }
   }

@@ -10,70 +10,70 @@
         System.err.println("SVGInputFormat warning: skipping nameless element at line " + elem.getLineNr());
       }
     }
- else     if (name.equals("a")) {
+ else     if ("a".equals(name)) {
       f=readAElement(elem);
     }
- else     if (name.equals("circle")) {
+ else     if ("circle".equals(name)) {
       f=readCircleElement(elem);
     }
- else     if (name.equals("defs")) {
+ else     if ("defs".equals(name)) {
       readDefsElement(elem);
       f=null;
     }
- else     if (name.equals("ellipse")) {
+ else     if ("ellipse".equals(name)) {
       f=readEllipseElement(elem);
     }
- else     if (name.equals("g")) {
+ else     if ("g".equals(name)) {
       f=readGElement(elem);
     }
- else     if (name.equals("image")) {
+ else     if ("image".equals(name)) {
       f=readImageElement(elem);
     }
- else     if (name.equals("line")) {
+ else     if ("line".equals(name)) {
       f=readLineElement(elem);
     }
- else     if (name.equals("linearGradient")) {
+ else     if ("linearGradient".equals(name)) {
       readLinearGradientElement(elem);
       f=null;
     }
- else     if (name.equals("path")) {
+ else     if ("path".equals(name)) {
       f=readPathElement(elem);
     }
- else     if (name.equals("polygon")) {
+ else     if ("polygon".equals(name)) {
       f=readPolygonElement(elem);
     }
- else     if (name.equals("polyline")) {
+ else     if ("polyline".equals(name)) {
       f=readPolylineElement(elem);
     }
- else     if (name.equals("radialGradient")) {
+ else     if ("radialGradient".equals(name)) {
       readRadialGradientElement(elem);
       f=null;
     }
- else     if (name.equals("rect")) {
+ else     if ("rect".equals(name)) {
       f=readRectElement(elem);
     }
- else     if (name.equals("solidColor")) {
+ else     if ("solidColor".equals(name)) {
       readSolidColorElement(elem);
       f=null;
     }
- else     if (name.equals("svg")) {
+ else     if ("svg".equals(name)) {
       f=readSVGElement(elem);
     }
- else     if (name.equals("switch")) {
+ else     if ("switch".equals(name)) {
       f=readSwitchElement(elem);
     }
- else     if (name.equals("text")) {
+ else     if ("text".equals(name)) {
       f=readTextElement(elem);
     }
- else     if (name.equals("textArea")) {
+ else     if ("textArea".equals(name)) {
       f=readTextAreaElement(elem);
     }
- else     if (name.equals("title")) {
+ else     if ("title".equals(name)) {
     }
- else     if (name.equals("use")) {
+ else     if ("use".equals(name)) {
       f=readUseElement(elem);
     }
- else     if (name.equals("style")) {
+ else     if ("style".equals(name)) {
     }
  else {
       if (DEBUG) {

@@ -2,46 +2,46 @@
   ODGFigure f=null;
   if (elem.getNamespace() == null || elem.getNamespace().equals(DRAWING_NAMESPACE)) {
     String name=elem.getName();
-    if (name.equals("caption")) {
+    if ("caption".equals(name)) {
       f=readCaptionElement(elem);
     }
- else     if (name.equals("circle")) {
+ else     if ("circle".equals(name)) {
       f=readCircleElement(elem);
     }
- else     if (name.equals("connector")) {
+ else     if ("connector".equals(name)) {
       f=readCircleElement(elem);
     }
- else     if (name.equals("custom-shape")) {
+ else     if ("custom-shape".equals(name)) {
       f=readCustomShapeElement(elem);
     }
- else     if (name.equals("ellipse")) {
+ else     if ("ellipse".equals(name)) {
       f=readEllipseElement(elem);
     }
- else     if (name.equals("frame")) {
+ else     if ("frame".equals(name)) {
       f=readFrameElement(elem);
     }
- else     if (name.equals("g")) {
+ else     if ("g".equals(name)) {
       f=readGElement(elem);
     }
- else     if (name.equals("line")) {
+ else     if ("line".equals(name)) {
       f=readLineElement(elem);
     }
- else     if (name.equals("measure")) {
+ else     if ("measure".equals(name)) {
       f=readMeasureElement(elem);
     }
- else     if (name.equals("path")) {
+ else     if ("path".equals(name)) {
       f=readPathElement(elem);
     }
- else     if (name.equals("polygon")) {
+ else     if ("polygon".equals(name)) {
       f=readPolygonElement(elem);
     }
- else     if (name.equals("polyline")) {
+ else     if ("polyline".equals(name)) {
       f=readPolylineElement(elem);
     }
- else     if (name.equals("rect")) {
+ else     if ("rect".equals(name)) {
       f=readRectElement(elem);
     }
- else     if (name.equals("regularPolygon")) {
+ else     if ("regularPolygon".equals(name)) {
       f=readRegularPolygonElement(elem);
     }
  else {
