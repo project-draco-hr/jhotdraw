@@ -7,4 +7,5 @@
   }
   clearHoverHandles();
   dragLocation=null;
+  masterHandle.removeHandleListener(eventHandler);
 }

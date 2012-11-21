@@ -6,4 +6,5 @@
     v.setActiveHandle(masterHandle);
   }
   clearHoverHandles();
+  masterHandle.addHandleListener(eventHandler);
 }
