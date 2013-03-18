@@ -8,6 +8,9 @@ default :
 case SQUARE:
 p=new ColorSquareImageProducer(model.getColorSpace(),w,h,isFlipX,isFlipY);
 break;
+case DISK:
+p=new DiskColorWheelImageProducer(model.getColorSpace(),w,h,isFlipX,isFlipY);
+break;
 case COMPLEX:
 p=new ComplexColorWheelImageProducer(model.getColorSpace(),w,h,isFlipX,isFlipY);
 break;

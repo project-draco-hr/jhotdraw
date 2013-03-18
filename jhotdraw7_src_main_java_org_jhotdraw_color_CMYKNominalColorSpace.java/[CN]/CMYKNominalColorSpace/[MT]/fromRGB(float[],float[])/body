@@ -1,0 +1,30 @@
+{
+  float r=rgbvalue[0];
+  float g=rgbvalue[1];
+  float b=rgbvalue[2];
+  float cyan, magenta, yellow, black;
+  cyan=1f - r;
+  magenta=1f - g;
+  yellow=1f - b;
+  if (Math.min(Math.min(cyan,magenta),yellow) >= 1f) {
+    cyan=magenta=yellow=0f;
+    black=1f;
+  }
+ else {
+    black=Math.min(Math.min(cyan,magenta),yellow);
+    if (black > 0f) {
+      cyan=(cyan - black) / (1 - black);
+      magenta=(magenta - black) / (1 - black);
+      yellow=(yellow - black) / (1 - black);
+    }
+  }
+  cyan=Math.min(1f,Math.max(0f,cyan));
+  yellow=Math.min(1f,Math.max(0f,yellow));
+  magenta=Math.min(1f,Math.max(0f,magenta));
+  black=Math.min(1f,Math.max(0f,black));
+  colorvalue[0]=cyan;
+  colorvalue[1]=magenta;
+  colorvalue[2]=yellow;
+  colorvalue[3]=black;
+  return colorvalue;
+}

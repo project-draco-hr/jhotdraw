@@ -3,9 +3,9 @@ switch (component) {
 case 0:
     return 100f;
 case 1:
-  return 128f;
+  return 127f;
 case 2:
-return 320f;
+return 360f;
 }
 throw new IllegalArgumentException("Illegal component:" + component);
 }

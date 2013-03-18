@@ -3,7 +3,7 @@ switch (component) {
 case 0:
     return 0f;
 case 1:
-  return -127f;
+  return 0f;
 case 2:
 return 0f;
 }

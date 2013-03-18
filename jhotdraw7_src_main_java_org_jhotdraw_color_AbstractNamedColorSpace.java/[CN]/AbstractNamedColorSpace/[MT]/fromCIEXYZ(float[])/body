@@ -1,0 +1,3 @@
+{
+  return fromCIEXYZ(colorvalue,new float[getNumComponents()]);
+}

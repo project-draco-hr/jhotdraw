@@ -1,0 +1,3 @@
+{
+  return toRGB(colorvalue,new float[3]);
+}

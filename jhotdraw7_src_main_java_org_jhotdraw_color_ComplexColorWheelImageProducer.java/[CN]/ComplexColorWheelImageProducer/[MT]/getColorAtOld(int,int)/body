@@ -1,0 +1,24 @@
+{
+  int side=Math.min(w - 1,h - 1);
+  int xOffset=(w - side) / 2;
+  int yOffset=(h - side) / 2;
+  float radial=(x - xOffset) / (float)side;
+  float angular=(y - yOffset) / (float)side;
+  if (flipX) {
+    radial=1f - radial;
+  }
+  if (!flipY) {
+    angular=1f - angular;
+  }
+  float[] rav=new float[3];
+  rav[angularIndex]=angular * (colorSpace.getMaxValue(angularIndex) - colorSpace.getMinValue(angularIndex)) + colorSpace.getMinValue(angularIndex);
+  rav[radialIndex]=radial * (colorSpace.getMaxValue(radialIndex) - colorSpace.getMinValue(radialIndex)) + colorSpace.getMinValue(radialIndex);
+  rav[verticalIndex]=verticalValue;
+  int xy=x + y * w;
+  System.out.println("ComplexColorWheelImageProducer.getColorAt " + rav[angularIndex] + ","+ rav[radialIndex]+ " ~ "+ angulars[xy]+ ","+ radials[xy]);
+  rav[angularIndex]=angulars[xy];
+  rav[radialIndex]=radials[xy];
+  Point p=getColorLocation(rav);
+  System.out.println("ComplexColorWheelImageProducer.getColorAt( " + x + ","+ y+ " => "+ p.x+ ","+ p.y);
+  return rav;
+}

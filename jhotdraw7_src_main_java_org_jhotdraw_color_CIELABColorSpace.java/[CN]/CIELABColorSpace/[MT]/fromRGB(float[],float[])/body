@@ -1,0 +1,4 @@
+{
+  ColorUtil.RGBtoCIEXYZ(rgb,rgb);
+  return fromCIEXYZ(rgb,component);
+}

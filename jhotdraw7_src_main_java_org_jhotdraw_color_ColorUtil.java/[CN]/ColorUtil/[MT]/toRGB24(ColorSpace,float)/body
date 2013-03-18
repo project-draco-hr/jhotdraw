@@ -1,0 +1,3 @@
+{
+  return CStoRGB24(colorSpace,components,new float[3]);
+}

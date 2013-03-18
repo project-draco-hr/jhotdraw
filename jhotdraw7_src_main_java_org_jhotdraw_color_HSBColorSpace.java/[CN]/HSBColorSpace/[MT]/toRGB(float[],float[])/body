@@ -1,0 +1,7 @@
+{
+  int rgb=Color.HSBtoRGB(c[0],c[1],c[2]);
+  component[0]=((rgb & 0xff0000) >> 16) / 255f;
+  component[1]=((rgb & 0xff00) >> 8) / 255f;
+  component[2]=(rgb & 0xff) / 255f;
+  return component;
+}

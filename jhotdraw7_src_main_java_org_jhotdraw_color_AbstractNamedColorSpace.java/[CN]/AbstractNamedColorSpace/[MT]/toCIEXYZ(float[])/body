@@ -1,0 +1,3 @@
+{
+  return toCIEXYZ(colorvalue,new float[3]);
+}

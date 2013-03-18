@@ -1,0 +1,41 @@
+{
+  radials=new float[w * h];
+  angulars=new float[w * h];
+  alphas=new int[w * h];
+  float radius=getRadius();
+  Point2D.Float center=getCenter();
+  float blend=(radius + 2f) / radius - 1f;
+  float maxR=colorSpace.getMaxValue(radialIndex);
+  float minR=colorSpace.getMinValue(radialIndex);
+  float extentR=maxR - minR;
+  float maxA=colorSpace.getMaxValue(angularIndex);
+  float minA=colorSpace.getMinValue(angularIndex);
+  float extentA=maxA - minA;
+  float cx=center.x;
+  float cy=center.y;
+  for (int x=0; x < w; x++) {
+    float kx=(x - cx) / radius;
+    if (flipX)     kx=-kx;
+    float squarekx=kx * kx;
+    for (int y=0; y < h; y++) {
+      float ky=(y - cy) / radius;
+      if (flipY)       ky=-ky;
+      int index=x + y * w;
+      float radiusRatio=(float)Math.sqrt(squarekx + ky * ky);
+      if (radiusRatio <= 1f) {
+        alphas[index]=0xff000000;
+      }
+ else {
+        alphas[index]=(int)((blend - Math.min(blend,radiusRatio - 1f)) * 255 / blend) << 24;
+      }
+      if (alphas[index] != 0) {
+      }
+      double angle=Math.atan2(ky,kx);
+      double scale=1.0 / Math.max(Math.abs(Math.sin(angle)),Math.abs(Math.cos(angle)));
+      scale=1.0;
+      radials[index]=(float)((kx * scale + 1) / 2 * extentR + minR);
+      angulars[index]=(float)((ky * scale + 1) / 2 * extentA + minA);
+    }
+  }
+  isLookupValid=true;
+}

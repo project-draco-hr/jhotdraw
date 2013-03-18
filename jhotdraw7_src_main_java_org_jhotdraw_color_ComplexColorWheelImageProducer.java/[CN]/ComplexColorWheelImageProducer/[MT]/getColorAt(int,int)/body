@@ -1,14 +1,37 @@
 {
-  int side=Math.min(w - 1,h - 1);
-  int xOffset=(w - side) / 2;
-  int yOffset=(h - side) / 2;
-  float radial=(x - xOffset) / (float)side;
-  float angular=(y - yOffset) / (float)side;
-  if (flipX)   radial=1f - radial;
-  if (!flipY)   angular=1f - angular;
-  float[] hsb=new float[3];
-  hsb[angularIndex]=angular * (colorSpace.getMaxValue(angularIndex) - colorSpace.getMinValue(angularIndex)) + colorSpace.getMinValue(angularIndex);
-  hsb[radialIndex]=radial * (colorSpace.getMaxValue(radialIndex) - colorSpace.getMinValue(radialIndex)) + colorSpace.getMinValue(radialIndex);
-  hsb[verticalIndex]=verticalValue;
-  return hsb;
+  float radius=getRadius();
+  Point2D.Float center=getCenter();
+  float maxR=colorSpace.getMaxValue(radialIndex);
+  float minR=colorSpace.getMinValue(radialIndex);
+  float extentR=maxR - minR;
+  float maxA=colorSpace.getMaxValue(angularIndex);
+  float minA=colorSpace.getMinValue(angularIndex);
+  float extentA=maxA - minA;
+  int side=Math.min(w,h);
+  float cx=center.x;
+  float cy=center.y;
+  float extentX=side - 1;
+  float extentY=extentX;
+  float radial, angular;
+  float kx=(x - cx) / radius;
+  if (flipX) {
+    kx=-kx;
+  }
+  float squarekx=kx * kx;
+  float ky=(y - cy) / radius;
+  if (flipY) {
+    ky=-ky;
+  }
+  int index=x + y * w;
+  float r=(float)Math.sqrt(squarekx + ky * ky);
+  double angle=atan2(ky,kx);
+  float scale=(float)max(abs(sin(angle)),abs(cos(angle)));
+  scale=(1 - r) + scale * r;
+  radial=(float)((kx / scale + 1) / 2 * extentR + minR);
+  angular=(float)((ky / scale + 1) / 2 * extentA + minA);
+  float[] rav=new float[3];
+  rav[angularIndex]=angular;
+  rav[radialIndex]=radial;
+  rav[verticalIndex]=verticalValue;
+  return rav;
 }

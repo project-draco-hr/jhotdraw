@@ -1,0 +1,5 @@
+ColorSpace sys
+int w
+int h
+boolean flipX
+boolean flipY

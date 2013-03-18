@@ -1,0 +1,3 @@
+{
+  return ColorUtil.RGBtoCIEXYZ(toRGB(colorvalue,xyz),xyz);
+}

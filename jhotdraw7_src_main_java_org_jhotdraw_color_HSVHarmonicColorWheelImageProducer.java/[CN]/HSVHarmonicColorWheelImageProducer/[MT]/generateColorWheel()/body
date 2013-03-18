@@ -1,7 +1,12 @@
 {
+  float[] components=new float[3];
+  float[] rgb=new float[3];
   for (int index=0; index < pixels.length; index++) {
     if (alphas[index] != 0) {
-      pixels[index]=alphas[index] | 0xffffff & ColorUtil.toRGB(colorSpace,angulars[index],radials[index],brights[index]);
+      components[0]=angulars[index];
+      components[1]=radials[index];
+      components[2]=brights[index];
+      pixels[index]=alphas[index] | 0xffffff & ColorUtil.CStoRGB24(colorSpace,components,rgb);
     }
   }
   newPixels();

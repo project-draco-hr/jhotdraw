@@ -1,0 +1,3 @@
+ColorSpace colorSpace
+float[] components
+float[] rgb

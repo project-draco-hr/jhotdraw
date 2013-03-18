@@ -1,5 +1,5 @@
 {
-  super(((int)(alpha * 255) << 24) | ColorUtil.toRGB(cspace,components),true);
+  super(((int)(alpha * 255) << 24) | ColorUtil.toRGB24(cspace,components),true);
   boolean rangeError=false;
   StringBuilder badComponentString=new StringBuilder();
   int n=cspace.getNumComponents();

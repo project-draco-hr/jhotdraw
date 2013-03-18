@@ -1,12 +1,13 @@
 {
   float[] components=colorizer.getComponents();
+  float[] rgb=new float[3];
   ColorSpace cs=colorizer.getColorSpace();
   int offset=trackBuffer / 2;
   float minv=cs.getMinValue(componentIndex);
   float maxv=cs.getMaxValue(componentIndex);
   for (int y=0, n=h - trackBuffer - 1; y <= n; y++) {
     components[componentIndex]=maxv - (y / (float)n) * (maxv - minv);
-    pixels[(y + offset) * w]=ColorUtil.toRGB(cs,components);
+    pixels[(y + offset) * w]=ColorUtil.CStoRGB24(cs,components,rgb);
   }
   for (int y=0; y < offset; y++) {
     pixels[y * w]=pixels[offset * w];

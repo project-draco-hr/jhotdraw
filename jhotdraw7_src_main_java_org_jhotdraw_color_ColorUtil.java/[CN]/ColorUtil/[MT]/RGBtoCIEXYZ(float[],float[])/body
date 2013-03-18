@@ -1,0 +1,5 @@
+{
+  float[] tmp=sRGB.toCIEXYZ(rgb);
+  System.arraycopy(tmp,0,xyz,0,3);
+  return xyz;
+}

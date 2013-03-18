@@ -1,0 +1,3 @@
+ColorSpace cs
+float[] xyz
+float[] colorvalue

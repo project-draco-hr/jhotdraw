@@ -1,18 +1,52 @@
 {
-  JPanel p=new JPanel(new GridLayout(vertical ? 1 : 0,vertical ? 0 : 1));
-  DefaultColorSliderModel m=new DefaultColorSliderModel(sys);
+  JPanel p=new JPanel(new GridBagLayout());
+  final DefaultColorSliderModel m=new DefaultColorSliderModel(sys);
   models.add(m);
+  GridBagConstraints gbc=new GridBagConstraints();
   if (!vertical) {
-    p.add(new JLabel("<html>" + ColorUtil.getName(sys)),BorderLayout.NORTH);
+    gbc.gridx=0;
+    gbc.gridy=0;
+    p.add(new JLabel("<html>" + ColorUtil.getName(sys)),gbc);
   }
   m.addChangeListener(handler);
   for (int i=0; i < m.getComponentCount(); i++) {
+    final int comp=i;
     JSlider s=new JSlider(JSlider.HORIZONTAL);
     s.setMajorTickSpacing(50);
     s.setPaintTicks(true);
     s.setOrientation(vertical ? JSlider.VERTICAL : JSlider.HORIZONTAL);
-    m.configureSlider(i,s);
-    p.add(s);
+    m.configureSlider(comp,s);
+    if (vertical) {
+      gbc.gridx=i;
+      gbc.gridy=0;
+    }
+ else {
+      gbc.gridy=i + 1;
+      gbc.gridx=0;
+    }
+    p.add(s,gbc);
+    final JTextField tf=new JTextField();
+    tf.setEditable(false);
+    tf.setColumns(4);
+    ChangeListener cl=new ChangeListener(){
+      NumberFormat df=NumberFormat.getNumberInstance();
+      @Override public void stateChanged(      ChangeEvent e){
+        df.setMaximumFractionDigits(3);
+        tf.setText(df.format(m.getComponent(comp)));
+      }
+    }
+;
+    cl.stateChanged(null);
+    m.addChangeListener(cl);
+    if (vertical) {
+      gbc.gridx=i;
+      gbc.gridy=1;
+    }
+ else {
+      gbc.gridy=i + 1;
+      gbc.gridx=1;
+    }
+    p.add(tf,gbc);
   }
   return p;
 }

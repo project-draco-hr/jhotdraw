@@ -1,0 +1,3 @@
+{
+  return fromRGB(ColorUtil.CIEXYZtoRGB(xyz,colorvalue),colorvalue);
+}

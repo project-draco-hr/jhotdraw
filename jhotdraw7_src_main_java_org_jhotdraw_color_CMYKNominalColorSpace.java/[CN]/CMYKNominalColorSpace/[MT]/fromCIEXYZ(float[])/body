@@ -1,4 +1,0 @@
-{
-  float[] sRGB=ColorSpace.getInstance(ColorSpace.CS_sRGB).fromCIEXYZ(colorvalue);
-  return fromRGB(sRGB);
-}

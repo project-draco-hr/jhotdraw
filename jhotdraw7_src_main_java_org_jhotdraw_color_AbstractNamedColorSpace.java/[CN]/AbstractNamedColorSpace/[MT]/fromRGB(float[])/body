@@ -1,0 +1,4 @@
+{
+  float[] tmp=new float[getNumComponents()];
+  return fromRGB(rgb,new float[getNumComponents()]);
+}

@@ -1,0 +1,4 @@
+{
+  cs.toRGB(colorvalue,rgb);
+  return rgb;
+}

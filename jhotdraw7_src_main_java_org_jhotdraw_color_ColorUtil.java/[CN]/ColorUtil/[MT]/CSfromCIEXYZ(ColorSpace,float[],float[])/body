@@ -1,0 +1,10 @@
+{
+  if (cs instanceof NamedColorSpace) {
+    CSfromCIEXYZ((NamedColorSpace)cs,xyz,colorvalue);
+  }
+ else {
+    float[] tmp=cs.toRGB(xyz);
+    System.arraycopy(tmp,0,colorvalue,0,tmp.length);
+  }
+  return colorvalue;
+}
