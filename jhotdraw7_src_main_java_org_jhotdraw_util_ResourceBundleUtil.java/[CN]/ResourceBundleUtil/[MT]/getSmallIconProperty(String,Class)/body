@@ -1,0 +1,3 @@
+{
+  return getIconProperty(key,".smallIcon",baseClass);
+}

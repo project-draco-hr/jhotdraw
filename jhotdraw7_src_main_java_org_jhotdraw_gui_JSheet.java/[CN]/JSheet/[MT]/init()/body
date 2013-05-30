@@ -1,6 +1,7 @@
 {
   if (getOwner() != null && isShowAsSheet()) {
     if (isNativeSheetSupported()) {
+      setUndecorated(true);
       getRootPane().putClientProperty("apple.awt.documentModalSheet",Boolean.TRUE);
     }
  else {

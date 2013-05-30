@@ -39,7 +39,7 @@
 ;
   popupButton.setPopupMenu(popupMenu);
   popupButton.setPopupAlpha(1.0f);
-  Icon icon=new SelectionColorIcon(editor,attributeKey,labels.getIconProperty(labelKey,ButtonFactory.class).getImage(),colorShape);
+  Icon icon=new SelectionColorIcon(editor,attributeKey,labels.getLargeIconProperty(labelKey,ButtonFactory.class).getImage(),colorShape);
   popupButton.setIcon(icon);
   popupButton.setDisabledIcon(icon);
   popupButton.setFocusable(false);

@@ -1,7 +1,7 @@
 {
-  Icon icon=getIconProperty(argument,baseClass);
+  Icon icon=getLargeIconProperty(argument,baseClass);
   if (icon != null) {
-    button.setIcon(getIconProperty(argument,baseClass));
+    button.setIcon(getLargeIconProperty(argument,baseClass));
     button.setText(null);
   }
  else {

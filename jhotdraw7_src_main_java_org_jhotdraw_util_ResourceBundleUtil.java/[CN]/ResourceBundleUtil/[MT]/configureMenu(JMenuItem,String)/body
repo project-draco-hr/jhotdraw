@@ -4,5 +4,5 @@
     menu.setAccelerator(getAcceleratorProperty(argument));
   }
   menu.setMnemonic(getMnemonicProperty(argument));
-  menu.setIcon(getIconProperty(argument,baseClass));
+  menu.setIcon(getLargeIconProperty(argument,baseClass));
 }

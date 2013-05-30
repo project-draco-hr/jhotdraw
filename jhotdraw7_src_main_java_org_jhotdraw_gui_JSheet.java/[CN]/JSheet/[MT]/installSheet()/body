@@ -1,5 +1,5 @@
 {
-  if (!isNativeSheetSupported() && !isInstalled) {
+  if (!isInstalled) {
     Window owner=getOwner();
     if (owner != null) {
       Point ownerLoc=owner.getLocation();
@@ -41,11 +41,5 @@
       }
     }
     isInstalled=true;
-  }
- else {
-    Window owner=getOwner();
-    Point ownerLoc=owner.getLocation();
-    Point sheetLoc=new Point(ownerLoc.x + (owner.getWidth() - getWidth()) / 2,ownerLoc.y + (owner.getHeight() - getHeight()) / 3);
-    setLocation(sheetLoc);
   }
 }

@@ -4,16 +4,27 @@
   tam.setName(NAME);
   tam.setViewClassName("org.jhotdraw.samples.teddy.TeddyView");
   tam.setVersion(Main.class.getPackage().getImplementationVersion());
-  Application app;
+  HashMap<String,String> types=new HashMap<String,String>();
+  types.put("mdi","org.jhotdraw.app.MDIApplication");
+  types.put("sdi","org.jhotdraw.app.SDIApplication");
+  types.put("osx","org.jhotdraw.app.OSXApplication");
+  types.put("cross","org.jhotdraw.app.CrossPlatformApplication");
+  String type;
   if (System.getProperty("os.name").toLowerCase().startsWith("mac os x")) {
-    app=new OSXApplication();
-  }
- else   if (System.getProperty("os.name").toLowerCase().startsWith("win")) {
-    app=new SDIApplication();
+    type="osx";
   }
  else {
-    app=new SDIApplication();
+    type="sdi";
   }
+  for (int i=0; i < args.length; i++) {
+    if ("-app".equals(args[i]) && i < args.length - 1) {
+      type=args[++i];
+      if (!types.containsKey(type)) {
+        throw new IllegalArgumentException("-app " + args[i]);
+      }
+    }
+  }
+  Application app=(Application)Class.forName(types.get(type)).newInstance();
   app.setModel(tam);
   app.launch(args);
 }

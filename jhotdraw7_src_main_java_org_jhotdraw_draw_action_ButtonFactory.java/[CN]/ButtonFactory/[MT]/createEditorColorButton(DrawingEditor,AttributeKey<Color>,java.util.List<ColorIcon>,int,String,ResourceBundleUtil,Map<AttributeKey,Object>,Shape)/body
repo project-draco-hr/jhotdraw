@@ -32,7 +32,7 @@
   popupButton.add(a=new EditorColorChooserAction(editor,attributeKey,"color",chooserIcon,defaultAttributes));
   labels.configureToolBarButton(popupButton,labelKey);
   a.putValue(Action.SHORT_DESCRIPTION,labels.getToolTipTextProperty("attribute.color.colorChooser"));
-  Icon icon=new EditorColorIcon(editor,attributeKey,labels.getIconProperty(labelKey,ButtonFactory.class).getImage(),colorShape);
+  Icon icon=new EditorColorIcon(editor,attributeKey,labels.getLargeIconProperty(labelKey,ButtonFactory.class).getImage(),colorShape);
   popupButton.setIcon(icon);
   popupButton.setDisabledIcon(icon);
   popupButton.setFocusable(false);

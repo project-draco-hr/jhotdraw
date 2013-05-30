@@ -1,7 +1,4 @@
 {
   JMenuItem item=m.add(a);
-  if (suppressIcons) {
-    item.setIcon(null);
-  }
   return item;
 }

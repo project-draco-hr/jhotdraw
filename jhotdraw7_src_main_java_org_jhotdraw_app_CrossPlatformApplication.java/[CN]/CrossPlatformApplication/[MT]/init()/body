@@ -1,0 +1,4 @@
+{
+  super.init();
+  ResourceBundleUtil.putPropertyNameModifier("os","other","default");
+}

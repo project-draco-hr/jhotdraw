@@ -1,5 +1,5 @@
 {
   button.setText(getTextProperty(argument));
-  button.setIcon(getIconProperty(argument,baseClass));
+  button.setIcon(getLargeIconProperty(argument,baseClass));
   button.setToolTipText(getToolTipTextProperty(argument));
 }
