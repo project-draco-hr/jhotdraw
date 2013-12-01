@@ -1,16 +1,16 @@
 {
-  Class c=m.getDeclaringClass();
+  Class<?> c=m.getDeclaringClass();
   if (Modifier.isPublic(m.getModifiers()) && Modifier.isPublic(c.getModifiers())) {
     return m;
   }
-  Class sc=c.getSuperclass();
+  Class<?> sc=c.getSuperclass();
   if (sc != null) {
     Method sm=raiseToPublicClass(m,sc);
     if (sm != null) {
       return sm;
     }
   }
-  Class[] ints=c.getInterfaces();
+  Class<?>[] ints=c.getInterfaces();
   for (int i=0; i < ints.length; i++) {
     Method im=raiseToPublicClass(m,ints[i]);
     if (im != null) {

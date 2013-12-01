@@ -1,6 +1,6 @@
 {
   JMenuItem b=(JMenuItem)c;
-  Icon icon=(Icon)b.getIcon();
+  Icon icon=b.getIcon();
   if (icon == null) {
     return new Dimension(22,22);
   }

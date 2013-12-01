@@ -5,7 +5,7 @@
     p.transform(viewBoxTransform);
   }
   String styleName=elem.getAttribute("style-name",DRAWING_NAMESPACE,null);
-  HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+  HashMap<AttributeKey<?>,Object> a=new HashMap<AttributeKey<?>,Object>();
   a.putAll(styles.getAttributes(styleName,"graphic"));
   readCommonDrawingShapeAttributes(elem,a);
   ODGFigure f=createPathFigure(paths,a);

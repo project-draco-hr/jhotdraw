@@ -1,6 +1,6 @@
 {
   try {
-    if (min != null && min.compareTo(value) > 0) {
+    if (min != null && min.compareTo((Number)value) > 0) {
       return false;
     }
   }
@@ -11,7 +11,7 @@
     return false;
   }
   try {
-    if (max != null && max.compareTo(value) < 0) {
+    if (max != null && max.compareTo((Number)value) < 0) {
       return false;
     }
   }

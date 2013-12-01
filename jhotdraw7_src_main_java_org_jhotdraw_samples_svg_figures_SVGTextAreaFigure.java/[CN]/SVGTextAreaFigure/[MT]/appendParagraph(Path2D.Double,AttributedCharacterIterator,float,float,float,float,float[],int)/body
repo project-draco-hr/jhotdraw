@@ -2,7 +2,7 @@
   Rectangle2D.Double paragraphBounds=new Rectangle2D.Double(leftMargin,verticalPos,0,0);
   int[] tabLocations=new int[tabCount + 1];
   int i=0;
-  for (char c=styledText.first(); c != styledText.DONE; c=styledText.next()) {
+  for (char c=styledText.first(); c != CharacterIterator.DONE; c=styledText.next()) {
     if (c == '\t') {
       tabLocations[i++]=styledText.getIndex();
     }

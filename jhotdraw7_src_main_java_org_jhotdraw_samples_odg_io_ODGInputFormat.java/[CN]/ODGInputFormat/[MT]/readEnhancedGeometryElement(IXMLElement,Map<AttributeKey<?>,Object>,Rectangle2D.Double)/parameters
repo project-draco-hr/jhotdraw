@@ -1,0 +1,3 @@
+IXMLElement elem
+Map<AttributeKey<?>,Object> a
+Rectangle2D.Double figureBounds

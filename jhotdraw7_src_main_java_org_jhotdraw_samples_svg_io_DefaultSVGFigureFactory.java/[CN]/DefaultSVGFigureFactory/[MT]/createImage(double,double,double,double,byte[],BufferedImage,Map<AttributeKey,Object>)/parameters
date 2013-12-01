@@ -1,7 +1,0 @@
-double x
-double y
-double w
-double h
-byte[] imageData
-BufferedImage bufferedImage
-Map<AttributeKey,Object> a

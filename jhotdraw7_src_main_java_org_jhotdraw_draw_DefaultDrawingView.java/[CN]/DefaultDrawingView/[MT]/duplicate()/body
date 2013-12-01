@@ -6,7 +6,7 @@
   AffineTransform tx=new AffineTransform();
   tx.translate(5,5);
   for (  Figure f : sorted) {
-    Figure d=(Figure)f.clone();
+    Figure d=f.clone();
     d.transform(tx);
     duplicates.add(d);
     originalToDuplicateMap.put(f,d);
@@ -17,6 +17,7 @@
   }
   addToSelection(duplicates);
   getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
+    private final static long serialVersionUID=1L;
     @Override public String getPresentationName(){
       ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
       return labels.getString("edit.duplicate.text");

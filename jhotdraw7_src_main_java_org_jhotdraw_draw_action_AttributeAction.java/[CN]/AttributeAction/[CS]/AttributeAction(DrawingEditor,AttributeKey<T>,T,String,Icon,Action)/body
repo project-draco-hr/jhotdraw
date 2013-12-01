@@ -1,0 +1,9 @@
+{
+  super(editor);
+  this.attributes=new HashMap<AttributeKey<?>,Object>();
+  attributes.put(key,value);
+  putValue(AbstractAction.NAME,name);
+  putValue(AbstractAction.SMALL_ICON,icon);
+  putValue(ActionUtil.UNDO_PRESENTATION_NAME_KEY,key.getPresentationName());
+  updateEnabledState();
+}

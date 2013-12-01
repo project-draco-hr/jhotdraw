@@ -1,7 +1,0 @@
-double x
-double y
-double w
-double h
-double rx
-double ry
-Map<AttributeKey,Object> a

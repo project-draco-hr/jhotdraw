@@ -1,5 +1,5 @@
 {
-  PropertyChangeListener listener=(PropertyChangeListener)weakRef.get();
+  PropertyChangeListener listener=weakRef.get();
   if (listener == null) {
     removeFromSource(event);
     return;

@@ -1,6 +1,7 @@
 {
   super(w);
   getContentPane().add(new JPanel(){
+    private final static long serialVersionUID=1L;
     @Override public void paintComponent(    Graphics g){
       paintDragWindow(g);
     }

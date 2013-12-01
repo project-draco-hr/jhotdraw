@@ -1,7 +1,0 @@
-IXMLElement doc
-double x
-double y
-double w
-double h
-StyledDocument text
-Map<AttributeKey,Object> attributes

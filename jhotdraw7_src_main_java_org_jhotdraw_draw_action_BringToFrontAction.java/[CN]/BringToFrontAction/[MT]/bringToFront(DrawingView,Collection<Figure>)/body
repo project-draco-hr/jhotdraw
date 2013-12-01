@@ -1,8 +1,6 @@
 {
   Drawing drawing=view.getDrawing();
-  Iterator i=drawing.sort(figures).iterator();
-  while (i.hasNext()) {
-    Figure figure=(Figure)i.next();
+  for (  Figure figure : drawing.sort(figures)) {
     drawing.bringToFront(figure);
   }
 }

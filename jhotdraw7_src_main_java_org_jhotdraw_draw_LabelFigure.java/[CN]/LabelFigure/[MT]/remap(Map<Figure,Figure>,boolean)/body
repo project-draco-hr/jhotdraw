@@ -1,7 +1,7 @@
 {
   super.remap(oldToNew,disconnectIfNotInMap);
   if (target != null) {
-    Figure newTarget=(Figure)oldToNew.get(target);
+    Figure newTarget=oldToNew.get(target);
     if (newTarget != null) {
       target.removeFigureListener(this);
       target=(TextHolderFigure)newTarget;

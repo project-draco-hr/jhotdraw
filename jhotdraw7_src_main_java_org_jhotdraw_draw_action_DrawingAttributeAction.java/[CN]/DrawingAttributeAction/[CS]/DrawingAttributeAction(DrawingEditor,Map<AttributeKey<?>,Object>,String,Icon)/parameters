@@ -1,0 +1,4 @@
+DrawingEditor editor
+Map<AttributeKey<?>,Object> attributes
+String name
+Icon icon

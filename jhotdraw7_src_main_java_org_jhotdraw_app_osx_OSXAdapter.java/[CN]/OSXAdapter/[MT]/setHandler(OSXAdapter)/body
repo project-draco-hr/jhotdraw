@@ -1,12 +1,12 @@
 {
   try {
-    Class applicationClass=Class.forName("com.apple.eawt.Application");
+    Class<?> applicationClass=Class.forName("com.apple.eawt.Application");
     if (macOSXApplication == null) {
-      macOSXApplication=applicationClass.getConstructor((Class[])null).newInstance((Object[])null);
+      macOSXApplication=applicationClass.getConstructor((Class<?>[])null).newInstance((Object[])null);
     }
-    Class applicationListenerClass=Class.forName("com.apple.eawt.ApplicationListener");
-    Method addListenerMethod=applicationClass.getDeclaredMethod("addApplicationListener",new Class[]{applicationListenerClass});
-    Object osxAdapterProxy=Proxy.newProxyInstance(OSXAdapter.class.getClassLoader(),new Class[]{applicationListenerClass},adapter);
+    Class<?> applicationListenerClass=Class.forName("com.apple.eawt.ApplicationListener");
+    Method addListenerMethod=applicationClass.getDeclaredMethod("addApplicationListener",new Class<?>[]{applicationListenerClass});
+    Object osxAdapterProxy=Proxy.newProxyInstance(OSXAdapter.class.getClassLoader(),new Class<?>[]{applicationListenerClass},adapter);
     addListenerMethod.invoke(macOSXApplication,new Object[]{osxAdapterProxy});
   }
  catch (  ClassNotFoundException cnfe) {

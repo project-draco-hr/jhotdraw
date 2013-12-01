@@ -3,6 +3,7 @@
   final LinkedList<Figure> figures=new LinkedList<Figure>(view.getSelectedFigures());
   sendToBack(view,figures);
   fireUndoableEditHappened(new AbstractUndoableEdit(){
+    private final static long serialVersionUID=1L;
     @Override public String getPresentationName(){
       ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
       return labels.getTextProperty(ID);

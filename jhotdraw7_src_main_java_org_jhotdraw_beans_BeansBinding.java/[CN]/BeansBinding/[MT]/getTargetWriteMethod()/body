@@ -1,0 +1,14 @@
+{
+  if (targetWriteMethod == null) {
+    try {
+      PropertyDescriptor pd=new PropertyDescriptor(targetProperty,target.getClass());
+      targetWriteMethod=pd.getWriteMethod();
+    }
+ catch (    IntrospectionException ex) {
+      InternalError ie=new InternalError("Could not create target property descriptor for " + target);
+      ie.initCause(ex);
+      throw ie;
+    }
+  }
+  return targetWriteMethod;
+}

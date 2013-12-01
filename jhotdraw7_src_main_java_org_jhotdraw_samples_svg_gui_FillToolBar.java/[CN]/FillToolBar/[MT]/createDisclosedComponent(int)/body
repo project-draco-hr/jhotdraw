@@ -14,7 +14,7 @@ case 1:
       p.setLayout(layout);
       GridBagConstraints gbc;
       AbstractButton btn;
-      Map<AttributeKey,Object> defaultAttributes=new HashMap<AttributeKey,Object>();
+      Map<AttributeKey<?>,Object> defaultAttributes=new HashMap<AttributeKey<?>,Object>();
       FILL_GRADIENT.put(defaultAttributes,null);
       btn=ButtonFactory.createSelectionColorChooserButton(editor,FILL_COLOR,"attribute.fillColor",labels,defaultAttributes,new Rectangle(3,3,10,10),PaletteColorChooserUI.class,disposables);
       btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
@@ -62,7 +62,7 @@ case 2:
   p.setLayout(layout);
   GridBagConstraints gbc;
   AbstractButton btn;
-  Map<AttributeKey,Object> defaultAttributes=new HashMap<AttributeKey,Object>();
+  Map<AttributeKey<?>,Object> defaultAttributes=new HashMap<AttributeKey<?>,Object>();
   FILL_GRADIENT.put(defaultAttributes,null);
   JAttributeTextField<Color> colorField=new JAttributeTextField<Color>();
   colorField.setColumns(7);

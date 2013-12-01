@@ -6,7 +6,7 @@
  else {
       for (      IXMLElement node : elem.getChildren()) {
         if (node.getName() != null && node.getName().equals("tspan")) {
-          readTSpanElement((IXMLElement)node,doc);
+          readTSpanElement(node,doc);
         }
  else {
           if (DEBUG) {

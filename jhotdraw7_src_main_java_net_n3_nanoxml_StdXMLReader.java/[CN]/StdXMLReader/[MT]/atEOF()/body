@@ -1,11 +1,11 @@
 {
   int ch=this.currentReader.pbReader.read();
   while (ch < 0) {
-    if (this.readers.empty()) {
+    if (this.readers.isEmpty()) {
       return true;
     }
     this.currentReader.pbReader.close();
-    this.currentReader=(StackedReader)this.readers.pop();
+    this.currentReader=this.readers.pop();
     ch=this.currentReader.pbReader.read();
   }
   this.currentReader.pbReader.unread(ch);

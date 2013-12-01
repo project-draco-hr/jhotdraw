@@ -1,0 +1,14 @@
+{
+  double y=selectionBounds.y;
+  for (  Figure f : getView().getSelectedFigures()) {
+    if (f.isTransformable()) {
+      f.willChange();
+      Rectangle2D.Double b=f.getBounds();
+      AffineTransform tx=new AffineTransform();
+      tx.translate(0,y - b.y);
+      f.transform(tx);
+      f.changed();
+      fireUndoableEditHappened(new TransformEdit(f,tx));
+    }
+  }
+}

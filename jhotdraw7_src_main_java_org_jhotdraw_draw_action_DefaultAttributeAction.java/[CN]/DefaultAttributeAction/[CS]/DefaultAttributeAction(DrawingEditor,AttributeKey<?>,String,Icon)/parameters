@@ -1,0 +1,4 @@
+DrawingEditor editor
+AttributeKey<?> key
+String name
+Icon icon

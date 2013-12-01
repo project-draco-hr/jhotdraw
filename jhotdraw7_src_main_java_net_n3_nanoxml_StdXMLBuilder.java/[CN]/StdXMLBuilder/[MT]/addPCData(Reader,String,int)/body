@@ -23,8 +23,8 @@
   }
   IXMLElement elt=this.prototype.createElement(null,systemID,lineNr);
   elt.setContent(str.toString());
-  if (!this.stack.empty()) {
-    IXMLElement top=(IXMLElement)this.stack.peek();
+  if (!this.stack.isEmpty()) {
+    IXMLElement top=this.stack.peek();
     top.addChild(elt);
   }
 }

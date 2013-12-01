@@ -6,10 +6,10 @@
       return;
     }
   }
-  Iterator i=getView().getSelectedFigures().iterator();
+  Iterator<Figure> i=getView().getSelectedFigures().iterator();
   T toggleValue=value1;
   if (i.hasNext()) {
-    Figure f=(Figure)i.next();
+    Figure f=i.next();
     Object attr=f.get(key);
     if (value1 == null && attr == null || (value1 != null && attr != null && attr.equals(value1))) {
       toggleValue=value2;
@@ -25,6 +25,7 @@
     figure.changed();
   }
   UndoableEdit edit=new AbstractUndoableEdit(){
+    private final static long serialVersionUID=1L;
     @Override public String getPresentationName(){
       String name=(String)getValue(ActionUtil.UNDO_PRESENTATION_NAME_KEY);
       if (name == null) {

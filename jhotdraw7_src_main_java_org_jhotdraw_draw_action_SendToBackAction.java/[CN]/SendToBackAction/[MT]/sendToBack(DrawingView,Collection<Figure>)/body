@@ -1,0 +1,6 @@
+{
+  Drawing drawing=view.getDrawing();
+  for (  Figure figure : figures) {
+    drawing.sendToBack(figure);
+  }
+}

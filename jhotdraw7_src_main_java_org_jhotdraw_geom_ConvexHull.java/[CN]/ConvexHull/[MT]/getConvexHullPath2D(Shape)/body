@@ -20,9 +20,17 @@ points.add(new Point2D.Double(coords[4],coords[5]));
 break;
 }
 }
-Polygon2D.Double convexHull=new Polygon2D.Double();
+Path2D.Double convexHull=new Path2D.Double();
+boolean first=true;
 for (Point2D.Double p : getConvexHull2D(points.toArray(new Point2D.Double[points.size()]))) {
-convexHull.add(p);
+if (first) {
+convexHull.moveTo(p.x,p.y);
+first=false;
 }
+ else {
+convexHull.lineTo(p.x,p.y);
+}
+}
+convexHull.closePath();
 return convexHull;
 }

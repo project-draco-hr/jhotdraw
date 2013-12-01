@@ -1,8 +1,7 @@
 {
   StdXMLReader r=new StdXMLReader(new FileInputStream(filename));
   r.setSystemID(filename);
-  for (int i=0; i < r.readers.size(); i++) {
-    StackedReader sr=(StackedReader)r.readers.elementAt(i);
+  for (  StackedReader sr : r.readers) {
     sr.systemId=r.currentReader.systemId;
   }
   return r;

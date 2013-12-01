@@ -1,7 +1,5 @@
 {
-  Iterator enm=this.attributes.iterator();
-  while (enm.hasNext()) {
-    XMLAttribute attr=(XMLAttribute)enm.next();
+  for (  XMLAttribute attr : attributes) {
     if (attr.getFullName().equals(fullName)) {
       return attr;
     }

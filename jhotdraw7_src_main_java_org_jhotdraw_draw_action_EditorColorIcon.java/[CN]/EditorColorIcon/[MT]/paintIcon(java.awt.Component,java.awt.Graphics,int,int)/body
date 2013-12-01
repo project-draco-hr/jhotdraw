@@ -1,7 +1,7 @@
 {
   Graphics2D g=(Graphics2D)gr;
   super.paintIcon(c,g,x,y);
-  Color color=(Color)editor.getDefaultAttribute(key);
+  Color color=editor.getDefaultAttribute(key);
   if (color != null) {
     g.setColor(color);
     g.translate(x,y);

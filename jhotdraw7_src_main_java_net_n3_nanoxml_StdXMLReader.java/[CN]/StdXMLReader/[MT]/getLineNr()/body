@@ -1,6 +1,6 @@
 {
   if (this.currentReader.lineReader == null) {
-    StackedReader sr=(StackedReader)this.readers.peek();
+    StackedReader sr=this.readers.peek();
     if (sr.lineReader == null) {
       return 0;
     }

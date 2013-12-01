@@ -1,5 +1,5 @@
 {
-  final View view=(View)getActiveView();
+  final View view=getActiveView();
   if (view.isEnabled()) {
     ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
     oldFocusOwner=SwingUtilities.getWindowAncestor(view.getComponent()).getFocusOwner();

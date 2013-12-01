@@ -1,6 +1,6 @@
 {
   if (e.getSource() == drawing) {
-    AttributeKey a=e.getAttribute();
+    AttributeKey<?> a=e.getAttribute();
     if (a.equals(CANVAS_HEIGHT) || a.equals(CANVAS_WIDTH)) {
       validateViewTranslation();
       repaint();

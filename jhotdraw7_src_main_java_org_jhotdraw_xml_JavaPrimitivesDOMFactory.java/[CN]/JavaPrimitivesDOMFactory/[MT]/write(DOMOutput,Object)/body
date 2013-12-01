@@ -97,7 +97,7 @@
     out.addAttribute("size",f.getSize());
   }
  else   if (o instanceof Enum) {
-    Enum e=(Enum)o;
+    Enum<?> e=(Enum<?>)o;
     out.addAttribute("type",getEnumName(e));
     out.addText(getEnumValue(e));
   }

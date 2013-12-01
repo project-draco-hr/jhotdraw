@@ -1,6 +1,6 @@
 {
-  LinkedList list=(LinkedList)geometry;
-  Iterator i=list.iterator();
+  @SuppressWarnings("unchecked") LinkedList<Object> list=(LinkedList<Object>)geometry;
+  Iterator<Object> i=list.iterator();
   for (  Figure child : getChildren()) {
     child.restoreTransformTo(i.next());
   }

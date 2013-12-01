@@ -20,5 +20,5 @@ catch (    Throwable t) {
       System.err.println("PaletteColorChooserUI warning: unable to instantiate " + defaultChooserNames[i]);
     }
   }
-  return (AbstractColorChooserPanel[])panels.toArray(new AbstractColorChooserPanel[panels.size()]);
+  return panels.toArray(new AbstractColorChooserPanel[panels.size()]);
 }

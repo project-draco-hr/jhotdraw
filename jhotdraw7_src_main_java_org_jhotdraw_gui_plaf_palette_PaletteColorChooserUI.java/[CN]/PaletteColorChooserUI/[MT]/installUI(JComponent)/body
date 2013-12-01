@@ -8,7 +8,7 @@
   defaultChoosers=createDefaultChoosers();
   chooser.setChooserPanels(defaultChoosers);
   installPreviewPanel();
-  AbstractColorChooserPanel[] newPanels=(AbstractColorChooserPanel[])chooser.getChooserPanels();
+  AbstractColorChooserPanel[] newPanels=chooser.getChooserPanels();
   updateColorChooserPanels(oldPanels,newPanels);
   installListeners();
   chooser.applyComponentOrientation(c.getComponentOrientation());

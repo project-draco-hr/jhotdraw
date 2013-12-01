@@ -1,0 +1,14 @@
+{
+  if (sourceWriteMethod == null) {
+    try {
+      PropertyDescriptor pd=new PropertyDescriptor(sourceProperty,source.getClass());
+      sourceWriteMethod=pd.getWriteMethod();
+    }
+ catch (    IntrospectionException ex) {
+      InternalError ie=new InternalError("Could not create source property descriptor for " + source);
+      ie.initCause(ex);
+      throw ie;
+    }
+  }
+  return sourceWriteMethod;
+}

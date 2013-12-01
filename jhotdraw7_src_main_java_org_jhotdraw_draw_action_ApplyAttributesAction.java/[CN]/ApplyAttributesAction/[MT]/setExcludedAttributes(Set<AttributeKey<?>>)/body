@@ -1,0 +1,3 @@
+{
+  this.excludedAttributes=new HashSet<AttributeKey<?>>(a);
+}

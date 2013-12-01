@@ -1,7 +1,15 @@
 {
-  Polygon2D.Double convexHull=new Polygon2D.Double();
+  Path2D.Double convexHull=new Path2D.Double();
+  boolean first=true;
   for (  Point p : getConvexHull(points.toArray(new Point[points.size()]))) {
-    convexHull.add(p);
+    if (first) {
+      convexHull.moveTo(p.x,p.y);
+      first=false;
+    }
+ else {
+      convexHull.lineTo(p.x,p.y);
+    }
   }
+  convexHull.closePath();
   return convexHull;
 }

@@ -4,13 +4,13 @@
   Figure newStartFigure=null;
   Figure newEndFigure=null;
   if (getStartFigure() != null) {
-    newStartFigure=(Figure)oldToNew.get(getStartFigure());
+    newStartFigure=oldToNew.get(getStartFigure());
     if (newStartFigure == null && !disconnectIfNotInMap) {
       newStartFigure=getStartFigure();
     }
   }
   if (getEndFigure() != null) {
-    newEndFigure=(Figure)oldToNew.get(getEndFigure());
+    newEndFigure=oldToNew.get(getEndFigure());
     if (newEndFigure == null && !disconnectIfNotInMap) {
       newEndFigure=getEndFigure();
     }

@@ -1,5 +1,5 @@
 {
-  this.attributeDefaultValues=new Hashtable();
-  this.currentElements=new Stack();
+  this.attributeDefaultValues=new HashMap<String,Object>();
+  this.currentElements=new ArrayDeque<Properties>();
   this.parameterEntityResolver=new XMLEntityResolver();
 }

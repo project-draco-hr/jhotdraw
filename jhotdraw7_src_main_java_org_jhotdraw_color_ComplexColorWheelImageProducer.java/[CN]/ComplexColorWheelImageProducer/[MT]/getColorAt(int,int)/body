@@ -27,8 +27,8 @@
   double angle=atan2(ky,kx);
   float scale=(float)max(abs(sin(angle)),abs(cos(angle)));
   scale=(1 - r) + scale * r;
-  radial=(float)((kx / scale + 1) / 2 * extentR + minR);
-  angular=(float)((ky / scale + 1) / 2 * extentA + minA);
+  radial=(kx / scale + 1) / 2 * extentR + minR;
+  angular=(ky / scale + 1) / 2 * extentA + minA;
   float[] rav=new float[3];
   rav[angularIndex]=angular;
   rav[radialIndex]=radial;

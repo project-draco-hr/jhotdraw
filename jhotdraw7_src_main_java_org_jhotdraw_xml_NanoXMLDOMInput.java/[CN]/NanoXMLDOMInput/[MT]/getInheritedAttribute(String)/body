@@ -1,10 +1,10 @@
 {
   LinkedList<String> values=new LinkedList<String>();
-  for (  XMLElement node : stack) {
-    String value=(String)node.getAttribute(name,null);
+  for (  IXMLElement node : stack) {
+    String value=node.getAttribute(name,null);
     values.add(value);
   }
-  String value=(String)current.getAttribute(name,null);
+  String value=current.getAttribute(name,null);
   values.add(value);
   return values;
 }

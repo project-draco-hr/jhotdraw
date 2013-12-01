@@ -1,7 +1,7 @@
 {
   Transferable t=super.getContents(requestor);
   try {
-    Class c=Class.forName("ch.randelshofer.quaqua.osx.OSXClipboardTransferable");
+    Class<?> c=Class.forName("ch.randelshofer.quaqua.osx.OSXClipboardTransferable");
     @SuppressWarnings("unchecked") boolean isAvailable=(Boolean)c.getMethod("isNativeCodeAvailable").invoke(null);
     if (isAvailable) {
       CompositeTransferable ct=new CompositeTransferable();

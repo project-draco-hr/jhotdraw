@@ -4,9 +4,9 @@
   }
   if (c instanceof AbstractButton) {
     AbstractButton b=(AbstractButton)c;
-    Border border=(Border)borderTable.remove(b);
+    Border border=borderTable.remove(b);
     b.setBorder(border);
-    Boolean value=(Boolean)rolloverTable.remove(b);
+    Boolean value=rolloverTable.remove(b);
     if (value != null) {
       b.setRolloverEnabled(value.booleanValue());
     }

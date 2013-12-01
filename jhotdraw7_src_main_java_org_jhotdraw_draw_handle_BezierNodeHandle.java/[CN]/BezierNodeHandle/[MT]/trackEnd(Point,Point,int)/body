@@ -19,6 +19,7 @@
     fireHandleRequestSecondaryHandles();
   }
   view.getDrawing().fireUndoableEditHappened(new BezierNodeEdit(f,index,oldValue,newValue){
+    private final static long serialVersionUID=1L;
     @Override public void redo() throws CannotRedoException {
       super.redo();
       fireHandleRequestSecondaryHandles();

@@ -1,0 +1,11 @@
+{
+  try {
+    Method m=bean.getClass().getMethod("removePropertyChangeListener",PropertyChangeListener.class);
+    m.invoke(bean,listener);
+  }
+ catch (  Exception ex) {
+    InternalError ie=new InternalError("Could not remove property change listener from " + bean);
+    ie.initCause(ex);
+    throw ie;
+  }
+}

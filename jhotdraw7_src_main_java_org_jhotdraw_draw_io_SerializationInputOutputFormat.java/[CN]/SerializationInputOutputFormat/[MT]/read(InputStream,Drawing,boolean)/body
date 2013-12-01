@@ -3,8 +3,8 @@
     ObjectInputStream oin=new ObjectInputStream(in);
     Drawing d=(Drawing)oin.readObject();
     if (replace) {
-      for (      Map.Entry<AttributeKey,Object> e : d.getAttributes().entrySet()) {
-        drawing.set(e.getKey(),e.getValue());
+      for (      Map.Entry<AttributeKey<?>,Object> e : d.getAttributes().entrySet()) {
+        drawing.set((AttributeKey<Object>)e.getKey(),e.getValue());
       }
     }
     for (    Figure f : d.getChildren()) {

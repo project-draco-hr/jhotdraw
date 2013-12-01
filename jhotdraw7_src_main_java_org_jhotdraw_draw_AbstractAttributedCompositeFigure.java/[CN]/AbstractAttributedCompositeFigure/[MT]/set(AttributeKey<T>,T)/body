@@ -1,6 +1,6 @@
 {
   if (forbiddenAttributes == null || !forbiddenAttributes.contains(key)) {
-    Object oldValue=attributes.put(key,newValue);
+    @SuppressWarnings("unchecked") T oldValue=(T)attributes.put(key,newValue);
     setAttributeOnChildren(key,newValue);
     fireAttributeChanged(key,oldValue,newValue);
   }

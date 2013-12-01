@@ -1,0 +1,4 @@
+String name
+String namespace
+Map<String,T> valueSet
+String defaultKey

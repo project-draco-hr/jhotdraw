@@ -2,10 +2,10 @@
   DrawingEditor editor=getEditor();
   Collection<Figure> selection=getView().getSelectedFigures();
   if (selection.size() > 0) {
-    Figure figure=(Figure)selection.iterator().next();
-    for (    Map.Entry<AttributeKey,Object> entry : figure.getAttributes().entrySet()) {
+    Figure figure=selection.iterator().next();
+    for (    Map.Entry<AttributeKey<?>,Object> entry : figure.getAttributes().entrySet()) {
       if (!excludedAttributes.contains(entry.getKey())) {
-        editor.setDefaultAttribute(entry.getKey(),entry.getValue());
+        editor.setDefaultAttribute((AttributeKey<Object>)entry.getKey(),entry.getValue());
       }
     }
   }

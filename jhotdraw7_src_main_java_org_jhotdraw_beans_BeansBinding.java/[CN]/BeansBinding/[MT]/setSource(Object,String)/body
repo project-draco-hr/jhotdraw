@@ -1,0 +1,12 @@
+{
+  if (this.source != null) {
+    removePropertyChangeListener(this.source,handler);
+  }
+  this.source=source;
+  this.sourceProperty=sourceProperty;
+  sourceWriteMethod=null;
+  sourceReadMethod=null;
+  if (this.source != null) {
+    addPropertyChangeListener(this.source,handler);
+  }
+}

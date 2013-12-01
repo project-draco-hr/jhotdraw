@@ -1,6 +1,6 @@
 {
   view.setEnabled(false);
-  view.execute(new Worker(){
+  view.execute(new Worker<Object>(){
     @Override public Object construct(){
       view.clear();
       return null;

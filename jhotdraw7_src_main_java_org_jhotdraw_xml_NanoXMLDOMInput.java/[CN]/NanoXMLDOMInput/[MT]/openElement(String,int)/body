@@ -1,8 +1,7 @@
 {
   int count=0;
-  ArrayList list=current.getChildren();
-  for (int i=0; i < list.size(); i++) {
-    XMLElement node=(XMLElement)list.get(i);
+  ArrayList<IXMLElement> list=current.getChildren();
+  for (  IXMLElement node : list) {
     if (node.getName().equals(tagName)) {
       if (count++ == index) {
         stack.push(current);

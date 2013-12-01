@@ -1,8 +1,10 @@
 {
   Window window=SwingUtilities.getWindowAncestor(toolbar);
   JFrame frame=new JFrame(toolbar.getName(),(window != null) ? window.getGraphicsConfiguration() : null){
+    private final static long serialVersionUID=1L;
     @Override protected JRootPane createRootPane(){
       JRootPane rootPane=new JRootPane(){
+        private final static long serialVersionUID=1L;
         private boolean packing=false;
         @Override public void validate(){
           super.validate();

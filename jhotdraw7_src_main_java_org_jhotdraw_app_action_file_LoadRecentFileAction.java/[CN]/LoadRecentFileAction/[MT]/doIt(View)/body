@@ -32,7 +32,7 @@
     }
   }
   view.setMultipleOpenId(multipleOpenId);
-  view.execute(new Worker(){
+  view.execute(new Worker<Object>(){
     @Override protected Object construct() throws IOException {
       boolean exists=true;
       try {

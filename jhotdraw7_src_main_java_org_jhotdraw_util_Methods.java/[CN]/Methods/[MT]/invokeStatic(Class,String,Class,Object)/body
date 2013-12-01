@@ -1,3 +1,0 @@
-{
-  return invokeStatic(clazz,methodName,new Class[]{type},new Object[]{value});
-}

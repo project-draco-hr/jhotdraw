@@ -3,7 +3,7 @@
   if (nsPrefix != null) {
     fullName=nsPrefix + ':' + key;
   }
-  IXMLElement top=(IXMLElement)this.stack.peek();
+  IXMLElement top=this.stack.peek();
   if (top.hasAttribute(fullName)) {
     throw new XMLParseException(top.getSystemID(),top.getLineNr(),"Duplicate attribute: " + key);
   }

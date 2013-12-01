@@ -1,6 +1,6 @@
 {
   LinkedList<Object> list=new LinkedList<Object>();
-  list.add(new HashMap<AttributeKey,Object>(getAttributes()));
+  list.add(new HashMap<AttributeKey<?>,Object>(getAttributes()));
   for (  Figure child : getChildren()) {
     list.add(child.getAttributesRestoreData());
   }

@@ -1,0 +1,11 @@
+{
+  try {
+    Method m=bean.getClass().getMethod("addPropertyChangeListener",PropertyChangeListener.class);
+    m.invoke(bean,listener);
+  }
+ catch (  Exception ex) {
+    InternalError ie=new InternalError("Could not add property change listener to " + bean);
+    ie.initCause(ex);
+    throw ie;
+  }
+}

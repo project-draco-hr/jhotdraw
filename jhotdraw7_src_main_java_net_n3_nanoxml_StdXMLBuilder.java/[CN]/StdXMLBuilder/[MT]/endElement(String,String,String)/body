@@ -1,5 +1,5 @@
 {
-  IXMLElement elt=(IXMLElement)this.stack.pop();
+  IXMLElement elt=this.stack.pop();
   if (elt.getChildrenCount() == 1) {
     IXMLElement child=elt.getChildAtIndex(0);
     if (child.getName() == null) {

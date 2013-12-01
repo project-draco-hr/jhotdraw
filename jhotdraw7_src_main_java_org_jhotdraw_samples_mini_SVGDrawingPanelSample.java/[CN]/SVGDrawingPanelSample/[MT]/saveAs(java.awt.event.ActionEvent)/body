@@ -13,7 +13,7 @@
       selectedFile=fc.getSelectedFile();
     }
     final OutputFormat selectedFormat=fileFilterOutputFormatMap.get(fc.getFileFilter());
-    new Worker(){
+    new Worker<Object>(){
       @Override protected Object construct() throws IOException {
         svgPanel.write(selectedFile.toURI(),selectedFormat);
         return null;

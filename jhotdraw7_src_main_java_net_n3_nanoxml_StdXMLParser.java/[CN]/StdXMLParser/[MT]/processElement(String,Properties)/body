@@ -8,9 +8,9 @@
     prefix=name.substring(0,colonIndex);
     name=name.substring(colonIndex + 1);
   }
-  Vector attrNames=new Vector();
-  Vector attrValues=new Vector();
-  Vector attrTypes=new Vector();
+  ArrayList<String> attrNames=new ArrayList<String>();
+  ArrayList<String> attrValues=new ArrayList<String>();
+  ArrayList<String> attrTypes=new ArrayList<String>();
   this.validator.elementStarted(fullName,this.reader.getSystemID(),this.reader.getLineNr());
   char ch;
   for (; ; ) {
@@ -24,18 +24,18 @@
   }
   Properties extraAttributes=new Properties();
   this.validator.elementAttributesProcessed(fullName,extraAttributes,this.reader.getSystemID(),this.reader.getLineNr());
-  Enumeration enm=extraAttributes.keys();
+  Enumeration<Object> enm=extraAttributes.keys();
   while (enm.hasMoreElements()) {
     String key=(String)enm.nextElement();
     String value=extraAttributes.getProperty(key);
-    attrNames.addElement(key);
-    attrValues.addElement(value);
-    attrTypes.addElement("CDATA");
+    attrNames.add(key);
+    attrValues.add(value);
+    attrTypes.add("CDATA");
   }
   for (int i=0; i < attrNames.size(); i++) {
-    String key=(String)attrNames.elementAt(i);
-    String value=(String)attrValues.elementAt(i);
-    String type=(String)attrTypes.elementAt(i);
+    String key=attrNames.get(i);
+    String value=attrValues.get(i);
+    String type=attrTypes.get(i);
     if ("xmlns".equals(key)) {
       defaultNamespace=value;
     }
@@ -50,12 +50,12 @@
     this.builder.startElement(name,prefix,namespaces.getProperty(prefix),this.reader.getSystemID(),this.reader.getLineNr());
   }
   for (int i=0; i < attrNames.size(); i++) {
-    String key=(String)attrNames.elementAt(i);
+    String key=attrNames.get(i);
     if (key.startsWith("xmlns")) {
       continue;
     }
-    String value=(String)attrValues.elementAt(i);
-    String type=(String)attrTypes.elementAt(i);
+    String value=attrValues.get(i);
+    String type=attrTypes.get(i);
     colonIndex=key.indexOf(':');
     if (colonIndex > 0) {
       String attPrefix=key.substring(0,colonIndex);

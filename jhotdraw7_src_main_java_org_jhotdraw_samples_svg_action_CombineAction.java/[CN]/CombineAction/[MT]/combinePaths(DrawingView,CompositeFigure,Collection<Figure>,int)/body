@@ -14,8 +14,8 @@
       break;
     }
   }
-  for (  Map.Entry<AttributeKey,Object> entry : figures.iterator().next().getAttributes().entrySet()) {
-    group.set(entry.getKey(),entry.getValue());
+  for (  Map.Entry<AttributeKey<?>,Object> entry : figures.iterator().next().getAttributes().entrySet()) {
+    group.set((AttributeKey<Object>)entry.getKey(),entry.getValue());
   }
   group.set(TRANSFORM,tx);
   for (  Figure f : figures) {

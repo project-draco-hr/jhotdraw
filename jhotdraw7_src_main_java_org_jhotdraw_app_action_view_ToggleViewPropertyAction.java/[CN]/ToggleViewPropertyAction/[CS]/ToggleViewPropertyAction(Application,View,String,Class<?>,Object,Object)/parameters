@@ -1,0 +1,6 @@
+Application app
+View view
+String propertyName
+Class<?> propertyClass
+Object selectedPropertyValue
+Object deselectedPropertyValue

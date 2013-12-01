@@ -38,7 +38,7 @@
       return palettes;
     }
     @Override protected void done(    LinkedList<JFrame> result){
-      @SuppressWarnings("unchecked") LinkedList<JFrame> palettes=(LinkedList<JFrame>)result;
+      @SuppressWarnings("unchecked") LinkedList<JFrame> palettes=result;
       if (palettes != null) {
         firePropertyChange("paletteCount",0,palettes.size());
       }

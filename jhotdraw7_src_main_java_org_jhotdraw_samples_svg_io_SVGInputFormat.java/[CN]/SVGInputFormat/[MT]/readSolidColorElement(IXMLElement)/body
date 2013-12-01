@@ -1,5 +1,5 @@
 {
-  HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+  HashMap<AttributeKey<?>,Object> a=new HashMap<AttributeKey<?>,Object>();
   readCoreAttributes(elem,a);
   Color color=toColor(elem,readAttribute(elem,"solid-color","black"));
   double opacity=toDouble(elem,readAttribute(elem,"solid-opacity","1"),1,0,1);

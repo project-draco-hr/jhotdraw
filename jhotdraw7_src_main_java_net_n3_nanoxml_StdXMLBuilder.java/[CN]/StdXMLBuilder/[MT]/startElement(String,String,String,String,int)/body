@@ -4,11 +4,11 @@
     fullName=nsPrefix + ':' + name;
   }
   IXMLElement elt=this.prototype.createElement(fullName,nsURI,systemID,lineNr);
-  if (this.stack.empty()) {
+  if (this.stack.isEmpty()) {
     this.root=elt;
   }
  else {
-    IXMLElement top=(IXMLElement)this.stack.peek();
+    IXMLElement top=this.stack.peek();
     top.addChild(elt);
   }
   this.stack.push(elt);

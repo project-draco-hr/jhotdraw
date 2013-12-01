@@ -19,6 +19,7 @@
       final Figure addedFigure=createdFigure;
       final Drawing addedDrawing=getDrawing();
       getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
+        private final static long serialVersionUID=1L;
         @Override public String getPresentationName(){
           return presentationName;
         }

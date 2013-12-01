@@ -1,0 +1,11 @@
+{
+  if (this.target != null) {
+    removePropertyChangeListener(this.target,handler);
+  }
+  this.target=target;
+  this.targetProperty=targetProperty;
+  targetWriteMethod=null;
+  if (this.target != null) {
+    addPropertyChangeListener(this.target,handler);
+  }
+}

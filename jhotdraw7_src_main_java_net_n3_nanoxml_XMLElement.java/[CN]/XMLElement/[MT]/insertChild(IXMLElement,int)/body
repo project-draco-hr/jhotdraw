@@ -3,7 +3,7 @@
     throw new IllegalArgumentException("child must not be null");
   }
   if ((child.getName() == null) && (!this.children.isEmpty())) {
-    IXMLElement lastChild=(IXMLElement)this.children.get(this.children.size() - 1);
+    IXMLElement lastChild=this.children.get(this.children.size() - 1);
     if (lastChild.getName() == null) {
       lastChild.setContent(lastChild.getContent() + child.getContent());
       return;

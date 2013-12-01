@@ -1,6 +1,6 @@
 {
   super(editor);
-  this.attributes=new HashMap<AttributeKey,Object>();
+  this.attributes=new HashMap<AttributeKey<?>,Object>();
   attributes.put(key,value);
   putValue(AbstractAction.NAME,name);
   putValue(AbstractAction.SMALL_ICON,icon);

@@ -19,7 +19,7 @@ case 1:
       TextCreationTool textTool;
       TextAreaCreationTool textAreaTool;
       SVGCreateFromFileTool imageTool;
-      HashMap<AttributeKey,Object> attributes;
+      HashMap<AttributeKey<?>,Object> attributes;
       btn=ButtonFactory.addSelectionToolTo(this,editor,ButtonFactory.createDrawingActions(editor,disposables),createSelectionActions(editor));
       btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
       btn.addMouseListener(new SelectionToolButtonHandler(editor));
@@ -28,7 +28,7 @@ case 1:
       gbc.gridy=0;
       p.add(btn,gbc);
       labels.configureToolBarButton(btn,"selectionTool");
-      attributes=new HashMap<AttributeKey,Object>();
+      attributes=new HashMap<AttributeKey<?>,Object>();
       btn=ButtonFactory.addToolTo(this,editor,creationTool=new CreationTool(new SVGRectFigure(),attributes),"createRectangle",labels);
       creationTool.setToolDoneAfterCreation(false);
       btn.setUI((PaletteButtonUI)PaletteButtonUI.createUI(btn));
@@ -53,7 +53,7 @@ case 1:
       gbc.gridy=1;
       gbc.insets=new Insets(3,3,0,0);
       p.add(btn,gbc);
-      attributes=new HashMap<AttributeKey,Object>();
+      attributes=new HashMap<AttributeKey<?>,Object>();
       attributes.put(AttributeKeys.FILL_COLOR,null);
       attributes.put(PATH_CLOSED,false);
       btn=ButtonFactory.addToolTo(this,editor,creationTool=new CreationTool(new SVGPathFigure(),attributes),"createLine",labels);
@@ -72,7 +72,7 @@ case 1:
       gbc.gridy=0;
       gbc.insets=new Insets(0,3,0,0);
       p.add(btn,gbc);
-      attributes=new HashMap<AttributeKey,Object>();
+      attributes=new HashMap<AttributeKey<?>,Object>();
       attributes.put(AttributeKeys.FILL_COLOR,Color.black);
       attributes.put(AttributeKeys.STROKE_COLOR,null);
       btn=ButtonFactory.addToolTo(this,editor,textTool=new TextCreationTool(new SVGTextFigure(),attributes),"createText",labels);
@@ -93,7 +93,7 @@ case 1:
       gbc.gridy=2;
       gbc.insets=new Insets(3,3,0,0);
       p.add(btn,gbc);
-      attributes=new HashMap<AttributeKey,Object>();
+      attributes=new HashMap<AttributeKey<?>,Object>();
       attributes.put(AttributeKeys.FILL_COLOR,null);
       attributes.put(AttributeKeys.STROKE_COLOR,null);
       btn=ButtonFactory.addToolTo(this,editor,imageTool=new SVGCreateFromFileTool(new SVGImageFigure(),new SVGGroupFigure(),attributes),"createImage",labels);

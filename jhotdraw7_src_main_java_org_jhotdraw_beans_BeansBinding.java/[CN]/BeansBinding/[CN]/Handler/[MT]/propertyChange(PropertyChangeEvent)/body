@@ -1,0 +1,30 @@
+{
+  if (evt.getSource() == source) {
+    if (sourceProperty.equals(evt.getPropertyName())) {
+      if (target != null) {
+        try {
+          getTargetWriteMethod().invoke(target,evt.getNewValue());
+        }
+ catch (        Exception ex) {
+          InternalError ie=new InternalError("Could not set property \"" + targetProperty + "\" on "+ target);
+          ie.initCause(ex);
+          throw ie;
+        }
+      }
+    }
+  }
+ else   if (bidirectional && evt.getSource() == target) {
+    if (targetProperty.equals(evt.getPropertyName())) {
+      if (source != null) {
+        try {
+          getSourceWriteMethod().invoke(source,evt.getNewValue());
+        }
+ catch (        Exception ex) {
+          InternalError ie=new InternalError("Could not set property \"" + targetProperty + "\" on "+ target);
+          ie.initCause(ex);
+          throw ie;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  Properties props=(Properties)this.currentElements.peek();
+  Properties props=this.currentElements.peek();
   if (props.containsKey(key)) {
     props.remove(key);
   }

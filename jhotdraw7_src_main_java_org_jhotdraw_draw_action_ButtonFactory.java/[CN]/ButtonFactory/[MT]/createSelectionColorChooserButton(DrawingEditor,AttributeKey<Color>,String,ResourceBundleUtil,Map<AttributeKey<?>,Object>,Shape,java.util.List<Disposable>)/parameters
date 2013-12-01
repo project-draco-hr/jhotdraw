@@ -1,0 +1,7 @@
+DrawingEditor editor
+AttributeKey<Color> attributeKey
+String labelKey
+ResourceBundleUtil labels
+Map<AttributeKey<?>,Object> defaultAttributes
+Shape colorShape
+java.util.List<Disposable> dsp

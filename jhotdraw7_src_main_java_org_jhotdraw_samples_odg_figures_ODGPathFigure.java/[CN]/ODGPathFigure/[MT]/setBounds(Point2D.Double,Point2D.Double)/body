@@ -1,6 +1,6 @@
 {
-  if (getChildCount() == 1 && ((ODGBezierFigure)getChild(0)).getNodeCount() <= 2) {
-    ODGBezierFigure b=(ODGBezierFigure)getChild(0);
+  if (getChildCount() == 1 && getChild(0).getNodeCount() <= 2) {
+    ODGBezierFigure b=getChild(0);
     b.setBounds(anchor,lead);
     invalidate();
   }

@@ -3,6 +3,7 @@
   final Drawing addedDrawing=creationView.getDrawing();
   final DrawingView addedView=creationView;
   getDrawing().fireUndoableEditHappened(new AbstractUndoableEdit(){
+    private final static long serialVersionUID=1L;
     @Override public String getPresentationName(){
       return presentationName;
     }

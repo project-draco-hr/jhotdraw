@@ -1,6 +1,6 @@
 {
   try {
-    Method method=obj.getClass().getMethod(methodName,new Class[]{Boolean.TYPE});
+    Method method=obj.getClass().getMethod(methodName,new Class<?>[]{Boolean.TYPE});
     return method.invoke(obj,new Object[]{newValue});
   }
  catch (  IllegalAccessException e) {

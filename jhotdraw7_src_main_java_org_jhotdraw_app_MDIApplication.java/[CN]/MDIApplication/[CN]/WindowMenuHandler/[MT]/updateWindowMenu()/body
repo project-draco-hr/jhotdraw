@@ -5,8 +5,7 @@
   m.add(getAction(view,ArrangeWindowsAction.VERTICAL_ID));
   m.add(getAction(view,ArrangeWindowsAction.HORIZONTAL_ID));
   m.addSeparator();
-  for (Iterator i=views().iterator(); i.hasNext(); ) {
-    View pr=(View)i.next();
+  for (  View pr : views()) {
     if (getAction(pr,FocusWindowAction.ID) != null) {
       m.add(getAction(pr,FocusWindowAction.ID));
     }

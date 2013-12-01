@@ -3,7 +3,7 @@
   that.children=new ArrayList<Figure>();
   that.eventHandler=that.createEventHandler();
   for (  Figure thisChild : this.children) {
-    Figure thatChild=(Figure)thisChild.clone();
+    Figure thatChild=thisChild.clone();
     that.children.add(thatChild);
     thatChild.addFigureListener(that.eventHandler);
   }

@@ -1,7 +1,5 @@
 {
-  Iterator enm=this.children.iterator();
-  while (enm.hasNext()) {
-    IXMLElement child=(IXMLElement)enm.next();
+  for (  IXMLElement child : children) {
     String str=child.getName();
     boolean found=(str != null) && (str.equals(name));
     str=child.getNamespace();

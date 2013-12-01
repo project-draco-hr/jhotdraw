@@ -1,5 +1,5 @@
 {
-  Color initialColor=(Color)getEditor().getDefaultAttribute(key);
+  Color initialColor=getEditor().getDefaultAttribute(key);
   if (initialColor == null) {
     initialColor=Color.red;
   }

@@ -1,3 +1,0 @@
-ImageHolderFigure imagePrototype
-CompositeFigure groupPrototype
-Map<AttributeKey,Object> attributes

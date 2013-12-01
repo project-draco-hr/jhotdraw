@@ -2,7 +2,7 @@
   LineConnectionFigure that=(LineConnectionFigure)super.clone();
   that.connectionHandler=new ConnectionHandler(that);
   if (this.liner != null) {
-    that.liner=(Liner)this.liner.clone();
+    that.liner=this.liner.clone();
   }
   if (this.startConnector != null) {
     that.startConnector=(Connector)this.startConnector.clone();

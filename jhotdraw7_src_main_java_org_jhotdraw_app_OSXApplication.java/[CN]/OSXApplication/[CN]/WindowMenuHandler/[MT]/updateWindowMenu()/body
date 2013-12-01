@@ -7,8 +7,7 @@
   mi=m.add(getAction(view,MaximizeWindowAction.ID));
   mi.setIcon(null);
   m.addSeparator();
-  for (Iterator i=views().iterator(); i.hasNext(); ) {
-    View pr=(View)i.next();
+  for (  View pr : views()) {
     if (getAction(pr,FocusWindowAction.ID) != null) {
       mi=m.add(getAction(pr,FocusWindowAction.ID));
     }

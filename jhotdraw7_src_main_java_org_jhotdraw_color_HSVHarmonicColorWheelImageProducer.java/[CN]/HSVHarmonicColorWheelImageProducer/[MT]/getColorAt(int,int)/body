@@ -5,7 +5,7 @@
   float theta=(float)Math.atan2(-y,x);
   float radius=Math.min(w,h) / 2f;
   float[] hsb;
-  float sat=(float)r / radius * wheelScaleFactor;
+  float sat=r / radius * wheelScaleFactor;
   float hue=(float)(theta / Math.PI / 2d);
   if (hue < 0) {
     hue+=1f;

@@ -1,7 +1,7 @@
 {
-  HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+  HashMap<AttributeKey<?>,Object> a=new HashMap<AttributeKey<?>,Object>();
   readCoreAttributes(elem,a);
-  HashMap<AttributeKey,Object> a2=new HashMap<AttributeKey,Object>();
+  HashMap<AttributeKey<?>,Object> a2=new HashMap<AttributeKey<?>,Object>();
   readTransformAttribute(elem,a);
   readOpacityAttribute(elem,a2);
   readUseShapeAttributes(elem,a2);
@@ -17,9 +17,9 @@
  else {
       Figure obj=readElement(refElem);
       if (obj != null) {
-        Figure figure=(Figure)obj.clone();
-        for (        Map.Entry<AttributeKey,Object> entry : a2.entrySet()) {
-          figure.set(entry.getKey(),entry.getValue());
+        Figure figure=obj.clone();
+        for (        Map.Entry<AttributeKey<?>,Object> entry : a2.entrySet()) {
+          figure.set((AttributeKey<Object>)entry.getKey(),entry.getValue());
         }
         AffineTransform tx=(TRANSFORM.get(a) == null) ? new AffineTransform() : TRANSFORM.get(a);
         double x=toNumber(elem,readAttribute(elem,"x","0"));

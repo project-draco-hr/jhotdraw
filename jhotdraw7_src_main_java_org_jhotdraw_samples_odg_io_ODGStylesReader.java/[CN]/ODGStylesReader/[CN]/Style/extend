@@ -1,1 +1,1 @@
-HashMap<AttributeKey,Object>
+HashMap<AttributeKey<?>,Object>

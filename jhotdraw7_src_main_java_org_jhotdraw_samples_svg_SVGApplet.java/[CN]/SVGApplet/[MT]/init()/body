@@ -17,8 +17,8 @@
   final ProgressIndicator progress=new ProgressIndicator(getName(),labels.getString("progressInitializing"));
   c.add(progress);
   progress.revalidate();
-  new Worker(){
-    @Override protected Object construct() throws Exception {
+  new Worker<Drawing>(){
+    @Override protected Drawing construct() throws Exception {
       Thread t=new Thread(){
         @Override public void run(){
           drawingComponent=createDrawingComponent();
@@ -27,27 +27,20 @@
 ;
       t.start();
       progress.setNote(labels.getString("progressLoading"));
-      Object drawing=loadDrawing(progress);
+      Drawing drawing=loadDrawing(progress);
       progress.setNote(labels.getString("progressOpeningEditor"));
       progress.setIndeterminate(true);
       t.join();
       return drawing;
     }
-    @Override protected void done(    Object result){
+    @Override protected void done(    Drawing result){
       Container c=getContentPane();
       c.setLayout(new BorderLayout());
       c.removeAll();
       c.add(drawingComponent.getComponent());
       initComponents();
       if (result != null) {
-        if (result instanceof Drawing) {
-          setDrawing((Drawing)result);
-        }
- else         if (result instanceof Throwable) {
-          setDrawing(createDrawing());
-          getDrawing().add(new SVGTextFigure(result.toString()));
-          ((Throwable)result).printStackTrace();
-        }
+        setDrawing(result);
       }
       drawingComponent.revalidate();
     }
@@ -55,7 +48,7 @@
       Container c=getContentPane();
       c.setLayout(new BorderLayout());
       c.removeAll();
-      Throwable error=(Throwable)result;
+      Throwable error=result;
       error.printStackTrace();
       String message=(error.getMessage() == null) ? error.toString() : error.getMessage();
       MessagePanel mp=new MessagePanel(UIManager.getIcon("OptionPane.errorIcon"),labels.getFormatted("messageLoadFailed",htmlencode(getParameter("DrawingURL")),htmlencode(message)));

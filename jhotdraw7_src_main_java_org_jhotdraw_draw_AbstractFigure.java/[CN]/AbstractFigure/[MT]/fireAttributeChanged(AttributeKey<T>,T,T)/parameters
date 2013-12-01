@@ -1,0 +1,3 @@
+AttributeKey<T> attribute
+T oldValue
+T newValue

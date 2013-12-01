@@ -1,0 +1,11 @@
+{
+  try {
+    Object value=getSourceReadMethod().invoke(source);
+    getTargetWriteMethod().invoke(target,value);
+  }
+ catch (  Exception ex) {
+    InternalError ie=new InternalError("Could not update target from source.");
+    ie.initCause(ex);
+    throw ie;
+  }
+}

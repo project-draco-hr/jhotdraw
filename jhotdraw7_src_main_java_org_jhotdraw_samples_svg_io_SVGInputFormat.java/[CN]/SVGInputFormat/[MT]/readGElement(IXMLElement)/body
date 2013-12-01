@@ -1,5 +1,5 @@
 {
-  HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+  HashMap<AttributeKey<?>,Object> a=new HashMap<AttributeKey<?>,Object>();
   readCoreAttributes(elem,a);
   readOpacityAttribute(elem,a);
   CompositeFigure g=factory.createG(a);

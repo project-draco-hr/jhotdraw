@@ -1,5 +1,5 @@
 {
-  HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+  HashMap<AttributeKey<?>,Object> a=new HashMap<AttributeKey<?>,Object>();
   readCoreAttributes(elem,a);
   double x1=toLength(elem,readAttribute(elem,"x1","0"),0.01);
   double y1=toLength(elem,readAttribute(elem,"y1","0"),0.01);

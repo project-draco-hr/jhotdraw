@@ -1,7 +1,7 @@
 {
   if (event != null) {
     try {
-      Method setHandledMethod=event.getClass().getDeclaredMethod("setHandled",new Class[]{boolean.class});
+      Method setHandledMethod=event.getClass().getDeclaredMethod("setHandled",new Class<?>[]{boolean.class});
       setHandledMethod.invoke(event,new Object[]{Boolean.valueOf(handled)});
     }
  catch (    Exception ex) {

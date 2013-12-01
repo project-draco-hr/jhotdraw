@@ -1,6 +1,6 @@
 {
   try {
-    Method method=obj.getClass().getMethod(methodName,new Class[0]);
+    Method method=obj.getClass().getMethod(methodName,new Class<?>[0]);
     Object result=method.invoke(obj,new Object[0]);
     return ((Boolean)result).booleanValue();
   }

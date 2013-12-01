@@ -1,7 +1,9 @@
 {
   super.activate(editor);
   final DrawingView v=getView();
-  if (v == null)   return;
+  if (v == null) {
+    return;
+  }
   if (workerThread != null) {
     try {
       workerThread.join();
@@ -28,9 +30,9 @@
     }
   }
   if (file != null) {
-    Worker worker;
     if (file.getName().toLowerCase().endsWith(".svg") || file.getName().toLowerCase().endsWith(".svgz")) {
-      prototype=((Figure)groupPrototype.clone());
+      prototype=groupPrototype.clone();
+      Worker<Drawing> worker;
       worker=new Worker<Drawing>(){
         @Override public Drawing construct() throws IOException {
           Drawing drawing=new DefaultDrawing();
@@ -64,13 +66,15 @@
         }
       }
 ;
+      workerThread=new Thread(worker);
     }
  else {
       prototype=imagePrototype;
       final ImageHolderFigure loaderFigure=((ImageHolderFigure)prototype.clone());
-      worker=new Worker(){
+      Worker<Object> worker;
+      worker=new Worker<Object>(){
         @Override protected Object construct() throws IOException {
-          ((ImageHolderFigure)loaderFigure).loadImage(file);
+          loaderFigure.loadImage(file);
           return null;
         }
         @Override protected void done(        Object value){
@@ -93,8 +97,8 @@
         }
       }
 ;
+      workerThread=new Thread(worker);
     }
-    workerThread=new Thread(worker);
     workerThread.start();
   }
  else {

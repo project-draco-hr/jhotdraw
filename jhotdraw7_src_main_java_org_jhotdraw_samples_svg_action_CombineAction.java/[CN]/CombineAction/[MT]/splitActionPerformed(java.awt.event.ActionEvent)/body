@@ -10,8 +10,8 @@
     int index=drawing.indexOf(group);
     for (    Figure f : group.getChildren()) {
       SVGPathFigure path=new SVGPathFigure(true);
-      for (      Map.Entry<AttributeKey,Object> entry : group.getAttributes().entrySet()) {
-        path.set(entry.getKey(),entry.getValue());
+      for (      Map.Entry<AttributeKey<?>,Object> entry : group.getAttributes().entrySet()) {
+        path.set((AttributeKey<Object>)entry.getKey(),entry.getValue());
       }
       ungroupedPaths.add(path);
       ungroupedPathsIndices[i]=index + i;
@@ -20,6 +20,7 @@
     }
     splitPath(view,group,ungroupedPaths,ungroupedPathsIndices,ungroupedPathsChildCounts);
     UndoableEdit edit=new AbstractUndoableEdit(){
+      private final static long serialVersionUID=1L;
       @Override public String getPresentationName(){
         return labels.getTextProperty("edit.splitPath");
       }

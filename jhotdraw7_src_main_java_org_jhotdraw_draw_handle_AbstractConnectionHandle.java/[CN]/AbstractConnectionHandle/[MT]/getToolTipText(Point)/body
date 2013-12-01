@@ -1,5 +1,5 @@
 {
-  ConnectionFigure f=(ConnectionFigure)getOwner();
+  ConnectionFigure f=getOwner();
   if (f.getLiner() == null && savedLiner == null) {
     ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
     BezierPath.Node node=getBezierNode();

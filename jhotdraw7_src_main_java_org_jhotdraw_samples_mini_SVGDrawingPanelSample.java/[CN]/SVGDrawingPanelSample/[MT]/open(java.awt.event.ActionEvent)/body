@@ -7,7 +7,7 @@
     svgPanel.setEnabled(false);
     final File selectedFile=fc.getSelectedFile();
     final InputFormat selectedFormat=fileFilterInputFormatMap.get(fc.getFileFilter());
-    new Worker(){
+    new Worker<Object>(){
       @Override protected Object construct() throws IOException {
         svgPanel.read(selectedFile.toURI(),selectedFormat);
         return null;

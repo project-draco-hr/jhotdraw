@@ -1,8 +1,8 @@
 {
   name=unescape(name);
-  Class enumClass;
+  Class<E> enumClass;
   try {
-    enumClass=Class.forName(name);
+    enumClass=(Class<E>)Class.forName(name);
   }
  catch (  ClassNotFoundException ex) {
     throw new IllegalArgumentException("Class not found for Enum with name:" + name);

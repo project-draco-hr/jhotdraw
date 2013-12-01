@@ -1,8 +1,8 @@
 {
   Figure prototype=(Figure)out.getPrototype();
   boolean isElementOpen=false;
-  for (  Map.Entry<AttributeKey,Object> entry : attributes.entrySet()) {
-    AttributeKey key=entry.getKey();
+  for (  Map.Entry<AttributeKey<?>,Object> entry : attributes.entrySet()) {
+    AttributeKey<?> key=entry.getKey();
     if (forbiddenAttributes == null || !forbiddenAttributes.contains(key)) {
       @SuppressWarnings("unchecked") Object prototypeValue=prototype.get(key);
       @SuppressWarnings("unchecked") Object attributeValue=get(key);

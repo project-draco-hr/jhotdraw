@@ -1,4 +1,4 @@
 {
-  String value=(String)current.getAttribute(name,null);
+  String value=current.getAttribute(name,null);
   return (value == null || value.length() == 0) ? defaultValue : Double.parseDouble(value);
 }

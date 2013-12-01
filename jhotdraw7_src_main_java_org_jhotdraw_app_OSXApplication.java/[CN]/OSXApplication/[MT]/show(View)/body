@@ -10,8 +10,7 @@
     boolean moved;
     do {
       moved=false;
-      for (Iterator i=views().iterator(); i.hasNext(); ) {
-        View aView=(View)i.next();
+      for (      View aView : views()) {
         if (aView != view && aView.isShowing() && SwingUtilities.getWindowAncestor(aView.getComponent()).getLocation().equals(loc)) {
           loc.x+=22;
           loc.y+=22;

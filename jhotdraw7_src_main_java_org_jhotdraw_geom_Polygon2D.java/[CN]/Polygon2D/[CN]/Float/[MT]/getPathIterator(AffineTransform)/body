@@ -1,3 +1,0 @@
-{
-  return new PolygonPathIteratorFloat(this,at);
-}

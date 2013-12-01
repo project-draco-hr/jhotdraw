@@ -8,7 +8,7 @@
   final PrintableView p=(PrintableView)v;
   p.setEnabled(false);
   app.add(p);
-  p.execute(new Worker(){
+  p.execute(new Worker<Object>(){
     @Override public Object construct() throws IOException {
       p.read(new File(filename).toURI(),null);
       return null;

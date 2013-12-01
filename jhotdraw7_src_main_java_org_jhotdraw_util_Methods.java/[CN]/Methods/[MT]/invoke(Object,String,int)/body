@@ -1,6 +1,6 @@
 {
   try {
-    Method method=obj.getClass().getMethod(methodName,new Class[]{Integer.TYPE});
+    Method method=obj.getClass().getMethod(methodName,new Class<?>[]{Integer.TYPE});
     return method.invoke(obj,new Object[]{newValue});
   }
  catch (  IllegalAccessException e) {

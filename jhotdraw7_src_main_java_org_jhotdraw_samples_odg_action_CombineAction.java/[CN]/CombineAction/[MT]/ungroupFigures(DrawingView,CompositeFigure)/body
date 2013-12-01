@@ -6,8 +6,8 @@
   for (  Figure f : figures) {
     ODGPathFigure path=new ODGPathFigure();
     path.removeAllChildren();
-    for (    Map.Entry<AttributeKey,Object> entry : group.getAttributes().entrySet()) {
-      path.set(entry.getKey(),entry.getValue());
+    for (    Map.Entry<AttributeKey<?>,Object> entry : group.getAttributes().entrySet()) {
+      path.set((AttributeKey<Object>)entry.getKey(),entry.getValue());
     }
     path.add(f);
     view.getDrawing().basicAdd(path);

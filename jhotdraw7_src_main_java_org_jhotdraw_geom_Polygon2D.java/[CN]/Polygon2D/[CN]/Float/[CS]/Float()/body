@@ -1,4 +1,0 @@
-{
-  xpoints=new float[MIN_LENGTH];
-  ypoints=new float[MIN_LENGTH];
-}

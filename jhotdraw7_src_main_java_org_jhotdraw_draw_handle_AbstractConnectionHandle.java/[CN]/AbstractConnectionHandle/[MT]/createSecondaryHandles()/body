@@ -1,6 +1,6 @@
 {
   LinkedList<Handle> list=new LinkedList<Handle>();
-  if (((ConnectionFigure)getOwner()).getLiner() == null && savedLiner == null) {
+  if (getOwner().getLiner() == null && savedLiner == null) {
     int index=getBezierNodeIndex();
     BezierFigure f=getBezierFigure();
     BezierPath.Node v=f.getNode(index);

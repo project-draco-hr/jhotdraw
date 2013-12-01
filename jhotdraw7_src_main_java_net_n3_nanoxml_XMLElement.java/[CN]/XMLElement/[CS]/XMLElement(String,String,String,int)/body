@@ -1,6 +1,6 @@
 {
-  this.attributes=new ArrayList();
-  this.children=new ArrayList(8);
+  this.attributes=new ArrayList<XMLAttribute>();
+  this.children=new ArrayList<IXMLElement>(8);
   this.fullName=fullName;
   if (namespace == null) {
     this.name=fullName;

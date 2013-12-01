@@ -1,0 +1,4 @@
+double cx
+double cy
+double r
+Map<AttributeKey<?>,Object> a

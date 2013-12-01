@@ -1,6 +1,6 @@
 {
   if (openRecentMenu.getItemCount() > 0) {
-    JMenuItem clearRecentFilesItem=(JMenuItem)openRecentMenu.getItem(openRecentMenu.getItemCount() - 1);
+    JMenuItem clearRecentFilesItem=openRecentMenu.getItem(openRecentMenu.getItemCount() - 1);
     openRecentMenu.remove(openRecentMenu.getItemCount() - 1);
     for (    Action action : openRecentActions) {
       if (action instanceof Disposable) {

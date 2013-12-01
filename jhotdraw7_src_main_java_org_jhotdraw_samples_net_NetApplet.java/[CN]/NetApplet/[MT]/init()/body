@@ -45,7 +45,7 @@
       c.removeAll();
       c.add(drawingPanel=new NetPanel());
       if (result != null) {
-        Drawing drawing=(Drawing)result;
+        Drawing drawing=result;
         setDrawing(drawing);
       }
     }

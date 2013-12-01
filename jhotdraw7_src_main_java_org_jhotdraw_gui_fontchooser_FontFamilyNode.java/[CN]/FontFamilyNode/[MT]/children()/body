@@ -1,3 +1,4 @@
 {
-  return Collections.enumeration(children);
+  Enumeration<FontFaceNode> e=Collections.enumeration(children);
+  return e;
 }

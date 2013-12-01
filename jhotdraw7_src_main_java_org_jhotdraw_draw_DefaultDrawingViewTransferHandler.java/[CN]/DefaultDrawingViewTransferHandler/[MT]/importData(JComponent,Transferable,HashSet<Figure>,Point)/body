@@ -39,6 +39,7 @@
                   transferFigures.addAll(importedFigures);
                   moveToDropPoint(comp,transferFigures,dropPoint);
                   drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
+                    private final static long serialVersionUID=1L;
                     @Override public String getPresentationName(){
                       ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
                       return labels.getString("edit.paste.text");
@@ -89,6 +90,7 @@
                   transferFigures.addAll(importedFigures);
                   moveToDropPoint(comp,transferFigures,dropPoint);
                   drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
+                    private final static long serialVersionUID=1L;
                     @Override public String getPresentationName(){
                       ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
                       return labels.getString("edit.paste.text");
@@ -146,6 +148,7 @@
                 transferFigures.addAll(importedFigures);
                 moveToDropPoint(comp,transferFigures,dropPoint);
                 drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
+                  private final static long serialVersionUID=1L;
                   @Override public String getPresentationName(){
                     ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
                     return labels.getString("edit.paste.text");

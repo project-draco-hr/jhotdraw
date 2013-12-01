@@ -4,7 +4,7 @@
   float r=(float)Math.sqrt(x * x + y * y);
   float theta=(float)Math.atan2(y,-x);
   float angular=(float)(0.5 + (theta / Math.PI / 2d));
-  float radial=Math.min(1f,(float)r / getRadius());
+  float radial=Math.min(1f,r / getRadius());
   float[] hsb=new float[3];
   hsb[angularIndex]=angular * (colorSpace.getMaxValue(angularIndex) - colorSpace.getMinValue(angularIndex)) + colorSpace.getMinValue(angularIndex);
   hsb[radialIndex]=radial * (colorSpace.getMaxValue(radialIndex) - colorSpace.getMinValue(radialIndex)) + colorSpace.getMinValue(radialIndex);

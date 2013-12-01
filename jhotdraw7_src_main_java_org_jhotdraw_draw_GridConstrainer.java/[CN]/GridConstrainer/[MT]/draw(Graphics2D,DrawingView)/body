@@ -12,7 +12,7 @@
         g.setColor((i % majorGridSpacing == 0) ? majorColor : minorColor);
         point.x=width * i;
         t.transform(point,viewPoint);
-        g.drawLine((int)viewPoint.x,(int)viewBounds.y,(int)viewPoint.x,(int)(viewBounds.y + viewBounds.height));
+        g.drawLine((int)viewPoint.x,viewBounds.y,(int)viewPoint.x,viewBounds.y + viewBounds.height);
       }
     }
  else     if (width * majorGridSpacing * view.getScaleFactor() > 2) {
@@ -21,7 +21,7 @@
         if (i % majorGridSpacing == 0) {
           point.x=width * i;
           t.transform(point,viewPoint);
-          g.drawLine((int)viewPoint.x,(int)viewBounds.y,(int)viewPoint.x,(int)(viewBounds.y + viewBounds.height));
+          g.drawLine((int)viewPoint.x,viewBounds.y,(int)viewPoint.x,viewBounds.y + viewBounds.height);
         }
       }
     }
@@ -31,7 +31,7 @@
         g.setColor((i % majorGridSpacing == 0) ? majorColor : minorColor);
         point.y=height * i;
         t.transform(point,viewPoint);
-        g.drawLine((int)viewBounds.x,(int)viewPoint.y,(int)(viewBounds.x + viewBounds.width),(int)viewPoint.y);
+        g.drawLine(viewBounds.x,(int)viewPoint.y,viewBounds.x + viewBounds.width,(int)viewPoint.y);
       }
     }
  else     if (height * majorGridSpacing * view.getScaleFactor() > 2) {
@@ -40,7 +40,7 @@
         if (i % majorGridSpacing == 0) {
           point.y=height * i;
           t.transform(point,viewPoint);
-          g.drawLine((int)viewBounds.x,(int)viewPoint.y,(int)(viewBounds.x + viewBounds.width),(int)viewPoint.y);
+          g.drawLine(viewBounds.x,(int)viewPoint.y,viewBounds.x + viewBounds.width,(int)viewPoint.y);
         }
       }
     }

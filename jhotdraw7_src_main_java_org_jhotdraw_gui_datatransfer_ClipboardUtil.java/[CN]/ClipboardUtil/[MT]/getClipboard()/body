@@ -7,7 +7,7 @@
   }
  catch (  SecurityException e1) {
     try {
-      Class serviceManager=Class.forName("javax.jnlp.ServiceManager");
+      Class<?> serviceManager=Class.forName("javax.jnlp.ServiceManager");
       instance=new JNLPClipboard(serviceManager.getMethod("lookup",String.class).invoke(null,"javax.jnlp.ClipboardService"));
     }
  catch (    Exception e2) {

@@ -11,7 +11,7 @@
       editor.add(view);
       JToolBar tb=new JToolBar();
       ButtonFactory.addSelectionToolTo(tb,editor);
-      HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+      HashMap<AttributeKey<?>,Object> a=new HashMap<AttributeKey<?>,Object>();
       FILL_COLOR.put(a,Color.GREEN);
       ButtonFactory.addToolTo(tb,editor,new CreationTool(new RectangleFigure(),a),"edit.createRectangle",labels);
       tb.setOrientation(JToolBar.VERTICAL);

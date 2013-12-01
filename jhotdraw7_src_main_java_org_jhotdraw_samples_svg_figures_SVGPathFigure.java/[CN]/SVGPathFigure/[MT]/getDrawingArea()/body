@@ -8,7 +8,7 @@
  else     if (get(STROKE_CAP) != BasicStroke.CAP_BUTT) {
       width+=strokeTotalWidth * 2;
     }
-    Shape gp=(Path2D.Double)getPath();
+    Shape gp=getPath();
     Rectangle2D strokeRect=new Rectangle2D.Double(0,0,width,width);
     AffineTransform tx=get(TRANSFORM);
     if (tx != null) {

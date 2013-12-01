@@ -1,0 +1,5 @@
+{
+  Class<?> oldValue=viewClass;
+  viewClass=newValue;
+  firePropertyChange(VIEW_CLASS_PROPERTY,oldValue,newValue);
+}

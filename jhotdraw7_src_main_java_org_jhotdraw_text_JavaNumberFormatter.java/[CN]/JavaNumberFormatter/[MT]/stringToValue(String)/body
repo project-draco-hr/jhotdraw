@@ -8,7 +8,7 @@
       text=text.substring(0,p);
     }
   }
-  Class valueClass=getValueClass();
+  Class<?> valueClass=getValueClass();
   Object value;
   if (valueClass != null) {
     try {
@@ -29,7 +29,7 @@
       }
  else       if (valueClass == Double.class) {
         double v=Double.parseDouble(text);
-        v=(double)(v / multiplier);
+        v=(v / multiplier);
         value=new Double(v);
       }
  else       if (valueClass == Byte.class) {

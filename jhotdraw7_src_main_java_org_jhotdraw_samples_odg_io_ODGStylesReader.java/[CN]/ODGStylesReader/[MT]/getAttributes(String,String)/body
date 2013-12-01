@@ -17,8 +17,8 @@
     return style;
   }
  else {
-    HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
-    Map<AttributeKey,Object> parentAttributes=getAttributes(style.parentName,familyName);
+    HashMap<AttributeKey<?>,Object> a=new HashMap<AttributeKey<?>,Object>();
+    Map<AttributeKey<?>,Object> parentAttributes=getAttributes(style.parentName,familyName);
     a.putAll(parentAttributes);
     a.putAll(style);
     return a;

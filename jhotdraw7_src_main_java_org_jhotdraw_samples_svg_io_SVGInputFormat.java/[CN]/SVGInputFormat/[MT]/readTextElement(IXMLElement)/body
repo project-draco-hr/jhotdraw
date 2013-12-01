@@ -1,5 +1,5 @@
 {
-  HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+  HashMap<AttributeKey<?>,Object> a=new HashMap<AttributeKey<?>,Object>();
   readCoreAttributes(elem,a);
   readTransformAttribute(elem,a);
   readOpacityAttribute(elem,a);
@@ -49,7 +49,7 @@
           doc.insertString(0,toText(elem,node.getContent()),null);
         }
  else         if ("tspan".equals(node.getName())) {
-          readTSpanElement((IXMLElement)node,doc);
+          readTSpanElement(node,doc);
         }
  else {
           if (DEBUG) {

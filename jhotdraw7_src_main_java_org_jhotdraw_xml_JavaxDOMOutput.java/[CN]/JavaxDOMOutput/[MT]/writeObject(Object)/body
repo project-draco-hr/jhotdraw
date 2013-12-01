@@ -3,7 +3,7 @@
   if (tagName == null)   throw new IllegalArgumentException("no tag name for:" + o);
   openElement(tagName);
   if (objectids.containsKey(o)) {
-    addAttribute("ref",(String)objectids.get(o));
+    addAttribute("ref",objectids.get(o));
   }
  else {
     String id=Integer.toString(objectids.size(),16);

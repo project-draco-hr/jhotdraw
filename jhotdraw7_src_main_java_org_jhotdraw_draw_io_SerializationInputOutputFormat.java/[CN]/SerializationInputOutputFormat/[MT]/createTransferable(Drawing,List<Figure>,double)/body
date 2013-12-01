@@ -3,7 +3,7 @@
   HashMap<Figure,Figure> originalToDuplicateMap=new HashMap<Figure,Figure>(figures.size());
   final ArrayList<Figure> duplicates=new ArrayList<Figure>(figures.size());
   for (  Figure f : figures) {
-    Figure df=(Figure)f.clone();
+    Figure df=f.clone();
     d.add(df);
     duplicates.add(df);
     originalToDuplicateMap.put(f,df);

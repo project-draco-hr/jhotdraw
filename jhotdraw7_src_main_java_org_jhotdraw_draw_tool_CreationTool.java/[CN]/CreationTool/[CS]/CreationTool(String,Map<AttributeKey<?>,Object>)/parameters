@@ -1,0 +1,2 @@
+String prototypeClassName
+Map<AttributeKey<?>,Object> attributes

@@ -1,6 +1,6 @@
 {
   if (availableCharSets == null) {
-    new Worker(){
+    new Worker<Object>(){
       @Override public Object construct(){
         SortedMap<String,Charset> sm=Charset.availableCharsets();
         LinkedList<String> list=new LinkedList<String>();

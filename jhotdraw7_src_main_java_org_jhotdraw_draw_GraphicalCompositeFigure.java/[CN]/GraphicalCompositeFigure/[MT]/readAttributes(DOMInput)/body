@@ -5,10 +5,10 @@
       in.openElement(i);
       String name=in.getTagName();
       Object value=in.readObject();
-      AttributeKey key=getAttributeKey(name);
+      AttributeKey<?> key=getAttributeKey(name);
       if (key != null && key.isAssignable(value)) {
         if (forbiddenAttributes == null || !forbiddenAttributes.contains(key)) {
-          set(key,value);
+          set((AttributeKey<Object>)key,value);
         }
       }
       in.closeElement();

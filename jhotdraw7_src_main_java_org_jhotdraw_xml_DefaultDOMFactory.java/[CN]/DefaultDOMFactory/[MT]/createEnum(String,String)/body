@@ -1,5 +1,5 @@
 {
-  Class enumClass=nameToEnumClassMap.get(name);
+  Class<T> enumClass=(Class<T>)nameToEnumClassMap.get(name);
   if (enumClass == null) {
     throw new IllegalArgumentException("Enum name not known to factory:" + name);
   }

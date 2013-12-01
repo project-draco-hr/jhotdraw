@@ -1,8 +1,8 @@
 {
   AbstractAttributedCompositeFigure that=(AbstractAttributedCompositeFigure)super.clone();
-  that.attributes=new HashMap<AttributeKey,Object>(this.attributes);
+  that.attributes=new HashMap<AttributeKey<?>,Object>(this.attributes);
   if (this.forbiddenAttributes != null) {
-    that.forbiddenAttributes=new HashSet<AttributeKey>(this.forbiddenAttributes);
+    that.forbiddenAttributes=new HashSet<AttributeKey<?>>(this.forbiddenAttributes);
   }
   return that;
 }

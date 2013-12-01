@@ -1,0 +1,6 @@
+{
+  setSource(source,sourceProperty);
+  setTarget(target,targetProperty);
+  bidirectional=true;
+  updateTarget();
+}

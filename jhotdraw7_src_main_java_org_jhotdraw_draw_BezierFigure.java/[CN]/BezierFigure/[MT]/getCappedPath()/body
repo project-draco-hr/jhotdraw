@@ -1,6 +1,6 @@
 {
   if (cappedPath == null) {
-    cappedPath=(BezierPath)path.clone();
+    cappedPath=path.clone();
     if (isClosed()) {
       cappedPath.setClosed(true);
     }

@@ -7,7 +7,7 @@
     points[i / 2]=(Point2D.Double)viewBoxTransform.transform(p,p);
   }
   String styleName=elem.getAttribute("style-name",DRAWING_NAMESPACE,null);
-  HashMap<AttributeKey,Object> a=new HashMap<AttributeKey,Object>();
+  HashMap<AttributeKey<?>,Object> a=new HashMap<AttributeKey<?>,Object>();
   a.putAll(styles.getAttributes(styleName,"graphic"));
   readCommonDrawingShapeAttributes(elem,a);
   ODGFigure f=createPolygonFigure(points,a);

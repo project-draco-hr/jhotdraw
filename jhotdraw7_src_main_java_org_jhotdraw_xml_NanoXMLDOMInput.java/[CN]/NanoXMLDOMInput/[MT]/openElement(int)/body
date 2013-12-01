@@ -1,5 +1,5 @@
 {
   stack.push(current);
-  ArrayList list=current.getChildren();
-  current=(XMLElement)list.get(index);
+  ArrayList<IXMLElement> list=current.getChildren();
+  current=list.get(index);
 }

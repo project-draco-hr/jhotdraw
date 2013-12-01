@@ -1,6 +1,6 @@
 {
   try {
-    Method method=obj.getClass().getMethod(methodName,new Class[]{String.class});
+    Method method=obj.getClass().getMethod(methodName,new Class<?>[]{String.class});
     Object result=method.invoke(obj,new Object[]{stringParameter});
     return result;
   }

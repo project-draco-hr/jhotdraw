@@ -1,7 +1,7 @@
 {
   Iterator<Object> i=((LinkedList<Object>)restoreData).iterator();
   attributes.clear();
-  setAttributes((Map<AttributeKey,Object>)i.next());
+  setAttributes((Map<AttributeKey<?>,Object>)i.next());
   for (  Figure child : getChildren()) {
     child.restoreAttributesTo(i.next());
   }

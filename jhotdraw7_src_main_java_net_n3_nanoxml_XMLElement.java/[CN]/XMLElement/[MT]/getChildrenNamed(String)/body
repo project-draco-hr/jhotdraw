@@ -1,8 +1,6 @@
 {
-  ArrayList result=new ArrayList(this.children.size());
-  Iterator enm=this.children.iterator();
-  while (enm.hasNext()) {
-    IXMLElement child=(IXMLElement)enm.next();
+  ArrayList<IXMLElement> result=new ArrayList<IXMLElement>(this.children.size());
+  for (  IXMLElement child : children) {
     String childName=child.getFullName();
     if ((childName != null) && childName.equals(name)) {
       result.add(child);

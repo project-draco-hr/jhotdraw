@@ -5,9 +5,7 @@
   if (this.attributes.size() != elt.getAttributeCount()) {
     return false;
   }
-  Iterator enm=this.attributes.iterator();
-  while (enm.hasNext()) {
-    XMLAttribute attr=(XMLAttribute)enm.next();
+  for (  XMLAttribute attr : attributes) {
     if (!elt.hasAttribute(attr.getName(),attr.getNamespace())) {
       return false;
     }

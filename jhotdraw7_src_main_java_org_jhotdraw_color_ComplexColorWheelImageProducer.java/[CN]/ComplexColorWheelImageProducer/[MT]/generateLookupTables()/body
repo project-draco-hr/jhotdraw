@@ -40,8 +40,8 @@
       double angle=atan2(ky,kx);
       float scale=(float)max(abs(sin(angle)),abs(cos(angle)));
       scale=(1 - r) + scale * r;
-      radials[index]=max(minR,min((float)((kx / scale + 1) / 2 * extentR + minR),maxR));
-      angulars[index]=max(minA,min((float)((ky / scale + 1) / 2 * extentA + minA),maxA));
+      radials[index]=max(minR,min((kx / scale + 1) / 2 * extentR + minR,maxR));
+      angulars[index]=max(minA,min((ky / scale + 1) / 2 * extentA + minA,maxA));
     }
   }
   isLookupValid=true;

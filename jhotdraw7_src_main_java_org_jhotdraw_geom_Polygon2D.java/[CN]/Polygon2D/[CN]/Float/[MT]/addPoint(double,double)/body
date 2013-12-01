@@ -1,3 +1,0 @@
-{
-  addPoint((float)x,(float)y);
-}

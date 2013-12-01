@@ -3,6 +3,7 @@
   final Object editRestoreData=restoreData;
   final float editNewSize=newSize;
   UndoableEdit edit=new AbstractUndoableEdit(){
+    private final static long serialVersionUID=1L;
     @Override public String getPresentationName(){
       ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
       return labels.getString("attribute.fontSize.text");

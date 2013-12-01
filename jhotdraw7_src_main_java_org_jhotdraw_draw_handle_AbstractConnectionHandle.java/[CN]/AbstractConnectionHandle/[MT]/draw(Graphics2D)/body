@@ -6,9 +6,9 @@
   }
   gg.dispose();
   if (getTarget() == null) {
-    drawCircle(g,(Color)getEditor().getHandleAttribute(HandleAttributeKeys.DISCONNECTED_CONNECTION_HANDLE_FILL_COLOR),(Color)getEditor().getHandleAttribute(HandleAttributeKeys.DISCONNECTED_CONNECTION_HANDLE_STROKE_COLOR));
+    drawCircle(g,getEditor().getHandleAttribute(HandleAttributeKeys.DISCONNECTED_CONNECTION_HANDLE_FILL_COLOR),getEditor().getHandleAttribute(HandleAttributeKeys.DISCONNECTED_CONNECTION_HANDLE_STROKE_COLOR));
   }
  else {
-    drawCircle(g,(Color)getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTION_HANDLE_FILL_COLOR),(Color)getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTION_HANDLE_STROKE_COLOR));
+    drawCircle(g,getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTION_HANDLE_FILL_COLOR),getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTION_HANDLE_STROKE_COLOR));
   }
 }

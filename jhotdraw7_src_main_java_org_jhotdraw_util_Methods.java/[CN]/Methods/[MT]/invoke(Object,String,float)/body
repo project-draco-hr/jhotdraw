@@ -1,6 +1,6 @@
 {
   try {
-    Method method=obj.getClass().getMethod(methodName,new Class[]{Float.TYPE});
+    Method method=obj.getClass().getMethod(methodName,new Class<?>[]{Float.TYPE});
     return method.invoke(obj,new Object[]{new Float(newValue)});
   }
  catch (  IllegalAccessException e) {

@@ -1,3 +1,3 @@
 {
-  return (String)get(TEXT);
+  return get(TEXT);
 }

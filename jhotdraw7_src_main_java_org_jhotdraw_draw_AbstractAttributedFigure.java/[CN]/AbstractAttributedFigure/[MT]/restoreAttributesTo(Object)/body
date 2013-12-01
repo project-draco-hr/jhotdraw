@@ -1,4 +1,5 @@
 {
   attributes.clear();
-  setAttributes((HashMap<AttributeKey,Object>)restoreData);
+  @SuppressWarnings("unchecked") HashMap<AttributeKey<?>,Object> restoreDataHashMap=(HashMap<AttributeKey<?>,Object>)restoreData;
+  setAttributes(restoreDataHashMap);
 }

@@ -4,7 +4,7 @@
     setHandler(new OSXAdapter("handlePreferences",prefsHandler));
   }
   try {
-    Method enablePrefsMethod=macOSXApplication.getClass().getDeclaredMethod("setEnabledPreferencesMenu",new Class[]{boolean.class});
+    Method enablePrefsMethod=macOSXApplication.getClass().getDeclaredMethod("setEnabledPreferencesMenu",new Class<?>[]{boolean.class});
     enablePrefsMethod.invoke(macOSXApplication,new Object[]{Boolean.valueOf(enablePrefsMenu)});
   }
  catch (  Exception ex) {

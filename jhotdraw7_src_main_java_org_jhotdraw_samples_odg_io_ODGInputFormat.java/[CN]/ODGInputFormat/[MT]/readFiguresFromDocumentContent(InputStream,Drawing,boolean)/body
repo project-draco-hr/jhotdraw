@@ -24,7 +24,7 @@
   }
   styles.read(document);
   IXMLElement drawingElem=document;
-  Stack<Iterator> stack=new Stack<Iterator>();
+  Stack<Iterator<IXMLElement>> stack=new Stack<Iterator<IXMLElement>>();
   LinkedList<IXMLElement> ll=new LinkedList<IXMLElement>();
   ll.add(document);
   stack.push(ll.iterator());

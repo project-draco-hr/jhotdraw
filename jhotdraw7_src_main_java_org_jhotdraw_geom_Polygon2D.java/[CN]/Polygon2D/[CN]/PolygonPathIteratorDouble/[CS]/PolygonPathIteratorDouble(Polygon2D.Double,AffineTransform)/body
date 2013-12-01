@@ -1,7 +1,0 @@
-{
-  poly=pg;
-  transform=at;
-  if (pg.npoints == 0) {
-    index=1;
-  }
-}

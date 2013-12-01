@@ -1,7 +1,7 @@
 {
   AbstractAttributedDecoratedFigure that=(AbstractAttributedDecoratedFigure)super.clone();
   if (this.decorator != null) {
-    that.decorator=(Figure)this.decorator.clone();
+    that.decorator=this.decorator.clone();
   }
   return that;
 }
