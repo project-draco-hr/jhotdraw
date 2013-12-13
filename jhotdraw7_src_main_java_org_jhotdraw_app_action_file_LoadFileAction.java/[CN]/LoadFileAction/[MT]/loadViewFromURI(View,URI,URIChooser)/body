@@ -1,11 +1,10 @@
 {
   view.setEnabled(false);
-  view.execute(new Worker<Object>(){
-    @Override protected Object construct() throws IOException {
+  view.execute(new BackgroundTask(){
+    @Override protected void construct() throws IOException {
       view.read(uri,chooser);
-      return null;
     }
-    @Override protected void done(    Object value){
+    @Override protected void done(){
       view.setURI(uri);
       view.setEnabled(true);
       getApplication().addRecentURI(uri);

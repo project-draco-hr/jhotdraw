@@ -1,0 +1,27 @@
+{
+  try {
+    construct();
+  }
+ catch (  Throwable e) {
+    setError(e);
+    SwingUtilities.invokeLater(new Runnable(){
+      @Override public void run(){
+        failed(getError());
+        finished();
+      }
+    }
+);
+    return;
+  }
+  SwingUtilities.invokeLater(new Runnable(){
+    @Override public void run(){
+      try {
+        done();
+      }
+  finally {
+        finished();
+      }
+    }
+  }
+);
+}

@@ -29,12 +29,11 @@
   }
   if (file != null) {
     final ImageHolderFigure loaderFigure=((ImageHolderFigure)prototype.clone());
-    Worker<Object> worker=new Worker<Object>(){
-      @Override protected Object construct() throws IOException {
+    BackgroundTask worker=new BackgroundTask(){
+      @Override protected void construct() throws IOException {
         loaderFigure.loadImage(file);
-        return null;
       }
-      @Override protected void done(      Object value){
+      @Override protected void done(){
         try {
           if (createdFigure == null) {
             ((ImageHolderFigure)prototype).setImage(loaderFigure.getImageData(),loaderFigure.getBufferedImage());

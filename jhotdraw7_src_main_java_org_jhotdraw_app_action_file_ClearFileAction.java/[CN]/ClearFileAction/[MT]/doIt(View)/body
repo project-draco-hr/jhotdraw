@@ -1,9 +1,8 @@
 {
   view.setEnabled(false);
-  view.execute(new Worker<Object>(){
-    @Override public Object construct(){
+  view.execute(new BackgroundTask(){
+    @Override public void construct(){
       view.clear();
-      return null;
     }
     @Override public void finished(){
       view.setEnabled(true);

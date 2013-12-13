@@ -8,12 +8,11 @@
   final PrintableView p=(PrintableView)v;
   p.setEnabled(false);
   app.add(p);
-  p.execute(new Worker<Object>(){
-    @Override public Object construct() throws IOException {
+  p.execute(new BackgroundTask(){
+    @Override public void construct() throws IOException {
       p.read(new File(filename).toURI(),null);
-      return null;
     }
-    @Override protected void done(    Object value){
+    @Override protected void done(){
       p.setURI(new File(filename).toURI());
       p.setEnabled(false);
       if ("true".equals(System.getProperty("apple.awt.graphics.UseQuartz","false"))) {

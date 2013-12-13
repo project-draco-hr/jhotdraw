@@ -13,12 +13,11 @@
       selectedFile=fc.getSelectedFile();
     }
     final OutputFormat selectedFormat=fileFilterOutputFormatMap.get(fc.getFileFilter());
-    new Worker<Object>(){
-      @Override protected Object construct() throws IOException {
+    new BackgroundTask(){
+      @Override protected void construct() throws IOException {
         svgPanel.write(selectedFile.toURI(),selectedFormat);
-        return null;
       }
-      @Override protected void done(      Object value){
+      @Override protected void done(){
         file=selectedFile;
         setTitle(file.getName());
       }

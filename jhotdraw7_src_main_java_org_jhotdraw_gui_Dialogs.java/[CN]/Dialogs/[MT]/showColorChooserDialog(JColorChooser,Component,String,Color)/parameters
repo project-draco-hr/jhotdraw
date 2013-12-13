@@ -1,3 +1,4 @@
+JColorChooser chooser
 Component component
 String title
 Color initialColor

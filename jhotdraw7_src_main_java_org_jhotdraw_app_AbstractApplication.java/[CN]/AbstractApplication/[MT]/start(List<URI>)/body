@@ -5,10 +5,9 @@
     v.setEnabled(false);
     show(v);
     setActiveView(v);
-    v.execute(new Worker<Object>(){
-      @Override public Object construct(){
+    v.execute(new BackgroundTask(){
+      @Override public void construct(){
         v.clear();
-        return null;
       }
       @Override public void finished(){
         v.setEnabled(true);
@@ -23,12 +22,11 @@
       v.setEnabled(false);
       show(v);
       setActiveView(v);
-      v.execute(new Worker<Object>(){
-        @Override public Object construct() throws Exception {
+      v.execute(new BackgroundTask(){
+        @Override public void construct() throws Exception {
           v.read(uri,null);
-          return null;
         }
-        @Override protected void done(        Object value){
+        @Override protected void done(){
           v.setURI(uri);
         }
         @Override protected void failed(        Throwable error){

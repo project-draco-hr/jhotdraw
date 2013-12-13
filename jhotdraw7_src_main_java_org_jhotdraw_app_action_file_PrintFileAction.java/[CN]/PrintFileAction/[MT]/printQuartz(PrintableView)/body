@@ -8,8 +8,8 @@
   pageAttr.setPrinterResolution((int)resolution);
   final PrintJob pj=frame.getToolkit().getPrintJob(frame,"Job Title",jobAttr,pageAttr);
   getActiveView().setEnabled(false);
-  new Worker<Object>(){
-    @Override protected Object construct() throws PrinterException {
+  new BackgroundTask(){
+    @Override protected void construct() throws PrinterException {
       Paper paper=new Paper();
       paper.setSize(pj.getPageDimension().width / resolution * 72d,pj.getPageDimension().height / resolution * 72d);
       paper.setImageableArea(64d,32d,paper.getWidth() - 96d,paper.getHeight() - 64);
@@ -41,7 +41,6 @@
   finally {
         pj.end();
       }
-      return null;
     }
     @Override protected void failed(    Throwable error){
       error.printStackTrace();

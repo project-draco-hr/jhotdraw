@@ -10,8 +10,8 @@
   }
   view.setMultipleOpenId(multipleOpenId);
   view.setEnabled(false);
-  view.execute(new Worker<Object>(){
-    @Override public Object construct() throws IOException {
+  view.execute(new BackgroundTask(){
+    @Override public void construct() throws IOException {
       boolean exists=true;
       try {
         exists=new File(uri).exists();
@@ -20,14 +20,13 @@
       }
       if (exists) {
         view.read(uri,chooser);
-        return null;
       }
  else {
         ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
         throw new IOException(labels.getFormatted("file.open.fileDoesNotExist.message",URIUtil.getName(uri)));
       }
     }
-    @Override protected void done(    Object value){
+    @Override protected void done(){
       final Application app=getApplication();
       view.setURI(uri);
       view.setEnabled(true);
