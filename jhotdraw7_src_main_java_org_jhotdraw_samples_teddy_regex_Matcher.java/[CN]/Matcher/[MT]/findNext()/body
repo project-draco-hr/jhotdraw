@@ -17,32 +17,33 @@
           nextMatch++;
           if (nextMatch == matchLowerCase.length) {
             int foundIndex=text.getIndex() - text.getBeginIndex() + offset - matchLowerCase.length + 1;
-            if (matchType == MatchType.CONTAINS) {
+switch (matchType) {
+case CONTAINS:
+              return foundIndex;
+case STARTS_WITH:
+            if (!isWordChar(foundIndex - 1)) {
               return foundIndex;
             }
- else             if (matchType == MatchType.STARTS_WITH) {
-              if (!isWordChar(foundIndex - 1)) {
-                return foundIndex;
-              }
-            }
- else             if (matchType == MatchType.FULL_WORD) {
-              if (!isWordChar(foundIndex - 1) && !isWordChar(foundIndex + matchLowerCase.length)) {
-                return foundIndex;
-              }
-            }
-            nextMatch=0;
-          }
+          break;
+case FULL_WORD:
+        if (!isWordChar(foundIndex - 1) && !isWordChar(foundIndex + matchLowerCase.length)) {
+          return foundIndex;
         }
+      break;
+  }
+  nextMatch=0;
+}
+}
  else {
-          nextMatch=0;
-        }
-      }
-      nleft-=text.count;
-      offset+=text.count;
-    }
-    return -1;
-  }
- catch (  BadLocationException e) {
-    throw new IndexOutOfBoundsException();
-  }
+nextMatch=0;
+}
+}
+nleft-=text.count;
+offset+=text.count;
+}
+return -1;
+}
+ catch (BadLocationException e) {
+throw new IndexOutOfBoundsException();
+}
 }

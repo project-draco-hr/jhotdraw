@@ -1,8 +1,7 @@
 {
   int data;
   if (unread.size() > 0) {
-    data=unread.lastElement().intValue();
-    unread.removeElementAt(unread.size() - 1);
+    data=unread.removeLast();
   }
  else {
     data=reader.read();

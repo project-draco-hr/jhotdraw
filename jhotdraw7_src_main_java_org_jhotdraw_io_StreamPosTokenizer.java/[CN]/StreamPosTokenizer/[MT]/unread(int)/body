@@ -1,4 +1,4 @@
 {
-  unread.addElement(c);
+  unread.add(c);
   readpos--;
 }

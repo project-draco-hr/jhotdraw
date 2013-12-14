@@ -11,7 +11,7 @@
     if (b.getBorder() instanceof UIResource) {
       b.setBorder(getRolloverBorder(b));
     }
-    rolloverTable.put(b,b.isRolloverEnabled() ? Boolean.TRUE : Boolean.FALSE);
+    rolloverTable.put(b,b.isRolloverEnabled());
     b.setRolloverEnabled(true);
   }
 }
