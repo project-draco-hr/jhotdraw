@@ -4,7 +4,7 @@
   setFocusable(false);
   setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
   progressPanel=new javax.swing.JPanel(){
-    private final static long serialVersionUID=1L;
+    private static final long serialVersionUID=1L;
     @Override public Dimension getPreferredSize(){
       Dimension d=super.getPreferredSize();
       d.width=300;

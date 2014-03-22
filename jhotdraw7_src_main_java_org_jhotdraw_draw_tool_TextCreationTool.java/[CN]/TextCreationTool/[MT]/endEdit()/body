@@ -17,7 +17,7 @@
       }
     }
     UndoableEdit edit=new AbstractUndoableEdit(){
-      private final static long serialVersionUID=1L;
+      private static final long serialVersionUID=1L;
       @Override public String getPresentationName(){
         ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
         return labels.getString("attribute.text.text");

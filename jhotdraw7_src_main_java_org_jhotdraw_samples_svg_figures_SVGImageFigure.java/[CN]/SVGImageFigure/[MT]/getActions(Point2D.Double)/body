@@ -3,7 +3,7 @@
   LinkedList<Action> actions=new LinkedList<Action>();
   if (get(TRANSFORM) != null) {
     actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")){
-      private final static long serialVersionUID=1L;
+      private static final long serialVersionUID=1L;
       @Override public void actionPerformed(      ActionEvent evt){
         willChange();
         fireUndoableEditHappened(TRANSFORM.setUndoable(SVGImageFigure.this,null));
@@ -15,7 +15,7 @@
   if (bufferedImage != null) {
     if (rectangle.width != bufferedImage.getWidth() || rectangle.height != bufferedImage.getHeight()) {
       actions.add(new AbstractAction(labels.getString("edit.setToImageSize.text")){
-        private final static long serialVersionUID=1L;
+        private static final long serialVersionUID=1L;
         @Override public void actionPerformed(        ActionEvent evt){
           Object geometry=getTransformRestoreData();
           willChange();
@@ -30,7 +30,7 @@
     double figureRatio=rectangle.height / rectangle.width;
     if (Math.abs(imageRatio - figureRatio) > 0.001) {
       actions.add(new AbstractAction(labels.getString("edit.adjustHeightToImageAspect.text")){
-        private final static long serialVersionUID=1L;
+        private static final long serialVersionUID=1L;
         @Override public void actionPerformed(        ActionEvent evt){
           Object geometry=getTransformRestoreData();
           willChange();
@@ -42,7 +42,7 @@
       }
 );
       actions.add(new AbstractAction(labels.getString("edit.adjustWidthToImageAspect.text")){
-        private final static long serialVersionUID=1L;
+        private static final long serialVersionUID=1L;
         @Override public void actionPerformed(        ActionEvent evt){
           Object geometry=getTransformRestoreData();
           willChange();

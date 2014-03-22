@@ -28,7 +28,7 @@
     c.setFont(smallFont);
   }
   swatchesList=new JList(){
-    private final static long serialVersionUID=1L;
+    private static final long serialVersionUID=1L;
     @Override public String getToolTipText(    MouseEvent evt){
       int index=locationToIndex(evt.getPoint());
       Object item=getModel().getElementAt(index);

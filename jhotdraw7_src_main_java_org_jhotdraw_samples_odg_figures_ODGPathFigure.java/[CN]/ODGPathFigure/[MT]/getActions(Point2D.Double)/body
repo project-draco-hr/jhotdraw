@@ -3,7 +3,7 @@
   LinkedList<Action> actions=new LinkedList<Action>();
   if (get(TRANSFORM) != null) {
     actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")){
-      private final static long serialVersionUID=1L;
+      private static final long serialVersionUID=1L;
       @Override public void actionPerformed(      ActionEvent evt){
         willChange();
         fireUndoableEditHappened(TRANSFORM.setUndoable(ODGPathFigure.this,null));
@@ -12,11 +12,11 @@
     }
 );
     actions.add(new AbstractAction(labels.getString("edit.flattenTransform.text")){
-      private final static long serialVersionUID=1L;
+      private static final long serialVersionUID=1L;
       @Override public void actionPerformed(      ActionEvent evt){
         final Object restoreData=getTransformRestoreData();
         UndoableEdit edit=new AbstractUndoableEdit(){
-          private final static long serialVersionUID=1L;
+          private static final long serialVersionUID=1L;
           @Override public String getPresentationName(){
             return labels.getString("flattenTransform");
           }
@@ -44,7 +44,7 @@
 );
   }
   actions.add(new AbstractAction(labels.getString("closePath")){
-    private final static long serialVersionUID=1L;
+    private static final long serialVersionUID=1L;
     @Override public void actionPerformed(    ActionEvent evt){
       for (      Figure child : getChildren()) {
         willChange();
@@ -55,7 +55,7 @@
   }
 );
   actions.add(new AbstractAction(labels.getString("openPath")){
-    private final static long serialVersionUID=1L;
+    private static final long serialVersionUID=1L;
     @Override public void actionPerformed(    ActionEvent evt){
       for (      Figure child : getChildren()) {
         willChange();
@@ -66,7 +66,7 @@
   }
 );
   actions.add(new AbstractAction(labels.getString("windingRule.evenOdd")){
-    private final static long serialVersionUID=1L;
+    private static final long serialVersionUID=1L;
     @Override public void actionPerformed(    ActionEvent evt){
       willChange();
       getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(ODGPathFigure.this,WindingRule.EVEN_ODD));
@@ -75,7 +75,7 @@
   }
 );
   actions.add(new AbstractAction(labels.getString("windingRule.nonZero")){
-    private final static long serialVersionUID=1L;
+    private static final long serialVersionUID=1L;
     @Override public void actionPerformed(    ActionEvent evt){
       ODGPathFigure.this.willChange();
       getDrawing().fireUndoableEditHappened(WINDING_RULE.setUndoable(ODGPathFigure.this,WindingRule.NON_ZERO));

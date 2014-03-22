@@ -20,7 +20,7 @@
     }
     splitPath(view,group,ungroupedPaths,ungroupedPathsIndices,ungroupedPathsChildCounts);
     UndoableEdit edit=new AbstractUndoableEdit(){
-      private final static long serialVersionUID=1L;
+      private static final long serialVersionUID=1L;
       @Override public String getPresentationName(){
         return labels.getTextProperty("edit.splitPath");
       }

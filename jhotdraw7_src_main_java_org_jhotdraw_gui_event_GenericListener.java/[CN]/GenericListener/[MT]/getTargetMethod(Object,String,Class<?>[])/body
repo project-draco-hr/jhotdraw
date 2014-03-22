@@ -5,7 +5,7 @@
     if (!targetMethodName.equals(m[i].getName())) {
       continue eachMethod;
     }
-    Class[] p=m[i].getParameterTypes();
+    Class<?>[] p=m[i].getParameterTypes();
     if (p.length != parameterTypes.length) {
       continue eachMethod;
     }

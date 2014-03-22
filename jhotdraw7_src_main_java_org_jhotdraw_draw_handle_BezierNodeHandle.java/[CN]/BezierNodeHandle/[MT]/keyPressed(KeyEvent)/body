@@ -38,7 +38,7 @@ final BezierPath.Node removedNode=f.removeNode(index);
 f.changed();
 fireHandleRequestRemove(invalidatedArea);
 fireUndoableEditHappened(new AbstractUndoableEdit(){
-private final static long serialVersionUID=1L;
+private static final long serialVersionUID=1L;
 @Override public String getPresentationName(){
 ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
 return labels.getString("edit.bezierPath.joinSegments.text");

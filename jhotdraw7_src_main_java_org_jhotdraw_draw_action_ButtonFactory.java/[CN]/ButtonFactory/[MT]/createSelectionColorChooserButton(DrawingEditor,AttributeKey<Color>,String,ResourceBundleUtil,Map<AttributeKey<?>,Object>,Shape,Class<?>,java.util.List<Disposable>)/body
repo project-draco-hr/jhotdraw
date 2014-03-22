@@ -5,7 +5,7 @@
   popupButton.setFocusable(true);
   popupButton.setRequestFocusEnabled(false);
   JComponentPopup popupMenu=new JComponentPopup(){
-    private final static long serialVersionUID=1L;
+    private static final long serialVersionUID=1L;
     private JColorChooser colorChooser;
     @Override public void show(    Component invoker,    int x,    int y){
       if (colorChooser == null) {
@@ -27,7 +27,7 @@
       colorChooser.setBackground(Color.WHITE);
       if (uiclass != null) {
         try {
-          colorChooser.setUI((ColorChooserUI)Methods.invokeStatic(uiclass,"createUI",new Class[]{JComponent.class},new Object[]{colorChooser}));
+          colorChooser.setUI((ColorChooserUI)Methods.invokeStatic(uiclass,"createUI",new Class<?>[]{JComponent.class},new Object[]{colorChooser}));
         }
  catch (        NoSuchMethodException ex) {
           ex.printStackTrace();
