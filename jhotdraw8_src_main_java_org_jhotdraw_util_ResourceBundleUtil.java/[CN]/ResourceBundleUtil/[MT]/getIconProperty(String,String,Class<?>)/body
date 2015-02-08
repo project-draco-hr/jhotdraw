@@ -1,0 +1,19 @@
+{
+  try {
+    String rsrcName=getStringRecursive(key + suffix);
+    if ("".equals(rsrcName)) {
+      return null;
+    }
+    URL url=baseClass.getResource(rsrcName);
+    if (isVerbose && url == null) {
+      System.err.println("Warning ResourceBundleUtil[" + baseName + "].getIconProperty \""+ key+ suffix+ "\" resource:"+ rsrcName+ " not found.");
+    }
+    return (url == null) ? null : new ImageView(url.toString());
+  }
+ catch (  MissingResourceException e) {
+    if (isVerbose) {
+      System.err.println("Warning ResourceBundleUtil[" + baseName + "].getIconProperty \""+ key+ suffix+ "\" not found.");
+    }
+    return null;
+  }
+}

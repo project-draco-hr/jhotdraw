@@ -1,0 +1,12 @@
+{
+  Node icon=getLargeIconProperty(argument,baseClass);
+  if (icon != null) {
+    button.setGraphic(getLargeIconProperty(argument,baseClass));
+    button.setText(null);
+  }
+ else {
+    button.setGraphic(null);
+    button.setText(getTextProperty(argument));
+  }
+  button.setTooltip(new Tooltip(getToolTipTextProperty(argument)));
+}

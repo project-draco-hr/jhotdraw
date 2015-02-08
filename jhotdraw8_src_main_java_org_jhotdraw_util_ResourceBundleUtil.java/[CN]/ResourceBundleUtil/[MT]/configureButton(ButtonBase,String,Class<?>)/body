@@ -1,0 +1,5 @@
+{
+  button.setText(getTextProperty(argument));
+  button.setGraphic(getLargeIconProperty(argument,baseClass));
+  button.setTooltip(new Tooltip(getToolTipTextProperty(argument)));
+}

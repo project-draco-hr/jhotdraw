@@ -1,0 +1,9 @@
+{
+  if (s != null) {
+    s=s.replace("ctrl ","Ctrl+");
+    s=s.replace("meta ","Meta+");
+    s=s.replace("alt ","Alt+");
+    s=s.replace("shift ","Shift+");
+  }
+  return s;
+}

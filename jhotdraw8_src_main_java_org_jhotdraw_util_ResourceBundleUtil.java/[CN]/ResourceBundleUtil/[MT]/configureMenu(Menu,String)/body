@@ -1,0 +1,6 @@
+{
+  menu.setText(getTextProperty(argument));
+  menu.setText(getTextProperty(argument));
+  menu.setAccelerator(getAcceleratorProperty(argument));
+  menu.setGraphic(getSmallIconProperty(argument,baseClass));
+}

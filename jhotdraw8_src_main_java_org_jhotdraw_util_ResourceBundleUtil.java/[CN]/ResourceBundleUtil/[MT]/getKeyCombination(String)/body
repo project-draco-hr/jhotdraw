@@ -1,0 +1,11 @@
+{
+  KeyCombination ks=null;
+  String s=getStringRecursive(key);
+  try {
+    ks=(s == null || s.isEmpty()) ? (KeyCombination)null : KeyCombination.valueOf(translateKeyStrokeToKeyCombination(s));
+  }
+ catch (  NoSuchElementException|StringIndexOutOfBoundsException e) {
+    throw new InternalError(key + "=" + s,e);
+  }
+  return ks;
+}
