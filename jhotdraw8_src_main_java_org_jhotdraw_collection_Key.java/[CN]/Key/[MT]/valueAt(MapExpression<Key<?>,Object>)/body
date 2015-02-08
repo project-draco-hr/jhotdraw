@@ -1,0 +1,4 @@
+{
+  ObjectBinding<Object> value=map.valueAt(this);
+  return (ObjectBinding<T>)value;
+}

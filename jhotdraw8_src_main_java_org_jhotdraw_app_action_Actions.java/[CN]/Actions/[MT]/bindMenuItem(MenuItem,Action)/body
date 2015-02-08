@@ -1,0 +1,12 @@
+{
+  control.textProperty().bind(action.getValueProperty(Action.NAME));
+  if (control instanceof CheckMenuItem) {
+    ((CheckMenuItem)control).selectedProperty().bindBidirectional(action.getValueProperty(Action.SELECTED_KEY));
+  }
+ else   if (control instanceof RadioMenuItem) {
+    ((RadioMenuItem)control).selectedProperty().bindBidirectional(action.getValueProperty(Action.SELECTED_KEY));
+  }
+  control.setOnAction(action);
+  control.disableProperty().bind(action.disabledProperty());
+  control.acceleratorProperty().bind(action.getValueProperty(Action.ACCELERATOR_KEY));
+}

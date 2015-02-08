@@ -1,0 +1,12 @@
+{
+  if (isDisabled()) {
+    return;
+  }
+  final View v=getActiveView();
+  if (v == null || v.isDisabled()) {
+    return;
+  }
+  oldFocusOwner=v.getNode().getScene().getFocusOwner();
+  v.addDisabler(this);
+  saveView(v);
+}

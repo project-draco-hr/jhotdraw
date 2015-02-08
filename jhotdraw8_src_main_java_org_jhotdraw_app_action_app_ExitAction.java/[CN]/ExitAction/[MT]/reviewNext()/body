@@ -1,0 +1,22 @@
+{
+  int unsavedViewsCount=0;
+  View documentToBeReviewed=null;
+  for (  View p : getApplication().views()) {
+    if (p.isModified()) {
+      if (!p.isDisabled()) {
+        documentToBeReviewed=p;
+      }
+      unsavedViewsCount++;
+    }
+  }
+  if (unsavedViewsCount == 0) {
+    doExit();
+  }
+ else   if (documentToBeReviewed != null) {
+    unsavedView=documentToBeReviewed;
+    reviewChanges();
+  }
+ else {
+    getApplication().removeDisabler(this);
+  }
+}

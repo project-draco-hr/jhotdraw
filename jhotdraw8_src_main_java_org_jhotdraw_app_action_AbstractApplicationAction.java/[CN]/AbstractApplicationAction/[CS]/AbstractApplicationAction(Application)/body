@@ -1,0 +1,5 @@
+{
+  this.app=app;
+  disabled.unbind();
+  disabled.bind(app.disabledProperty().or(disablers.emptyProperty().not()));
+}

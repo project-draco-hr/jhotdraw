@@ -1,0 +1,8 @@
+{
+  if (containsKey(key)) {
+    return get(key);
+  }
+ else {
+    return (parent == null) ? null : parent.getOrParent(key);
+  }
+}

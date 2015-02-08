@@ -1,0 +1,25 @@
+{
+  BackgroundTask<String> t=new BackgroundTask<String>(){
+    @Override protected String call() throws Exception {
+      StringBuilder builder=new StringBuilder();
+      char[] cbuf=new char[8192];
+      try (Reader in=new InputStreamReader(new FileInputStream(new File(uri)),StandardCharsets.UTF_8)){
+        for (int count=in.read(cbuf,0,cbuf.length); count != -1; count=in.read(cbuf,0,cbuf.length)) {
+          builder.append(cbuf,0,count);
+        }
+      }
+       return builder.toString();
+    }
+    @Override protected void succeeded(    String value){
+      if (append) {
+        textArea.appendText(value);
+      }
+ else {
+        textArea.setText(value);
+      }
+    }
+  }
+;
+  t.addCompletionHandler(handler);
+  getApplication().execute(t);
+}

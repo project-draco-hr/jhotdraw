@@ -1,0 +1,26 @@
+{
+  if (format == null) {
+    throw new NullPointerException("Format cannot be null.");
+  }
+  if (extractDependencies(args).length == 0) {
+    return StringConstant.valueOf(String.format(format,args));
+  }
+  final MessageStringFormatter formatter=new MessageStringFormatter(){
+{
+      super.bind(extractDependencies(args));
+    }
+    @Override public void dispose(){
+      super.unbind(extractDependencies(args));
+    }
+    @Override protected String computeValue(){
+      final Object[] values=extractValues(args);
+      return MessageFormat.format(format,values);
+    }
+    @Override public ObservableList<ObservableValue<?>> getDependencies(){
+      return FXCollections.unmodifiableObservableList(FXCollections.observableArrayList(extractDependencies(args)));
+    }
+  }
+;
+  formatter.get();
+  return formatter;
+}

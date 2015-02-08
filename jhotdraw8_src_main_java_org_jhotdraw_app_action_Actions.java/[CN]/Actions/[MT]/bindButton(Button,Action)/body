@@ -1,0 +1,5 @@
+{
+  control.textProperty().bind(action.getValueProperty(Action.NAME));
+  control.setOnAction(action);
+  control.disableProperty().bind(action.disabledProperty());
+}

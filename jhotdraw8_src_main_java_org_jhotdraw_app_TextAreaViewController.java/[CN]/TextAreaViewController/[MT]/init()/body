@@ -1,0 +1,10 @@
+{
+  FXMLLoader loader=new FXMLLoader();
+  loader.setController(this);
+  try {
+    node=loader.load(getClass().getResourceAsStream("TextAreaView.fxml"));
+  }
+ catch (  IOException ex) {
+    throw new InternalError(ex);
+  }
+}

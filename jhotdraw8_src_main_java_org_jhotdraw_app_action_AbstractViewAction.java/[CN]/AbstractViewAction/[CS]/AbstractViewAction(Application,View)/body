@@ -1,0 +1,5 @@
+{
+  this.app=app;
+  this.view=view;
+  activeViewListener.changed(null,null,view);
+}

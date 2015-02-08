@@ -1,0 +1,14 @@
+{
+  final String text=textArea.getText();
+  BackgroundTask<Void> t=new BackgroundTask<Void>(){
+    @Override protected Void call() throws Exception {
+      try (Writer out=new OutputStreamWriter(new FileOutputStream(new File(uri)),StandardCharsets.UTF_8)){
+        out.write(text);
+      }
+       return null;
+    }
+  }
+;
+  t.addCompletionHandler(handler);
+  getApplication().execute(t);
+}

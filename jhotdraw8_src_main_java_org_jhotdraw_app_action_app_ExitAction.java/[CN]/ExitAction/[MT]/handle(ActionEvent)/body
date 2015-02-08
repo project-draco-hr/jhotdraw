@@ -1,0 +1,65 @@
+{
+  if (isDisabled()) {
+    return;
+  }
+  final Application app=getApplication();
+  app.addDisabler(this);
+  int unsavedViewsCount=0;
+  int disabledViewsCount=0;
+  View documentToBeReviewed=null;
+  URI unsavedURI=null;
+  for (  View p : app.views()) {
+    if (p.isDisabled()) {
+      disabledViewsCount++;
+    }
+    if (p.isModified()) {
+      if (!p.isDisabled()) {
+        documentToBeReviewed=p;
+      }
+      unsavedURI=p.getURI();
+      unsavedViewsCount++;
+    }
+  }
+  if (unsavedViewsCount > 0 && documentToBeReviewed == null) {
+    app.removeDisabler(this);
+    return;
+  }
+  final ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+switch (unsavedViewsCount) {
+case 0:
+{
+      doExit();
+      break;
+    }
+case 1:
+{
+    reviewNext();
+    break;
+  }
+default :
+{
+  ButtonType[] options={new ButtonType(labels.getString("application.exit.reviewChangesOption.text"),ButtonBar.ButtonData.YES),new ButtonType(labels.getString("application.exit.cancelOption.text"),ButtonBar.ButtonData.CANCEL_CLOSE),new ButtonType(labels.getString("application.exit.discardChangesOption.text"),ButtonBar.ButtonData.NO)};
+  Alert alert=new Alert(Alert.AlertType.CONFIRMATION,labels.getString("application.exit.doYouWantToReview.details"),options);
+  alert.setHeaderText(labels.getFormatted("application.exit.doYouWantToReview.message",unsavedViewsCount));
+  Optional<ButtonType> result=alert.showAndWait();
+  if (result.isPresent()) {
+switch (result.get().getButtonData()) {
+default :
+case CANCEL_CLOSE:
+      app.removeDisabler(this);
+    break;
+case NO:
+  app.exit();
+break;
+case YES:
+unsavedView=documentToBeReviewed;
+reviewChanges();
+break;
+}
+}
+ else {
+app.removeDisabler(this);
+}
+}
+}
+}

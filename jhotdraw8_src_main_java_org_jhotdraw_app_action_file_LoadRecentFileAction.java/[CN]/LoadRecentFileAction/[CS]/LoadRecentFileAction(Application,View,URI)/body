@@ -1,0 +1,6 @@
+{
+  super(app,view);
+  this.uri=uri;
+  setMayCreateView(true);
+  putValue(Action.NAME,URIUtil.getName(uri));
+}

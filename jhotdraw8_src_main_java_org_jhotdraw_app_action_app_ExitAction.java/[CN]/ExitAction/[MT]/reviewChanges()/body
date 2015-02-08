@@ -1,0 +1,38 @@
+{
+  if (!unsavedView.isDisabled()) {
+    final ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+    oldFocusOwner=unsavedView.getNode().getScene().getFocusOwner();
+    unsavedView.removeDisabler(this);
+    URI unsavedURI=unsavedView.getURI();
+    ButtonType[] options={new ButtonType(labels.getString("application.exit.saveOption.text"),ButtonData.YES),new ButtonType(labels.getString("application.exit.cancelOption.text"),ButtonData.CANCEL_CLOSE),new ButtonType(labels.getString("application.exit.dontSaveOption.text"),ButtonData.NO)};
+    Alert alert=new Alert(Alert.AlertType.CONFIRMATION,labels.getString("application.exit.doYouWantToSave.details"),options);
+    alert.setHeaderText(labels.getFormatted("application.exit.doYouWantToSave.message",unsavedView.getTitle(),unsavedView.getDisambiguation()));
+    unsavedView.getNode().getScene().getWindow().requestFocus();
+    alert.initOwner(unsavedView.getNode().getScene().getWindow());
+    Optional<ButtonType> result=alert.showAndWait();
+    if (result.isPresent()) {
+switch (result.get().getButtonData()) {
+default :
+case CANCEL_CLOSE:
+        unsavedView.removeDisabler(this);
+      getApplication().removeDisabler(this);
+    break;
+case NO:
+  getApplication().remove(unsavedView);
+unsavedView.removeDisabler(this);
+reviewNext();
+break;
+case YES:
+saveChangesAndReviewNext();
+break;
+}
+}
+ else {
+unsavedView.removeDisabler(this);
+getApplication().removeDisabler(this);
+}
+}
+ else {
+getApplication().removeDisabler(this);
+}
+}

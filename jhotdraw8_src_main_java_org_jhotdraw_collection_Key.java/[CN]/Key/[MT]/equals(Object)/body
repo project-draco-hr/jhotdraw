@@ -1,0 +1,22 @@
+{
+  if (obj == null) {
+    return false;
+  }
+  if (getClass() != obj.getClass()) {
+    return false;
+  }
+  final Key<?> other=(Key<?>)obj;
+  if (!Objects.equals(this.key,other.key)) {
+    return false;
+  }
+  if (!Objects.equals(this.defaultValue,other.defaultValue)) {
+    return false;
+  }
+  if (this.isNullable != other.isNullable) {
+    return false;
+  }
+  if (!Objects.equals(this.clazz,other.clazz)) {
+    return false;
+  }
+  return true;
+}

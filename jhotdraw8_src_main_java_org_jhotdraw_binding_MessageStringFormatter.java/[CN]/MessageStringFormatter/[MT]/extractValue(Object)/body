@@ -1,0 +1,6 @@
+{
+  Object value=obj instanceof ObservableValue ? ((ObservableValue<?>)obj).getValue() : obj;
+  if (Boolean.TRUE.equals(value))   return 1;
+  if (Boolean.FALSE.equals(value))   return 0;
+  return value;
+}

@@ -1,0 +1,4 @@
+{
+  System.out.println("You clicked me!");
+  title.set("New Title");
+}

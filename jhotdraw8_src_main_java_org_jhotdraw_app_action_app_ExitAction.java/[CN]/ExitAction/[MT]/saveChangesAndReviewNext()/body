@@ -1,0 +1,20 @@
+{
+  final View v=unsavedView;
+  if (v.getURI() == null) {
+    URIChooser chooser=getChooser(v);
+    URI uri=chooser.showDialog(unsavedView.getNode());
+    if (uri != null) {
+      saveToFileAndReviewNext(uri,chooser);
+    }
+ else {
+      v.removeDisabler(this);
+      if (oldFocusOwner != null) {
+        oldFocusOwner.requestFocus();
+      }
+      getApplication().removeDisabler(this);
+    }
+  }
+ else {
+    saveToFileAndReviewNext(v.getURI(),null);
+  }
+}

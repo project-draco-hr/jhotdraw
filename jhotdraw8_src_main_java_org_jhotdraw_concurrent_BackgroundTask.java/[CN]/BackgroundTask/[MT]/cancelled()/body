@@ -1,0 +1,5 @@
+{
+  aborted();
+  finished();
+  fireEvent(new TaskCompletionEvent<V>(this,TaskCompletionEvent.CANCELLED,null,null));
+}

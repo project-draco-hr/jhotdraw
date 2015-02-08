@@ -1,0 +1,13 @@
+{
+  for (  View p : new ArrayList<View>(app.views())) {
+    if (!p.isDisabled() && !p.isModified()) {
+      app.remove(p);
+    }
+  }
+  if (app.views().isEmpty()) {
+    app.exit();
+  }
+ else {
+    app.removeDisabler(this);
+  }
+}

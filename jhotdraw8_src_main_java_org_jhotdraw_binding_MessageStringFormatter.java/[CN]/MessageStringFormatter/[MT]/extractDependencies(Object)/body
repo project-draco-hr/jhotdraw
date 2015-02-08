@@ -1,0 +1,9 @@
+{
+  final List<ObservableValue<?>> dependencies=new ArrayList<ObservableValue<?>>();
+  for (  final Object obj : args) {
+    if (obj instanceof ObservableValue) {
+      dependencies.add((ObservableValue<?>)obj);
+    }
+  }
+  return dependencies.toArray(new ObservableValue[dependencies.size()]);
+}

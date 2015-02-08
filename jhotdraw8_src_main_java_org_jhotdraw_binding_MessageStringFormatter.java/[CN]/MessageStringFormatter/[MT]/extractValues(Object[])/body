@@ -1,0 +1,8 @@
+{
+  final int n=objs.length;
+  final Object[] values=new Object[n];
+  for (int i=0; i < n; i++) {
+    values[i]=extractValue(objs[i]);
+  }
+  return values;
+}

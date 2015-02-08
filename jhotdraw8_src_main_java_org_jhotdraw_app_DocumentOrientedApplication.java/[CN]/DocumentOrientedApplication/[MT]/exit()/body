@@ -1,0 +1,4 @@
+{
+  System.out.println(this + ".exit()");
+  System.exit(0);
+}

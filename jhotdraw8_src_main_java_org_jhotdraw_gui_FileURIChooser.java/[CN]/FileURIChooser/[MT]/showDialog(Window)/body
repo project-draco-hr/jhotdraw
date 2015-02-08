@@ -1,0 +1,12 @@
+{
+  File f=null;
+switch (mode) {
+case OPEN:
+    f=chooser.showOpenDialog(parent);
+  break;
+case SAVE:
+f=chooser.showSaveDialog(parent);
+break;
+}
+return f == null ? null : f.toURI();
+}

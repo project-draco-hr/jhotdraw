@@ -1,0 +1,48 @@
+{
+  if (isDisabled()) {
+    return;
+  }
+  final Application app=getApplication();
+{
+    app.addDisabler(this);
+    View emptyView=app.getActiveView();
+    if (emptyView == null || !emptyView.isEmpty() || emptyView.isDisabled()) {
+      emptyView=null;
+    }
+    final View view;
+    boolean disposeView;
+    if (emptyView == null) {
+      view=app.getModel().createView();
+      disposeView=true;
+    }
+ else {
+      view=emptyView;
+      disposeView=false;
+    }
+    URIChooser chooser=getChooser(view);
+    URI uri=chooser.showDialog(app.getNode());
+    if (uri != null) {
+      app.add(view);
+      if (!getApplication().getModel().isAllowMultipleViewsPerURI()) {
+        for (        View v : getApplication().views()) {
+          if (v.getURI() != null && v.getURI().equals(uri)) {
+            if (disposeView) {
+              app.remove(view);
+            }
+            app.removeDisabler(this);
+            v.getNode().getScene().getWindow().requestFocus();
+            v.getNode().requestFocus();
+            return;
+          }
+        }
+      }
+      openViewFromURI(view,uri,chooser);
+    }
+ else {
+      if (disposeView) {
+        app.remove(view);
+      }
+      app.removeDisabler(this);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  isSystemMenuSupported=Toolkit.getToolkit().getSystemMenu().isSupported();
+  actionMap=createApplicationActionMap();
+  if (isSystemMenuSupported) {
+    Platform.setImplicitExit(false);
+    ArrayList<MenuBase> menus=new ArrayList<>();
+    MenuBar mb=createMenuBar(getActionMap());
+    for (    Menu m : mb.getMenus()) {
+      menus.add(GlobalMenuAdapter.adapt(m));
+    }
+    Toolkit.getToolkit().getSystemMenu().setMenus(menus);
+  }
+  View v=createView();
+  add(v);
+}

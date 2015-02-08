@@ -1,0 +1,28 @@
+{
+  FXMLLoader loader=new FXMLLoader();
+  try {
+    MenuBar mb=loader.load(getClass().getResourceAsStream("DocumentOrientedMenu.fxml"));
+    LinkedList<Menu> todo=new LinkedList<>(mb.getMenus());
+    while (!todo.isEmpty()) {
+      for (      MenuItem mi : todo.remove().getItems()) {
+        if (mi instanceof Menu) {
+          todo.add((Menu)mi);
+        }
+ else {
+          Action a=actions.getOrParent(mi.getId());
+          if (a != null) {
+            Actions.bindMenuItem(mi,a);
+          }
+ else           if (mi.getId() != null) {
+            System.err.println("No action for menu item with id=" + mi.getId());
+            mi.setVisible(false);
+          }
+        }
+      }
+    }
+    return mb;
+  }
+ catch (  IOException e) {
+    throw new InternalError(e);
+  }
+}

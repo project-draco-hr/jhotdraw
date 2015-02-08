@@ -1,0 +1,4 @@
+{
+  @Nullable Scene scene=node.getScene();
+  return scene == null ? null : scene.getFocusOwner();
+}

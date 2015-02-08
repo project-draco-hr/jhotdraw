@@ -1,0 +1,4 @@
+{
+  File f=chooser.showDialog(parent);
+  return f == null ? null : f.toURI();
+}
