@@ -1,3 +1,6 @@
 {
+  if (values == null) {
+    values=new SimpleMapProperty<>(FXCollections.observableHashMap());
+  }
   return values;
 }
