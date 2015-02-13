@@ -1,5 +1,10 @@
 {
   this.app=app;
   this.view=view;
-  activeViewListener.changed(null,null,view);
+  if (view != null) {
+    activeViewListener.changed(null,null,view);
+  }
+ else {
+    app.activeViewProperty().addListener(activeViewListener);
+  }
 }
