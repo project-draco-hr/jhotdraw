@@ -1,8 +1,11 @@
 {
   Stage stage=(Stage)view.getNode().getScene().getWindow();
-  view.getActionMap().setParent(null);
+  view.getActionMap().setParent(Optional.empty());
   view.setApplication(null);
-  stage.focusedProperty().removeListener(view.getValue(FOCUS_LISTENER_KEY));
+  Optional<ChangeListener> focusListener=view.getValue(FOCUS_LISTENER_KEY);
+  if (focusListener.isPresent()) {
+    stage.focusedProperty().removeListener(focusListener.get());
+  }
   stage.close();
   view.dispose();
   if (views.isEmpty() && !isSystemMenuSupported) {

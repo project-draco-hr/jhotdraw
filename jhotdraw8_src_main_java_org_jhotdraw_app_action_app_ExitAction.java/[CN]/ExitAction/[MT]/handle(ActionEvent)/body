@@ -2,7 +2,6 @@
   if (isDisabled()) {
     return;
   }
-  final Application app=getApplication();
   app.addDisabler(this);
   int unsavedViewsCount=0;
   int disabledViewsCount=0;

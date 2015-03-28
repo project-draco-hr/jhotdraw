@@ -1,4 +1,7 @@
 {
+  if (app == null) {
+    throw new IllegalArgumentException("app is null");
+  }
   this.app=app;
   disabled.unbind();
   disabled.bind(app.disabledProperty().or(disablers.emptyProperty().not()));

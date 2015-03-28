@@ -12,9 +12,6 @@
   if (!Objects.equals(this.defaultValue,other.defaultValue)) {
     return false;
   }
-  if (this.isNullable != other.isNullable) {
-    return false;
-  }
   if (!Objects.equals(this.clazz,other.clazz)) {
     return false;
   }

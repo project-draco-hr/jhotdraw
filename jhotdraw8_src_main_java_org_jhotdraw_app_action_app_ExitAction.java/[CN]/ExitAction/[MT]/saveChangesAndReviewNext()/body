@@ -2,9 +2,9 @@
   final View v=unsavedView;
   if (v.getURI() == null) {
     URIChooser chooser=getChooser(v);
-    URI uri=chooser.showDialog(unsavedView.getNode());
-    if (uri != null) {
-      saveToFileAndReviewNext(uri,chooser);
+    Optional<URI> uri=chooser.showDialog(unsavedView.getNode());
+    if (uri.isPresent()) {
+      saveToFileAndReviewNext(uri.get(),chooser);
     }
  else {
       v.removeDisabler(this);

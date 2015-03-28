@@ -1,3 +1,0 @@
-{
-  super(key,String.class,defaultValue,isNullable);
-}

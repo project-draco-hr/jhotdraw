@@ -5,27 +5,27 @@
   final Application app=getApplication();
 {
     app.addDisabler(this);
-    View emptyView=app.getActiveView();
-    if (emptyView == null || !emptyView.isEmpty() || emptyView.isDisabled()) {
-      emptyView=null;
+    Optional<View> emptyView=app.getActiveView();
+    if (!emptyView.isPresent() || !emptyView.get().isEmpty() || emptyView.get().isDisabled()) {
+      emptyView=Optional.empty();
     }
     final View view;
     boolean disposeView;
-    if (emptyView == null) {
+    if (!emptyView.isPresent()) {
       view=app.getModel().createView();
       disposeView=true;
     }
  else {
-      view=emptyView;
+      view=emptyView.get();
       disposeView=false;
     }
     URIChooser chooser=getChooser(view);
-    URI uri=chooser.showDialog(app.getNode());
-    if (uri != null) {
+    Optional<URI> uri=chooser.showDialog(app.getNode());
+    if (uri.isPresent()) {
       app.add(view);
       if (!getApplication().getModel().isAllowMultipleViewsPerURI()) {
         for (        View v : getApplication().views()) {
-          if (v.getURI() != null && v.getURI().equals(uri)) {
+          if (v.getURI() != null && v.getURI().equals(uri.get())) {
             if (disposeView) {
               app.remove(view);
             }
@@ -36,7 +36,7 @@
           }
         }
       }
-      openViewFromURI(view,uri,chooser);
+      openViewFromURI(view,uri.get(),chooser);
     }
  else {
       if (disposeView) {

@@ -1,8 +1,8 @@
 {
-  @Nullable URIChooser chsr=view.getValue(AbstractSaveUnsavedChangesAction.SAVE_CHOOSER_KEY);
-  if (chsr == null) {
-    chsr=getApplication().getModel().createSaveChooser();
+  Optional<URIChooser> chsr=view.getValue(AbstractSaveUnsavedChangesAction.SAVE_CHOOSER_KEY);
+  if (!chsr.isPresent()) {
+    chsr=Optional.of(getApplication().getModel().createSaveChooser());
     view.putValue(AbstractSaveUnsavedChangesAction.SAVE_CHOOSER_KEY,chsr);
   }
-  return chsr;
+  return chsr.get();
 }

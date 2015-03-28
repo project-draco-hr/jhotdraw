@@ -1,0 +1,16 @@
+{
+  if (key == null) {
+    throw new IllegalArgumentException("key is null");
+  }
+  if (clazz == null) {
+    throw new IllegalArgumentException("clazz is null");
+  }
+  this.key=key;
+  this.clazz=clazz;
+  this.defaultValue=defaultValue;
+  int hash=7;
+  hash=17 * hash + Objects.hashCode(this.key);
+  hash=17 * hash + Objects.hashCode(this.defaultValue);
+  hash=17 * hash + Objects.hashCode(this.clazz);
+  hashcode=hash;
+}

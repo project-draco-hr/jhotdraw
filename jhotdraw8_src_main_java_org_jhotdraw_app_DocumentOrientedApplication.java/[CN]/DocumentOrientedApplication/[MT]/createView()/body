@@ -3,6 +3,6 @@
   v.init();
   v.setTitle(getLabels().getString("unnamedFile"));
   HierarchicalMap<String,Action> map=v.getActionMap();
-  map.put(CloseFileAction.ID,new CloseFileAction(this,v));
+  map.put(CloseFileAction.ID,new CloseFileAction(this,Optional.of(v)));
   return v;
 }

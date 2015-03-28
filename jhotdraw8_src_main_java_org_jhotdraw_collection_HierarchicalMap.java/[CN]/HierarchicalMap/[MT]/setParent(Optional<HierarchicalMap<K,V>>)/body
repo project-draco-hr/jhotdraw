@@ -1,0 +1,6 @@
+{
+  if (newValue == null) {
+    throw new IllegalArgumentException("newValue is null");
+  }
+  parent=newValue;
+}

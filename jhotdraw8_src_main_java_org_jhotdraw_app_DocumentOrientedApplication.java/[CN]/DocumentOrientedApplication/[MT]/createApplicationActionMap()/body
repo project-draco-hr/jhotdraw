@@ -4,9 +4,9 @@
   map.put(ExitAction.ID,new ExitAction(this));
   map.put(NewFileAction.ID,new NewFileAction(this));
   map.put(OpenFileAction.ID,new OpenFileAction(this));
-  map.put(SaveFileAction.ID,new SaveFileAction(this,null));
-  map.put(SaveFileAsAction.ID,new SaveFileAsAction(this,null));
-  map.put(CloseFileAction.ID,new CloseFileAction(this,null));
+  map.put(SaveFileAction.ID,new SaveFileAction(this));
+  map.put(SaveFileAsAction.ID,new SaveFileAsAction(this));
+  map.put(CloseFileAction.ID,new CloseFileAction(this));
   map.put(CutAction.ID,new CutAction(this));
   map.put(CopyAction.ID,new CopyAction(this));
   map.put(PasteAction.ID,new PasteAction(this));
