@@ -1,0 +1,34 @@
+{
+  if (node instanceof Element) {
+    Element elem=(Element)node;
+    Figure figure=null;
+    String id=elem.getAttribute("id");
+    if (id != null) {
+      figure=getFigure(id);
+    }
+    if (figure != null) {
+      NamedNodeMap attrs=elem.getAttributes();
+      for (int i=0, n=attrs.getLength(); i < n; i++) {
+        Attr attr=(Attr)attrs.item(i);
+        if ("id".equals(attr.getName())) {
+          continue;
+        }
+        Key<Object> key=(Key<Object>)factory.nameToKey(attr.getName());
+        if (key != null && factory.figureKeys(figure).contains(key)) {
+          Object value=null;
+          if (Figure.class.isAssignableFrom(key.getValueType())) {
+            value=getFigure(cdataConverter.toValue(attr.getValue()));
+          }
+ else {
+            value=factory.stringToValue(key,cdataConverter.toValue(attr.getValue()));
+          }
+          figure.set(key,value);
+        }
+      }
+    }
+    NodeList list=elem.getChildNodes();
+    for (int i=0, n=list.getLength(); i < n; i++) {
+      readElementAttributes(list.item(i));
+    }
+  }
+}

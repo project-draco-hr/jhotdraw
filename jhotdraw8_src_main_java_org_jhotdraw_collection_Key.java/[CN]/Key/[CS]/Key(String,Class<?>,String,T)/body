@@ -1,0 +1,26 @@
+{
+  if (key == null) {
+    throw new IllegalArgumentException("key is null");
+  }
+  if (clazz == null) {
+    throw new IllegalArgumentException("clazz is null");
+  }
+  if (typeParameters == null) {
+    throw new IllegalArgumentException("type parameters is null");
+  }
+  if (typeParameters.length() > 0) {
+    if (!typeParameters.startsWith("<") || !typeParameters.endsWith(">")) {
+      throw new IllegalArgumentException("type parameters does not have arrow brackets:" + typeParameters);
+    }
+  }
+  this.name=key;
+  this.clazz=clazz;
+  this.typeParameters=typeParameters;
+  this.defaultValue=defaultValue;
+  int hash=7;
+  hash=17 * hash + Objects.hashCode(this.name);
+  hash=17 * hash + Objects.hashCode(this.defaultValue);
+  hash=17 * hash + Objects.hashCode(this.clazz);
+  hash=17 * hash + Objects.hashCode(this.typeParameters);
+  hashcode=hash;
+}

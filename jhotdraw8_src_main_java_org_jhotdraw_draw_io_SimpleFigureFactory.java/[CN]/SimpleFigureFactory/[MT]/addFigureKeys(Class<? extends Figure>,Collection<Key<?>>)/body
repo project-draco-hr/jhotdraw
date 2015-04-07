@@ -1,0 +1,8 @@
+{
+  if (figureKeys.containsKey(f)) {
+    figureKeys.get(f).addAll(keys);
+  }
+ else {
+    figureKeys.put(f,new HashSet<>(keys));
+  }
+}

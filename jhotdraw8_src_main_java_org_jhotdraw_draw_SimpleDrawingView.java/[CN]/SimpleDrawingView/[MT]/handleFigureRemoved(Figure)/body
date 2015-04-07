@@ -1,0 +1,10 @@
+{
+  dirtyFigures.remove(f);
+  for (  Figure child : f.children()) {
+    handleFigureRemoved(child);
+  }
+  Node oldNode=figureToNodeMap.remove(f);
+  if (oldNode != null) {
+    nodeToFigureMap.remove(oldNode);
+  }
+}

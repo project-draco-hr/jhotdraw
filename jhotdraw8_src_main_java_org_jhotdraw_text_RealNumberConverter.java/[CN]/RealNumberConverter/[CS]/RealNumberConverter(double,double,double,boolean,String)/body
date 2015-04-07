@@ -1,0 +1,9 @@
+{
+  super();
+  initFormats();
+  setMinimum(min);
+  setMaximum(max);
+  setFactor(multiplier);
+  setAllowsNullValue(allowsNullValue);
+  setUnit(unit);
+}

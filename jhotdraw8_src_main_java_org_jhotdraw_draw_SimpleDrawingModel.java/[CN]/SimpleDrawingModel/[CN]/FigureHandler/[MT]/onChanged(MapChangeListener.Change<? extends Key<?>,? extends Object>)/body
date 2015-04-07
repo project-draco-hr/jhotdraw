@@ -1,0 +1,4 @@
+{
+  Figure figure=(Figure)((MapProperty)change.getMap()).getBean();
+  firePropertyChange(figure,(Key<Object>)change.getKey(),change.getValueRemoved(),change.getValueAdded());
+}

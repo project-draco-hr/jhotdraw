@@ -1,0 +1,21 @@
+{
+  BackgroundTask<SimpleDrawing> t=new BackgroundTask<SimpleDrawing>(){
+    @Override protected SimpleDrawing call() throws Exception {
+      try {
+        FigureFactory factory=new DefaultFigureFactory();
+        SimpleXmlIO io=new SimpleXmlIO(factory);
+        SimpleDrawing drawing=(SimpleDrawing)io.read(uri,null);
+        return drawing;
+      }
+ catch (      Exception e) {
+        throw e;
+      }
+    }
+    @Override protected void succeeded(    SimpleDrawing value){
+      drawingView.setDrawing(value);
+    }
+  }
+;
+  t.addCompletionHandler(callback);
+  getApplication().execute(t);
+}

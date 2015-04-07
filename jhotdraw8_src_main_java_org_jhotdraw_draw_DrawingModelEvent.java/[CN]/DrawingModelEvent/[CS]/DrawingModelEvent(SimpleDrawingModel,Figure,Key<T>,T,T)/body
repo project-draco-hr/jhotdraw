@@ -1,0 +1,13 @@
+{
+  if (figure == null) {
+    throw new NullPointerException("figure is null");
+  }
+  eventType=EventType.PROPERTY_CHANGED;
+  this.source=source;
+  this.figure=figure;
+  this.key=key;
+  this.oldValue=oldValue;
+  this.newValue=newValue;
+  this.child=null;
+  this.index=-1;
+}

@@ -1,0 +1,27 @@
+{
+  Element elem=doc.createElement(factory.figureToName(figure));
+  elem.setAttribute("id",ids.createId(figure));
+  for (  Key<?> k : factory.figureKeys(figure)) {
+    System.out.println("figure:" + figure + " "+ k);
+    Key<Object> key=(Key<Object>)k;
+    Object value=figure.get(key);
+    if (!factory.isDefaultValue(key,value)) {
+      if (Figure.class.isAssignableFrom(key.getValueType())) {
+        elem.setAttribute(factory.keyToName(key),cdataConverter.toString(ids.createId(value)));
+      }
+ else {
+        elem.setAttribute(factory.keyToName(key),cdataConverter.toString(factory.valueToString(key,value)));
+      }
+    }
+  }
+  for (  Figure child : figure.children()) {
+    if (factory.figureToName(child) != null) {
+      elem.appendChild(doc.createTextNode("\n"));
+      elem.appendChild(writeNode(doc,child));
+    }
+  }
+  if (!figure.children().isEmpty()) {
+    elem.appendChild(doc.createTextNode("\n"));
+  }
+  return elem;
+}

@@ -1,0 +1,5 @@
+{
+  AttributedString as=new AttributedString(string);
+  as.addAttribute(key,value);
+  return as.getIterator();
+}

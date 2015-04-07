@@ -1,0 +1,12 @@
+{
+  addFigure("Drawing",SimpleDrawing.class);
+  addFigure("Rectangle",RectangleFigure.class);
+  addFigure("Text",TextFigure.class);
+  addFigureKeys(RectangleFigure.class,RectangleFigure.getFigureKeys().values());
+  addFigureKeys(TextFigure.class,TextFigure.getFigureKeys().values());
+  addKeys(RectangleFigure.getFigureKeys());
+  addKeys(TextFigure.getFigureKeys());
+  addConverter(Rectangle2D.class,new Rectangle2DConverter());
+  addConverter(String.class,new DefaultConverter());
+  addConverter(Point2D.class,new Point2DConverter());
+}

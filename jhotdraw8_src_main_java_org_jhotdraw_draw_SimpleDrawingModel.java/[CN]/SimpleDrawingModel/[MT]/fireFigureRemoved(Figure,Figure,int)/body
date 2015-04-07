@@ -1,0 +1,4 @@
+{
+  handleFigureRemoved(child);
+  fire(new DrawingModelEvent(SimpleDrawingModel.this,false,parent,child,index));
+}

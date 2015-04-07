@@ -1,0 +1,4 @@
+{
+  handleFigureAdded(child);
+  fire(new DrawingModelEvent(SimpleDrawingModel.this,true,parent,child,index));
+}

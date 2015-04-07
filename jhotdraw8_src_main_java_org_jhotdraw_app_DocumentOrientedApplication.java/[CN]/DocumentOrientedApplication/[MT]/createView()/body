@@ -1,5 +1,5 @@
 {
-  TextAreaViewController v=new TextAreaViewController();
+  View v=instantiateView();
   v.init();
   v.setTitle(getLabels().getString("unnamedFile"));
   HierarchicalMap<String,Action> map=v.getActionMap();

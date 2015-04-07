@@ -1,0 +1,5 @@
+SimpleDrawingModel source
+boolean wasAdded
+Figure parent
+Figure child
+int index

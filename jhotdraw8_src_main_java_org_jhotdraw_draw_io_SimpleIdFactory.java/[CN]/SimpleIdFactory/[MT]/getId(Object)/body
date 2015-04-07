@@ -1,0 +1,3 @@
+{
+  return objectToId.get(object);
+}

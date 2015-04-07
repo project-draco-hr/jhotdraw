@@ -1,0 +1,4 @@
+{
+  ObjectBinding<Object> value=map.valueAt(this);
+  return new PropertyAt<>(map,this);
+}

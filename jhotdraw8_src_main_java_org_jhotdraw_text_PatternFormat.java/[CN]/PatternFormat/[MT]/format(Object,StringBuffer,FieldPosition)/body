@@ -1,0 +1,3 @@
+{
+  return subformat((Object[])arguments,result,pos,null);
+}

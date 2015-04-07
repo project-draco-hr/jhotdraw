@@ -1,0 +1,14 @@
+{
+  try {
+    ids.reset();
+    DocumentBuilder builder=DocumentBuilderFactory.newInstance().newDocumentBuilder();
+    Document doc=builder.newDocument();
+    if (factory.figureToName(drawing) != null) {
+      doc.appendChild(writeNode(doc,drawing));
+    }
+    return doc;
+  }
+ catch (  ParserConfigurationException ex) {
+    throw new IOException(ex);
+  }
+}

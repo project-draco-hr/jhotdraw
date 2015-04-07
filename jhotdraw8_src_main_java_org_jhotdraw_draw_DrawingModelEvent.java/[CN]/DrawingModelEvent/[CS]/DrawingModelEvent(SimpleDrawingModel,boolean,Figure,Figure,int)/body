@@ -1,0 +1,13 @@
+{
+  if (parent == null) {
+    throw new NullPointerException("parent is null");
+  }
+  eventType=wasAdded ? EventType.FIGURE_ADDED : EventType.FIGURE_REMOVED;
+  this.source=source;
+  this.child=child;
+  this.key=null;
+  this.oldValue=null;
+  this.newValue=null;
+  this.figure=parent;
+  this.index=index;
+}

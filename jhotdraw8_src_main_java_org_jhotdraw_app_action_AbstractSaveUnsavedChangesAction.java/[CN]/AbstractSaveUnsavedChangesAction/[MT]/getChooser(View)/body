@@ -1,8 +1,8 @@
 {
-  Optional<URIChooser> chsr=view.getValue(SAVE_CHOOSER_KEY);
+  Optional<URIChooser> chsr=view.get(SAVE_CHOOSER_KEY);
   if (!chsr.isPresent()) {
     chsr=Optional.of(getApplication().getModel().createSaveChooser());
-    view.putValue(SAVE_CHOOSER_KEY,chsr);
+    view.set(SAVE_CHOOSER_KEY,chsr);
   }
   return chsr.get();
 }

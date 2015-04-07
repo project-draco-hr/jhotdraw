@@ -1,0 +1,8 @@
+{
+  Point2DConverter c=new Point2DConverter();
+  String str=c.toString(new Point2D(3e15,3.14519265788947687879));
+  System.out.println(str);
+  Object value=c.toValue(str);
+  System.out.println(value);
+  System.exit(0);
+}

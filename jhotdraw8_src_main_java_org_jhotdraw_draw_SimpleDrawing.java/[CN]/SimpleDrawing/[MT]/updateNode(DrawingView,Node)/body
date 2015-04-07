@@ -1,0 +1,16 @@
+{
+  Group g=(Group)n;
+  ObservableList<Node> children=((Group)n).getChildren();
+  children.clear();
+  Rectangle2D bounds=get(BOUNDS);
+  Rectangle page=(Rectangle)g.getProperties().get("page");
+  page.setX(bounds.getMinX());
+  page.setY(bounds.getMinY());
+  page.setWidth(bounds.getWidth());
+  page.setHeight(bounds.getHeight());
+  page.setFill(get(BACKGROUND));
+  children.add(page);
+  for (  Figure child : children()) {
+    children.add(v.getNode(child));
+  }
+}

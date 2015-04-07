@@ -1,0 +1,21 @@
+{
+  ids.reset();
+  Drawing drawing=null;
+  NodeList list=doc.getChildNodes();
+  for (int i=0; i < list.getLength(); i++) {
+    Figure f=readNode(list.item(i));
+    if (f instanceof Drawing) {
+      drawing=(Drawing)f;
+      break;
+    }
+  }
+  for (int i=0; i < list.getLength(); i++) {
+    readElementAttributes(list.item(i));
+  }
+  if (drawing != null) {
+    return drawing;
+  }
+ else {
+    throw new IOException("document does not contain a drawing");
+  }
+}

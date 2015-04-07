@@ -1,0 +1,12 @@
+{
+  try {
+    Converter converter=valueOfCData.get(key.getFullValueType());
+    if (converter == null) {
+      throw new IOException("no converter for attribute type " + key.getClass());
+    }
+    return converter.toValue(string);
+  }
+ catch (  ParseException ex) {
+    throw new IOException(ex);
+  }
+}

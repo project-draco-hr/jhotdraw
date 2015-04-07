@@ -1,0 +1,17 @@
+{
+  if (oldValue != null) {
+    Drawing d=oldValue;
+    nodeToFigureMap.clear();
+    figureToNodeMap.clear();
+    drawingPane.getChildren().clear();
+    dirtyFigures.clear();
+    model.setRoot(null);
+  }
+  if (newValue != null) {
+    Drawing d=newValue;
+    handleFigureAdded(d);
+    drawingPane.getChildren().add(getNode(d));
+    updateView();
+    model.setRoot(d);
+  }
+}

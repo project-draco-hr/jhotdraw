@@ -1,0 +1,5 @@
+{
+  String value=string.substring(pp.getIndex());
+  pp.setIndex(string.length());
+  return value;
+}

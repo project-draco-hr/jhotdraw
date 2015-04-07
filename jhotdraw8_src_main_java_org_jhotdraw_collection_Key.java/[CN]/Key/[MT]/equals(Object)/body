@@ -6,7 +6,7 @@
     return false;
   }
   final Key<?> other=(Key<?>)obj;
-  if (!Objects.equals(this.key,other.key)) {
+  if (!Objects.equals(this.name,other.name)) {
     return false;
   }
   if (!Objects.equals(this.defaultValue,other.defaultValue)) {

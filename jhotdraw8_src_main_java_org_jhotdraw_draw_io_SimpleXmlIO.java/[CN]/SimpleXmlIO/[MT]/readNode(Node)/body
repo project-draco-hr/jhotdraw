@@ -1,0 +1,22 @@
+{
+  if (node instanceof Element) {
+    Element elem=(Element)node;
+    Figure figure=factory.nameToFigure(elem.getTagName());
+    if (figure == null) {
+      return null;
+    }
+    String id=elem.getAttribute("id");
+    if (id != null) {
+      ids.putId(figure,id);
+    }
+    NodeList list=elem.getChildNodes();
+    for (int i=0; i < list.getLength(); i++) {
+      Figure child=readNode(list.item(i));
+      if (child instanceof Figure) {
+        figure.add(child);
+      }
+    }
+    return figure;
+  }
+  return null;
+}

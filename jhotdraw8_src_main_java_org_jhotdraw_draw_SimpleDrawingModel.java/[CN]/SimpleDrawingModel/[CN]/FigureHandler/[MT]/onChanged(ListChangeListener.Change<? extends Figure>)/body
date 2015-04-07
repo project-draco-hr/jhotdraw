@@ -1,0 +1,37 @@
+{
+  Figure figure=(Figure)((ListProperty)c.getList()).getBean();
+  while (c.next()) {
+    final int from=c.getFrom();
+    final int to=c.getTo();
+    final ObservableList<? extends Figure> list=c.getList();
+    if (c.wasPermutated()) {
+      Figure[] tmp=new Figure[to - from];
+      for (int oldi=from; oldi < to; ++oldi) {
+        tmp[oldi]=list.get(oldi);
+        fireFigureRemoved(figure,tmp[oldi],oldi);
+      }
+      for (int i=from; i < to; ++i) {
+        for (int j=from; j < to; ++j) {
+          if (c.getPermutation(j) == i) {
+            fireFigureAdded(figure,tmp[j],i);
+          }
+        }
+      }
+    }
+ else     if (c.wasUpdated()) {
+    }
+ else {
+      if (c.wasRemoved()) {
+        final List<? extends Figure> removed=c.getRemoved();
+        for (int i=0, n=removed.size(); i < n; i++) {
+          fireFigureRemoved(figure,removed.get(i),i + from);
+        }
+      }
+      if (c.wasAdded()) {
+        for (int i=from; i < to; i++) {
+          fireFigureAdded(figure,list.get(i),i);
+        }
+      }
+    }
+  }
+}

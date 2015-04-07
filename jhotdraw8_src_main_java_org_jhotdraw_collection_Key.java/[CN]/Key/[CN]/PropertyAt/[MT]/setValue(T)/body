@@ -1,0 +1,6 @@
+{
+  super.setValue(value);
+  if (value != key.get(map)) {
+    map.put(key,value);
+  }
+}

@@ -1,0 +1,8 @@
+{
+  invalidationListeners.remove(listener);
+  if (invalidationListeners != null) {
+    if (invalidationListeners.isEmpty()) {
+      invalidationListeners=null;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  handler.removeFigure(figure);
+  for (  Figure child : figure.children()) {
+    handleFigureRemoved(child);
+  }
+}

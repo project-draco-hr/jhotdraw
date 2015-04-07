@@ -1,0 +1,6 @@
+{
+  if (!figureToElem.containsKey(f.getClass())) {
+    throw new IOException("no mapping for figure " + f.getClass());
+  }
+  return figureToElem.get(f.getClass());
+}

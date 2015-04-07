@@ -1,12 +1,20 @@
 {
-  control.textProperty().bind(action.getValueProperty(Action.NAME));
+  Binding<String> nameBinding=Action.NAME.valueAt(action.properties());
+  control.getProperties().put("ActionsNameBinding",nameBinding);
+  control.textProperty().bind(action.NAME.valueAt(action.properties()));
   if (control instanceof CheckMenuItem) {
-    ((CheckMenuItem)control).selectedProperty().bindBidirectional(action.getValueProperty(Action.SELECTED_KEY));
+    Property<Boolean> selectedBinding=Action.SELECTED_KEY.propertyAt(action.properties());
+    control.getProperties().put("ActionsSelectedBinding",selectedBinding);
+    ((CheckMenuItem)control).selectedProperty().bindBidirectional(selectedBinding);
   }
  else   if (control instanceof RadioMenuItem) {
-    ((RadioMenuItem)control).selectedProperty().bindBidirectional(action.getValueProperty(Action.SELECTED_KEY));
+    Property<Boolean> selectedBinding=Action.SELECTED_KEY.propertyAt(action.properties());
+    control.getProperties().put("ActionsSelectedBinding",selectedBinding);
+    ((RadioMenuItem)control).selectedProperty().bindBidirectional(selectedBinding);
   }
   control.setOnAction(action);
   control.disableProperty().bind(action.disabledProperty());
-  control.acceleratorProperty().bind(action.getValueProperty(Action.ACCELERATOR_KEY));
+  Binding<KeyCombination> acceleratorBinding=Action.ACCELERATOR_KEY.valueAt(action.properties());
+  control.getProperties().put("ActionsAcceleratorBinding",acceleratorBinding);
+  control.acceleratorProperty().bind(acceleratorBinding);
 }

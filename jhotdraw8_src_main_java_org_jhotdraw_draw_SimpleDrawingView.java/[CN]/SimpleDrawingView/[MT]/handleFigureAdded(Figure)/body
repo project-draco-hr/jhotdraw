@@ -1,0 +1,6 @@
+{
+  dirtyFigures.add(f);
+  for (  Figure child : f.children()) {
+    handleFigureAdded(child);
+  }
+}

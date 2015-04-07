@@ -1,0 +1,5 @@
+{
+  for (  Map.Entry<String,Key<?>> entry : keys.entrySet()) {
+    addKey(entry.getKey(),entry.getValue());
+  }
+}

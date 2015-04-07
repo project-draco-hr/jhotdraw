@@ -1,0 +1,13 @@
+{
+  BackgroundTask<Void> t=new BackgroundTask<Void>(){
+    @Override protected Void call() throws Exception {
+      FigureFactory factory=new DefaultFigureFactory();
+      SimpleXmlIO io=new SimpleXmlIO(factory);
+      io.write(uri,drawingView.getDrawing());
+      return null;
+    }
+  }
+;
+  t.addCompletionHandler(callback);
+  getApplication().execute(t);
+}

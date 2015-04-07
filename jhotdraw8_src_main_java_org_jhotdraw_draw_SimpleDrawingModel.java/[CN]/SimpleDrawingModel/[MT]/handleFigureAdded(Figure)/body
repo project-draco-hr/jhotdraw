@@ -1,0 +1,6 @@
+{
+  handler.addFigure(figure);
+  for (  Figure child : figure.children()) {
+    handleFigureAdded(child);
+  }
+}

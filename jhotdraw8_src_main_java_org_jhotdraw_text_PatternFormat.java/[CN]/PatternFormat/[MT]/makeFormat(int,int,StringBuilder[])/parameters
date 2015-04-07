@@ -1,0 +1,3 @@
+int position
+int offsetNumber
+StringBuilder[] textSegments

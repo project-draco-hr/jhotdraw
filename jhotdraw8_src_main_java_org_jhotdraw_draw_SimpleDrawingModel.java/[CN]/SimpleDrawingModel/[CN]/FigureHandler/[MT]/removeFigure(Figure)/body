@@ -1,0 +1,5 @@
+{
+  figure.children().removeListener((ListChangeListener<Figure>)this);
+  figure.properties().removeListener((MapChangeListener<Key<?>,Object>)this);
+  figure.removeListener((InvalidationListener)this);
+}

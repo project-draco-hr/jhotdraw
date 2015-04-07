@@ -1,0 +1,12 @@
+{
+  dirtyFigures.add(f);
+  Node oldNode=figureToNodeMap.put(f,newNode);
+  if (oldNode != newNode) {
+    if (oldNode != null) {
+      nodeToFigureMap.remove(oldNode);
+    }
+    if (newNode != null) {
+      nodeToFigureMap.put(newNode,f);
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  int lastOffset=0;
+  int last=result.length();
+  for (int i=0; i <= maxOffset; ++i) {
+    result.append(pattern.substring(lastOffset,offsets[i]));
+    lastOffset=offsets[i];
+    int argumentNumber=argumentNumbers[i];
+    if (arguments == null || argumentNumber >= arguments.length) {
+      result.append('{').append(argumentNumber).append('}');
+      continue;
+    }
+    if (false) {
+      result.append('\uFFFD');
+    }
+ else {
+      Object obj=arguments[argumentNumber];
+      String arg=null;
+      Format subFormatter=null;
+      if (obj == null) {
+        arg="null";
+      }
+ else       if (formats[i] != null) {
+        subFormatter=formats[i];
+        if (subFormatter instanceof ChoiceFormat) {
+          arg=formats[i].format(obj);
+          if (arg.indexOf('{') >= 0) {
+            subFormatter=new PatternFormat(arg,locale);
+            obj=arguments;
+            arg=null;
+          }
+        }
+      }
+ else       if (obj instanceof Number) {
+        subFormatter=NumberFormat.getInstance(locale);
+      }
+ else       if (obj instanceof Date) {
+        subFormatter=DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT,locale);
+      }
+ else       if (obj instanceof String) {
+        arg=(String)obj;
+      }
+ else {
+        arg=obj.toString();
+        if (arg == null) {
+          arg="null";
+        }
+      }
+      if (characterIterators != null) {
+        if (last != result.length()) {
+          characterIterators.add(createAttributedCharacterIterator(result.substring(last)));
+          last=result.length();
+        }
+        if (subFormatter != null) {
+          AttributedCharacterIterator subIterator=subFormatter.formatToCharacterIterator(obj);
+          append(result,subIterator);
+          if (last != result.length()) {
+            characterIterators.add(createAttributedCharacterIterator(subIterator,Field.ARGUMENT,Integer.valueOf(argumentNumber)));
+            last=result.length();
+          }
+          arg=null;
+        }
+        if (arg != null && arg.length() > 0) {
+          result.append(arg);
+          characterIterators.add(createAttributedCharacterIterator(arg,Field.ARGUMENT,Integer.valueOf(argumentNumber)));
+          last=result.length();
+        }
+      }
+ else {
+        if (subFormatter != null) {
+          arg=subFormatter.format(obj);
+        }
+        last=result.length();
+        result.append(arg);
+        if (i == 0 && fp != null && Field.ARGUMENT.equals(fp.getFieldAttribute())) {
+          fp.setBeginIndex(last);
+          fp.setEndIndex(result.length());
+        }
+        last=result.length();
+      }
+    }
+  }
+  result.append(pattern.substring(lastOffset,pattern.length()));
+  if (characterIterators != null && last != result.length()) {
+    characterIterators.add(createAttributedCharacterIterator(result.substring(last)));
+  }
+  return result;
+}

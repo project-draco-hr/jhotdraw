@@ -1,0 +1,8 @@
+{
+  try {
+    return converter.toValue(string);
+  }
+ catch (  ParseException ex) {
+    throw new IllegalArgumentException(ex);
+  }
+}

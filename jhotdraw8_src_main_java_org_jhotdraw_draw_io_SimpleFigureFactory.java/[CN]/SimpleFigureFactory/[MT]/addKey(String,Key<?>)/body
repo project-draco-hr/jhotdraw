@@ -1,0 +1,8 @@
+{
+  if (!attrToKey.containsKey(name)) {
+    attrToKey.put(name,key);
+  }
+  if (!keyToAttr.containsKey(key)) {
+    keyToAttr.put(key,name);
+  }
+}

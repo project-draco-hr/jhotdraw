@@ -1,0 +1,17 @@
+{
+  FXMLLoader loader=new FXMLLoader();
+  loader.setController(this);
+  try {
+    node=loader.load(getClass().getResourceAsStream("GrapherView.fxml"));
+  }
+ catch (  IOException ex) {
+    throw new InternalError(ex);
+  }
+  Drawing d=new SimpleDrawing();
+  d.add(new RectangleFigure(10,10,40,30));
+  d.add(new TextFigure(15,30,"Hello"));
+  drawingView=new SimpleDrawingView();
+  drawingView.init();
+  drawingView.setDrawing(d);
+  scrollPane.setContent(drawingView.getNode());
+}

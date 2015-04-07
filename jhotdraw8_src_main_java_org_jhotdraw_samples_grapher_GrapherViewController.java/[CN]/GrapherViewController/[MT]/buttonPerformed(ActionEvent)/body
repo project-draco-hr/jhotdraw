@@ -1,0 +1,9 @@
+{
+  Instant now=Instant.now();
+  for (  Figure f : drawingView.getDrawing().children()) {
+    if (f instanceof TextFigure) {
+      TextFigure tf=(TextFigure)f;
+      tf.set(TextFigure.TEXT,now.toString());
+    }
+  }
+}

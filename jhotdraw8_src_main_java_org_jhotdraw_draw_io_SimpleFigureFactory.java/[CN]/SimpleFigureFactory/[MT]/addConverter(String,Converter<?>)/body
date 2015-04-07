@@ -1,0 +1,4 @@
+{
+  valueToCData.put(fullValueType,converter);
+  valueOfCData.put(fullValueType,converter);
+}

@@ -1,0 +1,13 @@
+{
+  if (invalidatedFigure == null) {
+    throw new NullPointerException("figure is null");
+  }
+  eventType=EventType.FIGURE_INVALIDATED;
+  this.source=source;
+  this.figure=invalidatedFigure;
+  this.key=null;
+  this.oldValue=null;
+  this.newValue=null;
+  this.child=null;
+  this.index=-1;
+}

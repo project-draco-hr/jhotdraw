@@ -1,0 +1,5 @@
+{
+  ParsePosition pp=new ParsePosition(0);
+  String value=toValue(string,pp);
+  return value;
+}

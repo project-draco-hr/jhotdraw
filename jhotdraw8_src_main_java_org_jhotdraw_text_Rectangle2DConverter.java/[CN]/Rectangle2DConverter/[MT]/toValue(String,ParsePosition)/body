@@ -1,0 +1,7 @@
+{
+  Object[] v=formatter.parse(value,pp);
+  if (pp.getErrorIndex() != -1) {
+    return null;
+  }
+  return new Rectangle2D((double)v[0],(double)v[1],(double)v[2],(double)v[3]);
+}

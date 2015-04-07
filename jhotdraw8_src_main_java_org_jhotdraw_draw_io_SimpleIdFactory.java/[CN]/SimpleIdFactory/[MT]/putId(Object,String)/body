@@ -1,0 +1,10 @@
+{
+  String oldId=objectToId.put(object,id);
+  if (oldId != null) {
+    idToObject.remove(oldId);
+  }
+  Object oldObject=idToObject.put(id,object);
+  if (oldObject != null) {
+    objectToId.remove(oldObject);
+  }
+}

@@ -1,0 +1,6 @@
+{
+  String sub=string.substring(pp.getIndex());
+  String value=sub.replace("&quot;","\"").replace("&amp;","&");
+  pp.setIndex(string.length());
+  return value;
+}

@@ -1,0 +1,6 @@
+{
+  if (invalidationListeners == null) {
+    invalidationListeners=new LinkedList<>();
+  }
+  invalidationListeners.add(listener);
+}

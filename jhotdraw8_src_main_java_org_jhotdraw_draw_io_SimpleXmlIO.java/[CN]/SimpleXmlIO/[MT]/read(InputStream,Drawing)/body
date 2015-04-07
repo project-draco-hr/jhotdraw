@@ -1,0 +1,10 @@
+{
+  try {
+    DocumentBuilder builder=DocumentBuilderFactory.newInstance().newDocumentBuilder();
+    Document doc=builder.parse(in);
+    return read(doc,drawing);
+  }
+ catch (  SAXException|ParserConfigurationException ex) {
+    throw new IOException(ex);
+  }
+}

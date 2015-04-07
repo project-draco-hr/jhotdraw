@@ -1,0 +1,2 @@
+Class<? extends Figure> f
+Collection<Key<?>> keys

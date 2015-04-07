@@ -1,0 +1,9 @@
+{
+  Drawing tmp=ofDocument(in);
+  if (drawing != null) {
+    drawing.children().addAll(tmp.children());
+    drawing.properties().putAll(tmp.properties());
+    tmp=drawing;
+  }
+  return tmp;
+}

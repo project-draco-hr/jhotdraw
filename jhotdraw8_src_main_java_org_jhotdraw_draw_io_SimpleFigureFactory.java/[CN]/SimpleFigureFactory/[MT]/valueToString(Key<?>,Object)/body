@@ -1,0 +1,7 @@
+{
+  Converter converter=valueToCData.get(key.getFullValueType());
+  if (converter == null) {
+    throw new IOException("no converter for attribute type " + key.getFullValueType());
+  }
+  return converter.toString(value);
+}

@@ -1,0 +1,4 @@
+{
+  toAppendTo.append(converter.toString(obj));
+  return toAppendTo;
+}

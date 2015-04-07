@@ -1,0 +1,5 @@
+{
+  for (  DrawingModelListener l : listeners) {
+    l.handle(event);
+  }
+}

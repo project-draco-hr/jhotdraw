@@ -1,0 +1,7 @@
+{
+  ObservableList<Node> group=((Group)n).getChildren();
+  group.clear();
+  for (  Figure child : children()) {
+    group.add(v.getNode(child));
+  }
+}

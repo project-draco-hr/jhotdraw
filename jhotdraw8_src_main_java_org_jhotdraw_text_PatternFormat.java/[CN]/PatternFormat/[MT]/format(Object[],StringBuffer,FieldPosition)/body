@@ -1,0 +1,3 @@
+{
+  return subformat(arguments,result,pos,null);
+}

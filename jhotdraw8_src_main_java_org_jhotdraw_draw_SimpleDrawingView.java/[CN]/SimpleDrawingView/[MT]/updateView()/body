@@ -1,0 +1,12 @@
+{
+  try {
+    LinkedList<Figure> update=new LinkedList<>(dirtyFigures);
+    dirtyFigures.clear();
+    for (    Figure f : update) {
+      f.updateNode(this,getNode(f));
+    }
+  }
+ catch (  Throwable t) {
+    t.printStackTrace();
+  }
+}

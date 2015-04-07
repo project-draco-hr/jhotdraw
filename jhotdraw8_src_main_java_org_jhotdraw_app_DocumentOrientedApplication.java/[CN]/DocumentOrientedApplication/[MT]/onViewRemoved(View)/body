@@ -2,7 +2,7 @@
   Stage stage=(Stage)view.getNode().getScene().getWindow();
   view.getActionMap().setParent(Optional.empty());
   view.setApplication(null);
-  Optional<ChangeListener> focusListener=view.getValue(FOCUS_LISTENER_KEY);
+  Optional<ChangeListener> focusListener=view.get(FOCUS_LISTENER_KEY);
   if (focusListener.isPresent()) {
     stage.focusedProperty().removeListener(focusListener.get());
   }

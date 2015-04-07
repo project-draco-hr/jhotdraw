@@ -1,0 +1,3 @@
+{
+  fire(new DrawingModelEvent(SimpleDrawingModel.this,figure,key,oldValue,newValue));
+}
