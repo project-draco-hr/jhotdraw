@@ -5,8 +5,14 @@
   final Application app=getApplication();
 {
     app.addDisabler(this);
-    Optional<View> emptyView=app.getActiveView();
-    if (!emptyView.isPresent() || !emptyView.get().isEmpty() || emptyView.get().isDisabled()) {
+    Optional<View> emptyView;
+    if (reuseEmptyViews) {
+      emptyView=app.getActiveView();
+      if (!emptyView.isPresent() || !emptyView.get().isEmpty() || emptyView.get().isDisabled()) {
+        emptyView=Optional.empty();
+      }
+    }
+ else {
       emptyView=Optional.empty();
     }
     final View view;

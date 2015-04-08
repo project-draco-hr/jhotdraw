@@ -1,0 +1,5 @@
+{
+  set(CENTER,new Point2D(x,y));
+  set(RADIUS_X,radiusx);
+  set(RADIUS_Y,radiusy);
+}

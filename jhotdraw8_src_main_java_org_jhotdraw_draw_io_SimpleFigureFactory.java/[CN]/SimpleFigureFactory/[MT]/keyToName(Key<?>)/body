@@ -1,6 +1,0 @@
-{
-  if (!keyToAttr.containsKey(key)) {
-    throw new IOException("no mapping for key " + key);
-  }
-  return keyToAttr.get(key);
-}

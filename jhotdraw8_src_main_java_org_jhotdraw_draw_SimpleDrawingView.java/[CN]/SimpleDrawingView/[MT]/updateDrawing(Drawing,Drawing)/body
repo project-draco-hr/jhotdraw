@@ -2,7 +2,7 @@
   if (oldValue != null) {
     nodeToFigureMap.clear();
     figureToNodeMap.clear();
-    drawingPane.setCenter(null);
+    drawingPane.getChildren().clear();
     dirtyFigures.clear();
     model.setRoot(null);
     if (boundsProperty != null) {
@@ -13,7 +13,7 @@
   }
   if (newValue != null) {
     handleFigureAdded(newValue);
-    drawingPane.setCenter(getNode(newValue));
+    drawingPane.getChildren().add(getNode(newValue));
     updateView();
     model.setRoot(newValue);
     boundsProperty=Drawing.BOUNDS.propertyAt(newValue.properties());

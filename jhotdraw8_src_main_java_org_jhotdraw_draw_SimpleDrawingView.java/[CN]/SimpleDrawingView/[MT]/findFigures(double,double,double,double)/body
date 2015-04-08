@@ -1,0 +1,6 @@
+{
+  double sf=1 / zoomFactor.get();
+  BoundingBox r=new BoundingBox(vx * sf,vy * sf,0,vwidth * sf,vheight * sf,0);
+  List<Figure> list=new LinkedList<Figure>();
+  return list;
+}

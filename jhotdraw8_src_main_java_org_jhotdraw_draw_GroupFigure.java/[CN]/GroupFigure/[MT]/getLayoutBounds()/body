@@ -3,7 +3,7 @@
   double maxX=Double.MIN_VALUE;
   double minY=Double.MAX_VALUE;
   double maxY=Double.MIN_VALUE;
-  for (  Figure child : children()) {
+  for (  Figure child : childrenProperty()) {
     Rectangle2D b=child.getLayoutBounds();
     minX=min(minX,b.getMinX());
     maxX=max(maxX,b.getMaxX());

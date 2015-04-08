@@ -1,14 +1,18 @@
 {
+  addFigure("Group",GroupFigure.class);
   addFigure("Drawing",SimpleDrawing.class);
   addFigure("Rectangle",RectangleFigure.class);
   addFigure("Text",TextFigure.class);
   addFigure("Circle",CircleFigure.class);
   addFigure("Line",LineFigure.class);
+  addFigure("Ellipse",EllipseFigure.class);
   addFigureKeysAndNames(RectangleFigure.class,RectangleFigure.getFigureKeys().values());
+  addFigureKeysAndNames(GroupFigure.class,GroupFigure.getFigureKeys().values());
   addFigureKeysAndNames(SimpleDrawing.class,SimpleDrawing.getFigureKeys().values());
   addFigureKeysAndNames(TextFigure.class,TextFigure.getFigureKeys().values());
   addFigureKeysAndNames(CircleFigure.class,CircleFigure.getFigureKeys().values());
   addFigureKeysAndNames(LineFigure.class,LineFigure.getFigureKeys().values());
+  addFigureKeysAndNames(EllipseFigure.class,EllipseFigure.getFigureKeys().values());
   addConverter(Rectangle2D.class,new Rectangle2DConverter());
   addConverter(String.class,new DefaultConverter());
   addConverter(Point2D.class,new Point2DConverter());

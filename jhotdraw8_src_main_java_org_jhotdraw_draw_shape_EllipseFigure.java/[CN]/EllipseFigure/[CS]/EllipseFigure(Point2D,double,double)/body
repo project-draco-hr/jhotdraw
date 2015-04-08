@@ -1,0 +1,5 @@
+{
+  set(CENTER,center);
+  set(RADIUS_X,radiusx);
+  set(RADIUS_Y,radiusy);
+}

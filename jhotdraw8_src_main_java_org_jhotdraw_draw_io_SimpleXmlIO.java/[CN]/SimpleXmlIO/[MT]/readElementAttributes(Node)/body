@@ -13,7 +13,7 @@
         if ("id".equals(attr.getName())) {
           continue;
         }
-        Key<Object> key=(Key<Object>)factory.nameToKey(attr.getName());
+        Key<Object> key=(Key<Object>)factory.nameToKey(figure,attr.getName());
         if (key != null && factory.figureKeys(figure).contains(key)) {
           Object value=null;
           if (Figure.class.isAssignableFrom(key.getValueType())) {

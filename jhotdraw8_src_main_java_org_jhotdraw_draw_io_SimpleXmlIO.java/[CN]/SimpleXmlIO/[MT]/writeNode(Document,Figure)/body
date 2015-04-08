@@ -6,20 +6,20 @@
     Object value=figure.get(key);
     if (!factory.isDefaultValue(key,value)) {
       if (Figure.class.isAssignableFrom(key.getValueType())) {
-        elem.setAttribute(factory.keyToName(key),cdataConverter.toString(ids.createId(value)));
+        elem.setAttribute(factory.keyToName(figure,key),cdataConverter.toString(ids.createId(value)));
       }
  else {
-        elem.setAttribute(factory.keyToName(key),cdataConverter.toString(factory.valueToString(key,value)));
+        elem.setAttribute(factory.keyToName(figure,key),cdataConverter.toString(factory.valueToString(key,value)));
       }
     }
   }
-  for (  Figure child : figure.children()) {
+  for (  Figure child : figure.childrenProperty()) {
     if (factory.figureToName(child) != null) {
       elem.appendChild(doc.createTextNode("\n"));
       elem.appendChild(writeNode(doc,child));
     }
   }
-  if (!figure.children().isEmpty()) {
+  if (!figure.childrenProperty().isEmpty()) {
     elem.appendChild(doc.createTextNode("\n"));
   }
   return elem;

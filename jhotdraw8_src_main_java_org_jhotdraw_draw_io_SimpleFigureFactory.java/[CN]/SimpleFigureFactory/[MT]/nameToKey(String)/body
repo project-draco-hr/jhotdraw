@@ -1,6 +1,0 @@
-{
-  if (!attrToKey.containsKey(attributeName)) {
-    throw new IOException("no mapping for attribute " + attributeName);
-  }
-  return attrToKey.get(attributeName);
-}

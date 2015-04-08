@@ -1,0 +1,10 @@
+{
+  Ellipse n=(Ellipse)node;
+  updateFigureProperties(n);
+  updateShapeProperties(n);
+  Point2D c=get(CENTER);
+  n.setCenterX(c.getX());
+  n.setCenterY(c.getY());
+  n.setRadiusX(get(RADIUS_X));
+  n.setRadiusY(get(RADIUS_Y));
+}

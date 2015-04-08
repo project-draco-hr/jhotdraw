@@ -1,6 +1,6 @@
 {
   try {
-    HashMap<String,Key<?>> keys=new HashMap<>();
+    HashMap<String,Key<?>> keys=Figure.getFigureKeys();
     for (    Field f : GroupFigure.class.getDeclaredFields()) {
       if (Key.class.isAssignableFrom(f.getType())) {
         Key<?> value=(Key<?>)f.get(null);
