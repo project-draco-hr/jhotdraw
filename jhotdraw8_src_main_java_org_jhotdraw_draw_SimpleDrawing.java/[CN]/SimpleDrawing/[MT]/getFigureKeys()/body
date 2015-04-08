@@ -1,6 +1,12 @@
 {
   try {
     HashMap<String,Key<?>> keys=new HashMap<>();
+    for (    Field f : Drawing.class.getDeclaredFields()) {
+      if (Key.class.isAssignableFrom(f.getType())) {
+        Key<?> value=(Key<?>)f.get(null);
+        keys.put(value.getName(),value);
+      }
+    }
     for (    Field f : SimpleDrawing.class.getDeclaredFields()) {
       if (Key.class.isAssignableFrom(f.getType())) {
         Key<?> value=(Key<?>)f.get(null);

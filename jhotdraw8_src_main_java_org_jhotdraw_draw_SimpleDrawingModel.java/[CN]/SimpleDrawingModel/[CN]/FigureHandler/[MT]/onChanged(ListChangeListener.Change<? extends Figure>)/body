@@ -1,5 +1,5 @@
 {
-  Figure figure=(Figure)((ListProperty)c.getList()).getBean();
+  Figure figure=(Figure)((ReadOnlyProperty)c.getList()).getBean();
   while (c.next()) {
     final int from=c.getFrom();
     final int to=c.getTo();
@@ -24,11 +24,13 @@
       if (c.wasRemoved()) {
         final List<? extends Figure> removed=c.getRemoved();
         for (int i=0, n=removed.size(); i < n; i++) {
+          handleFigureRemoved(removed.get(i));
           fireFigureRemoved(figure,removed.get(i),i + from);
         }
       }
       if (c.wasAdded()) {
         for (int i=from; i < to; i++) {
+          handleFigureAdded(list.get(i));
           fireFigureAdded(figure,list.get(i),i);
         }
       }

@@ -1,0 +1,12 @@
+{
+  Document doc=toDocument(drawing);
+  try {
+    Transformer t=TransformerFactory.newInstance().newTransformer();
+    DOMSource source=new DOMSource(doc);
+    StreamResult result=new StreamResult(file);
+    t.transform(source,result);
+  }
+ catch (  TransformerException ex) {
+    throw new IOException(ex);
+  }
+}

@@ -1,17 +1,22 @@
 {
   if (oldValue != null) {
-    Drawing d=oldValue;
     nodeToFigureMap.clear();
     figureToNodeMap.clear();
-    drawingPane.getChildren().clear();
+    drawingPane.setCenter(null);
     dirtyFigures.clear();
     model.setRoot(null);
+    if (boundsProperty != null) {
+      boundsProperty.removeListener(invalidationListener);
+      boundsProperty.unbind();
+      boundsProperty=null;
+    }
   }
   if (newValue != null) {
-    Drawing d=newValue;
-    handleFigureAdded(d);
-    drawingPane.getChildren().add(getNode(d));
+    handleFigureAdded(newValue);
+    drawingPane.setCenter(getNode(newValue));
     updateView();
-    model.setRoot(d);
+    model.setRoot(newValue);
+    boundsProperty=Drawing.BOUNDS.propertyAt(newValue.properties());
+    boundsProperty.addListener(invalidationListener);
   }
 }

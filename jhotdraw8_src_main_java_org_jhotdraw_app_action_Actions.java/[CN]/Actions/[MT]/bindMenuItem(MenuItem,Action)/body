@@ -1,7 +1,7 @@
 {
-  Binding<String> nameBinding=Action.NAME.valueAt(action.properties());
+  Binding<String> nameBinding=Action.LABEL.valueAt(action.properties());
   control.getProperties().put("ActionsNameBinding",nameBinding);
-  control.textProperty().bind(action.NAME.valueAt(action.properties()));
+  control.textProperty().bind(action.LABEL.valueAt(action.properties()));
   if (control instanceof CheckMenuItem) {
     Property<Boolean> selectedBinding=Action.SELECTED_KEY.propertyAt(action.properties());
     control.getProperties().put("ActionsSelectedBinding",selectedBinding);

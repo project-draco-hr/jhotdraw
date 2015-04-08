@@ -1,6 +1,0 @@
-{
-  Rectangle2D r=get(RECTANGLE);
-  Bounds b=new BoundingBox(r.getMinX(),r.getMinY(),r.getMaxX(),r.getMaxY());
-  b=transform.transform(b);
-  set(RECTANGLE,new Rectangle2D(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight()));
-}

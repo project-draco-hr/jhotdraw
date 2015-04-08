@@ -8,6 +8,6 @@
   this.key=null;
   this.oldValue=null;
   this.newValue=null;
-  this.child=null;
+  this.parent=null;
   this.index=-1;
 }

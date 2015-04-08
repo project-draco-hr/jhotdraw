@@ -1,0 +1,12 @@
+{
+  Rectangle rectangleNode=(Rectangle)node;
+  updateFigureProperties(rectangleNode);
+  updateShapeProperties(rectangleNode);
+  Rectangle2D r=get(RECTANGLE);
+  rectangleNode.setX(r.getMinX());
+  rectangleNode.setY(r.getMinY());
+  rectangleNode.setWidth(r.getWidth());
+  rectangleNode.setHeight(r.getHeight());
+  rectangleNode.setArcWidth(get(ARC_WIDTH));
+  rectangleNode.setArcHeight(get(ARC_HEIGHT));
+}

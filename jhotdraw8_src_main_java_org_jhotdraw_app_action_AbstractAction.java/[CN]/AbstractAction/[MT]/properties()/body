@@ -1,6 +1,3 @@
 {
-  if (properties == null) {
-    properties=new SimpleMapProperty<>(FXCollections.observableMap(new HashMap<Key<?>,Object>()));
-  }
-  return properties;
+  return properties.getReadOnlyProperty();
 }

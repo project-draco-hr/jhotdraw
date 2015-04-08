@@ -1,0 +1,12 @@
+{
+  if (oldValue.isPresent()) {
+    Tool t=oldValue.get();
+    toolPane.setCenter(null);
+    t.setDrawingView(null);
+  }
+  if (newValue.isPresent()) {
+    Tool t=newValue.get();
+    toolPane.setCenter(t.getNode());
+    t.setDrawingView(this);
+  }
+}

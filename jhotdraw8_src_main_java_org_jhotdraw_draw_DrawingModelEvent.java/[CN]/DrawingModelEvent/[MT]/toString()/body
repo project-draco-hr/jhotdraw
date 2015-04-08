@@ -1,0 +1,3 @@
+{
+  return "DrawingModelEvent{" + "figure=" + figure + ", key="+ key+ ", oldValue="+ oldValue+ ", newValue="+ newValue+ ", parent="+ parent+ ", index="+ index+ ", eventType="+ eventType+ ", source="+ source+ '}';
+}

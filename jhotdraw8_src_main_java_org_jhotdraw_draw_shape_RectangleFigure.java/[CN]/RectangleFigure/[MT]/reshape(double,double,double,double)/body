@@ -1,0 +1,3 @@
+{
+  set(RECTANGLE,new Rectangle2D(x + min(width,0),y + min(height,0),abs(width),abs(height)));
+}

@@ -1,8 +1,25 @@
 {
-  Point2DConverter c=new Point2DConverter();
-  String str=c.toString(new Point2D(3e15,3.14519265788947687879));
-  System.out.println(str);
-  Object value=c.toValue(str);
-  System.out.println(value);
+  Drawing d=new SimpleDrawing();
+  RectangleFigure r=new RectangleFigure();
+  r.properties().addListener(new MapChangeListener<Key<?>,Object>(){
+    @Override public void onChanged(    MapChangeListener.Change<? extends Key<?>,? extends Object> change){
+      System.out.println("Map change:" + change);
+    }
+  }
+);
+  SimpleDrawingModel m=new SimpleDrawingModel();
+  m.setRoot(d);
+  m.addListener(new DrawingModelListener(){
+    @Override public void handle(    DrawingModelEvent mutation){
+      System.out.println(mutation);
+    }
+  }
+);
+  d=new SimpleDrawing();
+  m.setRoot(d);
+  d.add(r);
+  r.set(RectangleFigure.RECTANGLE,new Rectangle2D(1,2,3,4));
+  r.reshape(6,7,8,9);
+  r.reshape(1,1,2,4);
   System.exit(0);
 }
