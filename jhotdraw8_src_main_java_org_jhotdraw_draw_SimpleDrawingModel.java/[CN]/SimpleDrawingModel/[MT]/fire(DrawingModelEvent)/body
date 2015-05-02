@@ -1,5 +1,8 @@
 {
-  for (  DrawingModelListener l : listeners) {
+  for (  Listener<DrawingModelEvent> l : drawingModelListeners) {
     l.handle(event);
+  }
+  for (  InvalidationListener l : invalidationListeners) {
+    l.invalidated(this);
   }
 }

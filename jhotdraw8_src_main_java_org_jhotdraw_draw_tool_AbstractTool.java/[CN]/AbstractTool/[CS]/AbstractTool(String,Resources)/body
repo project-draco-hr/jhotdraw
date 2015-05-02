@@ -1,0 +1,6 @@
+{
+  set(NAME,name);
+  if (rsrc != null) {
+    applyResources(rsrc);
+  }
+}

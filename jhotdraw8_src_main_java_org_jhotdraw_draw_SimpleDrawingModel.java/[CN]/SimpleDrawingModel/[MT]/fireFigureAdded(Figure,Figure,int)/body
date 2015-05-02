@@ -1,3 +1,3 @@
 {
-  fire(new DrawingModelEvent(SimpleDrawingModel.this,true,parent,child,index));
+  fire(new DrawingModelEvent(this,true,parent,child,index));
 }

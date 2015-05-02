@@ -1,4 +1,4 @@
 {
-  TextAreaViewController v=new TextAreaViewController();
+  TextAreaView v=new TextAreaView();
   return v;
 }

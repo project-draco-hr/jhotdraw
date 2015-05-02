@@ -1,0 +1,3 @@
+{
+  drawingViewProperty().set(Optional.ofNullable(drawingView));
+}

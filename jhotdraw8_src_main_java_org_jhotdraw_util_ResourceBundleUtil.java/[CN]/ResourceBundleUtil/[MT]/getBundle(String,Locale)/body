@@ -1,5 +1,0 @@
-{
-  ResourceBundleUtil r;
-  r=new ResourceBundleUtil(baseName,locale);
-  return r;
-}

@@ -4,5 +4,5 @@
   }
   updateNode(null,textNode);
   Bounds b=textNode.getLayoutBounds();
-  return new Rectangle2D(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
+  return new BoundingBox(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
 }

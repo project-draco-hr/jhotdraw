@@ -1,0 +1,6 @@
+{
+  String name=get(NAME);
+  set(LABEL,rsrc.getTextProperty(name));
+  set(LARGE_ICON_KEY,rsrc.getLargeIconProperty(name,getClass()));
+  set(SHORT_DESCRIPTION,rsrc.getToolTipTextProperty(name));
+}

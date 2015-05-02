@@ -1,0 +1,19 @@
+{
+  if (!handlesAreValid) {
+    handlesAreValid=true;
+    selectionHandles.clear();
+    while (true) {
+      for (      Figure figure : getSelectedFigures()) {
+        for (        Handle handle : figure.createHandles(detailLevel,this)) {
+          selectionHandles.add(handle);
+          handle.addHandleListener(eventHandler);
+        }
+      }
+      if (selectionHandles.size() == 0 && detailLevel != HandleLevel.SHAPE) {
+        detailLevel=HandleLevel.SHAPE;
+        continue;
+      }
+      break;
+    }
+  }
+}

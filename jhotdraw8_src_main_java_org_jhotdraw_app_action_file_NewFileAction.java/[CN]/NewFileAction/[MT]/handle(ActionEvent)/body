@@ -1,7 +1,2 @@
 {
-  Application app=getApplication();
-  final View newView=app.getModel().createView();
-  app.add(newView);
-  newView.clear();
-  newView.clearModified();
 }

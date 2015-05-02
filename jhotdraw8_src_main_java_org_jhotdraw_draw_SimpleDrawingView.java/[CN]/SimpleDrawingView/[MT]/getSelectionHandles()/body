@@ -1,0 +1,4 @@
+{
+  validateHandles();
+  return Collections.unmodifiableList(selectionHandles);
+}

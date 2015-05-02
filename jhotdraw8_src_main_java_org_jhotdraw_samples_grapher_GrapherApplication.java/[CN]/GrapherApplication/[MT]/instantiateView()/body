@@ -1,4 +1,4 @@
 {
-  GrapherViewController v=new GrapherViewController();
+  GrapherView v=new GrapherView();
   return v;
 }

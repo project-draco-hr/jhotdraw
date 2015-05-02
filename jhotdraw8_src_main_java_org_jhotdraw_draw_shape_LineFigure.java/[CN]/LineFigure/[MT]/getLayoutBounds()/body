@@ -1,5 +1,5 @@
 {
   Point2D start=get(START);
   Point2D end=get(END);
-  return new Rectangle2D(min(start.getX(),end.getX()),min(end.getX(),end.getY()),abs(start.getX() - end.getX()),abs(start.getY() - end.getY()));
+  return new BoundingBox(min(start.getX(),end.getX()),min(end.getX(),end.getY()),abs(start.getX() - end.getX()),abs(start.getY() - end.getY()));
 }

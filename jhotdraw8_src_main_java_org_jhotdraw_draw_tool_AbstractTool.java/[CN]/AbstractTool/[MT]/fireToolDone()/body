@@ -1,0 +1,3 @@
+{
+  fire(new ToolEvent(this,ToolEvent.EventType.TOOL_DONE));
+}

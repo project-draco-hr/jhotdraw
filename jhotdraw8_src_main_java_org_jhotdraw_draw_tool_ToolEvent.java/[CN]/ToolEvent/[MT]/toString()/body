@@ -1,0 +1,3 @@
+{
+  return "ToolEvent{" + "type=" + eventType + " tool="+ getSource()+ '}';
+}

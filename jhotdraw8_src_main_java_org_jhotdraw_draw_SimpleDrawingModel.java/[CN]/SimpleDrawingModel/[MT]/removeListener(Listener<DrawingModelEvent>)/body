@@ -1,0 +1,3 @@
+{
+  drawingModelListeners.remove(listener);
+}

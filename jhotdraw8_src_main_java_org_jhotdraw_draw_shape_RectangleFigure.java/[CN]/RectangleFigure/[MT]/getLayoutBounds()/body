@@ -1,3 +1,4 @@
 {
-  return get(RECTANGLE);
+  Rectangle2D r=get(RECTANGLE);
+  return new BoundingBox(r.getMinX(),r.getMinY(),r.getWidth(),r.getHeight());
 }
