@@ -2,8 +2,14 @@
   final Application app=getApplication();
   if (app.isEnabled()) {
     app.setEnabled(false);
-    View emptyView=app.getActiveView();
-    if (emptyView == null || !emptyView.isEmpty() || !emptyView.isEnabled()) {
+    View emptyView;
+    if (reuseEmptyViews) {
+      emptyView=app.getActiveView();
+      if (emptyView == null || !emptyView.isEmpty() || !emptyView.isEnabled()) {
+        emptyView=null;
+      }
+    }
+ else {
       emptyView=null;
     }
     final View view;
