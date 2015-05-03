@@ -1,0 +1,5 @@
+{
+  dm.removeListener(handler);
+  dm.setRoot(null);
+  dv.drawingToViewProperty().removeListener(handler);
+}

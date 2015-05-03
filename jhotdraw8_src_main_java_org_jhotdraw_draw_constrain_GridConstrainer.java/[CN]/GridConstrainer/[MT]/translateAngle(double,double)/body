@@ -1,0 +1,14 @@
+{
+  double ta=angle / theta;
+  if (Double.isNaN(dir) || dir == 0) {
+    ta=round(ta);
+  }
+ else   if (dir < 0) {
+    ta=floor(ta + 1);
+  }
+ else {
+    ta=ceil(ta - 1);
+  }
+  double result=(ta * theta) % 360;
+  return result < 0 ? 360 + result : result;
+}

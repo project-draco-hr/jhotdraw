@@ -1,0 +1,8 @@
+{
+  double w=x - event.getX();
+  double h=y - event.getY();
+  rubberband.setX(min(x - 0.5,event.getX()));
+  rubberband.setY(min(y - 0.5,event.getY()));
+  rubberband.setWidth(abs(w));
+  rubberband.setHeight(abs(h));
+}

@@ -1,0 +1,5 @@
+{
+  super(bean,name,initialValue);
+  this.minValue=minValue;
+  this.maxValue=maxValue;
+}

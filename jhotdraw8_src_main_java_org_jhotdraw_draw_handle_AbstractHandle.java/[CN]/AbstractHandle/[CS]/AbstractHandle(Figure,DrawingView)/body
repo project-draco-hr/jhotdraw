@@ -1,0 +1,8 @@
+{
+  this.figure=figure;
+  this.dv=dv;
+  dm=new SimpleDrawingModel(figure);
+  dm.addListener(handler);
+  dv.drawingToViewProperty().addListener(handler);
+  updateNode();
+}

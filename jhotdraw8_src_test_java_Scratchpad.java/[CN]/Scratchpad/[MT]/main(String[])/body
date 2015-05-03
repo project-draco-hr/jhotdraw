@@ -9,7 +9,7 @@
 );
   SimpleDrawingModel m=new SimpleDrawingModel();
   m.setRoot(d);
-  m.addDrawingModelListener(new HandleListener(){
+  m.addDrawingModelListener(new Listener<DrawingModelEvent>(){
     @Override public void handle(    DrawingModelEvent mutation){
       System.out.println(mutation);
     }

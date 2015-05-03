@@ -1,0 +1,23 @@
+{
+  double tx=(width == 0) ? p.getX() : (p.getX() - x) / width;
+  double ty=(height == 0) ? p.getY() : (p.getY() - y) / height;
+  if (dir.getX() > 0) {
+    tx=floor(tx + 1);
+  }
+ else   if (dir.getX() < 0) {
+    tx=ceil(tx - 1);
+  }
+ else {
+    tx=round(tx);
+  }
+  if (dir.getY() > 0) {
+    ty=ceil(ty);
+  }
+ else   if (dir.getY() < 0) {
+    ty=floor(ty);
+  }
+ else {
+    ty=round(ty);
+  }
+  return new Point2D(tx * width + x,ty * height + y);
+}

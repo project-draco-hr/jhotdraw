@@ -1,0 +1,7 @@
+{
+  if (handleTracker == null) {
+    handleTracker=new SimpleHandleTracker();
+  }
+  handleTracker.setHandles(handle,getDrawingView().get().getCompatibleHandles(handle));
+  return handleTracker;
+}

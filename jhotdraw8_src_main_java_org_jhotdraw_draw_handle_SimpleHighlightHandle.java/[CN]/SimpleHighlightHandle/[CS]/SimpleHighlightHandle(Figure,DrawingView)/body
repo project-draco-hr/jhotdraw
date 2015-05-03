@@ -1,0 +1,7 @@
+{
+  super(figure,dv);
+  node=new Rectangle();
+  node.setFill(null);
+  node.setStroke(Color.LIGHTBLUE);
+  updateNode();
+}

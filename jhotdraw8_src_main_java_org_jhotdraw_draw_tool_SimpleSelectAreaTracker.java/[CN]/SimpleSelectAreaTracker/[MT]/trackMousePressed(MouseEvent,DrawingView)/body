@@ -1,0 +1,10 @@
+{
+  Bounds b=getNode().getBoundsInParent();
+  x=event.getX();
+  y=event.getY();
+  rubberband.setVisible(true);
+  rubberband.setX(x);
+  rubberband.setY(y);
+  rubberband.setWidth(0);
+  rubberband.setHeight(0);
+}

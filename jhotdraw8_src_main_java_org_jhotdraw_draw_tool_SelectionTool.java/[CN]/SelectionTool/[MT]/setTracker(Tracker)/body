@@ -1,0 +1,10 @@
+{
+  if (tracker != null) {
+    node.setCenter(null);
+  }
+  tracker=t;
+  if (tracker != null) {
+    node.setCenter(tracker.getNode());
+    node.layout();
+  }
+}

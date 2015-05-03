@@ -1,0 +1,5 @@
+{
+  anchorFigure.reshape(Transform.translate(evt.getX() - x,evt.getY() - y));
+  x=evt.getX();
+  y=evt.getY();
+}

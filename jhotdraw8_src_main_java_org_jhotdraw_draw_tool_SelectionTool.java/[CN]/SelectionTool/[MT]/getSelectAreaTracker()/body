@@ -1,0 +1,6 @@
+{
+  if (selectAreaTracker == null) {
+    selectAreaTracker=new SimpleSelectAreaTracker();
+  }
+  return selectAreaTracker;
+}

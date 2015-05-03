@@ -1,0 +1,4 @@
+{
+  x=evt.getX();
+  y=evt.getY();
+}

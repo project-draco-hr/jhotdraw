@@ -1,0 +1,22 @@
+{
+  Bounds b=getNode().getBoundsInParent();
+  Drawing drawing=view.getDrawing();
+  double vx=evt.getX();
+  double vy=evt.getY();
+  Optional<Figure> figure=view.findFigure(vx,vy);
+  if (isSelectBehindEnabled() && (evt.isAltDown() || evt.isControlDown())) {
+    figure=view.findFigureBehind(vx,vy,figure.get());
+  }
+  if (figure.isPresent()) {
+    DragTracker t=getDragTracker(figure.get());
+    setTracker(t);
+  }
+ else {
+    SelectAreaTracker t=getSelectAreaTracker();
+    setTracker(t);
+  }
+  if (tracker != null) {
+    tracker.trackMousePressed(evt,view);
+  }
+  fireToolStarted();
+}

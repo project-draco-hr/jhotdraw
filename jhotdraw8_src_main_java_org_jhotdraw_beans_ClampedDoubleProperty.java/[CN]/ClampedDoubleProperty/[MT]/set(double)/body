@@ -1,0 +1,3 @@
+{
+  super.set(max(minValue,min(newValue,maxValue)));
+}

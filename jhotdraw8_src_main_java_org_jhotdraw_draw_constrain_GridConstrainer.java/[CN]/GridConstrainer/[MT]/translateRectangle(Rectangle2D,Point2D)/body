@@ -1,0 +1,25 @@
+{
+  double tx=(width == 0) ? r.getMinX() : (r.getMinX() - x) / width;
+  double ty=(height == 0) ? r.getMinY() : (r.getMinY() - y) / height;
+  double tmaxx=(width == 0) ? r.getMaxX() : (r.getMaxX() - x) / width;
+  double tmaxy=(height == 0) ? r.getMaxY() : (r.getMaxY() - y) / height;
+  if (dir.getX() > 0) {
+    tx+=floor(tmaxx + 1) - tmaxx;
+  }
+ else   if (dir.getX() < 0) {
+    tx=ceil(tx - 1);
+  }
+ else {
+    tx=round(tx);
+  }
+  if (dir.getY() > 0) {
+    ty+=floor(tmaxy + 1) - tmaxy;
+  }
+ else   if (dir.getY() < 0) {
+    ty=ceil(ty - 1);
+  }
+ else {
+    ty=round(ty);
+  }
+  return new Rectangle2D(tx * width + x,ty * height + y,r.getWidth(),r.getHeight());
+}

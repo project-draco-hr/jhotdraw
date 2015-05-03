@@ -1,0 +1,3 @@
+{
+  this("selectAreaTool",Resources.getBundle("org.jhotdraw.draw.Labels"));
+}
