@@ -5,7 +5,7 @@
     TEXT_ANCHOR.put(a,SVG_TEXT_ANCHORS.get(value));
   }
   value=readInheritAttribute(elem,"display-align","auto");
-  if (!value.equals("auto")) {
+  if (!"auto".equals(value)) {
     if ("center".equals(value)) {
       TEXT_ANCHOR.put(a,TextAnchor.MIDDLE);
     }
@@ -14,7 +14,7 @@
     }
   }
   value=readInheritAttribute(elem,"text-align","start");
-  if (!value.equals("start")) {
+  if (!"start".equals(value)) {
     TEXT_ALIGN.put(a,SVG_TEXT_ALIGNS.get(value));
   }
 }

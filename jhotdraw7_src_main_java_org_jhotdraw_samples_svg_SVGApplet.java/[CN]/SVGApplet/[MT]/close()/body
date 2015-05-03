@@ -10,6 +10,8 @@
     System.exit(0);
   }
  else {
+    getContentPane().removeAll();
+    ((JComponent)getContentPane()).revalidate();
     try {
       appletContext.showDocument(new URL(getDocumentBase(),getParameter("PageURL")));
     }
