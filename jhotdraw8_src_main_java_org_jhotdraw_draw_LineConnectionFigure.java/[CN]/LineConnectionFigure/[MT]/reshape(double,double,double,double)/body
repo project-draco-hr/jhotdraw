@@ -1,0 +1,4 @@
+{
+  set(START,new Point2D(x,y));
+  set(END,new Point2D(x + width,y + height));
+}
