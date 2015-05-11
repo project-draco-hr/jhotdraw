@@ -1,0 +1,9 @@
+{
+  final Point2D center;
+  final Figure startFigure=connection.get(ConnectionFigure.START_FIGURE);
+  if (startFigure != null) {
+    final Bounds b=startFigure.getLayoutBounds();
+    center=new Point2D(b.getMinX() + b.getWidth() / 2.0,(b.getMinY() + b.getHeight() / 2.0));
+    connection.set(ConnectionFigure.START,center);
+  }
+}

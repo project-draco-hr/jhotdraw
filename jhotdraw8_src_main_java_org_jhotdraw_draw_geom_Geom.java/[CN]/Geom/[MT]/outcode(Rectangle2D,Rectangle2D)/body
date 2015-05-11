@@ -1,0 +1,16 @@
+{
+  int outcode=0;
+  if (r2.getMinX() > r1.getMinX() + r1.getWidth()) {
+    outcode=OUT_RIGHT;
+  }
+ else   if (r2.getMinX() + r2.getWidth() < r1.getMinX()) {
+    outcode=OUT_LEFT;
+  }
+  if (r2.getMinY() > r1.getMinY() + r1.getHeight()) {
+    outcode|=OUT_BOTTOM;
+  }
+ else   if (r2.getMinY() + r2.getHeight() < r1.getMinY()) {
+    outcode|=OUT_TOP;
+  }
+  return outcode;
+}

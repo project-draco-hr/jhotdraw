@@ -1,0 +1,7 @@
+{
+  double x1=Math.min(r.getMinX(),newx);
+  double x2=Math.max(r.getMaxX(),newx);
+  double y1=Math.min(r.getMinY(),newy);
+  double y2=Math.max(r.getMaxY(),newy);
+  return new Rectangle2D(x1,y1,x2 - x1,y2 - y1);
+}

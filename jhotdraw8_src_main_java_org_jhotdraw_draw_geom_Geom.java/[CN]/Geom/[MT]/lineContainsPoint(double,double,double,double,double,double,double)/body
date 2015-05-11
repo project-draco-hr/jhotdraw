@@ -1,0 +1,21 @@
+{
+  Rectangle2D r=new Rectangle2D(x1,y1,0,0);
+  r=Geom.add(r,x2,y2);
+  double grow=max(2,(int)ceil(tolerance));
+  r=new Rectangle2D(r.getMinX() - grow,r.getMinY() - grow,r.getWidth() + grow * 2,r.getHeight() + grow * 2);
+  if (!r.contains(px,py)) {
+    return false;
+  }
+  double a, b, x, y;
+  if (x1 == x2) {
+    return (abs(px - x1) <= tolerance);
+  }
+  if (y1 == y2) {
+    return (abs(py - y1) <= tolerance);
+  }
+  a=(y1 - y2) / (x1 - x2);
+  b=y1 - a * x1;
+  x=(py - b) / a;
+  y=a * px + b;
+  return (min(abs(x - px),abs(y - py)) <= tolerance);
+}

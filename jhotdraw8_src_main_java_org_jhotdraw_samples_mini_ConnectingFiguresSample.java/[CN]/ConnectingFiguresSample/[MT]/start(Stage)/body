@@ -1,0 +1,27 @@
+{
+  Drawing drawing=new SimpleDrawing();
+  RectangleFigure vertex1=new RectangleFigure(10,10,30,20);
+  RectangleFigure vertex2=new RectangleFigure(50,40,30,20);
+  RectangleFigure vertex3=new RectangleFigure(90,10,30,20);
+  LineConnectionFigure edge12=new LineConnectionFigure();
+  LineConnectionFigure edge23=new LineConnectionFigure();
+  edge12.set(ConnectionFigure.START_FIGURE,vertex1);
+  edge12.set(ConnectionFigure.END_FIGURE,vertex2);
+  edge23.set(ConnectionFigure.START_FIGURE,vertex2);
+  edge23.set(ConnectionFigure.END_FIGURE,vertex3);
+  drawing.add(vertex1);
+  drawing.add(vertex2);
+  drawing.add(vertex3);
+  drawing.add(edge12);
+  drawing.add(edge23);
+  DrawingView drawingView=new SimpleDrawingView();
+  drawingView.setDrawing(drawing);
+  DrawingEditor drawingEditor=new SimpleDrawingEditor();
+  drawingEditor.drawingViewsProperty().add(drawingView);
+  Tool tool=new SelectionTool();
+  drawingEditor.setActiveTool(tool);
+  ScrollPane root=new ScrollPane();
+  root.setContent(drawingView.getNode());
+  primaryStage.setScene(new Scene(root,300,250));
+  primaryStage.show();
+}

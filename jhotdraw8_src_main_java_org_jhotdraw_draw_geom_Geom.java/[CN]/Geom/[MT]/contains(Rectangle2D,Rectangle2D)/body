@@ -1,0 +1,3 @@
+{
+  return (r2.getMinX() >= r1.getMinX() && r2.getMinY() >= r1.getMinY() && (r2.getMinX() + max(0,r2.getWidth())) <= r1.getMinX() + max(0,r1.getWidth()) && (r2.getMinY() + max(0,r2.getHeight())) <= r1.getMinY() + max(0,r1.getHeight()));
+}

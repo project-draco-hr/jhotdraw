@@ -1,0 +1,5 @@
+{
+  double px=p.getX() - (r.getMinX() + r.getWidth() / 2);
+  double py=p.getY() - (r.getMinY() + r.getHeight() / 2);
+  return atan2(py * r.getWidth(),px * r.getHeight());
+}

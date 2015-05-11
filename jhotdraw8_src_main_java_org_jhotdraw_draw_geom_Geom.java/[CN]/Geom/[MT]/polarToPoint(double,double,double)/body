@@ -1,0 +1,5 @@
+{
+  double si=sin(angle);
+  double co=cos(angle);
+  return new Point2D((int)(fx * co + 0.5),(int)(fy * si + 0.5));
+}

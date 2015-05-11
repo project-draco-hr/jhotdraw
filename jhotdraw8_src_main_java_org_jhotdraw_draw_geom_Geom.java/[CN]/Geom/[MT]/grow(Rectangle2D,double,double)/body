@@ -1,0 +1,3 @@
+{
+  return new Rectangle2D(r.getMinX() - h,r.getMinY() - v,r.getWidth() + h * 2d,r.getHeight() + v * 2d);
+}

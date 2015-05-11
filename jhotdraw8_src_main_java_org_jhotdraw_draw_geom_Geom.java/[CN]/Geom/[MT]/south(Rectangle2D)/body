@@ -1,0 +1,3 @@
+{
+  return new Point2D(r.getMinX() + r.getWidth() / 2,r.getMinY() + r.getHeight());
+}

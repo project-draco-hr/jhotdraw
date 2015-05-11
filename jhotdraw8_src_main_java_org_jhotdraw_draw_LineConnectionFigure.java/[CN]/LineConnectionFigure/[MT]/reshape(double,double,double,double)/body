@@ -1,4 +1,8 @@
 {
-  set(START,new Point2D(x,y));
-  set(END,new Point2D(x + width,y + height));
+  if (get(START_FIGURE) == null) {
+    set(START,new Point2D(x,y));
+  }
+  if (get(END_FIGURE) == null) {
+    set(END,new Point2D(x + width,y + height));
+  }
 }

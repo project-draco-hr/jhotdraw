@@ -1,4 +1,8 @@
 {
-  set(START,transform.transform(get(START)));
-  set(END,transform.transform(get(END)));
+  if (get(START_FIGURE) == null) {
+    set(START,transform.transform(get(START)));
+  }
+  if (get(END_FIGURE) == null) {
+    set(END,transform.transform(get(END)));
+  }
 }

@@ -1,0 +1,33 @@
+{
+  double denom=((xb - xa) * (yd - yc) - (yb - ya) * (xd - xc));
+  double rnum=((ya - yc) * (xd - xc) - (xa - xc) * (yd - yc));
+  if (denom == 0.0) {
+    if (rnum == 0.0) {
+      if ((xa < xb && (xb < xc || xb < xd)) || (xa > xb && (xb > xc || xb > xd))) {
+        return new Point2D(xb,yb);
+      }
+ else {
+        return new Point2D(xa,ya);
+      }
+    }
+ else {
+      return null;
+    }
+  }
+  double r=rnum / denom;
+  double snum=((ya - yc) * (xb - xa) - (xa - xc) * (yb - ya));
+  double s=snum / denom;
+  if (0.0 <= r && r <= 1.0 && 0.0 <= s && s <= 1.0) {
+    double px=xa + (xb - xa) * r;
+    double py=ya + (yb - ya) * r;
+    return new Point2D(px,py);
+  }
+ else {
+    double px=xa + (xb - xa) * r;
+    double py=ya + (yb - ya) * r;
+    if (length(xa,ya,px,py) <= limit || length(xb,yb,px,py) <= limit || length(xc,yc,px,py) <= limit || length(xd,yd,px,py) <= limit) {
+      return new Point2D(px,py);
+    }
+    return null;
+  }
+}
