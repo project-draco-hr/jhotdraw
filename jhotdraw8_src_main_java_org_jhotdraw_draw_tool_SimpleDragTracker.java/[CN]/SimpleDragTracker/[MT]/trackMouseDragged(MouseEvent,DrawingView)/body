@@ -1,5 +1,6 @@
 {
-  anchorFigure.reshape(Transform.translate(evt.getX() - x,evt.getY() - y));
+  Point2D dp=dv.viewToDrawing(evt.getX() - x,evt.getY() - y);
+  anchorFigure.reshape(Transform.translate(dp.getX(),dp.getY()));
   x=evt.getX();
   y=evt.getY();
 }
