@@ -1,3 +1,3 @@
 {
-  return clazz.isInstance(value);
+  return value == null || clazz.isInstance(value);
 }
