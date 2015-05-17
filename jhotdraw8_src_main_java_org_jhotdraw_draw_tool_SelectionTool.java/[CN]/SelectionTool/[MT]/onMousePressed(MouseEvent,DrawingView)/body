@@ -8,7 +8,7 @@
     figure=view.findFigureBehind(vx,vy,figure.get());
   }
   if (figure.isPresent()) {
-    DragTracker t=getDragTracker(figure.get());
+    DragTracker t=getDragTracker(figure.get(),view);
     setTracker(t);
   }
  else {

@@ -2,6 +2,6 @@
   if (dragTracker == null) {
     dragTracker=new SimpleDragTracker();
   }
-  dragTracker.setDraggedFigure(f);
+  dragTracker.setDraggedFigure(f,dv);
   return dragTracker;
 }

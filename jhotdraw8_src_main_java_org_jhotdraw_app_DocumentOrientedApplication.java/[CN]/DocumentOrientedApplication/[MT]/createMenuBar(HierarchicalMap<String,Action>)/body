@@ -1,28 +1,22 @@
 {
-  FXMLLoader loader=new FXMLLoader();
-  try {
-    MenuBar mb=loader.load(DocumentOrientedApplication.class.getResourceAsStream("DocumentOrientedMenu.fxml"));
-    LinkedList<Menu> todo=new LinkedList<>(mb.getMenus());
-    while (!todo.isEmpty()) {
-      for (      MenuItem mi : todo.remove().getItems()) {
-        if (mi instanceof Menu) {
-          todo.add((Menu)mi);
-        }
+  MenuBar mb=createMenuBar();
+  LinkedList<Menu> todo=new LinkedList<>(mb.getMenus());
+  while (!todo.isEmpty()) {
+    for (    MenuItem mi : todo.remove().getItems()) {
+      if (mi instanceof Menu) {
+        todo.add((Menu)mi);
+      }
  else {
-          Optional<Action> a=actions.getOrParent(mi.getId());
-          if (a.isPresent()) {
-            Actions.bindMenuItem(mi,a.get());
-          }
- else           if (mi.getId() != null) {
-            System.err.println("No action for menu item with id=" + mi.getId());
-            mi.setVisible(false);
-          }
+        Optional<Action> a=actions.getOrParent(mi.getId());
+        if (a.isPresent()) {
+          Actions.bindMenuItem(mi,a.get());
+        }
+ else         if (mi.getId() != null) {
+          System.err.println("No action for menu item with id=" + mi.getId());
+          mi.setVisible(false);
         }
       }
     }
-    return mb;
   }
- catch (  IOException e) {
-    throw new InternalError(e);
-  }
+  return mb;
 }

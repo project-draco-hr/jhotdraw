@@ -1,0 +1,7 @@
+{
+  anchorFigure=f;
+  if (!view.getSelectedFigures().contains(f)) {
+    view.getSelectedFigures().clear();
+    view.getSelectedFigures().add(f);
+  }
+}

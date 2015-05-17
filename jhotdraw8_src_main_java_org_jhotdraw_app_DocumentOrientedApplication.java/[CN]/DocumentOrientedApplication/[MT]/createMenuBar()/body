@@ -1,0 +1,9 @@
+{
+  FXMLLoader loader=new FXMLLoader();
+  try {
+    return loader.load(DocumentOrientedApplication.class.getResourceAsStream("DocumentOrientedMenu.fxml"));
+  }
+ catch (  IOException ex) {
+    throw new InternalError(ex);
+  }
+}
