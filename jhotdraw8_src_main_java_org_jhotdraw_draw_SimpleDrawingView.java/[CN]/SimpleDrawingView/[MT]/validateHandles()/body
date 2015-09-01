@@ -9,8 +9,8 @@
           handle.addHandleListener(eventHandler);
         }
       }
-      if (selectionHandles.size() == 0 && detailLevel != HandleLevel.SHAPE) {
-        detailLevel=HandleLevel.SHAPE;
+      if (selectionHandles.isEmpty() && detailLevel != 0) {
+        detailLevel=0;
         continue;
       }
       break;

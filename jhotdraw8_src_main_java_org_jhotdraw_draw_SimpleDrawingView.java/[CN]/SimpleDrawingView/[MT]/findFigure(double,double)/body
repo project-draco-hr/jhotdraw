@@ -1,5 +1,5 @@
 {
-  Drawing dr=drawing.get();
+  Drawing dr=drawingProperty.get();
   Figure f=findFigure((Parent)getNode(dr),viewToDrawing(vx,vy));
   return Optional.ofNullable(f);
 }

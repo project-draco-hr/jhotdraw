@@ -18,13 +18,11 @@
           f=null;
         }
       }
+ else       if (n instanceof Parent) {
+        f=findFigureBehind((Parent)n,pl,figureInWay);
+      }
  else {
-        if (n instanceof Parent) {
-          f=findFigureBehind((Parent)n,pl,figureInWay);
-        }
- else {
-          f=null;
-        }
+        f=null;
       }
       return f;
     }
