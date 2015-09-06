@@ -1,10 +1,4 @@
 {
-  dirtyFigures.remove(f);
-  for (  Figure child : f.childrenProperty()) {
-    handleFigureRemoved(child);
-  }
-  Node oldNode=figureToNodeMap.remove(f);
-  if (oldNode != null) {
-    nodeToFigureMap.remove(oldNode);
-  }
+  handleFigureRemoved0(f);
+  repaint();
 }

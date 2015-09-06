@@ -17,10 +17,10 @@
         if (key != null && factory.figureKeys(figure).contains(key)) {
           Object value=null;
           if (Figure.class.isAssignableFrom(key.getValueType())) {
-            value=getFigure(cdataConverter.toValue(attr.getValue()));
+            value=getFigure(attr.getValue());
           }
  else {
-            value=factory.stringToValue(key,cdataConverter.toValue(attr.getValue()));
+            value=factory.stringToValue(key,attr.getValue());
           }
           figure.set(key,value);
         }

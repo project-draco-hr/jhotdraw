@@ -3,5 +3,8 @@
     tracker.trackMouseReleased(event,dv);
   }
   setTracker(null);
+  if (!mouseDragged && pressedFigure.isPresent()) {
+    dv.selectionProperty().add(pressedFigure.get());
+  }
   fireToolDone();
 }

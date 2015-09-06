@@ -1,6 +1,6 @@
 {
   Ellipse n=(Ellipse)node;
-  updateFigureProperties(n);
+  applyFigureProperties(n);
   updateShapeProperties(n);
   Point2D c=get(CENTER);
   n.setCenterX(c.getX());

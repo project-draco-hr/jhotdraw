@@ -1,0 +1,7 @@
+{
+  Object[] v=null;
+  if (pp.getErrorIndex() != -1) {
+    return null;
+  }
+  return new Point2D((double)v[0],(double)v[1]);
+}

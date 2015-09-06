@@ -1,19 +1,6 @@
 {
   if (!handlesAreValid) {
     handlesAreValid=true;
-    selectionHandles.clear();
-    while (true) {
-      for (      Figure figure : getSelectedFigures()) {
-        for (        Handle handle : figure.createHandles(detailLevel,this)) {
-          selectionHandles.add(handle);
-          handle.addHandleListener(eventHandler);
-        }
-      }
-      if (selectionHandles.isEmpty() && detailLevel != 0) {
-        detailLevel=0;
-        continue;
-      }
-      break;
-    }
+    updateHandles();
   }
 }

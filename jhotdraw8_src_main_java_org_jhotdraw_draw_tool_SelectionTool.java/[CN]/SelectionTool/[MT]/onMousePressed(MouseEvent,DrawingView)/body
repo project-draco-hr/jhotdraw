@@ -1,14 +1,15 @@
 {
+  mouseDragged=false;
   Bounds b=getNode().getBoundsInParent();
   Drawing drawing=view.getDrawing();
   double vx=evt.getX();
   double vy=evt.getY();
-  Optional<Figure> figure=view.findFigure(vx,vy);
+  pressedFigure=view.findFigure(vx,vy);
   if (isSelectBehindEnabled() && (evt.isAltDown() || evt.isControlDown())) {
-    figure=view.findFigureBehind(vx,vy,figure.get());
+    pressedFigure=view.findFigureBehind(vx,vy,pressedFigure.get());
   }
-  if (figure.isPresent()) {
-    DragTracker t=getDragTracker(figure.get(),view);
+  if (pressedFigure.isPresent() && view.getSelectedFigures().contains(pressedFigure.get())) {
+    DragTracker t=getDragTracker(pressedFigure.get(),view);
     setTracker(t);
   }
  else {

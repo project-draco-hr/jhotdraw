@@ -1,4 +1,0 @@
-{
-  toAppendTo.append(obj == null ? "null" : obj.toString());
-  return toAppendTo;
-}

@@ -1,4 +1,0 @@
-Object[] arguments
-StringBuffer result
-FieldPosition fp
-List<AttributedCharacterIterator> characterIterators

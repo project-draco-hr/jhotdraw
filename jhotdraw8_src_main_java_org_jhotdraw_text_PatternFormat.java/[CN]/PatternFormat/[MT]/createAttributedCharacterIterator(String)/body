@@ -1,4 +1,0 @@
-{
-  AttributedString as=new AttributedString(s);
-  return as.getIterator();
-}

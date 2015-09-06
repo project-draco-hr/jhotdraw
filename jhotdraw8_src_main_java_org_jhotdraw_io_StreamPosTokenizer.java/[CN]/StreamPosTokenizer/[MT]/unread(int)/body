@@ -1,0 +1,4 @@
+{
+  unread.add(c);
+  readpos--;
+}

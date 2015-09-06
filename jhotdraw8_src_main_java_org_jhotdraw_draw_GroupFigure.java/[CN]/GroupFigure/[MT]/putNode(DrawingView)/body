@@ -1,3 +1,0 @@
-{
-  drawingView.putNode(this,new Group());
-}

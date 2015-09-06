@@ -10,7 +10,7 @@
   }
  catch (  Throwable t) {
     if (userNodes == null) {
-      userNodes=new HashMap<Package,Preferences>();
+      userNodes=new HashMap<>();
     }
     return userNodeForPackage(c);
   }

@@ -1,0 +1,6 @@
+{
+  for (  Figure child : f.childrenProperty()) {
+    handleFigureRemoved0(child);
+  }
+  removeNode(f);
+}

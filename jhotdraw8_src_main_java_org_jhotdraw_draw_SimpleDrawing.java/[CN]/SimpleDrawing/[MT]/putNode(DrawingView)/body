@@ -1,5 +1,0 @@
-{
-  Group g=new Group();
-  g.getProperties().put("page",new Rectangle());
-  drawingView.putNode(this,g);
-}

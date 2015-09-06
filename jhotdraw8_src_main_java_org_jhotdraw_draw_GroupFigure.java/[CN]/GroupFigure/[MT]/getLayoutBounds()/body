@@ -8,7 +8,7 @@
     minX=min(minX,b.getMinX());
     maxX=max(maxX,b.getMaxX());
     minY=min(minY,b.getMinY());
-    maxX=max(maxY,b.getMaxY());
+    maxY=max(maxY,b.getMaxY());
   }
   return new BoundingBox(minX,minY,maxX - minX,maxY - minY);
 }

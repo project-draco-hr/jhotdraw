@@ -1,9 +1,9 @@
 {
   super();
   initFormats();
-  setMinimum(min);
-  setMaximum(max);
-  setFactor(multiplier);
-  setAllowsNullValue(allowsNullValue);
-  setUnit(unit);
+  this.min=min;
+  this.max=max;
+  this.factor=multiplier;
+  this.allowsNullValue=allowsNullValue;
+  this.unit=unit;
 }

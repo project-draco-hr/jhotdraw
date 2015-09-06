@@ -1,0 +1,21 @@
+{
+  for (  Handle h : selectionHandles) {
+    h.dispose();
+  }
+  selectionHandles.clear();
+  handlePane.getChildren().clear();
+  while (true) {
+    for (    Figure figure : getSelectedFigures()) {
+      for (      Handle handle : figure.createHandles(detailLevel,this)) {
+        selectionHandles.add(handle);
+        handlePane.getChildren().add(handle.getNode());
+        handle.updateNode();
+      }
+    }
+    if (selectionHandles.isEmpty() && detailLevel != 0) {
+      detailLevel=0;
+      continue;
+    }
+    break;
+  }
+}

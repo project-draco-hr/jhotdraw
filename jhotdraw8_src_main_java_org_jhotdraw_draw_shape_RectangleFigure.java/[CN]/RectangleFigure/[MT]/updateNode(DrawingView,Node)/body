@@ -1,6 +1,6 @@
 {
   Rectangle rectangleNode=(Rectangle)node;
-  updateFigureProperties(rectangleNode);
+  applyFigureProperties(rectangleNode);
   updateShapeProperties(rectangleNode);
   Rectangle2D r=get(RECTANGLE);
   rectangleNode.setX(r.getMinX());

@@ -1,16 +1,5 @@
 {
   if (handlesAreValid) {
     handlesAreValid=false;
-    for (    Handle handle : selectionHandles) {
-      handle.removeHandleListener(eventHandler);
-      handle.dispose();
-    }
-    for (    Handle handle : secondaryHandles) {
-      handle.removeHandleListener(eventHandler);
-      handle.dispose();
-    }
-    selectionHandles.clear();
-    secondaryHandles.clear();
-    setActiveHandle(null);
   }
 }

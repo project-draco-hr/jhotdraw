@@ -6,10 +6,10 @@
     Object value=figure.get(key);
     if (!factory.isDefaultValue(key,value)) {
       if (Figure.class.isAssignableFrom(key.getValueType())) {
-        elem.setAttribute(factory.keyToName(figure,key),cdataConverter.toString(ids.createId(value)));
+        elem.setAttribute(factory.keyToName(figure,key),ids.createId(value));
       }
  else {
-        elem.setAttribute(factory.keyToName(figure,key),cdataConverter.toString(factory.valueToString(key,value)));
+        elem.setAttribute(factory.keyToName(figure,key),factory.valueToString(key,value));
       }
     }
   }

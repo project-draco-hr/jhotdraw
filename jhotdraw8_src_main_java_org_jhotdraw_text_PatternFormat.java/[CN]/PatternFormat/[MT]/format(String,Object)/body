@@ -1,4 +1,0 @@
-{
-  PatternFormat temp=new PatternFormat(pattern);
-  return temp.format(arguments);
-}

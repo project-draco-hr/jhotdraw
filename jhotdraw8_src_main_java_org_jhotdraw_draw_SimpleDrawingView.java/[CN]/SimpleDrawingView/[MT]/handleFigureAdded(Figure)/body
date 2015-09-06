@@ -1,6 +1,4 @@
 {
-  dirtyFigures.add(f);
-  for (  Figure child : f.childrenProperty()) {
-    handleFigureAdded(child);
-  }
+  handleFigureAdded0(f);
+  repaint();
 }

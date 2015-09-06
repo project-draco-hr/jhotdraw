@@ -5,14 +5,14 @@
   double x=0, y=0;
   if (abs(si) > e) {
     x=(1.0 + co / abs(si)) / 2.0 * r.getWidth();
-    x=range(0,r.getWidth(),x);
+    x=clamp(x,0,r.getWidth());
   }
  else   if (co >= 0.0) {
     x=r.getWidth();
   }
   if (abs(co) > e) {
     y=(1.0 + si / abs(co)) / 2.0 * r.getHeight();
-    y=range(0,r.getHeight(),y);
+    y=clamp(y,0,r.getHeight());
   }
  else   if (si >= 0.0) {
     y=r.getHeight();

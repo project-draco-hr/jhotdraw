@@ -1,4 +1,0 @@
-{
-  pos.setIndex(source.length());
-  return source;
-}

@@ -1,7 +1,6 @@
 {
   if (oldValue != null) {
-    nodeToFigureMap.clear();
-    figureToNodeMap.clear();
+    clearNodes();
     drawingPane.getChildren().clear();
     dirtyFigures.clear();
     model.setRoot(null);
@@ -12,11 +11,10 @@
     }
   }
   if (newValue != null) {
-    handleFigureAdded(newValue);
     drawingPane.getChildren().add(getNode(newValue));
-    updateView();
     model.setRoot(newValue);
     boundsProperty=Drawing.BOUNDS.propertyAt(newValue.properties());
     boundsProperty.addListener(invalidationListener);
+    handleFigureAdded(newValue);
   }
 }

@@ -1,9 +1,0 @@
-{
-  if (iterator.first() != CharacterIterator.DONE) {
-    char aChar;
-    result.append(iterator.first());
-    while ((aChar=iterator.next()) != CharacterIterator.DONE) {
-      result.append(aChar);
-    }
-  }
-}

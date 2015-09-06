@@ -1,4 +1,5 @@
 {
+  mouseDragged=true;
   if (tracker != null) {
     tracker.trackMouseDragged(event,dv);
   }

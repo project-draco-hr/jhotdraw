@@ -1,0 +1,6 @@
+{
+  if (!valid) {
+    updateState();
+    valid=true;
+  }
+}

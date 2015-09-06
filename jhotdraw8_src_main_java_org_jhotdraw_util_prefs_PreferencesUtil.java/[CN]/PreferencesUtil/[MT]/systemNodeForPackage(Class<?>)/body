@@ -10,7 +10,7 @@
   }
  catch (  Throwable t) {
     if (systemNodes == null) {
-      systemNodes=new HashMap<Package,Preferences>();
+      systemNodes=new HashMap<>();
     }
     return systemNodeForPackage(c);
   }

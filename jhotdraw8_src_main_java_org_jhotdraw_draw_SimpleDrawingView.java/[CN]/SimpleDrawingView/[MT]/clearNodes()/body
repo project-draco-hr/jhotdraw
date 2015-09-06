@@ -1,0 +1,4 @@
+{
+  figureToNodeMap.clear();
+  nodeToFigureMap.clear();
+}

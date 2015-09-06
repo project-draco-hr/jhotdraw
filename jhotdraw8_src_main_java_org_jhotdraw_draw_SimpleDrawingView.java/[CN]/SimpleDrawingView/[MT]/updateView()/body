@@ -1,9 +1,14 @@
 {
-{
-    LinkedList<Figure> update=new LinkedList<>(dirtyFigures);
-    dirtyFigures.clear();
-    for (    Figure f : update) {
-      f.updateNode(this,getNode(f));
-    }
+  LinkedList<Figure> update=new LinkedList<>(dirtyFigures);
+  dirtyFigures.clear();
+  for (  Figure f : update) {
+    f.validate();
+    f.updateNode(this,getNode(f));
+  }
+  for (  Handle h : selectionHandles) {
+    h.updateNode();
+  }
+  for (  Handle h : secondaryHandles) {
+    h.updateNode();
   }
 }

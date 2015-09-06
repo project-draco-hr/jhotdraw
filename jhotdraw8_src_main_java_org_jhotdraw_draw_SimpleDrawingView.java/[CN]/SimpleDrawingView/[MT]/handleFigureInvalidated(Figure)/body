@@ -1,0 +1,4 @@
+{
+  invalidateFigure(f);
+  repaint();
+}

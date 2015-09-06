@@ -1,6 +1,6 @@
 {
   if (newValue == null) {
-    throw new IllegalArgumentException("newValue is null");
+    throw new NullPointerException("newValue");
   }
   super.set(newValue);
 }

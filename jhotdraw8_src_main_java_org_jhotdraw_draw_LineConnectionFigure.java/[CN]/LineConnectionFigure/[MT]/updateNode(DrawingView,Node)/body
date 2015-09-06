@@ -1,6 +1,6 @@
 {
   Line lineNode=(Line)node;
-  updateFigureProperties(lineNode);
+  applyFigureProperties(lineNode);
   updateShapeProperties(lineNode);
   Point2D start=get(START);
   lineNode.setStartX(start.getX());

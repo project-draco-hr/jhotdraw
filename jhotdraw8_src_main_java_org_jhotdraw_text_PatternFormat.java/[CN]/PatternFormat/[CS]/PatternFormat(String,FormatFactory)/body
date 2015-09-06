@@ -1,5 +1,0 @@
-{
-  this.locale=null;
-  this.factory=factory;
-  applyPattern(pattern);
-}

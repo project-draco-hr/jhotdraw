@@ -1,13 +1,13 @@
 {
   if (!attrToKey.containsKey(figure)) {
-    attrToKey.put(figure,new HashMap<String,Key<?>>());
+    attrToKey.put(figure,new HashMap<>());
   }
   HashMap<String,Key<?>> strToKey=attrToKey.get(figure);
   if (!strToKey.containsKey(name)) {
     strToKey.put(name,key);
   }
   if (!keyToAttr.containsKey(figure)) {
-    keyToAttr.put(figure,new HashMap<Key<?>,String>());
+    keyToAttr.put(figure,new HashMap<>());
   }
   HashMap<Key<?>,String> keyToStr=keyToAttr.get(figure);
   if (!keyToStr.containsKey(key)) {

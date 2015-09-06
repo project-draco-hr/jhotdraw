@@ -1,11 +1,9 @@
 {
   Node n=figureToNodeMap.get(f);
   if (n == null) {
-    f.putNode(this);
-    n=figureToNodeMap.get(f);
-    if (n == null) {
-      throw new IllegalStateException("Figure.putNode() must put a node. Figure=" + f);
-    }
+    n=f.createNode(this);
+    figureToNodeMap.put(f,n);
+    nodeToFigureMap.put(n,f);
   }
   return n;
 }

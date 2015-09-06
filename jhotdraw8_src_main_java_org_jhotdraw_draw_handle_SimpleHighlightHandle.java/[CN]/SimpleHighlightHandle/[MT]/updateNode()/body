@@ -1,7 +1,8 @@
 {
   Bounds r=dv.getDrawingToView().transform(getFigure().getLayoutBounds());
-  node.setX(r.getMinX());
-  node.setY(r.getMinY());
-  node.setWidth(r.getWidth());
-  node.setHeight(r.getHeight());
+  node.setX(Math.round(r.getMinX()) - 0.5);
+  node.setY(Math.round(r.getMinY()) - 0.5);
+  node.setWidth(Math.round(r.getWidth()));
+  node.setHeight(Math.round(r.getHeight()));
+  applyFigureTransform(node);
 }

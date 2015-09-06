@@ -5,7 +5,7 @@
   owners.add(master.getFigure());
   compatibleHandles.add(master);
   for (  Handle handle : getSelectionHandles()) {
-    if (!owners.contains(handle.getFigure()) && handle.isCombinableWith(master)) {
+    if (!owners.contains(handle.getFigure())) {
       owners.add(handle.getFigure());
       compatibleHandles.add(handle);
     }

@@ -1,4 +1,4 @@
 {
-  valueToCData.put(fullValueType,converter);
-  valueOfCData.put(fullValueType,converter);
+  valueToXML.put(fullValueType,converter);
+  valueFromXML.put(fullValueType,converter);
 }

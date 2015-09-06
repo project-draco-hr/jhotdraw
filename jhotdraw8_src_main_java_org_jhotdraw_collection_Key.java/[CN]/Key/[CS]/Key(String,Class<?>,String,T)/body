@@ -17,10 +17,4 @@
   this.clazz=clazz;
   this.typeParameters=typeParameters;
   this.defaultValue=defaultValue;
-  int hash=7;
-  hash=17 * hash + Objects.hashCode(this.name);
-  hash=17 * hash + Objects.hashCode(this.defaultValue);
-  hash=17 * hash + Objects.hashCode(this.clazz);
-  hash=17 * hash + Objects.hashCode(this.typeParameters);
-  hashcode=hash;
 }
