@@ -2,6 +2,9 @@
   ObservableList<Node> list=p.getChildrenUnmodifiable();
   for (int i=list.size() - 1; i >= 0; i--) {
     Node n=list.get(i);
+    if (!n.isVisible()) {
+      continue;
+    }
     Point2D pl=n.parentToLocal(pp);
     if (n.contains(pl)) {
       Figure f=nodeToFigureMap.get(n);
