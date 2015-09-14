@@ -1,8 +1,8 @@
 {
   if (figure != null) {
     if (abs(x2 - x1) < minSize && abs(y2 - y1) < minSize) {
-      Point2D c1=dv.getConstrainer().constrainPoint(dv.viewToDrawing(new Point2D(x1,y1)));
-      Point2D c2=dv.getConstrainer().translatePoint(dv.viewToDrawing(new Point2D(x1 + minSize,y1 + minSize)),new Point2D(1,1));
+      Point2D c1=dv.getConstrainer().constrainPoint(dv.viewToDrawing(x1,y1));
+      Point2D c2=dv.getConstrainer().translatePoint(dv.viewToDrawing(x1 + minSize,y1 + minSize),Constrainer.DIRECTION_NEAREST);
       if (c2.equals(c1)) {
         c2=new Point2D(c1.getX() + 10,c1.getY() + 10);
       }
