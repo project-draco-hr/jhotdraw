@@ -1,0 +1,9 @@
+{
+  boolean valid=true;
+  valid&=(enumeration == null) || enumeration.contains(value);
+  valid&=(minInclusive == null) || minInclusive <= value;
+  valid&=(minExclusive == null) || minExclusive < value;
+  valid&=(maxInclusive == null) || value <= maxInclusive;
+  valid&=(maxExclusive == null) || value < maxExclusive;
+  return valid;
+}

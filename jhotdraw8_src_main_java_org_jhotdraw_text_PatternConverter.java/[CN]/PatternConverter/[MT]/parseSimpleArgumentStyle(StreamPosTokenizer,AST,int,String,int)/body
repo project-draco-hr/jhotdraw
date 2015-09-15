@@ -1,0 +1,27 @@
+{
+  StringBuilder style=new StringBuilder();
+  int depth=0;
+  while ((tt.nextToken() != '}' || depth > 0) && tt.ttype != StreamPosTokenizer.TT_EOF) {
+switch (tt.ttype) {
+case '\'':
+      style.append((tt.sval.isEmpty()) ? "\'" : tt.sval);
+    break;
+case '{':
+  style.append('{');
+depth++;
+break;
+case '}':
+style.append('}');
+depth--;
+break;
+default :
+style.append((char)tt.ttype);
+break;
+}
+}
+SimpleArgument argument=new SimpleArgument();
+argument.index=index;
+argument.type=type;
+argument.style=style.toString();
+parent.children.add(argument);
+}

@@ -1,0 +1,15 @@
+{
+  RegexChoice regex=new RegexChoice();
+  if (tt.nextToken() != '(') {
+    throw new IOException("RegexChoice '(' expected @" + (tt.getStartPosition() + offset));
+  }
+  do {
+    parseRegex(tt,regex,offset);
+  }
+ while (tt.nextToken() == '|');
+  if (tt.ttype != ')') {
+    throw new IOException("RegexChoice ')' expected @" + (tt.getStartPosition() + offset));
+  }
+  parseRegexRepeat(tt,regex,offset);
+  parent.children.add(regex);
+}

@@ -1,0 +1,24 @@
+{
+  RegexCharclass regex=new RegexCharclass();
+  if (tt.nextToken() != '[') {
+    throw new IOException("RegexCharclass '[' expected @" + (tt.getStartPosition() + offset));
+  }
+  regex.chars="";
+  while (tt.nextToken() != ']') {
+    tt.pushBack();
+switch (tt.nextToken()) {
+case StreamPosTokenizer.TT_EOF:
+      throw new IOException("RegexCharclass character expected @" + (tt.getStartPosition() + offset));
+case '\'':
+    regex.chars+=(tt.sval.isEmpty()) ? "\'" : tt.sval;
+default :
+  regex.chars+=(char)tt.ttype;
+break;
+}
+}
+if (regex.chars.isEmpty()) {
+throw new IOException("RegexCharclass illegal empty character class @" + (tt.getStartPosition() + offset));
+}
+parseRegexRepeat(tt,regex,offset);
+parent.children.add(regex);
+}

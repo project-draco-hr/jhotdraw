@@ -1,0 +1,17 @@
+{
+switch (tt.nextToken()) {
+case '+':
+    regex.minRepeat=1;
+  regex.maxRepeat=Integer.MAX_VALUE;
+break;
+case '*':
+regex.minRepeat=0;
+regex.maxRepeat=Integer.MAX_VALUE;
+break;
+default :
+regex.minRepeat=1;
+regex.maxRepeat=1;
+tt.pushBack();
+break;
+}
+}

@@ -1,0 +1,7 @@
+{
+  StreamPosTokenizer tt=new StreamPosTokenizer(new StringReader(pattern));
+  tt.resetSyntax();
+  tt.quoteChar('\'');
+  parseTextFormatPattern(tt,parent,offset);
+  return parent;
+}

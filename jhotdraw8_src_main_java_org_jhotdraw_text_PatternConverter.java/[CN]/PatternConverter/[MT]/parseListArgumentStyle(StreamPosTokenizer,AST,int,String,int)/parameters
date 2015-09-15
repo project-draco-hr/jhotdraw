@@ -1,0 +1,5 @@
+StreamPosTokenizer tt
+AST parent
+int index
+String type
+int offset

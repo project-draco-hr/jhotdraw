@@ -1,0 +1,3 @@
+{
+  return parseTextFormatPattern(pattern,new AST(),0);
+}

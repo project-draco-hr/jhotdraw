@@ -1,0 +1,11 @@
+{
+  if (listeners != null) {
+    int index=listeners.lastIndexOf(listener);
+    if (index != -1) {
+      listeners.remove(index);
+      if (listeners.isEmpty()) {
+        listeners=null;
+      }
+    }
+  }
+}

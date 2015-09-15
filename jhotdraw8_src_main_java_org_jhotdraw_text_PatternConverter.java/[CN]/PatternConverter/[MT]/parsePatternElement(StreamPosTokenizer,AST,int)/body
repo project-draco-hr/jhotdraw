@@ -1,0 +1,14 @@
+{
+switch (tt.nextToken()) {
+case StreamPosTokenizer.TT_EOF:
+    return;
+case '{':
+  tt.pushBack();
+parseArgument(tt,parent,offset);
+break;
+default :
+tt.pushBack();
+parseRegex(tt,parent,offset);
+break;
+}
+}

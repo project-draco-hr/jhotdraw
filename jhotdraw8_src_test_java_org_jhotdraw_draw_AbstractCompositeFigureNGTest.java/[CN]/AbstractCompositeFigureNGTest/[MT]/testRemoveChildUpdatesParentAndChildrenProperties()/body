@@ -1,0 +1,8 @@
+{
+  Figure parent=new AbstractCompositeFigureImpl();
+  Figure child=new AbstractCompositeFigureImpl();
+  parent.add(child);
+  parent.remove(child);
+  assertFalse(parent.children().contains(child));
+  assertNull(child.getParent());
+}

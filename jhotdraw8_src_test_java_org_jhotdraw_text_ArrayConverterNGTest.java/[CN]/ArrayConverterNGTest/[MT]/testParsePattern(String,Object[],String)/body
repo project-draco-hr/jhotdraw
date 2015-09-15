@@ -1,0 +1,7 @@
+{
+  PatternConverter.AST ast=PatternConverter.parseTextFormatPattern(pattern);
+  System.out.println(ast);
+  PatternConverter c=new PatternConverter(pattern,new MessageFormatConverterFactory());
+  String actualOutput=c.toString(value);
+  System.out.println(actualOutput);
+}

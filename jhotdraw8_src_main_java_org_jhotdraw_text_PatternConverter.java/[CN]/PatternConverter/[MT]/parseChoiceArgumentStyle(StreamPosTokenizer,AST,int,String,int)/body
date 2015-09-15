@@ -1,0 +1,59 @@
+{
+  ChoiceArgument argument=new ChoiceArgument();
+  argument.index=index;
+  argument.limits=new ArrayList<>();
+  StringBuilder style=new StringBuilder();
+  int depth=0;
+  while ((tt.nextToken() != '}' || depth > 0) && tt.ttype != StreamPosTokenizer.TT_EOF) {
+    tt.pushBack();
+    int startPosition=tt.getStartPosition();
+    while (((tt.nextToken() != '#' && tt.ttype != '}') || depth > 0) && tt.ttype != StreamPosTokenizer.TT_EOF) {
+switch (tt.ttype) {
+case '\'':
+        style.append((tt.sval.isEmpty()) ? "\'" : tt.sval);
+      break;
+default :
+    style.append((char)tt.ttype);
+  break;
+}
+}
+try {
+double limit=Double.parseDouble(style.toString());
+argument.limits.add(limit);
+}
+ catch (NumberFormatException e) {
+throw new IOException("Choice Arugment: Illegal number format for limit: '" + style + "' @"+ (startPosition + offset));
+}
+style.delete(0,style.length());
+if (tt.ttype != '#') {
+tt.pushBack();
+}
+while (((tt.nextToken() != '|' && tt.ttype != '}') || depth > 0) && tt.ttype != StreamPosTokenizer.TT_EOF) {
+switch (tt.ttype) {
+case '\'':
+style.append((tt.sval.isEmpty()) ? "\'" : tt.sval);
+break;
+case '{':
+style.append('{');
+depth++;
+break;
+case '}':
+style.append('}');
+depth--;
+break;
+default :
+style.append((char)tt.ttype);
+break;
+}
+}
+AST child=new AST();
+argument.children.add(child);
+parseTextFormatPattern(style.toString(),child,offset + tt.getEndPosition());
+style.delete(0,style.length());
+if (tt.ttype != '|') {
+tt.pushBack();
+}
+}
+parseTextFormatPattern(tt,argument,offset + tt.getEndPosition());
+parent.children.add(argument);
+}

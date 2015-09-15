@@ -1,0 +1,10 @@
+{
+  this.enumeration=enumeration == null || enumeration.isEmpty() ? null : new HashSet<>(enumeration);
+  this.minInclusive=minInclusive;
+  this.maxInclusive=maxInclusive;
+  this.minExclusive=minExclusive;
+  this.maxExclusive=maxExclusive;
+  DecimalFormatSymbols s=new DecimalFormatSymbols(Locale.ENGLISH);
+  decimalFormat=new DecimalFormat("######0.#################",s);
+  scientificFormat=new DecimalFormat("0.#################E0",s);
+}

@@ -1,0 +1,3 @@
+{
+  return "SimpleArgument{index='" + index + "' type="+ type+ " style="+ style+ '}';
+}

@@ -1,0 +1,3 @@
+{
+  return "RegexChoice{children='" + children + "' repeat="+ minRepeat+ ".."+ maxRepeat+ '}';
+}

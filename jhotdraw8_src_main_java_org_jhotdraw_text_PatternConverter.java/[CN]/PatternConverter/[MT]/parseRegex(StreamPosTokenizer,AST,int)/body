@@ -1,0 +1,35 @@
+{
+switch (tt.nextToken()) {
+case StreamPosTokenizer.TT_EOF:
+    throw new IOException("RegexExpression expected @" + (tt.getStartPosition() + offset));
+case '\'':
+{
+    RegexChars regex=new RegexChars();
+    regex.chars=(tt.sval.isEmpty()) ? "\'" : tt.sval;
+    parseRegexRepeat(tt,regex,offset);
+    parent.children.add(regex);
+  }
+break;
+case '(':
+tt.pushBack();
+parseRegexChoice(tt,parent,offset);
+break;
+case '[':
+tt.pushBack();
+parseRegexCharclass(tt,parent,offset);
+break;
+case '+':
+case '*':
+case ')':
+case ']':
+throw new IOException("RegexExpression may not start with '" + (char)tt.ttype + "' @"+ (tt.getStartPosition() + offset));
+default :
+{
+RegexChars regex=new RegexChars();
+regex.chars=String.valueOf((char)tt.ttype);
+parseRegexRepeat(tt,regex,offset);
+parent.children.add(regex);
+}
+break;
+}
+}

@@ -1,0 +1,5 @@
+{
+  XMLDoubleConverter c=new XMLDoubleConverter();
+  String actualValue=c.toString(inputValue);
+  assertEquals(actualValue,expectedValue);
+}

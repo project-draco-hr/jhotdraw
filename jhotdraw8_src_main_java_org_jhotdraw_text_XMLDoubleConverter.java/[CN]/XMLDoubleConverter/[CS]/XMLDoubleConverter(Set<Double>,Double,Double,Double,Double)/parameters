@@ -1,0 +1,5 @@
+Set<Double> enumeration
+Double minInclusive
+Double maxInclusive
+Double minExclusive
+Double maxExclusive

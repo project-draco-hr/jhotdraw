@@ -1,0 +1,10 @@
+{
+  if (listeners != null) {
+    for (    L l : new ArrayList<>(listeners)) {
+      if ((l instanceof WeakListener) && ((WeakListener)l).wasGarbageCollected()) {
+        removeListener(l);
+      }
+      consumer.accept(l);
+    }
+  }
+}

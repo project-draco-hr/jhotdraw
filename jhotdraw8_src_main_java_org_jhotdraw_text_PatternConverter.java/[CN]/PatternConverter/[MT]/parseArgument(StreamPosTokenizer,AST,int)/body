@@ -1,0 +1,55 @@
+{
+  RegexChoice regex=new RegexChoice();
+  if (tt.nextToken() != '{') {
+    throw new IOException("Argument '{' expected @" + (tt.getStartPosition() + offset));
+  }
+  if (tt.nextToken() == '}') {
+    throw new IOException("Argument unexpected '}' expected @" + (tt.getStartPosition() + offset));
+  }
+  tt.pushBack();
+  int index=0;
+  while (tt.nextToken() != ',' && tt.ttype != '}' && tt.ttype != StreamPosTokenizer.TT_EOF) {
+switch (tt.ttype) {
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+      index=index * 10 + tt.ttype - '0';
+    break;
+}
+}
+StringBuilder type=new StringBuilder();
+if (tt.ttype == ',') {
+while (tt.nextToken() != ',' && tt.ttype != '}' && tt.ttype != StreamPosTokenizer.TT_EOF) {
+switch (tt.ttype) {
+case '\'':
+    type.append((tt.sval.isEmpty()) ? "\'" : tt.sval);
+  break;
+default :
+type.append((char)tt.ttype);
+break;
+}
+}
+}
+if (tt.ttype != ',') {
+tt.pushBack();
+}
+String typeStr=type.toString();
+switch (typeStr) {
+case "choice":
+parseChoiceArgumentStyle(tt,parent,index,typeStr,offset);
+break;
+case "list":
+parseListArgumentStyle(tt,parent,index,typeStr,offset);
+break;
+default :
+parseSimpleArgumentStyle(tt,parent,index,typeStr,offset);
+break;
+}
+}

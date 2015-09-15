@@ -1,0 +1,6 @@
+{
+  while (tt.nextToken() != StreamPosTokenizer.TT_EOF) {
+    tt.pushBack();
+    parsePatternElement(tt,parent,offset);
+  }
+}

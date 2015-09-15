@@ -1,0 +1,5 @@
+{
+  Figure f=new AbstractCompositeFigureImpl();
+  assertTrue(f.children().isEmpty());
+  assertNull(f.getParent());
+}

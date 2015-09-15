@@ -1,0 +1,3 @@
+{
+  return "RegexCharclass{chars='" + chars + "' repeat="+ minRepeat+ ".."+ maxRepeat+ '}';
+}

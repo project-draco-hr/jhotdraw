@@ -1,0 +1,26 @@
+{
+  if (v == null) {
+    return "";
+  }
+  if (Double.isNaN(v)) {
+    return "NaN";
+  }
+  if (v == Double.POSITIVE_INFINITY) {
+    return "INF";
+  }
+  if (v == Double.NEGATIVE_INFINITY) {
+    return "-INF";
+  }
+  StringBuilder buf=new StringBuilder();
+  String str;
+  BigDecimal big=new BigDecimal(v);
+  int exponent=big.scale() >= 0 ? big.precision() - big.scale() : -big.scale();
+  if (alwaysUseScientificNotation || !(minNegativeExponent < exponent && exponent <= minPositiveExponent)) {
+    str=scientificFormat.format(v);
+  }
+ else {
+    str=decimalFormat.format(v);
+  }
+  buf.append(str);
+  return str;
+}

@@ -1,0 +1,7 @@
+{
+  int i=index + argumentOffset.offset;
+  for (  AST child : children) {
+    i=Math.max(i,child.getMaxArgumentIndex(value,argumentOffset));
+  }
+  return i;
+}

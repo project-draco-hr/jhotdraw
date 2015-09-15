@@ -1,0 +1,5 @@
+{
+  DefaultConverter c=new DefaultConverter();
+  Object actualOutput=c.fromString(input);
+  assertEquals(actualOutput,expectedOutput);
+}

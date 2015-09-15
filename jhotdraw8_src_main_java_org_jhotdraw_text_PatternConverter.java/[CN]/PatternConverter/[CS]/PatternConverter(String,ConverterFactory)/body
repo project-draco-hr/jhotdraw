@@ -1,0 +1,9 @@
+{
+  try {
+    ast=parseTextFormatPattern(pattern);
+  }
+ catch (  IOException ex) {
+    throw new IllegalArgumentException("Illegal pattern",ex);
+  }
+  this.factory=factory;
+}
