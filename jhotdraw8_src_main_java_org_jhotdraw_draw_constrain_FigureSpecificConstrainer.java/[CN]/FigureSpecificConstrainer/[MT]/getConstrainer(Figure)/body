@@ -1,0 +1,4 @@
+{
+  Constrainer c=constrainerMap.get(f);
+  return c != null ? c : defaultConstrainer.get();
+}
