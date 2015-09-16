@@ -5,7 +5,6 @@
   childi=Math.max(childi,child.getMaxArgumentIndex(value,argumentOffset));
   int repeat=((Number)value[i]).intValue();
   int step=(childi - i);
-  System.out.println("ListArgument #=" + value.length + " argOffs="+ argumentOffset.offset+ " i="+ i+ " repeat="+ repeat+ " step="+ step+ " childi="+ childi);
   argumentOffset.offset=i + repeat * step;
   return i + repeat * step;
 }

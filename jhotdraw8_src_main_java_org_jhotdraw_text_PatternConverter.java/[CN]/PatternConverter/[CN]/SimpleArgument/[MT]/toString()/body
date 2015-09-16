@@ -1,3 +1,8 @@
 {
-  return "SimpleArgument{index='" + index + "' type="+ type+ " style="+ style+ '}';
+  if (type.isEmpty() && style.isEmpty()) {
+    return "Arg{" + index + '}';
+  }
+ else {
+    return "Arg{" + index + " type="+ type+ " style="+ style+ '}';
+  }
 }

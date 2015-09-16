@@ -1,0 +1,23 @@
+{
+  RegexChars regex=new RegexChars();
+  regex.chars="";
+switch (tt.nextToken()) {
+case StreamPosTokenizer.TT_EOF:
+    throw new IOException("RegexChars expected @" + (tt.getStartPosition() + offset));
+case '\'':
+  regex.chars+=tt.sval.isEmpty() ? "'" : tt.sval;
+break;
+case '(':
+case '[':
+case '+':
+case '*':
+case ')':
+case ']':
+throw new IOException("RegexChars may not start with '" + (char)tt.ttype + "' @"+ (tt.getStartPosition() + offset));
+default :
+regex.chars+=(char)tt.ttype;
+break;
+}
+parseRegexRepeat(tt,regex,offset);
+parent.children.add(regex);
+}

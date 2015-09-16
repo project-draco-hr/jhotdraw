@@ -1,6 +1,6 @@
 {
   int i=index + argumentOffset.offset;
-  AST separator=children.get(1);
+  AST separator=children.size() < 2 ? null : children.get(1);
   int childi=-1;
   AST child=children.get(0);
   childi=Math.max(childi,child.getMaxArgumentIndex(value,argumentOffset));
@@ -8,7 +8,7 @@
   int step=(childi - i);
   System.out.println("ListArgument #=" + value.length + " argOffs="+ argumentOffset.offset+ " i="+ i+ " repeat="+ repeat+ " step="+ step);
   for (int j=0; j < repeat; j++) {
-    if (j != 0) {
+    if (j != 0 && separator != null) {
       separator.toString(value,out,factory,new ArgumentOffset(0));
     }
     child.toString(value,out,factory,new ArgumentOffset(i + j * step));

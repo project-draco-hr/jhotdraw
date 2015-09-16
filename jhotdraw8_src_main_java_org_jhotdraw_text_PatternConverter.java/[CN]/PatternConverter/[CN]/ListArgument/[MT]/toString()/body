@@ -1,3 +1,3 @@
 {
-  return "ListArgument{index='" + index + "' children="+ children+ '}';
+  return "ArgList{" + index + " children="+ children+ '}';
 }

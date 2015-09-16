@@ -1,10 +1,10 @@
 {
-  int choiceIndex=Collections.binarySearch(limits,((Number)value[index]).doubleValue());
+  int choiceIndex=Arrays.binarySearch(limits,((Number)value[index]).doubleValue());
   if (choiceIndex < 0) {
-    choiceIndex=0;
+    choiceIndex=-choiceIndex - 1;
   }
- else   if (choiceIndex >= limits.size()) {
-    choiceIndex=limits.size() - 1;
+  if (choiceIndex >= limits.length) {
+    choiceIndex=limits.length - 1;
   }
   children.get(choiceIndex).toString(value,out,factory,argumentOffset);
 }

@@ -1,4 +1,3 @@
 {
-  System.out.println("MaxArgumentIndex:" + ast.getMaxArgumentIndex(value,new ArgumentOffset()));
   ast.toString(value,out,factory,new ArgumentOffset());
 }

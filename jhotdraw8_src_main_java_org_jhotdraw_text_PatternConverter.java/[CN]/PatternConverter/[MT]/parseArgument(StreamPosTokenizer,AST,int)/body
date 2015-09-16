@@ -43,10 +43,10 @@ tt.pushBack();
 String typeStr=type.toString();
 switch (typeStr) {
 case "choice":
-parseChoiceArgumentStyle(tt,parent,index,typeStr,offset);
+parseChoiceArgumentStyle(tt,parent,index,offset);
 break;
 case "list":
-parseListArgumentStyle(tt,parent,index,typeStr,offset);
+parseListArgumentStyle(tt,parent,index,offset);
 break;
 default :
 parseSimpleArgumentStyle(tt,parent,index,typeStr,offset);

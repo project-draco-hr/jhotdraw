@@ -1,7 +1,7 @@
 {
   ChoiceArgument argument=new ChoiceArgument();
   argument.index=index;
-  argument.limits=new ArrayList<>();
+  ArrayList<Double> limits=new ArrayList<>();
   StringBuilder style=new StringBuilder();
   int depth=0;
   while ((tt.nextToken() != '}' || depth > 0) && tt.ttype != StreamPosTokenizer.TT_EOF) {
@@ -19,15 +19,16 @@ default :
 }
 try {
 double limit=Double.parseDouble(style.toString());
-argument.limits.add(limit);
+limits.add(limit);
 }
  catch (NumberFormatException e) {
-throw new IOException("Choice Arugment: Illegal number format for limit: '" + style + "' @"+ (startPosition + offset));
+throw new IOException("Choice Argument: Illegal number format for limit: '" + style + "' @"+ (startPosition + offset));
 }
 style.delete(0,style.length());
 if (tt.ttype != '#') {
 tt.pushBack();
 }
+int itemPosition=tt.getEndPosition();
 while (((tt.nextToken() != '|' && tt.ttype != '}') || depth > 0) && tt.ttype != StreamPosTokenizer.TT_EOF) {
 switch (tt.ttype) {
 case '\'':
@@ -47,13 +48,16 @@ break;
 }
 }
 AST child=new AST();
+argument.limits=new double[limits.size()];
+for (int i=0, n=limits.size(); i < n; i++) {
+argument.limits[i]=limits.get(i);
+}
 argument.children.add(child);
-parseTextFormatPattern(style.toString(),child,offset + tt.getEndPosition());
+parseTextFormatPattern(style.toString(),child,offset + itemPosition);
 style.delete(0,style.length());
 if (tt.ttype != '|') {
 tt.pushBack();
 }
 }
-parseTextFormatPattern(tt,argument,offset + tt.getEndPosition());
 parent.children.add(argument);
 }
