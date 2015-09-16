@@ -2,6 +2,6 @@
   double sf=1 / zoomFactor.get();
   BoundingBox r=new BoundingBox(vx * sf,vy * sf,0,vwidth * sf,vheight * sf,0);
   List<Figure> list=new LinkedList<Figure>();
-  findFigures((Parent)figureToNodeMap.get(getDrawing()),r,list);
+  findFiguresInside((Parent)figureToNodeMap.get(getDrawing()),r,list);
   return list;
 }

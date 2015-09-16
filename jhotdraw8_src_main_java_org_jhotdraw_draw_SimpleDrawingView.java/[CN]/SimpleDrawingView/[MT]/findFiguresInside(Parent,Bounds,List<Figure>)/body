@@ -7,7 +7,7 @@
       Figure f=nodeToFigureMap.get(n);
       if (f == null) {
         if (n instanceof Parent) {
-          findFigures((Parent)n,pl,found);
+          findFiguresInside((Parent)n,pl,found);
         }
       }
  else {

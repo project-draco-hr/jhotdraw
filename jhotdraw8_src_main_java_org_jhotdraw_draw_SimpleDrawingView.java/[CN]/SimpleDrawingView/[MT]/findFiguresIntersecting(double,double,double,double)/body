@@ -1,0 +1,3 @@
+{
+  return findFiguresInside(vx,vy,vwidth,vheight);
+}

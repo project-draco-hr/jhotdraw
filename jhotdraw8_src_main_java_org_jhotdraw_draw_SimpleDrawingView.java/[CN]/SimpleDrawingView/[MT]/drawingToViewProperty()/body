@@ -1,3 +1,3 @@
 {
-  return drawingToViewProperty.getReadOnlyProperty();
+  return drawingToView.getReadOnlyProperty();
 }

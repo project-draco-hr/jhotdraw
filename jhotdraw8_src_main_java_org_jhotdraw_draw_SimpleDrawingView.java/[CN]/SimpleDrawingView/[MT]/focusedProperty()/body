@@ -1,3 +1,3 @@
 {
-  return focusedProperty.getReadOnlyProperty();
+  return focused.getReadOnlyProperty();
 }
