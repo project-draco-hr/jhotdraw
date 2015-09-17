@@ -1,6 +1,0 @@
-{
-  if (valid) {
-    valid=false;
-    fireInvalidated();
-  }
-}

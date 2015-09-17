@@ -1,4 +1,5 @@
 String key
-Class<?> clazz
+Class<T> clazz
 String typeParameters
 T defaultValue
+DirtyBits dirtyBits

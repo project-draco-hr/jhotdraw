@@ -1,5 +1,4 @@
 {
   figure.childrenProperty().addListener((ListChangeListener<Figure>)this);
   figure.properties().addListener((MapChangeListener<Key<?>,Object>)this);
-  figure.addListener((InvalidationListener)this);
 }

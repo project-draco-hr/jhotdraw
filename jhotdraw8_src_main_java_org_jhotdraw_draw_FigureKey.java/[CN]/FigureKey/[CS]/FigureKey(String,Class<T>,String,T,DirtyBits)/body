@@ -1,0 +1,8 @@
+{
+  super(key,clazz,typeParameters,defaultValue);
+  long mask=0;
+  for (  DirtyBits db : dirtyBits) {
+    mask|=db.getMask();
+  }
+  dirtyMask=mask;
+}

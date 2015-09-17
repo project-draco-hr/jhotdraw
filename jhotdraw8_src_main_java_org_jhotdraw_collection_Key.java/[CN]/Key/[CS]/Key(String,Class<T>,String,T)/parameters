@@ -1,0 +1,4 @@
+String key
+Class<T> clazz
+String typeParameters
+T defaultValue
