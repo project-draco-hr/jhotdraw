@@ -7,4 +7,5 @@
  catch (  IOException ex) {
     throw new InternalError(ex);
   }
+  handler.handle(new TaskCompletionEvent());
 }

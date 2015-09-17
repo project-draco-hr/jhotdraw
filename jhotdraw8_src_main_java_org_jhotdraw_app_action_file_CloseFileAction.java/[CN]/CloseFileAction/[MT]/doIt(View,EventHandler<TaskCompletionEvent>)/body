@@ -2,4 +2,5 @@
   if (view != null) {
     app.remove(view);
   }
+  callback.handle(new TaskCompletionEvent());
 }

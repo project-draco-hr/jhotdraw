@@ -1,0 +1,4 @@
+{
+  textArea.setText(null);
+  handler.handle(new TaskCompletionEvent());
+}
