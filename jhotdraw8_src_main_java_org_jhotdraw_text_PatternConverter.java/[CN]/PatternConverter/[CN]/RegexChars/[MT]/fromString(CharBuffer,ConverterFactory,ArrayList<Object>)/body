@@ -1,0 +1,17 @@
+{
+  for (int i=0; i < maxRepeat; i++) {
+    int reset=buf.position();
+    for (int j=0; j < chars.length(); j++) {
+      int ch=buf.remaining() > 0 ? buf.get() : -1;
+      if (ch != chars.charAt(j)) {
+        if (i < minRepeat) {
+          throw new ParseException("Expected character '" + escape(chars.charAt(j)) + "' but found '"+ escape((char)ch)+ "'.",buf.position());
+        }
+ else {
+          buf.position(reset);
+          return;
+        }
+      }
+    }
+  }
+}

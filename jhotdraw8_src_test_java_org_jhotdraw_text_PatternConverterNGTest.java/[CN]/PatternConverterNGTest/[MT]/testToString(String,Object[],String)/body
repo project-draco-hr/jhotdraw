@@ -1,0 +1,5 @@
+{
+  PatternConverter c=new PatternConverter(pattern,new MessageFormatConverterFactory());
+  String actualOutput=c.toString(value);
+  assertEquals(actualOutput,expectedOutput);
+}

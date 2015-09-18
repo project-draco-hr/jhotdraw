@@ -1,0 +1,20 @@
+{
+  int i=indices[index];
+  AST separator=children.size() < 2 ? null : children.get(1);
+  AST child=children.get(0);
+  int step=maxIndex - index;
+  int repeat=((Number)value[i]).intValue();
+  int shift=step * (repeat - 1);
+  for (int j=maxIndex + 1; j < indices.length; j++) {
+    indices[j]+=shift;
+  }
+  for (int j=0; j < repeat; j++) {
+    if (j != 0 && separator != null) {
+      separator.toString(value,out,factory,indices);
+    }
+    child.toString(value,out,factory,indices);
+    for (int k=index + 1; k <= maxIndex; k++) {
+      indices[k]+=step;
+    }
+  }
+}

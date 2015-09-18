@@ -1,25 +1,14 @@
 {
-  Drawing d=new SimpleDrawing();
-  RectangleFigure r=new RectangleFigure();
-  r.properties().addListener(new MapChangeListener<Key<?>,Object>(){
-    @Override public void onChanged(    MapChangeListener.Change<? extends Key<?>,? extends Object> change){
-      System.out.println("Map change:" + change);
-    }
+  Group root=new Group();
+  Scene scene=new Scene(root);
+  scene.getStylesheets().add("test.css");
+  Rectangle r=new Rectangle();
+  System.out.println("r.scene:" + r.getScene());
+  System.out.println("r.fill:" + r.getFill());
+  root.getChildren().add(r);
+  System.out.println("r.scene:" + r.getScene());
+  System.out.println("r.fill:" + r.getFill());
+  for (  CssMetaData<? extends Styleable,?> md : r.getCssMetaData()) {
+    System.out.println(md);
   }
-);
-  SimpleDrawingModel m=new SimpleDrawingModel();
-  m.setRoot(d);
-  m.addDrawingModelListener(new Listener<DrawingModelEvent>(){
-    @Override public void handle(    DrawingModelEvent mutation){
-      System.out.println(mutation);
-    }
-  }
-);
-  d=new SimpleDrawing();
-  m.setRoot(d);
-  d.add(r);
-  r.set(RectangleFigure.RECTANGLE,new Rectangle2D(1,2,3,4));
-  r.reshape(6,7,8,9);
-  r.reshape(1,1,2,4);
-  System.exit(0);
 }

@@ -1,6 +1,0 @@
-{
-  if (converter == null) {
-    converter=factory.apply(type,style);
-  }
-  converter.toString(value[index + argumentOffset.offset],out);
-}

@@ -1,6 +1,7 @@
 {
   try {
     ast=parseTextFormatPattern(pattern);
+    numIndices=1 + ast.getMaxArgumentIndex();
   }
  catch (  IOException ex) {
     throw new IllegalArgumentException("Illegal pattern",ex);

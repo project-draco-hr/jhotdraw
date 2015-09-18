@@ -1,5 +1,0 @@
-{
-  for (int i=0; i < minRepeat; i++) {
-    children.get(0).toString(value,out,factory,argumentOffset);
-  }
-}

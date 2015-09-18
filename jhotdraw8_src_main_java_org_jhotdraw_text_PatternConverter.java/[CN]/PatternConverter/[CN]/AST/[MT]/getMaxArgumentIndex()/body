@@ -1,0 +1,7 @@
+{
+  int index=-1;
+  for (  AST child : children) {
+    index=Math.max(index,+child.getMaxArgumentIndex());
+  }
+  return index;
+}

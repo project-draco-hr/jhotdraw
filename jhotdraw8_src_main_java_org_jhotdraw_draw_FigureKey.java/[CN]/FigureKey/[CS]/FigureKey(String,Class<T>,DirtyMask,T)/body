@@ -1,0 +1,3 @@
+{
+  this(key,clazz,"",dirtyMask,defaultValue);
+}

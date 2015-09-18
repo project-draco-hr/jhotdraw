@@ -1,5 +1,0 @@
-{
-  for (  AST child : children) {
-    child.toString(value,out,factory,argumentOffset);
-  }
-}

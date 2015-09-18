@@ -30,6 +30,7 @@ style.delete(0,style.length());
 if (tt.ttype != '|') {
 tt.pushBack();
 }
+argument.maxIndex=Math.max(argument.maxIndex,child.getMaxArgumentIndex());
 }
 parent.children.add(argument);
 }

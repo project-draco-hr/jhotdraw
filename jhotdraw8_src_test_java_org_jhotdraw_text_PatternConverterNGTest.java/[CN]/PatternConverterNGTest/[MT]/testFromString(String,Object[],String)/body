@@ -1,0 +1,7 @@
+{
+  PatternConverter c=new PatternConverter(pattern,new MessageFormatConverterFactory());
+  PatternConverter.AST ast=PatternConverter.parseTextFormatPattern(pattern);
+  System.out.println("ast:" + ast);
+  Object[] actualValue=c.fromString(input);
+  assertEquals(actualValue,expectedValue);
+}

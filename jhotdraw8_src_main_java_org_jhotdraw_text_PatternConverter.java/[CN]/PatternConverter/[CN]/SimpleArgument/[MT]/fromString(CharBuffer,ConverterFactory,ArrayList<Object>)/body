@@ -1,0 +1,10 @@
+{
+  if (converter == null) {
+    converter=factory.apply(type,style);
+  }
+  Object v=converter.fromString(buf);
+  while (value.size() <= index) {
+    value.add(null);
+  }
+  value.set(index,v);
+}

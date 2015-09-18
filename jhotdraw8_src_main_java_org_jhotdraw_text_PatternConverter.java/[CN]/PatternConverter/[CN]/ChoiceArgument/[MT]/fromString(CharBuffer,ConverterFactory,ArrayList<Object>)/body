@@ -1,0 +1,24 @@
+{
+  int pos=buf.position();
+  int choice=-1;
+  for (int i=0, n=children.size(); i < n; i++) {
+    AST child=children.get(i);
+    try {
+      child.fromString(buf,factory,value);
+      choice=i;
+      break;
+    }
+ catch (    ParseException e) {
+      if (i < n - 1) {
+        buf.position(pos);
+      }
+ else {
+        throw new ParseException("Could not parse choice.",pos);
+      }
+    }
+  }
+  while (value.size() < index) {
+    value.add(null);
+  }
+  value.set(index,limits[choice]);
+}

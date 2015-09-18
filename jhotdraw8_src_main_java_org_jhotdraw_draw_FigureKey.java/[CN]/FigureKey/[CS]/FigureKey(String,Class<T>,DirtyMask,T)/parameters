@@ -1,0 +1,4 @@
+String key
+Class<T> clazz
+DirtyMask dirtyMask
+T defaultValue
