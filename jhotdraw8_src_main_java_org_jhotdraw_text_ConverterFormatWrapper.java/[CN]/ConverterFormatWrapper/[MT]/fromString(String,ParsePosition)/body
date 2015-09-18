@@ -1,4 +1,4 @@
 {
   Object value=format.parseObject(string,pp);
-  return Optional.ofNullable(value);
+  return value;
 }

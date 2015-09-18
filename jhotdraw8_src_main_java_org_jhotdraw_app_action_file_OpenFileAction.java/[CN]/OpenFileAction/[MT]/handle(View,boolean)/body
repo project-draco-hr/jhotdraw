@@ -1,11 +1,11 @@
 {
   URIChooser chooser=getChooser(view);
-  Optional<URI> uri=chooser.showDialog(app.getNode());
-  if (uri.isPresent()) {
+  URI uri=chooser.showDialog(app.getNode());
+  if (uri != null) {
     app.add(view);
     if (!getApplication().getModel().isAllowMultipleViewsPerURI()) {
       for (      View v : getApplication().views()) {
-        if (v.getURI() != null && v.getURI().equals(uri.get())) {
+        if (v.getURI() != null && v.getURI().equals(uri)) {
           if (disposeView) {
             app.remove(view);
           }
@@ -16,7 +16,7 @@
         }
       }
     }
-    openViewFromURI(view,uri.get(),chooser);
+    openViewFromURI(view,uri,chooser);
   }
  else {
     if (disposeView) {

@@ -6,10 +6,10 @@
   double vy=evt.getY();
   pressedFigure=view.findFigure(vx,vy);
   if (isSelectBehindEnabled() && (evt.isAltDown() || evt.isControlDown())) {
-    pressedFigure=view.findFigureBehind(vx,vy,pressedFigure.get());
+    pressedFigure=view.findFigureBehind(vx,vy,pressedFigure);
   }
-  if (pressedFigure.isPresent() && view.getSelectedFigures().contains(pressedFigure.get())) {
-    DragTracker t=getDragTracker(pressedFigure.get(),view);
+  if (pressedFigure != null && view.getSelectedFigures().contains(pressedFigure)) {
+    DragTracker t=getDragTracker(pressedFigure,view);
     setTracker(t);
   }
  else {

@@ -1,0 +1,12 @@
+{
+  if (oldValue != null) {
+    Tool t=oldValue;
+    toolPane.setCenter(null);
+    t.setDrawingView(null);
+  }
+  if (newValue != null) {
+    Tool t=newValue;
+    toolPane.setCenter(t.getNode());
+    t.setDrawingView(this);
+  }
+}

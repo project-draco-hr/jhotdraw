@@ -1,4 +1,4 @@
 {
   File f=chooser.showDialog(parent);
-  return f == null ? Optional.empty() : Optional.of(f.toURI());
+  return f == null ? null : f.toURI();
 }

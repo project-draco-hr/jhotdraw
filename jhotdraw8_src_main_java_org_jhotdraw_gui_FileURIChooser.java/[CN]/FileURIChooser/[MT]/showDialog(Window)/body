@@ -8,5 +8,5 @@ case SAVE:
 f=chooser.showSaveDialog(parent);
 break;
 }
-return f == null ? Optional.empty() : Optional.of(f.toURI());
+return f == null ? null : f.toURI();
 }

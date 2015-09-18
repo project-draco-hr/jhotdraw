@@ -1,6 +1,0 @@
-{
-  super(app);
-  this.target=target;
-  app.activeViewProperty().addListener(activeViewListener);
-  activeViewListener.changed(null,null,app.getActiveView().orElse(null));
-}

@@ -2,11 +2,11 @@
   if (isDisabled()) {
     return;
   }
-  final Optional<View> v=getActiveView();
-  if (!v.isPresent() || v.get().isDisabled()) {
+  final View v=getActiveView();
+  if (v == null || v.isDisabled()) {
     return;
   }
-  oldFocusOwner=v.get().getNode().getScene().getFocusOwner();
-  v.get().addDisabler(this);
-  saveView(v.get());
+  oldFocusOwner=v.getNode().getScene().getFocusOwner();
+  v.addDisabler(this);
+  saveView(v);
 }

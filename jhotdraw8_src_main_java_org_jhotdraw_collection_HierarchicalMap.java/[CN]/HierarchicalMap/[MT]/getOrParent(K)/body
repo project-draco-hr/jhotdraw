@@ -1,8 +1,0 @@
-{
-  if (containsKey(key)) {
-    return Optional.of(get(key));
-  }
- else {
-    return (parent.isPresent()) ? parent.get().getOrParent(key) : Optional.empty();
-  }
-}

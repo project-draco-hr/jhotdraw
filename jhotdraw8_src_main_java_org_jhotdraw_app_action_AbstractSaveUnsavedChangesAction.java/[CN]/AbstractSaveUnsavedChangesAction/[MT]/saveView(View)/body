@@ -1,12 +1,12 @@
 {
   if (v.getURI() == null) {
     URIChooser chooser=getChooser(v);
-    Optional<URI> uri=Optional.empty();
+    URI uri=null;
     Outer:     while (true) {
       uri=chooser.showDialog(v.getNode());
-      if (uri.isPresent() && !app.getModel().isAllowMultipleViewsPerURI()) {
+      if (uri != null && !app.getModel().isAllowMultipleViewsPerURI()) {
         for (        View vi : app.views()) {
-          if (vi != v && v.getURI().equals(uri.get())) {
+          if (vi != v && v.getURI().equals(uri)) {
             Alert alert=new Alert(Alert.AlertType.INFORMATION,"You can not save to a file which is already open.");
             alert.showAndWait();
             continue Outer;
@@ -15,12 +15,12 @@
       }
       break;
     }
-    if (uri.isPresent()) {
-      saveViewToURI(v,uri.get(),chooser);
+    if (uri != null) {
+      saveViewToURI(v,uri,chooser);
     }
     v.removeDisabler(this);
-    if (oldFocusOwner.isPresent()) {
-      oldFocusOwner.get().requestFocus();
+    if (oldFocusOwner != null) {
+      oldFocusOwner.requestFocus();
     }
   }
  else {

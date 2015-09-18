@@ -7,9 +7,9 @@
         todo.add((Menu)mi);
       }
  else {
-        Optional<Action> a=actions.getOrParent(mi.getId());
-        if (a.isPresent()) {
-          Actions.bindMenuItem(mi,a.get());
+        Action a=actions.get(mi.getId());
+        if (a != null) {
+          Actions.bindMenuItem(mi,a);
         }
  else         if (mi.getId() != null) {
           System.err.println("No action for menu item with id=" + mi.getId());

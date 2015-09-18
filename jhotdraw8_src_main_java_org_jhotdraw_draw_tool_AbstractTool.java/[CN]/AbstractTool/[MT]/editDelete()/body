@@ -1,6 +1,6 @@
 {
-  if (getDrawingView().isPresent()) {
-    DrawingView v=getDrawingView().get();
+  if (getDrawingView() != null) {
+    DrawingView v=getDrawingView();
     v.getDrawing().children().removeAll(v.getSelectedFigures());
   }
 }

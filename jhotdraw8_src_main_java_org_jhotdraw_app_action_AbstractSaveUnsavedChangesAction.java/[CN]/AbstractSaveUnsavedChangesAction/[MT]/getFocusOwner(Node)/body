@@ -1,4 +1,4 @@
 {
-  Optional<Scene> scene=Optional.ofNullable(node.getScene());
-  return Optional.ofNullable(scene.isPresent() ? scene.get().getFocusOwner() : null);
+  Scene scene=node.getScene();
+  return scene == null ? null : scene.getFocusOwner();
 }
