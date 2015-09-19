@@ -1,0 +1,8 @@
+{
+  applyFigureProperties(n);
+  ObservableList<Node> group=((Group)n).getChildren();
+  group.clear();
+  for (  Figure child : childrenProperty()) {
+    group.add(v.getNode(child));
+  }
+}

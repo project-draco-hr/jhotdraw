@@ -1,0 +1,5 @@
+{
+  Drawing oldValue=root;
+  root=newValue;
+  fire(DrawingModelEvent.rootChanged(this,newValue));
+}

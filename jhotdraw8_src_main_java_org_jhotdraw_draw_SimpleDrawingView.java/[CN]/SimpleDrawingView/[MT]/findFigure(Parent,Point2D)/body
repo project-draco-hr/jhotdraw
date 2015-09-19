@@ -8,7 +8,7 @@
     Point2D pl=n.parentToLocal(pp);
     if (n.contains(pl)) {
       Figure f=nodeToFigureMap.get(n);
-      if (f == null) {
+      if (f == null || !f.isSelectable()) {
         if (n instanceof Parent) {
           f=findFigure((Parent)n,pl);
         }

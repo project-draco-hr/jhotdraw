@@ -1,0 +1,7 @@
+{
+  if (newValue != windingRule) {
+    invalidatePath();
+    int oldValue=windingRule;
+    this.windingRule=newValue;
+  }
+}

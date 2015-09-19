@@ -5,10 +5,16 @@
   double vx=evt.getX();
   double vy=evt.getY();
   pressedFigure=view.findFigure(vx,vy);
-  if (isSelectBehindEnabled() && (evt.isAltDown() || evt.isControlDown())) {
+  if (pressedFigure == null) {
+    List<Figure> fs=view.findFiguresIntersecting(vx - tolerance,vy - tolerance,tolerance * 2,tolerance * 2);
+    if (!fs.isEmpty()) {
+      pressedFigure=fs.get(0);
+    }
+  }
+  if (isSelectBehindEnabled() && (evt.isShiftDown())) {
     pressedFigure=view.findFigureBehind(vx,vy,pressedFigure);
   }
-  if (pressedFigure != null && view.getSelectedFigures().contains(pressedFigure)) {
+  if (pressedFigure != null && (!(evt.isAltDown() || evt.isControlDown()) || view.getSelectedFigures().contains(pressedFigure))) {
     DragTracker t=getDragTracker(pressedFigure,view);
     setTracker(t);
   }

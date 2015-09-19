@@ -1,5 +1,5 @@
 {
-  Drawing dr=drawing.get();
+  Drawing dr=getDrawing();
   Figure f=findFigure((Parent)getNode(dr),viewToDrawing(vx,vy));
   return f;
 }

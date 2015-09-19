@@ -1,0 +1,14 @@
+{
+  double minX=Double.MAX_VALUE;
+  double maxX=Double.MIN_VALUE;
+  double minY=Double.MAX_VALUE;
+  double maxY=Double.MIN_VALUE;
+  for (  Figure child : childrenProperty()) {
+    Bounds b=child.getBoundsInParent();
+    minX=min(minX,b.getMinX());
+    maxX=max(maxX,b.getMaxX());
+    minY=min(minY,b.getMinY());
+    maxY=max(maxY,b.getMaxY());
+  }
+  return new BoundingBox(minX,minY,maxX - minX,maxY - minY);
+}

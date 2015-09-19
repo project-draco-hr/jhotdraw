@@ -1,0 +1,5 @@
+{
+  for (  Figure child : childrenProperty()) {
+    child.reshape(transform);
+  }
+}

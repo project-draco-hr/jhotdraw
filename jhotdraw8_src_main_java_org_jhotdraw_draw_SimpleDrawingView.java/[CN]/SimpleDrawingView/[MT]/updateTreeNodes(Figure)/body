@@ -1,0 +1,6 @@
+{
+  dirtyFigures.add(parent);
+  for (  Figure child : parent.children()) {
+    updateTreeNodes(child);
+  }
+}

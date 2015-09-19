@@ -1,0 +1,21 @@
+{
+  double si=sin(angle);
+  double co=cos(angle);
+  double e=0.0001;
+  double x=0, y=0;
+  if (abs(si) > e) {
+    x=(1.0 + co / abs(si)) / 2.0 * r.width;
+    x=range(0,r.width,x);
+  }
+ else   if (co >= 0.0) {
+    x=r.width;
+  }
+  if (abs(co) > e) {
+    y=(1.0 + si / abs(co)) / 2.0 * r.height;
+    y=range(0,r.height,y);
+  }
+ else   if (si >= 0.0) {
+    y=r.height;
+  }
+  return new Point2D.Double(r.x + x,r.y + y);
+}

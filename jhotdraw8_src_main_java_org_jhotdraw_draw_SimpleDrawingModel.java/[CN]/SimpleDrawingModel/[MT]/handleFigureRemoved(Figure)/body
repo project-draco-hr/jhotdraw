@@ -1,6 +1,0 @@
-{
-  handler.removeFigure(figure);
-  for (  Figure child : figure.childrenProperty()) {
-    handleFigureRemoved(child);
-  }
-}

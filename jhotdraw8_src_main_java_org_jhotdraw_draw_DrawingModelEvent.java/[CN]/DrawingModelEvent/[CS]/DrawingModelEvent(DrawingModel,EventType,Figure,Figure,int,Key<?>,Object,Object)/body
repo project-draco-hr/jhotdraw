@@ -1,0 +1,10 @@
+{
+  super(source);
+  this.figure=figure;
+  this.key=key;
+  this.oldValue=oldValue;
+  this.newValue=newValue;
+  this.parent=parent;
+  this.index=index;
+  this.eventType=eventType;
+}

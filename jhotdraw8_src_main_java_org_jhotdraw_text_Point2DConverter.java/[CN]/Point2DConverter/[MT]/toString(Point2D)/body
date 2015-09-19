@@ -1,3 +1,0 @@
-{
-  return formatter.toString(new Object[]{value.getX(),value.getY()});
-}

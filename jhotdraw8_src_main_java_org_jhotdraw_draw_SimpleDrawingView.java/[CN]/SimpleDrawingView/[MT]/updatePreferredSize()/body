@@ -1,5 +1,5 @@
 {
-  Rectangle2D r=drawing.get().get(Drawing.BOUNDS);
+  Rectangle2D r=getDrawing().get(Drawing.BOUNDS);
   Rectangle2D visible=new Rectangle2D(max(r.getMinX(),0),max(r.getMinY(),0),(r.getWidth() + max(r.getMinX(),0)),r.getHeight() + max(r.getMinY(),0));
   node.setPrefHeight(visible.getHeight());
   node.setPrefHeight(visible.getWidth());

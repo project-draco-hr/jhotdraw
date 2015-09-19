@@ -3,8 +3,22 @@
   y1=event.getY();
   x2=x1;
   y2=y1;
-  figure=factory.get();
+  figure=figureFactory.get();
   Point2D c=dv.getConstrainer().constrainPoint(figure,dv.viewToDrawing(new Point2D(x1,y1)));
   figure.reshape(c.getX(),c.getY(),1,1);
-  dv.getDrawing().add(figure);
+  DrawingModel dm=dv.getDrawingModel();
+  Drawing drawing=dm.getRoot();
+  Layer activeLayer=dv.getActiveLayer();
+  if (activeLayer == null) {
+    Figure lastChild=drawing.getLastChild();
+    if (lastChild instanceof Layer) {
+      activeLayer=(Layer)lastChild;
+    }
+ else {
+      activeLayer=layerFactory.get();
+      dm.addChildTo(activeLayer,drawing);
+    }
+  }
+  dv.setActiveLayer(activeLayer);
+  dm.addChildTo(figure,activeLayer);
 }

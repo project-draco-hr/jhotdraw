@@ -1,8 +1,9 @@
 {
   Point2D dp=dv.viewToDrawing(evt.getX() - x,evt.getY() - y);
   Transform t=Transform.translate(dp.getX(),dp.getY());
+  DrawingModel dm=dv.getDrawingModel();
   for (  Figure f : dv.getSelectedFigures()) {
-    f.reshape(t);
+    dm.reshape(f,t);
   }
   x=evt.getX();
   y=evt.getY();

@@ -1,0 +1,15 @@
+{
+  double len=0;
+  PathIterator i=generalPath.getPathIterator(new AffineTransform(),flatness);
+  double[] coords=new double[6];
+  double prevX=coords[0];
+  double prevY=coords[1];
+  i.next();
+  for (; !i.isDone(); i.next()) {
+    i.currentSegment(coords);
+    len+=Geom.length(prevX,prevY,coords[0],coords[1]);
+    prevX=coords[0];
+    prevY=coords[1];
+  }
+  return len;
+}

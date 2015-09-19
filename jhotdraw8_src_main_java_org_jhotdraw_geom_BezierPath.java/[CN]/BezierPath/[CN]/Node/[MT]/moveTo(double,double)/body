@@ -1,0 +1,3 @@
+{
+  moveBy(x - this.x[0],y - this.y[0]);
+}

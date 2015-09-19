@@ -1,0 +1,8 @@
+DrawingModel source
+EventType eventType
+Figure figure
+Figure parent
+int index
+Key<?> key
+Object oldValue
+Object newValue

@@ -1,8 +1,0 @@
-{
-  ParsePosition pp=new ParsePosition(0);
-  Number value=fromString(text,pp);
-  if (pp.getErrorIndex() != -1) {
-    throw new ParseException("Unable to parse \"" + text + "\"",pp.getErrorIndex());
-  }
-  return value;
-}

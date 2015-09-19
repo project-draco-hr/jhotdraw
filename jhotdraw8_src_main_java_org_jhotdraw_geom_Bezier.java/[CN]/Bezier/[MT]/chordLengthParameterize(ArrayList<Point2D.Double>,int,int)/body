@@ -1,0 +1,13 @@
+{
+  int i;
+  double[] u;
+  u=new double[last - first + 1];
+  u[0]=0.0;
+  for (i=first + 1; i <= last; i++) {
+    u[i - first]=u[i - first - 1] + v2DistanceBetween2Points(d.get(i),d.get(i - 1));
+  }
+  for (i=first + 1; i <= last; i++) {
+    u[i - first]=u[i - first] / u[last - first];
+  }
+  return (u);
+}

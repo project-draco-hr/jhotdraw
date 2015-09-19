@@ -1,3 +1,0 @@
-{
-  fire(new DrawingModelEvent(this,figure));
-}

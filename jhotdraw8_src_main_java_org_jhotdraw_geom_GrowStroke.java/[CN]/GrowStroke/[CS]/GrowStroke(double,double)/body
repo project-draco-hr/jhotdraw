@@ -1,0 +1,4 @@
+{
+  super(grow * 2d,1d,BasicStroke.CAP_SQUARE,BasicStroke.JOIN_BEVEL,miterLimit,null,0f);
+  this.grow=grow;
+}

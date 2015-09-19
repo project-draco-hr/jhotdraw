@@ -1,0 +1,6 @@
+{
+  if (!isEndValid) {
+    updateEnd();
+    isEndValid=true;
+  }
+}

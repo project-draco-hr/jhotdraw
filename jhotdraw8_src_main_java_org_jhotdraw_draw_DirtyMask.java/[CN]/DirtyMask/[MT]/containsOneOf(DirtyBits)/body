@@ -1,0 +1,8 @@
+{
+  for (  DirtyBits bit : bits) {
+    if ((bitmask & bit.getMask()) == bit.getMask()) {
+      return true;
+    }
+  }
+  return false;
+}

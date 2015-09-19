@@ -1,4 +1,0 @@
-{
-  figure.childrenProperty().removeListener((ListChangeListener<Figure>)this);
-  figure.properties().removeListener((MapChangeListener<Key<?>,Object>)this);
-}

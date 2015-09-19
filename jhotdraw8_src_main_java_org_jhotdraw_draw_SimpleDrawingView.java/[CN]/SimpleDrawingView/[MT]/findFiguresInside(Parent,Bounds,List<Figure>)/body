@@ -2,16 +2,27 @@
   ObservableList<Node> list=p.getChildrenUnmodifiable();
   for (int i=list.size() - 1; i >= 0; i--) {
     Node n=list.get(i);
-    Bounds pl=n.parentToLocal(pp);
-    if (pl.contains(n.getBoundsInLocal())) {
-      Figure f=nodeToFigureMap.get(n);
-      if (f == null) {
+    Figure f1=nodeToFigureMap.get(n);
+    if (f1 != null && f1.isSelectable()) {
+      Bounds pl=n.parentToLocal(pp);
+      if (pl.contains(n.getBoundsInLocal())) {
+        Figure f=nodeToFigureMap.get(n);
+        if (f == null || !f.isSelectable()) {
+          if (n instanceof Parent) {
+            findFiguresInside((Parent)n,pl,found);
+          }
+        }
+ else {
+          found.add(f);
+        }
+      }
+    }
+ else {
+      Bounds pl=n.parentToLocal(pp);
+      if (pl.intersects(n.getBoundsInLocal())) {
         if (n instanceof Parent) {
           findFiguresInside((Parent)n,pl,found);
         }
-      }
- else {
-        found.add(f);
       }
     }
   }

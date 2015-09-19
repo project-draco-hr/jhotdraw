@@ -3,4 +3,5 @@
   if (oldNode != null) {
     nodeToFigureMap.remove(oldNode);
   }
+  dirtyFigures.remove(f);
 }

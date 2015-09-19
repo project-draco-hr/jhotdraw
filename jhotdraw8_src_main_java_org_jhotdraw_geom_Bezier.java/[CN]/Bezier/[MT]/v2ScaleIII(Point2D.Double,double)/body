@@ -1,0 +1,6 @@
+{
+  Point2D.Double result=new Point2D.Double();
+  result.x=v.x * s;
+  result.y=v.y * s;
+  return result;
+}

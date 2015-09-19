@@ -1,2 +1,26 @@
 {
+  FXMLLoader loader=new FXMLLoader();
+  loader.setController(this);
+  try {
+    node=loader.load(getClass().getResourceAsStream("SimpleDrawingView.fxml"));
+  }
+ catch (  IOException ex) {
+    throw new InternalError(ex);
+  }
+  setDrawingModel(new SimpleDrawingModel());
+  node.addEventFilter(MouseEvent.MOUSE_PRESSED,new EventHandler<MouseEvent>(){
+    @Override public void handle(    MouseEvent evt){
+      if (!node.isFocused()) {
+        node.requestFocus();
+        if (!node.getScene().getWindow().isFocused()) {
+          evt.consume();
+        }
+      }
+    }
+  }
+);
+  node.setFocusTraversable(true);
+  focused.bind(node.focusedProperty());
+  drawingPane.setScaleX(zoomFactor.get());
+  drawingPane.setScaleY(zoomFactor.get());
 }

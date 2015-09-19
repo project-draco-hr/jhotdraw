@@ -1,9 +1,0 @@
-{
-  if (root != null) {
-    handleFigureRemoved(root);
-  }
-  root=newValue;
-  if (root != null) {
-    handleFigureAdded(root);
-  }
-}

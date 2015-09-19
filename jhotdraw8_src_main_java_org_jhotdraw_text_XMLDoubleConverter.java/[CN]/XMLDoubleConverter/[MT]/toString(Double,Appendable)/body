@@ -1,3 +1,25 @@
 {
-  throw new UnsupportedOperationException("Not supported yet.");
+  if (value == null && allowsNullValue) {
+    return;
+  }
+  double v=((Double)value).doubleValue();
+  if (factor != 1.0) {
+    v=v * factor;
+  }
+  String str;
+  BigDecimal big=new BigDecimal(v);
+  int exponent=big.scale() >= 0 ? big.precision() - big.scale() : -big.scale();
+  if (!usesScientificNotation || exponent > minNegativeExponent && exponent < minPositiveExponent) {
+    str=decimalFormat.format(v);
+  }
+ else {
+    str=scientificFormat.format(v);
+  }
+  buf.append(str);
+  if (value != null) {
+    if (unit != null) {
+      buf.append(unit);
+    }
+  }
+  return;
 }

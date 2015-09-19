@@ -1,4 +1,0 @@
-{
-  Figure figure=(Figure)observable;
-  fireFigureInvalidated(figure);
-}

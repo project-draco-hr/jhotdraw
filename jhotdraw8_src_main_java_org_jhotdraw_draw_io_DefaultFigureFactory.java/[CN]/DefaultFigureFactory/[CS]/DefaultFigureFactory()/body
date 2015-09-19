@@ -1,4 +1,5 @@
 {
+  addFigure("Layer",SimpleLayer.class);
   addFigure("Group",GroupFigure.class);
   addFigure("Drawing",SimpleDrawing.class);
   addFigure("Rectangle",RectangleFigure.class);
@@ -16,5 +17,5 @@
   addConverter(Rectangle2D.class,new Rectangle2DConverter());
   addConverter(String.class,new DefaultConverter());
   addConverter(Point2D.class,new Point2DConverter());
-  addConverter(Double.class,new RealNumberConverter());
+  addConverter(Double.class,new NumberConverter());
 }

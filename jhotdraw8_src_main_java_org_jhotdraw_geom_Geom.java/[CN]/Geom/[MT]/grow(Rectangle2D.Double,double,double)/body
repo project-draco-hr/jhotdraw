@@ -1,0 +1,6 @@
+{
+  r.x-=h;
+  r.y-=v;
+  r.width+=h * 2d;
+  r.height+=v * 2d;
+}

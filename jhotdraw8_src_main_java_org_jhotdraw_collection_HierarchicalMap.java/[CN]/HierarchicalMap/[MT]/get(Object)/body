@@ -1,6 +1,6 @@
 {
   if (containsKey(key)) {
-    return get(key);
+    return super.get(key);
   }
  else {
     return (parent != null) ? parent.get(key) : null;

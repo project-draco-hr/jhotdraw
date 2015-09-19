@@ -1,3 +1,23 @@
 {
-  return from;
+  Bounds bounds=target.getBoundsInDrawing();
+  Rectangle2D.Double r=new Rectangle2D.Double(bounds.getMinX(),bounds.getMinY(),bounds.getWidth(),bounds.getHeight());
+  if (target.get(STROKE_PAINT) != null) {
+    double grow;
+switch (target.get(STROKE_TYPE)) {
+case CENTERED:
+default :
+      grow=target.get(STROKE_WIDTH) / 2d;
+    break;
+case OUTSIDE:
+  grow=target.get(STROKE_WIDTH);
+break;
+case INSIDE:
+grow=0d;
+break;
+}
+Geom.grow(r,grow,grow);
+}
+java.awt.geom.Point2D.Double from2D=new java.awt.geom.Point2D.Double(from.getX(),from.getY());
+java.awt.geom.Point2D.Double p=Geom.angleToPoint(r,Geom.pointToAngle(r,from2D));
+return new Point2D(p.getX(),p.getY());
 }

@@ -1,3 +1,0 @@
-{
-  return getEventType() == EventType.FIGURE_INVALIDATED;
-}

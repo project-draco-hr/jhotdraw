@@ -1,5 +1,0 @@
-{
-  for (  Listener<DrawingModelEvent> l : propertyListeners) {
-    l.handle(event);
-  }
-}

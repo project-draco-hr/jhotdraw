@@ -1,0 +1,17 @@
+{
+  clearNodes();
+  drawingPane.getChildren().clear();
+  if (boundsProperty != null) {
+    boundsProperty.removeListener(preferredSizeHandler);
+    boundsProperty.unbind();
+    boundsProperty=null;
+    activeLayer.set(null);
+  }
+  Drawing d=getDrawingModel().getRoot();
+  if (d != null) {
+    boundsProperty=Drawing.BOUNDS.propertyAt(d.properties());
+    boundsProperty.addListener(preferredSizeHandler);
+    drawingPane.getChildren().add(getNode(d));
+    updateTreeNodes(d);
+  }
+}

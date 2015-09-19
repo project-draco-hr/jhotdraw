@@ -1,3 +1,0 @@
-{
-  fireToPropertyListeners(new DrawingModelEvent(this,figure,key,oldValue,newValue));
-}

@@ -1,0 +1,131 @@
+{
+  if ((str == null || str.length() == 0) && getAllowsNullValue()) {
+    return null;
+  }
+  final int remaining=str.remaining();
+  int end=0;
+{
+    boolean noMoreSigns=false;
+    boolean noMorePoints=false;
+    boolean noMoreEs=false;
+    Outer:     for (; end < remaining; end++) {
+      char c=str.charAt(end);
+switch (c) {
+case '+':
+case '-':
+        if (noMoreSigns) {
+          break Outer;
+        }
+      noMoreSigns=true;
+    break;
+case '.':
+  if (noMorePoints) {
+    break Outer;
+  }
+noMoreSigns=true;
+noMorePoints=true;
+break;
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+noMoreSigns=true;
+break;
+case 'e':
+case 'E':
+if (noMoreEs) {
+break Outer;
+}
+noMoreSigns=false;
+noMorePoints=false;
+noMoreEs=true;
+break;
+default :
+break Outer;
+}
+}
+}
+String text=str.subSequence(0,end).toString();
+if (unit != null && end + unit.length() <= str.length()) {
+if (str.subSequence(end,end + unit.length()).toString().startsWith(unit)) {
+end+=unit.length();
+}
+}
+Class<?> valueClass=getValueClass();
+Object value;
+if (valueClass != null) {
+try {
+if (valueClass == Integer.class) {
+int v=Integer.parseInt(text);
+if (factor != 1.0) {
+v=(int)(v / factor);
+}
+value=v;
+}
+ else if (valueClass == Long.class) {
+long v=Long.parseLong(text);
+if (factor != 1.0) {
+v=(long)(v / factor);
+}
+value=v;
+}
+ else if (valueClass == Float.class) {
+float v=Float.parseFloat(text);
+if (factor != 1.0) {
+v=(float)(v / factor);
+}
+value=new Float(v);
+}
+ else if (valueClass == Double.class) {
+double v=Double.parseDouble(text);
+if (factor != 1.0) {
+v=(v / factor);
+}
+value=new Double(v);
+}
+ else if (valueClass == Byte.class) {
+byte v=Byte.parseByte(text);
+if (factor != 1.0) {
+v=(byte)(v / factor);
+}
+value=v;
+}
+ else if (valueClass == Short.class) {
+short v=Short.parseShort(text);
+if (factor != 1.0) {
+v=(short)(v / factor);
+}
+value=v;
+}
+ else {
+throw new ParseException("parse error (1)",str.position());
+}
+}
+ catch (NumberFormatException e) {
+ParseException pe=new ParseException("illegal number format",str.position());
+pe.initCause(e);
+throw pe;
+}
+}
+ else {
+throw new ParseException("illegal value class:" + valueClass,str.position());
+}
+try {
+if (!isValidValue(value,true)) {
+throw new ParseException("invalid value",str.position());
+}
+}
+ catch (ClassCastException cce) {
+ParseException pe=new ParseException("invalid value",str.position());
+pe.initCause(cce);
+throw pe;
+}
+str.position(str.position() + end);
+return (Number)value;
+}

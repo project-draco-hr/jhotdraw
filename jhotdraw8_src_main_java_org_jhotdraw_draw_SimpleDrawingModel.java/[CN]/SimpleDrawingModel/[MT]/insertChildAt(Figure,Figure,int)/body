@@ -1,0 +1,10 @@
+{
+  parent.children().add(index,child);
+{
+    fire(DrawingModelEvent.figureAdded(this,parent,child,index));
+  }
+{
+    fire(DrawingModelEvent.nodeChanged(this,parent));
+  }
+  fireInvalidated();
+}
