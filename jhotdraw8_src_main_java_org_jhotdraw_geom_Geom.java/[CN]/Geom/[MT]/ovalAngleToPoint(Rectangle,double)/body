@@ -1,5 +1,0 @@
-{
-  Point center=Geom.center(r);
-  Point p=Geom.polarToPoint(angle,r.width / 2,r.height / 2);
-  return new Point(center.x + p.x,center.y + p.y);
-}

@@ -1,3 +1,0 @@
-{
-  return new DrawingModelEvent(source,EventType.PROPERTY_CHANGED,figure,null,-1,key,oldValue,newValue);
-}

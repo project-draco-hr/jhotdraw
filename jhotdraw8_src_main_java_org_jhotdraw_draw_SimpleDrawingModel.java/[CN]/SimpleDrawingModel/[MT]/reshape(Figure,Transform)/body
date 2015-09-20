@@ -1,7 +1,0 @@
-{
-  figure.properties().addListener(propertyHandler);
-  figure.reshape(transform);
-  figure.properties().removeListener(propertyHandler);
-  fireSubtreeNodesChanged(figure,DirtyBits.NODE,DirtyBits.LAYOUT_BOUNDS);
-  fireInvalidated();
-}

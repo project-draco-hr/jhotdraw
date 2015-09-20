@@ -29,7 +29,7 @@
   if (bp.isClosed() && bp.size() > 1) {
     prevCorners=computeThickLine(bp.get(bp.size() - 1).x[0],bp.get(bp.size() - 1).y[0],bp.get(0).x[0],bp.get(0).y[0],innerWidth,prevCorners);
     currentCorners=computeThickLine(bp.get(0).x[0],bp.get(0).y[0],bp.get(1).x[0],bp.get(1).y[0],innerWidth,currentCorners);
-    intersect=Geom.intersect(prevCorners[0],prevCorners[1],prevCorners[4],prevCorners[5],currentCorners[0],currentCorners[1],currentCorners[4],currentCorners[5],miterLimit);
+    intersect=Geom.intersectAWT(prevCorners[0],prevCorners[1],prevCorners[4],prevCorners[5],currentCorners[0],currentCorners[1],currentCorners[4],currentCorners[5],miterLimit);
     if (intersect != null) {
       right.moveTo(intersect.x,intersect.y);
     }
@@ -37,7 +37,7 @@
       right.moveTo(prevCorners[4],prevCorners[5]);
       right.lineTo(currentCorners[0],currentCorners[1]);
     }
-    intersect=Geom.intersect(prevCorners[2],prevCorners[3],prevCorners[6],prevCorners[7],currentCorners[2],currentCorners[3],currentCorners[6],currentCorners[7],miterLimit);
+    intersect=Geom.intersectAWT(prevCorners[2],prevCorners[3],prevCorners[6],prevCorners[7],currentCorners[2],currentCorners[3],currentCorners[6],currentCorners[7],miterLimit);
     if (intersect != null) {
       left.moveTo(intersect.x,intersect.y);
     }
@@ -57,7 +57,7 @@
     double[] tmp=prevCorners;
     prevCorners=currentCorners;
     currentCorners=computeThickLine(bp.get(i).x[0],bp.get(i).y[0],bp.get(i + 1).x[0],bp.get(i + 1).y[0],innerWidth,tmp);
-    intersect=Geom.intersect(prevCorners[0],prevCorners[1],prevCorners[4],prevCorners[5],currentCorners[0],currentCorners[1],currentCorners[4],currentCorners[5],miterLimit);
+    intersect=Geom.intersectAWT(prevCorners[0],prevCorners[1],prevCorners[4],prevCorners[5],currentCorners[0],currentCorners[1],currentCorners[4],currentCorners[5],miterLimit);
     if (intersect != null) {
       right.lineTo(intersect.x,intersect.y);
     }
@@ -65,7 +65,7 @@
       right.lineTo(prevCorners[4],prevCorners[5]);
       right.lineTo(currentCorners[0],currentCorners[1]);
     }
-    intersect=Geom.intersect(prevCorners[2],prevCorners[3],prevCorners[6],prevCorners[7],currentCorners[2],currentCorners[3],currentCorners[6],currentCorners[7],miterLimit);
+    intersect=Geom.intersectAWT(prevCorners[2],prevCorners[3],prevCorners[6],prevCorners[7],currentCorners[2],currentCorners[3],currentCorners[6],currentCorners[7],miterLimit);
     if (intersect != null) {
       left.lineTo(intersect.x,intersect.y);
     }
@@ -78,7 +78,7 @@
     double[] tmp=prevCorners;
     prevCorners=currentCorners;
     currentCorners=computeThickLine(bp.get(bp.size() - 1).x[0],bp.get(bp.size() - 1).y[0],bp.get(0).x[0],bp.get(0).y[0],innerWidth,tmp);
-    intersect=Geom.intersect(prevCorners[0],prevCorners[1],prevCorners[4],prevCorners[5],currentCorners[0],currentCorners[1],currentCorners[4],currentCorners[5],miterLimit);
+    intersect=Geom.intersectAWT(prevCorners[0],prevCorners[1],prevCorners[4],prevCorners[5],currentCorners[0],currentCorners[1],currentCorners[4],currentCorners[5],miterLimit);
     if (intersect != null) {
       right.lineTo(intersect.x,intersect.y);
     }
@@ -86,7 +86,7 @@
       right.lineTo(prevCorners[4],prevCorners[5]);
       right.lineTo(currentCorners[0],currentCorners[1]);
     }
-    intersect=Geom.intersect(prevCorners[2],prevCorners[3],prevCorners[6],prevCorners[7],currentCorners[2],currentCorners[3],currentCorners[6],currentCorners[7],miterLimit);
+    intersect=Geom.intersectAWT(prevCorners[2],prevCorners[3],prevCorners[6],prevCorners[7],currentCorners[2],currentCorners[3],currentCorners[6],currentCorners[7],miterLimit);
     if (intersect != null) {
       left.lineTo(intersect.x,intersect.y);
     }

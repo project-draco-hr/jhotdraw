@@ -1,0 +1,6 @@
+{
+  for (  Figure child : children()) {
+    child.layout();
+  }
+  doLayout();
+}

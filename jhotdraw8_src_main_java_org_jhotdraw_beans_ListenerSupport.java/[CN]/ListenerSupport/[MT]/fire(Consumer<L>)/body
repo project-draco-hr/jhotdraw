@@ -2,7 +2,7 @@
   if (listeners != null) {
     for (    L l : new ArrayList<>(listeners)) {
       if ((l instanceof WeakListener) && ((WeakListener)l).wasGarbageCollected()) {
-        removeListener(l);
+        remove(l);
       }
       consumer.accept(l);
     }

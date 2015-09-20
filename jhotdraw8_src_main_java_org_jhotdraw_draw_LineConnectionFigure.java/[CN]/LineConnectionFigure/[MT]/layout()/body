@@ -1,0 +1,20 @@
+{
+  Point2D start=get(START);
+  Point2D end=get(END);
+  Figure startFigure=get(START_FIGURE);
+  Figure endFigure=get(END_FIGURE);
+  Connector startConnector=get(START_CONNECTOR);
+  Connector endConnector=get(END_CONNECTOR);
+  if (startFigure != null && startConnector != null) {
+    start=startConnector.getPosition(startFigure,this);
+  }
+  if (endFigure != null && endConnector != null) {
+    end=endConnector.getPosition(endFigure,this);
+  }
+  if (startFigure != null && startConnector != null) {
+    set(START,drawingToLocal(startConnector.chopStart(startFigure,this,start,end)));
+  }
+  if (endFigure != null && endConnector != null) {
+    set(END,drawingToLocal(startConnector.chopEnd(endFigure,this,start,end)));
+  }
+}

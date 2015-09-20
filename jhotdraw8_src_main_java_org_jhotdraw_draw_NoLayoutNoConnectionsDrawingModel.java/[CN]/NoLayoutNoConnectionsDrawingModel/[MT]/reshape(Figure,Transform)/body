@@ -1,0 +1,4 @@
+{
+  f.reshape(transform);
+  fire(DrawingModelEvent.subtreeNodesInvalidated(this,f));
+}

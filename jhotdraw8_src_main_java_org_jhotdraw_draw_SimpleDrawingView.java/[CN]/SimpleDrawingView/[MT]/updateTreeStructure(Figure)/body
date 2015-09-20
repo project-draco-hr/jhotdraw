@@ -1,7 +1,7 @@
 {
   Drawing drawing=getDrawing();
   for (  Figure f : new ArrayList<Figure>(figureToNodeMap.keySet())) {
-    if (f.getDrawing() != drawing) {
+    if (f.getRoot() != drawing) {
       removeNode(f);
     }
   }

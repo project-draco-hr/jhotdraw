@@ -1,5 +1,0 @@
-{
-  if (newValue != null) {
-    throw new IllegalArgumentException("A drawing can not have a parent.");
-  }
-}

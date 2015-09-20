@@ -1,5 +1,4 @@
 {
-  validate();
   Line lineNode=(Line)node;
   applyFigureProperties(lineNode);
   updateShapeProperties(lineNode);

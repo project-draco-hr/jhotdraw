@@ -1,0 +1,9 @@
+{
+  if (oldValue != null) {
+    oldValue.removeDrawingModelListener(modelHandler);
+  }
+  if (newValue != null) {
+    newValue.addDrawingModelListener(modelHandler);
+    updateDrawing();
+  }
+}

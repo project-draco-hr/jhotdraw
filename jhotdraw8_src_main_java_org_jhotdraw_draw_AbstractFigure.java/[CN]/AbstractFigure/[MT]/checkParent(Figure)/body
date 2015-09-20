@@ -1,0 +1,5 @@
+{
+  if (newValue instanceof Drawing) {
+    throw new IllegalArgumentException("illegal parent:" + newValue);
+  }
+}

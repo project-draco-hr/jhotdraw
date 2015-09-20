@@ -1,5 +1,6 @@
 {
   figureToNodeMap.clear();
   nodeToFigureMap.clear();
-  dirtyFigures.clear();
+  dirtyFigureNodes.clear();
+  dirtyFigureLayouts.clear();
 }

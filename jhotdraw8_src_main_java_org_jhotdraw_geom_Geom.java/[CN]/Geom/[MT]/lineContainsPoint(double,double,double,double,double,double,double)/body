@@ -1,11 +1,8 @@
 {
-  Rectangle2D.Double r=new Rectangle2D.Double(x1,y1,0,0);
-  r.add(x2,y2);
+  Rectangle2D r=new Rectangle2D(x1,y1,0,0);
+  r=Geom.add(r,x2,y2);
   double grow=max(2,(int)ceil(tolerance));
-  r.x-=grow;
-  r.y-=grow;
-  r.width+=grow * 2;
-  r.height+=grow * 2;
+  r=new Rectangle2D(r.getMinX() - grow,r.getMinY() - grow,r.getWidth() + grow * 2,r.getHeight() + grow * 2);
   if (!r.contains(px,py)) {
     return false;
   }

@@ -1,3 +1,0 @@
-{
-  get(START_CONNECTOR).updateStartPosition(this);
-}

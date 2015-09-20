@@ -1,0 +1,10 @@
+{
+  figure.set(key,value);
+  if (key instanceof FigureKey) {
+    FigureKey<T> fk=(FigureKey<T>)key;
+    DirtyMask dm=fk.getDirtyMask();
+    if (dm.containsOneOf(DirtyBits.NODE)) {
+      fire(DrawingModelEvent.nodeInvalidated(this,figure));
+    }
+  }
+}

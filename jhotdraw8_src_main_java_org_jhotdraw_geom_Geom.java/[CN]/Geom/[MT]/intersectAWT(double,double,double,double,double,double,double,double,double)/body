@@ -1,0 +1,4 @@
+{
+  Point2D p=intersect(xa,ya,xb,yb,xc,yc,xd,yd,limit);
+  return new java.awt.geom.Point2D.Double(p.getX(),p.getY());
+}

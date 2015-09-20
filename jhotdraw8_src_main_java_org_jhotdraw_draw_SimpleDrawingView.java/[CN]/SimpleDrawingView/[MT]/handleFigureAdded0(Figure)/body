@@ -1,5 +1,5 @@
 {
-  invalidateFigure(f);
+  invalidateFigureNode(f);
   for (  Figure child : f.childrenProperty()) {
     handleFigureAdded0(child);
   }

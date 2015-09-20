@@ -1,3 +1,0 @@
-{
-  invalidationListeners.addListener(l);
-}

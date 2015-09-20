@@ -1,3 +1,0 @@
-{
-  updateStartEndPosition(connection,ConnectionFigure.END_FIGURE,ConnectionFigure.END,ConnectionFigure.START_FIGURE,ConnectionFigure.START);
-}

@@ -1,0 +1,50 @@
+{
+  java.awt.geom.Rectangle2D bounds=shape.getBounds2D();
+  java.awt.geom.Point2D.Double ctr=new java.awt.geom.Point2D.Double(bounds.getCenterX(),bounds.getCenterY());
+  double cx=-1;
+  double cy=-1;
+  double len=Double.MAX_VALUE;
+  PathIterator i=shape.getPathIterator(new AffineTransform(),1);
+  double[] coords=new double[6];
+  double prevX=coords[0];
+  double prevY=coords[1];
+  double moveToX=prevX;
+  double moveToY=prevY;
+  i.next();
+  for (; !i.isDone(); i.next()) {
+switch (i.currentSegment(coords)) {
+case PathIterator.SEG_MOVETO:
+      moveToX=coords[0];
+    moveToY=coords[1];
+  break;
+case PathIterator.SEG_CLOSE:
+coords[0]=moveToX;
+coords[1]=moveToY;
+break;
+}
+Point2D chop=Geom.intersect(prevX,prevY,coords[0],coords[1],p.getX(),p.getY(),ctr.getX(),ctr.getY());
+if (chop != null) {
+double cl=Geom.length2(chop.getX(),chop.getY(),p.getX(),p.getY());
+if (cl < len) {
+len=cl;
+cx=chop.getX();
+cy=chop.getY();
+}
+}
+prevX=coords[0];
+prevY=coords[1];
+}
+if (len == Double.MAX_VALUE) {
+i=shape.getPathIterator(new AffineTransform(),1);
+for (; !i.isDone(); i.next()) {
+i.currentSegment(coords);
+double l=Geom.length2(ctr.x,ctr.y,coords[0],coords[1]);
+if (l < len) {
+len=l;
+cx=coords[0];
+cy=coords[1];
+}
+}
+}
+return new Point2D(cx,cy);
+}

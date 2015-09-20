@@ -1,6 +1,0 @@
-{
-  if (!isStartValid) {
-    updateStart();
-    isStartValid=true;
-  }
-}

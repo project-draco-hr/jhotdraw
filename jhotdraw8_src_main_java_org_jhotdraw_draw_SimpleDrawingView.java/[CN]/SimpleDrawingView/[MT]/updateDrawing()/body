@@ -12,6 +12,7 @@
     boundsProperty=Drawing.BOUNDS.propertyAt(d.properties());
     boundsProperty.addListener(preferredSizeHandler);
     drawingPane.getChildren().add(getNode(d));
-    updateTreeNodes(d);
+    dirtyFigureNodes.add(d);
+    repaint();
   }
 }

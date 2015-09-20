@@ -1,5 +1,0 @@
-ConnectionFigure connection
-FigureKey<ConnectableFigure> targetFigureKey
-FigureKey<Point2D> targetKey
-FigureKey<ConnectableFigure> fromFigureKey
-FigureKey<Point2D> fromKey

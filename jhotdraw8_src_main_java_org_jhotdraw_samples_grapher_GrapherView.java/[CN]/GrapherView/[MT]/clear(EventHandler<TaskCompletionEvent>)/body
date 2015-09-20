@@ -1,3 +1,4 @@
 {
   drawingView.setDrawing(new SimpleDrawing());
+  callback.handle(new TaskCompletionEvent());
 }

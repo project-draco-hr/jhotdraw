@@ -1,5 +1,0 @@
-{
-  if (newValue instanceof Drawing) {
-    throw new IllegalArgumentException("This figure can not be directly added to a Drawing. Illegal parent: " + newValue);
-  }
-}

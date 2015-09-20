@@ -3,5 +3,6 @@
   if (oldNode != null) {
     nodeToFigureMap.remove(oldNode);
   }
-  dirtyFigures.remove(f);
+  dirtyFigureNodes.remove(f);
+  dirtyFigureLayouts.remove(f);
 }
