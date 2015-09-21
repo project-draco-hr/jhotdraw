@@ -9,6 +9,9 @@
   view.dispose();
   view.setApplication(null);
   view.getActionMap().setParent(null);
+  if (activeView.get() == view) {
+    activeView.set(null);
+  }
   if (views.isEmpty() && !isSystemMenuSupported) {
     exit();
   }
