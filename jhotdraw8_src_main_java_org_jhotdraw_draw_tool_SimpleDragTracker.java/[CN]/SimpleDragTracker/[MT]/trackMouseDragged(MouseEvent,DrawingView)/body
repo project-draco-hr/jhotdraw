@@ -1,10 +1,18 @@
 {
-  Point2D dp=viewToDrawing.deltaTransform(evt.getX() - x,evt.getY() - y);
+  Point2D current=dv.viewToDrawing(evt.getX(),evt.getY());
+  if (evt.isControlDown()) {
+    if (Math.abs(current.getX() - start.getX()) < Math.abs(current.getY() - start.getY())) {
+      current=new Point2D(start.getX(),current.getY());
+    }
+ else {
+      current=new Point2D(current.getX(),start.getY());
+    }
+  }
+  Point2D dp=current.subtract(previous);
   Transform t=Transform.translate(dp.getX(),dp.getY());
   DrawingModel dm=dv.getDrawingModel();
   for (  Figure f : dv.getSelectedFigures()) {
     dm.reshape(f,t);
   }
-  x=evt.getX();
-  y=evt.getY();
+  previous=current;
 }

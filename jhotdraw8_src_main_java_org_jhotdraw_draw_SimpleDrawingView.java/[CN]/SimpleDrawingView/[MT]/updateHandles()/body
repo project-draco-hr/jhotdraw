@@ -6,10 +6,13 @@
   handlePane.getChildren().clear();
   while (true) {
     for (    Figure figure : getSelectedFigures()) {
-      for (      Handle handle : figure.createHandles(detailLevel,this)) {
-        selectionHandles.add(handle);
-        handlePane.getChildren().add(handle.getNode());
-        handle.updateNode();
+      List<Handle> handles=figure.createHandles(detailLevel,this);
+      if (handles != null) {
+        for (        Handle handle : handles) {
+          selectionHandles.add(handle);
+          handlePane.getChildren().add(handle.getNode());
+          handle.updateNode();
+        }
       }
     }
     if (selectionHandles.isEmpty() && detailLevel != 0) {

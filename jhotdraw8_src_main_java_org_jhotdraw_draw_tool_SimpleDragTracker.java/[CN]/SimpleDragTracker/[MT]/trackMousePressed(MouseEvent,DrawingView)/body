@@ -1,10 +1,3 @@
 {
-  x=evt.getX();
-  y=evt.getY();
-  try {
-    viewToDrawing=view.getDrawingToView().createInverse();
-  }
- catch (  NonInvertibleTransformException ex) {
-    throw new InternalError(ex);
-  }
+  previous=start=view.viewToDrawing(evt.getX(),evt.getY());
 }

@@ -3,8 +3,5 @@
     tracker.trackMouseReleased(event,dv);
   }
   setTracker(null);
-  if (!mouseDragged && pressedFigure != null) {
-    dv.selectionProperty().add(pressedFigure);
-  }
   fireToolDone();
 }

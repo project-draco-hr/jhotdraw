@@ -11,10 +11,31 @@
       pressedFigure=fs.get(0);
     }
   }
-  if (isSelectBehindEnabled() && (evt.isShiftDown())) {
+  if (isSelectBehindEnabled() && (evt.isAltDown())) {
     pressedFigure=view.findFigureBehind(vx,vy,pressedFigure);
   }
-  if (pressedFigure != null && (!(evt.isAltDown() || evt.isControlDown()) || view.getSelectedFigures().contains(pressedFigure))) {
+  if (evt.isShiftDown() && !evt.isMetaDown()) {
+    if (pressedFigure != null) {
+      view.getSelectedFigures().add(pressedFigure);
+    }
+  }
+  if (!evt.isShiftDown() && evt.isMetaDown()) {
+    if (pressedFigure != null) {
+      if (view.selectionProperty().contains(pressedFigure)) {
+        view.selectionProperty().remove(pressedFigure);
+      }
+ else {
+        view.selectionProperty().add(pressedFigure);
+      }
+    }
+  }
+  if (!evt.isShiftDown() && !evt.isMetaDown()) {
+    if (pressedFigure != null) {
+      view.selectionProperty().clear();
+      view.selectionProperty().add(pressedFigure);
+    }
+  }
+  if (pressedFigure != null && (!(evt.isControlDown()) || view.selectionProperty().contains(pressedFigure))) {
     DragTracker t=getDragTracker(pressedFigure,view);
     setTracker(t);
   }
