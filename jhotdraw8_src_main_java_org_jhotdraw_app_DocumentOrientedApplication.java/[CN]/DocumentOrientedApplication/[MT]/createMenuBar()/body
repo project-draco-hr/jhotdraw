@@ -1,5 +1,6 @@
 {
   FXMLLoader loader=new FXMLLoader();
+  loader.setResources(getModel().getResources());
   try {
     return loader.load(DocumentOrientedApplication.class.getResourceAsStream("DocumentOrientedMenu.fxml"));
   }

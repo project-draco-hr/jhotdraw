@@ -23,7 +23,7 @@
     app.removeDisabler(this);
     return;
   }
-  final Resources labels=Resources.getBundle("org.jhotdraw.app.Labels");
+  final Resources labels=Resources.getResources("org.jhotdraw.app.Labels");
 switch (unsavedViewsCount) {
 case 0:
 {

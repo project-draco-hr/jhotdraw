@@ -1,0 +1,7 @@
+{
+  Object obj=resource.getObject(key);
+  if (obj instanceof String) {
+    obj=getStringRecursive(key);
+  }
+  return obj;
+}

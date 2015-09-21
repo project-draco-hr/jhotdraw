@@ -27,7 +27,7 @@
       }
     }
     if (placeholderValue == null) {
-      throw new MissingResourceException("\"" + key + "\" not found in "+ baseName,baseName,key);
+      throw new MissingResourceException("Placeholder value for fallback keys \"" + fallbackKeys + "\" in key \""+ key+ "\" not found in "+ baseName,baseName,key);
     }
     if ("accelerator".equals(placeholderFormat)) {
       StringBuilder b=new StringBuilder();
