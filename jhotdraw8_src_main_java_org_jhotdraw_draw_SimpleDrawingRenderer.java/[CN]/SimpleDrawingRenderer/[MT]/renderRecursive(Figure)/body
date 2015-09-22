@@ -1,0 +1,6 @@
+{
+  figure.updateNode(this,getNode(figure));
+  for (  Figure child : figure.children()) {
+    renderRecursive(child);
+  }
+}

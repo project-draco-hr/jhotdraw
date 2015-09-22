@@ -13,6 +13,7 @@
     boundsProperty.addListener(preferredSizeHandler);
     drawingPane.getChildren().add(getNode(d));
     dirtyFigureNodes.add(d);
+    updateTreeNodes(d);
     repaint();
   }
 }

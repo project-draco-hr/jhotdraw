@@ -1,0 +1,3 @@
+{
+  dv.getDrawingModel().addDrawingModelListener(layoutInvalidationListener);
+}

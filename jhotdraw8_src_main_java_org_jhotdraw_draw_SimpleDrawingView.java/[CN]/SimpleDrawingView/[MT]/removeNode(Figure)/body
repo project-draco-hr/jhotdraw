@@ -4,5 +4,4 @@
     nodeToFigureMap.remove(oldNode);
   }
   dirtyFigureNodes.remove(f);
-  dirtyFigureLayouts.remove(f);
 }

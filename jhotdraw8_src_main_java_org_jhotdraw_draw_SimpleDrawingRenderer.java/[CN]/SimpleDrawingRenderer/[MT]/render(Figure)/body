@@ -1,0 +1,5 @@
+{
+  figureToNodeMap.clear();
+  renderRecursive(figure);
+  return getNode(figure);
+}

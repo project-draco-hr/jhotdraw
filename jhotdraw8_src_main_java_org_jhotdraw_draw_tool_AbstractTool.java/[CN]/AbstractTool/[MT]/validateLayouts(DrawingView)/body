@@ -1,0 +1,8 @@
+{
+  DrawingModel dm=dv.getDrawingModel();
+  LinkedList<Figure> fs=new LinkedList<>(dirtyLayouts);
+  dirtyLayouts.clear();
+  for (  Figure f : fs) {
+    dm.layout(f);
+  }
+}

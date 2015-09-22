@@ -11,7 +11,6 @@
   edge12.set(LineConnectionFigure.END_FIGURE,vertex2);
   edge12.set(LineConnectionFigure.START_CONNECTOR,new ChopRectangleConnector());
   edge12.set(LineConnectionFigure.END_CONNECTOR,new ChopRectangleConnector());
-  System.out.println("vertex1.connections:" + vertex1.connections());
   edge23.set(LineConnectionFigure.START_FIGURE,vertex2);
   edge23.set(LineConnectionFigure.END_FIGURE,vertex3);
   edge23.set(LineConnectionFigure.START_CONNECTOR,new ChopRectangleConnector());

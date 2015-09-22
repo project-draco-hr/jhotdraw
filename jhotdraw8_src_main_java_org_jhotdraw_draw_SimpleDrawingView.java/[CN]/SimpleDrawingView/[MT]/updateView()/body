@@ -1,10 +1,4 @@
 {
-  LinkedList<Figure> updateLayouts=new LinkedList<>(dirtyFigureLayouts);
-  dirtyFigureLayouts.clear();
-  DrawingModel dm=drawingModel.get();
-  for (  Figure f : updateLayouts) {
-    dm.layout(f);
-  }
   LinkedList<Figure> updateNodes=new LinkedList<>(dirtyFigureNodes);
   dirtyFigureNodes.clear();
   for (  Figure f : updateNodes) {
@@ -15,8 +9,5 @@
   }
   for (  Handle h : secondaryHandles) {
     h.updateNode();
-  }
-  if (!dirtyFigureNodes.isEmpty()) {
-    repaint();
   }
 }
