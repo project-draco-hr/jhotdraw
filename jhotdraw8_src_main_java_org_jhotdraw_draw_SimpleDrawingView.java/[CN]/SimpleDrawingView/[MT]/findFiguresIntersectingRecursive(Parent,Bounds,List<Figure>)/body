@@ -7,7 +7,7 @@
       Figure f=nodeToFigureMap.get(n);
       if (f == null || !f.isSelectable()) {
         if (n instanceof Parent) {
-          findFiguresIntersecting((Parent)n,pl,found);
+          findFiguresIntersectingRecursive((Parent)n,pl,found);
         }
       }
  else {

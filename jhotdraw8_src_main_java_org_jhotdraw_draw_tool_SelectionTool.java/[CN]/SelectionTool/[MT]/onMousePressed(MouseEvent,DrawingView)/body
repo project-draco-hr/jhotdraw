@@ -19,7 +19,7 @@
       view.getSelectedFigures().add(pressedFigure);
     }
   }
-  if (!evt.isShiftDown() && evt.isMetaDown()) {
+ else   if (!evt.isShiftDown() && evt.isMetaDown()) {
     if (pressedFigure != null) {
       if (view.selectionProperty().contains(pressedFigure)) {
         view.selectionProperty().remove(pressedFigure);
@@ -29,8 +29,8 @@
       }
     }
   }
-  if (!evt.isShiftDown() && !evt.isMetaDown()) {
-    if (pressedFigure != null) {
+ else   if (!evt.isShiftDown() && !evt.isMetaDown()) {
+    if (pressedFigure != null && !view.selectionProperty().contains(pressedFigure)) {
       view.selectionProperty().clear();
       view.selectionProperty().add(pressedFigure);
     }

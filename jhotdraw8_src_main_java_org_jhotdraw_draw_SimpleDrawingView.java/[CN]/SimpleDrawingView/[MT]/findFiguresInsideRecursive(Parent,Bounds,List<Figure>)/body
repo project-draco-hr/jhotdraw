@@ -9,7 +9,7 @@
         Figure f=nodeToFigureMap.get(n);
         if (f == null || !f.isSelectable()) {
           if (n instanceof Parent) {
-            findFiguresInside((Parent)n,pl,found);
+            findFiguresInsideRecursive((Parent)n,pl,found);
           }
         }
  else {
@@ -21,7 +21,7 @@
       Bounds pl=n.parentToLocal(pp);
       if (pl.intersects(n.getBoundsInLocal())) {
         if (n instanceof Parent) {
-          findFiguresInside((Parent)n,pl,found);
+          findFiguresInsideRecursive((Parent)n,pl,found);
         }
       }
     }

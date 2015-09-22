@@ -12,7 +12,7 @@
   if (activeView.get() == view) {
     activeView.set(null);
   }
-  if (views.isEmpty() && !isSystemMenuSupported) {
+  if (views.isEmpty()) {
     exit();
   }
 }

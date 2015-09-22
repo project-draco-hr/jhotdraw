@@ -10,22 +10,8 @@
       Figure f=nodeToFigureMap.get(n);
       if (f == null || !f.isSelectable()) {
         if (n instanceof Parent) {
-          f=findFigureBehind((Parent)n,pl,figureInWay);
+          f=findFigureRecursive((Parent)n,pl);
         }
-      }
-      if (f == figureInWay) {
-        if (n instanceof Parent) {
-          f=findFigure((Parent)n,pl);
-        }
- else {
-          f=null;
-        }
-      }
- else       if (n instanceof Parent) {
-        f=findFigureBehind((Parent)n,pl,figureInWay);
-      }
- else {
-        f=null;
       }
       return f;
     }

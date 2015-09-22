@@ -1,8 +1,0 @@
-{
-  Scale st=new Scale(zoomFactor.get(),zoomFactor.get());
-  Bounds b=drawingPane.getBoundsInLocal();
-  System.out.println("drawingPane:" + b);
-  Translate tr=new Translate(-b.getMinX(),-b.getMinY());
-  Transform t=tr.createConcatenation(st);
-  drawingToView.set(t);
-}

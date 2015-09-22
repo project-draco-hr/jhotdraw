@@ -1,7 +1,9 @@
 {
-  double sf=1 / zoomFactor.get();
-  BoundingBox r=new BoundingBox(vx * sf,vy * sf,0,vwidth * sf,vheight * sf,0);
+  Transform vt=getViewToDrawing();
+  Point2D pxy=vt.transform(vx,vy);
+  Point2D pwh=vt.deltaTransform(vwidth,vheight);
+  BoundingBox r=new BoundingBox(pxy.getX(),pxy.getY(),pwh.getX(),pwh.getY());
   List<Figure> list=new LinkedList<Figure>();
-  findFiguresIntersecting((Parent)figureToNodeMap.get(getDrawing()),r,list);
+  findFiguresIntersectingRecursive((Parent)figureToNodeMap.get(getDrawing()),r,list);
   return list;
 }

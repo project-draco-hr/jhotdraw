@@ -1,5 +1,5 @@
 {
   Drawing dr=getDrawing();
-  Figure f=findFigureBehind((Parent)getNode(dr),viewToDrawing(vx,vy),figureInWay);
+  Figure f=findFigureBehindRecursive((Parent)getNode(dr),viewToDrawing(vx,vy),figureInWay);
   return f;
 }

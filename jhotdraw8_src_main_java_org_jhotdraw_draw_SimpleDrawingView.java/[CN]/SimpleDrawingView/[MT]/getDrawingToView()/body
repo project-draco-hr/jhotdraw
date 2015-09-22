@@ -1,0 +1,5 @@
+{
+  Scale st=new Scale(zoomFactor.get(),zoomFactor.get());
+  drawingToViewTransform=st;
+  return drawingToViewTransform;
+}
