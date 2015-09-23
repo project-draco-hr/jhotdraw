@@ -5,4 +5,5 @@
   node.setY(Math.round(r.getMinY()) - 0.5);
   node.setWidth(Math.round(r.getWidth()));
   node.setHeight(Math.round(r.getHeight()));
+  applyFigureTransform(node);
 }
