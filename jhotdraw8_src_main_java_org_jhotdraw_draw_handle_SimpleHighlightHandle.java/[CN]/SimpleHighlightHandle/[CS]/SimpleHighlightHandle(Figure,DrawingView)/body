@@ -1,6 +1,7 @@
 {
   super(figure,dv);
-  node=new Rectangle();
+  points=new double[8];
+  node=new Polygon(points);
   node.setFill(null);
   node.setStroke(Color.BLUE);
 }
