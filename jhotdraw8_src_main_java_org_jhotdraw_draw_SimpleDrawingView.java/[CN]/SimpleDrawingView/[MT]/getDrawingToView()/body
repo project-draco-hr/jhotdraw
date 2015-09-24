@@ -1,5 +1,8 @@
 {
-  Scale st=new Scale(zoomFactor.get(),zoomFactor.get());
-  drawingToViewTransform=st;
+  if (drawingToViewTransform == null) {
+    Scale st=new Scale(zoomFactor.get(),zoomFactor.get());
+    Translate tr=new Translate(drawingPane.getTranslateX(),drawingPane.getTranslateY());
+    drawingToViewTransform=st.createConcatenation(tr);
+  }
   return drawingToViewTransform;
 }

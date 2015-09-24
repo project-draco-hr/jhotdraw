@@ -5,9 +5,9 @@
     f.updateNode(this,getNode(f));
   }
   for (  Handle h : selectionHandles) {
-    h.updateNode();
+    h.updateNode(this);
   }
   for (  Handle h : secondaryHandles) {
-    h.updateNode();
+    h.updateNode(this);
   }
 }

@@ -1,7 +1,8 @@
 {
-  Scale st=new Scale(1.0 / zoomFactor.get(),1.0 / zoomFactor.get());
-  Bounds viewRootNodeBounds=getNode(getDrawing()).getLayoutBounds();
-  Translate tr=new Translate(viewRootNodeBounds.getMinX(),viewRootNodeBounds.getMinY());
-  viewToDrawingTransform=st.createConcatenation(tr);
+  if (viewToDrawingTransform == null) {
+    Scale st=new Scale(1.0 / zoomFactor.get(),1.0 / zoomFactor.get());
+    Translate tr=new Translate(-drawingPane.getTranslateX(),-drawingPane.getTranslateY());
+    viewToDrawingTransform=tr.createConcatenation(st);
+  }
   return viewToDrawingTransform;
 }

@@ -1,0 +1,12 @@
+{
+  Bounds newValue=drawingPane.getLayoutBounds();
+  drawingPane.setTranslateX(max(0,-newValue.getMinX()));
+  drawingPane.setTranslateY(max(0,-newValue.getMinY()));
+  toolPane.resize(newValue.getWidth(),newValue.getHeight());
+  drawingSubScene.setWidth(newValue.getWidth());
+  drawingSubScene.setHeight(newValue.getHeight());
+  Bounds hb=handlesPane.getLayoutBounds();
+  overlaysSubScene.setWidth(max(newValue.getWidth(),hb.getMinX() + hb.getWidth()));
+  overlaysSubScene.setHeight(max(newValue.getHeight(),hb.getMinY() + hb.getHeight()));
+  invalidateDrawingViewTransforms();
+}

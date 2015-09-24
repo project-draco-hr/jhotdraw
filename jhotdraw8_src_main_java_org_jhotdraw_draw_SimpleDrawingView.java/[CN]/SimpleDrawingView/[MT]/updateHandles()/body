@@ -3,15 +3,15 @@
     h.dispose();
   }
   selectionHandles.clear();
-  handlePane.getChildren().clear();
+  handlesPane.getChildren().clear();
   while (true) {
     for (    Figure figure : getSelectedFigures()) {
       List<Handle> handles=figure.createHandles(detailLevel,this);
       if (handles != null) {
         for (        Handle handle : handles) {
           selectionHandles.add(handle);
-          handlePane.getChildren().add(handle.getNode());
-          handle.updateNode();
+          handlesPane.getChildren().add(handle.getNode());
+          handle.updateNode(this);
         }
       }
     }
