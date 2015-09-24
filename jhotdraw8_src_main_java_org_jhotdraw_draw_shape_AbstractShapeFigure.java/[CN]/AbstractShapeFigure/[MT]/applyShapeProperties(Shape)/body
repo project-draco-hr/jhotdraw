@@ -1,5 +1,5 @@
 {
-  shape.setFill(get(FILL_PAINT));
+  shape.setFill(get(FILL));
   shape.setSmooth(get(SMOOTH));
   shape.setStrokeDashOffset(get(STROKE_DASH_OFFSET));
   shape.setStrokeLineCap(get(STROKE_LINE_CAP));

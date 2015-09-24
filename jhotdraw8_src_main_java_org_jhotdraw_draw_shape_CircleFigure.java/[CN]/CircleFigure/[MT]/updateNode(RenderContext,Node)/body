@@ -1,7 +1,7 @@
 {
   Circle circleNode=(Circle)node;
   applyFigureProperties(circleNode);
-  updateShapeProperties(circleNode);
+  applyShapeProperties(circleNode);
   Point2D c=get(CENTER);
   circleNode.setCenterX(c.getX());
   circleNode.setCenterY(c.getY());
