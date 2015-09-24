@@ -5,7 +5,7 @@
   shape.setStrokeLineCap(get(STROKE_LINE_CAP));
   shape.setStrokeLineJoin(get(STROKE_LINE_JOIN));
   shape.setStrokeMiterLimit(get(STROKE_MITER_LIMIT));
-  shape.setStroke(get(STROKE_PAINT));
+  shape.setStroke(get(STROKE));
   shape.setStrokeType(get(STROKE_TYPE));
   shape.setStrokeWidth(get(STROKE_WIDTH));
   shape.getStrokeDashArray().clear();
