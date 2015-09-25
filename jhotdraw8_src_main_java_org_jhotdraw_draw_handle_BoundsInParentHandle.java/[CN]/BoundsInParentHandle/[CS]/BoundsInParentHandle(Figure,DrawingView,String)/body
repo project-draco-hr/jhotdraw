@@ -1,0 +1,7 @@
+{
+  super(figure,dv);
+  points=new double[8];
+  node=new Polygon(points);
+  this.styleclass=styleclass;
+  initNode(node);
+}

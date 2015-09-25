@@ -3,8 +3,8 @@
   x=event.getX();
   y=event.getY();
   rubberband.setVisible(true);
-  rubberband.setX(x);
-  rubberband.setY(y);
+  rubberband.setX(round(x) - 0.5);
+  rubberband.setY(round(y) - 0.5);
   rubberband.setWidth(0);
   rubberband.setHeight(0);
 }

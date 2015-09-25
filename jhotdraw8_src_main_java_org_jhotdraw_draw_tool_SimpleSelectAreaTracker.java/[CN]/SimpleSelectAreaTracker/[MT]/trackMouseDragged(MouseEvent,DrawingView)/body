@@ -1,8 +1,8 @@
 {
   double w=x - event.getX();
   double h=y - event.getY();
-  rubberband.setX(min(x - 0.5,event.getX()));
-  rubberband.setY(min(y - 0.5,event.getY()));
-  rubberband.setWidth(abs(w));
-  rubberband.setHeight(abs(h));
+  rubberband.setX(round(min(x,event.getX())) - 0.5);
+  rubberband.setY(round(min(y,event.getY())) - 0.5);
+  rubberband.setWidth(round(abs(w)));
+  rubberband.setHeight(round(abs(h)));
 }

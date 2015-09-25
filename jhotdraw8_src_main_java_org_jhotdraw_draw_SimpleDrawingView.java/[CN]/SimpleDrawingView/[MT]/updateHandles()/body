@@ -1,4 +1,5 @@
 {
+  nodeToHandleMap.clear();
   for (  Handle h : selectionHandles) {
     h.dispose();
   }
@@ -10,7 +11,9 @@
       if (handles != null) {
         for (        Handle handle : handles) {
           selectionHandles.add(handle);
-          handlesPane.getChildren().add(handle.getNode());
+          Node n=handle.getNode();
+          nodeToHandleMap.put(n,handle);
+          handlesPane.getChildren().add(n);
           handle.updateNode(this);
         }
       }

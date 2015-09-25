@@ -1,12 +1,17 @@
 {
-  Bounds newValue=drawingPane.getLayoutBounds();
-  drawingPane.setTranslateX(max(0,-newValue.getMinX()));
-  drawingPane.setTranslateY(max(0,-newValue.getMinY()));
-  toolPane.resize(newValue.getWidth(),newValue.getHeight());
-  drawingSubScene.setWidth(newValue.getWidth());
-  drawingSubScene.setHeight(newValue.getHeight());
-  Bounds hb=handlesPane.getLayoutBounds();
-  overlaysSubScene.setWidth(max(newValue.getWidth(),hb.getMinX() + hb.getWidth()));
-  overlaysSubScene.setHeight(max(newValue.getHeight(),hb.getMinY() + hb.getHeight()));
+  Bounds bounds=drawingPane.getLayoutBounds();
+  double f=getZoomFactor();
+  double x=bounds.getMinX() * f;
+  double y=bounds.getMinY() * f;
+  double w=bounds.getWidth() * f;
+  double h=bounds.getHeight() * f;
+  drawingPane.setTranslateX(max(0,-x));
+  drawingPane.setTranslateY(max(0,-y));
+  drawingSubScene.setWidth(w);
+  drawingSubScene.setHeight(h);
+  overlaysSubScene.setWidth(w);
+  overlaysSubScene.setHeight(h);
+  toolPane.resize(w,h);
+  toolPane.layout();
   invalidateDrawingViewTransforms();
 }

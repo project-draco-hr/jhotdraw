@@ -1,4 +1,4 @@
 {
-  System.out.println("HandleTracker.onMouseReleased");
+  handle.onMouseReleased(event,dv);
   fireToolDone();
 }

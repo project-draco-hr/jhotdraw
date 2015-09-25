@@ -1,0 +1,5 @@
+double vx
+double vy
+double vwidth
+double vheight
+boolean decompose

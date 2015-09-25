@@ -1,0 +1,9 @@
+{
+  Figure f=getFigure();
+  Transform t=view.getDrawingToView().createConcatenation(f.getLocalToDrawing());
+  Point2D p=f.get(pointKey);
+  p=t.transform(p);
+  Rectangle r=node;
+  r.setX(p.getX() - r.getWidth() / 2);
+  r.setY(p.getY() - r.getHeight() / 2);
+}

@@ -1,0 +1,5 @@
+{
+  r.setFill(null);
+  r.setStroke(Color.BLACK);
+  rubberband.getStyleClass().add(STYLECLASS_TOOL_RUBBERBAND);
+}

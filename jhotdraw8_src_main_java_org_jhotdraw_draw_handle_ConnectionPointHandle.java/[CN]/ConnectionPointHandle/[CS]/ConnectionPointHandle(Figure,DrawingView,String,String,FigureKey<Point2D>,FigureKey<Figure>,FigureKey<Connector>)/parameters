@@ -1,0 +1,7 @@
+Figure figure
+DrawingView dv
+String styleclass
+String styleclassConnected
+FigureKey<Point2D> pointKey
+FigureKey<Figure> figureKey
+FigureKey<Connector> connectorKey

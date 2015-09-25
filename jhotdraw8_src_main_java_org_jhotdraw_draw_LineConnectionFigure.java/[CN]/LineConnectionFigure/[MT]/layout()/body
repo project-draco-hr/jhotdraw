@@ -15,6 +15,6 @@
     set(START,drawingToLocal(startConnector.chopStart(startFigure,this,start,end)));
   }
   if (endFigure != null && endConnector != null) {
-    set(END,drawingToLocal(startConnector.chopEnd(endFigure,this,start,end)));
+    set(END,drawingToLocal(endConnector.chopEnd(endFigure,this,start,end)));
   }
 }

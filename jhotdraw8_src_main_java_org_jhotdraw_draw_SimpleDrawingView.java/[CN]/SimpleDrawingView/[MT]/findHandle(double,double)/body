@@ -1,0 +1,9 @@
+{
+  for (  Node n : handlesPane.getChildren()) {
+    Point2D pl=n.parentToLocal(vx,vy);
+    if (n.contains(pl)) {
+      return nodeToHandleMap.get(n);
+    }
+  }
+  return null;
+}

@@ -1,0 +1,29 @@
+{
+  ObservableList<Node> list=p.getChildrenUnmodifiable();
+  for (int i=list.size() - 1; i >= 0; i--) {
+    Node n=list.get(i);
+    Figure f1=nodeToFigureMap.get(n);
+    if (f1 != null && f1.isSelectable()) {
+      Point2D pl=n.parentToLocal(pp);
+      if (n.contains(pl)) {
+        Figure f=nodeToFigureMap.get(n);
+        if (f != null && f.isSelectable()) {
+          found.add(f);
+        }
+        if (f == null || !f.isSelectable() || decompose && f.isDecomposable()) {
+          if (n instanceof Parent) {
+            findFiguresRecursive((Parent)n,pl,found,decompose);
+          }
+        }
+      }
+    }
+ else {
+      Point2D pl=n.parentToLocal(pp);
+      if (n.contains(pl)) {
+        if (n instanceof Parent) {
+          findFiguresRecursive((Parent)n,pl,found,decompose);
+        }
+      }
+    }
+  }
+}

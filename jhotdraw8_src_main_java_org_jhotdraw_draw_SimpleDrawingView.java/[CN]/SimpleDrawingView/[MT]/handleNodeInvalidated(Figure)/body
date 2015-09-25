@@ -1,4 +1,7 @@
 {
   invalidateFigureNode(f);
+  if (f == getDrawing()) {
+    updateLayout();
+  }
   repaint();
 }

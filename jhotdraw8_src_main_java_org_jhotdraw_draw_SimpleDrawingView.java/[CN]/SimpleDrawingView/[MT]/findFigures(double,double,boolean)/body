@@ -1,0 +1,7 @@
+{
+  Transform vt=getViewToDrawing();
+  Point2D pp=vt.transform(vx,vy);
+  List<Figure> list=new LinkedList<Figure>();
+  findFiguresRecursive((Parent)figureToNodeMap.get(getDrawing()),pp,list,decompose);
+  return list;
+}

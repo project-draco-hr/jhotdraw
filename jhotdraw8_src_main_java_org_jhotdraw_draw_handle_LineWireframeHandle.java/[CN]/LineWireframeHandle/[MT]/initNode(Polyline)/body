@@ -1,0 +1,5 @@
+{
+  r.setFill(null);
+  r.setStroke(Color.CYAN);
+  r.getStyleClass().add(styleclass);
+}

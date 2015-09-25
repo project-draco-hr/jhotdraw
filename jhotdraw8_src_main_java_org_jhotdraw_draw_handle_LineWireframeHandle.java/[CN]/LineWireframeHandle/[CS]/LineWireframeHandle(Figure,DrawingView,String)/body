@@ -1,0 +1,7 @@
+{
+  super(figure,dv);
+  points=new double[4];
+  node=new Polyline(points);
+  this.styleclass=styleclass;
+  initNode(node);
+}

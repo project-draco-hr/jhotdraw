@@ -1,0 +1,4 @@
+Parent p
+Point2D pp
+List<Figure> found
+boolean decompose

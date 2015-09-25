@@ -2,5 +2,5 @@
   super(name,rsrc);
   node.getChildren().add(rubberband);
   rubberband.setVisible(false);
-  configureRubberband(rubberband);
+  initNode(rubberband);
 }

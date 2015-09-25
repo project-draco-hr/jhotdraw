@@ -1,0 +1,13 @@
+{
+  Figure f=getFigure();
+  Transform t=view.getDrawingToView().createConcatenation(f.getLocalToDrawing());
+  Point2D p=f.get(pointKey);
+  p=t.transform(p);
+  Circle r=node;
+  r.getStyleClass().clear();
+  boolean isConnected=f.get(figureKey) != null && f.get(connectorKey) != null;
+  r.setFill(isConnected ? Color.LIGHTGREEN : Color.RED);
+  r.getStyleClass().add(isConnected ? styleclassConnected : styleclass);
+  r.setCenterX(p.getX());
+  r.setCenterY(p.getY());
+}
