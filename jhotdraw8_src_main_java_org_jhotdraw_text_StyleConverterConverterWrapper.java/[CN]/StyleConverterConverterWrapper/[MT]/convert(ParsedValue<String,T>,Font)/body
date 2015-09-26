@@ -1,0 +1,9 @@
+{
+  try {
+    return converter.fromString(value.getValue());
+  }
+ catch (  ParseException ex) {
+    System.err.println("StyleConverterConverterWrapper. Warning could not convert " + value + " with "+ converter);
+    return null;
+  }
+}

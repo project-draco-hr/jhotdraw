@@ -1,0 +1,13 @@
+{
+  StyleableProperty<T> sp=(StyleableProperty<T>)styleableProperties.get(key);
+  if (sp == null) {
+    if (key instanceof StyleableKey) {
+      sp=new MapStyleableProperty<>(key,((StyleableKey)key).createCssMetaData());
+    }
+ else {
+      sp=new MapStyleableProperty<>(key,null);
+    }
+    styleableProperties.put(key,sp);
+  }
+  return sp;
+}

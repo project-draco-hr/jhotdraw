@@ -1,0 +1,4 @@
+{
+  Object[] v=formatter.fromString(buf);
+  return (double)v[0];
+}

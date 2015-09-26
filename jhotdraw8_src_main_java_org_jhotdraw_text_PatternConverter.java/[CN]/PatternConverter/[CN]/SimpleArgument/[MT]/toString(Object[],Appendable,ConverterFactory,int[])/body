@@ -2,5 +2,5 @@
   if (converter == null) {
     converter=factory.apply(type,style);
   }
-  converter.toString(value[indices[index]],out);
+  converter.toString(out,value[indices[index]]);
 }

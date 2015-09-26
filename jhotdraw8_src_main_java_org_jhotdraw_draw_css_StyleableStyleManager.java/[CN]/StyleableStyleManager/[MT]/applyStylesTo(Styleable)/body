@@ -1,0 +1,7 @@
+{
+  for (  StyleableRule rule : rules) {
+    if (rule.matches(elem)) {
+      rule.apply(elem);
+    }
+  }
+}

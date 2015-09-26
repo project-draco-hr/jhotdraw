@@ -1,6 +1,0 @@
-{
-  if (!isAssignable(value)) {
-    throw new IllegalArgumentException("Value is not assignable to key. key=" + this + ", value="+ value);
-  }
-  return (T)a.put(this,value);
-}

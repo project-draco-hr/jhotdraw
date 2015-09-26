@@ -1,0 +1,7 @@
+{
+  author.addListener(inputHandler);
+  userAgent.addListener(inputHandler);
+  inline.addListener(inputHandler);
+  user.addListener(inputHandler);
+  this.bean=bean;
+}

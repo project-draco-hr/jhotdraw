@@ -1,0 +1,11 @@
+{
+  styleableProperties.clearNonUserProperties();
+  Drawing d=getDrawing();
+  if (d != null) {
+    StyleableStyleManager styleManager=d.getStyleManager();
+    styleManager.applyStylesTo(this);
+    for (    Figure child : children()) {
+      child.applyCss();
+    }
+  }
+}

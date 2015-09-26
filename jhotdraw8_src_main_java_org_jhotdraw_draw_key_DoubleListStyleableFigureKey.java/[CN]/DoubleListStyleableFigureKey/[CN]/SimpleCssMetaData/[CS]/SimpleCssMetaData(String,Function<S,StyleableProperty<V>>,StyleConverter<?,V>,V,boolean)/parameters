@@ -1,0 +1,5 @@
+String property
+Function<S,StyleableProperty<V>> function
+StyleConverter<?,V> converter
+V initialValue
+boolean inherits

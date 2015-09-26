@@ -1,0 +1,5 @@
+String key
+Class<?> clazz
+String typeParameters
+CssMetaData metaData
+T defaultValue

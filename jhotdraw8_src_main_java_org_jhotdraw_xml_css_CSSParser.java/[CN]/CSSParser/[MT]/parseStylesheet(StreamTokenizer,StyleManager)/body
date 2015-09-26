@@ -1,0 +1,6 @@
+{
+  while (tt.nextToken() != StreamTokenizer.TT_EOF) {
+    tt.pushBack();
+    parseRuleset(tt,rm);
+  }
+}

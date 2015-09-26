@@ -1,0 +1,3 @@
+String key
+DirtyMask mask
+List<Double> defaultValue

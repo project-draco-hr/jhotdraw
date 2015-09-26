@@ -1,0 +1,43 @@
+{
+  HashMap<String,String> map=new HashMap<String,String>();
+  do {
+    StringBuilder key=new StringBuilder();
+    while (tt.nextToken() != StreamTokenizer.TT_EOF && tt.ttype != '}' && tt.ttype != ':' && tt.ttype != ';') {
+switch (tt.ttype) {
+case StreamTokenizer.TT_WORD:
+        key.append(tt.sval);
+      break;
+default :
+    key.append((char)tt.ttype);
+  break;
+}
+}
+if (tt.ttype == '}' && key.length() == 0) {
+break;
+}
+if (tt.ttype != ':') {
+throw new IOException("Declaration ':' missing for " + key);
+}
+StringBuilder value=new StringBuilder();
+boolean needsWhitespace=false;
+while (tt.nextToken() != StreamTokenizer.TT_EOF && tt.ttype != ';' && tt.ttype != '}') {
+switch (tt.ttype) {
+case StreamTokenizer.TT_WORD:
+if (needsWhitespace) {
+  value.append(' ');
+}
+value.append(tt.sval);
+needsWhitespace=true;
+break;
+default :
+value.append((char)tt.ttype);
+needsWhitespace=false;
+break;
+}
+}
+map.put(key.toString(),value.toString());
+}
+ while (tt.ttype != '}' && tt.ttype != StreamTokenizer.TT_EOF);
+tt.pushBack();
+return map;
+}

@@ -1,0 +1,24 @@
+{
+  StyleOrigin origin=getStyleOrigin(key);
+  if (origin == null) {
+    output.remove(key);
+  }
+ else {
+switch (origin) {
+case INLINE:
+      output.put(key,inline.getValue());
+    break;
+case AUTHOR:
+  output.put(key,author.getValue());
+break;
+case USER:
+output.put(key,user.getValue());
+break;
+case USER_AGENT:
+output.put(key,userAgent.getValue());
+break;
+default :
+throw new InternalError("unknown enum value " + origin);
+}
+}
+}

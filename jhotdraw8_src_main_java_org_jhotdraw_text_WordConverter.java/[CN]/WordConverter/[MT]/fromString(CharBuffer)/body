@@ -1,0 +1,8 @@
+{
+  int pos=in.position();
+  StringBuilder out=new StringBuilder();
+  while (in.remaining() > 0 && !Character.isWhitespace(in.charAt(0))) {
+    out.append(in.get());
+  }
+  return out.toString();
+}

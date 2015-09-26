@@ -1,0 +1,7 @@
+{
+  final StyleableProperty<V> prop=getStyleableProperty(styleable);
+  if (prop instanceof Property) {
+    return !((Property)prop).isBound();
+  }
+  return prop != null;
+}

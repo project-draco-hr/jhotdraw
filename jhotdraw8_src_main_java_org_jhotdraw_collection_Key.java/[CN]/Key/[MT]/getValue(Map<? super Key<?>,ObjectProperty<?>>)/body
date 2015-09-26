@@ -1,7 +1,0 @@
-{
-  if (!a.containsKey(this)) {
-    a.put(this,new SimpleObjectProperty<T>(defaultValue));
-  }
-  SimpleObjectProperty<T> value=(SimpleObjectProperty<T>)a.get(this);
-  return value.get();
-}

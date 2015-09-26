@@ -1,0 +1,3 @@
+String key
+Class<T> clazz
+DirtyMask mask

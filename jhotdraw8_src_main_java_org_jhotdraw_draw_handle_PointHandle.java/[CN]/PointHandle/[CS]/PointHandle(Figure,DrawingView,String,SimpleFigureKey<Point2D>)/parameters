@@ -1,0 +1,4 @@
+Figure figure
+DrawingView dv
+String styleclass
+SimpleFigureKey<Point2D> pointKey

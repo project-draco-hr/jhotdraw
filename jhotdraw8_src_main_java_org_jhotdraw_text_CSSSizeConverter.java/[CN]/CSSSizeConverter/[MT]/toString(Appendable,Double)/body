@@ -1,0 +1,3 @@
+{
+  formatter.toString(out,new Object[]{value});
+}

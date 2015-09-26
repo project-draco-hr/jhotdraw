@@ -1,0 +1,17 @@
+{
+  if (inline.containsKey(key)) {
+    return StyleOrigin.INLINE;
+  }
+ else   if (author.containsKey(key)) {
+    return StyleOrigin.AUTHOR;
+  }
+ else   if (user.containsKey(key)) {
+    return StyleOrigin.INLINE;
+  }
+ else   if (userAgent.containsKey(key)) {
+    return StyleOrigin.USER_AGENT;
+  }
+ else {
+    return null;
+  }
+}

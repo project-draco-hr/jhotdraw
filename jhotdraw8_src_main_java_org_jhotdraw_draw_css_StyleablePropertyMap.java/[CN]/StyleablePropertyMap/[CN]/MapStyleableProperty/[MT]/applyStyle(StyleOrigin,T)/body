@@ -1,0 +1,26 @@
+{
+  if (!key.isAssignable(value)) {
+    throw new ClassCastException("value is not assignable. key:" + key + " value:"+ value);
+  }
+  if (origin == null) {
+    throw new IllegalArgumentException("origin must not be null");
+  }
+ else {
+switch (origin) {
+case INLINE:
+      inline.put(key,value);
+    break;
+case AUTHOR:
+  author.put(key,value);
+break;
+case USER:
+user.put(key,value);
+break;
+case USER_AGENT:
+userAgent.put(key,value);
+break;
+default :
+throw new InternalError("unknown enum value " + origin);
+}
+}
+}

@@ -1,0 +1,3 @@
+{
+  this(key,DirtyMask.of(DirtyBits.NODE),defaultValue);
+}

@@ -1,0 +1,4 @@
+{
+  StyleableRule rule=new StyleableRule(selector,properties);
+  rules.add(rule);
+}

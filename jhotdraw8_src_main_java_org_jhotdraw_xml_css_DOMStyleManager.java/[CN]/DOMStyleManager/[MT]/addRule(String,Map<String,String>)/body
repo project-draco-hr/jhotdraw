@@ -1,0 +1,4 @@
+{
+  DOMRule rule=new DOMRule(selector,properties);
+  rules.add(rule);
+}

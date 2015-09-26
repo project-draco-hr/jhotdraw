@@ -1,3 +1,0 @@
-{
-  formatter.toString(new Object[]{value.getMinX(),value.getMinY(),value.getWidth(),value.getHeight()},out);
-}

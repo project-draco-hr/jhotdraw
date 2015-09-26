@@ -1,0 +1,32 @@
+{
+  boolean isMatch=false;
+switch (type) {
+case ALL:
+    isMatch=true;
+  break;
+case ELEMENT_NAME:
+{
+  String name=elem.getTypeSelector();
+  isMatch=name.equals(selector);
+  break;
+}
+case CLASS_ATTRIBUTE:
+{
+List<String> clazzes=elem.getStyleClass();
+for (String clazz : clazzes) {
+  if (clazz.equals(selector)) {
+    isMatch=true;
+    break;
+  }
+}
+break;
+}
+case ID_ATTRIBUTE:
+{
+String name=elem.getId();
+isMatch=name != null && name.equals(selector);
+break;
+}
+}
+return isMatch;
+}

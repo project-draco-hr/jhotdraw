@@ -1,0 +1,16 @@
+{
+  if (styleManager == null) {
+    styleManager=new StyleableStyleManager();
+    if (get(STYLESHEET) != null) {
+      CSSParser parser=new CSSParser();
+      try {
+        parser.parse(get(STYLESHEET),styleManager);
+      }
+ catch (      IOException ex) {
+        System.err.println("Warning could not load stylesheet " + get(STYLESHEET));
+        ex.printStackTrace();
+      }
+    }
+  }
+  return styleManager;
+}

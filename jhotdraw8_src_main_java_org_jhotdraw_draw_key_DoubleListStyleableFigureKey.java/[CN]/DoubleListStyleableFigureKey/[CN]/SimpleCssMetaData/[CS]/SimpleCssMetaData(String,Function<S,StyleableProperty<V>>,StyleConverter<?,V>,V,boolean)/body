@@ -1,0 +1,4 @@
+{
+  super(property,converter,initialValue,inherits);
+  this.function=function;
+}

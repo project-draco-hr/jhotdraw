@@ -1,0 +1,8 @@
+{
+  for (  char ch : value.toCharArray()) {
+    if (Character.isWhitespace(ch)) {
+      break;
+    }
+    out.append(ch);
+  }
+}

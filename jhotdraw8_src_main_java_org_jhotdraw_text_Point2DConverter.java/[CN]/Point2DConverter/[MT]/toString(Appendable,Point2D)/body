@@ -1,0 +1,3 @@
+{
+  formatter.toString(out,value.getX(),value.getY());
+}
