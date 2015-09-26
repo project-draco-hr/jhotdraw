@@ -8,11 +8,13 @@
     activeLayer.set(null);
   }
   Drawing d=getDrawingModel().getRoot();
+  drawing.set(d);
   if (d != null) {
     boundsProperty=Drawing.BOUNDS.propertyAt(d.properties());
     boundsProperty.addListener(preferredSizeHandler);
     drawingPane.getChildren().add(getNode(d));
     dirtyFigureNodes.add(d);
+    updatePreferredSize();
     updateTreeNodes(d);
     repaint();
   }

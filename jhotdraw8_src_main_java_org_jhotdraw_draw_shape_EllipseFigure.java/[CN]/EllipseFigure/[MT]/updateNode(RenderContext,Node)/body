@@ -7,4 +7,5 @@
   n.setCenterY(c.getY());
   n.setRadiusX(get(RADIUS_X));
   n.setRadiusY(get(RADIUS_Y));
+  n.applyCss();
 }

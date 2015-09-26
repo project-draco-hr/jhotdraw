@@ -1,6 +1,7 @@
 {
   if (oldValue != null) {
     oldValue.removeDrawingModelListener(modelHandler);
+    drawing.setValue(null);
   }
   if (newValue != null) {
     newValue.addDrawingModelListener(modelHandler);

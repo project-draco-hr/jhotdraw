@@ -9,4 +9,5 @@
   rectangleNode.setHeight(r.getHeight());
   rectangleNode.setArcWidth(get(ARC_WIDTH));
   rectangleNode.setArcHeight(get(ARC_HEIGHT));
+  rectangleNode.applyCss();
 }
