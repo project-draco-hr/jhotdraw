@@ -5,7 +5,13 @@
 switch (type) {
 case "number":
     return new XMLDoubleConverter();
+case "size":
+  return new CSSSizeConverter();
+case "word":
+return new WordConverter();
+case "paint":
+return new CSSPaintConverter();
 default :
-  throw new IllegalArgumentException("illegal type:" + type);
+throw new IllegalArgumentException("illegal type:" + type);
 }
 }

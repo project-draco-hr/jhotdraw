@@ -4,6 +4,6 @@
   tn.setX(get(ORIGIN).getX());
   tn.setY(get(ORIGIN).getY());
   tn.setBoundsType(TextBoundsType.VISUAL);
-  updateTextProperties(tn);
+  applyTextProperties(tn);
   tn.applyCss();
 }

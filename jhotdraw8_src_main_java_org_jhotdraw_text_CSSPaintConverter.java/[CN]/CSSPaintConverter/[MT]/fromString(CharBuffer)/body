@@ -1,0 +1,12 @@
+{
+  try {
+    Color c=Color.web(buf.toString());
+    buf.position(buf.limit());
+    return c;
+  }
+ catch (  IllegalArgumentException e) {
+    ParseException pe=new ParseException("not a color:" + buf,buf.position());
+    pe.initCause(e);
+    throw pe;
+  }
+}

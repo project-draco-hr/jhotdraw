@@ -29,8 +29,15 @@
   layer.add(edge23);
   layer.add(edge3Null);
   layer.add(edgeNullNull);
+  System.out.println("vertex.stroke=" + vertex1.getStyled(AbstractShapeFigure.STROKE));
+  System.out.println("vertex.strokeWidth=" + vertex1.getStyled(AbstractShapeFigure.STROKE_WIDTH));
+  System.out.println("vertex.fill=" + vertex1.getStyled(AbstractShapeFigure.FILL));
+  drawing.layout();
   drawing.set(Drawing.STYLESHEET,CssSample.class.getResource("CssSample.css"));
   drawing.applyCss();
+  System.out.println("vertex.stroke=" + vertex1.getStyled(AbstractShapeFigure.STROKE));
+  System.out.println("vertex.strokeWidth=" + vertex1.getStyled(AbstractShapeFigure.STROKE_WIDTH));
+  System.out.println("vertex.fill=" + vertex1.getStyled(AbstractShapeFigure.FILL));
   drawing.layout();
   DrawingView drawingView=new SimpleDrawingView();
   drawingView.setDrawing(drawing);

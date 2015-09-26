@@ -1,0 +1,4 @@
+{
+  figure.applyCss();
+  fire(DrawingModelEvent.subtreeNodesInvalidated(this,figure));
+}

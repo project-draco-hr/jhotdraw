@@ -14,7 +14,6 @@
         ParsedValueImpl<String,Object> parsedValue=new ParsedValueImpl<>(pv.unparsedValue,null);
         pv.convertedValue=converter.convert(parsedValue,null);
       }
-      System.out.println("StyleableRule. implement " + entry.getKey() + ":"+ pv.unparsedValue+ " c:"+ pv.convertedValue);
       styleableProperty.applyStyle(StyleOrigin.AUTHOR,pv.convertedValue);
     }
   }

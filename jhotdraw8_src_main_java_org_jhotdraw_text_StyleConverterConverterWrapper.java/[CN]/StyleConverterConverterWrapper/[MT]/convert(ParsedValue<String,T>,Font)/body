@@ -4,6 +4,7 @@
   }
  catch (  ParseException ex) {
     System.err.println("StyleConverterConverterWrapper. Warning could not convert " + value + " with "+ converter);
+    ex.printStackTrace();
     return null;
   }
 }
