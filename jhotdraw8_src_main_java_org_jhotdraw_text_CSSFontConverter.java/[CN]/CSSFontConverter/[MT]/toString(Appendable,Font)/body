@@ -1,0 +1,17 @@
+{
+  double fontSize=font.getSize();
+  String fontStyle=font.getStyle();
+  String fontFamily=font.getFamily();
+  out.append(fontStyle);
+  out.append(' ');
+  doubleConverter.toString(out,fontSize);
+  out.append(' ');
+  if (fontFamily.contains(" ") || fontFamily.contains("\'") || fontFamily.contains("\"")) {
+    out.append('\"');
+    out.append(fontFamily.replace("\"","\\\""));
+    out.append('\"');
+  }
+ else {
+    out.append(fontFamily);
+  }
+}

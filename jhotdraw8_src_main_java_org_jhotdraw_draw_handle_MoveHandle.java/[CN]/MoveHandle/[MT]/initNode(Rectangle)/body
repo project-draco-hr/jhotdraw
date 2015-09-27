@@ -1,0 +1,7 @@
+{
+  r.setWidth(8);
+  r.setHeight(8);
+  r.setFill(Color.WHITE);
+  r.setStroke(Color.BLUE);
+  r.getStyleClass().add(styleclass);
+}

@@ -1,0 +1,8 @@
+{
+  super(figure,dv);
+  this.styleclass=styleclass;
+  node=new Rectangle();
+  this.relativeX=Geom.clamp(relativeX,0,1);
+  this.relativeY=Geom.clamp(relativeY,0,1);
+  initNode(node);
+}

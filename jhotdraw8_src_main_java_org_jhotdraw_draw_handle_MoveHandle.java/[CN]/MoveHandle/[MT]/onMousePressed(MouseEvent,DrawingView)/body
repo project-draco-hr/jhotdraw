@@ -1,0 +1,4 @@
+{
+  prevX=event.getX();
+  prevY=event.getY();
+}

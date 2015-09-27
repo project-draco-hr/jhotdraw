@@ -1,9 +1,0 @@
-{
-  ParsedValue[] sides=value.getValue();
-  ArrayList<Double> list=new ArrayList<>(sides.length);
-  for (int i=0; i < sides.length; i++) {
-    double item=((Size)sides[i].convert(font)).pixels(font);
-    list.add(item);
-  }
-  return list;
-}
