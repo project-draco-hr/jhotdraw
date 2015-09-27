@@ -1,0 +1,20 @@
+{
+  if (!dirtyStyles.isEmpty()) {
+    isValidating=true;
+    LinkedList<Figure> fs=new LinkedList<>(dirtyStyles);
+    dirtyStyles.clear();
+    for (    Figure f : fs) {
+      applyCss(f);
+    }
+    isValidating=false;
+  }
+  if (!dirtyLayouts.isEmpty()) {
+    isValidating=true;
+    LinkedList<Figure> fs=new LinkedList<>(dirtyLayouts);
+    dirtyLayouts.clear();
+    for (    Figure f : fs) {
+      layout(f);
+    }
+    isValidating=false;
+  }
+}

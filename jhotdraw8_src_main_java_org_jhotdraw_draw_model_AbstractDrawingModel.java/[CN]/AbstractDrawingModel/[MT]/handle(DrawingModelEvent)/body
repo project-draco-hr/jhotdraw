@@ -1,0 +1,23 @@
+{
+  if (isValidating) {
+    return;
+  }
+switch (event.getEventType()) {
+case FIGURE_ADDED:
+    invalidateStyle(event.getFigure());
+  break;
+case FIGURE_REMOVED:
+case NODE_INVALIDATED:
+case ROOT_CHANGED:
+case SUBTREE_NODES_INVALIDATED:
+break;
+case LAYOUT_INVALIDATED:
+invalidateLayout(event.getFigure());
+break;
+case SUBTREE_STRUCTURE_CHANGED:
+invalidateLayout(event.getFigure());
+break;
+default :
+throw new UnsupportedOperationException(event.getEventType() + "not supported");
+}
+}
