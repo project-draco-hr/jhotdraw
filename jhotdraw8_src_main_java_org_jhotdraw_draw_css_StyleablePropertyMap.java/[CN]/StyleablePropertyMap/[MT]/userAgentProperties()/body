@@ -1,3 +1,7 @@
 {
+  if (userAgent == null) {
+    userAgent=new ReadOnlyMapWrapper<Key<?>,Object>(this,USER_AGENT_PROPERTY,FXCollections.observableHashMap()).getReadOnlyProperty();
+    userAgent.addListener(inputHandler);
+  }
   return userAgent;
 }

@@ -1,0 +1,28 @@
+{
+  T value=null;
+switch (origin) {
+case INLINE:
+    if (inline != null) {
+      value=(T)inline.remove(key);
+    }
+  break;
+case AUTHOR:
+if (author != null) {
+  value=(T)author.remove(key);
+}
+break;
+case USER:
+if (user != null) {
+value=(T)user.remove(key);
+}
+break;
+case USER_AGENT:
+if (userAgent != null) {
+value=(T)userAgent.remove(key);
+}
+break;
+default :
+throw new InternalError("unknown enum value " + origin);
+}
+return value;
+}

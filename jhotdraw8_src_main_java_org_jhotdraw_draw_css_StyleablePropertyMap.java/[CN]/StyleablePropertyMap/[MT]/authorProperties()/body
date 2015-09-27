@@ -1,3 +1,7 @@
 {
+  if (author == null) {
+    author=new ReadOnlyMapWrapper<Key<?>,Object>(this,AUTHOR_PROPERTY,FXCollections.observableHashMap()).getReadOnlyProperty();
+    author.addListener(inputHandler);
+  }
   return author;
 }

@@ -3,7 +3,7 @@
   for (  Key<?> key : Figure.getSupportedKeys(this)) {
     if (key instanceof StyleableKey) {
       StyleableKey sk=(StyleableKey)key;
-      list.add(sk.createCssMetaData());
+      list.add(sk.getCssMetaData());
     }
   }
   return list;

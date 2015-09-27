@@ -6,17 +6,16 @@
  else {
 switch (origin) {
 case INLINE:
-      output.put(key,inline.get(key));
+      output.put(key,inlineProperties().get(key));
     break;
 case AUTHOR:
-  System.out.println(this + " updating output k:" + key+ " v:"+ author.get(key));
-output.put(key,author.get(key));
+  output.put(key,authorProperties().get(key));
 break;
 case USER:
-output.put(key,user.get(key));
+output.put(key,userProperties().get(key));
 break;
 case USER_AGENT:
-output.put(key,userAgent.get(key));
+output.put(key,userAgentProperties().get(key));
 break;
 default :
 throw new InternalError("unknown enum value " + origin);

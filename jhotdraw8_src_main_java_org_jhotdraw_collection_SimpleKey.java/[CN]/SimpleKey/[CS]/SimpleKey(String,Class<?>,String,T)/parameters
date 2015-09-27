@@ -1,4 +1,4 @@
-String key
+String name
 Class<?> clazz
 String typeParameters
 T defaultValue

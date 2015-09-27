@@ -1,5 +1,11 @@
 {
-  userAgent.clear();
-  inline.clear();
-  author.clear();
+  if (userAgent != null) {
+    userAgent.clear();
+  }
+  if (inline != null) {
+    inline.clear();
+  }
+  if (author != null) {
+    author.clear();
+  }
 }

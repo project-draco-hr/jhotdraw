@@ -1,3 +1,7 @@
 {
+  if (inline == null) {
+    inline=new ReadOnlyMapWrapper<Key<?>,Object>(this,INLINE_PROPERTY,FXCollections.observableHashMap()).getReadOnlyProperty();
+    inline.addListener(inputHandler);
+  }
   return inline;
 }

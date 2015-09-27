@@ -1,5 +1,5 @@
 {
-  if (key == null) {
+  if (name == null) {
     throw new IllegalArgumentException("key is null");
   }
   if (clazz == null) {
@@ -13,7 +13,7 @@
       throw new IllegalArgumentException("type parameters does not have arrow brackets:" + typeParameters);
     }
   }
-  this.name=key;
+  this.name=name;
   this.clazz=clazz;
   this.typeParameters=typeParameters;
   this.defaultValue=defaultValue;
