@@ -2,5 +2,5 @@
   r.setFill(Color.WHITE);
   r.setStroke(Color.BLUE);
   r.getStyleClass().add(styleclass);
-  r.setRadius(3);
+  r.setRadius(4);
 }

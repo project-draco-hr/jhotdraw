@@ -1,0 +1,6 @@
+{
+  if (get() == null) {
+    throw new NullPointerException("newValue is null");
+  }
+  super.fireValueChangedEvent();
+}

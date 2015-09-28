@@ -1,6 +1,0 @@
-{
-  if (newValue == null) {
-    throw new NullPointerException("newValue");
-  }
-  super.set(newValue);
-}
