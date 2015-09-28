@@ -8,17 +8,7 @@
   figure.reshape(c.getX(),c.getY(),1,1);
   DrawingModel dm=dv.getDrawingModel();
   Drawing drawing=dm.getRoot();
-  Layer activeLayer=dv.getActiveLayer();
-  if (activeLayer == null) {
-    Figure lastChild=drawing.getLastChild();
-    if (lastChild instanceof Layer) {
-      activeLayer=(Layer)lastChild;
-    }
- else {
-      activeLayer=layerFactory.get();
-      dm.addChildTo(activeLayer,drawing);
-    }
-  }
-  dv.setActiveLayer(activeLayer);
-  dm.addChildTo(figure,activeLayer);
+  Layer layer=getOrCreateLayer(dv,figure);
+  dv.setActiveLayer(layer);
+  dm.addChildTo(figure,layer);
 }
