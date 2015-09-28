@@ -1,20 +1,3 @@
 {
-  if (name == null) {
-    throw new IllegalArgumentException("key is null");
-  }
-  if (clazz == null) {
-    throw new IllegalArgumentException("clazz is null");
-  }
-  if (typeParameters == null) {
-    throw new IllegalArgumentException("type parameters is null");
-  }
-  if (typeParameters.length() > 0) {
-    if (!typeParameters.startsWith("<") || !typeParameters.endsWith(">")) {
-      throw new IllegalArgumentException("type parameters does not have arrow brackets:" + typeParameters);
-    }
-  }
-  this.name=name;
-  this.clazz=clazz;
-  this.typeParameters=typeParameters;
-  this.defaultValue=defaultValue;
+  this(name,clazz,"",true,defaultValue);
 }

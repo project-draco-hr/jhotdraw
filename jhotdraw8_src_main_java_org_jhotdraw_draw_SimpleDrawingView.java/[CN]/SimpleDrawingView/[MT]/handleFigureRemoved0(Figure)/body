@@ -3,4 +3,6 @@
     handleFigureRemoved0(child);
   }
   removeNode(f);
+  selection.remove(f);
+  invalidateHandles();
 }

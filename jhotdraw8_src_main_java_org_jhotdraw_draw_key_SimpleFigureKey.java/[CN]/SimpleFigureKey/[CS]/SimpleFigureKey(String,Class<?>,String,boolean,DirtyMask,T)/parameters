@@ -1,0 +1,6 @@
+String name
+Class<?> clazz
+String typeParameters
+boolean isNullable
+DirtyMask dirtyMask
+T defaultValue

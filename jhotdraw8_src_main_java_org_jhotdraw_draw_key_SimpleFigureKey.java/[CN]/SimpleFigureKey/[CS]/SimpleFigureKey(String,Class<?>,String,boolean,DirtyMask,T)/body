@@ -1,0 +1,4 @@
+{
+  super(name,clazz,typeParameters,isNullable,defaultValue);
+  this.dirtyMask=dirtyMask;
+}

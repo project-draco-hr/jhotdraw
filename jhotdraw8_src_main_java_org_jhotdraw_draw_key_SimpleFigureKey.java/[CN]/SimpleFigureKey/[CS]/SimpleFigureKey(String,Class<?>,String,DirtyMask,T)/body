@@ -1,4 +1,3 @@
 {
-  super(name,clazz,typeParameters,defaultValue);
-  this.dirtyMask=dirtyMask;
+  this(name,clazz,typeParameters,true,dirtyMask,defaultValue);
 }
