@@ -1,10 +1,2 @@
 {
-  super(name,rsrc);
-  this.figureFactory=factory;
-  this.layerFactory=new Supplier<Layer>(){
-    @Override public Layer get(){
-      return new SimpleLayer();
-    }
-  }
-;
 }
