@@ -1,5 +1,5 @@
 {
-  figure.set(key,value);
+  T oldValue=figure.set(key,value);
   if (key instanceof FigureKey) {
     FigureKey<T> fk=(FigureKey<T>)key;
     DirtyMask dm=fk.getDirtyMask();
@@ -7,4 +7,5 @@
       fire(DrawingModelEvent.nodeInvalidated(this,figure));
     }
   }
+  return oldValue;
 }

@@ -41,6 +41,7 @@
   drawing.layout();
   DrawingView drawingView=new SimpleDrawingView();
   drawingView.setDrawing(drawing);
+  drawingView.setConstrainer(new GridConstrainer(30,30));
   DrawingEditor drawingEditor=new SimpleDrawingEditor();
   drawingEditor.drawingViewsProperty().add(drawingView);
   Tool tool=new SelectionTool();

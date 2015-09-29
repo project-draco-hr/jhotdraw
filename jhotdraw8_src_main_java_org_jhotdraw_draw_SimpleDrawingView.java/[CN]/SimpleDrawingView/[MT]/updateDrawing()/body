@@ -7,7 +7,7 @@
     boundsProperty=null;
     activeLayer.set(null);
   }
-  Drawing d=getDrawingModel().getRoot();
+  Drawing d=getModel().getRoot();
   drawing.set(d);
   if (d != null) {
     boundsProperty=Drawing.BOUNDS.propertyAt(d.properties());

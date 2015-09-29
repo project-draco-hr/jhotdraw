@@ -1,5 +1,5 @@
 {
-  getDrawingModel().validate();
+  getModel().validate();
   LinkedList<Figure> updateNodes=new LinkedList<>(dirtyFigureNodes);
   dirtyFigureNodes.clear();
   for (  Figure f : updateNodes) {

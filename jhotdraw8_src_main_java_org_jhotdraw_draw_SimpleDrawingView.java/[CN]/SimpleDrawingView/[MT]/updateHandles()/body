@@ -5,14 +5,13 @@
   }
   selectionHandles.clear();
   handlesPane.getChildren().clear();
-  List<Handle> handles=createSelectionHandles();
-  if (handles != null) {
-    for (    Handle handle : handles) {
-      selectionHandles.add(handle);
-      Node n=handle.getNode();
-      nodeToHandleMap.put(n,handle);
-      handlesPane.getChildren().add(n);
-      handle.updateNode(this);
-    }
+  ArrayList<Handle> handles=new ArrayList<>();
+  createSelectionHandles(handles);
+  for (  Handle handle : handles) {
+    selectionHandles.add(handle);
+    Node n=handle.getNode();
+    nodeToHandleMap.put(n,handle);
+    handlesPane.getChildren().add(n);
+    handle.updateNode(this);
   }
 }

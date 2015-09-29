@@ -12,7 +12,7 @@
   }
   if (layer == null) {
     layer=layerFactory.get();
-    dv.getDrawingModel().addChildTo(layer,dv.getDrawing());
+    dv.getModel().addChildTo(layer,dv.getDrawing());
   }
   return layer;
 }

@@ -1,2 +1,3 @@
 HandleType handleType
 DrawingView dv
+List<Handle> list
