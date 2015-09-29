@@ -1,2 +1,2 @@
-MouseEvent evt
-DrawingView dv
+MouseEvent event
+DrawingView view

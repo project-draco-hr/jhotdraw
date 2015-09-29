@@ -1,0 +1,42 @@
+{
+  Point2D point=owner.getPointOnPath((float)relativePosition,3);
+  if (point == null) {
+    return new Point2D(0,0);
+  }
+  Point2D nextPoint=owner.getPointOnPath((relativePosition < 0.5) ? (float)relativePosition + 0.1f : (float)relativePosition - 0.1f,3);
+  double dir=Math.atan2(nextPoint.getY() - point.getY(),nextPoint.getX() - point.getX());
+  if (relativePosition >= 0.5) {
+    dir+=Math.PI;
+  }
+  double alpha=dir + angle;
+  Point2D p=new Point2D(point.getX() + distance * Math.cos(alpha),point.getY() + distance * Math.sin(alpha));
+  if (Double.isNaN(p.getX()))   p=point;
+  if (true)   throw new UnsupportedOperationException("implement me");
+  Dimension2D labelDim=null;
+  if (relativePosition == 0.5 && p.getX() >= point.getX() - distance / 2 && p.getX() <= point.getX() + distance / 2) {
+    if (p.getY() >= point.getY()) {
+      return new Point2D(p.getX() - labelDim.getWidth() / 2,p.getY());
+    }
+ else {
+      return new Point2D(p.getX() - labelDim.getWidth() / 2,p.getY() - labelDim.getHeight());
+    }
+  }
+ else {
+    if (p.getX() >= point.getX()) {
+      if (p.getY() >= point.getY()) {
+        return new Point2D(p.getX(),p.getY());
+      }
+ else {
+        return new Point2D(p.getX(),p.getY() - labelDim.getHeight());
+      }
+    }
+ else {
+      if (p.getY() >= point.getY()) {
+        return new Point2D(p.getX() - labelDim.getWidth(),p.getY());
+      }
+ else {
+        return new Point2D(p.getX() - labelDim.getWidth(),p.getY() - labelDim.getHeight());
+      }
+    }
+  }
+}

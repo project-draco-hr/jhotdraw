@@ -1,7 +1,7 @@
 {
-  Figure f=getFigure();
+  Figure f=getOwner();
   Transform t=view.getDrawingToView().createConcatenation(f.getLocalToDrawing());
-  Bounds b=getFigure().getBoundsInLocal();
+  Bounds b=getOwner().getBoundsInLocal();
   points[0]=f.get(LineConnectionFigure.START).getX();
   points[1]=f.get(LineConnectionFigure.START).getY();
   points[2]=f.get(LineConnectionFigure.END).getX();

@@ -1,5 +1,5 @@
 {
-  Figure f=getFigure();
+  Figure f=getOwner();
   Transform t=view.getDrawingToView().createConcatenation(f.getLocalToDrawing());
   Bounds b=f.getBoundsInLocal();
   points[0]=b.getMinX();

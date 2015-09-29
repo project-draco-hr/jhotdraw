@@ -1,0 +1,6 @@
+Figure figure
+String styleclass
+String styleclassConnected
+SimpleFigureKey<Point2D> pointKey
+SimpleFigureKey<Figure> figureKey
+SimpleFigureKey<Connector> connectorKey

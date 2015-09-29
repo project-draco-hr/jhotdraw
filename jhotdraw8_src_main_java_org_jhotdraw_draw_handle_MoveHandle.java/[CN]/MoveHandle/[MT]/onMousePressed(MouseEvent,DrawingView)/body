@@ -1,4 +1,3 @@
 {
-  prevX=event.getX();
-  prevY=event.getY();
+  oldPoint=anchor=view.getConstrainer().constrainPoint(getOwner(),view.viewToDrawing(new Point2D(event.getX(),event.getY())));
 }

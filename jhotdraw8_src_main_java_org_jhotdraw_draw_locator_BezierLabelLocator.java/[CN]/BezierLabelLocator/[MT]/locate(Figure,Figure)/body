@@ -1,0 +1,4 @@
+{
+  Point2D relativePoint=getRelativeLabelPoint((BezierFigure)owner,label);
+  return relativePoint;
+}

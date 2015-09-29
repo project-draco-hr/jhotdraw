@@ -1,5 +1,5 @@
 {
   startX=event.getX();
   startY=event.getY();
-  startPoint=getFigure().get(pointKey);
+  startPoint=getOwner().get(pointKey);
 }

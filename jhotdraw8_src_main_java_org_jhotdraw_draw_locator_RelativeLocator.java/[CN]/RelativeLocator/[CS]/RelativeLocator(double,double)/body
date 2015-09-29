@@ -1,0 +1,4 @@
+{
+  this.relativeX=relativeX;
+  this.relativeY=relativeY;
+}

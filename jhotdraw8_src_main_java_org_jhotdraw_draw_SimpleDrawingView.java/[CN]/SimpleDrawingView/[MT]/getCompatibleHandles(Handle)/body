@@ -2,11 +2,11 @@
   validateHandles();
   HashSet<Figure> owners=new HashSet<Figure>();
   LinkedList<Handle> compatibleHandles=new LinkedList<Handle>();
-  owners.add(master.getFigure());
+  owners.add(master.getOwner());
   compatibleHandles.add(master);
   for (  Handle handle : getSelectionHandles()) {
-    if (!owners.contains(handle.getFigure())) {
-      owners.add(handle.getFigure());
+    if (!owners.contains(handle.getOwner())) {
+      owners.add(handle.getOwner());
       compatibleHandles.add(handle);
     }
   }

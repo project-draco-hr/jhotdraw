@@ -1,0 +1,6 @@
+{
+  super(figure,locator);
+  this.styleclass=styleclass;
+  node=new Rectangle();
+  initNode(node);
+}

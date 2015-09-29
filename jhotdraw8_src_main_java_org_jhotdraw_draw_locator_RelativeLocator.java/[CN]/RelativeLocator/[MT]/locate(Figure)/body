@@ -1,0 +1,5 @@
+{
+  Bounds bounds=owner.getBoundsInLocal();
+  Point2D location=new Point2D(bounds.getMinX() + bounds.getWidth() * relativeX,bounds.getMinY() + bounds.getHeight() * relativeY);
+  return location;
+}

@@ -1,7 +1,0 @@
-{
-  super(figure,dv);
-  this.pointKey=pointKey;
-  this.styleclass=styleclass;
-  node=new Rectangle();
-  initNode(node);
-}
