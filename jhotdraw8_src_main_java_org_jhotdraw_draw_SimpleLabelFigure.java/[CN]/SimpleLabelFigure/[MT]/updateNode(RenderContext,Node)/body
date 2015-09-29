@@ -5,4 +5,5 @@
   textNode.setY(get(ORIGIN).getY());
   textNode.setBoundsType(TextBoundsType.VISUAL);
   applyTextProperties(textNode);
+  applyLabelProperties(textNode);
 }
