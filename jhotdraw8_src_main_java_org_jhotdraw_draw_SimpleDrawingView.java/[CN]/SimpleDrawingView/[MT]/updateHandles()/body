@@ -5,23 +5,14 @@
   }
   selectionHandles.clear();
   handlesPane.getChildren().clear();
-  while (true) {
-    for (    Figure figure : getSelectedFigures()) {
-      List<Handle> handles=figure.createHandles(detailLevel,this);
-      if (handles != null) {
-        for (        Handle handle : handles) {
-          selectionHandles.add(handle);
-          Node n=handle.getNode();
-          nodeToHandleMap.put(n,handle);
-          handlesPane.getChildren().add(n);
-          handle.updateNode(this);
-        }
-      }
+  List<Handle> handles=createSelectionHandles();
+  if (handles != null) {
+    for (    Handle handle : handles) {
+      selectionHandles.add(handle);
+      Node n=handle.getNode();
+      nodeToHandleMap.put(n,handle);
+      handlesPane.getChildren().add(n);
+      handle.updateNode(this);
     }
-    if (selectionHandles.isEmpty() && detailLevel != 0) {
-      detailLevel=0;
-      continue;
-    }
-    break;
   }
 }

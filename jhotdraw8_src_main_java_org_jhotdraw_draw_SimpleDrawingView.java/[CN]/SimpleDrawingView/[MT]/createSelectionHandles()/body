@@ -1,0 +1,7 @@
+{
+  ArrayList<Handle> list=new ArrayList<>();
+  for (  Figure figure : getSelectedFigures()) {
+    list.addAll(figure.createHandles(HandleType.SELECTION,this));
+  }
+  return list;
+}

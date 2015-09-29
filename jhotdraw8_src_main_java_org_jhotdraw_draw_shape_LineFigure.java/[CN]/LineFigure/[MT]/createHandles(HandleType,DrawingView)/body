@@ -1,0 +1,9 @@
+{
+  ArrayList<Handle> list=new ArrayList<>();
+  if (handleType == HandleType.SELECTION) {
+    list.add(new LineWireframeHandle(this,Handle.STYLECLASS_HANDLE_OUTLINE));
+    list.add(new PointHandle(this,Handle.STYLECLASS_HANDLE_POINT,START));
+    list.add(new PointHandle(this,Handle.STYLECLASS_HANDLE_POINT,END));
+  }
+  return list;
+}
