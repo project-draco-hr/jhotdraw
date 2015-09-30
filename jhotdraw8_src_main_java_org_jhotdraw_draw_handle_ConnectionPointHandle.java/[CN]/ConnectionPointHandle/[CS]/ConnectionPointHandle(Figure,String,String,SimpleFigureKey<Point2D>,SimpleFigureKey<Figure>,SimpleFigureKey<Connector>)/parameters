@@ -1,5 +1,4 @@
 Figure figure
-DrawingView dv
 String styleclass
 String styleclassConnected
 SimpleFigureKey<Point2D> pointKey
