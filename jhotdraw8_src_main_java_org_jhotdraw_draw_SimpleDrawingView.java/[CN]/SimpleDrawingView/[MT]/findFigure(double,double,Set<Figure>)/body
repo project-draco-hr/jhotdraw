@@ -1,0 +1,5 @@
+{
+  Drawing dr=getDrawing();
+  Figure f=findFigureRecursiveInSet((Parent)getNode(dr),viewToDrawing(vx,vy),figures);
+  return f;
+}

@@ -9,24 +9,24 @@
     setTracker(getHandleTracker(h));
   }
  else {
-    pressedFigure=view.findFigure(vx,vy);
-    if (pressedFigure == null && tolerance != 0) {
-      List<Figure> fs=view.findFiguresIntersecting(vx - tolerance,vy - tolerance,tolerance * 2,tolerance * 2,false);
-      if (!fs.isEmpty()) {
-        pressedFigure=fs.get(0);
-      }
-    }
     if (isSelectBehindEnabled() && (evt.isAltDown())) {
       pressedFigure=null;
       boolean selectionFound=false;
       for (      Figure f : view.findFigures(vx,vy,false)) {
         if (view.selectionProperty().contains(f)) {
           selectionFound=true;
+          continue;
         }
         if (selectionFound) {
           pressedFigure=f;
           break;
         }
+      }
+    }
+ else {
+      pressedFigure=view.findFigure(vx,vy,view.getSelectedFigures());
+      if (pressedFigure == null) {
+        pressedFigure=view.findFigure(vx,vy);
       }
     }
     if (evt.isShiftDown() && !evt.isMetaDown()) {

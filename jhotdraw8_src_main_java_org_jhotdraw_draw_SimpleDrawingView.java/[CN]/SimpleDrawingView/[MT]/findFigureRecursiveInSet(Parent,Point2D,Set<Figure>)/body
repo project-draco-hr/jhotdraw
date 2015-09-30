@@ -1,0 +1,22 @@
+{
+  ObservableList<Node> list=p.getChildrenUnmodifiable();
+  for (int i=list.size() - 1; i >= 0; i--) {
+    Node n=list.get(i);
+    if (!n.isVisible()) {
+      continue;
+    }
+    Point2D pl=n.parentToLocal(pp);
+    if (n.contains(pl)) {
+      Figure f=nodeToFigureMap.get(n);
+      if (f == null || !f.isSelectable() && !f.isDisabled()) {
+        if (n instanceof Parent) {
+          f=findFigureRecursiveInSet((Parent)n,pl,figures);
+        }
+      }
+      if (f != null && !f.isDisabled() && figures.contains(f)) {
+        return f;
+      }
+    }
+  }
+  return null;
+}
