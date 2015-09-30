@@ -6,7 +6,7 @@
       continue;
     }
     Point2D pl=n.parentToLocal(pp);
-    if (n.contains(pl)) {
+    if (contains(n,pl,TOLERANCE)) {
       Figure f=nodeToFigureMap.get(n);
       if (f == null || !f.isSelectable() && !f.isDisabled()) {
         if (n instanceof Parent) {

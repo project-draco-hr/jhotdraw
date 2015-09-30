@@ -1,0 +1,16 @@
+{
+  if (tolerance == 0) {
+    return node.contains(point);
+  }
+  if (node instanceof Line) {
+    Line line=(Line)node;
+    boolean contains=Geom.lineContainsPoint(line.getStartX(),line.getStartY(),line.getEndX(),line.getEndY(),point.getX(),point.getY(),tolerance);
+    return contains;
+  }
+ else   if (node instanceof Group) {
+    return node.getBoundsInLocal().contains(point);
+  }
+ else {
+    return node.contains(point);
+  }
+}

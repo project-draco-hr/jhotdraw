@@ -5,7 +5,7 @@
     Figure f1=nodeToFigureMap.get(n);
     if (f1 != null && f1.isSelectable()) {
       Point2D pl=n.parentToLocal(pp);
-      if (n.contains(pl)) {
+      if (contains(n,pl,TOLERANCE)) {
         Figure f=nodeToFigureMap.get(n);
         if (f != null && f.isSelectable() && !f.isDisabled()) {
           found.add(f);
@@ -19,7 +19,7 @@
     }
  else {
       Point2D pl=n.parentToLocal(pp);
-      if (n.contains(pl)) {
+      if (contains(n,pl,TOLERANCE)) {
         if (n instanceof Parent) {
           findFiguresRecursive((Parent)n,pl,found,decompose);
         }

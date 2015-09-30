@@ -1,7 +1,7 @@
 {
   for (  Node n : handlesPane.getChildren()) {
     Point2D pl=n.parentToLocal(vx,vy);
-    if (n.contains(pl)) {
+    if (contains(n,pl,TOLERANCE)) {
       Handle h=nodeToHandleMap.get(n);
       if (h.isSelectable()) {
         return h;

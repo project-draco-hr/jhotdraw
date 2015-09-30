@@ -6,11 +6,11 @@
       continue;
     }
     Point2D pl=n.parentToLocal(pp);
-    if (n.contains(pl)) {
+    if (contains(n,pl,tolerance)) {
       Figure f=nodeToFigureMap.get(n);
       if (f == null || !f.isSelectable() && !f.isDisabled()) {
         if (n instanceof Parent) {
-          f=findFigureRecursive((Parent)n,pl);
+          f=findFigureRecursive((Parent)n,pl,tolerance);
         }
       }
       if (f != null && !f.isDisabled()) {

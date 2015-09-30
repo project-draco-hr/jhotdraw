@@ -1,5 +1,8 @@
 {
   Drawing dr=getDrawing();
-  Figure f=findFigureRecursive((Parent)getNode(dr),viewToDrawing(vx,vy));
+  Figure f=findFigureRecursive((Parent)getNode(dr),viewToDrawing(vx,vy),0.0);
+  if (f == null) {
+    f=findFigureRecursive((Parent)getNode(dr),viewToDrawing(vx,vy),TOLERANCE);
+  }
   return f;
 }
