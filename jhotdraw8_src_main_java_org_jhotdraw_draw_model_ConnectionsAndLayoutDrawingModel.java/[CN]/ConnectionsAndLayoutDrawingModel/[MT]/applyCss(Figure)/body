@@ -1,9 +1,5 @@
 {
   figure.applyCss();
   fire(DrawingModelEvent.subtreeNodesInvalidated(this,figure));
-  for (  Figure f : figure.preorderIterable()) {
-    for (    Figure c : f.connections()) {
-      fire(DrawingModelEvent.layoutInvalidated(this,c));
-    }
-  }
+  fireLayoutInvalidatedForConnectionsOfSubtree(figure);
 }

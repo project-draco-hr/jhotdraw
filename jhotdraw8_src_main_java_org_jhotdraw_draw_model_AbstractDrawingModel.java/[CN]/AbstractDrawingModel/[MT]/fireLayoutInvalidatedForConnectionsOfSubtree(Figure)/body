@@ -1,0 +1,7 @@
+{
+  LinkedList<Figure> todo=new LinkedList();
+  for (  Figure f : figure.preorderIterable()) {
+    todo.add(f);
+  }
+  fireLayoutInvalidatedForConnectionsOf(todo,new HashSet<Figure>());
+}

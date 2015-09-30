@@ -1,0 +1,16 @@
+{
+  HashSet<Figure> todoNext=new HashSet<>();
+  for (  Figure figure : todo) {
+    for (    Figure c : figure.connections()) {
+      if (done.add(c)) {
+        fire(DrawingModelEvent.layoutInvalidated(this,c));
+      }
+ else {
+        todoNext.add(c);
+      }
+    }
+  }
+  if (!todoNext.isEmpty()) {
+    fireLayoutInvalidatedForConnectionsOf(todoNext,done);
+  }
+}

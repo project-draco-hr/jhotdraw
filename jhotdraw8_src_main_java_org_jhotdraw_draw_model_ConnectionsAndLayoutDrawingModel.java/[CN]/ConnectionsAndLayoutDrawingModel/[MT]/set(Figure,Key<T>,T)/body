@@ -11,9 +11,7 @@
         fire(DrawingModelEvent.layoutInvalidated(this,figure));
       }
       if (dm.containsOneOf(DirtyBits.CONNECTION_LAYOUT)) {
-        for (        Figure c : figure.connections()) {
-          fire(DrawingModelEvent.layoutInvalidated(this,c));
-        }
+        fireLayoutInvalidatedForConnectionsOfFigure(figure);
       }
     }
   }
