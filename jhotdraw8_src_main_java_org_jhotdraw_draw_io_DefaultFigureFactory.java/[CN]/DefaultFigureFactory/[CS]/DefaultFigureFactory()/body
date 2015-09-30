@@ -18,4 +18,5 @@
   addConverter(String.class,new DefaultConverter());
   addConverter(Point2D.class,new Point2DConverter());
   addConverter(Double.class,new NumberConverter());
+  addConverter(URL.class,new URLConverter());
 }

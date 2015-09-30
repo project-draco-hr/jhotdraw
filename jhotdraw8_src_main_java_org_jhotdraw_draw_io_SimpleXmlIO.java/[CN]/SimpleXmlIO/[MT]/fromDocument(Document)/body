@@ -10,8 +10,13 @@
       break;
     }
   }
-  for (  Element elem : figureElements) {
-    readElementAttributes(elem);
+  try {
+    for (    Element elem : figureElements) {
+      readElementAttributes(elem);
+    }
+  }
+  finally {
+    figureElements.clear();
   }
   if (drawing != null) {
     return drawing;

@@ -1,6 +1,5 @@
 {
   Drawing d=new SimpleDrawing();
-  d.set(Drawing.STYLESHEET,GrapherView.class.getResource("GrapherDrawing.css"));
   drawingView.setDrawing(d);
   callback.handle(new TaskCompletionEvent());
 }
