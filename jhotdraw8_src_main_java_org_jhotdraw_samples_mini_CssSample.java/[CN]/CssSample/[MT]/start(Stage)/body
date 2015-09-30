@@ -21,6 +21,9 @@
   edge3Null.set(LineConnectionFigure.END,new Point2D(145,15));
   edgeNullNull.set(LineConnectionFigure.START,new Point2D(65,90));
   edgeNullNull.set(LineConnectionFigure.END,new Point2D(145,95));
+  LineFigure line1=new LineFigure();
+  line1.set(LineFigure.START,new Point2D(50,150));
+  line1.set(LineFigure.END,new Point2D(100,150));
   Layer layer=new SimpleLayer();
   drawing.add(layer);
   layer.add(vertex1);
@@ -31,6 +34,7 @@
   layer.add(edge23);
   layer.add(edge3Null);
   layer.add(edgeNullNull);
+  layer.add(line1);
   vertex1.set(Figure.STYLE_ID,"vertex1");
   vertex2.set(Figure.STYLE_ID,"vertex2");
   vertex3.set(Figure.STYLE_ID,"vertex3");
@@ -41,7 +45,7 @@
   drawing.layout();
   DrawingView drawingView=new SimpleDrawingView();
   drawingView.setDrawing(drawing);
-  drawingView.setConstrainer(new GridConstrainer(30,30));
+  drawingView.setConstrainer(new GridConstrainer(10,10));
   DrawingEditor drawingEditor=new SimpleDrawingEditor();
   drawingEditor.drawingViewsProperty().add(drawingView);
   Tool tool=new SelectionTool();

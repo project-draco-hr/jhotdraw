@@ -1,5 +1,5 @@
 Figure figure
-String styleclass
+String styleclassDisconnected
 String styleclassConnected
 SimpleFigureKey<Point2D> pointKey
 SimpleFigureKey<Figure> figureKey

@@ -6,7 +6,7 @@
   selectionHandles.clear();
   handlesPane.getChildren().clear();
   ArrayList<Handle> handles=new ArrayList<>();
-  createSelectionHandles(handles);
+  createHandles(handles);
   for (  Handle handle : handles) {
     selectionHandles.add(handle);
     Node n=handle.getNode();

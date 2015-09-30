@@ -3,7 +3,7 @@
   this.pointKey=pointKey;
   this.figureKey=figureKey;
   this.connectorKey=connectorKey;
-  this.styleclassDisconnected=styleclass;
+  this.styleclassDisconnected=styleclassDisconnected;
   this.styleclassConnected=styleclassConnected;
   node=new Region();
   node.setShape(REGION_SHAPE);

@@ -1,5 +1,0 @@
-{
-  for (  Figure figure : getSelectedFigures()) {
-    figure.createHandles(HandleType.SELECTION,this,list);
-  }
-}
