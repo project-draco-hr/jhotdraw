@@ -1,5 +1,8 @@
 {
   if (!elemToFigure.containsKey(elementName)) {
+    if (skipElements.contains(elementName)) {
+      return null;
+    }
     throw new IOException("no mapping for element " + elementName);
   }
   Class<? extends Figure> clazz=elemToFigure.get(elementName);

@@ -5,13 +5,14 @@
     if (figure == null) {
       return null;
     }
+    figureElements.add(elem);
     String id=elem.getAttribute("id");
     if (id != null) {
       ids.putId(figure,id);
     }
     NodeList list=elem.getChildNodes();
     for (int i=0; i < list.getLength(); i++) {
-      Figure child=readNode(list.item(i));
+      Figure child=readNodeRecursively(list.item(i));
       if (child instanceof Figure) {
         figure.add(child);
       }

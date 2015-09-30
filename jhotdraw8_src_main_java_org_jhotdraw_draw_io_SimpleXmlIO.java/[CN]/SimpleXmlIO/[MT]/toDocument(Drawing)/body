@@ -4,7 +4,7 @@
     DocumentBuilder builder=DocumentBuilderFactory.newInstance().newDocumentBuilder();
     Document doc=builder.newDocument();
     if (factory.figureToName(drawing) != null) {
-      doc.appendChild(writeNode(doc,drawing));
+      doc.appendChild(writeNodeRecursively(doc,drawing));
     }
     return doc;
   }

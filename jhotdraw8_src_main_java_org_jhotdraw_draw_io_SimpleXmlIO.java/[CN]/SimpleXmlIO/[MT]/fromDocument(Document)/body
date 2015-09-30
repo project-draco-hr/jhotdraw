@@ -1,16 +1,17 @@
 {
   ids.reset();
+  figureElements.clear();
   Drawing drawing=null;
   NodeList list=doc.getChildNodes();
   for (int i=0; i < list.getLength(); i++) {
-    Figure f=readNode(list.item(i));
+    Figure f=readNodeRecursively(list.item(i));
     if (f instanceof Drawing) {
       drawing=(Drawing)f;
       break;
     }
   }
-  for (int i=0; i < list.getLength(); i++) {
-    readElementAttributes(list.item(i));
+  for (  Element elem : figureElements) {
+    readElementAttributes(elem);
   }
   if (drawing != null) {
     return drawing;

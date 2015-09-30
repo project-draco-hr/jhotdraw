@@ -16,7 +16,7 @@
   for (  Figure child : figure.childrenProperty()) {
     if (factory.figureToName(child) != null) {
       elem.appendChild(doc.createTextNode("\n"));
-      elem.appendChild(writeNode(doc,child));
+      elem.appendChild(writeNodeRecursively(doc,child));
     }
   }
   if (!figure.childrenProperty().isEmpty()) {
