@@ -2,7 +2,7 @@
   String className=getClass().getName();
   className=className.substring(className.lastIndexOf('.') + 1);
   StringBuilder buf=new StringBuilder();
-  buf.append(className).append('@').append(hashCode()).append("{properties=").append(properties().get()).append(", connections={");
+  buf.append(className).append('@').append(hashCode()).append("{properties=").append(getProperties()).append(", connections={");
   boolean isFirst=true;
   for (  Figure f : connections) {
     if (isFirst) {

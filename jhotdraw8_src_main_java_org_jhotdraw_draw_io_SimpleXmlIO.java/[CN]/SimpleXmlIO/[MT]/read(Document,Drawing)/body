@@ -2,7 +2,7 @@
   Drawing tmp=fromDocument(in);
   if (drawing != null) {
     drawing.childrenProperty().addAll(tmp.childrenProperty());
-    drawing.properties().putAll(tmp.properties());
+    drawing.getProperties().putAll(tmp.getProperties());
     tmp=drawing;
   }
   return tmp;

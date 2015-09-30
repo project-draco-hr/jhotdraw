@@ -1,9 +1,9 @@
 {
   Figure parent=child.getParent();
   if (parent != null) {
-    int index=parent.children().indexOf(child);
+    int index=parent.getChildren().indexOf(child);
     if (index != -1) {
-      parent.children().remove(index);
+      parent.getChildren().remove(index);
       fire(DrawingModelEvent.figureRemoved(this,parent,child,index));
       fire(DrawingModelEvent.nodeInvalidated(this,parent));
     }

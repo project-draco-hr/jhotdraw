@@ -2,7 +2,7 @@
   figure.reshape(x,y,width,height);
   fire(DrawingModelEvent.subtreeNodesInvalidated(this,figure));
   for (  Figure f : figure.preorderIterable()) {
-    for (    Figure c : f.connections()) {
+    for (    Figure c : f.getConnections()) {
       fire(DrawingModelEvent.layoutInvalidated(this,c));
     }
   }

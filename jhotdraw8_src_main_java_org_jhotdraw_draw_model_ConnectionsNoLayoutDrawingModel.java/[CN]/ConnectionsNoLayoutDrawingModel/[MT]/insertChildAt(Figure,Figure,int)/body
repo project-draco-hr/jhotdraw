@@ -1,5 +1,5 @@
 {
-  parent.children().add(index,child);
+  parent.getChildren().add(index,child);
   fire(DrawingModelEvent.figureAdded(this,parent,child,index));
   fire(DrawingModelEvent.nodeInvalidated(this,parent));
 }

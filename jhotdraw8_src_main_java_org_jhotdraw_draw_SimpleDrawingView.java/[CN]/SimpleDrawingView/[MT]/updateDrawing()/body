@@ -9,7 +9,7 @@
   Drawing d=getModel().getRoot();
   drawing.set(d);
   if (d != null) {
-    boundsProperty=Drawing.BOUNDS.propertyAt(d.properties());
+    boundsProperty=Drawing.BOUNDS.propertyAt(d.propertiesProperty());
     drawingPane.getChildren().add(getNode(d));
     dirtyFigureNodes.add(d);
     updateLayout();

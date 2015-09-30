@@ -4,7 +4,7 @@
   if (d != null) {
     StyleableStyleManager styleManager=d.getStyleManager();
     styleManager.applyStylesTo(this);
-    for (    Figure child : children()) {
+    for (    Figure child : getChildren()) {
       child.applyCss();
     }
   }

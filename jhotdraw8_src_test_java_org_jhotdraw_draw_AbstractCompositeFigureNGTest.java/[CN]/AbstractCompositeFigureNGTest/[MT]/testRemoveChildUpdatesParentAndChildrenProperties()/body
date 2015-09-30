@@ -3,6 +3,6 @@
   Figure child=new AbstractCompositeFigureImpl();
   parent.add(child);
   parent.remove(child);
-  assertFalse(parent.children().contains(child));
+  assertFalse(parent.getChildren().contains(child));
   assertNull(child.getParent());
 }
