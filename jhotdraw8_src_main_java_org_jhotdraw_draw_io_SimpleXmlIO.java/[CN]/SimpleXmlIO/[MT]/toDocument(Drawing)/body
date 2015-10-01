@@ -1,10 +1,24 @@
 {
   try {
     ids.reset();
-    DocumentBuilder builder=DocumentBuilderFactory.newInstance().newDocumentBuilder();
-    Document doc=builder.newDocument();
-    if (factory.figureToName(drawing) != null) {
-      doc.appendChild(writeNodeRecursively(doc,drawing));
+    DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
+    Document doc;
+    if (namespaceURI != null) {
+      builderFactory.setNamespaceAware(true);
+      DocumentBuilder builder=builderFactory.newDocumentBuilder();
+      DOMImplementation domImpl=builder.getDOMImplementation();
+      doc=domImpl.createDocument(namespaceURI,namespaceQualifier == null ? factory.figureToName(drawing) : namespaceQualifier + ":" + factory.figureToName(drawing),null);
+    }
+ else {
+      DocumentBuilder builder=builderFactory.newDocumentBuilder();
+      doc=builder.newDocument();
+      Element elem=doc.createElement(factory.figureToName(drawing));
+      doc.appendChild(elem);
+    }
+    Element docElement=doc.getDocumentElement();
+    writeElementAttributes(docElement,drawing);
+    for (    Figure child : drawing.getChildren()) {
+      docElement.appendChild(writeNodeRecursively(doc,child));
     }
     return doc;
   }

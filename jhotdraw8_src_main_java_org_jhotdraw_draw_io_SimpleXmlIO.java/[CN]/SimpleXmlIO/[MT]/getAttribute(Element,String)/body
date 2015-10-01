@@ -1,0 +1,16 @@
+{
+  if (namespaceURI == null) {
+    return elem.getAttribute(unqualifiedName);
+  }
+ else {
+    if (elem.hasAttributeNS(namespaceURI,unqualifiedName)) {
+      return elem.getAttributeNS(namespaceURI,unqualifiedName);
+    }
+ else {
+      if (elem.isDefaultNamespace(namespaceURI)) {
+        return elem.getAttribute(unqualifiedName);
+      }
+    }
+  }
+  return null;
+}

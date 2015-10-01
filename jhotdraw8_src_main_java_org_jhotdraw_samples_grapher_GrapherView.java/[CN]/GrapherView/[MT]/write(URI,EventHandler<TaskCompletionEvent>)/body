@@ -2,7 +2,7 @@
   BackgroundTask<Void> t=new BackgroundTask<Void>(){
     @Override protected Void call() throws Exception {
       FigureFactory factory=new DefaultFigureFactory();
-      SimpleXmlIO io=new SimpleXmlIO(factory);
+      SimpleXmlIO io=new SimpleXmlIO(factory,GRAPHER_NAMESPACE_URI,null);
       io.write(uri,drawingView.getDrawing());
       return null;
     }

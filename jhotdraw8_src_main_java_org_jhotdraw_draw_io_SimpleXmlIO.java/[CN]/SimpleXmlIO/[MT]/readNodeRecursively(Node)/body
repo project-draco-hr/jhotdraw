@@ -1,12 +1,17 @@
 {
   if (node instanceof Element) {
     Element elem=(Element)node;
-    Figure figure=factory.nameToFigure(elem.getTagName());
+    if (namespaceURI != null) {
+      if (!namespaceURI.equals(elem.getNamespaceURI())) {
+        return null;
+      }
+    }
+    Figure figure=factory.nameToFigure(elem.getLocalName());
     if (figure == null) {
       return null;
     }
     figureElements.add(elem);
-    String id=elem.getAttribute("id");
+    String id=getAttribute(elem,"id");
     if (id != null) {
       ids.putId(figure,id);
     }

@@ -1,0 +1,15 @@
+{
+  setAttribute(elem,"id",ids.createId(figure));
+  for (  Key<?> k : factory.figureKeys(figure)) {
+    Key<Object> key=(Key<Object>)k;
+    Object value=figure.get(key);
+    if (!factory.isDefaultValue(key,value)) {
+      if (Figure.class.isAssignableFrom(key.getValueType())) {
+        setAttribute(elem,factory.keyToName(figure,key),ids.createId(value));
+      }
+ else {
+        setAttribute(elem,factory.keyToName(figure,key),factory.valueToString(key,value));
+      }
+    }
+  }
+}

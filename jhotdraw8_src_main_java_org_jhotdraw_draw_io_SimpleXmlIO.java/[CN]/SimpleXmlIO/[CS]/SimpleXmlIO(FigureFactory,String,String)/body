@@ -1,0 +1,5 @@
+{
+  this.factory=factory;
+  this.namespaceURI=namespaceURI;
+  this.namespaceQualifier=namespaceQualifier;
+}

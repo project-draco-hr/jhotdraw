@@ -1,6 +1,11 @@
 {
   try {
-    DocumentBuilder builder=DocumentBuilderFactory.newInstance().newDocumentBuilder();
+    DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
+    if (namespaceURI != null) {
+      builderFactory.setNamespaceAware(true);
+    }
+    builderFactory.setNamespaceAware(true);
+    DocumentBuilder builder=builderFactory.newDocumentBuilder();
     Document doc=builder.parse(in);
     return read(doc,drawing);
   }

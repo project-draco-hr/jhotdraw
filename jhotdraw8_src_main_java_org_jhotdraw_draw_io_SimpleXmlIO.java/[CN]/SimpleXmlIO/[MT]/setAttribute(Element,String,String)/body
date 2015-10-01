@@ -1,0 +1,8 @@
+{
+  if (namespaceURI == null || namespaceQualifier == null) {
+    elem.setAttribute(unqualifiedName,value);
+  }
+ else {
+    elem.setAttributeNS(namespaceURI,namespaceQualifier + ":" + unqualifiedName,value);
+  }
+}

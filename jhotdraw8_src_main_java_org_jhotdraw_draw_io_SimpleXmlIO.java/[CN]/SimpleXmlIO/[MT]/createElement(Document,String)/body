@@ -1,0 +1,11 @@
+{
+  if (namespaceURI == null || namespaceQualifier == null) {
+    return doc.createElement(unqualifiedName);
+  }
+  if (namespaceQualifier == null) {
+    return doc.createElementNS(namespaceURI,unqualifiedName);
+  }
+ else {
+    return doc.createElementNS(namespaceURI,namespaceQualifier + ":" + unqualifiedName);
+  }
+}
