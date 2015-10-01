@@ -1,5 +1,9 @@
 {
   Point2D newPoint=view.viewToDrawing(new Point2D(event.getX(),event.getY()));
+  Point2D center=getOwner().getCenterInLocal();
+  double oldRotate=Geom.angle(center.getX(),center.getY(),oldPoint.getX(),oldPoint.getY());
+  double newRotate=Geom.angle(center.getX(),center.getY(),newPoint.getX(),newPoint.getY());
+  double ownerAngle=getOwner().get(Figure.ROTATE);
   if (!event.isAltDown() && !event.isControlDown()) {
     newPoint=view.getConstrainer().constrainPoint(getOwner(),newPoint);
   }
