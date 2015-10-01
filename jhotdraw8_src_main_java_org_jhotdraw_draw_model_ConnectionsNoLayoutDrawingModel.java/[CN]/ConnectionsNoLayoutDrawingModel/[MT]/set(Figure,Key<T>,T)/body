@@ -8,7 +8,7 @@
         fire(DrawingModelEvent.nodeInvalidated(this,figure));
       }
       if (dm.containsOneOf(DirtyBits.CONNECTION_LAYOUT)) {
-        for (        Figure c : figure.getConnections()) {
+        for (        Figure c : figure.getConnectedFigures()) {
           fire(DrawingModelEvent.layoutInvalidated(this,c));
         }
       }
