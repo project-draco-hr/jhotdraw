@@ -1,5 +1,15 @@
 {
+  Drawing oldDrawing=child.getDrawing();
   parent.getChildren().add(index,child);
-  fire(DrawingModelEvent.figureAdded(this,parent,child,index));
+  fire(DrawingModelEvent.figureAddedToParent(this,parent,child,index));
   fire(DrawingModelEvent.nodeInvalidated(this,parent));
+  Drawing newDrawing=child.getDrawing();
+  if (oldDrawing != newDrawing) {
+    if (oldDrawing != null) {
+      fire(DrawingModelEvent.figureRemovedFromDrawing(this,oldDrawing,child));
+    }
+    if (newDrawing != null) {
+      fire(DrawingModelEvent.figureAddedToDrawing(this,newDrawing,child));
+    }
+  }
 }

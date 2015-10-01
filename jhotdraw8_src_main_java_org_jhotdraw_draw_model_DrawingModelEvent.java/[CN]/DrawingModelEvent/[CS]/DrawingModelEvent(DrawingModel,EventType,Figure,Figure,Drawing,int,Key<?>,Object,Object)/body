@@ -5,6 +5,7 @@
   this.oldValue=oldValue;
   this.newValue=newValue;
   this.parent=parent;
+  this.drawing=drawing;
   this.index=index;
   this.eventType=eventType;
 }

@@ -1,0 +1,12 @@
+{
+  if (connectedFigure != null) {
+    if (connectedFigure == START_FIGURE) {
+      set(START_FIGURE,null);
+      set(START_CONNECTOR,null);
+    }
+    if (connectedFigure == END_FIGURE) {
+      set(END_FIGURE,null);
+      set(END_CONNECTOR,null);
+    }
+  }
+}

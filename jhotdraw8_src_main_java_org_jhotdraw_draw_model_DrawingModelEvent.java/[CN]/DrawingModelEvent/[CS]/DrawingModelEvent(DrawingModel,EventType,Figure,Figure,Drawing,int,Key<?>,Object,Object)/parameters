@@ -2,6 +2,7 @@ DrawingModel source
 EventType eventType
 Figure figure
 Figure parent
+Drawing drawing
 int index
 Key<?> key
 Object oldValue
