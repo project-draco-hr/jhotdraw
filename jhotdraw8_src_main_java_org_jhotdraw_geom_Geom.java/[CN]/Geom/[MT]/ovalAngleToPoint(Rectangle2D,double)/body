@@ -1,5 +1,5 @@
 {
   Point2D center=Geom.center(r);
-  Point2D p=Geom.polarToPoint(angle,r.getWidth() / 2,r.getHeight() / 2);
+  Point2D p=Geom.polarToPoint(angle,r.getWidth() / 2.0,r.getHeight() / 2.0);
   return new Point2D(center.getX() + p.getX(),center.getY() + p.getY());
 }
