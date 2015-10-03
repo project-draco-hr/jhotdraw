@@ -1,0 +1,3 @@
+ObservableValue<? extends DrawingEditor> observable
+DrawingEditor oldValue
+DrawingEditor newValue

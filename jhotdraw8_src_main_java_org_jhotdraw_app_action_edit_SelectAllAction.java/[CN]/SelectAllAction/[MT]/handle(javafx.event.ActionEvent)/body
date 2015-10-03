@@ -6,5 +6,9 @@
       TextInputControl tic=(TextInputControl)n;
       tic.selectAll();
     }
+ else     if (n instanceof EditableComponent) {
+      EditableComponent tic=(EditableComponent)n;
+      tic.selectAll();
+    }
   }
 }

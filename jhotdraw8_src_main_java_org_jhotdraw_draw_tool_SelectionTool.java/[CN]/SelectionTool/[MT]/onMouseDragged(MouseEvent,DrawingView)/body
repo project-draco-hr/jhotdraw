@@ -3,4 +3,5 @@
   if (tracker != null) {
     tracker.trackMouseDragged(event,dv);
   }
+  event.consume();
 }

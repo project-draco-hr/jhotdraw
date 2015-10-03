@@ -1,10 +1,10 @@
 {
-  Text textNode=(Text)node;
-  textNode.setText(get(TEXT));
-  textNode.setX(get(ORIGIN).getX());
-  textNode.setY(get(ORIGIN).getY());
-  textNode.setBoundsType(TextBoundsType.VISUAL);
-  applyFigureProperties(textNode);
-  applyTextProperties(textNode);
-  applyLabelProperties(textNode);
+  Text tn=(Text)node;
+  tn.setText(get(TEXT));
+  tn.setX(get(ORIGIN).getX());
+  tn.setY(get(ORIGIN).getY());
+  tn.setBoundsType(TextBoundsType.VISUAL);
+  applyFigureProperties(tn);
+  applyTextProperties(tn);
+  applyLabelProperties(tn);
 }

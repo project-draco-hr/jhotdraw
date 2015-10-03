@@ -9,6 +9,6 @@
   drawingPane.setTranslateY(max(0,-y));
   toolPane.resize(w,h);
   toolPane.layout();
-  node.setPrefSize(w,h);
+  stackPane.setPrefSize(w,h);
   invalidateDrawingViewTransforms();
 }

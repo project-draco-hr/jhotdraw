@@ -1,0 +1,3 @@
+{
+  SimpleDrawingView.this.clearSelection();
+}

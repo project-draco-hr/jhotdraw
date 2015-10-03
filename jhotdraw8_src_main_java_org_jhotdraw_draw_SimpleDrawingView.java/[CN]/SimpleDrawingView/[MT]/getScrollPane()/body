@@ -1,0 +1,7 @@
+{
+  Parent p=(Parent)getNode();
+  while (p != null && !(p instanceof ScrollPane)) {
+    p=p.getParent();
+  }
+  return (ScrollPane)p;
+}

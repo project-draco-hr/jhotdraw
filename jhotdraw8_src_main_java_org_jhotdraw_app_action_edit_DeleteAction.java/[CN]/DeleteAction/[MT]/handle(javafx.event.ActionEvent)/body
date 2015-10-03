@@ -6,5 +6,9 @@
       TextInputControl tic=(TextInputControl)n;
       tic.deleteNextChar();
     }
+    if (n instanceof EditableComponent) {
+      EditableComponent tic=(EditableComponent)n;
+      tic.deleteSelection();
+    }
   }
 }

@@ -13,4 +13,6 @@
     dv.selectionProperty().add(figure);
     figure=null;
   }
+  event.consume();
+  fireToolDone();
 }

@@ -12,5 +12,6 @@
   map.put(PasteAction.ID,new PasteAction(this));
   map.put(DeleteAction.ID,new DeleteAction(this));
   map.put(SelectAllAction.ID,new SelectAllAction(this));
+  map.put(ClearSelectionAction.ID,new ClearSelectionAction(this));
   return map;
 }

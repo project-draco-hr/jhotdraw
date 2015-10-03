@@ -1,0 +1,17 @@
+{
+  ArrayList<Figure> figures=new ArrayList<>();
+  Drawing d=getDrawing();
+  if (d != null) {
+    for (    Figure layer : d.getChildren()) {
+      if (!layer.isDisabled()) {
+        for (        Figure f : layer.getChildren()) {
+          if (!f.isDisabled() && f.isSelectable()) {
+            figures.add(f);
+          }
+        }
+      }
+    }
+  }
+  getSelectedFigures().clear();
+  getSelectedFigures().addAll(figures);
+}
