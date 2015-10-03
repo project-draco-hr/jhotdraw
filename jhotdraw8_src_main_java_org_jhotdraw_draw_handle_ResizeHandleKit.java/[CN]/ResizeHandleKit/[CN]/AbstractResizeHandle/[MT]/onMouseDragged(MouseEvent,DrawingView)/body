@@ -7,8 +7,5 @@
     Point2D loc=getLocation();
     oldPoint=getOwner().localToDrawing(loc);
   }
-  Transform tx=Transform.translate(newPoint.getX() - oldPoint.getX(),newPoint.getY() - oldPoint.getY());
-  tx=getOwner().getDrawingToParent().createConcatenation(tx);
-  view.getModel().reshape(getOwner(),tx);
-  oldPoint=newPoint;
+  resize(newPoint,getOwner(),startBounds,view.getModel());
 }
