@@ -2,5 +2,5 @@
   figure.reshape(transform);
   fire(DrawingModelEvent.subtreeNodesInvalidated(this,figure));
   fire(DrawingModelEvent.layoutInvalidated(this,figure));
-  fireLayoutInvalidatedForConnectionsOfSubtree(figure);
+  fireLayoutInvalidatedForFiguresConnectedWithSubtree(figure);
 }

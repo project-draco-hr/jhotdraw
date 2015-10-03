@@ -1,0 +1,32 @@
+{
+  if (figure != null) {
+    Point2D newPoint=view.viewToDrawing(new Point2D(event.getX(),event.getY()));
+    if (!event.isAltDown() && !event.isControlDown()) {
+      newPoint=view.getConstrainer().constrainPoint(figure,newPoint);
+    }
+    Connector newConnector=null;
+    Figure newConnectedFigure=null;
+    if (!event.isMetaDown()) {
+      List<Figure> list=view.findFigures(newPoint,true);
+      for (      Figure ff : list) {
+        newConnector=ff.findConnector(newPoint,figure);
+        if (newConnector != null) {
+          newConnectedFigure=ff;
+          break;
+        }
+      }
+    }
+    DrawingModel model=view.getModel();
+    model.set(figure,LineConnectionFigure.END,figure.drawingToLocal(newPoint));
+    Figure oldConnectedFigure=model.set(figure,LineConnectionFigure.END_FIGURE,newConnectedFigure);
+    model.set(figure,LineConnectionFigure.END_CONNECTOR,newConnector);
+    if (oldConnectedFigure != null) {
+      model.fire(DrawingModelEvent.nodeInvalidated(model,oldConnectedFigure));
+    }
+    if (newConnectedFigure != null) {
+      model.fire(DrawingModelEvent.nodeInvalidated(model,newConnectedFigure));
+    }
+    model.layout(figure);
+  }
+  event.consume();
+}

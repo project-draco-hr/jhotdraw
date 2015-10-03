@@ -11,6 +11,6 @@
     }
   }
   if (!todoNext.isEmpty()) {
-    fireLayoutInvalidatedForConnectionsOf(todoNext,done);
+    fireLayoutInvalidatedForFiguresConnectedWithTodo(todoNext,done);
   }
 }

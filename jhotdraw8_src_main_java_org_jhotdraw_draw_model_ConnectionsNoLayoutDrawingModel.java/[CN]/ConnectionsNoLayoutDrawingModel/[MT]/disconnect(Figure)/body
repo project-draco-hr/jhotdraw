@@ -1,0 +1,7 @@
+{
+  for (  Figure connectedFigure : figure.getConnectedFigures()) {
+    fire(DrawingModelEvent.nodeInvalidated(this,connectedFigure));
+  }
+  figure.disconnect();
+  fire(DrawingModelEvent.nodeInvalidated(this,figure));
+}

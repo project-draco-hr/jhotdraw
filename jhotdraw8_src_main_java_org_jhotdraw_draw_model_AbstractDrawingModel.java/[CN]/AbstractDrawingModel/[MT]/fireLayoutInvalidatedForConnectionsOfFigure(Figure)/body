@@ -1,5 +1,0 @@
-{
-  LinkedList<Figure> todo=new LinkedList();
-  todo.add(figure);
-  fireLayoutInvalidatedForConnectionsOf(todo,new HashSet<Figure>());
-}
