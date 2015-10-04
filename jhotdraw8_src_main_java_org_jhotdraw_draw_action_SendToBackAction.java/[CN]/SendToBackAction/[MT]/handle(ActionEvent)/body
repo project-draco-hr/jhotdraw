@@ -1,0 +1,8 @@
+{
+  final DrawingView view=getView();
+  if (view == null) {
+    return;
+  }
+  final LinkedList<Figure> figures=new LinkedList<Figure>(view.getSelectedFigures());
+  sendToBack(view,figures);
+}

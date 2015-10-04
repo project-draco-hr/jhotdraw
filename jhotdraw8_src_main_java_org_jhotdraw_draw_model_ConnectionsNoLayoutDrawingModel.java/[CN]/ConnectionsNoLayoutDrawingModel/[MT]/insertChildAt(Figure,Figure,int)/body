@@ -1,5 +1,8 @@
 {
   Drawing oldDrawing=child.getDrawing();
+  if (child.getParent() != null) {
+    child.getParent().remove(child);
+  }
   parent.getChildren().add(index,child);
   fire(DrawingModelEvent.figureAddedToParent(this,parent,child,index));
   fire(DrawingModelEvent.nodeInvalidated(this,parent));

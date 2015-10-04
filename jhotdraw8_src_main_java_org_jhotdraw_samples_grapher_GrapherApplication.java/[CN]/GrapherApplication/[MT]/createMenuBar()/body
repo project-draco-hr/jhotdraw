@@ -1,0 +1,10 @@
+{
+  FXMLLoader loader=new FXMLLoader();
+  loader.setResources(getModel().getResources());
+  try {
+    return loader.load(GrapherApplication.class.getResourceAsStream("GrapherMenuBar.fxml"));
+  }
+ catch (  IOException ex) {
+    throw new InternalError(ex);
+  }
+}

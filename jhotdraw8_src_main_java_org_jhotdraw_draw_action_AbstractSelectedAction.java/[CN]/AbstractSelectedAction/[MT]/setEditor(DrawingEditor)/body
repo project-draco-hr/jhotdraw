@@ -1,0 +1,4 @@
+{
+  DrawingEditor oldValue=editor;
+  this.editor=newValue;
+}
