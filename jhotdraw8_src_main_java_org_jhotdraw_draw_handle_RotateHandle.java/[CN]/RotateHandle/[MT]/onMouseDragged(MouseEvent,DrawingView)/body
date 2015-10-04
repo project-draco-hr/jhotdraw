@@ -1,18 +1,17 @@
 {
   Point2D newPoint=view.viewToDrawing(new Point2D(event.getX(),event.getY()));
-  Point2D center=getOwner().getCenterInLocal();
-  double oldRotate=Geom.angle(center.getX(),center.getY(),oldPoint.getX(),oldPoint.getY());
-  double newRotate=Geom.angle(center.getX(),center.getY(),newPoint.getX(),newPoint.getY());
+  double oldRotate=90 + 180.0 / Math.PI * Geom.angle(center.getX(),center.getY(),oldPoint.getX(),oldPoint.getY());
+  double newRotate=90 + 180.0 / Math.PI * Geom.angle(center.getX(),center.getY(),newPoint.getX(),newPoint.getY());
   double ownerAngle=getOwner().get(Figure.ROTATE);
+  newRotate=newRotate % 360;
+  if (newRotate < 0) {
+    newRotate+=360;
+  }
   if (!event.isAltDown() && !event.isControlDown()) {
-    newPoint=view.getConstrainer().constrainPoint(getOwner(),newPoint);
+    newRotate=view.getConstrainer().constrainAngle(getOwner(),newRotate);
   }
   if (event.isMetaDown()) {
-    Point2D loc=getLocation();
-    oldPoint=getOwner().localToDrawing(loc);
   }
-  Transform tx=Transform.translate(newPoint.getX() - oldPoint.getX(),newPoint.getY() - oldPoint.getY());
-  tx=getOwner().getDrawingToParent().createConcatenation(tx);
-  view.getModel().reshape(getOwner(),tx);
+  view.getModel().set(getOwner(),Figure.ROTATE,newRotate);
   oldPoint=newPoint;
 }

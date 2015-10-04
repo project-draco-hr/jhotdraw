@@ -1,4 +1,7 @@
 {
+  if (theta == 0) {
+    return angle;
+  }
   double ta=angle / theta;
   if (Double.isNaN(dir) || dir == 0) {
     ta=round(ta);
