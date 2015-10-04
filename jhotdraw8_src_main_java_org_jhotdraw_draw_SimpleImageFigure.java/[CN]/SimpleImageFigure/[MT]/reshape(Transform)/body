@@ -1,0 +1,6 @@
+{
+  Rectangle2D r=get(IMAGE_RECTANGLE);
+  Bounds b=new BoundingBox(r.getMinX(),r.getMinY(),r.getWidth(),r.getHeight());
+  b=transform.transform(b);
+  reshape(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
+}

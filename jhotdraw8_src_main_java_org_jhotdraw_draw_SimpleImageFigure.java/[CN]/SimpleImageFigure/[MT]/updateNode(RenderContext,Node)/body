@@ -1,0 +1,12 @@
+{
+  ImageView imageView=(ImageView)node;
+  validateImage();
+  imageView.setImage(cachedImage);
+  applyFigureProperties(imageView);
+  Rectangle2D r=get(IMAGE_RECTANGLE);
+  imageView.setX(r.getMinX());
+  imageView.setY(r.getMinY());
+  imageView.setFitWidth(r.getWidth());
+  imageView.setFitHeight(r.getHeight());
+  imageView.applyCss();
+}

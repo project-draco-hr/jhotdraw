@@ -40,7 +40,9 @@
   vertex3.set(Figure.STYLE_ID,"vertex3");
   vertex4.set(Figure.STYLE_ID,"vertex4");
   drawing.layout();
-  drawing.set(Drawing.STYLESHEET,CssSample.class.getResource("CssSample.css"));
+  ArrayList<URL> stylesheets=new ArrayList();
+  stylesheets.add(CssSample.class.getResource("CssSample.css"));
+  drawing.set(Drawing.STYLESHEETS,stylesheets);
   drawing.applyCss();
   drawing.layout();
   DrawingView drawingView=new SimpleDrawingView();

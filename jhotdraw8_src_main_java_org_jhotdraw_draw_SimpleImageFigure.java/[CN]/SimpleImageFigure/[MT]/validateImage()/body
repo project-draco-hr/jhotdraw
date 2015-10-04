@@ -1,0 +1,20 @@
+{
+  URL url=get(IMAGE_URL);
+  if (url == null) {
+    cachedImageUrl=null;
+    cachedImage=null;
+    return;
+  }
+  Drawing drawing=getDrawing();
+  URL documentHome=drawing == null ? null : drawing.get(Drawing.DOCUMENT_HOME);
+  try {
+    URL absoluteUrl=(documentHome == null) ? url : new URL(documentHome,url.toString());
+    if (cachedImageUrl == null || !cachedImageUrl.equals(absoluteUrl)) {
+      cachedImageUrl=absoluteUrl;
+      cachedImage=new Image(cachedImageUrl.toString(),true);
+    }
+  }
+ catch (  MalformedURLException ex) {
+    System.err.println("warning could not load image " + ex);
+  }
+}

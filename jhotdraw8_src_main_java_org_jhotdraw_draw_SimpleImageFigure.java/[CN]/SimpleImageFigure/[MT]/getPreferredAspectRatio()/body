@@ -1,0 +1,3 @@
+{
+  return (cachedImage == null || cachedImage.getWidth() == 0 || cachedImage.getHeight() == 0) ? super.getPreferredAspectRatio() : cachedImage.getHeight() / cachedImage.getWidth();
+}
