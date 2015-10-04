@@ -1,0 +1,14 @@
+{
+  double newWidth=newPoint.getX() - bounds.getMinX();
+  double newHeight=bounds.getMaxY() - newPoint.getY();
+  if (keepAspect) {
+    double newRatio=newHeight / newWidth;
+    if (newRatio > preferredAspectRatio) {
+      newHeight=newWidth * preferredAspectRatio;
+    }
+ else {
+      newWidth=newHeight / preferredAspectRatio;
+    }
+  }
+  model.reshape(owner,bounds.getMinX(),bounds.getMaxY() - newHeight,newWidth,newHeight);
+}

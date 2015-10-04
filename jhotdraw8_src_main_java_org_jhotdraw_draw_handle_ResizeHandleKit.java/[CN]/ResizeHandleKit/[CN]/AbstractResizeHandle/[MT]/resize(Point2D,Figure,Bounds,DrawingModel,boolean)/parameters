@@ -2,3 +2,4 @@ Point2D newPoint
 Figure owner
 Bounds bounds
 DrawingModel model
+boolean keepAspect

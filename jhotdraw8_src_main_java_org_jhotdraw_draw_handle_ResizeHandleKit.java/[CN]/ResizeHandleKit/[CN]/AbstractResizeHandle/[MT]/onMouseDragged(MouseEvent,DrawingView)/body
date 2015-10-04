@@ -7,5 +7,6 @@
     Point2D loc=getLocation();
     oldPoint=getOwner().localToDrawing(loc);
   }
-  resize(newPoint,getOwner(),startBounds,view.getModel());
+  boolean keepAspect=event.isShiftDown();
+  resize(newPoint,getOwner(),startBounds,view.getModel(),keepAspect);
 }

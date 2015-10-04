@@ -1,4 +1,5 @@
 {
   oldPoint=view.getConstrainer().constrainPoint(getOwner(),view.viewToDrawing(new Point2D(event.getX(),event.getY())));
   startBounds=getOwner().getBoundsInLocal();
+  preferredAspectRatio=getOwner().getPreferredAspectRatio();
 }

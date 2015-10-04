@@ -1,3 +1,0 @@
-{
-  model.reshape(owner,bounds.getMinX(),newPoint.getY(),newPoint.getX() - bounds.getMinX(),bounds.getMaxY() - newPoint.getY());
-}
