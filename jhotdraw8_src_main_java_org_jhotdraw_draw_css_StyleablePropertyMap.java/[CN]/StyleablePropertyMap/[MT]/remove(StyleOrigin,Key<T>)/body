@@ -3,22 +3,26 @@
 switch (origin) {
 case INLINE:
     if (inline != null) {
-      value=(T)inline.remove(key);
+      @SuppressWarnings("unchecked") T temp=(T)inline.remove(key);
+      value=temp;
     }
   break;
 case AUTHOR:
 if (author != null) {
-  value=(T)author.remove(key);
+  @SuppressWarnings("unchecked") T temp=(T)author.remove(key);
+  value=temp;
 }
 break;
 case USER:
 if (user != null) {
-value=(T)user.remove(key);
+@SuppressWarnings("unchecked") T temp=(T)user.remove(key);
+value=temp;
 }
 break;
 case USER_AGENT:
 if (userAgent != null) {
-value=(T)userAgent.remove(key);
+@SuppressWarnings("unchecked") T temp=(T)userAgent.remove(key);
+value=temp;
 }
 break;
 default :
