@@ -1,3 +1,0 @@
-{
-  return SimpleDrawingView.this.getSelectedFigures().isEmpty();
-}
