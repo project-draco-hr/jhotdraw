@@ -1,0 +1,3 @@
+{
+  this(LayerInspector.class.getResource("ZoomToolbar.fxml"));
+}

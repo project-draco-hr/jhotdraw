@@ -1,8 +1,8 @@
 {
   FXMLLoader loader=new FXMLLoader();
   loader.setController(this);
-  try {
-    setCenter(loader.load(getClass().getResourceAsStream("ZoomToolbar.fxml")));
+  try (InputStream in=fxmlUrl.openStream()){
+    setCenter(loader.load(in));
   }
  catch (  IOException ex) {
     throw new InternalError(ex);
