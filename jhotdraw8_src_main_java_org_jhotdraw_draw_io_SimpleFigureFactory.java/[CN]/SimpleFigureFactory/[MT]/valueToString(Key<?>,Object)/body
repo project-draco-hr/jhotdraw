@@ -1,7 +1,8 @@
 {
-  Converter converter=valueToXML.get(key.getFullValueType());
+  @SuppressWarnings("unchecked") Converter<Object> converter=(Converter<Object>)valueToXML.get(key.getFullValueType());
   if (converter == null) {
     throw new IOException("no converter for attribute type " + key.getFullValueType());
   }
-  return converter.toString(value);
+  @SuppressWarnings("unchecked") String string=converter.toString(value);
+  return string;
 }

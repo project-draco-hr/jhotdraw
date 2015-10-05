@@ -1,6 +1,6 @@
 {
   try {
-    Converter converter=valueFromXML.get(key.getFullValueType());
+    Converter<?> converter=valueFromXML.get(key.getFullValueType());
     if (converter == null) {
       throw new IOException("no converter for attribute type " + key.getClass());
     }

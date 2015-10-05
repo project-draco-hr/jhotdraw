@@ -1,5 +1,5 @@
 {
-  LinkedList<Figure> todo=new LinkedList();
+  LinkedList<Figure> todo=new LinkedList<>();
   for (  Figure f : subtreeRoot.preorderIterable()) {
     todo.add(f);
   }

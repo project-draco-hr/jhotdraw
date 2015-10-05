@@ -1,3 +1,4 @@
 {
-  this.converter=(Converter<Object>)converter;
+  @SuppressWarnings("unchecked") Converter<Object> temp=(Converter<Object>)converter;
+  this.converter=temp;
 }

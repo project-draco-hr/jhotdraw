@@ -17,7 +17,7 @@
       if ("id".equals(attr.getLocalName())) {
         continue;
       }
-      Key<Object> key=(Key<Object>)factory.nameToKey(figure,attr.getLocalName());
+      @SuppressWarnings("unchecked") Key<Object> key=(Key<Object>)factory.nameToKey(figure,attr.getLocalName());
       if (key != null && factory.figureKeys(figure).contains(key)) {
         Object value=null;
         if (Figure.class.isAssignableFrom(key.getValueType())) {

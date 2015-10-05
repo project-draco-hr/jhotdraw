@@ -11,8 +11,9 @@ case StreamPosTokenizer.TT_EOF:
       throw new IOException("RegexCharclass character expected @" + (tt.getStartPosition() + offset));
 case '\'':
     regex.chars+=(tt.sval.isEmpty()) ? "\'" : tt.sval;
+  break;
 default :
-  regex.chars+=(char)tt.ttype;
+regex.chars+=(char)tt.ttype;
 break;
 }
 }

@@ -1,6 +1,7 @@
 {
   if (converter == null) {
-    converter=(Converter<Object>)factory.apply(type,style);
+    @SuppressWarnings("unchecked") Converter<Object> temp=(Converter<Object>)factory.apply(type,style);
+    converter=temp;
   }
   converter.toString(out,value[indices[index]]);
 }

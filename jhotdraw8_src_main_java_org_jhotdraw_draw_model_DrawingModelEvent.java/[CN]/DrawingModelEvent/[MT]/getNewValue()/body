@@ -1,3 +1,4 @@
 {
-  return (T)newValue;
+  @SuppressWarnings("unchecked") T temp=(T)newValue;
+  return temp;
 }

@@ -1,3 +1,4 @@
 {
-  return (E)super.getSource();
+  @SuppressWarnings("unchecked") E temp=(E)super.getSource();
+  return temp;
 }

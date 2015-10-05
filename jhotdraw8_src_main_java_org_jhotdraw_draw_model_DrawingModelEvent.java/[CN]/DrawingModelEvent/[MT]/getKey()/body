@@ -1,3 +1,4 @@
 {
-  return (Key<T>)key;
+  @SuppressWarnings("unchecked") Key<T> tmp=(Key<T>)key;
+  return tmp;
 }

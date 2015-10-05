@@ -1,5 +1,5 @@
 String key
 Class<?> clazz
 String typeParameters
-CssMetaData metaData
+CssMetaData<?,T> metaData
 T defaultValue
