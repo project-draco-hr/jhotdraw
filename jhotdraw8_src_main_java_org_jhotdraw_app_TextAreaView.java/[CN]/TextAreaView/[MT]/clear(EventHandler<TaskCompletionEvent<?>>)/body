@@ -1,0 +1,5 @@
+{
+  textArea.setText(null);
+  clearModified();
+  handler.handle(new TaskCompletionEvent<Void>());
+}
