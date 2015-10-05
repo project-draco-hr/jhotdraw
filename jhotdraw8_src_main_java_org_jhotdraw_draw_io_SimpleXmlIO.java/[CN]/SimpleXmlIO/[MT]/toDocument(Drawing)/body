@@ -18,7 +18,10 @@
     Element docElement=doc.getDocumentElement();
     writeElementAttributes(docElement,drawing);
     for (    Figure child : drawing.getChildren()) {
-      docElement.appendChild(writeNodeRecursively(doc,child));
+      Node childNode=writeNodeRecursively(doc,child);
+      if (childNode != null) {
+        docElement.appendChild(childNode);
+      }
     }
     return doc;
   }

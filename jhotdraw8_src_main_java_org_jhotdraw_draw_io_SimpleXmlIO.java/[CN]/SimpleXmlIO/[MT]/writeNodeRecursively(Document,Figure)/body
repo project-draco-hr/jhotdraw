@@ -1,10 +1,17 @@
 {
-  Element elem=createElement(doc,factory.figureToName(figure));
+  String elementName=factory.figureToName(figure);
+  if (elementName == null) {
+    return null;
+  }
+  Element elem=createElement(doc,elementName);
   writeElementAttributes(elem,figure);
   for (  Figure child : figure.childrenProperty()) {
     if (factory.figureToName(child) != null) {
       elem.appendChild(doc.createTextNode("\n"));
-      elem.appendChild(writeNodeRecursively(doc,child));
+      Node childNode=writeNodeRecursively(doc,child);
+      if (childNode != null) {
+        elem.appendChild(childNode);
+      }
     }
   }
   if (!figure.childrenProperty().isEmpty()) {
