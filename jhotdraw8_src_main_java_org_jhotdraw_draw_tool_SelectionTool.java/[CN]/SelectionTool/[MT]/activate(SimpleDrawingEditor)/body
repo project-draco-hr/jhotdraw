@@ -1,0 +1,5 @@
+{
+  for (  DrawingView view : editor.getDrawingViews()) {
+    view.setHandleType(handleType);
+  }
+}

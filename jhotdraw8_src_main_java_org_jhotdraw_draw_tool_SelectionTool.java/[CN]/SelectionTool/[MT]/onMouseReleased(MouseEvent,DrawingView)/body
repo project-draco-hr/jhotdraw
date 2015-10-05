@@ -3,6 +3,5 @@
     tracker.trackMouseReleased(event,dv);
   }
   setTracker(null);
-  fireToolDone();
   event.consume();
 }

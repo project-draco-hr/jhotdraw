@@ -1,3 +1,3 @@
 {
-  super(name,rsrc);
+  this(name,HandleType.RESIZE,rsrc);
 }

@@ -1,6 +1,6 @@
 {
   if (converter == null) {
-    converter=factory.apply(type,style);
+    converter=(Converter<Object>)factory.apply(type,style);
   }
   Object v=converter.fromString(buf);
   while (value.size() <= index) {

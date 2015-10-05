@@ -1,4 +1,4 @@
 {
-  GrapherView v=new GrapherView();
+  GrapherApplicationView v=new GrapherApplicationView();
   return v;
 }
