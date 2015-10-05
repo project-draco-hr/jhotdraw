@@ -5,10 +5,10 @@
   for (  Figure f : updateNodes) {
     f.updateNode(this,getNode(f));
   }
-  for (  Handle h : selectionHandles) {
+  for (  Handle<?> h : selectionHandles) {
     h.updateNode(this);
   }
-  for (  Handle h : secondaryHandles) {
+  for (  Handle<?> h : secondaryHandles) {
     h.updateNode(this);
   }
 }

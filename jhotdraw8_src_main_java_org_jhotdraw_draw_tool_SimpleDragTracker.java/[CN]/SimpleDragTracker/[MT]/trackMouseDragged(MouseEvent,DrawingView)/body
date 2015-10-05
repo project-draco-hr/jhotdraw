@@ -3,11 +3,6 @@
   if (!event.isAltDown() && !event.isControlDown()) {
     newPoint=view.getConstrainer().constrainPoint(anchorFigure,newPoint);
   }
-  if (event.isMetaDown()) {
-    Bounds b=anchorFigure.getBoundsInLocal();
-    Point2D loc=new Point2D(b.getMinX() + b.getWidth() / 2,b.getMinY() + b.getHeight() / 2);
-    oldPoint=anchorFigure.localToDrawing(loc);
-  }
   Transform tx=Transform.translate(newPoint.getX() - oldPoint.getX(),newPoint.getY() - oldPoint.getY());
   DrawingModel dm=view.getModel();
   for (  Figure f : view.getSelectedFigures()) {

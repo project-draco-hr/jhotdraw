@@ -8,7 +8,9 @@
     return contains;
   }
  else   if (node instanceof Group) {
-    return node.getBoundsInLocal().contains(point);
+    Bounds bounds=node.getBoundsInLocal();
+    bounds=Geom.grow(bounds,tolerance,tolerance);
+    return bounds.contains(point);
   }
  else {
     return node.contains(point);
