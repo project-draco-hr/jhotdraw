@@ -1,0 +1,3 @@
+{
+  return southWest(owner,Handle.STYLECLASS_HANDLE_MOVE);
+}

@@ -9,9 +9,11 @@
     oldPoint=anchorFigure.localToDrawing(loc);
   }
   Transform tx=Transform.translate(newPoint.getX() - oldPoint.getX(),newPoint.getY() - oldPoint.getY());
-  DrawingModel dm=view.getModel();
-  for (  Figure f : view.getSelectedFigures()) {
-    dm.reshape(f,f.getDrawingToParent().createConcatenation(tx));
+  if (!tx.isIdentity()) {
+    DrawingModel dm=view.getModel();
+    for (    Figure f : view.getSelectedFigures()) {
+      dm.reshape(f,f.getDrawingToParent().createConcatenation(tx));
+    }
   }
   oldPoint=newPoint;
 }
