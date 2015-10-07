@@ -1,12 +1,12 @@
 {
   ids.reset();
   figureElements.clear();
-  Drawing drawing=null;
+  Drawing external=null;
   NodeList list=doc.getChildNodes();
   for (int i=0; i < list.getLength(); i++) {
     Figure f=readNodeRecursively(list.item(i));
     if (f instanceof Drawing) {
-      drawing=(Drawing)f;
+      external=(Drawing)f;
       break;
     }
   }
@@ -18,8 +18,11 @@
   finally {
     figureElements.clear();
   }
-  if (drawing != null) {
-    return drawing;
+  if (external != null) {
+    for (    Figure f : external.preorderIterable()) {
+      f.addNotify(f.getDrawing());
+    }
+    return factory.fromExternalDrawing(external);
   }
  else {
     throw new IOException(namespaceURI == null ? "document does not contain a drawing" : "document does not contain a drawing in namespace " + namespaceURI);

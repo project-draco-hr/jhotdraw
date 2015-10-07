@@ -1,5 +1,6 @@
 {
   try {
+    Drawing external=factory.toExternalDrawing(internal);
     ids.reset();
     DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
     Document doc;
@@ -7,17 +8,17 @@
       builderFactory.setNamespaceAware(true);
       DocumentBuilder builder=builderFactory.newDocumentBuilder();
       DOMImplementation domImpl=builder.getDOMImplementation();
-      doc=domImpl.createDocument(namespaceURI,namespaceQualifier == null ? factory.figureToName(drawing) : namespaceQualifier + ":" + factory.figureToName(drawing),null);
+      doc=domImpl.createDocument(namespaceURI,namespaceQualifier == null ? factory.figureToName(external) : namespaceQualifier + ":" + factory.figureToName(internal),null);
     }
  else {
       DocumentBuilder builder=builderFactory.newDocumentBuilder();
       doc=builder.newDocument();
-      Element elem=doc.createElement(factory.figureToName(drawing));
+      Element elem=doc.createElement(factory.figureToName(external));
       doc.appendChild(elem);
     }
     Element docElement=doc.getDocumentElement();
-    writeElementAttributes(docElement,drawing);
-    for (    Figure child : drawing.getChildren()) {
+    writeElementAttributes(docElement,external);
+    for (    Figure child : external.getChildren()) {
       Node childNode=writeNodeRecursively(doc,child);
       if (childNode != null) {
         docElement.appendChild(childNode);
