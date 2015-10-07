@@ -1,9 +1,9 @@
 {
-  if (!figureToElem.containsKey(f.getClass())) {
+  if (!figureToName.containsKey(f.getClass())) {
     if (skipFigures.contains(f.getClass())) {
       return null;
     }
     throw new IOException("no mapping for figure " + f.getClass());
   }
-  return figureToElem.get(f.getClass());
+  return figureToName.get(f.getClass());
 }

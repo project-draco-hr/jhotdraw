@@ -1,0 +1,8 @@
+{
+  if (!nameToFigure.containsKey(name)) {
+    nameToFigure.put(name,figureSupplier);
+  }
+  if (!figureToName.containsKey(figureClass)) {
+    figureToName.put(figureClass,name);
+  }
+}

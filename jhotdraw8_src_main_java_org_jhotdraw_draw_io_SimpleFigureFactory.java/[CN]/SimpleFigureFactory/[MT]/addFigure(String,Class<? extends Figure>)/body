@@ -1,8 +1,2 @@
 {
-  if (!elemToFigure.containsKey(name)) {
-    elemToFigure.put(name,figure);
-  }
-  if (!figureToElem.containsKey(figure)) {
-    figureToElem.put(figure,name);
-  }
 }

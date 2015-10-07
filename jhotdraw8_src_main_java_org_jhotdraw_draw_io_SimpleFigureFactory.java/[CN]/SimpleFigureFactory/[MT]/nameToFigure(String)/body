@@ -1,15 +1,10 @@
 {
-  if (!elemToFigure.containsKey(elementName)) {
+  if (!nameToFigure.containsKey(elementName)) {
     if (skipElements.contains(elementName)) {
       return null;
     }
     throw new IOException("no mapping for element " + elementName);
   }
-  Class<? extends Figure> clazz=elemToFigure.get(elementName);
-  try {
-    return (Figure)clazz.newInstance();
-  }
- catch (  InstantiationException|IllegalAccessException ex) {
-    throw new IOException("can not instantiate " + clazz);
-  }
+  Supplier<Figure> supplier=nameToFigure.get(elementName);
+  return supplier.get();
 }
