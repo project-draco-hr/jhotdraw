@@ -1,5 +1,6 @@
 {
   this.factory=factory;
+  this.ids=idFactory == null ? new SimpleIdFactory() : idFactory;
   this.namespaceURI=namespaceURI;
   this.namespaceQualifier=namespaceQualifier;
 }

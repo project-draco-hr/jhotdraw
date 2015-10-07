@@ -1,3 +1,4 @@
 FigureFactory factory
+IdFactory idFactory
 String namespaceURI
 String namespaceQualifier

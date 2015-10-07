@@ -3,7 +3,7 @@
     @Override protected SimpleDrawing call() throws Exception {
       try {
         FigureFactory factory=new DefaultFigureFactory();
-        SimpleXmlIO io=new SimpleXmlIO(factory,GRAPHER_NAMESPACE_URI,null);
+        SimpleXmlIO io=new SimpleXmlIO(factory,null,GRAPHER_NAMESPACE_URI,null);
         SimpleDrawing drawing=(SimpleDrawing)io.read(uri,null);
         drawing.applyCss();
         drawing.layout();
