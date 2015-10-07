@@ -1,9 +1,3 @@
 {
-  Drawing tmp=fromDocument(in);
-  if (drawing != null) {
-    drawing.childrenProperty().addAll(tmp.childrenProperty());
-    drawing.getProperties().putAll(tmp.getProperties());
-    tmp=drawing;
-  }
-  return tmp;
+  return fromDocument(in);
 }
