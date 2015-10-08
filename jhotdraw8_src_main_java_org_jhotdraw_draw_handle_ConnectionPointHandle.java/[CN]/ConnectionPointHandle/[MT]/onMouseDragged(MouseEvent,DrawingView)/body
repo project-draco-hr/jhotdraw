@@ -27,10 +27,10 @@
   Figure oldConnectedFigure=model.set(o,figureKey,newConnectedFigure);
   model.set(o,connectorKey,newConnector);
   if (oldConnectedFigure != null) {
-    model.fire(DrawingModelEvent.nodeInvalidated(model,oldConnectedFigure));
+    model.fireNodeInvalidated(oldConnectedFigure);
   }
-  if (newConnectedFigure != null) {
-    model.fire(DrawingModelEvent.nodeInvalidated(model,newConnectedFigure));
+  for (  Figure f : o.getConnectionsToFigures()) {
+    model.fireNodeInvalidated(f);
   }
   o.connectNotify();
   model.layout(o);

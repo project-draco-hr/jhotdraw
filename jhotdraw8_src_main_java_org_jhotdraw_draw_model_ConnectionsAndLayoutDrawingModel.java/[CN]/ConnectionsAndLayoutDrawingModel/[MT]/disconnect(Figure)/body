@@ -1,5 +1,5 @@
 {
-  for (  Figure connectedFigure : figure.getConnectedFigures()) {
+  for (  Figure connectedFigure : figure.getConnectionsFromFigures()) {
     fire(DrawingModelEvent.layoutInvalidated(this,connectedFigure));
   }
   fireLayoutInvalidatedForFiguresConnectedWith(figure);
