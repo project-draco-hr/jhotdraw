@@ -2,12 +2,12 @@
   Rectangle rectangleNode=(Rectangle)node;
   applyFigureProperties(rectangleNode);
   applyShapeProperties(rectangleNode);
-  Rectangle2D r=get(RECTANGLE);
+  Rectangle2D r=get(BOUNDS);
   rectangleNode.setX(r.getMinX());
   rectangleNode.setY(r.getMinY());
   rectangleNode.setWidth(r.getWidth());
   rectangleNode.setHeight(r.getHeight());
-  rectangleNode.setArcWidth(get(ARC_WIDTH));
-  rectangleNode.setArcHeight(get(ARC_HEIGHT));
+  rectangleNode.setArcWidth(get(ARC).getX());
+  rectangleNode.setArcHeight(get(ARC).getY());
   rectangleNode.applyCss();
 }

@@ -1,5 +1,3 @@
 {
-  set(CENTER,new Point2D(x + width / 2,y + height / 2));
-  set(RADIUS_X,abs(width) / 2);
-  set(RADIUS_Y,abs(height) / 2);
+  set(BOUNDS,new Rectangle2D(x + min(width,0),y + min(height,0),abs(width),abs(height)));
 }

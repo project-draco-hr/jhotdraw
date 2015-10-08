@@ -1,7 +1,7 @@
 {
   try {
     Drawing external=factory.toExternalDrawing(internal);
-    ids.reset();
+    factory.reset();
     DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
     Document doc;
     if (namespaceURI != null) {
@@ -21,9 +21,11 @@
     for (    Figure child : external.getChildren()) {
       Node childNode=writeNodeRecursively(doc,child);
       if (childNode != null) {
+        docElement.appendChild(doc.createTextNode("\n"));
         docElement.appendChild(childNode);
       }
     }
+    docElement.appendChild(doc.createTextNode("\n"));
     return doc;
   }
  catch (  ParserConfigurationException ex) {

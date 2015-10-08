@@ -1,0 +1,3 @@
+String figureName
+Class<? extends Figure> f
+Collection<Key<?>> keys

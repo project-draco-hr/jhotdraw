@@ -1,5 +1,6 @@
 {
   Drawing d=new SimpleDrawing();
   drawingView.setDrawing(d);
+  clearModified();
   callback.handle(new TaskCompletionEvent<Void>());
 }

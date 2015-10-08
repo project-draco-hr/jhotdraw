@@ -1,4 +1,0 @@
-{
-  set(CENTER,center);
-  set(RADIUS,radius);
-}

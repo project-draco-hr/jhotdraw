@@ -3,6 +3,7 @@
   if (converter == null) {
     throw new IOException("no converter for attribute type " + key.getFullValueType());
   }
-  @SuppressWarnings("unchecked") String string=converter.toString(value);
-  return string;
+  StringBuilder builder=new StringBuilder();
+  converter.toString(builder,this,value);
+  return builder.toString();
 }

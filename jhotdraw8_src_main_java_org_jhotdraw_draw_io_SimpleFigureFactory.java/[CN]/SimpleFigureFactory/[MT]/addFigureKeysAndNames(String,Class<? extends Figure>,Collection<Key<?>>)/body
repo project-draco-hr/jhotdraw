@@ -1,0 +1,7 @@
+{
+  addFigure(figureName,f);
+  addFigureKeys(f,keys);
+  for (  Key<?> key : keys) {
+    addKey(f,key.getName(),key);
+  }
+}

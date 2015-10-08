@@ -1,5 +1,0 @@
-{
-  Point2D c=get(CENTER);
-  double r=get(RADIUS);
-  return new BoundingBox(c.getX() - r,c.getY() - r,r * 2,r * 2);
-}

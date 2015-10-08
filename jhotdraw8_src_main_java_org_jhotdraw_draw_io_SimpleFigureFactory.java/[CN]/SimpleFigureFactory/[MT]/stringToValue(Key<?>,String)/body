@@ -4,7 +4,7 @@
     if (converter == null) {
       throw new IOException("no converter for attribute type " + key.getClass());
     }
-    return converter.fromString(string);
+    return converter.fromString(CharBuffer.wrap(string),this);
   }
  catch (  ParseException ex) {
     throw new IOException(ex);

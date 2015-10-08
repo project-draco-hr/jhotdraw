@@ -2,11 +2,11 @@
   BackgroundTask<SimpleDrawing> t=new BackgroundTask<SimpleDrawing>(){
     @Override protected SimpleDrawing call() throws Exception {
       try {
-        FigureFactory factory=new DefaultFigureFactory();
-        SimpleXmlIO io=new SimpleXmlIO(factory,null,GRAPHER_NAMESPACE_URI,null);
+        IdFactory idFactory=new SimpleIdFactory();
+        FigureFactory factory=new DefaultFigureFactory(idFactory);
+        SimpleXmlIO io=new SimpleXmlIO(factory,idFactory,GRAPHER_NAMESPACE_URI,null);
         SimpleDrawing drawing=(SimpleDrawing)io.read(uri,null);
         drawing.applyCss();
-        drawing.layout();
         return drawing;
       }
  catch (      Exception e) {

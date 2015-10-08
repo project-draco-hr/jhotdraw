@@ -1,4 +1,0 @@
-{
-  set(CENTER,new Point2D(x,y));
-  set(RADIUS,radius);
-}

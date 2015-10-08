@@ -5,7 +5,7 @@
       int ch=buf.remaining() > 0 ? buf.get() : -1;
       if (ch != chars.charAt(j)) {
         if (i < minRepeat) {
-          throw new ParseException("Expected character '" + escape(chars.charAt(j)) + "' but found '"+ escape((char)ch)+ "'.",buf.position());
+          throw new ParseException("Expected character '" + escape(chars.charAt(j)) + "' but found '"+ escape(ch)+ "'.",buf.position());
         }
  else {
           buf.position(reset);

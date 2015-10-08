@@ -1,6 +1,4 @@
 {
-  Point2D c=get(CENTER);
-  double rx=get(RADIUS_X);
-  double ry=get(RADIUS_Y);
-  return new BoundingBox(c.getX() - rx,c.getY() - ry,rx * 2,ry * 2);
+  Rectangle2D r=get(BOUNDS);
+  return new BoundingBox(r.getMinX(),r.getMinY(),r.getWidth(),r.getHeight());
 }
