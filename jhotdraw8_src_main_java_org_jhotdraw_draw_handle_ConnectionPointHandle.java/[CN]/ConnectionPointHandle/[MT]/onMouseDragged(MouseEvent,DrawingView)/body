@@ -29,7 +29,7 @@
   if (oldConnectedFigure != null) {
     model.fireNodeInvalidated(oldConnectedFigure);
   }
-  for (  Figure f : o.getConnectionTargetFigures()) {
+  for (  Figure f : o.getConnectionTargets()) {
     model.fireNodeInvalidated(f);
   }
   o.connectNotify();
