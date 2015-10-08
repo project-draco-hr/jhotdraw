@@ -1,4 +1,12 @@
 {
+  Set<Figure> connectionsBefore=null;
+  if (key instanceof FigureKey) {
+    FigureKey<T> fk=(FigureKey<T>)key;
+    DirtyMask dm=fk.getDirtyMask();
+    if (dm.containsOneOf(DirtyBits.CONNECTION)) {
+      connectionsBefore=figure.getConnectionTargets();
+    }
+  }
   T oldValue=figure.set(key,newValue);
   if (oldValue != newValue) {
     if (key instanceof FigureKey) {
@@ -11,7 +19,18 @@
         fire(DrawingModelEvent.layoutInvalidated(this,figure));
       }
       if (dm.containsOneOf(DirtyBits.CONNECTION_LAYOUT)) {
-        fireLayoutInvalidatedForFiguresConnectedWith(figure);
+        fireLayoutInvalidatedConnectedFigures(figure);
+      }
+      if (dm.containsOneOf(DirtyBits.CONNECTION)) {
+        Set<Figure> connectionsAfter=figure.getConnectionTargets();
+        if (!connectionsBefore.equals(connectionsAfter)) {
+          Set<Figure> changed=new HashSet<>();
+          changed.addAll(connectionsBefore);
+          changed.addAll(connectionsAfter);
+          for (          Figure f : changed) {
+            fire(DrawingModelEvent.connectionChanged(this,f));
+          }
+        }
       }
     }
   }

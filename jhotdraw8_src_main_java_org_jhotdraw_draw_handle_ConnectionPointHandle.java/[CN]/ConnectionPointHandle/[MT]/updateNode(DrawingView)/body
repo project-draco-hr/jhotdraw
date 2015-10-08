@@ -3,7 +3,7 @@
   Transform t=view.getDrawingToView().createConcatenation(f.getLocalToDrawing());
   Point2D p=f.get(pointKey);
   p=t.transform(p);
-  boolean isConnected=f.get(figureKey) != null && f.get(connectorKey) != null;
+  boolean isConnected=f.get(connectorKey) != null;
   node.setBackground(isConnected ? REGION_BACKGROUND_CONNECTED : REGION_BACKGROUND_DISCONNECTED);
   node.getStyleClass().set(0,isConnected ? styleclassConnected : styleclassDisconnected);
   node.relocate(p.getX() - 5,p.getY() - 5);

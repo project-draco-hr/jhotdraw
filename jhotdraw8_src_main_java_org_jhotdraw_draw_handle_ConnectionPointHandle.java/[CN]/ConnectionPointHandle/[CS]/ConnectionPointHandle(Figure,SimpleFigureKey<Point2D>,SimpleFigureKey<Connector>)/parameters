@@ -1,0 +1,3 @@
+Figure figure
+SimpleFigureKey<Point2D> pointKey
+SimpleFigureKey<Connector> connectorKey

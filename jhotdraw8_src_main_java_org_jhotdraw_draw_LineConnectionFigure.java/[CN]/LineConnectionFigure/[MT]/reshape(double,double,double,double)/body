@@ -1,8 +1,8 @@
 {
-  if (get(START_FIGURE) == null) {
+  if (get(START_CONNECTOR) == null) {
     set(START,new Point2D(x,y));
   }
-  if (get(END_FIGURE) == null) {
+  if (get(END_CONNECTOR) == null) {
     set(END,new Point2D(x + width,y + height));
   }
 }

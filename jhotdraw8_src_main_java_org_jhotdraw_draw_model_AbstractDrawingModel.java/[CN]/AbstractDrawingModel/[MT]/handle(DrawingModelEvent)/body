@@ -12,6 +12,9 @@ break;
 case FIGURE_REMOVED_FROM_DRAWING:
 invokeRemoveNotify(event.getFigure(),event.getDrawing());
 break;
+case CONNECTION_CHANGED:
+invokeConnectNotify(event.getFigure());
+break;
 case FIGURE_REMOVED_FROM_PARENT:
 case NODE_INVALIDATED:
 case ROOT_CHANGED:

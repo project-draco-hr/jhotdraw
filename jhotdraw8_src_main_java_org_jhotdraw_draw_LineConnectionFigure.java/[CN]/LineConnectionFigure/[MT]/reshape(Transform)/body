@@ -1,8 +1,8 @@
 {
-  if (get(START_FIGURE) == null) {
+  if (get(START_CONNECTOR) == null) {
     set(START,transform.transform(get(START)));
   }
-  if (get(END_FIGURE) == null) {
+  if (get(END_CONNECTOR) == null) {
     set(END,transform.transform(get(END)));
   }
 }

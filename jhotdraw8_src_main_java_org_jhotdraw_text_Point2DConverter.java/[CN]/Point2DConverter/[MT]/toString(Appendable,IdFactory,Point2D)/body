@@ -1,0 +1,3 @@
+{
+  formatter.toString(out,idFactory,value.getX(),value.getY());
+}

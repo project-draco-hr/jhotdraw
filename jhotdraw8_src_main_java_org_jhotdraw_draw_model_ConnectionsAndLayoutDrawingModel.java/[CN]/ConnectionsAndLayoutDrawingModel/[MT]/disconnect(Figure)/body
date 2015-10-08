@@ -2,7 +2,7 @@
   for (  Figure connectedFigure : figure.getConnectedFigures()) {
     fire(DrawingModelEvent.layoutInvalidated(this,connectedFigure));
   }
-  fireLayoutInvalidatedForFiguresConnectedWith(figure);
+  fireLayoutInvalidatedConnectedFigures(figure);
   figure.disconnect();
   fire(DrawingModelEvent.nodeInvalidated(this,figure));
   fire(DrawingModelEvent.layoutInvalidated(this,figure));

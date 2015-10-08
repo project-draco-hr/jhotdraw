@@ -1,11 +1,9 @@
 {
   if (connectedFigure != null) {
-    if (connectedFigure == get(START_FIGURE)) {
-      set(START_FIGURE,null);
+    if (get(START_CONNECTOR) != null && connectedFigure == get(START_CONNECTOR).getTarget()) {
       set(START_CONNECTOR,null);
     }
-    if (connectedFigure == get(END_FIGURE)) {
-      set(END_FIGURE,null);
+    if (get(END_CONNECTOR) != null && connectedFigure == get(END_CONNECTOR).getTarget()) {
       set(END_CONNECTOR,null);
     }
   }

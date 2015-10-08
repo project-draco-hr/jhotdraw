@@ -1,10 +1,10 @@
 {
   HashSet<Figure> ctf=new HashSet<>();
-  if (get(START_FIGURE) != null) {
-    ctf.add(get(START_FIGURE));
+  if (get(START_CONNECTOR) != null) {
+    ctf.add(get(START_CONNECTOR).getTarget());
   }
-  if (get(END_FIGURE) != null) {
-    ctf.add(get(END_FIGURE));
+  if (get(END_CONNECTOR) != null) {
+    ctf.add(get(END_CONNECTOR).getTarget());
   }
   return ctf;
 }

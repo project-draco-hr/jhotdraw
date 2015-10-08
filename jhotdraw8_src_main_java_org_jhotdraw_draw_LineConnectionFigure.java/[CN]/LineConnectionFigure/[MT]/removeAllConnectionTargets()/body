@@ -1,6 +1,6 @@
 {
-  set(START_FIGURE,null);
   set(START_CONNECTOR,null);
-  set(END_FIGURE,null);
+  set(START_CONNECTOR,null);
+  set(END_CONNECTOR,null);
   set(END_CONNECTOR,null);
 }

@@ -24,14 +24,6 @@
   }
   DrawingModel model=view.getModel();
   model.set(o,pointKey,getOwner().drawingToLocal(constrainedPoint));
-  Figure oldConnectedFigure=model.set(o,figureKey,newConnectedFigure);
   model.set(o,connectorKey,newConnector);
-  if (oldConnectedFigure != null) {
-    model.fireNodeInvalidated(oldConnectedFigure);
-  }
-  for (  Figure f : o.getConnectionTargets()) {
-    model.fireNodeInvalidated(f);
-  }
-  o.connectNotify();
   model.layout(o);
 }
