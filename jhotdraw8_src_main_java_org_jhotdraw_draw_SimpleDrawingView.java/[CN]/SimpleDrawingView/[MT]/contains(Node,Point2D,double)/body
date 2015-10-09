@@ -10,7 +10,14 @@
  else   if (node instanceof Group) {
     Bounds bounds=node.getBoundsInLocal();
     bounds=Geom.grow(bounds,tolerance,tolerance);
-    return bounds.contains(point);
+    if (bounds.contains(point)) {
+      for (      Node child : ((Group)node).getChildren()) {
+        if (contains(child,child.parentToLocal(point),tolerance)) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
  else {
     return node.contains(point);
