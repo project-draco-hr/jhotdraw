@@ -1,0 +1,5 @@
+{
+  for (  Figure f : figure.preorderIterable()) {
+    figure.transformNotify();
+  }
+}

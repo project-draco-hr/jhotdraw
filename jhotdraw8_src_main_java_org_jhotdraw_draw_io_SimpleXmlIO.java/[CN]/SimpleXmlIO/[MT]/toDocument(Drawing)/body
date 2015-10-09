@@ -17,6 +17,10 @@
       doc.appendChild(elem);
     }
     Element docElement=doc.getDocumentElement();
+    String commentText=factory.createFileComment();
+    if (commentText != null) {
+      docElement.getParentNode().insertBefore(doc.createComment(commentText),docElement);
+    }
     writeElementAttributes(docElement,external);
     for (    Figure child : external.getChildren()) {
       Node childNode=writeNodeRecursively(doc,child);

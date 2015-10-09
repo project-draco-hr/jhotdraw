@@ -1,13 +1,18 @@
 {
   getModel().validate();
-  LinkedList<Figure> updateNodes=new LinkedList<>(dirtyFigureNodes);
-  dirtyFigureNodes.clear();
-  for (  Figure f : updateNodes) {
+  for (  Figure f : dirtyFigureNodes) {
     f.updateNode(this,getNode(f));
   }
-  for (  Handle h : selectionHandles) {
-    h.updateNode(this);
+  dirtyFigureNodes.clear();
+  for (  Figure f : dirtyHandles) {
+    List<Handle> hh=handles.get(f);
+    if (hh != null) {
+      for (      Handle h : hh) {
+        h.updateNode(this);
+      }
+    }
   }
+  dirtyHandles.clear();
   for (  Handle h : secondaryHandles) {
     h.updateNode(this);
   }

@@ -1,5 +1,6 @@
 {
   figure.reshape(x,y,width,height);
+  fire(DrawingModelEvent.transformChanged(this,figure));
   fire(DrawingModelEvent.subtreeNodesInvalidated(this,figure));
   fire(DrawingModelEvent.layoutInvalidated(this,figure));
   fireLayoutInvalidatedForFiguresConnectedWithSubtree(figure);

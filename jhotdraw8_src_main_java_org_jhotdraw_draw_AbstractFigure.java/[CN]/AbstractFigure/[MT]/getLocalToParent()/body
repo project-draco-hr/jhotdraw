@@ -1,0 +1,6 @@
+{
+  if (localToParent == null) {
+    localToParent=Figure.super.getLocalToParent();
+  }
+  return localToParent;
+}

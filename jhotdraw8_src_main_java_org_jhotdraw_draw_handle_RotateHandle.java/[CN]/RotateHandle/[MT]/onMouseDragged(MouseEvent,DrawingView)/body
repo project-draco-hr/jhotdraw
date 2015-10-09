@@ -12,6 +12,14 @@
   }
   if (event.isMetaDown()) {
   }
-  view.getModel().set(getOwner(),Figure.ROTATE,newRotate);
+  DrawingModel model=view.getModel();
+  if (event.isShiftDown()) {
+    for (    Figure f : view.getSelectedFiguresWithCompatibleHandle(this)) {
+      model.set(f,Figure.ROTATE,newRotate);
+    }
+  }
+ else {
+    model.set(getOwner(),Figure.ROTATE,newRotate);
+  }
   oldPoint=newPoint;
 }

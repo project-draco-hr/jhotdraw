@@ -1,0 +1,4 @@
+{
+  dirtyHandles.addAll(handles.keySet());
+  repaint();
+}

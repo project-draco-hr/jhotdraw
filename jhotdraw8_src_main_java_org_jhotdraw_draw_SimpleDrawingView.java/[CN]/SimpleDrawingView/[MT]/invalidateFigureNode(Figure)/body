@@ -1,3 +1,6 @@
 {
   dirtyFigureNodes.add(f);
+  if (handles.containsKey(f)) {
+    dirtyHandles.add(f);
+  }
 }

@@ -1,0 +1,6 @@
+{
+  if (drawingToLocal == null) {
+    drawingToLocal=Figure.super.getDrawingToLocal();
+  }
+  return drawingToLocal;
+}

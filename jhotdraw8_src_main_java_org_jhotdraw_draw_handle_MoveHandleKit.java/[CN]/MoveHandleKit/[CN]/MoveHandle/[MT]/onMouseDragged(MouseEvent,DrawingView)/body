@@ -9,8 +9,17 @@
   }
   Transform tx=Transform.translate(newPoint.getX() - oldPoint.getX(),newPoint.getY() - oldPoint.getY());
   if (!tx.isIdentity()) {
-    tx=getOwner().getDrawingToParent().createConcatenation(tx);
-    view.getModel().reshape(getOwner(),tx);
+    DrawingModel model=view.getModel();
+    if (event.isShiftDown()) {
+      for (      Figure f : view.getSelectedFiguresWithCompatibleHandle(this)) {
+        tx=f.getDrawingToParent().createConcatenation(tx);
+        model.reshape(f,tx);
+      }
+    }
+ else {
+      tx=getOwner().getDrawingToParent().createConcatenation(tx);
+      model.reshape(getOwner(),tx);
+    }
   }
   oldPoint=newPoint;
 }

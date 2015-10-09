@@ -3,12 +3,13 @@
   double f=getZoomFactor();
   double x=bounds.getMinX() * f;
   double y=bounds.getMinY() * f;
-  double w=min(8192,bounds.getWidth() * f);
-  double h=min(8192,bounds.getHeight() * f);
+  double w=bounds.getWidth() * f;
+  double h=bounds.getHeight() * f;
   drawingPane.setTranslateX(max(0,-x));
   drawingPane.setTranslateY(max(0,-y));
   toolPane.resize(w,h);
   toolPane.layout();
   stackPane.setPrefSize(w,h);
   invalidateDrawingViewTransforms();
+  invalidateHandleNodes();
 }

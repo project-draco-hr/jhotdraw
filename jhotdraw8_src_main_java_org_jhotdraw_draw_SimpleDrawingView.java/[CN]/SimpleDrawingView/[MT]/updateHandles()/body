@@ -1,17 +1,21 @@
 {
-  nodeToHandleMap.clear();
-  for (  Handle h : selectionHandles) {
-    h.dispose();
+  for (  Map.Entry<Figure,List<Handle>> entry : handles.entrySet()) {
+    for (    Handle h : entry.getValue()) {
+      h.dispose();
+    }
   }
-  selectionHandles.clear();
+  nodeToHandleMap.clear();
+  handles.clear();
   handlesPane.getChildren().clear();
-  ArrayList<Handle> handles=new ArrayList<>();
+  dirtyHandles.clear();
   createHandles(handles);
-  for (  Handle handle : handles) {
-    selectionHandles.add(handle);
-    Node n=handle.getNode();
-    nodeToHandleMap.put(n,handle);
-    handlesPane.getChildren().add(n);
-    handle.updateNode(this);
+  for (  Map.Entry<Figure,List<Handle>> entry : handles.entrySet()) {
+    dirtyHandles.add(entry.getKey());
+    for (    Handle handle : entry.getValue()) {
+      Node n=handle.getNode();
+      nodeToHandleMap.put(n,handle);
+      handlesPane.getChildren().add(n);
+      handle.updateNode(this);
+    }
   }
 }

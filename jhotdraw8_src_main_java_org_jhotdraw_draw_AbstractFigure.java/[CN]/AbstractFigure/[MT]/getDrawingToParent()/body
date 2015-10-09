@@ -1,0 +1,6 @@
+{
+  if (drawingToParent == null) {
+    drawingToParent=Figure.super.getDrawingToParent();
+  }
+  return drawingToParent;
+}

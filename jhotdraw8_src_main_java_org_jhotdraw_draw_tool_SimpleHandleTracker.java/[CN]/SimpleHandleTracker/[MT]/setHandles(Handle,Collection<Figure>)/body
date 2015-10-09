@@ -1,0 +1,4 @@
+{
+  this.handle=handle;
+  this.compatibleFigures=compatibleFigures;
+}

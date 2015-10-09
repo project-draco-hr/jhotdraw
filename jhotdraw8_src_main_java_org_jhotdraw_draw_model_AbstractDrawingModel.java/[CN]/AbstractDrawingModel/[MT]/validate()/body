@@ -14,6 +14,7 @@
     dirtyLayouts.clear();
     for (    Figure f : fs) {
       layout(f);
+      f.transformNotify();
     }
     isValidating=false;
   }

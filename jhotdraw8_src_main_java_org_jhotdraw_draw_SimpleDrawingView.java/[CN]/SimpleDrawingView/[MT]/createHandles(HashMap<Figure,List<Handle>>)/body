@@ -1,6 +1,8 @@
 {
   HandleType ht=getHandleType();
   for (  Figure figure : getSelectedFigures()) {
+    ArrayList<Handle> list=new ArrayList<>();
     figure.createHandles(ht,this,list);
+    hh.put(figure,list);
   }
 }
