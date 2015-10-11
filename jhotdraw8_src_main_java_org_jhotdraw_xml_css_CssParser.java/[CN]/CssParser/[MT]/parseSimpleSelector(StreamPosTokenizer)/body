@@ -19,6 +19,9 @@ if (tt.nextToken() != StreamPosTokenizer.TT_WORD) {
 throw new IOException("SimpleSelector: identifier instead of " + value(tt) + " expected after ':' in line "+ tt.lineno());
 }
 return new PseudoClassSelector(tt.sval);
+case '[':
+tt.pushBack();
+return parseAttributeSelector(tt);
 default :
 throw new IOException("SimpleSelector: SimpleSelector instead of " + value(tt) + " expected in line "+ tt.lineno());
 }

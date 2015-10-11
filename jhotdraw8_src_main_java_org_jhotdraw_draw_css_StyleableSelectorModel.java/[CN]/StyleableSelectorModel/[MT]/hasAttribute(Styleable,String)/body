@@ -1,0 +1,9 @@
+{
+  List<CssMetaData<? extends Styleable,?>> list=element.getCssMetaData();
+  for (  CssMetaData<? extends Styleable,?> item : list) {
+    if (attributeName.equals(item.getProperty())) {
+      return true;
+    }
+  }
+  return false;
+}

@@ -1,0 +1,4 @@
+{
+  String value=model.getAttribute(element,attributeName);
+  return (value != null && (attributeValue.equals(value) || value.startsWith(attributeValue + "-"))) ? element : null;
+}

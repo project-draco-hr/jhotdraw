@@ -1,0 +1,11 @@
+{
+  List<CssMetaData<? extends Styleable,?>> list=element.getCssMetaData();
+  for (  CssMetaData<? extends Styleable,?> i : list) {
+    @SuppressWarnings("unchecked") CssMetaData<Styleable,?> item=(CssMetaData<Styleable,?>)i;
+    if (attributeName.equals(item.getProperty())) {
+      Object value=item.getStyleableProperty(element).getValue();
+      return value == null ? "" : value.toString();
+    }
+  }
+  return null;
+}
