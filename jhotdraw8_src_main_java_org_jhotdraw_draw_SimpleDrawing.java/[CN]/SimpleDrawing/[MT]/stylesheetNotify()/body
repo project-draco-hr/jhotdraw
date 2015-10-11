@@ -1,6 +1,5 @@
 {
-  if (styleManager == null) {
-    styleManager=new StyleableStyleManager();
+  if (styleManager != null) {
     try {
       styleManager.updateStylesheets(StyleOrigin.USER_AGENT,get(USER_AGENT_STYLESHEETS));
       styleManager.updateStylesheets(StyleOrigin.AUTHOR,get(AUTHOR_STYLESHEETS));
@@ -10,5 +9,5 @@
       ex.printStackTrace();
     }
   }
-  return styleManager;
+  super.stylesheetNotify();
 }
