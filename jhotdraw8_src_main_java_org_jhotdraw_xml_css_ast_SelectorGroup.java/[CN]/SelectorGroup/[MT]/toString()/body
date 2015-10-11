@@ -1,0 +1,15 @@
+{
+  StringBuilder buf=new StringBuilder("( ");
+  boolean first=true;
+  for (  Selector s : selectors) {
+    if (first) {
+      first=false;
+    }
+ else {
+      buf.append(" || ");
+    }
+    buf.append(s);
+  }
+  buf.append(" )");
+  return buf.toString();
+}

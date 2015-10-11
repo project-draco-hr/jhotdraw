@@ -1,0 +1,3 @@
+{
+  return "Combinator{" + "simpleSelector=" + firstSelector + ", selector="+ secondSelector+ '}';
+}

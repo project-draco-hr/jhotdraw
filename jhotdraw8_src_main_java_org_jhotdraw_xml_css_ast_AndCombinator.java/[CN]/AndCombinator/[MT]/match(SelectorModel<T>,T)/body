@@ -1,0 +1,3 @@
+{
+  return (firstSelector.match(model,element) != null && secondSelector.match(model,element) != null) ? element : null;
+}

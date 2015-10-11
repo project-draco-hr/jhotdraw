@@ -1,0 +1,3 @@
+{
+  return (element != null && model.hasStyleType(element,type)) ? element : null;
+}

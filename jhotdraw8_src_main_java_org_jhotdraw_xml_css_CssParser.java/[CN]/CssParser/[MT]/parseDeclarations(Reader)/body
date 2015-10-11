@@ -1,0 +1,5 @@
+{
+  StreamPosTokenizer tt=new StreamPosTokenizer(css);
+  setSyntax(tt);
+  return parseDeclarations(tt);
+}

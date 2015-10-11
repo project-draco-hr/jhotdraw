@@ -1,18 +1,29 @@
 {
   if (styleManager == null) {
     styleManager=new StyleableStyleManager();
-    if (get(STYLESHEETS) != null) {
-      URL documentHome=get(DOCUMENT_HOME);
-      CSSParser parser=new CSSParser();
-      try {
-        for (        URL url : get(STYLESHEETS)) {
+    URL documentHome=get(DOCUMENT_HOME);
+    if (get(USER_AGENT_STYLESHEETS) != null) {
+      for (      URL url : get(USER_AGENT_STYLESHEETS)) {
+        try {
           URL absoluteUrl=(documentHome == null) ? url : new URL(documentHome,url.toString());
-          parser.parse(absoluteUrl,styleManager);
+          styleManager.addStylesheet(StyleOrigin.USER_AGENT,absoluteUrl);
+        }
+ catch (        IOException ex) {
+          System.err.println("Warning could not load stylesheet " + url);
+          ex.printStackTrace();
         }
       }
- catch (      IOException ex) {
-        System.err.println("Warning could not load stylesheet " + get(STYLESHEETS));
-        ex.printStackTrace();
+    }
+    if (get(AUTHOR_STYLESHEETS) != null) {
+      for (      URL url : get(AUTHOR_STYLESHEETS)) {
+        try {
+          URL absoluteUrl=(documentHome == null) ? url : new URL(documentHome,url.toString());
+          styleManager.addStylesheet(StyleOrigin.AUTHOR,absoluteUrl);
+        }
+ catch (        IOException ex) {
+          System.err.println("Warning could not load stylesheet " + url);
+          ex.printStackTrace();
+        }
       }
     }
   }

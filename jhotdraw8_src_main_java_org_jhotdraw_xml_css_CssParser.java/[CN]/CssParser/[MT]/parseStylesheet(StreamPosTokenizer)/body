@@ -1,0 +1,8 @@
+{
+  List<Ruleset> rulesets=new ArrayList<>();
+  while (tt.nextToken() != StreamPosTokenizer.TT_EOF) {
+    tt.pushBack();
+    rulesets.add(parseRuleset(tt));
+  }
+  return new Stylesheet(rulesets);
+}

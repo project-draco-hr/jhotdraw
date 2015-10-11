@@ -1,5 +1,0 @@
-{
-  try (Reader in=new BufferedReader(new InputStreamReader(css.openConnection().getInputStream()))){
-    parse(in,rm);
-  }
- }

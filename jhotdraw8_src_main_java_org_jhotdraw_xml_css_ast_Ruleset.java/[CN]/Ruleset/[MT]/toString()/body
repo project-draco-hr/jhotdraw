@@ -1,0 +1,10 @@
+{
+  StringBuilder buf=new StringBuilder("Ruleset: ");
+  buf.append(selectorGroup.toString());
+  buf.append("{");
+  for (  Declaration r : declarations) {
+    buf.append(r.toString());
+  }
+  buf.append("}");
+  return buf.toString();
+}

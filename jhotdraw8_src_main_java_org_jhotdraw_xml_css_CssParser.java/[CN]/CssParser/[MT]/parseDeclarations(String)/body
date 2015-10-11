@@ -1,0 +1,3 @@
+{
+  return parseDeclarations(new StringReader(css));
+}

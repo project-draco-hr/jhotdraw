@@ -1,0 +1,12 @@
+{
+  T siblingElement=secondSelector.match(model,element);
+  T matchingElement=null;
+  while (siblingElement != null) {
+    siblingElement=model.getParent(siblingElement);
+    matchingElement=firstSelector.match(model,siblingElement);
+    if (matchingElement != null) {
+      break;
+    }
+  }
+  return matchingElement;
+}

@@ -1,0 +1,34 @@
+{
+  StringBuilder terms=new StringBuilder();
+  tt.ordinaryChars(0,' ');
+  while (tt.nextToken() != StreamPosTokenizer.TT_EOF && tt.ttype != '}' && tt.ttype != ';') {
+switch (tt.ttype) {
+case StreamPosTokenizer.TT_WORD:
+      terms.append(tt.sval);
+    break;
+case '\'':
+  terms.append('\'');
+terms.append(tt.sval);
+terms.append('\'');
+break;
+case '"':
+terms.append('"');
+terms.append(tt.sval);
+terms.append('"');
+break;
+default :
+if (isWhitespace(tt.ttype)) {
+if (terms.length() > 0 && terms.charAt(terms.length() - 1) != ' ') {
+terms.append(' ');
+}
+}
+ else {
+terms.append((char)tt.ttype);
+}
+break;
+}
+}
+tt.pushBack();
+setSyntax(tt);
+return terms.toString().trim();
+}

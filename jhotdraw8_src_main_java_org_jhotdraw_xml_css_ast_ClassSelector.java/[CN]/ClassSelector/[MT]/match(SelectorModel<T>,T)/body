@@ -1,0 +1,3 @@
+{
+  return (element != null && model.hasStyleClass(element,clazz)) ? element : null;
+}

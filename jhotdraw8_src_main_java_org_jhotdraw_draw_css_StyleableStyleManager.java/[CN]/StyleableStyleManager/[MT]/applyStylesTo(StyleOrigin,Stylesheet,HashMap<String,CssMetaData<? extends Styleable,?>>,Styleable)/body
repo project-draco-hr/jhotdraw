@@ -1,0 +1,19 @@
+{
+  for (  Ruleset r : s.getRulesets()) {
+    if (r.getSelectorGroup().matches(selectorModel,elem)) {
+      for (      Declaration d : r.getDeclarations()) {
+        @SuppressWarnings("unchecked") CssMetaData<Styleable,?> m=(CssMetaData<Styleable,?>)metaMap.get(d.getProperty());
+        if (m != null && m.isSettable(elem)) {
+          if (!convertedValues.containsKey(d)) {
+            @SuppressWarnings("unchecked") StyleConverter<String,Object> converter=(StyleConverter<String,Object>)m.getConverter();
+            ParsedValueImpl<String,Object> parsedValue=new ParsedValueImpl<>(d.getTerms(),null);
+            convertedValues.put(d,converter.convert(parsedValue,null));
+          }
+          Object convertedValue=convertedValues.get(d);
+          @SuppressWarnings("unchecked") StyleableProperty<Object> styleableProperty=(StyleableProperty<Object>)m.getStyleableProperty(elem);
+          styleableProperty.applyStyle(origin,convertedValue);
+        }
+      }
+    }
+  }
+}

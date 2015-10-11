@@ -1,7 +1,0 @@
-{
-  for (  DOMRule rule : rules) {
-    if (rule.matches(elem)) {
-      rule.apply(elem);
-    }
-  }
-}

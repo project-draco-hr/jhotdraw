@@ -1,0 +1,3 @@
+{
+  return (element != null && model.hasStyleId(element,id)) ? element : null;
+}

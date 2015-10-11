@@ -37,7 +37,7 @@
   drawing.layout();
   ArrayList<URL> stylesheets=new ArrayList<>();
   stylesheets.add(CssSample.class.getResource("CssSample.css"));
-  drawing.set(Drawing.STYLESHEETS,stylesheets);
+  drawing.set(Drawing.USER_AGENT_STYLESHEETS,stylesheets);
   drawing.applyCss();
   drawing.layout();
   DrawingView drawingView=new SimpleDrawingView();

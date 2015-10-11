@@ -1,0 +1,25 @@
+{
+switch (tt.nextToken()) {
+case '*':
+    return new UniversalSelector();
+case StreamPosTokenizer.TT_WORD:
+  return new TypeSelector(tt.sval);
+case '#':
+if (tt.nextToken() != StreamPosTokenizer.TT_WORD) {
+  throw new IOException("SimpleSelector: identifier instead of " + value(tt) + " expected after '#' in line "+ tt.lineno());
+}
+return new IdSelector(tt.sval);
+case '.':
+if (tt.nextToken() != StreamPosTokenizer.TT_WORD) {
+throw new IOException("SimpleSelector: identifier instead of " + value(tt) + " expected after '.' in line "+ tt.lineno());
+}
+return new ClassSelector(tt.sval);
+case ':':
+if (tt.nextToken() != StreamPosTokenizer.TT_WORD) {
+throw new IOException("SimpleSelector: identifier instead of " + value(tt) + " expected after ':' in line "+ tt.lineno());
+}
+return new PseudoClassSelector(tt.sval);
+default :
+throw new IOException("SimpleSelector: SimpleSelector instead of " + value(tt) + " expected in line "+ tt.lineno());
+}
+}
