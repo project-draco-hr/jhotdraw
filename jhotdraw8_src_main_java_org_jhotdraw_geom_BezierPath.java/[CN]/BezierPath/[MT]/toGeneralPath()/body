@@ -20,7 +20,8 @@
       current=get(i);
       if ((previous.mask & C2_MASK) == 0) {
         if ((current.mask & C1_MASK) == 0) {
-          gp.lineTo(current.x[0],current.y[0]);
+          if (current.moveTo)           gp.moveTo(current.x[0],current.y[0]);
+ else           gp.lineTo(current.x[0],current.y[0]);
         }
  else {
           gp.quadTo(current.x[1],current.y[1],current.x[0],current.y[0]);

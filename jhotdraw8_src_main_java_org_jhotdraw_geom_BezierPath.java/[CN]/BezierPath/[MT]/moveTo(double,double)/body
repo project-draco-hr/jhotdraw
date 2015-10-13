@@ -4,5 +4,6 @@
   }
   Node node=new Node(x1,y1);
   node.keepColinear=false;
+  node.moveTo=true;
   add(node);
 }

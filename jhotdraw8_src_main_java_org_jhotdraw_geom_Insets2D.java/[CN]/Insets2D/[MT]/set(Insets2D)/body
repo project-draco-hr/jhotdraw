@@ -1,3 +1,0 @@
-{
-  set(i.getTop(),i.getLeft(),i.getBottom(),i.getRight());
-}

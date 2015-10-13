@@ -1,10 +1,13 @@
 {
   getModel().validate();
-  for (  Figure f : dirtyFigureNodes) {
+  ArrayList<Figure> copyOfDirtyFigureNodes=new ArrayList<>(dirtyFigureNodes);
+  ArrayList<Figure> copyOfDirtyHandles=new ArrayList<>(dirtyHandles);
+  dirtyFigureNodes.clear();
+  dirtyHandles.clear();
+  for (  Figure f : copyOfDirtyFigureNodes) {
     f.updateNode(this,getNode(f));
   }
-  dirtyFigureNodes.clear();
-  for (  Figure f : dirtyHandles) {
+  for (  Figure f : copyOfDirtyHandles) {
     List<Handle> hh=handles.get(f);
     if (hh != null) {
       for (      Handle h : hh) {
@@ -12,7 +15,6 @@
       }
     }
   }
-  dirtyHandles.clear();
   for (  Handle h : secondaryHandles) {
     h.updateNode(this);
   }

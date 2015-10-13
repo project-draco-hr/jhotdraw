@@ -1,7 +1,4 @@
 {
-  if (size() == 0) {
-    throw new IllegalPathStateException("lineTo only allowed when not empty");
-  }
   get(size() - 1).keepColinear=false;
   add(new Node(x1,y1));
 }

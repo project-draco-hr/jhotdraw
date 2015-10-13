@@ -1,6 +1,0 @@
-{
-  this.top=(float)top;
-  this.left=(float)left;
-  this.bottom=(float)bottom;
-  this.right=(float)right;
-}
