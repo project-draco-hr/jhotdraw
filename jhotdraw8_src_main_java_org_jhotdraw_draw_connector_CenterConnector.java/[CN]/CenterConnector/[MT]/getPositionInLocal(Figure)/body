@@ -1,0 +1,4 @@
+{
+  final Bounds b=target.getBoundsInLocal();
+  return new Point2D(b.getMinX() + b.getWidth() / 2.0,(b.getMinY() + b.getHeight() / 2.0));
+}

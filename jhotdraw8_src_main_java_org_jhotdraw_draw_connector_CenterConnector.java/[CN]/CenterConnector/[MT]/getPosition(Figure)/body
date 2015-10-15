@@ -1,4 +1,0 @@
-{
-  final Bounds b=target.getBoundsInLocal();
-  return target.localToDrawing(new Point2D(b.getMinX() + b.getWidth() / 2.0,(b.getMinY() + b.getHeight() / 2.0)));
-}
