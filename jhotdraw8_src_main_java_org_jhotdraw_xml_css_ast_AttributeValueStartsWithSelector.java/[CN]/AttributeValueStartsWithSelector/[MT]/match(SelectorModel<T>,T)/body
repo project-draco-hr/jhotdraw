@@ -1,0 +1,3 @@
+{
+  return model.attributeValueStartsWith(element,attributeName,prefix) ? element : null;
+}

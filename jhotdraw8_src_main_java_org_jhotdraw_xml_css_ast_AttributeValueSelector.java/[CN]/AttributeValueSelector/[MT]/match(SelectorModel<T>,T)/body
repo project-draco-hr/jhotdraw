@@ -1,4 +1,0 @@
-{
-  String value=model.getAttribute(element,attributeName);
-  return attributeValue.equals(value) ? element : null;
-}

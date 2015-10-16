@@ -1,0 +1,3 @@
+{
+  return model.attributeValueContainsWord(element,attributeName,word) ? element : null;
+}

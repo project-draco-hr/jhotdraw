@@ -1,0 +1,4 @@
+{
+  String actualValue=getAttribute(element,attributeName);
+  return actualValue != null && actualValue.equals(attributeValue);
+}
