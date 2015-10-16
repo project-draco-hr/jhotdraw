@@ -14,7 +14,7 @@
   }
   DrawingModel model=view.getModel();
   if (event.isShiftDown()) {
-    for (    Figure f : view.getSelectedFiguresWithCompatibleHandle(this)) {
+    for (    Figure f : groupReshapeableFigures) {
       model.set(f,Figure.ROTATE,newRotate);
     }
   }

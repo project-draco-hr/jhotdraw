@@ -1,3 +1,10 @@
 {
   this.anchorFigure=anchor;
+  Set<Figure> selectedFigures=view.getSelectedFigures();
+  groupReshapeableFigures=new HashSet<>();
+  for (  Figure f : selectedFigures) {
+    if (f.isGroupReshapeableWith(selectedFigures)) {
+      groupReshapeableFigures.add(f);
+    }
+  }
 }

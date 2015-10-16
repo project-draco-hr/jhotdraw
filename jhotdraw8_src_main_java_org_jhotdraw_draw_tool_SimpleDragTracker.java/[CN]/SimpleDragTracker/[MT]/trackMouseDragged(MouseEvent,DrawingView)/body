@@ -11,8 +11,13 @@
   Transform tx=Transform.translate(newPoint.getX() - oldPoint.getX(),newPoint.getY() - oldPoint.getY());
   if (!tx.isIdentity()) {
     DrawingModel dm=view.getModel();
-    for (    Figure f : view.getSelectedFigures()) {
-      dm.reshape(f,f.getDrawingToParent().createConcatenation(tx));
+    if (event.isShiftDown()) {
+      dm.reshape(anchorFigure,anchorFigure.getDrawingToParent().createConcatenation(tx));
+    }
+ else {
+      for (      Figure f : groupReshapeableFigures) {
+        dm.reshape(f,f.getDrawingToParent().createConcatenation(tx));
+      }
     }
   }
   oldPoint=newPoint;

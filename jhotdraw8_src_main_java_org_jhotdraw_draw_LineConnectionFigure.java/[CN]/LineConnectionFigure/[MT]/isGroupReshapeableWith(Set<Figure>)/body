@@ -1,0 +1,8 @@
+{
+  for (  Figure f : getConnectionTargets()) {
+    if (others.contains(f)) {
+      return false;
+    }
+  }
+  return true;
+}

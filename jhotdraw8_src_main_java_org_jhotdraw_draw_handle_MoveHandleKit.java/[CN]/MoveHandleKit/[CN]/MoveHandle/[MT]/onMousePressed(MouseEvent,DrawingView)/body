@@ -1,3 +1,11 @@
 {
   oldPoint=view.getConstrainer().constrainPoint(getOwner(),view.viewToDrawing(new Point2D(event.getX(),event.getY())));
+  Set<Figure> selectedFigures=view.getSelectedFigures();
+  groupReshapeableFigures=new HashSet<>();
+  for (  Figure f : view.getSelectedFigures()) {
+    if (f.isGroupReshapeableWith(selectedFigures)) {
+      groupReshapeableFigures.add(f);
+    }
+  }
+  groupReshapeableFigures=view.getFiguresWithCompatibleHandle(groupReshapeableFigures,this);
 }

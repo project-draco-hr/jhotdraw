@@ -11,7 +11,7 @@
   if (!tx.isIdentity()) {
     DrawingModel model=view.getModel();
     if (event.isShiftDown()) {
-      for (      Figure f : view.getSelectedFiguresWithCompatibleHandle(this)) {
+      for (      Figure f : groupReshapeableFigures) {
         tx=f.getDrawingToParent().createConcatenation(tx);
         model.reshape(f,tx);
       }
