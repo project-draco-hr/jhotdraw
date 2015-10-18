@@ -1,0 +1,17 @@
+{
+  int ch=in.nextChar();
+  while (ch != -1) {
+    if (ch == '*') {
+      ch=in.nextChar();
+      if (ch == '/') {
+        return true;
+      }
+      buf.append('*');
+    }
+ else {
+      buf.append((char)ch);
+      ch=in.nextChar();
+    }
+  }
+  return false;
+}

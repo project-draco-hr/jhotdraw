@@ -1,0 +1,42 @@
+{
+  tt.ordinaryChars(' ',' ');
+  while (isWhitespace(tt.nextToken())) {
+  }
+  tt.pushBack();
+  SimpleSelector simpleSelector=parseSimpleSelector(tt);
+  Selector selector=simpleSelector;
+  while (tt.nextToken() != StreamPosTokenizer.TT_EOF && tt.ttype != '{' && tt.ttype != ',') {
+    boolean potentialDescendantCombinator=false;
+    if (isWhitespace(tt.ttype)) {
+      potentialDescendantCombinator=true;
+      while (isWhitespace(tt.nextToken())) {
+      }
+    }
+    if (tt.ttype == StreamPosTokenizer.TT_EOF || tt.ttype == '{' || tt.ttype == ',') {
+      break;
+    }
+switch (tt.ttype) {
+case '>':
+      selector=new ChildCombinator(simpleSelector,parseSelector(tt));
+    break;
+case '+':
+  selector=new AdjacentSiblingCombinator(simpleSelector,parseSelector(tt));
+break;
+case '~':
+selector=new GeneralSiblingCombinator(simpleSelector,parseSelector(tt));
+break;
+default :
+tt.pushBack();
+if (potentialDescendantCombinator) {
+selector=new DescendantCombinator(simpleSelector,parseSelector(tt));
+}
+ else {
+selector=new AndCombinator(simpleSelector,parseSelector(tt));
+}
+break;
+}
+}
+tt.whitespaceChars(0,' ');
+tt.pushBack();
+return selector;
+}

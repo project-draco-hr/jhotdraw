@@ -1,0 +1,38 @@
+{
+  if (!pushedChars.isEmpty()) {
+    currentChar=pushedChars.pop();
+    return currentChar;
+  }
+  currentChar=in.read();
+  if (skipLF && currentChar == '\n') {
+    skipLF=false;
+    position++;
+    currentChar=in.read();
+  }
+switch (currentChar) {
+case -1:
+    break;
+case '\r':
+  skipLF=true;
+currentChar='\n';
+lineNumber++;
+position++;
+break;
+case '\f':
+currentChar='\n';
+lineNumber++;
+position++;
+break;
+case '\n':
+lineNumber++;
+position++;
+break;
+case '\000':
+currentChar='\ufffd';
+break;
+default :
+position++;
+break;
+}
+return currentChar;
+}

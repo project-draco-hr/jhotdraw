@@ -1,0 +1,3 @@
+{
+  return (model.attributeValueContains(element,attributeName,substring)) ? element : null;
+}

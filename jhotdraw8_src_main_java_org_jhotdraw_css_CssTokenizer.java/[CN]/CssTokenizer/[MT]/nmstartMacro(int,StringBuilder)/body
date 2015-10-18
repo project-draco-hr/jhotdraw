@@ -1,0 +1,14 @@
+{
+  if (ch == '_' || 'a' <= ch && ch <= 'z' || 'A' <= ch && ch <= 'Z') {
+    buf.append((char)ch);
+    return true;
+  }
+ else   if (ch > 159) {
+    buf.append((char)ch);
+    return true;
+  }
+ else   if (ch == '\\') {
+    return escapeMacro(ch,buf);
+  }
+  return false;
+}

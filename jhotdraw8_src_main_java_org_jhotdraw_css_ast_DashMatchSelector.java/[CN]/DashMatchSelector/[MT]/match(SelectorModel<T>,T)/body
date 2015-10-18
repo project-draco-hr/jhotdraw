@@ -1,0 +1,3 @@
+{
+  return (model.attributeValueEquals(element,attributeName,substring) || model.attributeValueStartsWith(element,attributeName,substring + '-')) ? element : null;
+}

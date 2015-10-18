@@ -1,0 +1,33 @@
+{
+  System.out.println(stylesheet);
+  CssParserOld p=new CssParserOld();
+  Stylesheet ast=p.parseStylesheet(stylesheet);
+  DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
+  DocumentBuilder builder=builderFactory.newDocumentBuilder();
+  Document doc=builder.parse(new InputSource(new StringReader(before)));
+  DocumentSelectorModel dsd=new DocumentSelectorModel();
+  NodeList elements=doc.getElementsByTagName("*");
+  for (int i=0, n=elements.getLength(); i < n; i++) {
+    Element elem=(Element)elements.item(i);
+    for (    Ruleset r : ast.getRulesets()) {
+      SelectorGroup sg=r.getSelectorGroup();
+      if (sg.matches(dsd,elem)) {
+        System.out.println("  match " + sg.toString() + " "+ elem);
+        for (        Declaration d : r.getDeclarations()) {
+          elem.setAttribute(d.getProperty(),d.getTerms());
+        }
+      }
+ else {
+        System.out.println(" !match " + sg.toString() + " "+ elem);
+      }
+    }
+  }
+  Transformer t=TransformerFactory.newInstance().newTransformer();
+  DOMSource source=new DOMSource(doc);
+  StringWriter w=new StringWriter();
+  StreamResult result=new StreamResult(w);
+  t.transform(source,result);
+  String actualValue=w.toString();
+  actualValue=actualValue.substring(XML_PREFIX.length());
+  assertEquals(actualValue,expectedValue);
+}

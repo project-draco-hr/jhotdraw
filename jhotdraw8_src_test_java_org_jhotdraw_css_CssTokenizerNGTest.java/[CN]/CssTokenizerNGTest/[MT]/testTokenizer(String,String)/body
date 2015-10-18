@@ -1,0 +1,24 @@
+{
+  CssTokenizer s=new CssTokenizer(new StringReader(inputData));
+  StringBuilder buf=new StringBuilder();
+  while (s.nextToken() != CssTokenizer.TT_EOF) {
+    if (buf.length() > 0) {
+      buf.append(' ');
+    }
+    if (s.currentToken() < 0) {
+      buf.append(s.currentToken());
+    }
+ else {
+      buf.append((char)s.currentToken());
+    }
+    buf.append(':');
+    buf.append(s.currentValue());
+  }
+  String actualValue=buf.toString();
+  actualValue=actualValue.replaceAll("\\n","\\\\n");
+  actualValue=actualValue.replaceAll("\\t","\\\\t");
+  expectedValue=expectedValue.replaceAll("\\n","\\\\n");
+  expectedValue=expectedValue.replaceAll("\\t","\\\\t");
+  System.out.println("testTokenizer:" + actualValue + " :: "+ expectedValue);
+  assertEquals(actualValue,expectedValue);
+}

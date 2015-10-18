@@ -1,0 +1,4 @@
+{
+  this.firstSelector=firstSelector;
+  this.secondSelector=secondSelector;
+}

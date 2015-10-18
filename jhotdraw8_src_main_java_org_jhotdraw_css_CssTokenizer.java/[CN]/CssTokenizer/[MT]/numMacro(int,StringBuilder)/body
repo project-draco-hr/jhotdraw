@@ -1,0 +1,27 @@
+{
+  boolean hasDecimals=false;
+  while ('0' <= ch && ch <= '9') {
+    hasDecimals=true;
+    buf.append((char)ch);
+    ch=in.nextChar();
+  }
+  if (ch == '.') {
+    int next=in.nextChar();
+    if (!('0' <= next && next <= '9')) {
+      in.pushBack(next);
+      if (hasDecimals) {
+        in.pushBack(ch);
+        return true;
+      }
+      return false;
+    }
+    buf.append('.');
+    ch=next;
+    while ('0' <= ch && ch <= '9') {
+      buf.append((char)ch);
+      ch=in.nextChar();
+    }
+  }
+  in.pushBack(ch);
+  return true;
+}

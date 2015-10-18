@@ -1,0 +1,4 @@
+{
+  this.selectorGroup=selectorGroup;
+  this.declarations=Collections.unmodifiableList(declarations);
+}

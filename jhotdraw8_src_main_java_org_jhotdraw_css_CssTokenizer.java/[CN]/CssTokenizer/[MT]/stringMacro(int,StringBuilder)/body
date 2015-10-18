@@ -1,0 +1,35 @@
+{
+  int quote=ch;
+  if (quote != '\'' && quote != '"') {
+    throw new IllegalArgumentException("illegal quote character:" + (char)ch);
+  }
+  while (true) {
+    ch=in.nextChar();
+    if (ch == -1) {
+      return false;
+    }
+ else     if (ch == '\\') {
+      if (!escapeMacro(ch,buf)) {
+        int nextch=in.nextChar();
+        if (nextch == '\n') {
+          buf.append('\n');
+        }
+ else {
+          in.pushBack(nextch);
+          in.pushBack(ch);
+          return false;
+        }
+      }
+    }
+ else     if (ch == '\n') {
+      in.pushBack(ch);
+      return false;
+    }
+ else     if (ch == quote) {
+      return true;
+    }
+ else {
+      buf.append((char)ch);
+    }
+  }
+}

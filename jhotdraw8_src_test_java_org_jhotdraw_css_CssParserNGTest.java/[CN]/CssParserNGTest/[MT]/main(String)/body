@@ -1,0 +1,10 @@
+{
+  CssParserNGTest test=new CssParserNGTest();
+  Object[][] data=test.stylesheetData();
+  for (  Object[] row : data) {
+    String stylesheet=(String)row[0];
+    String before=(String)row[1];
+    String expectedValue=(String)row[2];
+    test.testParseStylesheet(stylesheet,before,expectedValue);
+  }
+}

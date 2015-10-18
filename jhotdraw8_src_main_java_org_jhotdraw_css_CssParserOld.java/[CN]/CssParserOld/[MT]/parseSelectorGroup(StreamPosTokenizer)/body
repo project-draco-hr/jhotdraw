@@ -1,0 +1,12 @@
+{
+  List<Selector> selectors=new ArrayList<>();
+  selectors.add(parseSelector(tt));
+  while (tt.nextToken() != StreamPosTokenizer.TT_EOF && tt.ttype != '{') {
+    if (tt.ttype != ',') {
+      throw new IOException("SelectorGroup: ',' instead of " + value(tt) + " expected in line "+ tt.lineno());
+    }
+    selectors.add(parseSelector(tt));
+  }
+  tt.pushBack();
+  return new SelectorGroup(selectors);
+}

@@ -1,0 +1,3 @@
+{
+  return (model.attributeValueEndsWith(element,attributeName,substring)) ? element : null;
+}

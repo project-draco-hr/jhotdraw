@@ -1,0 +1,11 @@
+{
+  if (nmcharMacro(ch,buf)) {
+    while (nmcharMacro(ch=in.nextChar(),buf)) {
+    }
+    in.pushBack(ch);
+    return true;
+  }
+ else {
+    return false;
+  }
+}

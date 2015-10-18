@@ -1,0 +1,7 @@
+{
+  T matchingElement=secondSelector.match(model,element);
+  if (matchingElement != null) {
+    return firstSelector.match(model,model.getPreviousSibling(matchingElement));
+  }
+  return null;
+}

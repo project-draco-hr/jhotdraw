@@ -1,0 +1,17 @@
+{
+  if (ch == '\\') {
+    ch=in.nextChar();
+    if ('0' <= ch && ch <= '9' || 'a' <= ch && ch <= 'f' || 'A' <= ch && ch <= 'F') {
+      return unicodeAfterBackslashMacro(ch,buf);
+    }
+ else     if (ch == '\n') {
+      in.pushBack(ch);
+      return false;
+    }
+ else {
+      buf.append((char)ch);
+      return true;
+    }
+  }
+  return false;
+}

@@ -1,0 +1,36 @@
+{
+  int ch=in.nextChar();
+  while (ch == ' ' || ch == '\n' || ch == '\t') {
+    ch=in.nextChar();
+  }
+  if (ch == '\'' || ch == '"') {
+    if (!stringMacro(ch,buf)) {
+      return false;
+    }
+    ch=in.nextChar();
+  }
+ else {
+    while (true) {
+      if (ch == '!' || ch == '#' || ch == '$' || ch == '%' || ch == '&' || '*' <= ch && ch <= '[' || ']' <= ch && ch <= '~' || ch > 159) {
+        buf.append((char)ch);
+      }
+ else       if (ch == '\'') {
+        if (!escapeMacro(ch,buf)) {
+          break;
+        }
+      }
+ else {
+        break;
+      }
+      ch=in.nextChar();
+    }
+  }
+  while (ch == ' ' || ch == '\n' || ch == '\t') {
+    ch=in.nextChar();
+  }
+  if (ch == ')') {
+    return true;
+  }
+  in.pushBack(ch);
+  return false;
+}

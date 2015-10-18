@@ -1,0 +1,4 @@
+{
+  String value=elem.getNodeName();
+  return value != null && value.equals(type);
+}
