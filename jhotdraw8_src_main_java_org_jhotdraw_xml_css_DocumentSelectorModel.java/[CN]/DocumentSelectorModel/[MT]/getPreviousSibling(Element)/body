@@ -1,7 +1,0 @@
-{
-  Node n=element.getPreviousSibling();
-  while (n != null && !(n instanceof Element)) {
-    n=n.getPreviousSibling();
-  }
-  return (Element)n;
-}

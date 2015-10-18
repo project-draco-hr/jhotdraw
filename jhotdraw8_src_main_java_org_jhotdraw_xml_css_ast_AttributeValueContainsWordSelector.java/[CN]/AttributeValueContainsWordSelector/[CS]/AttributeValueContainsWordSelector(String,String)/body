@@ -1,4 +1,0 @@
-{
-  this.attributeName=attributeName;
-  this.word=word;
-}

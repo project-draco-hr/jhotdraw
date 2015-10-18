@@ -1,3 +1,0 @@
-{
-  return (element != null && model.hasId(element,id)) ? element : null;
-}

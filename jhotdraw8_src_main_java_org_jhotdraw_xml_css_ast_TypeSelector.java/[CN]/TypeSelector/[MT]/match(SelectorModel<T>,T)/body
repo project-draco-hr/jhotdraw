@@ -1,3 +1,0 @@
-{
-  return (element != null && model.hasType(element,type)) ? element : null;
-}

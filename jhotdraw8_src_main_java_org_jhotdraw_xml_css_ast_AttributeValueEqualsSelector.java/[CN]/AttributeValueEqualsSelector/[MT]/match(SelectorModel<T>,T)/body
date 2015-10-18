@@ -1,3 +1,0 @@
-{
-  return model.attributeValueEquals(element,attributeName,attributeValue) ? element : null;
-}

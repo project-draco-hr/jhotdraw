@@ -1,7 +1,0 @@
-{
-  Node n=elem.getParentNode();
-  while (n != null && !(n instanceof Element)) {
-    n=n.getParentNode();
-  }
-  return (Element)n;
-}

@@ -1,3 +1,0 @@
-{
-  this.rulesets=Collections.unmodifiableList(rulesets);
-}

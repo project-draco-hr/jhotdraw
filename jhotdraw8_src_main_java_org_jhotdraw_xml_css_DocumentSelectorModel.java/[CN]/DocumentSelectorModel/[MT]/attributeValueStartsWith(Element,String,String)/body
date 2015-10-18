@@ -1,4 +1,0 @@
-{
-  String actualValue=element.getAttribute(attributeName);
-  return actualValue != null && (actualValue.equals(string) || actualValue.startsWith(string + "-"));
-}

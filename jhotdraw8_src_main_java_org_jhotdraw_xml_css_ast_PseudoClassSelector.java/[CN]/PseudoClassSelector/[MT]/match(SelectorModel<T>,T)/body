@@ -1,3 +1,0 @@
-{
-  return (element != null && model.hasPseudoClass(element,pseudoClass)) ? element : null;
-}

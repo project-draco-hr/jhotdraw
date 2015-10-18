@@ -1,6 +1,0 @@
-{
-  NodeList list=elem.getElementsByTagName("*");
-  for (int i=0, n=list.getLength(); i < n; i++) {
-    applyStylesTo((Element)list.item(i));
-  }
-}

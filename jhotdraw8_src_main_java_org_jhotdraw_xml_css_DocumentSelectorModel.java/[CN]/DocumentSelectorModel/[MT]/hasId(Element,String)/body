@@ -1,4 +1,0 @@
-{
-  String value=elem.getAttribute("id");
-  return value != null && value.equals(id);
-}
