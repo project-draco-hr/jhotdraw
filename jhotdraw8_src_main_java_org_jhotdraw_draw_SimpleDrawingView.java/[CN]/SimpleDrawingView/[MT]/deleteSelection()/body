@@ -2,7 +2,9 @@
   ArrayList<Figure> figures=new ArrayList<>(getSelectedFigures());
   DrawingModel model=getModel();
   for (  Figure f : figures) {
-    model.disconnect(f);
-    model.removeFromParent(f);
+    if (f.isDeletable()) {
+      model.disconnect(f);
+      model.removeFromParent(f);
+    }
   }
 }
