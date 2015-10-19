@@ -1,0 +1,13 @@
+{
+  List<Declaration> declarations=new ArrayList<>();
+  while (tt.nextToken() != CssTokenizer.TT_EOF && tt.currentToken() != '}') {
+    if (tt.currentToken() != ';') {
+      if (tt.currentToken() == CssTokenizer.TT_IDENT) {
+        tt.pushBack();
+        declarations.add(parseDeclaration(tt));
+      }
+    }
+  }
+  tt.pushBack();
+  return declarations;
+}

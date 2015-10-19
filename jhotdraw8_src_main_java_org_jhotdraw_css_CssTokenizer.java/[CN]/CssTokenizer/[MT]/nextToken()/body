@@ -1,7 +1,10 @@
 {
   if (pushBack) {
+    pushBack=false;
     return currentToken;
   }
+  lineNumber=(int)in.getLineNumber();
+  position=(int)in.getPosition();
   int ch=in.nextChar();
   value=null;
 switch (ch) {
@@ -32,7 +35,7 @@ if (next == '=') {
  else {
   in.pushBack(next);
   currentToken=ch;
-  value=(char)ch;
+  value=String.valueOf((char)ch);
 }
 break;
 }
@@ -50,7 +53,7 @@ value="||";
  else {
 in.pushBack(next);
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)currentToken);
 }
 break;
 }
@@ -64,7 +67,7 @@ value="^=";
  else {
 in.pushBack(next);
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)currentToken);
 }
 break;
 }
@@ -78,7 +81,7 @@ value="$=";
  else {
 in.pushBack(next);
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)currentToken);
 }
 break;
 }
@@ -92,7 +95,7 @@ value="*=";
  else {
 in.pushBack(next);
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)ch);
 }
 break;
 }
@@ -106,7 +109,7 @@ value=buf.toString();
  else {
 in.pushBack(ch);
 currentToken='@';
-value=(char)currentToken;
+value=String.valueOf((char)currentToken);
 }
 break;
 }
@@ -120,7 +123,7 @@ value=buf.toString();
  else {
 in.pushBack(ch);
 currentToken='#';
-value=(char)currentToken;
+value=String.valueOf((char)currentToken);
 }
 break;
 }
@@ -167,7 +170,7 @@ value=buf.toString();
 }
  else {
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)currentToken);
 }
 break;
 }
@@ -187,7 +190,7 @@ value=buf.toString();
  else {
 in.pushBack(next);
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)currentToken);
 }
 break;
 }
@@ -204,12 +207,27 @@ currentToken=TT_CDC;
 in.pushBack(next2);
 in.pushBack(next1);
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)currentToken);
 }
 }
  else {
-in.pushBack(next1);
 StringBuilder buf=new StringBuilder();
+if (numMacro(ch,buf)) {
+ch=in.nextChar();
+if (ch == '%') {
+currentToken=TT_PERCENTAGE;
+}
+ else if (identMacro(ch,buf)) {
+currentToken=TT_DIMENSION;
+}
+ else {
+in.pushBack(ch);
+currentToken=TT_NUMBER;
+}
+value=buf.toString();
+}
+ else {
+in.pushBack(next1);
 if (identMacro(ch,buf)) {
 next1=in.nextChar();
 if (next1 == '(') {
@@ -223,7 +241,8 @@ value=buf.toString();
 }
  else {
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)currentToken);
+}
 }
 }
 break;
@@ -244,7 +263,7 @@ in.pushBack(next3);
 in.pushBack(next2);
 in.pushBack(next1);
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)currentToken);
 }
 }
  else {
@@ -252,14 +271,14 @@ in.pushBack(next2);
 in.pushBack(next1);
 StringBuilder buf=new StringBuilder();
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)currentToken);
 }
 }
  else {
 in.pushBack(next1);
 StringBuilder buf=new StringBuilder();
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)currentToken);
 }
 break;
 }
@@ -271,7 +290,7 @@ if (identMacro(ch,buf)) {
 int next1=in.nextChar();
 if (next1 == '(') {
 value=buf.toString();
-if (((String)value).equalsIgnoreCase("url")) {
+if (value.equalsIgnoreCase("url")) {
 buf.setLength(0);
 if (uriMacro(buf)) {
 currentToken=TT_URI;
@@ -293,7 +312,7 @@ value=buf.toString();
 }
  else {
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)currentToken);
 }
 break;
 }
@@ -314,10 +333,10 @@ value=buf.toString();
 }
  else {
 currentToken=ch;
-value=(char)ch;
+value=String.valueOf((char)currentToken);
 }
 break;
 }
 }
-return currentToken;
+return (currentToken == TT_COMMENT) ? nextToken() : currentToken;
 }

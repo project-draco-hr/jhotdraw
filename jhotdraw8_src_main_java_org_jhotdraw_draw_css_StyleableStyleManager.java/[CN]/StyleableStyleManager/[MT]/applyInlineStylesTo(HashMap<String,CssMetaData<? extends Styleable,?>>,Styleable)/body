@@ -7,7 +7,7 @@
         if (m != null && m.isSettable(elem)) {
           if (!convertedValues.containsKey(d)) {
             @SuppressWarnings("unchecked") StyleConverter<String,Object> converter=(StyleConverter<String,Object>)m.getConverter();
-            ParsedValueImpl<String,Object> parsedValue=new ParsedValueImpl<>(d.getTerms(),null);
+            ParsedValueImpl<String,Object> parsedValue=new ParsedValueImpl<>(d.getTermsAsString(),null);
             convertedValues.put(d,converter.convert(parsedValue,null));
           }
           Object convertedValue=convertedValues.get(d);

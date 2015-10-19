@@ -1,0 +1,15 @@
+{
+  List<String> terms=new ArrayList<>();
+  skipWhitespace(tt);
+  while (tt.nextToken() != CssTokenizer.TT_EOF && tt.currentToken() != '}' && tt.currentToken() != ';') {
+switch (tt.currentToken()) {
+case CssTokenizer.TT_S:
+      break;
+default :
+    terms.add(tt.currentStringValue());
+  break;
+}
+}
+tt.pushBack();
+return terms;
+}

@@ -1,0 +1,13 @@
+{
+  if (tt.nextToken() != CssTokenizer.TT_IDENT) {
+    throw new ParseException("Declaration: property name expected. Line " + tt.getLineNumber() + ".",tt.getPosition());
+  }
+  String property=tt.currentStringValue();
+  tt.nextToken();
+  skipWhitespace(tt);
+  if (tt.currentToken() != ':') {
+    throw new ParseException("Declaration: ':' expected instead of \"" + tt.currentStringValue() + "\". Line "+ tt.getLineNumber()+ ".",tt.getPosition());
+  }
+  List<String> terms=parseTerms(tt);
+  return new Declaration(property,terms);
+}

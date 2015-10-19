@@ -1,0 +1,20 @@
+{
+  StringBuilder buf=new StringBuilder();
+  for (  String t : terms) {
+    if (buf.length() > 0) {
+      buf.append(' ');
+    }
+    if (t.isEmpty()) {
+      buf.append("''");
+    }
+ else     if (t.matches(".*\\s.*")) {
+      buf.append('\'');
+      buf.append(t);
+      buf.append('\'');
+    }
+ else {
+      buf.append(t);
+    }
+  }
+  return buf.toString();
+}

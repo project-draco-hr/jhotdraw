@@ -1,4 +1,4 @@
 {
   this.property=property;
-  this.terms=terms;
+  this.terms=Arrays.asList(new String[]{term});
 }

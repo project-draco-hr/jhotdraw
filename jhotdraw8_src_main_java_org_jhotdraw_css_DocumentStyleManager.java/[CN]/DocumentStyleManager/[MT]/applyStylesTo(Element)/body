@@ -5,7 +5,7 @@
       if (r.getSelectorGroup().matches(selectorModel,elem)) {
         for (        Declaration d : r.getDeclarations()) {
           if (!elem.hasAttribute(d.getProperty())) {
-            applicableDeclarations.put(d.getProperty(),d.getTerms());
+            applicableDeclarations.put(d.getProperty(),d.getTermsAsString());
           }
         }
       }
@@ -15,7 +15,7 @@
     for (    Ruleset r : s.getRulesets()) {
       if (r.getSelectorGroup().matches(selectorModel,elem)) {
         for (        Declaration d : r.getDeclarations()) {
-          applicableDeclarations.put(d.getProperty(),d.getTerms());
+          applicableDeclarations.put(d.getProperty(),d.getTermsAsString());
         }
       }
     }
@@ -23,7 +23,7 @@
   if (elem.hasAttribute("style")) {
     try {
       for (      Declaration d : parser.parseDeclarations(elem.getAttribute("style"))) {
-        applicableDeclarations.put(d.getProperty(),d.getTerms());
+        applicableDeclarations.put(d.getProperty(),d.getTermsAsString());
       }
     }
  catch (    IOException ex) {
