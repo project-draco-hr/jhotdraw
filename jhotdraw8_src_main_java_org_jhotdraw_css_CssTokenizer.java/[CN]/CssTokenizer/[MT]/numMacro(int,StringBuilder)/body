@@ -1,4 +1,11 @@
 {
+  if (ch == '-') {
+    buf.append('-');
+    ch=in.nextChar();
+  }
+ else   if (ch == '+') {
+    ch=in.nextChar();
+  }
   boolean hasDecimals=false;
   while ('0' <= ch && ch <= '9') {
     hasDecimals=true;
@@ -20,6 +27,27 @@
     while ('0' <= ch && ch <= '9') {
       buf.append((char)ch);
       ch=in.nextChar();
+    }
+  }
+  if (ch == 'e' || ch == 'E') {
+    buf.append('E');
+    ch=in.nextChar();
+    if (ch == '-') {
+      buf.append('-');
+      ch=in.nextChar();
+    }
+ else     if (ch == '+') {
+      ch=in.nextChar();
+    }
+    boolean hasExponents=false;
+    while ('0' <= ch && ch <= '9') {
+      hasExponents=true;
+      buf.append((char)ch);
+      ch=in.nextChar();
+    }
+    if (!hasExponents) {
+      in.pushBack(ch);
+      return false;
     }
   }
   in.pushBack(ch);
