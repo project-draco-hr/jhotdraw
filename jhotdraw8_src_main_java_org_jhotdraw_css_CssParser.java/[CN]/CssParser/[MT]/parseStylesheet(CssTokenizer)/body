@@ -1,6 +1,6 @@
 {
   exceptions=new ArrayList<>();
-  List<Ruleset> rulesets=new ArrayList<>();
+  List<StyleRule> styleRules=new ArrayList<>();
   while (tt.nextToken() != CssTokenizer.TT_EOF) {
     try {
 switch (tt.currentToken()) {
@@ -8,18 +8,28 @@ case CssTokenizer.TT_S:
 case CssTokenizer.TT_CDC:
 case CssTokenizer.TT_CDO:
         break;
+case CssTokenizer.TT_AT_KEYWORD:
+{
+        tt.pushBack();
+        AtRule r=parseAtRule(tt);
+        if (r != null) {
+        }
+        break;
+      }
 default :
+{
       tt.pushBack();
-    Ruleset r=parseRuleset(tt);
-  if (r != null) {
-    rulesets.add(r);
-  }
-break;
+      StyleRule r=parseStyleRule(tt);
+      if (r != null) {
+        styleRules.add(r);
+      }
+      break;
+    }
 }
 }
  catch (ParseException e) {
 exceptions.add(e);
 }
 }
-return new Stylesheet(rulesets);
+return new Stylesheet(styleRules);
 }

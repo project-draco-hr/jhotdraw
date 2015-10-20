@@ -1,0 +1,8 @@
+{
+  if (numericValue instanceof Double) {
+    return DOUBLE_CONVERTER.toString((Double)numericValue);
+  }
+ else {
+    return numericValue.toString();
+  }
+}

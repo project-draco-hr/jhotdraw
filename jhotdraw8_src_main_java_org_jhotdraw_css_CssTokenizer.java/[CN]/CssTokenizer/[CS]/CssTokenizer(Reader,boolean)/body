@@ -1,0 +1,4 @@
+{
+  in=new CssScanner(reader);
+  this.skipComments=skipComments;
+}

@@ -1,0 +1,3 @@
+{
+  return CssParser.this.parseDeclarationList(new StringReader(css));
+}

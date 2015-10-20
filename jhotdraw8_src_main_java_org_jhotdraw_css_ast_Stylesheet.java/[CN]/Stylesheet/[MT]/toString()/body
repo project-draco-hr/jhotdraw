@@ -1,7 +1,7 @@
 {
   StringBuilder buf=new StringBuilder();
   boolean first=true;
-  for (  Ruleset r : rulesets) {
+  for (  StyleRule r : rulesets) {
     if (first) {
       first=false;
     }

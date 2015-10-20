@@ -1,18 +1,23 @@
 {
+  boolean hasSign=false;
   if (ch == '-') {
+    hasSign=true;
     buf.append('-');
     ch=in.nextChar();
   }
  else   if (ch == '+') {
+    hasSign=true;
     ch=in.nextChar();
   }
   boolean hasDecimals=false;
+  boolean hasFractionalsOrExponent=false;
   while ('0' <= ch && ch <= '9') {
     hasDecimals=true;
     buf.append((char)ch);
     ch=in.nextChar();
   }
   if (ch == '.') {
+    hasFractionalsOrExponent=true;
     int next=in.nextChar();
     if (!('0' <= next && next <= '9')) {
       in.pushBack(next);
@@ -29,7 +34,8 @@
       ch=in.nextChar();
     }
   }
-  if (ch == 'e' || ch == 'E') {
+  if ((hasDecimals || hasFractionalsOrExponent) && (ch == 'e' || ch == 'E')) {
+    hasFractionalsOrExponent=true;
     buf.append('E');
     ch=in.nextChar();
     if (ch == '-') {
@@ -49,6 +55,24 @@
       in.pushBack(ch);
       return false;
     }
+  }
+  if (!hasDecimals && !hasFractionalsOrExponent) {
+    if (hasSign) {
+      in.pushBack(ch);
+      buf.setLength(buf.length() - 1);
+    }
+    return false;
+  }
+  try {
+    if (hasFractionalsOrExponent) {
+      numericValue=Double.parseDouble(buf.toString());
+    }
+ else {
+      numericValue=Integer.parseInt(buf.toString());
+    }
+  }
+ catch (  NumberFormatException e) {
+    throw new InternalError("Tokenizer is broken.",e);
   }
   in.pushBack(ch);
   return true;

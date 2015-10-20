@@ -1,0 +1,5 @@
+{
+  this.atKeyword=atKeyword;
+  this.selectorList=selectorGroup;
+  this.declarations=declarations == null ? Collections.emptyList() : Collections.unmodifiableList(declarations);
+}

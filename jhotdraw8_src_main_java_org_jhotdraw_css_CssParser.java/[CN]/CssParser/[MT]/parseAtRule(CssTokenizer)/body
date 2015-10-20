@@ -1,0 +1,21 @@
+{
+  if (tt.nextToken() != CssTokenizer.TT_AT_KEYWORD) {
+    throw new ParseException("AtRule: At-Keyword expected.",tt.getLineNumber());
+  }
+  String atKeyword=tt.currentStringValue();
+  tt.nextToken();
+  skipWhitespace(tt);
+  while (tt.currentToken() != CssTokenizer.TT_EOF && tt.currentToken() != '{' && tt.currentToken() != ';') {
+    tt.pushBack();
+    parseComponentValue(tt);
+    tt.nextToken();
+  }
+  if (tt.currentToken() == ';') {
+    return new AtRule(atKeyword,null,null);
+  }
+ else {
+    tt.pushBack();
+    parseCurlyBlock(tt);
+    return new AtRule(atKeyword,null,null);
+  }
+}

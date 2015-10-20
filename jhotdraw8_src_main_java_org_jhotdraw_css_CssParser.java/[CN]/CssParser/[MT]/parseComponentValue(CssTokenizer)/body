@@ -1,0 +1,25 @@
+{
+switch (tt.nextToken()) {
+case '{':
+    tt.pushBack();
+  parseCurlyBlock(tt);
+break;
+case '(':
+tt.pushBack();
+parseRoundBlock(tt);
+break;
+case '[':
+tt.pushBack();
+parseSquareBlock(tt);
+break;
+case CssTokenizer.TT_FUNCTION:
+tt.pushBack();
+parseFunctionBlock(tt);
+break;
+default :
+tt.pushBack();
+parsePreservedToken(tt);
+break;
+}
+return null;
+}

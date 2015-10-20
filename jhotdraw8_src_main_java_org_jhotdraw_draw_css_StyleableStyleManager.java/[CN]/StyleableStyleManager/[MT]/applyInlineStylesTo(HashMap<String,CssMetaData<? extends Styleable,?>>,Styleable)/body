@@ -2,7 +2,7 @@
   String style=elem.getStyle();
   if (style != null) {
     try {
-      for (      Declaration d : parser.parseDeclarations(style)) {
+      for (      Declaration d : parser.parseDeclarationList(style)) {
         @SuppressWarnings("unchecked") CssMetaData<Styleable,?> m=(CssMetaData<Styleable,?>)metaMap.get(d.getProperty());
         if (m != null && m.isSettable(elem)) {
           if (!convertedValues.containsKey(d)) {

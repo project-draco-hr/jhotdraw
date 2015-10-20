@@ -1,0 +1,48 @@
+{
+  System.out.println(stylesheet);
+  CssParser p=new CssParser();
+  Stylesheet ast=p.parseStylesheet(stylesheet);
+  System.out.println("AST: " + ast);
+  if (!p.getParseExceptions().isEmpty()) {
+    System.out.println("Errors: ");
+    for (    ParseException e : p.getParseExceptions()) {
+      System.out.println("\033[31m " + e.getMessage() + " @ "+ e.getErrorOffset()+ "\033[0m");
+    }
+  }
+  DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
+  DocumentBuilder builder=builderFactory.newDocumentBuilder();
+  Document doc=builder.parse(new InputSource(new StringReader(before)));
+  DocumentSelectorModel dsd=new DocumentSelectorModel();
+  NodeList elements=doc.getElementsByTagName("*");
+  for (int i=0, n=elements.getLength(); i < n; i++) {
+    Element elem=(Element)elements.item(i);
+    for (    StyleRule r : ast.getRulesets()) {
+      SelectorGroup sg=r.getSelectorGroup();
+      if (sg.matches(dsd,elem)) {
+        System.out.println("  match " + sg.toString() + " "+ elem);
+        for (        Declaration d : r.getDeclarations()) {
+          elem.setAttribute(d.getProperty(),d.getTermsAsString());
+        }
+      }
+ else {
+        System.out.println(" !match " + sg.toString() + " "+ elem);
+      }
+    }
+  }
+  Transformer t=TransformerFactory.newInstance().newTransformer();
+  DOMSource source=new DOMSource(doc);
+  StringWriter w=new StringWriter();
+  StreamResult result=new StreamResult(w);
+  t.transform(source,result);
+  String actualValue=w.toString();
+  actualValue=actualValue.substring(XML_PREFIX.length());
+  if (!actualValue.equals(expectedValue)) {
+    System.out.println(" actual  : \033[31m" + actualValue + "\033[0m");
+  }
+ else {
+    System.out.println(" actual  : " + actualValue);
+  }
+  System.out.println(" expected: " + expectedValue);
+  assertEquals(actualValue,expectedValue);
+  assertEquals(p.getParseExceptions().isEmpty(),valid);
+}

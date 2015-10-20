@@ -1,0 +1,3 @@
+{
+  return (element != null && model.hasPseudoClass(element,functionIdentifier)) ? element : null;
+}

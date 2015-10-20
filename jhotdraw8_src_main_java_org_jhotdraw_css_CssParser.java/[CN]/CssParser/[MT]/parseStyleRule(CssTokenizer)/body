@@ -1,0 +1,23 @@
+{
+  SelectorGroup selectorGroup;
+  skipWhitespace(tt);
+  if (tt.nextToken() == '{') {
+    tt.pushBack();
+    selectorGroup=new SelectorGroup(new UniversalSelector());
+  }
+ else {
+    tt.pushBack();
+    selectorGroup=parseSelectorGroup(tt);
+  }
+  skipWhitespace(tt);
+  if (tt.nextToken() != '{') {
+    throw new ParseException("QualifiedRule: '{' expected.",tt.getLineNumber());
+  }
+  List<Declaration> declarations=parseDeclarationList(tt);
+  tt.nextToken();
+  skipWhitespace(tt);
+  if (tt.currentToken() != '}') {
+    throw new ParseException("QualifiedRule: '}' expected.",tt.getLineNumber());
+  }
+  return new StyleRule(selectorGroup,declarations);
+}

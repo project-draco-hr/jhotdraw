@@ -1,0 +1,11 @@
+{
+  StringBuilder buf=new StringBuilder("QualifiedRule: ");
+  buf.append(selectorList.toString());
+  buf.append("{");
+  for (  Declaration r : declarations) {
+    buf.append(r.toString());
+    buf.append(';');
+  }
+  buf.append("}");
+  return buf.toString();
+}

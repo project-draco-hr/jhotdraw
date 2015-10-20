@@ -1,5 +1,7 @@
 {
-switch (tt.nextToken()) {
+  tt.nextToken();
+  skipWhitespace(tt);
+switch (tt.currentToken()) {
 case '*':
     return new UniversalSelector();
 case CssTokenizer.TT_IDENT:
@@ -12,10 +14,8 @@ throw new ParseException("SimpleSelector: identifier expected.",tt.getLineNumber
 }
 return new ClassSelector(tt.currentStringValue());
 case ':':
-if (tt.nextToken() != CssTokenizer.TT_IDENT) {
-throw new ParseException("SimpleSelector: identifier expected. Line " + tt.getLineNumber() + ".",tt.getPosition());
-}
-return new PseudoClassSelector(tt.currentStringValue());
+tt.pushBack();
+return parsePseudoClassSelector(tt);
 case '[':
 tt.pushBack();
 return parseAttributeSelector(tt);

@@ -1,0 +1,4 @@
+{
+  this.functionIdentifier=functionIdentifier;
+  this.terms=Collections.unmodifiableList(terms);
+}

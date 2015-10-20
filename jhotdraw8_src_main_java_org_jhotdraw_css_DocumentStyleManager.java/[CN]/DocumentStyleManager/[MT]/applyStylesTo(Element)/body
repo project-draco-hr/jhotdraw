@@ -1,7 +1,7 @@
 {
   HashMap<String,String> applicableDeclarations=new HashMap<>();
   for (  Stylesheet s : userAgentStylesheets) {
-    for (    Ruleset r : s.getRulesets()) {
+    for (    StyleRule r : s.getRulesets()) {
       if (r.getSelectorGroup().matches(selectorModel,elem)) {
         for (        Declaration d : r.getDeclarations()) {
           if (!elem.hasAttribute(d.getProperty())) {
@@ -12,7 +12,7 @@
     }
   }
   for (  Stylesheet s : authorStylesheets) {
-    for (    Ruleset r : s.getRulesets()) {
+    for (    StyleRule r : s.getRulesets()) {
       if (r.getSelectorGroup().matches(selectorModel,elem)) {
         for (        Declaration d : r.getDeclarations()) {
           applicableDeclarations.put(d.getProperty(),d.getTermsAsString());
@@ -22,7 +22,7 @@
   }
   if (elem.hasAttribute("style")) {
     try {
-      for (      Declaration d : parser.parseDeclarations(elem.getAttribute("style"))) {
+      for (      Declaration d : parser.parseDeclarationList(elem.getAttribute("style"))) {
         applicableDeclarations.put(d.getProperty(),d.getTermsAsString());
       }
     }

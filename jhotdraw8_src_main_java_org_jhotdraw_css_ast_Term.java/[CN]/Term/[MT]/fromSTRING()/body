@@ -1,0 +1,8 @@
+{
+  if (stringValue.contains("'")) {
+    return '"' + stringValue + '"';
+  }
+ else {
+    return '\'' + stringValue + '\'';
+  }
+}

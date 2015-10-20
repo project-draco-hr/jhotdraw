@@ -1,0 +1,3 @@
+String atKeyword
+SelectorGroup selectorGroup
+List<Declaration> declarations

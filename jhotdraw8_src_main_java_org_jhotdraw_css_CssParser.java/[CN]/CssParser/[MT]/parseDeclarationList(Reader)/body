@@ -1,0 +1,11 @@
+{
+  exceptions=new ArrayList<>();
+  CssTokenizer tt=new CssTokenizer(css);
+  try {
+    return parseDeclarationList(tt);
+  }
+ catch (  ParseException ex) {
+    exceptions.add(ex);
+  }
+  return new ArrayList<>();
+}

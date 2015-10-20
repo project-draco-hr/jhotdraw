@@ -4,43 +4,39 @@
   }
 switch (ttype) {
 case CssTokenizer.TT_IDENT:
-    return fromIDENT(stringValue);
+    return fromIDENT();
 case CssTokenizer.TT_AT_KEYWORD:
-  return "@" + fromIDENT(stringValue);
+  return "@" + fromIDENT();
 case CssTokenizer.TT_STRING:
-return fromSTRING(stringValue);
+return fromSTRING();
 case CssTokenizer.TT_HASH:
-return "#" + fromIDENT(stringValue);
+return "#" + fromIDENT();
 case CssTokenizer.TT_NUMBER:
-return fromNUMBER(numericValue);
+return fromNUMBER();
 case CssTokenizer.TT_PERCENTAGE:
-return fromNUMBER(numericValue) + "%";
+return fromNUMBER() + "%";
 case CssTokenizer.TT_DIMENSION:
-return fromNUMBER(numericValue) + fromIDENT(stringValue);
+return fromNUMBER() + fromIDENT();
 case CssTokenizer.TT_URI:
-return fromURI(stringValue);
+return fromURI();
 case CssTokenizer.TT_UNICODE_RANGE:
-return fromUNICODE_RANGE(stringValue);
-case CssTokenizer.TT_CDO:
-return fromCDO(stringValue);
-case CssTokenizer.TT_CDC:
-return fromCDC(stringValue);
+return fromUNICODE_RANGE();
 case CssTokenizer.TT_S:
-return fromS(stringValue);
+return fromS();
 case CssTokenizer.TT_FUNCTION:
-return fromFUNCTION(stringValue);
+return fromIDENT() + "(";
 case CssTokenizer.TT_INCLUDE_MATCH:
-return fromINCLUDE_MATCH(stringValue);
+return fromINCLUDE_MATCH();
 case CssTokenizer.TT_DASH_MATCH:
-return fromDASH_MATCH(stringValue);
+return fromDASH_MATCH();
 case CssTokenizer.TT_PREFIX_MATCH:
-return fromPREFIX_MATCH(stringValue);
+return fromPREFIX_MATCH();
 case CssTokenizer.TT_SUFFIX_MATCH:
-return fromSUFFIX_MATCH(stringValue);
+return fromSUFFIX_MATCH();
 case CssTokenizer.TT_SUBSTRING_MATCH:
-return fromSUBSTRING_MATCH(stringValue);
+return fromSUBSTRING_MATCH();
 case CssTokenizer.TT_COLUMN:
-return fromCOLUMN(stringValue);
+return fromCOLUMN();
 }
 throw new InternalError("Unsupported TTYPE:" + ttype);
 }

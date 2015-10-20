@@ -1,0 +1,9 @@
+{
+  if (tt.nextToken() != '(') {
+    throw new ParseException("RoundBlock: '(' expected in line " + tt.getLineNumber() + ".",tt.getPosition());
+  }
+  if (tt.nextToken() != ')') {
+    throw new ParseException("RoundBlock: ')' expected in line " + tt.getLineNumber() + ".",tt.getPosition());
+  }
+  return null;
+}
