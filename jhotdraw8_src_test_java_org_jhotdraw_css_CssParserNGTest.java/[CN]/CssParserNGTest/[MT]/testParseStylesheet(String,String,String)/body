@@ -1,7 +1,14 @@
 {
   System.out.println(stylesheet);
-  CssParserOld p=new CssParserOld();
+  CssParser p=new CssParser();
   Stylesheet ast=p.parseStylesheet(stylesheet);
+  System.out.println("AST: " + ast);
+  if (!p.getParseExceptions().isEmpty()) {
+    System.out.println("Errors: ");
+    for (    ParseException e : p.getParseExceptions()) {
+      System.out.println("\033[31m " + e.getMessage() + " @ "+ e.getErrorOffset()+ "\033[0m");
+    }
+  }
   DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
   DocumentBuilder builder=builderFactory.newDocumentBuilder();
   Document doc=builder.parse(new InputSource(new StringReader(before)));
@@ -14,7 +21,7 @@
       if (sg.matches(dsd,elem)) {
         System.out.println("  match " + sg.toString() + " "+ elem);
         for (        Declaration d : r.getDeclarations()) {
-          elem.setAttribute(d.getProperty(),d.getTerms());
+          elem.setAttribute(d.getProperty(),d.getTermsAsString());
         }
       }
  else {
@@ -29,5 +36,12 @@
   t.transform(source,result);
   String actualValue=w.toString();
   actualValue=actualValue.substring(XML_PREFIX.length());
+  if (!actualValue.equals(expectedValue)) {
+    System.out.println(" actual  : \033[31m" + actualValue + "\033[0m");
+  }
+ else {
+    System.out.println(" actual  : " + actualValue);
+  }
+  System.out.println(" expected: " + expectedValue);
   assertEquals(actualValue,expectedValue);
 }

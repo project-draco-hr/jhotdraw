@@ -8,6 +8,6 @@
   if (tt.currentToken() != ':') {
     throw new ParseException("Declaration: ':' expected instead of \"" + tt.currentStringValue() + "\". Line "+ tt.getLineNumber()+ ".",tt.getPosition());
   }
-  List<String> terms=parseTerms(tt);
+  List<Term> terms=parseTerms(tt);
   return new Declaration(property,terms);
 }
