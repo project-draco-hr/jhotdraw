@@ -11,7 +11,9 @@ invokeAddNotify(event.getFigure(),event.getDrawing());
 break;
 case FIGURE_REMOVED_FROM_DRAWING:
 invokeRemoveNotify(event.getFigure(),event.getDrawing());
-dirtyLayouts.remove(event.getFigure());
+if (dirtyLayouts.remove(event.getFigure())) {
+dirtyLayoutList.remove(event.getFigure());
+}
 dirtyStyles.remove(event.getFigure());
 break;
 case CONNECTION_CHANGED:
@@ -21,7 +23,9 @@ case TRANSFORM_CHANGED:
 invokeTransformNotify(event.getFigure());
 break;
 case FIGURE_REMOVED_FROM_PARENT:
-dirtyLayouts.remove(event.getFigure());
+if (dirtyLayouts.remove(event.getFigure())) {
+dirtyLayoutList.remove(event.getFigure());
+}
 dirtyStyles.remove(event.getFigure());
 break;
 case NODE_INVALIDATED:

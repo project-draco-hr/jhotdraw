@@ -10,8 +10,9 @@
   }
   if (!dirtyLayouts.isEmpty()) {
     isValidating=true;
-    LinkedList<Figure> fs=new LinkedList<>(dirtyLayouts);
+    ArrayList<Figure> fs=new ArrayList<>(dirtyLayoutList);
     dirtyLayouts.clear();
+    dirtyLayoutList.clear();
     for (    Figure f : fs) {
       invokeLayoutNotify(f);
     }
