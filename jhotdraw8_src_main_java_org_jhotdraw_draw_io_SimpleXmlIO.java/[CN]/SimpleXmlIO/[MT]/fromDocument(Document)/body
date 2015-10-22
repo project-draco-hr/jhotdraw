@@ -10,6 +10,14 @@
       break;
     }
   }
+  if (external == null) {
+    if (namespaceURI == null) {
+      throw new IOException("The document does not contain a drawing.");
+    }
+ else {
+      throw new IOException("The document does not contain a drawing in namespace \"" + namespaceURI + "\".");
+    }
+  }
   external.set(Drawing.DOCUMENT_HOME,getDocumentHome());
   readProcessingInstructions(doc,external);
   try {

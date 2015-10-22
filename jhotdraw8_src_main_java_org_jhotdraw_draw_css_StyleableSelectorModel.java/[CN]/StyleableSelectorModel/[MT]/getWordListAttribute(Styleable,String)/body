@@ -1,0 +1,28 @@
+{
+  List<CssMetaData<? extends Styleable,?>> list=element.getCssMetaData();
+  for (  CssMetaData<? extends Styleable,?> i : list) {
+    @SuppressWarnings("unchecked") CssMetaData<Styleable,?> item=(CssMetaData<Styleable,?>)i;
+    if (attributeName.equals(item.getProperty())) {
+      Object value=item.getStyleableProperty(element).getValue();
+      if (value instanceof Collection) {
+        @SuppressWarnings("unchecked") Collection<Object> olist=(Collection<Object>)value;
+        Set<String> slist=new HashSet<String>();
+        for (        Object o : olist) {
+          slist.add(o.toString());
+        }
+        return slist;
+      }
+ else {
+        Set<String> slist=new HashSet<>();
+        if (value != null) {
+          String[] words=value.toString().split("\\s+");
+          for (          String word : words) {
+            slist.add(word);
+          }
+        }
+        return slist;
+      }
+    }
+  }
+  return null;
+}

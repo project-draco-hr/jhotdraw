@@ -1,3 +1,10 @@
 {
+  if (editor == null) {
+    View v=getActiveView();
+    if (v instanceof EditorView) {
+      EditorView ev=(EditorView)v;
+      return ev.getEditor() != null ? ev.getEditor().getActiveDrawingView() : null;
+    }
+  }
   return (editor == null) ? null : editor.getActiveDrawingView();
 }

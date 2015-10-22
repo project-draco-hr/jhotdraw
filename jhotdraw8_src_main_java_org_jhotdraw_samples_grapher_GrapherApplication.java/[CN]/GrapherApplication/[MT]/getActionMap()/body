@@ -1,0 +1,6 @@
+{
+  HierarchicalMap<String,Action> map=super.getActionMap();
+  map.put(SendToBackAction.ID,new SendToBackAction(this,null));
+  map.put(BringToFrontAction.ID,new BringToFrontAction(this,null));
+  return map;
+}

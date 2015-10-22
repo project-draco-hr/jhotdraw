@@ -1,4 +1,5 @@
 {
   this.key=key;
   this.metaData=metaData;
+  bindBidirectional(new Key.PropertyAt<>(user,key));
 }

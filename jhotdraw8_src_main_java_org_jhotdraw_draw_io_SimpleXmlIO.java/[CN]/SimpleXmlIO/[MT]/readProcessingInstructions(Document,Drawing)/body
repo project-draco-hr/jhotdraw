@@ -1,6 +1,7 @@
 {
   if (factory.getStylesheetsKey() != null) {
-    Pattern p=Pattern.compile("href=\"([^\"]*)\"");
+    Pattern hrefPattern=Pattern.compile("(?:^|.* )href=\"([^\"]*)\".*");
+    Pattern typePattern=Pattern.compile("(?:^|.* )type=\"([^\"]*)\".*");
     ArrayList<Object> stylesheets=new ArrayList<Object>();
     NodeList list=doc.getChildNodes();
     for (int i=0, n=list.getLength(); i < n; i++) {
@@ -8,9 +9,16 @@
       if (node.getNodeType() == Node.PROCESSING_INSTRUCTION_NODE) {
         ProcessingInstruction pi=(ProcessingInstruction)node;
         if ("xml-stylesheet".equals(pi.getNodeName()) && pi.getData() != null) {
-          Matcher m=p.matcher(pi.getData());
+          Matcher m=hrefPattern.matcher(pi.getData());
           if (m.matches()) {
             String href=m.group(1);
+            m=typePattern.matcher(pi.getData());
+            if (m.matches()) {
+              String type=m.group(1);
+              if (!"text/css".equals(type)) {
+                continue;
+              }
+            }
             stylesheets.add(URI.create(href));
           }
         }

@@ -1,5 +1,5 @@
 {
-  super(editor);
+  super(app,editor);
   Resources labels=Resources.getResources("org.jhotdraw.draw.Labels");
   labels.configureAction(this,ID);
 }
