@@ -1,0 +1,34 @@
+{
+  if (node instanceof Element) {
+    Element elem=(Element)node;
+    if (namespaceURI != null) {
+      if (!namespaceURI.equals(elem.getNamespaceURI())) {
+        return null;
+      }
+    }
+    Figure figure=factory.nameToFigure(elem.getLocalName());
+    if (figure == null) {
+      return null;
+    }
+    figureToElementMap.put(figure,elem);
+    String id=getAttribute(elem,"id");
+    if (id == null) {
+      throw new IOException("No \"id\" attribute in element " + elem.getTagName());
+    }
+    if (id != null) {
+      if (factory.getObject(id) != null) {
+        throw new IOException("Duplicate id " + id + " in element "+ elem.getTagName());
+      }
+      factory.putId(figure,id);
+    }
+    NodeList list=elem.getChildNodes();
+    for (int i=0; i < list.getLength(); i++) {
+      Figure child=readNodesRecursively(list.item(i));
+      if (child instanceof Figure) {
+        figure.add(child);
+      }
+    }
+    return figure;
+  }
+  return null;
+}

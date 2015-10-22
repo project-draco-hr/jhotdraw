@@ -1,9 +1,12 @@
 {
+  System.out.println("attributeValueContainsWord " + element);
   String value=getAttribute(element,attributeName);
+  System.out.println(attributeName + "  value " + value);
   if (value != null) {
     String[] words=value.split("\\s+");
     for (int i=0; i < words.length; i++) {
       if (word.equals(words[i])) {
+        System.out.println("  words " + Arrays.asList(words));
         return true;
       }
     }

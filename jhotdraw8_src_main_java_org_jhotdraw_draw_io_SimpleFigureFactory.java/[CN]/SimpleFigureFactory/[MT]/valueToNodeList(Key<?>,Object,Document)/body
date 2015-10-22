@@ -1,0 +1,11 @@
+{
+  if (key.getValueType() == String.class) {
+    Text node=document.createTextNode((String)value);
+    List<Node> list=new ArrayList<>();
+    list.add(node);
+    return list;
+  }
+ else {
+    throw new UnsupportedOperationException("Not supported yet.");
+  }
+}

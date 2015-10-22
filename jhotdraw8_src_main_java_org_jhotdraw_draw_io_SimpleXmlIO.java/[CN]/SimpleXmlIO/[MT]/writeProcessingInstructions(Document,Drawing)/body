@@ -1,0 +1,15 @@
+{
+  Element docElement=doc.getDocumentElement();
+  if (factory.getStylesheetsKey() != null) {
+    for (    Object stylesheet : external.get(factory.getStylesheetsKey())) {
+      if (stylesheet instanceof URI) {
+        URI stylesheetUri=(URI)stylesheet;
+        if (documentHome != null) {
+          stylesheetUri=documentHome.relativize(stylesheetUri);
+        }
+        ProcessingInstruction pi=doc.createProcessingInstruction("xml-stylesheet","type=\"text/css\" href=\"" + stylesheet + "\"");
+        doc.insertBefore(pi,docElement);
+      }
+    }
+  }
+}

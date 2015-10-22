@@ -1,8 +1,8 @@
 {
   if (styleManager != null) {
     try {
-      styleManager.updateStylesheets(StyleOrigin.USER_AGENT,get(USER_AGENT_STYLESHEETS));
-      styleManager.updateStylesheets(StyleOrigin.AUTHOR,get(AUTHOR_STYLESHEETS));
+      styleManager.updateStylesheets(StyleOrigin.USER_AGENT,get(DOCUMENT_HOME),get(USER_AGENT_STYLESHEETS));
+      styleManager.updateStylesheets(StyleOrigin.AUTHOR,get(DOCUMENT_HOME),get(AUTHOR_STYLESHEETS));
     }
  catch (    IOException ex) {
       System.err.println("Warning could not load user agent stylesheets.");

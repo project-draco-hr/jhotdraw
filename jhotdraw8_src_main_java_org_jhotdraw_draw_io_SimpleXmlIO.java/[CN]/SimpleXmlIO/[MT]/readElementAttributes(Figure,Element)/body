@@ -1,0 +1,23 @@
+{
+  NamedNodeMap attrs=elem.getAttributes();
+  for (int i=0, n=attrs.getLength(); i < n; i++) {
+    Attr attr=(Attr)attrs.item(i);
+    if (attr.getNamespaceURI() != null && !attr.getNamespaceURI().equals(namespaceURI)) {
+      continue;
+    }
+    if ("id".equals(attr.getLocalName())) {
+      continue;
+    }
+    @SuppressWarnings("unchecked") Key<Object> key=(Key<Object>)factory.nameToKey(figure,attr.getLocalName());
+    if (key != null && factory.figureAttributeKeys(figure).contains(key)) {
+      Object value=null;
+      if (Figure.class.isAssignableFrom(key.getValueType())) {
+        value=getFigure(attr.getValue());
+      }
+ else {
+        value=factory.stringToValue(key,attr.getValue());
+      }
+      figure.set(key,value);
+    }
+  }
+}

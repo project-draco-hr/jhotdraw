@@ -1,22 +1,25 @@
 {
   factory.reset();
-  figureElements.clear();
+  figureToElementMap.clear();
   Drawing external=null;
   NodeList list=doc.getChildNodes();
   for (int i=0; i < list.getLength(); i++) {
-    Figure f=readNodeRecursively(list.item(i));
+    Figure f=readNodesRecursively(list.item(i));
     if (f instanceof Drawing) {
       external=(Drawing)f;
       break;
     }
   }
+  external.set(Drawing.DOCUMENT_HOME,getDocumentHome());
+  readProcessingInstructions(doc,external);
   try {
-    for (    Element elem : figureElements) {
-      readElementAttributes(elem);
+    for (    Map.Entry<Figure,Element> entry : figureToElementMap.entrySet()) {
+      readElementAttributes(entry.getKey(),entry.getValue());
+      readElementNodeList(entry.getKey(),entry.getValue());
     }
   }
   finally {
-    figureElements.clear();
+    figureToElementMap.clear();
   }
   if (external != null) {
     return factory.fromExternalDrawing(external);

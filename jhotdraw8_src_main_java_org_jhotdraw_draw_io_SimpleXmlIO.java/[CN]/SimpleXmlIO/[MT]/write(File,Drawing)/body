@@ -1,4 +1,5 @@
 {
+  setDocumentHome(file.toURI());
   Document doc=toDocument(drawing);
   try {
     Transformer t=TransformerFactory.newInstance().newTransformer();

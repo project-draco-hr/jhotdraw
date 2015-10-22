@@ -1,0 +1,11 @@
+{
+  for (  Key<?> k : factory.figureNodeListKeys(figure)) {
+    @SuppressWarnings("unchecked") Key<Object> key=(Key<Object>)k;
+    Object value=figure.get(key);
+    if (!factory.isDefaultValue(key,value)) {
+      for (      Node node : factory.valueToNodeList(key,value,document)) {
+        elem.appendChild(node);
+      }
+    }
+  }
+}

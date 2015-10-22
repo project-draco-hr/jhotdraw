@@ -3,8 +3,14 @@
   addFigureKeysAndNames("Rectangle",RectangleFigure.class,Figure.getDeclaredAndInheritedKeys(RectangleFigure.class));
   addFigureKeysAndNames("Group",GroupFigure.class,Figure.getDeclaredAndInheritedKeys(GroupFigure.class));
   addFigureKeysAndNames("Drawing",SimpleDrawing.class,Figure.getDeclaredAndInheritedKeys(SimpleDrawing.class));
-  addFigureKeysAndNames("Text",TextFigure.class,Figure.getDeclaredAndInheritedKeys(TextFigure.class));
-  addFigureKeysAndNames("Label",SimpleLabelFigure.class,Figure.getDeclaredAndInheritedKeys(SimpleLabelFigure.class));
+  Set<Key<?>> keys=Figure.getDeclaredAndInheritedKeys(TextFigure.class);
+  keys.remove(TextFigure.TEXT);
+  addNodeListKey(TextFigure.class,"",TextFigure.TEXT);
+  addFigureKeysAndNames("Text",TextFigure.class,keys);
+  keys=Figure.getDeclaredAndInheritedKeys(SimpleLabelFigure.class);
+  keys.remove(TextFigure.TEXT);
+  addNodeListKey(SimpleLabelFigure.class,"",TextFigure.TEXT);
+  addFigureKeysAndNames("Label",SimpleLabelFigure.class,keys);
   addFigureKeysAndNames("Line",LineFigure.class,Figure.getDeclaredAndInheritedKeys(LineFigure.class));
   addFigureKeysAndNames("Ellipse",EllipseFigure.class,Figure.getDeclaredAndInheritedKeys(EllipseFigure.class));
   addFigureKeysAndNames("LineConnection",LineConnectionFigure.class,Figure.getDeclaredAndInheritedKeys(LineConnectionFigure.class));
@@ -14,4 +20,5 @@
   addConverter(Double.class,new NumberConverter());
   addConverter(URL.class,new URLConverter());
   addConverter(Connector.class,new DefaultConnectorConverter());
+  addConverter(Figure.STYLE_CLASS.getFullValueType(),new CssObservableWordListConverter());
 }

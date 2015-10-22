@@ -1,8 +1,8 @@
 {
-  if (!attrToKey.containsKey(f.getClass())) {
-    throw new IOException("no mapping for figure " + f.getClass());
-  }
   HashMap<String,Key<?>> strToKey=attrToKey.get(f.getClass());
+  if (attrToKey.containsKey(f.getClass())) {
+    strToKey=attrToKey.get(f.getClass());
+  }
   if (!strToKey.containsKey(attributeName)) {
     throw new IOException("no mapping for attribute " + attributeName + " in figure "+ f.getClass());
   }

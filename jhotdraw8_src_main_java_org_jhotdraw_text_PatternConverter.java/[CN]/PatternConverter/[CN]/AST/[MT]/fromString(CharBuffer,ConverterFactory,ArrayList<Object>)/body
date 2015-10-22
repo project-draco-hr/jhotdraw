@@ -1,5 +1,0 @@
-{
-  for (  AST child : children) {
-    child.fromString(buf,factory,value);
-  }
-}

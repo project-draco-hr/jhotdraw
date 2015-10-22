@@ -1,4 +1,12 @@
 {
+  if (figureAttributeKeys.containsKey(figure)) {
+    figureAttributeKeys.get(figure).add(key);
+  }
+ else {
+    HashSet<Key<?>> hset=new HashSet<>();
+    hset.add(key);
+    figureAttributeKeys.put(figure,hset);
+  }
   if (!attrToKey.containsKey(figure)) {
     attrToKey.put(figure,new HashMap<>());
   }

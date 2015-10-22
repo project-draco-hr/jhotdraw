@@ -1,0 +1,14 @@
+{
+  if (key.getValueType() == String.class) {
+    StringBuilder buf=new StringBuilder();
+    for (    Node node : nodeList) {
+      if (node.getNodeType() == Node.TEXT_NODE) {
+        buf.append(node.getNodeValue());
+      }
+    }
+    return buf.toString();
+  }
+ else {
+    throw new UnsupportedOperationException("Not supported yet.");
+  }
+}

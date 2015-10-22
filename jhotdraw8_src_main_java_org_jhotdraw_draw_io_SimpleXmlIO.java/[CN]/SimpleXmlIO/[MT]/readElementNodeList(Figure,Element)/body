@@ -1,0 +1,41 @@
+{
+  Set<Key<?>> keys=factory.figureNodeListKeys(figure);
+  for (  Key<?> ky : keys) {
+    @SuppressWarnings("unchecked") Key<Object> key=(Key<Object>)ky;
+    String name=factory.keyToElementName(figure,key);
+    if ("".equals(name)) {
+      List<Node> nodeList=new ArrayList<>();
+      NodeList children=elem.getChildNodes();
+      for (int i=0, n=children.getLength(); i < n; i++) {
+        Node child=children.item(i);
+        if (child.getNodeType() == Node.TEXT_NODE) {
+          nodeList.add(child);
+        }
+ else         if (child.getNodeType() == Node.ELEMENT_NODE) {
+          Element childElem=(Element)child;
+          if (namespaceURI != null) {
+            if (!namespaceURI.equals(childElem.getNamespaceURI())) {
+              nodeList.add(child);
+            }
+          }
+ else {
+            try {
+              if (factory.nameToFigure(childElem.getLocalName()) != null) {
+                continue;
+              }
+            }
+ catch (            IOException e) {
+              continue;
+            }
+            nodeList.add(child);
+          }
+        }
+      }
+      Object value=factory.nodeListToValue(key,nodeList);
+      figure.set(key,value);
+    }
+ else {
+      throw new UnsupportedOperationException("Reading of sub-elements is not yet supported");
+    }
+  }
+}

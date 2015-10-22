@@ -1,7 +1,8 @@
 {
   SelectorGroup selectorGroup;
+  tt.nextToken();
   skipWhitespace(tt);
-  if (tt.nextToken() == '{') {
+  if (tt.currentToken() == '{') {
     tt.pushBack();
     selectorGroup=new SelectorGroup(new UniversalSelector());
   }

@@ -1,5 +1,9 @@
 {
+  int[] indices=new int[numIndices];
+  for (int i=0; i < indices.length; i++) {
+    indices[i]=i;
+  }
   ArrayList<Object> value=new ArrayList<>();
-  ast.fromString(buf,factory,value);
+  ast.fromString(buf,factory,value,indices);
   return value.toArray();
 }

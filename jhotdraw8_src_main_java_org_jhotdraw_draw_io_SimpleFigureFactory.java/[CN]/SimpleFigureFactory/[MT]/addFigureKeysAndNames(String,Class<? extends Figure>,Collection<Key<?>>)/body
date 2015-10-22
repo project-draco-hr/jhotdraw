@@ -1,6 +1,6 @@
 {
   addFigure(figureName,f);
-  addFigureKeys(f,keys);
+  addFigureAttributeKeys(f,keys);
   for (  Key<?> key : keys) {
     addKey(f,key.getName(),key);
   }

@@ -6,6 +6,7 @@
     }
     Element elem=createElement(doc,elementName);
     writeElementAttributes(elem,figure);
+    writeElementNodeList(doc,elem,figure);
     for (    Figure child : figure.childrenProperty()) {
       if (factory.figureToName(child) != null) {
         elem.appendChild(doc.createTextNode("\n"));

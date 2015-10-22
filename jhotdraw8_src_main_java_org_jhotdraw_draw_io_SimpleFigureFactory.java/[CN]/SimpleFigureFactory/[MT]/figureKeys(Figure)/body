@@ -1,4 +1,0 @@
-{
-  Set<Key<?>> keys=figureKeys.get(f.getClass());
-  return keys == null ? Collections.emptySet() : keys;
-}

@@ -1,0 +1,5 @@
+{
+  String value=buf.toString();
+  buf.position(buf.limit());
+  return value;
+}

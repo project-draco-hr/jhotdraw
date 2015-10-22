@@ -1,0 +1,8 @@
+{
+  Object[] v=formatter.fromString(buf);
+  ArrayList<String> l=new ArrayList<>((int)v[0]);
+  for (int i=0, n=(int)v[0]; i < n; i++) {
+    l.add((String)v[i + 1]);
+  }
+  return l;
+}

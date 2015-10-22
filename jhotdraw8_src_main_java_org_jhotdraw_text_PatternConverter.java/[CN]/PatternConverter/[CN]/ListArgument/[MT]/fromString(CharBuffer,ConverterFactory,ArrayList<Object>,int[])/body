@@ -1,0 +1,29 @@
+{
+  int i=indices[index];
+  AST separator=children.size() < 2 ? null : children.get(1);
+  AST child=children.get(0);
+  int step=maxIndex - index;
+  int repeat=0;
+  try {
+    for (int j=0; true; j++) {
+      if (j != 0 && separator != null) {
+        separator.fromString(buf,factory,value,indices);
+      }
+      child.fromString(buf,factory,value,indices);
+      repeat++;
+      for (int k=index + 1; k <= maxIndex; k++) {
+        indices[k]+=step;
+      }
+    }
+  }
+ catch (  ParseException e) {
+  }
+  int shift=step * (repeat - 1);
+  for (int j=maxIndex + 1; j < indices.length; j++) {
+    indices[j]+=shift;
+  }
+  while (value.size() <= i) {
+    value.add(null);
+  }
+  value.set(i,repeat);
+}
