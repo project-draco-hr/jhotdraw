@@ -1,0 +1,3 @@
+ListView<T> listView
+ClipboardIO<T> io
+boolean reorderingOnly

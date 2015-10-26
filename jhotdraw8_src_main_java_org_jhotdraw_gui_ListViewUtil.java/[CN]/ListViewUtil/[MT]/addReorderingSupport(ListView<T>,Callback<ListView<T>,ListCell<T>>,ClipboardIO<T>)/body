@@ -1,0 +1,3 @@
+{
+  addDragAndDropSupport(listView,cellFactory,clipboardIO,true);
+}
