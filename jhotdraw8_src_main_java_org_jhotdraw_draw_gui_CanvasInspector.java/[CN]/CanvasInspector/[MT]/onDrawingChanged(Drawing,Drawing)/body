@@ -1,0 +1,30 @@
+{
+  if (widthProperty != null) {
+    widthField.textProperty().unbindBidirectional(widthProperty);
+    widthProperty.removeListener(drawingUpdater);
+  }
+  if (heightProperty != null) {
+    heightField.textProperty().unbindBidirectional(heightProperty);
+    heightProperty.removeListener(drawingUpdater);
+  }
+  if (backgroundProperty != null) {
+    backgroundColorField.textProperty().unbindBidirectional(backgroundProperty);
+    backgroundProperty.removeListener(drawingUpdater);
+  }
+  widthProperty=null;
+  heightProperty=null;
+  backgroundProperty=null;
+  if (newValue != null) {
+    widthProperty=Drawing.WIDTH.propertyAt(newValue.propertiesProperty());
+    heightProperty=Drawing.HEIGHT.propertyAt(newValue.propertiesProperty());
+    backgroundProperty=Drawing.BACKGROUND.propertyAt(newValue.propertiesProperty());
+    widthProperty.addListener(drawingUpdater);
+    heightProperty.addListener(drawingUpdater);
+    backgroundProperty.addListener(drawingUpdater);
+    widthField.textProperty().bindBidirectional(widthProperty,new StringConverterConverterWrapper<>(new XmlDoubleConverter()));
+    heightField.textProperty().bindBidirectional(heightProperty,new StringConverterConverterWrapper<>(new XmlDoubleConverter()));
+    backgroundColorField.textProperty().bindBidirectional(backgroundProperty,new StringConverterConverterWrapper<>(new CssPaintConverter()));
+    @SuppressWarnings("unchecked") Property<Color> colorProperty=(Property<Color>)(Property<?>)backgroundProperty;
+    backgroundColorPicker.valueProperty().bindBidirectional(colorProperty);
+  }
+}

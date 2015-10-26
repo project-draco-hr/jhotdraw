@@ -35,8 +35,8 @@
   vertex3.set(Figure.STYLE_ID,"vertex3");
   vertex4.set(Figure.STYLE_ID,"vertex4");
   drawing.layout();
-  ArrayList<Object> stylesheets=new ArrayList<>();
-  stylesheets.add(CssSample.class.getResource("CssSample.css"));
+  ArrayList<URI> stylesheets=new ArrayList<>();
+  stylesheets.add(CssSample.class.getResource("CssSample.css").toURI());
   drawing.set(Drawing.USER_AGENT_STYLESHEETS,stylesheets);
   drawing.applyCss();
   drawing.layout();

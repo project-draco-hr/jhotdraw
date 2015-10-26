@@ -1,5 +1,5 @@
 {
-  setAttribute(elem,"id",factory.createId(figure));
+  setAttribute(elem,factory.getObjectIdAttribute(),factory.createId(figure));
   for (  Key<?> k : factory.figureAttributeKeys(figure)) {
     @SuppressWarnings("unchecked") Key<Object> key=(Key<Object>)k;
     Object value=figure.get(key);

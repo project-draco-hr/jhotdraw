@@ -1,0 +1,3 @@
+{
+  installStagePrefsHandler(prefs,name,stage,new Dimension2D(400,300));
+}

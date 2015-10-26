@@ -6,12 +6,16 @@
   }
   if (origin == null || origin == StyleOrigin.USER_AGENT) {
     for (    Stylesheet s : userAgentStylesheets) {
-      applyStylesTo(StyleOrigin.USER_AGENT,s,metaMap,elem);
+      if (s != null) {
+        applyStylesTo(StyleOrigin.USER_AGENT,s,metaMap,elem);
+      }
     }
   }
   if (origin == null || origin == StyleOrigin.AUTHOR) {
     for (    Stylesheet s : authorStylesheets) {
-      applyStylesTo(StyleOrigin.AUTHOR,s,metaMap,elem);
+      if (s != null) {
+        applyStylesTo(StyleOrigin.AUTHOR,s,metaMap,elem);
+      }
     }
   }
   if (origin == null || origin == StyleOrigin.INLINE) {

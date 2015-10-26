@@ -11,11 +11,8 @@
       return null;
     }
     figureToElementMap.put(figure,elem);
-    String id=getAttribute(elem,"id");
-    if (id == null) {
-      throw new IOException("No \"id\" attribute in element " + elem.getTagName());
-    }
-    if (id != null) {
+    String id=getAttribute(elem,factory.getObjectIdAttribute());
+    if (id != null && !id.isEmpty()) {
       if (factory.getObject(id) != null) {
         throw new IOException("Duplicate id " + id + " in element "+ elem.getTagName());
       }

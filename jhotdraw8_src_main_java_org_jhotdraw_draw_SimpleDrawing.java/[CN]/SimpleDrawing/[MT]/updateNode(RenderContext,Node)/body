@@ -2,7 +2,7 @@
   Group g=(Group)n;
   ObservableList<Node> children=((Group)n).getChildren();
   children.clear();
-  Rectangle2D bounds=get(BOUNDS);
+  Bounds bounds=getBoundsInLocal();
   Rectangle page=(Rectangle)g.getProperties().get("background");
   page.setX(bounds.getMinX());
   page.setY(bounds.getMinY());

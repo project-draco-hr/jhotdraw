@@ -1,0 +1,8 @@
+{
+  Set<Key<?>> figureKeys=Figure.getDeclaredAndInheritedKeys(Figure.class);
+  Set<Key<?>> rectangleFigureKeys=Figure.getDeclaredAndInheritedKeys(RectangleFigure.class);
+  Set<Key<?>> intersection=new HashSet<>(figureKeys);
+  intersection.retainAll(rectangleFigureKeys);
+  System.out.println("r:" + rectangleFigureKeys);
+  assertEquals(figureKeys,intersection);
+}

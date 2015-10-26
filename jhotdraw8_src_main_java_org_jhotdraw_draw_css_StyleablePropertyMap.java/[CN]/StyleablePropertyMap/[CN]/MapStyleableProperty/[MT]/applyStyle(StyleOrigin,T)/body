@@ -8,16 +8,20 @@
  else {
 switch (origin) {
 case INLINE:
-      inlineProperties().put(key,value);
+      if (value == null)       inlineProperties().remove(key);
+ else       inlineProperties().put(key,value);
     break;
 case AUTHOR:
-  authorProperties().put(key,value);
+  if (value == null)   authorProperties().remove(key);
+ else   authorProperties().put(key,value);
 break;
 case USER:
-userProperties().put(key,value);
+if (value == null) userProperties().remove(key);
+ else userProperties().put(key,value);
 break;
 case USER_AGENT:
-userAgentProperties().put(key,value);
+if (value == null) userAgentProperties().remove(key);
+ else userAgentProperties().put(key,value);
 break;
 default :
 throw new InternalError("unknown enum value " + origin);

@@ -1,0 +1,11 @@
+{
+  FXMLLoader loader=new FXMLLoader();
+  loader.setResources(Resources.getBundle("org.jhotdraw.draw.gui.Labels"));
+  loader.setController(this);
+  try (InputStream in=fxmlUrl.openStream()){
+    setCenter(loader.load(in));
+  }
+ catch (  IOException ex) {
+    throw new InternalError(ex);
+  }
+}

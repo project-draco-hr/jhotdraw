@@ -3,11 +3,12 @@
   if (factory.getStylesheetsKey() != null) {
     for (    Object stylesheet : external.get(factory.getStylesheetsKey())) {
       if (stylesheet instanceof URI) {
-        URI stylesheetUri=(URI)stylesheet;
-        if (documentHome != null) {
-          stylesheetUri=documentHome.relativize(stylesheetUri);
+        String stylesheetString=stylesheet.toString();
+        String type="text/" + stylesheetString.substring(stylesheetString.lastIndexOf('.') + 1);
+        if ("text/".equals(type)) {
+          type="text/css";
         }
-        ProcessingInstruction pi=doc.createProcessingInstruction("xml-stylesheet","type=\"text/css\" href=\"" + stylesheet + "\"");
+        ProcessingInstruction pi=doc.createProcessingInstruction("xml-stylesheet","type=\"" + type + "\" href=\""+ stylesheet+ "\"");
         doc.insertBefore(pi,docElement);
       }
     }

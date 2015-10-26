@@ -29,10 +29,5 @@
   finally {
     figureToElementMap.clear();
   }
-  if (external != null) {
-    return factory.fromExternalDrawing(external);
-  }
- else {
-    throw new IOException(namespaceURI == null ? "document does not contain a drawing" : "document does not contain a drawing in namespace " + namespaceURI);
-  }
+  return factory.fromExternalDrawing(external);
 }

@@ -1,0 +1,28 @@
+{
+  if (value == null) {
+    out.append("transparent");
+  }
+ else   if (value instanceof Color) {
+    Color c=(Color)value;
+    if (c.getOpacity() == 1.0) {
+      int rgb=((((int)(c.getRed() * 255)) & 0xff) << 16) | ((((int)(c.getGreen() * 255)) & 0xff) << 8) | ((((int)(c.getBlue() * 255)) & 0xff) << 0);
+      String hex="000000" + Integer.toHexString(rgb);
+      out.append("#");
+      out.append(hex.substring(hex.length() - 6));
+    }
+ else {
+      out.append("rgba(");
+      out.append(Integer.toString((int)(c.getRed() * 255)));
+      out.append(',');
+      out.append(Integer.toString((int)(c.getGreen() * 255)));
+      out.append(',');
+      out.append(Integer.toString((int)(c.getBlue() * 255)));
+      out.append(',');
+      out.append(doubleConverter.toString(c.getOpacity()));
+      out.append(')');
+    }
+  }
+ else {
+    throw new UnsupportedOperationException("not yet implemented");
+  }
+}

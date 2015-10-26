@@ -1,0 +1,8 @@
+{
+  ObservableMap<Key<?>,Object> om=FXCollections.observableHashMap();
+  MapProperty<Key<?>,Object> mp=new SimpleMapProperty<>(om);
+  SimpleKey<String> sk=new SimpleKey<>("s",String.class);
+  Property<String> ps=sk.propertyAt(mp);
+  ps.setValue("2");
+  assertEquals(om.get(sk),"2");
+}

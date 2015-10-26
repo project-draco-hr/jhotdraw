@@ -1,0 +1,12 @@
+{
+  ObservableMap<Key<?>,Object> om=FXCollections.observableHashMap();
+  MapProperty<Key<?>,Object> mp=new SimpleMapProperty<>(om);
+  SimpleKey<String> sk=new SimpleKey<>("s",String.class);
+  Property<String> ps=sk.propertyAt(mp);
+  Property<String> ps2=new SimpleStringProperty("ps2");
+  ps2.bindBidirectional(ps);
+  Property<String> ps3=new SimpleStringProperty("ps3");
+  ps3.bindBidirectional(ps);
+  ps2.setValue("5");
+  assertEquals(ps3.getValue(),"5");
+}

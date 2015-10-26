@@ -5,7 +5,7 @@
     if (attr.getNamespaceURI() != null && !attr.getNamespaceURI().equals(namespaceURI)) {
       continue;
     }
-    if ("id".equals(attr.getLocalName())) {
+    if (factory.getObjectIdAttribute().equals(attr.getLocalName())) {
       continue;
     }
     @SuppressWarnings("unchecked") Key<Object> key=(Key<Object>)factory.nameToKey(figure,attr.getLocalName());

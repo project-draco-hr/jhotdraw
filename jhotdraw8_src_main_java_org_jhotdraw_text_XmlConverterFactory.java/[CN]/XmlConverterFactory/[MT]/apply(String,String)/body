@@ -1,0 +1,13 @@
+{
+  if (type == null) {
+    return new DefaultConverter();
+  }
+switch (type) {
+case "number":
+    return new XmlDoubleConverter();
+case "word":
+  return new WordConverter();
+default :
+throw new IllegalArgumentException("illegal type:" + type);
+}
+}

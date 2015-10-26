@@ -1,0 +1,19 @@
+{
+  if (type == null) {
+    return new DefaultConverter();
+  }
+switch (type) {
+case "number":
+    return new XmlDoubleConverter();
+case "size":
+  return new CssSizeConverter();
+case "word":
+return new WordConverter();
+case "paint":
+return new CssPaintConverter();
+case "font":
+return new CssFontConverter();
+default :
+throw new IllegalArgumentException("illegal type:" + type);
+}
+}

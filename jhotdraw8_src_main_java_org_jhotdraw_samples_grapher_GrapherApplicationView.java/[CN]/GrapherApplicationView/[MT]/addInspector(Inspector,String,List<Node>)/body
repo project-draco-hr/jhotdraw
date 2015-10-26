@@ -1,0 +1,20 @@
+{
+  Resources r=Resources.getResources("org.jhotdraw.draw.gui.Labels");
+  Accordion a=new Accordion();
+  Node n=inspector.getNode();
+  n.setRotate(90);
+  ((Pane)n).setPrefHeight(133);
+  Group g=new Group();
+  g.getChildren().add(n);
+  TitledPane t=new TitledPane(r.getString(id + ".toolbar"),g);
+  a.getPanes().add(t);
+  g=new Group();
+  a.setRotate(-90);
+  g.getChildren().add(a);
+  list.add(g);
+  PreferencesUtil.installBooleanPropertyHandler(Preferences.userNodeForPackage(GrapherApplicationView.class),id + ".expanded",t.expandedProperty());
+  if (t.isExpanded()) {
+    a.setExpandedPane(t);
+  }
+  inspector.setDrawingView(drawingView);
+}

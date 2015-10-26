@@ -3,6 +3,6 @@
     return converter.fromString(string);
   }
  catch (  ParseException ex) {
-    throw new IllegalArgumentException(ex);
+    return null;
   }
 }

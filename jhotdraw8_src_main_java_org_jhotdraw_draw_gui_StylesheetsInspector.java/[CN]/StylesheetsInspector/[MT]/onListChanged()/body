@@ -1,0 +1,3 @@
+{
+  drawingView.getModel().set(drawingView.getDrawing(),Drawing.AUTHOR_STYLESHEETS,new ArrayList<>(listView.getItems()));
+}

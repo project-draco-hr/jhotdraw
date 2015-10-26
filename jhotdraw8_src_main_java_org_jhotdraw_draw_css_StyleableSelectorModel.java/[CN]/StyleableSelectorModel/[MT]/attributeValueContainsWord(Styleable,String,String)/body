@@ -1,6 +1,4 @@
 {
-  System.out.println("attributeValueContainsWord " + element);
   Set<String> value=getWordListAttribute(element,attributeName);
-  System.out.println(attributeName + "  value " + value);
   return value != null && value.contains(word);
 }

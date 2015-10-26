@@ -1,0 +1,10 @@
+{
+  DrawingView oldValue=drawingView;
+  if (oldValue != null) {
+    oldValue.drawingProperty().removeListener(drawingListener);
+  }
+  this.drawingView=newValue;
+  if (newValue != null) {
+    newValue.drawingProperty().addListener(drawingListener);
+  }
+}

@@ -1,0 +1,4 @@
+Preferences prefs
+String name
+Stage stage
+Dimension2D defaultSize
