@@ -6,6 +6,8 @@
     Set<Key<?>> keys=Figure.getDeclaredAndInheritedKeys(SimpleDrawing.class);
     keys.remove(Drawing.USER_AGENT_STYLESHEETS);
     keys.remove(Drawing.AUTHOR_STYLESHEETS);
+    keys.remove(Drawing.INLINE_STYLESHEETS);
+    keys.remove(Drawing.DOCUMENT_HOME);
     addNodeListKey(TextFigure.class,"",TextFigure.TEXT);
     addFigureKeysAndNames("Drawing",SimpleDrawing.class,keys);
   }
@@ -33,6 +35,7 @@
   addConverter(URI.class,new UriConverter());
   addConverter(Connector.class,new DefaultConnectorConverter());
   addConverter(Paint.class,new XmlPaintConverter());
+  addConverter(Boolean.class,new XmlBooleanConverter());
   addConverter(Figure.STYLE_CLASS.getFullValueType(),new CssObservableWordListConverter());
   checkConverters();
 }

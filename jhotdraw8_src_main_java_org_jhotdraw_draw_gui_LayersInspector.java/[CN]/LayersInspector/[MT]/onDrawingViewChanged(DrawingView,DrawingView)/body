@@ -1,0 +1,9 @@
+{
+  if (oldValue != null) {
+    oldValue.activeLayerProperty().removeListener(selectedLayerHandler);
+  }
+  if (newValue != null) {
+    newValue.activeLayerProperty().addListener(selectedLayerHandler);
+    listView.setCellFactory(LayerCell.forListView(newValue));
+  }
+}

@@ -1,0 +1,6 @@
+{
+  if (newValue != null) {
+    layers=new ReversedObservableList<>(newValue.getChildren());
+    listView.setItems(layers);
+  }
+}

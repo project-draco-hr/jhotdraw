@@ -1,0 +1,4 @@
+{
+  this.drawingView=drawingView;
+  init(fxmlUrl);
+}

@@ -1,0 +1,17 @@
+{
+  super.updateItem(item,empty);
+  if (empty || item == null) {
+    setText(null);
+    setGraphic(null);
+    this.item=null;
+  }
+ else {
+    this.item=item;
+    isUpdating=true;
+    idLabel.setText(item.get(Figure.STYLE_ID));
+    setGraphic(node);
+    visibleCheckBox.setSelected(item.get(Figure.VISIBLE));
+    lockedCheckBox.setSelected(item.get(Figure.DISABLED));
+    isUpdating=false;
+  }
+}
