@@ -1,0 +1,3 @@
+{
+  this(LayersInspector.class.getResource("LayersInspector.fxml"),layerFactory);
+}

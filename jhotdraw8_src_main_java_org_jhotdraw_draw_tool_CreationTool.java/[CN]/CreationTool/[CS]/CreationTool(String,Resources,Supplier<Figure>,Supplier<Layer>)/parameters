@@ -1,0 +1,4 @@
+String name
+Resources rsrc
+Supplier<Figure> figureFactory
+Supplier<Layer> layerFactory

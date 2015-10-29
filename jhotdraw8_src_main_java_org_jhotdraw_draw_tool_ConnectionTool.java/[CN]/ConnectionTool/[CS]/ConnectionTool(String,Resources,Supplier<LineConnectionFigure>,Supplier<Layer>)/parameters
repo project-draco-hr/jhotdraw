@@ -1,3 +1,4 @@
 String name
 Resources rsrc
 Supplier<LineConnectionFigure> figureFactory
+Supplier<Layer> layerFactory
