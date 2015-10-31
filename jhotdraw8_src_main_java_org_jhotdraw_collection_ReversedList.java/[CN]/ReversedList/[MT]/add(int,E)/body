@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") ObservableList<E> src=(ObservableList<E>)getSource();
+  src.add(size - index,element);
+}

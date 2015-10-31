@@ -1,0 +1,4 @@
+{
+  this.iter=list.listIterator(index);
+  this.nextIndex=index;
+}

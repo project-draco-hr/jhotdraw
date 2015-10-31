@@ -1,0 +1,28 @@
+{
+  for (  Map.Entry<Class<? extends Figure>,HashMap<String,Key<?>>> entry : attrToKey.entrySet()) {
+    for (    Map.Entry<String,Key<?>> e : new ArrayList<>(entry.getValue().entrySet())) {
+      if (e.getValue() == key) {
+        entry.getValue().remove(e.getKey());
+      }
+    }
+  }
+  for (  Map.Entry<Class<? extends Figure>,HashMap<Key<?>,String>> entry : keyToAttr.entrySet()) {
+    entry.getValue().remove(key);
+  }
+  for (  Map.Entry<Class<? extends Figure>,HashMap<String,Key<?>>> entry : elemToKey.entrySet()) {
+    for (    Map.Entry<String,Key<?>> e : new ArrayList<>(entry.getValue().entrySet())) {
+      if (e.getValue() == key) {
+        entry.getValue().remove(e.getKey());
+      }
+    }
+  }
+  for (  Map.Entry<Class<? extends Figure>,HashMap<Key<?>,String>> entry : keyToElem.entrySet()) {
+    entry.getValue().remove(key);
+  }
+  for (  Map.Entry<Class<? extends Figure>,HashSet<Key<?>>> entry : figureAttributeKeys.entrySet()) {
+    entry.getValue().remove(key);
+  }
+  for (  Map.Entry<Class<? extends Figure>,HashSet<Key<?>>> entry : figureNodeListKeys.entrySet()) {
+    entry.getValue().remove(key);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  lastReturned=iter.next();
+  nextIndex++;
+  return lastReturned;
+}

@@ -1,0 +1,10 @@
+{
+  beginChange();
+  try {
+    boolean res=sublist.addAll(index,c);
+    return res;
+  }
+  finally {
+    endChange();
+  }
+}

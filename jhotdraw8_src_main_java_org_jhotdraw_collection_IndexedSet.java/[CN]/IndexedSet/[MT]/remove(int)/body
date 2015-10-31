@@ -1,0 +1,9 @@
+{
+  E old=list.remove(index);
+  beginChange();
+  nextRemove(index,old);
+  ++modCount;
+  onRemoved(old);
+  endChange();
+  return old;
+}

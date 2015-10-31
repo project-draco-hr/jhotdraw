@@ -1,0 +1,19 @@
+{
+  int oldIndex=list.indexOf(element);
+  if (oldIndex == -1) {
+    list.add(index,element);
+    beginChange();
+    nextAdd(index,index + 1);
+    onAdded(element);
+    ++modCount;
+    endChange();
+    return true;
+  }
+ else   if (oldIndex == index || oldIndex == index - 1) {
+    return false;
+  }
+ else {
+    move(oldIndex,oldIndex < index ? index - 1 : index);
+    return false;
+  }
+}

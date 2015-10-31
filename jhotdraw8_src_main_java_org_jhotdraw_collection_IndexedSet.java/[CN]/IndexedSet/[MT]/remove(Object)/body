@@ -1,0 +1,8 @@
+{
+  int i=indexOf(o);
+  if (i != -1) {
+    remove(i);
+    return true;
+  }
+  return false;
+}

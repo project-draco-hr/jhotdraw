@@ -1,0 +1,6 @@
+{
+  if ((o instanceof Figure) && ((Figure)o).getParent() == AbstractCompositeFigure.this) {
+    return super.indexOf(o);
+  }
+  return -1;
+}

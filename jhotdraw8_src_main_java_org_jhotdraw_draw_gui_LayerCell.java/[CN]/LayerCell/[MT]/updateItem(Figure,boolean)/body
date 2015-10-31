@@ -8,10 +8,10 @@
  else {
     this.item=item;
     isUpdating=true;
-    idLabel.setText(item.get(Figure.STYLE_ID));
+    setText(item.get(Figure.STYLE_ID));
     setGraphic(node);
     visibleCheckBox.setSelected(item.get(Figure.VISIBLE));
-    lockedCheckBox.setSelected(item.get(Figure.DISABLED));
+    disabledCheckBox.setSelected(item.get(Figure.DISABLED));
     isUpdating=false;
   }
 }

@@ -1,0 +1,10 @@
+{
+  beginChange();
+  try {
+    boolean res=super.removeAll(c);
+    return res;
+  }
+  finally {
+    endChange();
+  }
+}

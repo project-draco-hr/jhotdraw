@@ -1,0 +1,18 @@
+{
+  if (oldIndex == newIndex) {
+    return;
+  }
+  E element=list.remove(oldIndex);
+  list.add(newIndex,element);
+  beginChange();
+  int from=Math.min(oldIndex,newIndex);
+  int to=Math.max(oldIndex,newIndex) + 1;
+  int[] perm=new int[to - from];
+  for (int i=1; i < perm.length - 1; i++) {
+    perm[i]=from + i;
+  }
+  perm[oldIndex - from]=newIndex;
+  perm[newIndex - from]=oldIndex;
+  nextPermutation(from,to,perm);
+  endChange();
+}

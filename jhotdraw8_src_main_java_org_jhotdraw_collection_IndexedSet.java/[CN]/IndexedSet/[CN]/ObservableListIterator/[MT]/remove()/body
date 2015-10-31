@@ -1,0 +1,7 @@
+{
+  iter.remove();
+  beginChange();
+  nextRemove(nextIndex - 1,lastReturned);
+  onRemoved(lastReturned);
+  endChange();
+}

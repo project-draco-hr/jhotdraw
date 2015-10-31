@@ -1,0 +1,11 @@
+{
+  if (contains(e)) {
+    throw new UnsupportedOperationException("Can not permute element in iterator");
+  }
+  iter.add(e);
+  nextIndex++;
+  beginChange();
+  nextAdd(nextIndex,nextIndex + 1);
+  onAdded(e);
+  endChange();
+}

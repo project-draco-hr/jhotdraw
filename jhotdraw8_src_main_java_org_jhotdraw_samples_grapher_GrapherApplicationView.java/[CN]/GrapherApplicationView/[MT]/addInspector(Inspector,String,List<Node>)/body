@@ -12,9 +12,9 @@
   a.setRotate(-90);
   g.getChildren().add(a);
   list.add(g);
+  g.getProperties().put("inspector",inspector);
   PreferencesUtil.installBooleanPropertyHandler(Preferences.userNodeForPackage(GrapherApplicationView.class),id + ".expanded",t.expandedProperty());
   if (t.isExpanded()) {
     a.setExpandedPane(t);
   }
-  inspector.setDrawingView(drawingView);
 }

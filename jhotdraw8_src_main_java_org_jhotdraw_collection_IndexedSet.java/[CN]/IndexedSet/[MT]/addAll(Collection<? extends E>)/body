@@ -1,0 +1,10 @@
+{
+  beginChange();
+  try {
+    boolean res=super.addAll(c);
+    return res;
+  }
+  finally {
+    endChange();
+  }
+}

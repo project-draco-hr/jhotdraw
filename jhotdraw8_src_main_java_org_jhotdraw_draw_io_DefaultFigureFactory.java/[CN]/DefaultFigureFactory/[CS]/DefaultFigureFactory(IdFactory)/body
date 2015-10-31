@@ -24,7 +24,6 @@
     addFigureKeysAndNames("Label",SimpleLabelFigure.class,keys);
   }
   addFigureKeysAndNames("Line",LineFigure.class,Figure.getDeclaredAndInheritedKeys(LineFigure.class));
-  System.out.println("DefaultFigureFactory line:" + Figure.getDeclaredAndInheritedKeys(LineFigure.class));
   addFigureKeysAndNames("Ellipse",EllipseFigure.class,Figure.getDeclaredAndInheritedKeys(EllipseFigure.class));
   addFigureKeysAndNames("LineConnection",LineConnectionFigure.class,Figure.getDeclaredAndInheritedKeys(LineConnectionFigure.class));
   addConverter(Rectangle2D.class,new Rectangle2DConverter());
@@ -37,5 +36,6 @@
   addConverter(Paint.class,new XmlPaintConverter());
   addConverter(Boolean.class,new XmlBooleanConverter());
   addConverter(Figure.STYLE_CLASS.getFullValueType(),new CssObservableWordListConverter());
+  removeKey(Drawing.PSEUDO_CLASS_STATES);
   checkConverters();
 }

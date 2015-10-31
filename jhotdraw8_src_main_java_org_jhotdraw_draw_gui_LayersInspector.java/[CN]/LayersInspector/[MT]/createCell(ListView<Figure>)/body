@@ -1,0 +1,12 @@
+{
+  StringConverter<Figure> converter=new StringConverter<Figure>(){
+    @Override public String toString(    Figure object){
+      return object.get(Figure.STYLE_ID);
+    }
+    @Override public Figure fromString(    String string){
+      throw new UnsupportedOperationException("Not supported yet.");
+    }
+  }
+;
+  return new LayerCell(drawingView);
+}

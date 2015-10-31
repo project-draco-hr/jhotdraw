@@ -1,0 +1,3 @@
+{
+  this.iter=new ObservableListIterator(index);
+}

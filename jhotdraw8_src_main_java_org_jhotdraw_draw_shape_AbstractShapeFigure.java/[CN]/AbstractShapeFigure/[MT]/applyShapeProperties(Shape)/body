@@ -1,11 +1,10 @@
 {
-  shape.setFill(getStyled(FILL));
-  shape.setSmooth(getStyled(SMOOTH));
+  shape.setFill(getStyled(FILL_COLOR));
   shape.setStrokeDashOffset(getStyled(STROKE_DASH_OFFSET));
   shape.setStrokeLineCap(getStyled(STROKE_LINE_CAP));
   shape.setStrokeLineJoin(getStyled(STROKE_LINE_JOIN));
   shape.setStrokeMiterLimit(getStyled(STROKE_MITER_LIMIT));
-  shape.setStroke(getStyled(STROKE));
+  shape.setStroke(getStyled(STROKE_COLOR));
   shape.setStrokeType(getStyled(STROKE_TYPE));
   shape.setStrokeWidth(getStyled(STROKE_WIDTH));
   shape.getStrokeDashArray().setAll(getStyled(STROKE_DASH_ARRAY));

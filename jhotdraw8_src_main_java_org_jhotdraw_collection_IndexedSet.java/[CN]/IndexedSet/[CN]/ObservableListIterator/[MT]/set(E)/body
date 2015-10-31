@@ -1,0 +1,11 @@
+{
+  if (contains(e)) {
+    throw new UnsupportedOperationException("Can not permute element in iterator");
+  }
+  E oldValue=lastReturned;
+  lastReturned=e;
+  iter.set(e);
+  beginChange();
+  nextSet(nextIndex - 1,oldValue);
+  endChange();
+}

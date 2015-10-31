@@ -1,0 +1,7 @@
+{
+  list=backingList;
+  list.clear();
+  if (col != null) {
+    addAll(col);
+  }
+}

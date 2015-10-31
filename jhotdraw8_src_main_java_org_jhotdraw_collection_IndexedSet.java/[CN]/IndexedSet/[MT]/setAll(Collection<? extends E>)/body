@@ -1,0 +1,11 @@
+{
+  beginChange();
+  try {
+    clear();
+    addAll(col);
+  }
+  finally {
+    endChange();
+  }
+  return true;
+}

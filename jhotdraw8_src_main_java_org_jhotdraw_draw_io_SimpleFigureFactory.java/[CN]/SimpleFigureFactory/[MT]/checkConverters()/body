@@ -3,7 +3,7 @@
     for (    Key<?> k : map.keySet()) {
       String fullValueType=k.getFullValueType();
       if (!valueToXML.containsKey(fullValueType)) {
-        System.err.println(this + " WARNING can not convert " + fullValueType+ " to XML");
+        System.err.println(this + " WARNING can not convert " + fullValueType+ " to XML for key "+ k+ ".");
       }
     }
   }

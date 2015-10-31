@@ -1,0 +1,26 @@
+{
+  int oldIndex=list.indexOf(element);
+  if (oldIndex == -1) {
+    E old=list.set(index,element);
+    beginChange();
+    nextSet(index,old);
+    onRemoved(old);
+    endChange();
+    return old;
+  }
+ else   if (oldIndex == index) {
+    return element;
+  }
+ else {
+    beginChange();
+    E old=list.remove(index);
+    nextRemove(index,old);
+    onRemoved(old);
+    if (oldIndex > index) {
+      oldIndex--;
+    }
+    move(oldIndex,oldIndex < index ? index - 1 : index);
+    endChange();
+    return old;
+  }
+}

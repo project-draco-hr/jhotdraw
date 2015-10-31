@@ -1,0 +1,9 @@
+{
+  beginChange();
+  try {
+    sublist.clear();
+  }
+  finally {
+    endChange();
+  }
+}

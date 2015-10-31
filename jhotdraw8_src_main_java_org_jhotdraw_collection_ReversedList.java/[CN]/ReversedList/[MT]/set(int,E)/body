@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") List<E> tmp=((List<E>)getSource());
+  return tmp.set(getSourceIndex(index),e);
+}

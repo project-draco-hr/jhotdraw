@@ -1,0 +1,10 @@
+{
+  beginChange();
+  try {
+    boolean res=sublist.removeAll(c);
+    return res;
+  }
+  finally {
+    endChange();
+  }
+}

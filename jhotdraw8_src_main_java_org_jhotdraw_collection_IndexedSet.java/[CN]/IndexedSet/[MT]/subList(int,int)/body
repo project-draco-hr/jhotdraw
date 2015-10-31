@@ -1,0 +1,3 @@
+{
+  return new SubObservableList(super.subList(fromIndex,toIndex));
+}

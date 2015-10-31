@@ -1,0 +1,9 @@
+{
+  beginChange();
+  try {
+    super.removeRange(fromIndex,toIndex);
+  }
+  finally {
+    endChange();
+  }
+}
