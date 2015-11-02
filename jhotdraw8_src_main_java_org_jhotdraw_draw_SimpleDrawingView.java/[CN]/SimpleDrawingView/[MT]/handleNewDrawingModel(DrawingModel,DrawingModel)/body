@@ -5,7 +5,7 @@
   }
   if (newValue != null) {
     newValue.addDrawingModelListener(modelHandler);
-    rebuildNodes();
+    handleDrawingChanged();
     updateLayout();
   }
 }

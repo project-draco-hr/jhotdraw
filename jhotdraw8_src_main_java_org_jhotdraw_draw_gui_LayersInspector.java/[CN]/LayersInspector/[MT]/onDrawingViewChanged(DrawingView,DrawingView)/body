@@ -1,8 +1,10 @@
 {
   if (oldValue != null) {
     oldValue.activeLayerProperty().removeListener(selectedLayerHandler);
+    oldValue.selectedFiguresProperty().removeListener(selectionInvalidationListener);
   }
   if (newValue != null) {
     newValue.activeLayerProperty().addListener(selectedLayerHandler);
+    oldValue.selectedFiguresProperty().addListener(selectionInvalidationListener);
   }
 }

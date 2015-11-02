@@ -10,5 +10,12 @@
     updateLayout();
     updateTreeNodes(d);
     repaint();
+    for (int i=d.getChildren().size() - 1; i >= 0; i--) {
+      Layer layer=(Layer)d.getChild(i);
+      if (!layer.isDisabled() && layer.isVisible()) {
+        activeLayer.set(layer);
+        break;
+      }
+    }
   }
 }
