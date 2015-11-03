@@ -1,0 +1,7 @@
+{
+  LinkedList<Character> l=new LinkedList<>();
+  for (  char ch : str.toCharArray()) {
+    l.addFirst(ch);
+  }
+  return FXCollections.observableList(l);
+}

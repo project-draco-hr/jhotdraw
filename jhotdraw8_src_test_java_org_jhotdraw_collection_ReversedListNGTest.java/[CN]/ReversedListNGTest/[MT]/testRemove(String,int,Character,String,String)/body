@@ -1,0 +1,17 @@
+{
+  ReversedList<Character> list=new ReversedList<Character>(asList(initialList));
+  ChangeRecorder recorder=new ChangeRecorder();
+  list.addListener(recorder);
+  if (index == -1) {
+    list.remove(value);
+  }
+ else {
+    list.remove(index);
+  }
+  System.out.println("initial :" + asList(initialList));
+  System.out.println("actual  :" + list);
+  System.out.println("expected:" + asList(expectedList));
+  assertEquals(list,asList(expectedList));
+  assertEquals(list.getSource(),asReversedList(expectedList));
+  assertEquals(recorder.getChanges(),expectedChanges);
+}

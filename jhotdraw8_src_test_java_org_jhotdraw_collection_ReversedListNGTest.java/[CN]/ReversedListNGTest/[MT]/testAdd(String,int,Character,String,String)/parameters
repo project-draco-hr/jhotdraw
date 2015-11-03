@@ -1,0 +1,5 @@
+String initialList
+int index
+Character value
+String expectedList
+String expectedChanges

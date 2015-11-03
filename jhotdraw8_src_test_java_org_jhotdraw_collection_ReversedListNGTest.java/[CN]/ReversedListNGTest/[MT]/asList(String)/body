@@ -1,0 +1,7 @@
+{
+  ArrayList<Character> l=new ArrayList<>();
+  for (  char ch : str.toCharArray()) {
+    l.add(ch);
+  }
+  return FXCollections.observableList(l);
+}

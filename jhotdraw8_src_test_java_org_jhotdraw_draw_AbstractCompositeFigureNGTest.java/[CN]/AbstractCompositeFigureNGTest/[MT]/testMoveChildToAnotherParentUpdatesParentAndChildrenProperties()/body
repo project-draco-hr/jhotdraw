@@ -6,5 +6,5 @@
   parent2.add(child);
   assertFalse(parent1.getChildren().contains(child));
   assertTrue(parent2.getChildren().contains(child));
-  assertEquals(child.getParent(),equals(parent2));
+  assertEquals(child.getParent(),parent2);
 }

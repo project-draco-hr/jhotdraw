@@ -1,0 +1,31 @@
+{
+  while (c.next()) {
+    if (c.wasPermutated()) {
+      buf.append("perm(");
+      boolean first=true;
+      for (int i=c.getFrom(); i < c.getTo(); i++) {
+        if (i != c.getPermutation(i)) {
+          if (first) {
+            first=false;
+          }
+ else {
+            buf.append(',');
+          }
+          buf.append(i).append("->").append(c.getPermutation(i));
+        }
+      }
+      buf.append(")");
+    }
+ else     if (c.wasReplaced()) {
+      buf.append("rep(").append(c.getRemoved()).append("->").append(c.getAddedSubList()).append(")");
+    }
+ else {
+      if (c.wasAdded()) {
+        buf.append("add(").append(c.getFrom()).append(',').append(c.getAddedSubList()).append(')');
+      }
+      if (c.wasRemoved()) {
+        buf.append("rem(").append(c.getFrom()).append(',').append(c.getRemoved()).append(')');
+      }
+    }
+  }
+}

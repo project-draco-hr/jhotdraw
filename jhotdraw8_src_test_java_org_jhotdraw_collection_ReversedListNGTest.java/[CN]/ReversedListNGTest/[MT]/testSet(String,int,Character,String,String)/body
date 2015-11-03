@@ -1,0 +1,9 @@
+{
+  ReversedList<Character> list=new ReversedList<Character>(asList(initialList));
+  ChangeRecorder recorder=new ChangeRecorder();
+  list.addListener(recorder);
+  list.set(index,value);
+  assertEquals(list,asList(expectedList));
+  assertEquals(list.getSource(),asReversedList(expectedList));
+  assertEquals(recorder.getChanges(),expectedChanges);
+}
