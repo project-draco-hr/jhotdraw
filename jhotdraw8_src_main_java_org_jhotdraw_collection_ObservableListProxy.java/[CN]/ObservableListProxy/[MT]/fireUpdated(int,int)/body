@@ -1,0 +1,7 @@
+{
+  beginChange();
+  for (int i=from; i < to; i++) {
+    nextUpdate(i);
+  }
+  endChange();
+}

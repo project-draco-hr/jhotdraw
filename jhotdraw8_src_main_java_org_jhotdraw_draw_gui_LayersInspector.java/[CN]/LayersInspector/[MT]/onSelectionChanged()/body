@@ -1,10 +1,21 @@
 {
   Drawing d=drawingView.getDrawing();
   Set<Figure> selection=drawingView.getSelectedFigures();
-  HashMap<Figure,Integer> count=new HashMap<>();
-  for (  Figure layer : d.getChildren()) {
-    count.put(layer,0);
+  HashMap<Figure,Integer> layerToIndex=new HashMap<>();
+  List<Figure> children=d.getChildren();
+  int[] count=new int[children.size()];
+  for (int i=0, n=children.size(); i < n; i++) {
+    layerToIndex.put(children.get(i),i);
   }
   for (  Figure f : selection) {
+    Layer l=f.getLayer();
+    Integer index=layerToIndex.get(l);
+    if (index != null) {
+      count[index]++;
+    }
   }
+  for (int i=0, n=children.size(); i < n; i++) {
+    children.get(i).set(SELECTION_COUNT,count[i]);
+  }
+  layers.fireUpdated(0,layers.size());
 }

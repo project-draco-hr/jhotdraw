@@ -10,6 +10,8 @@
     isUpdating=true;
     setText(item.get(Figure.STYLE_ID));
     setGraphic(node);
+    Integer count=item.get(LayersInspector.SELECTION_COUNT);
+    selectionLabel.setText(count == null ? "" : "(" + count.toString() + ")");
     visibleCheckBox.setSelected(item.get(Figure.VISIBLE));
     disabledCheckBox.setSelected(item.get(Figure.DISABLED));
     isUpdating=false;

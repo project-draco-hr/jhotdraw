@@ -1,0 +1,4 @@
+{
+  perm=null;
+  return change.next();
+}
