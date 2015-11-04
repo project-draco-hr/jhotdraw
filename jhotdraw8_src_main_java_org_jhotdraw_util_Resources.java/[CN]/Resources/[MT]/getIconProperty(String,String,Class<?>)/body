@@ -1,7 +1,7 @@
 {
   try {
     String rsrcName=getStringRecursive(key + suffix);
-    if ("".equals(rsrcName)) {
+    if ("".equals(rsrcName) || rsrcName == null) {
       return null;
     }
     URL url=baseClass.getResource(rsrcName);

@@ -12,7 +12,7 @@
           Actions.bindMenuItem(mi,a);
         }
  else         if (mi.getId() != null) {
-          System.err.println("No action for menu item with id=" + mi.getId());
+          System.err.println("DocumentOrientedApplication: Warning: no action for menu item with id=" + mi.getId());
           mi.setVisible(false);
         }
       }

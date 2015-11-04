@@ -1,0 +1,6 @@
+{
+  if (!isDisabled() && !event.isConsumed()) {
+    onActionPerformed(event);
+    event.consume();
+  }
+}

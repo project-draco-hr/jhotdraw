@@ -1,6 +1,4 @@
 {
-  if (e.isConsumed())   return;
-  e.consume();
   final DrawingView view=getView();
   if (view == null) {
     return;

@@ -1,0 +1,6 @@
+{
+  super(app,view);
+  labels.configureAction(this,id);
+  this.property=null;
+  this.nodeGetter=nodeGetter;
+}
