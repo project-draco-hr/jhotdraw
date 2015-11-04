@@ -1,3 +1,4 @@
 {
-  return (List<E>)change.getRemoved();
+  @SuppressWarnings("unchecked") List<E> temp=(List<E>)change.getRemoved();
+  return temp;
 }
