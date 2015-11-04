@@ -8,5 +8,5 @@
     oldPoint=getOwner().localToDrawing(loc);
   }
   boolean keepAspect=event.isShiftDown();
-  resize(newPoint,getOwner(),startBounds,view.getModel(),keepAspect);
+  resize(getOwner().drawingToLocal(newPoint),getOwner(),startBounds,view.getModel(),keepAspect);
 }
