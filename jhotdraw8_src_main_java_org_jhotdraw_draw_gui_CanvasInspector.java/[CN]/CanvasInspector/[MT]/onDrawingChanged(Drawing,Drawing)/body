@@ -1,15 +1,15 @@
 {
   if (widthProperty != null) {
     widthField.textProperty().unbindBidirectional(widthProperty);
-    widthProperty.removeListener(drawingUpdater);
+    widthProperty.removeListener(commitHandler);
   }
   if (heightProperty != null) {
     heightField.textProperty().unbindBidirectional(heightProperty);
-    heightProperty.removeListener(drawingUpdater);
+    heightProperty.removeListener(commitHandler);
   }
   if (backgroundProperty != null) {
     backgroundColorField.textProperty().unbindBidirectional(backgroundProperty);
-    backgroundProperty.removeListener(drawingUpdater);
+    backgroundProperty.removeListener(commitHandler);
   }
   widthProperty=null;
   heightProperty=null;
@@ -18,9 +18,9 @@
     widthProperty=Drawing.WIDTH.propertyAt(newValue.propertiesProperty());
     heightProperty=Drawing.HEIGHT.propertyAt(newValue.propertiesProperty());
     backgroundProperty=Drawing.BACKGROUND.propertyAt(newValue.propertiesProperty());
-    widthProperty.addListener(drawingUpdater);
-    heightProperty.addListener(drawingUpdater);
-    backgroundProperty.addListener(drawingUpdater);
+    widthProperty.addListener(commitHandler);
+    heightProperty.addListener(commitHandler);
+    backgroundProperty.addListener(commitHandler);
     widthField.textProperty().bindBidirectional(widthProperty,new StringConverterConverterWrapper<>(new XmlDoubleConverter()));
     heightField.textProperty().bindBidirectional(heightProperty,new StringConverterConverterWrapper<>(new XmlDoubleConverter()));
     backgroundColorField.textProperty().bindBidirectional(backgroundProperty,new StringConverterConverterWrapper<>(new CssPaintConverter()));

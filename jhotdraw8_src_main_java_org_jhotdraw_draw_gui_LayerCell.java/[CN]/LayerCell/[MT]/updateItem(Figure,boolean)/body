@@ -6,9 +6,26 @@
     this.item=null;
   }
  else {
-    this.item=item;
     isUpdating=true;
-    setText(item.get(Figure.STYLE_ID));
+    this.item=item;
+    if (isEditing()) {
+      if (textField == null) {
+        textField=createTextField();
+      }
+      if (textField != null) {
+        textField.setText(getItemText());
+      }
+      setText(null);
+      if (textField.getParent() == null) {
+        node.getChildren().add(textField);
+      }
+    }
+ else {
+      setText(getItemText());
+      if (textField != null && textField.getParent() != null) {
+        node.getChildren().remove(textField);
+      }
+    }
     setGraphic(node);
     Integer count=item.get(LayersInspector.SELECTION_COUNT);
     selectionLabel.setText(count == null ? "" : "(" + count.toString() + ")");

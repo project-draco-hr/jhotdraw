@@ -1,0 +1,3 @@
+{
+  return getItem() == null ? "" : getItem().get(Figure.STYLE_ID);
+}
