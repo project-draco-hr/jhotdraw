@@ -57,6 +57,9 @@ if (str.subSequence(end,end + unit.length()).toString().startsWith(unit)) {
 end+=unit.length();
 }
 }
+if (text.isEmpty()) {
+throw new ParseException("invalid value",str.position());
+}
 Object value;
 double v=Double.parseDouble(text);
 if (factor != 1.0) {

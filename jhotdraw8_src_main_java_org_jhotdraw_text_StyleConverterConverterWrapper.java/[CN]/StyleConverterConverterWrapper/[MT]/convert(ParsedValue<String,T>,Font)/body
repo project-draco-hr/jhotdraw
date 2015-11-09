@@ -2,9 +2,7 @@
   try {
     return converter.fromString(value.getValue());
   }
- catch (  ParseException ex) {
-    System.err.println("StyleConverterConverterWrapper. Warning could not convert " + value + " with "+ converter);
-    ex.printStackTrace();
-    return null;
+ catch (  ParseException|IOException ex) {
+    return converter.getDefaultValue();
   }
 }

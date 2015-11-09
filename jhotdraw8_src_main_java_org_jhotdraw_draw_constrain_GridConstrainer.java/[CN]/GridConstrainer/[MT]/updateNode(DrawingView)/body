@@ -1,0 +1,30 @@
+{
+  Drawing drawing=drawingView.getDrawing();
+  Transform t=drawingView.getDrawingToView();
+  Point2D gxy=t.transform(x,y);
+  Point2D gwh=t.transform(width,height);
+  Point2D dwh=t.transform(drawing.get(Drawing.WIDTH),drawing.get(Drawing.HEIGHT));
+  Point2D zxy=t.transform(0,0);
+  ObservableList<PathElement> elements=node.getElements();
+  elements.clear();
+  double zx=zxy.getX();
+  double zy=zxy.getY();
+  double gx=gxy.getX();
+  double gy=gxy.getY();
+  double gw=gwh.getX();
+  double gh=gwh.getY();
+  double dw=dwh.getX();
+  double dh=dwh.getY();
+  if (gh > 5) {
+    for (double iy=zy; iy < dh; iy+=gh) {
+      elements.add(new MoveTo(zx,iy + gy));
+      elements.add(new LineTo(dw,iy + gy));
+    }
+  }
+  if (gw > 5) {
+    for (double ix=zx; ix < dw; ix+=gw) {
+      elements.add(new MoveTo(ix + gx,zy));
+      elements.add(new LineTo(ix + gx,dh));
+    }
+  }
+}

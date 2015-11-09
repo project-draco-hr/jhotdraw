@@ -1,3 +1,0 @@
-{
-  drawingView.getModel().fire(DrawingModelEvent.nodeInvalidated(drawingView.getModel(),drawingView.getDrawing()));
-}
