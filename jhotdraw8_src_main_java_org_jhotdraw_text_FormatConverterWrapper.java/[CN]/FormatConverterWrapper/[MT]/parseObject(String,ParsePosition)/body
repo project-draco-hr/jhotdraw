@@ -1,3 +1,15 @@
 {
-  return null;
+  try {
+    CharBuffer buf=CharBuffer.wrap(source);
+    Object value=converter.fromString(buf,null);
+    pos.setIndex(buf.position());
+    return value;
+  }
+ catch (  ParseException ex) {
+    pos.setErrorIndex(ex.getErrorOffset());
+    return null;
+  }
+catch (  IOException ex) {
+    return null;
+  }
 }

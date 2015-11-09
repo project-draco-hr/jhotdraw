@@ -2,6 +2,9 @@
   invalidateFigureNode(f);
   if (f == getDrawing()) {
     updateLayout();
+    if (constrainer.get() != null) {
+      onConstrainerInvalidated(constrainer.get());
+    }
   }
   repaint();
 }

@@ -1,8 +1,12 @@
 {
-  if (theta == 0) {
+  if (!snapToGrid.get()) {
     return angle;
   }
-  double ta=angle / theta;
+  double cAngle=this.angle.get();
+  if (cAngle == 0) {
+    return angle;
+  }
+  double ta=angle / cAngle;
   if (Double.isNaN(dir) || dir == 0) {
     ta=round(ta);
   }
@@ -12,6 +16,6 @@
  else {
     ta=ceil(ta - 1);
   }
-  double result=(ta * theta) % 360;
+  double result=(ta * cAngle) % 360;
   return result < 0 ? 360 + result : result;
 }

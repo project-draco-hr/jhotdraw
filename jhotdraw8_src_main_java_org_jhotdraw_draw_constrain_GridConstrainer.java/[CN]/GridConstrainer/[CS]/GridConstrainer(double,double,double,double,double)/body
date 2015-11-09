@@ -1,7 +1,8 @@
 {
-  this.x=x;
-  this.y=y;
-  this.width=width;
-  this.height=height;
-  this.theta=theta;
+  this.x.set(x);
+  this.y.set(y);
+  this.width.set(width);
+  this.height.set(height);
+  this.angle.set(angle);
+  this.node.getStyleClass().setAll(STYLECLASS_CONSTRAINER_GRID);
 }

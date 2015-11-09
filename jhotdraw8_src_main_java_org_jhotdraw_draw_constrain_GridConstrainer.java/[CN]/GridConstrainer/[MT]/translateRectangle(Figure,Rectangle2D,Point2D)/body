@@ -1,8 +1,15 @@
 {
-  double tx=(width == 0) ? r.getMinX() : (r.getMinX() - x) / width;
-  double ty=(height == 0) ? r.getMinY() : (r.getMinY() - y) / height;
-  double tmaxx=(width == 0) ? r.getMaxX() : (r.getMaxX() - x) / width;
-  double tmaxy=(height == 0) ? r.getMaxY() : (r.getMaxY() - y) / height;
+  if (!snapToGrid.get()) {
+    return r;
+  }
+  double cx=this.x.get();
+  double cy=this.y.get();
+  double cwidth=this.width.get();
+  double cheight=this.height.get();
+  double tx=(cwidth == 0) ? r.getMinX() : (r.getMinX() - cx) / cwidth;
+  double ty=(cheight == 0) ? r.getMinY() : (r.getMinY() - cy) / cheight;
+  double tmaxx=(cwidth == 0) ? r.getMaxX() : (r.getMaxX() - cx) / cwidth;
+  double tmaxy=(cheight == 0) ? r.getMaxY() : (r.getMaxY() - cy) / cheight;
   if (dir.getX() > 0) {
     tx+=floor(tmaxx + 1) - tmaxx;
   }
@@ -21,5 +28,5 @@
  else {
     ty=round(ty);
   }
-  return new Rectangle2D(tx * width + x,ty * height + y,r.getWidth(),r.getHeight());
+  return new Rectangle2D(tx * cwidth + cx,ty * cheight + cy,r.getWidth(),r.getHeight());
 }

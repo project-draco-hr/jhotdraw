@@ -1,0 +1,6 @@
+{
+  Constrainer c=(Constrainer)o;
+  if (c != null) {
+    c.updateNode(this);
+  }
+}

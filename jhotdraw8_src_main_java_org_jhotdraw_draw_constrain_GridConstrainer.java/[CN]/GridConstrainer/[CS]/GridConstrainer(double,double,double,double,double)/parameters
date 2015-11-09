@@ -2,4 +2,4 @@ double x
 double y
 double width
 double height
-double theta
+double angle

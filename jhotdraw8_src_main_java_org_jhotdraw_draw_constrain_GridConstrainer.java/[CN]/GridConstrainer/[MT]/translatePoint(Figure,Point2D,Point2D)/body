@@ -1,6 +1,13 @@
 {
-  double tx=(width == 0) ? p.getX() : (p.getX() - x) / width;
-  double ty=(height == 0) ? p.getY() : (p.getY() - y) / height;
+  if (!snapToGrid.get()) {
+    return p;
+  }
+  double cx=this.x.get();
+  double cy=this.y.get();
+  double cwidth=this.width.get();
+  double cheight=this.height.get();
+  double tx=(cwidth == 0) ? p.getX() : (p.getX() - cx) / cwidth;
+  double ty=(cheight == 0) ? p.getY() : (p.getY() - cy) / cheight;
   if (dir.getX() > 0) {
     tx=floor(tx + 1);
   }
@@ -19,5 +26,5 @@
  else {
     ty=round(ty);
   }
-  return new Point2D(tx * width + x,ty * height + y);
+  return new Point2D(tx * cwidth + cx,ty * cheight + cy);
 }
