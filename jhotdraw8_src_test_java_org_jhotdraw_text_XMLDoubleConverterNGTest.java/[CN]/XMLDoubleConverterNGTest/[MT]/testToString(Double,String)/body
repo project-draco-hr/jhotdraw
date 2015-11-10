@@ -1,5 +1,5 @@
 {
-  XmlDoubleConverter c=new XmlDoubleConverter();
+  XmlNumberConverter c=new XmlNumberConverter();
   String actualValue=c.toString(inputValue);
   assertEquals(actualValue,expectedValue);
 }

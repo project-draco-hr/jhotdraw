@@ -1,4 +1,3 @@
 {
-  super();
-  initFormats();
+  this(Double.NEGATIVE_INFINITY,Double.POSITIVE_INFINITY,1.0);
 }

@@ -6,7 +6,8 @@
         buf.append(node.getNodeValue());
       }
     }
-    return buf.toString();
+    @SuppressWarnings("unchecked") T temp=(T)buf.toString();
+    return temp;
   }
  else {
     throw new UnsupportedOperationException("Not supported yet.");

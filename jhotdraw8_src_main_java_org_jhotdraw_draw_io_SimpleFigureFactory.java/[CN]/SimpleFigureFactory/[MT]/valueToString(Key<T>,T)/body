@@ -1,5 +1,5 @@
 {
-  @SuppressWarnings("unchecked") Converter<Object> converter=(Converter<Object>)valueToXML.get(key.getFullValueType());
+  @SuppressWarnings("unchecked") Converter<T> converter=(Converter<T>)valueToXML.get(key.getFullValueType());
   if (converter == null) {
     throw new IOException("no converter for attribute type " + key.getFullValueType());
   }

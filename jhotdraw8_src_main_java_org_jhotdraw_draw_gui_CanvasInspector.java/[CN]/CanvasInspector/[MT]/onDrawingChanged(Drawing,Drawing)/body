@@ -21,9 +21,9 @@
     widthProperty.addListener(commitHandler);
     heightProperty.addListener(commitHandler);
     backgroundProperty.addListener(commitHandler);
-    widthField.textProperty().bindBidirectional(widthProperty,new StringConverterConverterWrapper(new XmlDoubleConverter()));
-    heightField.textProperty().bindBidirectional(heightProperty,new StringConverterConverterWrapper(new XmlDoubleConverter()));
-    backgroundColorField.textProperty().bindBidirectional(backgroundProperty,new StringConverterConverterWrapper(new CssPaintConverter()));
+    widthField.textProperty().bindBidirectional(widthProperty,new StringConverterConverterWrapper<>(new XmlDoubleConverter()));
+    heightField.textProperty().bindBidirectional(heightProperty,new StringConverterConverterWrapper<>(new XmlDoubleConverter()));
+    backgroundColorField.textProperty().bindBidirectional(backgroundProperty,new StringConverterConverterWrapper<>(new CssPaintConverter()));
     @SuppressWarnings("unchecked") Property<Color> colorProperty=(Property<Color>)(Property<?>)backgroundProperty;
     backgroundColorPicker.valueProperty().bindBidirectional(colorProperty);
   }
