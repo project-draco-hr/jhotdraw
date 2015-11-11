@@ -1,0 +1,15 @@
+{
+  StyledValue sv=backingMap.get(key);
+  if (sv == null) {
+    sv=new StyledValue();
+    backingMap.put(key,sv);
+  }
+  boolean hadValue=sv.hasValue(o);
+  V ret=sv.setValue(o,value);
+  if (o == StyleOrigin.USER) {
+    if (ret == null && value != null || ret != null && !ret.equals(value)) {
+      callObservers(new SimpleChange(key,ret,value,true,hadValue));
+    }
+  }
+  return ret;
+}

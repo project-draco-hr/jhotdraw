@@ -1,3 +1,0 @@
-{
-  return StyleablePropertyMap.this.getStyleOrigin(key);
-}

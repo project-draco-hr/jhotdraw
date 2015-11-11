@@ -1,0 +1,19 @@
+{
+  boolean removed=false;
+  for (Iterator<Entry<K,StyledValue>> i=backingMap.entrySet().iterator(); i.hasNext(); ) {
+    Entry<K,StyledValue> e=i.next();
+    if (remove == c.contains(e.getKey())) {
+      K key=e.getKey();
+      StyledValue sv=e.getValue();
+      if (sv.hasValue(ksetOrigin)) {
+        removed=true;
+        V value=sv.removeValue(ksetOrigin);
+        if (sv.isEmpty()) {
+          i.remove();
+        }
+        callObservers(new SimpleChange(key,value,null,false,true));
+      }
+    }
+  }
+  return removed;
+}

@@ -1,0 +1,6 @@
+{
+  if (changeListenerSupport == null) {
+    changeListenerSupport=new ListenerSupport<>();
+  }
+  changeListenerSupport.add(observer);
+}

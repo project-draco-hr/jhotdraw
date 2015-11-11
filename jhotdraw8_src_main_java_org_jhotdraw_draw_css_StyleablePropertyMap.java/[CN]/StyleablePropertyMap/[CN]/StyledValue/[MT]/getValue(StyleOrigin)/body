@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") T ret=(T)values[styleOrigin.ordinal()];
+  return ret;
+}

@@ -1,0 +1,6 @@
+{
+  if (invalidationListenerSupport == null) {
+    invalidationListenerSupport=new ListenerSupport<>();
+  }
+  invalidationListenerSupport.add(listener);
+}

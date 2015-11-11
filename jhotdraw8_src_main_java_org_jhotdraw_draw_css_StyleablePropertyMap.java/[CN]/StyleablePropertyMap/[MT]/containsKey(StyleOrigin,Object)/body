@@ -1,0 +1,4 @@
+{
+  StyledValue sv=backingMap.get(key);
+  return sv == null ? false : sv.hasValue(o);
+}

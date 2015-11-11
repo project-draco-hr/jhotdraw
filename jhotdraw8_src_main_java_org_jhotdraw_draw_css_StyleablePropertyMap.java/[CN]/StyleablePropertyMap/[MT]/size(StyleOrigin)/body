@@ -1,0 +1,9 @@
+{
+  int count=0;
+  for (  Map.Entry<K,StyledValue> e : backingMap.entrySet()) {
+    if (e.getValue().hasValue(o)) {
+      count++;
+    }
+  }
+  return count;
+}

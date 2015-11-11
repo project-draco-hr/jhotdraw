@@ -1,0 +1,6 @@
+{
+  if (keySet == null) {
+    keySet=new ObservableKeySet(StyleOrigin.USER);
+  }
+  return keySet;
+}

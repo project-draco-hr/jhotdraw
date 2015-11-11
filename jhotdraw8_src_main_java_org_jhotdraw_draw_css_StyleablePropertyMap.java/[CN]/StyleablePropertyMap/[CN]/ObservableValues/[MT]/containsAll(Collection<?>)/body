@@ -1,0 +1,8 @@
+{
+  for (  Object k : c) {
+    if (!containsValue(ksetOrigin,k)) {
+      return false;
+    }
+  }
+  return true;
+}

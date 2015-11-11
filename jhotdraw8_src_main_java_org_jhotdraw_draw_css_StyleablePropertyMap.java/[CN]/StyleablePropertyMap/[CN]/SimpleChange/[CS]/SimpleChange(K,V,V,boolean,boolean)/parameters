@@ -1,0 +1,5 @@
+K key
+V old
+V added
+boolean wasAdded
+boolean wasRemoved

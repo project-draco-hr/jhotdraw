@@ -1,0 +1,3 @@
+{
+  return remove(StyleOrigin.USER,key);
+}

@@ -1,0 +1,5 @@
+{
+  if (invalidationListenerSupport != null) {
+    invalidationListenerSupport.remove(listener);
+  }
+}

@@ -1,5 +1,0 @@
-{
-  setSelector(selector);
-  properties=new HashMap<>();
-  properties.put(propertyName,new PropertyValue(unparsedValue));
-}

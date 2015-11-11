@@ -1,4 +1,0 @@
-{
-  super.fireValueChangedEvent();
-  applyStyle(StyleOrigin.USER,get());
-}

@@ -1,4 +1,0 @@
-{
-  properties=new HashMap<>();
-  properties.put(name,new PropertyValue(unparsedValue));
-}

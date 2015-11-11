@@ -1,0 +1,8 @@
+{
+  for (  Map.Entry<K,StyledValue> e : backingMap.entrySet()) {
+    if (e.getValue().hasValue(o)) {
+      return false;
+    }
+  }
+  return true;
+}

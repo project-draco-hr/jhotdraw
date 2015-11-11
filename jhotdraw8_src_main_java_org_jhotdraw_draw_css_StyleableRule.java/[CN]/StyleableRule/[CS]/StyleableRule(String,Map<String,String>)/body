@@ -1,7 +1,0 @@
-{
-  setSelector(selector);
-  properties=new HashMap<>();
-  for (  Map.Entry<String,String> entry : unparsedProperties.entrySet()) {
-    properties.put(entry.getKey(),new PropertyValue(entry.getValue()));
-  }
-}

@@ -1,0 +1,34 @@
+{
+  return new Iterator<K>(){
+    private Iterator<Entry<K,StyledValue>> entryIt=backingMap.entrySet().iterator();
+    private boolean hasNext;
+    private K nextKey;
+    private K lastKey;
+{
+      advance();
+    }
+    private void advance(){
+      while (entryIt.hasNext()) {
+        Entry<K,StyledValue> entry=entryIt.next();
+        if (entry.getValue().hasValue(ksetOrigin)) {
+          nextKey=entry.getKey();
+          hasNext=true;
+          return;
+        }
+      }
+      hasNext=false;
+    }
+    @Override public boolean hasNext(){
+      return hasNext;
+    }
+    @Override public K next(){
+      lastKey=nextKey;
+      advance();
+      return lastKey;
+    }
+    @Override public void remove(){
+      StyleablePropertyMap.this.remove(ksetOrigin,lastKey);
+    }
+  }
+;
+}
