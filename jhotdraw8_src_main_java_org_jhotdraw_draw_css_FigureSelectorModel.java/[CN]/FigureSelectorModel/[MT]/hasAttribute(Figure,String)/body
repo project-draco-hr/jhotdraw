@@ -1,0 +1,4 @@
+{
+  StyleableKey<?> k=findKey(element,attributeName);
+  return k != null && element.propertiesProperty().containsKey(k);
+}

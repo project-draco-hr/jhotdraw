@@ -1,3 +1,4 @@
 {
-  return clazz;
+  @SuppressWarnings("unchecked") Class<T> ret=(Class<T>)clazz;
+  return ret;
 }

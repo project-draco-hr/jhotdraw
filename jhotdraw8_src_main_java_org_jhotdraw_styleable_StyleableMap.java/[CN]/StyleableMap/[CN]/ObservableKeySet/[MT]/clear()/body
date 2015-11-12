@@ -1,0 +1,3 @@
+{
+  StyleableMap.this.clear(ksetOrigin);
+}

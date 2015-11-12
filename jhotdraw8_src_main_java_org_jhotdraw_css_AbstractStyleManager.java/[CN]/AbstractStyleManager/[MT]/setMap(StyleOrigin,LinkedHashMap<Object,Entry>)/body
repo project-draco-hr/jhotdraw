@@ -1,0 +1,15 @@
+{
+switch (origin) {
+case AUTHOR:
+    authorList=newValue;
+  break;
+case USER_AGENT:
+userAgentList=newValue;
+break;
+case INLINE:
+inlineList=newValue;
+break;
+default :
+throw new IllegalArgumentException("illegal origin:" + origin);
+}
+}

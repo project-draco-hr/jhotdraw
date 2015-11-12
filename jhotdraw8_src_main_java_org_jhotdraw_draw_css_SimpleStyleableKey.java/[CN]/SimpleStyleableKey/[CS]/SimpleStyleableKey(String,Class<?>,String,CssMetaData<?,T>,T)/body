@@ -1,4 +1,0 @@
-{
-  super(key,clazz,typeParameters,defaultValue);
-  this.cssMetaData=metaData;
-}

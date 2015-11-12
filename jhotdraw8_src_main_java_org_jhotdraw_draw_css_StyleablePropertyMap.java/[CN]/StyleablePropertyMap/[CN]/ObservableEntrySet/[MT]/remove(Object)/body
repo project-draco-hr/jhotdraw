@@ -1,4 +1,0 @@
-{
-  Entry<K,V> entry=(Entry<K,V>)o;
-  return StyleablePropertyMap.this.remove(oesOrigin,entry.getKey()) != null;
-}

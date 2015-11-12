@@ -1,0 +1,9 @@
+{
+  if (key instanceof StyleableKey) {
+    StyleableKey<T> skey=(StyleableKey<T>)key;
+    return new KeyMapEntryStyleableProperty<T>(properties,skey,skey.getCssName(),skey.getCssMetaData());
+  }
+ else {
+    return null;
+  }
+}

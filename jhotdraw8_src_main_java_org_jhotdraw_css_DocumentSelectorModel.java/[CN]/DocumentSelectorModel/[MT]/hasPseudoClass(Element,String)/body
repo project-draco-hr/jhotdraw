@@ -1,3 +1,26 @@
 {
-  return false;
+switch (pseudoClass) {
+case "root":
+    return element.getOwnerDocument() != null && element.getOwnerDocument().getDocumentElement() == element;
+case "nth-child(even)":
+{
+    int i=getChildIndex(element);
+    return i != -1 && i % 2 == 0;
+  }
+case "nth-child(odd)":
+{
+  int i=getChildIndex(element);
+  return i != -1 && i % 2 == 1;
+}
+case "first-child":
+{
+return isFirstChild(element);
+}
+case "last-child":
+{
+return isLastChild(element);
+}
+default :
+return false;
+}
 }

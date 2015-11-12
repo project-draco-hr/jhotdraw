@@ -1,0 +1,9 @@
+{
+  @SuppressWarnings("unchecked") StyleableMap<Key<?>,Object> m=(StyleableMap<Key<?>,Object>)mapp.get();
+  this.map=m;
+  this.key=key;
+  this.metaData=metaData;
+  this.mapp=mapp;
+  this.name=name;
+  bindBidirectional(new KeyMapEntryProperty<T>(mapp,key));
+}

@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") T temp=(T)map.get(key);
+  return temp;
+}

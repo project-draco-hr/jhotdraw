@@ -1,0 +1,5 @@
+{
+  this.key=key;
+  this.metaData=metaData;
+  bindBidirectional(new KeyMapEntryProperty<T>(user,key));
+}

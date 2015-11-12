@@ -1,0 +1,7 @@
+{
+  CharBuffer out=CharBuffer.allocate(buf.remaining());
+  int count=buf.read(out);
+  out.position(0);
+  out.limit(count);
+  return out.toString();
+}

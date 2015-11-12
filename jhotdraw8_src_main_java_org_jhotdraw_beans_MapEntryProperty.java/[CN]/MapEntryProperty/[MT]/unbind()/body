@@ -1,0 +1,9 @@
+{
+  super.unbind();
+  if (map != null) {
+    map.removeListener(mapListener);
+    mapListener=null;
+    map=null;
+    key=null;
+  }
+}

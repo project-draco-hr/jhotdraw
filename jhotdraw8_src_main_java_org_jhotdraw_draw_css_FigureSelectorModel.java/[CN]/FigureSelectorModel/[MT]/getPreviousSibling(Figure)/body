@@ -1,0 +1,7 @@
+{
+  if (element.getParent() == null) {
+    return null;
+  }
+  int i=element.getParent().getChildren().indexOf(element);
+  return i == 0 ? null : element.getParent().getChild(i - 1);
+}

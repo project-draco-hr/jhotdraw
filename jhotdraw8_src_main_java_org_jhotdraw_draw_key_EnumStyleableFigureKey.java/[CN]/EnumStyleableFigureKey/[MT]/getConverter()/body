@@ -1,0 +1,6 @@
+{
+  if (converter == null) {
+    converter=new EnumConverter<T>(getValueType());
+  }
+  return converter;
+}

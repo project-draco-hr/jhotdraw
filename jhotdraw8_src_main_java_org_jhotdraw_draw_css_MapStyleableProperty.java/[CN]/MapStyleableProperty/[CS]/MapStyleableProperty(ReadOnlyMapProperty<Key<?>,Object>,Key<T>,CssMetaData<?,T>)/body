@@ -1,6 +1,0 @@
-{
-  this.key=key;
-  this.metaData=metaData;
-  this.map=map;
-  bindBidirectional(new Key.PropertyAt<>(map,key));
-}

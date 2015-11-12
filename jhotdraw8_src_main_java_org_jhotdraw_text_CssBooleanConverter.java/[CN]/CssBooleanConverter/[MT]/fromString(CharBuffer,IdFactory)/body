@@ -1,0 +1,18 @@
+{
+  int pos=in.position();
+  StringBuilder out=new StringBuilder();
+  while (in.remaining() > 0 && !Character.isWhitespace(in.charAt(0))) {
+    out.append(in.get());
+  }
+  String str=out.toString();
+  if (str.equals(trueString)) {
+    return true;
+  }
+ else   if (str.equals(falseString)) {
+    return false;
+  }
+ else {
+    in.position(pos);
+    throw new ParseException("\"" + trueString + "\" or \""+ falseString+ "\" expected instead of \""+ str+ "\".",pos);
+  }
+}

@@ -1,0 +1,12 @@
+{
+switch (origin) {
+case AUTHOR:
+    return authorList;
+case USER_AGENT:
+  return userAgentList;
+case INLINE:
+return inlineList;
+default :
+throw new IllegalArgumentException("illegal origin:" + origin);
+}
+}

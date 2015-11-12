@@ -1,0 +1,9 @@
+{
+  @SuppressWarnings("unchecked") StyleableKey<Object> k=(StyleableKey<Object>)findKey(element,attributeName);
+  if (k == null) {
+    return false;
+  }
+  Object value=element.get(k);
+  String stringValue=k.getConverter().toString(value);
+  return attributeValue.equals(stringValue);
+}

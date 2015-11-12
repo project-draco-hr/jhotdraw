@@ -1,6 +1,10 @@
 {
   HashMap<String,String> applicableDeclarations=new HashMap<>();
-  for (  Stylesheet s : userAgentStylesheets) {
+  for (  Entry e : getUserAgentStylesheets()) {
+    Stylesheet s=e.getStylesheet();
+    if (s == null) {
+      continue;
+    }
     for (    StyleRule r : s.getRulesets()) {
       if (r.getSelectorGroup().matches(selectorModel,elem)) {
         for (        Declaration d : r.getDeclarations()) {
@@ -11,7 +15,24 @@
       }
     }
   }
-  for (  Stylesheet s : authorStylesheets) {
+  for (  Entry e : getAuthorStylesheets()) {
+    Stylesheet s=e.getStylesheet();
+    if (s == null) {
+      continue;
+    }
+    for (    StyleRule r : s.getRulesets()) {
+      if (r.getSelectorGroup().matches(selectorModel,elem)) {
+        for (        Declaration d : r.getDeclarations()) {
+          applicableDeclarations.put(d.getProperty(),d.getTermsAsString());
+        }
+      }
+    }
+  }
+  for (  Entry e : getInlineStylesheets()) {
+    Stylesheet s=e.getStylesheet();
+    if (s == null) {
+      continue;
+    }
     for (    StyleRule r : s.getRulesets()) {
       if (r.getSelectorGroup().matches(selectorModel,elem)) {
         for (        Declaration d : r.getDeclarations()) {

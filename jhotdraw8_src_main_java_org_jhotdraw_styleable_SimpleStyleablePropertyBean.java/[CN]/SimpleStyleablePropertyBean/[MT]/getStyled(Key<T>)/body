@@ -1,0 +1,5 @@
+{
+  StyleableMap<Key<?>,Object> map=getStyleableMap();
+  @SuppressWarnings("unchecked") T ret=(T)(map.containsStyledKey(key) ? map.getStyled(key) : key.getDefaultValue());
+  return ret;
+}

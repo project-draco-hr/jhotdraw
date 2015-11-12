@@ -1,13 +1,8 @@
 {
   if (styleManager != null) {
-    try {
-      styleManager.updateStylesheets(StyleOrigin.USER_AGENT,get(DOCUMENT_HOME),get(USER_AGENT_STYLESHEETS));
-      styleManager.updateStylesheets(StyleOrigin.AUTHOR,get(DOCUMENT_HOME),get(AUTHOR_STYLESHEETS));
-    }
- catch (    IOException ex) {
-      System.err.println("Warning could not load user agent stylesheets.");
-      ex.printStackTrace();
-    }
+    styleManager.setStylesheets(StyleOrigin.USER_AGENT,get(DOCUMENT_HOME),get(USER_AGENT_STYLESHEETS));
+    styleManager.setStylesheets(StyleOrigin.AUTHOR,get(DOCUMENT_HOME),get(AUTHOR_STYLESHEETS));
+    styleManager.setStylesheets(StyleOrigin.INLINE,get(INLINE_STYLESHEETS));
   }
   super.stylesheetNotify();
 }

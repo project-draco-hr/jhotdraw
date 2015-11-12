@@ -1,8 +1,8 @@
 {
-  styleableProperties.clearNonUserProperties();
+  getStyleableMap().clearNonUserValues();
   Drawing d=getDrawing();
   if (d != null) {
-    StyleableStyleManager styleManager=d.getStyleManager();
+    StyleManager<Figure> styleManager=d.getStyleManager();
     styleManager.applyStylesTo(this);
     for (    Figure child : getChildren()) {
       child.applyCss();

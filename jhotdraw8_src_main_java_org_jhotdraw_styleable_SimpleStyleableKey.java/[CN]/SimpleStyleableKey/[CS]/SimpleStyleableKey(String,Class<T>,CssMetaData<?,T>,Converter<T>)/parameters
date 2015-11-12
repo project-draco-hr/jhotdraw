@@ -1,0 +1,4 @@
+String key
+Class<T> clazz
+CssMetaData<?,T> metaData
+Converter<T> converter

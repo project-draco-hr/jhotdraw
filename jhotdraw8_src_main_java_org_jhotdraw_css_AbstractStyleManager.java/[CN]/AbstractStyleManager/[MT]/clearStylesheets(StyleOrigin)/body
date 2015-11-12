@@ -1,0 +1,10 @@
+{
+  if (origin == null) {
+    authorList.clear();
+    userAgentList.clear();
+    inlineList.clear();
+  }
+ else {
+    getMap(origin).clear();
+  }
+}

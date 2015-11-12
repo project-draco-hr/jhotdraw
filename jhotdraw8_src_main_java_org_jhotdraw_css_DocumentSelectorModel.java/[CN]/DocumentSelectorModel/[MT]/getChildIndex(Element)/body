@@ -1,0 +1,14 @@
+{
+  if (element.getParentNode() != null) {
+    NodeList list=element.getParentNode().getChildNodes();
+    for (int i=0, j=0, n=list.getLength(); i < n; i++) {
+      if (list.item(i) == element) {
+        return j;
+      }
+      if (list.item(i) instanceof Element) {
+        j++;
+      }
+    }
+  }
+  return -1;
+}

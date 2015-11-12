@@ -1,0 +1,17 @@
+{
+  StyledValue sv=backingMap.get(key);
+  V ret=null;
+  boolean hadValue;
+  if (sv != null && sv.hasValue(o)) {
+    hadValue=true;
+    ret=sv.removeValue(o);
+  }
+ else {
+    hadValue=false;
+    ret=null;
+  }
+  if (hadValue && o == StyleOrigin.USER) {
+    callObservers(new SimpleChange(key,ret,null,false,true));
+  }
+  return ret;
+}
