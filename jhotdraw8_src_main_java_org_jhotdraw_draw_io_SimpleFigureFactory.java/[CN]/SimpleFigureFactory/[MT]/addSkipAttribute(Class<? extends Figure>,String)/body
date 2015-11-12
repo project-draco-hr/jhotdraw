@@ -1,0 +1,8 @@
+{
+  HashSet<Class<? extends Figure>> set=skipAttributes.get(attributeName);
+  if (set == null) {
+    set=new HashSet<Class<? extends Figure>>();
+    skipAttributes.put(attributeName,set);
+  }
+  set.add(figure);
+}
