@@ -2,7 +2,7 @@
   DrawingModel model=view.getModel();
   for (  Figure child : figures) {
     Figure parent=child.getParent();
-    if (parent != null && !parent.isDisabled() && parent.isDecomposable()) {
+    if (parent != null && !parent.isDisabledOrLocked() && parent.isDecomposable()) {
       model.insertChildAt(child,parent,parent.getChildren().size() - 1);
     }
   }

@@ -1,4 +1,5 @@
 {
+  exceptions=new ArrayList<>();
   CssTokenizer tt=new CssTokenizer(css);
   return parseStylesheet(tt);
 }

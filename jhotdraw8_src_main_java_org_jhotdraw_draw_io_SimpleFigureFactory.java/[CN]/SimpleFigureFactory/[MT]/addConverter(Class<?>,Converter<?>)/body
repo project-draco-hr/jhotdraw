@@ -1,3 +1,0 @@
-{
-  addConverter(valueType.getName(),converter);
-}

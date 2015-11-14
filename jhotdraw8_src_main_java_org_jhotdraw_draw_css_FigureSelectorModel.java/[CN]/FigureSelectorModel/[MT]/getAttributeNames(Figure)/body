@@ -1,0 +1,10 @@
+{
+  Set<String> attr=new HashSet<>();
+  for (  Key<?> key : element.getSupportedKeys()) {
+    if (key instanceof StyleableKey) {
+      StyleableKey<?> sk=(StyleableKey<?>)key;
+      attr.add(sk.getCssName());
+    }
+  }
+  return attr;
+}

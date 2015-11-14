@@ -1,0 +1,4 @@
+StyleOrigin styleOrigin
+Stylesheet s
+Figure f
+HashMap<String,Set<Figure>> pseudoStyles

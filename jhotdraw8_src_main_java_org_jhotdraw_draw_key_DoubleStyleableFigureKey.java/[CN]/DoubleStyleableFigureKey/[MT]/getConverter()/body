@@ -1,6 +1,3 @@
 {
-  if (converter == null) {
-    converter=new CssSizeConverter();
-  }
   return converter;
 }

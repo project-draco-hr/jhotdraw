@@ -9,14 +9,15 @@ case CssTokenizer.TT_CDC:
 case CssTokenizer.TT_CDO:
       break;
 case CssTokenizer.TT_BAD_URI:
-    throw new ParseException("Term: Bad URI in line " + tt.getLineNumber() + ".",tt.getPosition());
+    throw new ParseException("Terms: Bad URI in line " + tt.getLineNumber() + ".",tt.getPosition());
 case CssTokenizer.TT_BAD_STRING:
-  throw new ParseException("Term: Bad String in line " + tt.getLineNumber() + ".",tt.getPosition());
+  throw new ParseException("Terms: Bad String in line " + tt.getLineNumber() + ".",tt.getPosition());
 default :
 terms.add(new Term(tt.currentToken(),tt.currentStringValue(),tt.currentNumericValue()));
 break;
 }
 }
 tt.pushBack();
+if (terms.isEmpty()) throw new ParseException("Terms: Terms expected in line " + tt.getLineNumber() + ".",tt.getPosition());
 return terms;
 }

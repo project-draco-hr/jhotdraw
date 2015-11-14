@@ -1,5 +1,6 @@
 {
   Group g=(Group)n;
+  applyFigureProperties(n);
   ObservableList<Node> children=((Group)n).getChildren();
   children.clear();
   Bounds bounds=getBoundsInLocal();

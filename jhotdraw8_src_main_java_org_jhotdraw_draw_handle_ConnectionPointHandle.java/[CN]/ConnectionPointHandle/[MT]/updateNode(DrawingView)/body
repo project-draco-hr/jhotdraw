@@ -7,4 +7,6 @@
   node.setBackground(isConnected ? REGION_BACKGROUND_CONNECTED : REGION_BACKGROUND_DISCONNECTED);
   node.getStyleClass().set(0,isConnected ? styleclassConnected : styleclassDisconnected);
   node.relocate(p.getX() - 5,p.getY() - 5);
+  node.setRotate(f.getStyled(ROTATE));
+  node.setRotationAxis(f.getStyled(ROTATION_AXIS));
 }

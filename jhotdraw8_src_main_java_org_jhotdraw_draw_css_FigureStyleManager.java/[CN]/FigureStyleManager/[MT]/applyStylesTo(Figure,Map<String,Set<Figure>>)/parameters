@@ -1,0 +1,2 @@
+Figure elem
+Map<String,Set<Figure>> pseudoClassStates

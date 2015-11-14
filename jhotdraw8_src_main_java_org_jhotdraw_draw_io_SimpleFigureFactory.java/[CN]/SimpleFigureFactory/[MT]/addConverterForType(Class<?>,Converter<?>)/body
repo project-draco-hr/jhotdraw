@@ -1,0 +1,3 @@
+{
+  SimpleFigureFactory.this.addConverterForType(valueType.getName(),converter);
+}

@@ -1,6 +1,13 @@
 {
   try {
-    Color c=Color.web(buf.toString());
+    String str=buf.toString();
+    Color c;
+    if ("none".equals(str)) {
+      c=null;
+    }
+ else {
+      c=Color.web(str);
+    }
     buf.position(buf.limit());
     return c;
   }

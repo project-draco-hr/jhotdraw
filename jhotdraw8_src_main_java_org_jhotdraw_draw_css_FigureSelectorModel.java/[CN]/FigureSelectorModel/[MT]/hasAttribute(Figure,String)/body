@@ -1,4 +1,8 @@
 {
-  StyleableKey<?> k=findKey(element,attributeName);
-  return k != null && element.propertiesProperty().containsKey(k);
+  for (  Key<?> key : element.getSupportedKeys()) {
+    if (key.getName().equals(attributeName) && (key instanceof StyleableKey)) {
+      return true;
+    }
+  }
+  return false;
 }

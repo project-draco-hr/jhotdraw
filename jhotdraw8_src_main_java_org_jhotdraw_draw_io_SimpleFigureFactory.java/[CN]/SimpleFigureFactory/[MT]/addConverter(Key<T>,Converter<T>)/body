@@ -1,0 +1,4 @@
+{
+  keyValueToXML.put(key,converter);
+  keyValueFromXML.put(key,converter);
+}

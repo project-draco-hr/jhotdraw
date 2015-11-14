@@ -1,0 +1,7 @@
+{
+  @SuppressWarnings("unchecked") StyleableKey<Object> k=(StyleableKey<Object>)findKey(element,attributeName);
+  if (k == null) {
+    return null;
+  }
+  return k.getConverter().toString(element.get(k));
+}

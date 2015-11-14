@@ -23,7 +23,9 @@
     xField.textProperty().bindBidirectional(gc.xProperty(),cc);
     yField.textProperty().bindBidirectional(gc.yProperty(),cc);
     angleField.textProperty().bindBidirectional(gc.angleProperty(),cc);
+    gc.drawGridProperty().set(drawGridCheckBox.isSelected());
     drawGridCheckBox.selectedProperty().bindBidirectional(gc.drawGridProperty());
+    gc.snapToGridProperty().set(snapToGridCheckBox.isSelected());
     snapToGridCheckBox.selectedProperty().bindBidirectional(gc.snapToGridProperty());
   }
 }

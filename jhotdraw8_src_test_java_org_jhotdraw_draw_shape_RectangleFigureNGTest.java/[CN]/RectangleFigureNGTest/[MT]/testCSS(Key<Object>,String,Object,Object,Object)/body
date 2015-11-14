@@ -1,6 +1,6 @@
 {
   RectangleFigure instance=new RectangleFigure();
-  System.out.println(Figure.getSupportedKeys(instance));
+  System.out.println(instance.getSupportedKeys());
   System.out.println(instance.getCssMetaData());
   instance.set(key,userValue);
   System.out.println(key + ":" + instance.get(key));

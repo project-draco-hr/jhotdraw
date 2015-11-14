@@ -1,5 +1,4 @@
 {
-  exceptions=new ArrayList<>();
   List<StyleRule> styleRules=new ArrayList<>();
   while (tt.nextToken() != CssTokenizer.TT_EOF) {
     try {

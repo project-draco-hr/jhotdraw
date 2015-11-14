@@ -34,12 +34,10 @@
   vertex2.set(Figure.STYLE_ID,"vertex2");
   vertex3.set(Figure.STYLE_ID,"vertex3");
   vertex4.set(Figure.STYLE_ID,"vertex4");
-  System.out.println("V3 Fill color (should be white!):" + vertex3.getStyled(AbstractShapeFigure.FILL_COLOR) + " o:"+ vertex3.getStyleableProperty(AbstractShapeFigure.FILL_COLOR).getStyleOrigin());
   ArrayList<URI> stylesheets=new ArrayList<>();
   stylesheets.add(CssSample.class.getResource("CssSample.css").toURI());
   drawing.set(Drawing.USER_AGENT_STYLESHEETS,stylesheets);
   drawing.applyCss();
-  System.out.println("V3 Fill color (should be blue!):" + vertex3.getStyled(AbstractShapeFigure.FILL_COLOR) + " o:"+ vertex3.getStyleableProperty(AbstractShapeFigure.FILL_COLOR).getStyleOrigin());
   drawing.layout();
   DrawingView drawingView=new SimpleDrawingView();
   drawingView.setDrawing(drawing);

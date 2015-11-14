@@ -1,0 +1,5 @@
+{
+  StyleableMap<Key<?>,Object> map=getStyleableMap();
+  @SuppressWarnings("unchecked") T ret=(T)map.put(origin,key,newValue);
+  return ret;
+}

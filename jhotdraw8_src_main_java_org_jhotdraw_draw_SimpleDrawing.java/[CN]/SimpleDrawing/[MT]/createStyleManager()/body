@@ -1,4 +1,5 @@
 {
+  if (true)   return new FigureStyleManager();
   StyleManager<?> ret=(StyleManager<Styleable>)new StyleableStyleManager();
   @SuppressWarnings("unchecked") StyleManager<Figure> rf=(StyleManager<Figure>)ret;
   return rf;

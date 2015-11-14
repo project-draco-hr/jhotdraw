@@ -1,6 +1,12 @@
 {
   try {
-    @SuppressWarnings("unchecked") Converter<T> converter=(Converter<T>)valueFromXML.get(key.getFullValueType());
+    Converter<T> converter;
+    if (keyValueFromXML.containsKey(key)) {
+      @SuppressWarnings("unchecked") Converter<T> suppress=converter=(Converter<T>)keyValueFromXML.get(key);
+    }
+ else {
+      @SuppressWarnings("unchecked") Converter<T> suppress=converter=(Converter<T>)valueFromXML.get(key.getFullValueType());
+    }
     if (converter == null) {
       throw new IOException("no converter for key \"" + key + "\" with attribute type "+ key.getFullValueType());
     }

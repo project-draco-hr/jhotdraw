@@ -1,0 +1,5 @@
+{
+  DrawingView oldValue=drawingView;
+  this.drawingView=newValue;
+  onDrawingViewChanged(oldValue,newValue);
+}

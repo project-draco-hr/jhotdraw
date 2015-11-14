@@ -13,4 +13,6 @@
   node.setBorder(REGION_BORDER);
   node.setBackground(REGION_BACKGROUND);
   node.setCursor(Cursor.MOVE);
+  node.setRotate(figure.getStyled(ROTATE));
+  node.setRotationAxis(figure.getStyled(ROTATION_AXIS));
 }

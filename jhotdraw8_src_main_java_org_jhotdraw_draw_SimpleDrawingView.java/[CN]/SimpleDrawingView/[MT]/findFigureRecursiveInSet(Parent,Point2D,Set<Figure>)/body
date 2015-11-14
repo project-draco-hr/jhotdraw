@@ -8,12 +8,12 @@
     Point2D pl=n.parentToLocal(pp);
     if (contains(n,pl,TOLERANCE)) {
       Figure f=nodeToFigureMap.get(n);
-      if (f == null || !f.isSelectable() && !f.isDisabled()) {
+      if (f == null || !f.isSelectable() && !f.isDisabledOrLocked()) {
         if (n instanceof Parent) {
           f=findFigureRecursiveInSet((Parent)n,pl,figures);
         }
       }
-      if (f != null && !f.isDisabled() && figures.contains(f)) {
+      if (f != null && !f.isDisabledOrLocked() && figures.contains(f)) {
         return f;
       }
     }

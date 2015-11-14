@@ -7,10 +7,10 @@
       Bounds pl=n.parentToLocal(pp);
       if (pl.contains(n.getBoundsInLocal())) {
         Figure f=nodeToFigureMap.get(n);
-        if (f != null && f.isSelectable() && !f.isDisabled()) {
+        if (f != null && f.isSelectable() && !f.isDisabledOrLocked()) {
           found.add(f);
         }
-        if (f == null || !f.isSelectable() || decompose && f.isDecomposable() && !f.isDisabled()) {
+        if (f == null || !f.isSelectable() || decompose && f.isDecomposable() && !f.isDisabledOrLocked()) {
           if (n instanceof Parent) {
             findFiguresInsideRecursive((Parent)n,pl,found,decompose);
           }

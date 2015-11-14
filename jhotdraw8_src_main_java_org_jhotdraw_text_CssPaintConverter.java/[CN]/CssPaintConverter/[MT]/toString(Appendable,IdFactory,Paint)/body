@@ -1,6 +1,6 @@
 {
   if (value == null) {
-    out.append("transparent");
+    out.append("none");
   }
  else   if (value instanceof Color) {
     Color c=(Color)value;

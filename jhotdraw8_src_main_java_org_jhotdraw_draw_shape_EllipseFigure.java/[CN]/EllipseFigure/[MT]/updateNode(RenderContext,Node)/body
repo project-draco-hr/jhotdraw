@@ -1,7 +1,8 @@
 {
   Ellipse n=(Ellipse)node;
   applyFigureProperties(n);
-  applyShapeProperties(n);
+  applyStrokedShapeProperties(n);
+  applyFilledShapeProperties(n);
   Rectangle2D r=get(BOUNDS);
   n.setCenterX(r.getMinX() + r.getWidth() * 0.5);
   n.setCenterY(r.getMinY() + r.getHeight() * 0.5);

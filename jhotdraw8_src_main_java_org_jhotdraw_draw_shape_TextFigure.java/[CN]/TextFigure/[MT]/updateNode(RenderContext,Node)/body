@@ -5,7 +5,8 @@
   tn.setY(get(ORIGIN).getY());
   tn.setBoundsType(TextBoundsType.VISUAL);
   applyFigureProperties(tn);
-  applyTextProperties(tn);
-  applyShapeProperties(tn);
+  applyTextHolderProperties(tn);
+  applyStrokedShapeProperties(tn);
+  applyFilledShapeProperties(tn);
   tn.applyCss();
 }

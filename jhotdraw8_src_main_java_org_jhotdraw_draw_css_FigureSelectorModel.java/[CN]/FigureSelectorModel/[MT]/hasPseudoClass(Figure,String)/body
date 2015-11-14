@@ -1,3 +1,7 @@
 {
+  Set<Figure> fs=additionalPseudoClassStates.get(pseudoClass);
+  if (fs != null && fs.contains(element)) {
+    return true;
+  }
   return element.getPseudoClassStates().contains(pseudoClass);
 }

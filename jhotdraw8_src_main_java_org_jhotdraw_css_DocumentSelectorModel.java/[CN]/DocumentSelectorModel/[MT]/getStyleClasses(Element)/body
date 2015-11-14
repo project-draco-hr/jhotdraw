@@ -1,0 +1,8 @@
+{
+  String value=elem.getAttribute("class");
+  if (value == null) {
+    return Collections.emptySet();
+  }
+  String[] clazzes=value.split(" +");
+  return new HashSet<>(Arrays.asList(clazzes));
+}

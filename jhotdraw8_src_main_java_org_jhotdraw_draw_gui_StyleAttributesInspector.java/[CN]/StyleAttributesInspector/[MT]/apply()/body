@@ -1,0 +1,27 @@
+{
+  CssParser parser=new CssParser();
+  try {
+    Stylesheet s=parser.parseStylesheet(textArea.getText());
+    if (!parser.getParseExceptions().isEmpty()) {
+      System.out.println("StyleAttributesInspector:\n" + parser.getParseExceptions().toString().replace(',','\n'));
+    }
+    Drawing d=drawingView.getDrawing();
+    DrawingModel m=drawingView.getModel();
+    HashMap<String,Set<Figure>> pseudoStyles=new HashMap<>();
+    HashSet<Figure> fs=new HashSet<>(drawingView.getSelectedFigures());
+    if (fs.isEmpty()) {
+      fs.add(d);
+    }
+    pseudoStyles.put("selected",fs);
+    StyleManager<Figure> sm=d.getStyleManager();
+    for (    Figure f : d.breadthFirstIterable()) {
+      sm.applyStylesheetTo(StyleOrigin.USER,s,f,pseudoStyles);
+      m.fireNodeInvalidated(f);
+      m.fireTransformInvalidated(f);
+    }
+  }
+ catch (  IOException ex) {
+    ex.printStackTrace();
+    return;
+  }
+}

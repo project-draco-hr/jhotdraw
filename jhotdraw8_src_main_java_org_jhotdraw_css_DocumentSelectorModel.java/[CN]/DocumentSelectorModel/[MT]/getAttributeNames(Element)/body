@@ -1,0 +1,9 @@
+{
+  Set<String> attr=new HashSet<String>();
+  NamedNodeMap nnm=element.getAttributes();
+  for (int i=0, n=nnm.getLength(); i < n; i++) {
+    Node node=nnm.item(i);
+    attr.add(node.getLocalName());
+  }
+  return attr;
+}

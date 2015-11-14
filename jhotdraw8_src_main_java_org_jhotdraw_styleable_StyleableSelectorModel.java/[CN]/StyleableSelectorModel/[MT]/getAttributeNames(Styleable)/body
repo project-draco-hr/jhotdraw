@@ -1,0 +1,7 @@
+{
+  Set<String> attr=new HashSet<>();
+  for (  CssMetaData<? extends Styleable,?> item : element.getCssMetaData()) {
+    attr.add(item.getProperty());
+  }
+  return attr;
+}

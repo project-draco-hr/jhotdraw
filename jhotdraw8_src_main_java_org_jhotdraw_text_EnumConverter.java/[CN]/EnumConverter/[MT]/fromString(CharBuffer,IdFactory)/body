@@ -8,5 +8,8 @@
     in.position(pos);
     throw new ParseException("word expected",pos);
   }
-  return Enum.valueOf(enumClass,out.toString());
+  if (out.toString().equals("null")) {
+    return null;
+  }
+  return Enum.valueOf(enumClass,out.toString().toUpperCase());
 }

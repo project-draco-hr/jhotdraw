@@ -1,0 +1,3 @@
+{
+  super(name,List.class,"<Double>",mask,defaultValue);
+}
