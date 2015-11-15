@@ -211,6 +211,7 @@ stringValue=String.valueOf((char)currentToken);
 }
 }
  else {
+in.pushBack(next1);
 StringBuilder buf=new StringBuilder();
 if (numMacro(ch,buf)) {
 ch=in.nextChar();
