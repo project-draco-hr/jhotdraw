@@ -1,6 +1,6 @@
 {
   if (figure != null) {
-    Point2D newPoint=view.viewToDrawing(new Point2D(event.getX(),event.getY()));
+    Point2D newPoint=view.viewToWorld(new Point2D(event.getX(),event.getY()));
     Connector newConnector=null;
     if (!event.isMetaDown()) {
       List<Figure> list=view.findFigures(newPoint,true);
@@ -19,7 +19,7 @@
       constrainedPoint=newPoint;
     }
     DrawingModel model=view.getModel();
-    model.set(figure,LineConnectionFigure.END,figure.drawingToLocal(constrainedPoint));
+    model.set(figure,LineConnectionFigure.END,figure.worldToLocal(constrainedPoint));
     model.set(figure,LineConnectionFigure.END_CONNECTOR,newConnector);
   }
   event.consume();

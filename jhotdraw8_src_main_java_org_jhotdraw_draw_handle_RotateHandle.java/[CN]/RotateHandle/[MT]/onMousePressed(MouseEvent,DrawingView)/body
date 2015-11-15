@@ -1,5 +1,5 @@
 {
-  oldPoint=view.getConstrainer().constrainPoint(getOwner(),view.viewToDrawing(new Point2D(event.getX(),event.getY())));
+  oldPoint=view.getConstrainer().constrainPoint(getOwner(),view.viewToWorld(new Point2D(event.getX(),event.getY())));
   center=getOwner().getCenterInLocal();
   Set<Figure> selectedFigures=view.getSelectedFigures();
   groupReshapeableFigures=new HashSet<>();

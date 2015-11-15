@@ -10,9 +10,9 @@
     end=endConnector.getPositionInDrawing(this);
   }
   if (startConnector != null) {
-    set(START,drawingToParent(startConnector.chopStart(this,start,end)));
+    set(START,worldToParent(startConnector.chopStart(this,start,end)));
   }
   if (endConnector != null) {
-    set(END,drawingToParent(endConnector.chopEnd(this,start,end)));
+    set(END,worldToParent(endConnector.chopEnd(this,start,end)));
   }
 }

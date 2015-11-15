@@ -1,6 +1,6 @@
 {
   Ellipse n=(Ellipse)node;
-  applyFigureProperties(n);
+  applyTransformableFigureProperties(n);
   applyStrokedShapeProperties(n);
   applyFilledShapeProperties(n);
   Rectangle2D r=get(BOUNDS);

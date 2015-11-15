@@ -18,4 +18,11 @@
   for (  Handle h : secondaryHandles) {
     h.updateNode(this);
   }
+  if (!constrainerNodeValid) {
+    constrainerNodeValid=true;
+    Constrainer c=getConstrainer();
+    if (c != null) {
+      c.updateNode(this);
+    }
+  }
 }

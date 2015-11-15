@@ -1,6 +1,6 @@
 {
   Rectangle rectangleNode=(Rectangle)node;
-  applyFigureProperties(rectangleNode);
+  applyTransformableFigureProperties(rectangleNode);
   applyFilledShapeProperties(rectangleNode);
   applyStrokedShapeProperties(rectangleNode);
   Rectangle2D r=get(BOUNDS);

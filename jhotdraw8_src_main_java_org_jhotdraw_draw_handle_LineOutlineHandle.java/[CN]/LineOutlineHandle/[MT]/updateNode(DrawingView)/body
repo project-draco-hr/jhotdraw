@@ -1,6 +1,6 @@
 {
   Figure f=getOwner();
-  Transform t=view.getDrawingToView().createConcatenation(f.getLocalToDrawing());
+  Transform t=view.getWorldToView().createConcatenation(f.getLocalToDrawing());
   Bounds b=getOwner().getBoundsInLocal();
   points[0]=f.get(LineConnectionFigure.START).getX();
   points[1]=f.get(LineConnectionFigure.START).getY();

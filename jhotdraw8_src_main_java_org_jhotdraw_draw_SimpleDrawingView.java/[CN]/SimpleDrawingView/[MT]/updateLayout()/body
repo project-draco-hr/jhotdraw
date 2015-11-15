@@ -10,6 +10,6 @@
   toolPane.resize(w,h);
   toolPane.layout();
   stackPane.setPrefSize(w,h);
-  invalidateDrawingViewTransforms();
+  invalidateWorldViewTransforms();
   invalidateHandleNodes();
 }

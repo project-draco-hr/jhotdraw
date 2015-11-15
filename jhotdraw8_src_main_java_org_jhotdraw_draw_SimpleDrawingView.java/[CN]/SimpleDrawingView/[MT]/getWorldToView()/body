@@ -1,8 +1,8 @@
 {
-  if (drawingToViewTransform == null) {
+  if (worldToViewTransform == null) {
     Transform st=new Scale(zoomFactor.get(),zoomFactor.get());
     Transform tr=new Translate(drawingPane.getTranslateX(),drawingPane.getTranslateY());
-    drawingToViewTransform=tr.createConcatenation(st);
+    worldToViewTransform=tr.createConcatenation(st);
   }
-  return drawingToViewTransform;
+  return worldToViewTransform;
 }

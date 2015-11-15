@@ -1,5 +1,5 @@
 {
-  Point2D newPoint=view.viewToDrawing(new Point2D(event.getX(),event.getY()));
+  Point2D newPoint=view.viewToWorld(new Point2D(event.getX(),event.getY()));
   if (!event.isAltDown() && !event.isControlDown()) {
     newPoint=view.getConstrainer().constrainPoint(getOwner(),newPoint);
   }
@@ -12,12 +12,12 @@
     DrawingModel model=view.getModel();
     if (event.isShiftDown()) {
       for (      Figure f : groupReshapeableFigures) {
-        tx=f.getDrawingToParent().createConcatenation(tx);
+        tx=f.getWorldToParent().createConcatenation(tx);
         model.reshape(f,tx);
       }
     }
  else {
-      tx=getOwner().getDrawingToParent().createConcatenation(tx);
+      tx=getOwner().getWorldToParent().createConcatenation(tx);
       model.reshape(getOwner(),tx);
     }
   }

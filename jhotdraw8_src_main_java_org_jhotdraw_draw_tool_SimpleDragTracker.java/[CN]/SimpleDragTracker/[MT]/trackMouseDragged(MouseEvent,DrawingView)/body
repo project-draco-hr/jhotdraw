@@ -1,5 +1,5 @@
 {
-  Point2D newPoint=view.viewToDrawing(new Point2D(event.getX(),event.getY()));
+  Point2D newPoint=view.viewToWorld(new Point2D(event.getX(),event.getY()));
   if (!event.isAltDown() && !event.isControlDown()) {
     newPoint=view.getConstrainer().constrainPoint(anchorFigure,newPoint);
   }
@@ -12,11 +12,11 @@
   if (!tx.isIdentity()) {
     DrawingModel dm=view.getModel();
     if (event.isShiftDown()) {
-      dm.reshape(anchorFigure,anchorFigure.getDrawingToParent().createConcatenation(tx));
+      dm.reshape(anchorFigure,anchorFigure.getWorldToParent().createConcatenation(tx));
     }
  else {
       for (      Figure f : groupReshapeableFigures) {
-        dm.reshape(f,f.getDrawingToParent().createConcatenation(tx));
+        dm.reshape(f,f.getWorldToParent().createConcatenation(tx));
       }
     }
   }

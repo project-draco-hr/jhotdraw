@@ -1,9 +1,11 @@
 {
   Figure f=getOwner();
-  Transform t=view.getDrawingToView().createConcatenation(f.getLocalToDrawing());
+  Transform t=view.getWorldToView().createConcatenation(f.getLocalToDrawing());
   Bounds b=f.getBoundsInLocal();
   Point2D p=getLocation();
   p=t.transform(p);
   node.relocate(p.getX() - 5,p.getY() - 5);
-  f.applyFigureProperties(node);
+  if (f instanceof TransformableFigure) {
+    ((TransformableFigure)f).applyTransformableFigureProperties(node);
+  }
 }
