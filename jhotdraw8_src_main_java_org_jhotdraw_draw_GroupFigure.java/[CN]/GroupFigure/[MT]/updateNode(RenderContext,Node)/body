@@ -1,4 +1,5 @@
 {
+  applyHideableFigureProperties(n);
   applyTransformableFigureProperties(n);
   ObservableList<Node> group=((Group)n).getChildren();
   group.clear();
