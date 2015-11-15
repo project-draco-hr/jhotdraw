@@ -5,10 +5,10 @@
     Bounds pl=n.parentToLocal(pp);
     if (n.intersects(pl)) {
       Figure f=nodeToFigureMap.get(n);
-      if (f != null && f.isSelectable() && !f.isDisabledOrLocked()) {
+      if (f != null && f.isSelectable() && !f.isDisabledOrUneditable()) {
         found.add(f);
       }
-      if (f == null || !f.isSelectable() || decompose && f.isDecomposable() && !f.isDisabledOrLocked()) {
+      if (f == null || !f.isSelectable() || decompose && f.isDecomposable() && !f.isDisabledOrUneditable()) {
         if (n instanceof Parent) {
           findFiguresIntersectingRecursive((Parent)n,pl,found,decompose);
         }

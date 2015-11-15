@@ -4,6 +4,5 @@
   if (f == null) {
     f=findFigureRecursive((Parent)getNode(dr),viewToDrawing(vx,vy),TOLERANCE);
   }
-  System.out.println("SimpleDrawigView.findFigure " + f);
   return f;
 }
