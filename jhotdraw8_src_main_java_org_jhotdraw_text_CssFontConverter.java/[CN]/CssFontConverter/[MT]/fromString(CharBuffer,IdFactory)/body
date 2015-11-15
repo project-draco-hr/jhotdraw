@@ -1,11 +1,11 @@
 {
-  StreamPosTokenizer tt=new StreamPosTokenizer(new StringReader(buf.toString()));
+  CssTokenizer tt=new CssTokenizer(new StringReader(buf.toString()));
   FontPosture fontPosture=FontPosture.REGULAR;
   FontWeight fontWeight=FontWeight.NORMAL;
   double fontSize=12.0;
   String fontFamily="System";
-  if (tt.nextToken() == StreamPosTokenizer.TT_WORD) {
-switch (tt.sval.toLowerCase()) {
+  if (tt.nextToken() == CssTokenizer.TT_IDENT) {
+switch (tt.currentStringValue().toLowerCase()) {
 case "normal":
       fontPosture=FontPosture.REGULAR;
     break;
@@ -21,9 +21,10 @@ break;
  else {
 tt.pushBack();
 }
+tt.skipWhitespace();
 boolean fontWeightConsumed=false;
-if (tt.nextToken() == StreamPosTokenizer.TT_WORD) {
-switch (tt.sval.toLowerCase()) {
+if (tt.nextToken() == CssTokenizer.TT_IDENT) {
+switch (tt.currentStringValue().toLowerCase()) {
 case "normal":
 fontWeight=FontWeight.NORMAL;
 fontWeightConsumed=true;
@@ -48,19 +49,21 @@ break;
  else {
 tt.pushBack();
 }
+tt.skipWhitespace();
 double fontWeightOrFontSize=0.0;
 boolean fontWeightOrFontSizeConsumed=false;
 if (!fontWeightConsumed) {
-if (tt.nextToken() == StreamPosTokenizer.TT_NUMBER) {
-fontWeightOrFontSize=tt.nval;
+if (tt.nextToken() == CssTokenizer.TT_NUMBER) {
+fontWeightOrFontSize=tt.currentNumericValue().doubleValue();
 fontWeightOrFontSizeConsumed=true;
 }
  else {
 tt.pushBack();
 }
 }
-if (tt.nextToken() == StreamPosTokenizer.TT_NUMBER) {
-fontSize=tt.nval;
+tt.skipWhitespace();
+if (tt.nextToken() == CssTokenizer.TT_NUMBER) {
+fontSize=tt.currentNumericValue().doubleValue();
 if (fontWeightOrFontSizeConsumed) {
 switch ((int)fontWeightOrFontSize) {
 case 100:
@@ -91,7 +94,7 @@ case 900:
 fontWeight=FontWeight.BLACK;
 break;
 default :
-throw new ParseException("illegal font weight " + fontWeightOrFontSize,buf.position() + tt.getStartPosition());
+throw new ParseException("illegal font weight " + fontWeightOrFontSize,buf.position() + tt.getPosition());
 }
 }
 }
@@ -102,12 +105,13 @@ fontSize=fontWeightOrFontSize;
  else {
 tt.pushBack();
 }
-if (tt.nextToken() == StreamPosTokenizer.TT_WORD || tt.ttype == '\'' || tt.ttype == '"') {
-fontFamily=tt.sval;
+tt.skipWhitespace();
+if (tt.nextToken() == CssTokenizer.TT_IDENT || tt.currentToken() == CssTokenizer.TT_STRING) {
+fontFamily=tt.currentStringValue();
 buf.position(buf.limit());
 }
  else {
-throw new ParseException("font family expected",buf.position() + tt.getStartPosition());
+throw new ParseException("font family expected",buf.position() + tt.getPosition());
 }
 return Font.font(fontFamily,fontWeight,fontPosture,fontSize);
 }

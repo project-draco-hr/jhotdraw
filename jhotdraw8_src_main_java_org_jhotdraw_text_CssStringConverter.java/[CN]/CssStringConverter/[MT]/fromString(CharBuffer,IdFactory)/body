@@ -1,5 +1,7 @@
 {
-  String value=buf.toString();
-  buf.position(buf.limit());
-  return value;
+  CssTokenizer tt=new CssTokenizer(new CharBufferReader(buf));
+  if (tt.nextToken() != CssTokenizer.TT_STRING) {
+    throw new ParseException("Css String expected. " + tt.currentToken(),buf.position());
+  }
+  return tt.currentStringValue();
 }

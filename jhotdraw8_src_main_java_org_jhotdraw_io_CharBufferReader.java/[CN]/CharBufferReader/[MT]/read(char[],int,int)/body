@@ -1,0 +1,5 @@
+{
+  len=Math.min(len,buf.remaining());
+  buf.get(cbuf,off,len);
+  return len;
+}

@@ -1,6 +1,6 @@
 {
   if (converter == null) {
-    converter=new EnumConverter<BlendMode>(BlendMode.class);
+    converter=new CssEnumConverter<BlendMode>(BlendMode.class);
   }
   return converter;
 }

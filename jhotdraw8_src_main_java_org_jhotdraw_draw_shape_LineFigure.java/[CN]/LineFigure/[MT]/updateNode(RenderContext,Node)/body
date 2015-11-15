@@ -1,7 +1,7 @@
 {
   Line lineNode=(Line)node;
-  applyTransformableFigureProperties(lineNode);
-  applyStrokedShapeProperties(lineNode);
+  applyHideableFigureProperties(node);
+  applyStrokeableFigureProperties(lineNode);
   Point2D start=get(START);
   lineNode.setStartX(start.getX());
   lineNode.setStartY(start.getY());

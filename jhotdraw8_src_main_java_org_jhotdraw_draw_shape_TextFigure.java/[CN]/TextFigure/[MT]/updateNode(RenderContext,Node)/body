@@ -4,9 +4,10 @@
   tn.setX(get(ORIGIN).getX());
   tn.setY(get(ORIGIN).getY());
   tn.setBoundsType(TextBoundsType.VISUAL);
+  applyHideableFigureProperties(node);
   applyTransformableFigureProperties(tn);
   applyTextHolderProperties(tn);
-  applyStrokedShapeProperties(tn);
-  applyFilledShapeProperties(tn);
+  applyStrokeableFigureProperties(tn);
+  applyFilleableFigureProperties(tn);
   tn.applyCss();
 }

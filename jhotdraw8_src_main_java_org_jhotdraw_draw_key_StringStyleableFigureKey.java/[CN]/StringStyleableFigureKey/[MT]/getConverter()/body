@@ -1,6 +1,6 @@
 {
   if (converter == null) {
-    converter=new XmlStringConverter();
+    converter=new CssStringConverter();
   }
   return converter;
 }

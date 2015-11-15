@@ -1,12 +1,12 @@
 {
   Ellipse n=(Ellipse)node;
+  applyHideableFigureProperties(n);
   applyTransformableFigureProperties(n);
-  applyStrokedShapeProperties(n);
-  applyFilledShapeProperties(n);
-  Rectangle2D r=get(BOUNDS);
-  n.setCenterX(r.getMinX() + r.getWidth() * 0.5);
-  n.setCenterY(r.getMinY() + r.getHeight() * 0.5);
-  n.setRadiusX(r.getWidth() * 0.5);
-  n.setRadiusY(r.getHeight() * 0.5);
+  applyStrokeableFigureProperties(n);
+  applyFilleableFigureProperties(n);
+  n.setCenterX(get(CENTER_X));
+  n.setCenterY(get(CENTER_Y));
+  n.setRadiusX(get(RADIUS_X));
+  n.setRadiusY(get(RADIUS_Y));
   n.applyCss();
 }

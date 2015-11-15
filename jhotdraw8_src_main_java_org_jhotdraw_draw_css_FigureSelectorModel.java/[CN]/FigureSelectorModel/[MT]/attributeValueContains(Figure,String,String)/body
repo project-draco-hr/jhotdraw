@@ -4,6 +4,7 @@
     return false;
   }
   Object value=element.get(k);
-  String stringValue=k.getConverter().toString(value);
+  @SuppressWarnings("unchecked") Converter<Object> c=k.getConverter();
+  String stringValue=(((Converter<?>)c) instanceof CssStringConverter) ? (String)value : k.getConverter().toString(value);
   return stringValue.contains(substring);
 }

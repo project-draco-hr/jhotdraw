@@ -1,17 +1,16 @@
 {
-  if (!updateContentsCheckBox.isSelected()) {
-    return;
-  }
+  textAreaValid=true;
   if (drawingView == null || drawingView.getDrawing() == null) {
     textArea.setText("");
     return;
   }
+  Drawing drawing=drawingView.getDrawing();
+  Set<Figure> newValue=drawingView.getSelectedFigures();
   if (newValue.isEmpty()) {
-    newValue=new HashSet<Figure>();
-    newValue.add(drawingView.getDrawing());
+    newValue=new LinkedHashSet<Figure>();
+    newValue.add(drawing);
   }
-  Drawing d=drawingView.getDrawing();
-  StyleManager<Figure> styleManager=d.getStyleManager();
+  StyleManager<Figure> styleManager=drawing.getStyleManager();
   SelectorModel<Figure> selectorModel=styleManager.getSelectorModel();
   String id=null;
   String type=null;
@@ -47,13 +46,13 @@
   }
   StringBuilder buf=new StringBuilder();
   if (type != null) {
-    buf.append(type);
+    buf.append(cssIdentConverter.toString(type));
   }
   if (id != null) {
-    buf.append('#').append(id);
+    buf.append('#').append(cssIdentConverter.toString(id));
   }
   for (  String clazz : styleClasses) {
-    buf.append('.').append(clazz);
+    buf.append('.').append(cssIdentConverter.toString(clazz));
   }
   buf.append(":selected {");
   for (  Map.Entry<String,String> a : attr.entrySet()) {
@@ -62,5 +61,15 @@
     buf.append(";");
   }
   buf.append("\n}");
+  try {
+    Method m=Node.class.getDeclaredMethod("impl_markDirty",DirtyBits.class);
+    m.setAccessible(true);
+    for (Parent p=textArea; p != null; p=p.getParent()) {
+      m.invoke(p,DirtyBits.NODE_CONTENTS);
+    }
+  }
+ catch (  Exception e) {
+    System.out.println("StylesAttributesInspector e:" + e);
+  }
   textArea.setText(buf.toString());
 }

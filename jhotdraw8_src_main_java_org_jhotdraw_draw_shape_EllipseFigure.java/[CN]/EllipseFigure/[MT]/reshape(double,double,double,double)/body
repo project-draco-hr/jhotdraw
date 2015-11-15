@@ -1,3 +1,8 @@
 {
-  set(BOUNDS,new Rectangle2D(x + min(width,0),y + min(height,0),abs(width),abs(height)));
+  double rx=abs(width) / 2.0;
+  double ry=abs(height) / 2.0;
+  set(CENTER_X,x + rx);
+  set(CENTER_Y,y + ry);
+  set(RADIUS_X,rx);
+  set(RADIUS_Y,ry);
 }

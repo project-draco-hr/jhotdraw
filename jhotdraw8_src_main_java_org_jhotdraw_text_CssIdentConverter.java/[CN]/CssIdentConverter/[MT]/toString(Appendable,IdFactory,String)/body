@@ -1,0 +1,27 @@
+{
+  Reader r=new StringReader(value);
+  int ch=r.read();
+  if (ch == '-') {
+    out.append((char)ch);
+    ch=r.read();
+  }
+  if (ch == -1) {
+    throw new IllegalArgumentException("nmstart missing! " + value);
+  }
+  if (ch == '_' || 'a' <= ch && ch <= 'z' || 'A' <= ch && ch <= 'Z' || 0xA0 <= ch && ch <= 0x10FFFF) {
+    out.append((char)ch);
+  }
+ else {
+    out.append('\\');
+    out.append((char)ch);
+  }
+  while (-1 != (ch=r.read())) {
+    if (ch == '_' || 'a' <= ch && ch <= 'z' || 'A' <= ch && ch <= 'Z' || '0' <= ch && ch <= '9' || ch == '-' || 0xA0 <= ch && ch <= 0x10FFFF) {
+      out.append((char)ch);
+    }
+ else {
+      out.append('\\');
+      out.append((char)ch);
+    }
+  }
+}

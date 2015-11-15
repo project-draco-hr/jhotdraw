@@ -1,0 +1,11 @@
+{
+  if (oldValue != null) {
+    oldValue.modelProperty().removeListener(modelChangeHandler);
+    modelChangeHandler.changed(oldValue.modelProperty(),oldValue.getModel(),null);
+  }
+  if (newValue != null) {
+    newValue.modelProperty().addListener(modelChangeHandler);
+    modelChangeHandler.changed(newValue.modelProperty(),null,newValue.getModel());
+    invalidateTextArea();
+  }
+}

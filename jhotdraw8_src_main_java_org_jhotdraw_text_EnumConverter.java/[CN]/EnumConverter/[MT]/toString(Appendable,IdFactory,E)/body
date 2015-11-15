@@ -3,7 +3,7 @@
     out.append("null");
   }
  else {
-    for (    char ch : value.toString().toLowerCase().toCharArray()) {
+    for (    char ch : value.toString().toCharArray()) {
       if (Character.isWhitespace(ch)) {
         break;
       }

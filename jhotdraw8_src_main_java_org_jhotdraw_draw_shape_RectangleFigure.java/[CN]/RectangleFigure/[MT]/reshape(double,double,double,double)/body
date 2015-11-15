@@ -1,3 +1,6 @@
 {
-  set(BOUNDS,new Rectangle2D(x + min(width,0),y + min(height,0),abs(width),abs(height)));
+  set(X,x + min(width,0));
+  set(Y,y + min(height,0));
+  set(WIDTH,abs(width));
+  set(HEIGHT,abs(height));
 }

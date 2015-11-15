@@ -1,8 +1,8 @@
 {
   double fontSize=font.getSize();
-  String fontStyle=font.getStyle();
+  String fontStyle=font.getStyle().toLowerCase();
   String fontFamily=font.getFamily();
-  out.append(fontStyle);
+  out.append(fontStyle.equals("regular") ? "normal" : fontStyle);
   out.append(' ');
   doubleConverter.toString(out,fontSize);
   out.append(' ');

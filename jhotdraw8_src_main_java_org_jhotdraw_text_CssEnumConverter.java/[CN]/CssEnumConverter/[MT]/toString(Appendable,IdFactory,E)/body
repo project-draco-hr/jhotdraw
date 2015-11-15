@@ -1,0 +1,13 @@
+{
+  if (value == null) {
+    out.append("null");
+  }
+ else {
+    for (    char ch : value.toString().toLowerCase().toCharArray()) {
+      if (Character.isWhitespace(ch)) {
+        break;
+      }
+      out.append(ch);
+    }
+  }
+}

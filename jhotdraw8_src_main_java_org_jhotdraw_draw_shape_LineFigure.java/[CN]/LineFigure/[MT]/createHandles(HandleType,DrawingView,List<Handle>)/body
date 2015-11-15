@@ -2,10 +2,15 @@
   if (handleType == HandleType.SELECT) {
     list.add(new LineOutlineHandle(this,Handle.STYLECLASS_HANDLE_SELECT_OUTLINE));
   }
- else   if (handleType == HandleType.MOVE || handleType == HandleType.RESIZE) {
-    list.add(new LineOutlineHandle(this,Handle.STYLECLASS_HANDLE_SELECT_OUTLINE));
-    list.add(new PointHandle(this,Handle.STYLECLASS_HANDLE_POINT,START));
-    list.add(new PointHandle(this,Handle.STYLECLASS_HANDLE_POINT,END));
+ else   if (handleType == HandleType.MOVE) {
+    list.add(new LineOutlineHandle(this,Handle.STYLECLASS_HANDLE_MOVE_OUTLINE));
+    list.add(new MoveHandleKit.MoveHandle(this,Handle.STYLECLASS_HANDLE_MOVE,new PointLocator(START)));
+    list.add(new MoveHandleKit.MoveHandle(this,Handle.STYLECLASS_HANDLE_MOVE,new PointLocator(END)));
+  }
+ else   if (handleType == HandleType.RESIZE) {
+    list.add(new LineOutlineHandle(this,Handle.STYLECLASS_HANDLE_RESIZE_OUTLINE));
+    list.add(new PointHandle(this,Handle.STYLECLASS_HANDLE_RESIZE,START));
+    list.add(new PointHandle(this,Handle.STYLECLASS_HANDLE_RESIZE,END));
   }
  else {
     super.createHandles(handleType,dv,list);

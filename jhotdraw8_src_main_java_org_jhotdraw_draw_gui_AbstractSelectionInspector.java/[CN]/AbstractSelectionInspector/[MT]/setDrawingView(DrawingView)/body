@@ -7,4 +7,5 @@
   if (newValue != null) {
     newValue.selectedFiguresProperty().addListener(selectionListener);
   }
+  handleDrawingViewChanged(oldValue,newValue);
 }

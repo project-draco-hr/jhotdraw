@@ -1,6 +1,6 @@
 {
   if (converter == null) {
-    converter=new EnumConverter<T>(getValueType());
+    converter=new CssEnumConverter<T>(getValueType());
   }
   return converter;
 }

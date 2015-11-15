@@ -11,5 +11,5 @@
   if (out.toString().equals("null")) {
     return null;
   }
-  return Enum.valueOf(enumClass,out.toString().toUpperCase());
+  return Enum.valueOf(enumClass,out.toString());
 }

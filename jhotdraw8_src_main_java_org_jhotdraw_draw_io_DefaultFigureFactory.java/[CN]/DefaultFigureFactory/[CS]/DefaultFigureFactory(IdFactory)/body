@@ -35,7 +35,11 @@
   addConverterForType(Connector.class,new DefaultConnectorConverter());
   addConverterForType(Paint.class,new XmlPaintConverter());
   addConverterForType(Boolean.class,new XmlBooleanConverter());
-  addConverterForType(Figure.STYLE_CLASS.getFullValueType(),new CssObservableWordListConverter());
+  addConverter(Figure.STYLE_CLASS,new CssObservableWordListConverter());
+  addConverter(StrokeableFigure.STROKE_DASH_ARRAY,new CssSizeListConverter());
+  addConverter(StrokeableFigure.STROKE_LINE_CAP,new CssEnumConverter<StrokeLineCap>(StrokeLineCap.class));
+  addConverter(StrokeableFigure.STROKE_LINE_JOIN,new CssEnumConverter<StrokeLineJoin>(StrokeLineJoin.class));
+  addConverter(StrokeableFigure.STROKE_TYPE,new CssEnumConverter<StrokeType>(StrokeType.class));
   removeKey(Drawing.PSEUDO_CLASS_STATES);
   checkConverters();
 }
