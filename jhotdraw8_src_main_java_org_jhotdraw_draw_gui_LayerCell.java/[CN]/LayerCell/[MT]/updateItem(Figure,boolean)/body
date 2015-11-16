@@ -30,7 +30,7 @@
     Integer count=item.get(LayersInspector.SELECTION_COUNT);
     selectionLabel.setText(count == null ? "" : "(" + count.toString() + ")");
     visibleCheckBox.setSelected(item.get(HideableFigure.VISIBLE));
-    lockedCheckBox.setSelected(item.get(Figure.LOCKED));
+    lockedCheckBox.setSelected(item.get(LockableFigure.LOCKED));
     isUpdating=false;
   }
 }
