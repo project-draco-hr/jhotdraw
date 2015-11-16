@@ -1,6 +1,6 @@
 {
   Figure f=getOwner();
-  Transform t=view.getWorldToView().createConcatenation(f.getParentToDrawing());
+  Transform t=view.getWorldToView().createConcatenation(f.getParentToWorld());
   Bounds b=f.getBoundsInParent();
   points[0]=b.getMinX();
   points[1]=b.getMinY();

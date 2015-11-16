@@ -1,4 +1,4 @@
 {
   @SuppressWarnings("unchecked") T ret=(T)values[styleOrigin.ordinal()];
-  return ret == NO_VALUE ? null : ret;
+  return ret == NO_VALUE ? defaultValue : ret;
 }

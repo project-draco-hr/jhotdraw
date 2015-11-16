@@ -1,6 +1,6 @@
 {
   Figure f=getOwner();
-  Transform t=view.getWorldToView().createConcatenation(f.getLocalToDrawing());
+  Transform t=view.getWorldToView().createConcatenation(f.getLocalToWorld());
   Bounds b=f.getBoundsInLocal();
   Point2D p=getLocation();
   p=t.transform(p);

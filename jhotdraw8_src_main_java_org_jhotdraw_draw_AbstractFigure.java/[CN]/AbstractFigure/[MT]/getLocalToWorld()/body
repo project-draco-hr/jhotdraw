@@ -1,6 +1,6 @@
 {
   if (localToDrawing == null) {
-    localToDrawing=Figure.super.getLocalToDrawing();
+    localToDrawing=Figure.super.getLocalToWorld();
   }
   return localToDrawing;
 }
