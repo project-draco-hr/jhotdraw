@@ -3,9 +3,9 @@
   Drawing d=getDrawing();
   if (d != null) {
     for (    Figure layer : d.getChildren()) {
-      if (!layer.isDisabledOrUneditable()) {
+      if (layer.isSelectable()) {
         for (        Figure f : layer.getChildren()) {
-          if (!f.isDisabledOrUneditable() && f.isSelectable()) {
+          if (f.isSelectable()) {
             figures.add(f);
           }
         }

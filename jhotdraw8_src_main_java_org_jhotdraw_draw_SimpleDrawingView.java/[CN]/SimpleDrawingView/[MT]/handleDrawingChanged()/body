@@ -12,7 +12,7 @@
     repaint();
     for (int i=d.getChildren().size() - 1; i >= 0; i--) {
       Layer layer=(Layer)d.getChild(i);
-      if (!layer.isDisabledOrUneditable() && layer.isVisible()) {
+      if (!layer.isEditable() && layer.isVisible()) {
         activeLayer.set(layer);
         break;
       }
