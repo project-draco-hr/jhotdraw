@@ -1,3 +1,9 @@
 {
-  return new Text();
+  Group g=new Group();
+  g.setAutoSizeChildren(false);
+  Region r=new Region();
+  g.getChildren().add(r);
+  g.getChildren().add(new Text());
+  r.setScaleShape(true);
+  return g;
 }

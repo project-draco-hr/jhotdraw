@@ -1,0 +1,9 @@
+{
+  CssTokenizer tt=new CssTokenizer(new CharBufferReader(buf));
+  if (tt.nextToken() != CssTokenizer.TT_STRING) {
+    throw new ParseException("Css String expected. " + tt.currentToken(),buf.position());
+  }
+  SVGPath p=new SVGPath();
+  p.setContent(tt.currentStringValue());
+  return p;
+}

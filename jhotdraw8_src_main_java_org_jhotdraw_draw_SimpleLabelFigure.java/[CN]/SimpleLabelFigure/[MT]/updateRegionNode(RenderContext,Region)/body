@@ -1,0 +1,16 @@
+{
+  node.setShape(getStyled(SHAPE));
+  Bounds b=getBoundsInLocal();
+  node.resizeRelocate(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
+  Paint fillColor=getStyled(FILL_COLOR);
+  node.setBackground(fillColor == null ? null : new Background(new BackgroundFill(fillColor,null,null)));
+  Paint strokeColor=getStyled(STROKE_COLOR);
+  double strokeWidth=getStyled(STROKE_WIDTH);
+  if (strokeColor == null || strokeWidth == 0) {
+    node.setBorder(Border.EMPTY);
+  }
+ else {
+    BorderStrokeStyle bss=new BorderStrokeStyle(getStyled(STROKE_TYPE),getStyled(STROKE_LINE_JOIN),getStyled(STROKE_LINE_CAP),getStyled(STROKE_MITER_LIMIT),getStyled(STROKE_DASH_OFFSET),getStyled(STROKE_DASH_ARRAY));
+    node.setBorder(new Border(new BorderStroke(strokeColor,bss,CornerRadii.EMPTY,new BorderWidths(strokeWidth))));
+  }
+}

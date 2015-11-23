@@ -1,6 +1,6 @@
 {
   try {
-    String str=buf.toString();
+    String str=buf.toString().trim();
     Color c;
     if ("none".equals(str)) {
       c=null;

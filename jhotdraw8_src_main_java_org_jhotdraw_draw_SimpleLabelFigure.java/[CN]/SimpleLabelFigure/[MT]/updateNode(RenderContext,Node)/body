@@ -1,10 +1,8 @@
 {
-  Text tn=(Text)node;
-  tn.setText(get(TEXT));
-  tn.setX(get(ORIGIN).getX());
-  tn.setY(get(ORIGIN).getY());
-  tn.setBoundsType(TextBoundsType.VISUAL);
-  applyTransformableFigureProperties(tn);
-  applyTextHolderProperties(tn);
-  applyLabelProperties(tn);
+  Group g=(Group)node;
+  Region r=(Region)g.getChildren().get(0);
+  Text t=(Text)g.getChildren().get(1);
+  applyTransformableFigureProperties(g);
+  updateRegionNode(drawingView,r);
+  updateTextNode(drawingView,t);
 }

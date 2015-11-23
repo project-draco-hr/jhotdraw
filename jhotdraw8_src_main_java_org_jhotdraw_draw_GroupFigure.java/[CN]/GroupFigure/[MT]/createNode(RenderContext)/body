@@ -1,3 +1,5 @@
 {
-  return new Group();
+  Group g=new Group();
+  g.setAutoSizeChildren(false);
+  return g;
 }

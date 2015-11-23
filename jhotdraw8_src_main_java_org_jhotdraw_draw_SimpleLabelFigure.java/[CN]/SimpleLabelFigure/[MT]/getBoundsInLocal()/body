@@ -1,8 +1,12 @@
 {
-  if (textNode == null) {
-    textNode=new Text();
+  if (boundsInLocal == null) {
+    if (textNode == null) {
+      textNode=new Text();
+    }
+    updateTextNode(null,textNode);
+    Bounds b=textNode.getLayoutBounds();
+    Insets i=getStyled(PADDING);
+    boundsInLocal=new BoundingBox(b.getMinX() - i.getLeft(),b.getMinY() - i.getTop(),b.getWidth() + i.getLeft() + i.getRight(),b.getHeight() + i.getTop() + i.getBottom());
   }
-  updateNode(null,textNode);
-  Bounds b=textNode.getLayoutBounds();
-  return new BoundingBox(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
+  return boundsInLocal;
 }
