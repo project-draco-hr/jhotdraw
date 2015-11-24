@@ -1,0 +1,4 @@
+{
+  Preferences prefs=Preferences.userNodeForPackage(GrapherView.class);
+  PreferencesUtil.installVisibilityPrefsHandlers(prefs,detailsScrollPane,detailsVisible,mainSplitPane,Side.RIGHT);
+}
