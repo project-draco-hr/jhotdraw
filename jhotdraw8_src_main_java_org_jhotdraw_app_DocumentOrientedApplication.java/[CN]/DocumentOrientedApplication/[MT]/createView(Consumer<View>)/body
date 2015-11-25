@@ -4,12 +4,6 @@
       return instantiateView();
     }
     @Override protected void succeeded(    View v){
-      v.getActionMap().setParent(getActionMap());
-      v.setApplication(DocumentOrientedApplication.this);
-      v.init();
-      v.setTitle(getLabels().getString("unnamedFile"));
-      HierarchicalMap<String,Action> map=v.getActionMap();
-      map.put(CloseFileAction.ID,new CloseFileAction(DocumentOrientedApplication.this,v));
       callback.accept(v);
     }
   }
