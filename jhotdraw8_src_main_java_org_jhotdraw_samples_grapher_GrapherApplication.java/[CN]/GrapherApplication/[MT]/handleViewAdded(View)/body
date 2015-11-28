@@ -1,4 +1,0 @@
-{
-  super.handleViewAdded(view);
-  view.getNode().getScene().getStylesheets().addAll(GrapherApplication.class.getResource("/org/jhotdraw/draw/gui/inspector.css").toString(),GrapherApplication.class.getResource("/org/jhotdraw/samples/grapher/grapher.css").toString());
-}

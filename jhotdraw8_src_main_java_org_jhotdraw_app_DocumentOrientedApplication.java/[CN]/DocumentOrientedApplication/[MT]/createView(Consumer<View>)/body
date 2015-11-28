@@ -1,9 +1,11 @@
 {
   BackgroundTask<View> t=new BackgroundTask<View>(){
     @Override protected View call() throws Exception {
-      return instantiateView();
+      return getModel().instantiateView();
     }
     @Override protected void succeeded(    View v){
+      v.setApplication(DocumentOrientedApplication.this);
+      v.init();
       callback.accept(v);
     }
   }

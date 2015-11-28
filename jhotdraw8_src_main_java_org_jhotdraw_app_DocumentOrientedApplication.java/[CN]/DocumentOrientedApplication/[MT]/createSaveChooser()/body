@@ -1,6 +1,0 @@
-{
-  FileURIChooser c=new FileURIChooser();
-  c.setMode(FileURIChooser.Mode.SAVE);
-  c.getFileChooser().getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files","*.txt"));
-  return c;
-}

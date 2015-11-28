@@ -1,5 +1,5 @@
 {
   StyledValue sv=backingMap.get(key);
-  @SuppressWarnings("unchecked") V ret=(sv == null) ? defaultValue : (V)sv.getValue(sv.getOrigin(),defaultValue);
+  @SuppressWarnings("unchecked") V ret=(sv == null) ? defaultValue : sv.getValue(sv.getOrigin(),defaultValue);
   return ret;
 }

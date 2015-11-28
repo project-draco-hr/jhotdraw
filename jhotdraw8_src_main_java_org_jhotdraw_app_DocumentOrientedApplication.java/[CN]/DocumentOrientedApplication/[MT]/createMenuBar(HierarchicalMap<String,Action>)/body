@@ -1,5 +1,5 @@
 {
-  MenuBar mb=createMenuBar();
+  MenuBar mb=model.createMenuBar();
   LinkedList<Menu> todo=new LinkedList<>(mb.getMenus());
   while (!todo.isEmpty()) {
     for (    MenuItem mi : todo.remove().getItems()) {

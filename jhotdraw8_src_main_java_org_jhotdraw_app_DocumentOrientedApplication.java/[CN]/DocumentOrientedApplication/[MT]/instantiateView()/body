@@ -1,4 +1,0 @@
-{
-  TextAreaView v=new TextAreaView();
-  return v;
-}

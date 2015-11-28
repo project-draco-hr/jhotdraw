@@ -1,0 +1,10 @@
+{
+  FXMLLoader loader=new FXMLLoader();
+  loader.setResources(getResources());
+  try (InputStream in=menuFxml.openStream()){
+    return loader.load(in);
+  }
+ catch (  IOException ex) {
+    throw new InternalError(ex);
+  }
+}

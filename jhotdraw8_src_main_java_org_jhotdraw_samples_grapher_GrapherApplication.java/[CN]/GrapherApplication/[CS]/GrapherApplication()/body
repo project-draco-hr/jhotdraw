@@ -1,4 +1,2 @@
 {
-  super();
-  Resources.setVerbose(true);
 }

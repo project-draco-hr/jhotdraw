@@ -1,0 +1,7 @@
+{
+  this.name=name;
+  this.menuFxml=menuFxml;
+  this.fileDescription=fileDescription;
+  this.fileExtension=fileExtension;
+  this.viewFactory=viewFactory;
+}
