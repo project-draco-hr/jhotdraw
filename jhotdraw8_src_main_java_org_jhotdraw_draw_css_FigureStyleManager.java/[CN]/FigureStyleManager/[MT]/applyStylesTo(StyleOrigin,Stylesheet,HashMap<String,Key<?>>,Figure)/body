@@ -14,8 +14,10 @@
               ex.printStackTrace();
             }
           }
-          Object convertedValue=convertedValues.get(d);
-          elem.setStyled(origin,k,convertedValue);
+          if (convertedValues.containsKey(d)) {
+            Object convertedValue=convertedValues.get(d);
+            elem.setStyled(origin,k,convertedValue);
+          }
         }
       }
     }

@@ -1,3 +1,17 @@
 {
-  return null;
+  try {
+    for (    Field f : enumClass.getDeclaredFields()) {
+      if (f.isEnumConstant()) {
+        @SuppressWarnings("unchecked") E e=(E)f.get(null);
+        return e;
+      }
+    }
+    return null;
+  }
+ catch (  IllegalArgumentException ex) {
+    return null;
+  }
+catch (  IllegalAccessException ex) {
+    return null;
+  }
 }
