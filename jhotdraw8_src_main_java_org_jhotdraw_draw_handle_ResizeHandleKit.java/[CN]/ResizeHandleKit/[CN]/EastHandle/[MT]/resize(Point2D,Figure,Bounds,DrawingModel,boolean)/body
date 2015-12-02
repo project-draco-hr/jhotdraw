@@ -1,5 +1,5 @@
 {
-  double newWidth=newPoint.getX() - bounds.getMinX();
+  double newWidth=max(newPoint.getX(),bounds.getMinX()) - bounds.getMinX();
   double newHeight=bounds.getMaxY() - bounds.getMinY();
   if (keepAspect) {
     double newRatio=newHeight / newWidth;
