@@ -1,3 +1,3 @@
 {
-  this(name,clazz,"",isNullable,dirtyMask,defaultValue);
+  this(name,clazz,null,isNullable,dirtyMask,defaultValue);
 }

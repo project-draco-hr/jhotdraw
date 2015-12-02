@@ -1,0 +1,5 @@
+String name
+Class<?> clazz
+Class<?>[] typeParameters
+DirtyMask dirtyMask
+T defaultValue

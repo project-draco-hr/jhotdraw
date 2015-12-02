@@ -8,7 +8,8 @@
     }
   }
   if (origin == null || origin == StyleOrigin.USER_AGENT) {
-    for (    Entry e : getUserAgentStylesheets()) {
+    elem.removeAll(StyleOrigin.USER_AGENT);
+    for (    MyEntry e : getUserAgentStylesheets()) {
       Stylesheet s=e.getStylesheet();
       if (s != null) {
         applyStylesTo(StyleOrigin.USER_AGENT,s,metaMap,elem);
@@ -16,7 +17,8 @@
     }
   }
   if (origin == null || origin == StyleOrigin.AUTHOR) {
-    for (    Entry e : getAuthorStylesheets()) {
+    elem.removeAll(StyleOrigin.AUTHOR);
+    for (    MyEntry e : getAuthorStylesheets()) {
       Stylesheet s=e.getStylesheet();
       if (s != null) {
         applyStylesTo(StyleOrigin.AUTHOR,s,metaMap,elem);
@@ -24,14 +26,13 @@
     }
   }
   if (origin == null || origin == StyleOrigin.INLINE) {
-    for (    Entry e : getAuthorStylesheets()) {
+    elem.removeAll(StyleOrigin.INLINE);
+    for (    MyEntry e : getInlineStylesheets()) {
       Stylesheet s=e.getStylesheet();
       if (s != null) {
         applyStylesTo(StyleOrigin.INLINE,s,metaMap,elem);
       }
     }
-  }
-  if (origin == null || origin == StyleOrigin.INLINE) {
     applyInlineStylesTo(metaMap,elem);
   }
   metaMap.clear();

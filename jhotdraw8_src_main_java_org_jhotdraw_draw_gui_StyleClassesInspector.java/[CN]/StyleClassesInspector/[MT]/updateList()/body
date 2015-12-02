@@ -1,0 +1,22 @@
+{
+  Set<Figure> newValue=getSelectedFigures();
+  Set<String> union=new TreeSet<>();
+  Set<String> intersection=new HashSet<>();
+  boolean first=true;
+  for (  Figure f : newValue) {
+    @SuppressWarnings("unchecked") Collection<String> tags=f.get(tagsKey);
+    if (first) {
+      intersection.addAll(tags);
+      first=false;
+    }
+ else {
+      intersection.retainAll(tags);
+    }
+    union.addAll(tags);
+  }
+  ObservableList<StyleClassItem> items=listView.getItems();
+  items.clear();
+  for (  String t : union) {
+    items.add(new StyleClassItem(t,intersection.contains(t)));
+  }
+}

@@ -1,29 +1,29 @@
 {
-  LinkedHashMap<Object,Entry> oldMap=getMap(origin);
+  LinkedHashMap<Object,MyEntry> oldMap=getMap(origin);
   if (stylesheets == null) {
     oldMap.clear();
     return;
   }
-  LinkedHashMap<Object,Entry> newMap=new LinkedHashMap<>();
+  LinkedHashMap<Object,MyEntry> newMap=new LinkedHashMap<>();
   for (  T t : stylesheets) {
     if (t instanceof URI) {
       URI uri=(URI)t;
       URI resolvedUri=documentHome == null ? uri : documentHome.resolve(uri);
-      Entry old=oldMap.get(resolvedUri);
-      if (old != null) {
+      MyEntry old=oldMap.get(resolvedUri);
+      if (false && old != null) {
         newMap.put(resolvedUri,old);
       }
  else {
-        newMap.put(resolvedUri,new Entry(origin,resolvedUri));
+        newMap.put(resolvedUri,new MyEntry(origin,resolvedUri));
       }
     }
  else     if (t instanceof String) {
-      Entry old=oldMap.get(t);
+      MyEntry old=oldMap.get(t);
       if (old != null) {
         newMap.put(t,old);
       }
  else {
-        newMap.put(t,new Entry(origin,(String)t));
+        newMap.put(t,new MyEntry(origin,(String)t));
       }
     }
  else {

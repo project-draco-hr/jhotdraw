@@ -1,7 +1,7 @@
 {
   selectorModel.additionalPseudoClassStatesProperty().putAll(pseudoClassStates);
   HashMap<String,String> applicableDeclarations=new HashMap<>();
-  for (  Entry e : getUserAgentStylesheets()) {
+  for (  MyEntry e : getUserAgentStylesheets()) {
     Stylesheet s=e.getStylesheet();
     if (s == null) {
       continue;
@@ -16,7 +16,7 @@
       }
     }
   }
-  for (  Entry e : getAuthorStylesheets()) {
+  for (  MyEntry e : getAuthorStylesheets()) {
     Stylesheet s=e.getStylesheet();
     if (s == null) {
       continue;
@@ -29,7 +29,7 @@
       }
     }
   }
-  for (  Entry e : getInlineStylesheets()) {
+  for (  MyEntry e : getInlineStylesheets()) {
     Stylesheet s=e.getStylesheet();
     if (s == null) {
       continue;

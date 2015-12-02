@@ -4,13 +4,13 @@
     @SuppressWarnings("unchecked") T oldValue=(T)values[i];
     values[i]=NO_VALUE;
     if (this.origin == origin) {
-      for (int j=origin.ordinal() - 1; j <= 0; j--) {
+      this.origin=null;
+      for (int j=origin.ordinal() - 1; j >= 0; j--) {
         if (values[j] != NO_VALUE) {
           this.origin=ORIGINS[j];
           break;
         }
       }
-      this.origin=null;
     }
     return oldValue;
   }

@@ -1,5 +1,0 @@
-String name
-Class<?> clazz
-String typeParameters
-DirtyMask dirtyMask
-T defaultValue

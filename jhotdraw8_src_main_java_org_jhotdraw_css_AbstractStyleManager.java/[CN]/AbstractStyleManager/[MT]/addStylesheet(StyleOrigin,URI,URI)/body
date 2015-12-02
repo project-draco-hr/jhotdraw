@@ -1,4 +1,4 @@
 {
   URI resolvedUri=documentHome == null ? uri : documentHome.resolve(uri);
-  getMap(origin).put(resolvedUri,new Entry(origin,resolvedUri));
+  getMap(origin).put(resolvedUri,new MyEntry(origin,resolvedUri));
 }
