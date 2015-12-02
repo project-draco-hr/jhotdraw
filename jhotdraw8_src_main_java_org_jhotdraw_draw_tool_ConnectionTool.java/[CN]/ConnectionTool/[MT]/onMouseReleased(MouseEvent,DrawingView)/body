@@ -1,9 +1,0 @@
-{
-  if (figure != null) {
-    onMouseDragged(event,view);
-    view.getSelectedFigures().clear();
-    view.getSelectedFigures().add(figure);
-    figure=null;
-  }
-  fireToolDone();
-}

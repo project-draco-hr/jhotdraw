@@ -1,6 +1,6 @@
 {
   if (converter == null) {
-    converter=new CssSVGPathConverter();
+    converter=new CssSvgPathConverter();
   }
   return converter;
 }

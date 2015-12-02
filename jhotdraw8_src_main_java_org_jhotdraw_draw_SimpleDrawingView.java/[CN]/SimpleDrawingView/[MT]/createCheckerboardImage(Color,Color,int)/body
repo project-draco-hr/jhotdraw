@@ -1,0 +1,13 @@
+{
+  WritableImage img=new WritableImage(size * 2,size * 2);
+  PixelWriter w=img.getPixelWriter();
+  for (int x=0; x < size; x++) {
+    for (int y=0; y < size; y++) {
+      w.setColor(x,y,c1);
+      w.setColor(x + size,y + size,c1);
+      w.setColor(x + size,y,c2);
+      w.setColor(x,y + size,c2);
+    }
+  }
+  return img;
+}

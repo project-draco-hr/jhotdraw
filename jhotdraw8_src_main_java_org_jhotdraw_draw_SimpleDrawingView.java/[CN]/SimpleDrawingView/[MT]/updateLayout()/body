@@ -1,15 +1,33 @@
 {
+  if (node == null) {
+    return;
+  }
   Bounds bounds=drawingPane.getLayoutBounds();
   double f=getZoomFactor();
   double x=bounds.getMinX() * f;
   double y=bounds.getMinY() * f;
   double w=bounds.getWidth() * f;
   double h=bounds.getHeight() * f;
+  Drawing d=getDrawing();
+  double dw=d.get(Drawing.WIDTH);
+  double dh=d.get(Drawing.HEIGHT);
   drawingPane.setTranslateX(max(0,-x));
   drawingPane.setTranslateY(max(0,-y));
-  toolPane.resize(w,h);
+  if (d != null) {
+    backgroundPane.setTranslateX(max(0,-x));
+    backgroundPane.setTranslateY(max(0,-y));
+    backgroundPane.setWidth(dw * f);
+    backgroundPane.setHeight(dh * f);
+  }
+  double padding=20;
+  double lw=max(max(0,x) + w,max(0,-x) + dw * f);
+  double lh=max(max(0,y) + h,max(0,-y) + dh * f);
+  overlaysPane.setTranslateX(-padding);
+  overlaysPane.setTranslateY(-padding);
+  toolPane.resize(lw + padding * 2,lh + padding * 2);
   toolPane.layout();
-  stackPane.setPrefSize(w,h);
+  stackPane.setPrefSize(lw,lh);
+  stackPane.setMaxSize(lw,lh);
   invalidateWorldViewTransforms();
   invalidateHandleNodes();
 }

@@ -1,5 +1,5 @@
 {
-  if (!tClazz.isAssignableFrom(value.getClass())) {
+  if (value != null && !tClazz.isAssignableFrom(value.getClass())) {
     throw new IllegalArgumentException("value is not assignable " + value);
   }
   V temp=(V)value;
