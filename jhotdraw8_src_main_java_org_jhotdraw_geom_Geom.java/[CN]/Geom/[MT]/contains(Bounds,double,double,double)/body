@@ -1,0 +1,3 @@
+{
+  return r.getMinX() - tolerance <= x && x <= r.getMaxX() + tolerance && r.getMinY() - tolerance <= y && y <= r.getMaxY() + tolerance;
+}

@@ -1,0 +1,8 @@
+{
+  Bounds b=node.getBoundsInLocal();
+  double cx=b.getMinX() + b.getWidth() * 0.5;
+  double cy=b.getMinY() + b.getHeight() * 0.5;
+  double dx=point.getX() - cx;
+  double dy=point.getY() - cy;
+  return dx * dx + dy * dy < squaredRadius;
+}

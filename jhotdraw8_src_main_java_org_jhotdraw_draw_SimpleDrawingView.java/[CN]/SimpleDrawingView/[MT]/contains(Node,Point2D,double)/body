@@ -8,9 +8,7 @@
     return contains;
   }
  else   if (node instanceof Group) {
-    Bounds bounds=node.getBoundsInLocal();
-    bounds=Geom.grow(bounds,tolerance,tolerance);
-    if (bounds.contains(point)) {
+    if (Geom.contains(node.getBoundsInLocal(),point,tolerance)) {
       for (      Node child : ((Group)node).getChildren()) {
         if (contains(child,child.parentToLocal(point),tolerance)) {
           return true;
@@ -20,6 +18,6 @@
     return false;
   }
  else {
-    return node.contains(point);
+    return Geom.contains(node.getBoundsInLocal(),point,tolerance);
   }
 }
