@@ -1,6 +1,6 @@
 {
   if (!mappedFigureClasses.contains(element.getClass())) {
-    for (    Key<?> k : element.getSupportedKeys()) {
+    for (    MapAccessor<?> k : element.getSupportedKeys()) {
       if (k instanceof StyleableKey) {
         StyleableKey<?> sk=(StyleableKey<?>)k;
         nameToKeyMap.put(sk.getCssName(),sk);

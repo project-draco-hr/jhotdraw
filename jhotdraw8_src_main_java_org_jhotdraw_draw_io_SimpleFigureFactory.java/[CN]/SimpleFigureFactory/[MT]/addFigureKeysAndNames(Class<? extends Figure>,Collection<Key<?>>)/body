@@ -1,6 +1,0 @@
-{
-  addFigureAttributeKeys(f,keys);
-  for (  Key<?> key : keys) {
-    addKey(f,key.getName(),key);
-  }
-}

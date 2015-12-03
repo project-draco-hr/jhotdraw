@@ -1,4 +1,4 @@
 {
-  @SuppressWarnings("unchecked") T ret=(T)key.get(map);
+  @SuppressWarnings("unchecked") V ret=accessor.get(map);
   return ret;
 }

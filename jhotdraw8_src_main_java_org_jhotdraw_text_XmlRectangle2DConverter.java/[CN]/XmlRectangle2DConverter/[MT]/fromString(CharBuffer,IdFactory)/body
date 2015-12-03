@@ -1,0 +1,4 @@
+{
+  Object[] v=formatter.fromString(buf);
+  return new Rectangle2D((double)v[0],(double)v[1],(double)v[2],(double)v[3]);
+}

@@ -1,0 +1,7 @@
+{
+  for (  MapAccessor<?> key : keys) {
+    if (key instanceof Key) {
+      addKey(f,key.getName(),(Key<?>)key);
+    }
+  }
+}

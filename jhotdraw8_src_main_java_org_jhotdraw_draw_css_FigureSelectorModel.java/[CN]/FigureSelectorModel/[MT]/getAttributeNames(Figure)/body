@@ -1,6 +1,6 @@
 {
   Set<String> attr=new HashSet<>();
-  for (  Key<?> key : element.getSupportedKeys()) {
+  for (  MapAccessor<?> key : element.getSupportedKeys()) {
     if (key instanceof StyleableKey) {
       StyleableKey<?> sk=(StyleableKey<?>)key;
       attr.add(sk.getCssName());

@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") T ret=key.remove(getStyleableMap().getMap(origin));
+  return ret;
+}

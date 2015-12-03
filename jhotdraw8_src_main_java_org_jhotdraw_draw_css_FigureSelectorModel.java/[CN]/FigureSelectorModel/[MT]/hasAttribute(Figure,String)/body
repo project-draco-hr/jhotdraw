@@ -1,5 +1,5 @@
 {
-  for (  Key<?> key : element.getSupportedKeys()) {
+  for (  MapAccessor<?> key : element.getSupportedKeys()) {
     if (key.getName().equals(attributeName) && (key instanceof StyleableKey)) {
       return true;
     }

@@ -3,7 +3,7 @@
   addFigureKeysAndNames("Rectangle",RectangleFigure.class,Figure.getDeclaredAndInheritedKeys(RectangleFigure.class));
   addFigureKeysAndNames("Group",GroupFigure.class,Figure.getDeclaredAndInheritedKeys(GroupFigure.class));
 {
-    Set<Key<?>> keys=Figure.getDeclaredAndInheritedKeys(SimpleDrawing.class);
+    Set<MapAccessor<?>> keys=Figure.getDeclaredAndInheritedKeys(SimpleDrawing.class);
     keys.remove(Drawing.USER_AGENT_STYLESHEETS);
     keys.remove(Drawing.AUTHOR_STYLESHEETS);
     keys.remove(Drawing.INLINE_STYLESHEETS);
@@ -12,13 +12,13 @@
     addFigureKeysAndNames("Drawing",SimpleDrawing.class,keys);
   }
 {
-    Set<Key<?>> keys=Figure.getDeclaredAndInheritedKeys(TextFigure.class);
+    Set<MapAccessor<?>> keys=Figure.getDeclaredAndInheritedKeys(TextFigure.class);
     keys.remove(TextFigure.TEXT);
     addNodeListKey(TextFigure.class,"",TextFigure.TEXT);
     addFigureKeysAndNames("Text",TextFigure.class,keys);
   }
 {
-    Set<Key<?>> keys=Figure.getDeclaredAndInheritedKeys(SimpleLabelFigure.class);
+    Set<MapAccessor<?>> keys=Figure.getDeclaredAndInheritedKeys(SimpleLabelFigure.class);
     keys.remove(TextFigure.TEXT);
     addNodeListKey(SimpleLabelFigure.class,"",TextFigure.TEXT);
     addFigureKeysAndNames("Label",SimpleLabelFigure.class,keys);
@@ -41,11 +41,12 @@
   addConverterForType(TextAlignment.class,new XmlEnumConverter<TextAlignment>(TextAlignment.class));
   addConverterForType(VPos.class,new XmlEnumConverter<VPos>(VPos.class));
   addConverterForType(Font.class,new XmlFontConverter());
+  addConverterForType(Rectangle2D.class,new XmlRectangle2DConverter());
   addConverter(StyleableFigure.STYLE_CLASS,new CssObservableWordListConverter());
   addConverter(StrokeableFigure.STROKE_DASH_ARRAY,new CssSizeListConverter());
-  addConverter(StrokeableFigure.STROKE_LINE_CAP,new CssEnumConverter<StrokeLineCap>(StrokeLineCap.class));
-  addConverter(StrokeableFigure.STROKE_LINE_JOIN,new CssEnumConverter<StrokeLineJoin>(StrokeLineJoin.class));
-  addConverter(StrokeableFigure.STROKE_TYPE,new CssEnumConverter<StrokeType>(StrokeType.class));
+  addConverter(StrokeableFigure.STROKE_LINE_CAP,new XmlEnumConverter<StrokeLineCap>(StrokeLineCap.class));
+  addConverter(StrokeableFigure.STROKE_LINE_JOIN,new XmlEnumConverter<StrokeLineJoin>(StrokeLineJoin.class));
+  addConverter(StrokeableFigure.STROKE_TYPE,new XmlEnumConverter<StrokeType>(StrokeType.class));
   removeKey(StyleableFigure.PSEUDO_CLASS_STATES);
   checkConverters();
 }
