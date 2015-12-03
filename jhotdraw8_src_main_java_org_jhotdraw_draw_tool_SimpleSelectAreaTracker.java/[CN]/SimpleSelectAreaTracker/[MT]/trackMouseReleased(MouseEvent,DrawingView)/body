@@ -7,5 +7,4 @@
     dv.selectedFiguresProperty().clear();
   }
   dv.selectedFiguresProperty().addAll(f);
-  fireToolDone();
 }

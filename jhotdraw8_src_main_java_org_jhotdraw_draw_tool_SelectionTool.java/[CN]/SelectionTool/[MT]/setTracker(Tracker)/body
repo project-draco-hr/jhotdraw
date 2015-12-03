@@ -1,10 +1,10 @@
 {
   if (tracker != null) {
-    node.setCenter(null);
+    drawPane.setCenter(null);
   }
   tracker=t;
   if (tracker != null) {
-    node.setCenter(tracker.getNode());
-    node.layout();
+    drawPane.setCenter(tracker.getNode());
+    drawPane.layout();
   }
 }

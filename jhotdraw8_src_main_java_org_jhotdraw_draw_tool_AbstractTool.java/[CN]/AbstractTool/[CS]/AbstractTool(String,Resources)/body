@@ -3,4 +3,5 @@
   if (rsrc != null) {
     applyResources(rsrc);
   }
+  node.getChildren().addAll(drawPane,eventPane);
 }

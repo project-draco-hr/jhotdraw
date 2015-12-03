@@ -1,5 +1,4 @@
 {
-  super(name,rsrc);
   node.getChildren().add(rubberband);
   rubberband.setVisible(false);
   initNode(rubberband);
