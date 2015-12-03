@@ -1,0 +1,6 @@
+{
+  Figure owner=getOwner();
+  Bounds bounds=owner.getBoundsInLocal();
+  Point2D shift=view.getViewToWorld().deltaTransform(10,10);
+  return new Point2D(bounds.getMinX() + bounds.getWidth() / 2,bounds.getMinY() - shift.getY());
+}

@@ -1,5 +1,0 @@
-{
-  Figure owner=getOwner();
-  Bounds bounds=owner.getBoundsInLocal();
-  return new Point2D(bounds.getMinX() + bounds.getWidth() / 2,bounds.getMinY() - 10);
-}
