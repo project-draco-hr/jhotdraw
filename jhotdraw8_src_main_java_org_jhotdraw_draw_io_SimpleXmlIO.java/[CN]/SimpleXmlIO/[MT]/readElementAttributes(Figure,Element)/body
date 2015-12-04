@@ -18,7 +18,7 @@
         value=factory.stringToValue(key,attr.getValue());
       }
       if (value instanceof URI) {
-        value=relativeToAbsolute((URI)value);
+        value=externalToInternal(figure.getDrawing(),(URI)value);
       }
       figure.set(key,value);
     }

@@ -1,0 +1,10 @@
+{
+  URI drawingHome=drawing.get(Drawing.DOCUMENT_HOME);
+  if (drawingHome != null) {
+    uri=drawingHome.resolve(uri);
+  }
+  if (documentHomeDir != null) {
+    uri=documentHomeDir.relativize(uri);
+  }
+  return uri;
+}

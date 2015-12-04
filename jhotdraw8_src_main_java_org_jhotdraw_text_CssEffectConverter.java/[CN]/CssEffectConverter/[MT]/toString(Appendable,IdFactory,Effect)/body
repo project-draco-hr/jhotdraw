@@ -1,3 +1,37 @@
 {
-  out.append("null");
+  if (value instanceof DropShadow) {
+    DropShadow fx=(DropShadow)value;
+    out.append("dropshadow(");
+    out.append(fx.getBlurType().toString().toLowerCase().replace('_','-'));
+    out.append(',');
+    colorConverter.toString(out,idFactory,fx.getColor());
+    out.append(',');
+    sizeConverter.toString(out,idFactory,fx.getRadius());
+    out.append(',');
+    sizeConverter.toString(out,idFactory,fx.getSpread());
+    out.append(',');
+    sizeConverter.toString(out,idFactory,fx.getOffsetX());
+    out.append(',');
+    sizeConverter.toString(out,idFactory,fx.getOffsetY());
+    out.append(')');
+  }
+ else   if (value instanceof InnerShadow) {
+    InnerShadow fx=(InnerShadow)value;
+    out.append("innershadow(");
+    out.append(fx.getBlurType().toString().toLowerCase().replace('_','-'));
+    out.append(',');
+    colorConverter.toString(out,idFactory,fx.getColor());
+    out.append(',');
+    sizeConverter.toString(out,idFactory,fx.getRadius());
+    out.append(',');
+    sizeConverter.toString(out,idFactory,fx.getChoke());
+    out.append(',');
+    sizeConverter.toString(out,idFactory,fx.getOffsetX());
+    out.append(',');
+    sizeConverter.toString(out,idFactory,fx.getOffsetY());
+    out.append(')');
+  }
+ else {
+    out.append("none");
+  }
 }

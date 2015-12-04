@@ -7,7 +7,7 @@
     @SuppressWarnings("unchecked") MapAccessor<Object> key=(MapAccessor<Object>)k;
     Object value=figure.get(key);
     if (value instanceof URI) {
-      value=absoluteToRelative((URI)value);
+      value=internalToExternal(figure.getDrawing(),(URI)value);
     }
     if (!factory.isDefaultValue(key,value)) {
       if (Figure.class.isAssignableFrom(key.getValueType())) {

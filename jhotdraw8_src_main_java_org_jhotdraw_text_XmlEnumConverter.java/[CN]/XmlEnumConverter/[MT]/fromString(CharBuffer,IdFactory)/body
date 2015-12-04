@@ -12,7 +12,7 @@
     return null;
   }
   try {
-    return Enum.valueOf(enumClass,out.toString().toUpperCase());
+    return Enum.valueOf(enumClass,out.toString().toUpperCase().replace('-','_'));
   }
  catch (  IllegalArgumentException e) {
     return getDefaultValue();

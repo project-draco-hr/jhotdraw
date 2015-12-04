@@ -12,7 +12,7 @@
           if (m.matches()) {
             String href=m.group(1);
             URI uri=URI.create(href);
-            uri=relativeToAbsolute(uri);
+            uri=externalToInternal(external,uri);
             stylesheets.add(uri);
           }
         }
