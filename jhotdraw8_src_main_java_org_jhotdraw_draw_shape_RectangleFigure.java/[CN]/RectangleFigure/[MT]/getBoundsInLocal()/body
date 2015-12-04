@@ -1,3 +1,0 @@
-{
-  return new BoundingBox(get(X),get(Y),get(WIDTH),get(HEIGHT));
-}

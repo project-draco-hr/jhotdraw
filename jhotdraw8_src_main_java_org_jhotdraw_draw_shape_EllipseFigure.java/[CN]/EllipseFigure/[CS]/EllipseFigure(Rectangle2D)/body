@@ -1,3 +1,0 @@
-{
-  reshape(rect.getMinX(),rect.getMinY(),rect.getWidth(),rect.getHeight());
-}
