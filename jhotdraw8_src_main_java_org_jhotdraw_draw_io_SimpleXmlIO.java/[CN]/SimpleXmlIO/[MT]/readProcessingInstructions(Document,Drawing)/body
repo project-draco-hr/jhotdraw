@@ -11,7 +11,9 @@
           Matcher m=hrefPattern.matcher(pi.getData());
           if (m.matches()) {
             String href=m.group(1);
-            stylesheets.add(URI.create(href));
+            URI uri=URI.create(href);
+            uri=relativeToAbsolute(uri);
+            stylesheets.add(uri);
           }
         }
       }

@@ -1,8 +1,14 @@
 {
   setAttribute(elem,factory.getObjectIdAttribute(),factory.createId(figure));
   for (  MapAccessor<?> k : factory.figureAttributeKeys(figure)) {
+    if (k.isTransient()) {
+      continue;
+    }
     @SuppressWarnings("unchecked") MapAccessor<Object> key=(MapAccessor<Object>)k;
     Object value=figure.get(key);
+    if (value instanceof URI) {
+      value=absoluteToRelative((URI)value);
+    }
     if (!factory.isDefaultValue(key,value)) {
       if (Figure.class.isAssignableFrom(key.getValueType())) {
         setAttribute(elem,factory.keyToName(figure,key),factory.createId(value));

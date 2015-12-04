@@ -2,6 +2,7 @@
   Line lineNode=(Line)node;
   applyHideableFigureProperties(node);
   applyStrokeableFigureProperties(lineNode);
+  applyCompositableFigureProperties(lineNode);
   Point2D start=get(START);
   lineNode.setStartX(start.getX());
   lineNode.setStartY(start.getY());

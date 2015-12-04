@@ -1,4 +1,4 @@
 {
-  setDocumentHome(file.getParentFile().toURI());
+  setDocumentHome(file.toURI());
   return InputFormat.super.read(file,drawing);
 }

@@ -1,0 +1,6 @@
+{
+  if (documentHomeDir != null) {
+    uri=documentHomeDir.relativize(uri);
+  }
+  return uri;
+}

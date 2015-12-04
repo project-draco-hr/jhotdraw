@@ -1,0 +1,5 @@
+{
+  if (uriChooser == null)   uriChooser=createURIChooser();
+  URI uri=uriChooser.showDialog(node);
+  return uri;
+}

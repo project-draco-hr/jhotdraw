@@ -1,0 +1,4 @@
+String name
+Class<?> clazz
+Class<?>[] typeParameters
+T defaultValue

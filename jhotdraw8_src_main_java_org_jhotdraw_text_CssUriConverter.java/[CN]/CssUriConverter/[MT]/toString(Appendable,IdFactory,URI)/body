@@ -1,0 +1,5 @@
+{
+  out.append("url(");
+  out.append(value.toASCIIString());
+  out.append(')');
+}

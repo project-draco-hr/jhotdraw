@@ -1,0 +1,13 @@
+{
+  ImageView imageView=(ImageView)node;
+  validateImage();
+  imageView.setImage(cachedImage);
+  applyTransformableFigureProperties(imageView);
+  applyCompositableFigureProperties(node);
+  Rectangle2D r=get(BOUNDS);
+  imageView.setX(r.getMinX());
+  imageView.setY(r.getMinY());
+  imageView.setFitWidth(r.getWidth());
+  imageView.setFitHeight(r.getHeight());
+  imageView.applyCss();
+}

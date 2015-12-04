@@ -1,0 +1,7 @@
+{
+  CssTokenizer tt=new CssTokenizer(new CharBufferReader(buf));
+  if (tt.nextToken() != CssTokenizer.TT_URI) {
+    throw new ParseException("Css URI expected. " + tt.currentToken(),buf.position());
+  }
+  return URI.create(tt.currentStringValue());
+}

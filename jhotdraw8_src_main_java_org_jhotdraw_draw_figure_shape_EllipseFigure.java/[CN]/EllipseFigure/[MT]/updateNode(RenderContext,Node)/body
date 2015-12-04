@@ -4,6 +4,7 @@
   applyTransformableFigureProperties(n);
   applyStrokeableFigureProperties(n);
   applyFilleableFigureProperties(n);
+  applyCompositableFigureProperties(n);
   n.setCenterX(get(CENTER_X));
   n.setCenterY(get(CENTER_Y));
   n.setRadiusX(get(RADIUS_X));

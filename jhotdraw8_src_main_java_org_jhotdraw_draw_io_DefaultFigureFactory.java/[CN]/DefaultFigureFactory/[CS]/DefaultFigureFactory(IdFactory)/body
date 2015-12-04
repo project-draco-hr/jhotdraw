@@ -18,14 +18,15 @@
     addFigureKeysAndNames("Text",TextFigure.class,keys);
   }
 {
-    Set<MapAccessor<?>> keys=Figure.getDeclaredAndInheritedKeys(SimpleLabelFigure.class);
+    Set<MapAccessor<?>> keys=Figure.getDeclaredAndInheritedKeys(LabelFigure.class);
     keys.remove(TextFigure.TEXT);
-    addNodeListKey(SimpleLabelFigure.class,"",TextFigure.TEXT);
-    addFigureKeysAndNames("Label",SimpleLabelFigure.class,keys);
+    addNodeListKey(LabelFigure.class,"",TextFigure.TEXT);
+    addFigureKeysAndNames("Label",LabelFigure.class,keys);
   }
   addFigureKeysAndNames("Line",LineFigure.class,Figure.getDeclaredAndInheritedKeys(LineFigure.class));
   addFigureKeysAndNames("Ellipse",EllipseFigure.class,Figure.getDeclaredAndInheritedKeys(EllipseFigure.class));
   addFigureKeysAndNames("LineConnection",LineConnectionFigure.class,Figure.getDeclaredAndInheritedKeys(LineConnectionFigure.class));
+  addFigureKeysAndNames("Image",ImageFigure.class,Figure.getDeclaredAndInheritedKeys(ImageFigure.class));
   addConverterForType(Rectangle2D.class,new Rectangle2DConverter());
   addConverterForType(String.class,new DefaultConverter());
   addConverterForType(Point2D.class,new XmlPoint2DConverter());
@@ -33,8 +34,8 @@
   addConverterForType(SVGPath.class,new XmlSvgPathConverter());
   addConverterForType(Insets.class,new XmlInsetsConverter());
   addConverterForType(Double.class,new NumberConverter());
-  addConverterForType(URL.class,new UrlConverter());
-  addConverterForType(URI.class,new UriConverter());
+  addConverterForType(URL.class,new XmlUrlConverter());
+  addConverterForType(URI.class,new XmlUriConverter());
   addConverterForType(Connector.class,new DefaultConnectorConverter());
   addConverterForType(Paint.class,new XmlPaintConverter());
   addConverterForType(Boolean.class,new XmlBooleanConverter());

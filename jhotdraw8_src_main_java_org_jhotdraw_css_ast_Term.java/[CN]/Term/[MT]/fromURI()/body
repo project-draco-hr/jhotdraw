@@ -1,3 +1,3 @@
 {
-  return stringValue;
+  return "url(" + stringValue + ")";
 }

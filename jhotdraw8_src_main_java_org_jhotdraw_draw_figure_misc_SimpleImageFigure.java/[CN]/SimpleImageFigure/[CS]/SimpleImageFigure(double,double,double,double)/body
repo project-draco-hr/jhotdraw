@@ -1,3 +1,0 @@
-{
-  set(IMAGE_RECTANGLE,new Rectangle2D(x,y,width,height));
-}

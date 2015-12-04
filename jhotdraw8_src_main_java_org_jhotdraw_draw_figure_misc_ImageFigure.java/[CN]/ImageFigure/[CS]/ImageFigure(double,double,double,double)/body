@@ -1,0 +1,3 @@
+{
+  set(BOUNDS,new Rectangle2D(x,y,width,height));
+}

@@ -9,5 +9,6 @@
   applyTextHolderProperties(tn);
   applyStrokeableFigureProperties(tn);
   applyFilleableFigureProperties(tn);
+  applyCompositableFigureProperties(tn);
   tn.applyCss();
 }
