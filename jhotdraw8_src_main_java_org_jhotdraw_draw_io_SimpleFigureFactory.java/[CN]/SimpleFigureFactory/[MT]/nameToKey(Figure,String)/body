@@ -1,5 +1,5 @@
 {
-  HashMap<String,Key<?>> strToKey=attrToKey.get(f.getClass());
+  HashMap<String,MapAccessor<?>> strToKey=attrToKey.get(f.getClass());
   if (attrToKey.containsKey(f.getClass())) {
     strToKey=attrToKey.get(f.getClass());
   }

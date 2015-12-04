@@ -1,0 +1,8 @@
+{
+  FFont oldValue=get(a);
+  familyKey.put(a,value.getFamily());
+  weightKey.put(a,value.getWeight());
+  postureKey.put(a,value.getPosture());
+  sizeKey.put(a,value.getSize());
+  return oldValue;
+}

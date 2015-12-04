@@ -8,7 +8,7 @@
     if (factory.getObjectIdAttribute().equals(attr.getLocalName())) {
       continue;
     }
-    @SuppressWarnings("unchecked") Key<Object> key=(Key<Object>)factory.nameToKey(figure,attr.getLocalName());
+    @SuppressWarnings("unchecked") MapAccessor<Object> key=(MapAccessor<Object>)factory.nameToKey(figure,attr.getLocalName());
     if (key != null && factory.figureAttributeKeys(figure).contains(key)) {
       Object value=null;
       if (Figure.class.isAssignableFrom(key.getValueType())) {

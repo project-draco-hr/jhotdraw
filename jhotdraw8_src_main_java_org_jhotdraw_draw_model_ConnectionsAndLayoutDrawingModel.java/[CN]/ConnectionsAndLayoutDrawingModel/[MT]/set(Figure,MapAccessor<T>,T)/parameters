@@ -1,0 +1,3 @@
+Figure figure
+MapAccessor<T> key
+T newValue

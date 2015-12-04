@@ -1,0 +1,13 @@
+{
+  Rectangle rectangleNode=(Rectangle)node;
+  applyHideableFigureProperties(node);
+  applyTransformableFigureProperties(rectangleNode);
+  applyFilleableFigureProperties(rectangleNode);
+  applyStrokeableFigureProperties(rectangleNode);
+  rectangleNode.setX(get(X));
+  rectangleNode.setY(get(Y));
+  rectangleNode.setWidth(get(WIDTH));
+  rectangleNode.setHeight(get(HEIGHT));
+  rectangleNode.setArcWidth(get(ARC_WIDTH));
+  rectangleNode.setArcHeight(get(ARC_HEIGHT));
+}

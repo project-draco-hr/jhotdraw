@@ -1,0 +1,28 @@
+{
+  for (  Map.Entry<Class<? extends Figure>,HashMap<String,MapAccessor<?>>> entry : attrToKey.entrySet()) {
+    for (    Map.Entry<String,MapAccessor<?>> e : new ArrayList<>(entry.getValue().entrySet())) {
+      if (e.getValue() == key) {
+        entry.getValue().remove(e.getKey());
+      }
+    }
+  }
+  for (  Map.Entry<Class<? extends Figure>,HashMap<MapAccessor<?>,String>> entry : keyToAttr.entrySet()) {
+    entry.getValue().remove(key);
+  }
+  for (  Map.Entry<Class<? extends Figure>,HashMap<String,MapAccessor<?>>> entry : elemToKey.entrySet()) {
+    for (    Map.Entry<String,MapAccessor<?>> e : new ArrayList<>(entry.getValue().entrySet())) {
+      if (e.getValue() == key) {
+        entry.getValue().remove(e.getKey());
+      }
+    }
+  }
+  for (  Map.Entry<Class<? extends Figure>,HashMap<MapAccessor<?>,String>> entry : keyToElem.entrySet()) {
+    entry.getValue().remove(key);
+  }
+  for (  Map.Entry<Class<? extends Figure>,HashSet<MapAccessor<?>>> entry : figureAttributeKeys.entrySet()) {
+    entry.getValue().remove(key);
+  }
+  for (  Map.Entry<Class<? extends Figure>,HashSet<MapAccessor<?>>> entry : figureNodeListKeys.entrySet()) {
+    entry.getValue().remove(key);
+  }
+}

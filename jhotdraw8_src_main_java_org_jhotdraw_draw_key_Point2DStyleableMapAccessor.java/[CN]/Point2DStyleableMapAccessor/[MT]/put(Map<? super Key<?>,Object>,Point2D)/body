@@ -1,0 +1,6 @@
+{
+  Point2D oldValue=get(a);
+  xKey.put(a,value.getX());
+  yKey.put(a,value.getY());
+  return oldValue;
+}

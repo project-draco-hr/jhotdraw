@@ -1,6 +1,8 @@
 {
   addFigureAttributeKeys(f,keys);
   for (  MapAccessor<?> key : keys) {
-    if (key instanceof Key)     addKey(f,key.getName(),(Key<?>)key);
+    if (key instanceof MapAccessor) {
+      addKey(f,key.getName(),(MapAccessor<?>)key);
+    }
   }
 }

@@ -1,5 +1,5 @@
 {
-  @SuppressWarnings("unchecked") StyleableKey<Object> k=(StyleableKey<Object>)findKey(element,attributeName);
+  @SuppressWarnings("unchecked") StyleableMapAccessor<Object> k=(StyleableMapAccessor<Object>)findKey(element,attributeName);
   if (k == null) {
     return null;
   }

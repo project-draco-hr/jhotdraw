@@ -1,0 +1,14 @@
+{
+  HashSet<MapAccessor<?>> redundantKeys=new HashSet<>();
+  for (  Map.Entry<Class<? extends Figure>,HashSet<MapAccessor<?>>> entry : figureAttributeKeys.entrySet()) {
+    for (    MapAccessor<?> ma : entry.getValue()) {
+      if (ma instanceof CompositeMapAccessor<?>) {
+        CompositeMapAccessor<?> cma=(CompositeMapAccessor<?>)ma;
+        redundantKeys.addAll(cma.getSubAccessors());
+      }
+    }
+  }
+  for (  MapAccessor<?> ma : redundantKeys) {
+    removeKey(ma);
+  }
+}

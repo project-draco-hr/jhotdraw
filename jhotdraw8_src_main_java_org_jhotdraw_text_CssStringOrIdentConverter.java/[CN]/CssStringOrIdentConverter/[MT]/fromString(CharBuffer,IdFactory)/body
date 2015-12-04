@@ -1,0 +1,7 @@
+{
+  CssTokenizer tt=new CssTokenizer(new CharBufferReader(buf));
+  if (tt.nextToken() != CssTokenizer.TT_STRING && tt.currentToken() != CssTokenizer.TT_IDENT) {
+    throw new ParseException("Css String or Ident expected. " + tt.currentToken(),buf.position());
+  }
+  return tt.currentStringValue();
+}

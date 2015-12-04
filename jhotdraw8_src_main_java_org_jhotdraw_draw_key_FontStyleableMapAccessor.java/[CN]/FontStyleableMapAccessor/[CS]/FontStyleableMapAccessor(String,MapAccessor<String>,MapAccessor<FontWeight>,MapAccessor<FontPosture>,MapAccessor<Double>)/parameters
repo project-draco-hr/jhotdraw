@@ -1,0 +1,5 @@
+String name
+MapAccessor<String> familyKey
+MapAccessor<FontWeight> weightKey
+MapAccessor<FontPosture> postureKey
+MapAccessor<Double> sizeKey

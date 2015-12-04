@@ -2,7 +2,7 @@
   for (  StyleRule r : s.getRulesets()) {
     if (r.getSelectorGroup().matches(selectorModel,elem)) {
       for (      Declaration d : r.getDeclarations()) {
-        @SuppressWarnings("unchecked") StyleableKey<Object> k=(StyleableKey<Object>)metaMap.get(d.getProperty());
+        @SuppressWarnings("unchecked") StyleableMapAccessor<Object> k=(StyleableMapAccessor<Object>)metaMap.get(d.getProperty());
         if (k != null) {
           if (!convertedValues.containsKey(d)) {
             @SuppressWarnings("unchecked") Converter<Object> converter=k.getConverter();

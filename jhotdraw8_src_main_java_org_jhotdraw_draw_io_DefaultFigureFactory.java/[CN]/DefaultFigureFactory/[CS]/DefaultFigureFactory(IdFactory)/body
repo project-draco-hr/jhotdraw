@@ -48,5 +48,6 @@
   addConverter(StrokeableFigure.STROKE_LINE_JOIN,new XmlEnumConverter<StrokeLineJoin>(StrokeLineJoin.class));
   addConverter(StrokeableFigure.STROKE_TYPE,new XmlEnumConverter<StrokeType>(StrokeType.class));
   removeKey(StyleableFigure.PSEUDO_CLASS_STATES);
+  removeRedundantKeys();
   checkConverters();
 }

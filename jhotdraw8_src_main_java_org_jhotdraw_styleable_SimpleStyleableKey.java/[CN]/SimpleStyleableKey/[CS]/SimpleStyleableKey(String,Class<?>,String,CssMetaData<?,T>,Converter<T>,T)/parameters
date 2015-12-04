@@ -1,6 +1,0 @@
-String key
-Class<?> clazz
-String typeParameters
-CssMetaData<?,T> metaData
-Converter<T> converter
-T defaultValue

@@ -1,7 +1,7 @@
 {
-  Set<Key<?>> keys=factory.figureNodeListKeys(figure);
-  for (  Key<?> ky : keys) {
-    @SuppressWarnings("unchecked") Key<Object> key=(Key<Object>)ky;
+  Set<MapAccessor<?>> keys=factory.figureNodeListKeys(figure);
+  for (  MapAccessor<?> ky : keys) {
+    @SuppressWarnings("unchecked") MapAccessor<Object> key=(MapAccessor<Object>)ky;
     String name=factory.keyToElementName(figure,key);
     if ("".equals(name)) {
       List<Node> nodeList=new ArrayList<>();

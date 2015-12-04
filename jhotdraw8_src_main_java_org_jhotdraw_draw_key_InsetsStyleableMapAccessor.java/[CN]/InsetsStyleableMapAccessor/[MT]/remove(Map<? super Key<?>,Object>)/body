@@ -1,0 +1,8 @@
+{
+  Insets oldValue=get(a);
+  topKey.remove(a);
+  rightKey.remove(a);
+  bottomKey.remove(a);
+  leftKey.remove(a);
+  return oldValue;
+}

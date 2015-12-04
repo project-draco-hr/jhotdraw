@@ -2,8 +2,8 @@
   Set<MapAccessor<?>> metaList=elem.getSupportedKeys();
   HashMap<String,MapAccessor<?>> metaMap=new HashMap<>();
   for (  MapAccessor<?> k : metaList) {
-    if (k instanceof StyleableKey) {
-      StyleableKey<?> sk=(StyleableKey<?>)k;
+    if (k instanceof StyleableMapAccessor) {
+      StyleableMapAccessor<?> sk=(StyleableMapAccessor<?>)k;
       metaMap.put(sk.getCssName(),k);
     }
   }

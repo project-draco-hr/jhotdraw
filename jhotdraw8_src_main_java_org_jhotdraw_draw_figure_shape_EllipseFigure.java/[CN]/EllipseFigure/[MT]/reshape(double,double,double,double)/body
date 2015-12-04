@@ -1,0 +1,8 @@
+{
+  double rx=max(0.0,width) / 2.0;
+  double ry=max(0.0,height) / 2.0;
+  set(CENTER_X,x + rx);
+  set(CENTER_Y,y + ry);
+  set(RADIUS_X,rx);
+  set(RADIUS_Y,ry);
+}

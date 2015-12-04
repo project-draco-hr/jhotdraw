@@ -5,7 +5,6 @@
   Point2D p=getLocation();
   p=t.transform(p);
   node.relocate(p.getX() - 5,p.getY() - 5);
-  if (f instanceof TransformableFigure) {
-    ((TransformableFigure)f).applyTransformableFigureProperties(node);
-  }
+  node.setRotate(f.getStyled(ROTATE));
+  node.setRotationAxis(f.getStyled(ROTATION_AXIS));
 }

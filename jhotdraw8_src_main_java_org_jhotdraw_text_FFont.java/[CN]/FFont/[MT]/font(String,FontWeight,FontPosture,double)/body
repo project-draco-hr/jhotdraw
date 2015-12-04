@@ -1,0 +1,3 @@
+{
+  return new FFont(family,weight,posture,size);
+}

@@ -1,0 +1,8 @@
+{
+  Rectangle2D oldValue=get(a);
+  xKey.put(a,value.getMinX());
+  yKey.put(a,value.getMinY());
+  widthKey.put(a,value.getWidth());
+  heightKey.put(a,value.getHeight());
+  return oldValue;
+}

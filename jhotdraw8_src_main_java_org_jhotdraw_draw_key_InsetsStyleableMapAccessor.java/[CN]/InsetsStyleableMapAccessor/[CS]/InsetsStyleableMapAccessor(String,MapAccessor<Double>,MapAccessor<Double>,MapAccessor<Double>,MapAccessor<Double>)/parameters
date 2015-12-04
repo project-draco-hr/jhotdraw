@@ -1,0 +1,5 @@
+String name
+MapAccessor<Double> topKey
+MapAccessor<Double> rightKey
+MapAccessor<Double> bottomKey
+MapAccessor<Double> leftKey

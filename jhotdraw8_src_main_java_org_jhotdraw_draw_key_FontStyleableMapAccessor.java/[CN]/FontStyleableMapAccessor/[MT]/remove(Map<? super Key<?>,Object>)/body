@@ -1,0 +1,8 @@
+{
+  FFont oldValue=get(a);
+  familyKey.remove(a);
+  weightKey.remove(a);
+  postureKey.remove(a);
+  sizeKey.remove(a);
+  return oldValue;
+}

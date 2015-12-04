@@ -1,0 +1,10 @@
+{
+  HashMap<MapAccessor<?>,String> keyToStr=null;
+  if (keyToAttr.containsKey(f.getClass())) {
+    keyToStr=keyToAttr.get(f.getClass());
+  }
+  if (keyToStr == null || !keyToStr.containsKey(key)) {
+    throw new IOException("no mapping for key " + key + " in figure "+ f.getClass());
+  }
+  return keyToStr.get(key);
+}

@@ -1,6 +1,6 @@
 {
-  for (  HashMap<Key<?>,String> map : keyToAttr.values()) {
-    for (    Key<?> k : map.keySet()) {
+  for (  HashMap<MapAccessor<?>,String> map : keyToAttr.values()) {
+    for (    MapAccessor<?> k : map.keySet()) {
       String fullValueType=k.getFullValueType();
       if (!keyValueToXML.containsKey(k) && !valueToXML.containsKey(fullValueType)) {
         System.err.println(this + " WARNING can not convert " + fullValueType+ " to XML for key "+ k+ ".");

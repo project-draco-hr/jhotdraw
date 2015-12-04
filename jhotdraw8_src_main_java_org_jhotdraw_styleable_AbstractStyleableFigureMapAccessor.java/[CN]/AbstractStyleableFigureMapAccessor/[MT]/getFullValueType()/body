@@ -1,0 +1,15 @@
+{
+  StringBuilder buf=new StringBuilder();
+  buf.append(clazz.getName());
+  if (!typeParameters.isEmpty()) {
+    buf.append('<');
+    boolean first=true;
+    for (    Class<?> tp : typeParameters) {
+      if (first)       first=false;
+ else       buf.append(',');
+      buf.append(tp.getName());
+    }
+    buf.append('>');
+  }
+  return buf.toString();
+}

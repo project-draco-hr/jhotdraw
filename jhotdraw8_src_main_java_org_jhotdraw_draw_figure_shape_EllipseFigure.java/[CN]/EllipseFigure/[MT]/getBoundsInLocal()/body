@@ -1,0 +1,5 @@
+{
+  double rx=get(RADIUS_X);
+  double ry=get(RADIUS_Y);
+  return new BoundingBox(get(CENTER_X) - rx,get(CENTER_Y) - ry,rx * 2.0,ry * 2.0);
+}

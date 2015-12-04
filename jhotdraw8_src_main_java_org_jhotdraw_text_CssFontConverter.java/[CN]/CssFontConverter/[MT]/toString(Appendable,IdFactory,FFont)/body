@@ -1,0 +1,39 @@
+{
+  double fontSize=font.getSize();
+  String fontStyle=font.getPosture().toString().toLowerCase();
+  String fontWeight=font.getWeight().toString().toLowerCase();
+  String fontFamily=font.getFamily();
+switch (font.getPosture()) {
+case ITALIC:
+    out.append("italic");
+  break;
+case REGULAR:
+out.append("normal");
+break;
+default :
+throw new InternalError("Unknown fontPosture:" + font.getPosture());
+}
+out.append(' ');
+switch (font.getWeight()) {
+case NORMAL:
+out.append("normal");
+break;
+case BOLD:
+out.append("bold");
+break;
+default :
+out.append(Integer.toString(font.getWeight().getWeight()));
+break;
+}
+out.append(' ');
+doubleConverter.toString(out,fontSize);
+out.append(' ');
+if (fontFamily.contains(" ") || fontFamily.contains("\'") || fontFamily.contains("\"")) {
+out.append('\"');
+out.append(fontFamily.replace("\"","\\\""));
+out.append('\"');
+}
+ else {
+out.append(fontFamily);
+}
+}

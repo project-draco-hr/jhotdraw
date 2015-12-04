@@ -1,0 +1,6 @@
+String key
+Class<?> clazz
+Class<?>[] typeParameters
+CssMetaData<?,T> metaData
+Converter<T> converter
+T defaultValue

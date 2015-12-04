@@ -1,0 +1,7 @@
+{
+  this.family=family;
+  this.weight=weight;
+  this.posture=posture;
+  this.size=size;
+  this.font=Font.font(family,weight,posture,size);
+}
