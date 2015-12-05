@@ -1,3 +1,4 @@
 {
-  return new HashSet<String>(element.getStyleClass());
+  Collection<String> styleClasses=element.getStyleClass();
+  return (styleClasses == null) ? Collections.emptySet() : new HashSet<String>(element.getStyleClass());
 }
