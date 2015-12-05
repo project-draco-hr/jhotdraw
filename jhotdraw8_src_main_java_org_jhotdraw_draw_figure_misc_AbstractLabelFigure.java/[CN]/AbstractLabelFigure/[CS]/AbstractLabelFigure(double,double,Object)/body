@@ -1,0 +1,7 @@
+{
+  set(ORIGIN,new Point2D(x,y));
+  for (int i=0; i < keyValues.length; i+=2) {
+    @SuppressWarnings("unchecked") Key<Object> key=(Key<Object>)keyValues[i];
+    set(key,keyValues[i + 1]);
+  }
+}

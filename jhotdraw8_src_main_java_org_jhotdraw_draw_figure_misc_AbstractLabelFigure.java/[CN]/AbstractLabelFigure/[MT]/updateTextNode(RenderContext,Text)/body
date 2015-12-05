@@ -1,8 +1,7 @@
 {
-  tn.setText(get(TEXT));
+  tn.setText(getText());
   Point2D origin=get(ORIGIN);
   tn.setX(origin.getX());
   tn.setY(origin.getY());
-  applyTextableFigureProperties(tn);
   applyLabeledFigureProperties(tn);
 }
