@@ -1,4 +1,3 @@
 {
   super(owner,RelativeLocator.southWest());
-  node.setCursor(Cursor.SW_RESIZE);
 }

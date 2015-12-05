@@ -14,7 +14,9 @@
   DrawingModel model=view.getModel();
   if (event.isShiftDown()) {
     for (    Figure f : groupReshapeableFigures) {
-      if (f instanceof TransformableFigure)       model.set(f,TransformableFigure.ROTATE,newRotate);
+      if (f instanceof TransformableFigure) {
+        model.set(f,TransformableFigure.ROTATE,newRotate);
+      }
     }
   }
  else {

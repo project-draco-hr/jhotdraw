@@ -1,4 +1,3 @@
 {
   super(owner,RelativeLocator.north());
-  node.setCursor(Cursor.N_RESIZE);
 }

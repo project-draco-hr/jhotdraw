@@ -12,7 +12,7 @@
  else {
     Handle h=view.findHandle(vx,vy);
     if (h != null) {
-      node.setCursor(h.getNode().getCursor());
+      node.setCursor(h.getCursor());
       setTracker(getHandleTracker(h));
     }
  else {

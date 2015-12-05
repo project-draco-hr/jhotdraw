@@ -13,5 +13,4 @@
   node.getStyleClass().clear();
   node.getStyleClass().add(styleclassDisconnected);
   node.setBorder(REGION_BORDER);
-  node.setCursor(Cursor.CROSSHAIR);
 }
