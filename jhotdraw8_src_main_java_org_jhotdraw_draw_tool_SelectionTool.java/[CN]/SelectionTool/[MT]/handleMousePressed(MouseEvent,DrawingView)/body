@@ -17,7 +17,6 @@
     }
  else {
       node.setCursor(Cursor.DEFAULT);
-      boolean selectionChanged=false;
       if (isSelectBehindEnabled() && (event.isAltDown())) {
         pressedFigure=null;
         boolean selectionFound=false;
@@ -41,7 +40,7 @@
       if (event.isShiftDown() && !event.isMetaDown()) {
         if (pressedFigure != null) {
           view.getSelectedFigures().add(pressedFigure);
-          selectionChanged=true;
+          return;
         }
       }
  else       if (!event.isShiftDown() && event.isMetaDown()) {
@@ -52,20 +51,16 @@
  else {
             view.selectedFiguresProperty().add(pressedFigure);
           }
-          selectionChanged=true;
+          return;
         }
       }
  else       if (!event.isShiftDown() && !event.isMetaDown()) {
         if (pressedFigure != null && !view.selectedFiguresProperty().contains(pressedFigure)) {
           view.selectedFiguresProperty().clear();
           view.selectedFiguresProperty().add(pressedFigure);
-          selectionChanged=true;
         }
       }
-      if (mustSelectFirstBeforeDrag && selectionChanged) {
-        setTracker(null);
-      }
- else       if (view.selectedFiguresProperty().contains(pressedFigure)) {
+      if (view.selectedFiguresProperty().contains(pressedFigure)) {
         DragTracker t=getDragTracker(pressedFigure,view);
         setTracker(t);
       }
