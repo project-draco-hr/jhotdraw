@@ -3,7 +3,7 @@
   Drawing d=getDrawing();
   if (d != null) {
     for (    Figure layer : d.getChildren()) {
-      if (layer.isSelectable()) {
+      if (layer.isEditable()) {
         for (        Figure f : layer.getChildren()) {
           if (f.isSelectable()) {
             figures.add(f);

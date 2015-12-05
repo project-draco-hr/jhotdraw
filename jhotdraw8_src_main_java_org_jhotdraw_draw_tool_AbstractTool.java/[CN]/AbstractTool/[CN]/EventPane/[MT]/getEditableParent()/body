@@ -1,0 +1,9 @@
+{
+  DrawingView dv=getDrawingView();
+  if (dv != null) {
+    if (dv.getNode() instanceof EditableComponent) {
+      return (EditableComponent)dv.getNode();
+    }
+  }
+  return null;
+}

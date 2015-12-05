@@ -1,0 +1,6 @@
+{
+  EditableComponent p=getEditableParent();
+  if (p != null) {
+    p.duplicateSelection();
+  }
+}

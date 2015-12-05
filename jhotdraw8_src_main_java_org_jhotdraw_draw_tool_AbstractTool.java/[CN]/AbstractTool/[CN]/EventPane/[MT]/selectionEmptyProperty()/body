@@ -1,0 +1,7 @@
+{
+  EditableComponent p=getEditableParent();
+  if (p != null) {
+    return p.selectionEmptyProperty();
+  }
+  return null;
+}
