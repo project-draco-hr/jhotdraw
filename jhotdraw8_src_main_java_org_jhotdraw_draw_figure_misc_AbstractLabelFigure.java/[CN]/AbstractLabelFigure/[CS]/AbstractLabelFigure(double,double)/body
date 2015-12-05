@@ -1,0 +1,3 @@
+{
+  set(ORIGIN,new Point2D(x,y));
+}

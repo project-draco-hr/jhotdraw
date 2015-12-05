@@ -1,10 +1,14 @@
 {
-  if (uriChooser == null)   uriChooser=createURIChooser();
+  if (uriChooser == null) {
+    uriChooser=createURIChooser();
+  }
   URI uri=uriChooser.showDialog(node);
-  Drawing drawing=getDrawingView().getDrawing();
-  URI documentHome=drawing.get(Drawing.DOCUMENT_HOME);
-  if (documentHome != null) {
-    uri=documentHome.relativize(uri);
+  if (uri != null) {
+    Drawing drawing=getDrawingView().getDrawing();
+    URI documentHome=drawing.get(Drawing.DOCUMENT_HOME);
+    if (documentHome != null) {
+      uri=documentHome.relativize(uri);
+    }
   }
   return uri;
 }
