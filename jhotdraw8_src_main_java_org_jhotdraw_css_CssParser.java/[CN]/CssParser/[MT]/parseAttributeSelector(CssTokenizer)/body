@@ -51,6 +51,7 @@ break;
 default :
 throw new ParseException("AttributeSelector: operator expected. Line " + tt.getLineNumber() + ".",tt.getPosition());
 }
+tt.skipWhitespace();
 if (tt.nextToken() != ']') {
 throw new ParseException("AttributeSelector: ']' expected.",tt.getLineNumber());
 }
