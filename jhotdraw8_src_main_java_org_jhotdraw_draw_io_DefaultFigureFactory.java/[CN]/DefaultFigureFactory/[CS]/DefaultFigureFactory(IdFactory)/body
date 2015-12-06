@@ -32,7 +32,7 @@
   addConverterForType(Point3D.class,new XmlPoint3DConverter());
   addConverterForType(SVGPath.class,new XmlSvgPathConverter());
   addConverterForType(Insets.class,new XmlInsetsConverter());
-  addConverterForType(Double.class,new NumberConverter());
+  addConverterForType(Double.class,new XmlDoubleConverter());
   addConverterForType(URL.class,new XmlUrlConverter());
   addConverterForType(URI.class,new XmlUriConverter());
   addConverterForType(Connector.class,new DefaultConnectorConverter());
