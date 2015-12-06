@@ -1,4 +1,11 @@
 {
+  if (value == null) {
+    if (!nullable) {
+      throw new IllegalArgumentException("value is null");
+    }
+    out.append("none");
+    return;
+  }
   out.append('"');
   for (  char ch : value.getContent().toCharArray()) {
 switch (ch) {

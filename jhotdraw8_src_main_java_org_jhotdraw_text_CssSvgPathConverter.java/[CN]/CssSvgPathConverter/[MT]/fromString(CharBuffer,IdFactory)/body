@@ -1,9 +1,22 @@
 {
   CssTokenizer tt=new CssTokenizer(new CharBufferReader(buf));
-  if (tt.nextToken() != CssTokenizer.TT_STRING) {
-    throw new ParseException("Css String expected. " + tt.currentToken(),buf.position());
+  SVGPath p=null;
+  if (tt.nextToken() == CssTokenizer.TT_IDENT) {
+    if (!nullable) {
+      throw new ParseException("tring expected. " + tt.currentToken(),buf.position());
+    }
+    if (!"none".equals(tt.currentStringValue())) {
+      throw new ParseException("none or String expected. " + tt.currentToken(),buf.position());
+    }
+    p=null;
   }
-  SVGPath p=new SVGPath();
-  p.setContent(tt.currentStringValue());
+ else {
+    if (tt.currentToken() != CssTokenizer.TT_STRING) {
+      throw new ParseException("Css String expected. " + tt.currentToken(),buf.position());
+    }
+    p=new SVGPath();
+    p.setContent(tt.currentStringValue());
+  }
+  buf.position(buf.limit());
   return p;
 }

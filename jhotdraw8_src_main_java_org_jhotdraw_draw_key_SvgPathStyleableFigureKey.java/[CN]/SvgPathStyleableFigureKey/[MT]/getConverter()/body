@@ -1,6 +1,6 @@
 {
   if (converter == null) {
-    converter=new CssSvgPathConverter();
+    converter=new CssSvgPathConverter(isNullable());
   }
   return converter;
 }
