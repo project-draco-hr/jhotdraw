@@ -10,7 +10,7 @@
     hadValue=false;
     ret=null;
   }
-  if (hadValue && o == StyleOrigin.USER) {
+  if (hadValue) {
     callObservers(new SimpleChange(key,ret,null,false,true));
   }
   return ret;

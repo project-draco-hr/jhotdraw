@@ -6,10 +6,8 @@
   }
   boolean hadValue=sv.hasValue(o);
   V ret=sv.setValue(o,value);
-  if (o == StyleOrigin.USER) {
-    if (ret == null && value != null || ret != null && !ret.equals(value)) {
-      callObservers(new SimpleChange(key,ret,value,true,hadValue));
-    }
+  if (ret == null && value != null || ret != null && !ret.equals(value)) {
+    callObservers(new SimpleChange(key,ret,value,true,hadValue));
   }
   return ret;
 }
