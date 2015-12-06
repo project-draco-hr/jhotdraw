@@ -1,0 +1,6 @@
+{
+  CssRegexConverter c=new CssRegexConverter();
+  Regex rgx=c.fromString(inpuRegex);
+  String actualValue=rgx.apply(inputValue);
+  assertEquals(actualValue,expectedValue);
+}

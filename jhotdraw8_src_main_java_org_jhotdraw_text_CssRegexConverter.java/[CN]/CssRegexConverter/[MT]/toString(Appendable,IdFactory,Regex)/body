@@ -2,6 +2,8 @@
   out.append('/');
   appendExpr(out,value.getFind());
   out.append('/');
-  appendExpr(out,value.getReplace());
-  out.append('/');
+  if (!"$1".equals(value.getReplace())) {
+    appendExpr(out,value.getReplace());
+    out.append('/');
+  }
 }

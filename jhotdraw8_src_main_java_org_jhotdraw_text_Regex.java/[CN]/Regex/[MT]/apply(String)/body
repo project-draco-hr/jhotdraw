@@ -1,0 +1,7 @@
+{
+  if (pattern == null) {
+    pattern=Pattern.compile(find);
+  }
+  Matcher m=pattern.matcher(str);
+  return m.replaceAll(replace);
+}

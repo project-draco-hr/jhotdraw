@@ -1,4 +1,0 @@
-{
-  CssRegexConverter c=new CssRegexConverter();
-  Regex out=c.fromString(inputData);
-}
