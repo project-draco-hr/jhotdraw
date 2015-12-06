@@ -1,0 +1,7 @@
+{
+  super(name,BoundingBox.class,new MapAccessor<?>[]{xKey,yKey,widthKey,heightKey},new BoundingBox(xKey.getDefaultValue(),yKey.getDefaultValue(),widthKey.getDefaultValue(),heightKey.getDefaultValue()));
+  this.xKey=xKey;
+  this.yKey=yKey;
+  this.widthKey=widthKey;
+  this.heightKey=heightKey;
+}

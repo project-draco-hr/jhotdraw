@@ -1,0 +1,4 @@
+String name
+Class<T> clazz
+MapAccessor<?>[] subAccessors
+T defaultValue

@@ -1,0 +1,4 @@
+{
+  String keyClass=getClass().getName();
+  return keyClass.substring(keyClass.lastIndexOf('.') + 1) + "{name:" + name+ " type:"+ getFullValueType()+ "}";
+}
