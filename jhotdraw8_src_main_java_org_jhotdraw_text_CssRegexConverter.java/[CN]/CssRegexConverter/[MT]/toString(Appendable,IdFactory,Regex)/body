@@ -1,7 +1,12 @@
 {
   if (value == null) {
-    out.append("none");
-    return;
+    if (nullable) {
+      out.append("none");
+      return;
+    }
+ else {
+      throw new IllegalArgumentException("value is null");
+    }
   }
   out.append('/');
   appendExpr(out,value.getFind());

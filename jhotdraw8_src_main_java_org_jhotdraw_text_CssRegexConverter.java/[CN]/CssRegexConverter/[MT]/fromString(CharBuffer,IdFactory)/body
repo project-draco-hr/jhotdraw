@@ -4,10 +4,16 @@
   StringBuilder replace=new StringBuilder();
   tt.skipWhitespace();
   if (tt.nextToken() == CssTokenizer.TT_IDENT) {
+    if (!nullable) {
+      throw new ParseException("'/' expected",tt.getPosition());
+    }
     if (!"none".equals(tt.currentStringValue())) {
       throw new ParseException("none or '/' expected",tt.getPosition());
     }
     return null;
+  }
+ else {
+    tt.pushBack();
   }
   if (tt.nextToken() != '/') {
     throw new ParseException("first / expected",tt.getPosition());
