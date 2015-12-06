@@ -7,7 +7,7 @@
   boolean hadValue=sv.hasValue(o);
   V ret=sv.setValue(o,value);
   if (ret == null && value != null || ret != null && !ret.equals(value)) {
-    callObservers(new SimpleChange(key,ret,value,true,hadValue));
+    callObservers(o,new SimpleChange(key,ret,value,true,hadValue));
   }
   return ret;
 }

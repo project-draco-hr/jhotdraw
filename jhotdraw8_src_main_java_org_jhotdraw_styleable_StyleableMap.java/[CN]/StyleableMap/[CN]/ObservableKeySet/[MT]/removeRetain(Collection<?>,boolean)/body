@@ -8,7 +8,7 @@
       if (sv.hasValue(ksetOrigin)) {
         removed=true;
         V value=sv.removeValue(ksetOrigin);
-        callObservers(new SimpleChange(key,value,null,false,true));
+        callObservers(ksetOrigin,new SimpleChange(key,value,null,false,true));
       }
     }
   }

@@ -11,7 +11,7 @@
         if (sv.isEmpty()) {
           i.remove();
         }
-        callObservers(new SimpleChange(key,value,null,false,true));
+        callObservers(ksetOrigin,new SimpleChange(key,value,null,false,true));
       }
     }
   }

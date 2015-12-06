@@ -1,6 +1,6 @@
 {
   for (  MapAccessor<?> ma : factory.figureAttributeKeys(figure)) {
-    MapAccessor<Object> mao=(MapAccessor<Object>)ma;
+    @SuppressWarnings("unchecked") MapAccessor<Object> mao=(MapAccessor<Object>)ma;
     Object defaultValue=factory.getDefaultValue(figure,ma);
     figure.set(mao,defaultValue);
   }

@@ -11,7 +11,7 @@
     ret=null;
   }
   if (hadValue) {
-    callObservers(new SimpleChange(key,ret,null,false,true));
+    callObservers(o,new SimpleChange(key,ret,null,false,true));
   }
   return ret;
 }

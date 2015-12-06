@@ -4,6 +4,6 @@
     K key=e.getKey();
     StyledValue sv=e.getValue();
     @SuppressWarnings("unchecked") V val=(V)sv.removeValue(o);
-    callObservers(new SimpleChange(key,val,null,false,true));
+    callObservers(o,new SimpleChange(key,val,null,false,true));
   }
 }
