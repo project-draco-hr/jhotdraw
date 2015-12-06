@@ -1,0 +1,3 @@
+{
+  return new BoundingBox(xKey.get(a),yKey.get(a),widthKey.get(a),heightKey.get(a));
+}
