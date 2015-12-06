@@ -9,10 +9,10 @@
     }
   }
   out.append('/');
-  appendExpr(out,value.getFind());
+  stringConverter.toString(out,value.getFind());
   out.append('/');
   if (!"$1".equals(value.getReplace())) {
-    appendExpr(out,value.getReplace());
+    stringConverter.toString(out,value.getReplace());
     out.append('/');
   }
 }

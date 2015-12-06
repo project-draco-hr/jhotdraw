@@ -1,5 +1,5 @@
 {
-  CssRegexConverter c=new CssRegexConverter();
+  CssRegexConverter c=new CssRegexConverter(false);
   Regex rgx=c.fromString(inpuRegex);
   String actualValue=rgx.apply(inputValue);
   assertEquals(actualValue,expectedValue);
