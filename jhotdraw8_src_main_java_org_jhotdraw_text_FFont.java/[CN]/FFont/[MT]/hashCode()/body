@@ -1,0 +1,8 @@
+{
+  int hash=3;
+  hash=97 * hash + Objects.hashCode(this.family);
+  hash=97 * hash + Objects.hashCode(this.weight);
+  hash=97 * hash + Objects.hashCode(this.posture);
+  hash=97 * hash + (int)(Double.doubleToLongBits(this.size) ^ (Double.doubleToLongBits(this.size) >>> 32));
+  return hash;
+}

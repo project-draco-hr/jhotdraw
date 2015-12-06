@@ -1,0 +1,25 @@
+{
+  if (this == obj) {
+    return true;
+  }
+  if (obj == null) {
+    return false;
+  }
+  if (getClass() != obj.getClass()) {
+    return false;
+  }
+  final FFont other=(FFont)obj;
+  if (Double.doubleToLongBits(this.size) != Double.doubleToLongBits(other.size)) {
+    return false;
+  }
+  if (!Objects.equals(this.family,other.family)) {
+    return false;
+  }
+  if (this.weight != other.weight) {
+    return false;
+  }
+  if (this.posture != other.posture) {
+    return false;
+  }
+  return true;
+}
