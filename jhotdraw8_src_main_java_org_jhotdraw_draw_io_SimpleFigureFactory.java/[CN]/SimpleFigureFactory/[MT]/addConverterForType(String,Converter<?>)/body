@@ -1,4 +1,7 @@
 {
+  if (valueToXML.containsKey(fullValueType)) {
+    throw new IllegalStateException("you already added " + fullValueType);
+  }
   valueToXML.put(fullValueType,converter);
   valueFromXML.put(fullValueType,converter);
 }
