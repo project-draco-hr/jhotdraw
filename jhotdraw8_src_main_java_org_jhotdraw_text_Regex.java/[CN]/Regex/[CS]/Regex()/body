@@ -1,4 +1,4 @@
 {
   this.find=".*";
-  this.replace="$1";
+  this.replace="$0";
 }
