@@ -1,0 +1,6 @@
+{
+  int hash=5;
+  hash=53 * hash + Objects.hashCode(this.find);
+  hash=53 * hash + Objects.hashCode(this.replace);
+  return hash;
+}
