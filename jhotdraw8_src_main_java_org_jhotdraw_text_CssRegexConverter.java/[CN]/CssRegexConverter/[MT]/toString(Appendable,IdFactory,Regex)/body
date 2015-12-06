@@ -1,4 +1,8 @@
 {
+  if (value == null) {
+    out.append("none");
+    return;
+  }
   out.append('/');
   appendExpr(out,value.getFind());
   out.append('/');

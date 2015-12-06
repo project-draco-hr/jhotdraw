@@ -3,6 +3,12 @@
   StringBuilder find=new StringBuilder();
   StringBuilder replace=new StringBuilder();
   tt.skipWhitespace();
+  if (tt.nextToken() == CssTokenizer.TT_IDENT) {
+    if (!"none".equals(tt.currentStringValue())) {
+      throw new ParseException("none or '/' expected",tt.getPosition());
+    }
+    return null;
+  }
   if (tt.nextToken() != '/') {
     throw new ParseException("first / expected",tt.getPosition());
   }
