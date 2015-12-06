@@ -1,0 +1,4 @@
+{
+  this.find=find;
+  this.replace=replace;
+}

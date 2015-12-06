@@ -1,7 +1,0 @@
-{
-  CssTokenizer tt=new CssTokenizer(new StringReader(inputData),false);
-  while (tt.nextToken() != CssTokenizer.TT_EOF) {
-    int t=tt.currentToken();
-    System.out.println("tt:" + t + " "+ tt.currentStringValue());
-  }
-}

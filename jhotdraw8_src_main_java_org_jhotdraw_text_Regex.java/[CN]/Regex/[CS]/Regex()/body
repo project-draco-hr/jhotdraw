@@ -1,0 +1,4 @@
+{
+  this.find=".*";
+  this.replace="$1";
+}
