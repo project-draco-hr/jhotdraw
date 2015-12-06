@@ -1,0 +1,2 @@
+Class<? extends Figure> figure
+MapAccessor<T> acc

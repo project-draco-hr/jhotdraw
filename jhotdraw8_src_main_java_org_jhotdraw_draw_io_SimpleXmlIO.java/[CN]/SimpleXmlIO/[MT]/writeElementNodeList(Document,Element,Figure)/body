@@ -2,7 +2,7 @@
   for (  MapAccessor<?> k : factory.figureNodeListKeys(figure)) {
     @SuppressWarnings("unchecked") MapAccessor<Object> key=(MapAccessor<Object>)k;
     Object value=figure.get(key);
-    if (!factory.isDefaultValue(key,value)) {
+    if (!factory.isDefaultValue(figure,key,value)) {
       for (      Node node : factory.valueToNodeList(key,value,document)) {
         elem.appendChild(node);
       }

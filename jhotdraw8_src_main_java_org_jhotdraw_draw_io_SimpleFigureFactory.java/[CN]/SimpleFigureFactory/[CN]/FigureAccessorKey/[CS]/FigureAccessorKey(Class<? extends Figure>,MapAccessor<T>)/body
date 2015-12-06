@@ -1,0 +1,4 @@
+{
+  this.figure=figure;
+  this.acc=acc;
+}

@@ -1,0 +1,19 @@
+{
+  if (this == obj) {
+    return true;
+  }
+  if (obj == null) {
+    return false;
+  }
+  if (getClass() != obj.getClass()) {
+    return false;
+  }
+  final FigureAccessorKey<?> other=(FigureAccessorKey<?>)obj;
+  if (!Objects.equals(this.figure,other.figure)) {
+    return false;
+  }
+  if (!Objects.equals(this.acc,other.acc)) {
+    return false;
+  }
+  return true;
+}

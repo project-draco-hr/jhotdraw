@@ -1,0 +1,11 @@
+{
+  FigureAccessorKey<T> k=new FigureAccessorKey<T>(f.getClass(),key);
+  T defaultValue;
+  if (defaultValueMap.containsKey(k)) {
+    @SuppressWarnings("unchecked") T suppress=defaultValue=(T)defaultValueMap.get(k);
+  }
+ else {
+    defaultValue=key.getDefaultValue();
+  }
+  return defaultValue == null ? value == null : (value == null ? false : defaultValue.equals(value));
+}

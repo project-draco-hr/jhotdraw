@@ -1,4 +1,9 @@
 {
+  for (  MapAccessor<?> ma : factory.figureAttributeKeys(figure)) {
+    MapAccessor<Object> mao=(MapAccessor<Object>)ma;
+    Object defaultValue=factory.getDefaultValue(figure,ma);
+    figure.set(mao,defaultValue);
+  }
   NamedNodeMap attrs=elem.getAttributes();
   for (int i=0, n=attrs.getLength(); i < n; i++) {
     Attr attr=(Attr)attrs.item(i);
