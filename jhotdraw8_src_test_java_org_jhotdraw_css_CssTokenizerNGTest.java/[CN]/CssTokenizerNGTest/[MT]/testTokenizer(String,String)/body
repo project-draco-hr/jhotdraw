@@ -1,18 +1,18 @@
 {
-  CssTokenizer s=new CssTokenizer(new StringReader(inputData),false);
+  CssTokenizer tt=new CssTokenizer(new StringReader(inputData),false);
   StringBuilder buf=new StringBuilder();
-  while (s.nextToken() != CssTokenizer.TT_EOF) {
+  while (tt.nextToken() != CssTokenizer.TT_EOF) {
     if (buf.length() > 0) {
       buf.append(' ');
     }
-    if (s.currentToken() < 0) {
-      buf.append(s.currentToken());
+    if (tt.currentToken() < 0) {
+      buf.append(tt.currentToken());
     }
  else {
-      buf.append((char)s.currentToken());
+      buf.append((char)tt.currentToken());
     }
     buf.append(':');
-    buf.append(s.currentStringValue());
+    buf.append(tt.currentStringValue());
   }
   String actualValue=buf.toString();
   actualValue=actualValue.replaceAll("\\n","\\\\n");
