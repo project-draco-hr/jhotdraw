@@ -1,3 +1,0 @@
-{
-  return south(owner,Handle.STYLECLASS_HANDLE_MOVE);
-}

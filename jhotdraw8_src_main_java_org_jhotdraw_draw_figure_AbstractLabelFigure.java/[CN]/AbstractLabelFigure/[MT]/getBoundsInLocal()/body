@@ -1,0 +1,7 @@
+{
+  if (boundsInLocal == null) {
+    Bounds b=getLayoutBounds();
+    boundsInLocal=new BoundingBox(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
+  }
+  return boundsInLocal;
+}

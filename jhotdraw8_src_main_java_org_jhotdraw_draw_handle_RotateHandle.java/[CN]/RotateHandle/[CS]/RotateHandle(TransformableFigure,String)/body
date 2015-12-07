@@ -1,6 +1,5 @@
 {
   super(figure);
-  this.styleclass=styleclass;
   node=new Region();
   node.setShape(REGION_SHAPE);
   node.setManaged(false);

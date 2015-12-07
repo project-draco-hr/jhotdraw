@@ -1,3 +1,0 @@
-{
-  return northEast(owner,Handle.STYLECLASS_HANDLE_MOVE);
-}
