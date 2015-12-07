@@ -1,6 +1,0 @@
-{
-  if (parentToDrawing == null) {
-    parentToDrawing=Figure.super.getParentToWorld();
-  }
-  return parentToDrawing;
-}
