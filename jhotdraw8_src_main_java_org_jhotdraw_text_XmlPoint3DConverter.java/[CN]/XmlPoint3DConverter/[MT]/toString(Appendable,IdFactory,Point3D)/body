@@ -1,3 +1,8 @@
 {
-  formatter.toStr(out,idFactory,value.getX(),value.getY(),value.getZ());
+  if (value.getZ() == 0.0) {
+    formatter.toStr(out,idFactory,2,value.getX(),value.getY());
+  }
+ else {
+    formatter.toStr(out,idFactory,3,value.getX(),value.getY(),value.getZ());
+  }
 }

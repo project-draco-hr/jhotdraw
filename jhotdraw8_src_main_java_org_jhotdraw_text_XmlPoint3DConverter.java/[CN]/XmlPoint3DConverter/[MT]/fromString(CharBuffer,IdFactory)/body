@@ -1,4 +1,11 @@
 {
   Object[] v=formatter.fromString(buf);
-  return new Point3D((double)v[0],(double)v[1],(double)v[3]);
+switch ((int)v[0]) {
+case 2:
+    return new Point3D((double)v[1],(double)v[2],0.0);
+case 3:
+  return new Point3D((double)v[1],(double)v[2],(double)v[3]);
+default :
+throw new ParseException("Point3D with 2 to 3 values expected.",buf.position());
+}
 }
