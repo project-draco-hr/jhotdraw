@@ -1,6 +1,10 @@
 {
-  center=getOwner().getCenterInParent();
-  center=getOwner().getInverseTransform().transform(center);
+  Figure o=getOwner();
+  center=Geom.center(o.getBoundsInLocal());
+  startTransform=o.getWorldToLocal().createConcatenation(view.getViewToWorld());
+  Point2D newPoint=startTransform.transform(new Point2D(event.getX(),event.getY()));
+  startRotation=90 + 180.0 / Math.PI * Geom.angle(center.getX(),center.getY(),newPoint.getX(),newPoint.getY());
+  startRotation=startRotation + o.getStyled(ROTATE);
   Set<Figure> selectedFigures=view.getSelectedFigures();
   groupReshapeableFigures=new HashSet<>();
   for (  Figure f : view.getSelectedFigures()) {

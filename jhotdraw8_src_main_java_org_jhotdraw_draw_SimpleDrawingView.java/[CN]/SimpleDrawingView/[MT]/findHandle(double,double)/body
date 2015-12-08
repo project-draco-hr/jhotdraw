@@ -1,11 +1,8 @@
 {
-  for (  Node n : handlesPane.getChildren()) {
-    Point2D pl=n.parentToLocal(vx,vy);
-    if (isInsideRadius(n,pl,HANDLE_TOLERANCE)) {
-      Handle h=nodeToHandleMap.get(n);
-      if (h.isSelectable()) {
-        return h;
-      }
+  for (  Map.Entry<Node,Handle> e : nodeToHandleMap.entrySet()) {
+    Point2D p=e.getValue().getLocationInView();
+    if (p != null && Geom.length2(vx,vy,p.getX(),p.getY()) <= HANDLE_TOLERANCE) {
+      return e.getValue();
     }
   }
   return null;
