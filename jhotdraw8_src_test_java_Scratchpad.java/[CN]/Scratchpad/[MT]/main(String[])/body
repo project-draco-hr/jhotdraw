@@ -1,2 +1,4 @@
 {
+  String s="hallo".replaceAll("^.*","x$0");
+  System.out.println(s);
 }
