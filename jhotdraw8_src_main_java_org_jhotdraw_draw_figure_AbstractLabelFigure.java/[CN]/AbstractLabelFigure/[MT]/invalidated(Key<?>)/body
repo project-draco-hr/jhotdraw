@@ -1,4 +1,5 @@
 {
+  super.invalidated(key);
   if ((key instanceof FigureKey) && ((FigureKey)key).getDirtyMask().containsOneOf(DirtyBits.LAYOUT)) {
     invalidateBounds();
   }

@@ -1,0 +1,8 @@
+{
+  if (key instanceof FigureKey<?>) {
+    FigureKey<?> fk=(FigureKey<?>)key;
+    if (fk.getDirtyMask().containsOneOf(DirtyBits.TRANSFORM)) {
+      invalidateTransforms();
+    }
+  }
+}
