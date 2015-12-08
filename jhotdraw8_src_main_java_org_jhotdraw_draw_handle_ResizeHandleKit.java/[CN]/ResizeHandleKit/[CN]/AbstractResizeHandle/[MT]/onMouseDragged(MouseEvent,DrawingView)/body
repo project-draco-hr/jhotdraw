@@ -5,7 +5,7 @@
   }
   if (event.isMetaDown()) {
     Point2D loc=getLocation();
-    oldPoint=getOwner().localToDrawing(loc);
+    oldPoint=getOwner().localToWorld(loc);
   }
   boolean keepAspect=event.isShiftDown();
   resize(getOwner().worldToLocal(newPoint),getOwner(),startBounds,view.getModel(),keepAspect);

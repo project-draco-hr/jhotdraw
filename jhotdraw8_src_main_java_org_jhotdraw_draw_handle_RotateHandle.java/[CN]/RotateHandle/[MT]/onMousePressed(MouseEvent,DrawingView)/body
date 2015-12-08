@@ -1,5 +1,6 @@
 {
-  center=getOwner().getCenterInLocal();
+  center=getOwner().getCenterInParent();
+  center=getOwner().getInverseTransform().transform(center);
   Set<Figure> selectedFigures=view.getSelectedFigures();
   groupReshapeableFigures=new HashSet<>();
   for (  Figure f : view.getSelectedFigures()) {
