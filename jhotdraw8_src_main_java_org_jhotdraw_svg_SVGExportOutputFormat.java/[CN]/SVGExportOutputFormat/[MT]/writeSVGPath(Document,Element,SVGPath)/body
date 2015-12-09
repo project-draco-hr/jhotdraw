@@ -1,0 +1,6 @@
+{
+  Element elem=doc.createElement("path");
+  elem.setAttribute("d",node.getContent());
+  parent.appendChild(elem);
+  return elem;
+}

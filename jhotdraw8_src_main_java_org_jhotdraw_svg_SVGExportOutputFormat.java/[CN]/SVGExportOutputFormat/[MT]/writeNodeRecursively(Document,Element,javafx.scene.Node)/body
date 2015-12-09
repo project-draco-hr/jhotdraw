@@ -1,0 +1,25 @@
+{
+  parent.appendChild(doc.createTextNode("\n"));
+  Element elem=null;
+  if (node instanceof Shape) {
+    elem=writeShape(doc,parent,(Shape)node);
+  }
+ else   if (node instanceof Group) {
+    elem=writeGroup(doc,parent,(Group)node);
+  }
+ else   if (node instanceof Region) {
+    elem=writeRegion(doc,parent,(Region)node);
+  }
+ else {
+    throw new UnsupportedOperationException("not yet implemented for " + node);
+  }
+  if (elem != null && (node instanceof Parent)) {
+    Parent pp=(Parent)node;
+    for (    javafx.scene.Node child : pp.getChildrenUnmodifiable()) {
+      writeNodeRecursively(doc,elem,child);
+    }
+    if (!pp.getChildrenUnmodifiable().isEmpty()) {
+      elem.appendChild(doc.createTextNode("\n"));
+    }
+  }
+}

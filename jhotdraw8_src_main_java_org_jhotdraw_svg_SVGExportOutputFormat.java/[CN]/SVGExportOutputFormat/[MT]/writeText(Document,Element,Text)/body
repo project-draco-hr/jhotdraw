@@ -1,0 +1,8 @@
+{
+  Element elem=doc.createElement("text");
+  parent.appendChild(elem);
+  elem.appendChild(doc.createTextNode(node.getText()));
+  elem.setAttribute("x",nb.toString(node.getX()));
+  elem.setAttribute("y",nb.toString(node.getY()));
+  return elem;
+}

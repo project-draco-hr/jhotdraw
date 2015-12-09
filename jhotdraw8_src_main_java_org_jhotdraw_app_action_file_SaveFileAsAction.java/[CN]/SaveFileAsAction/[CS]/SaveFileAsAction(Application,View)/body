@@ -1,5 +1,3 @@
 {
-  super(app,view,true);
-  Resources labels=Resources.getResources("org.jhotdraw.app.Labels");
-  labels.configureAction(this,ID);
+  super(app,view,ID,true);
 }

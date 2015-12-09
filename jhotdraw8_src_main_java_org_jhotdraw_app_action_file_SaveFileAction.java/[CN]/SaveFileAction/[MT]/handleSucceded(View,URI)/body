@@ -1,0 +1,6 @@
+{
+  v.setURI(uri);
+  v.clearModified();
+  v.setTitle(URIUtil.getName(uri));
+  app.addRecentURI(uri);
+}

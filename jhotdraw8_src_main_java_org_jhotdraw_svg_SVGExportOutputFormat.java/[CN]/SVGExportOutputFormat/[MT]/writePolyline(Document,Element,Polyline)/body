@@ -1,0 +1,13 @@
+{
+  Element elem=doc.createElement("polyline");
+  StringBuilder buf=new StringBuilder();
+  for (  Double d : node.getPoints()) {
+    if (buf.length() != 0) {
+      buf.append(' ');
+    }
+    buf.append(nb.toString(d));
+  }
+  elem.setAttribute("points",buf.toString());
+  parent.appendChild(elem);
+  return elem;
+}

@@ -1,0 +1,17 @@
+{
+  Element elem=doc.createElement("line");
+  if (node.getStartX() != 0.0) {
+    elem.setAttribute("x1",nb.toString(node.getStartX()));
+  }
+  if (node.getStartY() != 0.0) {
+    elem.setAttribute("y1",nb.toString(node.getStartY()));
+  }
+  if (node.getEndX() != 0.0) {
+    elem.setAttribute("x2",nb.toString(node.getEndX()));
+  }
+  if (node.getEndY() != 0.0) {
+    elem.setAttribute("y2",nb.toString(node.getEndY()));
+  }
+  parent.appendChild(elem);
+  return elem;
+}

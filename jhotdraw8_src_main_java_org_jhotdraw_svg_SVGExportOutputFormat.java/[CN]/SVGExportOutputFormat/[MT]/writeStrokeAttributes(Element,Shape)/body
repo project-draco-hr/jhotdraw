@@ -1,0 +1,3 @@
+{
+  elem.setAttribute("stroke",paint.toString(node.getStroke()));
+}

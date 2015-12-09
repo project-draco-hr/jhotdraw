@@ -1,0 +1,8 @@
+{
+  Element elem=doc.createElement("path");
+  parent.appendChild(elem);
+  final StringBuilder buf=new StringBuilder();
+  buf.append('M').append(nb.toString(node.getStartX())).append(' ').append(nb.toString(node.getStartY())).append(' ').append('C').append(nb.toString(node.getControlX1())).append(' ').append(nb.toString(node.getControlY1())).append(' ').append(nb.toString(node.getControlX2())).append(' ').append(nb.toString(node.getControlY2())).append(' ').append(nb.toString(node.getEndX())).append(' ').append(nb.toString(node.getEndY()));
+  elem.setAttribute("content",buf.substring(0));
+  return elem;
+}

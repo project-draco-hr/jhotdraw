@@ -1,0 +1,23 @@
+{
+  Element elem=doc.createElement("rect");
+  if (node.getX() != 0.0) {
+    elem.setAttribute("x",nb.toString(node.getX()));
+  }
+  if (node.getY() != 0.0) {
+    elem.setAttribute("y",nb.toString(node.getY()));
+  }
+  if (node.getWidth() != 0.0) {
+    elem.setAttribute("width",nb.toString(node.getWidth()));
+  }
+  if (node.getHeight() != 0.0) {
+    elem.setAttribute("height",nb.toString(node.getHeight()));
+  }
+  if (node.getArcWidth() != 0.0) {
+    elem.setAttribute("rx",nb.toString(node.getArcWidth()));
+  }
+  if (node.getArcHeight() != 0.0) {
+    elem.setAttribute("ry",nb.toString(node.getArcHeight()));
+  }
+  parent.appendChild(elem);
+  return elem;
+}

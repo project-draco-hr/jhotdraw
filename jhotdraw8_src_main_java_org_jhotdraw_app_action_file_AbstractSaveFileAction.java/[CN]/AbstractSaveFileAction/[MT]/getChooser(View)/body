@@ -1,0 +1,8 @@
+{
+  URIChooser c=view.get(saveChooserKey);
+  if (c == null) {
+    c=createChooser(view);
+    view.set(saveChooserKey,c);
+  }
+  return c;
+}

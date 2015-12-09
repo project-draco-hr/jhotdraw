@@ -1,0 +1,4 @@
+Application app
+View view
+String id
+boolean saveAs

@@ -1,0 +1,17 @@
+{
+  Element elem=doc.createElement("ellipse");
+  if (node.getCenterX() != 0.0) {
+    elem.setAttribute("cx",nb.toString(node.getCenterX()));
+  }
+  if (node.getCenterY() != 0.0) {
+    elem.setAttribute("cy",nb.toString(node.getCenterY()));
+  }
+  if (node.getRadiusX() != 0.0) {
+    elem.setAttribute("rx",nb.toString(node.getRadiusX()));
+  }
+  if (node.getRadiusY() != 0.0) {
+    elem.setAttribute("ry",nb.toString(node.getRadiusY()));
+  }
+  parent.appendChild(elem);
+  return elem;
+}

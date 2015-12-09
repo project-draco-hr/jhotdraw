@@ -1,8 +1,0 @@
-{
-  URIChooser c=app.get(SAVE_CHOOSER_KEY);
-  if (c == null) {
-    c=getApplication().getModel().createSaveChooser();
-    app.set(SAVE_CHOOSER_KEY,c);
-  }
-  return c;
-}

@@ -1,0 +1,45 @@
+{
+  Element elem=null;
+  if (node instanceof Arc) {
+    elem=writeArc(doc,parent,(Arc)node);
+  }
+ else   if (node instanceof Circle) {
+    elem=writeCircle(doc,parent,(Circle)node);
+  }
+ else   if (node instanceof CubicCurve) {
+    elem=writeCubicCurve(doc,parent,(CubicCurve)node);
+  }
+ else   if (node instanceof Ellipse) {
+    elem=writeEllipse(doc,parent,(Ellipse)node);
+  }
+ else   if (node instanceof Line) {
+    elem=writeLine(doc,parent,(Line)node);
+  }
+ else   if (node instanceof Path) {
+    elem=writePath(doc,parent,(Path)node);
+  }
+ else   if (node instanceof Polygon) {
+    elem=writePolygon(doc,parent,(Polygon)node);
+  }
+ else   if (node instanceof Polyline) {
+    elem=writePolyline(doc,parent,(Polyline)node);
+  }
+ else   if (node instanceof QuadCurve) {
+    elem=writeQuadCurve(doc,parent,(QuadCurve)node);
+  }
+ else   if (node instanceof Rectangle) {
+    elem=writeRectangle(doc,parent,(Rectangle)node);
+  }
+ else   if (node instanceof SVGPath) {
+    elem=writeSVGPath(doc,parent,(SVGPath)node);
+  }
+ else   if (node instanceof Text) {
+    elem=writeText(doc,parent,(Text)node);
+  }
+ else {
+    throw new IOException("unknown shape type " + node);
+  }
+  writeFillAttributes(elem,node);
+  writeStrokeAttributes(elem,node);
+  return elem;
+}

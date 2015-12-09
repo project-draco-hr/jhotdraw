@@ -1,0 +1,14 @@
+{
+  Element elem=doc.createElement("circle");
+  if (node.getCenterX() != 0.0) {
+    elem.setAttribute("cx",nb.toString(node.getCenterX()));
+  }
+  if (node.getCenterY() != 0.0) {
+    elem.setAttribute("cy",nb.toString(node.getCenterY()));
+  }
+  if (node.getRadius() != 0.0) {
+    elem.setAttribute("r",nb.toString(node.getRadius()));
+  }
+  parent.appendChild(elem);
+  return elem;
+}
