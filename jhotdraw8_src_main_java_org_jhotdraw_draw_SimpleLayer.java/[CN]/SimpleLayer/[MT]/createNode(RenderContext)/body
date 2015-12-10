@@ -1,3 +1,6 @@
 {
-  return new Group();
+  Group n=new Group();
+  n.setCacheHint(CacheHint.QUALITY);
+  n.setCache(true);
+  return n;
 }

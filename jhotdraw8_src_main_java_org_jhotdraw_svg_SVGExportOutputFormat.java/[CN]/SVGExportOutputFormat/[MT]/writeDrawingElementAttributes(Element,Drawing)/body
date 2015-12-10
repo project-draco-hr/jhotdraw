@@ -1,6 +1,4 @@
 {
-  docElement.setAttribute("version","1.2");
-  docElement.setAttribute("baseProfile","tiny");
   docElement.setAttribute("width",nb.toString(drawing.get(Drawing.WIDTH)));
   docElement.setAttribute("height",nb.toString(drawing.get(Drawing.HEIGHT)));
 }

@@ -1,0 +1,20 @@
+{
+  String id=node.getId();
+  if (id != null && !id.isEmpty()) {
+    elem.setAttribute("id",id);
+  }
+  List<String> styleClass=node.getStyleClass();
+  if (!styleClass.isEmpty()) {
+    StringBuffer buf=new StringBuffer();
+    for (    String clazz : styleClass) {
+      if (buf.length() != 0) {
+        buf.append(' ');
+      }
+      buf.append(clazz);
+    }
+    elem.setAttribute("clazz",buf.toString());
+  }
+  if (!node.isVisible()) {
+    elem.setAttribute("visible","hidden");
+  }
+}

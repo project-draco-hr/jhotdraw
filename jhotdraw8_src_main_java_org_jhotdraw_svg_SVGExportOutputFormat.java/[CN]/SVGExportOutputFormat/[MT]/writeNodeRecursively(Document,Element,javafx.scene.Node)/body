@@ -1,5 +1,4 @@
 {
-  if (!node.isVisible())   return;
   parent.appendChild(doc.createTextNode("\n"));
   Element elem=null;
   if (node instanceof Shape) {
@@ -15,6 +14,7 @@
     throw new UnsupportedOperationException("not yet implemented for " + node);
   }
   if (elem != null && (node instanceof Parent)) {
+    writeNodeAttributes(elem,node);
     Parent pp=(Parent)node;
     for (    javafx.scene.Node child : pp.getChildrenUnmodifiable()) {
       writeNodeRecursively(doc,elem,child);

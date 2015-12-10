@@ -16,11 +16,11 @@
   int xAxisRot=0;
   int largeArc=(length > 180) ? 1 : 0;
   int sweep=(length < 0) ? 1 : 0;
-  buf.append('M').append(nb.toString(centerX)).append(' ').append(nb.toString(centerY)).append(' ');
+  buf.append('M').append(nb.toString(centerX)).append(',').append(nb.toString(centerY)).append(' ');
   if (ArcType.ROUND == node.getType()) {
-    buf.append("l ").append(startX).append(' ').append(startY).append(' ');
+    buf.append('l').append(startX).append(',').append(startY).append(' ');
   }
-  buf.append('A').append(nb.toString(radiusX)).append(' ').append(nb.toString(radiusY)).append(' ').append(nb.toString(xAxisRot)).append(' ').append(nb.toString(largeArc)).append(' ').append(nb.toString(sweep)).append(' ').append(nb.toString(endX)).append(' ').append(nb.toString(endY)).append(' ');
+  buf.append('A').append(nb.toString(radiusX)).append(',').append(nb.toString(radiusY)).append(',').append(nb.toString(xAxisRot)).append(',').append(nb.toString(largeArc)).append(',').append(nb.toString(sweep)).append(',').append(nb.toString(endX)).append(',').append(nb.toString(endY)).append(',');
   if (ArcType.CHORD == node.getType() || ArcType.ROUND == node.getType()) {
     buf.append('Z');
   }

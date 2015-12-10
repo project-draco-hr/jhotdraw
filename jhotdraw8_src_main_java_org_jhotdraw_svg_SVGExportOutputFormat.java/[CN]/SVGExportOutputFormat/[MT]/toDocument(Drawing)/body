@@ -1,25 +1,8 @@
 {
   SimpleDrawingRenderer r=new SimpleDrawingRenderer();
+  r.set(RenderContext.RENDERING_INTENT,RenderingIntent.EXPORT);
   javafx.scene.Node drawingNode=r.render(external);
-  try {
-    DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
-    Document doc;
-    builderFactory.setNamespaceAware(true);
-    DocumentBuilder builder=builderFactory.newDocumentBuilder();
-    DOMImplementation domImpl=builder.getDOMImplementation();
-    doc=domImpl.createDocument(namespaceURI,namespaceQualifier == null ? "svg" : namespaceQualifier + ":" + "svg",null);
-    Element docElement=doc.getDocumentElement();
-    writeProcessingInstructions(doc,external,drawingNode);
-    String commentText=createFileComment();
-    if (commentText != null) {
-      docElement.getParentNode().insertBefore(doc.createComment(commentText),docElement);
-    }
-    writeDocumentElementAttributes(docElement,external,drawingNode);
-    writeNodeRecursively(doc,docElement,drawingNode);
-    docElement.appendChild(doc.createTextNode("\n"));
-    return doc;
-  }
- catch (  ParserConfigurationException ex) {
-    throw new IOException(ex);
-  }
+  Document doc=toDocument(drawingNode);
+  writeDrawingElementAttributes(doc.getDocumentElement(),external);
+  return doc;
 }

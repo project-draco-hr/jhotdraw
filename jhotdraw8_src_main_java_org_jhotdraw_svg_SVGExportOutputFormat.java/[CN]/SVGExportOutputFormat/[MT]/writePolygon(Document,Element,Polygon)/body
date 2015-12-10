@@ -1,11 +1,12 @@
 {
   Element elem=doc.createElement("polygon");
   StringBuilder buf=new StringBuilder();
-  for (  Double d : node.getPoints()) {
-    if (buf.length() != 0) {
+  List<Double> ps=node.getPoints();
+  for (int i=0, n=ps.size(); i < n; i+=2) {
+    if (i != 0) {
       buf.append(' ');
     }
-    buf.append(nb.toString(d));
+    buf.append(nb.toString(ps.get(i))).append(',').append(nb.toString(ps.get(i + 1)));
   }
   elem.setAttribute("points",buf.toString());
   parent.appendChild(elem);

@@ -1,7 +1,4 @@
 {
-  if (node.getChildren().isEmpty()) {
-    return parent;
-  }
   Element elem=doc.createElement("g");
   parent.appendChild(elem);
   return elem;

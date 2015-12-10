@@ -1,5 +1,6 @@
 {
   Group g=(Group)n;
+  applyStyleableFigureProperties(v,n);
   ObservableList<Node> children=((Group)n).getChildren();
   children.clear();
   Bounds bounds=getBoundsInLocal();
@@ -9,8 +10,13 @@
   page.setWidth(bounds.getWidth());
   page.setHeight(bounds.getHeight());
   page.setFill(getStyled(BACKGROUND));
-  children.add(page);
+  List<Node> nodes=new ArrayList<Node>(getChildren().size());
+  nodes.add(page);
   for (  Figure child : childrenProperty()) {
-    children.add(v.getNode(child));
+    nodes.add(v.getNode(child));
+  }
+  ObservableList<Node> group=((Group)n).getChildren();
+  if (!group.equals(nodes)) {
+    group.setAll(nodes);
   }
 }
