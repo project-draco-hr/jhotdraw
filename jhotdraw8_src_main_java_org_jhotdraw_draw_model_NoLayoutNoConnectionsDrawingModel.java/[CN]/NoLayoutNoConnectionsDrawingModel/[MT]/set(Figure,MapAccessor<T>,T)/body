@@ -1,6 +1,6 @@
 {
   T oldValue=figure.set(key,newValue);
-  if (oldValue != newValue) {
+  if (!Objects.equals(oldValue,newValue)) {
     final DirtyMask dm;
     if (key instanceof FigureKey) {
       FigureKey<T> fk=(FigureKey<T>)key;
