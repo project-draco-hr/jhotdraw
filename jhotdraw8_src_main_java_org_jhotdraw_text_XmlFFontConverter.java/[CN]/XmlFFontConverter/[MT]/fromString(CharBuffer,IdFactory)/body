@@ -113,9 +113,9 @@ buf.position(buf.limit());
  else {
 throw new ParseException("font family expected",buf.position() + tt.getPosition());
 }
-Font font=Font.font(fontFamily,fontWeight,fontPosture,fontSize);
+FFont font=FFont.font(fontFamily,fontWeight,fontPosture,fontSize);
 if (font == null) {
-font=Font.font(null,fontWeight,fontPosture,fontSize);
+font=FFont.font(null,fontWeight,fontPosture,fontSize);
 }
 return font;
 }

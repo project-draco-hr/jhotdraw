@@ -40,7 +40,7 @@
   addConverterForType(Boolean.class,new XmlBooleanConverter());
   addConverterForType(TextAlignment.class,new XmlEnumConverter<TextAlignment>(TextAlignment.class));
   addConverterForType(VPos.class,new XmlEnumConverter<VPos>(VPos.class));
-  addConverterForType(FFont.class,new XmlFontConverter());
+  addConverterForType(FFont.class,new XmlFFontConverter());
   addConverterForType(Rectangle2D.class,new XmlRectangle2DConverter());
   addConverterForType(BlendMode.class,new XmlEnumConverter<BlendMode>(BlendMode.class));
   addConverterForType(Effect.class,new XmlEffectConverter());

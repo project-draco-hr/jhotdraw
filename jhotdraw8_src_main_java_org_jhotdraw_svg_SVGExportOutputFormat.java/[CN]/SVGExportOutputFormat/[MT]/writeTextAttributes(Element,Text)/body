@@ -1,0 +1,3 @@
+{
+  elem.setAttribute("font",font.toString(node.getFont()));
+}

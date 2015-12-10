@@ -1,4 +1,5 @@
 {
+  if (!node.isVisible())   return;
   parent.appendChild(doc.createTextNode("\n"));
   Element elem=null;
   if (node instanceof Shape) {
