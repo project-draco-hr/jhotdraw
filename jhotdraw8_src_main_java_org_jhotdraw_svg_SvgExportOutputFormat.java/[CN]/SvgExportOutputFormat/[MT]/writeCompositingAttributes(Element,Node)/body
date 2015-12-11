@@ -1,0 +1,5 @@
+{
+  if (node.getOpacity() != 1.0) {
+    elem.setAttribute("opacity",nb.toString(node.getOpacity()));
+  }
+}

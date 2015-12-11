@@ -1,3 +1,7 @@
 {
-  elem.setAttribute("font",font.toString(node.getFont()));
+  Font ft=node.getFont();
+  elem.setAttribute("font-family",ft.getFamily());
+  elem.setAttribute("font-size",nb.toString(ft.getSize()));
+  elem.setAttribute("font-style",ft.getStyle().contains("italic") ? "italic" : "normal");
+  elem.setAttribute("font-weight",ft.getStyle().contains("bold") ? "bold" : "normal");
 }

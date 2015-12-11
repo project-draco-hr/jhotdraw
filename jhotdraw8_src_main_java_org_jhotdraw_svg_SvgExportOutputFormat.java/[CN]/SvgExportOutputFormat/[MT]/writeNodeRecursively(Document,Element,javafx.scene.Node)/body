@@ -18,6 +18,7 @@
   }
   writeStyleAttributes(elem,node);
   writeTransformAttributes(elem,node);
+  writeCompositingAttributes(elem,node);
   if (elem != null && (node instanceof Parent)) {
     Parent pp=(Parent)node;
     for (    javafx.scene.Node child : pp.getChildrenUnmodifiable()) {
