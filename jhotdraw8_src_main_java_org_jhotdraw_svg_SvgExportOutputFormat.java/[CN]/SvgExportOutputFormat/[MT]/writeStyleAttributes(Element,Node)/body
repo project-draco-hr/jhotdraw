@@ -15,6 +15,6 @@
     elem.setAttribute("class",buf.toString());
   }
   if (!node.isVisible()) {
-    elem.setAttribute("visible","hidden");
+    elem.setAttribute("visibility","hidden");
   }
 }

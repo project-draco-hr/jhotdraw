@@ -13,14 +13,14 @@
   int xAxisRot=0;
   boolean largeArc=(length > 180);
   boolean sweep=(length < 0);
-  BezierPath p=new BezierPath();
+  SvgPath2D p=new SvgPath2D();
   p.moveTo(centerX,centerY);
   if (ArcType.ROUND == node.getType()) {
     p.lineTo(startX,startY);
   }
   p.arcTo(radiusX,radiusY,xAxisRot,largeArc,sweep,endX,endY);
   if (ArcType.CHORD == node.getType() || ArcType.ROUND == node.getType()) {
-    p.setClosed(true);
+    p.closePath();
   }
-  return p.toGeneralPath();
+  return p;
 }

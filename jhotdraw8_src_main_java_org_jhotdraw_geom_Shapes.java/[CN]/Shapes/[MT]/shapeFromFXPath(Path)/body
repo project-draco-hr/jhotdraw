@@ -1,5 +1,5 @@
 {
-  BezierPath p=new BezierPath();
+  SvgPath2D p=new SvgPath2D();
   double x=0;
   double y=0;
   for (  PathElement pe : node.getElements()) {
@@ -47,5 +47,5 @@
       p.closePath();
     }
   }
-  return p.toGeneralPath();
+  return p;
 }
