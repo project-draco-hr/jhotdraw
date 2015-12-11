@@ -7,17 +7,7 @@
   double height=region.getHeight();
   if ((region.getBackground() != null && !region.getBackground().isEmpty()) || (region.getBorder() != null && !region.getBorder().isEmpty())) {
     Shape s=(region.getShape() == null) ? null : region.getShape();
-    if (s != null) {
-      if (region.isScaleShape()) {
-        java.awt.Shape awtShape=Shapes.awtShapeFromFX(s);
-        Bounds sb=s.getBoundsInLocal();
-        Bounds rb=region.getBoundsInParent();
-        Transform tx=Transform.translate(-sb.getMinX(),-sb.getMinY());
-        tx=tx.createConcatenation(Transform.translate(rb.getMinX(),rb.getMinY()));
-        tx=tx.createConcatenation(Transform.scale(rb.getWidth() / sb.getWidth(),rb.getHeight() / sb.getHeight()));
-        s=Shapes.fxShapeFromAWT(awtShape,tx);
-      }
-    }
+    Bounds sb=(s != null) ? s.getLayoutBounds() : null;
     if (region.getBackground() != null) {
       for (      BackgroundFill bgf : region.getBackground().getFills()) {
         Paint fill=bgf.getFill() == null ? Color.TRANSPARENT : bgf.getFill();
@@ -27,7 +17,6 @@
         if (s != null) {
           if (region.isScaleShape()) {
             java.awt.Shape awtShape=Shapes.awtShapeFromFX(s);
-            Bounds sb=s.getBoundsInLocal();
             Transform tx=Transform.translate(-sb.getMinX(),-sb.getMinY());
             tx=tx.createConcatenation(Transform.translate(x + insets.getLeft(),y + insets.getTop()));
             tx=tx.createConcatenation(Transform.scale((width - insets.getLeft() - insets.getRight()) / sb.getWidth(),(height - insets.getTop() - insets.getBottom()) / sb.getHeight()));
@@ -62,7 +51,6 @@
           if (s != null) {
             if (region.isScaleShape()) {
               java.awt.Shape awtShape=Shapes.awtShapeFromFX(s);
-              Bounds sb=s.getBoundsInLocal();
               Transform tx=Transform.translate(-sb.getMinX(),-sb.getMinY());
               tx=tx.createConcatenation(Transform.translate(x + insets.getLeft(),y + insets.getTop()));
               tx=tx.createConcatenation(Transform.scale((width - insets.getLeft() - insets.getRight()) / sb.getWidth(),(height - insets.getTop() - insets.getBottom()) / sb.getHeight()));
