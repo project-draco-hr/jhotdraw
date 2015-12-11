@@ -1,7 +1,10 @@
 {
+  if (find == null) {
+    return replace == null ? str : replace;
+  }
   if (pattern == null) {
     pattern=Pattern.compile(find);
   }
   Matcher m=pattern.matcher(str);
-  return m.replaceAll(replace);
+  return replace == null ? m.replaceFirst("$0") : m.replaceAll(replace);
 }

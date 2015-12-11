@@ -1,7 +1,7 @@
 {
   CssTokenizer tt=new CssTokenizer(new StringReader(in.toString()));
-  String find;
-  String replace;
+  String find=null;
+  String replace=null;
   tt.skipWhitespace();
   if (tt.nextToken() == CssTokenizer.TT_IDENT) {
     if (!nullable) {
@@ -20,27 +20,27 @@
     throw new ParseException("first / expected",tt.getPosition());
   }
   tt.skipWhitespace();
-  if (tt.nextToken() != CssTokenizer.TT_STRING) {
-    throw new ParseException("find string expected",tt.getPosition());
+  if (tt.nextToken() == CssTokenizer.TT_STRING) {
+    find=tt.currentStringValue();
+    tt.skipWhitespace();
   }
-  find=tt.currentStringValue();
-  tt.skipWhitespace();
+ else {
+    tt.pushBack();
+  }
   if (tt.nextToken() != '/') {
     throw new ParseException("second / expected",tt.getPosition());
   }
   tt.skipWhitespace();
   if (tt.nextToken() == CssTokenizer.TT_STRING) {
     replace=tt.currentStringValue();
-    tt.skipWhitespace();
-    if (tt.nextToken() != '/') {
-      throw new ParseException("third / expected",tt.getPosition());
-    }
   }
  else {
-    replace="$0";
     tt.pushBack();
   }
   tt.skipWhitespace();
+  if (tt.nextToken() != '/') {
+    throw new ParseException("third / expected",tt.getPosition());
+  }
   in.position(in.limit());
   return new Regex(find,replace);
 }
