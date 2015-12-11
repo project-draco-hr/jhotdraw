@@ -1,0 +1,8 @@
+{
+  if (txs.size() > 0) {
+    String value=tx.toString(txs);
+    if (!value.isEmpty()) {
+      elem.setAttribute("transform",value);
+    }
+  }
+}

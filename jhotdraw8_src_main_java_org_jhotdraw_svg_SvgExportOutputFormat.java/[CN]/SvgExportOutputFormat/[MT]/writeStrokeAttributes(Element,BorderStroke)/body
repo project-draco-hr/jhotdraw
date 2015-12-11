@@ -1,0 +1,39 @@
+{
+  if (shape.getTopStroke() != null) {
+    elem.setAttribute("stroke",paint.toString(shape.getTopStroke()));
+  }
+  if (shape.getWidths().getTop() != 1) {
+    elem.setAttribute("stroke-width",nb.toString(shape.getWidths().getTop()));
+  }
+  BorderStrokeStyle style=shape.getTopStyle();
+  if (style.getLineCap() != StrokeLineCap.BUTT) {
+    elem.setAttribute("stroke-linecap",style.getLineCap().toString().toLowerCase());
+  }
+  if (style.getLineJoin() != StrokeLineJoin.MITER) {
+    elem.setAttribute("stroke-linecap",style.getLineJoin().toString().toLowerCase());
+  }
+  if (style.getMiterLimit() != 4) {
+    elem.setAttribute("stroke-miterlimit",nb.toString(style.getMiterLimit()));
+  }
+  if (!style.getDashArray().isEmpty()) {
+    elem.setAttribute("stroke-dasharray",nbList.toString(style.getDashArray()));
+  }
+  if (style.getDashOffset() != 0) {
+    elem.setAttribute("stroke-dashoffset",nb.toString(style.getDashOffset()));
+  }
+  if (style.getType() != StrokeType.CENTERED) {
+switch (style.getType()) {
+case INSIDE:
+      elem.setAttribute("stroke-position","inside");
+    break;
+case CENTERED:
+  elem.setAttribute("stroke-position","middle");
+break;
+case OUTSIDE:
+elem.setAttribute("stroke-position","outside");
+break;
+default :
+throw new InternalError("Unsupported stroke type " + style.getType());
+}
+}
+}

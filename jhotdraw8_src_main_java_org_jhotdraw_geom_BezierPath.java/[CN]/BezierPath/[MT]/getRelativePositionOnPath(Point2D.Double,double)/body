@@ -31,7 +31,7 @@
       }
     }
   }
-  if (isClosed && size() > 1) {
+  if (isClosed() && size() > 1) {
     v1=get(size() - 1);
     v2=get(0);
     if (v1.mask == 0 && v2.mask == 0) {

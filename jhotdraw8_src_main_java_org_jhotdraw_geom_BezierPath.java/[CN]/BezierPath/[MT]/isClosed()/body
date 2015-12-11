@@ -1,3 +1,6 @@
 {
-  return isClosed;
+  if (!isEmpty()) {
+    return get(size() - 1).closed;
+  }
+  return false;
 }

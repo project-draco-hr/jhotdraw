@@ -1,3 +1,38 @@
 {
-  elem.setAttribute("stroke",paint.toString(node.getStroke()));
+  if (shape.getStroke() != null) {
+    elem.setAttribute("stroke",paint.toString(shape.getStroke()));
+  }
+  if (shape.getStrokeWidth() != 1) {
+    elem.setAttribute("stroke-width",nb.toString(shape.getStrokeWidth()));
+  }
+  if (shape.getStrokeLineCap() != StrokeLineCap.BUTT) {
+    elem.setAttribute("stroke-linecap",shape.getStrokeLineCap().toString().toLowerCase());
+  }
+  if (shape.getStrokeLineJoin() != StrokeLineJoin.MITER) {
+    elem.setAttribute("stroke-linecap",shape.getStrokeLineJoin().toString().toLowerCase());
+  }
+  if (shape.getStrokeMiterLimit() != 4) {
+    elem.setAttribute("stroke-miterlimit",nb.toString(shape.getStrokeMiterLimit()));
+  }
+  if (!shape.getStrokeDashArray().isEmpty()) {
+    elem.setAttribute("stroke-dasharray",nbList.toString(shape.getStrokeDashArray()));
+  }
+  if (shape.getStrokeDashOffset() != 0) {
+    elem.setAttribute("stroke-dashoffset",nb.toString(shape.getStrokeDashOffset()));
+  }
+  if (shape.getStrokeType() != StrokeType.CENTERED) {
+switch (shape.getStrokeType()) {
+case INSIDE:
+      elem.setAttribute("stroke-position","inside");
+    break;
+case CENTERED:
+  elem.setAttribute("stroke-position","middle");
+break;
+case OUTSIDE:
+elem.setAttribute("stroke-position","outside");
+break;
+default :
+throw new InternalError("Unsupported stroke type " + shape.getStrokeType());
+}
+}
 }

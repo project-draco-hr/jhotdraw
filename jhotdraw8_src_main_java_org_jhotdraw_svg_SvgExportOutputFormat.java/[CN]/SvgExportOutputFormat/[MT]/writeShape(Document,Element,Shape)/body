@@ -39,7 +39,5 @@
  else {
     throw new IOException("unknown shape type " + node);
   }
-  writeFillAttributes(elem,node);
-  writeStrokeAttributes(elem,node);
   return elem;
 }

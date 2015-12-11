@@ -1,0 +1,4 @@
+{
+  Line2D.Double p=new Line2D.Double(node.getStartX(),node.getStartY(),node.getEndX(),node.getEndY());
+  return p;
+}

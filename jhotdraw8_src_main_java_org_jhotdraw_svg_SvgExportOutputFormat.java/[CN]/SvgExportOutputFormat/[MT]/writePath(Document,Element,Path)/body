@@ -24,7 +24,7 @@
     }
  else     if (pe instanceof ArcTo) {
       ArcTo e=(ArcTo)pe;
-      buf.append('A').append(nb.toString(e.getX())).append(',').append(nb.toString(e.getY())).append(',').append(nb.toString(e.getRadiusX())).append(',').append(nb.toString(e.getRadiusY()));
+      buf.append('A').append(nb.toString(e.getRadiusX())).append(',').append(nb.toString(e.getRadiusY())).append(',').append(nb.toString(e.getXAxisRotation())).append(',').append(e.isLargeArcFlag() ? '1' : '0').append(',').append(e.isSweepFlag() ? '1' : '0').append(',').append(nb.toString(e.getX())).append(',').append(nb.toString(e.getY()));
     }
  else     if (pe instanceof HLineTo) {
       HLineTo e=(HLineTo)pe;
@@ -38,6 +38,6 @@
       buf.append('Z');
     }
   }
-  elem.setAttribute("content",buf.toString());
+  elem.setAttribute("d",buf.toString());
   return elem;
 }

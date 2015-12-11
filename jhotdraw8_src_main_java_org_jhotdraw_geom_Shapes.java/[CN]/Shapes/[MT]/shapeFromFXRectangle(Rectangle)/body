@@ -1,0 +1,8 @@
+{
+  if (node.getArcHeight() == 0 && node.getArcWidth() == 0) {
+    return new Rectangle2D.Double(node.getX(),node.getY(),node.getWidth(),node.getHeight());
+  }
+ else {
+    return new RoundRectangle2D.Double(node.getX(),node.getY(),node.getWidth(),node.getHeight(),node.getArcWidth(),node.getArcHeight());
+  }
+}

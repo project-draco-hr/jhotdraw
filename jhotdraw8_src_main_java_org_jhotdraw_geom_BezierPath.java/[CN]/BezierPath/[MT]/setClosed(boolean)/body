@@ -1,6 +1,6 @@
 {
-  if (isClosed != newValue) {
-    isClosed=newValue;
-    invalidatePath();
+  if (!isEmpty()) {
+    get(size() - 1).setClosed(newValue);
   }
+  invalidatePath();
 }

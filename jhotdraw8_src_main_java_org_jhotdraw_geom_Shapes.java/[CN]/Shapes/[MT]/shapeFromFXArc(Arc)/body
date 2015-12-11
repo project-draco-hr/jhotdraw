@@ -1,0 +1,26 @@
+{
+  double centerX=node.getCenterX();
+  double centerY=node.getCenterY();
+  double radiusX=node.getRadiusX();
+  double radiusY=node.getRadiusY();
+  double startAngle=Math.toRadians(-node.getStartAngle());
+  double endAngle=Math.toRadians(-node.getStartAngle() - node.getLength());
+  double length=node.getLength();
+  double startX=radiusX * Math.cos(startAngle);
+  double startY=radiusY * Math.sin(startAngle);
+  double endX=centerX + radiusX * Math.cos(endAngle);
+  double endY=centerY + radiusY * Math.sin(endAngle);
+  int xAxisRot=0;
+  boolean largeArc=(length > 180);
+  boolean sweep=(length < 0);
+  BezierPath p=new BezierPath();
+  p.moveTo(centerX,centerY);
+  if (ArcType.ROUND == node.getType()) {
+    p.lineTo(startX,startY);
+  }
+  p.arcTo(radiusX,radiusY,xAxisRot,largeArc,sweep,endX,endY);
+  if (ArcType.CHORD == node.getType() || ArcType.ROUND == node.getType()) {
+    p.setClosed(true);
+  }
+  return p.toGeneralPath();
+}

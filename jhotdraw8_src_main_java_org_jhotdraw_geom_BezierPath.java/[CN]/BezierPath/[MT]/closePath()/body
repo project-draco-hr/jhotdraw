@@ -1,0 +1,6 @@
+{
+  if (!isEmpty()) {
+    get(size() - 1).setClosed(true);
+  }
+  invalidatePath();
+}

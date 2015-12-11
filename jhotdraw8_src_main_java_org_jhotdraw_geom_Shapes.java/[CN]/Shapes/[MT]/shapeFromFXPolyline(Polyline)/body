@@ -1,0 +1,13 @@
+{
+  Path2D.Double p=new Path2D.Double();
+  List<Double> ps=node.getPoints();
+  for (int i=0, n=ps.size(); i < n; i+=2) {
+    if (i == 0) {
+      p.moveTo(ps.get(i),ps.get(i + 1));
+    }
+ else {
+      p.lineTo(ps.get(i),ps.get(i + 1));
+    }
+  }
+  return p;
+}

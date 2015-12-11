@@ -1,0 +1,6 @@
+{
+  double x=node.getCenterX();
+  double y=node.getCenterY();
+  double r=node.getRadius();
+  return new Ellipse2D.Double(x - r,y - r,r * 2,r * 2);
+}

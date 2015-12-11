@@ -1,0 +1,6 @@
+{
+  Path2D.Double p=new Path2D.Double();
+  p.moveTo(node.getStartX(),node.getStartY());
+  p.quadTo(node.getControlX(),node.getControlY(),node.getEndX(),node.getEndY());
+  return p;
+}
