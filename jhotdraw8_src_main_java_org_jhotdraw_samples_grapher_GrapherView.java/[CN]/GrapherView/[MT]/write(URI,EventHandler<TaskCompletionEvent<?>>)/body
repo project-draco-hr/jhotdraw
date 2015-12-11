@@ -2,7 +2,7 @@
   BackgroundTask<Void> t=new BackgroundTask<Void>(){
     @Override protected void construct() throws Exception {
       if (uri.getPath().endsWith(".svg")) {
-        SVGExportOutputFormat io=new SVGExportOutputFormat();
+        SvgExportOutputFormat io=new SvgExportOutputFormat();
         io.write(uri,drawingView.getDrawing());
       }
  else {

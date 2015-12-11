@@ -10,5 +10,6 @@
   applyStrokeableFigureProperties(tn);
   applyFillableFigureProperties(tn);
   applyCompositableFigureProperties(tn);
+  applyStyleableFigureProperties(ctx,node);
   tn.applyCss();
 }

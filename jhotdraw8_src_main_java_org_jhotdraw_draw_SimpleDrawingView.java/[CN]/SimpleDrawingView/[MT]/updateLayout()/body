@@ -26,8 +26,8 @@
   overlaysPane.setTranslateY(-padding);
   toolPane.resize(lw + padding * 2,lh + padding * 2);
   toolPane.layout();
-  stackPane.setPrefSize(lw,lh);
-  stackPane.setMaxSize(lw,lh);
+  rootPane.setPrefSize(lw,lh);
+  rootPane.setMaxSize(lw,lh);
   invalidateWorldViewTransforms();
   invalidateHandleNodes();
 }

@@ -1,0 +1,145 @@
+{
+  List<Transform> txs=new ArrayList<>();
+  CssTokenizer tt=new CssTokenizer(new StringReader(in.toString()));
+  while (tt.nextToken() != CssTokenizer.TT_EOF) {
+    tt.pushBack();
+    tt.skipWhitespace();
+    if (tt.nextToken() != CssTokenizer.TT_FUNCTION) {
+      throw new ParseException("function expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+    }
+    String func=tt.currentStringValue();
+    tt.skipWhitespace();
+switch (func) {
+case "skewX":
+{
+        if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
+          throw new ParseException("skew-angle expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+        }
+        double a=tt.currentNumericValue().doubleValue();
+        txs.add(Transform.affine(1,0,tan(a),1,0,0));
+        break;
+      }
+case "skewY":
+{
+      if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
+        throw new ParseException("skew-angle expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+      }
+      double a=tt.currentNumericValue().doubleValue();
+      txs.add(Transform.affine(1,tan(a),0,1,0,0));
+      break;
+    }
+case "translate":
+{
+    if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
+      throw new ParseException("tx expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+    }
+    double tx=tt.currentNumericValue().doubleValue();
+    tt.skipWhitespace();
+    if (tt.nextToken() == ',') {
+      tt.skipWhitespace();
+    }
+ else {
+      tt.pushBack();
+    }
+    double ty;
+    if (tt.nextToken() == CssTokenizer.TT_NUMBER) {
+      ty=tt.currentNumericValue().doubleValue();
+    }
+ else {
+      ty=0;
+      tt.pushBack();
+    }
+    txs.add(Transform.translate(tx,ty));
+    break;
+  }
+case "scale":
+{
+  if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
+    throw new ParseException("sx expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+  }
+  double sx=tt.currentNumericValue().doubleValue();
+  tt.skipWhitespace();
+  if (tt.nextToken() == ',') {
+    tt.skipWhitespace();
+  }
+ else {
+    tt.pushBack();
+  }
+  double sy;
+  if (tt.nextToken() == CssTokenizer.TT_NUMBER) {
+    sy=tt.currentNumericValue().doubleValue();
+  }
+ else {
+    sy=1;
+    tt.pushBack();
+  }
+  txs.add(Transform.scale(sx,sy));
+  break;
+}
+case "rotate":
+{
+if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
+  throw new ParseException("rotate-angle expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+}
+double angle=tt.currentNumericValue().doubleValue();
+tt.skipWhitespace();
+if (tt.nextToken() == ',') {
+  tt.skipWhitespace();
+}
+ else {
+  tt.pushBack();
+}
+double cx;
+double cy;
+if (tt.nextToken() == CssTokenizer.TT_NUMBER) {
+  cx=tt.currentNumericValue().doubleValue();
+  tt.skipWhitespace();
+  if (tt.nextToken() == ',') {
+    tt.skipWhitespace();
+  }
+ else {
+    tt.pushBack();
+  }
+  if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
+    throw new ParseException("cy expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+  }
+  cy=tt.currentNumericValue().doubleValue();
+}
+ else {
+  cx=0;
+  cy=0;
+  tt.pushBack();
+}
+txs.add(Transform.rotate(angle,cx,cy));
+break;
+}
+case "matrix":
+{
+double[] m=new double[6];
+for (int i=0; i < m.length; i++) {
+tt.skipWhitespace();
+if (tt.nextToken() == ',') {
+  tt.skipWhitespace();
+}
+ else {
+  tt.pushBack();
+}
+if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
+  throw new ParseException(((char)('a' + i)) + " expected: \"" + tt.currentStringValue()+ "\"",tt.getPosition());
+}
+m[i]=tt.currentNumericValue().doubleValue();
+}
+txs.add(Transform.affine(m[0],m[1],m[2],m[3],m[4],m[5]));
+break;
+}
+default :
+throw new ParseException("unsupported function: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+}
+tt.skipWhitespace();
+if (tt.nextToken() != ')') {
+throw new ParseException("')' expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+}
+}
+in.position(in.limit());
+return txs;
+}

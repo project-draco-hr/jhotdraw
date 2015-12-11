@@ -1,9 +1,13 @@
 {
   applyHideableFigureProperties(n);
   applyTransformableFigureProperties(n);
-  ObservableList<Node> group=((Group)n).getChildren();
-  group.clear();
+  applyStyleableFigureProperties(ctx,n);
+  List<Node> nodes=new ArrayList<Node>(getChildren().size());
   for (  Figure child : childrenProperty()) {
-    group.add(v.getNode(child));
+    nodes.add(ctx.getNode(child));
+  }
+  ObservableList<Node> group=((Group)n).getChildren();
+  if (!group.equals(nodes)) {
+    group.setAll(nodes);
   }
 }

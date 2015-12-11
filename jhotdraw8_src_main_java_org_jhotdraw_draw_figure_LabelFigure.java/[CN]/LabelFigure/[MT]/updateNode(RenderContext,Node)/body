@@ -1,5 +1,6 @@
 {
-  super.updateNode(drawingView,node);
+  super.updateNode(ctx,node);
   applyTransformableFigureProperties(node);
   applyCompositableFigureProperties(node);
+  applyStyleableFigureProperties(ctx,node);
 }

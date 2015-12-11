@@ -6,13 +6,13 @@
     out.append(',');
     colorConverter.toString(out,idFactory,fx.getColor());
     out.append(',');
-    sizeConverter.toString(out,idFactory,fx.getRadius());
+    nb.toString(out,idFactory,fx.getRadius());
     out.append(',');
-    sizeConverter.toString(out,idFactory,fx.getSpread());
+    nb.toString(out,idFactory,fx.getSpread());
     out.append(',');
-    sizeConverter.toString(out,idFactory,fx.getOffsetX());
+    nb.toString(out,idFactory,fx.getOffsetX());
     out.append(',');
-    sizeConverter.toString(out,idFactory,fx.getOffsetY());
+    nb.toString(out,idFactory,fx.getOffsetY());
     out.append(')');
   }
  else   if (value instanceof InnerShadow) {
@@ -22,13 +22,13 @@
     out.append(',');
     colorConverter.toString(out,idFactory,fx.getColor());
     out.append(',');
-    sizeConverter.toString(out,idFactory,fx.getRadius());
+    nb.toString(out,idFactory,fx.getRadius());
     out.append(',');
-    sizeConverter.toString(out,idFactory,fx.getChoke());
+    nb.toString(out,idFactory,fx.getChoke());
     out.append(',');
-    sizeConverter.toString(out,idFactory,fx.getOffsetX());
+    nb.toString(out,idFactory,fx.getOffsetX());
     out.append(',');
-    sizeConverter.toString(out,idFactory,fx.getOffsetY());
+    nb.toString(out,idFactory,fx.getOffsetY());
     out.append(')');
   }
  else {

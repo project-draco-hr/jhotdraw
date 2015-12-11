@@ -5,6 +5,7 @@
   applyFillableFigureProperties(rectangleNode);
   applyStrokeableFigureProperties(rectangleNode);
   applyCompositableFigureProperties(rectangleNode);
+  applyStyleableFigureProperties(ctx,node);
   rectangleNode.setX(get(X));
   rectangleNode.setY(get(Y));
   rectangleNode.setWidth(get(WIDTH));

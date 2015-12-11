@@ -1,9 +1,9 @@
 {
   applyHideableFigureProperties(n);
-  applyStyleableFigureProperties(v,n);
+  applyStyleableFigureProperties(ctx,n);
   List<Node> nodes=new ArrayList<Node>(getChildren().size());
   for (  Figure child : childrenProperty()) {
-    nodes.add(v.getNode(child));
+    nodes.add(ctx.getNode(child));
   }
   ObservableList<Node> group=((Group)n).getChildren();
   if (!group.equals(nodes)) {
