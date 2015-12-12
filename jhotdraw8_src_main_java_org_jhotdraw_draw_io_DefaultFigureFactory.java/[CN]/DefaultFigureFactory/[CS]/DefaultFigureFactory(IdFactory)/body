@@ -37,6 +37,7 @@
   addConverterForType(URI.class,new XmlUriConverter());
   addConverterForType(Connector.class,new DefaultConnectorConverter());
   addConverterForType(Paint.class,new XmlPaintConverter());
+  addConverterForType(CColor.class,new XmlCColorConverter());
   addConverterForType(Boolean.class,new XmlBooleanConverter());
   addConverterForType(TextAlignment.class,new XmlEnumConverter<TextAlignment>(TextAlignment.class));
   addConverterForType(VPos.class,new XmlEnumConverter<VPos>(VPos.class));

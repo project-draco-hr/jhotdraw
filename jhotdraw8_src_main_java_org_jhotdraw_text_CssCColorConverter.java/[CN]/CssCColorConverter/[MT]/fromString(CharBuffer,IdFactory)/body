@@ -1,0 +1,19 @@
+{
+  try {
+    String str=buf.toString().trim();
+    CColor c;
+    if ("none".equals(str)) {
+      c=null;
+    }
+ else {
+      c=new CColor(str,Color.web(str));
+    }
+    buf.position(buf.limit());
+    return c;
+  }
+ catch (  IllegalArgumentException e) {
+    ParseException pe=new ParseException("not a color:" + buf,buf.position());
+    pe.initCause(e);
+    throw pe;
+  }
+}

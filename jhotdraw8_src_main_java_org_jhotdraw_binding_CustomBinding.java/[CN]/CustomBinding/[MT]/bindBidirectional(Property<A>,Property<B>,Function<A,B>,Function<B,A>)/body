@@ -1,0 +1,5 @@
+{
+  boolean[] alreadyCalled=new boolean[1];
+  addFlaggedChangeListener(propertyA,propertyB,updateB,alreadyCalled);
+  addFlaggedChangeListener(propertyB,propertyA,updateA,alreadyCalled);
+}
