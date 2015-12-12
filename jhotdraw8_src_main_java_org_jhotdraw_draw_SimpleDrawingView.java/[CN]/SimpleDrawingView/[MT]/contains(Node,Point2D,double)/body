@@ -7,6 +7,12 @@
     boolean contains=Geom.lineContainsPoint(line.getStartX(),line.getStartY(),line.getEndX(),line.getEndY(),point.getX(),point.getY(),tolerance);
     return contains;
   }
+ else   if (node instanceof Rectangle) {
+    return Geom.contains(node.getBoundsInLocal(),point,tolerance);
+  }
+ else   if (node instanceof Shape) {
+    return node.contains(point);
+  }
  else   if (node instanceof Group) {
     if (Geom.contains(node.getBoundsInLocal(),point,tolerance)) {
       for (      Node child : ((Group)node).getChildren()) {

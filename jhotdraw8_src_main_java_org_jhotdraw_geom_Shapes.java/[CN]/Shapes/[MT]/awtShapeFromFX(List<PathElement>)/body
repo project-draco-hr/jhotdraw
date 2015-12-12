@@ -1,0 +1,51 @@
+{
+  SvgPath2D p=new SvgPath2D();
+  double x=0;
+  double y=0;
+  for (  PathElement pe : pathElements) {
+    if (pe instanceof MoveTo) {
+      MoveTo e=(MoveTo)pe;
+      x=e.getX();
+      y=e.getY();
+      p.moveTo(x,y);
+    }
+ else     if (pe instanceof LineTo) {
+      LineTo e=(LineTo)pe;
+      x=e.getX();
+      y=e.getY();
+      p.lineTo(x,y);
+    }
+ else     if (pe instanceof CubicCurveTo) {
+      CubicCurveTo e=(CubicCurveTo)pe;
+      x=e.getX();
+      y=e.getY();
+      p.curveTo(e.getControlX1(),e.getControlY1(),e.getControlX2(),e.getControlY2(),x,y);
+    }
+ else     if (pe instanceof QuadCurveTo) {
+      QuadCurveTo e=(QuadCurveTo)pe;
+      x=e.getX();
+      y=e.getY();
+      p.quadTo(e.getControlX(),e.getControlY(),x,y);
+    }
+ else     if (pe instanceof ArcTo) {
+      ArcTo e=(ArcTo)pe;
+      x=e.getX();
+      y=e.getY();
+      p.arcTo(e.getRadiusX(),e.getRadiusY(),e.getXAxisRotation(),e.isLargeArcFlag(),e.isSweepFlag(),x,y);
+    }
+ else     if (pe instanceof HLineTo) {
+      HLineTo e=(HLineTo)pe;
+      x=e.getX();
+      p.lineTo(x,y);
+    }
+ else     if (pe instanceof VLineTo) {
+      VLineTo e=(VLineTo)pe;
+      y=e.getY();
+      p.lineTo(x,y);
+    }
+ else     if (pe instanceof ClosePath) {
+      p.closePath();
+    }
+  }
+  return p;
+}
