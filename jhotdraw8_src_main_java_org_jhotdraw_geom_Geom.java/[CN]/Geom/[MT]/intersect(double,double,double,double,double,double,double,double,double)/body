@@ -1,4 +1,5 @@
 {
+  double limit2=limit * limit;
   double denom=((xb - xa) * (yd - yc) - (yb - ya) * (xd - xc));
   double rnum=((ya - yc) * (xd - xc) - (xa - xc) * (yd - yc));
   if (denom == 0.0) {
@@ -25,7 +26,7 @@
  else {
     double px=xa + (xb - xa) * r;
     double py=ya + (yb - ya) * r;
-    if (length(xa,ya,px,py) <= limit || length(xb,yb,px,py) <= limit || length(xc,yc,px,py) <= limit || length(xd,yd,px,py) <= limit) {
+    if (length2(xa,ya,px,py) <= limit2 || length2(xb,yb,px,py) <= limit2 || length2(xc,yc,px,py) <= limit2 || length2(xd,yd,px,py) <= limit2) {
       return new Point2D(px,py);
     }
     return null;

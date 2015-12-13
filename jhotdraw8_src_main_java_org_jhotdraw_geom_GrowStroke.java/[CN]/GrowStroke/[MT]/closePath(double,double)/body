@@ -1,0 +1,13 @@
+{
+  if ((prevX - x) * (prevX - x) + (prevY - y) * (prevY - y) < EPSILON) {
+    out.closePath();
+    return;
+  }
+  Point2D s=Geom.perpendicularVector(prevX,prevY,x,y,grow);
+  double sx=s.getX();
+  double sy=s.getY();
+  Point3D myTangent=Geom.hcrossProduct(prevX + sx,prevY + sy,x + sx,y + sy);
+  join(myTangent,prevX + sx,prevY + sy);
+  out.lineTo(x + sx,y + sy);
+  out.closePath();
+}

@@ -1,0 +1,5 @@
+{
+  this.join=join;
+  this.grow=grow;
+  this.sqMiterLimit=miterLimit * miterLimit;
+}

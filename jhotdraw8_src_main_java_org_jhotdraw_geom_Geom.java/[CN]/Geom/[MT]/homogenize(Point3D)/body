@@ -1,0 +1,3 @@
+{
+  return new Point3D(p.getX() / p.getZ(),p.getY() / p.getZ(),1);
+}

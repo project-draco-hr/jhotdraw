@@ -1,49 +1,111 @@
 {
-  BezierPath bp=new BezierPath();
-  Path2D.Double left=new Path2D.Double();
-  Path2D.Double right=new Path2D.Double();
-  if (s instanceof Path2D.Double) {
-    left.setWindingRule(((Path2D.Double)s).getWindingRule());
-    right.setWindingRule(((Path2D.Double)s).getWindingRule());
-  }
- else   if (s instanceof BezierPath) {
-    left.setWindingRule(((BezierPath)s).getWindingRule());
-    right.setWindingRule(((BezierPath)s).getWindingRule());
-  }
   double[] coords=new double[6];
-  for (PathIterator i=s.getPathIterator(null,0.1d); !i.isDone(); i.next()) {
-    int type=i.currentSegment(coords);
+  ArrayList<Subpath> subpaths=new ArrayList<>();
+{
+    int prevType=-1;
+    double lastX=0;
+    double lastY=0;
+    double firstX=0;
+    double firstY=0;
+    boolean inSubpath=false;
+    for (PathIterator i=s.getPathIterator(null); !i.isDone(); i.next()) {
+      int type=i.currentSegment(coords);
 switch (type) {
 case PathIterator.SEG_MOVETO:
-      if (bp.size() != 0) {
-        traceStroke(bp,left,right);
-      }
-    bp.clear();
-  bp.moveTo(coords[0],coords[1]);
+        if (inSubpath) {
+          subpaths.add(new Subpath(prevType,firstX,firstY,lastX,lastY,false));
+        }
+      lastX=coords[0];
+    lastY=coords[1];
+  firstX=lastX;
+firstY=lastY;
+inSubpath=true;
 break;
 case PathIterator.SEG_LINETO:
-if (coords[0] != bp.get(bp.size() - 1).x[0] || coords[1] != bp.get(bp.size() - 1).y[0]) {
-bp.lineTo(coords[0],coords[1]);
-}
+lastX=coords[0];
+lastY=coords[1];
 break;
 case PathIterator.SEG_QUADTO:
-bp.quadTo(coords[0],coords[1],coords[2],coords[3]);
+lastX=coords[2];
+lastY=coords[3];
 break;
 case PathIterator.SEG_CUBICTO:
-bp.curveTo(coords[0],coords[1],coords[2],coords[3],coords[4],coords[5]);
+lastX=coords[4];
+lastY=coords[5];
 break;
 case PathIterator.SEG_CLOSE:
-bp.setClosed(true);
+if (inSubpath) {
+subpaths.add(new Subpath(prevType,firstX,firstY,lastX,lastY,true));
+inSubpath=false;
+}
 break;
 }
+prevType=type;
 }
-if (bp.size() > 1) {
-traceStroke(bp,left,right);
+if (inSubpath) {
+subpaths.add(new Subpath(prevType,firstX,firstY,lastX,lastY,false));
 }
-if (Geom.containsAWT(left.getBounds2D(),right.getBounds2D())) {
-return (grow > 0) ? left : right;
+}
+out=new Path2D.Double();
+{
+boolean inSubpath=false;
+int si=0;
+double x=0, c1x, c2x;
+double y=0, c1y, c2y;
+for (PathIterator i=s.getPathIterator(null); !i.isDone(); i.next()) {
+int type=i.currentSegment(coords);
+Subpath sp=subpaths.get(si);
+switch (type) {
+case PathIterator.SEG_MOVETO:
+x=coords[0];
+y=coords[1];
+if (sp.closed) {
+prevX=sp.lastX;
+prevY=sp.lastY;
+prevTangent=Geom.hcrossProduct(sp.lastX,sp.lastY,sp.firstX,sp.firstY);
 }
  else {
-return (grow > 0) ? right : left;
+prevTangent=null;
 }
+movePending=true;
+moveTo(x,y);
+if (inSubpath) {
+si++;
+}
+inSubpath=true;
+break;
+case PathIterator.SEG_LINETO:
+x=coords[0];
+y=coords[1];
+lineTo(x,y);
+break;
+case PathIterator.SEG_QUADTO:
+c1x=coords[0];
+c1y=coords[1];
+x=coords[2];
+y=coords[3];
+quadTo(c1x,c1y,x,y);
+break;
+case PathIterator.SEG_CUBICTO:
+c1x=coords[0];
+c1y=coords[1];
+c2x=coords[2];
+c2y=coords[3];
+x=coords[4];
+y=coords[5];
+curveTo(c1x,c1y,c2x,c2y,x,y);
+break;
+case PathIterator.SEG_CLOSE:
+closePath(sp.firstX,sp.lastY);
+if (inSubpath) {
+si++;
+inSubpath=false;
+}
+break;
+}
+prevX=x;
+prevY=y;
+}
+}
+return out;
 }

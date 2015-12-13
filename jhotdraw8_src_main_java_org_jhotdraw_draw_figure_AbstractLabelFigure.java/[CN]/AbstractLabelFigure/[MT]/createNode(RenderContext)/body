@@ -2,8 +2,10 @@
   Group g=new Group();
   g.setAutoSizeChildren(false);
   Region r=new Region();
+  r.setScaleShape(true);
   g.getChildren().add(r);
   g.getChildren().add(new Text());
-  r.setScaleShape(true);
+  g.getChildren().add(new Path());
+  g.getChildren().add(new Path());
   return g;
 }

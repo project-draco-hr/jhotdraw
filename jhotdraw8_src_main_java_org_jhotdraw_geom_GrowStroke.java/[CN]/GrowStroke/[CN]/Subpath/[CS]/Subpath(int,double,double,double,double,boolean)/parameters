@@ -1,0 +1,6 @@
+int type
+double firstX
+double firstY
+double lastX
+double lastY
+boolean closed

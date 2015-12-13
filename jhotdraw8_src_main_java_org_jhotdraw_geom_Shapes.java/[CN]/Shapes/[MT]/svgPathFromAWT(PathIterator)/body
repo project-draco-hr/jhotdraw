@@ -12,7 +12,10 @@ throw new IllegalArgumentException("illegal winding rule " + iter.getWindingRule
 }
 StringBuilder buf=new StringBuilder();
 double[] coords=new double[6];
+boolean first=true;
 for (; !iter.isDone(); iter.next()) {
+if (first) first=false;
+ else buf.append(' ');
 switch (iter.currentSegment(coords)) {
 case PathIterator.SEG_CLOSE:
 buf.append('Z');

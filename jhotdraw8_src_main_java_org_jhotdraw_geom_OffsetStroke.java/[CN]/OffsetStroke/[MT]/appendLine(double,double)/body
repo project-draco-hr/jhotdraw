@@ -1,0 +1,7 @@
+{
+  if (!inSubpath) {
+    throw new IllegalArgumentException("initial moveTo missing");
+  }
+  lastX=x1;
+  lastY=y1;
+}

@@ -1,0 +1,4 @@
+{
+  double z=p.getZ();
+  return new Point2D(p.getX() / z,p.getY() / z);
+}

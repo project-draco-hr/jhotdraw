@@ -1,0 +1,5 @@
+{
+  double a=p.getX() - x;
+  double b=p.getY() - y;
+  return a * a + b * b;
+}
