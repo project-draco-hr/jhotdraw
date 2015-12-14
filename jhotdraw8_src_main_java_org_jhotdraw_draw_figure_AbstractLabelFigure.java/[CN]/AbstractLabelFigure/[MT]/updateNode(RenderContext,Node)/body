@@ -4,25 +4,4 @@
   Text t=(Text)g.getChildren().get(1);
   updateRegionNode(ctx,r);
   updateTextNode(ctx,t);
-  Text t2=new Text();
-  updateTextNode(ctx,t2);
-  Path p2=(Path)Shape.subtract(t2,new Rectangle(0,0));
-{
-    Path p=(Path)g.getChildren().get(2);
-    p.setFill(null);
-    p.setStroke(Color.BLUE);
-    GrowStroke str=new GrowStroke(3,2);
-    Path p3=(Path)Shapes.fxShapeFromAWT(str.createStrokedShape(Shapes.awtShapeFromFX(p2)));
-    p.getElements().setAll(p3.getElements());
-  }
-{
-    Path p=(Path)g.getChildren().get(3);
-    p.setFill(null);
-    p.setStroke(Color.RED);
-    p.getStrokeDashArray().setAll(2.0);
-    p.setStrokeLineCap(StrokeLineCap.BUTT);
-    GrowStroke str=new GrowStroke(3,BasicStroke.JOIN_BEVEL,2);
-    Path p3=(Path)Shapes.fxShapeFromAWT(str.createStrokedShape(Shapes.awtShapeFromFX(p2)));
-    p.getElements().setAll(p3.getElements());
-  }
 }
