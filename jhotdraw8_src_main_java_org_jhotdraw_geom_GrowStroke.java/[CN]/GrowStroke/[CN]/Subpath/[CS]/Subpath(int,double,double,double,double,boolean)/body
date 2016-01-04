@@ -1,8 +1,0 @@
-{
-  this.type=type;
-  this.firstX=firstX;
-  this.firstY=firstY;
-  this.lastX=lastX;
-  this.lastY=lastY;
-  this.closed=closed;
-}

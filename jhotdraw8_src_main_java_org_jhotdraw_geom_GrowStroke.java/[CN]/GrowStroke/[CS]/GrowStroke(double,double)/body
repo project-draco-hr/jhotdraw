@@ -1,3 +1,0 @@
-{
-  this(grow,BasicStroke.JOIN_MITER,20);
-}

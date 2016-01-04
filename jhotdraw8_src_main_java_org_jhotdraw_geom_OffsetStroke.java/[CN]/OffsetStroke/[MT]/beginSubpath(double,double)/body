@@ -1,9 +1,0 @@
-{
-  if (inSubpath) {
-    endOfSubpath();
-  }
-  inSubpath=true;
-  isClosed=false;
-  firstX=lastX=x0;
-  firstY=lastY=y0;
-}

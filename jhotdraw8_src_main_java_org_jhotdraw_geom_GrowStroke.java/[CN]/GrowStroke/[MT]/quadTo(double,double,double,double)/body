@@ -1,9 +1,0 @@
-{
-  Point2D s0=Geom.perpendicularVector(prevX,prevY,c1x,c1y,grow);
-  Point2D s1=Geom.perpendicularVector(prevX,prevY,x,y,grow);
-  Point2D s2=Geom.perpendicularVector(c1x,c1y,x,y,grow);
-  Point3D myTangent=Geom.hcrossProduct(prevX + s0.getX(),prevY + s0.getY(),c1x + s1.getX(),c1y + s1.getY());
-  join(myTangent,prevX + s0.getX(),prevY + s0.getY());
-  out.quadTo(c1x + s1.getX(),c1y + s1.getY(),x + s2.getX(),y + s2.getY());
-  prevTangent=Geom.hcrossProduct(c1x + s1.getX(),c1y + s1.getY(),x + s2.getX(),y + s2.getY());
-}

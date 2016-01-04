@@ -1,6 +1,0 @@
-{
-  if (inSubpath) {
-    endOfSubpath();
-    isClosed=false;
-  }
-}
