@@ -1,4 +1,4 @@
 {
-  @SuppressWarnings("unchecked") StyleableMap<Key<?>,Object> map=(StyleableMap<Key<?>,Object>)properties.get();
+  @SuppressWarnings("unchecked") StyleableMap<Key<?>,Object> map=properties;
   return map;
 }

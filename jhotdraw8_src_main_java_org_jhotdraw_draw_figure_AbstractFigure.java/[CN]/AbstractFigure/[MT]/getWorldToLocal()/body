@@ -1,6 +1,0 @@
-{
-  if (worldToLocal == null) {
-    worldToLocal=Figure.super.getWorldToLocal();
-  }
-  return worldToLocal;
-}

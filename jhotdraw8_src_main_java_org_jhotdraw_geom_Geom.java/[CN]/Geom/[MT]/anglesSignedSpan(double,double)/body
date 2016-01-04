@@ -1,0 +1,6 @@
+{
+  double diff=to - from;
+  if (diff > PI)   diff=diff - PI;
+ else   if (diff < -PI)   diff=diff + 2 * PI;
+  return diff;
+}

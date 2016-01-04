@@ -1,6 +1,6 @@
 {
   super.invalidated(key);
-  if ((key instanceof FigureKey) && ((FigureKey)key).getDirtyMask().containsOneOf(DirtyBits.LAYOUT)) {
+  if ((key instanceof FigureMapAccessor) && ((FigureMapAccessor)key).getDirtyMask().containsOneOf(DirtyBits.LAYOUT)) {
     invalidateBounds();
   }
 }

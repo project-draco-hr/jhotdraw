@@ -3,7 +3,7 @@
   double maxX=Double.NEGATIVE_INFINITY;
   double minY=Double.POSITIVE_INFINITY;
   double maxY=Double.NEGATIVE_INFINITY;
-  for (  Figure child : childrenProperty()) {
+  for (  Figure child : getChildren()) {
     Bounds b=child.getBoundsInParent();
     minX=min(minX,b.getMinX());
     maxX=max(maxX,b.getMaxX());

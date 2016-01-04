@@ -1,0 +1,17 @@
+{
+  Arc n=(Arc)node;
+  applyHideableFigureProperties(n);
+  applyTransformableFigureProperties(n);
+  applyStrokeableFigureProperties(n);
+  applyFillableFigureProperties(n);
+  applyCompositableFigureProperties(n);
+  applyStyleableFigureProperties(ctx,node);
+  n.setCenterX(getStyled(CENTER_X));
+  n.setCenterY(getStyled(CENTER_Y));
+  n.setRadiusX(getStyled(RADIUS_X));
+  n.setRadiusY(getStyled(RADIUS_Y));
+  n.setStartAngle(getStyled(START_ANGLE));
+  n.setLength(getStyled(ARC_LENGTH));
+  n.setType(getStyled(ARC_TYPE));
+  n.applyCss();
+}

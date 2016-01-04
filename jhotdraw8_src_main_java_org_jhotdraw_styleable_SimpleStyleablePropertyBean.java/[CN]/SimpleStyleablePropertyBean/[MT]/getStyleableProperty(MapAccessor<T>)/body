@@ -1,7 +1,7 @@
 {
   if (key instanceof StyleableMapAccessor) {
     StyleableMapAccessor<T> skey=(StyleableMapAccessor<T>)key;
-    return new KeyMapEntryStyleableProperty<T>(properties,skey,skey.getCssName(),skey.getCssMetaData());
+    return new KeyMapEntryStyleableProperty<T>(this,properties,skey,skey.getCssName(),skey.getCssMetaData());
   }
  else {
     return null;

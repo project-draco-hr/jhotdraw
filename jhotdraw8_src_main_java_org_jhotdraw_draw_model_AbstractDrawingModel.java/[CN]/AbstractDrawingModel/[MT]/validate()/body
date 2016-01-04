@@ -1,7 +1,7 @@
 {
   if (!dirtyStyles.isEmpty()) {
     isValidating=true;
-    LinkedList<Figure> fs=new LinkedList<>(dirtyStyles);
+    Figure[] fs=dirtyStyles.keySet().toArray(new Figure[dirtyStyles.size()]);
     dirtyStyles.clear();
     for (    Figure f : fs) {
       invokeStylesheetNotify(f);
@@ -10,9 +10,8 @@
   }
   if (!dirtyLayouts.isEmpty()) {
     isValidating=true;
-    ArrayList<Figure> fs=new ArrayList<>(dirtyLayoutList);
+    Figure[] fs=dirtyLayouts.keySet().toArray(new Figure[dirtyLayouts.size()]);
     dirtyLayouts.clear();
-    dirtyLayoutList.clear();
     for (    Figure f : fs) {
       invokeLayoutNotify(f);
     }

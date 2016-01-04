@@ -1,0 +1,3 @@
+ObservableMap<K,V> map
+K key
+Class<T> tClazz

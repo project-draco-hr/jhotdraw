@@ -1,6 +1,0 @@
-{
-  if (parentToWorld == null) {
-    parentToWorld=Figure.super.getParentToWorld();
-  }
-  return parentToWorld;
-}

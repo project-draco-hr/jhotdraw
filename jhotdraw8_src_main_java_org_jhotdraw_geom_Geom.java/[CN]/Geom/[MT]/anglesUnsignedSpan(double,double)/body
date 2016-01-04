@@ -1,0 +1,3 @@
+{
+  return angle0 > angle1 ? angle0 - angle1 : angle1 - angle0;
+}

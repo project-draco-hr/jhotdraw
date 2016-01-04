@@ -1,0 +1,8 @@
+{
+  double vx=l2x - l1x;
+  double vy=l2y - l1y;
+  double perpX=-vy;
+  double perpY=vx;
+  double m=distance / sqrt(perpX * perpY);
+  return new Point2D(px + perpX * m,py + perpY * m);
+}

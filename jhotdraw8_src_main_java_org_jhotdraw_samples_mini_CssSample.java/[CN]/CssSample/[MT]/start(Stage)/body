@@ -37,8 +37,8 @@
   ArrayList<URI> stylesheets=new ArrayList<>();
   stylesheets.add(CssSample.class.getResource("CssSample.css").toURI());
   drawing.set(Drawing.USER_AGENT_STYLESHEETS,stylesheets);
-  drawing.applyCss();
-  drawing.layout();
+  drawing.updateCss();
+  drawing.updateLayout();
   DrawingView drawingView=new SimpleDrawingView();
   drawingView.setDrawing(drawing);
   drawingView.setConstrainer(new GridConstrainer(10,10));

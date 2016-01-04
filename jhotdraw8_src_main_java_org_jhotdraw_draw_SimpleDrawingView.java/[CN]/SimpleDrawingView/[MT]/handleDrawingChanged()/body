@@ -6,7 +6,7 @@
   drawing.set(d);
   if (d != null) {
     drawingPane.getChildren().add(getNode(d));
-    dirtyFigureNodes.add(d);
+    dirtyFigureNodes.put(d,null);
     updateLayout();
     updateTreeNodes(d);
     repaint();

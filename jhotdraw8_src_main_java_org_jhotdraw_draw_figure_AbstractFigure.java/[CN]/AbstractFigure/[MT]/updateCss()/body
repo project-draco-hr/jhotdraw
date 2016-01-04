@@ -1,0 +1,12 @@
+{
+  getStyleableMap().clearNonUserValues();
+  Drawing d=getDrawing();
+  if (d != null) {
+    StyleManager<Figure> styleManager=d.getStyleManager();
+    styleManager.applyStylesTo(this);
+    for (    Figure child : getChildren()) {
+      child.updateCss();
+    }
+  }
+  invalidateTransforms();
+}

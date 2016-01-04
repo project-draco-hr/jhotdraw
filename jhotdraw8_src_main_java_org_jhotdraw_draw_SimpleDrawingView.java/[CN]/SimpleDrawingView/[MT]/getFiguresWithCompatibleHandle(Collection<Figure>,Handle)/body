@@ -1,15 +1,15 @@
 {
   validateHandles();
-  HashSet<Figure> result=new HashSet<>();
+  Map<Figure,Figure> result=new IdentityHashMap<>();
   for (  Map.Entry<Figure,List<Handle>> entry : handles.entrySet()) {
     if (figures.contains(entry.getKey())) {
       for (      Handle h : entry.getValue()) {
         if (h.isCompatible(master)) {
-          result.add(entry.getKey());
+          result.put(entry.getKey(),null);
           break;
         }
       }
     }
   }
-  return result;
+  return result.keySet();
 }

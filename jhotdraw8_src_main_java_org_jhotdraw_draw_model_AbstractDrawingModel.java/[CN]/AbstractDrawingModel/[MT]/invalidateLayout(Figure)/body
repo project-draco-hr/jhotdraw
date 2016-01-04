@@ -1,5 +1,3 @@
 {
-  if (dirtyLayouts.add(figure)) {
-    dirtyLayoutList.add(figure);
-  }
+  dirtyLayouts.put(figure,null);
 }

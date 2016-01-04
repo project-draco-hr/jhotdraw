@@ -1,0 +1,9 @@
+{
+  Figure oldParent=element.getParent();
+  if (oldParent != AbstractCompositeFigure.this) {
+    return super.doAdd(index,element,false);
+  }
+ else {
+    return super.doAdd(index,element,true);
+  }
+}

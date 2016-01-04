@@ -1,0 +1,6 @@
+{
+  if (connectedFigures == null) {
+    connectedFigures=FXCollections.observableSet(Collections.newSetFromMap(new IdentityHashMap<Figure,Boolean>()));
+  }
+  return connectedFigures;
+}

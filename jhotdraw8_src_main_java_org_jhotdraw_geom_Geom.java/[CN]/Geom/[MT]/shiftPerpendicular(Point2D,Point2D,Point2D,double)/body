@@ -1,3 +1,0 @@
-{
-  return shiftPerpendicular(l1.getX(),l1.getY(),l2.getX(),l2.getY(),p.getX(),p.getY(),distance);
-}

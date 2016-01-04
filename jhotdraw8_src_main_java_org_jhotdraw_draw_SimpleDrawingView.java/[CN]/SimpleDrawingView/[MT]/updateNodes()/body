@@ -1,7 +1,7 @@
 {
   getModel().validate();
-  ArrayList<Figure> copyOfDirtyFigureNodes=new ArrayList<>(dirtyFigureNodes);
-  ArrayList<Figure> copyOfDirtyHandles=new ArrayList<>(dirtyHandles);
+  Figure[] copyOfDirtyFigureNodes=dirtyFigureNodes.keySet().toArray(new Figure[dirtyFigureNodes.size()]);
+  Figure[] copyOfDirtyHandles=dirtyHandles.keySet().toArray(new Figure[dirtyHandles.size()]);
   dirtyFigureNodes.clear();
   dirtyHandles.clear();
   for (  Figure f : copyOfDirtyFigureNodes) {

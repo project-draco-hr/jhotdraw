@@ -1,0 +1,9 @@
+{
+  double vx=l2x - l1x;
+  double vy=l2y - l1y;
+  double cvx=-vy;
+  double cvy=vx;
+  double norm=sqrt(cvx * cvx + cvy * cvy);
+  double m=norm == 0 ? 0 : 1 / norm;
+  return new Point2D(cvx * m,cvy * m);
+}

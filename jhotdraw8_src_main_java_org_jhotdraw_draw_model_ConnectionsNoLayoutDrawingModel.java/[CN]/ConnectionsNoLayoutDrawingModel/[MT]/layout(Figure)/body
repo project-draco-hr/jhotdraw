@@ -1,5 +1,5 @@
 {
-  figure.layout();
+  figure.updateLayout();
   fire(DrawingModelEvent.subtreeNodesInvalidated(this,figure));
   for (  Figure f : figure.preorderIterable()) {
     for (    Figure c : f.getConnectedFigures()) {

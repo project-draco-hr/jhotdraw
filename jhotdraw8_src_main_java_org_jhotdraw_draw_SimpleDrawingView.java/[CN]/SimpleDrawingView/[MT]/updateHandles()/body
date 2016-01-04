@@ -10,7 +10,7 @@
   dirtyHandles.clear();
   createHandles(handles);
   for (  Map.Entry<Figure,List<Handle>> entry : handles.entrySet()) {
-    dirtyHandles.add(entry.getKey());
+    dirtyHandles.put(entry.getKey(),null);
     for (    Handle handle : entry.getValue()) {
       Node n=handle.getNode();
       nodeToHandleMap.put(n,handle);

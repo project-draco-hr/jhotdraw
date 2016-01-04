@@ -1,7 +1,7 @@
 {
-  Binding<String> nameBinding=Action.LABEL.valueAt(action.propertiesProperty());
+  Binding<String> nameBinding=Action.LABEL.valueAt(action.getProperties());
   control.getProperties().put("ActionsNameBinding",nameBinding);
-  control.textProperty().bind(Action.LABEL.valueAt(action.propertiesProperty()));
+  control.textProperty().bind(Action.LABEL.valueAt(action.getProperties()));
   control.setOnAction(action);
   control.disableProperty().bind(action.disabledProperty());
 }

@@ -1,36 +1,36 @@
 {
   if (fx instanceof Arc) {
-    return shapeFromFXArc((Arc)fx);
+    return awtShapeFromFXArc((Arc)fx);
   }
  else   if (fx instanceof Circle) {
-    return shapeFromFXCircle((Circle)fx);
+    return awtShapeFromFXCircle((Circle)fx);
   }
  else   if (fx instanceof CubicCurve) {
-    return shapeFromFXCubicCurve((CubicCurve)fx);
+    return awtShapeFromFXCubicCurve((CubicCurve)fx);
   }
  else   if (fx instanceof Ellipse) {
-    return shapeFromFXEllipse((Ellipse)fx);
+    return awtShapeFromFXEllipse((Ellipse)fx);
   }
  else   if (fx instanceof Line) {
-    return shapeFromFXLine((Line)fx);
+    return awtShapeFromFXLine((Line)fx);
   }
  else   if (fx instanceof Path) {
-    return shapeFromFXPath((Path)fx);
+    return awtShapeFromFXPath((Path)fx);
   }
  else   if (fx instanceof Polygon) {
-    return shapeFromFXPolygon((Polygon)fx);
+    return awtShapeFromFXPolygon((Polygon)fx);
   }
  else   if (fx instanceof Polyline) {
-    return shapeFromFXPolyline((Polyline)fx);
+    return awtShapeFromFXPolyline((Polyline)fx);
   }
  else   if (fx instanceof QuadCurve) {
-    return shapeFromFXQuadCurve((QuadCurve)fx);
+    return awtShapeFromFXQuadCurve((QuadCurve)fx);
   }
  else   if (fx instanceof Rectangle) {
-    return shapeFromFXRectangle((Rectangle)fx);
+    return awtShapeFromFXRectangle((Rectangle)fx);
   }
  else   if (fx instanceof SVGPath) {
-    return shapeFromFXSVGPath((SVGPath)fx);
+    return awtShapeFromFXSvgPath((SVGPath)fx);
   }
  else {
     throw new UnsupportedOperationException("unsupported shape " + fx);
