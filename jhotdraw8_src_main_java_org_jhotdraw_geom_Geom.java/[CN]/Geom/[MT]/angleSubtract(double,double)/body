@@ -1,5 +1,7 @@
 {
-  double diff=a - b;
-  if (diff < -2 * PI)   diff+=2 * PI;
+  double diff=from - to;
+  if (diff < -2 * PI) {
+    diff+=2 * PI;
+  }
   return diff;
 }
