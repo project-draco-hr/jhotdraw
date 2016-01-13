@@ -2,6 +2,7 @@
   tn.setText(getText());
   tn.setX(get(ORIGIN_X));
   tn.setY(get(ORIGIN_Y));
-  applyLabeledFigureProperties(tn);
+  applyTextFillableFigureProperties(tn);
   applyTextableFigureProperties(tn);
+  applyFontableFigureProperties(tn);
 }
