@@ -1,5 +1,5 @@
 {
-  for (  Figure f : getConnectionTargets()) {
+  for (  Figure f : getProvidingFigures()) {
     if (others.contains(f)) {
       return false;
     }

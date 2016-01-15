@@ -1,0 +1,5 @@
+Doc holder
+String instantiatingType
+String patternName
+String patternRole
+SourcePosition position

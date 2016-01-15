@@ -1,0 +1,4 @@
+{
+  this.classDoc=classDoc;
+  this.role=role;
+}

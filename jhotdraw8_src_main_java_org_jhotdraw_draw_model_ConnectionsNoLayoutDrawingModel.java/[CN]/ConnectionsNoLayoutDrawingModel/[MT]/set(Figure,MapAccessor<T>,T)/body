@@ -16,7 +16,7 @@
       fire(DrawingModelEvent.layoutInvalidated(this,figure));
     }
     if (dm.containsOneOf(DirtyBits.CONNECTION_LAYOUT)) {
-      for (      Figure c : figure.getConnectedFigures()) {
+      for (      Figure c : figure.getDependentFigures()) {
         fire(DrawingModelEvent.layoutInvalidated(this,c));
       }
     }
