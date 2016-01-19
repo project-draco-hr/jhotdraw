@@ -1,0 +1,5 @@
+{
+  ArrayList<PathElement> result=new ArrayList<>();
+  awtShapeFromFXPathElements(elements);
+  return result;
+}

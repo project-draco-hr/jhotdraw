@@ -1,0 +1,24 @@
+{
+  List<PathElement> fxelem=new ArrayList<>();
+  double[] coords=new double[6];
+  for (; !iter.isDone(); iter.next()) {
+switch (iter.currentSegment(coords)) {
+case PathIterator.SEG_CLOSE:
+      fxelem.add(new ClosePath());
+    break;
+case PathIterator.SEG_CUBICTO:
+  fxelem.add(new CubicCurveTo(coords[0],coords[1],coords[2],coords[3],coords[4],coords[5]));
+break;
+case PathIterator.SEG_LINETO:
+fxelem.add(new LineTo(coords[0],coords[1]));
+break;
+case PathIterator.SEG_MOVETO:
+fxelem.add(new MoveTo(coords[0],coords[1]));
+break;
+case PathIterator.SEG_QUADTO:
+fxelem.add(new QuadCurveTo(coords[0],coords[1],coords[2],coords[3]));
+break;
+}
+}
+return fxelem;
+}
