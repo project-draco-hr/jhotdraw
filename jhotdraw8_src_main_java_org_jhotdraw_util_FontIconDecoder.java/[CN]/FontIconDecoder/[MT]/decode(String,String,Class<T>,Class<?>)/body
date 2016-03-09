@@ -1,0 +1,5 @@
+{
+  Text txt=new Text();
+  txt.setFont(font);
+  return (T)txt;
+}

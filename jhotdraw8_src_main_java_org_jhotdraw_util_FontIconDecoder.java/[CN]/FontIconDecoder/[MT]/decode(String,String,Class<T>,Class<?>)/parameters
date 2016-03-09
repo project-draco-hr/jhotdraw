@@ -1,0 +1,4 @@
+String key
+String propertyValue
+Class<T> type
+Class<?> baseClass

@@ -1,0 +1,5 @@
+String keyRegex
+String valuePrefix
+String fontResourceName
+float fontSize
+Class<?> baseClass

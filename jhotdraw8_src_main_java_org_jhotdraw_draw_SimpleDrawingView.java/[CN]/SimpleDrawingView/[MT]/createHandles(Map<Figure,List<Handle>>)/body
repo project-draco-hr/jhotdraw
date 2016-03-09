@@ -1,5 +1,5 @@
 {
-  HandleType handleType=getHandleType();
+  HandleType handleType=getSelectedFigures().size() > 1 ? getMultiHandleType() : getHandleType();
   for (  Figure figure : getSelectedFigures()) {
     List<Handle> list=handles.get(figure);
     if (list == null) {

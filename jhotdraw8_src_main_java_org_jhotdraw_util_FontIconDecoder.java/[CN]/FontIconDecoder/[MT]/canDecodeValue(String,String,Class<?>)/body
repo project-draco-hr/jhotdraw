@@ -1,0 +1,3 @@
+{
+  return keyPattern.matcher(key).matches() && propertyValue.startsWith(valuePrefix) && (Node.class.isAssignableFrom(type));
+}

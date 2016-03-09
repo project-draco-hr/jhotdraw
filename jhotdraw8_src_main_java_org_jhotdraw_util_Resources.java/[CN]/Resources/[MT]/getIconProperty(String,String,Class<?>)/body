@@ -4,6 +4,11 @@
     if ("".equals(rsrcName) || rsrcName == null) {
       return null;
     }
+    for (    ResourceDecoder d : decoders) {
+      if (d.canDecodeValue(key,rsrcName,Node.class)) {
+        return d.decode(key,rsrcName,Node.class,baseClass);
+      }
+    }
     URL url=baseClass.getResource(rsrcName);
     if (isVerbose && url == null) {
       System.err.println("Warning ResourceBundleUtil[" + baseName + "].getIconProperty \""+ key+ suffix+ "\" resource:"+ rsrcName+ " not found.");
