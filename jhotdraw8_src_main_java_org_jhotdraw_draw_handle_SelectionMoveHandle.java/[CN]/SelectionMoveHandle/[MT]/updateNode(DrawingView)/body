@@ -1,0 +1,7 @@
+{
+  Point2D p=getLocation(view);
+  pickLocation=p;
+  if (p != null) {
+    node.relocate(p.getX() - 5,p.getY() - 5);
+  }
+}

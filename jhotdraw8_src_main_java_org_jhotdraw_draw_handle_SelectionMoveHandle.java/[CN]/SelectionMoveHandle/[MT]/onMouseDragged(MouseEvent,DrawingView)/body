@@ -1,0 +1,21 @@
+{
+  Point2D newPoint=view.viewToWorld(new Point2D(event.getX(),event.getY()));
+  if (!event.isAltDown() && !event.isControlDown()) {
+    newPoint=view.getConstrainer().constrainPoint(getOwner(),newPoint);
+  }
+  if (event.isMetaDown()) {
+    Point2D loc=getLocation(view);
+    oldPoint=getOwner().localToWorld(loc);
+  }
+  DrawingModel model=view.getModel();
+  for (  Figure f : view.getSelectedFigures()) {
+    Point2D npl=f.worldToParent(newPoint);
+    Point2D opl=f.worldToParent(oldPoint);
+    Transform tt=((TransformableFigure)f).getInverseTransform();
+    npl=tt.transform(npl);
+    opl=tt.transform(opl);
+    Transform tx=Transform.translate(npl.getX() - opl.getX(),npl.getY() - opl.getY());
+    model.reshape(f,tx);
+  }
+  oldPoint=newPoint;
+}

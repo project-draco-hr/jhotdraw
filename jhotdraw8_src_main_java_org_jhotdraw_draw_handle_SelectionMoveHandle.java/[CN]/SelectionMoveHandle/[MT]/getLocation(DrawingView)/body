@@ -1,0 +1,14 @@
+{
+  Bounds b=null;
+  for (  Figure f : dv.getSelectedFigures()) {
+    Transform l2w=f.getLocalToWorld();
+    Bounds fb=l2w.transform(f.getBoundsInLocal());
+    if (b == null) {
+      b=fb;
+    }
+ else {
+      b=Geom.add(b,fb);
+    }
+  }
+  return b == null ? null : dv.drawingToView(new Point2D(b.getMinX() + relativeX * b.getWidth(),b.getMinY() + relativeY * b.getHeight()));
+}

@@ -1,12 +1,26 @@
 {
-  HandleType handleType=getSelectedFigures().size() > 1 ? getMultiHandleType() : getHandleType();
-  for (  Figure figure : getSelectedFigures()) {
+  if (getSelectedFigures().size() > 1) {
+    Figure figure=getSelectedFigures().iterator().next();
     List<Handle> list=handles.get(figure);
     if (list == null) {
       list=new ArrayList<>();
       handles.put(figure,list);
     }
-    figure.createHandles(handleType,this,list);
-    handles.put(figure,list);
+    list.add(SelectionMoveHandle.northEast());
+    list.add(SelectionMoveHandle.northWest());
+    list.add(SelectionMoveHandle.southEast());
+    list.add(SelectionMoveHandle.southWest());
+  }
+ else {
+    HandleType handleType=getSelectedFigures().size() > 1 ? getMultiHandleType() : getHandleType();
+    for (    Figure figure : getSelectedFigures()) {
+      List<Handle> list=handles.get(figure);
+      if (list == null) {
+        list=new ArrayList<>();
+        handles.put(figure,list);
+      }
+      figure.createHandles(handleType,this,list);
+      handles.put(figure,list);
+    }
   }
 }
