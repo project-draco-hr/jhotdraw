@@ -1,8 +1,0 @@
-{
-  super(worker,worker instanceof EventTarget ? (EventTarget)worker : null,eventType);
-  if (eventType == ANY) {
-    throw new IllegalArgumentException("eventType==ANY");
-  }
-  this.value=value;
-  this.exception=exception;
-}

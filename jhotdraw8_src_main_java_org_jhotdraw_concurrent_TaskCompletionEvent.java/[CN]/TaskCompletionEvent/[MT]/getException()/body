@@ -1,6 +1,0 @@
-{
-  if (getState() != Worker.State.FAILED) {
-    throw new IllegalStateException();
-  }
-  return exception;
-}

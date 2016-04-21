@@ -1,4 +1,0 @@
-{
-  in.defaultReadObject();
-  this.resource=ResourceBundle.getBundle(baseName,locale);
-}

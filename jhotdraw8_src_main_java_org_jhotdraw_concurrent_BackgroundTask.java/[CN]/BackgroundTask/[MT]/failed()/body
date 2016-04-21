@@ -1,5 +1,0 @@
-{
-  failed(getException());
-  finished();
-  fireEvent(new TaskCompletionEvent<V>(this,TaskCompletionEvent.FAILED,null,getException()));
-}

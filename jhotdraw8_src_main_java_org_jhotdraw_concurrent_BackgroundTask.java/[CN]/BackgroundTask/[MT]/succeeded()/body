@@ -1,5 +1,0 @@
-{
-  succeeded(getValue());
-  finished();
-  fireEvent(new TaskCompletionEvent<V>(this,TaskCompletionEvent.SUCCEEDED,getValue(),null));
-}

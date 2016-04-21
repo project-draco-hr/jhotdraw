@@ -1,4 +1,0 @@
-{
-  construct();
-  return null;
-}

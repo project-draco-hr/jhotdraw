@@ -1,5 +1,16 @@
 {
-  Object obj=resource.getObject(key);
+  Object obj=null;
+  try {
+    obj=resource.getObject(key);
+  }
+ catch (  MissingResourceException e) {
+    if (parent != null) {
+      return parent.getObject(key);
+    }
+ else {
+      throw e;
+    }
+  }
   if (obj instanceof String) {
     obj=getStringRecursive(key);
   }

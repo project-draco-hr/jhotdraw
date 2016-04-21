@@ -1,4 +1,0 @@
-Worker<V> worker
-EventType<? extends Event> eventType
-V value
-Throwable exception

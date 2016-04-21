@@ -1,3 +1,0 @@
-{
-  addEventHandler(TaskCompletionEvent.ANY,handler);
-}

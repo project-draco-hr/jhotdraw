@@ -1,4 +1,0 @@
-{
-  @SuppressWarnings("unchecked") Worker<V> s=(Worker<V>)super.getSource();
-  return s;
-}

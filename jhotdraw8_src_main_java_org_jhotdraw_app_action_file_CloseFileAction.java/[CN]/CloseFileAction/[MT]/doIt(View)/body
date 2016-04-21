@@ -1,0 +1,6 @@
+{
+  if (view != null) {
+    app.remove(view);
+  }
+  return CompletableFuture.completedFuture(null);
+}

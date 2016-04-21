@@ -1,6 +1,23 @@
 {
   try {
-    String value=resource.getString(key);
+    String value;
+    try {
+      value=resource.getString(key);
+    }
+ catch (    MissingResourceException e) {
+      if (parent != null) {
+        value=parent.getStringRecursive(key);
+      }
+ else {
+        value=null;
+      }
+      if (value == null) {
+        if (isVerbose) {
+          System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ "\" not found.");
+        }
+        return null;
+      }
+    }
     for (int p1=value.indexOf("${"); p1 != -1; p1=value.indexOf("${")) {
       int p2=value.indexOf('}',p1 + 2);
       if (p2 == -1) {

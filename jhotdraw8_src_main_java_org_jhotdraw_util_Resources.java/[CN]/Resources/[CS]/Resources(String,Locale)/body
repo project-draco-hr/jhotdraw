@@ -2,4 +2,14 @@
   this.locale=locale;
   this.baseName=baseName;
   this.resource=ResourceBundle.getBundle(baseName,locale);
+  Resources potentialParent=null;
+  try {
+    String parentBaseName=this.resource.getString("parent");
+    if (parentBaseName != null && !Objects.equals(baseName,parentBaseName)) {
+      potentialParent=new Resources(parentBaseName,locale);
+    }
+  }
+ catch (  MissingResourceException e) {
+  }
+  this.parent=potentialParent;
 }

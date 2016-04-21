@@ -1,0 +1,4 @@
+{
+  textArea.setText(null);
+  return CompletableFuture.completedFuture(null);
+}

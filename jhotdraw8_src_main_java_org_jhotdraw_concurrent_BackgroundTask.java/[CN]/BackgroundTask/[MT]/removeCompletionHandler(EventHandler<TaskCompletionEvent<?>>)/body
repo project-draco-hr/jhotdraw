@@ -1,3 +1,0 @@
-{
-  removeEventHandler(TaskCompletionEvent.ANY,handler);
-}
