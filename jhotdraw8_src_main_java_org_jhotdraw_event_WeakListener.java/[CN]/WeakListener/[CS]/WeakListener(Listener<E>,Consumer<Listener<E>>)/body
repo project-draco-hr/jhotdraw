@@ -1,0 +1,7 @@
+{
+  if (listener == null) {
+    throw new NullPointerException("Listener must be specified.");
+  }
+  this.ref=new WeakReference<Listener<E>>(listener);
+  this.removeListener=removeListener;
+}

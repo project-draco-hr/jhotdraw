@@ -1,4 +1,6 @@
 {
-  handleFigureAdded0(f);
+  for (  Figure f : figure.preorderIterable()) {
+    invalidateFigureNode(f);
+  }
   repaint();
 }

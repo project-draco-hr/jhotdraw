@@ -1,0 +1,16 @@
+{
+  double newX=max(bounds.getMinX(),newPoint.getX());
+  double newY=min(bounds.getMaxY(),newPoint.getY());
+  double newWidth=newX - bounds.getMinX();
+  double newHeight=bounds.getMaxY() - newY;
+  if (keepAspect) {
+    double newRatio=newHeight / newWidth;
+    if (newRatio > preferredAspectRatio) {
+      newHeight=newWidth * preferredAspectRatio;
+    }
+ else {
+      newWidth=newHeight / preferredAspectRatio;
+    }
+  }
+  transform(model,owner,bounds.getMinX(),bounds.getMaxY() - newHeight,newWidth,newHeight);
+}

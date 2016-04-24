@@ -1,5 +1,0 @@
-{
-  Layer layer=new SimpleLayer();
-  layer.set(StyleableFigure.STYLE_ID,"layer" + (++counter));
-  return layer;
-}

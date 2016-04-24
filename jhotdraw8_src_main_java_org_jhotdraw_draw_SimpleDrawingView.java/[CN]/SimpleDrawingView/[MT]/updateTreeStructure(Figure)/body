@@ -5,5 +5,5 @@
       removeNode(f);
     }
   }
-  updateTreeNodes(parent);
+  handleSubtreeNodesInvalidated(parent);
 }

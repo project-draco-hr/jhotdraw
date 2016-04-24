@@ -1,0 +1,10 @@
+{
+  super.unbind();
+  if (model != null) {
+    model.removeDrawingModelListener(weakListener);
+    modelListener=null;
+    model=null;
+    key=null;
+    weakListener=null;
+  }
+}

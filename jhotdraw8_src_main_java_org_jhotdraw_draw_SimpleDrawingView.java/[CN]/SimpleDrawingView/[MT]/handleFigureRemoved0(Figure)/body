@@ -1,8 +1,0 @@
-{
-  for (  Figure child : f.getChildren()) {
-    handleFigureRemoved0(child);
-  }
-  removeNode(f);
-  selectedFigures.remove(f);
-  invalidateHandles();
-}

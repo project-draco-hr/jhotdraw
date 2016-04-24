@@ -1,0 +1,6 @@
+{
+  for (  Figure f : figures.preorderIterable()) {
+    dirtyFigureNodes.put(f,null);
+    dirtyHandles.put(f,null);
+  }
+}

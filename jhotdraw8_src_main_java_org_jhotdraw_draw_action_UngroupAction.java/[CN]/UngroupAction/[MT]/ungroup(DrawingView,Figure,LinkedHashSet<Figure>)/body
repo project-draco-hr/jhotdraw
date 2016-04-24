@@ -1,0 +1,25 @@
+{
+  Figure parent=group.getParent();
+  if (parent != null && (!parent.isEditable() || !parent.isDecomposable())) {
+    new Alert(Alert.AlertType.INFORMATION,"Only groups in editable and decomposable parents can be ungrouped").showAndWait();
+    return;
+  }
+  DrawingModel model=view.getModel();
+  Transform groupTransform=group.getLocalToParent();
+  if (groupTransform.isIdentity()) {
+    groupTransform=null;
+  }
+  int index=parent.getChildren().indexOf(group);
+  newSelection.addAll(group.getChildren());
+  for (  Figure child : new ArrayList<Figure>(group.getChildren())) {
+    model.insertChildAt(child,parent,index++);
+    if (groupTransform != null) {
+      List<Transform> transforms=child.get(TransformableFigure.TRANSFORM);
+      ArrayList<Transform> newTransforms=new ArrayList<>();
+      newTransforms.add(groupTransform);
+      if (transforms != null)       newTransforms.addAll(transforms);
+      child.set(TransformableFigure.TRANSFORM,newTransforms);
+    }
+  }
+  model.removeFromParent(group);
+}

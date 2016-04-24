@@ -1,7 +1,0 @@
-{
-  dirtyFigureNodes.put(parent,null);
-  dirtyHandles.put(parent,null);
-  for (  Figure child : parent.getChildren()) {
-    updateTreeNodes(child);
-  }
-}

@@ -1,0 +1,7 @@
+{
+  if (value != null && !key.isAssignable(value)) {
+    throw new IllegalArgumentException("value is not assignable " + value);
+  }
+  model.set(figure,key,value);
+  super.setValue(value);
+}

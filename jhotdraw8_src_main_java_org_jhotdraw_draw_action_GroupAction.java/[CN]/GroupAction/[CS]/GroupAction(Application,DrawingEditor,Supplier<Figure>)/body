@@ -1,0 +1,9 @@
+{
+  super(app,editor);
+  Resources labels=Resources.getResources("org.jhotdraw.draw.Labels");
+  labels.configureAction(this,ID);
+  this.groupFactory=groupFactory;
+  if (groupFactory == null) {
+    addDisabler("groupFactory==null");
+  }
+}

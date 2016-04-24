@@ -1,0 +1,2 @@
+Listener<E> listener
+Consumer<Listener<E>> removeListener

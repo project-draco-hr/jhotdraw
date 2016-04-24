@@ -4,6 +4,6 @@
   }
   super.startEdit();
   updateItem(getItem(),false);
-  textField.selectAll();
-  textField.requestFocus();
+  editField.selectAll();
+  editField.requestFocus();
 }

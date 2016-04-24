@@ -1,5 +1,8 @@
 {
+  figure.getProperties().addListener(figurePropertyChangeHandler);
+  figurePropertyChangeHandler.setFigure(figure);
   figure.reshape(transform);
+  figure.getProperties().removeListener(figurePropertyChangeHandler);
   fire(DrawingModelEvent.transformChanged(this,figure));
   fire(DrawingModelEvent.subtreeNodesInvalidated(this,figure));
   fire(DrawingModelEvent.layoutInvalidated(this,figure));

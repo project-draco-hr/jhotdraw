@@ -1,3 +1,0 @@
-{
-  return new DrawingModelEvent(source,EventType.SUBTREE_STRUCTURE_CHANGED,subtreeRoot,null,null,-1,null,null,null);
-}

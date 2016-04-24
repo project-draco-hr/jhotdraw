@@ -1,0 +1,35 @@
+{
+  if (figures.isEmpty()) {
+    new Alert(Alert.AlertType.INFORMATION,"Empty selection can not be grouped").showAndWait();
+    return;
+  }
+  Figure first=figures.iterator().next();
+  Drawing drawing=view.getDrawing();
+  for (  Figure child : figures) {
+    if (child instanceof Layer) {
+      new Alert(Alert.AlertType.INFORMATION,"Layers can not be grouped").showAndWait();
+      return;
+    }
+    if (child.getDrawing() != drawing) {
+      new Alert(Alert.AlertType.INFORMATION," Only figures in primary drawing can be grouped").showAndWait();
+      return;
+    }
+    Figure parent=child.getParent();
+    if (parent != null && (!parent.isEditable() || !parent.isDecomposable())) {
+      new Alert(Alert.AlertType.INFORMATION,"Only figures in editable and decomposable parents can be grouped").showAndWait();
+      return;
+    }
+  }
+  Figure parent=first.getParent();
+  DrawingModel model=view.getModel();
+  Figure group=groupFactory.get();
+  model.addChildTo(group,parent);
+  for (  Figure child : drawing.preorderList()) {
+    if (!figures.contains(child)) {
+      continue;
+    }
+    model.addChildTo(child,group);
+  }
+  view.getSelectedFigures().clear();
+  view.getSelectedFigures().add(group);
+}

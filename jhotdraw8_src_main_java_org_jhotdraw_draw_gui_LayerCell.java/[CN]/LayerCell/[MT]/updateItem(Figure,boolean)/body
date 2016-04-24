@@ -9,21 +9,21 @@
     isUpdating=true;
     this.item=item;
     if (isEditing()) {
-      if (textField == null) {
-        textField=createTextField();
+      if (editField == null) {
+        editField=createTextField();
       }
-      if (textField != null) {
-        textField.setText(getItemText());
+      if (editField != null) {
+        editField.setText(getItemText());
       }
       setText(null);
-      if (textField.getParent() == null) {
-        node.getChildren().add(textField);
+      if (editField.getParent() == null) {
+        node.getChildren().add(editField);
       }
     }
  else {
       setText(getItemText());
-      if (textField != null && textField.getParent() != null) {
-        node.getChildren().remove(textField);
+      if (editField != null && editField.getParent() != null) {
+        node.getChildren().remove(editField);
       }
     }
     setGraphic(node);

@@ -1,3 +1,0 @@
-{
-  this(relativeX,relativeY,STYLECLASS_HANDLE_MOVE);
-}

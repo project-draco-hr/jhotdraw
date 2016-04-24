@@ -1,0 +1,7 @@
+{
+  for (  Figure f : figure.preorderIterable()) {
+    selectedFigures.remove(f);
+  }
+  invalidateHandles();
+  repaint();
+}

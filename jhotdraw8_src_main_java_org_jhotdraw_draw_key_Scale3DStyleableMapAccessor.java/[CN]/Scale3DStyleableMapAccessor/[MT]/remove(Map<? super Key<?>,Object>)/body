@@ -1,0 +1,7 @@
+{
+  Point3D oldValue=get(a);
+  xKey.remove(a);
+  yKey.remove(a);
+  zKey.remove(a);
+  return oldValue;
+}

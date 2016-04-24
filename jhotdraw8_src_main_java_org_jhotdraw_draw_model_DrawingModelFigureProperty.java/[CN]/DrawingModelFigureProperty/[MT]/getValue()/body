@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") T temp=figure.get(key);
+  return temp;
+}

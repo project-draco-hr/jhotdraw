@@ -1,0 +1,11 @@
+{
+  TreeItem<Figure> item=new TreeItem<>(f);
+  item.setExpanded(true);
+  items.put(f,item);
+  int childIndex=0;
+  for (  Figure child : f.getChildren()) {
+    handleSubtreeAddedToDrawing(child,f,childIndex);
+    handleFigureAdded(child,f,childIndex);
+    childIndex++;
+  }
+}

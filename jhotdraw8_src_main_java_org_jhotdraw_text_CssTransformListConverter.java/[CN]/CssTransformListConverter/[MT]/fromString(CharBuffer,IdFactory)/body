@@ -53,6 +53,7 @@ default :
 }
 break;
 }
+case "skew":
 case "shear":
 {
 switch (m.size()) {
@@ -94,7 +95,7 @@ case 2:
 txs.add(Transform.scale(m.get(0),m.get(1)));
 break;
 case 3:
-txs.add(new Scale(m.get(0),m.get(1),m.get(2)));
+txs.add(new Scale(m.get(0),m.get(0),m.get(1),m.get(2)));
 break;
 case 4:
 txs.add(Transform.scale(m.get(0),m.get(1),m.get(2),m.get(3)));

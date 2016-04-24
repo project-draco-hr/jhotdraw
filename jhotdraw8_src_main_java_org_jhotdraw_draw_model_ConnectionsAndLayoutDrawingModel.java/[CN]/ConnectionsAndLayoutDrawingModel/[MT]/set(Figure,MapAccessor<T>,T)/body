@@ -1,6 +1,9 @@
 {
   Set<Figure> connectionChange=null;
+  figure.getProperties().addListener(figurePropertyChangeHandler);
+  figurePropertyChangeHandler.setFigure(figure);
   T oldValue=figure.set(key,newValue);
+  figure.getProperties().removeListener(figurePropertyChangeHandler);
   if (!Objects.equals(oldValue,newValue)) {
     final DirtyMask dm;
     if (key instanceof FigureMapAccessor) {

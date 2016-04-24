@@ -1,0 +1,10 @@
+{
+  Transform t=o.getWorldToParent();
+  if (o instanceof TransformableFigure) {
+    Transform translate=Transform.translate(-o.getStyled(TransformableFigure.TRANSLATE_X),-o.getStyled(TransformableFigure.TRANSLATE_Y));
+    Transform scale=Transform.scale(1.0 / o.getStyled(TransformableFigure.SCALE_X),1.0 / o.getStyled(TransformableFigure.SCALE_Y),center.getX(),center.getY());
+    Transform rotate=Transform.rotate(-o.getStyled(TransformableFigure.ROTATE),center.getX(),center.getY());
+    t=t.createConcatenation(translate);
+  }
+  return t;
+}

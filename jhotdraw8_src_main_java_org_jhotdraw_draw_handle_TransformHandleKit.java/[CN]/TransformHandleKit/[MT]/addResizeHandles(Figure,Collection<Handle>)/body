@@ -1,0 +1,4 @@
+{
+  addCornerTransformHandles(f,handles);
+  addEdgeTransformHandles(f,handles);
+}

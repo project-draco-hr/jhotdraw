@@ -1,7 +1,4 @@
 {
   super.cancelEdit();
-  setText(getItemText());
-  if (textField != null) {
-    node.getChildren().remove(textField);
-  }
+  updateItem(getItem(),false);
 }

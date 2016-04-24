@@ -1,0 +1,12 @@
+{
+  Point2D newPoint=view.viewToWorld(new Point2D(event.getX(),event.getY()));
+  if (!event.isAltDown() && !event.isControlDown()) {
+    newPoint=view.getConstrainer().constrainPoint(getOwner(),newPoint);
+  }
+  if (event.isMetaDown()) {
+    Point2D loc=getLocation();
+    oldPoint=getOwner().localToWorld(loc);
+  }
+  boolean keepAspect=event.isShiftDown();
+  resize(getOwner().worldToLocal(newPoint),getOwner(),startBounds,view.getModel(),keepAspect);
+}

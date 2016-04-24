@@ -1,10 +1,15 @@
 {
   Figure o=getOwner();
-  Transform t=view.getWorldToView().createConcatenation(o.getLocalToWorld());
+  Transform t=view.getWorldToView().createConcatenation(getRotateToWorld(o));
   Bounds b=o.getBoundsInLocal();
   Point2D p=getLocation(view);
   pickLocation=p=t.transform(p);
   node.relocate(p.getX() - 5,p.getY() - 5);
   node.setRotate(o.getStyled(ROTATE));
   node.setRotationAxis(o.getStyled(ROTATION_AXIS));
+  Point2D centerInViewCoordinates=t.transform(Geom.center(b));
+  line.setStartX(centerInViewCoordinates.getX());
+  line.setStartY(centerInViewCoordinates.getY());
+  line.setEndX(pickLocation.getX());
+  line.setEndY(pickLocation.getY());
 }

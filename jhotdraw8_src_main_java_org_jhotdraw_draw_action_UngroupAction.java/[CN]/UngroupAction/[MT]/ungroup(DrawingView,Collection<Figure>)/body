@@ -1,0 +1,27 @@
+{
+  if (figures.isEmpty()) {
+    new Alert(Alert.AlertType.INFORMATION,"Empty selection can not be ungrouped").showAndWait();
+    return;
+  }
+  for (  Figure f : figures) {
+    if (f instanceof Layer) {
+      new Alert(Alert.AlertType.INFORMATION,"Layers can not be ungrouped").showAndWait();
+      return;
+    }
+    if (f != null && (!f.isEditable() || !f.isDecomposable())) {
+      new Alert(Alert.AlertType.INFORMATION,"Only editable and decomposable figures can be ungrouped").showAndWait();
+      return;
+    }
+    Figure parent=f.getParent();
+    if (parent == null || !parent.isEditable() || !parent.isDecomposable()) {
+      new Alert(Alert.AlertType.INFORMATION,"Only groups in editable and decomposable parents can be ungrouped").showAndWait();
+      return;
+    }
+  }
+  LinkedHashSet<Figure> newSelection=new LinkedHashSet<>();
+  for (  Figure f : figures) {
+    ungroup(view,f,newSelection);
+  }
+  view.getSelectedFigures().clear();
+  view.getSelectedFigures().addAll(newSelection);
+}

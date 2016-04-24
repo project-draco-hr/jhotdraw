@@ -1,5 +1,5 @@
 {
-  for (  Figure child : getChildren()) {
-    child.reshape(transform);
-  }
+  Bounds b=getBoundsInLocal();
+  b=transform.transform(b);
+  reshape(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
 }

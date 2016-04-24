@@ -1,0 +1,13 @@
+{
+  if (value.getZ() == 1.0) {
+    if (value.getX() == value.getY()) {
+      formatter.toStr(out,idFactory,1,value.getX());
+    }
+ else {
+      formatter.toStr(out,idFactory,2,value.getX(),value.getY());
+    }
+  }
+ else {
+    formatter.toStr(out,idFactory,3,value.getX(),value.getY(),value.getZ());
+  }
+}

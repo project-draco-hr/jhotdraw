@@ -1,4 +1,7 @@
 {
-  handleFigureRemoved0(f);
+  for (  Figure f : figure.preorderIterable()) {
+    removeNode(f);
+  }
+  invalidateHandles();
   repaint();
 }

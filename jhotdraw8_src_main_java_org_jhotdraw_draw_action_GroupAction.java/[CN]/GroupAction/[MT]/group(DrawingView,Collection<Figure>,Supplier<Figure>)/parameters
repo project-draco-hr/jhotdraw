@@ -1,0 +1,3 @@
+DrawingView view
+Collection<Figure> figures
+Supplier<Figure> groupFactory

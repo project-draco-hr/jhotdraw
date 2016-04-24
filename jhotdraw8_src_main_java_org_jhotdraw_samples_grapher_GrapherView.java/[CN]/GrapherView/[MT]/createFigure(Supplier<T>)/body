@@ -1,0 +1,18 @@
+{
+  T created=supplier.get();
+  String prefix=created.getTypeSelector().toLowerCase();
+  Integer counter=counters.get(prefix);
+  Set<String> ids=new HashSet<>();
+  counter=counter == null ? 1 : counter + 1;
+  for (  Figure f : drawingView.getDrawing().preorderIterable()) {
+    ids.add(f.getId());
+  }
+  String id=prefix + counter;
+  while (ids.contains(id)) {
+    counter++;
+    id=prefix + counter;
+  }
+  counters.put(created.getTypeSelector(),counter);
+  created.set(StyleableFigure.STYLE_ID,id);
+  return created;
+}

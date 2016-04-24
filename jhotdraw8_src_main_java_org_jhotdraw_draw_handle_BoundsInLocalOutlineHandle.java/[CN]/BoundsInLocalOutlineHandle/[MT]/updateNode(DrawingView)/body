@@ -11,7 +11,9 @@
   points[5]=b.getMaxY();
   points[6]=b.getMinX();
   points[7]=b.getMaxY();
-  t.transform2DPoints(points,0,points,0,4);
+  if (t.isType2D()) {
+    t.transform2DPoints(points,0,points,0,4);
+  }
   ObservableList<Double> pp=node.getPoints();
   for (int i=0; i < points.length; i++) {
     pp.set(i,points[i]);

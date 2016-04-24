@@ -1,0 +1,4 @@
+{
+  TreeItem<Figure> node=items.get(f);
+  node.setValue(f);
+}

@@ -1,0 +1,9 @@
+{
+  Listener<E> listener=ref.get();
+  if (listener != null) {
+    listener.handle(event);
+  }
+ else {
+    removeListener.accept(this);
+  }
+}

@@ -1,3 +1,0 @@
-{
-  return new SelectionMoveHandle(0.0,1.0);
-}
