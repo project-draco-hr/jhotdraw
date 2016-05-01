@@ -1,3 +1,0 @@
-{
-  this(FigureHierarchyInspector.class.getResource("FigureHierarchyInspector.fxml"),Resources.getBundle("org.jhotdraw.draw.gui.Labels"));
-}

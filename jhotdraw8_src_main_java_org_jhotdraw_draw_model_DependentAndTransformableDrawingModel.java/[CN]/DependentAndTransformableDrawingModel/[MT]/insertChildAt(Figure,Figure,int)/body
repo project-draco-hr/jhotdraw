@@ -1,0 +1,22 @@
+{
+  Drawing oldDrawing=child.getDrawing();
+  Figure oldParent=child.getParent();
+  if (oldParent != null) {
+    int oldChildIndex=oldParent.getChildren().indexOf(child);
+    oldParent.remove(child);
+    fire(DrawingModelEvent.figureRemovedFromParent((DrawingModel)this,child,oldParent,oldChildIndex));
+    fire(DrawingModelEvent.nodeInvalidated((DrawingModel)this,oldParent));
+  }
+  parent.getChildren().add(index,child);
+  Drawing newDrawing=child.getDrawing();
+  if (oldDrawing != newDrawing) {
+    if (oldDrawing != null) {
+      fire(DrawingModelEvent.figureRemovedFromDrawing((DrawingModel)this,oldDrawing,child));
+    }
+    if (newDrawing != null) {
+      fire(DrawingModelEvent.figureAddedToDrawing((DrawingModel)this,newDrawing,child));
+    }
+  }
+  fire(DrawingModelEvent.figureAddedToParent((DrawingModel)this,child,parent,index));
+  fire(DrawingModelEvent.nodeInvalidated((DrawingModel)this,parent));
+}

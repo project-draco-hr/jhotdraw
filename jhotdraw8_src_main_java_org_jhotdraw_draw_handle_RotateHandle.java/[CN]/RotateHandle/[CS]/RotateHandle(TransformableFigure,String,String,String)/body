@@ -1,0 +1,29 @@
+{
+  super(figure);
+  group=new Group();
+  pickNode=new Region();
+  pickNode.setShape(PICK_NODE_SHAPE);
+  pickNode.setManaged(false);
+  pickNode.setScaleShape(false);
+  pickNode.setCenterShape(true);
+  pickNode.resize(11,11);
+  pickNode.getStyleClass().clear();
+  pickNode.getStyleClass().add(handleStyleclass);
+  pickNode.setBorder(REGION_BORDER);
+  pickNode.setBackground(REGION_BACKGROUND);
+  pivotNode=new Region();
+  pivotNode.setShape(PIVOT_NODE_SHAPE);
+  pivotNode.setManaged(false);
+  pivotNode.setScaleShape(false);
+  pivotNode.setCenterShape(true);
+  pivotNode.resize(11,11);
+  pivotNode.getStyleClass().clear();
+  pivotNode.getStyleClass().add(pivotStyleclass);
+  pivotNode.setBorder(REGION_BORDER);
+  pivotNode.setBackground(REGION_BACKGROUND);
+  pivotNode.setVisible(false);
+  line=new Line();
+  line.getStyleClass().clear();
+  line.getStyleClass().add(lineStyleclass);
+  group.getChildren().addAll(line,pickNode,pivotNode);
+}

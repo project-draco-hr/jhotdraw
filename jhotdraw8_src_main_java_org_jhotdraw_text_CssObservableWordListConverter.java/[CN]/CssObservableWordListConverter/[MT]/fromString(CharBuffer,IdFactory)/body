@@ -1,8 +1,10 @@
 {
   Object[] v=formatter.fromString(buf);
-  ObservableList<String> l=FXCollections.observableArrayList();
+  Set<String> tokens=new TreeSet<>(NFD_COMPARATOR);
   for (int i=0, n=(int)v[0]; i < n; i++) {
-    l.add((String)v[i + 1]);
+    tokens.add((String)v[i + 1]);
   }
+  ObservableList<String> l=FXCollections.observableArrayList();
+  l.addAll(tokens);
   return l;
 }

@@ -2,6 +2,9 @@
   for (  StyleRule r : s.getRulesets()) {
     if (r.getSelectorGroup().matches(selectorModel,elem)) {
       for (      Declaration d : r.getDeclarations()) {
+        if (d.getTerms().isEmpty()) {
+          continue;
+        }
         @SuppressWarnings("unchecked") StyleableMapAccessor<Object> k=(StyleableMapAccessor<Object>)metaMap.get(d.getProperty());
         if (k != null) {
           if (!convertedValues.containsKey(d)) {

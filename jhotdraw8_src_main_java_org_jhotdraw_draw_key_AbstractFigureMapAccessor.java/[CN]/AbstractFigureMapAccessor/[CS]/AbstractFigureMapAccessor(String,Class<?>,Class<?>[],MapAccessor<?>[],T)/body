@@ -13,11 +13,4 @@
   this.typeParameters=typeParameters == null ? Collections.emptyList() : Collections.unmodifiableList(Arrays.asList(typeParameters.clone()));
   this.defaultValue=defaultValue;
   this.subAccessors=Collections.unmodifiableSet(new LinkedHashSet<>(Arrays.asList(subAccessors)));
-  DirtyMask m=DirtyMask.EMPTY;
-  for (  MapAccessor<?> sub : subAccessors) {
-    if (sub instanceof FigureMapAccessor<?>) {
-      m=m.add(((FigureMapAccessor<?>)sub).getDirtyMask());
-    }
-  }
-  dirtyMask=m;
 }

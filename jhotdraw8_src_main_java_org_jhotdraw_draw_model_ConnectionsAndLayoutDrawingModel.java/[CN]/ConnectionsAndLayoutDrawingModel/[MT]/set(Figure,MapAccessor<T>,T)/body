@@ -6,38 +6,36 @@
   figure.getProperties().removeListener(figurePropertyChangeHandler);
   if (!Objects.equals(oldValue,newValue)) {
     final DirtyMask dm;
-    if (key instanceof FigureMapAccessor) {
-      FigureMapAccessor<T> fk=(FigureMapAccessor<T>)key;
+    if (key instanceof FigureKey) {
+      FigureKey<T> fk=(FigureKey<T>)key;
       dm=fk.getDirtyMask();
     }
  else {
       dm=DirtyMask.EMPTY;
     }
-    if (dm.containsOneOf(DirtyBits.CONNECTION)) {
+    if (dm.containsOneOf(DirtyBits.DEPENDENCY)) {
       connectionChange=figure.getProvidingFigures();
     }
     if (dm.containsOneOf(DirtyBits.NODE)) {
-      fire(DrawingModelEvent.nodeInvalidated(this,figure));
+      fire(DrawingModelEvent.nodeInvalidated((DrawingModel)this,figure));
     }
     if (dm.containsOneOf(DirtyBits.LAYOUT)) {
-      fire(DrawingModelEvent.layoutInvalidated(this,figure));
-    }
-    if (dm.containsOneOf(DirtyBits.CONNECTION_LAYOUT)) {
+      fire(DrawingModelEvent.layoutChanged((DrawingModel)this,figure));
       fireLayoutInvalidatedConnectedFigures(figure);
     }
     if (dm.containsOneOf(DirtyBits.TRANSFORM)) {
-      fire(DrawingModelEvent.transformChanged(this,figure));
+      fire(DrawingModelEvent.transformChanged((DrawingModel)this,figure));
     }
     if (dm.containsOneOf(DirtyBits.STYLE)) {
-      fire(DrawingModelEvent.styleInvalidated(this,figure));
+      fire(DrawingModelEvent.styleInvalidated((DrawingModel)this,figure));
     }
-    if (dm.containsOneOf(DirtyBits.CONNECTION)) {
-      fire(DrawingModelEvent.connectionChanged(this,figure));
+    if (dm.containsOneOf(DirtyBits.DEPENDENCY)) {
+      fire(DrawingModelEvent.dependencyChanged((DrawingModel)this,figure));
       Set<Figure> connectionsAfter=figure.getProvidingFigures();
       connectionChange.addAll(connectionsAfter);
       for (      Figure f : connectionChange) {
-        fire(DrawingModelEvent.connectionChanged(this,f));
-        fire(DrawingModelEvent.nodeInvalidated(this,f));
+        fire(DrawingModelEvent.dependencyChanged((DrawingModel)this,f));
+        fire(DrawingModelEvent.nodeInvalidated((DrawingModel)this,f));
       }
     }
   }

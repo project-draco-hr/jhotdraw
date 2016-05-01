@@ -1,0 +1,6 @@
+{
+  if (propertyChangeListeners == null) {
+    propertyChangeListeners=new CopyOnWriteArrayList<>();
+  }
+  return propertyChangeListeners;
+}

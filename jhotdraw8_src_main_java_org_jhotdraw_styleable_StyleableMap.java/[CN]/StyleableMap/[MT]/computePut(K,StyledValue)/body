@@ -1,0 +1,3 @@
+{
+  return oldValue != null ? oldValue : new StyledValue();
+}

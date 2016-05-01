@@ -1,5 +1,5 @@
 {
-  if (changeListenerSupport != null) {
-    changeListenerSupport.remove(observer);
+  if (changeListenerList != null) {
+    changeListenerList.remove(observer);
   }
 }

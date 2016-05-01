@@ -1,0 +1,21 @@
+{
+  if (event.getType() == FigurePropertyChangeEvent.EventType.WILL_CHANGE) {
+    Key<?> k=event.getKey();
+    if (k instanceof FigureKey && ((FigureKey<?>)k).getDirtyMask().containsOneOf(DirtyBits.DEPENDENCY)) {
+      dependencyChange.clear();
+      dependencyChange.addAll(event.getSource().getProvidingFigures());
+    }
+  }
+  if (event.getType() == FigurePropertyChangeEvent.EventType.CHANGED) {
+    fire(DrawingModelEvent.propertyValueChanged(this,event.getSource(),(Key<Object>)event.getKey(),event.getOldValue(),event.getNewValue()));
+    Key<?> k=event.getKey();
+    if (k instanceof FigureKey && ((FigureKey<?>)k).getDirtyMask().containsOneOf(DirtyBits.DEPENDENCY)) {
+      fire(DrawingModelEvent.dependencyChanged(this,event.getSource()));
+      dependencyChange.addAll(event.getSource().getProvidingFigures());
+      for (      Figure f : new ArrayList<>(dependencyChange)) {
+        fire(DrawingModelEvent.dependencyChanged((DrawingModel)this,f));
+      }
+      dependencyChange.clear();
+    }
+  }
+}

@@ -12,13 +12,13 @@
   }
   skipWhitespace(tt);
   if (tt.nextToken() != '{') {
-    throw new ParseException("QualifiedRule: '{' expected.",tt.getLineNumber());
+    throw new ParseException("StyleRule: '{' expected.",tt.getLineNumber());
   }
   List<Declaration> declarations=parseDeclarationList(tt);
   tt.nextToken();
   skipWhitespace(tt);
   if (tt.currentToken() != '}') {
-    throw new ParseException("QualifiedRule: '}' expected.",tt.getLineNumber());
+    throw new ParseException("StyleRule: '}' expected.",tt.getLineNumber());
   }
   return new StyleRule(selectorGroup,declarations);
 }

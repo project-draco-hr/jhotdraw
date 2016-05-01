@@ -1,3 +1,0 @@
-{
-  return new DrawingModelEvent(source,EventType.CONNECTION_CHANGED,figure,null,null,-1,null,null,null);
-}

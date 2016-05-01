@@ -1,0 +1,4 @@
+TransformableFigure figure
+String handleStyleclass
+String lineStyleclass
+String pivotStyleclass

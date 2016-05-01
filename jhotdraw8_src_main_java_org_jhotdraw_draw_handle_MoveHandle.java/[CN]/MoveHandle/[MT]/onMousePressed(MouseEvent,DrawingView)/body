@@ -1,5 +1,12 @@
 {
-  oldPoint=view.getConstrainer().constrainPoint(getOwner(),view.viewToWorld(new Point2D(event.getX(),event.getY())));
+  oldPoint=view.getConstrainer().constrainPoint(owner,view.viewToWorld(new Point2D(event.getX(),event.getY())));
+  if (owner instanceof TransformableFigure) {
+    worldToLocal=((TransformableFigure)owner).getInverseTransform().createConcatenation(owner.getWorldToParent());
+  }
+ else {
+    worldToLocal=owner.getWorldToParent();
+  }
+  localToWorld=owner.getLocalToWorld();
   Set<Figure> selectedFigures=view.getSelectedFigures();
   groupReshapeableFigures=new HashSet<>();
   for (  Figure f : view.getSelectedFigures()) {

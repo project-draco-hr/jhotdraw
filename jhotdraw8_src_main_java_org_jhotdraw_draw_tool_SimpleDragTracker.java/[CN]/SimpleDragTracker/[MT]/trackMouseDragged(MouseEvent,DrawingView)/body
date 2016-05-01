@@ -8,6 +8,9 @@
     Point2D loc=new Point2D(bounds.getMinX(),bounds.getMinY());
     oldPoint=anchorFigure.localToWorld(loc);
   }
+  if (newPoint.equals(oldPoint)) {
+    return;
+  }
   DrawingModel dm=view.getModel();
   if (event.isShiftDown()) {
     Figure f=anchorFigure;

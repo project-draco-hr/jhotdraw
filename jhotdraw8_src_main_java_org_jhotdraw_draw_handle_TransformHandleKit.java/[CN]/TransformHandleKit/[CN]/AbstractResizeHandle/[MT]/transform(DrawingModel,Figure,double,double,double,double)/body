@@ -2,23 +2,19 @@
   if (width == 0 || height == 0) {
     return;
   }
-  Bounds oldBounds=owner.getBoundsInLocal();
-  Point2D oldCenter=Geom.center(oldBounds);
-  double sx=width / oldBounds.getWidth();
-  double sy=height / oldBounds.getHeight();
+  double sx=width / startBounds.getWidth();
+  double sy=height / startBounds.getHeight();
   if (Double.isNaN(sx) || Double.isNaN(sy)) {
     return;
   }
-  double tx=x - oldBounds.getMinX();
-  double ty=y - oldBounds.getMinY();
-  double oldTx=owner.get(TransformableFigure.TRANSLATE_X);
-  double oldTy=owner.get(TransformableFigure.TRANSLATE_Y);
-  double oldSx=owner.get(TransformableFigure.SCALE_X);
-  double oldSy=owner.get(TransformableFigure.SCALE_Y);
-  double newTx=oldTx + tx - x + sx * x;
-  double newTy=oldTy + ty - y + sy * y;
-  double newSx=oldSx * sx;
-  double newSy=oldSy * sy;
+  double tx=x - startBounds.getMinX();
+  double ty=y - startBounds.getMinY();
+  double newTx=startTranslateX + tx - x + sx * x;
+  double newTy=startTranslateY + ty - y + sy * y;
+  double newSx=startScaleX * sx;
+  double newSy=startScaleY * sy;
+  model.set(owner,TransformableFigure.TRANSLATE_X,newTx);
+  model.set(owner,TransformableFigure.TRANSLATE_Y,newTy);
   model.set(owner,TransformableFigure.SCALE_X,newSx);
   model.set(owner,TransformableFigure.SCALE_Y,newSy);
 }

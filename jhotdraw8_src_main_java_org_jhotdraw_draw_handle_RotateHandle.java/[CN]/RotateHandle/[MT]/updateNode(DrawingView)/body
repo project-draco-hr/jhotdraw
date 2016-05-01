@@ -1,15 +1,23 @@
 {
-  Figure o=getOwner();
-  Transform t=view.getWorldToView().createConcatenation(getRotateToWorld(o));
+  TransformableFigure o=getOwner();
+  Transform t=view.getWorldToView().createConcatenation(getRotateToWorld());
   Bounds b=o.getBoundsInLocal();
-  Point2D p=getLocation(view);
-  pickLocation=p=t.transform(p);
-  node.relocate(p.getX() - 5,p.getY() - 5);
-  node.setRotate(o.getStyled(ROTATE));
-  node.setRotationAxis(o.getStyled(ROTATION_AXIS));
-  Point2D centerInViewCoordinates=t.transform(Geom.center(b));
-  line.setStartX(centerInViewCoordinates.getX());
-  line.setStartY(centerInViewCoordinates.getY());
-  line.setEndX(pickLocation.getX());
-  line.setEndY(pickLocation.getY());
+  Point2D centerInLocal=Geom.center(b);
+  double scaleY=o.getStyled(SCALE_Y);
+  Point2D p=new Point2D(centerInLocal.getX(),centerInLocal.getY() - b.getHeight() * 0.5 * scaleY);
+  p=t.transform(p);
+  pickNode.setRotate(o.getStyled(ROTATE));
+  pickNode.setRotationAxis(o.getStyled(ROTATION_AXIS));
+  pivotNode.setRotate(o.getStyled(ROTATE));
+  pivotNode.setRotationAxis(o.getStyled(ROTATION_AXIS));
+  Point2D centerInView=t.transform(centerInLocal);
+  Point2D vector=new Point2D(p.getX() - centerInView.getX(),p.getY() - centerInView.getY());
+  vector=vector.normalize();
+  pickLocation=new Point2D(p.getX() + vector.getX() * lineLength,p.getY() + vector.getY() * lineLength);
+  pickNode.relocate(pickLocation.getX() - 5,pickLocation.getY() - 5);
+  pivotNode.relocate(centerInView.getX() - 5,centerInView.getY() - 5);
+  line.setStartX(pickLocation.getX());
+  line.setStartY(pickLocation.getY());
+  line.setEndX(p.getX());
+  line.setEndY(p.getY());
 }

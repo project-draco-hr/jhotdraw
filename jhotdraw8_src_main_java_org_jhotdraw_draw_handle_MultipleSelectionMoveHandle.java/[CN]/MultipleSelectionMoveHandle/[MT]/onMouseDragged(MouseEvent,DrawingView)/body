@@ -7,13 +7,18 @@
     Point2D loc=getLocation(view);
     oldPoint=getOwner().localToWorld(loc);
   }
+  if (oldPoint.equals(newPoint)) {
+    return;
+  }
   DrawingModel model=view.getModel();
   for (  Figure f : view.getSelectedFigures()) {
     Point2D npl=f.worldToParent(newPoint);
     Point2D opl=f.worldToParent(oldPoint);
-    Transform tt=((TransformableFigure)f).getInverseTransform();
-    npl=tt.transform(npl);
-    opl=tt.transform(opl);
+    if (f instanceof TransformableFigure) {
+      Transform tt=((TransformableFigure)f).getInverseTransform();
+      npl=tt.transform(npl);
+      opl=tt.transform(opl);
+    }
     Transform tx=Transform.translate(npl.getX() - opl.getX(),npl.getY() - opl.getY());
     model.reshape(f,tx);
   }

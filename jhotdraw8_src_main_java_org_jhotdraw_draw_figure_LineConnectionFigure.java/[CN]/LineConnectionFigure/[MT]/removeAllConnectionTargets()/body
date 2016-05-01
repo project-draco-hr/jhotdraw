@@ -1,6 +1,4 @@
 {
   set(START_CONNECTOR,null);
-  set(START_CONNECTOR,null);
-  set(END_CONNECTOR,null);
   set(END_CONNECTOR,null);
 }

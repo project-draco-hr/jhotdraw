@@ -3,8 +3,8 @@
   figurePropertyChangeHandler.setFigure(figure);
   figure.reshape(transform);
   figure.getProperties().removeListener(figurePropertyChangeHandler);
-  fire(DrawingModelEvent.transformChanged(this,figure));
-  fire(DrawingModelEvent.subtreeNodesInvalidated(this,figure));
-  fire(DrawingModelEvent.layoutInvalidated(this,figure));
+  fire(DrawingModelEvent.transformChanged((DrawingModel)this,figure));
+  fire(DrawingModelEvent.subtreeNodesInvalidated((DrawingModel)this,figure));
+  fire(DrawingModelEvent.layoutChanged((DrawingModel)this,figure));
   fireLayoutInvalidatedForFiguresConnectedWithSubtree(figure);
 }

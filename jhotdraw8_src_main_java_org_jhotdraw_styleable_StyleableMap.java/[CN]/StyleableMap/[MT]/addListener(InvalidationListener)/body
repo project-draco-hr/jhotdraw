@@ -1,6 +1,6 @@
 {
-  if (invalidationListenerSupport == null) {
-    invalidationListenerSupport=new ListenerSupport<>();
+  if (invalidationListenerList == null) {
+    invalidationListenerList=new CopyOnWriteArrayList<>();
   }
-  invalidationListenerSupport.add(listener);
+  invalidationListenerList.add(listener);
 }

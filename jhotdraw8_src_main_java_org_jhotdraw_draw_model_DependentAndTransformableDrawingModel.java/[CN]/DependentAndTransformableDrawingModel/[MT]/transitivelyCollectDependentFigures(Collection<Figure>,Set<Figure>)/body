@@ -1,0 +1,18 @@
+{
+  while (true) {
+    List<Figure> todoNext=new ArrayList<>();
+    for (    Figure figure : todo) {
+      for (      Figure d : figure.getDependentFigures()) {
+        if (done.add(d)) {
+          todoNext.add(d);
+        }
+      }
+    }
+    if (todoNext.isEmpty()) {
+      break;
+    }
+ else {
+      todo=todoNext;
+    }
+  }
+}

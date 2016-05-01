@@ -1,0 +1,3 @@
+{
+  return (this.bitmask & that.bitmask) != 0;
+}

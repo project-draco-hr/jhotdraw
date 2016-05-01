@@ -1,5 +1,4 @@
 {
-  getModel().validate();
   Figure[] copyOfDirtyFigureNodes=dirtyFigureNodes.keySet().toArray(new Figure[dirtyFigureNodes.size()]);
   Figure[] copyOfDirtyHandles=dirtyHandles.keySet().toArray(new Figure[dirtyHandles.size()]);
   dirtyFigureNodes.clear();

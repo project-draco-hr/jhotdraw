@@ -1,0 +1,59 @@
+{
+  if (!valid) {
+    isValidating=true;
+    DirtyMask dmTransform=DirtyMask.of(DirtyBits.TRANSFORM);
+    for (    Map.Entry<Figure,DirtyMask> entry : new ArrayList<>(dirties.entrySet())) {
+      Figure f=entry.getKey();
+      DirtyMask dm=entry.getValue();
+      if (dm.intersects(dmTransform)) {
+        for (        Figure a : f.ancestorIterable()) {
+          if (a instanceof TransformableFigure) {
+            markDirty(a,DirtyBits.NODE,DirtyBits.TRANSFORM);
+          }
+        }
+      }
+    }
+    DirtyMask dmLayout=DirtyMask.of(DirtyBits.LAYOUT);
+    List<Figure> todo=new ArrayList<>();
+    for (    Map.Entry<Figure,DirtyMask> entry : new ArrayList<>(dirties.entrySet())) {
+      Figure f=entry.getKey();
+      DirtyMask dm=entry.getValue();
+      if (dm.intersects(dmLayout)) {
+        for (        Figure subtree : f.preorderIterable()) {
+          for (          Figure d : subtree.getDependentFigures()) {
+            todo.add(d);
+          }
+        }
+        for (        Figure a : f.ancestorIterable()) {
+          if (a instanceof TransformableFigure) {
+            markDirty(a,DirtyBits.NODE);
+          }
+        }
+      }
+      if (dm.intersects(DirtyBits.DEPENDENT_LAYOUT)) {
+        todo.add(f);
+      }
+    }
+    LinkedHashSet<Figure> transitive=new LinkedHashSet<>(todo);
+    transitivelyCollectDependentFigures(todo,transitive);
+    collectLayoutableAncestors(new ArrayList<>(transitive),transitive);
+    for (    Figure f : transitive) {
+      this.layout(f);
+      markDirty(f,DirtyBits.NODE);
+    }
+    DirtyMask dmNode=DirtyMask.of(DirtyBits.NODE);
+    for (    Map.Entry<Figure,DirtyMask> entry : dirties.entrySet()) {
+      Figure f=entry.getKey();
+      DirtyMask dm=entry.getValue();
+      if (dm.intersects(dmNode)) {
+        fireNodeInvalidated(f);
+      }
+    }
+    for (    Figure f : getRoot().preorderIterable()) {
+      f.transformNotify();
+    }
+    dirties.clear();
+    isValidating=false;
+    valid=true;
+  }
+}

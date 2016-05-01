@@ -1,31 +1,33 @@
 {
   Point2D newPoint=view.viewToWorld(new Point2D(event.getX(),event.getY()));
   if (!event.isAltDown() && !event.isControlDown()) {
-    newPoint=view.getConstrainer().constrainPoint(getOwner(),newPoint);
+    newPoint=view.getConstrainer().constrainPoint(owner,newPoint);
   }
   if (event.isMetaDown()) {
     Point2D loc=getLocation();
-    oldPoint=getOwner().localToWorld(loc);
+    oldPoint=localToWorld.transform(loc);
+  }
+  if (oldPoint.equals(newPoint)) {
+    return;
   }
   DrawingModel model=view.getModel();
   if (event.isShiftDown()) {
     for (    Figure f : groupReshapeableFigures) {
       Point2D npl=f.worldToParent(newPoint);
       Point2D opl=f.worldToParent(oldPoint);
-      Transform tt=((TransformableFigure)f).getInverseTransform();
-      npl=tt.transform(npl);
-      opl=tt.transform(opl);
+      if (f instanceof TransformableFigure) {
+        Transform tt=((TransformableFigure)f).getInverseTransform();
+        npl=tt.transform(npl);
+        opl=tt.transform(opl);
+      }
       Transform tx=Transform.translate(npl.getX() - opl.getX(),npl.getY() - opl.getY());
       model.reshape(f,tx);
     }
   }
  else {
-    Figure f=getOwner();
-    Point2D npl=f.worldToParent(newPoint);
-    Point2D opl=f.worldToParent(oldPoint);
-    Transform tt=((TransformableFigure)f).getInverseTransform();
-    npl=tt.transform(npl);
-    opl=tt.transform(opl);
+    Figure f=owner;
+    Point2D npl=worldToLocal.transform(newPoint);
+    Point2D opl=worldToLocal.transform(oldPoint);
     Transform tx=Transform.translate(npl.getX() - opl.getX(),npl.getY() - opl.getY());
     model.reshape(f,tx);
   }

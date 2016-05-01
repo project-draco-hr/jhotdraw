@@ -1,0 +1,6 @@
+{
+  Transform t=o.getWorldToParent();
+  Transform rotate=Transform.rotate(-o.getStyled(TransformableFigure.ROTATE),center.getX(),center.getY());
+  t=((TransformableFigure)o).getInverseTransform().createConcatenation(rotate);
+  return t;
+}

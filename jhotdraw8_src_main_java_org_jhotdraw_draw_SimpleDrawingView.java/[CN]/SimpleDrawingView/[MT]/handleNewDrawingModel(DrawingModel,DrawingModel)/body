@@ -1,11 +1,15 @@
 {
   if (oldValue != null) {
+    clearSelection();
     oldValue.removeDrawingModelListener(modelHandler);
+    oldValue.removeListener(modelInvalidationListener);
     drawing.setValue(null);
   }
   if (newValue != null) {
     newValue.addDrawingModelListener(modelHandler);
+    newValue.addListener(modelInvalidationListener);
     handleDrawingChanged();
     updateLayout();
+    repaint();
   }
 }

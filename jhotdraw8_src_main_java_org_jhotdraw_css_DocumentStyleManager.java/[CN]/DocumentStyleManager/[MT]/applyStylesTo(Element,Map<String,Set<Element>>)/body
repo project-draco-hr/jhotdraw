@@ -9,6 +9,9 @@
     for (    StyleRule r : s.getRulesets()) {
       if (r.getSelectorGroup().matches(selectorModel,elem)) {
         for (        Declaration d : r.getDeclarations()) {
+          if (d.getTerms().isEmpty()) {
+            continue;
+          }
           if (!elem.hasAttribute(d.getProperty())) {
             applicableDeclarations.put(d.getProperty(),d.getTermsAsString());
           }
@@ -24,6 +27,9 @@
     for (    StyleRule r : s.getRulesets()) {
       if (r.getSelectorGroup().matches(selectorModel,elem)) {
         for (        Declaration d : r.getDeclarations()) {
+          if (d.getTerms().isEmpty()) {
+            continue;
+          }
           applicableDeclarations.put(d.getProperty(),d.getTermsAsString());
         }
       }
@@ -37,6 +43,9 @@
     for (    StyleRule r : s.getRulesets()) {
       if (r.getSelectorGroup().matches(selectorModel,elem)) {
         for (        Declaration d : r.getDeclarations()) {
+          if (d.getTerms().isEmpty()) {
+            continue;
+          }
           applicableDeclarations.put(d.getProperty(),d.getTermsAsString());
         }
       }
@@ -45,6 +54,9 @@
   if (elem.hasAttribute("style")) {
     try {
       for (      Declaration d : parser.parseDeclarationList(elem.getAttribute("style"))) {
+        if (d.getTerms().isEmpty()) {
+          continue;
+        }
         applicableDeclarations.put(d.getProperty(),d.getTermsAsString());
       }
     }

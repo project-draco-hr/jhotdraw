@@ -1,11 +1,5 @@
 {
-  Figure o=getOwner();
-  mouse=new Point2D(event.getX(),event.getY());
-  center=Geom.center(o.getBoundsInLocal());
-  startTransform=getWorldToRotate(o).createConcatenation(view.getViewToWorld());
-  Point2D newPoint=startTransform.transform(mouse);
-  startRotation=90 + 180.0 / Math.PI * Geom.angle(center.getX(),center.getY(),newPoint.getX(),newPoint.getY());
-  startRotation=startRotation + o.getStyled(ROTATE);
+  pivotNode.setVisible(true);
   Set<Figure> selectedFigures=view.getSelectedFigures();
   groupReshapeableFigures=new HashSet<>();
   for (  Figure f : view.getSelectedFigures()) {

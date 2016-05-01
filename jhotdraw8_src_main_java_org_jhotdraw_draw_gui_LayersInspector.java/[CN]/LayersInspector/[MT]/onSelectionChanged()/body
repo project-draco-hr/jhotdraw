@@ -15,7 +15,7 @@
     }
   }
   for (int i=0, n=children.size(); i < n; i++) {
-    children.get(i).set(SELECTION_COUNT,count[i]);
+    selectionCount.put((Layer)children.get(i),count[i]);
   }
   layers.fireUpdated(0,layers.size());
 }

@@ -1,5 +1,0 @@
-{
-  for (  Figure f : preorderIterable()) {
-    f.invalidateTransforms();
-  }
-}

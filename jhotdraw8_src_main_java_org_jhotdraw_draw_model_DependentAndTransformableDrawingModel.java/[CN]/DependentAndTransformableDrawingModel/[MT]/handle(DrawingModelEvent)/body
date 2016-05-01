@@ -1,0 +1,62 @@
+{
+  if (isValidating) {
+    return;
+  }
+  final Figure figure=event.getFigure();
+switch (event.getEventType()) {
+case FIGURE_ADDED_TO_PARENT:
+    markDirty(figure,DirtyBits.LAYOUT,DirtyBits.STYLE);
+  invalidate();
+break;
+case SUBTREE_ADDED_TO_DRAWING:
+figure.addNotify(event.getDrawing());
+break;
+case SUBTREE_REMOVED_FROM_DRAWING:
+figure.removeNotify(event.getDrawing());
+removeDirty(figure);
+break;
+case DEPENDENCY_CHANGED:
+figure.dependencyNotify();
+markDirty(figure,DirtyBits.DEPENDENT_LAYOUT);
+invalidate();
+break;
+case TRANSFORM_CHANGED:
+markDirty(figure,DirtyBits.TRANSFORM);
+invalidate();
+break;
+case FIGURE_REMOVED_FROM_PARENT:
+markDirty(event.getParent(),DirtyBits.DEPENDENT_LAYOUT,DirtyBits.NODE);
+invalidate();
+break;
+case NODE_CHANGED:
+break;
+case ROOT_CHANGED:
+dirties.clear();
+valid=true;
+break;
+case SUBTREE_NODES_CHANGED:
+break;
+case PROPERTY_VALUE_CHANGED:
+{
+Key<?> key=event.getKey();
+if (key instanceof FigureKey) {
+FigureKey<?> fk=(FigureKey<?>)key;
+final DirtyMask dm=fk.getDirtyMask();
+if (!dm.isEmpty()) {
+markDirty(figure,dm);
+invalidate();
+}
+}
+}
+break;
+case LAYOUT_CHANGED:
+markDirty(figure,DirtyBits.LAYOUT);
+break;
+case STYLE_CHANGED:
+markDirty(figure,DirtyBits.STYLE);
+invalidate();
+break;
+default :
+throw new UnsupportedOperationException(event.getEventType() + "not supported");
+}
+}

@@ -1,9 +1,0 @@
-{
-  figure.reshape(x,y,width,height);
-  fire(DrawingModelEvent.subtreeNodesInvalidated(this,figure));
-  for (  Figure f : figure.preorderIterable()) {
-    for (    Figure c : f.getDependentFigures()) {
-      fire(DrawingModelEvent.layoutInvalidated(this,c));
-    }
-  }
-}

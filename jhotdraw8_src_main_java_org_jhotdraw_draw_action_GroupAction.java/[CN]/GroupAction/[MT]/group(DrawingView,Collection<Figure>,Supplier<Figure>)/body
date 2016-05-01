@@ -24,7 +24,7 @@
   DrawingModel model=view.getModel();
   Figure group=groupFactory.get();
   model.addChildTo(group,parent);
-  for (  Figure child : drawing.preorderList()) {
+  for (  Figure child : IterableTree.toList(drawing.breadthFirstIterable())) {
     if (!figures.contains(child)) {
       continue;
     }

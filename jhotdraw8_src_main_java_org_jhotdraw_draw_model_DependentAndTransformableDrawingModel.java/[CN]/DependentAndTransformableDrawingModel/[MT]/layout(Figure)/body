@@ -1,0 +1,4 @@
+{
+  f.layout();
+  fire(DrawingModelEvent.layoutChanged(this,f));
+}

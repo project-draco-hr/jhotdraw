@@ -1,5 +1,36 @@
 {
+  boolean hasTransformedChild=false;
   for (  Figure child : getChildren()) {
-    child.reshape(transform);
+    if (child instanceof TransformableFigure) {
+      TransformableFigure tchild=(TransformableFigure)child;
+      Transform t=tchild.getInverseTransform();
+      if (!t.isIdentity()) {
+        hasTransformedChild=true;
+        break;
+      }
+    }
+  }
+  if (hasTransformedChild) {
+    if (!(transform instanceof Translate)) {
+      return;
+    }
+  }
+  for (  Figure child : getChildren()) {
+    if (child instanceof TransformableFigure) {
+      TransformableFigure tchild=(TransformableFigure)child;
+      Transform t=tchild.getInverseTransform();
+      if (t.isIdentity()) {
+        child.reshape(transform);
+      }
+ else {
+        Point2D tr=new Point2D(transform.getTx(),transform.getTy());
+        tr=Geom.toDeltaTransform(t).transform(tr);
+        t=new Translate(tr.getX(),tr.getY());
+        child.reshape(t);
+      }
+    }
+ else {
+      child.reshape(transform);
+    }
   }
 }

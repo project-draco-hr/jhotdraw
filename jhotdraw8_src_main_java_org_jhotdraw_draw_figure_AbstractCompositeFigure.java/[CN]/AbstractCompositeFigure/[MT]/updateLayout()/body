@@ -1,6 +1,0 @@
-{
-  for (  Figure child : getChildren()) {
-    child.updateLayout();
-  }
-  layoutImpl();
-}

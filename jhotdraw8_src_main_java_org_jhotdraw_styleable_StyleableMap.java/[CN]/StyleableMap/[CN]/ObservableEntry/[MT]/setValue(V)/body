@@ -1,5 +1,8 @@
 {
-  V oldValue=backingEntry.getValue().setValue(oeOrigin,value);
-  callObservers(oeOrigin,new SimpleChange(getKey(),oldValue,value,true,true));
+  V oldValue=backingEntry.getValue().getValue(oeOrigin);
+  SimpleChange change=new SimpleChange(getKey(),oldValue,value,true,true);
+  callObservers(oeOrigin,true,change);
+  backingEntry.getValue().setValue(oeOrigin,value);
+  callObservers(oeOrigin,false,change);
   return oldValue;
 }

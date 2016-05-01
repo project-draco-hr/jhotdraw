@@ -1,0 +1,14 @@
+{
+  if (origin == StyleOrigin.USER && !Objects.equals(change.getValueRemoved(),change.getValueAdded())) {
+    if (willChange) {
+      if (change.getKey() instanceof FigureKey) {
+        if (((FigureKey<?>)change.getKey()).getDirtyMask().containsOneOf(DirtyBits.DEPENDENCY)) {
+          firePropertyChangeEvent(this,FigurePropertyChangeEvent.EventType.WILL_CHANGE,(Key<Object>)change.getKey(),change.getValueRemoved(),change.getValueAdded());
+        }
+      }
+    }
+ else {
+      firePropertyChangeEvent(this,FigurePropertyChangeEvent.EventType.CHANGED,(Key<Object>)change.getKey(),change.getValueRemoved(),change.getValueAdded());
+    }
+  }
+}

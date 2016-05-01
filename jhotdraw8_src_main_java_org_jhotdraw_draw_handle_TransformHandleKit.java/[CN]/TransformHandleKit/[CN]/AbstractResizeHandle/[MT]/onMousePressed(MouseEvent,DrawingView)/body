@@ -1,5 +1,11 @@
 {
+  Figure o=getOwner();
   oldPoint=view.getConstrainer().constrainPoint(getOwner(),view.viewToWorld(new Point2D(event.getX(),event.getY())));
-  startBounds=getOwner().getBoundsInLocal();
+  startBounds=o.getBoundsInLocal();
+  startScaleX=o.get(TransformableFigure.SCALE_X);
+  startScaleY=o.get(TransformableFigure.SCALE_Y);
+  startTranslateX=o.get(TransformableFigure.TRANSLATE_X);
+  startTranslateY=o.get(TransformableFigure.TRANSLATE_Y);
   preferredAspectRatio=getOwner().getPreferredAspectRatio();
+  center=Geom.center(startBounds);
 }

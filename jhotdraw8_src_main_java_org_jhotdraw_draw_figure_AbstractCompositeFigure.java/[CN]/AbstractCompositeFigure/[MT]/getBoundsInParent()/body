@@ -1,0 +1,15 @@
+{
+  double minX=Double.POSITIVE_INFINITY;
+  double maxX=Double.NEGATIVE_INFINITY;
+  double minY=Double.POSITIVE_INFINITY;
+  double maxY=Double.NEGATIVE_INFINITY;
+  Transform t=getLocalToParent();
+  for (  Figure child : getChildren()) {
+    Bounds b=t.transform(child.getBoundsInParent());
+    minX=min(minX,b.getMinX());
+    maxX=max(maxX,b.getMaxX());
+    minY=min(minY,b.getMinY());
+    maxY=max(maxY,b.getMaxY());
+  }
+  return new BoundingBox(minX,minY,maxX - minX,maxY - minY);
+}

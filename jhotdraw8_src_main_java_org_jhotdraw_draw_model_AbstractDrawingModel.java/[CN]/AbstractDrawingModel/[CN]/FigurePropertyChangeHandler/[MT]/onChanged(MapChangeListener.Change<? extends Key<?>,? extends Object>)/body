@@ -1,4 +1,0 @@
-{
-  @SuppressWarnings("unchecked") Key<Object> key=(Key<Object>)change.getKey();
-  firePropertyValueChanged(figure,key,change.getValueRemoved(),change.getValueAdded());
-}

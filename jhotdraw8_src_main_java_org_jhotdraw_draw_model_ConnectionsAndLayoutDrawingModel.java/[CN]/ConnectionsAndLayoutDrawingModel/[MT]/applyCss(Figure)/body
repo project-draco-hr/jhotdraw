@@ -1,5 +1,5 @@
 {
   figure.updateCss();
-  fire(DrawingModelEvent.subtreeNodesInvalidated(this,figure));
+  fire(DrawingModelEvent.subtreeNodesInvalidated((DrawingModel)this,figure));
   fireLayoutInvalidatedForFiguresConnectedWithSubtree(figure);
 }

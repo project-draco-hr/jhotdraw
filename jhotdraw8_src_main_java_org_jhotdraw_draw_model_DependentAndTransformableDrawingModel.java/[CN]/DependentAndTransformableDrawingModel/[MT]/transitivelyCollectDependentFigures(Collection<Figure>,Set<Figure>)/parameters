@@ -1,0 +1,2 @@
+Collection<Figure> todo
+Set<Figure> done

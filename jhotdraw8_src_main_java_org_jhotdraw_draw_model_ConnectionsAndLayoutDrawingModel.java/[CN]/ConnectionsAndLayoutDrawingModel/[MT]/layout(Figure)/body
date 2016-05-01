@@ -1,6 +1,6 @@
 {
-  figure.updateLayout();
-  fire(DrawingModelEvent.transformChanged(this,figure));
-  fire(DrawingModelEvent.subtreeNodesInvalidated(this,figure));
+  figure.layout();
+  fire(DrawingModelEvent.transformChanged((DrawingModel)this,figure));
+  fire(DrawingModelEvent.subtreeNodesInvalidated((DrawingModel)this,figure));
   fireLayoutInvalidatedForFiguresConnectedWithSubtree(figure);
 }

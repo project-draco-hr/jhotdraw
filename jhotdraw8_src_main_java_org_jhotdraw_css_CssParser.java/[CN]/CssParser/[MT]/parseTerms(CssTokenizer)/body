@@ -18,8 +18,5 @@ break;
 }
 }
 tt.pushBack();
-if (terms.isEmpty()) {
-throw new ParseException("Terms: Terms expected in line " + tt.getLineNumber() + ".",tt.getPosition());
-}
 return terms;
 }

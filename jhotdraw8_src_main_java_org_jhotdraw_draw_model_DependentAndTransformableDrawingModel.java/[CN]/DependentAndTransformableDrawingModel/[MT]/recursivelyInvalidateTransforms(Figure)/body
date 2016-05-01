@@ -1,0 +1,8 @@
+{
+  System.out.println("D&TDrawingModel invalidateTransform: " + f.getId());
+  if (f.transformNotify()) {
+    for (    Figure child : f.getChildren()) {
+      recursivelyInvalidateTransforms(child);
+    }
+  }
+}

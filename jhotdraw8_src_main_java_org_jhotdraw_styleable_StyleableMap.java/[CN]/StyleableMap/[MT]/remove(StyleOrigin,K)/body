@@ -3,15 +3,14 @@
   V ret=null;
   boolean hadValue;
   if (sv != null && sv.hasValue(o)) {
-    hadValue=true;
-    ret=sv.removeValue(o);
+    ret=sv.getValue(o);
+    SimpleChange change=new SimpleChange(key,ret,null,false,true);
+    callObservers(o,true,change);
+    sv.removeValue(o);
+    callObservers(o,false,change);
   }
  else {
-    hadValue=false;
     ret=null;
-  }
-  if (hadValue) {
-    callObservers(o,new SimpleChange(key,ret,null,false,true));
   }
   return ret;
 }

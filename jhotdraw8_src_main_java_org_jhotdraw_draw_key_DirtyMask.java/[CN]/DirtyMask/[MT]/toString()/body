@@ -1,0 +1,3 @@
+{
+  return "DirtyMask{" + "bitmask=" + Integer.toBinaryString(bitmask) + '}';
+}

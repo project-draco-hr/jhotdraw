@@ -1,4 +1,0 @@
-{
-  this.root=root;
-  fire(DrawingModelEvent.rootChanged(this,root));
-}

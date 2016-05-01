@@ -1,0 +1,3 @@
+{
+  dirties.merge(figure,DirtyMask.of(bits),mergeDirtyMask);
+}

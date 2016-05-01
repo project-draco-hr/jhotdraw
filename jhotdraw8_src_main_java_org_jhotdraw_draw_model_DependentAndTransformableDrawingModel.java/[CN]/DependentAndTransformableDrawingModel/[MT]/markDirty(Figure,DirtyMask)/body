@@ -1,0 +1,3 @@
+{
+  dirties.merge(figure,mask,mergeDirtyMask);
+}

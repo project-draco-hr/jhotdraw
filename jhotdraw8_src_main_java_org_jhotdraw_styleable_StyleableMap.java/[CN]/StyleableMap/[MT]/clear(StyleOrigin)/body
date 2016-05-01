@@ -3,7 +3,10 @@
     Entry<K,StyledValue> e=i.next();
     K key=e.getKey();
     StyledValue sv=e.getValue();
-    @SuppressWarnings("unchecked") V val=(V)sv.removeValue(o);
-    callObservers(o,new SimpleChange(key,val,null,false,true));
+    @SuppressWarnings("unchecked") V val=sv.getValue(o);
+    SimpleChange change=new SimpleChange(key,val,null,false,true);
+    callObservers(o,true,change);
+    sv.removeValue(o);
+    callObservers(o,false,change);
   }
 }

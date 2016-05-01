@@ -1,7 +1,0 @@
-{
-  LinkedList<Figure> todo=new LinkedList<>();
-  for (  Figure f : subtreeRoot.preorderIterable()) {
-    todo.add(f);
-  }
-  fireLayoutInvalidatedForFiguresConnectedWithTodo(todo,new HashSet<Figure>());
-}

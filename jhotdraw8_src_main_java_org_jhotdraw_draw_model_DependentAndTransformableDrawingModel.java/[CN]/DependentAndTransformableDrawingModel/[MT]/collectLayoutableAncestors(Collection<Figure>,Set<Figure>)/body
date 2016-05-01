@@ -1,0 +1,10 @@
+{
+  for (  Figure figure : todo) {
+    for (Figure ancestor=figure; ancestor != null && ancestor.isLayoutable(); ancestor=ancestor.getParent()) {
+      if (!done.add(ancestor)) {
+        done.remove(ancestor);
+        done.add(ancestor);
+      }
+    }
+  }
+}

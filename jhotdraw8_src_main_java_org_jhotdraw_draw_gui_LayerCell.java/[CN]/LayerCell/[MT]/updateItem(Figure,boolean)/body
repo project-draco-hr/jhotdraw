@@ -27,7 +27,7 @@
       }
     }
     setGraphic(node);
-    Integer count=item.get(LayersInspector.SELECTION_COUNT);
+    Integer count=inspector.getSelectionCount((Layer)item);
     selectionLabel.setText(count == null ? "" : "(" + count.toString() + ")");
     visibleCheckBox.setSelected(item.get(HideableFigure.VISIBLE));
     lockedCheckBox.setSelected(item.get(LockableFigure.LOCKED));

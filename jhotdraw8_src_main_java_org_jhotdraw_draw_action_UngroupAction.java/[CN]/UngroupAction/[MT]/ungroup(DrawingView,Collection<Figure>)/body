@@ -8,6 +8,10 @@
       new Alert(Alert.AlertType.INFORMATION,"Layers can not be ungrouped").showAndWait();
       return;
     }
+    if (!(f instanceof GroupFigure)) {
+      new Alert(Alert.AlertType.INFORMATION,"Only groups can be ungrouped").showAndWait();
+      return;
+    }
     if (f != null && (!f.isEditable() || !f.isDecomposable())) {
       new Alert(Alert.AlertType.INFORMATION,"Only editable and decomposable figures can be ungrouped").showAndWait();
       return;

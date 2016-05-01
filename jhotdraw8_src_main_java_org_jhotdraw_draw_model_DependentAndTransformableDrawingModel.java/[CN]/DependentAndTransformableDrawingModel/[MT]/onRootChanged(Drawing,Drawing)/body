@@ -1,0 +1,9 @@
+{
+  if (oldValue != null) {
+    oldValue.removePropertyChangeListener(propertyChangeHandler);
+  }
+  if (newValue != null) {
+    newValue.addPropertyChangeListener(propertyChangeHandler);
+  }
+  fire(DrawingModelEvent.rootChanged(this,newValue));
+}

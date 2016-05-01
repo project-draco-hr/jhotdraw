@@ -1,2 +1,5 @@
 {
+  for (  InvalidationListener l : invalidationListeners) {
+    l.invalidated(this);
+  }
 }

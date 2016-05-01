@@ -4,7 +4,17 @@
   while (!todo.isEmpty()) {
     for (    MenuItem mi : todo.remove().getItems()) {
       if (mi instanceof Menu) {
-        todo.add((Menu)mi);
+        if ("file.openRecentMenu".equals(mi.getId())) {
+          for (          URI uri : recentUrisProperty()) {
+            MenuItem mii=new MenuItem();
+            Action a=new OpenRecentFileAction(this,uri);
+            Actions.bindMenuItem(mii,a);
+            ((Menu)mi).getItems().add(mii);
+          }
+        }
+ else {
+          todo.add((Menu)mi);
+        }
       }
  else {
         Action a=actions.get(mi.getId());

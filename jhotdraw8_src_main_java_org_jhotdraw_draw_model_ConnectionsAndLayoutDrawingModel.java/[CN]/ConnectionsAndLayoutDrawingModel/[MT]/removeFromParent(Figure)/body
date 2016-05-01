@@ -5,17 +5,17 @@
     int index=parent.getChildren().indexOf(child);
     if (index != -1) {
       parent.getChildren().remove(index);
-      fire(DrawingModelEvent.figureRemovedFromParent(this,parent,child,index));
-      fire(DrawingModelEvent.nodeInvalidated(this,parent));
+      fire(DrawingModelEvent.figureRemovedFromParent((DrawingModel)this,parent,child,index));
+      fire(DrawingModelEvent.nodeInvalidated((DrawingModel)this,parent));
     }
   }
   Drawing newDrawing=child.getDrawing();
   if (oldDrawing != newDrawing) {
     if (oldDrawing != null) {
-      fire(DrawingModelEvent.figureRemovedFromDrawing(this,oldDrawing,child));
+      fire(DrawingModelEvent.figureRemovedFromDrawing((DrawingModel)this,oldDrawing,child));
     }
     if (newDrawing != null) {
-      fire(DrawingModelEvent.figureAddedToDrawing(this,newDrawing,child));
+      fire(DrawingModelEvent.figureAddedToDrawing((DrawingModel)this,newDrawing,child));
     }
   }
 }
