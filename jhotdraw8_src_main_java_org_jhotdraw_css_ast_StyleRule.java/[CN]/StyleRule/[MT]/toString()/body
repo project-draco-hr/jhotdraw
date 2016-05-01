@@ -1,5 +1,5 @@
 {
-  StringBuilder buf=new StringBuilder("QualifiedRule: ");
+  StringBuilder buf=new StringBuilder("StyleRule: ");
   buf.append(selectorList.toString());
   buf.append("{");
   for (  Declaration r : declarations) {

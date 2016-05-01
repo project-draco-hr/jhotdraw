@@ -1,5 +1,5 @@
 {
-  for (  StyleRule r : s.getRulesets()) {
+  for (  StyleRule r : s.getStyleRules()) {
     if (r.getSelectorGroup().matches(selectorModel,elem)) {
       for (      Declaration d : r.getDeclarations()) {
         @SuppressWarnings("unchecked") CssMetaData<Styleable,?> m=(CssMetaData<Styleable,?>)metaMap.get(d.getProperty());

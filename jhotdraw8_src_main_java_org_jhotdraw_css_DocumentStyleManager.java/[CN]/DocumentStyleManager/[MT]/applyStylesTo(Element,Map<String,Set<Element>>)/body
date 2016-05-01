@@ -6,7 +6,7 @@
     if (s == null) {
       continue;
     }
-    for (    StyleRule r : s.getRulesets()) {
+    for (    StyleRule r : s.getStyleRules()) {
       if (r.getSelectorGroup().matches(selectorModel,elem)) {
         for (        Declaration d : r.getDeclarations()) {
           if (d.getTerms().isEmpty()) {
@@ -24,7 +24,7 @@
     if (s == null) {
       continue;
     }
-    for (    StyleRule r : s.getRulesets()) {
+    for (    StyleRule r : s.getStyleRules()) {
       if (r.getSelectorGroup().matches(selectorModel,elem)) {
         for (        Declaration d : r.getDeclarations()) {
           if (d.getTerms().isEmpty()) {
@@ -40,7 +40,7 @@
     if (s == null) {
       continue;
     }
-    for (    StyleRule r : s.getRulesets()) {
+    for (    StyleRule r : s.getStyleRules()) {
       if (r.getSelectorGroup().matches(selectorModel,elem)) {
         for (        Declaration d : r.getDeclarations()) {
           if (d.getTerms().isEmpty()) {

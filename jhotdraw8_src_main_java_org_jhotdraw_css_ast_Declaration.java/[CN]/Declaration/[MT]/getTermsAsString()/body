@@ -1,6 +1,6 @@
 {
   StringBuilder buf=new StringBuilder();
-  for (  Term t : terms) {
+  for (  PreservedToken t : terms) {
     buf.append(t.toString());
   }
   return buf.toString();

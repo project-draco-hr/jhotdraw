@@ -7,9 +7,9 @@
   }
   if (tt.currentToken() == CssTokenizer.TT_FUNCTION) {
     String ident=tt.currentStringValue();
-    List<Term> terms=new ArrayList<>();
+    List<PreservedToken> terms=new ArrayList<>();
     while (tt.nextToken() != CssTokenizer.TT_EOF && tt.currentToken() != ')') {
-      terms.add(new Term(tt.currentToken(),tt.currentStringValue(),tt.currentNumericValue()));
+      terms.add(new PreservedToken(tt.currentToken(),tt.currentStringValue(),tt.currentNumericValue()));
     }
     return new FunctionPseudoClassSelector(ident,terms);
   }
