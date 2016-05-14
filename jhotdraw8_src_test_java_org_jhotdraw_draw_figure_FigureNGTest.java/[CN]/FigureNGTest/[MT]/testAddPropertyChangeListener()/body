@@ -1,0 +1,7 @@
+{
+  System.out.println("addPropertyChangeListener");
+  Listener<FigurePropertyChangeEvent> listener=null;
+  Figure instance=new FigureImpl();
+  instance.addPropertyChangeListener(listener);
+  fail("The test case is a prototype.");
+}

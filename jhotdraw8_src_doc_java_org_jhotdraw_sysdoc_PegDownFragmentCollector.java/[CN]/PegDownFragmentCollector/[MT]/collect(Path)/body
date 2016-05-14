@@ -1,0 +1,12 @@
+{
+  PegDownProcessor pdp=new PegDownProcessor(Extensions.ALL);
+  ByteArrayOutputStream inbuf=new ByteArrayOutputStream();
+  Files.copy(docfile,inbuf);
+  String markdown=new String(inbuf.toByteArray(),StandardCharsets.UTF_8);
+  RootNode ast=pdp.parseMarkdown(markdown.toCharArray());
+  FragmentDetector fd=new FragmentDetector(docfile);
+  ast.accept(fd);
+  parsedFiles.put(docfile,ast);
+  exportedFragments.addAll(fd.getExportedFragments());
+  referencedFragments.addAll(fd.getReferencedFragments());
+}

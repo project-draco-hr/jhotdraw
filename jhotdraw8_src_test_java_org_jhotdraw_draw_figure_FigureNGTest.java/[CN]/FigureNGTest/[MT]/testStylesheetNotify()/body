@@ -1,0 +1,6 @@
+{
+  System.out.println("stylesheetNotify");
+  Figure instance=new FigureImpl();
+  instance.stylesheetNotify();
+  fail("The test case is a prototype.");
+}

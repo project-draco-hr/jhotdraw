@@ -1,0 +1,8 @@
+{
+  System.out.println("getDeclaredAndInheritedKeys");
+  Class<?> clazz=null;
+  Set<MapAccessor<?>> expResult=null;
+  Set<MapAccessor<?>> result=Figure.getDeclaredAndInheritedKeys(clazz);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

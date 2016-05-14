@@ -2,6 +2,7 @@
   textAreaValid=true;
   if (drawingView == null || drawingView.getDrawing() == null) {
     textArea.setText("");
+    textArea.setPrefRowCount(5);
     return;
   }
   Drawing drawing=drawingView.getDrawing();
@@ -73,4 +74,9 @@
     System.out.println("StylesAttributesInspector e:" + e);
   }
   textArea.setText(buf.toString());
+  int rows=1;
+  for (int i=0; i < buf.length(); i++) {
+    if (buf.charAt(i) == '\n')     rows++;
+  }
+  textArea.setPrefRowCount(Math.min(Math.max(5,rows),25));
 }

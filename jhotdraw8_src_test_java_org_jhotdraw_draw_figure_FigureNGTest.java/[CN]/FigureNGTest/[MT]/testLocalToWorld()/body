@@ -1,0 +1,9 @@
+{
+  System.out.println("localToWorld");
+  Point2D p=null;
+  Figure instance=new FigureImpl();
+  Point2D expResult=null;
+  Point2D result=instance.localToWorld(p);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

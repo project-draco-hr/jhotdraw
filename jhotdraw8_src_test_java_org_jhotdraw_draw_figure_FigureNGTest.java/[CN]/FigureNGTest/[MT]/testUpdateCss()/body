@@ -1,0 +1,6 @@
+{
+  System.out.println("updateCss");
+  Figure instance=new FigureImpl();
+  instance.updateCss();
+  fail("The test case is a prototype.");
+}

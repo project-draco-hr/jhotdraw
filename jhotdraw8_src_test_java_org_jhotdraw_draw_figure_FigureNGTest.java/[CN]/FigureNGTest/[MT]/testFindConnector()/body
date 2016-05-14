@@ -1,0 +1,10 @@
+{
+  System.out.println("findConnector");
+  Point2D pointInLocal=null;
+  Figure prototype=null;
+  Figure instance=new FigureImpl();
+  Connector expResult=null;
+  Connector result=instance.findConnector(pointInLocal,prototype);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

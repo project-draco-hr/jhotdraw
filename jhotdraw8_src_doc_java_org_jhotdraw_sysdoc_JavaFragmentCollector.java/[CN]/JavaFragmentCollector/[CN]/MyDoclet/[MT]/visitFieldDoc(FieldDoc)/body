@@ -1,0 +1,5 @@
+{
+  final Fragment fragment=new Fragment(Paths.get(cd.qualifiedName()),cd.qualifiedName());
+  fragments.add(fragment);
+  visitDoc(fragment,cd);
+}

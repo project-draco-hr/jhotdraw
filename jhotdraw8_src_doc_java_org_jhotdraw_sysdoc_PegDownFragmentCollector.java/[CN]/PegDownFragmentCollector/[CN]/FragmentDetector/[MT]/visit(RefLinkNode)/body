@@ -1,0 +1,9 @@
+{
+  if (n.referenceKey != null) {
+    referencedFragments.add(new Reference(fragment,n.referenceKey.toString()));
+  }
+ else {
+    referencedFragments.add(new Reference(fragment,n.toString()));
+  }
+  visitChildren(n);
+}

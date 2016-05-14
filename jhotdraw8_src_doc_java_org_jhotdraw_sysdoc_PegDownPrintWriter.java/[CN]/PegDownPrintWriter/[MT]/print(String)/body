@@ -1,0 +1,5 @@
+{
+  printWriter.print(string);
+  endsWithNewLine=!string.isEmpty() && string.charAt(string.length() - 1) == '\n';
+  return this;
+}

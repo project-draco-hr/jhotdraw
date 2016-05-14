@@ -1,0 +1,4 @@
+Path destdir
+List<Path> docdirs
+List<Path> srcdirs
+List<Path> tstdirs

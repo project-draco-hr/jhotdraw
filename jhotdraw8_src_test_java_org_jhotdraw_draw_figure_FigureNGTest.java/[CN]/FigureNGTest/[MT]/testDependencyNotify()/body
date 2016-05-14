@@ -1,0 +1,6 @@
+{
+  System.out.println("dependencyNotify");
+  Figure instance=new FigureImpl();
+  instance.dependencyNotify();
+  fail("The test case is a prototype.");
+}

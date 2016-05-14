@@ -1,0 +1,10 @@
+{
+  sb.setLength(0);
+  FastEncoder.encode(string,sb);
+  printWriter.print(sb.toString());
+  if (sb.length() > 0) {
+    endsWithNewLine=sb.charAt(sb.length() - 1) == '\n';
+  }
+  sb.setLength(0);
+  return this;
+}

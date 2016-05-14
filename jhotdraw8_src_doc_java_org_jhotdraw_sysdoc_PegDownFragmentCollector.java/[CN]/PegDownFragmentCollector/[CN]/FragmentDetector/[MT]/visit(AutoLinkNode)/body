@@ -1,0 +1,3 @@
+{
+  referencedFragments.add(new Reference(fragment,n.getText()));
+}

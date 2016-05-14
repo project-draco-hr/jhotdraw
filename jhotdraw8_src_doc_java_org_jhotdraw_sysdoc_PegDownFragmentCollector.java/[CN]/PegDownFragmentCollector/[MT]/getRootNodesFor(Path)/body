@@ -1,0 +1,9 @@
+{
+  List<RootNode> roots=new ArrayList<>();
+  for (  Map.Entry<Path,RootNode> entry : parsedFiles.entrySet()) {
+    if (entry.getKey().getParent().equals(docdir)) {
+      roots.add(entry.getValue());
+    }
+  }
+  return roots;
+}

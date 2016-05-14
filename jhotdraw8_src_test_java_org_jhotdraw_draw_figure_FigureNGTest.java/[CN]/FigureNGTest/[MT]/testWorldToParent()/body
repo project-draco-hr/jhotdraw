@@ -1,0 +1,9 @@
+{
+  System.out.println("worldToParent");
+  Point2D pointInWorld=null;
+  Figure instance=new FigureImpl();
+  Point2D expResult=null;
+  Point2D result=instance.worldToParent(pointInWorld);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

@@ -1,0 +1,8 @@
+{
+  System.out.println("getDrawing");
+  Figure instance=new FigureImpl();
+  Drawing expResult=null;
+  Drawing result=instance.getDrawing();
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

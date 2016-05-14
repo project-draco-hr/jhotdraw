@@ -1,3 +1,3 @@
 {
-  super(owner,RelativeLocator.southWest());
+  super(owner,RelativeLocator.southWest(),SOUTH_WEST_SHAPE);
 }

@@ -1,0 +1,9 @@
+{
+  System.out.println("isGroupReshapeableWith");
+  Set<Figure> others=null;
+  Figure instance=new FigureImpl();
+  boolean expResult=false;
+  boolean result=instance.isGroupReshapeableWith(others);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

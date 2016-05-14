@@ -1,0 +1,8 @@
+{
+  System.out.println("getCenterInParent");
+  Figure instance=new FigureImpl();
+  Point2D expResult=null;
+  Point2D result=instance.getCenterInParent();
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

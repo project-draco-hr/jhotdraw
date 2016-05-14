@@ -1,6 +1,6 @@
 {
   super.updateNode(ctx,node);
-  applyTransformableFigureProperties(node,getBoundsInLocal());
+  applyTransformableFigureProperties(node);
   applyCompositableFigureProperties(node);
   applyStyleableFigureProperties(ctx,node);
 }

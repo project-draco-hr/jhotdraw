@@ -1,0 +1,8 @@
+{
+  System.out.println("getLocalToParent");
+  Figure instance=new FigureImpl();
+  Transform expResult=null;
+  Transform result=instance.getLocalToParent();
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

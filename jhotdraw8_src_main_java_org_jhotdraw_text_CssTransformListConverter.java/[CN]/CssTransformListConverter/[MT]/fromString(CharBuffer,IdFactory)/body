@@ -43,10 +43,10 @@ case "affine":
 {
 switch (m.size()) {
 case 6:
-          txs.add(Transform.affine(m.get(0),m.get(1),m.get(2),m.get(3),m.get(4),m.get(5)));
+          txs.add(new Affine(m.get(0),m.get(1),m.get(2),m.get(3),m.get(4),m.get(5)));
         break;
 case 12:
-      txs.add(Transform.affine(m.get(0),m.get(1),m.get(2),m.get(3),m.get(4),m.get(5),m.get(5),m.get(6),m.get(7),m.get(8),m.get(9),m.get(10)));
+      txs.add(new Affine(m.get(0),m.get(1),m.get(2),m.get(3),m.get(4),m.get(5),m.get(5),m.get(6),m.get(7),m.get(8),m.get(9),m.get(10)));
     break;
 default :
   throw new ParseException("6 or 12 coefficients expected, but found " + m.size(),tt.getPosition());

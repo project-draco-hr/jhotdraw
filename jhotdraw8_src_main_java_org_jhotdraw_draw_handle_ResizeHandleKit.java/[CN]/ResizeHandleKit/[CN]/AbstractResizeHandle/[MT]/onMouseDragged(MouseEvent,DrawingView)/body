@@ -5,9 +5,9 @@
   }
   if (event.isMetaDown()) {
     Point2D loc=getLocation();
-    oldPoint=localToWorld.transform(loc);
+    oldPoint=loc;
   }
   boolean keepAspect=event.isShiftDown();
-  Transform t=worldToLocal;
+  Transform t=owner.getWorldToLocal();
   resize(t.transform(newPoint),owner,startBounds,view.getModel(),keepAspect);
 }

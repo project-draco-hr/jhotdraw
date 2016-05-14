@@ -1,0 +1,3 @@
+{
+  this(owner,STYLECLASS_HANDLE_RESIZE,locator,shape);
+}

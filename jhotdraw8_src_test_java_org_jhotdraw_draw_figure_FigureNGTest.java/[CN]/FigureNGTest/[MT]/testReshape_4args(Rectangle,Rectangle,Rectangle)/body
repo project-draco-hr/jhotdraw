@@ -1,0 +1,23 @@
+{
+  System.out.println("reshape");
+  Transform[] actual=new Transform[1];
+  Figure instance=new FigureImpl(){
+    Rectangle r=new Rectangle(initial.getX(),initial.getY(),initial.getWidth(),initial.getHeight());
+    public Bounds getBoundsInLocal(){
+      return r.getBoundsInLocal();
+    }
+    public void reshape(    Transform t){
+      actual[0]=t;
+      Bounds b=t.transform(getBoundsInLocal());
+      r.setX(b.getMinX());
+      r.setY(b.getMinY());
+      r.setWidth(b.getWidth());
+      r.setHeight(b.getHeight());
+    }
+  }
+;
+  instance.reshape(reshape.getX(),reshape.getY(),reshape.getWidth(),reshape.getHeight());
+  System.out.println(actual[0]);
+  System.out.println(instance.getBoundsInLocal());
+  assertEquals(expected.getBoundsInLocal(),instance.getBoundsInLocal());
+}

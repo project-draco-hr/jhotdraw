@@ -1,0 +1,4 @@
+{
+  referencedFragments.add(new Reference(fragment,n.getUrl()));
+  visitChildren(n);
+}

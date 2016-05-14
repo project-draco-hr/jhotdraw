@@ -1,0 +1,4 @@
+PegDownPrintWriter w
+LinkRenderer linkRenderer
+Map<String,VerbatimSerializer> verbatimSerializerMap
+List<ToHtmlSerializerPlugin> plugins

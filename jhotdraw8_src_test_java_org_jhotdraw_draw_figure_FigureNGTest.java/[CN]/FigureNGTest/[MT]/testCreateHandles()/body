@@ -1,0 +1,9 @@
+{
+  System.out.println("createHandles");
+  HandleType handleType=null;
+  DrawingView dv=null;
+  List<Handle> list=null;
+  Figure instance=new FigureImpl();
+  instance.createHandles(handleType,dv,list);
+  fail("The test case is a prototype.");
+}

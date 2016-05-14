@@ -5,7 +5,7 @@
   }
   if (event.isMetaDown()) {
     Point2D loc=getLocation();
-    oldPoint=localToWorld.transform(loc);
+    oldPoint=owner.getLocalToWorld().transform(loc);
   }
   if (oldPoint.equals(newPoint)) {
     return;
@@ -26,8 +26,13 @@
   }
  else {
     Figure f=owner;
-    Point2D npl=worldToLocal.transform(newPoint);
-    Point2D opl=worldToLocal.transform(oldPoint);
+    Point2D npl=owner.worldToParent(newPoint);
+    Point2D opl=owner.worldToParent(oldPoint);
+    if (f instanceof TransformableFigure) {
+      Transform tt=((TransformableFigure)f).getInverseTransform();
+      npl=tt.transform(npl);
+      opl=tt.transform(opl);
+    }
     Transform tx=Transform.translate(npl.getX() - opl.getX(),npl.getY() - opl.getY());
     model.reshape(f,tx);
   }

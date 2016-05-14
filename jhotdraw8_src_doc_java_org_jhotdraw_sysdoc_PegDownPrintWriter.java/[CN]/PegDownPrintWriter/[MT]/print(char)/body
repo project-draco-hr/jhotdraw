@@ -1,0 +1,5 @@
+{
+  printWriter.write(c);
+  endsWithNewLine=c == '\n';
+  return this;
+}

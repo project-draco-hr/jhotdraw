@@ -1,0 +1,7 @@
+{
+  System.out.println("remove");
+  Figure child=null;
+  Figure instance=new FigureImpl();
+  instance.remove(child);
+  fail("The test case is a prototype.");
+}
