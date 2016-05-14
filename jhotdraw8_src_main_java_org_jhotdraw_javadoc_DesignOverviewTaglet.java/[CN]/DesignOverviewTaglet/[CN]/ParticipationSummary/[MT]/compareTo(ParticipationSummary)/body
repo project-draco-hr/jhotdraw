@@ -1,7 +1,0 @@
-{
-  int cmp=role.compareTo(that.role);
-  if (cmp == 0) {
-    cmp=classDoc.simpleTypeName().compareTo(that.classDoc.simpleTypeName());
-  }
-  return cmp;
-}
