@@ -1,3 +1,0 @@
-{
-  drawingView().set(newValue);
-}

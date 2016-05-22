@@ -1,5 +1,5 @@
 {
   if (!isUpdating) {
-    drawingView.getModel().set(item,HideableFigure.VISIBLE,visibleCheckBox.isSelected());
+    drawingModel.set(item,HideableFigure.VISIBLE,visibleCheckBox.isSelected());
   }
 }

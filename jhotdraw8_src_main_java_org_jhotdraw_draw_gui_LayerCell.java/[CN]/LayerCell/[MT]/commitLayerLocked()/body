@@ -1,5 +1,5 @@
 {
   if (!isUpdating) {
-    drawingView.getModel().set(item,LockableFigure.LOCKED,lockedCheckBox.isSelected());
+    drawingModel.set(item,LockableFigure.LOCKED,lockedCheckBox.isSelected());
   }
 }

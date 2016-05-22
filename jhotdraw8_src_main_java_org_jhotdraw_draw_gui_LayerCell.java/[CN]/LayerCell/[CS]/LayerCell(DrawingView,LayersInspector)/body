@@ -1,3 +1,0 @@
-{
-  this(LayersInspector.class.getResource("LayerCell.fxml"),drawingView,inspector);
-}

@@ -1,37 +1,26 @@
 {
-  javafx.scene.shape.Path fxpath=new javafx.scene.shape.Path();
   XmlNumberConverter nb=new XmlNumberConverter();
-switch (iter.getWindingRule()) {
-case PathIterator.WIND_EVEN_ODD:
-    fxpath.setFillRule(javafx.scene.shape.FillRule.EVEN_ODD);
-  break;
-case PathIterator.WIND_NON_ZERO:
-fxpath.setFillRule(javafx.scene.shape.FillRule.NON_ZERO);
-break;
-default :
-throw new IllegalArgumentException("illegal winding rule " + iter.getWindingRule());
-}
-StringBuilder buf=new StringBuilder();
-double[] coords=new double[6];
-boolean first=true;
-for (; !iter.isDone(); iter.next()) {
-if (first) {
-first=false;
-}
+  StringBuilder buf=new StringBuilder();
+  double[] coords=new double[6];
+  boolean first=true;
+  for (; !iter.isDone(); iter.next()) {
+    if (first) {
+      first=false;
+    }
  else {
-buf.append(' ');
-}
+      buf.append(' ');
+    }
 switch (iter.currentSegment(coords)) {
 case PathIterator.SEG_CLOSE:
-buf.append('Z');
-break;
+      buf.append('Z');
+    break;
 case PathIterator.SEG_CUBICTO:
-buf.append('C');
+  buf.append('C');
 for (int i=0; i < 6; i++) {
-if (i != 0) {
-buf.append(',');
-}
-buf.append(nb.toString(coords[i]));
+  if (i != 0) {
+    buf.append(',');
+  }
+  buf.append(nb.toString(coords[i]));
 }
 break;
 case PathIterator.SEG_LINETO:
