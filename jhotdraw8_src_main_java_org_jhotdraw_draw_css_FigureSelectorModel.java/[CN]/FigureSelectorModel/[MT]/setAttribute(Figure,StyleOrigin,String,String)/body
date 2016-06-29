@@ -1,0 +1,21 @@
+{
+  HashMap<String,StyleableMapAccessor<Object>> metaMap=new HashMap<>();
+  for (  MapAccessor<?> k : elem.getSupportedKeys()) {
+    if (k instanceof StyleableMapAccessor) {
+      @SuppressWarnings("unchecked") StyleableMapAccessor<Object> sk=(StyleableMapAccessor<Object>)k;
+      metaMap.put(sk.getCssName(),sk);
+    }
+  }
+  StyleableMapAccessor<Object> k=metaMap.get(name);
+  if (k != null) {
+    @SuppressWarnings("unchecked") Converter<Object> converter=k.getConverter();
+    Object convertedValue;
+    try {
+      convertedValue=converter.fromString(value);
+      elem.setStyled(origin,k,convertedValue);
+    }
+ catch (    ParseException|IOException ex) {
+      ex.printStackTrace();
+    }
+  }
+}

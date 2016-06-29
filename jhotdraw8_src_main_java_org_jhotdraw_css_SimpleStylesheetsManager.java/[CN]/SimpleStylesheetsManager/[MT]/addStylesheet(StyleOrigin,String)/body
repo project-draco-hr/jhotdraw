@@ -1,0 +1,3 @@
+{
+  getMap(origin).put(str,new ParsedStylesheetEntry(origin,str));
+}

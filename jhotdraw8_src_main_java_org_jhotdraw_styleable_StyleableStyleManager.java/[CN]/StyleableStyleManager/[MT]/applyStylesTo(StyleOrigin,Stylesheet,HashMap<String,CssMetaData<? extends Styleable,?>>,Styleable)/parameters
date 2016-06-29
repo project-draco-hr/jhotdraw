@@ -1,4 +1,0 @@
-StyleOrigin origin
-Stylesheet s
-HashMap<String,CssMetaData<? extends Styleable,?>> metaMap
-Styleable elem

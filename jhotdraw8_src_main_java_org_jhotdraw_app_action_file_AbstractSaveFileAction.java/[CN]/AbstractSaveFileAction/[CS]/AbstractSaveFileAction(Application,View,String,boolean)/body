@@ -1,5 +1,5 @@
 {
   super(app,view);
   this.saveAs=saveAs;
-  Resources.getResources("org.jhotdraw.app.Labels").configureAction(this,ID);
+  Resources.getResources("org.jhotdraw.app.Labels").configureAction(this,id);
 }

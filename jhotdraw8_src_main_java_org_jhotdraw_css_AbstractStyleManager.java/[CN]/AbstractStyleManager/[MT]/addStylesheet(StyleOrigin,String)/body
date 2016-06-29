@@ -1,3 +1,0 @@
-{
-  getMap(origin).put(str,new MyEntry(origin,str));
-}

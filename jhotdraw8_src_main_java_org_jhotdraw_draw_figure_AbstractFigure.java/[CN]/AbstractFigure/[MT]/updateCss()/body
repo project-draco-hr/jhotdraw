@@ -2,8 +2,8 @@
   getStyleableMap().clearNonUserValues();
   Drawing d=getDrawing();
   if (d != null) {
-    StyleManager<Figure> styleManager=d.getStyleManager();
-    styleManager.applyStylesTo(this);
+    StylesheetsManager<Figure> styleManager=d.getStyleManager();
+    styleManager.applyStylesheetsTo(this);
     for (    Figure child : getChildren()) {
       child.updateCss();
     }

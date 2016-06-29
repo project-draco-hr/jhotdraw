@@ -1,0 +1,6 @@
+{
+  SelectorModel<E> selectorModel=getSelectorModel();
+  for (  Map.Entry<String,String> entry : collectApplicableDeclarations(elem,s,new HashMap<String,String>()).entrySet()) {
+    selectorModel.setAttribute(elem,styleOrigin,entry.getKey(),entry.getValue());
+  }
+}

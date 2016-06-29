@@ -1,0 +1,15 @@
+{
+  List<CssMetaData<? extends Styleable,?>> metaList=elem.getCssMetaData();
+  HashMap<String,CssMetaData<? extends Styleable,?>> metaMap=new HashMap<>();
+  for (  CssMetaData<? extends Styleable,?> m : metaList) {
+    metaMap.put(m.getProperty(),m);
+  }
+  @SuppressWarnings("unchecked") CssMetaData<Styleable,?> m=(CssMetaData<Styleable,?>)metaMap.get(name);
+  if (m != null && m.isSettable(elem)) {
+    @SuppressWarnings("unchecked") StyleConverter<String,Object> converter=(StyleConverter<String,Object>)m.getConverter();
+    ParsedValueImpl<String,Object> parsedValue=new ParsedValueImpl<>(value,null);
+    Object convertedValue=converter.convert(parsedValue,null);
+    @SuppressWarnings("unchecked") StyleableProperty<Object> styleableProperty=(StyleableProperty<Object>)m.getStyleableProperty(elem);
+    styleableProperty.applyStyle(origin,convertedValue);
+  }
+}

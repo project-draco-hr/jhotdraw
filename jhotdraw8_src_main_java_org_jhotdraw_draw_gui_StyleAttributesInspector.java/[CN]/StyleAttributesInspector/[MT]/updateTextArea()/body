@@ -11,7 +11,7 @@
     newValue=new LinkedHashSet<Figure>();
     newValue.add(drawing);
   }
-  StyleManager<Figure> styleManager=drawing.getStyleManager();
+  StylesheetsManager<Figure> styleManager=drawing.getStyleManager();
   SelectorModel<Figure> selectorModel=styleManager.getSelectorModel();
   String id=null;
   String type=null;
@@ -27,7 +27,7 @@
       type=selectorModel.getType(f);
       styleClasses.addAll(selectorModel.getStyleClasses(f));
       for (      String name : selectorModel.getNonDecomposedAttributeNames(f)) {
-        attr.put(name,selectorModel.getAttributeValue(f,name));
+        attr.put(name,selectorModel.getAttribute(f,name));
       }
     }
  else {
@@ -38,7 +38,7 @@
       for (      String name : attr.keySet()) {
         String oldAttrValue=attr.get(name);
         if (oldAttrValue != null) {
-          String newAttrValue=selectorModel.getAttributeValue(f,name);
+          String newAttrValue=selectorModel.getAttribute(f,name);
           if (!oldAttrValue.equals(newAttrValue)) {
             attr.put(name,"/* multiple values */");
           }

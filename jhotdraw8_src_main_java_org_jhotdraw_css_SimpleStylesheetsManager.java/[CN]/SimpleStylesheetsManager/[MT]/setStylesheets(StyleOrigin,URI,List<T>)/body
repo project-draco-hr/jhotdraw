@@ -1,0 +1,34 @@
+{
+  LinkedHashMap<Object,ParsedStylesheetEntry> oldMap=getMap(origin);
+  if (stylesheets == null) {
+    oldMap.clear();
+    return;
+  }
+  LinkedHashMap<Object,ParsedStylesheetEntry> newMap=new LinkedHashMap<>();
+  for (  T t : stylesheets) {
+    if (t instanceof URI) {
+      URI uri=(URI)t;
+      URI resolvedUri=documentHome == null ? uri : documentHome.resolve(uri);
+      ParsedStylesheetEntry old=oldMap.get(resolvedUri);
+      if (false && old != null) {
+        newMap.put(resolvedUri,old);
+      }
+ else {
+        newMap.put(resolvedUri,new ParsedStylesheetEntry(origin,resolvedUri));
+      }
+    }
+ else     if (t instanceof String) {
+      ParsedStylesheetEntry old=oldMap.get(t);
+      if (old != null) {
+        newMap.put(t,old);
+      }
+ else {
+        newMap.put(t,new ParsedStylesheetEntry(origin,(String)t));
+      }
+    }
+ else {
+      throw new IllegalArgumentException("illegal item " + t);
+    }
+  }
+  setMap(origin,newMap);
+}

@@ -1,0 +1,20 @@
+{
+switch (origin) {
+case USER:
+    element.setAttribute(name,value);
+  break;
+case USER_AGENT:
+if (!hasAttribute(element,name)) {
+  element.setAttribute(name,value);
+}
+break;
+case AUTHOR:
+element.setAttribute(name,value);
+break;
+case INLINE:
+element.setAttribute(name,value);
+break;
+default :
+throw new UnsupportedOperationException("unsupported origin:" + origin);
+}
+}
