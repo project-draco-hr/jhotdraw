@@ -3,44 +3,31 @@
   String find=null;
   String replace=null;
   tt.skipWhitespace();
-  if (tt.nextToken() == CssTokenizer.TT_IDENT) {
-    if (!nullable) {
-      throw new ParseException("'/' expected",tt.getPosition());
-    }
-    if (!"none".equals(tt.currentStringValue())) {
-      throw new ParseException("none or '/' expected",tt.getPosition());
-    }
-    in.position(in.limit());
-    return null;
-  }
- else {
-    tt.pushBack();
-  }
-  if (tt.nextToken() != '/') {
-    throw new ParseException("first / expected",tt.getPosition());
-  }
-  tt.skipWhitespace();
-  if (tt.nextToken() == CssTokenizer.TT_STRING) {
+switch (tt.nextToken()) {
+case CssTokenizer.TT_STRING:
     find=tt.currentStringValue();
-    tt.skipWhitespace();
-  }
+  break;
+case CssTokenizer.TT_IDENT:
+if ("none".equals(tt.currentStringValue())) {
+}
  else {
-    tt.pushBack();
-  }
-  if (tt.nextToken() != '/') {
-    throw new ParseException("second / expected",tt.getPosition());
-  }
-  tt.skipWhitespace();
-  if (tt.nextToken() == CssTokenizer.TT_STRING) {
-    replace=tt.currentStringValue();
-  }
- else {
-    tt.pushBack();
-  }
-  tt.skipWhitespace();
-  if (tt.nextToken() != '/') {
-    throw new ParseException("third / expected",tt.getPosition());
-  }
-  in.position(in.limit());
-  return new Regex(find,replace);
+  throw new ParseException("find string or none expected",tt.getPosition());
+}
+break;
+default :
+throw new ParseException("find string expected",tt.getPosition());
+}
+tt.skipWhitespace();
+switch (tt.nextToken()) {
+case CssTokenizer.TT_STRING:
+replace=tt.currentStringValue();
+break;
+case CssTokenizer.TT_EOF:
+break;
+default :
+throw new ParseException("replace string expected",tt.getPosition());
+}
+tt.skipWhitespace();
+in.position(tt.getPosition());
+return new Regex(find,replace);
 }

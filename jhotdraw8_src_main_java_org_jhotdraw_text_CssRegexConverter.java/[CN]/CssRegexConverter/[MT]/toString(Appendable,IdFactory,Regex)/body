@@ -8,13 +8,15 @@
       throw new IllegalArgumentException("value is null");
     }
   }
-  out.append('/');
-  if (value.getFind() != null) {
-    stringConverter.toString(out,value.getFind());
+  String find=value.getFind();
+  if (find == null) {
+    out.append("none");
+    return;
   }
-  out.append('/');
-  if (value.getReplace() != null) {
-    stringConverter.toString(out,value.getReplace());
+  stringConverter.toString(out,find);
+  String replace=value.getReplace();
+  if (replace != null) {
+    out.append(' ');
+    stringConverter.toString(out,replace);
   }
-  out.append('/');
 }

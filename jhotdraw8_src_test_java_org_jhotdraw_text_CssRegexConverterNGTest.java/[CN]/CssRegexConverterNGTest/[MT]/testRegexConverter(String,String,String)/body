@@ -1,0 +1,6 @@
+{
+  CssRegexConverter c=new CssRegexConverter(false);
+  Regex rgx=c.fromString(inputCssRegex);
+  assertEquals(rgx.getFind(),expectedFind,"find");
+  assertEquals(rgx.getReplace(),expectedReplace,"replace");
+}
