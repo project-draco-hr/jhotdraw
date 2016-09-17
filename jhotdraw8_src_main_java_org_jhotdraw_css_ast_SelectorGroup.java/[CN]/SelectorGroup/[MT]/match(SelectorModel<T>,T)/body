@@ -1,10 +1,10 @@
 {
-  T matchingElement=null;
+  MatchResult<T> result=null;
   for (  Selector s : selectors) {
-    matchingElement=s.match(model,element);
-    if (matchingElement != null) {
+    result=s.match(model,element);
+    if (result != null) {
       break;
     }
   }
-  return matchingElement;
+  return result;
 }

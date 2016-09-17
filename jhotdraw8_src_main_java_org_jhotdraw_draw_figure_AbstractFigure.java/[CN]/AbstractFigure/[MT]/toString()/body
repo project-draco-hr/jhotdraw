@@ -23,10 +23,10 @@
       buf.append(e.getValue());
     }
   }
-  if (connectedFigures != null) {
+  if (dependentFigures != null) {
     buf.append(", connections={");
     isFirst=true;
-    for (    Figure f : connectedFigures) {
+    for (    Figure f : dependentFigures) {
       if (isFirst) {
         isFirst=false;
       }

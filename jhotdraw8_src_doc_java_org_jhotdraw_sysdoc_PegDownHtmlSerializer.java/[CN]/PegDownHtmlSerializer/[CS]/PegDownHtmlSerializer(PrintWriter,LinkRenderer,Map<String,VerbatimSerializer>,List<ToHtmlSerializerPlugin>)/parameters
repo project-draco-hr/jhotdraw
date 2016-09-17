@@ -1,4 +1,0 @@
-PrintWriter w
-LinkRenderer linkRenderer
-Map<String,VerbatimSerializer> verbatimSerializers
-List<ToHtmlSerializerPlugin> plugins

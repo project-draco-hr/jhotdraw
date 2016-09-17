@@ -1,4 +1,9 @@
 {
+  String name=colorNames.get(value);
+  if (name != null) {
+    out.append(name);
+    return;
+  }
   if (value == null) {
     out.append("none");
   }

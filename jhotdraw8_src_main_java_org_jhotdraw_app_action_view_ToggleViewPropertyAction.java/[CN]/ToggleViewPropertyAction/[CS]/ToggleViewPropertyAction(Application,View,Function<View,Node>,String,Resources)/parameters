@@ -1,5 +1,0 @@
-Application app
-View view
-Function<View,Node> nodeGetter
-String id
-Resources labels

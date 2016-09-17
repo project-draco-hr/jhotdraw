@@ -1,0 +1,36 @@
+{
+  SimpleSelector simpleSelector=parseSimpleSelector(tt);
+  Selector selector=simpleSelector;
+  while (tt.nextToken() != CssTokenizerInterface.TT_EOF && tt.currentToken() != '{' && tt.currentToken() != ',') {
+    boolean potentialDescendantCombinator=false;
+    if (tt.currentToken() == CssTokenizerInterface.TT_S) {
+      potentialDescendantCombinator=true;
+      skipWhitespace(tt);
+    }
+    if (tt.currentToken() == CssTokenizerInterface.TT_EOF || tt.currentToken() == '{' || tt.currentToken() == ',') {
+      break;
+    }
+switch (tt.currentToken()) {
+case '>':
+      selector=new ChildCombinator(simpleSelector,parseSelector(tt));
+    break;
+case '+':
+  selector=new AdjacentSiblingCombinator(simpleSelector,parseSelector(tt));
+break;
+case '~':
+selector=new GeneralSiblingCombinator(simpleSelector,parseSelector(tt));
+break;
+default :
+tt.pushBack();
+if (potentialDescendantCombinator) {
+selector=new DescendantCombinator(simpleSelector,parseSelector(tt));
+}
+ else {
+selector=new AndCombinator(simpleSelector,parseSelector(tt));
+}
+break;
+}
+}
+tt.pushBack();
+return selector;
+}

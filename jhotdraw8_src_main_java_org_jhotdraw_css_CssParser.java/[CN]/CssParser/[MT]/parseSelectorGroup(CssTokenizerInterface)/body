@@ -1,0 +1,16 @@
+{
+  List<Selector> selectors=new ArrayList<>();
+  selectors.add(parseSelector(tt));
+  while (tt.nextToken() != CssTokenizerInterface.TT_EOF && tt.currentToken() != '{') {
+    skipWhitespace(tt);
+    if (tt.currentToken() != ',') {
+      throw new ParseException("SelectorGroup: ',' expected.",tt.getLineNumber());
+    }
+    tt.nextToken();
+    skipWhitespace(tt);
+    tt.pushBack();
+    selectors.add(parseSelector(tt));
+  }
+  tt.pushBack();
+  return new SelectorGroup(selectors);
+}

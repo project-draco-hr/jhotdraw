@@ -1,5 +1,4 @@
 {
-  SelectorModel<E> selectorModel=getSelectorModel();
   for (  ParsedStylesheetEntry e : stylesheets) {
     Stylesheet s=e.getStylesheet();
     if (s == null) {

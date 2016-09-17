@@ -1,0 +1,10 @@
+{
+  HashMap<String,StyleableMapAccessor<Object>> metaMap=new HashMap<>();
+  for (  MapAccessor<?> k : elem.getSupportedKeys()) {
+    if (k instanceof StyleableMapAccessor) {
+      @SuppressWarnings("unchecked") StyleableMapAccessor<Object> sk=(StyleableMapAccessor<Object>)k;
+      metaMap.put(sk.getCssName(),sk);
+    }
+  }
+  return metaMap;
+}

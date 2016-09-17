@@ -1,12 +1,12 @@
 {
-  T siblingElement=secondSelector.match(model,element);
-  T matchingElement=null;
+  MatchResult<T> result=secondSelector.match(model,element);
+  T siblingElement=result == null ? null : result.getElement();
   while (siblingElement != null) {
     siblingElement=model.getParent(siblingElement);
-    matchingElement=firstSelector.match(model,siblingElement);
-    if (matchingElement != null) {
+    result=firstSelector.match(model,siblingElement);
+    if (result != null) {
       break;
     }
   }
-  return matchingElement;
+  return result == null ? null : new MatchResult<>(result.getElement(),this);
 }

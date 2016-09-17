@@ -29,5 +29,7 @@
   finally {
     figureToElementMap.clear();
   }
-  return factory.fromExternalDrawing(external);
+  Drawing internal=factory.fromExternalDrawing(external);
+  internal.updateCss();
+  return internal;
 }

@@ -1,6 +1,6 @@
 {
   exceptions=new ArrayList<>();
-  CssTokenizer tt=new CssTokenizer(css);
+  CssTokenizerInterface tt=new CssTokenizer(css);
   try {
     return parseDeclarationList(tt);
   }

@@ -1,9 +1,0 @@
-{
-  if (tt.nextToken() != CssTokenizer.TT_FUNCTION) {
-    throw new ParseException("FunctionBlock: function expected in line " + tt.getLineNumber() + ".",tt.getPosition());
-  }
-  if (tt.nextToken() != ')') {
-    throw new ParseException("FunctionBlock: ')' expected in line " + tt.getLineNumber() + ".",tt.getPosition());
-  }
-  return null;
-}

@@ -1,5 +1,5 @@
 {
-  final View v=unsavedView;
+  final ProjectView v=unsavedView;
   if (v.getURI() == null) {
     URIChooser chooser=getChooser(v);
     URI uri=chooser.showDialog(unsavedView.getNode());

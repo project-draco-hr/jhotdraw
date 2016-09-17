@@ -1,7 +1,7 @@
 {
   Set<Figure> selection=getSelectedFigures();
-  HandleType handleType=selection.size() > 1 ? getMultiHandleType() : getHandleType();
-  if (selection.size() < tooManySelectedFigures) {
+  HandleType handleType=getHandleType();
+  if (true || selection.size() < tooManySelectedFigures) {
     for (    Figure figure : selection) {
       List<Handle> list=handles.get(figure);
       if (list == null) {

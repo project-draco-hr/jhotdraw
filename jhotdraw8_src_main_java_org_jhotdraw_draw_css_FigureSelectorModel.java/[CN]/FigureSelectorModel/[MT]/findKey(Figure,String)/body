@@ -1,5 +1,5 @@
 {
-  if (!mappedFigureClasses.contains(element.getClass())) {
+  if (mappedFigureClasses.add(element.getClass())) {
     for (    MapAccessor<?> k : element.getSupportedKeys()) {
       if (k instanceof StyleableMapAccessor) {
         StyleableMapAccessor<?> sk=(StyleableMapAccessor<?>)k;

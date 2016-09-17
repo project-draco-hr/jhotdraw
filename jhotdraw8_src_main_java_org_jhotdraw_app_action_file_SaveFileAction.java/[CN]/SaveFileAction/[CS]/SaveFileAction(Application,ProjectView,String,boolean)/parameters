@@ -1,0 +1,4 @@
+Application app
+ProjectView view
+String id
+boolean saveAs

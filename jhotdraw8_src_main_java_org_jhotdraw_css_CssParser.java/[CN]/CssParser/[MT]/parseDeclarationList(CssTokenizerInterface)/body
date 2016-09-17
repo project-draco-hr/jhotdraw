@@ -1,0 +1,24 @@
+{
+  List<Declaration> declarations=new ArrayList<>();
+  while (tt.nextToken() != CssTokenizerInterface.TT_EOF && tt.currentToken() != '}') {
+switch (tt.currentToken()) {
+case CssTokenizerInterface.TT_IDENT:
+      tt.pushBack();
+    try {
+      declarations.add(parseDeclaration(tt));
+    }
+ catch (    ParseException e) {
+      System.out.println("CssParser skipped " + e);
+      exceptions.add(e);
+    }
+  break;
+case ';':
+case CssTokenizerInterface.TT_S:
+break;
+default :
+throw new ParseException("Declaration List: declaration or at-rule expected. Line" + tt.getLineNumber() + ".",tt.getPosition());
+}
+}
+tt.pushBack();
+return declarations;
+}

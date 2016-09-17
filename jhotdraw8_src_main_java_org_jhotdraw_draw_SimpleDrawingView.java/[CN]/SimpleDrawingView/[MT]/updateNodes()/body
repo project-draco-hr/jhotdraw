@@ -1,6 +1,6 @@
 {
-  Figure[] copyOfDirtyFigureNodes=dirtyFigureNodes.keySet().toArray(new Figure[dirtyFigureNodes.size()]);
-  Figure[] copyOfDirtyHandles=dirtyHandles.keySet().toArray(new Figure[dirtyHandles.size()]);
+  Figure[] copyOfDirtyFigureNodes=dirtyFigureNodes.toArray(new Figure[dirtyFigureNodes.size()]);
+  Figure[] copyOfDirtyHandles=dirtyHandles.toArray(new Figure[dirtyHandles.size()]);
   dirtyFigureNodes.clear();
   dirtyHandles.clear();
   for (  Figure f : copyOfDirtyFigureNodes) {

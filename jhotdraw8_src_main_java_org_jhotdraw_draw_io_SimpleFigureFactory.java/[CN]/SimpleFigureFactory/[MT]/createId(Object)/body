@@ -1,0 +1,14 @@
+{
+  String id=getId(object);
+  if (id == null) {
+    if (object instanceof StyleableFigure) {
+      StyleableFigure f=(StyleableFigure)object;
+      id=f.get(StyleableFigure.STYLE_ID);
+      putId(object,id);
+    }
+ else {
+      id=super.createId(object);
+    }
+  }
+  return id;
+}

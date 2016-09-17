@@ -1,3 +1,0 @@
-{
-  exportedFragments.add(fragment=new Fragment(file,n.getName()));
-}

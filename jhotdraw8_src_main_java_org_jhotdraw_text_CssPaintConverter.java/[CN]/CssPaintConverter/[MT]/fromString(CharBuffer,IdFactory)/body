@@ -1,7 +1,12 @@
 {
   try {
-    String str=buf.toString().trim();
-    Color c;
+    String str=buf.toString().trim().toLowerCase(Locale.ROOT);
+    Paint c;
+    c=nameColors.get(str);
+    if (c != null) {
+      buf.position(buf.limit());
+      return c;
+    }
     if ("none".equals(str)) {
       c=null;
     }
@@ -9,6 +14,8 @@
       c=Color.web(str);
     }
     buf.position(buf.limit());
+    colorNames.put(c,str);
+    nameColors.put(str,c);
     return c;
   }
  catch (  IllegalArgumentException e) {

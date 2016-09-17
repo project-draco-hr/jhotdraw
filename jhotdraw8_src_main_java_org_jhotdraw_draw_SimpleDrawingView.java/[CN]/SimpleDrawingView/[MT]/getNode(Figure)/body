@@ -4,7 +4,7 @@
     n=f.createNode(this);
     figureToNodeMap.put(f,n);
     nodeToFigureMap.put(n,f);
-    dirtyFigureNodes.put(f,null);
+    dirtyFigureNodes.add(f);
   }
   return n;
 }

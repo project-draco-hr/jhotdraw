@@ -1,0 +1,22 @@
+{
+  List<PreservedToken> terms=new ArrayList<>();
+  tt.nextToken();
+  skipWhitespace(tt);
+  tt.pushBack();
+  while (tt.nextToken() != CssTokenizerInterface.TT_EOF && tt.currentToken() != '}' && tt.currentToken() != ';') {
+switch (tt.currentToken()) {
+case CssTokenizerInterface.TT_CDC:
+case CssTokenizerInterface.TT_CDO:
+      break;
+case CssTokenizerInterface.TT_BAD_URI:
+    throw new ParseException("Terms: Bad URI in line " + tt.getLineNumber() + ".",tt.getPosition());
+case CssTokenizerInterface.TT_BAD_STRING:
+  throw new ParseException("Terms: Bad String in line " + tt.getLineNumber() + ".",tt.getPosition());
+default :
+terms.add(new PreservedToken(tt.currentToken(),tt.currentStringValue(),tt.currentNumericValue()));
+break;
+}
+}
+tt.pushBack();
+return terms;
+}

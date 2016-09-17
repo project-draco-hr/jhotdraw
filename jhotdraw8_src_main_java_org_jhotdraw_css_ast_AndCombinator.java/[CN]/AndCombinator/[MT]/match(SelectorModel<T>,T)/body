@@ -1,3 +1,5 @@
 {
-  return (firstSelector.match(model,element) != null && secondSelector.match(model,element) != null) ? element : null;
+  MatchResult<T> firstResult=firstSelector.match(model,element);
+  MatchResult<T> secondResult=secondSelector.match(model,element);
+  return (firstResult != null && secondResult != null) ? new MatchResult<>(element,this) : null;
 }

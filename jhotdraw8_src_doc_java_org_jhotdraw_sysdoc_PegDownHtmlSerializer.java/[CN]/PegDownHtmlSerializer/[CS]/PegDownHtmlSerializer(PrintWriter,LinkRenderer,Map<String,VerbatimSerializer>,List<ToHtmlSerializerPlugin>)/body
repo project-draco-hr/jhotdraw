@@ -1,4 +1,0 @@
-{
-  super(linkRenderer,verbatimSerializers,plugins);
-  printer=new PegDownPrintWriter(w);
-}

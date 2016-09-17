@@ -1,0 +1,6 @@
+{
+  if (tt.nextToken() == CssTokenizerInterface.TT_EOF) {
+    throw new ParseException("PreservedToken: token expected in line " + tt.getLineNumber() + ".",tt.getPosition());
+  }
+  return null;
+}

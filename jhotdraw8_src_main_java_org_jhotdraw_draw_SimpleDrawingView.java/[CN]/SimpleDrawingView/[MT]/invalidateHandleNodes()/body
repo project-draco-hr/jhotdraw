@@ -1,6 +1,6 @@
 {
   for (  Figure f : handles.keySet()) {
-    dirtyHandles.put(f,null);
+    dirtyHandles.add(f);
   }
   repaint();
 }

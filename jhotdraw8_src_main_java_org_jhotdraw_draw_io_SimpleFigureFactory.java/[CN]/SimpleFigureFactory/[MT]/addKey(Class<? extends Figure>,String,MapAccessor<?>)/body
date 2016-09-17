@@ -1,24 +1,2 @@
 {
-  if (figureAttributeKeys.containsKey(figure)) {
-    figureAttributeKeys.get(figure).add(key);
-  }
- else {
-    HashSet<MapAccessor<?>> hset=new HashSet<>();
-    hset.add(key);
-    figureAttributeKeys.put(figure,hset);
-  }
-  if (!attrToKey.containsKey(figure)) {
-    attrToKey.put(figure,new HashMap<>());
-  }
-  HashMap<String,MapAccessor<?>> strToKey=attrToKey.get(figure);
-  if (!strToKey.containsKey(name)) {
-    strToKey.put(name,key);
-  }
-  if (!keyToAttr.containsKey(figure)) {
-    keyToAttr.put(figure,new HashMap<>());
-  }
-  HashMap<MapAccessor<?>,String> keyToStr=keyToAttr.get(figure);
-  if (!keyToStr.containsKey(key)) {
-    keyToStr.put(key,name);
-  }
 }

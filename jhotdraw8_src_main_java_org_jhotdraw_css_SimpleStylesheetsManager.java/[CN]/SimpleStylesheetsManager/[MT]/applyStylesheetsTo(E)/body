@@ -4,10 +4,10 @@
     selectorModel.setAttribute(elem,StyleOrigin.USER_AGENT,entry.getKey(),entry.getValue());
   }
   for (  Map.Entry<String,String> entry : collectApplicableDeclarations(elem,getAuthorStylesheets(),new HashMap<String,String>()).entrySet()) {
-    selectorModel.setAttribute(elem,StyleOrigin.USER,entry.getKey(),entry.getValue());
+    selectorModel.setAttribute(elem,StyleOrigin.AUTHOR,entry.getKey(),entry.getValue());
   }
   for (  Map.Entry<String,String> entry : collectApplicableDeclarations(elem,getInlineStylesheets(),collectApplicableDeclarations(elem,getAuthorStylesheets(),new HashMap<String,String>())).entrySet()) {
-    selectorModel.setAttribute(elem,StyleOrigin.USER,entry.getKey(),entry.getValue());
+    selectorModel.setAttribute(elem,StyleOrigin.INLINE,entry.getKey(),entry.getValue());
   }
   HashMap<String,String> applicableDeclarations=new HashMap<>();
   if (selectorModel.hasAttribute(elem,"style")) {

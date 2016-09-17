@@ -1,10 +1,3 @@
 {
-  Set<String> attr=new HashSet<>();
-  for (  MapAccessor<?> key : element.getSupportedKeys()) {
-    if (key instanceof StyleableMapAccessor) {
-      StyleableMapAccessor<?> sk=(StyleableMapAccessor<?>)key;
-      attr.add(sk.getCssName());
-    }
-  }
-  return attr;
+  return getMetaMap(element).keySet();
 }

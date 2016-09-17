@@ -1,0 +1,31 @@
+{
+  tt.nextToken();
+  skipWhitespace(tt);
+  try {
+switch (tt.currentToken()) {
+case '*':
+      return new UniversalSelector();
+case CssTokenizerInterface.TT_IDENT:
+    return new TypeSelector(tt.currentStringValue());
+case CssTokenizerInterface.TT_HASH:
+  return new IdSelector(tt.currentStringValue());
+case '.':
+if (tt.nextToken() != CssTokenizerInterface.TT_IDENT) {
+  throw new ParseException("SimpleSelector: identifier expected.",tt.getLineNumber());
+}
+return new ClassSelector(tt.currentStringValue());
+case ':':
+tt.pushBack();
+return parsePseudoClassSelector(tt);
+case '[':
+tt.pushBack();
+return parseAttributeSelector(tt);
+default :
+throw new ParseException("SimpleSelector: SimpleSelector expected instead of \"" + tt.currentStringValue() + "\". Line "+ tt.getLineNumber()+ ".",tt.getPosition());
+}
+}
+ catch (ParseException e) {
+exceptions.add(e);
+return new SelectNothingSelector();
+}
+}

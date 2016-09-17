@@ -1,0 +1,12 @@
+{
+  tt.nextToken();
+  skipWhitespace(tt);
+  while (tt.currentToken() != CssTokenizerInterface.TT_EOF && tt.currentToken() != '{' && tt.currentToken() != ';') {
+    tt.pushBack();
+    parseComponentValue(tt);
+    tt.nextToken();
+  }
+  tt.pushBack();
+  parseCurlyBlock(tt);
+  return null;
+}

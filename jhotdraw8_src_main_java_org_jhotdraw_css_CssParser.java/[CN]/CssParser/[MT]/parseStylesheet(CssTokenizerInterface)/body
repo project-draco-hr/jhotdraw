@@ -1,0 +1,34 @@
+{
+  List<StyleRule> styleRules=new ArrayList<>();
+  while (tt.nextToken() != CssTokenizerInterface.TT_EOF) {
+    try {
+switch (tt.currentToken()) {
+case CssTokenizerInterface.TT_S:
+case CssTokenizerInterface.TT_CDC:
+case CssTokenizerInterface.TT_CDO:
+        break;
+case CssTokenizerInterface.TT_AT_KEYWORD:
+{
+        tt.pushBack();
+        AtRule r=parseAtRule(tt);
+        if (r != null) {
+        }
+        break;
+      }
+default :
+{
+      tt.pushBack();
+      StyleRule r=parseStyleRule(tt);
+      if (r != null) {
+        styleRules.add(r);
+      }
+      break;
+    }
+}
+}
+ catch (ParseException e) {
+exceptions.add(e);
+}
+}
+return new Stylesheet(styleRules);
+}

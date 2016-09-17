@@ -1,0 +1,5 @@
+{
+  while (tt.currentToken() == CssTokenizerInterface.TT_S || tt.currentToken() == CssTokenizerInterface.TT_CDC || tt.currentToken() == CssTokenizerInterface.TT_CDO) {
+    tt.nextToken();
+  }
+}

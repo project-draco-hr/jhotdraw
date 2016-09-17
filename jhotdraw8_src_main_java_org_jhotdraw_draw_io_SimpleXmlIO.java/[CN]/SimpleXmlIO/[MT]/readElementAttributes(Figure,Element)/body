@@ -10,9 +10,6 @@
     if (attr.getNamespaceURI() != null && !attr.getNamespaceURI().equals(namespaceURI)) {
       continue;
     }
-    if (factory.getObjectIdAttribute().equals(attr.getLocalName())) {
-      continue;
-    }
     @SuppressWarnings("unchecked") MapAccessor<Object> key=(MapAccessor<Object>)factory.nameToKey(figure,attr.getLocalName());
     if (key != null && factory.figureAttributeKeys(figure).contains(key)) {
       Object value=null;

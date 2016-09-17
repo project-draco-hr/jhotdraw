@@ -1,5 +1,0 @@
-String name
-Supplier<View> viewFactory
-URL menuFxml
-String fileDescription
-String fileExtension

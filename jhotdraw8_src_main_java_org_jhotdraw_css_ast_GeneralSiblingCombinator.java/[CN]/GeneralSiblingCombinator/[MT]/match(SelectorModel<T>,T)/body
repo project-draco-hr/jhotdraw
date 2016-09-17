@@ -1,6 +1,6 @@
 {
-  T siblingElement=secondSelector.match(model,element);
-  T matchingElement=null;
+  MatchResult<T> matchingElement=secondSelector.match(model,element);
+  T siblingElement=matchingElement == null ? null : matchingElement.getElement();
   while (siblingElement != null) {
     siblingElement=model.getPreviousSibling(siblingElement);
     matchingElement=firstSelector.match(model,siblingElement);
@@ -8,5 +8,5 @@
       break;
     }
   }
-  return matchingElement;
+  return matchingElement == null ? null : new MatchResult<>(matchingElement.getElement(),this);
 }

@@ -1,0 +1,13 @@
+{
+  if (tt.nextToken() != '(') {
+    throw new ParseException("RoundBlock: '(' expected in line " + tt.getLineNumber() + ".",tt.getPosition());
+  }
+  while (tt.nextToken() != CssTokenizerInterface.TT_EOF && tt.currentToken() != ')') {
+    tt.pushBack();
+    parseComponentValue(tt);
+  }
+  if (tt.nextToken() != ')') {
+    throw new ParseException("RoundBlock: ')' expected in line " + tt.getLineNumber() + ".",tt.getPosition());
+  }
+  return null;
+}
