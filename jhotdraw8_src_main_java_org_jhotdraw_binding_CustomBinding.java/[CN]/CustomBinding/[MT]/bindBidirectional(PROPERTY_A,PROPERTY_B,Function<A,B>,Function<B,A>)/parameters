@@ -1,4 +1,4 @@
-Property<A> propertyA
-Property<B> propertyB
+PROPERTY_A propertyA
+PROPERTY_B propertyB
 Function<A,B> updateB
 Function<B,A> updateA

@@ -1,4 +1,5 @@
 {
+  updateLocation(view);
   Point2D p=getLocation(view);
   pickLocation=p;
   if (p != null) {

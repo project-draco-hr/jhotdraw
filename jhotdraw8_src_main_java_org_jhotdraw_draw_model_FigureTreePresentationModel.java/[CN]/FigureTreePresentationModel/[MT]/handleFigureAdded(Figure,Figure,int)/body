@@ -1,10 +1,10 @@
 {
   TreeItem<Figure> item=items.get(f);
-  TreeItem<Figure> parent=items.get(parentFigure);
+  TreeItem<Figure> newParent=items.get(parentFigure);
   if (reversed) {
-    parent.getChildren().add(parent.getChildren().size() - index,item);
+    newParent.getChildren().add(newParent.getChildren().size() - index,item);
   }
  else {
-    parent.getChildren().add(index,item);
+    newParent.getChildren().add(index,item);
   }
 }
