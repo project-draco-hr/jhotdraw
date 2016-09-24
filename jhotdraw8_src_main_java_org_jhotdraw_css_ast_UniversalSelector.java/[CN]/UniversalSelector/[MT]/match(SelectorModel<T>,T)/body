@@ -1,3 +1,3 @@
 {
-  return new MatchResult<>(element,this);
+  return element;
 }

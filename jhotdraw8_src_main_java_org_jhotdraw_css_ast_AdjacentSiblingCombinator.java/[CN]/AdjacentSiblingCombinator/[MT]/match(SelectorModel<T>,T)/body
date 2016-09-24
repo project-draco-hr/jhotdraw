@@ -1,7 +1,7 @@
 {
-  MatchResult<T> result=secondSelector.match(model,element);
+  T result=secondSelector.match(model,element);
   if (result != null) {
-    result=firstSelector.match(model,model.getPreviousSibling(result.getElement()));
+    result=firstSelector.match(model,model.getPreviousSibling(result));
   }
-  return result == null ? null : new MatchResult<T>(result.getElement(),this);
+  return result;
 }

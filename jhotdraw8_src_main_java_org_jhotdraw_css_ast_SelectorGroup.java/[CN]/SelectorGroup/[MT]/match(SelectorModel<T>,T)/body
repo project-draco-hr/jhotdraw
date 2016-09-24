@@ -1,5 +1,5 @@
 {
-  MatchResult<T> result=null;
+  T result=null;
   for (  Selector s : selectors) {
     result=s.match(model,element);
     if (result != null) {
