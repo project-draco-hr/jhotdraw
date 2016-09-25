@@ -47,7 +47,9 @@
       DirtyMask dm=entry.getValue();
       if (dm.intersects(dmStyle)) {
         f.stylesheetNotify();
-        markDirty(f,DirtyBits.NODE);
+        for (        Figure subf : f.preorderIterable()) {
+          markDirty(subf,DirtyBits.NODE);
+        }
       }
     }
     DirtyMask dmNode=DirtyMask.of(DirtyBits.NODE);

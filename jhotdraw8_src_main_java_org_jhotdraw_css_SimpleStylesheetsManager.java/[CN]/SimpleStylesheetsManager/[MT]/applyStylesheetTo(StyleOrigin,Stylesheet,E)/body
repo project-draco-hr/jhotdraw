@@ -1,6 +1,7 @@
 {
   SelectorModel<E> selectorModel=getSelectorModel();
-  for (  Map.Entry<String,String> entry : collectApplicableDeclarations(elem,s,new HashMap<String,String>()).entrySet()) {
-    selectorModel.setAttribute(elem,styleOrigin,entry.getKey(),entry.getValue());
+  for (  Map.Entry<Integer,Declaration> entry : collectApplicableDeclarations(elem,s,new LinkedList<Map.Entry<Integer,Declaration>>())) {
+    Declaration d=entry.getValue();
+    selectorModel.setAttribute(elem,styleOrigin,d.getProperty(),d.getTermsAsString());
   }
 }

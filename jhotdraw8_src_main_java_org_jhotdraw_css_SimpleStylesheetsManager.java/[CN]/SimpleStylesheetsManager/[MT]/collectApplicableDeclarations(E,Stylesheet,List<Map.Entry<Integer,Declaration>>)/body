@@ -1,12 +1,13 @@
 {
   SelectorModel<E> selectorModel=getSelectorModel();
   for (  StyleRule r : s.getStyleRules()) {
-    if (r.getSelectorGroup().matches(selectorModel,elem)) {
+    Selector selector;
+    if (null != (selector=r.getSelectorGroup().match(selectorModel,elem))) {
       for (      Declaration d : r.getDeclarations()) {
         if (d.getTerms().isEmpty()) {
           continue;
         }
-        applicableDeclarations.put(d.getProperty(),d.getTermsAsString());
+        applicableDeclarations.add(new AbstractMap.SimpleEntry<>(selector.getSpecificity(),d));
       }
     }
   }

@@ -1,3 +1,2 @@
 E elem
 Collection<ParsedStylesheetEntry> stylesheets
-Map<String,String> applicableDeclarations

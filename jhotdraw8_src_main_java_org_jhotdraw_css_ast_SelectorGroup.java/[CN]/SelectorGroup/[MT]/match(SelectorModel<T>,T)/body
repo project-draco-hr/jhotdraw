@@ -1,10 +1,9 @@
 {
-  T result=null;
   for (  Selector s : selectors) {
-    result=s.match(model,element);
+    T result=s.match(model,element);
     if (result != null) {
-      break;
+      return s;
     }
   }
-  return result;
+  return null;
 }

@@ -1,13 +1,13 @@
 {
   SelectorModel<E> selectorModel=getSelectorModel();
-  for (  Map.Entry<String,String> entry : collectApplicableDeclarations(elem,getUserAgentStylesheets(),new HashMap<String,String>()).entrySet()) {
-    selectorModel.setAttribute(elem,StyleOrigin.USER_AGENT,entry.getKey(),entry.getValue());
+  for (  Declaration d : collectApplicableDeclarations(elem,getUserAgentStylesheets())) {
+    selectorModel.setAttribute(elem,StyleOrigin.USER_AGENT,d.getProperty(),d.getTermsAsString());
   }
-  for (  Map.Entry<String,String> entry : collectApplicableDeclarations(elem,getAuthorStylesheets(),new HashMap<String,String>()).entrySet()) {
-    selectorModel.setAttribute(elem,StyleOrigin.AUTHOR,entry.getKey(),entry.getValue());
+  for (  Declaration d : collectApplicableDeclarations(elem,getAuthorStylesheets())) {
+    selectorModel.setAttribute(elem,StyleOrigin.AUTHOR,d.getProperty(),d.getTermsAsString());
   }
-  for (  Map.Entry<String,String> entry : collectApplicableDeclarations(elem,getInlineStylesheets(),collectApplicableDeclarations(elem,getAuthorStylesheets(),new HashMap<String,String>())).entrySet()) {
-    selectorModel.setAttribute(elem,StyleOrigin.INLINE,entry.getKey(),entry.getValue());
+  for (  Declaration d : collectApplicableDeclarations(elem,getInlineStylesheets())) {
+    selectorModel.setAttribute(elem,StyleOrigin.INLINE,d.getProperty(),d.getTermsAsString());
   }
   HashMap<String,String> applicableDeclarations=new HashMap<>();
   if (selectorModel.hasAttribute(elem,"style")) {
