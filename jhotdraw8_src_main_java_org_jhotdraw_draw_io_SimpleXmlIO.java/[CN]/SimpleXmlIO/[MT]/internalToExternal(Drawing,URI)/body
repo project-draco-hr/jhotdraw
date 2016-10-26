@@ -3,8 +3,8 @@
   if (drawingHome != null) {
     uri=drawingHome.resolve(uri);
   }
-  if (documentHomeDir != null) {
-    uri=documentHomeDir.relativize(uri);
+  if (documentHome != null) {
+    uri=documentHome.relativize(uri);
   }
   return uri;
 }

@@ -1,0 +1,4 @@
+WritableValue<X> propertyX
+ObservableValue<Y> propertyY
+Function<Y,X> updateX
+boolean[] alreadyCalled

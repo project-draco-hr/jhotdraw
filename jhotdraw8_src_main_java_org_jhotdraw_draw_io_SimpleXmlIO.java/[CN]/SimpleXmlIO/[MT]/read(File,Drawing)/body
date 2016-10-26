@@ -1,4 +1,4 @@
 {
-  setDocumentHome(file.toURI());
+  setDocumentHome(file.getParentFile() == null ? new File(System.getProperty("user.home")).toURI() : file.getParentFile().toURI());
   return InputFormat.super.read(file,drawing);
 }

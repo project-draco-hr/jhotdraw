@@ -1,0 +1,3 @@
+WritableValue<A> propertyA
+ObservableValue<B> propertyB
+Function<B,A> updateA

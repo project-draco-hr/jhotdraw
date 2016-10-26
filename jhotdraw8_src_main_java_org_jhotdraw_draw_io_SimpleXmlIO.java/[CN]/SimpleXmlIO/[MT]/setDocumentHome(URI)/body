@@ -1,4 +1,3 @@
 {
   documentHome=uri;
-  documentHomeDir=uri.resolve(".");
 }
