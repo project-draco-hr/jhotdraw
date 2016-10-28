@@ -25,4 +25,5 @@
   DrawingModel model=view.getModel();
   model.set(o,pointKey,getOwner().worldToLocal(constrainedPoint));
   model.set(o,connectorKey,newConnector);
+  model.set(o,targetKey,newConnectedFigure);
 }

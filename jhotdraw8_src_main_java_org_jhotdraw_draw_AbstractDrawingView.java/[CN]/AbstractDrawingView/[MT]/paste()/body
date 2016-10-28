@@ -1,0 +1,11 @@
+{
+  Clipboard cb=Clipboard.getSystemClipboard();
+  for (  DataFormat df : cb.getContentTypes()) {
+    System.out.println(df);
+    System.out.println(cb.getContent(df));
+  }
+  ClipboardInputFormat in=getClipboardInputFormat();
+  if (in == null) {
+    throw new UnsupportedOperationException("Not supported yet.");
+  }
+}

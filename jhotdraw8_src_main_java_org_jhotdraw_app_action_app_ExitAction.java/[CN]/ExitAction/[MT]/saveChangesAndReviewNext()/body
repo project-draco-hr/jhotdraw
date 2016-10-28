@@ -4,7 +4,7 @@
     URIChooser chooser=getChooser(v);
     URI uri=chooser.showDialog(unsavedView.getNode());
     if (uri != null) {
-      saveToFileAndReviewNext(uri,chooser);
+      saveToFileAndReviewNext(uri,chooser.getDataFormat());
     }
  else {
       v.removeDisabler(this);

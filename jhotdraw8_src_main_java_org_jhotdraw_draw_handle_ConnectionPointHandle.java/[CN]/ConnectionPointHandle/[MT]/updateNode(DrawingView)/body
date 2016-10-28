@@ -3,7 +3,7 @@
   Transform t=view.getWorldToView().createConcatenation(f.getLocalToWorld());
   Point2D p=f.get(pointKey);
   pickLocation=p=t.transform(p);
-  boolean isConnected=f.get(connectorKey) != null;
+  boolean isConnected=f.get(connectorKey) != null && f.get(targetKey) != null;
   node.setBackground(isConnected ? REGION_BACKGROUND_CONNECTED : REGION_BACKGROUND_DISCONNECTED);
   node.getStyleClass().set(0,isConnected ? styleclassConnected : styleclassDisconnected);
   node.relocate(p.getX() - 5,p.getY() - 5);

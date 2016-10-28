@@ -1,0 +1,4 @@
+{
+  set(END_CONNECTOR,connector);
+  set(END_TARGET,target);
+}

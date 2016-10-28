@@ -1,0 +1,4 @@
+{
+  extensionFilter=new FileChooser.ExtensionFilter(description,extensions);
+  this.format=format;
+}

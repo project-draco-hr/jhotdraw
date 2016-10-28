@@ -1,0 +1,8 @@
+{
+  for (  URIExtensionFilter f : filters) {
+    if (f.getFileChooserExtensionFilter() == chooser.getSelectedExtensionFilter()) {
+      return f.getDataFormat();
+    }
+  }
+  return null;
+}

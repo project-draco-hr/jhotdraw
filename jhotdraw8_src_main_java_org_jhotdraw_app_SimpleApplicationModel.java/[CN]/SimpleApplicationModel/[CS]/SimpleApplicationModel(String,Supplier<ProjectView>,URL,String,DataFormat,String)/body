@@ -1,0 +1,8 @@
+{
+  this.name=name;
+  this.menuFxml=menuFxml;
+  URIExtensionFilter fef=new URIExtensionFilter(fileDescription,format,fileExtension);
+  openExtensionFilters.add(fef);
+  saveExtensionFilters.add(fef);
+  this.viewFactory=viewFactory;
+}

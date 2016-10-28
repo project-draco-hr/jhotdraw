@@ -24,7 +24,7 @@
       getApplication().removeDisabler(this);
     }
  else {
-      saveToFile(uri,chooser);
+      saveToFile(uri,chooser.getDataFormat());
     }
   }
  else {

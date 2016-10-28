@@ -1,0 +1,17 @@
+{
+  ClipboardOutputFormat out=getClipboardOutputFormat();
+  if (out == null) {
+    throw new UnsupportedOperationException("Not supported yet.");
+  }
+ else {
+    Map<DataFormat,Object> content=new LinkedHashMap<>();
+    try {
+      final ObservableSet<Figure> selectedFigures=getSelectedFigures();
+      out.write(content,getDrawing(),selectedFigures.isEmpty() ? FXCollections.singletonObservableList(getDrawing()) : selectedFigures);
+      Clipboard.getSystemClipboard().setContent(content);
+    }
+ catch (    IOException ex) {
+      ex.printStackTrace();
+    }
+  }
+}

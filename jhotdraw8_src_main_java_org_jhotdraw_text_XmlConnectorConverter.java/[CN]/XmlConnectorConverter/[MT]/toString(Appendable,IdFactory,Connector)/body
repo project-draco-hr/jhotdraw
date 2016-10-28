@@ -1,0 +1,4 @@
+{
+  double choice=connectorToChoiceMap.get(value.getClass());
+  formatter.toStr(out,idFactory,choice);
+}

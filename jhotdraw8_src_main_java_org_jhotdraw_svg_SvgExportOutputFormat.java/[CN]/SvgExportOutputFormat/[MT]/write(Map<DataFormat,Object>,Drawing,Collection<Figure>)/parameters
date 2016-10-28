@@ -1,0 +1,3 @@
+Map<DataFormat,Object> clipboard
+Drawing drawing
+Collection<Figure> selection

@@ -1,0 +1,3 @@
+{
+  this.filters.setAll(filters);
+}

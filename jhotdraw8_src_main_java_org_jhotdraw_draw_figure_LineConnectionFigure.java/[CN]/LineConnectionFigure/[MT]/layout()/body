@@ -3,16 +3,18 @@
   Point2D end=get(END);
   Connector startConnector=get(START_CONNECTOR);
   Connector endConnector=get(END_CONNECTOR);
-  if (startConnector != null) {
-    start=startConnector.getPositionInWorld(this);
+  Figure startTarget=get(START_TARGET);
+  Figure endTarget=get(END_TARGET);
+  if (startConnector != null && startTarget != null) {
+    start=startConnector.getPositionInWorld(this,startTarget);
   }
-  if (endConnector != null) {
-    end=endConnector.getPositionInWorld(this);
+  if (endConnector != null && endTarget != null) {
+    end=endConnector.getPositionInWorld(this,endTarget);
   }
-  if (startConnector != null) {
-    set(START,worldToParent(startConnector.chopStart(this,start,end)));
+  if (startConnector != null && startTarget != null) {
+    set(START,worldToParent(startConnector.chopStart(this,startTarget,start,end)));
   }
-  if (endConnector != null) {
-    set(END,worldToParent(endConnector.chopEnd(this,start,end)));
+  if (endConnector != null && endTarget != null) {
+    set(END,worldToParent(endConnector.chopEnd(this,endTarget,start,end)));
   }
 }

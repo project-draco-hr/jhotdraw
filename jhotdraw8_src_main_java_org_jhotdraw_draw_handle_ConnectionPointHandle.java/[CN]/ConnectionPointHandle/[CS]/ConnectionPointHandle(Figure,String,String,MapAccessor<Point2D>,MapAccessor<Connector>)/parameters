@@ -1,5 +1,0 @@
-Figure figure
-String styleclassDisconnected
-String styleclassConnected
-MapAccessor<Point2D> pointKey
-MapAccessor<Connector> connectorKey

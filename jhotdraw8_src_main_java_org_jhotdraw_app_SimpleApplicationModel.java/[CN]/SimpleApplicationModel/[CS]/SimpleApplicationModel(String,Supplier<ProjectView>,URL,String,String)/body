@@ -1,8 +1,0 @@
-{
-  this.name=name;
-  this.menuFxml=menuFxml;
-  FileChooser.ExtensionFilter fef=new FileChooser.ExtensionFilter(fileDescription,fileExtension);
-  openExtensionFilters.add(fef);
-  saveExtensionFilters.add(fef);
-  this.viewFactory=viewFactory;
-}

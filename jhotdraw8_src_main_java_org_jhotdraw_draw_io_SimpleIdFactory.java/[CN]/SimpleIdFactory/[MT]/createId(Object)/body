@@ -1,12 +1,3 @@
 {
-  String id=objectToId.get(object);
-  if (id == null) {
-    do {
-      id=Long.toString(nextId++);
-    }
- while (idToObject.containsKey(id));
-    objectToId.put(object,id);
-    idToObject.put(id,object);
-  }
-  return id;
+  return createId(object,"");
 }

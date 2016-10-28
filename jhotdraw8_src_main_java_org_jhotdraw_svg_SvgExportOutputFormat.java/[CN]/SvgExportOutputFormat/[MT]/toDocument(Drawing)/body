@@ -1,8 +1,3 @@
 {
-  SimpleDrawingRenderer r=new SimpleDrawingRenderer();
-  r.set(RenderContext.RENDERING_INTENT,RenderingIntent.EXPORT);
-  javafx.scene.Node drawingNode=r.render(external);
-  Document doc=toDocument(drawingNode);
-  writeDrawingElementAttributes(doc.getDocumentElement(),external);
-  return doc;
+  return toDocument(external,Collections.singleton(external));
 }

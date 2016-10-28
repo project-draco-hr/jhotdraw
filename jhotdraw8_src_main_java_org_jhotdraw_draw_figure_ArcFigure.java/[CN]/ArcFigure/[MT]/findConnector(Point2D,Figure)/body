@@ -1,3 +1,3 @@
 {
-  return new ChopEllipseConnector(this);
+  return new ChopEllipseConnector();
 }

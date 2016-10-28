@@ -35,7 +35,7 @@
   addConverterForType(Double.class,new XmlDoubleConverter());
   addConverterForType(URL.class,new XmlUrlConverter());
   addConverterForType(URI.class,new XmlUriConverter());
-  addConverterForType(Connector.class,new DefaultConnectorConverter());
+  addConverterForType(Connector.class,new XmlConnectorConverter());
   addConverterForType(Paint.class,new XmlPaintConverter());
   addConverterForType(CColor.class,new XmlCColorConverter());
   addConverterForType(Boolean.class,new XmlBooleanConverter());
@@ -45,6 +45,7 @@
   addConverterForType(Rectangle2D.class,new XmlRectangle2DConverter());
   addConverterForType(BlendMode.class,new XmlEnumConverter<BlendMode>(BlendMode.class));
   addConverterForType(Effect.class,new XmlEffectConverter());
+  addConverterForType(Figure.class,new XmlFigureReferenceConverter());
   addConverter(StyleableFigure.STYLE_CLASS,new CssObservableWordListConverter());
   addConverter(StrokeableFigure.STROKE_DASH_ARRAY,new CssSizeListConverter());
   addConverter(StrokeableFigure.STROKE_LINE_CAP,new XmlEnumConverter<StrokeLineCap>(StrokeLineCap.class));

@@ -16,7 +16,7 @@
       break;
     }
     if (uri != null) {
-      saveViewToURI(v,uri,chsr);
+      saveViewToURI(v,uri,chsr.getDataFormat());
     }
     v.removeDisabler(this);
     if (oldFocusOwner != null) {

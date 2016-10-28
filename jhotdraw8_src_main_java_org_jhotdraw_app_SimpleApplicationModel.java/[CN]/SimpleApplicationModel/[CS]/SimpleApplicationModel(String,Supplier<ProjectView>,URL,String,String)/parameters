@@ -1,5 +1,0 @@
-String name
-Supplier<ProjectView> viewFactory
-URL menuFxml
-String fileDescription
-String fileExtension

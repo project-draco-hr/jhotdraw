@@ -1,0 +1,7 @@
+{
+  ObservableList<FileChooser.ExtensionFilter> cfilters=chooser.getExtensionFilters();
+  cfilters.clear();
+  for (  URIExtensionFilter f : filters) {
+    cfilters.add(f.getFileChooserExtensionFilter());
+  }
+}

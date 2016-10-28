@@ -1,6 +1,6 @@
 {
   FileURIChooser c=new FileURIChooser();
   c.setMode(FileURIChooser.Mode.OPEN);
-  c.getFileChooser().getExtensionFilters().addAll(openExtensionFilters);
+  c.setExtensionFilters(openExtensionFilters);
   return c;
 }

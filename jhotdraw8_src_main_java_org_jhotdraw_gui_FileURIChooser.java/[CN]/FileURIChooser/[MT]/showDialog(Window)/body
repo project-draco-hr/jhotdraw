@@ -1,4 +1,5 @@
 {
+  updateFilters();
   File f=null;
 switch (mode) {
 case OPEN:

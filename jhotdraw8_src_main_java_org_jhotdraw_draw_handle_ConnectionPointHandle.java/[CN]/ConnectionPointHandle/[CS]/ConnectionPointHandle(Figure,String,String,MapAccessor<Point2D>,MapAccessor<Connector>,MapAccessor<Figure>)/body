@@ -1,0 +1,17 @@
+{
+  super(figure);
+  this.pointKey=pointKey;
+  this.connectorKey=connectorKey;
+  this.targetKey=targetKey;
+  this.styleclassDisconnected=styleclassDisconnected;
+  this.styleclassConnected=styleclassConnected;
+  node=new Region();
+  node.setShape(REGION_SHAPE);
+  node.setManaged(false);
+  node.setScaleShape(false);
+  node.setCenterShape(true);
+  node.resize(10,10);
+  node.getStyleClass().clear();
+  node.getStyleClass().add(styleclassDisconnected);
+  node.setBorder(REGION_BORDER);
+}

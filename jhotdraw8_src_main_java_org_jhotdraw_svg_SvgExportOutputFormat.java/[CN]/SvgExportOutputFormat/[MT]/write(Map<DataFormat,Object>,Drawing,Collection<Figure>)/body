@@ -1,0 +1,14 @@
+{
+  StringWriter out=new StringWriter();
+  Document doc=toDocument(drawing,selection);
+  try {
+    Transformer t=TransformerFactory.newInstance().newTransformer();
+    DOMSource source=new DOMSource(doc);
+    StreamResult result=new StreamResult(out);
+    t.transform(source,result);
+  }
+ catch (  TransformerException ex) {
+    throw new IOException(ex);
+  }
+  clipboard.put(SVG_FORMAT,out.toString());
+}

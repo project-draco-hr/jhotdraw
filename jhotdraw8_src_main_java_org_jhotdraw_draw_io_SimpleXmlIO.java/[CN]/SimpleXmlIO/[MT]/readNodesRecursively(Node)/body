@@ -14,9 +14,11 @@
     String id=getAttribute(elem,factory.getObjectIdAttribute());
     if (id != null && !id.isEmpty()) {
       if (factory.getObject(id) != null) {
-        throw new IOException("Duplicate id " + id + " in element "+ elem.getTagName());
+        System.err.println("warning: duplicate id " + id + " in element "+ elem.getTagName());
       }
-      factory.putId(figure,id);
+ else {
+        factory.putId(figure,id);
+      }
     }
     NodeList list=elem.getChildNodes();
     for (int i=0; i < list.getLength(); i++) {

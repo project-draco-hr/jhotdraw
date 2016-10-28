@@ -1,0 +1,10 @@
+{
+  for (  ClipboardInputFormat f : formats) {
+    try {
+      return f.read(clipboard,drawing,layer);
+    }
+ catch (    IOException e) {
+    }
+  }
+  throw new IOException("Unsupported clipboard content");
+}
