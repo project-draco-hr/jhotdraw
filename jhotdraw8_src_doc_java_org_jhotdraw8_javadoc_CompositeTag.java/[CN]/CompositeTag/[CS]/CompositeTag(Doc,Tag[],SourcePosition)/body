@@ -1,0 +1,5 @@
+{
+  this.holder=holder;
+  this.inlineTags=inlineTags;
+  this.position=position;
+}

@@ -1,0 +1,68 @@
+{
+  if (tags.length > 0 && NAME.equals(tags[0].kind())) {
+    DesignPatternHeaderTag dpt=(DesignPatternHeaderTag)tags[0];
+    String key=dpt.instantiatingType + " " + dpt.patternName;
+    if (tags.length == 1) {
+      ArrayList<Tag> descr=descriptions.get(key);
+      if (descr != null) {
+        Tag[] newTags=new Tag[descr.size() + 1];
+        newTags[0]=dpt;
+        for (int i=1; i < newTags.length; i++) {
+          newTags[i]=descr.get(i - 1);
+        }
+        return newTags;
+      }
+ else {
+        Doc doc=dpt.holder();
+        if (doc instanceof ClassDoc) {
+          ClassDoc cd=(ClassDoc)doc;
+          ClassDoc maincd=cd.findClass(dpt.instantiatingType);
+          if (maincd != null) {
+            Tag[] lookupedTags=maincd.tags(NAME);
+            DesignPatternHeaderTag lookedUpDpt=null;
+            for (            Tag lookup : lookupedTags) {
+              Tag[] inline=parseInlineTags(lookup);
+              if (inline.length > 0 && (inline[0] instanceof DesignPatternHeaderTag)) {
+                lookedUpDpt=(DesignPatternHeaderTag)inline[0];
+                if (lookedUpDpt.instantiatingType.equals(dpt.instantiatingType) && lookedUpDpt.patternName.equals(dpt.patternName)) {
+                  descr=new ArrayList<>();
+                  for (int i=1; i < inline.length; i++) {
+                    descr.add(inline[i]);
+                  }
+                  break;
+                }
+              }
+            }
+            if (descr != null) {
+              if (descr.isEmpty()) {
+                System.err.println(lookedUpDpt.position() + ": warning: DesignPatternTaglet \"@" + NAME+ " "+ dpt.unqualfiedInstantiatingType()+ " "+ dpt.patternName+ "\" must have a description.");
+                descriptions.put(key,descr);
+              }
+ else {
+                descriptions.put(key,descr);
+                ArrayList<Tag> result=new ArrayList<>();
+                result.add(dpt);
+                result.addAll(descr);
+                return result.toArray(new Tag[result.size()]);
+              }
+            }
+ else {
+              System.err.println(dpt.position() + ": warning: DesignPatternTaglet could not find a \"@" + NAME+ " "+ dpt.unqualfiedInstantiatingType()+ " "+ dpt.patternName+ "\" tag in class "+ dpt.instantiatingType+ ".");
+            }
+          }
+ else {
+            System.err.println(dpt.position() + ": warning: DesignPatternTaglet could not find class " + dpt.unqualfiedInstantiatingType()+ ".");
+          }
+        }
+      }
+    }
+ else {
+      ArrayList<Tag> descr=new ArrayList<>();
+      for (int i=1; i < tags.length; i++) {
+        descr.add(tags[i]);
+      }
+      descriptions.put(key,descr);
+    }
+  }
+  return tags;
+}
