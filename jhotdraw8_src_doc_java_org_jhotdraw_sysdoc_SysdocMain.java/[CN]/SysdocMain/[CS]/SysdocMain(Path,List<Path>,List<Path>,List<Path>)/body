@@ -1,6 +1,0 @@
-{
-  this.destdir=destdir;
-  this.docdirs=docdirs;
-  this.srcdirs=srcdirs;
-  this.tstdirs=tstdirs;
-}

@@ -1,3 +1,0 @@
-{
-  return "Reference{" + "file=" + fragment.getFileName() + ", name="+ name+ '}';
-}

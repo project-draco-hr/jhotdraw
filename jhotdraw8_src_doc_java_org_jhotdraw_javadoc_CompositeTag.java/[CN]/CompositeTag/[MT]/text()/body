@@ -1,7 +1,0 @@
-{
-  StringBuilder buf=new StringBuilder();
-  for (  Tag t : inlineTags) {
-    buf.append(t.text());
-  }
-  return buf.toString();
-}

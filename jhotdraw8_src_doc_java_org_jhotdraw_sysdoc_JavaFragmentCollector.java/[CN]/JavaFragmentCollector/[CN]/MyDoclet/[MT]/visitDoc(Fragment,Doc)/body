@@ -1,9 +1,0 @@
-{
-  for (  Tag tag : cd.tags()) {
-    if ("@doc.ref".equals(tag.name())) {
-      for (      String ref : tag.text().split("\\s+")) {
-        references.add(new Reference(frag,ref));
-      }
-    }
-  }
-}

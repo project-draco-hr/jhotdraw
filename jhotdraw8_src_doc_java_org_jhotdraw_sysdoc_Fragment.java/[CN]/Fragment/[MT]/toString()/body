@@ -1,3 +1,0 @@
-{
-  return "Fragment{" + "file=" + file.getFileName() + ", name="+ name+ '}';
-}

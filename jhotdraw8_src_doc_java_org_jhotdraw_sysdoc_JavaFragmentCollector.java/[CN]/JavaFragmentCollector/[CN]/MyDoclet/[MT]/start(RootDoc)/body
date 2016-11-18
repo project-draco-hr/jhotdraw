@@ -1,6 +1,0 @@
-{
-  for (  ClassDoc cd : root.classes()) {
-    visitClassDoc(cd);
-  }
-  return true;
-}

@@ -1,5 +1,0 @@
-{
-  this.holder=holder;
-  this.text=text;
-  this.position=position;
-}

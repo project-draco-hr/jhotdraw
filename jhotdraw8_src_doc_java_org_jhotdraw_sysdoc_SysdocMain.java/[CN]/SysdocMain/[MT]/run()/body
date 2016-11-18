@@ -1,6 +1,0 @@
-{
-  JavaFragmentCollector srcc=new JavaFragmentCollector(srcdirs);
-  JavaFragmentCollector tstc=new JavaFragmentCollector(tstdirs);
-  srcc.collect();
-  tstc.collect();
-}
