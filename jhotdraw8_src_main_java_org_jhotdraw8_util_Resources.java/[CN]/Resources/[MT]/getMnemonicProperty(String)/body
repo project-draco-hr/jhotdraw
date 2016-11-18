@@ -5,7 +5,7 @@
   }
  catch (  MissingResourceException e) {
     if (isVerbose) {
-      System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ ".mnemonic\" not found.");
+      System.err.println("Warning Resources[" + baseName + "] \""+ key+ ".mnemonic\" not found.");
     }
     s=null;
   }

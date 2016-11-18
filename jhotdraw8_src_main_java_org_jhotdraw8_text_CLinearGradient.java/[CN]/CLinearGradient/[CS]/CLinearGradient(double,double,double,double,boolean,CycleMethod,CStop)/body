@@ -1,0 +1,10 @@
+{
+  this.startX=startX;
+  this.startY=startY;
+  this.endX=endX;
+  this.endY=endY;
+  this.proportional=proportional;
+  this.cycleMethod=cycleMethod;
+  this.name=null;
+  this.cstops=stops;
+}

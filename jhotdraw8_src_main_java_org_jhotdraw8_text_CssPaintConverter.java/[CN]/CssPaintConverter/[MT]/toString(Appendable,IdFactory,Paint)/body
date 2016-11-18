@@ -1,9 +1,4 @@
 {
-  String name=colorNames.get(value);
-  if (name != null) {
-    out.append(name);
-    return;
-  }
   if (value == null) {
     out.append("none");
   }
@@ -11,31 +6,12 @@
     out.append("transparent");
   }
  else   if (value instanceof Color) {
-    Color c=(Color)value;
-    if (c.getOpacity() == 1.0) {
-      int rgb=((((int)(c.getRed() * 255)) & 0xff) << 16) | ((((int)(c.getGreen() * 255)) & 0xff) << 8) | ((((int)(c.getBlue() * 255)) & 0xff) << 0);
-      if ((rgb & 0xf0f0f0) >>> 4 == (rgb & 0x0f0f0f)) {
-        String hex="000" + Integer.toHexString(((rgb & 0xf0000) >>> 8) | ((rgb & 0xf00) >>> 4) | (rgb & 0xf));
-        out.append("#");
-        out.append(hex.substring(hex.length() - 3));
-      }
- else {
-        String hex="000000" + Integer.toHexString(rgb);
-        out.append("#");
-        out.append(hex.substring(hex.length() - 6));
-      }
-    }
- else {
-      out.append("rgba(");
-      out.append(Integer.toString((int)(c.getRed() * 255)));
-      out.append(',');
-      out.append(Integer.toString((int)(c.getGreen() * 255)));
-      out.append(',');
-      out.append(Integer.toString((int)(c.getBlue() * 255)));
-      out.append(',');
-      out.append(doubleConverter.toString(c.getOpacity()));
-      out.append(')');
-    }
+    CColor c=new CColor((Color)value);
+    colorConverter.toString(out,idFactory,c);
+  }
+ else   if (value instanceof LinearGradient) {
+    CLinearGradient lg=new CLinearGradient((LinearGradient)value);
+    linearGradientConverter.toString(out,idFactory,lg);
   }
  else {
     throw new UnsupportedOperationException("not yet implemented");

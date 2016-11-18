@@ -5,7 +5,7 @@
   }
  catch (  MissingResourceException e) {
     if (isVerbose) {
-      System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ ".toolTipText\" not found.");
+      System.err.println("Warning Resources[" + baseName + "] \""+ key+ ".toolTipText\" not found.");
     }
     return null;
   }

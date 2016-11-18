@@ -1,0 +1,7 @@
+double startX
+double startY
+double endX
+double endY
+boolean proportional
+CycleMethod cycleMethod
+CStop stops

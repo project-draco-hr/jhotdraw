@@ -1,6 +1,6 @@
 {
   super(app,editor);
-  Resources labels=Resources.getResources("org.jhotdraw.draw.Labels");
+  Resources labels=Resources.getResources("org.jhotdraw8.draw.Labels");
   labels.configureAction(this,ID);
   this.groupFactory=groupFactory;
   if (groupFactory == null) {

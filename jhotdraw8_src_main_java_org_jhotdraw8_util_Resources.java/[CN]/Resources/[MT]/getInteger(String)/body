@@ -4,7 +4,7 @@
   }
  catch (  MissingResourceException e) {
     if (isVerbose) {
-      System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ "\" not found.");
+      System.err.println("Warning Resources[" + baseName + "] \""+ key+ "\" not found.");
     }
     return -1;
   }

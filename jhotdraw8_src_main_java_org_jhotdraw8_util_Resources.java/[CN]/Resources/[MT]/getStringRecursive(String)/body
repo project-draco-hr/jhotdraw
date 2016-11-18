@@ -13,7 +13,7 @@
       }
       if (value == null) {
         if (isVerbose) {
-          System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ "\" not found.");
+          System.err.println("Warning Resources[" + baseName + "] \""+ key+ "\" not found.");
         }
         return null;
       }
@@ -65,7 +65,7 @@
   }
  catch (  MissingResourceException e) {
     if (isVerbose) {
-      System.err.println("Warning ResourceBundleUtil[" + baseName + "] \""+ key+ "\" not found.");
+      System.err.println("Warning Resources[" + baseName + "] \""+ key+ "\" not found.");
     }
     return null;
   }

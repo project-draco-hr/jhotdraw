@@ -1,6 +1,6 @@
 {
   if (!unsavedView.isDisabled()) {
-    final Resources labels=Resources.getResources("org.jhotdraw.app.Labels");
+    final Resources labels=Resources.getResources("org.jhotdraw8.app.Labels");
     oldFocusOwner=unsavedView.getNode().getScene().getFocusOwner();
     unsavedView.removeDisabler(this);
     URI unsavedURI=unsavedView.getURI();

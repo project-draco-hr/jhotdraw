@@ -11,13 +11,13 @@
     }
     URL url=baseClass.getResource(rsrcName);
     if (isVerbose && url == null) {
-      System.err.println("Warning ResourceBundleUtil[" + baseName + "].getIconProperty \""+ key+ suffix+ "\" resource:"+ rsrcName+ " not found.");
+      System.err.println("Warning Resources[" + baseName + "].getIconProperty \""+ key+ suffix+ "\" resource:"+ rsrcName+ " not found.");
     }
     return (url == null) ? null : new ImageView(url.toString());
   }
  catch (  MissingResourceException e) {
     if (isVerbose) {
-      System.err.println("Warning ResourceBundleUtil[" + baseName + "].getIconProperty \""+ key+ suffix+ "\" not found.");
+      System.err.println("Warning Resources[" + baseName + "].getIconProperty \""+ key+ suffix+ "\" not found.");
     }
     return null;
   }

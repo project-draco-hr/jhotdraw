@@ -1,0 +1,3 @@
+{
+  return new Object[][]{{null,"none"},{new CLinearGradient(0,1,2,3,false,CycleMethod.NO_CYCLE,new CStop(0.0,new CColor("red",Color.RED))),null}};
+}

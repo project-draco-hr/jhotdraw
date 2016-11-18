@@ -1,0 +1,19 @@
+{
+  if (value == null) {
+    out.append("none");
+  }
+ else   if (Color.TRANSPARENT.equals(value)) {
+    out.append("transparent");
+  }
+ else   if (value instanceof CColor) {
+    CColor c=(CColor)value;
+    colorConverter.toString(out,idFactory,c);
+  }
+ else   if (value instanceof CLinearGradient) {
+    CLinearGradient lg=(CLinearGradient)value;
+    linearGradientConverter.toString(out,idFactory,lg);
+  }
+ else {
+    throw new UnsupportedOperationException("not yet implemented");
+  }
+}
