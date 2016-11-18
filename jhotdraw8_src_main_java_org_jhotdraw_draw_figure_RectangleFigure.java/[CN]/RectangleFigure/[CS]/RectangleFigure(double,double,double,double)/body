@@ -1,3 +1,4 @@
 {
   reshape(x,y,width,height);
+  set(STROKE_TYPE,StrokeType.CENTERED);
 }
