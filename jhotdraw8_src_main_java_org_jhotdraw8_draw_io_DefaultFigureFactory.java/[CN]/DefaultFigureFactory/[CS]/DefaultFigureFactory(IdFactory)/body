@@ -37,6 +37,7 @@
   addConverterForType(URI.class,new XmlUriConverter());
   addConverterForType(Connector.class,new XmlConnectorConverter());
   addConverterForType(Paint.class,new XmlPaintConverter());
+  addConverterForType(Paintable.class,new XmlPaintableConverter());
   addConverterForType(CColor.class,new XmlCColorConverter());
   addConverterForType(Boolean.class,new XmlBooleanConverter());
   addConverterForType(TextAlignment.class,new XmlEnumConverter<TextAlignment>(TextAlignment.class));
@@ -51,7 +52,7 @@
   addConverter(StrokeableFigure.STROKE_LINE_CAP,new XmlEnumConverter<StrokeLineCap>(StrokeLineCap.class));
   addConverter(StrokeableFigure.STROKE_LINE_JOIN,new XmlEnumConverter<StrokeLineJoin>(StrokeLineJoin.class));
   addConverter(StrokeableFigure.STROKE_TYPE,new XmlEnumConverter<StrokeType>(StrokeType.class));
-  addConverter(TransformableFigure.TRANSFORM,new XmlTransformListConverter());
+  addConverter(TransformableFigure.TRANSFORMS,new XmlTransformListConverter());
   removeKey(StyleableFigure.PSEUDO_CLASS_STATES);
   removeRedundantKeys();
   checkConverters();

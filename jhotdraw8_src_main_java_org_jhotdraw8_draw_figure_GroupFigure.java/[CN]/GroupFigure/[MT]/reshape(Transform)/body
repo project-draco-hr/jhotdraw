@@ -1,4 +1,6 @@
 {
+  Point2D oldPoint=new Point2D(0,0);
+  Point2D newPoint=getLocalToWorld().createConcatenation(transform).transform(oldPoint);
   for (  Figure child : getChildren()) {
     Transform p2c=child.getParentToLocal();
     if (p2c.isIdentity()) {
@@ -7,11 +9,7 @@
  else     if (child instanceof TransformableFigure) {
       TransformableFigure tchild=(TransformableFigure)child;
       if (transform instanceof Translate) {
-        p2c=tchild.getTransform();
-        Point2D tr=new Point2D(transform.getTx(),transform.getTy());
-        tr=Geom.toDeltaTransform(p2c).transform(tr);
-        Transform t=new Translate(tr.getX(),tr.getY());
-        tchild.reshape(t);
+        MoveHandle.translateFigure(child,oldPoint,newPoint,null);
       }
  else {
         tchild.reshape(p2c.createConcatenation(transform));

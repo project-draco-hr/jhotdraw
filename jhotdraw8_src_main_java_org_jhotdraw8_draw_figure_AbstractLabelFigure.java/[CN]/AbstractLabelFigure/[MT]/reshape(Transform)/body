@@ -1,5 +1,0 @@
-{
-  Point2D o=get(ORIGIN);
-  o=transform.transform(o);
-  set(ORIGIN,o);
-}

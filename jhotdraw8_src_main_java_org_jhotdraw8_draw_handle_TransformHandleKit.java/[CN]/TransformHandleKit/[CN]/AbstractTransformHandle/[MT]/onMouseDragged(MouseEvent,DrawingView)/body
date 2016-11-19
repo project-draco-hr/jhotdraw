@@ -8,4 +8,5 @@
     oldPoint=getOwner().localToWorld(loc);
   }
   boolean keepAspect=event.isShiftDown();
+  resize(newPoint,getOwner(),startBounds,view.getModel(),keepAspect);
 }

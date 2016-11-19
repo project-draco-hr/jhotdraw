@@ -1,4 +1,5 @@
 {
+  if (true)   return;
   if (width == 0 || height == 0) {
     return;
   }
@@ -7,8 +8,8 @@
   if (Double.isNaN(sx) || Double.isNaN(sy)) {
     return;
   }
-  double tx=x - startBounds.getMinX();
-  double ty=y - startBounds.getMinY();
+  double tx=(x - startBounds.getMinX());
+  double ty=(y - startBounds.getMinY());
   double newTx=startTranslateX + tx - x + sx * x;
   double newTy=startTranslateY + ty - y + sy * y;
   double newSx=startScaleX * sx;

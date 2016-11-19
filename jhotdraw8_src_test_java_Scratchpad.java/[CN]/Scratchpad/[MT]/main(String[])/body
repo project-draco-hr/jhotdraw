@@ -1,2 +1,10 @@
 {
+  Scale s=new Scale(0,2);
+  System.out.println("s:" + s);
+  try {
+    System.out.println("invs:" + s.createInverse());
+  }
+ catch (  NonInvertibleTransformException ex) {
+    System.out.println(ex);
+  }
 }
