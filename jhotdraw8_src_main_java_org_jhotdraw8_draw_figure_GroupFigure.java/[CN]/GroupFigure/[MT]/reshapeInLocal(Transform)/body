@@ -1,0 +1,7 @@
+{
+  Point2D oldPoint=new Point2D(0,0);
+  Point2D newPoint=getLocalToWorld().createConcatenation(transform).transform(oldPoint);
+  for (  Figure child : getChildren()) {
+    child.reshapeInParent(transform);
+  }
+}

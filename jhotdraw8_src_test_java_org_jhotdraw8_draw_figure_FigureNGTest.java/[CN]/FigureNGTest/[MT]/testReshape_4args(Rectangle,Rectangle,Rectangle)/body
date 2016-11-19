@@ -6,7 +6,7 @@
     public Bounds getBoundsInLocal(){
       return r.getBoundsInLocal();
     }
-    public void reshape(    Transform t){
+    public void reshapeInLocal(    Transform t){
       actual[0]=t;
       Bounds b=t.transform(getBoundsInLocal());
       r.setX(b.getMinX());

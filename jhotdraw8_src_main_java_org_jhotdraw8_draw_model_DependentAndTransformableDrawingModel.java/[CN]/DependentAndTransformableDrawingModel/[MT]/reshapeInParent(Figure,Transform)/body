@@ -1,0 +1,4 @@
+{
+  f.reshapeInParent(transform);
+  fire(DrawingModelEvent.layoutChanged(this,f));
+}

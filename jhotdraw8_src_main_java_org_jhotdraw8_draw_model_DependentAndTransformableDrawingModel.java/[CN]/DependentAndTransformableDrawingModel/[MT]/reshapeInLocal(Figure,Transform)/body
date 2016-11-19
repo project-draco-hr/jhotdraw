@@ -1,4 +1,4 @@
 {
-  f.reshape(transform);
+  f.reshapeInLocal(transform);
   fire(DrawingModelEvent.layoutChanged(this,f));
 }

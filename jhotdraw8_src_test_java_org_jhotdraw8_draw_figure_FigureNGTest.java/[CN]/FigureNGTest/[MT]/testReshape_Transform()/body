@@ -2,6 +2,6 @@
   System.out.println("reshape");
   Transform transform=null;
   Figure instance=new FigureImpl();
-  instance.reshape(transform);
+  instance.reshapeInLocal(transform);
   fail("The test case is a prototype.");
 }

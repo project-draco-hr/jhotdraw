@@ -20,7 +20,7 @@
       opl=tt.transform(opl);
     }
     Transform tx=Transform.translate(npl.getX() - opl.getX(),npl.getY() - opl.getY());
-    model.reshape(f,tx);
+    model.reshapeInLocal(f,tx);
   }
   oldPoint=newPoint;
 }
