@@ -1,0 +1,40 @@
+{
+  List<Transform> list=new ArrayList<>();
+  if (transform.isIdentity()) {
+  }
+ else   if (transform instanceof Translate) {
+    list.add(transform);
+  }
+ else   if (transform instanceof Scale) {
+    list.add(transform);
+  }
+ else   if (transform instanceof Rotate) {
+    list.add(transform);
+  }
+ else {
+    double a=transform.getMxx();
+    double b=transform.getMxy();
+    double c=transform.getMyx();
+    double d=transform.getMyy();
+    double tx=transform.getTx();
+    double ty=transform.getTy();
+    double sx=sqrt(a * a + c * c);
+    double sy=sqrt(b * b + d * d);
+    double rot1=atan(c / d);
+    double rot2=atan(-b / a);
+    if (isNaN(rot1) || isNaN(rot2) || abs(rot1 - rot2) > 1e-6) {
+      list.add(transform);
+      return list;
+    }
+    if (tx != 0.0 || ty != 0.0) {
+      list.add(new Translate(tx,ty));
+    }
+    if (sx != 1.0 || sy != 1.0) {
+      list.add(new Scale(tx,ty));
+    }
+    if (rot1 != 0.0 && rot2 != 0.0) {
+      list.add(new Rotate(rot1 * 180.0 / Math.PI));
+    }
+  }
+  return list;
+}

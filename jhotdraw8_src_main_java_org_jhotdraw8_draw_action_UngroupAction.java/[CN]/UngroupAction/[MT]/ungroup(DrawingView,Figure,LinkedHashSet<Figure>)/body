@@ -15,20 +15,7 @@
   for (  Figure child : new ArrayList<Figure>(group.getChildren())) {
     model.insertChildAt(child,parent,index++);
     if (groupTransform != null) {
-      List<Transform> childTransforms=child.get(TransformableFigure.TRANSFORMS);
-      if (!isGroupTranslateScaleRotateOnly || childTransforms != null && !childTransforms.isEmpty()) {
-        ArrayList<Transform> newTransforms=new ArrayList<>();
-        newTransforms.add(groupTransform);
-        if (childTransforms != null) {
-          newTransforms.addAll(childTransforms);
-        }
-        model.set(child,TransformableFigure.TRANSFORMS,newTransforms);
-      }
- else {
-        ArrayList<Transform> newTransforms=new ArrayList<>();
-        newTransforms.add(groupTransform);
-        model.set(child,TransformableFigure.TRANSFORMS,newTransforms);
-      }
+      model.transformInParent(child,groupTransform);
     }
   }
   model.removeFromParent(group);

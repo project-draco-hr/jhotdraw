@@ -1,3 +1,0 @@
-{
-  reshapeInLocal(getParentToLocal().createConcatenation(transform));
-}

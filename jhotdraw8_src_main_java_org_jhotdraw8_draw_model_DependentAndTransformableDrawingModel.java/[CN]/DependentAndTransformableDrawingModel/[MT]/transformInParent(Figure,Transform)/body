@@ -1,0 +1,4 @@
+{
+  f.transformInParent(transform);
+  fire(DrawingModelEvent.transformChanged(this,f));
+}
