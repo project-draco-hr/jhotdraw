@@ -8,14 +8,16 @@
   page.setWidth(bounds.getWidth());
   page.setHeight(bounds.getHeight());
   CColor cclr=getStyled(BACKGROUND);
-  page.setFill(cclr == null ? null : cclr.getColor());
-  g.setClip(new Rectangle(bounds.getMinX(),bounds.getMinY(),bounds.getWidth(),bounds.getHeight()));
+  page.setFill(Paintable.getPaint(cclr));
+  if (g.getClip() == null || !g.getClip().getBoundsInLocal().equals(bounds)) {
+    g.setClip(new Rectangle(bounds.getMinX(),bounds.getMinY(),bounds.getWidth(),bounds.getHeight()));
+  }
   List<Node> nodes=new ArrayList<Node>(getChildren().size());
   nodes.add(page);
   for (  Figure child : getChildren()) {
     nodes.add(v.getNode(child));
   }
-  ObservableList<Node> group=((Group)n).getChildren();
+  ObservableList<Node> group=g.getChildren();
   if (!group.equals(nodes)) {
     group.setAll(nodes);
   }
