@@ -14,20 +14,24 @@
   drawingPane.setTranslateX(max(0,-x));
   drawingPane.setTranslateY(max(0,-y));
   if (d != null) {
-    backgroundPane.setTranslateX(max(0,-x));
-    backgroundPane.setTranslateY(max(0,-y));
-    backgroundPane.setWidth(dw * f);
-    backgroundPane.setHeight(dh * f);
+    canvasPane.setTranslateX(max(0,-x));
+    canvasPane.setTranslateY(max(0,-y));
+    canvasPane.setWidth(dw * f);
+    canvasPane.setHeight(dh * f);
   }
   double padding=20;
   double lw=max(max(0,x) + w,max(0,-x) + dw * f);
   double lh=max(max(0,y) + h,max(0,-y) + dh * f);
-  overlaysPane.setTranslateX(-padding);
-  overlaysPane.setTranslateY(-padding);
+  drawingPane.setTranslateX(padding);
+  drawingPane.setTranslateY(padding);
+  canvasPane.setTranslateX(padding);
+  canvasPane.setTranslateY(padding);
   toolPane.resize(lw + padding * 2,lh + padding * 2);
   toolPane.layout();
-  rootPane.setPrefSize(lw,lh);
-  rootPane.setMaxSize(lw,lh);
+  overlaysPane.setClip(new Rectangle(0,0,lw + padding * 2,lh + padding * 2));
+  drawingPane.setClip(new Rectangle(0,0,lw,lh));
+  rootPane.setPrefSize(lw + padding * 2,lh + padding * 2);
+  rootPane.setMaxSize(lw + padding * 2,lh + padding * 2);
   invalidateWorldViewTransforms();
   invalidateHandleNodes();
 }
