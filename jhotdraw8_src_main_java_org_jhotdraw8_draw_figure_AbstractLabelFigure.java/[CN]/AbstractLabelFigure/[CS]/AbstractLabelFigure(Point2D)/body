@@ -1,3 +1,5 @@
 {
   this(position.getX(),position.getY());
+  set(FILL_COLOR,null);
+  set(STROKE_COLOR,null);
 }

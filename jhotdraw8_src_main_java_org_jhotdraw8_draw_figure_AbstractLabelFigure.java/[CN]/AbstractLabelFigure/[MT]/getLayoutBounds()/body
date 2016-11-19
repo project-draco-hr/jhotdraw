@@ -5,5 +5,5 @@
   updateTextNode(null,textNode);
   Bounds b=textNode.getLayoutBounds();
   Insets i=getStyled(PADDING);
-  return new BoundingBox(b.getMinX() - i.getLeft(),b.getMinY() - i.getTop(),b.getWidth() + i.getLeft() + i.getRight(),b.getHeight() + i.getTop() + i.getBottom());
+  return new BoundingBox(b.getMinX() - i.getLeft(),b.getMinY() - i.getTop(),b.getWidth() + i.getLeft() + i.getRight(),textNode.getBaselineOffset() + i.getTop() + i.getBottom());
 }

@@ -4,6 +4,7 @@
   Region r=new Region();
   r.setScaleShape(true);
   g.getChildren().add(r);
-  g.getChildren().add(new Text());
+  Text text=new Text();
+  g.getChildren().add(text);
   return g;
 }

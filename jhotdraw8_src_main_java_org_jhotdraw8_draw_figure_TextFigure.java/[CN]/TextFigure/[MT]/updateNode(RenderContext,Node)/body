@@ -10,7 +10,7 @@
   applyStrokeableFigureProperties(tn);
   applyFillableFigureProperties(tn);
   applyCompositableFigureProperties(tn);
-  applyFontableFigureProperties(tn);
+  applyFontableFigureProperties(ctx,tn);
   applyStyleableFigureProperties(ctx,node);
   tn.applyCss();
 }
