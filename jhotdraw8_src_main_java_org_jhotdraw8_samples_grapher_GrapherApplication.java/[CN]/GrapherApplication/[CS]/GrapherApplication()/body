@@ -1,2 +1,12 @@
 {
+  super();
+  Resources.setVerbose(true);
+  try {
+    Resources.addDecoder(new FontIconDecoder(".*","fontawesome:","/fontawesome-webfont.ttf",16.0f,GrapherApplication.class));
+    Resources.addDecoder(new FontIconDecoder(".*","materialicons:","/MaterialIcons-Regular.ttf",16.0f,GrapherApplication.class));
+  }
+ catch (  IOException ex) {
+    Logger.getLogger(GrapherApplication.class.getName()).log(Level.SEVERE,null,ex);
+  }
+  setModel(new GrapherApplicationModel());
 }
