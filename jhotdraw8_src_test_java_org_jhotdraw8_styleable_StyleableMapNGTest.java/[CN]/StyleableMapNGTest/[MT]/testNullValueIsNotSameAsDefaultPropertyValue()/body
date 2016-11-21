@@ -1,0 +1,14 @@
+{
+  System.out.println("testNullValueIsNotSameAsDefaultPropertyValue");
+  StyleableMap<Key<?>,Object> instance=new StyleableMap<>();
+  final PaintableStyleableFigureKey key=FillableFigure.FILL_COLOR;
+  assertNotNull(key.getDefaultValue(),"need a key with a non-null default value for this test");
+  assertFalse(instance.containsKey(key),"value has not been set, map must not contain key");
+  assertEquals(instance.get(key),null,"value has not been set, must deliver null");
+  instance.put(key,null);
+  assertNull(instance.get(key),"value has been explicitly set to null");
+  assertTrue(instance.containsKey(key),"map must contain key after explicit set");
+  instance.remove(key);
+  assertEquals(instance.get(key),null,"key has been removed, value must be nulll again");
+  assertFalse(instance.containsKey(key),"key has been removed, map must not contain key");
+}

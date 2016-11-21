@@ -1,8 +1,0 @@
-{
-  System.out.println("updateNode");
-  RenderContext ctx=null;
-  Node node=null;
-  Figure instance=new FigureImpl();
-  instance.updateNode(ctx,node);
-  fail("The test case is a prototype.");
-}

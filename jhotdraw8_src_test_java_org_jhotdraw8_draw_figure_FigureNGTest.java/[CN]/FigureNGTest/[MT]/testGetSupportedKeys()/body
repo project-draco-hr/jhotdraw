@@ -1,8 +1,0 @@
-{
-  System.out.println("getSupportedKeys");
-  Figure instance=new FigureImpl();
-  Set<MapAccessor<?>> expResult=null;
-  Set<MapAccessor<?>> result=instance.getSupportedKeys();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

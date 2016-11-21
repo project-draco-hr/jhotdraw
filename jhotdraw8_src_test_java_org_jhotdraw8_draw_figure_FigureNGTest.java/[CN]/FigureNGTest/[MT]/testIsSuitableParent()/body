@@ -1,9 +1,0 @@
-{
-  System.out.println("isSuitableParent");
-  Figure newParent=null;
-  Figure instance=new FigureImpl();
-  boolean expResult=false;
-  boolean result=instance.isSuitableParent(newParent);
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

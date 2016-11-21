@@ -1,9 +1,8 @@
 {
   int i=origin.ordinal();
-  @SuppressWarnings("unchecked") T oldValue=(T)values[i];
-  values[i]=newValue;
-  if (this.origin == null || origin.ordinal() > this.origin.ordinal()) {
-    this.origin=origin;
+  @SuppressWarnings("unchecked") T oldValue=(T)setValue(i,newValue);
+  if (this.origin == -1 || origin.ordinal() > this.origin) {
+    this.origin=origin.ordinal();
   }
   return oldValue;
 }

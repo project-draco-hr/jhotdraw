@@ -46,12 +46,27 @@ noMoreSigns=false;
 noMorePoints=false;
 noMoreEs=true;
 break;
+case 'I':
+case 'N':
+end+=3;
+break Outer;
 default :
 break Outer;
 }
 }
 }
 String text=str.subSequence(0,end).toString();
+switch (text) {
+case "-INF":
+str.position(str.position() + end);
+return Double.NEGATIVE_INFINITY;
+case "INF":
+str.position(str.position() + end);
+return Double.POSITIVE_INFINITY;
+case "NaN":
+str.position(str.position() + end);
+return Double.NaN;
+}
 if (unit != null && end + unit.length() <= remaining) {
 if (str.subSequence(end,end + unit.length()).toString().startsWith(unit)) {
 end+=unit.length();

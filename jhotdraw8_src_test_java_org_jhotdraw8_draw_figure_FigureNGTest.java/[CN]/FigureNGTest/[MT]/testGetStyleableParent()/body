@@ -1,8 +1,0 @@
-{
-  System.out.println("getStyleableParent");
-  Figure instance=new FigureImpl();
-  Styleable expResult=null;
-  Styleable result=instance.getStyleableParent();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

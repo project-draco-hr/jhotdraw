@@ -1,8 +1,0 @@
-{
-  System.out.println("getCenterInLocal");
-  Figure instance=new FigureImpl();
-  Point2D expResult=null;
-  Point2D result=instance.getCenterInLocal();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

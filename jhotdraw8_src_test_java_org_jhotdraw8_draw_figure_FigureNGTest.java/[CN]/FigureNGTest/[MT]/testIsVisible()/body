@@ -1,8 +1,0 @@
-{
-  System.out.println("isVisible");
-  Figure instance=new FigureImpl();
-  boolean expResult=false;
-  boolean result=instance.isVisible();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

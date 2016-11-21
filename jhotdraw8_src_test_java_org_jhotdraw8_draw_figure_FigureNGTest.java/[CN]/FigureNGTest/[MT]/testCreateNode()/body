@@ -1,9 +1,0 @@
-{
-  System.out.println("createNode");
-  RenderContext ctx=null;
-  Figure instance=new FigureImpl();
-  Node expResult=null;
-  Node result=instance.createNode(ctx);
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

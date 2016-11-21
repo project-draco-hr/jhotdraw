@@ -1,8 +1,0 @@
-{
-  System.out.println("transformNotify");
-  Figure instance=new FigureImpl();
-  boolean expResult=false;
-  boolean result=instance.transformNotify();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

@@ -1,7 +1,0 @@
-{
-  System.out.println("reshape");
-  Transform transform=null;
-  Figure instance=new FigureImpl();
-  instance.reshapeInLocal(transform);
-  fail("The test case is a prototype.");
-}

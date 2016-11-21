@@ -1,6 +1,0 @@
-{
-  System.out.println("layout");
-  Figure instance=new FigureImpl();
-  instance.layout();
-  fail("The test case is a prototype.");
-}

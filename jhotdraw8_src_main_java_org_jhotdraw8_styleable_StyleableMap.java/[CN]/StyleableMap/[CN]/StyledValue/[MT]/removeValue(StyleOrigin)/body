@@ -1,13 +1,12 @@
 {
   if (hasValue(origin)) {
     int i=origin.ordinal();
-    @SuppressWarnings("unchecked") T oldValue=(T)values[i];
-    values[i]=NO_VALUE;
-    if (this.origin == origin) {
-      this.origin=null;
+    @SuppressWarnings("unchecked") T oldValue=(T)setValue(i,NO_VALUE);
+    if (this.origin == origin.ordinal()) {
+      this.origin=-1;
       for (int j=origin.ordinal() - 1; j >= 0; j--) {
-        if (values[j] != NO_VALUE) {
-          this.origin=ORIGINS[j];
+        if (getValue(j) != NO_VALUE) {
+          this.origin=j;
           break;
         }
       }

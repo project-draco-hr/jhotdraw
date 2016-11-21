@@ -1,7 +1,0 @@
-{
-  System.out.println("addNotify");
-  Drawing drawing=null;
-  Figure instance=new FigureImpl();
-  instance.addNotify(drawing);
-  fail("The test case is a prototype.");
-}

@@ -1,8 +1,0 @@
-{
-  System.out.println("getPropertyChangeListeners");
-  Figure instance=new FigureImpl();
-  CopyOnWriteArrayList<Listener<FigurePropertyChangeEvent>> expResult=null;
-  CopyOnWriteArrayList<Listener<FigurePropertyChangeEvent>> result=instance.getPropertyChangeListeners();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

@@ -1,6 +1,0 @@
-{
-  System.out.println("disconnect");
-  Figure instance=new FigureImpl();
-  instance.disconnect();
-  fail("The test case is a prototype.");
-}

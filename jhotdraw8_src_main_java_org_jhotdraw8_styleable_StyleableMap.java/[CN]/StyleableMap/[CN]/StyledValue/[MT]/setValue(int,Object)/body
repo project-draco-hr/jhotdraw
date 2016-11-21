@@ -1,0 +1,24 @@
+{
+  Object oldValue;
+switch (index) {
+case 0:
+    oldValue=value0;
+  value0=newValue;
+break;
+case 1:
+oldValue=value1;
+value1=newValue;
+break;
+case 2:
+oldValue=value2;
+value2=newValue;
+break;
+case 3:
+oldValue=value3;
+value3=newValue;
+break;
+default :
+throw new ArrayIndexOutOfBoundsException(index);
+}
+return oldValue;
+}

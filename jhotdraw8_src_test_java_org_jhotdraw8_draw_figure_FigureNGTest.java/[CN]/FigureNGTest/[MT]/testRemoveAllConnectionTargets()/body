@@ -1,6 +1,0 @@
-{
-  System.out.println("removeAllConnectionTargets");
-  Figure instance=new FigureImpl();
-  instance.removeAllConnectionTargets();
-  fail("The test case is a prototype.");
-}

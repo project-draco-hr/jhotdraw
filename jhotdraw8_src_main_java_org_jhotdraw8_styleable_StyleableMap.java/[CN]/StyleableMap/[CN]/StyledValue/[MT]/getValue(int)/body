@@ -1,0 +1,14 @@
+{
+switch (index) {
+case 0:
+    return value0;
+case 1:
+  return value1;
+case 2:
+return value2;
+case 3:
+return value3;
+default :
+throw new ArrayIndexOutOfBoundsException(index);
+}
+}

@@ -1,7 +1,0 @@
-{
-  System.out.println("firePropertyChangeEvent");
-  FigurePropertyChangeEvent event=null;
-  Figure instance=new FigureImpl();
-  instance.firePropertyChangeEvent(event);
-  fail("The test case is a prototype.");
-}

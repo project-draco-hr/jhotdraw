@@ -1,8 +1,0 @@
-{
-  System.out.println("isDecomposable");
-  Figure instance=new FigureImpl();
-  boolean expResult=false;
-  boolean result=instance.isDecomposable();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

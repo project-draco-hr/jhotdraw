@@ -1,8 +1,0 @@
-{
-  System.out.println("getFirstChild");
-  Figure instance=new FigureImpl();
-  Figure expResult=null;
-  Figure result=instance.getFirstChild();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

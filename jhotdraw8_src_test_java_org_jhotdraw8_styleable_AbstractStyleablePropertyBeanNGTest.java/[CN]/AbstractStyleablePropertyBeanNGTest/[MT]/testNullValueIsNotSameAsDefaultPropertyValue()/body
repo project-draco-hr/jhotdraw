@@ -1,0 +1,14 @@
+{
+  System.out.println("testNullValueIsNotSameAsDefaultPropertyValue");
+  AbstractStyleablePropertyBean instance=new AbstractStyleablePropertyBeanImpl();
+  final PaintableStyleableFigureKey key=FillableFigure.FILL_COLOR;
+  assertNotNull(key.getDefaultValue(),"need a key with a non-null default value for this test");
+  assertFalse(instance.getProperties().containsKey(key),"value has not been set, map must not contain key");
+  assertEquals(instance.get(key),key.getDefaultValue(),"value has not been set, must deliver default value");
+  instance.set(key,null);
+  assertNull(instance.get(key),"value has been explicitly set to null");
+  assertTrue(instance.getProperties().containsKey(key),"map must contain key after explicit set");
+  instance.remove(key);
+  assertEquals(instance.get(key),key.getDefaultValue(),"key has been removed, value must be default value");
+  assertFalse(instance.getProperties().containsKey(key),"key has been removed, map must not contain key");
+}

@@ -1,8 +1,0 @@
-{
-  System.out.println("getBoundsInParent");
-  Figure instance=new FigureImpl();
-  Bounds expResult=null;
-  Bounds result=instance.getBoundsInParent();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

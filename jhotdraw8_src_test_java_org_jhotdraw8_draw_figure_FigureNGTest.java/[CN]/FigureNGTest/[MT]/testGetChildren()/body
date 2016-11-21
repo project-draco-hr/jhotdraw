@@ -1,8 +1,0 @@
-{
-  System.out.println("getChildren");
-  Figure instance=new FigureImpl();
-  ObservableList<Figure> expResult=null;
-  ObservableList<Figure> result=instance.getChildren();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

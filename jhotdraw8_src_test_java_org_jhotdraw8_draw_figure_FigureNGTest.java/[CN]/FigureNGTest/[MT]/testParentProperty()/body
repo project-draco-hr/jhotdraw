@@ -1,8 +1,0 @@
-{
-  System.out.println("parentProperty");
-  Figure instance=new FigureImpl();
-  ObjectProperty<Figure> expResult=null;
-  ObjectProperty<Figure> result=instance.parentProperty();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

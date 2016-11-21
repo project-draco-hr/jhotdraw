@@ -1,8 +1,0 @@
-{
-  System.out.println("getDependentFigures");
-  Figure instance=new FigureImpl();
-  Set<Figure> expResult=null;
-  Set<Figure> result=instance.getDependentFigures();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

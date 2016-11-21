@@ -1,8 +1,0 @@
-{
-  System.out.println("getLayer");
-  Figure instance=new FigureImpl();
-  Layer expResult=null;
-  Layer result=instance.getLayer();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

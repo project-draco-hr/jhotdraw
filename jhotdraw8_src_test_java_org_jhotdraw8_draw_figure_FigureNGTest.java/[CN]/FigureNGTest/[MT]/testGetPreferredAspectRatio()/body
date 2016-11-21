@@ -1,8 +1,0 @@
-{
-  System.out.println("getPreferredAspectRatio");
-  Figure instance=new FigureImpl();
-  double expResult=0.0;
-  double result=instance.getPreferredAspectRatio();
-  assertEquals(result,expResult,0.0);
-  fail("The test case is a prototype.");
-}

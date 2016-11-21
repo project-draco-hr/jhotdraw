@@ -1,12 +1,2 @@
 {
-  StyledValue sv=backingMap.compute(key,computePutMethodReference);
-  boolean hadValue=sv.hasValue(o);
-  V ret=sv.getValue(o);
-  if (!Objects.equals(ret,value)) {
-    SimpleChange change=new SimpleChange(key,ret,value,true,hadValue);
-    callObservers(o,true,change);
-    sv.setValue(o,value);
-    callObservers(o,false,change);
-  }
-  return ret;
 }
