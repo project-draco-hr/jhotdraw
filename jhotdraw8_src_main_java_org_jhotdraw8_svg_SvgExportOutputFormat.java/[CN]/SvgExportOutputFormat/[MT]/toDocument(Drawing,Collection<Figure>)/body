@@ -1,2 +1,8 @@
 {
+  Map<Key<?>,Object> hints=new HashMap<>();
+  RenderContext.RENDERING_INTENT.put(hints,RenderingIntent.EXPORT);
+  javafx.scene.Node drawingNode=toNode(external,selection,hints);
+  Document doc=toDocument(drawingNode);
+  writeDrawingElementAttributes(doc.getDocumentElement(),external);
+  return doc;
 }
