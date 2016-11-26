@@ -1,0 +1,13 @@
+{
+  double dotsPerMilli=dpi / INCH_2_MM;
+  IIOMetadataNode horiz=new IIOMetadataNode("HorizontalPixelSize");
+  horiz.setAttribute("value",Double.toString(dotsPerMilli));
+  IIOMetadataNode vert=new IIOMetadataNode("VerticalPixelSize");
+  vert.setAttribute("value",Double.toString(dotsPerMilli));
+  IIOMetadataNode dim=new IIOMetadataNode("Dimension");
+  dim.appendChild(horiz);
+  dim.appendChild(vert);
+  IIOMetadataNode root=new IIOMetadataNode("javax_imageio_1.0");
+  root.appendChild(dim);
+  metadata.mergeTree("javax_imageio_1.0",root);
+}

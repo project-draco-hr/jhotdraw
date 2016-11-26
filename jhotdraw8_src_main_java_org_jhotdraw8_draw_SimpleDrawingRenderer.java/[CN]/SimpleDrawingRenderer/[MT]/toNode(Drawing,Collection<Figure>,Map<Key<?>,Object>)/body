@@ -1,0 +1,20 @@
+{
+  SimpleDrawingRenderer r=new SimpleDrawingRenderer();
+  if (renderingHints != null) {
+    r.getProperties().putAll(renderingHints);
+  }
+  LinkedList<Node> nodes=new LinkedList<>();
+  for (  Figure f : external.preorderIterable()) {
+    if (selection.contains(f)) {
+      nodes.add(r.render(f));
+    }
+  }
+  Node drawingNode;
+  if (nodes.size() == 1) {
+    drawingNode=nodes.getFirst();
+  }
+ else {
+    drawingNode=new Group(nodes);
+  }
+  return drawingNode;
+}

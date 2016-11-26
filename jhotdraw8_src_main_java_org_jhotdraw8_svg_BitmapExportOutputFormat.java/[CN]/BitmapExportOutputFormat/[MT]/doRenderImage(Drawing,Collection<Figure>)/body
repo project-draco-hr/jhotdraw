@@ -1,0 +1,15 @@
+{
+  Map<Key<?>,Object> hints=new HashMap<>();
+  RenderContext.RENDERING_INTENT.put(hints,RenderingIntent.EXPORT);
+  RenderContext.DPI.put(hints,dpi);
+  javafx.scene.Node node=toNode(drawing,selection,hints);
+  SnapshotParameters parameters=new SnapshotParameters();
+  double scale=dpi / RenderContext.DPI.getDefaultValue();
+  parameters.setTransform(Transform.scale(scale,scale));
+  parameters.setFill(Color.TRANSPARENT);
+  double width=drawing.get(Drawing.WIDTH) * scale;
+  double height=drawing.get(Drawing.HEIGHT) * scale;
+  parameters.setViewport(new Rectangle2D(0,0,width,height));
+  WritableImage image=node.snapshot(parameters,null);
+  return image;
+}

@@ -1,0 +1,19 @@
+{
+  WritableImage writableImage=renderImage(drawing,Collections.singleton(drawing));
+  BufferedImage image=SwingFXUtils.fromFXImage(writableImage,null);
+  for (Iterator<ImageWriter> iw=ImageIO.getImageWritersByFormatName("png"); iw.hasNext(); ) {
+    ImageWriter writer=iw.next();
+    ImageWriteParam writeParam=writer.getDefaultWriteParam();
+    ImageTypeSpecifier typeSpecifier=ImageTypeSpecifier.createFromBufferedImageType(BufferedImage.TYPE_INT_RGB);
+    IIOMetadata metadata=writer.getDefaultImageMetadata(typeSpecifier,writeParam);
+    if (metadata.isReadOnly() || !metadata.isStandardMetadataFormatSupported()) {
+      continue;
+    }
+    setDPI(metadata);
+    ImageOutputStream output=new MemoryCacheImageOutputStream(out);
+    writer.setOutput(output);
+    writer.write(metadata,new IIOImage(image,null,metadata),writeParam);
+    output.flush();
+    break;
+  }
+}
