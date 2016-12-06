@@ -1,21 +1,14 @@
 {
   try {
-    String str=buf.toString().trim().toLowerCase(Locale.ROOT);
-    Color c;
-    c=nameColors.get(str);
-    if (c != null) {
-      buf.position(buf.limit());
-      return c;
-    }
+    String str=buf.toString().trim();
+    CssColor c;
     if ("none".equals(str)) {
       c=null;
     }
  else {
-      c=Color.web(str);
+      c=new CssColor(str,Color.web(str));
     }
     buf.position(buf.limit());
-    colorNames.put(c,str);
-    nameColors.put(str,c);
     return c;
   }
  catch (  IllegalArgumentException e) {

@@ -1,0 +1,7 @@
+{
+  System.out.println("getDefaultValue");
+  CssLinearGradientConverter instance=new CssLinearGradientConverter();
+  CssLinearGradient expResult=null;
+  CssLinearGradient result=instance.getDefaultValue();
+  assertEquals(result,expResult);
+}

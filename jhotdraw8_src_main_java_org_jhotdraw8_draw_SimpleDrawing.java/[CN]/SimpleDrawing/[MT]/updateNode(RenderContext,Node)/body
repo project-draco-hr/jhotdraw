@@ -7,7 +7,7 @@
   page.setY(bounds.getMinY());
   page.setWidth(bounds.getWidth());
   page.setHeight(bounds.getHeight());
-  CColor cclr=getStyled(BACKGROUND);
+  CssColor cclr=getStyled(BACKGROUND);
   page.setFill(Paintable.getPaint(cclr));
   if (g.getClip() == null || !g.getClip().getBoundsInLocal().equals(bounds)) {
     g.setClip(new Rectangle(bounds.getMinX(),bounds.getMinY(),bounds.getWidth(),bounds.getHeight()));

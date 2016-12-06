@@ -1,0 +1,16 @@
+{
+  this.name=name;
+  this.linearGradient=linearGradient;
+  this.startX=linearGradient.getStartX();
+  this.startY=linearGradient.getStartY();
+  this.endX=linearGradient.getEndX();
+  this.endY=linearGradient.getEndY();
+  this.proportional=linearGradient.isProportional();
+  this.cycleMethod=linearGradient.getCycleMethod();
+  List<Stop> stopList=linearGradient.getStops();
+  cstops=new CssStop[stopList.size()];
+  for (int i=0; i < cstops.length; i++) {
+    Stop stop=stopList.get(i);
+    cstops[i]=new CssStop(stop.getOffset(),new CssColor(stop.getColor()));
+  }
+}

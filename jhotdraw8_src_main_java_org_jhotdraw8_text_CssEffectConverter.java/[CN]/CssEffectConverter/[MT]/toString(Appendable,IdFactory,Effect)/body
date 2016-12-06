@@ -4,7 +4,7 @@
     out.append("dropshadow(");
     out.append(fx.getBlurType().toString().toLowerCase().replace('_','-'));
     out.append(',');
-    colorConverter.toString(out,idFactory,new CColor(fx.getColor()));
+    colorConverter.toString(out,idFactory,new CssColor(fx.getColor()));
     out.append(',');
     nb.toString(out,idFactory,fx.getRadius());
     out.append(',');
@@ -20,7 +20,7 @@
     out.append("innershadow(");
     out.append(fx.getBlurType().toString().toLowerCase().replace('_','-'));
     out.append(',');
-    colorConverter.toString(out,idFactory,new CColor(fx.getColor()));
+    colorConverter.toString(out,idFactory,new CssColor(fx.getColor()));
     out.append(',');
     nb.toString(out,idFactory,fx.getRadius());
     out.append(',');

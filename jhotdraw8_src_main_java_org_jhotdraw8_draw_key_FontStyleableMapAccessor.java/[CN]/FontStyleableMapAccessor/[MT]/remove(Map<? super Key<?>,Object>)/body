@@ -1,5 +1,5 @@
 {
-  FFont oldValue=get(a);
+  CssFont oldValue=get(a);
   familyKey.remove(a);
   weightKey.remove(a);
   postureKey.remove(a);

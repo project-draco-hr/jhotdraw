@@ -1,5 +1,6 @@
 {
-  CssTokenizer tt=new CssTokenizer(new StringReader(buf.toString()));
+  CssTokenizerInterface tt=new CssTokenizer(new StringReader(buf.toString()));
+  tt.setSkipWhitespace(true);
   FontPosture fontPosture=FontPosture.REGULAR;
   FontWeight fontWeight=FontWeight.NORMAL;
   double fontSize=12.0;
@@ -21,7 +22,6 @@ break;
  else {
 tt.pushBack();
 }
-tt.skipWhitespace();
 boolean fontWeightConsumed=false;
 if (tt.nextToken() == CssTokenizer.TT_IDENT) {
 switch (tt.currentStringValue().toLowerCase()) {
@@ -49,7 +49,6 @@ break;
  else {
 tt.pushBack();
 }
-tt.skipWhitespace();
 double fontWeightOrFontSize=0.0;
 boolean fontWeightOrFontSizeConsumed=false;
 if (!fontWeightConsumed) {
@@ -61,7 +60,6 @@ fontWeightOrFontSizeConsumed=true;
 tt.pushBack();
 }
 }
-tt.skipWhitespace();
 if (tt.nextToken() == CssTokenizer.TT_NUMBER) {
 fontSize=tt.currentNumericValue().doubleValue();
 if (fontWeightOrFontSizeConsumed) {
@@ -105,7 +103,6 @@ fontSize=fontWeightOrFontSize;
  else {
 tt.pushBack();
 }
-tt.skipWhitespace();
 if (tt.nextToken() == CssTokenizer.TT_IDENT || tt.currentToken() == CssTokenizer.TT_STRING) {
 fontFamily=tt.currentStringValue();
 buf.position(buf.limit());
@@ -113,9 +110,9 @@ buf.position(buf.limit());
  else {
 throw new ParseException("font family expected",buf.position() + tt.getPosition());
 }
-FFont font=FFont.font(fontFamily,fontWeight,fontPosture,fontSize);
+CssFont font=CssFont.font(fontFamily,fontWeight,fontPosture,fontSize);
 if (font == null) {
-font=FFont.font(null,fontWeight,fontPosture,fontSize);
+font=CssFont.font(null,fontWeight,fontPosture,fontSize);
 }
 return font;
 }

@@ -1,14 +1,12 @@
 {
   List<Transform> txs=new ArrayList<>();
-  CssTokenizer tt=new CssTokenizer(new StringReader(in.toString()));
+  CssTokenizerInterface tt=new CssTokenizer(new StringReader(in.toString()));
   while (tt.nextToken() != CssTokenizer.TT_EOF) {
     tt.pushBack();
-    tt.skipWhitespace();
     if (tt.nextToken() != CssTokenizer.TT_FUNCTION) {
       throw new ParseException("function expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
     }
     String func=tt.currentStringValue();
-    tt.skipWhitespace();
 switch (func) {
 case "skewX":
 {
@@ -34,11 +32,7 @@ case "translate":
       throw new ParseException("tx expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
     }
     double tx=tt.currentNumericValue().doubleValue();
-    tt.skipWhitespace();
-    if (tt.nextToken() == ',') {
-      tt.skipWhitespace();
-    }
- else {
+    if (tt.nextToken() != ',') {
       tt.pushBack();
     }
     double ty;
@@ -58,11 +52,7 @@ case "scale":
     throw new ParseException("sx expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
   }
   double sx=tt.currentNumericValue().doubleValue();
-  tt.skipWhitespace();
-  if (tt.nextToken() == ',') {
-    tt.skipWhitespace();
-  }
- else {
+  if (tt.nextToken() != ',') {
     tt.pushBack();
   }
   double sy;
@@ -82,22 +72,14 @@ if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
   throw new ParseException("rotate-angle expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
 }
 double angle=tt.currentNumericValue().doubleValue();
-tt.skipWhitespace();
-if (tt.nextToken() == ',') {
-  tt.skipWhitespace();
-}
- else {
+if (tt.nextToken() != ',') {
   tt.pushBack();
 }
 double cx;
 double cy;
 if (tt.nextToken() == CssTokenizer.TT_NUMBER) {
   cx=tt.currentNumericValue().doubleValue();
-  tt.skipWhitespace();
-  if (tt.nextToken() == ',') {
-    tt.skipWhitespace();
-  }
- else {
+  if (tt.nextToken() != ',') {
     tt.pushBack();
   }
   if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
@@ -117,11 +99,7 @@ case "matrix":
 {
 double[] m=new double[6];
 for (int i=0; i < m.length; i++) {
-tt.skipWhitespace();
-if (tt.nextToken() == ',') {
-  tt.skipWhitespace();
-}
- else {
+if (tt.nextToken() != ',') {
   tt.pushBack();
 }
 if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
@@ -135,7 +113,6 @@ break;
 default :
 throw new ParseException("unsupported function: \"" + tt.currentStringValue() + "\"",tt.getPosition());
 }
-tt.skipWhitespace();
 if (tt.nextToken() != ')') {
 throw new ParseException("')' expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
 }

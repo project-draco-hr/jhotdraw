@@ -1,0 +1,342 @@
+{
+  if (pushBack) {
+    pushBack=false;
+    return currentToken;
+  }
+  lineNumber=(int)in.getLineNumber();
+  position=(int)in.getPosition();
+  int ch=in.nextChar();
+  stringValue=null;
+switch (ch) {
+case -1:
+    currentToken=TT_EOF;
+  break;
+case ' ':
+case '\n':
+case '\t':
+{
+  StringBuilder buf=new StringBuilder();
+  while (ch == ' ' || ch == '\n' || ch == '\t') {
+    buf.append((char)ch);
+    ch=in.nextChar();
+  }
+  in.pushBack(ch);
+  currentToken=TT_S;
+  stringValue=buf.toString();
+  break;
+}
+case '~':
+{
+int next=in.nextChar();
+if (next == '=') {
+  currentToken=TT_INCLUDE_MATCH;
+  stringValue="~=";
+}
+ else {
+  in.pushBack(next);
+  currentToken=ch;
+  stringValue=String.valueOf((char)ch);
+}
+break;
+}
+case '|':
+{
+int next=in.nextChar();
+if (next == '=') {
+currentToken=TT_DASH_MATCH;
+stringValue="|=";
+}
+ else if (next == '|') {
+currentToken=TT_COLUMN;
+stringValue="||";
+}
+ else {
+in.pushBack(next);
+currentToken=ch;
+stringValue=String.valueOf((char)currentToken);
+}
+break;
+}
+case '^':
+{
+int next=in.nextChar();
+if (next == '=') {
+currentToken=TT_PREFIX_MATCH;
+stringValue="^=";
+}
+ else {
+in.pushBack(next);
+currentToken=ch;
+stringValue=String.valueOf((char)currentToken);
+}
+break;
+}
+case '$':
+{
+int next=in.nextChar();
+if (next == '=') {
+currentToken=TT_SUFFIX_MATCH;
+stringValue="$=";
+}
+ else {
+in.pushBack(next);
+currentToken=ch;
+stringValue=String.valueOf((char)currentToken);
+}
+break;
+}
+case '*':
+{
+int next=in.nextChar();
+if (next == '=') {
+currentToken=TT_SUBSTRING_MATCH;
+stringValue="*=";
+}
+ else {
+in.pushBack(next);
+currentToken=ch;
+stringValue=String.valueOf((char)ch);
+}
+break;
+}
+case '@':
+{
+StringBuilder buf=new StringBuilder();
+if (identMacro(ch=in.nextChar(),buf)) {
+currentToken=TT_AT_KEYWORD;
+stringValue=buf.toString();
+}
+ else {
+in.pushBack(ch);
+currentToken='@';
+stringValue=String.valueOf((char)currentToken);
+}
+break;
+}
+case '#':
+{
+StringBuilder buf=new StringBuilder();
+if (nameMacro(ch=in.nextChar(),buf)) {
+currentToken=TT_HASH;
+stringValue=buf.toString();
+}
+ else {
+in.pushBack(ch);
+currentToken='#';
+stringValue=String.valueOf((char)currentToken);
+}
+break;
+}
+case '\'':
+case '"':
+{
+StringBuilder buf=new StringBuilder();
+if (stringMacro(ch,buf)) {
+currentToken=TT_STRING;
+stringValue=buf.toString();
+}
+ else {
+currentToken=TT_BAD_STRING;
+stringValue=buf.toString();
+}
+break;
+}
+case '.':
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+{
+StringBuilder buf=new StringBuilder();
+if (numMacro(ch,buf)) {
+ch=in.nextChar();
+if (ch == '%') {
+currentToken=TT_PERCENTAGE;
+}
+ else if (identMacro(ch,buf)) {
+currentToken=TT_DIMENSION;
+}
+ else {
+in.pushBack(ch);
+currentToken=TT_NUMBER;
+}
+stringValue=buf.toString();
+}
+ else {
+currentToken=ch;
+stringValue=String.valueOf((char)currentToken);
+}
+break;
+}
+case '/':
+{
+int next=in.nextChar();
+if (next == '*') {
+StringBuilder buf=new StringBuilder();
+if (commentAfterSlashStarMacro(buf)) {
+currentToken=TT_COMMENT;
+}
+ else {
+currentToken=TT_BAD_COMMENT;
+}
+stringValue=buf.toString();
+}
+ else {
+in.pushBack(next);
+currentToken=ch;
+stringValue=String.valueOf((char)currentToken);
+}
+break;
+}
+case '-':
+{
+int next1=in.nextChar();
+if (next1 == '-') {
+int next2=in.nextChar();
+if (next2 == '>') {
+stringValue="-->";
+currentToken=TT_CDC;
+}
+ else {
+in.pushBack(next2);
+in.pushBack(next1);
+currentToken=ch;
+stringValue=String.valueOf((char)currentToken);
+}
+}
+ else {
+in.pushBack(next1);
+StringBuilder buf=new StringBuilder();
+if (numMacro(ch,buf)) {
+ch=in.nextChar();
+if (ch == '%') {
+currentToken=TT_PERCENTAGE;
+}
+ else if (identMacro(ch,buf)) {
+currentToken=TT_DIMENSION;
+}
+ else {
+in.pushBack(ch);
+currentToken=TT_NUMBER;
+}
+stringValue=buf.toString();
+}
+ else {
+if (identMacro(ch,buf)) {
+next1=in.nextChar();
+if (next1 == '(') {
+currentToken=TT_FUNCTION;
+}
+ else {
+in.pushBack(next1);
+currentToken=TT_IDENT;
+}
+stringValue=buf.toString();
+}
+ else {
+currentToken=ch;
+stringValue=String.valueOf((char)currentToken);
+}
+}
+}
+break;
+}
+case '<':
+{
+int next1=in.nextChar();
+if (next1 == '!') {
+int next2=in.nextChar();
+if (next2 == '-') {
+int next3=in.nextChar();
+if (next3 == '-') {
+stringValue="<!--";
+currentToken=TT_CDO;
+}
+ else {
+in.pushBack(next3);
+in.pushBack(next2);
+in.pushBack(next1);
+currentToken=ch;
+stringValue=String.valueOf((char)currentToken);
+}
+}
+ else {
+in.pushBack(next2);
+in.pushBack(next1);
+StringBuilder buf=new StringBuilder();
+currentToken=ch;
+stringValue=String.valueOf((char)currentToken);
+}
+}
+ else {
+in.pushBack(next1);
+StringBuilder buf=new StringBuilder();
+currentToken=ch;
+stringValue=String.valueOf((char)currentToken);
+}
+break;
+}
+case 'u':
+case 'U':
+{
+StringBuilder buf=new StringBuilder();
+if (identMacro(ch,buf)) {
+int next1=in.nextChar();
+if (next1 == '(') {
+stringValue=buf.toString();
+if (stringValue.equalsIgnoreCase("url")) {
+buf.setLength(0);
+if (uriMacro(buf)) {
+currentToken=TT_URI;
+}
+ else {
+currentToken=TT_BAD_URI;
+}
+stringValue=buf.toString();
+}
+ else {
+currentToken=TT_FUNCTION;
+}
+}
+ else {
+in.pushBack(next1);
+currentToken=TT_IDENT;
+stringValue=buf.toString();
+}
+}
+ else {
+currentToken=ch;
+stringValue=String.valueOf((char)currentToken);
+}
+break;
+}
+default :
+{
+StringBuilder buf=new StringBuilder();
+if (identMacro(ch,buf)) {
+int next1=in.nextChar();
+if (next1 == '(') {
+stringValue=buf.toString();
+currentToken=TT_FUNCTION;
+}
+ else {
+in.pushBack(next1);
+currentToken=TT_IDENT;
+stringValue=buf.toString();
+}
+}
+ else {
+currentToken=ch;
+stringValue=String.valueOf((char)currentToken);
+}
+break;
+}
+}
+return (skipComments && (currentToken == TT_COMMENT || currentToken == TT_BAD_COMMENT)) ? nextToken() : currentToken;
+}

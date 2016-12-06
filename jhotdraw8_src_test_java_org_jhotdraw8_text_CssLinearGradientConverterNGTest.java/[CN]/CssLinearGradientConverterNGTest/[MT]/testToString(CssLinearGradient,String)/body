@@ -1,0 +1,10 @@
+{
+  System.out.println("toString(" + value + "):"+ expected);
+  StringBuilder out=new StringBuilder();
+  IdFactory idFactory=null;
+  CssLinearGradientConverter instance=new CssLinearGradientConverter();
+  instance.toString(out,idFactory,value);
+  String actual=out.toString();
+  System.out.println("actual: " + actual);
+  assertEquals(actual,expected);
+}

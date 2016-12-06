@@ -1,8 +1,8 @@
 {
-  CssTokenizer tt=new CssTokenizer(new StringReader(in.toString()));
+  CssTokenizerInterface tt=new CssTokenizer(new StringReader(in.toString()));
+  tt.setSkipWhitespace(true);
   String find=null;
   String replace=null;
-  tt.skipWhitespace();
 switch (tt.nextToken()) {
 case CssTokenizer.TT_STRING:
     find=tt.currentStringValue();
@@ -17,7 +17,6 @@ break;
 default :
 throw new ParseException("find string expected",tt.getPosition());
 }
-tt.skipWhitespace();
 switch (tt.nextToken()) {
 case CssTokenizer.TT_STRING:
 replace=tt.currentStringValue();

@@ -6,11 +6,11 @@
     out.append("transparent");
   }
  else   if (value instanceof Color) {
-    CColor c=new CColor((Color)value);
+    CssColor c=new CssColor((Color)value);
     colorConverter.toString(out,idFactory,c);
   }
  else   if (value instanceof LinearGradient) {
-    CLinearGradient lg=new CLinearGradient((LinearGradient)value);
+    CssLinearGradient lg=new CssLinearGradient((LinearGradient)value);
     linearGradientConverter.toString(out,idFactory,lg);
   }
  else {

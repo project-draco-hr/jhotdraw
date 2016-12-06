@@ -1,3 +1,0 @@
-{
-  return new Object[][]{{FillableFigure.FILL_COLOR,"-jhotdraw-fill",new CColor(Color.RED),"blue",new CColor(Color.BLUE)}};
-}

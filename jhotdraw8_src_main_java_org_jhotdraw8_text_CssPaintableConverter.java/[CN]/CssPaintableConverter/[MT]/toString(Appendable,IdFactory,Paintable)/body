@@ -5,12 +5,12 @@
  else   if (Color.TRANSPARENT.equals(value)) {
     out.append("transparent");
   }
- else   if (value instanceof CColor) {
-    CColor c=(CColor)value;
+ else   if (value instanceof CssColor) {
+    CssColor c=(CssColor)value;
     colorConverter.toString(out,idFactory,c);
   }
- else   if (value instanceof CLinearGradient) {
-    CLinearGradient lg=(CLinearGradient)value;
+ else   if (value instanceof CssLinearGradient) {
+    CssLinearGradient lg=(CssLinearGradient)value;
     linearGradientConverter.toString(out,idFactory,lg);
   }
  else {

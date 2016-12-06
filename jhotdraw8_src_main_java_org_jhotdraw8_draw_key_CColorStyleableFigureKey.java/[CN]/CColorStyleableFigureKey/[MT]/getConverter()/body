@@ -1,6 +1,6 @@
 {
   if (converter == null) {
-    converter=new CssCColorConverter();
+    converter=new CssColorConverter();
   }
   return converter;
 }

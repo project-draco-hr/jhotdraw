@@ -1,0 +1,8 @@
+{
+  System.out.println("fromString(" + string + "):"+ expected);
+  CharBuffer in=CharBuffer.wrap(string);
+  IdFactory idFactory=null;
+  CssLinearGradientConverter instance=new CssLinearGradientConverter();
+  CssLinearGradient actual=instance.fromString(in,idFactory);
+  assertEquals(actual,expected);
+}

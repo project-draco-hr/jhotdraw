@@ -1,6 +1,6 @@
 {
   if (converter == null) {
-    converter=new CssFFontConverter();
+    converter=new CssFontConverter();
   }
   return converter;
 }

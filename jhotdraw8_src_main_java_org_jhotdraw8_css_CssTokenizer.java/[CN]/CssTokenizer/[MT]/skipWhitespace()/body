@@ -1,5 +1,5 @@
 {
-  while (nextToken() == TT_S || currentToken() == TT_CDC || currentToken() == TT_CDO) {
+  while (doNextToken() == TT_S || currentToken == TT_CDC || currentToken == TT_CDO) {
   }
   pushBack();
 }

@@ -38,11 +38,11 @@
   addConverterForType(Connector.class,new XmlConnectorConverter());
   addConverterForType(Paint.class,new XmlPaintConverter());
   addConverterForType(Paintable.class,new XmlPaintableConverter());
-  addConverterForType(CColor.class,new XmlCColorConverter());
+  addConverterForType(CssColor.class,new XmlCColorConverter());
   addConverterForType(Boolean.class,new XmlBooleanConverter());
   addConverterForType(TextAlignment.class,new XmlEnumConverter<TextAlignment>(TextAlignment.class));
   addConverterForType(VPos.class,new XmlEnumConverter<VPos>(VPos.class));
-  addConverterForType(FFont.class,new XmlFFontConverter());
+  addConverterForType(CssFont.class,new XmlFFontConverter());
   addConverterForType(Rectangle2D.class,new XmlRectangle2DConverter());
   addConverterForType(BlendMode.class,new XmlEnumConverter<BlendMode>(BlendMode.class));
   addConverterForType(Effect.class,new XmlEffectConverter());

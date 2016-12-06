@@ -1,0 +1,3 @@
+{
+  return new CssFont(family,weight,posture,size);
+}
