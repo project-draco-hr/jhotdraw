@@ -1,0 +1,7 @@
+{
+  System.out.println("toString");
+  Regex instance=new Regex();
+  String expResult="///";
+  String result=instance.toString();
+  assertEquals(result,expResult);
+}

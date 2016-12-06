@@ -1,3 +1,3 @@
 {
-  return "/" + escape(find) + "/"+ escape(find)+ "/";
+  return "/" + escape(find) + "/"+ escape(replace)+ "/";
 }

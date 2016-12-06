@@ -24,7 +24,7 @@
     }
   }
   if (dependentFigures != null) {
-    buf.append(", connections={");
+    buf.append(", deps={");
     isFirst=true;
     for (    Figure f : dependentFigures) {
       if (isFirst) {
@@ -37,7 +37,8 @@
       className=className.substring(className.lastIndexOf('.') + 1);
       buf.append(className).append('@').append(f.hashCode());
     }
-    buf.append("}}");
+    buf.append('}');
   }
+  buf.append('}');
   return buf.toString();
 }
