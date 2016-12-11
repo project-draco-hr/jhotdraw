@@ -1,0 +1,3 @@
+Application<V> app
+DrawingEditor editor
+Supplier<Figure> groupFactory

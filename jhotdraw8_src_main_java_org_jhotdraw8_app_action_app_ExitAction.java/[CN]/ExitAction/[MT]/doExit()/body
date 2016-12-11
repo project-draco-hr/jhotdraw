@@ -1,5 +1,5 @@
 {
-  for (  ProjectView p : new ArrayList<ProjectView>(app.views())) {
+  for (  DocumentView p : new ArrayList<DocumentView>(app.views())) {
     if (!p.isDisabled() && !p.isModified()) {
       app.remove(p);
     }

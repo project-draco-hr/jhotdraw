@@ -1,5 +1,5 @@
 {
-  ProjectView v=app.getActiveView();
+  V v=app.getActiveView();
   if (v != null && !v.isDisabled()) {
     Node n=v.getNode().getScene().getFocusOwner();
     if (n instanceof TextInputControl) {

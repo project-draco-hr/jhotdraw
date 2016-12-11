@@ -1,0 +1,5 @@
+Application<V> app
+V view
+Function<V,Node> nodeGetter
+String id
+Resources labels
