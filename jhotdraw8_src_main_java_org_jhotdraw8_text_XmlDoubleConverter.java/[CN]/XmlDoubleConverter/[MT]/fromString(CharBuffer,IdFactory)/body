@@ -1,3 +1,4 @@
 {
-  return c.fromString(in,idFactory);
+  Number n=c.fromString(in,idFactory);
+  return (n == null || n instanceof Double) ? (Double)n : n.doubleValue();
 }

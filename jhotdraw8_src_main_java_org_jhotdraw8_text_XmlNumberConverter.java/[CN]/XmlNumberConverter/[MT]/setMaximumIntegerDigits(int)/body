@@ -1,5 +1,0 @@
-{
-  decimalFormat.setMaximumIntegerDigits(newValue);
-  scientificFormat.setMaximumIntegerDigits(newValue);
-  this.maxIntDigits=newValue;
-}

@@ -1,3 +1,3 @@
 {
-  this(min,max,multiplier,allowsNullValue,null);
+  super(min,max,multiplier,allowsNullValue);
 }

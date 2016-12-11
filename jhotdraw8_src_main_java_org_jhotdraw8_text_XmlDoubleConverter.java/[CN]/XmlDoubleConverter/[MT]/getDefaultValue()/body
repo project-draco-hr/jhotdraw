@@ -1,3 +1,4 @@
 {
-  return c.getDefaultValue();
+  Number n=c.getDefaultValue();
+  return (n == null || n instanceof Double) ? (Double)n : n.doubleValue();
 }

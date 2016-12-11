@@ -7,16 +7,27 @@
     if (factor != 1.0) {
       v=v * factor;
     }
-    String str;
-    BigDecimal big=new BigDecimal(v);
-    int exponent=big.scale() >= 0 ? big.precision() - big.scale() : -big.scale();
-    if (!usesScientificNotation || exponent > minNegativeExponent && exponent < minPositiveExponent) {
-      str=decimalFormat.format(v);
+    if (Double.isInfinite(v)) {
+      if (v < 0.0) {
+        buf.append('-');
+      }
+      buf.append("INF");
+    }
+ else     if (Double.isNaN(v)) {
+      buf.append("NaN");
     }
  else {
-      str=scientificFormat.format(v);
+      String str;
+      BigDecimal big=new BigDecimal(v);
+      int exponent=big.scale() >= 0 ? big.precision() - big.scale() : -big.scale();
+      if (!usesScientificNotation || exponent > minNegativeExponent && exponent < minPositiveExponent) {
+        str=decimalFormat.format(v);
+      }
+ else {
+        str=scientificFormat.format(v);
+      }
+      buf.append(str);
     }
-    buf.append(str);
   }
  else   if (value instanceof Float) {
     float v=((Float)value).floatValue();

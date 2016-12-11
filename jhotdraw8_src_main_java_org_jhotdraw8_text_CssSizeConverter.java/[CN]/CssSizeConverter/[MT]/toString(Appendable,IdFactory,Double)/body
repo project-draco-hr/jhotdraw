@@ -1,3 +1,3 @@
 {
-  formatter.toString(out,new Object[]{value,0,""});
+  numberConverter.toString(out,idFactory,value);
 }

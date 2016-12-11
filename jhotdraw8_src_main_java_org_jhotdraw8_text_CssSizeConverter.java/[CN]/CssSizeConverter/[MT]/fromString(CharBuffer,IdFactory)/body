@@ -1,4 +1,20 @@
 {
-  Object[] v=formatter.fromString(buf);
-  return (double)v[0];
+  CssTokenizerInterface tt=new CssTokenizer(buf);
+  tt.skipWhitespace();
+  Double value=null;
+switch (tt.nextToken()) {
+case CssTokenizerInterface.TT_DIMENSION:
+    value=tt.currentNumericValue().doubleValue();
+  break;
+case CssTokenizerInterface.TT_PERCENTAGE:
+value=tt.currentNumericValue().doubleValue() / 100.0;
+break;
+case CssTokenizerInterface.TT_NUMBER:
+value=tt.currentNumericValue().doubleValue();
+break;
+default :
+throw new ParseException("number expected",tt.getPosition());
+}
+tt.skipWhitespace();
+return value;
 }
