@@ -1,4 +1,8 @@
 {
+  if (value == null) {
+    out.append("none");
+    return;
+  }
   Object[] v=new Object[value.size() + 2];
   v[0]=value.size();
   v[1]=value.size();
