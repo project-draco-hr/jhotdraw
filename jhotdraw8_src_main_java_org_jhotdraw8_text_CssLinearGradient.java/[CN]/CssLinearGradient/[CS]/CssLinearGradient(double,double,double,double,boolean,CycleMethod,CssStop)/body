@@ -5,6 +5,5 @@
   this.endY=endY;
   this.proportional=proportional;
   this.cycleMethod=cycleMethod;
-  this.name=null;
   this.cstops=stops;
 }

@@ -1,6 +1,6 @@
 {
   CssTokenizerInterface tt=new CssTokenizer(new StringReader(in.toString()));
-  tt.setSkipWhitespace(true);
+  tt.setSkipWhitespaces(true);
   String find=null;
   String replace=null;
 switch (tt.nextToken()) {

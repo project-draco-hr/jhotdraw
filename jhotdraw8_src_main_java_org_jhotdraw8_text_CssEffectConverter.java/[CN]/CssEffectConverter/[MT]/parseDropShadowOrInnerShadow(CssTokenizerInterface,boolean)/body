@@ -1,0 +1,98 @@
+{
+  String func=isDropShadow ? DROP_SHADOW : INNER_SHADOW;
+  BlurType blurType=BlurType.GAUSSIAN;
+  Color color=new Color(0,0,0,0.75);
+  double radius=10.0;
+  double spreadOrChocke=0.0;
+  double offsetX=0.0;
+  double offsetY=4.0;
+  if (tt.nextToken() != ')') {
+    if (tt.currentToken() != CssTokenizer.TT_IDENT) {
+      throw new ParseException("CSS Effect: " + func + "(<blur-type>,color,radius,spread,offset-x,offset-y) expected",tt.getPosition());
+    }
+switch (tt.currentStringValue()) {
+case "gaussian":
+      blurType=BlurType.GAUSSIAN;
+    break;
+case "one-pass-box":
+  blurType=BlurType.ONE_PASS_BOX;
+break;
+case "three-pass-box":
+blurType=BlurType.THREE_PASS_BOX;
+break;
+case "two-pass-box":
+blurType=BlurType.TWO_PASS_BOX;
+break;
+default :
+throw new ParseException("CSS Effect: " + func + "(<gaussian | one-pass-box | three-pass-box | two-pass-box>  expected",tt.getPosition());
+}
+if (tt.nextToken() != ',') {
+tt.pushBack();
+}
+if (tt.nextToken() == CssTokenizer.TT_HASH) {
+color=Color.web('#' + tt.currentStringValue());
+}
+ else if (tt.currentToken() == CssTokenizer.TT_IDENT) {
+color=Color.web(tt.currentStringValue());
+}
+ else if (tt.currentToken() == CssTokenizer.TT_FUNCTION) {
+StringBuilder buf=new StringBuilder();
+buf.append(tt.currentStringValue());
+buf.append('(');
+while (tt.nextToken() != CssTokenizer.TT_EOF) {
+if (tt.currentToken() == ')') {
+buf.append(')');
+break;
+}
+buf.append(tt.currentStringValue());
+}
+color=(Color)colorConverter.fromString(buf.toString()).getPaint();
+}
+ else {
+throw new ParseException("CSS Effect: " + func + "("+ blurType.toString().toLowerCase().replace('_','-')+ ",  <color> expected",tt.getPosition());
+}
+if (tt.nextToken() != ',') {
+tt.pushBack();
+}
+if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
+throw new ParseException("CSS Effect: radius number expected",tt.getPosition());
+}
+radius=tt.currentNumericValue().doubleValue();
+if (tt.nextToken() != ',') {
+tt.pushBack();
+}
+switch (tt.nextToken()) {
+case CssTokenizer.TT_NUMBER:
+spreadOrChocke=tt.currentNumericValue().doubleValue();
+break;
+case CssTokenizer.TT_PERCENTAGE:
+spreadOrChocke=tt.currentNumericValue().doubleValue() / 100.0;
+break;
+default :
+throw new ParseException("CSS Effect: spread or chocke number expected",tt.getPosition());
+}
+if (tt.nextToken() != ',') {
+tt.pushBack();
+}
+if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
+throw new ParseException("CSS Effect: offset-x number expected",tt.getPosition());
+}
+offsetX=tt.currentNumericValue().doubleValue();
+if (tt.nextToken() != ',') {
+tt.pushBack();
+}
+if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
+throw new ParseException("CSS Effect: offset-y number expected",tt.getPosition());
+}
+offsetY=tt.currentNumericValue().doubleValue();
+if (tt.nextToken() != ')') {
+throw new ParseException("CSS Effect: ')'  expected",tt.getPosition());
+}
+}
+if (isDropShadow) {
+return new DropShadow(blurType,color,radius,spreadOrChocke,offsetX,offsetY);
+}
+ else {
+return new InnerShadow(blurType,color,radius,spreadOrChocke,offsetX,offsetY);
+}
+}

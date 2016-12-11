@@ -1,0 +1,10 @@
+{
+  StringBuilder buf=new StringBuilder();
+  try {
+    toString(buf,new SimpleIdFactory(),value);
+  }
+ catch (  IOException ex) {
+    throw new InternalError(ex);
+  }
+  return buf.toString();
+}

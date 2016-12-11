@@ -1,0 +1,4 @@
+{
+  int hash=7;
+  return hash;
+}

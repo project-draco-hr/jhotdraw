@@ -1,19 +1,16 @@
 {
-  try {
-    String str=buf.toString().trim();
-    CssColor c;
-    if ("none".equals(str)) {
-      c=null;
-    }
- else {
-      c=new CssColor(str,Color.web(str));
-    }
+  String str=buf.toString().trim();
+  CssColor c;
+  if ("none".equals(str)) {
+    c=null;
     buf.position(buf.limit());
-    return c;
   }
- catch (  IllegalArgumentException e) {
-    ParseException pe=new ParseException("not a color:" + buf,buf.position());
-    pe.initCause(e);
-    throw pe;
+ else {
+    CssTokenizerInterface tt=new CssTokenizer(new StringReader(buf.toString()));
+    tt.setSkipWhitespaces(true);
+    c=parseColor(tt);
+    tt.skipWhitespace();
+    buf.position(buf.position() + tt.getPosition());
   }
+  return c;
 }

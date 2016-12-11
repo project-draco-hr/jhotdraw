@@ -1,6 +1,7 @@
 {
-  if (skipWhitespaces) {
-    skipWhitespace();
+  do {
+    doNextToken();
   }
-  return doNextToken();
+ while (skipComments && (currentToken == TT_COMMENT || currentToken == TT_BAD_COMMENT) || skipWhitespaces && (currentToken == TT_S || currentToken == TT_CDC || currentToken == TT_CDO));
+  return currentToken;
 }

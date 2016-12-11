@@ -1,0 +1,3 @@
+{
+  return "CssLinearGradient{" + "startX=" + startX + ", startY="+ startY+ ", endX="+ endX+ ", endY="+ endY+ ", proportional="+ proportional+ ", "+ cycleMethod+ ", stops="+ Arrays.toString(cstops)+ '}';
+}

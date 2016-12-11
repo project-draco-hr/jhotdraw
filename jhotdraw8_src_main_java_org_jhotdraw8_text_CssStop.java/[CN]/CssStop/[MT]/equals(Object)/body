@@ -1,0 +1,19 @@
+{
+  if (this == obj) {
+    return true;
+  }
+  if (obj == null) {
+    return false;
+  }
+  if (getClass() != obj.getClass()) {
+    return false;
+  }
+  final CssStop other=(CssStop)obj;
+  if (!Objects.equals(this.offset,other.offset)) {
+    return false;
+  }
+  if (!Objects.equals(this.color,other.color)) {
+    return false;
+  }
+  return true;
+}

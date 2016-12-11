@@ -3,29 +3,104 @@
     out.append("none");
   }
  else {
+    out.append("linear-gradient(");
     CssLinearGradient lg=value;
     final boolean proportional=lg.isProportional();
-    final String unit=proportional ? "%" : "px";
-    out.append("linear-gradient(");
+    final double startX=lg.getStartX();
+    final double startY=lg.getStartY();
+    final double endX=lg.getEndX();
+    final double endY=lg.getEndY();
+    final boolean needsFromTo;
     boolean needsSpace=false;
     boolean needsComma=false;
+    if (proportional) {
+      if (startX == 0.0 && startY == 0.0 & endX == 0.0 && endY == 0.0) {
+        needsFromTo=true;
+      }
+ else       if (startX == 0.0 && startY == 0.0 & endX == 0.0 && endY == 1.0) {
+        needsFromTo=false;
+      }
+ else       if (startX == 0.0 && startY == 0.0 & endX == 1.0 && endY == 0.0) {
+        out.append("to right");
+        needsComma=true;
+        needsFromTo=false;
+      }
+ else       if (startX == 0.0 && startY == 0.0 & endX == 1.0 && endY == 1.0) {
+        out.append("to right bottom");
+        needsComma=true;
+        needsFromTo=false;
+      }
+ else       if (startX == 0.0 && startY == 1.0 & endX == 0.0 && endY == 0.0) {
+        out.append("to top");
+        needsComma=true;
+        needsFromTo=false;
+      }
+ else       if (startX == 0.0 && startY == 1. & endX == 0.0 && endY == 1.0) {
+        needsFromTo=true;
+      }
+ else       if (startX == 0.0 && startY == 1.0 & endX == 1.0 && endY == 0.0) {
+        out.append("to right top");
+        needsComma=true;
+        needsFromTo=false;
+      }
+ else       if (startX == 0.0 && startY == 1.0 & endX == 1.0 && endY == 1.0) {
+        out.append("to right");
+        needsComma=true;
+        needsFromTo=false;
+      }
+ else       if (startX == 1.0 && startY == 0.0 & endX == 0.0 && endY == 0.0) {
+        out.append("to left");
+        needsComma=true;
+        needsFromTo=false;
+      }
+ else       if (startX == 1.0 && startY == 0.0 & endX == 0.0 && endY == 1.0) {
+        out.append("to left bottom");
+        needsComma=true;
+        needsFromTo=false;
+      }
+ else       if (startX == 1.0 && startY == 0.0 & endX == 1.0 && endY == 0.0) {
+        needsFromTo=true;
+      }
+ else       if (startX == 1.0 && startY == 0.0 & endX == 1.0 && endY == 1.0) {
+        needsFromTo=false;
+      }
+ else       if (startX == 1.0 && startY == 1.0 & endX == 0.0 && endY == 0.0) {
+        out.append("to left top");
+        needsComma=true;
+        needsFromTo=false;
+      }
+ else       if (startX == 1.0 && startY == 1.0 & endX == 0.0 && endY == 1.0) {
+        out.append("to left");
+        needsComma=true;
+        needsFromTo=false;
+      }
+ else       if (startX == 1.0 && startY == 1.0 & endX == 1.0 && endY == 0.0) {
+        out.append("to top");
+        needsComma=true;
+        needsFromTo=false;
+      }
+ else       if (startX == 1.0 && startY == 1.0 & endX == 1.0 && endY == 1.0) {
+        needsFromTo=true;
+      }
+ else {
+        needsFromTo=true;
+      }
+    }
+ else {
+      needsFromTo=true;
+    }
+    if (needsFromTo) {
+      final String unit=proportional ? "%" : "";
 {
-      final double startX=lg.getStartX();
-      final double startY=lg.getStartY();
-      if (startX != 0.0 || startY != 0.0) {
-        out.append("from ").append(doubleConverter.toString(startX)).append(unit).append(' ').append(doubleConverter.toString(startY)).append(unit);
+        out.append("from ").append(doubleConverter.toString(proportional ? startX * 100.0 : startX)).append(unit).append(' ').append(doubleConverter.toString(proportional ? startY * 100.0 : startY)).append(unit);
         needsSpace=true;
         needsComma=true;
       }
-    }
 {
-      final double endX=lg.getEndX();
-      final double endY=lg.getEndY();
-      if (endX != 0.0 || endY != 0.0) {
         if (needsSpace) {
           out.append(' ');
         }
-        out.append("to ").append(doubleConverter.toString(endX)).append(unit).append(' ').append(doubleConverter.toString(endY)).append(unit);
+        out.append("to ").append(doubleConverter.toString(proportional ? endX * 100.0 : endX)).append(unit).append(' ').append(doubleConverter.toString(proportional ? endY * 100.0 : endY)).append(unit);
         needsSpace=true;
         needsComma=true;
       }
@@ -58,13 +133,8 @@ out.append(", ");
 colorConverter.toString(out,idFactory,stop.getColor());
 if (stop.getOffset() != null) {
 out.append(' ');
-if (proportional) {
 doubleConverter.toString(out,idFactory,stop.getOffset() * 100.0);
 out.append('%');
-}
- else {
-doubleConverter.toString(out,idFactory,stop.getOffset());
-}
 }
 needsComma=true;
 }

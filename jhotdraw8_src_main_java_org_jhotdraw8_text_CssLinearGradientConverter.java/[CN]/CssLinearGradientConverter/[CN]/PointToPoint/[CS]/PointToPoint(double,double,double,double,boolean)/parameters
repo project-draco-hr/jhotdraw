@@ -1,0 +1,5 @@
+double startX
+double startY
+double endX
+double endY
+boolean isProportional

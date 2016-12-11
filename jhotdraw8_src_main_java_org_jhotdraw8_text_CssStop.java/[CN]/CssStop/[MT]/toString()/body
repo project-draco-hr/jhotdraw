@@ -1,0 +1,3 @@
+{
+  return "CssStop{" + "offset=" + offset + ", "+ color+ '}';
+}

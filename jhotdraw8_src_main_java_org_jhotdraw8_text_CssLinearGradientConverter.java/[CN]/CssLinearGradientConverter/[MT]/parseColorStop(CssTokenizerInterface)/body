@@ -1,0 +1,15 @@
+{
+  CssColor color=colorConverter.parseColor(tt);
+  Double offset=null;
+switch (tt.nextToken()) {
+case CssTokenizerInterface.TT_NUMBER:
+    offset=tt.currentNumericValue().doubleValue();
+  break;
+case CssTokenizerInterface.TT_PERCENTAGE:
+offset=tt.currentNumericValue().doubleValue() / 100.0;
+break;
+default :
+tt.pushBack();
+}
+return new CssStop(offset,color);
+}

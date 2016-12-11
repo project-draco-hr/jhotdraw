@@ -13,6 +13,6 @@
     int g=(int)Math.round(c.getGreen() * 255.0);
     int b=(int)Math.round(c.getBlue() * 255.0);
     double o=c.getOpacity();
-    return String.format("rgba(%d,%d,%d,%f)",r,g,b,o);
+    return formatter.format(r,g,b,o);
   }
 }

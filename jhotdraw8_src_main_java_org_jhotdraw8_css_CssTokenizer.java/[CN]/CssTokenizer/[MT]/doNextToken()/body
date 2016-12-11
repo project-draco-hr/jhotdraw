@@ -6,36 +6,38 @@
   lineNumber=(int)in.getLineNumber();
   position=(int)in.getPosition();
   int ch=in.nextChar();
-  stringValue=null;
+  unitValue=stringValue=null;
+  numericValue=null;
 switch (ch) {
 case -1:
     currentToken=TT_EOF;
-  break;
+  stringValue="<EOF>";
+break;
 case ' ':
 case '\n':
 case '\t':
 {
-  StringBuilder buf=new StringBuilder();
-  while (ch == ' ' || ch == '\n' || ch == '\t') {
-    buf.append((char)ch);
-    ch=in.nextChar();
-  }
-  in.pushBack(ch);
-  currentToken=TT_S;
-  stringValue=buf.toString();
-  break;
+StringBuilder buf=new StringBuilder();
+while (ch == ' ' || ch == '\n' || ch == '\t') {
+  buf.append((char)ch);
+  ch=in.nextChar();
+}
+in.pushBack(ch);
+currentToken=TT_S;
+stringValue=buf.toString();
+break;
 }
 case '~':
 {
 int next=in.nextChar();
 if (next == '=') {
-  currentToken=TT_INCLUDE_MATCH;
-  stringValue="~=";
+currentToken=TT_INCLUDE_MATCH;
+stringValue="~=";
 }
  else {
-  in.pushBack(next);
-  currentToken=ch;
-  stringValue=String.valueOf((char)ch);
+in.pushBack(next);
+currentToken=ch;
+stringValue=String.valueOf((char)ch);
 }
 break;
 }
@@ -154,13 +156,19 @@ case '8':
 case '9':
 {
 StringBuilder buf=new StringBuilder();
+StringBuilder unitBuf=new StringBuilder();
 if (numMacro(ch,buf)) {
 ch=in.nextChar();
 if (ch == '%') {
 currentToken=TT_PERCENTAGE;
+buf.append('%');
+unitBuf.append('%');
+unitValue=unitBuf.toString();
 }
- else if (identMacro(ch,buf)) {
+ else if (identMacro(ch,unitBuf)) {
 currentToken=TT_DIMENSION;
+unitValue=unitBuf.toString();
+buf.append(unitBuf);
 }
  else {
 in.pushBack(ch);
@@ -213,13 +221,19 @@ stringValue=String.valueOf((char)currentToken);
  else {
 in.pushBack(next1);
 StringBuilder buf=new StringBuilder();
+StringBuilder unitBuf=new StringBuilder();
 if (numMacro(ch,buf)) {
 ch=in.nextChar();
 if (ch == '%') {
 currentToken=TT_PERCENTAGE;
+buf.append('%');
+unitBuf.append('%');
+unitValue=unitBuf.toString();
 }
- else if (identMacro(ch,buf)) {
+ else if (identMacro(ch,unitBuf)) {
 currentToken=TT_DIMENSION;
+unitValue=unitBuf.toString();
+buf.append(unitBuf);
 }
  else {
 in.pushBack(ch);
@@ -338,5 +352,5 @@ stringValue=String.valueOf((char)currentToken);
 break;
 }
 }
-return (skipComments && (currentToken == TT_COMMENT || currentToken == TT_BAD_COMMENT)) ? nextToken() : currentToken;
+return currentToken;
 }
