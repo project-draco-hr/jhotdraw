@@ -1,10 +1,10 @@
 {
-  URI drawingHome=drawing.get(Drawing.DOCUMENT_HOME);
-  if (drawingHome != null) {
-    uri=drawingHome.resolve(uri);
+  URI external=internal;
+  if (internalHome != null) {
+    external=internalHome.resolve(external);
   }
-  if (documentHome != null) {
-    uri=documentHome.relativize(uri);
+  if (externalHome != null) {
+    external=externalHome.relativize(external);
   }
-  return uri;
+  return external;
 }

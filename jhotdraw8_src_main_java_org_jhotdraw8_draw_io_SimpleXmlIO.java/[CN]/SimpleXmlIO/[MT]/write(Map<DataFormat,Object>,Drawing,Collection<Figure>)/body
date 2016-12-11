@@ -1,4 +1,6 @@
 {
+  setInternalHome(drawing.get(Drawing.DOCUMENT_HOME));
+  setExternalHome(new File(System.getProperty("user.home")).toURI());
   StringWriter sw=new StringWriter();
   write(sw,drawing,selection);
   out.put(getDataFormat(),sw.toString());

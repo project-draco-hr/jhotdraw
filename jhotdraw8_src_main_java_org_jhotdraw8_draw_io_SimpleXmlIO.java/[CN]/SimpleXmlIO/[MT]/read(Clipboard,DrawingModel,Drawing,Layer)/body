@@ -1,4 +1,6 @@
 {
+  setInternalHome(drawing.get(Drawing.DOCUMENT_HOME));
+  setExternalHome(new File(System.getProperty("user.home")).toURI());
   Object content=clipboard.getContent(getDataFormat());
   if (content instanceof String) {
     Set<Figure> figures=new LinkedHashSet<>();
@@ -8,9 +10,12 @@
       factory.createId(f);
     }
     if (layer == null) {
-      layer=new SimpleLayer();
-      layer.set(StyleableFigure.STYLE_ID,factory.createId(layer));
-      model.addChildTo(layer,drawing);
+      layer=(Layer)drawing.getLastChild();
+      if (layer == null) {
+        layer=new SimpleLayer();
+        layer.set(StyleableFigure.STYLE_ID,factory.createId(layer));
+        model.addChildTo(layer,drawing);
+      }
     }
     for (    Figure f : new ArrayList<>(newDrawing.getChildren())) {
       newDrawing.remove(f);

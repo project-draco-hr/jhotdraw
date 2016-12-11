@@ -1,4 +1,5 @@
 {
-  setDocumentHome(file.getParentFile() == null ? new File(System.getProperty("user.home")).toURI() : file.getParentFile().toURI());
+  setExternalHome(file.getParentFile() == null ? new File(System.getProperty("user.home")).toURI() : file.getParentFile().toURI());
+  setInternalHome(drawing == null ? getExternalHome() : drawing.get(Drawing.DOCUMENT_HOME));
   return InputFormat.super.read(file,drawing);
 }

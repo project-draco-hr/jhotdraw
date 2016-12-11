@@ -23,7 +23,7 @@
       throw new IOException("The document does not contain a drawing in namespace \"" + namespaceURI + "\".");
     }
   }
-  external.set(Drawing.DOCUMENT_HOME,getDocumentHome());
+  external.set(Drawing.DOCUMENT_HOME,getExternalHome());
   readProcessingInstructions(doc,external);
   try {
     for (    Map.Entry<Figure,Element> entry : figureToElementMap.entrySet()) {

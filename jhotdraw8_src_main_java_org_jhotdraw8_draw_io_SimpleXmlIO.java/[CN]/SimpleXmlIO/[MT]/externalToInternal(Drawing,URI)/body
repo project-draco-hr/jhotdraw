@@ -1,3 +1,10 @@
 {
-  return uri;
+  URI internal=external;
+  if (externalHome != null) {
+    internal=externalHome.resolve(internal);
+  }
+  if (internalHome != null) {
+    internal=internalHome.relativize(internal);
+  }
+  return internal;
 }
