@@ -4,11 +4,11 @@
     if (object instanceof StyleableFigure) {
       StyleableFigure f=(StyleableFigure)object;
       id=f.get(StyleableFigure.STYLE_ID);
-      if (id != null && getObject(id) == null) {
+      if (id != null) {
         putId(object,id);
       }
  else {
-        id=super.createId(object,f.getTypeSelector().toLowerCase());
+        id=super.createId(object,f.getTypeSelector());
       }
     }
  else {

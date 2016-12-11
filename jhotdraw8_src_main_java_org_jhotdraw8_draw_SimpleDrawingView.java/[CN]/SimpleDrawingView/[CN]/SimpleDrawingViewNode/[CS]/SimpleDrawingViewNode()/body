@@ -1,3 +1,4 @@
 {
   setFocusTraversable(true);
+  setId("drawingView");
 }

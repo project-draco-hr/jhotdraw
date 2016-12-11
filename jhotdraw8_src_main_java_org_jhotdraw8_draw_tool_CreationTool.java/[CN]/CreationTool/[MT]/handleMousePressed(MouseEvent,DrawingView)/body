@@ -1,2 +1,15 @@
 {
+  x1=event.getX();
+  y1=event.getY();
+  x2=x1;
+  y2=y1;
+  figure=createFigure();
+  Point2D c=view.getConstrainer().constrainPoint(figure,view.viewToDrawing(new Point2D(x1,y1)));
+  figure.reshape(c.getX(),c.getY(),1,1);
+  DrawingModel dm=view.getModel();
+  Drawing drawing=dm.getRoot();
+  Layer layer=getOrCreateLayer(view,figure);
+  view.setActiveLayer(layer);
+  dm.addChildTo(figure,layer);
+  event.consume();
 }

@@ -1,7 +1,4 @@
 {
   Figure f=(Figure)factory.getObject(id);
-  if (f == null) {
-    throw new IOException("no figure for id:" + id);
-  }
   return f;
 }

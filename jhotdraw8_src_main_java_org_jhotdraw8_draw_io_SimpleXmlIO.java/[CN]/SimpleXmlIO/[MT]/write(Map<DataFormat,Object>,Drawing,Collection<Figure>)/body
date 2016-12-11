@@ -1,0 +1,5 @@
+{
+  StringWriter sw=new StringWriter();
+  write(sw,drawing,selection);
+  out.put(getDataFormat(),sw.toString());
+}

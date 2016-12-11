@@ -1,5 +1,10 @@
 {
   factory.reset();
+  if (oldDrawing != null) {
+    for (    Figure f : oldDrawing.preorderIterable()) {
+      factory.createId(f);
+    }
+  }
   figureToElementMap.clear();
   Drawing external=null;
   NodeList list=doc.getChildNodes();

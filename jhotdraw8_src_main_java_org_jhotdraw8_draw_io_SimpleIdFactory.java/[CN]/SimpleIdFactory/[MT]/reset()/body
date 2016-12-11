@@ -1,5 +1,5 @@
 {
-  nextId=0;
+  prefixToNextId.clear();
   idToObject.clear();
   objectToId.clear();
 }

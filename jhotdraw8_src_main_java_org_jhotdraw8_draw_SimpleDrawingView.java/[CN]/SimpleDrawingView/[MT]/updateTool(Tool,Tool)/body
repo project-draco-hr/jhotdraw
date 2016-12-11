@@ -3,10 +3,12 @@
     Tool t=oldValue;
     toolPane.setCenter(null);
     t.setDrawingView(null);
+    focused.unbind();
   }
   if (newValue != null) {
     Tool t=newValue;
     toolPane.setCenter(t.getNode());
     t.setDrawingView(this);
+    focused.bind(t.getNode().focusedProperty());
   }
 }

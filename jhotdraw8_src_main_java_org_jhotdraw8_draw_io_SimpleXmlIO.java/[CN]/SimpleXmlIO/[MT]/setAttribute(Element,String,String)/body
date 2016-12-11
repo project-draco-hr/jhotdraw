@@ -1,8 +1,12 @@
 {
   if (namespaceURI == null || namespaceQualifier == null) {
-    if (!elem.hasAttribute(unqualifiedName))     elem.setAttribute(unqualifiedName,value);
+    if (!elem.hasAttribute(unqualifiedName)) {
+      elem.setAttribute(unqualifiedName,value);
+    }
   }
  else {
-    if (!elem.hasAttributeNS(namespaceURI,namespaceQualifier + ":" + unqualifiedName))     elem.setAttributeNS(namespaceURI,namespaceQualifier + ":" + unqualifiedName,value);
+    if (!elem.hasAttributeNS(namespaceURI,namespaceQualifier + ":" + unqualifiedName)) {
+      elem.setAttributeNS(namespaceURI,namespaceQualifier + ":" + unqualifiedName,value);
+    }
   }
 }

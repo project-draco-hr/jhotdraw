@@ -1,12 +1,14 @@
 {
   String id=objectToId.get(object);
   if (id == null) {
+    long pNextId=prefixToNextId.getOrDefault(prefix,1L);
     do {
-      id=prefix + Long.toString(nextId++);
+      id=prefix + Long.toString(pNextId++);
     }
  while (idToObject.containsKey(id));
     objectToId.put(object,id);
     idToObject.put(id,object);
+    prefixToNextId.put(prefix,pNextId);
   }
   return id;
 }

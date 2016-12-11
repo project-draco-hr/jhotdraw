@@ -1,3 +1,3 @@
 {
-  return newParent != null && !(newParent instanceof Drawing);
+  return true;
 }

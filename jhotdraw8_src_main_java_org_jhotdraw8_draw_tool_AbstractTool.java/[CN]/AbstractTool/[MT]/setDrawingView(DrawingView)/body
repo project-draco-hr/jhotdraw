@@ -1,3 +1,0 @@
-{
-  drawingViewProperty().set(drawingView);
-}

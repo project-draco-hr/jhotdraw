@@ -1,0 +1,13 @@
+{
+  IOException firstCause=null;
+  for (  ClipboardInputFormat f : formats) {
+    try {
+      return f.read(clipboard,model,drawing,layer);
+    }
+ catch (    IOException e) {
+      if (firstCause == null)       firstCause=e;
+    }
+  }
+  if (firstCause != null)   throw firstCause;
+  throw new IOException("Unsupported clipboard content");
+}
