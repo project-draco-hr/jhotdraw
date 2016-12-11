@@ -1,0 +1,11 @@
+{
+  System.out.println("fromString " + string);
+  CharBuffer buf=CharBuffer.wrap(string);
+  IdFactory idFactory=new SimpleIdFactory();
+  CssSizeConverter instance=new CssSizeConverter(true);
+  Double actual=instance.fromString(buf,idFactory);
+  System.out.println("  expected: " + expected);
+  System.out.println("    actual: " + actual);
+  if (expected == null || Double.isNaN(expected))   assertEquals(actual,expected);
+ else   assertEquals(actual,expected,1e-4);
+}
