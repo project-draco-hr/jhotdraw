@@ -1,0 +1,10 @@
+{
+  this.screenColorSpace=screenColorSpace;
+  if (screenColorSpace == null) {
+    this.screenColorModel=ColorModel.getRGBdefault();
+  }
+ else   this.screenColorModel=new DirectColorModel(screenColorSpace,32,0x00ff0000,0x0000ff00,0x000000ff,0xff000000,false,DataBuffer.TYPE_INT);
+  invalidateLookupTables();
+  newPixels(pixels,screenColorModel,0,w);
+  generateColorWheel();
+}

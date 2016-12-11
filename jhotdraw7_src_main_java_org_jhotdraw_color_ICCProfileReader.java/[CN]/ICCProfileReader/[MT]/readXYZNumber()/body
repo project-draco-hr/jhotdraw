@@ -1,0 +1,7 @@
+{
+  double[] xyz=new double[3];
+  xyz[0]=readS15Fixed16Number();
+  xyz[1]=readS15Fixed16Number();
+  xyz[2]=readS15Fixed16Number();
+  return xyz;
+}

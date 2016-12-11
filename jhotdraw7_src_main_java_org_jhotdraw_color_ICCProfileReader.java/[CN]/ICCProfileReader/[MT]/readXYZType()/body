@@ -1,0 +1,11 @@
+{
+  int typeDescriptor=in.readInt();
+  if (typeDescriptor != 0x58595A20) {
+    throw new IOException("illegal type descriptor: 0x" + Integer.toHexString(typeDescriptor));
+  }
+  int reserved=in.readInt();
+  if (reserved != 0x0) {
+    throw new IOException("illegal reserved: 0x" + Integer.toHexString(reserved));
+  }
+  return readXYZNumber();
+}

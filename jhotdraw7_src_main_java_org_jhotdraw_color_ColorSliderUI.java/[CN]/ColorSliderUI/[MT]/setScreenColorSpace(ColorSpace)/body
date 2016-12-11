@@ -1,0 +1,6 @@
+{
+  if (colorTrackImageProducer != null) {
+    colorTrackImageProducer.setScreenColorSpace(cs);
+  }
+  slider.repaint();
+}

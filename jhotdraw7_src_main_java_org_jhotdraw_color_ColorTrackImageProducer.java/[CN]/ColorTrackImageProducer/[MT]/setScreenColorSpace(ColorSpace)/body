@@ -1,0 +1,12 @@
+{
+  this.screenColorSpace=screenColorSpace;
+  if (screenColorSpace == null) {
+    new DirectColorModel(24,0x00ff0000,0x0000ff00,0x000000ff);
+  }
+ else {
+    this.screenColorModel=new DirectColorModel(screenColorSpace,24,0x00ff0000,0x0000ff00,0x000000ff,0x00000000,false,DataBuffer.TYPE_INT);
+  }
+  newPixels(pixels,screenColorModel,0,w);
+  needsGeneration();
+  generateColorTrack();
+}

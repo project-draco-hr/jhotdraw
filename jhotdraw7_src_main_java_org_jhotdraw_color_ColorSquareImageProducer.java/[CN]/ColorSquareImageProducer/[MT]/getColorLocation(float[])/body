@@ -1,6 +1,6 @@
 {
-  float radial=(components[radialIndex] - colorSpace.getMinValue(radialIndex)) / (colorSpace.getMaxValue(radialIndex) - colorSpace.getMinValue(radialIndex));
-  float angular=(components[angularIndex] - colorSpace.getMinValue(angularIndex)) / (colorSpace.getMaxValue(angularIndex) - colorSpace.getMinValue(angularIndex));
+  float radial=(components[radialIndex] - modelColorSpace.getMinValue(radialIndex)) / (modelColorSpace.getMaxValue(radialIndex) - modelColorSpace.getMinValue(radialIndex));
+  float angular=(components[angularIndex] - modelColorSpace.getMinValue(angularIndex)) / (modelColorSpace.getMaxValue(angularIndex) - modelColorSpace.getMinValue(angularIndex));
   if (flipX)   radial=1f - radial;
   if (flipY)   angular=1f - angular;
   int side=Math.min(w - 1,h - 1);

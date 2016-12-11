@@ -11,8 +11,8 @@
     radial/=r;
   }
   float[] hsb=new float[3];
-  hsb[angularIndex]=(angular + 1f) / 2f * (colorSpace.getMaxValue(angularIndex) - colorSpace.getMinValue(angularIndex)) + colorSpace.getMinValue(angularIndex);
-  hsb[radialIndex]=(radial + 1f) / 2f * (colorSpace.getMaxValue(radialIndex) - colorSpace.getMinValue(radialIndex)) + colorSpace.getMinValue(radialIndex);
+  hsb[angularIndex]=(angular + 1f) / 2f * (modelColorSpace.getMaxValue(angularIndex) - modelColorSpace.getMinValue(angularIndex)) + modelColorSpace.getMinValue(angularIndex);
+  hsb[radialIndex]=(radial + 1f) / 2f * (modelColorSpace.getMaxValue(radialIndex) - modelColorSpace.getMinValue(radialIndex)) + modelColorSpace.getMinValue(radialIndex);
   hsb[verticalIndex]=verticalValue;
   return hsb;
 }

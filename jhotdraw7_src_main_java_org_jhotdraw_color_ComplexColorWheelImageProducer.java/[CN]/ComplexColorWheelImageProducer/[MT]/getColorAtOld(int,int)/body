@@ -11,8 +11,8 @@
     angular=1f - angular;
   }
   float[] rav=new float[3];
-  rav[angularIndex]=angular * (colorSpace.getMaxValue(angularIndex) - colorSpace.getMinValue(angularIndex)) + colorSpace.getMinValue(angularIndex);
-  rav[radialIndex]=radial * (colorSpace.getMaxValue(radialIndex) - colorSpace.getMinValue(radialIndex)) + colorSpace.getMinValue(radialIndex);
+  rav[angularIndex]=angular * (modelColorSpace.getMaxValue(angularIndex) - modelColorSpace.getMinValue(angularIndex)) + modelColorSpace.getMinValue(angularIndex);
+  rav[radialIndex]=radial * (modelColorSpace.getMaxValue(radialIndex) - modelColorSpace.getMinValue(radialIndex)) + modelColorSpace.getMinValue(radialIndex);
   rav[verticalIndex]=verticalValue;
   int xy=x + y * w;
   System.out.println("ComplexColorWheelImageProducer.getColorAt " + rav[angularIndex] + ","+ rav[radialIndex]+ " ~ "+ angulars[xy]+ ","+ radials[xy]);

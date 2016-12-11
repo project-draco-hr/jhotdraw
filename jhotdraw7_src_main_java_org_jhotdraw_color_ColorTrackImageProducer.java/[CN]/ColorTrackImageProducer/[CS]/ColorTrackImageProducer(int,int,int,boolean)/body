@@ -5,6 +5,6 @@
   this.h=h;
   this.trackBuffer=((trackBuffer & 1) == 0) ? trackBuffer : trackBuffer - 1;
   this.isHorizontal=isHorizontal;
-  newPixels(pixels,new DirectColorModel(24,0x00ff0000,0x0000ff00,0x000000ff),0,w);
+  newPixels(pixels,screenColorModel,0,w);
   setAnimated(true);
 }

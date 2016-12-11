@@ -7,7 +7,7 @@
   float maxv=cs.getMaxValue(componentIndex);
   for (int y=0, n=h - trackBuffer - 1; y <= n; y++) {
     components[componentIndex]=maxv - (y / (float)n) * (maxv - minv);
-    pixels[(y + offset) * w]=ColorUtil.CStoRGB24(cs,components,rgb);
+    pixels[(y + offset) * w]=ColorUtil.CStoRGB24(cs,screenColorSpace,components,rgb);
   }
   for (int y=0; y < offset; y++) {
     pixels[y * w]=pixels[offset * w];

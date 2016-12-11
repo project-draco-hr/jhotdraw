@@ -1,8 +1,8 @@
 {
   float radius=getRadius();
   Point2D.Float center=getCenter();
-  float radial=(components[radialIndex] - colorSpace.getMinValue(radialIndex)) / (colorSpace.getMaxValue(radialIndex) - colorSpace.getMinValue(radialIndex)) * 2 - 1;
-  float angular=(components[angularIndex] - colorSpace.getMinValue(angularIndex)) / (colorSpace.getMaxValue(angularIndex) - colorSpace.getMinValue(angularIndex)) * 2 - 1;
+  float radial=(components[radialIndex] - modelColorSpace.getMinValue(radialIndex)) / (modelColorSpace.getMaxValue(radialIndex) - modelColorSpace.getMinValue(radialIndex)) * 2 - 1;
+  float angular=(components[angularIndex] - modelColorSpace.getMinValue(angularIndex)) / (modelColorSpace.getMaxValue(angularIndex) - modelColorSpace.getMinValue(angularIndex)) * 2 - 1;
   if (flipX) {
     radial=-radial;
   }

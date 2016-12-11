@@ -1,0 +1,4 @@
+ColorSpace cs
+ColorSpace screencs
+float[] colorvalue
+float[] rgb

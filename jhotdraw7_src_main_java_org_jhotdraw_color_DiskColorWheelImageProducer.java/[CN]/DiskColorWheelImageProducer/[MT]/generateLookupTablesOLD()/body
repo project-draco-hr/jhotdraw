@@ -4,11 +4,11 @@
   alphas=new int[w * h];
   float radius=getRadius();
   float blend=(radius + 2f) / radius - 1f;
-  float maxR=colorSpace.getMaxValue(radialIndex);
-  float minR=colorSpace.getMinValue(radialIndex);
+  float maxR=modelColorSpace.getMaxValue(radialIndex);
+  float minR=modelColorSpace.getMinValue(radialIndex);
   float extentR=maxR - minR;
-  float maxA=colorSpace.getMaxValue(angularIndex);
-  float minA=colorSpace.getMinValue(angularIndex);
+  float maxA=modelColorSpace.getMaxValue(angularIndex);
+  float minA=modelColorSpace.getMinValue(angularIndex);
   float extentA=maxA - minA;
   int side=Math.min(w,h);
   int cx=side / 2;

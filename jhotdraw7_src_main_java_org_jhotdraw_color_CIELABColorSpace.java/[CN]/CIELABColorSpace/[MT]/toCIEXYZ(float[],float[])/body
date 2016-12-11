@@ -2,36 +2,5 @@
   double L=colorvalue[0];
   double a=colorvalue[1];
   double b=colorvalue[2];
-  double fy=(L + 16d) / 116d;
-  double fx=a / 500d + fy;
-  double fz=fy - b / 200d;
-  double xr, yr, zr;
-  double fxp3=fx * fx * fx;
-  if (fxp3 > eps) {
-    xr=fxp3;
-  }
- else {
-    xr=(116d * fx - 16d) / k;
-  }
-  if (L > k * eps) {
-    yr=((L + 16d) / 116d);
-    yr=yr * yr * yr;
-  }
- else {
-    yr=L / k;
-  }
-  double fzp3=fz * fz * fz;
-  if (fzp3 > eps) {
-    zr=fzp3;
-  }
- else {
-    zr=(116d * fz - 16f) / k;
-  }
-  double X=xr * Xw;
-  double Y=yr * Yw;
-  double Z=zr * Zw;
-  xyz[0]=(float)X;
-  xyz[1]=(float)Y;
-  xyz[2]=(float)Z;
-  return xyz;
+  return toCIEXYZ(L,a,b,xyz);
 }

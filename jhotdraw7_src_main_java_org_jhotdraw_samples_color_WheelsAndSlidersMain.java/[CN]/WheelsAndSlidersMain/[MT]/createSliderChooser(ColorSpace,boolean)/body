@@ -16,6 +16,7 @@
     s.setPaintTicks(true);
     s.setOrientation(vertical ? JSlider.VERTICAL : JSlider.HORIZONTAL);
     m.configureSlider(comp,s);
+    sliderViews.add((ColorSliderUI)s.getUI());
     if (vertical) {
       gbc.gridx=i;
       gbc.gridy=0;

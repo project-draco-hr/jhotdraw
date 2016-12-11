@@ -1,4 +1,4 @@
 {
-  float[] hsb=ColorUtil.fromColor(colorSpace,c);
+  float[] hsb=ColorUtil.fromColor(modelColorSpace,c);
   return getColorLocation(hsb);
 }

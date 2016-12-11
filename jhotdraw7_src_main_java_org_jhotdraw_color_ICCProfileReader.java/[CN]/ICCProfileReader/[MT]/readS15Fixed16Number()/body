@@ -1,0 +1,5 @@
+{
+  int s15=in.readShort();
+  int p15=in.readUnsignedShort();
+  return (double)s15 + (double)p15 / 65536.0;
+}

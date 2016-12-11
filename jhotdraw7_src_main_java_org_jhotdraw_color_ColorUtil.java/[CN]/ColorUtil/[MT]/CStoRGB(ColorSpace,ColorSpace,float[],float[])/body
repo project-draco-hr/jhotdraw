@@ -1,0 +1,19 @@
+{
+  if (screencs == null) {
+    if (cs.isCS_sRGB()) {
+      System.arraycopy(colorvalue,0,rgb,0,3);
+    }
+ else     if (cs instanceof NamedColorSpace) {
+      CStoRGB((NamedColorSpace)cs,colorvalue,rgb);
+    }
+ else {
+      float[] tmp=cs.toRGB(colorvalue);
+      System.arraycopy(tmp,0,rgb,0,rgb.length);
+    }
+  }
+ else {
+    float[] xyz=cs.toCIEXYZ(colorvalue);
+    float[] tmpRgb=screencs.fromCIEXYZ(xyz);
+    System.arraycopy(tmpRgb,0,rgb,0,rgb.length);
+  }
+}

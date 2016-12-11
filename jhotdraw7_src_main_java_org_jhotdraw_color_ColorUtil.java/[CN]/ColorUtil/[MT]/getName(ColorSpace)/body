@@ -5,7 +5,7 @@
   if ((a instanceof ICC_ColorSpace)) {
     ICC_ColorSpace icc=(ICC_ColorSpace)a;
     ICC_Profile p=icc.getProfile();
-    byte[] desc=p.getData(0x64657363);
+    byte[] desc=p.getData(ICC_Profile.icSigProfileDescriptionTag);
     if (desc != null) {
       DataInputStream in=new DataInputStream(new ByteArrayInputStream(desc));
       try {

@@ -2,11 +2,11 @@
   radials=new float[w * h];
   angulars=new float[w * h];
   alphas=new int[w * h];
-  float maxR=colorSpace.getMaxValue(radialIndex);
-  float minR=colorSpace.getMinValue(radialIndex);
+  float maxR=modelColorSpace.getMaxValue(radialIndex);
+  float minR=modelColorSpace.getMinValue(radialIndex);
   float extentR=maxR - minR;
-  float maxA=colorSpace.getMaxValue(angularIndex);
-  float minA=colorSpace.getMinValue(angularIndex);
+  float maxA=modelColorSpace.getMaxValue(angularIndex);
+  float minA=modelColorSpace.getMinValue(angularIndex);
   float extentA=maxA - minA;
   int side=Math.min(w - 1,h - 1);
   int xOffset=(w - side) / 2;

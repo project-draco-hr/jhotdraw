@@ -1,4 +1,4 @@
 {
-  float[] components=ColorUtil.fromColor(colorSpace,c);
+  float[] components=ColorUtil.fromColor(modelColorSpace,c);
   return getColorLocation(components);
 }

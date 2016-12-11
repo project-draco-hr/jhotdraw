@@ -6,8 +6,8 @@
   float angular=(float)(0.5 + (theta / Math.PI / 2d));
   float radial=Math.min(1f,r / getRadius());
   float[] hsb=new float[3];
-  hsb[angularIndex]=angular * (colorSpace.getMaxValue(angularIndex) - colorSpace.getMinValue(angularIndex)) + colorSpace.getMinValue(angularIndex);
-  hsb[radialIndex]=radial * (colorSpace.getMaxValue(radialIndex) - colorSpace.getMinValue(radialIndex)) + colorSpace.getMinValue(radialIndex);
+  hsb[angularIndex]=angular * (modelColorSpace.getMaxValue(angularIndex) - modelColorSpace.getMinValue(angularIndex)) + modelColorSpace.getMinValue(angularIndex);
+  hsb[radialIndex]=radial * (modelColorSpace.getMaxValue(radialIndex) - modelColorSpace.getMinValue(radialIndex)) + modelColorSpace.getMinValue(radialIndex);
   hsb[verticalIndex]=verticalValue;
   return hsb;
 }

@@ -1,6 +1,8 @@
 {
   initComponents();
-  models=new LinkedList<ColorSliderModel>();
+  models=new ArrayList<ColorSliderModel>();
+  views=new ArrayList<>();
+  sliderViews=new ArrayList<>();
   handler=new Handler();
   previewLabel.setOpaque(true);
   chooserPanel.add(createSliderChooser(ColorSpace.getInstance(ColorSpace.CS_sRGB)));
@@ -20,6 +22,6 @@
   chooserPanel.add(createColorWheelChooser(cs,1,2,0,JColorWheel.Type.SQUARE));
   cs=new CIELCHabColorSpace();
   chooserPanel.add(createColorWheelChooser(cs,2,1,0,JColorWheel.Type.POLAR));
-  chooserPanel.add(createColorWheelChooser(ICC_ColorSpace.getInstance(ICC_ColorSpace.CS_CIEXYZ),1,0,2,JColorWheel.Type.SQUARE));
+  chooserPanel.add(createColorWheelChooser(ICC_ColorSpace.getInstance(ICC_ColorSpace.CS_CIEXYZ),2,0,1,JColorWheel.Type.SQUARE));
   chooserPanel.add(createColorWheelChooser(ICC_ColorSpace.getInstance(ICC_ColorSpace.CS_PYCC),1,2,0,JColorWheel.Type.SQUARE));
 }
