@@ -4,7 +4,7 @@
   Object content=clipboard.getContent(getDataFormat());
   if (content instanceof String) {
     Set<Figure> figures=new LinkedHashSet<>();
-    Drawing newDrawing=read((String)content,drawing);
+    Figure newDrawing=read((String)content,drawing);
     factory.reset();
     for (    Figure f : drawing.preorderIterable()) {
       factory.createId(f);

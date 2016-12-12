@@ -1,5 +1,5 @@
 {
-  String mimeType=(namespaceURI == null) ? "text/xml" : "text/xml/" + namespaceURI;
+  String mimeType="text/xml";
   DataFormat df=DataFormat.lookupMimeType(mimeType);
   if (df == null) {
     df=new DataFormat(mimeType);

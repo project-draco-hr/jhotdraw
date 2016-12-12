@@ -1,6 +1,9 @@
 {
+  if (selection.isEmpty() || selection.contains(internal)) {
+    return toDocument(internal);
+  }
   try {
-    Drawing external=factory.toExternalDrawing(internal);
+    Clipping external=new SimpleClipping();
     factory.reset();
     DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
     Document doc;
@@ -17,13 +20,11 @@
       doc.appendChild(elem);
     }
     Element docElement=doc.getDocumentElement();
-    writeProcessingInstructions(doc,external);
     String commentText=factory.createFileComment();
     if (commentText != null) {
       docElement.getParentNode().insertBefore(doc.createComment(commentText),docElement);
     }
-    writeElementAttributes(docElement,external);
-    for (    Figure child : figures) {
+    for (    Figure child : selection) {
       Node childNode=writeNodeRecursively(doc,child);
       if (childNode != null) {
         docElement.appendChild(doc.createTextNode("\n"));

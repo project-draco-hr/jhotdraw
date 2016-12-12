@@ -7,6 +7,7 @@
   }
   figureToElementMap.clear();
   Drawing external=null;
+  Clipping clipping=null;
   NodeList list=doc.getChildNodes();
   for (int i=0; i < list.getLength(); i++) {
     Figure f=readNodesRecursively(list.item(i));
@@ -14,8 +15,12 @@
       external=(Drawing)f;
       break;
     }
+ else     if (f instanceof Clipping) {
+      clipping=(Clipping)f;
+      break;
+    }
   }
-  if (external == null) {
+  if (external == null && clipping == null) {
     if (namespaceURI == null) {
       throw new IOException("The document does not contain a drawing.");
     }
@@ -23,8 +28,10 @@
       throw new IOException("The document does not contain a drawing in namespace \"" + namespaceURI + "\".");
     }
   }
-  external.set(Drawing.DOCUMENT_HOME,getExternalHome());
-  readProcessingInstructions(doc,external);
+  if (external != null) {
+    external.set(Drawing.DOCUMENT_HOME,getExternalHome());
+    readProcessingInstructions(doc,external);
+  }
   try {
     for (    Map.Entry<Figure,Element> entry : figureToElementMap.entrySet()) {
       readElementAttributes(entry.getKey(),entry.getValue());
@@ -34,7 +41,12 @@
   finally {
     figureToElementMap.clear();
   }
-  Drawing internal=factory.fromExternalDrawing(external);
-  internal.updateCss();
-  return internal;
+  if (external != null) {
+    Drawing internal=factory.fromExternalDrawing(external);
+    internal.updateCss();
+    return internal;
+  }
+ else {
+    return clipping;
+  }
 }
