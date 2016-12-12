@@ -1,0 +1,104 @@
+{
+  double focusAngle=0.0, focusDistance=0.0, centerX=0.0, centerY=1.0;
+  Boolean isProportional=null;
+switch (tt.nextToken()) {
+case CssTokenizer.TT_NUMBER:
+    focusAngle=tt.currentNumericValue().doubleValue();
+  isProportional=false;
+break;
+case CssTokenizer.TT_PERCENTAGE:
+isProportional=true;
+focusAngle=tt.currentNumericValue().doubleValue() / 100.0;
+break;
+case CssTokenizer.TT_DIMENSION:
+isProportional=false;
+if (!"px".equals(tt.currentUnitValue())) {
+throw new ParseException("CSS RadialGradient: start-x given in pixels or percentage expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+focusAngle=tt.currentNumericValue().doubleValue();
+break;
+default :
+throw new ParseException("CSS RadialGradient: start-x expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+switch (tt.nextToken()) {
+case CssTokenizer.TT_NUMBER:
+if (isProportional) {
+throw new ParseException("CSS RadialGradient: start-y as percentage value expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+focusDistance=tt.currentNumericValue().doubleValue();
+break;
+case CssTokenizer.TT_PERCENTAGE:
+if (!isProportional) {
+throw new ParseException("CSS RadialGradient: start-y as absolute value expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+focusDistance=tt.currentNumericValue().doubleValue() / 100.0;
+break;
+case CssTokenizer.TT_DIMENSION:
+if (isProportional) {
+throw new ParseException("CSS RadialGradient: start-y as percentage value expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+if (!"px".equals(tt.currentUnitValue())) {
+throw new ParseException("CSS RadialGradient: start-y given in pixels or percentage expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+focusDistance=tt.currentNumericValue().doubleValue();
+break;
+default :
+throw new ParseException("CSS RadialGradient: start-y expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+if (tt.nextToken() == CssTokenizer.TT_IDENT && "to".equals(tt.currentStringValue())) {
+switch (tt.nextToken()) {
+case CssTokenizer.TT_NUMBER:
+if (isProportional) {
+throw new ParseException("CSS RadialGradient: end-x as percentage value expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+centerX=tt.currentNumericValue().doubleValue();
+break;
+case CssTokenizer.TT_PERCENTAGE:
+if (!isProportional) {
+throw new ParseException("CSS RadialGradient: end-x as absolute value expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+centerX=tt.currentNumericValue().doubleValue() / 100.0;
+break;
+case CssTokenizer.TT_DIMENSION:
+if (isProportional) {
+throw new ParseException("CSS RadialGradient: end-x as percentage value expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+if (!"px".equals(tt.currentUnitValue())) {
+throw new ParseException("CSS RadialGradient: end-x given in pixels or percentage expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+centerX=tt.currentNumericValue().doubleValue();
+break;
+default :
+throw new ParseException("CSS RadialGradient: end-x expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+switch (tt.nextToken()) {
+case CssTokenizer.TT_NUMBER:
+if (isProportional) {
+throw new ParseException("CSS RadialGradient: end-y as proportional value expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+centerY=tt.currentNumericValue().doubleValue();
+break;
+case CssTokenizer.TT_PERCENTAGE:
+if (!isProportional) {
+throw new ParseException("CSS RadialGradient: end-y as absolute value expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+centerY=tt.currentNumericValue().doubleValue() / 100.0;
+break;
+case CssTokenizer.TT_DIMENSION:
+if (isProportional) {
+throw new ParseException("CSS RadialGradient: end-y as proportional value expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+if (!"px".equals(tt.currentUnitValue())) {
+throw new ParseException("CSS RadialGradient: end-y given in pixels or percent expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+centerY=tt.currentNumericValue().doubleValue();
+break;
+default :
+throw new ParseException("CSS RadialGradient: end-y expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+}
+ else {
+throw new ParseException("CSS RadialGradient: 'to' expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+}
+return new PointToPoint(focusAngle,focusDistance,centerX,centerY,isProportional);
+}

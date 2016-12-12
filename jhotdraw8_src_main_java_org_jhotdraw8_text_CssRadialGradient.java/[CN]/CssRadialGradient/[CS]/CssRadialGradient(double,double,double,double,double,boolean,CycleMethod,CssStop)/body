@@ -1,0 +1,10 @@
+{
+  this.focusAngle=focusAngle;
+  this.focusDistance=focusDistance;
+  this.centerX=centerX;
+  this.centerY=centerY;
+  this.radius=radius;
+  this.proportional=proportional;
+  this.cycleMethod=cycleMethod;
+  this.cstops=stops;
+}

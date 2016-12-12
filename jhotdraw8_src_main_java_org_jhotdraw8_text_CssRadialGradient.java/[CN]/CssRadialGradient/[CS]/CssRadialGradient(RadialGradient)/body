@@ -1,0 +1,16 @@
+{
+  this.radialGradient=radialGradient;
+  this.centerX=radialGradient.getCenterX();
+  this.centerY=radialGradient.getCenterY();
+  this.radius=radialGradient.getRadius();
+  this.focusAngle=radialGradient.getFocusAngle();
+  this.focusDistance=radialGradient.getFocusDistance();
+  this.proportional=radialGradient.isProportional();
+  this.cycleMethod=radialGradient.getCycleMethod();
+  List<Stop> stopList=radialGradient.getStops();
+  cstops=new CssStop[stopList.size()];
+  for (int i=0; i < cstops.length; i++) {
+    Stop stop=stopList.get(i);
+    cstops[i]=new CssStop(stop.getOffset(),new CssColor(stop.getColor()));
+  }
+}

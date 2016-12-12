@@ -1,0 +1,3 @@
+{
+  return "CssRadialGradient{" + "focusAngle=" + focusAngle + ", focusDistance="+ focusDistance+ "centerX="+ centerX+ ", centerY="+ centerY+ ", radius="+ radius+ ", proportional="+ proportional+ ", "+ cycleMethod+ ", stops="+ Arrays.toString(cstops)+ '}';
+}

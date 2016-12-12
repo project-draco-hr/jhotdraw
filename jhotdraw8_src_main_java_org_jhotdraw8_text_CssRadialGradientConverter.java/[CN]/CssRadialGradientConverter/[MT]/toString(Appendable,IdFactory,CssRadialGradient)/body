@@ -1,0 +1,91 @@
+{
+  if (value == null) {
+    out.append("none");
+  }
+ else {
+    out.append("radial-gradient(");
+    CssRadialGradient lg=value;
+    final boolean proportional=lg.isProportional();
+    final double focusAngle=lg.getFocusAngle();
+    final double focusDistance=lg.getFocusDistance();
+    final double centerX=lg.getCenterX();
+    final double centerY=lg.getCenterY();
+    final double radius=lg.getRadius();
+    boolean needsSpace=false;
+    boolean needsComma=false;
+    if (focusAngle != 0.0) {
+      out.append("focus-angle ");
+      out.append(doubleConverter.toString(focusAngle));
+      out.append("deg");
+      needsComma=true;
+    }
+    if (focusDistance != 0.0) {
+      if (needsComma)       out.append(", ");
+      out.append("focus-angle ");
+      out.append(doubleConverter.toString(focusDistance * 100));
+      out.append("%");
+      needsComma=true;
+    }
+    if (centerX != 0.0 || centerY != 0.0) {
+      if (needsComma)       out.append(", ");
+      out.append("center ");
+      if (proportional) {
+        out.append(doubleConverter.toString(centerX * 100));
+        out.append("% ");
+        out.append(doubleConverter.toString(centerY * 100));
+        out.append("%");
+      }
+ else {
+        out.append(doubleConverter.toString(centerX));
+        out.append(" ");
+        out.append(doubleConverter.toString(centerY));
+      }
+      needsComma=true;
+    }
+    if (needsComma)     out.append(", ");
+    out.append("radius ");
+    if (proportional) {
+      out.append(doubleConverter.toString(radius * 100));
+      out.append("%");
+    }
+ else {
+      out.append(doubleConverter.toString(radius));
+    }
+    needsComma=true;
+{
+switch (lg.getCycleMethod()) {
+case NO_CYCLE:
+        break;
+case REPEAT:
+      if (needsComma) {
+        out.append(", ");
+      }
+    out.append("repeat");
+  needsComma=true;
+break;
+case REFLECT:
+if (needsComma) {
+out.append(", ");
+}
+out.append("reflect");
+needsComma=true;
+break;
+default :
+throw new UnsupportedOperationException("not yet implemented");
+}
+for (CssStop stop : lg.getStops()) {
+if (needsComma) {
+out.append(", ");
+}
+colorConverter.toString(out,idFactory,stop.getColor());
+if (stop.getOffset() != null) {
+out.append(' ');
+doubleConverter.toString(out,idFactory,stop.getOffset() * 100.0);
+out.append('%');
+}
+needsComma=true;
+}
+}
+out.append(")");
+}
+}

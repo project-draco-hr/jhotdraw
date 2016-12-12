@@ -1,0 +1,37 @@
+{
+  if (this == obj) {
+    return true;
+  }
+  if (obj == null) {
+    return false;
+  }
+  if (getClass() != obj.getClass()) {
+    return false;
+  }
+  final CssRadialGradient other=(CssRadialGradient)obj;
+  if (Double.doubleToLongBits(this.centerX) != Double.doubleToLongBits(other.centerX)) {
+    return false;
+  }
+  if (Double.doubleToLongBits(this.centerY) != Double.doubleToLongBits(other.centerY)) {
+    return false;
+  }
+  if (Double.doubleToLongBits(this.radius) != Double.doubleToLongBits(other.radius)) {
+    return false;
+  }
+  if (Double.doubleToLongBits(this.focusAngle) != Double.doubleToLongBits(other.focusAngle)) {
+    return false;
+  }
+  if (this.proportional != other.proportional) {
+    return false;
+  }
+  if (!Objects.equals(this.radialGradient,other.radialGradient)) {
+    return false;
+  }
+  if (this.cycleMethod != other.cycleMethod) {
+    return false;
+  }
+  if (!Arrays.deepEquals(this.cstops,other.cstops)) {
+    return false;
+  }
+  return true;
+}
