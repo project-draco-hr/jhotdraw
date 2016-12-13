@@ -1,3 +1,16 @@
 {
-  elem.setAttribute("fill",paint.toString(node.getFill()));
+  Paint fill=node.getFill();
+  String id=idFactory.getId(fill);
+  if (id != null) {
+    elem.setAttribute("fill","url(#" + id + ")");
+  }
+ else {
+    elem.setAttribute("fill",paint.toString(fill));
+    if (fill instanceof Color) {
+      Color c=(Color)fill;
+      if (!c.isOpaque()) {
+        elem.setAttribute("fill-opacity",nb.toString(c.getOpacity()));
+      }
+    }
+  }
 }

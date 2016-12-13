@@ -6,7 +6,7 @@
   lineNumber=(int)in.getLineNumber();
   position=(int)in.getPosition();
   int ch=in.nextChar();
-  unitValue=stringValue=null;
+  stringValue=null;
   numericValue=null;
 switch (ch) {
 case -1:
@@ -161,20 +161,16 @@ if (numMacro(ch,buf)) {
 ch=in.nextChar();
 if (ch == '%') {
 currentToken=TT_PERCENTAGE;
-buf.append('%');
-unitBuf.append('%');
-unitValue=unitBuf.toString();
+stringValue="%";
 }
  else if (identMacro(ch,unitBuf)) {
 currentToken=TT_DIMENSION;
-unitValue=unitBuf.toString();
-buf.append(unitBuf);
+stringValue=unitBuf.toString();
 }
  else {
 in.pushBack(ch);
 currentToken=TT_NUMBER;
 }
-stringValue=buf.toString();
 }
  else {
 currentToken=ch;
@@ -226,20 +222,16 @@ if (numMacro(ch,buf)) {
 ch=in.nextChar();
 if (ch == '%') {
 currentToken=TT_PERCENTAGE;
-buf.append('%');
-unitBuf.append('%');
-unitValue=unitBuf.toString();
+stringValue="%";
 }
  else if (identMacro(ch,unitBuf)) {
 currentToken=TT_DIMENSION;
-unitValue=unitBuf.toString();
-buf.append(unitBuf);
+stringValue=unitBuf.toString();
 }
  else {
 in.pushBack(ch);
 currentToken=TT_NUMBER;
 }
-stringValue=buf.toString();
 }
  else {
 if (identMacro(ch,buf)) {

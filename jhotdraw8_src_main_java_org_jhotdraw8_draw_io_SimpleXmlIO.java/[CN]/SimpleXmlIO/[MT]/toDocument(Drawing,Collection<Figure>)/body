@@ -2,6 +2,13 @@
   if (selection.isEmpty() || selection.contains(internal)) {
     return toDocument(internal);
   }
+  Set<Figure> s=new HashSet<>(selection);
+  ArrayList<Figure> ordered=new ArrayList<>(selection.size());
+  for (  Figure f : internal.preorderIterable()) {
+    if (s.contains(f)) {
+      ordered.add(f);
+    }
+  }
   try {
     Clipping external=new SimpleClipping();
     factory.reset();
@@ -24,7 +31,7 @@
     if (commentText != null) {
       docElement.getParentNode().insertBefore(doc.createComment(commentText),docElement);
     }
-    for (    Figure child : selection) {
+    for (    Figure child : ordered) {
       Node childNode=writeNodeRecursively(doc,child);
       if (childNode != null) {
         docElement.appendChild(doc.createTextNode("\n"));

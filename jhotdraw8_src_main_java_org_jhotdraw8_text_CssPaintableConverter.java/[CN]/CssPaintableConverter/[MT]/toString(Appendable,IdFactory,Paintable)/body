@@ -13,6 +13,10 @@
     CssLinearGradient lg=(CssLinearGradient)value;
     linearGradientConverter.toString(out,idFactory,lg);
   }
+ else   if (value instanceof CssRadialGradient) {
+    CssRadialGradient lg=(CssRadialGradient)value;
+    radialGradientConverter.toString(out,idFactory,lg);
+  }
  else {
     throw new UnsupportedOperationException("not yet implemented");
   }

@@ -1,0 +1,96 @@
+{
+  if (idFactory.getId(paint) == null) {
+    if (paint instanceof LinearGradient) {
+      LinearGradient g=(LinearGradient)paint;
+      String id=idFactory.createId(paint,"linearGradient");
+      Element elem=doc.createElement("linearGradient");
+      defsNode.appendChild(doc.createTextNode("\n"));
+      elem.setAttribute("id",id);
+      if (g.isProportional()) {
+        elem.setAttribute("x1",nb.toString(g.getStartX() * 100) + "%");
+        elem.setAttribute("y1",nb.toString(g.getStartY() * 100) + "%");
+        elem.setAttribute("x2",nb.toString(g.getEndX() * 100) + "%");
+        elem.setAttribute("y2",nb.toString(g.getEndY() * 100) + "%");
+        elem.setAttribute("gradientUnits","objectBoundingBox");
+      }
+ else {
+        elem.setAttribute("x1",nb.toString(g.getStartX()));
+        elem.setAttribute("y1",nb.toString(g.getStartY()));
+        elem.setAttribute("x2",nb.toString(g.getEndX()));
+        elem.setAttribute("y2",nb.toString(g.getEndY()));
+        elem.setAttribute("gradientUnits","userSpaceOnUse");
+      }
+switch (g.getCycleMethod()) {
+case NO_CYCLE:
+        elem.setAttribute("spreadMethod","pad");
+      break;
+case REFLECT:
+    elem.setAttribute("spreadMethod","reflect");
+  break;
+case REPEAT:
+elem.setAttribute("spreadMethod","repeat");
+break;
+default :
+throw new IOException("unsupported cycle method:" + g.getCycleMethod());
+}
+for (Stop s : g.getStops()) {
+Element stopElem=doc.createElement("stop");
+stopElem.setAttribute("offset",nb.toString(s.getOffset() * 100) + "%");
+Color c=s.getColor();
+stopElem.setAttribute("stop-color",this.paint.toString(c));
+if (!c.isOpaque()) {
+stopElem.setAttribute("stop-opacity",nb.toString(c.getOpacity()));
+}
+elem.appendChild(stopElem);
+}
+defsNode.appendChild(elem);
+}
+ else if (paint instanceof RadialGradient) {
+RadialGradient g=(RadialGradient)paint;
+String id=idFactory.createId(paint,"radialGradient");
+Element elem=doc.createElement("radialGradient");
+defsNode.appendChild(doc.createTextNode("\n"));
+elem.setAttribute("id",id);
+if (g.isProportional()) {
+elem.setAttribute("cx",nb.toString(g.getCenterX() * 100) + "%");
+elem.setAttribute("cy",nb.toString(g.getCenterY() * 100) + "%");
+elem.setAttribute("r",nb.toString(g.getRadius() * 100) + "%");
+elem.setAttribute("fx",nb.toString((g.getCenterX() + Math.cos(g.getFocusAngle() / 180 * Math.PI) * g.getFocusDistance() * g.getRadius()) * 100) + "%");
+elem.setAttribute("fy",nb.toString((g.getCenterY() + Math.sin(g.getFocusAngle() / 180 * Math.PI) * g.getFocusDistance() * g.getRadius()) * 100) + "%");
+elem.setAttribute("gradientUnits","objectBoundingBox");
+}
+ else {
+elem.setAttribute("cx",nb.toString(g.getCenterX()));
+elem.setAttribute("cy",nb.toString(g.getCenterY()));
+elem.setAttribute("r",nb.toString(g.getRadius()));
+elem.setAttribute("fx",nb.toString(g.getCenterX() + Math.cos(g.getFocusAngle() / 180 * Math.PI) * g.getFocusDistance() * g.getRadius()));
+elem.setAttribute("fy",nb.toString(g.getCenterY() + Math.sin(g.getFocusAngle() / 180 * Math.PI) * g.getFocusDistance() * g.getRadius()));
+elem.setAttribute("gradientUnits","userSpaceOnUse");
+}
+switch (g.getCycleMethod()) {
+case NO_CYCLE:
+elem.setAttribute("spreadMethod","pad");
+break;
+case REFLECT:
+elem.setAttribute("spreadMethod","reflect");
+break;
+case REPEAT:
+elem.setAttribute("spreadMethod","repeat");
+break;
+default :
+throw new IOException("unsupported cycle method:" + g.getCycleMethod());
+}
+for (Stop s : g.getStops()) {
+Element stopElem=doc.createElement("stop");
+stopElem.setAttribute("offset",nb.toString(s.getOffset() * 100) + "%");
+Color c=s.getColor();
+stopElem.setAttribute("stop-color",this.paint.toString(c));
+if (!c.isOpaque()) {
+stopElem.setAttribute("stop-opacity",nb.toString(c.getOpacity()));
+}
+elem.appendChild(stopElem);
+}
+defsNode.appendChild(elem);
+}
+}
+}

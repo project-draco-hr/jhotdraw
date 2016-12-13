@@ -3,10 +3,11 @@
     out.append("none");
   }
  else   if (Color.TRANSPARENT.equals(value)) {
-    out.append("transparent");
+    out.append("none");
   }
  else   if (value instanceof Color) {
-    CssColor c=new CssColor((Color)value);
+    Color crgba=(Color)value;
+    CssColor c=new CssColor(new Color(crgba.getRed(),crgba.getGreen(),crgba.getBlue(),1.0));
     colorConverter.toString(out,idFactory,c);
   }
  else   if (value instanceof LinearGradient) {

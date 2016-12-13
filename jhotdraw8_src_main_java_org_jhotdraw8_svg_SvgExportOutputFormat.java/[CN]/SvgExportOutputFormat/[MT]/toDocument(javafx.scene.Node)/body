@@ -13,6 +13,16 @@
     if (commentText != null) {
       docElement.getParentNode().insertBefore(doc.createComment(commentText),docElement);
     }
+    idFactory.reset();
+    initIdFactoryRecursively(drawingNode);
+    Element defsElement=doc.createElement("defs");
+    writeDefsRecursively(doc,defsElement,drawingNode);
+    if (defsElement.getChildNodes().getLength() > 0) {
+      docElement.appendChild(doc.createTextNode("\n"));
+      docElement.appendChild(defsElement);
+      defsElement.appendChild(doc.createTextNode("\n"));
+      docElement.appendChild(doc.createTextNode("\n"));
+    }
     writeDocumentElementAttributes(docElement,drawingNode);
     writeNodeRecursively(doc,docElement,drawingNode);
     docElement.appendChild(doc.createTextNode("\n"));

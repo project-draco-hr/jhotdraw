@@ -1,6 +1,19 @@
 {
-  if (shape.getStroke() != null) {
-    elem.setAttribute("stroke",paint.toString(shape.getStroke()));
+  Paint stroke=shape.getStroke();
+  if (stroke != null) {
+    String id=idFactory.getId(stroke);
+    if (id != null) {
+      elem.setAttribute("stroke","url(#" + id + ")");
+    }
+ else {
+      elem.setAttribute("stroke",paint.toString(stroke));
+      if (stroke instanceof Color) {
+        Color c=(Color)stroke;
+        if (!c.isOpaque()) {
+          elem.setAttribute("stroke-opacity",nb.toString(c.getOpacity()));
+        }
+      }
+    }
   }
   if (shape.getStrokeWidth() != 1) {
     elem.setAttribute("stroke-width",nb.toString(shape.getStrokeWidth()));

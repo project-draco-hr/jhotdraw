@@ -23,6 +23,7 @@
       in.pushBack(next);
       if (hasDecimals) {
         in.pushBack(ch);
+        numericValue=Long.parseLong(buf.toString());
         return true;
       }
       return false;
@@ -66,12 +67,11 @@
     return false;
   }
   try {
-    stringValue=buf.toString();
     if (hasFractionalsOrExponent) {
-      numericValue=Double.parseDouble(stringValue);
+      numericValue=Double.parseDouble(buf.toString());
     }
  else {
-      numericValue=Integer.parseInt(stringValue);
+      numericValue=Long.parseLong(buf.toString());
     }
   }
  catch (  NumberFormatException e) {

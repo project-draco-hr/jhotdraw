@@ -11,7 +11,6 @@
     final double centerX=lg.getCenterX();
     final double centerY=lg.getCenterY();
     final double radius=lg.getRadius();
-    boolean needsSpace=false;
     boolean needsComma=false;
     if (focusAngle != 0.0) {
       out.append("focus-angle ");
@@ -20,14 +19,18 @@
       needsComma=true;
     }
     if (focusDistance != 0.0) {
-      if (needsComma)       out.append(", ");
-      out.append("focus-angle ");
+      if (needsComma) {
+        out.append(", ");
+      }
+      out.append("focus-distance ");
       out.append(doubleConverter.toString(focusDistance * 100));
       out.append("%");
       needsComma=true;
     }
-    if (centerX != 0.0 || centerY != 0.0) {
-      if (needsComma)       out.append(", ");
+    if (centerX != 0.5 || centerY != 0.5) {
+      if (needsComma) {
+        out.append(", ");
+      }
       out.append("center ");
       if (proportional) {
         out.append(doubleConverter.toString(centerX * 100));
@@ -42,7 +45,9 @@
       }
       needsComma=true;
     }
-    if (needsComma)     out.append(", ");
+    if (needsComma) {
+      out.append(", ");
+    }
     out.append("radius ");
     if (proportional) {
       out.append(doubleConverter.toString(radius * 100));

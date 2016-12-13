@@ -17,5 +17,14 @@
       pe=e;
     }
   }
+  try {
+    buf.position(pos);
+    return radialGradientConverter.fromString(buf,idFactory);
+  }
+ catch (  ParseException e) {
+    if (e.getErrorOffset() > pe.getErrorOffset()) {
+      pe=e;
+    }
+  }
   throw pe;
 }

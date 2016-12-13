@@ -1,0 +1,15 @@
+{
+  String id=node.getId();
+  if (id != null && idFactory.getObject(id) == null) {
+    idFactory.putId(node,id);
+  }
+ else {
+    idFactory.createId(node,node.getTypeSelector().toLowerCase());
+  }
+  if (node instanceof Parent) {
+    Parent pp=(Parent)node;
+    for (    javafx.scene.Node child : pp.getChildrenUnmodifiable()) {
+      initIdFactoryRecursively(child);
+    }
+  }
+}

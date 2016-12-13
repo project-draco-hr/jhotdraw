@@ -1,0 +1,13 @@
+{
+  if (node instanceof Shape) {
+    Shape shape=(Shape)node;
+    writePaintDefs(doc,defsNode,shape.getFill());
+    writePaintDefs(doc,defsNode,shape.getStroke());
+  }
+  if (node instanceof Parent) {
+    Parent pp=(Parent)node;
+    for (    javafx.scene.Node child : pp.getChildrenUnmodifiable()) {
+      writeDefsRecursively(doc,defsNode,child);
+    }
+  }
+}

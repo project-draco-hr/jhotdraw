@@ -1,7 +1,0 @@
-{
-  this.focusAngle=focusAngle;
-  this.focusDistance=focusDistance;
-  this.centerX=centerX;
-  this.centerY=centerY;
-  this.isProportional=isProportional;
-}

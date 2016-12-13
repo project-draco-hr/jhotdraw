@@ -1,5 +1,5 @@
 {
-  CssTokenizerInterface tt=new CssTokenizer(new StringReader(in.toString()));
+  CssTokenizerInterface tt=new CssTokenizer(new CharBufferReader(in));
   tt.setSkipWhitespaces(true);
   if (tt.nextToken() == CssTokenizer.TT_IDENT) {
     if ("none".equals(tt.currentStringValue())) {
@@ -13,46 +13,142 @@
   if (tt.currentToken() != CssTokenizer.TT_FUNCTION) {
     throw new ParseException("CSS RadialGradient: \"<radial-gradient>(\"  expected",tt.getPosition());
   }
-  String func;
 switch (tt.currentStringValue()) {
 case "radial-gradient":
     break;
 default :
   throw new ParseException("CSS RadialGradient: \"<radial-gradient>(\"  expected, found: " + tt.currentStringValue(),tt.getPosition());
 }
-boolean needComma=false;
+double focusAngle=0;
+double focusDistance=0;
+double centerX=0.5;
+double centerY=0.5;
+double radius=1;
+Boolean isProportional=null;
+while (tt.nextToken() == CssTokenizer.TT_IDENT) {
+if ("focus-angle".equals(tt.currentStringValue())) {
+switch (tt.nextToken()) {
+case CssTokenizer.TT_DIMENSION:
+    if (!"deg".equals(tt.currentStringValue())) {
+      throw new ParseException("CSS RadialGradient: expected focus-angle given in degrees with unit  \"deg\", found: " + tt.currentStringValue(),tt.getPosition());
+    }
+  focusAngle=tt.currentNumericValue().doubleValue();
+break;
+case CssTokenizer.TT_NUMBER:
+focusAngle=tt.currentNumericValue().doubleValue();
+break;
+default :
+throw new ParseException("CSS RadialGradient: focus-angle  expected, found: " + tt.currentStringValue(),tt.getPosition());
+}
+}
+ else if ("focus-distance".equals(tt.currentStringValue())) {
+switch (tt.nextToken()) {
+case CssTokenizer.TT_PERCENTAGE:
+focusDistance=tt.currentNumericValue().doubleValue() / 100;
+break;
+case CssTokenizer.TT_NUMBER:
+focusDistance=tt.currentNumericValue().doubleValue();
+break;
+default :
+throw new ParseException("CSS RadialGradient: focus-distance  expected, found: " + tt.currentStringValue(),tt.getPosition());
+}
+}
+ else if ("center".equals(tt.currentStringValue())) {
+switch (tt.nextToken()) {
+case CssTokenizer.TT_PERCENTAGE:
+if (isProportional == null) {
+isProportional=true;
+}
+if (!isProportional) throw new ParseException("CSS RadialGradient: absolute value  expected, found: " + tt.currentStringValue(),tt.getPosition());
+centerX=tt.currentNumericValue().doubleValue() / 100;
+break;
+case CssTokenizer.TT_NUMBER:
+if (isProportional == null) {
+isProportional=false;
+}
+if (isProportional) throw new ParseException("CSS RadialGradient: percentage  expected, found: " + tt.currentStringValue(),tt.getPosition());
+centerX=tt.currentNumericValue().doubleValue();
+break;
+default :
+throw new ParseException("CSS RadialGradient: center x-value  expected, found: " + tt.currentStringValue(),tt.getPosition());
+}
+switch (tt.nextToken()) {
+case CssTokenizer.TT_PERCENTAGE:
+if (isProportional == null) {
+isProportional=true;
+}
+if (!isProportional) throw new ParseException("CSS RadialGradient: absolute value  expected, found: " + tt.currentStringValue(),tt.getPosition());
+centerY=tt.currentNumericValue().doubleValue() / 100;
+break;
+case CssTokenizer.TT_NUMBER:
+if (isProportional == null) {
+isProportional=false;
+}
+if (isProportional) throw new ParseException("CSS RadialGradient: percentage  expected, found: " + tt.currentStringValue(),tt.getPosition());
+centerY=tt.currentNumericValue().doubleValue();
+break;
+default :
+throw new ParseException("CSS RadialGradient: center y-value  expected, found: " + tt.currentStringValue(),tt.getPosition());
+}
+}
+ else if ("radius".equals(tt.currentStringValue())) {
+switch (tt.nextToken()) {
+case CssTokenizer.TT_PERCENTAGE:
+if (isProportional == null) {
+isProportional=true;
+}
+if (!isProportional) throw new ParseException("CSS RadialGradient: absolute value expected, found: " + tt.currentStringValue(),tt.getPosition());
+radius=tt.currentNumericValue().doubleValue() / 100;
+break;
+case CssTokenizer.TT_NUMBER:
+if (isProportional == null) {
+isProportional=false;
+}
+if (isProportional) throw new ParseException("CSS RadialGradient: percentage  expected, found: " + tt.currentStringValue(),tt.getPosition());
+radius=tt.currentNumericValue().doubleValue();
+break;
+default :
+throw new ParseException("CSS RadialGradient: center x-value  expected, found: " + tt.currentStringValue(),tt.getPosition());
+}
+}
+ else {
+tt.pushBack();
+break;
+}
+if (tt.nextToken() != ',') {
+tt.pushBack();
+}
+}
 CycleMethod cycleMethod=CycleMethod.NO_CYCLE;
 if (tt.nextToken() == CssTokenizer.TT_IDENT) {
 if ("repeat".equals(tt.currentStringValue())) {
-  cycleMethod=CycleMethod.REPEAT;
-  needComma=true;
+cycleMethod=CycleMethod.REPEAT;
 }
  else if ("reflect".equals(tt.currentStringValue())) {
-  cycleMethod=CycleMethod.REFLECT;
-  needComma=true;
+cycleMethod=CycleMethod.REFLECT;
 }
  else {
-  tt.pushBack();
+tt.pushBack();
 }
 }
  else {
 tt.pushBack();
 }
-if (needComma) {
 if (tt.nextToken() != ',') {
-  throw new ParseException("CSS RadialGradient: ','  expected, found: " + tt.currentStringValue(),tt.getPosition());
-}
-needComma=false;
+tt.pushBack();
 }
 List<CssStop> stops=new ArrayList<>();
-do {
+while (tt.nextToken() != ')' && tt.currentToken() != CssTokenizer.TT_EOF) {
+tt.pushBack();
 stops.add(parseColorStop(tt));
+if (tt.nextToken() != ',') {
+tt.pushBack();
 }
- while (tt.nextToken() == ',');
+}
 if (tt.currentToken() != ')') {
 throw new ParseException("CSS RadialGradient: ')'  expected, found: " + tt.currentStringValue(),tt.getPosition());
 }
 tt.skipWhitespace();
-in.position(tt.getPosition());
-return null;
+if (isProportional == null) isProportional=true;
+return new CssRadialGradient(focusAngle,focusDistance,centerX,centerY,radius,isProportional,cycleMethod,stops.toArray(new CssStop[stops.size()]));
 }
