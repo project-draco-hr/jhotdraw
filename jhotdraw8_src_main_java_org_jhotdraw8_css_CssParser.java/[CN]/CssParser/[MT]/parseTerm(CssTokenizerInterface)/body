@@ -1,11 +1,11 @@
 {
 switch (tt.nextToken()) {
 case CssTokenizerInterface.TT_EOF:
-    throw new ParseException("Term: Term expected in line " + tt.getLineNumber() + ".",tt.getPosition());
+    throw new ParseException("Term: Term expected in line " + tt.getLineNumber() + ".",tt.getStartPosition());
 case CssTokenizerInterface.TT_BAD_URI:
-  throw new ParseException("Term: Bad URI in line " + tt.getLineNumber() + ".",tt.getPosition());
+  throw new ParseException("Term: Bad URI in line " + tt.getLineNumber() + ".",tt.getStartPosition());
 case CssTokenizerInterface.TT_BAD_STRING:
-throw new ParseException("Term: Bad String in line " + tt.getLineNumber() + ".",tt.getPosition());
+throw new ParseException("Term: Bad String in line " + tt.getLineNumber() + ".",tt.getStartPosition());
 default :
 return new PreservedToken(tt.currentToken(),tt.currentStringValue(),tt.currentNumericValue());
 }

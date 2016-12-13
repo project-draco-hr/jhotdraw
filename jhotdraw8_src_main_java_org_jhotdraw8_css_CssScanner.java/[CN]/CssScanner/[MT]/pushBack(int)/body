@@ -1,3 +1,5 @@
 {
-  pushedChars.add(ch);
+  if (ch != -1 && currentChar != -1) {
+    pushedChars.add(ch);
+  }
 }

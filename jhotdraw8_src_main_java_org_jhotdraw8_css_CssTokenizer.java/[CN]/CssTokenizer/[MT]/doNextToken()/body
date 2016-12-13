@@ -4,7 +4,8 @@
     return currentToken;
   }
   lineNumber=(int)in.getLineNumber();
-  position=(int)in.getPosition();
+  startPosition=(int)in.getPosition();
+  endPosition=(int)in.getPosition();
   int ch=in.nextChar();
   stringValue=null;
   numericValue=null;
@@ -344,5 +345,6 @@ stringValue=String.valueOf((char)currentToken);
 break;
 }
 }
+endPosition=(int)in.getPosition();
 return currentToken;
 }

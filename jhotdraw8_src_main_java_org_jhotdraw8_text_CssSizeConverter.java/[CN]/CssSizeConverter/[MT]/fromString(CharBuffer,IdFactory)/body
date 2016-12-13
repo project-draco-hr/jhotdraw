@@ -1,11 +1,11 @@
 {
+  int startPosition=buf.position();
   if (idFactory == null) {
     idFactory=defaultFactory;
   }
   CssTokenizerInterface tt=new CssTokenizer(buf);
   tt.skipWhitespace();
   if (nullable && tt.nextToken() == CssTokenizer.TT_IDENT && "none".equals(tt.currentStringValue())) {
-    tt.skipWhitespace();
     return null;
   }
  else {
@@ -37,13 +37,14 @@ case "NaN":
 value=Double.NaN;
 break;
 default :
-throw new ParseException("number expected:" + tt.currentStringValue(),tt.getPosition());
+buf.position(startPosition + tt.getStartPosition());
+throw new ParseException("number expected:" + tt.currentStringValue(),tt.getStartPosition());
 }
 break;
 }
 default :
-throw new ParseException("number expected",tt.getPosition());
+throw new ParseException("number expected",tt.getStartPosition());
 }
-tt.skipWhitespace();
+buf.position(startPosition + tt.getEndPosition());
 return value;
 }

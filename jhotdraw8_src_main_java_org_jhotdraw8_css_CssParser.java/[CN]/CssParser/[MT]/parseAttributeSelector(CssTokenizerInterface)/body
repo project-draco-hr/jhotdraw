@@ -3,7 +3,7 @@
     throw new ParseException("AttributeSelector: '[' expected.",tt.getLineNumber());
   }
   if (tt.nextToken() != CssTokenizerInterface.TT_IDENT) {
-    throw new ParseException("AttributeSelector: Identifier expected. Line " + tt.getLineNumber() + ".",tt.getPosition());
+    throw new ParseException("AttributeSelector: Identifier expected. Line " + tt.getLineNumber() + ".",tt.getStartPosition());
   }
   String attributeName=tt.currentStringValue();
   AbstractAttributeSelector selector;
@@ -22,25 +22,25 @@ selector=new IncludeMatchSelector(attributeName,tt.currentStringValue());
 break;
 case CssTokenizerInterface.TT_DASH_MATCH:
 if (tt.nextToken() != CssTokenizerInterface.TT_IDENT && tt.currentToken() != CssTokenizerInterface.TT_STRING) {
-throw new ParseException("AttributeSelector: identifier or string expected. Line " + tt.getLineNumber() + ".",tt.getPosition());
+throw new ParseException("AttributeSelector: identifier or string expected. Line " + tt.getLineNumber() + ".",tt.getStartPosition());
 }
 selector=new DashMatchSelector(attributeName,tt.currentStringValue());
 break;
 case CssTokenizerInterface.TT_PREFIX_MATCH:
 if (tt.nextToken() != CssTokenizerInterface.TT_IDENT && tt.currentToken() != CssTokenizerInterface.TT_STRING) {
-throw new ParseException("AttributeSelector: identifier or string expected. Line " + tt.getLineNumber() + ".",tt.getPosition());
+throw new ParseException("AttributeSelector: identifier or string expected. Line " + tt.getLineNumber() + ".",tt.getStartPosition());
 }
 selector=new PrefixMatchSelector(attributeName,tt.currentStringValue());
 break;
 case CssTokenizerInterface.TT_SUFFIX_MATCH:
 if (tt.nextToken() != CssTokenizerInterface.TT_IDENT && tt.currentToken() != CssTokenizerInterface.TT_STRING) {
-throw new ParseException("AttributeSelector: identifier or string expected. Line " + tt.getLineNumber() + ".",tt.getPosition());
+throw new ParseException("AttributeSelector: identifier or string expected. Line " + tt.getLineNumber() + ".",tt.getStartPosition());
 }
 selector=new SuffixMatchSelector(attributeName,tt.currentStringValue());
 break;
 case CssTokenizerInterface.TT_SUBSTRING_MATCH:
 if (tt.nextToken() != CssTokenizerInterface.TT_IDENT && tt.currentToken() != CssTokenizerInterface.TT_STRING) {
-throw new ParseException("AttributeSelector: identifier or string expected. Line " + tt.getLineNumber() + ".",tt.getPosition());
+throw new ParseException("AttributeSelector: identifier or string expected. Line " + tt.getLineNumber() + ".",tt.getStartPosition());
 }
 selector=new SubstringMatchSelector(attributeName,tt.currentStringValue());
 break;
@@ -49,7 +49,7 @@ selector=new ExistsMatchSelector(attributeName);
 tt.pushBack();
 break;
 default :
-throw new ParseException("AttributeSelector: operator expected. Line " + tt.getLineNumber() + ".",tt.getPosition());
+throw new ParseException("AttributeSelector: operator expected. Line " + tt.getLineNumber() + ".",tt.getStartPosition());
 }
 tt.skipWhitespace();
 if (tt.nextToken() != ']') {

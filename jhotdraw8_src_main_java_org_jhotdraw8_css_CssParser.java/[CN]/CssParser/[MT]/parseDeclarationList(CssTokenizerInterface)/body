@@ -16,7 +16,7 @@ case ';':
 case CssTokenizerInterface.TT_S:
 break;
 default :
-throw new ParseException("Declaration List: declaration or at-rule expected. Line" + tt.getLineNumber() + ".",tt.getPosition());
+throw new ParseException("Declaration List: declaration or at-rule expected. Line" + tt.getLineNumber() + ".",tt.getStartPosition());
 }
 }
 tt.pushBack();

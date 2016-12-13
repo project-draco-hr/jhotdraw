@@ -11,7 +11,7 @@ case INNER_SHADOW:
   current=parseInnerShadow(tt);
 break;
 default :
-throw new ParseException("CSS Effect: \"" + DROP_SHADOW + "(\" or \""+ INNER_SHADOW+ "(\"  expected",tt.getPosition());
+throw new ParseException("CSS Effect: \"" + DROP_SHADOW + "(\" or \""+ INNER_SHADOW+ "(\"  expected",tt.getStartPosition());
 }
 if (first == null) {
 first=previous=current;
@@ -21,7 +21,7 @@ try {
 previous.getClass().getDeclaredMethod("setInput",Effect.class).invoke(previous,current);
 }
  catch (NoSuchMethodException|SecurityException|IllegalAccessException|IllegalArgumentException|InvocationTargetException ex) {
-ParseException pe=new ParseException("CSS Effect: can not combine effects",tt.getPosition());
+ParseException pe=new ParseException("CSS Effect: can not combine effects",tt.getStartPosition());
 pe.initCause(ex);
 throw pe;
 }

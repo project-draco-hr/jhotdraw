@@ -4,16 +4,16 @@
   if (tt.nextToken() == CssTokenizer.TT_IDENT) {
     if ("none".equals(tt.currentStringValue())) {
       tt.skipWhitespace();
-      in.position(tt.getPosition());
+      in.position(tt.getStartPosition());
       return null;
     }
  else {
-      throw new ParseException("CSS Effect: \"<none>\" or \"<dropshadow>(\" or \"<innershadow>(\"  expected",tt.getPosition());
+      throw new ParseException("CSS Effect: \"<none>\" or \"<dropshadow>(\" or \"<innershadow>(\"  expected",tt.getStartPosition());
     }
   }
   tt.pushBack();
   Effect effect=parseEffect(tt);
   tt.skipWhitespace();
-  in.position(tt.getPosition());
+  in.position(tt.getStartPosition());
   return effect;
 }

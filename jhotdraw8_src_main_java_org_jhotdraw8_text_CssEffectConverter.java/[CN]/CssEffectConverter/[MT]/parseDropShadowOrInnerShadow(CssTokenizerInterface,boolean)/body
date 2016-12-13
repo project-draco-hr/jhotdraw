@@ -8,7 +8,7 @@
   double offsetY=4.0;
   if (tt.nextToken() != ')') {
     if (tt.currentToken() != CssTokenizer.TT_IDENT) {
-      throw new ParseException("CSS Effect: " + func + "(<blur-type>,color,radius,spread,offset-x,offset-y) expected",tt.getPosition());
+      throw new ParseException("CSS Effect: " + func + "(<blur-type>,color,radius,spread,offset-x,offset-y) expected",tt.getStartPosition());
     }
 switch (tt.currentStringValue()) {
 case "gaussian":
@@ -24,7 +24,7 @@ case "two-pass-box":
 blurType=BlurType.TWO_PASS_BOX;
 break;
 default :
-throw new ParseException("CSS Effect: " + func + "(<gaussian | one-pass-box | three-pass-box | two-pass-box>  expected",tt.getPosition());
+throw new ParseException("CSS Effect: " + func + "(<gaussian | one-pass-box | three-pass-box | two-pass-box>  expected",tt.getStartPosition());
 }
 if (tt.nextToken() != ',') {
 tt.pushBack();
@@ -49,13 +49,13 @@ buf.append(tt.currentStringValue());
 color=(Color)colorConverter.fromString(buf.toString()).getPaint();
 }
  else {
-throw new ParseException("CSS Effect: " + func + "("+ blurType.toString().toLowerCase().replace('_','-')+ ",  <color> expected",tt.getPosition());
+throw new ParseException("CSS Effect: " + func + "("+ blurType.toString().toLowerCase().replace('_','-')+ ",  <color> expected",tt.getStartPosition());
 }
 if (tt.nextToken() != ',') {
 tt.pushBack();
 }
 if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
-throw new ParseException("CSS Effect: radius number expected",tt.getPosition());
+throw new ParseException("CSS Effect: radius number expected",tt.getStartPosition());
 }
 radius=tt.currentNumericValue().doubleValue();
 if (tt.nextToken() != ',') {
@@ -69,24 +69,24 @@ case CssTokenizer.TT_PERCENTAGE:
 spreadOrChocke=tt.currentNumericValue().doubleValue() / 100.0;
 break;
 default :
-throw new ParseException("CSS Effect: spread or chocke number expected",tt.getPosition());
+throw new ParseException("CSS Effect: spread or chocke number expected",tt.getStartPosition());
 }
 if (tt.nextToken() != ',') {
 tt.pushBack();
 }
 if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
-throw new ParseException("CSS Effect: offset-x number expected",tt.getPosition());
+throw new ParseException("CSS Effect: offset-x number expected",tt.getStartPosition());
 }
 offsetX=tt.currentNumericValue().doubleValue();
 if (tt.nextToken() != ',') {
 tt.pushBack();
 }
 if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
-throw new ParseException("CSS Effect: offset-y number expected",tt.getPosition());
+throw new ParseException("CSS Effect: offset-y number expected",tt.getStartPosition());
 }
 offsetY=tt.currentNumericValue().doubleValue();
 if (tt.nextToken() != ')') {
-throw new ParseException("CSS Effect: ')'  expected",tt.getPosition());
+throw new ParseException("CSS Effect: ')'  expected",tt.getStartPosition());
 }
 }
 if (isDropShadow) {

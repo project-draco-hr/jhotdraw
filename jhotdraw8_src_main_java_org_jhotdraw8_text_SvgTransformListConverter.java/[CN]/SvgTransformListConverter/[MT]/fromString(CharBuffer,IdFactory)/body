@@ -4,14 +4,14 @@
   while (tt.nextToken() != CssTokenizer.TT_EOF) {
     tt.pushBack();
     if (tt.nextToken() != CssTokenizer.TT_FUNCTION) {
-      throw new ParseException("function expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+      throw new ParseException("function expected: \"" + tt.currentStringValue() + "\"",tt.getStartPosition());
     }
     String func=tt.currentStringValue();
 switch (func) {
 case "skewX":
 {
         if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
-          throw new ParseException("skew-angle expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+          throw new ParseException("skew-angle expected: \"" + tt.currentStringValue() + "\"",tt.getStartPosition());
         }
         double a=tt.currentNumericValue().doubleValue();
         txs.add(Transform.affine(1,0,tan(a),1,0,0));
@@ -20,7 +20,7 @@ case "skewX":
 case "skewY":
 {
       if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
-        throw new ParseException("skew-angle expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+        throw new ParseException("skew-angle expected: \"" + tt.currentStringValue() + "\"",tt.getStartPosition());
       }
       double a=tt.currentNumericValue().doubleValue();
       txs.add(Transform.affine(1,tan(a),0,1,0,0));
@@ -29,7 +29,7 @@ case "skewY":
 case "translate":
 {
     if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
-      throw new ParseException("tx expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+      throw new ParseException("tx expected: \"" + tt.currentStringValue() + "\"",tt.getStartPosition());
     }
     double tx=tt.currentNumericValue().doubleValue();
     if (tt.nextToken() != ',') {
@@ -49,7 +49,7 @@ case "translate":
 case "scale":
 {
   if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
-    throw new ParseException("sx expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+    throw new ParseException("sx expected: \"" + tt.currentStringValue() + "\"",tt.getStartPosition());
   }
   double sx=tt.currentNumericValue().doubleValue();
   if (tt.nextToken() != ',') {
@@ -69,7 +69,7 @@ case "scale":
 case "rotate":
 {
 if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
-  throw new ParseException("rotate-angle expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+  throw new ParseException("rotate-angle expected: \"" + tt.currentStringValue() + "\"",tt.getStartPosition());
 }
 double angle=tt.currentNumericValue().doubleValue();
 if (tt.nextToken() != ',') {
@@ -83,7 +83,7 @@ if (tt.nextToken() == CssTokenizer.TT_NUMBER) {
     tt.pushBack();
   }
   if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
-    throw new ParseException("cy expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+    throw new ParseException("cy expected: \"" + tt.currentStringValue() + "\"",tt.getStartPosition());
   }
   cy=tt.currentNumericValue().doubleValue();
 }
@@ -103,7 +103,7 @@ if (tt.nextToken() != ',') {
   tt.pushBack();
 }
 if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
-  throw new ParseException(((char)('a' + i)) + " expected: \"" + tt.currentStringValue()+ "\"",tt.getPosition());
+  throw new ParseException(((char)('a' + i)) + " expected: \"" + tt.currentStringValue()+ "\"",tt.getStartPosition());
 }
 m[i]=tt.currentNumericValue().doubleValue();
 }
@@ -111,10 +111,10 @@ txs.add(Transform.affine(m[0],m[1],m[2],m[3],m[4],m[5]));
 break;
 }
 default :
-throw new ParseException("unsupported function: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+throw new ParseException("unsupported function: \"" + tt.currentStringValue() + "\"",tt.getStartPosition());
 }
 if (tt.nextToken() != ')') {
-throw new ParseException("')' expected: \"" + tt.currentStringValue() + "\"",tt.getPosition());
+throw new ParseException("')' expected: \"" + tt.currentStringValue() + "\"",tt.getStartPosition());
 }
 }
 in.position(in.limit());

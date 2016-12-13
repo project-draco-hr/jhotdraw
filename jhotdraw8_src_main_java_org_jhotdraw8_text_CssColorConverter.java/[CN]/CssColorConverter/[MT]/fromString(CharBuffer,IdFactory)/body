@@ -10,7 +10,7 @@
     tt.setSkipWhitespaces(true);
     c=parseColor(tt);
     tt.skipWhitespace();
-    buf.position(buf.position() + tt.getPosition());
+    buf.position(buf.position() + tt.getStartPosition());
   }
   return c;
 }

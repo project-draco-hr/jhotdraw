@@ -1,12 +1,12 @@
 {
   if (tt.nextToken() != CssTokenizerInterface.TT_IDENT) {
-    throw new ParseException("Declaration: property name expected. Line " + tt.getLineNumber() + ".",tt.getPosition());
+    throw new ParseException("Declaration: property name expected. Line " + tt.getLineNumber() + ".",tt.getStartPosition());
   }
   String property=tt.currentStringValue();
   tt.nextToken();
   skipWhitespace(tt);
   if (tt.currentToken() != ':') {
-    throw new ParseException("Declaration: ':' expected instead of \"" + tt.currentStringValue() + "\". Line "+ tt.getLineNumber()+ ".",tt.getPosition());
+    throw new ParseException("Declaration: ':' expected instead of \"" + tt.currentStringValue() + "\". Line "+ tt.getLineNumber()+ ".",tt.getStartPosition());
   }
   List<PreservedToken> terms=parseTerms(tt);
   return new Declaration(property,terms);

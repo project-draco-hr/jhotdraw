@@ -9,9 +9,9 @@ case CssTokenizerInterface.TT_CDC:
 case CssTokenizerInterface.TT_CDO:
       break;
 case CssTokenizerInterface.TT_BAD_URI:
-    throw new ParseException("Terms: Bad URI in line " + tt.getLineNumber() + ".",tt.getPosition());
+    throw new ParseException("Terms: Bad URI in line " + tt.getLineNumber() + ".",tt.getStartPosition());
 case CssTokenizerInterface.TT_BAD_STRING:
-  throw new ParseException("Terms: Bad String in line " + tt.getLineNumber() + ".",tt.getPosition());
+  throw new ParseException("Terms: Bad String in line " + tt.getLineNumber() + ".",tt.getStartPosition());
 default :
 terms.add(new PreservedToken(tt.currentToken(),tt.currentStringValue(),tt.currentNumericValue()));
 break;

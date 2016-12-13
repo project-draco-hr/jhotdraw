@@ -7,36 +7,36 @@
 switch (tt.currentStringValue()) {
 case "top":
       if (v != null) {
-        throw new ParseException("CSS LinearGradient: you already specified '" + v + "', found: "+ tt.currentStringValue()+ " ttype:"+ tt.currentToken(),tt.getPosition());
+        throw new ParseException("CSS LinearGradient: you already specified '" + v + "', found: "+ tt.currentStringValue()+ " ttype:"+ tt.currentToken(),tt.getStartPosition());
       }
     v=tt.currentStringValue();
   break;
 case "bottom":
 if (v != null) {
-  throw new ParseException("CSS LinearGradient: you already specified '" + v + "', found: "+ tt.currentStringValue()+ " ttype:"+ tt.currentToken(),tt.getPosition());
+  throw new ParseException("CSS LinearGradient: you already specified '" + v + "', found: "+ tt.currentStringValue()+ " ttype:"+ tt.currentToken(),tt.getStartPosition());
 }
 v=tt.currentStringValue();
 break;
 case "left":
 if (h != null) {
-throw new ParseException("CSS LinearGradient: you already specified '" + h + "', found: "+ tt.currentStringValue()+ " ttype:"+ tt.currentToken(),tt.getPosition());
+throw new ParseException("CSS LinearGradient: you already specified '" + h + "', found: "+ tt.currentStringValue()+ " ttype:"+ tt.currentToken(),tt.getStartPosition());
 }
 h=tt.currentStringValue();
 break;
 case "right":
 if (h != null) {
-throw new ParseException("CSS LinearGradient: you already specified '" + h + "', found: "+ tt.currentStringValue()+ " ttype:"+ tt.currentToken(),tt.getPosition());
+throw new ParseException("CSS LinearGradient: you already specified '" + h + "', found: "+ tt.currentStringValue()+ " ttype:"+ tt.currentToken(),tt.getStartPosition());
 }
 h=tt.currentStringValue();
 break;
 default :
-throw new ParseException("CSS LinearGradient: 'top', 'bottom', 'left' or 'right' expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getPosition());
+throw new ParseException("CSS LinearGradient: 'top', 'bottom', 'left' or 'right' expected, found: " + tt.currentStringValue() + " ttype:"+ tt.currentToken(),tt.getStartPosition());
 }
 }
 tt.pushBack();
 switch (h + " " + v) {
 case "null null":
-throw new ParseException("CSS LinearGradient: 'top', 'bottom', 'left' or 'right' expected after 'to'.",tt.getPosition());
+throw new ParseException("CSS LinearGradient: 'top', 'bottom', 'left' or 'right' expected after 'to'.",tt.getStartPosition());
 case "left null":
 startX=1.0;
 startY=endX=endY=0.0;

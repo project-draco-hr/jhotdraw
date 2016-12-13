@@ -1,13 +1,13 @@
 {
   if (tt.nextToken() != '[') {
-    throw new ParseException("SquareBlock: '[' expected in line " + tt.getLineNumber() + ".",tt.getPosition());
+    throw new ParseException("SquareBlock: '[' expected in line " + tt.getLineNumber() + ".",tt.getStartPosition());
   }
   while (tt.nextToken() != CssTokenizerInterface.TT_EOF && tt.currentToken() != ']') {
     tt.pushBack();
     parseComponentValue(tt);
   }
   if (tt.nextToken() != ']') {
-    throw new ParseException("SquareBlock: ']' expected in line " + tt.getLineNumber() + ".",tt.getPosition());
+    throw new ParseException("SquareBlock: ']' expected in line " + tt.getLineNumber() + ".",tt.getStartPosition());
   }
   return null;
 }

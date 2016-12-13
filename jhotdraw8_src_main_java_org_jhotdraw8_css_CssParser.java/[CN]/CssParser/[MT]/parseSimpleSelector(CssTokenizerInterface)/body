@@ -21,7 +21,7 @@ case '[':
 tt.pushBack();
 return parseAttributeSelector(tt);
 default :
-throw new ParseException("SimpleSelector: SimpleSelector expected instead of \"" + tt.currentStringValue() + "\". Line "+ tt.getLineNumber()+ ".",tt.getPosition());
+throw new ParseException("SimpleSelector: SimpleSelector expected instead of \"" + tt.currentStringValue() + "\". Line "+ tt.getLineNumber()+ ".",tt.getStartPosition());
 }
 }
  catch (ParseException e) {

@@ -7,11 +7,11 @@
       return null;
     }
  else {
-      throw new ParseException("CSS LinearGradient: \"<none>\" or \"<linear-gradient>(\"  expected",tt.getPosition());
+      throw new ParseException("CSS LinearGradient: \"<none>\" or \"<linear-gradient>(\"  expected",tt.getStartPosition());
     }
   }
   if (tt.currentToken() != CssTokenizer.TT_FUNCTION || !"linear-gradient".equals(tt.currentStringValue())) {
-    throw new ParseException("CSS LinearGradient: \"<linear-gradient>(\"  expected, found: " + tt.currentStringValue(),tt.getPosition());
+    throw new ParseException("CSS LinearGradient: \"<linear-gradient>(\"  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
   }
   PointToPoint fromTo=null;
   if (tt.nextToken() == CssTokenizer.TT_IDENT && "from".equals(tt.currentStringValue())) {
@@ -54,9 +54,9 @@
     }
   }
   if (tt.currentToken() != ')') {
-    throw new ParseException("CSS LinearGradient: ')'  expected, found: " + tt.currentStringValue(),tt.getPosition());
+    throw new ParseException("CSS LinearGradient: ')'  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
   }
   tt.skipWhitespace();
-  in.position(tt.getPosition());
+  in.position(tt.getStartPosition());
   return new CssLinearGradient(fromTo.startX,fromTo.startY,fromTo.endX,fromTo.endY,fromTo.isProportional,cycleMethod,stops.toArray(new CssStop[stops.size()]));
 }
