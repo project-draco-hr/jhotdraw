@@ -1,5 +1,6 @@
 {
   CssTokenizerInterface tt=new CssTokenizer(new StringReader(buf.toString()));
+  tt.setSkipWhitespaces(true);
   FontPosture fontPosture=FontPosture.REGULAR;
   FontWeight fontWeight=FontWeight.NORMAL;
   double fontSize=12.0;
