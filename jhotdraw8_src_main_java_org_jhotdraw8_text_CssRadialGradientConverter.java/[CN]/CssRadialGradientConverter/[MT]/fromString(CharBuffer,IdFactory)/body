@@ -13,47 +13,26 @@
   if (tt.currentToken() != CssTokenizer.TT_FUNCTION) {
     throw new ParseException("CSS RadialGradient: \"<radial-gradient>(\"  expected",tt.getPosition());
   }
-  boolean isRadial=false;
   String func;
 switch (tt.currentStringValue()) {
 case "radial-gradient":
-    isRadial=true;
-  break;
+    break;
 default :
-throw new ParseException("CSS RadialGradient: \"<radial-gradient>(\"  expected, found: " + tt.currentStringValue(),tt.getPosition());
+  throw new ParseException("CSS RadialGradient: \"<radial-gradient>(\"  expected, found: " + tt.currentStringValue(),tt.getPosition());
 }
 boolean needComma=false;
-PointToPoint fromTo=null;
-if (tt.nextToken() == CssTokenizer.TT_IDENT && "from".equals(tt.currentStringValue())) {
-fromTo=parsePointToPoint(tt);
-needComma=true;
-}
- else if (tt.currentToken() == CssTokenizer.TT_IDENT && "to".equals(tt.currentStringValue())) {
-fromTo=null;
-needComma=true;
-}
- else {
-fromTo=new PointToPoint(0.0,0.0,0.0,1.0,true);
-tt.pushBack();
-}
-if (needComma) {
-if (tt.nextToken() != ',') {
-throw new ParseException("CSS RadialGradient: ','  expected, found: " + tt.currentStringValue(),tt.getPosition());
-}
-needComma=false;
-}
 CycleMethod cycleMethod=CycleMethod.NO_CYCLE;
 if (tt.nextToken() == CssTokenizer.TT_IDENT) {
 if ("repeat".equals(tt.currentStringValue())) {
-cycleMethod=CycleMethod.REPEAT;
-needComma=true;
+  cycleMethod=CycleMethod.REPEAT;
+  needComma=true;
 }
  else if ("reflect".equals(tt.currentStringValue())) {
-cycleMethod=CycleMethod.REFLECT;
-needComma=true;
+  cycleMethod=CycleMethod.REFLECT;
+  needComma=true;
 }
  else {
-tt.pushBack();
+  tt.pushBack();
 }
 }
  else {
@@ -61,7 +40,7 @@ tt.pushBack();
 }
 if (needComma) {
 if (tt.nextToken() != ',') {
-throw new ParseException("CSS RadialGradient: ','  expected, found: " + tt.currentStringValue(),tt.getPosition());
+  throw new ParseException("CSS RadialGradient: ','  expected, found: " + tt.currentStringValue(),tt.getPosition());
 }
 needComma=false;
 }
