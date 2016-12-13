@@ -11,4 +11,5 @@
   imageView.setFitWidth(r.getWidth());
   imageView.setFitHeight(r.getHeight());
   imageView.applyCss();
+  imageView.getProperties().put(IMAGE_URI,get(IMAGE_URI));
 }

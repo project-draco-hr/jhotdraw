@@ -1,6 +1,6 @@
 {
   setInternalHome(drawing.get(Drawing.DOCUMENT_HOME));
-  setExternalHome(new File(System.getProperty("user.home")).toURI());
+  setExternalHome(null);
   Object content=clipboard.getContent(getDataFormat());
   if (content instanceof String) {
     Set<Figure> figures=new LinkedHashSet<>();

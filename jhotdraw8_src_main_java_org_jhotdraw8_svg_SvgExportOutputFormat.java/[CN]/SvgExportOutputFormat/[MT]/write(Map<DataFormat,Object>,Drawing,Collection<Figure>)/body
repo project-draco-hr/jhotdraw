@@ -1,4 +1,6 @@
 {
+  setExternalHome(null);
+  setInternalHome(drawing.get(Drawing.DOCUMENT_HOME));
   StringWriter out=new StringWriter();
   Document doc=toDocument(drawing,selection);
   try {
