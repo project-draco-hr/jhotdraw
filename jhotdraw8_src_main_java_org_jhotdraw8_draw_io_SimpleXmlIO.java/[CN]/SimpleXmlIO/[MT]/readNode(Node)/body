@@ -1,0 +1,27 @@
+{
+  if (node instanceof Element) {
+    Element elem=(Element)node;
+    if (namespaceURI != null) {
+      if (!namespaceURI.equals(elem.getNamespaceURI())) {
+        return null;
+      }
+    }
+    Figure figure=factory.nameToFigure(elem.getLocalName());
+    if (figure == null) {
+      return null;
+    }
+    figureToElementMap.put(figure,elem);
+    String id=getAttribute(elem,factory.getObjectIdAttribute());
+    if (id != null && !id.isEmpty()) {
+      if (factory.getObject(id) != null) {
+        System.err.println("warning: duplicate id " + id + " in element "+ elem.getTagName());
+        factory.putId(figure,id);
+      }
+ else {
+        factory.putId(figure,id);
+      }
+    }
+    return figure;
+  }
+  return null;
+}

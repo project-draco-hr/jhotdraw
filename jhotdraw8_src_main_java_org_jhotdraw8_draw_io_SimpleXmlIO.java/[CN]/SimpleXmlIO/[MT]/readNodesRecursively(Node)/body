@@ -1,37 +1,30 @@
 {
-  if (node instanceof Element) {
-    Element elem=(Element)node;
-    if (namespaceURI != null) {
-      if (!namespaceURI.equals(elem.getNamespaceURI())) {
-        return null;
-      }
-    }
-    Figure figure=factory.nameToFigure(elem.getLocalName());
-    if (figure == null) {
-      return null;
-    }
-    figureToElementMap.put(figure,elem);
-    String id=getAttribute(elem,factory.getObjectIdAttribute());
-    if (id != null && !id.isEmpty()) {
-      if (factory.getObject(id) != null) {
-        System.err.println("warning: duplicate id " + id + " in element "+ elem.getTagName());
-        factory.putId(figure,id);
-      }
- else {
-        factory.putId(figure,id);
-      }
-    }
-    NodeList list=elem.getChildNodes();
-    for (int i=0; i < list.getLength(); i++) {
-      Figure child=readNodesRecursively(list.item(i));
-      if (child instanceof Figure) {
-        if (!child.isSuitableParent(figure)) {
-          throw new IOException(list.item(i).getNodeName() + " is not a suitable child for " + elem.getTagName()+ ".");
-        }
-        figure.add(child);
-      }
-    }
-    return figure;
+switch (node.getNodeType()) {
+case Node.ELEMENT_NODE:
+    Figure figure=readNode(node);
+  if (!comments.isEmpty()) {
+    figure.set(XML_HEAD_COMMENT_KEY,comments);
+    comments=new ArrayList<>();
   }
-  return null;
+NodeList list=node.getChildNodes();
+for (int i=0; i < list.getLength(); i++) {
+Figure child=readNodesRecursively(list.item(i));
+if (child instanceof Figure) {
+  if (!child.isSuitableParent(figure)) {
+    throw new IOException(list.item(i).getNodeName() + " is not a suitable child for " + ((Element)node).getTagName()+ ".");
+  }
+  figure.add(child);
+}
+}
+if (!comments.isEmpty()) {
+figure.set(XML_BODY_COMMENT_KEY,comments);
+comments=new ArrayList<>();
+}
+return figure;
+case Node.COMMENT_NODE:
+comments.add(node.getTextContent());
+return null;
+default :
+return null;
+}
 }

@@ -18,19 +18,21 @@
     }
     Element docElement=doc.getDocumentElement();
     writeProcessingInstructions(doc,external);
-    String commentText=factory.createFileComment();
-    if (commentText != null) {
-      docElement.getParentNode().insertBefore(doc.createComment(commentText),docElement);
+    for (    String string : external.get(XML_HEAD_COMMENT_KEY)) {
+      doc.insertBefore(doc.createComment(string),docElement);
     }
     writeElementAttributes(docElement,external);
     for (    Figure child : external.getChildren()) {
-      Node childNode=writeNodeRecursively(doc,child);
-      if (childNode != null) {
-        docElement.appendChild(doc.createTextNode("\n"));
-        docElement.appendChild(childNode);
-      }
+      writeNodeRecursively(doc,docElement,child);
+    }
+    for (    String string : external.get(XML_BODY_COMMENT_KEY)) {
+      docElement.appendChild(doc.createTextNode("\n"));
+      docElement.appendChild(doc.createComment(string));
     }
     docElement.appendChild(doc.createTextNode("\n"));
+    for (    String string : external.get(XML_EPILOG_COMMENT_KEY)) {
+      doc.appendChild(doc.createComment(string));
+    }
     return doc;
   }
  catch (  ParserConfigurationException ex) {

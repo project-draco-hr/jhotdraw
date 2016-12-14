@@ -27,16 +27,8 @@
       doc.appendChild(elem);
     }
     Element docElement=doc.getDocumentElement();
-    String commentText=factory.createFileComment();
-    if (commentText != null) {
-      docElement.getParentNode().insertBefore(doc.createComment(commentText),docElement);
-    }
     for (    Figure child : ordered) {
-      Node childNode=writeNodeRecursively(doc,child);
-      if (childNode != null) {
-        docElement.appendChild(doc.createTextNode("\n"));
-        docElement.appendChild(childNode);
-      }
+      writeNodeRecursively(doc,docElement,child);
     }
     docElement.appendChild(doc.createTextNode("\n"));
     return doc;
