@@ -27,10 +27,11 @@
       doc.appendChild(elem);
     }
     Element docElement=doc.getDocumentElement();
+    String linebreak="\n";
     for (    Figure child : ordered) {
-      writeNodeRecursively(doc,docElement,child);
+      writeNodeRecursively(doc,docElement,child,linebreak);
     }
-    docElement.appendChild(doc.createTextNode("\n"));
+    docElement.appendChild(doc.createTextNode(linebreak));
     return doc;
   }
  catch (  ParserConfigurationException ex) {

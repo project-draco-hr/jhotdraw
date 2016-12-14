@@ -6,7 +6,8 @@
         String href=m.group(1);
         URI uri=URI.create(href);
         uri=externalToInternal(external,uri);
-        List<URI> stylesheets=new ArrayList<>(external.get(factory.getStylesheetsKey()));
+        List<URI> listOrNull=external.get(factory.getStylesheetsKey());
+        List<URI> stylesheets=listOrNull == null ? new ArrayList<>() : new ArrayList<>(listOrNull);
         stylesheets.add(uri);
         external.set(factory.getStylesheetsKey(),stylesheets);
       }

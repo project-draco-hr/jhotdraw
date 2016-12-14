@@ -22,14 +22,15 @@
       doc.insertBefore(doc.createComment(string),docElement);
     }
     writeElementAttributes(docElement,external);
+    String linebreak="\n";
     for (    Figure child : external.getChildren()) {
-      writeNodeRecursively(doc,docElement,child);
+      writeNodeRecursively(doc,docElement,child,linebreak);
     }
     for (    String string : external.get(XML_BODY_COMMENT_KEY)) {
-      docElement.appendChild(doc.createTextNode("\n"));
+      docElement.appendChild(doc.createTextNode(linebreak));
       docElement.appendChild(doc.createComment(string));
     }
-    docElement.appendChild(doc.createTextNode("\n"));
+    docElement.appendChild(doc.createTextNode(linebreak));
     for (    String string : external.get(XML_EPILOG_COMMENT_KEY)) {
       doc.appendChild(doc.createComment(string));
     }
