@@ -1,5 +1,5 @@
 {
-  parent.appendChild(doc.createTextNode("\n"));
+  parent.appendChild(doc.createTextNode(linebreak));
   Element elem=null;
   if (node instanceof Shape) {
     elem=writeShape(doc,parent,(Shape)node);
@@ -29,10 +29,10 @@
   if (node instanceof Parent) {
     Parent pp=(Parent)node;
     for (    javafx.scene.Node child : pp.getChildrenUnmodifiable()) {
-      writeNodeRecursively(doc,elem,child);
+      writeNodeRecursively(doc,elem,child,linebreak + indent);
     }
     if (!pp.getChildrenUnmodifiable().isEmpty()) {
-      elem.appendChild(doc.createTextNode("\n"));
+      elem.appendChild(doc.createTextNode(linebreak));
     }
   }
 }
