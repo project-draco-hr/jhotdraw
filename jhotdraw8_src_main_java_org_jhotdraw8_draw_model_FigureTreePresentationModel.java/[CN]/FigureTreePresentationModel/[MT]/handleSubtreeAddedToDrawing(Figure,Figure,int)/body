@@ -1,6 +1,6 @@
 {
   TreeItem<Figure> item=new TreeItem<>(f);
-  item.setExpanded(true);
+  item.setExpanded(false);
   items.put(f,item);
   int childIndex=0;
   for (  Figure child : f.getChildren()) {

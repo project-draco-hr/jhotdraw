@@ -1,0 +1,3 @@
+{
+  stack.push(Collections.singleton(root).iterator());
+}

@@ -1,0 +1,14 @@
+{
+  Iterator<TreeItem<T>> iter=stack.peek();
+  TreeItem<T> node=iter.next();
+  if (!iter.hasNext()) {
+    stack.pop();
+  }
+  if (node.isExpanded()) {
+    Iterator<TreeItem<T>> children=node.getChildren().iterator();
+    if (children.hasNext()) {
+      stack.push(children);
+    }
+  }
+  return node;
+}

@@ -1,11 +1,2 @@
 {
-  if (!isUpdatingSelection) {
-    isUpdatingSelection=true;
-    TreeTableView.TreeTableViewSelectionModel<Figure> selectionModel=treeView.getSelectionModel();
-    selectionModel.clearSelection();
-    for (    Figure f : drawingView.getSelectedFigures()) {
-      selectionModel.select(model.getTreeItem(f));
-    }
-    isUpdatingSelection=false;
-  }
 }
