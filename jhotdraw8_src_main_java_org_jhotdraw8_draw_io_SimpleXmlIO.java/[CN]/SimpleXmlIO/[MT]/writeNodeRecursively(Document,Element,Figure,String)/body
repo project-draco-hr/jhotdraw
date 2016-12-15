@@ -12,8 +12,9 @@
       parent.appendChild(doc.createComment(string));
     }
     for (    Figure child : figure.getChildren()) {
+      final String lbi=linebreak + indent;
       if (factory.figureToName(child) != null) {
-        writeNodeRecursively(doc,elem,child,linebreak + indent);
+        writeNodeRecursively(doc,elem,child,lbi);
       }
     }
     boolean hasNoElementNodes=factory.figureNodeListKeys(figure).isEmpty();
