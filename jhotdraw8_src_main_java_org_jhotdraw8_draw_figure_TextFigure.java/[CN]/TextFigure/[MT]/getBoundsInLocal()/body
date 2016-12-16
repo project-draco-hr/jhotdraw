@@ -3,6 +3,6 @@
     textNode=new Text();
   }
   updateNode(null,textNode);
-  Bounds b=textNode.getLayoutBounds();
+  Bounds b=textNode.getBoundsInLocal();
   return new BoundingBox(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
 }
