@@ -6,7 +6,12 @@
   Drawing d=getModel().getRoot();
   drawing.set(d);
   if (d != null) {
-    drawingPane.getChildren().add(getNode(d));
+    if (drawingImageView != null) {
+      drawingPane.getChildren().add(drawingImageView);
+    }
+ else {
+      drawingPane.getChildren().add(getNode(d));
+    }
     dirtyFigureNodes.add(d);
     updateLayout();
     handleSubtreeNodesChanged(d);

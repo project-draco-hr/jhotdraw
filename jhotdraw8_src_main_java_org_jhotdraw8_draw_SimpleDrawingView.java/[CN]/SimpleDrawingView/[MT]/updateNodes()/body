@@ -1,27 +1,2 @@
 {
-  Figure[] copyOfDirtyFigureNodes=dirtyFigureNodes.toArray(new Figure[dirtyFigureNodes.size()]);
-  Figure[] copyOfDirtyHandles=dirtyHandles.toArray(new Figure[dirtyHandles.size()]);
-  dirtyFigureNodes.clear();
-  dirtyHandles.clear();
-  for (  Figure f : copyOfDirtyFigureNodes) {
-    f.updateNode(this,getNode(f));
-  }
-  for (  Figure f : copyOfDirtyHandles) {
-    List<Handle> hh=handles.get(f);
-    if (hh != null) {
-      for (      Handle h : hh) {
-        h.updateNode(this);
-      }
-    }
-  }
-  for (  Handle h : secondaryHandles) {
-    h.updateNode(this);
-  }
-  if (!constrainerNodeValid) {
-    constrainerNodeValid=true;
-    Constrainer c=getConstrainer();
-    if (c != null) {
-      c.updateNode(this);
-    }
-  }
 }
