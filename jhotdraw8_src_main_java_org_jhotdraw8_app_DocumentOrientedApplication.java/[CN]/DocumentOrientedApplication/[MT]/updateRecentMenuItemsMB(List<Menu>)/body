@@ -1,0 +1,28 @@
+{
+  Deque<List<?>> todo=new ArrayDeque<>();
+  todo.add(mb);
+  while (!todo.isEmpty()) {
+    for (    Object mi : todo.remove()) {
+      if (mi instanceof Menu) {
+        Menu mmi=(Menu)mi;
+        if ("file.openRecentMenu".equals(mmi.getId())) {
+          mmi.getItems().clear();
+          for (          URI uri : recentUrisProperty()) {
+            MenuItem mii=new MenuItem();
+            Action a=new OpenRecentFileAction(this,uri);
+            Actions.bindMenuItem(mii,a);
+            ((Menu)mi).getItems().add(mii);
+          }
+          MenuItem mii=new MenuItem();
+          Action a=new ClearRecentFilesMenuAction(this);
+          Actions.bindMenuItem(mii,a);
+          mmi.getItems().add(new SeparatorMenuItem());
+          mmi.getItems().add(mii);
+        }
+ else {
+          todo.add(mmi.getItems());
+        }
+      }
+    }
+  }
+}

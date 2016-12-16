@@ -4,29 +4,29 @@
   while (!todo.isEmpty()) {
     for (    MenuItem mi : todo.remove().getItems()) {
       if (mi instanceof Menu) {
-        if ("file.openRecentMenu".equals(mi.getId())) {
-          for (          URI uri : recentUrisProperty()) {
-            MenuItem mii=new MenuItem();
-            Action a=new OpenRecentFileAction(this,uri);
-            Actions.bindMenuItem(mii,a);
-            ((Menu)mi).getItems().add(mii);
-          }
-        }
- else {
-          todo.add((Menu)mi);
-        }
+        todo.add((Menu)mi);
       }
  else {
         Action a=actions.get(mi.getId());
         if (a != null) {
           Actions.bindMenuItem(mi,a);
         }
- else         if (mi.getId() != null) {
+ else {
           System.err.println("DocumentOrientedApplication: Warning: no action for menu item with id=" + mi.getId());
-          mi.setVisible(false);
+          a=new AbstractViewAction(this,null){
+            @Override protected void onActionPerformed(            ActionEvent event){
+              Action ava=(Action)getActiveView().getActionMap().get(mi.getId());
+              if (ava != null) {
+                ava.handle(event);
+              }
+            }
+          }
+;
+          Actions.bindMenuItem(mi,a,false);
         }
       }
     }
   }
+  updateRecentMenuItemsMB(mb.getMenus());
   return mb;
 }

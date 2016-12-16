@@ -1,0 +1,14 @@
+{
+  if (isSystemMenuSupported) {
+    updateRecentMenuItemsMB(systemMenus);
+  }
+ else {
+    for (    DocumentView v : views()) {
+      BorderPane bp=(BorderPane)v.getNode().getScene().getRoot();
+      MenuBar mb=(MenuBar)bp.getTop();
+      if (mb != null) {
+        updateRecentMenuItemsMB((mb.getMenus()));
+      }
+    }
+  }
+}
