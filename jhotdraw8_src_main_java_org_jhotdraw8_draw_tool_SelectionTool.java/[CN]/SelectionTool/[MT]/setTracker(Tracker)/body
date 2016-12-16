@@ -5,6 +5,5 @@
   tracker=t;
   if (tracker != null) {
     drawPane.setCenter(tracker.getNode());
-    drawPane.layout();
   }
 }

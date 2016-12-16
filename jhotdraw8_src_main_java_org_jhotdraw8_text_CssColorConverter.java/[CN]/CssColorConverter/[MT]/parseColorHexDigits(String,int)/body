@@ -1,0 +1,39 @@
+{
+  try {
+    int v=(int)Long.parseLong(hexdigits,16);
+    int r, g, b, a;
+switch (hexdigits.length()) {
+case 3:
+      r=(((v & 0xf00) >>> 4) | (v & 0xf00) >>> 8);
+    g=(((v & 0x0f0)) | (v & 0x0f0) >>> 4);
+  b=((v & 0x00f) << 4) | (v & 0x00f);
+a=255;
+return new CssColor('#' + hexdigits.toLowerCase(),new Color(r / 255.0,g / 255.0,b / 255.0,a / 255.0));
+case 4:
+r=(((v & 0xf000) >>> 8) | (v & 0xf000) >>> 12);
+g=(((v & 0x0f00) >>> 4) | (v & 0x0f00) >>> 8);
+b=(((v & 0x00f0)) | (v & 0x00f0) >>> 4);
+a=((v & 0x000f) << 4) | (v & 0x000f);
+return new CssColor(a == 255 ? '#' + hexdigits.substring(0,3).toLowerCase() : "rgba(" + r + ","+ g+ ","+ b+ ","+ a / 255.0 + ")",new Color(r / 255.0,g / 255.0,b / 255.0,a / 255.0));
+case 6:
+r=(v & 0xff0000) >>> 16;
+g=(v & 0x00ff00) >>> 8;
+b=(v & 0x0000ff) >>> 0;
+a=255;
+return new CssColor('#' + hexdigits.toLowerCase(),new Color(r / 255.0,g / 255.0,b / 255.0,a / 255.0));
+case 8:
+r=(v & 0xff000000) >>> 24;
+g=(v & 0x00ff0000) >>> 16;
+b=(v & 0x0000ff00) >>> 8;
+a=(v & 0xff) >>> 0;
+return new CssColor(a == 255 ? '#' + hexdigits.substring(0,6).toLowerCase() : "rgba(" + r + ","+ g+ ","+ b+ ","+ a / 255.0 + ")",new Color(r / 255.0,g / 255.0,b / 255.0,a / 255.0));
+default :
+throw new ParseException("illegal hex-digits, expected 3, 6  or 8 digits.Found:" + hexdigits,startpos);
+}
+}
+ catch (NumberFormatException e) {
+ParseException pe=new ParseException("illegal hex-digits. Found:" + hexdigits,startpos);
+pe.initCause(e);
+throw pe;
+}
+}

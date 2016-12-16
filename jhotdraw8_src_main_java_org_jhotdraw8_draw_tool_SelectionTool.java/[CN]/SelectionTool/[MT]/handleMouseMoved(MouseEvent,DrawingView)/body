@@ -3,10 +3,9 @@
   double vy=event.getY();
   Handle h=view.findHandle(vx,vy);
   if (h != null) {
-    node.setCursor(h.getCursor());
-    setTracker(getHandleTracker(h));
+    if (updateCursor)     node.setCursor(h.getCursor());
   }
  else {
-    node.setCursor(Cursor.DEFAULT);
+    if (updateCursor)     node.setCursor(Cursor.DEFAULT);
   }
 }

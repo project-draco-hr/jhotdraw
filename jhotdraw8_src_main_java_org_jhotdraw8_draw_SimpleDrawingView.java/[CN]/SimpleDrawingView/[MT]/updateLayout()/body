@@ -8,6 +8,11 @@
   double y=bounds.getMinY() * f;
   double w=bounds.getWidth() * f;
   double h=bounds.getHeight() * f;
+  Bounds scaledBounds=new BoundingBox(x,y,w,h);
+  if (Objects.equals(scaledBounds,previousScaledBounds)) {
+    return;
+  }
+  previousScaledBounds=scaledBounds;
   Drawing d=getDrawing();
   double dw=d.get(Drawing.WIDTH);
   double dh=d.get(Drawing.HEIGHT);
