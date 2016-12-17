@@ -1,0 +1,41 @@
+{
+  Preferences prefs=Preferences.userNodeForPackage(AbstractApplication.class);
+  String recentUrisSerialized=prefs.get(applicationId + ".recentUris","");
+  for (  String str : recentUrisSerialized.split("\t")) {
+    if (str.isEmpty()) {
+      continue;
+    }
+    if (recentUris.size() >= getMaxNumberOfRecentUris()) {
+      break;
+    }
+    try {
+      URI uri=new URI(str);
+      recentUris.add(uri);
+    }
+ catch (    URISyntaxException ex) {
+      ex.printStackTrace();
+    }
+  }
+  recentUris.get().addListener(new SetChangeListener<URI>(){
+    @Override public void onChanged(    SetChangeListener.Change<? extends URI> change){
+      StringBuilder buf=new StringBuilder();
+      int skip=recentUris.size() - getMaxNumberOfRecentUris();
+      for (      URI uri : recentUris) {
+        if (--skip > 0) {
+          continue;
+        }
+        if (buf.length() != 0) {
+          buf.append('\t');
+        }
+        String str=uri.toString();
+        if (str.indexOf("\t") != -1) {
+          System.err.println("AbstractApplication warning can't store URI in preferences. URI=" + uri);
+          continue;
+        }
+        buf.append(str);
+      }
+      prefs.put("recentUris",buf.toString());
+    }
+  }
+);
+}
