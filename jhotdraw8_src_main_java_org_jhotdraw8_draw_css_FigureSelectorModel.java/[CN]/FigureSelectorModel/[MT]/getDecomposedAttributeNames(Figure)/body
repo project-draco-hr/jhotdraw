@@ -1,0 +1,14 @@
+{
+  Set<String> attr=new HashSet<>();
+  Set<StyleableMapAccessor<?>> attrk=new HashSet<>();
+  for (  MapAccessor<?> key : element.getSupportedKeys()) {
+    if ((key instanceof StyleableMapAccessor) && !(key instanceof CompositeMapAccessor)) {
+      StyleableMapAccessor<?> sk=(StyleableMapAccessor<?>)key;
+      attrk.add(sk);
+    }
+  }
+  for (  StyleableMapAccessor<?> key : attrk) {
+    attr.add(key.getCssName());
+  }
+  return attr;
+}

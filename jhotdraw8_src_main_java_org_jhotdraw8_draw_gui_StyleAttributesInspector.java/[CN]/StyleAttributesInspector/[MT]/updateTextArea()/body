@@ -1,4 +1,5 @@
 {
+  final boolean decompose=!composeAttributesCheckBox.isSelected();
   textAreaValid=true;
   if (drawingView == null || drawingView.getDrawing() == null) {
     textArea.setText("");
@@ -26,7 +27,7 @@
       id=selectorModel.getId(f);
       type=selectorModel.getType(f);
       styleClasses.addAll(selectorModel.getStyleClasses(f));
-      for (      String name : selectorModel.getNonDecomposedAttributeNames(f)) {
+      for (      String name : decompose ? selectorModel.getDecomposedAttributeNames(f) : selectorModel.getComposedAttributeNames(f)) {
         attr.put(name,selectorModel.getAttribute(f,name));
       }
     }
