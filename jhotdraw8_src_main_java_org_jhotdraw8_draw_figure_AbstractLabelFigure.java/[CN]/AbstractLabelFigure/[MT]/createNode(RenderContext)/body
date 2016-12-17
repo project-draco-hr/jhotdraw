@@ -3,8 +3,9 @@
   g.setAutoSizeChildren(false);
   Region r=new Region();
   r.setScaleShape(true);
-  g.getChildren().add(r);
   Text text=new Text();
   g.getChildren().add(text);
+  g.getProperties().put("region",r);
+  g.getProperties().put("text",text);
   return g;
 }
