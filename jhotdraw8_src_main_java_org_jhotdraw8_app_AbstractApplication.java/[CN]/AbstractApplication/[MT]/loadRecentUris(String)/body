@@ -34,7 +34,7 @@
         }
         buf.append(str);
       }
-      prefs.put("recentUris",buf.toString());
+      prefs.put(applicationId + ".recentUris",buf.toString());
     }
   }
 );

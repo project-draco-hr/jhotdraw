@@ -1,0 +1,7 @@
+{
+  double minx=Math.min(a.getMinX(),b.getMinX());
+  double miny=Math.min(a.getMinY(),b.getMinY());
+  double maxx=Math.max(a.getMaxX(),b.getMaxX());
+  double maxy=Math.max(a.getMaxY(),b.getMaxY());
+  return new BoundingBox(minx,miny,maxx - minx,maxy - miny);
+}

@@ -7,9 +7,12 @@
   double scale=dpi / RenderContext.DPI.getDefaultValue();
   parameters.setTransform(Transform.scale(scale,scale));
   parameters.setFill(Color.TRANSPARENT);
-  double width=drawing.get(Drawing.WIDTH) * scale;
-  double height=drawing.get(Drawing.HEIGHT) * scale;
-  parameters.setViewport(new Rectangle2D(0,0,width,height));
+  Bounds bounds=Figure.visualBounds(selection);
+  double x=bounds.getMinX() * scale;
+  double y=bounds.getMinY() * scale;
+  double width=bounds.getWidth() * scale;
+  double height=bounds.getHeight() * scale;
+  parameters.setViewport(new Rectangle2D(x,y,width,height));
   WritableImage image=node.snapshot(parameters,null);
   return image;
 }

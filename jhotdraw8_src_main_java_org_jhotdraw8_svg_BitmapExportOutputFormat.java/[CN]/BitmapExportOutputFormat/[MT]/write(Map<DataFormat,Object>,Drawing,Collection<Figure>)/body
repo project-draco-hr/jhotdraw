@@ -1,3 +1,4 @@
 {
-  throw new UnsupportedOperationException("Not supported yet.");
+  WritableImage image=doRenderImage(drawing,selection);
+  out.put(DataFormat.IMAGE,image);
 }
