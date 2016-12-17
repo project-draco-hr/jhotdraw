@@ -1,3 +1,0 @@
-{
-  super(owner,STYLECLASS_HANDLE_RESIZE,RelativeLocator.west(),WEST_SHAPE,REGION_BACKGROUND,REGION_BORDER);
-}

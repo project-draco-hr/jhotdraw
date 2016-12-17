@@ -1,0 +1,6 @@
+{
+  handles.add(south(f,styleclass));
+  handles.add(north(f,styleclass));
+  handles.add(east(f,styleclass));
+  handles.add(west(f,styleclass));
+}

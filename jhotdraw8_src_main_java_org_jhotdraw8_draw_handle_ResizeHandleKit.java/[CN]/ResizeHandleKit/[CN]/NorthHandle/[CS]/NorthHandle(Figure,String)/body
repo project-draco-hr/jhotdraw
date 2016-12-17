@@ -1,0 +1,3 @@
+{
+  super(owner,styleclass,RelativeLocator.north(),NORTH_SHAPE,REGION_BACKGROUND,REGION_BORDER);
+}

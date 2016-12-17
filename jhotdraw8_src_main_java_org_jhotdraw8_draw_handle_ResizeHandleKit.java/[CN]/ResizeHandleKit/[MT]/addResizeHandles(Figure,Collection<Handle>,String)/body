@@ -1,0 +1,4 @@
+{
+  addCornerResizeHandles(f,handles,styleclass);
+  addEdgeResizeHandles(f,handles,styleclass);
+}
