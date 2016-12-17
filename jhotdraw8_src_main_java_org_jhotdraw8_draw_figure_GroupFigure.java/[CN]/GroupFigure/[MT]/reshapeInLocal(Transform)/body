@@ -1,5 +1,6 @@
 {
-  Transform localTransform=transform.createConcatenation(getParentToLocal());
+  flattenTransforms();
+  Transform localTransform=transform;
   for (  Figure child : getChildren()) {
     child.reshapeInParent(localTransform);
   }

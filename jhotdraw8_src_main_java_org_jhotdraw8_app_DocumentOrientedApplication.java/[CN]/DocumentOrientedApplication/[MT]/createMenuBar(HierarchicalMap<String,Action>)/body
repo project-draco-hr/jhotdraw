@@ -13,9 +13,9 @@
         }
  else {
           System.err.println("DocumentOrientedApplication: Warning: no action for menu item with id=" + mi.getId());
-          a=new AbstractViewAction(this,null){
+          a=new AbstractViewAction<DocumentView>(this,null){
             @Override protected void onActionPerformed(            ActionEvent event){
-              Action ava=(Action)getActiveView().getActionMap().get(mi.getId());
+              Action ava=getActiveView().getActionMap().get(mi.getId());
               if (ava != null) {
                 ava.handle(event);
               }

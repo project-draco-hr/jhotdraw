@@ -1,0 +1,25 @@
+{
+  if (width == 0 || height == 0) {
+    return;
+  }
+  TransformableFigure owner=(TransformableFigure)o;
+  Bounds oldBounds=owner.getBoundsInLocal();
+  double sx=width / oldBounds.getWidth();
+  double sy=height / oldBounds.getHeight();
+  double tx=x - oldBounds.getMinX();
+  double ty=y - oldBounds.getMinY();
+  Transform transform=new Translate(tx,ty);
+  if (!Double.isNaN(sx) && !Double.isNaN(sy) && !Double.isInfinite(sx)&& !Double.isInfinite(sy)&& (sx != 1d || sy != 1d)) {
+    transform=transform.createConcatenation(new Scale(sx,sy,oldBounds.getMinX(),oldBounds.getMinY()));
+  }
+  List<Transform> transforms=new ArrayList<>(owner.get(TRANSFORMS));
+switch (transforms.size()) {
+case 0:
+    transforms.add(0,transform);
+  break;
+default :
+transforms.set(0,transform.createConcatenation(transforms.get(0)));
+break;
+}
+model.set(owner,TRANSFORMS,transforms);
+}

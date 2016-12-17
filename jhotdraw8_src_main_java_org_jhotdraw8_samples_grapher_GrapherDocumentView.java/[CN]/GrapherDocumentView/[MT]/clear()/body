@@ -1,6 +1,6 @@
 {
   Drawing d=new SimpleDrawing();
-  d.set(StyleableFigure.STYLE_ID,"drawing1");
+  d.set(StyleableFigure.ID,"drawing1");
   drawingView.setDrawing(d);
   return CompletableFuture.completedFuture(null);
 }

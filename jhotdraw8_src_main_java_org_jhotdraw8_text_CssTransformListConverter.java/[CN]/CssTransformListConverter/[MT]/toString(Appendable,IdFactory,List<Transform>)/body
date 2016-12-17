@@ -71,10 +71,10 @@
         buf.append(')');
       }
  else       if (tx.isType2D()) {
-        buf.append("affine(").append(nb.toString(tx.getMxx())).append(',').append(nb.toString(tx.getMxy())).append(',').append(nb.toString(tx.getTx())).append(' ').append(nb.toString(tx.getMyx())).append(',').append(nb.toString(tx.getMyy())).append(',').append(nb.toString(tx.getTy())).append(')');
+        buf.append("matrix(").append(nb.toString(tx.getMxx())).append(',').append(nb.toString(tx.getMyx())).append(' ').append(nb.toString(tx.getMxy())).append(',').append(nb.toString(tx.getMyy())).append(' ').append(nb.toString(tx.getTx())).append(',').append(nb.toString(tx.getTy())).append(')');
       }
  else {
-        buf.append("affine(").append(nb.toString(tx.getMxx())).append(',').append(nb.toString(tx.getMxy())).append(',').append(nb.toString(tx.getMzx())).append(',').append(nb.toString(tx.getTx())).append(' ').append(nb.toString(tx.getMyx())).append(',').append(nb.toString(tx.getMyy())).append(',').append(nb.toString(tx.getMyz())).append(',').append(nb.toString(tx.getTy())).append(' ').append(nb.toString(tx.getMzx())).append(',').append(nb.toString(tx.getMzy())).append(',').append(nb.toString(tx.getMzz())).append(',').append(nb.toString(tx.getTz())).append(')');
+        buf.append("matrix(").append(nb.toString(tx.getMxx())).append(',').append(nb.toString(tx.getMyx())).append(',').append(nb.toString(tx.getMzx())).append(' ').append(nb.toString(tx.getMxy())).append(',').append(nb.toString(tx.getMyy())).append(',').append(nb.toString(tx.getMzy())).append(' ').append(nb.toString(tx.getMxz())).append(',').append(nb.toString(tx.getMyz())).append(',').append(nb.toString(tx.getMzz())).append(' ').append(nb.toString(tx.getTx())).append(',').append(nb.toString(tx.getTy())).append(',').append(nb.toString(tx.getTz())).append(')');
       }
     }
   }

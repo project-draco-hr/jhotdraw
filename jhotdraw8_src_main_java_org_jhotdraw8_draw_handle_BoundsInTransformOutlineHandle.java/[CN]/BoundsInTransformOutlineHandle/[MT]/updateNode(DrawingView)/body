@@ -3,7 +3,7 @@
   Transform t=view.getWorldToView().createConcatenation(f.getParentToWorld());
   if (f instanceof TransformableFigure) {
     TransformableFigure tf=(TransformableFigure)f;
-    t=t.createConcatenation(tf.getTransform());
+    t=t.createConcatenation(new Translate(tf.get(TRANSLATE_X),tf.get(TRANSLATE_Y)));
   }
   t=Transform.translate(0.5,0.5).createConcatenation(t);
   Bounds b=f.getBoundsInLocal();

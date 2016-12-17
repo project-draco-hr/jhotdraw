@@ -13,6 +13,6 @@
     id=prefix + counter;
   }
   counters.put(created.getTypeSelector(),counter);
-  created.set(StyleableFigure.STYLE_ID,id);
+  created.set(StyleableFigure.ID,id);
   return created;
 }
