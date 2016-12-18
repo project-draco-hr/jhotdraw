@@ -1,0 +1,5 @@
+{
+  if (node.isVisible() && updateContentsCheckBox.isSelected()) {
+    invalidateTextArea();
+  }
+}

@@ -1,0 +1,11 @@
+{
+  DrawingView oldValue=drawingView;
+  if (oldValue != null) {
+    oldValue.selectedFiguresProperty().removeListener(selectionListener);
+  }
+  this.drawingView=newValue;
+  if (newValue != null) {
+    newValue.selectedFiguresProperty().addListener(selectionListener);
+  }
+  handleDrawingViewChanged(oldValue,newValue);
+}

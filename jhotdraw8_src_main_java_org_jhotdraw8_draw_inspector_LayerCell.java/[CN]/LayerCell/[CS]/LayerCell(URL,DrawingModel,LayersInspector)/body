@@ -1,0 +1,5 @@
+{
+  this.drawingModel=drawingModel;
+  this.inspector=inspector;
+  init(fxmlUrl);
+}

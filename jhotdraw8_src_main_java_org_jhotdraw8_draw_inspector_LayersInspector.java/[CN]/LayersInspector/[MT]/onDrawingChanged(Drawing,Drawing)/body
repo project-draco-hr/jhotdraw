@@ -1,0 +1,10 @@
+{
+  if (oldValue != null) {
+    oldValue.getChildren().removeListener(listInvalidationListener);
+  }
+  if (newValue != null) {
+    layers=new ReversedList<>(newValue.getChildren());
+    listView.setItems(layers);
+    newValue.getChildren().addListener(listInvalidationListener);
+  }
+}

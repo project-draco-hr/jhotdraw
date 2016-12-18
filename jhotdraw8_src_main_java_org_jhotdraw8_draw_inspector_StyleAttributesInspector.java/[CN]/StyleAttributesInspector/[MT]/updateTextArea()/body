@@ -1,0 +1,86 @@
+{
+  final boolean decompose=!composeAttributesCheckBox.isSelected();
+  textAreaValid=true;
+  if (drawingView == null || drawingView.getDrawing() == null) {
+    textArea.setText("");
+    textArea.setPrefRowCount(5);
+    return;
+  }
+  Drawing drawing=drawingView.getDrawing();
+  Set<Figure> newValue=drawingView.getSelectedFigures();
+  if (newValue.isEmpty()) {
+    newValue=new LinkedHashSet<Figure>();
+    newValue.add(drawing);
+  }
+  collectHelpTexts(newValue);
+  StylesheetsManager<Figure> styleManager=drawing.getStyleManager();
+  SelectorModel<Figure> selectorModel=styleManager.getSelectorModel();
+  String id=null;
+  String type=null;
+  Set<String> styleClasses=new TreeSet<>();
+  Map<String,String> attr=new TreeMap<>();
+  Map<String,String> description=new TreeMap<>();
+  boolean first=true;
+  for (  Figure f : newValue) {
+    selectorModel.getAttributeNames(f);
+    if (first) {
+      first=false;
+      id=selectorModel.getId(f);
+      type=selectorModel.getType(f);
+      styleClasses.addAll(selectorModel.getStyleClasses(f));
+      for (      String name : decompose ? selectorModel.getDecomposedAttributeNames(f) : selectorModel.getComposedAttributeNames(f)) {
+        attr.put(name,selectorModel.getAttribute(f,name));
+      }
+    }
+ else {
+      attr.keySet().retainAll(selectorModel.getAttributeNames(f));
+      id=null;
+      type=selectorModel.getType(f).equals(type) ? type : null;
+      styleClasses.retainAll(selectorModel.getStyleClasses(f));
+      for (      String name : attr.keySet()) {
+        String oldAttrValue=attr.get(name);
+        if (oldAttrValue != null) {
+          String newAttrValue=selectorModel.getAttribute(f,name);
+          if (!oldAttrValue.equals(newAttrValue)) {
+            attr.put(name,"/* multiple values */");
+          }
+        }
+      }
+    }
+  }
+  StringBuilder buf=new StringBuilder();
+  if (type != null && type.length() > 0) {
+    buf.append(cssIdentConverter.toString(type));
+  }
+  if (id != null && id.length() > 0) {
+    buf.append('#').append(cssIdentConverter.toString(id));
+  }
+  for (  String clazz : styleClasses) {
+    buf.append('.').append(cssIdentConverter.toString(clazz));
+  }
+  buf.append(":selected {");
+  for (  Map.Entry<String,String> a : attr.entrySet()) {
+    buf.append("\n  ").append(a.getKey()).append(": ");
+    buf.append(a.getValue());
+    buf.append(";");
+  }
+  buf.append("\n}");
+  try {
+    Method m=Node.class.getDeclaredMethod("impl_markDirty",DirtyBits.class);
+    m.setAccessible(true);
+    for (Parent p=textArea; p != null; p=p.getParent()) {
+      m.invoke(p,DirtyBits.NODE_CONTENTS);
+    }
+  }
+ catch (  Exception e) {
+    System.out.println("StylesAttributesInspector e:" + e);
+  }
+  textArea.setText(buf.toString());
+  int rows=1;
+  for (int i=0; i < buf.length(); i++) {
+    if (buf.charAt(i) == '\n') {
+      rows++;
+    }
+  }
+  textArea.setPrefRowCount(Math.min(Math.max(5,rows),25));
+}
