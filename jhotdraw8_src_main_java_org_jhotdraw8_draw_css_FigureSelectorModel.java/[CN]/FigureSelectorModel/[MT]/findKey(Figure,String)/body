@@ -3,9 +3,9 @@
     for (    MapAccessor<?> k : element.getSupportedKeys()) {
       if (k instanceof StyleableMapAccessor) {
         StyleableMapAccessor<?> sk=(StyleableMapAccessor<?>)k;
-        nameToKeyMap.put(sk.getCssName(),sk);
+        nameToKeyMap.put(element.getClass() + "$" + sk.getCssName(),sk);
       }
     }
   }
-  return nameToKeyMap.get(attributeName);
+  return nameToKeyMap.get(element.getClass() + "$" + attributeName);
 }

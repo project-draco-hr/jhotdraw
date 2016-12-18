@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") StyleableMapAccessor<Object> k=(StyleableMapAccessor<Object>)findKey(element,attributeName);
+  return k == null ? null : k.getConverter();
+}
