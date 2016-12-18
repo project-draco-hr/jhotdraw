@@ -1,13 +1,8 @@
 {
-  Map<Key<?>,Object> hints=new HashMap<>();
-  RenderContext.RENDERING_INTENT.put(hints,RenderingIntent.EXPORT);
-  RenderContext.DPI.put(hints,dpi);
-  javafx.scene.Node node=toNode(drawing,selection,hints);
   SnapshotParameters parameters=new SnapshotParameters();
   double scale=dpi / RenderContext.DPI.getDefaultValue();
-  parameters.setTransform(Transform.scale(scale,scale));
+  parameters.setTransform(Transform.scale(scale,scale).createConcatenation(slice.getLocalToWorld()));
   parameters.setFill(Color.TRANSPARENT);
-  Bounds bounds=Figure.visualBounds(selection);
   double x=bounds.getMinX() * scale;
   double y=bounds.getMinY() * scale;
   double width=bounds.getWidth() * scale;

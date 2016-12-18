@@ -1,0 +1,12 @@
+{
+  this.x.set(x);
+  this.y.set(y);
+  this.width.set(width);
+  this.height.set(height);
+  this.angle.set(angle);
+  this.minorNode.getStyleClass().setAll(STYLECLASS_CONSTRAINER_MINOR_GRID);
+  this.majorNode.getStyleClass().setAll(STYLECLASS_CONSTRAINER_MAJOR_GRID);
+  this.majorX.set(majorx);
+  this.majorY.set(majory);
+  node.getChildren().addAll(minorNode,majorNode);
+}

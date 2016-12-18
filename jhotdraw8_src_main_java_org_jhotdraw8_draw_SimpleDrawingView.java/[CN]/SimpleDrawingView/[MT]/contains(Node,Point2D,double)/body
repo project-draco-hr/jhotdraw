@@ -16,8 +16,7 @@
  else   if (node instanceof Group) {
     if (Geom.contains(node.getBoundsInLocal(),point,tolerance)) {
       for (      Node child : ((Group)node).getChildren()) {
-        double localTolerance=child.parentToLocal(0,0).distance(child.parentToLocal(tolerance,tolerance));
-        if (contains(child,child.parentToLocal(point),localTolerance)) {
+        if (contains(child,child.parentToLocal(point),tolerance)) {
           return true;
         }
       }

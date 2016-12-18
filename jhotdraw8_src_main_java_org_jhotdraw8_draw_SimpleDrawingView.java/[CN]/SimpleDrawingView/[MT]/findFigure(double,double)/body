@@ -2,7 +2,7 @@
   Drawing dr=getDrawing();
   Figure f=findFigureRecursive((Parent)getNode(dr),viewToDrawing(vx,vy),0.0);
   if (f == null) {
-    f=findFigureRecursive((Parent)getNode(dr),viewToDrawing(vx,vy),TOLERANCE);
+    f=findFigureRecursive((Parent)getNode(dr),viewToDrawing(vx,vy),TOLERANCE / getZoomFactor());
   }
   return f;
 }

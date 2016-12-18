@@ -1,4 +1,4 @@
 {
-  WritableImage image=doRenderImage(drawing,selection);
+  WritableImage image=renderImage(drawing,selection);
   out.put(DataFormat.IMAGE,image);
 }

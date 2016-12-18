@@ -1,11 +1,12 @@
 {
+  double tolerance=TOLERANCE / getZoomFactor();
   ObservableList<Node> list=p.getChildrenUnmodifiable();
   for (int i=list.size() - 1; i >= 0; i--) {
     Node n=list.get(i);
     Figure f1=nodeToFigureMap.get(n);
     if (f1 != null && f1.isSelectable()) {
       Point2D pl=n.parentToLocal(pp);
-      if (contains(n,pl,TOLERANCE)) {
+      if (contains(n,pl,tolerance)) {
         Figure f=nodeToFigureMap.get(n);
         if (f != null && f.isSelectable()) {
           found.add(f);
@@ -19,7 +20,7 @@
     }
  else {
       Point2D pl=n.parentToLocal(pp);
-      if (contains(n,pl,TOLERANCE)) {
+      if (contains(n,pl,tolerance)) {
         if (n instanceof Parent) {
           findFiguresRecursive((Parent)n,pl,found,decompose);
         }

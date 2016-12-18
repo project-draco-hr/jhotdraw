@@ -3,3 +3,5 @@ double y
 double width
 double height
 double angle
+int majorx
+int majory

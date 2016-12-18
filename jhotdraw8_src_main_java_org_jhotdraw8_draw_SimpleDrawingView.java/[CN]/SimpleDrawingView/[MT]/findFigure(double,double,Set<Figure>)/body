@@ -1,5 +1,5 @@
 {
   Drawing dr=getDrawing();
-  Figure f=findFigureRecursiveInSet((Parent)getNode(dr),viewToWorld(vx,vy),figures);
+  Figure f=findFigureRecursiveInSet((Parent)getNode(dr),viewToWorld(vx,vy),figures,TOLERANCE / getZoomFactor());
   return f;
 }

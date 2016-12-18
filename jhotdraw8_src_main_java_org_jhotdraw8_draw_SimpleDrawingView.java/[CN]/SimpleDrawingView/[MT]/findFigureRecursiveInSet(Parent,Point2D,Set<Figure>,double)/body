@@ -6,12 +6,12 @@
       continue;
     }
     Point2D pl=n.parentToLocal(pp);
-    double localTolerance=n.parentToLocal(0,0).distance(n.parentToLocal(TOLERANCE,TOLERANCE));
+    double localTolerance=n.parentToLocal(0,0).distance(n.parentToLocal(tolerance * INVSQRT2,tolerance * INVSQRT2));
     if (contains(n,pl,localTolerance)) {
       Figure f=nodeToFigureMap.get(n);
       if (f == null || !f.isSelectable() || !figures.contains(f)) {
         if (n instanceof Parent) {
-          f=findFigureRecursiveInSet((Parent)n,pl,figures);
+          f=findFigureRecursiveInSet((Parent)n,pl,figures,localTolerance);
         }
       }
       if (f != null && f.isSelectable() && figures.contains(f)) {
