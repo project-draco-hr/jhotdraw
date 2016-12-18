@@ -1,0 +1,11 @@
+{
+  List<Key<?>> keys=TransformableFigure.getDeclaredKeys();
+  DrawingModel model=view.getModel();
+  for (  Figure child : figures) {
+    if (child instanceof TransformableFigure) {
+      for (      Key<?> k : keys) {
+        model.remove(child,k);
+      }
+    }
+  }
+}
