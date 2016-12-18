@@ -2,6 +2,7 @@
   addFigureKeysAndNames("Layer",SimpleLayer.class,Figure.getDeclaredAndInheritedKeys(SimpleLayer.class));
   addFigureKeysAndNames("Clipping",SimpleClipping.class,Figure.getDeclaredAndInheritedKeys(SimpleClipping.class));
   addFigureKeysAndNames("Rectangle",RectangleFigure.class,Figure.getDeclaredAndInheritedKeys(RectangleFigure.class));
+  addFigureKeysAndNames("Slice",SliceFigure.class,Figure.getDeclaredAndInheritedKeys(SliceFigure.class));
   addFigureKeysAndNames("Group",GroupFigure.class,Figure.getDeclaredAndInheritedKeys(GroupFigure.class));
 {
     Set<MapAccessor<?>> keys=Figure.getDeclaredAndInheritedKeys(SimpleDrawing.class);

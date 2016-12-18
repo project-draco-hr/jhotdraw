@@ -1,4 +1,5 @@
 {
+  if (skipInvisibleNodes && !node.isVisible())   return;
   if (node instanceof Shape) {
     Shape shape=(Shape)node;
     writePaintDefs(doc,defsNode,shape.getFill());
