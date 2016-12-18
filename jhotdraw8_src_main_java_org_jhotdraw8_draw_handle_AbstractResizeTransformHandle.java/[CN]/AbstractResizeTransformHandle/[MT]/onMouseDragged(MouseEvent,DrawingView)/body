@@ -8,6 +8,6 @@
     oldPoint=loc;
   }
   boolean keepAspect=event.isShiftDown();
-  Transform t=owner.getWorldToLocal();
+  Transform t=startWorldToLocal;
   resize(t.transform(newPoint),owner,startBounds,view.getModel(),keepAspect);
 }

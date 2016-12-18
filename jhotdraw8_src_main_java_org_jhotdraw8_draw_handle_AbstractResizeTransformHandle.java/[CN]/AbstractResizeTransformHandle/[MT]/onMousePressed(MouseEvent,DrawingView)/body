@@ -1,5 +1,6 @@
 {
   oldPoint=view.getConstrainer().constrainPoint(owner,view.viewToWorld(new Point2D(event.getX(),event.getY())));
   startBounds=owner.getBoundsInLocal();
+  startWorldToLocal=owner.getWorldToLocal();
   preferredAspectRatio=owner.getPreferredAspectRatio();
 }
