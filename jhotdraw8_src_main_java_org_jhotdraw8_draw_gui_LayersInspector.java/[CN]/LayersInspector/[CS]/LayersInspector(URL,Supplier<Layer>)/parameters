@@ -1,2 +1,0 @@
-URL fxmlUrl
-Supplier<Layer> layerFactory

@@ -1,3 +1,0 @@
-{
-  return drawingView == null ? Collections.emptySet() : drawingView.getSelectedFigures();
-}

@@ -1,6 +1,0 @@
-{
-  if (editField != null && isEditing()) {
-    drawingModel.set(item,StyleableFigure.ID,editField.getText());
-  }
-  super.commitEdit(newValue);
-}

@@ -1,3 +1,0 @@
-{
-  this(StyleClassesInspector.class.getResource("StyleClassesInspector.fxml"));
-}

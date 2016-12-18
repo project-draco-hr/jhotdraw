@@ -1,4 +1,0 @@
-{
-  init(fxmlUrl);
-  this.inspector=inspector;
-}

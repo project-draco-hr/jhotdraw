@@ -1,4 +1,0 @@
-{
-  Integer value=selectionCount.get(item);
-  return value == null ? 0 : value;
-}

@@ -1,4 +1,0 @@
-{
-  this.layerFactory=layerFactory;
-  init(fxmlUrl);
-}

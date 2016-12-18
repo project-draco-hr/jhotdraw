@@ -1,3 +1,0 @@
-{
-  return new LayerCell(drawingView.getModel(),this);
-}

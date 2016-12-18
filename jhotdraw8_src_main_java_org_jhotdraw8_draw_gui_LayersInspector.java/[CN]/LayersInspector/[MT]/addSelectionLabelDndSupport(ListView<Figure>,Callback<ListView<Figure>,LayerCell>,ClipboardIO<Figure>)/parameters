@@ -1,3 +1,0 @@
-ListView<Figure> listView
-Callback<ListView<Figure>,LayerCell> cellFactory
-ClipboardIO<Figure> clipboardIO

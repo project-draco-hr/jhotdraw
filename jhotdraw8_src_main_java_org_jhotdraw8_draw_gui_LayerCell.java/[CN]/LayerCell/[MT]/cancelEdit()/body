@@ -1,4 +1,0 @@
-{
-  super.cancelEdit();
-  updateItem(getItem(),false);
-}

@@ -1,3 +1,0 @@
-{
-  this(ZoomToolbar.class.getResource("ZoomToolbar.fxml"));
-}
