@@ -1,0 +1,3 @@
+{
+  return "StyleableMap$StyledValue{" + "origin=" + origin + ", value0="+ value0+ ", value1="+ value1+ ", value2="+ value2+ ", value3="+ value3+ '}';
+}

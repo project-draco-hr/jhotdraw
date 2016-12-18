@@ -1,3 +1,4 @@
 {
   this.enumClass=enumClass;
+  this.name=enumClass.getName().substring(enumClass.getName().lastIndexOf('.') + 1);
 }

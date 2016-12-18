@@ -1,4 +1,3 @@
 {
-  this.property=property;
-  this.terms=Arrays.asList(new PreservedToken[]{term});
+  this(property,Arrays.asList(new PreservedToken[]{term}));
 }

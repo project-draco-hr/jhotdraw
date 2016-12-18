@@ -15,7 +15,7 @@
     nb.toString(out,idFactory,fx.getOffsetY());
     out.append(')');
     if (fx.getInput() != null) {
-      out.append(' ');
+      out.append(", ");
       toString(out,idFactory,fx.getInput());
     }
   }
@@ -30,13 +30,12 @@
     out.append(',');
     nb.toString(out,idFactory,fx.getChoke() * 100.0);
     out.append("%,");
-    out.append(',');
     nb.toString(out,idFactory,fx.getOffsetX());
     out.append(',');
     nb.toString(out,idFactory,fx.getOffsetY());
     out.append(')');
     if (fx.getInput() != null) {
-      out.append(' ');
+      out.append(", ");
       toString(out,idFactory,fx.getInput());
     }
   }

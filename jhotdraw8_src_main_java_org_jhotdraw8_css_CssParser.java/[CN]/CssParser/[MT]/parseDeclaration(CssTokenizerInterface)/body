@@ -3,11 +3,13 @@
     throw new ParseException("Declaration: property name expected. Line " + tt.getLineNumber() + ".",tt.getStartPosition());
   }
   String property=tt.currentStringValue();
+  int startPos=tt.getStartPosition();
   tt.nextToken();
   skipWhitespace(tt);
   if (tt.currentToken() != ':') {
     throw new ParseException("Declaration: ':' expected instead of \"" + tt.currentStringValue() + "\". Line "+ tt.getLineNumber()+ ".",tt.getStartPosition());
   }
   List<PreservedToken> terms=parseTerms(tt);
-  return new Declaration(property,terms);
+  int endPos=terms.isEmpty() ? tt.getStartPosition() : terms.get(terms.size() - 1).getEndPos();
+  return new Declaration(property,terms,startPos,endPos);
 }

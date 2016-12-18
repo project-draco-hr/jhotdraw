@@ -7,6 +7,6 @@ case CssTokenizerInterface.TT_BAD_URI:
 case CssTokenizerInterface.TT_BAD_STRING:
 throw new ParseException("Term: Bad String in line " + tt.getLineNumber() + ".",tt.getStartPosition());
 default :
-return new PreservedToken(tt.currentToken(),tt.currentStringValue(),tt.currentNumericValue());
+return new PreservedToken(tt.currentToken(),tt.currentStringValue(),tt.currentNumericValue(),tt.getStartPosition(),tt.getEndPosition());
 }
 }

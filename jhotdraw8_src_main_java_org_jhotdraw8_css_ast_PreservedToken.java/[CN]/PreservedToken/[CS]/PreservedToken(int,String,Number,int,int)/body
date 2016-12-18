@@ -2,4 +2,6 @@
   this.ttype=ttype;
   this.stringValue=stringValue;
   this.numericValue=numericValue;
+  this.startPos=startPos;
+  this.endPos=endPos;
 }

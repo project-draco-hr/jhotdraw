@@ -12,6 +12,7 @@
     newValue=new LinkedHashSet<Figure>();
     newValue.add(drawing);
   }
+  collectHelpTexts(newValue);
   StylesheetsManager<Figure> styleManager=drawing.getStyleManager();
   SelectorModel<Figure> selectorModel=styleManager.getSelectorModel();
   String id=null;

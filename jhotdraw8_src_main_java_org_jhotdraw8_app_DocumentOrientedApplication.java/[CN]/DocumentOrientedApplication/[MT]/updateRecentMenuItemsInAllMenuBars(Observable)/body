@@ -1,6 +1,8 @@
 {
   if (isSystemMenuSupported) {
-    updateRecentMenuItemsMB(systemMenus);
+    if (systemMenus != null) {
+      updateRecentMenuItemsMB(systemMenus);
+    }
   }
  else {
     for (    DocumentView v : views()) {

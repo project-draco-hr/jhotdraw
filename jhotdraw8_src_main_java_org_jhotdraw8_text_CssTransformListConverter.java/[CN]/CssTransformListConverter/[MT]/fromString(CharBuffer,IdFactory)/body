@@ -17,10 +17,6 @@
     String func=tt.currentStringValue();
     int funcPos=tt.getStartPosition();
     List<Double> m=new ArrayList<>();
-    if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
-      throw new ParseException("coefficient nb 1 expected: \"" + tt.currentStringValue() + "\"",tt.getStartPosition());
-    }
-    m.add(tt.currentNumericValue().doubleValue());
     while (tt.nextToken() != ')' && tt.currentToken() != CssTokenizer.TT_EOF) {
       if (tt.currentToken() != ',') {
         tt.pushBack();
@@ -37,20 +33,26 @@ switch (func) {
 case "affine":
 {
 switch (m.size()) {
-case 6:
-          txs.add(new Affine(m.get(0),m.get(1),m.get(2),m.get(3),m.get(4),m.get(5)));
+case 0:
+          txs.add(new Affine(1,0,0,0,1,0));
         break;
-case 12:
-      txs.add(new Affine(m.get(0),m.get(1),m.get(2),m.get(3),m.get(4),m.get(5),m.get(6),m.get(7),m.get(8),m.get(9),m.get(10),m.get(11)));
+case 6:
+      txs.add(new Affine(m.get(0),m.get(1),m.get(2),m.get(3),m.get(4),m.get(5)));
     break;
+case 12:
+  txs.add(new Affine(m.get(0),m.get(1),m.get(2),m.get(3),m.get(4),m.get(5),m.get(6),m.get(7),m.get(8),m.get(9),m.get(10),m.get(11)));
+break;
 default :
-  throw new ParseException("6 or 12 coefficients expected, but found " + m.size(),tt.getStartPosition());
+throw new ParseException("6 or 12 coefficients expected, but found " + m.size(),tt.getStartPosition());
 }
 break;
 }
 case "matrix":
 {
 switch (m.size()) {
+case 0:
+txs.add(new Affine(1,0,0,0,1,0));
+break;
 case 6:
 txs.add(new Affine(m.get(0),m.get(2),m.get(4),m.get(1),m.get(3),m.get(5)));
 break;
@@ -66,6 +68,9 @@ case "skew":
 case "shear":
 {
 switch (m.size()) {
+case 0:
+txs.add(Transform.shear(0,0));
+break;
 case 2:
 txs.add(Transform.shear(m.get(0),m.get(1)));
 break;
@@ -80,6 +85,9 @@ break;
 case "translate":
 {
 switch (m.size()) {
+case 0:
+txs.add(Transform.translate(0,0));
+break;
 case 1:
 txs.add(Transform.translate(m.get(0),0));
 break;
@@ -97,6 +105,9 @@ break;
 case "scale":
 {
 switch (m.size()) {
+case 0:
+txs.add(Transform.scale(1,1));
+break;
 case 1:
 txs.add(Transform.scale(m.get(0),m.get(0)));
 break;
@@ -120,6 +131,9 @@ break;
 case "rotate":
 {
 switch (m.size()) {
+case 0:
+txs.add(Transform.rotate(0,0,0));
+break;
 case 1:
 txs.add(Transform.rotate(m.get(0),0,0));
 break;
@@ -143,6 +157,7 @@ break;
 default :
 throw new ParseException("unsupported function: \"" + func + "\"",funcPos);
 }
+if (tt.nextToken() != ',') tt.pushBack();
 }
 in.position(in.limit());
 return txs;

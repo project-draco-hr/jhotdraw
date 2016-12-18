@@ -1,0 +1,6 @@
+{
+  this.property=property;
+  this.terms=Collections.unmodifiableList(new ArrayList<PreservedToken>(terms));
+  this.startPos=startPos;
+  this.endPos=endPos;
+}

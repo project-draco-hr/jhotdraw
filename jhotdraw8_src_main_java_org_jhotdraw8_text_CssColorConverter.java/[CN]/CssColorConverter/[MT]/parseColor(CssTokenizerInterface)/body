@@ -43,7 +43,12 @@ buf.append(tt.currentStringValue());
 }
 }
 }
-if (i == 3) {
+if (i == 0) {
+buf.append("0,0,0)");
+color=new CssColor(buf.toString(),Color.BLACK);
+tt.pushBack();
+}
+ else if (i == 3) {
 buf.append(')');
 color=new CssColor(buf.toString(),new Color(clamp(values[0],0,1),clamp(values[1],0,1),clamp(values[2],0,1),1.0));
 }
@@ -72,7 +77,12 @@ buf.append(tt.currentStringValue());
 }
 }
 }
-if (i == 4) {
+if (i == 0) {
+buf.append("0,0,0,1.0)");
+color=new CssColor(buf.toString(),Color.BLACK);
+tt.pushBack();
+}
+ else if (i == 4) {
 buf.append(')');
 color=new CssColor(buf.toString(),new Color(clamp(values[0],0,1),clamp(values[1],0,1),clamp(values[2],0,1),clamp(values[3],0,1)));
 }
@@ -101,7 +111,12 @@ buf.append(tt.currentStringValue());
 }
 }
 }
-if (i == 3) {
+if (i == 0) {
+buf.append("0,0%,0%)");
+color=new CssColor(buf.toString(),Color.BLACK);
+tt.pushBack();
+}
+ else if (i == 0 || i == 3) {
 buf.append(')');
 color=new CssColor(buf.toString(),Color.hsb(values[0],clamp(values[1],0,1),clamp(values[2],0,1)));
 }
@@ -133,7 +148,12 @@ buf.append(tt.currentStringValue());
 }
 }
 }
-if (i == 4) {
+if (i == 0) {
+buf.append("0,0%,0%,1.0)");
+color=new CssColor(buf.toString(),Color.BLACK);
+tt.pushBack();
+}
+ else if (i == 4) {
 buf.append(')');
 color=new CssColor(buf.toString(),Color.hsb(values[0],clamp(values[1],0,1),clamp(values[2],0,1),clamp(values[3],0,1)));
 }

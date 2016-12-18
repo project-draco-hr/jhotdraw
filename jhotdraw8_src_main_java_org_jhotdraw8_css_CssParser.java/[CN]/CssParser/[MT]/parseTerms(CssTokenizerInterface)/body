@@ -13,7 +13,7 @@ case CssTokenizerInterface.TT_BAD_URI:
 case CssTokenizerInterface.TT_BAD_STRING:
   throw new ParseException("Terms: Bad String in line " + tt.getLineNumber() + ".",tt.getStartPosition());
 default :
-terms.add(new PreservedToken(tt.currentToken(),tt.currentStringValue(),tt.currentNumericValue()));
+terms.add(new PreservedToken(tt.currentToken(),tt.currentStringValue(),tt.currentNumericValue(),tt.getStartPosition(),tt.getEndPosition()));
 break;
 }
 }

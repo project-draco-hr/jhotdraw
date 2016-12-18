@@ -1,7 +1,7 @@
 {
   String str=buf.toString().trim();
   CssColor c;
-  if ("none".equals(str)) {
+  if (optional && "none".equals(str)) {
     c=null;
     buf.position(buf.limit());
   }

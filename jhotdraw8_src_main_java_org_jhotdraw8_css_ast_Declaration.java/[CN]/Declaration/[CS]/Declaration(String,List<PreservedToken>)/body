@@ -1,4 +1,3 @@
 {
-  this.property=property;
-  this.terms=Collections.unmodifiableList(new ArrayList<PreservedToken>(terms));
+  this(property,terms,-1,-1);
 }

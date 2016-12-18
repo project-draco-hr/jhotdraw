@@ -1,30 +1,21 @@
 {
-  boolean allTransformsAreIdentity=true;
-  for (  Transform tx : txs) {
-    if (!tx.isIdentity()) {
-      allTransformsAreIdentity=false;
-      break;
-    }
-  }
-  if (allTransformsAreIdentity) {
+  if (txs.isEmpty()) {
     buf.append("none");
     return;
   }
   boolean first=true;
   for (  Transform tx : txs) {
-    if (!tx.isIdentity()) {
+{
       if (first) {
         first=false;
       }
  else {
-        buf.append(' ');
+        buf.append(',');
       }
       if (tx instanceof Translate) {
         Translate tr=(Translate)tx;
         buf.append("translate(").append(nb.toString(tr.getTx()));
-        if (tr.getTy() != 0.0 || tr.getTz() != 0.0) {
-          buf.append(',').append(nb.toString(tr.getTy()));
-        }
+        buf.append(',').append(nb.toString(tr.getTy()));
         if (tr.getTz() != 0.0) {
           buf.append(',').append(nb.toString(tr.getTz()));
         }
@@ -34,16 +25,16 @@
         Scale ts=(Scale)tx;
         buf.append("scale(").append(nb.toString(ts.getX()));
         if (ts.getY() != ts.getX() || ts.getZ() != 1 || ts.getPivotX() != 0 || ts.getPivotY() != 0) {
-          buf.append(' ').append(nb.toString(ts.getY()));
+          buf.append(',').append(nb.toString(ts.getY()));
         }
         if (ts.getZ() != 1) {
-          buf.append(' ').append(nb.toString(ts.getZ()));
+          buf.append(',').append(nb.toString(ts.getZ()));
           if (ts.getPivotX() != 0 || ts.getPivotY() != 0 || ts.getPivotZ() != 0) {
-            buf.append(", ").append(nb.toString(ts.getPivotX())).append(' ').append(nb.toString(ts.getPivotY())).append(' ').append(nb.toString(ts.getPivotZ()));
+            buf.append(", ").append(nb.toString(ts.getPivotX())).append(',').append(nb.toString(ts.getPivotY())).append(',').append(nb.toString(ts.getPivotZ()));
           }
         }
  else         if (ts.getPivotX() != 0 || ts.getPivotY() != 0) {
-          buf.append(", ").append(nb.toString(ts.getPivotX())).append(' ').append(nb.toString(ts.getPivotY()));
+          buf.append(", ").append(nb.toString(ts.getPivotX())).append(',').append(nb.toString(ts.getPivotY()));
         }
         buf.append(')');
       }
@@ -51,14 +42,14 @@
         Rotate tr=(Rotate)tx;
         buf.append("rotate(").append(nb.toString(tr.getAngle()));
         if (tr.getPivotX() != 0.0 || tr.getPivotY() != 0.0 || tr.getPivotZ() != 0.0 || !tr.getAxis().equals(Rotate.Z_AXIS)) {
-          buf.append(' ').append(nb.toString(tr.getPivotX())).append(',').append(nb.toString(tr.getPivotY()));
+          buf.append(',').append(nb.toString(tr.getPivotX())).append(',').append(nb.toString(tr.getPivotY()));
         }
         if (tr.getPivotZ() != 0.0) {
           buf.append(',').append(nb.toString(tr.getPivotZ()));
         }
         if (!tr.getAxis().equals(Rotate.Z_AXIS)) {
           Point3D a=tr.getAxis();
-          buf.append(' ').append(nb.toString(a.getX())).append(',').append(nb.toString(a.getY())).append(',').append(nb.toString(a.getZ()));
+          buf.append(',').append(nb.toString(a.getX())).append(',').append(nb.toString(a.getY())).append(',').append(nb.toString(a.getZ()));
         }
         buf.append(')');
       }
@@ -66,15 +57,15 @@
         Shear tr=(Shear)tx;
         buf.append("shear(").append(nb.toString(tr.getX())).append(',').append(nb.toString(tr.getY()));
         if (tr.getPivotX() != 0.0 || tr.getPivotY() != 0.0) {
-          buf.append(' ').append(nb.toString(tr.getPivotX())).append(',').append(nb.toString(tr.getPivotY()));
+          buf.append(',').append(nb.toString(tr.getPivotX())).append(',').append(nb.toString(tr.getPivotY()));
         }
         buf.append(')');
       }
  else       if (tx.isType2D()) {
-        buf.append("matrix(").append(nb.toString(tx.getMxx())).append(',').append(nb.toString(tx.getMyx())).append(' ').append(nb.toString(tx.getMxy())).append(',').append(nb.toString(tx.getMyy())).append(' ').append(nb.toString(tx.getTx())).append(',').append(nb.toString(tx.getTy())).append(')');
+        buf.append("matrix(").append(nb.toString(tx.getMxx())).append(',').append(nb.toString(tx.getMyx())).append(',').append(nb.toString(tx.getMxy())).append(',').append(nb.toString(tx.getMyy())).append(',').append(nb.toString(tx.getTx())).append(',').append(nb.toString(tx.getTy())).append(')');
       }
  else {
-        buf.append("matrix(").append(nb.toString(tx.getMxx())).append(',').append(nb.toString(tx.getMyx())).append(',').append(nb.toString(tx.getMzx())).append(' ').append(nb.toString(tx.getMxy())).append(',').append(nb.toString(tx.getMyy())).append(',').append(nb.toString(tx.getMzy())).append(' ').append(nb.toString(tx.getMxz())).append(',').append(nb.toString(tx.getMyz())).append(',').append(nb.toString(tx.getMzz())).append(' ').append(nb.toString(tx.getTx())).append(',').append(nb.toString(tx.getTy())).append(',').append(nb.toString(tx.getTz())).append(')');
+        buf.append("matrix(").append(nb.toString(tx.getMxx())).append(',').append(nb.toString(tx.getMyx())).append(',').append(nb.toString(tx.getMzx())).append(',').append(nb.toString(tx.getMxy())).append(',').append(nb.toString(tx.getMyy())).append(',').append(nb.toString(tx.getMzy())).append(',').append(nb.toString(tx.getMxz())).append(',').append(nb.toString(tx.getMyz())).append(',').append(nb.toString(tx.getMzz())).append(',').append(nb.toString(tx.getTx())).append(',').append(nb.toString(tx.getTy())).append(',').append(nb.toString(tx.getTz())).append(')');
       }
     }
   }

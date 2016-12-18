@@ -1,0 +1,4 @@
+String property
+List<PreservedToken> terms
+int startPos
+int endPos

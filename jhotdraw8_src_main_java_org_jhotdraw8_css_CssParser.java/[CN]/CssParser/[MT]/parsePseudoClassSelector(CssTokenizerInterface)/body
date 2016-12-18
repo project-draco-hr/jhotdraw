@@ -9,7 +9,7 @@
     String ident=tt.currentStringValue();
     List<PreservedToken> terms=new ArrayList<>();
     while (tt.nextToken() != CssTokenizerInterface.TT_EOF && tt.currentToken() != ')') {
-      terms.add(new PreservedToken(tt.currentToken(),tt.currentStringValue(),tt.currentNumericValue()));
+      terms.add(new PreservedToken(tt.currentToken(),tt.currentStringValue(),tt.currentNumericValue(),tt.getStartPosition(),tt.getEndPosition()));
     }
     return new FunctionPseudoClassSelector(ident,terms);
   }
