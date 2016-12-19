@@ -1,0 +1,5 @@
+Figure source
+FigurePropertyChangeEvent.EventType type
+Key<T> key
+T oldValue
+T newValue

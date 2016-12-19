@@ -1,4 +1,4 @@
 {
-  @SuppressWarnings("unchecked") T temp=figure.get(key);
+  @SuppressWarnings("unchecked") T temp=isDeclaredKey ? figure.get(key) : null;
   return temp;
 }

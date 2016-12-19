@@ -1,0 +1,4 @@
+{
+  Property<Boolean> p=(Property<Boolean>)getTableColumn().getCellObservableValue(getIndex());
+  p.setValue(checkBox.isSelected());
+}

@@ -1,0 +1,11 @@
+{
+  super.updateItem(item,empty);
+  if (empty || item == null) {
+    setText(null);
+    setGraphic(null);
+  }
+ else {
+    setGraphic(checkBox);
+    checkBox.setSelected(item);
+  }
+}

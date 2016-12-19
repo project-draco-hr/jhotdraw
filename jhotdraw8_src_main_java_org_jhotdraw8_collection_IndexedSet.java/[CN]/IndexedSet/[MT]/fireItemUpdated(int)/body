@@ -1,0 +1,5 @@
+{
+  beginChange();
+  nextUpdate(index);
+  endChange();
+}
