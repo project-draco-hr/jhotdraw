@@ -1,4 +1,5 @@
 {
+  event.consume();
   V v=app.getActiveView();
   if (v != null && !v.isDisabled()) {
     Node n=v.getNode().getScene().getFocusOwner();
