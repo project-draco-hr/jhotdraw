@@ -7,7 +7,9 @@
     if (shape.getFill() == null) {
       return Shapes.outlineContains(Shapes.awtShapeFromFX(shape),new java.awt.geom.Point2D.Double(point.getX(),point.getY()),tolerance);
     }
- else     return shape.contains(point);
+ else {
+      return shape.contains(point);
+    }
   }
  else   if (node instanceof Rectangle) {
     return Geom.contains(node.getBoundsInLocal(),point,tolerance);

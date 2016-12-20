@@ -1,0 +1,7 @@
+{
+  super(figure);
+  this.key=key;
+  node=new Polyline();
+  this.styleclass=styleclass;
+  initNode(node);
+}

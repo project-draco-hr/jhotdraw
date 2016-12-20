@@ -1,0 +1,7 @@
+{
+  super(name,rsrc);
+  this.key=key;
+  this.figureFactory=figureFactory;
+  this.layerFactory=layerFactory;
+  node.setCursor(Cursor.CROSSHAIR);
+}

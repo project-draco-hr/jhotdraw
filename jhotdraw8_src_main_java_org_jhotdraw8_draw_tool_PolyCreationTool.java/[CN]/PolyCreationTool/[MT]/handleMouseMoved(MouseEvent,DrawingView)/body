@@ -1,0 +1,5 @@
+{
+  if (figure != null) {
+    handleMouseDragged(event,dv);
+  }
+}

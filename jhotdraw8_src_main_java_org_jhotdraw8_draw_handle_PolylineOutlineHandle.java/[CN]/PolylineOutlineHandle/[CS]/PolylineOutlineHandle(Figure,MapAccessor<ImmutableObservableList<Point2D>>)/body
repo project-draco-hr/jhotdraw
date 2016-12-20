@@ -1,0 +1,3 @@
+{
+  this(figure,key,STYLECLASS_HANDLE_MOVE_OUTLINE);
+}

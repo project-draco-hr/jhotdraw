@@ -1,0 +1,6 @@
+{
+  if (figure != null) {
+    figure=null;
+    points=null;
+  }
+}

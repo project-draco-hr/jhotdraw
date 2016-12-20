@@ -1,0 +1,5 @@
+{
+  handlesAreValid=false;
+  recreateHandles=true;
+  repaint();
+}

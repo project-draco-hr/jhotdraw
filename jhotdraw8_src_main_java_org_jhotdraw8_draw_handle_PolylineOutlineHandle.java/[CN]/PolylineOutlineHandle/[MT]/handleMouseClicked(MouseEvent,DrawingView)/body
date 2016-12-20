@@ -1,0 +1,25 @@
+{
+  if (key != null && event.getClickCount() == 2) {
+    double px=event.getX();
+    double py=event.getY();
+    double tolerance=SimpleDrawingView.TOLERANCE;
+    List<Double> points=node.getPoints();
+    int insertAt=-1;
+    for (int i=2, n=points.size(); i < n; i+=2) {
+      double x1=points.get(i - 2);
+      double y1=points.get(i - 1);
+      double x2=points.get(i);
+      double y2=points.get(i + 1);
+      if (Geom.lineContainsPoint(x1,y1,x2,y2,px,py,tolerance)) {
+        insertAt=i / 2;
+        break;
+      }
+    }
+    if (insertAt != -1) {
+      Point2D pInDrawing=dv.viewToWorld(new Point2D(px,py));
+      Point2D pInLocal=owner.worldToLocal(pInDrawing);
+      dv.getModel().set(owner,key,ImmutableObservableList.add(owner.get(key),insertAt,pInLocal));
+      dv.recreateHandles();
+    }
+  }
+}

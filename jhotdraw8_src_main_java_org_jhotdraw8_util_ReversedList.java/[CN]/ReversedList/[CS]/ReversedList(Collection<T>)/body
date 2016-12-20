@@ -1,0 +1,3 @@
+{
+  this.target=(target instanceof List) ? (List)target : new ArrayList<>(target);
+}

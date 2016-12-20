@@ -1,0 +1,12 @@
+{
+  Figure f=getOwner();
+  Transform t=view.getWorldToView().createConcatenation(f.getLocalToWorld());
+  Bounds b=getOwner().getBoundsInLocal();
+  double[] points=PolylineFigure.toPointArray(f);
+  t.transform2DPoints(points,0,points,0,points.length / 2);
+  ObservableList<Double> pp=node.getPoints();
+  pp.clear();
+  for (int i=0; i < points.length; i++) {
+    pp.add(i,points[i]);
+  }
+}

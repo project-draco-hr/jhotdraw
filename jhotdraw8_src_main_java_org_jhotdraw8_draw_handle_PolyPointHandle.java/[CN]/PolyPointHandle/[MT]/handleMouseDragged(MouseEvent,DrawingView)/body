@@ -1,0 +1,8 @@
+{
+  Point2D newPoint=view.viewToWorld(new Point2D(event.getX(),event.getY()));
+  if (!event.isAltDown() && !event.isControlDown()) {
+    newPoint=view.getConstrainer().constrainPoint(getOwner(),newPoint);
+  }
+  ImmutableObservableList<Point2D> list=owner.get(pointKey);
+  view.getModel().set(getOwner(),pointKey,ImmutableObservableList.set(list,pointIndex,getOwner().worldToLocal(newPoint)));
+}

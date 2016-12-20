@@ -12,8 +12,14 @@
   Loop:   while (tt.nextToken() != CssTokenizer.TT_EOF) {
     tt.pushBack();
     double x=readCoordinate(tt,idFactory);
+    if (tt.nextToken() != ',') {
+      tt.pushBack();
+    }
     double y=readCoordinate(tt,idFactory);
     l.add(new Point2D(x,y));
+    if (tt.nextToken() != ',') {
+      tt.pushBack();
+    }
   }
   tt.skipWhitespace();
   return new ImmutableObservableList<>(l);

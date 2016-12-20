@@ -1,0 +1,11 @@
+{
+  if (figure != null) {
+    double x2=event.getX();
+    double y2=event.getY();
+    Point2D c2=dv.getConstrainer().constrainPoint(figure,dv.viewToDrawing(x2,y2));
+    DrawingModel dm=dv.getModel();
+    points.set(points.size() - 1,c2);
+    dm.set(figure,key,new ImmutableObservableList<>(points));
+  }
+  event.consume();
+}

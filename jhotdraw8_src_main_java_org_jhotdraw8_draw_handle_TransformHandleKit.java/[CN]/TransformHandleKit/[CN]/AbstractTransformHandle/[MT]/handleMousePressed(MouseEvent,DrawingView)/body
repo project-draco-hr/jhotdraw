@@ -1,4 +1,4 @@
 {
-  super.onMousePressed(event,view);
+  super.handleMousePressed(event,view);
   startTransforms=owner.get(TRANSFORMS);
 }

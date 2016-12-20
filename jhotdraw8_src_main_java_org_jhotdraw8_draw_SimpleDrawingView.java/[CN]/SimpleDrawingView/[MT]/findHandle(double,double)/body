@@ -1,8 +1,15 @@
 {
-  for (  Map.Entry<Node,Handle> e : nodeToHandleMap.entrySet()) {
-    Point2D p=e.getValue().getLocationInView();
-    if (p != null && Geom.length2(vx,vy,p.getX(),p.getY()) <= HANDLE_TOLERANCE) {
-      return e.getValue();
+  for (  Map.Entry<Node,Handle> e : new ReversedList<>(nodeToHandleMap.entrySet())) {
+    final Node node=e.getKey();
+    final Handle handle=e.getValue();
+    Point2D p=handle.getLocationInView();
+    if (p != null) {
+      if (Geom.length2(vx,vy,p.getX(),p.getY()) <= HANDLE_TOLERANCE) {
+        return handle;
+      }
+    }
+ else {
+      if (contains(node,new Point2D(vx,vy),TOLERANCE))       return handle;
     }
   }
   return null;
