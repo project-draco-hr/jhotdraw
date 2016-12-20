@@ -1,0 +1,5 @@
+{
+  ArrayList<T> a=new ArrayList<T>(collection);
+  a.remove(item);
+  return new ImmutableObservableList<>(a);
+}

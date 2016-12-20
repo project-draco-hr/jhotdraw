@@ -1,0 +1,3 @@
+{
+  super(name,ImmutableObservableList.class,new Class<?>[]{String.class},mask,defaultValue);
+}

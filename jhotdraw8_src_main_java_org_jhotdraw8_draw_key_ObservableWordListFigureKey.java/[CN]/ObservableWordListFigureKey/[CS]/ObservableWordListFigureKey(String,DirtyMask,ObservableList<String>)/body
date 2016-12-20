@@ -1,3 +1,0 @@
-{
-  super(name,ObservableList.class,new Class<?>[]{String.class},mask,defaultValue);
-}

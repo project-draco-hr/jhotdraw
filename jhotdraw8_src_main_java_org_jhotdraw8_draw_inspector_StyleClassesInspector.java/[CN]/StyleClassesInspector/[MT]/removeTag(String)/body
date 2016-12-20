@@ -15,7 +15,7 @@
           }
         }
         if (contains) {
-          getDrawingModel().set(f,tagsKey,newTags);
+          getDrawingModel().set(f,tagsKey,new ImmutableObservableList<>(newTags));
         }
       }
       updateList();

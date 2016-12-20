@@ -1,0 +1,15 @@
+{
+  return new Iterator<E>(){
+    private final Iterator<? extends E> i=backingSet.iterator();
+    @Override public boolean hasNext(){
+      return i.hasNext();
+    }
+    @Override public E next(){
+      return i.next();
+    }
+    @Override public void remove(){
+      throw new UnsupportedOperationException();
+    }
+  }
+;
+}
