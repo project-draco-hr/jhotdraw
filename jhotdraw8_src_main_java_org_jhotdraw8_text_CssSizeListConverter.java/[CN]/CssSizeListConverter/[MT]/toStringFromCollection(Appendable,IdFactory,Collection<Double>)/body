@@ -6,8 +6,9 @@
   Object[] v=new Object[value.size() + 2];
   v[0]=value.size();
   v[1]=value.size();
+  Iterator<Double> iter=value.iterator();
   for (int i=0, n=value.size(); i < n; i++) {
-    v[i + 2]=value.get(i);
+    v[i + 2]=iter.next();
   }
   formatter.toString(out,v);
 }

@@ -4,7 +4,7 @@
   tt.setSkipWhitespaces(true);
   if (tt.nextToken() == CssTokenizer.TT_IDENT && tt.currentStringValue().equals("none")) {
     in.position(in.limit());
-    return txs;
+    return ImmutableObservableList.emptyList();
   }
  else {
     tt.pushBack();
@@ -160,5 +160,5 @@ throw new ParseException("unsupported function: \"" + func + "\"",funcPos);
 if (tt.nextToken() != ',') tt.pushBack();
 }
 in.position(in.limit());
-return txs;
+return new ImmutableObservableList<>(txs);
 }

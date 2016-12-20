@@ -1,1 +1,1 @@
-SimpleFigureKey<List<Double>>
+SimpleFigureKey<ImmutableObservableList<Double>>

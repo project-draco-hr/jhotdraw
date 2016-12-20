@@ -1,0 +1,3 @@
+String name
+DirtyMask mask
+ImmutableObservableList<Double> defaultValue

@@ -1,0 +1,10 @@
+{
+  StringBuilder out=new StringBuilder();
+  try {
+    toStringFromCollection(out,value);
+  }
+ catch (  IOException ex) {
+    throw new InternalError(ex);
+  }
+  return out.toString();
+}

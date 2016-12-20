@@ -1,1 +1,1 @@
-SimpleFigureKey<List<String>>
+SimpleFigureKey<ImmutableObservableList<String>>

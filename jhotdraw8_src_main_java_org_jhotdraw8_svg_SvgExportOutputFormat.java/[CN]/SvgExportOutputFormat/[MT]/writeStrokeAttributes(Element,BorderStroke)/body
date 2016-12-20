@@ -16,7 +16,7 @@
     elem.setAttribute("stroke-miterlimit",nb.toString(style.getMiterLimit()));
   }
   if (!style.getDashArray().isEmpty()) {
-    elem.setAttribute("stroke-dasharray",nbList.toString(style.getDashArray()));
+    elem.setAttribute("stroke-dasharray",nbList.toStringFromCollection(style.getDashArray()));
   }
   if (style.getDashOffset() != 0) {
     elem.setAttribute("stroke-dashoffset",nb.toString(style.getDashOffset()));
