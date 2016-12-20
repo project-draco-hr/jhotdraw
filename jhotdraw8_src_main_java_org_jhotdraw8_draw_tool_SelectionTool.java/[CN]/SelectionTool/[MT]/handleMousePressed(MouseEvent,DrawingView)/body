@@ -11,7 +11,7 @@
   }
  else {
     Handle h=view.findHandle(vx,vy);
-    if (h != null) {
+    if (h != null && h.getOwner().isEditable()) {
       if (updateCursor) {
         node.setCursor(h.getCursor());
       }

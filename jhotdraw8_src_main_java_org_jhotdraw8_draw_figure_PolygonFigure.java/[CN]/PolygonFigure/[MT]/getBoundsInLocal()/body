@@ -1,0 +1,13 @@
+{
+  double minX=Double.POSITIVE_INFINITY;
+  double minY=Double.POSITIVE_INFINITY;
+  double maxX=Double.NEGATIVE_INFINITY;
+  double maxY=Double.NEGATIVE_INFINITY;
+  for (  Point2D p : get(POINTS)) {
+    minX=Math.min(minX,p.getX());
+    minY=Math.min(minY,p.getY());
+    maxX=Math.max(maxX,p.getX());
+    maxY=Math.max(maxY,p.getY());
+  }
+  return new BoundingBox(minX,minY,maxX - minX,maxY - minY);
+}

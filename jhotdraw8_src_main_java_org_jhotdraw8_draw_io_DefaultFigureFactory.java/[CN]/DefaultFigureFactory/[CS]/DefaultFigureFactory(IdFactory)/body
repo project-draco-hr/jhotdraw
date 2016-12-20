@@ -5,6 +5,7 @@
   addFigureKeysAndNames("Slice",SliceFigure.class,Figure.getDeclaredAndInheritedKeys(SliceFigure.class));
   addFigureKeysAndNames("Group",GroupFigure.class,Figure.getDeclaredAndInheritedKeys(GroupFigure.class));
   addFigureKeysAndNames("Polyline",PolylineFigure.class,Figure.getDeclaredAndInheritedKeys(PolylineFigure.class));
+  addFigureKeysAndNames("Polygon",PolygonFigure.class,Figure.getDeclaredAndInheritedKeys(PolygonFigure.class));
 {
     Set<MapAccessor<?>> keys=Figure.getDeclaredAndInheritedKeys(SimpleDrawing.class);
     keys.remove(Drawing.USER_AGENT_STYLESHEETS);

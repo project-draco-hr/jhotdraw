@@ -1,0 +1,10 @@
+{
+  List<Point2D> points=f.get(POINTS);
+  double[] a=new double[points.size() * 2];
+  for (int i=0, n=points.size(), j=0; i < n; i++, j+=2) {
+    Point2D p=points.get(i);
+    a[j]=p.getX();
+    a[j + 1]=p.getY();
+  }
+  return a;
+}
