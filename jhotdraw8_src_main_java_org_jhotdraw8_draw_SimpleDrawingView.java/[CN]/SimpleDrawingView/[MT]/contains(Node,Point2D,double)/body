@@ -2,10 +2,12 @@
   if (tolerance == 0) {
     return node.contains(point);
   }
-  if (node instanceof Line) {
-    Line line=(Line)node;
-    boolean contains=Geom.lineContainsPoint(line.getStartX(),line.getStartY(),line.getEndX(),line.getEndY(),point.getX(),point.getY(),tolerance);
-    return contains;
+  if (node instanceof Shape) {
+    Shape shape=(Shape)node;
+    if (shape.getFill() == null) {
+      return Shapes.outlineContains(Shapes.awtShapeFromFX(shape),new java.awt.geom.Point2D.Double(point.getX(),point.getY()),tolerance);
+    }
+ else     return shape.contains(point);
   }
  else   if (node instanceof Rectangle) {
     return Geom.contains(node.getBoundsInLocal(),point,tolerance);
