@@ -5,7 +5,9 @@
   Set<String> duplicateLines=new HashSet<>();
   for (  String line : lines) {
     if (duplicateLines.add(line)) {
-      if (buf.length() != 0)       buf.append('\n');
+      if (buf.length() != 0) {
+        buf.append('\n');
+      }
       buf.append(line);
     }
   }

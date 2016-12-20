@@ -1,3 +1,5 @@
 {
-  if (ttype != TT_NOTHING)   pushedBack=true;
+  if (ttype != TT_NOTHING) {
+    pushedBack=true;
+  }
 }

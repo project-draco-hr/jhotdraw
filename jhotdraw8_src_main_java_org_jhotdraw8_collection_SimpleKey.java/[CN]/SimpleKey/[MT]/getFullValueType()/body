@@ -5,8 +5,12 @@
     buf.append('<');
     boolean first=true;
     for (    Class<?> tp : typeParameters) {
-      if (first)       first=false;
- else       buf.append(',');
+      if (first) {
+        first=false;
+      }
+ else {
+        buf.append(',');
+      }
       buf.append(tp.getName());
     }
     buf.append('>');

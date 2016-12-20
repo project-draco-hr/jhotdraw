@@ -157,7 +157,9 @@ break;
 default :
 throw new ParseException("unsupported function: \"" + func + "\"",funcPos);
 }
-if (tt.nextToken() != ',') tt.pushBack();
+if (tt.nextToken() != ',') {
+tt.pushBack();
+}
 }
 in.position(in.limit());
 return new ImmutableObservableList<>(txs);

@@ -10,8 +10,12 @@
   }
   double alpha=dir + angle;
   Point2D p=new Point2D(point.getX() + distance * Math.cos(alpha),point.getY() + distance * Math.sin(alpha));
-  if (Double.isNaN(p.getX()))   p=point;
-  if (true)   throw new UnsupportedOperationException("implement me");
+  if (Double.isNaN(p.getX())) {
+    p=point;
+  }
+  if (true) {
+    throw new UnsupportedOperationException("implement me");
+  }
   Dimension2D labelDim=null;
   if (relativePosition == 0.5 && p.getX() >= point.getX() - distance / 2 && p.getX() <= point.getX() + distance / 2) {
     if (p.getY() >= point.getY()) {

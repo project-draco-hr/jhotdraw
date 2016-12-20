@@ -6,14 +6,18 @@
   byte ct[]=ctype;
   sval=null;
   int c=peekc;
-  if (c < 0)   c=NEED_CHAR;
+  if (c < 0) {
+    c=NEED_CHAR;
+  }
   if (c == SKIP_LF) {
     c=read();
     if (c < 0) {
       startpos=endpos=readpos - 1;
       return ttype=TT_EOF;
     }
-    if (c == '\n')     c=NEED_CHAR;
+    if (c == '\n') {
+      c=NEED_CHAR;
+    }
   }
   if (c == NEED_CHAR) {
     c=read();
@@ -34,7 +38,9 @@
         return ttype=TT_EOL;
       }
       c=read();
-      if (c == '\n')       c=read();
+      if (c == '\n') {
+        c=read();
+      }
     }
  else {
       if (c == '\n') {
@@ -132,13 +138,17 @@
     int decexp=0;
     int seendot=0;
     while (true) {
-      if (c == '.' && seendot == 0)       seendot=1;
+      if (c == '.' && seendot == 0) {
+        seendot=1;
+      }
  else       if ('0' <= c && c <= '9') {
         digits++;
         v=v * 10 + (c - '0');
         decexp+=seendot;
       }
- else       break;
+ else {
+        break;
+      }
       c=read();
     }
     peekc=c;
@@ -219,7 +229,9 @@
  while ((ctype & (CT_ALPHA | CT_DIGIT)) != 0);
     peekc=c;
     sval=String.copyValueOf(buf,0,i);
-    if (forceLower)     sval=sval.toLowerCase();
+    if (forceLower) {
+      sval=sval.toLowerCase();
+    }
     endpos=(c == -1) ? readpos - 1 : readpos - 2;
     return ttype=TT_WORD;
   }
@@ -241,9 +253,13 @@
               c=(c << 3) + (c2 - '0');
               d=read();
             }
- else             d=c2;
+ else {
+              d=c2;
+            }
           }
- else           d=c2;
+ else {
+            d=c2;
+          }
         }
  else {
 switch (c) {

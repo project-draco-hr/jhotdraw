@@ -7,6 +7,8 @@
   }
   double alpha=dir + angle;
   Point2D p=new Point2D(point.getX() + distance * Math.cos(alpha),point.getY() + distance * Math.sin(alpha));
-  if (Double.isNaN(p.getX()))   p=point;
+  if (Double.isNaN(p.getX())) {
+    p=point;
+  }
   return p;
 }

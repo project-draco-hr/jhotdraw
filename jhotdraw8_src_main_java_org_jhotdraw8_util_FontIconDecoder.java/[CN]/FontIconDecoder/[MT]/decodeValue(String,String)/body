@@ -1,6 +1,8 @@
 {
   String str=propertyValue.substring(valuePrefix.length()).trim();
-  if (!str.startsWith("U+"))   throw new InternalError("illegal property value \"" + propertyValue + "\" for key "+ key);
+  if (!str.startsWith("U+")) {
+    throw new InternalError("illegal property value \"" + propertyValue + "\" for key "+ key);
+  }
   int codePoint=Integer.valueOf(str.substring(2).trim(),16);
   return new String(Character.toChars(codePoint));
 }

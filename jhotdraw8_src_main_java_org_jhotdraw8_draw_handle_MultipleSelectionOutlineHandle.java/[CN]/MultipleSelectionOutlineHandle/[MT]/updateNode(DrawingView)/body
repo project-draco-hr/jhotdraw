@@ -1,6 +1,8 @@
 {
   Bounds b=getBounds(view);
-  if (b == null)   return;
+  if (b == null) {
+    return;
+  }
   points[0]=b.getMinX();
   points[1]=b.getMinY();
   points[2]=b.getMaxX();

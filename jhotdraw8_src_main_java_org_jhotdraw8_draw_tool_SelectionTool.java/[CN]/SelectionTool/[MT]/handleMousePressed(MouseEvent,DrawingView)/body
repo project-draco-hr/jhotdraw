@@ -12,11 +12,15 @@
  else {
     Handle h=view.findHandle(vx,vy);
     if (h != null) {
-      if (updateCursor)       node.setCursor(h.getCursor());
+      if (updateCursor) {
+        node.setCursor(h.getCursor());
+      }
       setTracker(getHandleTracker(h));
     }
  else {
-      if (updateCursor)       node.setCursor(Cursor.DEFAULT);
+      if (updateCursor) {
+        node.setCursor(Cursor.DEFAULT);
+      }
       if (isSelectBehindEnabled() && (event.isAltDown())) {
         pressedFigure=null;
         boolean selectionFound=false;

@@ -5,7 +5,9 @@
   Node node=toNode(drawing,Collections.singleton(drawing),hints);
   Set<String> usedNames=new HashSet<String>();
   for (  Figure slice : slices) {
-    if (slice.getId() != null)     usedNames.add(slice.getId());
+    if (slice.getId() != null) {
+      usedNames.add(slice.getId());
+    }
   }
   IdFactory idFactory=new SimpleIdFactory();
   for (  Figure slice : slices) {

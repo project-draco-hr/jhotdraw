@@ -1,7 +1,9 @@
 {
   Rectangle rectangleNode=(Rectangle)node;
   applyHideableFigureProperties(node);
-  if (ctx.get(RenderContext.RENDERING_INTENT) != RenderingIntent.EDITOR)   rectangleNode.setVisible(false);
+  if (ctx.get(RenderContext.RENDERING_INTENT) != RenderingIntent.EDITOR) {
+    rectangleNode.setVisible(false);
+  }
   applyTransformableFigureProperties(rectangleNode);
   rectangleNode.setX(get(X));
   rectangleNode.setY(get(Y));

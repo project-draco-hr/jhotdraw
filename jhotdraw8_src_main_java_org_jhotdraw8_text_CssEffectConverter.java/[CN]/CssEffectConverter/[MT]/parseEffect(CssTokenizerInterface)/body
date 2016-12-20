@@ -27,7 +27,9 @@ throw pe;
 }
 previous=current;
 }
-if (tt.nextToken() != ',') tt.pushBack();
+if (tt.nextToken() != ',') {
+tt.pushBack();
+}
 }
 return first;
 }

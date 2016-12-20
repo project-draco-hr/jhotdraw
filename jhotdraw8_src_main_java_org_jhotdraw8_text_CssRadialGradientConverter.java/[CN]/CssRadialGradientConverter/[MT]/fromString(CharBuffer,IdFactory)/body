@@ -59,14 +59,18 @@ case CssTokenizer.TT_PERCENTAGE:
 if (isProportional == null) {
 isProportional=true;
 }
-if (!isProportional) throw new ParseException("CSS RadialGradient: absolute value  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
+if (!isProportional) {
+throw new ParseException("CSS RadialGradient: absolute value  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
+}
 centerX=tt.currentNumericValue().doubleValue() / 100;
 break;
 case CssTokenizer.TT_NUMBER:
 if (isProportional == null) {
 isProportional=false;
 }
-if (isProportional) throw new ParseException("CSS RadialGradient: percentage  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
+if (isProportional) {
+throw new ParseException("CSS RadialGradient: percentage  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
+}
 centerX=tt.currentNumericValue().doubleValue();
 break;
 default :
@@ -77,14 +81,18 @@ case CssTokenizer.TT_PERCENTAGE:
 if (isProportional == null) {
 isProportional=true;
 }
-if (!isProportional) throw new ParseException("CSS RadialGradient: absolute value  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
+if (!isProportional) {
+throw new ParseException("CSS RadialGradient: absolute value  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
+}
 centerY=tt.currentNumericValue().doubleValue() / 100;
 break;
 case CssTokenizer.TT_NUMBER:
 if (isProportional == null) {
 isProportional=false;
 }
-if (isProportional) throw new ParseException("CSS RadialGradient: percentage  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
+if (isProportional) {
+throw new ParseException("CSS RadialGradient: percentage  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
+}
 centerY=tt.currentNumericValue().doubleValue();
 break;
 default :
@@ -97,14 +105,18 @@ case CssTokenizer.TT_PERCENTAGE:
 if (isProportional == null) {
 isProportional=true;
 }
-if (!isProportional) throw new ParseException("CSS RadialGradient: absolute value expected, found: " + tt.currentStringValue(),tt.getStartPosition());
+if (!isProportional) {
+throw new ParseException("CSS RadialGradient: absolute value expected, found: " + tt.currentStringValue(),tt.getStartPosition());
+}
 radius=tt.currentNumericValue().doubleValue() / 100;
 break;
 case CssTokenizer.TT_NUMBER:
 if (isProportional == null) {
 isProportional=false;
 }
-if (isProportional) throw new ParseException("CSS RadialGradient: percentage  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
+if (isProportional) {
+throw new ParseException("CSS RadialGradient: percentage  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
+}
 radius=tt.currentNumericValue().doubleValue();
 break;
 default :
@@ -149,6 +161,8 @@ if (tt.currentToken() != ')') {
 throw new ParseException("CSS RadialGradient: ')'  expected, found: " + tt.currentStringValue(),tt.getStartPosition());
 }
 tt.skipWhitespace();
-if (isProportional == null) isProportional=true;
+if (isProportional == null) {
+isProportional=true;
+}
 return new CssRadialGradient(focusAngle,focusDistance,centerX,centerY,radius,isProportional,cycleMethod,stops.toArray(new CssStop[stops.size()]));
 }

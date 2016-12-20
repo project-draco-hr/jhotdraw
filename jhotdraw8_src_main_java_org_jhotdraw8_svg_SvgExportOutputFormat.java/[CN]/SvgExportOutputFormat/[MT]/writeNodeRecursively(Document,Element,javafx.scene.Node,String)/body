@@ -1,5 +1,7 @@
 {
-  if (skipInvisibleNodes && !node.isVisible())   return;
+  if (skipInvisibleNodes && !node.isVisible()) {
+    return;
+  }
   parent.appendChild(doc.createTextNode(linebreak));
   Element elem=null;
   if (node instanceof Shape) {

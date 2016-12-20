@@ -5,7 +5,9 @@
   }
   double choice=(Double)v[0];
   Supplier<Connector> clazz=choiceToConnectorMap.get(choice);
-  if (clazz == null)   throw new ParseException("no connector found for " + buf,0);
+  if (clazz == null) {
+    throw new ParseException("no connector found for " + buf,0);
+  }
   Connector connector=clazz.get();
   return connector;
 }
