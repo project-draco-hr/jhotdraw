@@ -1,0 +1,16 @@
+{
+  if (value == null || value.isEmpty()) {
+    out.append("none");
+    return;
+  }
+  Object[] v=new Object[2 * value.size() + 2];
+  v[0]=value.size() * 2;
+  v[1]=value.size() * 2;
+  Iterator<Point2D> iter=value.iterator();
+  for (int i=0, n=2 * value.size(); i < n; i+=2) {
+    Point2D p=iter.next();
+    v[i + 2]=p.getX();
+    v[i + 3]=p.getY();
+  }
+  formatter.toString(out,v);
+}

@@ -1,0 +1,3 @@
+Appendable out
+IdFactory idFactory
+Collection<Point2D> value

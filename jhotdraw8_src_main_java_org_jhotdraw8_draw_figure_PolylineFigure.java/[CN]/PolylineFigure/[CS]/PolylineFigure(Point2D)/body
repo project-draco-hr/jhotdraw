@@ -1,0 +1,3 @@
+{
+  set(POINTS,ImmutableObservableList.of(points));
+}

@@ -1,0 +1,20 @@
+{
+  ArrayList<Point2D> l=new ArrayList<>();
+  CssTokenizerInterface tt=new CssTokenizer(buf);
+  tt.setSkipWhitespaces(true);
+  if (tt.nextToken() == CssTokenizer.TT_IDENT && "none".equals(tt.currentStringValue())) {
+    tt.skipWhitespace();
+    return new ImmutableObservableList<>(l);
+  }
+ else {
+    tt.pushBack();
+  }
+  Loop:   while (tt.nextToken() != CssTokenizer.TT_EOF) {
+    tt.pushBack();
+    double x=readCoordinate(tt,idFactory);
+    double y=readCoordinate(tt,idFactory);
+    l.add(new Point2D(x,y));
+  }
+  tt.skipWhitespace();
+  return new ImmutableObservableList<>(l);
+}

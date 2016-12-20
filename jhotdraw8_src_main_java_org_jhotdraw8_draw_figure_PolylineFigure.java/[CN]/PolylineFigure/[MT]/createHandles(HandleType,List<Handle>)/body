@@ -1,0 +1,17 @@
+{
+  if (handleType == HandleType.SELECT) {
+    list.add(new LineOutlineHandle(this,Handle.STYLECLASS_HANDLE_SELECT_OUTLINE));
+  }
+ else   if (handleType == HandleType.MOVE) {
+    list.add(new LineOutlineHandle(this,Handle.STYLECLASS_HANDLE_MOVE_OUTLINE));
+  }
+ else   if (handleType == HandleType.RESIZE) {
+    list.add(new LineOutlineHandle(this,Handle.STYLECLASS_HANDLE_RESIZE_OUTLINE));
+  }
+ else   if (handleType == HandleType.POINT) {
+    list.add(new LineOutlineHandle(this,Handle.STYLECLASS_HANDLE_POINT_OUTLINE));
+  }
+ else {
+    super.createHandles(handleType,list);
+  }
+}
