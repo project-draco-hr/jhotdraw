@@ -34,6 +34,9 @@
             break;
           }
         }
+        if (pressedFigure == null) {
+          pressedFigure=view.findFigure(vx,vy);
+        }
       }
  else {
         pressedFigure=view.findFigure(vx,vy,view.getSelectedFigures());
