@@ -10,55 +10,41 @@
     if (tt.currentToken() != CssTokenizer.TT_IDENT) {
       throw new ParseException("CSS Effect: " + func + "(<blur-type>,color,radius,spread,offset-x,offset-y) expected",tt.getStartPosition());
     }
-switch (tt.currentStringValue()) {
-case "gaussian":
-      blurType=BlurType.GAUSSIAN;
-    break;
-case "one-pass-box":
-  blurType=BlurType.ONE_PASS_BOX;
-break;
-case "three-pass-box":
-blurType=BlurType.THREE_PASS_BOX;
-break;
-case "two-pass-box":
-blurType=BlurType.TWO_PASS_BOX;
-break;
-default :
-throw new ParseException("CSS Effect: " + func + "(<gaussian | one-pass-box | three-pass-box | two-pass-box>  expected",tt.getStartPosition());
-}
-if (tt.nextToken() != ',') {
-tt.pushBack();
-}
-if (tt.nextToken() == CssTokenizer.TT_HASH) {
-color=Color.web('#' + tt.currentStringValue());
-}
- else if (tt.currentToken() == CssTokenizer.TT_IDENT) {
-color=Color.web(tt.currentStringValue());
-}
- else if (tt.currentToken() == CssTokenizer.TT_FUNCTION) {
-tt.pushBack();
-CssColor colorOrNull=colorConverter.parseColor(tt);
-color=colorOrNull.getColor();
-}
+    tt.pushBack();
+    blurType=blurTypeConverter.parse(tt);
+    if (tt.nextToken() != ',') {
+      tt.pushBack();
+    }
+    if (tt.nextToken() == CssTokenizer.TT_HASH) {
+      color=Color.web('#' + tt.currentStringValue());
+    }
+ else     if (tt.currentToken() == CssTokenizer.TT_IDENT) {
+      color=Color.web(tt.currentStringValue());
+    }
+ else     if (tt.currentToken() == CssTokenizer.TT_FUNCTION) {
+      tt.pushBack();
+      CssColor colorOrNull=colorConverter.parseColor(tt);
+      color=colorOrNull.getColor();
+    }
  else {
-throw new ParseException("CSS Effect: " + func + "("+ blurType.toString().toLowerCase().replace('_','-')+ ",  <color> expected",tt.getStartPosition());
-}
-if (tt.nextToken() != ',') {
-tt.pushBack();
-}
-if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
-throw new ParseException("CSS Effect: radius number expected",tt.getStartPosition());
-}
-radius=tt.currentNumericValue().doubleValue();
-if (tt.nextToken() != ',') {
-tt.pushBack();
-}
+      throw new ParseException("CSS Effect: " + func + "("+ blurType.toString().toLowerCase().replace('_','-')+ ",  <color> expected",tt.getStartPosition());
+    }
+    if (tt.nextToken() != ',') {
+      tt.pushBack();
+    }
+    if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
+      throw new ParseException("CSS Effect: radius number expected",tt.getStartPosition());
+    }
+    radius=tt.currentNumericValue().doubleValue();
+    if (tt.nextToken() != ',') {
+      tt.pushBack();
+    }
 switch (tt.nextToken()) {
 case CssTokenizer.TT_NUMBER:
-spreadOrChocke=tt.currentNumericValue().doubleValue();
-break;
+      spreadOrChocke=tt.currentNumericValue().doubleValue();
+    break;
 case CssTokenizer.TT_PERCENTAGE:
-spreadOrChocke=tt.currentNumericValue().doubleValue() / 100.0;
+  spreadOrChocke=tt.currentNumericValue().doubleValue() / 100.0;
 break;
 default :
 throw new ParseException("CSS Effect: spread or chocke number expected",tt.getStartPosition());
@@ -82,9 +68,9 @@ throw new ParseException("CSS Effect: ')'  expected",tt.getStartPosition());
 }
 }
 if (isDropShadow) {
-return new DropShadow(blurType,color,radius,spreadOrChocke,offsetX,offsetY);
+return new DropShadow(blurType,color,Geom.clamp(radius,0,127),spreadOrChocke,offsetX,offsetY);
 }
  else {
-return new InnerShadow(blurType,color,radius,spreadOrChocke,offsetX,offsetY);
+return new InnerShadow(blurType,color,Geom.clamp(radius,0,127),spreadOrChocke,offsetX,offsetY);
 }
 }

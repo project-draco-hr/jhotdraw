@@ -1,0 +1,14 @@
+{
+  double radius=5;
+switch (tt.nextToken()) {
+case CssTokenizer.TT_NUMBER:
+    radius=Geom.clamp(tt.currentNumericValue().doubleValue(),0,63);
+  break;
+default :
+tt.pushBack();
+}
+if (tt.nextToken() != ')') {
+throw new ParseException("CSS Effect: ')'  expected",tt.getStartPosition());
+}
+return new GaussianBlur(radius);
+}

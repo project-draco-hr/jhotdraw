@@ -1,0 +1,17 @@
+{
+  double level=0.3;
+switch (tt.nextToken()) {
+case CssTokenizer.TT_NUMBER:
+    level=tt.currentNumericValue().doubleValue();
+  break;
+case CssTokenizer.TT_PERCENTAGE:
+level=tt.currentNumericValue().doubleValue() / 100;
+break;
+default :
+tt.pushBack();
+}
+if (tt.nextToken() != ')') {
+throw new ParseException("CSS Effect: ')'  expected",tt.getStartPosition());
+}
+return new Glow(Geom.clamp(level,0,1));
+}

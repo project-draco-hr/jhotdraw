@@ -1,0 +1,11 @@
+{
+  BlendMode mode=BlendMode.SRC_OVER;
+  if (tt.nextToken() == CssTokenizerInterface.TT_IDENT) {
+    tt.pushBack();
+    mode=blendModeConverter.parse(tt);
+  }
+  if (tt.nextToken() != ')') {
+    throw new ParseException("CSS Effect: ')'  expected",tt.getStartPosition());
+  }
+  return new Blend(mode);
+}

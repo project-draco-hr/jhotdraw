@@ -1,0 +1,45 @@
+{
+  double hue=0.0;
+  double saturation=0.0;
+  double brightness=0.0;
+  double contrast=0.0;
+  while (tt.nextToken() == CssTokenizer.TT_IDENT) {
+    String ident=tt.currentStringValue();
+    int identPos=tt.getStartPosition();
+    double adjust=0.0;
+switch (tt.nextToken()) {
+case CssTokenizer.TT_NUMBER:
+      adjust=tt.currentNumericValue().doubleValue();
+    break;
+case CssTokenizer.TT_PERCENTAGE:
+  adjust=tt.currentNumericValue().doubleValue() / 100;
+break;
+default :
+tt.pushBack();
+}
+adjust=Geom.clamp(adjust,0,1);
+switch (ident) {
+case "hue":
+hue=adjust;
+break;
+case "saturation":
+saturation=adjust;
+break;
+case "brightness":
+brightness=adjust;
+break;
+case "contrast":
+contrast=adjust;
+break;
+default :
+throw new ParseException("CSS illegal identifier: " + ident,identPos);
+}
+if (tt.nextToken() != ',') {
+tt.pushBack();
+}
+}
+if (tt.currentToken() != ')') {
+throw new ParseException("CSS Effect: ')'  expected",tt.getStartPosition());
+}
+return new ColorAdjust(hue,saturation,brightness,contrast);
+}

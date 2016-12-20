@@ -1,0 +1,17 @@
+{
+  double threshold=0.3;
+switch (tt.nextToken()) {
+case CssTokenizer.TT_NUMBER:
+    threshold=tt.currentNumericValue().doubleValue();
+  break;
+case CssTokenizer.TT_PERCENTAGE:
+threshold=tt.currentNumericValue().doubleValue() / 100;
+break;
+default :
+tt.pushBack();
+}
+if (tt.nextToken() != ')') {
+throw new ParseException("CSS Effect: ')'  expected",tt.getStartPosition());
+}
+return new Bloom(Geom.clamp(threshold,0,1));
+}

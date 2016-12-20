@@ -1,8 +1,97 @@
 {
-  if (value instanceof DropShadow) {
+  if (value instanceof Blend) {
+    Blend fx=(Blend)value;
+    out.append(BLEND).append('(');
+    out.append(blendModeConverter.toString(fx.getMode()));
+    out.append(')');
+  }
+ else   if (value instanceof Bloom) {
+    Bloom fx=(Bloom)value;
+    out.append(BLOOM).append('(');
+    out.append(nb.toString(fx.getThreshold() * 100));
+    out.append("%)");
+    if (fx.getInput() != null) {
+      out.append(", ");
+      toString(out,idFactory,fx.getInput());
+    }
+  }
+ else   if (value instanceof BoxBlur) {
+    BoxBlur fx=(BoxBlur)value;
+    out.append(BOX_BLUR).append('(');
+    out.append(nb.toString(fx.getWidth()));
+    out.append(',');
+    out.append(nb.toString(fx.getHeight()));
+    out.append(',');
+    out.append(Integer.toString(fx.getIterations()));
+    out.append(")");
+    if (fx.getInput() != null) {
+      out.append(", ");
+      toString(out,idFactory,fx.getInput());
+    }
+  }
+ else   if (value instanceof ColorAdjust) {
+    ColorAdjust fx=(ColorAdjust)value;
+    out.append(COLOR_ADJUST).append('(');
+    boolean needComma=false;
+    final double hue=fx.getHue();
+    final double saturation=fx.getSaturation();
+    final double brightness=fx.getBrightness();
+    final double contrast=fx.getContrast();
+    boolean all=hue == 0 && saturation == 0 && brightness == 0 && contrast == 0;
+    if (hue != 0 || all) {
+      out.append("hue ");
+      if (hue > 0) {
+        out.append('+');
+      }
+      out.append(nb.toString(hue * 100));
+      out.append("%");
+      needComma=true;
+    }
+    if (saturation != 0 || all) {
+      if (needComma) {
+        out.append(", ");
+      }
+      out.append("saturation ");
+      if (saturation > 0) {
+        out.append('+');
+      }
+      out.append(nb.toString(saturation * 100));
+      out.append("%");
+      needComma=true;
+    }
+    if (brightness != 0 || all) {
+      if (needComma) {
+        out.append(", ");
+      }
+      out.append("brightness ");
+      if (brightness > 0) {
+        out.append('+');
+      }
+      out.append(nb.toString(brightness * 100));
+      out.append("%");
+      needComma=true;
+    }
+    if (contrast != 0 || all) {
+      if (needComma) {
+        out.append(", ");
+      }
+      out.append("contrast ");
+      if (contrast > 0) {
+        out.append('+');
+      }
+      out.append(nb.toString(contrast * 100));
+      out.append('%');
+    }
+    out.append(")");
+    if (fx.getInput() != null) {
+      out.append(", ");
+      toString(out,idFactory,fx.getInput());
+    }
+  }
+ else   if (value instanceof DropShadow) {
     DropShadow fx=(DropShadow)value;
     out.append(DROP_SHADOW).append('(');
-    out.append(fx.getBlurType().toString().toLowerCase().replace('_','-'));
+    out.append(blurTypeConverter.toString(fx.getBlurType()));
     out.append(',');
     colorConverter.toString(out,idFactory,new CssColor(fx.getColor()));
     out.append(',');
@@ -13,7 +102,27 @@
     nb.toString(out,idFactory,fx.getOffsetX());
     out.append(',');
     nb.toString(out,idFactory,fx.getOffsetY());
-    out.append(')');
+    out.append(',');
+    if (fx.getInput() != null) {
+      out.append(", ");
+      toString(out,idFactory,fx.getInput());
+    }
+  }
+ else   if (value instanceof GaussianBlur) {
+    GaussianBlur fx=(GaussianBlur)value;
+    out.append(GAUSSIAN_BLUR).append('(');
+    out.append(nb.toString(fx.getRadius()));
+    out.append(")");
+    if (fx.getInput() != null) {
+      out.append(", ");
+      toString(out,idFactory,fx.getInput());
+    }
+  }
+ else   if (value instanceof Glow) {
+    Glow fx=(Glow)value;
+    out.append(GLOW).append('(');
+    out.append(nb.toString(fx.getLevel() * 100));
+    out.append("%)");
     if (fx.getInput() != null) {
       out.append(", ");
       toString(out,idFactory,fx.getInput());
@@ -22,7 +131,7 @@
  else   if (value instanceof InnerShadow) {
     InnerShadow fx=(InnerShadow)value;
     out.append(INNER_SHADOW).append('(');
-    out.append(fx.getBlurType().toString().toLowerCase().replace('_','-'));
+    out.append(blurTypeConverter.toString(fx.getBlurType()));
     out.append(',');
     colorConverter.toString(out,idFactory,new CssColor(fx.getColor()));
     out.append(',');
@@ -33,6 +142,20 @@
     nb.toString(out,idFactory,fx.getOffsetX());
     out.append(',');
     nb.toString(out,idFactory,fx.getOffsetY());
+    out.append(')');
+    if (fx.getInput() != null) {
+      out.append(", ");
+      toString(out,idFactory,fx.getInput());
+    }
+  }
+ else   if (value instanceof Shadow) {
+    Shadow fx=(Shadow)value;
+    out.append(SHADOW).append('(');
+    out.append(blurTypeConverter.toString(fx.getBlurType()));
+    out.append(',');
+    colorConverter.toString(out,idFactory,new CssColor(fx.getColor()));
+    out.append(',');
+    nb.toString(out,idFactory,fx.getRadius());
     out.append(')');
     if (fx.getInput() != null) {
       out.append(", ");

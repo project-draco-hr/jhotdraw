@@ -3,6 +3,7 @@
   applyHideableFigureProperties(node);
   applyStyleableFigureProperties(ctx,node);
   applyStrokeableFigureProperties(lineNode);
+  applyFillableFigureProperties(lineNode);
   applyTransformableFigureProperties(node);
   applyCompositableFigureProperties(lineNode);
   final ImmutableObservableList<Point2D> points=getStyled(POINTS);

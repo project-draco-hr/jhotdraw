@@ -1,0 +1,41 @@
+{
+  String func=SHADOW;
+  BlurType blurType=BlurType.GAUSSIAN;
+  Color color=new Color(0,0,0,0.75);
+  double radius=10.0;
+  if (tt.nextToken() != ')') {
+    if (tt.currentToken() != CssTokenizer.TT_IDENT) {
+      throw new ParseException("CSS Effect: " + func + "(<blur-type>,color,radius,spread,offset-x,offset-y) expected",tt.getStartPosition());
+    }
+    tt.pushBack();
+    blurType=blurTypeConverter.parse(tt);
+    if (tt.nextToken() != ',') {
+      tt.pushBack();
+    }
+    if (tt.nextToken() == CssTokenizer.TT_HASH) {
+      color=Color.web('#' + tt.currentStringValue());
+    }
+ else     if (tt.currentToken() == CssTokenizer.TT_IDENT) {
+      color=Color.web(tt.currentStringValue());
+    }
+ else     if (tt.currentToken() == CssTokenizer.TT_FUNCTION) {
+      tt.pushBack();
+      CssColor colorOrNull=colorConverter.parseColor(tt);
+      color=colorOrNull.getColor();
+    }
+ else {
+      throw new ParseException("CSS Effect: " + func + "("+ blurType.toString().toLowerCase().replace('_','-')+ ",  <color> expected",tt.getStartPosition());
+    }
+    if (tt.nextToken() != ',') {
+      tt.pushBack();
+    }
+    if (tt.nextToken() != CssTokenizer.TT_NUMBER) {
+      throw new ParseException("CSS Effect: radius number expected",tt.getStartPosition());
+    }
+    radius=tt.currentNumericValue().doubleValue();
+    if (tt.nextToken() != ')') {
+      throw new ParseException("CSS Effect: ')'  expected",tt.getStartPosition());
+    }
+  }
+  return new Shadow(blurType,color,Geom.clamp(radius,0,127));
+}

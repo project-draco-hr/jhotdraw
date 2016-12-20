@@ -1,0 +1,10 @@
+{
+  if (tt.nextToken() != CssTokenizer.TT_IDENT)   throw new ParseException("identifier expected",tt.getStartPosition());
+  String identifier=tt.currentStringValue();
+  try {
+    return Enum.valueOf(enumClass,identifier.toUpperCase().replace('-','_'));
+  }
+ catch (  IllegalArgumentException e) {
+    throw new ParseException("illegal identifier:" + identifier,tt.getStartPosition());
+  }
+}

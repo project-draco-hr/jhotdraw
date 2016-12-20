@@ -1,0 +1,36 @@
+{
+  double width=5;
+  double height=5;
+  int iterations=1;
+switch (tt.nextToken()) {
+case CssTokenizer.TT_NUMBER:
+    width=Geom.clamp(tt.currentNumericValue().doubleValue(),0,255);
+  break;
+default :
+tt.pushBack();
+}
+if (tt.nextToken() != ',') {
+tt.pushBack();
+}
+switch (tt.nextToken()) {
+case CssTokenizer.TT_NUMBER:
+height=Geom.clamp(tt.currentNumericValue().doubleValue(),0,255);
+break;
+default :
+tt.pushBack();
+}
+if (tt.nextToken() != ',') {
+tt.pushBack();
+}
+switch (tt.nextToken()) {
+case CssTokenizer.TT_NUMBER:
+iterations=Geom.clamp(tt.currentNumericValue().intValue(),0,3);
+break;
+default :
+tt.pushBack();
+}
+if (tt.nextToken() != ')') {
+throw new ParseException("CSS Effect: ')'  expected",tt.getStartPosition());
+}
+return new BoxBlur(width,height,iterations);
+}

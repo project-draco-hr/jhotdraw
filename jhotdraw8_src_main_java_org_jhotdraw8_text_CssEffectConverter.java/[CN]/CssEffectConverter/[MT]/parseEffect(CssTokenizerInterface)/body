@@ -4,14 +4,35 @@
   while (tt.nextToken() == CssTokenizer.TT_FUNCTION) {
     Effect current=null;
 switch (tt.currentStringValue()) {
-case DROP_SHADOW:
-      current=parseDropShadow(tt);
+case BLEND:
+      current=parseBlend(tt);
     break;
+case BLOOM:
+  current=parseBloom(tt);
+break;
+case BOX_BLUR:
+current=parseBoxBlur(tt);
+break;
+case COLOR_ADJUST:
+current=parseColorAdjust(tt);
+break;
+case DROP_SHADOW:
+current=parseDropShadow(tt);
+break;
+case GAUSSIAN_BLUR:
+current=parseGaussianBlur(tt);
+break;
+case GLOW:
+current=parseGlow(tt);
+break;
 case INNER_SHADOW:
-  current=parseInnerShadow(tt);
+current=parseInnerShadow(tt);
+break;
+case SHADOW:
+current=parseShadow(tt);
 break;
 default :
-throw new ParseException("CSS Effect: \"" + DROP_SHADOW + "(\" or \""+ INNER_SHADOW+ "(\"  expected",tt.getStartPosition());
+throw new ParseException("CSS Effect: \"" + BLEND + ", "+ DROP_SHADOW+ "(\" or \""+ INNER_SHADOW+ "(\"  expected",tt.getStartPosition());
 }
 if (first == null) {
 first=previous=current;
