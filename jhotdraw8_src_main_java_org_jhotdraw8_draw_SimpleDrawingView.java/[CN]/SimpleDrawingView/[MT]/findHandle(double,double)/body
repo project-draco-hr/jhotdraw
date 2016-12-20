@@ -1,4 +1,7 @@
 {
+  if (recreateHandles) {
+    return null;
+  }
   for (  Map.Entry<Node,Handle> e : new ReversedList<>(nodeToHandleMap.entrySet())) {
     final Node node=e.getKey();
     final Handle handle=e.getValue();
@@ -9,7 +12,9 @@
       }
     }
  else {
-      if (contains(node,new Point2D(vx,vy),TOLERANCE))       return handle;
+      if (contains(node,new Point2D(vx,vy),TOLERANCE)) {
+        return handle;
+      }
     }
   }
   return null;

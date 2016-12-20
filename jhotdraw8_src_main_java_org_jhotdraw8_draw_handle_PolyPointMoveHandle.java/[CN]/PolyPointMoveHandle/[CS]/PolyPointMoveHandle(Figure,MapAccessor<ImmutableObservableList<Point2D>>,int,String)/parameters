@@ -1,0 +1,4 @@
+Figure figure
+MapAccessor<ImmutableObservableList<Point2D>> pointKey
+int pointIndex
+String styleclass

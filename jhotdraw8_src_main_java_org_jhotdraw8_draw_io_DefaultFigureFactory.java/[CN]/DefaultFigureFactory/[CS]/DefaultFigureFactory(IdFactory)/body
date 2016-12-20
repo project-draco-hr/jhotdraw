@@ -4,6 +4,7 @@
   addFigureKeysAndNames("Rectangle",RectangleFigure.class,Figure.getDeclaredAndInheritedKeys(RectangleFigure.class));
   addFigureKeysAndNames("Slice",SliceFigure.class,Figure.getDeclaredAndInheritedKeys(SliceFigure.class));
   addFigureKeysAndNames("Group",GroupFigure.class,Figure.getDeclaredAndInheritedKeys(GroupFigure.class));
+  addFigureKeysAndNames("Polyline",PolylineFigure.class,Figure.getDeclaredAndInheritedKeys(PolylineFigure.class));
 {
     Set<MapAccessor<?>> keys=Figure.getDeclaredAndInheritedKeys(SimpleDrawing.class);
     keys.remove(Drawing.USER_AGENT_STYLESHEETS);
@@ -55,6 +56,7 @@
   addConverter(StrokeableFigure.STROKE_LINE_JOIN,new XmlEnumConverter<StrokeLineJoin>(StrokeLineJoin.class));
   addConverter(StrokeableFigure.STROKE_TYPE,new XmlEnumConverter<StrokeType>(StrokeType.class));
   addConverter(TransformableFigure.TRANSFORMS,new XmlTransformListConverter());
+  addConverter(PolylineFigure.POINTS,new CssPoint2DListConverter());
   removeKey(StyleableFigure.PSEUDO_CLASS_STATES);
   removeRedundantKeys();
   checkConverters();

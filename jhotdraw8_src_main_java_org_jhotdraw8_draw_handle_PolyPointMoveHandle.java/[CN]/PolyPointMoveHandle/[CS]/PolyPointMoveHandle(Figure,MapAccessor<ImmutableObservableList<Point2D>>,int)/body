@@ -1,0 +1,3 @@
+{
+  this(figure,pointKey,pointIndex,STYLECLASS_HANDLE_MOVE);
+}
