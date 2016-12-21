@@ -1,11 +1,11 @@
 {
   TransformableFigure o=getOwner();
-  Transform t=view.getWorldToView().createConcatenation(getRotateToWorld());
+  Transform t=Transforms.concat(view.getWorldToView(),getRotateToWorld());
   Bounds b=o.getBoundsInLocal();
   Point2D centerInLocal=Geom.center(b);
   double scaleY=o.getStyled(SCALE_Y);
   Point2D p=new Point2D(centerInLocal.getX(),centerInLocal.getY() - b.getHeight() * 0.5 * scaleY);
-  p=t.transform(p);
+  p=t == null ? p : t.transform(p);
   pickNode.setRotate(o.getStyled(ROTATE));
   pickNode.setRotationAxis(o.getStyled(ROTATION_AXIS));
   pivotNode.setRotate(o.getStyled(ROTATE));

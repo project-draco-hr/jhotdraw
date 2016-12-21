@@ -1,0 +1,18 @@
+{
+  double contentAreaFactor=computeContentAreaFactor();
+  Insets insets=getStyled(PAGE_INSETS);
+  double overlap=getStyled(PAGE_OVERLAP);
+  int numPagesX=Math.max(1,getStyled(NUM_PAGES_X).intValue());
+  double pageX=get(X) - insets.getLeft() * contentAreaFactor;
+  double pageY=get(Y) - insets.getTop() * contentAreaFactor;
+  ;
+  double pageWidth=get(PAPER_WIDTH) * contentAreaFactor;
+  double pageHeight=get(PAPER_HEIGHT) * contentAreaFactor;
+  double pageOverlapX=(overlap + insets.getLeft() + insets.getRight()) * contentAreaFactor;
+  double pageOverlapY=(overlap + insets.getTop() + insets.getBottom()) * contentAreaFactor;
+  int px=internalPageNumber % numPagesX;
+  int py=internalPageNumber / numPagesX;
+  double x=pageX + (pageWidth - pageOverlapX) * px;
+  double y=pageY + (pageHeight - pageOverlapY) * py;
+  return new BoundingBox(x,y,pageWidth,pageHeight);
+}

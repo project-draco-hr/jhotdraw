@@ -1,0 +1,15 @@
+{
+  boolean intersects=node.intersects(node.sceneToLocal(sceneBounds));
+  if (intersects) {
+    node.getProperties().put(SKIP_KEY,false);
+    if (node instanceof Parent) {
+      Parent parent=(Parent)node;
+      for (      Node child : parent.getChildrenUnmodifiable()) {
+        markNodesOutsideBoundsWithSkip(child,sceneBounds);
+      }
+    }
+  }
+ else {
+    node.getProperties().put(SKIP_KEY,true);
+  }
+}

@@ -1,0 +1,8 @@
+{
+  final DrawingView view=getView();
+  if (view == null) {
+    return;
+  }
+  final List<Figure> figures=new ArrayList<>(view.getSelectedFigures());
+  selectChildren(view,figures);
+}

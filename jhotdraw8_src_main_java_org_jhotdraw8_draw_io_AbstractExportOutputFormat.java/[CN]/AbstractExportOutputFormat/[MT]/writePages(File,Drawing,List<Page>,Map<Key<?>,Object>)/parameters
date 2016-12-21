@@ -1,0 +1,4 @@
+File dir
+Drawing drawing
+List<Page> pages
+Map<Key<?>,Object> hints

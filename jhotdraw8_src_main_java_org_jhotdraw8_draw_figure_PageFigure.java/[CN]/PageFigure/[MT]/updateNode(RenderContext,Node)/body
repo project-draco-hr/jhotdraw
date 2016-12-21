@@ -1,3 +1,43 @@
 {
-  throw new UnsupportedOperationException("Not supported yet.");
+  javafx.scene.Group groupNode=(javafx.scene.Group)node;
+  node.getTransforms().setAll(getLocalToParent(true));
+  Rectangle contentBoundsNode=(Rectangle)groupNode.getProperties().get("contentBounds");
+  Path pageBoundsNode=(Path)groupNode.getProperties().get("pageBounds");
+  applyHideableFigureProperties(node);
+  if (ctx.get(RenderContext.RENDERING_INTENT) != RenderingIntent.EDITOR) {
+    contentBoundsNode.setVisible(false);
+    pageBoundsNode.setVisible(false);
+  }
+  double contentWidth=get(WIDTH);
+  double contentHeight=get(HEIGHT);
+  contentBoundsNode.setX(get(X));
+  contentBoundsNode.setY(get(Y));
+  contentBoundsNode.setWidth(contentWidth);
+  contentBoundsNode.setHeight(contentHeight);
+  int numPagesX=Math.max(1,getStyled(NUM_PAGES_X).intValue());
+  int numPagesY=Math.max(1,getStyled(NUM_PAGES_Y).intValue());
+  final ObservableList<PathElement> l=pageBoundsNode.getElements();
+  l.clear();
+  for (int i=0, n=numPagesX * numPagesY; i < n; i++) {
+    Bounds b=getPageBounds(i);
+    double x=b.getMinX();
+    double y=b.getMinY();
+    double w=b.getWidth();
+    double h=b.getHeight();
+    l.add(new MoveTo(x,y));
+    l.add(new LineTo(x + w,y));
+    l.add(new LineTo(x + w,y + h));
+    l.add(new LineTo(x,y + h));
+    l.add(new ClosePath());
+  }
+  List<Node> nodes=new ArrayList<Node>(getChildren().size() + 2);
+  nodes.add(pageBoundsNode);
+  nodes.add(contentBoundsNode);
+  for (  Figure child : getChildren()) {
+    nodes.add(ctx.getNode(child));
+  }
+  ObservableList<Node> group=groupNode.getChildren();
+  if (!group.equals(nodes)) {
+    group.setAll(nodes);
+  }
 }

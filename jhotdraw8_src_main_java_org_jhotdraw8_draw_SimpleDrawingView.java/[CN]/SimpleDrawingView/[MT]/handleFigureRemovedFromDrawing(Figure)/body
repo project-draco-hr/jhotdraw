@@ -1,7 +1,6 @@
 {
+  final ObservableSet<Figure> selectedFigures=getSelectedFigures();
   for (  Figure f : figure.preorderIterable()) {
     selectedFigures.remove(f);
   }
-  invalidateHandles();
-  repaint();
 }

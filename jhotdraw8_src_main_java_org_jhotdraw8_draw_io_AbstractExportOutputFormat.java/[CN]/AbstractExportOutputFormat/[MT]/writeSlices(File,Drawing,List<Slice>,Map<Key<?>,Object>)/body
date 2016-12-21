@@ -1,0 +1,13 @@
+{
+  Node node=toNode(drawing,Collections.singleton(drawing),hints);
+  IdFactory idFactory=new SimpleIdFactory();
+  for (  Figure slice : slices) {
+    if (slice.getId() != null) {
+      idFactory.putId(slice,slice.getId());
+    }
+  }
+  for (  Slice slice : slices) {
+    File filename=new File(dir,idFactory.createId(slice,"Slice") + "." + getExtension());
+    writeSlice(filename,slice,node);
+  }
+}

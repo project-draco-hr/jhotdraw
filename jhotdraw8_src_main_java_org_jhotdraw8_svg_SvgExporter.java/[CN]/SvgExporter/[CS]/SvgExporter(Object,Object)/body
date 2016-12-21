@@ -1,0 +1,4 @@
+{
+  this.imageUriKey=imageUriKey;
+  this.skipKey=skipKey;
+}

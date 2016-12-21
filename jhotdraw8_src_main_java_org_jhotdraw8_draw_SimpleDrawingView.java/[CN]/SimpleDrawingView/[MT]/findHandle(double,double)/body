@@ -5,6 +5,7 @@
   for (  Map.Entry<Node,Handle> e : new ReversedList<>(nodeToHandleMap.entrySet())) {
     final Node node=e.getKey();
     final Handle handle=e.getValue();
+    if (!handle.isSelectable())     continue;
     Point2D p=handle.getLocationInView();
     if (p != null) {
       if (Geom.length2(vx,vy,p.getX(),p.getY()) <= HANDLE_TOLERANCE) {

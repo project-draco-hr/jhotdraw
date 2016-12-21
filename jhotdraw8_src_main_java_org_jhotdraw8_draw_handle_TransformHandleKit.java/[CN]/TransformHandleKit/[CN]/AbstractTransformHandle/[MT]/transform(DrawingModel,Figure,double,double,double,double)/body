@@ -11,7 +11,7 @@
   double ty=y - oldBounds.getMinY();
   Transform transform=new Translate(tx,ty);
   if (!Double.isNaN(sx) && !Double.isNaN(sy) && !Double.isInfinite(sx)&& !Double.isInfinite(sy)&& (sx != 1d || sy != 1d)) {
-    transform=transform.createConcatenation(new Scale(sx,sy,oldBounds.getMinX(),oldBounds.getMinY()));
+    transform=Transforms.concat(transform,new Scale(sx,sy,oldBounds.getMinX(),oldBounds.getMinY()));
   }
 switch (oldTransforms.size()) {
 case 0:
@@ -19,7 +19,7 @@ case 0:
   break;
 default :
 int last=oldTransforms.size() - 1;
-model.set(owner,TRANSFORMS,ImmutableObservableList.set(oldTransforms,last,oldTransforms.get(last).createConcatenation(transform)));
+model.set(owner,TRANSFORMS,ImmutableObservableList.set(oldTransforms,last,Transforms.concat(oldTransforms.get(last),transform)));
 break;
 }
 }

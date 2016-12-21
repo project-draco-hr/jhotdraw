@@ -1,0 +1,6 @@
+{
+  super(name,rsrc);
+  this.handleType=handleType;
+  this.anchorHandleType=anchorHandleType;
+  this.leadHandleType=leadHandleType;
+}

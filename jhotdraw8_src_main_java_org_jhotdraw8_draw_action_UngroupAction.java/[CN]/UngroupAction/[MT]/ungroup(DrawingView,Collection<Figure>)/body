@@ -4,11 +4,7 @@
     return;
   }
   for (  Figure f : figures) {
-    if (f instanceof Layer) {
-      new Alert(Alert.AlertType.INFORMATION,"Layers can not be ungrouped").showAndWait();
-      return;
-    }
-    if (!(f instanceof GroupFigure)) {
+    if (!(f instanceof Group)) {
       new Alert(Alert.AlertType.INFORMATION,"Only groups can be ungrouped").showAndWait();
       return;
     }

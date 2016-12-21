@@ -1,8 +1,8 @@
 {
   TransformableFigure o=getOwner();
   Point2D center=Geom.center(o.getBoundsInLocal());
-  Transform t=getWorldToRotate().createConcatenation(view.getViewToWorld());
-  Point2D newPoint=t.transform(new Point2D(event.getX(),event.getY()));
+  Transform t=Transforms.concat(getWorldToRotate(),view.getViewToWorld());
+  Point2D newPoint=(t == null) ? new Point2D(event.getX(),event.getY()) : t.transform(new Point2D(event.getX(),event.getY()));
   double newRotate=90 + 180.0 / Math.PI * Geom.angle(center.getX(),center.getY(),newPoint.getX(),newPoint.getY());
   newRotate=newRotate % 360;
   if (newRotate < 0) {

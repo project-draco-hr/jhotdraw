@@ -9,5 +9,5 @@
   }
   boolean keepAspect=event.isShiftDown();
   Transform t=startWorldToLocal;
-  resize(t.transform(newPoint),owner,startBounds,view.getModel(),keepAspect);
+  resize(t == null ? newPoint : t.transform(newPoint),owner,startBounds,view.getModel(),keepAspect);
 }

@@ -1,0 +1,7 @@
+{
+  Bounds newBounds=transform.transform(getBoundsInLocal());
+  set(X,newBounds.getMinX());
+  set(Y,newBounds.getMinY());
+  set(WIDTH,newBounds.getWidth());
+  set(HEIGHT,newBounds.getHeight());
+}

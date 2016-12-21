@@ -1,5 +1,5 @@
 {
   Bounds b=getBoundsInLocal();
   b=transform.transform(b);
-  reshape(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
+  reshapeInLocal(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
 }

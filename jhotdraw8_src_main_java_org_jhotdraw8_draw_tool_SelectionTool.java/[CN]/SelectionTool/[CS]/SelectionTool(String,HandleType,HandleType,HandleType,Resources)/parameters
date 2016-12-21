@@ -1,0 +1,5 @@
+String name
+HandleType handleType
+HandleType anchorHandleType
+HandleType leadHandleType
+Resources rsrc

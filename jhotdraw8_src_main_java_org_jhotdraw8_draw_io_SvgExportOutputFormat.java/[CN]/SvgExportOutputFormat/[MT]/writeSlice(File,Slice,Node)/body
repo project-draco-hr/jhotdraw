@@ -1,0 +1,7 @@
+{
+  SvgExporter exporter=new SvgExporter(ImageFigure.IMAGE_URI,SKIP_KEY);
+  markNodesOutsideBoundsWithSkip(node,slice.getBoundsInLocal());
+  Document doc=exporter.toDocument(node);
+  writeSliceElementAttributes(doc.getDocumentElement(),slice);
+  write(file,doc);
+}

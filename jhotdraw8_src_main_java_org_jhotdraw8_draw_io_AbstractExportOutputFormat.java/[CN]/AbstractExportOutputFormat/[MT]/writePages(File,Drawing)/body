@@ -1,0 +1,12 @@
+{
+  List<Page> pages=new ArrayList<>();
+  for (  Figure f : drawing.preorderIterable()) {
+    if (f instanceof Page) {
+      pages.add((Page)f);
+    }
+  }
+  Map<Key<?>,Object> hints=new HashMap<>();
+  RenderContext.RENDERING_INTENT.put(hints,RenderingIntent.EXPORT);
+  RenderContext.DPI.put(hints,dpi);
+  writePages(dir,drawing,pages,hints);
+}

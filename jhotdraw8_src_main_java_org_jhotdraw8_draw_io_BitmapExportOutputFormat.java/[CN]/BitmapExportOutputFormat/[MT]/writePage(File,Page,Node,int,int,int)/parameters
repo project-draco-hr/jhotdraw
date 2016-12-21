@@ -1,0 +1,6 @@
+File file
+Page page
+Node node
+int pageCount
+int pageNumber
+int internalPageNumber

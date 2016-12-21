@@ -1,8 +1,8 @@
 {
   Figure f=getOwner();
-  Transform t=view.getWorldToView().createConcatenation(f.getLocalToWorld());
+  Transform t=Transforms.concat(view.getWorldToView(),f.getLocalToWorld());
   Point2D p=f.get(pointKey);
-  pickLocation=p=t.transform(p);
+  pickLocation=p=t == null ? p : t.transform(p);
   boolean isConnected=f.get(connectorKey) != null && f.get(targetKey) != null;
   node.setBackground(isConnected ? REGION_BACKGROUND_CONNECTED : REGION_BACKGROUND_DISCONNECTED);
   node.getStyleClass().set(0,isConnected ? styleclassConnected : styleclassDisconnected);

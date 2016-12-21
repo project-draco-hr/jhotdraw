@@ -2,5 +2,5 @@
   Rectangle2D r=get(BOUNDS);
   Bounds b=new BoundingBox(r.getMinX(),r.getMinY(),r.getWidth(),r.getHeight());
   b=transform.transform(b);
-  reshape(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
+  reshapeInLocal(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
 }

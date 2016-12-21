@@ -1,0 +1,9 @@
+{
+  Map<Key<?>,Object> hints=new HashMap<>();
+  RenderContext.RENDERING_INTENT.put(hints,RenderingIntent.EXPORT);
+  javafx.scene.Node drawingNode=toNode(external,selection,hints);
+  SvgExporter exporter=new SvgExporter(ImageFigure.IMAGE_URI,null);
+  Document doc=exporter.toDocument(drawingNode);
+  writeDrawingElementAttributes(doc.getDocumentElement(),external);
+  return doc;
+}

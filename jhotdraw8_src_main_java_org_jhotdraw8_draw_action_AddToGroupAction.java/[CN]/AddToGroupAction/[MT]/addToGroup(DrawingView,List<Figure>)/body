@@ -1,0 +1,35 @@
+{
+  if (figures.size() < 2) {
+    new Alert(Alert.AlertType.INFORMATION,"You must select a group and the figures that should be added").showAndWait();
+    return;
+  }
+  Figure anchor=figures.get(0);
+  if (!(anchor instanceof Group) && !anchor.isAllowsChildren() || !anchor.isDecomposable()) {
+    new Alert(Alert.AlertType.INFORMATION,"The first figure in the selection must be a group.").showAndWait();
+    return;
+  }
+  if (!anchor.isEditable()) {
+    new Alert(Alert.AlertType.INFORMATION,"The first figure in the selection is not editable.").showAndWait();
+    return;
+  }
+  List<Figure> reparentableFigures=new ArrayList<>();
+  for (int i=1, n=figures.size(); i < n; i++) {
+    Figure f=figures.get(i);
+    if (f.isEditable() && f.isSuitableParent(anchor) && (f.getParent() != null && f.getParent().isEditable() && f.getParent().isDecomposable())) {
+      reparentableFigures.add(f);
+    }
+ else {
+      if ((f instanceof StyleableFigure) && f.get(StyleableFigure.ID) != null) {
+        new Alert(Alert.AlertType.INFORMATION,"The figure with id \"" + f.get(StyleableFigure.ID) + "\" can not be added to the group.").showAndWait();
+      }
+ else {
+        new Alert(Alert.AlertType.INFORMATION,"One of the selected figures can not be added to the group.").showAndWait();
+      }
+      return;
+    }
+  }
+  DrawingModel m=view.getModel();
+  for (  Figure f : reparentableFigures) {
+    m.addChildTo(f,anchor);
+  }
+}

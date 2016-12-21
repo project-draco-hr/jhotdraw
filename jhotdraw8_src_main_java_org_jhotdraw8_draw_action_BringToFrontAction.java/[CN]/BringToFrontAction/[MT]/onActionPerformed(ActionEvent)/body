@@ -3,6 +3,6 @@
   if (view == null) {
     return;
   }
-  final LinkedList<Figure> figures=new LinkedList<>(view.getSelectedFigures());
+  final List<Figure> figures=new ArrayList<>(view.getSelectedFigures());
   bringToFront(view,figures);
 }

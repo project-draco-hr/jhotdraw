@@ -1,0 +1,36 @@
+{
+  List<Figure> reparentableFigures=new ArrayList<>();
+  for (  Figure f : figures) {
+    Layer layer=f.getAncestor(Layer.class);
+    if (layer.isEditable()) {
+      if (f.getParent() != null && f.getParent().isDecomposable() && f.getParent().isEditable() && (f.getParent() instanceof Group)) {
+        if (f.isEditable()) {
+          reparentableFigures.add(f);
+        }
+ else {
+          if ((f instanceof StyleableFigure) && f.get(StyleableFigure.ID) != null) {
+            new Alert(Alert.AlertType.INFORMATION,"The figure with id \"" + f.get(StyleableFigure.ID) + "\" can not be removed from the group.").showAndWait();
+          }
+ else {
+            new Alert(Alert.AlertType.INFORMATION,"One of the selected figures can not be removed from the group.").showAndWait();
+          }
+          return;
+        }
+      }
+ else {
+        if ((f instanceof StyleableFigure) && f.get(StyleableFigure.ID) != null) {
+          new Alert(Alert.AlertType.INFORMATION,"The figure with id \"" + f.get(StyleableFigure.ID) + "\" is not inside an editable group.").showAndWait();
+        }
+ else {
+          new Alert(Alert.AlertType.INFORMATION,"One of the selected figures is not inside an editable group.").showAndWait();
+        }
+        return;
+      }
+    }
+  }
+  DrawingModel m=view.getModel();
+  for (  Figure f : reparentableFigures) {
+    Layer layer=f.getAncestor(Layer.class);
+    m.addChildTo(f,layer);
+  }
+}

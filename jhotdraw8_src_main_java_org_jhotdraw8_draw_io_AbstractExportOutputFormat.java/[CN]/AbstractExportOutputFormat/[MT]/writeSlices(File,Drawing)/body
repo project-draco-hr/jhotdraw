@@ -1,0 +1,12 @@
+{
+  List<Slice> slices=new ArrayList<>();
+  for (  Figure f : drawing.preorderIterable()) {
+    if (f instanceof Slice) {
+      slices.add((Slice)f);
+    }
+  }
+  Map<Key<?>,Object> hints=new HashMap<>();
+  RenderContext.RENDERING_INTENT.put(hints,RenderingIntent.EXPORT);
+  RenderContext.DPI.put(hints,dpi);
+  writeSlices(dir,drawing,slices,hints);
+}

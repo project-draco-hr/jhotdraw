@@ -1,0 +1,45 @@
+{
+  if (skipInvisibleNodes && !node.isVisible()) {
+    return;
+  }
+  if (skipKey != null && Objects.equals(Boolean.TRUE,node.getProperties().get(skipKey))) {
+    return;
+  }
+  parent.appendChild(doc.createTextNode(linebreak));
+  Element elem=null;
+  if (node instanceof Shape) {
+    elem=writeShape(doc,parent,(Shape)node);
+    writeFillAttributes(elem,(Shape)node);
+    writeStrokeAttributes(elem,(Shape)node);
+  }
+ else   if (node instanceof Group) {
+    elem=writeGroup(doc,parent,(Group)node);
+  }
+ else   if (node instanceof Region) {
+    elem=writeRegion(doc,parent,(Region)node);
+  }
+ else   if (node instanceof ImageView) {
+    elem=writeImageView(doc,parent,(ImageView)node);
+  }
+ else {
+    throw new UnsupportedOperationException("not yet implemented for " + node);
+  }
+  if (elem != null) {
+    writeStyleAttributes(elem,node);
+    writeTransformAttributes(elem,node);
+    writeCompositingAttributes(elem,node);
+  }
+ else {
+    elem=parent;
+  }
+  if (node instanceof Parent) {
+    final Parent pp=(Parent)node;
+    final String lbi=linebreak + indent;
+    for (    javafx.scene.Node child : pp.getChildrenUnmodifiable()) {
+      writeNodeRecursively(doc,elem,child,lbi);
+    }
+    if (!pp.getChildrenUnmodifiable().isEmpty()) {
+      elem.appendChild(doc.createTextNode(linebreak));
+    }
+  }
+}

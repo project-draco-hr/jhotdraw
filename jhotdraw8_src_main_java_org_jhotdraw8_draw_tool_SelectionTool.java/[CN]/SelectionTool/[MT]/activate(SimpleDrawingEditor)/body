@@ -1,6 +1,8 @@
 {
   for (  DrawingView view : editor.getDrawingViews()) {
     view.setHandleType(handleType);
+    view.setAnchorHandleType(anchorHandleType);
+    view.setLeadHandleType(leadHandleType);
   }
   requestFocus();
 }

@@ -1,7 +1,7 @@
 {
   SnapshotParameters parameters=new SnapshotParameters();
   double scale=dpi / RenderContext.DPI.getDefaultValue();
-  parameters.setTransform(Transform.scale(scale,scale).createConcatenation(slice.getLocalToWorld()));
+  parameters.setTransform(Transforms.concat(Transform.scale(scale,scale),slice.getWorldToLocal()));
   parameters.setFill(Color.TRANSPARENT);
   double x=bounds.getMinX() * scale;
   double y=bounds.getMinY() * scale;

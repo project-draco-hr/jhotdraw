@@ -1,0 +1,5 @@
+{
+  HierarchicalMap<String,Action> map=super.createApplicationActionMap(app);
+  map.put(PrintFileAction.ID,new PrintFileAction(app,null));
+  return map;
+}

@@ -1,6 +1,6 @@
 {
   Figure f=getOwner();
-  Transform t=view.getWorldToView().createConcatenation(f.getParentToWorld());
+  Transform t=Transforms.concat(view.getWorldToView(),f.getParentToWorld());
   Bounds b=f.getBoundsInParent();
   points[0]=b.getMinX();
   points[1]=b.getMinY();
@@ -10,7 +10,9 @@
   points[5]=b.getMaxY();
   points[6]=b.getMinX();
   points[7]=b.getMaxY();
-  t.transform2DPoints(points,0,points,0,4);
+  if (t != null) {
+    t.transform2DPoints(points,0,points,0,4);
+  }
   ObservableList<Double> pp=node.getPoints();
   for (int i=0; i < points.length; i++) {
     pp.set(i,points[i]);

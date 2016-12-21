@@ -1,5 +1,5 @@
 {
-  Group g=new Group();
+  javafx.scene.Group g=new javafx.scene.Group();
   g.setAutoSizeChildren(false);
   return g;
 }

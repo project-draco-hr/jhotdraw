@@ -1,3 +1,21 @@
 {
-  throw new UnsupportedOperationException("Not supported yet.");
+  int numPagesX=Math.max(1,getStyled(NUM_PAGES_X).intValue());
+  int numPagesY=Math.max(1,getStyled(NUM_PAGES_Y).intValue());
+  internalPageNumber=Math.max(0,Math.min(internalPageNumber,numPagesX * numPagesY));
+  double px=internalPageNumber % numPagesX;
+  double py=internalPageNumber / numPagesX;
+  Insets insets=getStyled(PAGE_INSETS);
+  double overlap=getStyled(PAGE_OVERLAP);
+  double contentAreaFactor=computeContentAreaFactor();
+  double pageX=get(X) - insets.getLeft() * contentAreaFactor;
+  double pageY=get(Y) - insets.getTop() * contentAreaFactor;
+  ;
+  double pageWidth=get(PAPER_WIDTH) * contentAreaFactor;
+  double pageHeight=get(PAPER_HEIGHT) * contentAreaFactor;
+  double pageOverlapX=(overlap + insets.getLeft() + insets.getRight()) * contentAreaFactor;
+  double pageOverlapY=(overlap + insets.getTop() + insets.getBottom()) * contentAreaFactor;
+  double x=pageX + (pageWidth - pageOverlapX) * px;
+  double y=pageY + (pageHeight - pageOverlapY) * py;
+  Transform pageTransform=Transforms.concat(new Translate(x,y),new Scale(contentAreaFactor,contentAreaFactor));
+  return pageTransform;
 }

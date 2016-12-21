@@ -5,6 +5,6 @@
   Transform translate=Transform.translate(o.getStyled(TransformableFigure.TRANSLATE_X),o.getStyled(TransformableFigure.TRANSLATE_Y));
   Transform scale=Transform.scale(o.getStyled(TransformableFigure.SCALE_X),o.getStyled(TransformableFigure.SCALE_Y),center.getX(),center.getY());
   Transform rotate=Transform.rotate(o.getStyled(TransformableFigure.ROTATE),center.getX(),center.getY());
-  t=t.createConcatenation(translate.createConcatenation(rotate));
+  t=Transforms.concat(t,Transforms.concat(translate,rotate));
   return t;
 }
