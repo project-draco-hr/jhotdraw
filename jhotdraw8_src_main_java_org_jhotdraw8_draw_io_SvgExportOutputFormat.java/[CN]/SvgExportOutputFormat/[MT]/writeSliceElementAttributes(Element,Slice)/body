@@ -3,11 +3,5 @@
   Transform tx=slice.getWorldToLocal();
   docElement.setAttribute("width",nb.toString(b.getWidth()));
   docElement.setAttribute("height",nb.toString(b.getHeight()));
-  if (tx != null && !tx.isIdentity()) {
-    docElement.setAttribute("transform",txc.toString(ImmutableObservableList.of(new Translate(-b.getMinX(),-b.getMinY()),tx)));
-    docElement.setAttribute("viewBox",nb.toString(0) + " " + nb.toString(0)+ " "+ nb.toString(b.getWidth())+ " "+ nb.toString(b.getHeight()));
-  }
- else {
-    docElement.setAttribute("viewBox",nb.toString(b.getMinX()) + " " + nb.toString(b.getMinY())+ " "+ nb.toString(b.getWidth())+ " "+ nb.toString(b.getHeight()));
-  }
+  docElement.setAttribute("viewBox",nb.toString(b.getMinX()) + " " + nb.toString(b.getMinY())+ " "+ nb.toString(b.getWidth())+ " "+ nb.toString(b.getHeight()));
 }

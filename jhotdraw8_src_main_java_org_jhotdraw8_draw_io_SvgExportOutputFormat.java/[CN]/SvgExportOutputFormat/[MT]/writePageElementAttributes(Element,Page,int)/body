@@ -2,13 +2,7 @@
   Bounds b=page.getBoundsInLocal();
   Bounds pb=page.getPageBounds(internalPageNumber);
   Transform tx=page.getWorldToLocal();
-  docElement.setAttribute("width",nb.toString(b.getWidth()));
-  docElement.setAttribute("height",nb.toString(b.getHeight()));
-  if (tx != null && !tx.isIdentity()) {
-    docElement.setAttribute("transform",txc.toString(ImmutableObservableList.of(new Translate(b.getMinX() - pb.getMinX(),b.getMinY() - pb.getMinY()),tx)));
-    docElement.setAttribute("viewBox",nb.toString(pb.getMinX()) + " " + nb.toString(pb.getMinY())+ " "+ nb.toString(pb.getWidth())+ " "+ nb.toString(pb.getHeight()));
-  }
- else {
-    docElement.setAttribute("viewBox",nb.toString(pb.getMinX()) + " " + nb.toString(pb.getMinY())+ " "+ nb.toString(pb.getWidth())+ " "+ nb.toString(pb.getHeight()));
-  }
+  docElement.setAttribute("width",nb.toString(pb.getWidth()));
+  docElement.setAttribute("height",nb.toString(pb.getHeight()));
+  docElement.setAttribute("viewBox",nb.toString(pb.getMinX()) + " " + nb.toString(pb.getMinY())+ " "+ nb.toString(pb.getWidth())+ " "+ nb.toString(pb.getHeight()));
 }
