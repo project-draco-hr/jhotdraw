@@ -1,6 +1,6 @@
 {
   if (converter == null) {
-    converter=new CssSizeListConverter();
+    converter=new CssDoubleListConverter();
   }
   return converter;
 }

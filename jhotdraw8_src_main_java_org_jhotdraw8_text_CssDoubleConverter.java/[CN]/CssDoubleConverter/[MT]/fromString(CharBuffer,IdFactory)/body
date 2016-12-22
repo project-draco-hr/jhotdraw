@@ -1,0 +1,4 @@
+{
+  CssSize size=sizeConverter.fromString(buf,idFactory);
+  return size == null ? null : (idFactory != null ? idFactory.convert(size.getValue(),size.getUnits(),"px") : DefaultUnitConverter.getInstance().convert(size.getValue(),size.getUnits(),"px"));
+}

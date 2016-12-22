@@ -1,23 +1,19 @@
 {
+  Paintable p;
   if (value == null) {
-    out.append("none");
-  }
- else   if (Color.TRANSPARENT.equals(value)) {
-    out.append("transparent");
+    p=null;
   }
  else   if (value instanceof Color) {
-    CssColor c=new CssColor((Color)value);
-    colorConverter.toString(out,idFactory,c);
+    p=new CssColor((Color)value);
   }
  else   if (value instanceof LinearGradient) {
-    CssLinearGradient lg=new CssLinearGradient((LinearGradient)value);
-    linearGradientConverter.toString(out,idFactory,lg);
+    p=new CssLinearGradient((LinearGradient)value);
   }
  else   if (value instanceof RadialGradient) {
-    CssRadialGradient lg=new CssRadialGradient((RadialGradient)value);
-    radialGradientConverter.toString(out,idFactory,lg);
+    p=new CssRadialGradient((RadialGradient)value);
   }
  else {
-    throw new UnsupportedOperationException("not yet implemented");
+    throw new UnsupportedOperationException("unsupported value:" + value);
   }
+  paintableConverter.toString(out,idFactory,p);
 }

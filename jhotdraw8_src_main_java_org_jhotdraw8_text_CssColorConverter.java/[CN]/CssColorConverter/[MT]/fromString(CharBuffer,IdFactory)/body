@@ -1,16 +1,10 @@
 {
-  String str=buf.toString().trim();
   CssColor c;
-  if (optional && "none".equals(str)) {
-    c=null;
-    buf.position(buf.limit());
-  }
- else {
-    CssTokenizerInterface tt=new CssTokenizer(new StringReader(buf.toString()));
-    tt.setSkipWhitespaces(true);
-    c=parseColor(tt);
-    tt.skipWhitespace();
-    buf.position(buf.position() + tt.getStartPosition());
+  CssTokenizerInterface tt=new CssTokenizer(new CharBufferReader(buf));
+  tt.setSkipWhitespaces(true);
+  c=parseColor(tt);
+  if (!buf.toString().trim().isEmpty()) {
+    throw new ParseException("CssColor: End expected, found:" + buf.toString(),buf.position());
   }
   return c;
 }

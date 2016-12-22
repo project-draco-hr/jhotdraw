@@ -1,0 +1,4 @@
+{
+  Object[] v=formatter.fromString(buf);
+  return new CssSize2D((CssSize)v[0],(CssSize)v[1]);
+}

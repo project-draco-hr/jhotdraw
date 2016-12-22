@@ -2,7 +2,7 @@
   System.out.println("toString " + value);
   StringBuilder out=new StringBuilder();
   IdFactory idFactory=null;
-  CssSizeConverter instance=new CssSizeConverter(true);
+  CssDoubleConverter instance=new CssDoubleConverter(true);
   instance.toString(out,idFactory,value);
   String actual=out.toString();
   System.out.println("  expected: " + expected);

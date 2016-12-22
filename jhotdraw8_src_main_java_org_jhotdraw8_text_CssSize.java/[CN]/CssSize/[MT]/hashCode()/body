@@ -1,0 +1,6 @@
+{
+  int hash=7;
+  final double v=getDefaultConvertedValue();
+  hash=17 * hash + (int)(Double.doubleToLongBits(v) ^ (Double.doubleToLongBits(this.value) >>> 32));
+  return hash;
+}

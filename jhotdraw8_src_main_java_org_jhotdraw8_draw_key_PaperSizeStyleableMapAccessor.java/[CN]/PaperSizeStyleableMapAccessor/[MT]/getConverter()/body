@@ -1,0 +1,6 @@
+{
+  if (converter == null) {
+    converter=new CssPaperSizeConverter();
+  }
+  return converter;
+}

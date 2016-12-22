@@ -1,5 +1,5 @@
 {
-  String str=buf.toString().trim().toLowerCase(Locale.ROOT);
+  String str=buf.toString();
   int pos=buf.position();
   ParseException pe=null;
   try {

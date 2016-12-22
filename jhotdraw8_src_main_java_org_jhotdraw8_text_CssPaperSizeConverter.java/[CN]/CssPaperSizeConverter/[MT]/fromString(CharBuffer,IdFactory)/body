@@ -1,0 +1,4 @@
+{
+  CssTokenizerInterface tt=new CssTokenizer(buf);
+  return parsePageSize(tt);
+}

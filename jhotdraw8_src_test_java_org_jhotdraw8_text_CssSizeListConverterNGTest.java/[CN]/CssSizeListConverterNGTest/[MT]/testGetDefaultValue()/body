@@ -1,7 +1,0 @@
-{
-  System.out.println("getDefaultValue");
-  CssSizeListConverter instance=new CssSizeListConverter();
-  List<Double> expected=Collections.emptyList();
-  List<Double> actual=instance.getDefaultValue();
-  assertEquals(actual,expected);
-}

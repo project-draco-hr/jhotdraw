@@ -1,0 +1,10 @@
+{
+  System.out.println("fromString " + string);
+  CharBuffer buf=CharBuffer.wrap(string);
+  IdFactory idFactory=new SimpleIdFactory();
+  CssRectangle2DConverter instance=new CssRectangle2DConverter();
+  Rectangle2D actual=instance.fromString(buf,idFactory);
+  System.out.println("  expected: " + expected);
+  System.out.println("    actual: " + actual);
+  assertEquals(actual,expected);
+}

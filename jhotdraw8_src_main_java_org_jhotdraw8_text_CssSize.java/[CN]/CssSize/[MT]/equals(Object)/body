@@ -1,0 +1,17 @@
+{
+  if (this == obj) {
+    return true;
+  }
+  if (obj == null) {
+    return false;
+  }
+  if (getClass() != obj.getClass()) {
+    return false;
+  }
+  final CssSize other=(CssSize)obj;
+  double otherValue=DefaultUnitConverter.getInstance().convert(other,this.units);
+  if (Math.abs(otherValue - this.value) > 1e-4) {
+    return false;
+  }
+  return true;
+}

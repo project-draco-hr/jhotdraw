@@ -1,6 +1,6 @@
 {
   System.out.println("getDefaultValue");
-  CssSizeConverter instance=new CssSizeConverter();
+  CssDoubleConverter instance=new CssDoubleConverter();
   Double expected=0.0;
   Double actual=instance.getDefaultValue();
   assertEquals(actual,expected);

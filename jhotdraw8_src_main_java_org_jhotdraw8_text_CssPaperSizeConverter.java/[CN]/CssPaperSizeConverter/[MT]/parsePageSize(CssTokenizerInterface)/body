@@ -1,0 +1,30 @@
+{
+  tt.setSkipWhitespaces(true);
+  if (tt.nextToken() == CssTokenizerInterface.TT_IDENT) {
+    CssSize2D paperSize=paperSizes.get(tt.currentStringValue());
+    if (paperSize == null) {
+      throw new ParseException("Illegal paper format:" + tt.currentStringValue(),tt.getStartPosition());
+    }
+    if (tt.nextToken() == CssTokenizerInterface.TT_IDENT) {
+switch (tt.currentStringValue()) {
+case LANDSCAPE:
+        paperSize=new CssSize2D(paperSize.getY(),paperSize.getX());
+      break;
+case PORTRAIT:
+    break;
+default :
+  tt.pushBack();
+}
+}
+ else {
+tt.pushBack();
+}
+return paperSize;
+}
+ else {
+tt.pushBack();
+CssSize x=sizeConverter.parseSize(tt);
+CssSize y=sizeConverter.parseSize(tt);
+return new CssSize2D(x,y);
+}
+}

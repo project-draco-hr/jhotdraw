@@ -1,5 +1,14 @@
 {
   CssColor color=null;
+  tt.setSkipWhitespaces(true);
+  if (optional) {
+    if (tt.nextToken() == CssTokenizer.TT_IDENT && "none".equals(tt.currentStringValue())) {
+      return null;
+    }
+ else {
+      tt.pushBack();
+    }
+  }
 switch (tt.nextToken()) {
 case CssTokenizerInterface.TT_DIMENSION:
     if (tt.currentNumericValue().intValue() == 0 && (tt.currentNumericValue() instanceof Long) && tt.currentStringValue().startsWith("x")) {

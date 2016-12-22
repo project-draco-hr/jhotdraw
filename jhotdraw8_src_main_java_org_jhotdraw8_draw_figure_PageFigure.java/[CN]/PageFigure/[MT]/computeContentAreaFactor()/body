@@ -5,8 +5,8 @@
   double overlap=getStyled(PAGE_OVERLAP);
   int numPagesX=Math.max(1,getStyled(NUM_PAGES_X).intValue());
   int numPagesY=Math.max(1,getStyled(NUM_PAGES_Y).intValue());
-  double contentAreaWidth=(get(PAPER_WIDTH) - insets.getLeft() - insets.getRight()) * numPagesX;
-  double contentAreaHeight=(get(PAPER_HEIGHT) - insets.getTop() - insets.getBottom()) * numPagesY;
+  double contentAreaWidth=(get(PAPER_WIDTH).getDefaultConvertedValue() - insets.getLeft() - insets.getRight()) * numPagesX;
+  double contentAreaHeight=(get(PAPER_HEIGHT).getDefaultConvertedValue() - insets.getTop() - insets.getBottom()) * numPagesY;
   double contentRatio=contentWidth / contentHeight;
   double contentAreaRatio=contentAreaWidth / contentAreaHeight;
   double contentAreaFactor;
