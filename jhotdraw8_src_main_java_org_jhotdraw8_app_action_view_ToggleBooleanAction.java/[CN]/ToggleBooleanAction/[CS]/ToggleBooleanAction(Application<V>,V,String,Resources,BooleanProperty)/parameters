@@ -1,0 +1,5 @@
+Application<V> app
+V view
+String id
+Resources labels
+BooleanProperty value

@@ -2,7 +2,7 @@
   javafx.scene.Group groupNode=new javafx.scene.Group();
   Rectangle contentBoundsNode=new Rectangle();
   contentBoundsNode.setFill(Color.TRANSPARENT);
-  contentBoundsNode.setStroke(Color.BLUE);
+  contentBoundsNode.setStroke(Color.MEDIUMBLUE);
   contentBoundsNode.setStrokeType(StrokeType.INSIDE);
   Path pageBoundsNode=new Path();
   pageBoundsNode.setFill(Color.TRANSPARENT);

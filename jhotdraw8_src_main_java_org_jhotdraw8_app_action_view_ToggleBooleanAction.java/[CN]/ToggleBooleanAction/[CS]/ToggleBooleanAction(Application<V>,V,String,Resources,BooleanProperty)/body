@@ -1,0 +1,8 @@
+{
+  super(app,view);
+  if (labels != null && id != null) {
+    labels.configureAction(this,id);
+  }
+  this.value=value == null ? new SimpleBooleanProperty(this,VALUE_PROPERTY) : value;
+  this.value.bindBidirectional(getProperty(SELECTED_KEY));
+}
