@@ -5,7 +5,7 @@
     }
   }
  else {
-    for (    DocumentProject v : projects()) {
+    for (    Project v : projects()) {
       BorderPane bp=(BorderPane)v.getNode().getScene().getRoot();
       MenuBar mb=(MenuBar)bp.getTop();
       if (mb != null) {

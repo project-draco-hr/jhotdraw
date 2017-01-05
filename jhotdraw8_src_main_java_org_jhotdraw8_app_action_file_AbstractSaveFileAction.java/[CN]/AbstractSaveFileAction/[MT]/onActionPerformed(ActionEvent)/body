@@ -2,7 +2,7 @@
   if (isDisabled()) {
     return;
   }
-  final DocumentProject v=getActiveView();
+  final DocumentProject v=(DocumentProject)getActiveView();
   if (v == null || v.isDisabled()) {
     return;
   }

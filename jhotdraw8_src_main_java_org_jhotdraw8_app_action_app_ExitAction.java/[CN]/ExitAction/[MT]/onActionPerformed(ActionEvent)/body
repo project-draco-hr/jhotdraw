@@ -4,7 +4,8 @@
   int disabledViewsCount=0;
   DocumentProject documentToBeReviewed=null;
   URI unsavedURI=null;
-  for (  DocumentProject p : app.projects()) {
+  for (  Project pr : app.projects()) {
+    DocumentProject p=(DocumentProject)pr;
     if (p.isDisabled()) {
       disabledViewsCount++;
     }

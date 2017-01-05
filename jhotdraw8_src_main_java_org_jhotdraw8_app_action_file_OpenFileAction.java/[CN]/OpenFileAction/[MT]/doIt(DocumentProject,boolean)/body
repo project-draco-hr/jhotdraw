@@ -4,7 +4,8 @@
   if (uri != null) {
     app.add(view);
     if (!getApplication().getModel().isAllowMultipleViewsPerURI()) {
-      for (      DocumentProject v : getApplication().projects()) {
+      for (      Project vp : getApplication().projects()) {
+        DocumentProject v=(DocumentProject)vp;
         if (v.getURI() != null && v.getURI().equals(uri)) {
           if (disposeView) {
             app.remove(view);

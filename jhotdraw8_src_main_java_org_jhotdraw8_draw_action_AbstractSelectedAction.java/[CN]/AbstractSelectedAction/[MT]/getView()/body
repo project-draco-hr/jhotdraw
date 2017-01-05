@@ -1,6 +1,6 @@
 {
   if (editor == null) {
-    V v=getActiveView();
+    Project v=getActiveView();
     if (v instanceof EditorView) {
       EditorView ev=(EditorView)v;
       return ev.getEditor() != null ? ev.getEditor().getActiveDrawingView() : null;

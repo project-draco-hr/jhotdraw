@@ -1,5 +1,6 @@
 {
-  for (  DocumentProject p : new ArrayList<DocumentProject>(app.projects())) {
+  for (  Project pr : new ArrayList<Project>(app.projects())) {
+    DocumentProject p=(DocumentProject)pr;
     if (!p.isDisabled() && !p.isModified()) {
       app.remove(p);
     }

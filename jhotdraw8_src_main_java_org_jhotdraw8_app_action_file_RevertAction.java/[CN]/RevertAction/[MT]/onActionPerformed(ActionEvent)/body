@@ -2,7 +2,7 @@
   if (isDisabled()) {
     return;
   }
-  DocumentProject view=getActiveView();
+  DocumentProject view=(DocumentProject)getActiveView();
   URI uri=view.getURI();
   if (view.isModified()) {
     Alert alert=new Alert(Alert.AlertType.WARNING,"Do you want to revert?\nYou will lose your changes when you revert.",ButtonType.YES,ButtonType.CANCEL);

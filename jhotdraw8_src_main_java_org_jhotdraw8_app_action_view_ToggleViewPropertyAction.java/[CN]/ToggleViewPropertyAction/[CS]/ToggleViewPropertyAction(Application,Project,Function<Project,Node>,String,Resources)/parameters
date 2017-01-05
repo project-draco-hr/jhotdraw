@@ -1,0 +1,5 @@
+Application app
+Project view
+Function<Project,Node> nodeGetter
+String id
+Resources labels
