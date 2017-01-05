@@ -1,5 +1,0 @@
-{
-  getNode().getScene().getStylesheets().addAll(GrapherApplication.class.getResource("/org/jhotdraw8/draw/inspector/inspector.css").toString(),GrapherApplication.class.getResource("/org/jhotdraw8/samples/grapher/grapher.css").toString());
-  Preferences prefs=Preferences.userNodeForPackage(GrapherDocumentView.class);
-  PreferencesUtil.installVisibilityPrefsHandlers(prefs,detailsScrollPane,detailsVisible,mainSplitPane,Side.RIGHT);
-}

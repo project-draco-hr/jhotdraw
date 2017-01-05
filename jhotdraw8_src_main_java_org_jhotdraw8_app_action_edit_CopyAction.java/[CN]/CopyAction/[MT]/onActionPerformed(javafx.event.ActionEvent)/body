@@ -1,7 +1,7 @@
 {
   if (event.isConsumed())   return;
   event.consume();
-  V v=app.getActiveView();
+  V v=app.getActiveProject();
   if (v != null && !v.isDisabled()) {
     Node n=v.getNode().getScene().getFocusOwner();
     if (n instanceof TextInputControl) {

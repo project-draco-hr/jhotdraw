@@ -1,6 +1,0 @@
-String name
-Supplier<DocumentView> viewFactory
-URL menuFxml
-String fileDescription
-DataFormat format
-String fileExtension

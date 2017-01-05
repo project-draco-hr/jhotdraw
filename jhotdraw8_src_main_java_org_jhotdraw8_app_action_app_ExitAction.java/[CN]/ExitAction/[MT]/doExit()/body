@@ -1,10 +1,10 @@
 {
-  for (  DocumentView p : new ArrayList<DocumentView>(app.views())) {
+  for (  DocumentProject p : new ArrayList<DocumentProject>(app.projects())) {
     if (!p.isDisabled() && !p.isModified()) {
       app.remove(p);
     }
   }
-  if (app.views().isEmpty()) {
+  if (app.projects().isEmpty()) {
     app.exit();
   }
  else {

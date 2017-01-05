@@ -1,4 +1,0 @@
-Application<DocumentView> app
-DocumentView view
-String id
-boolean saveAs

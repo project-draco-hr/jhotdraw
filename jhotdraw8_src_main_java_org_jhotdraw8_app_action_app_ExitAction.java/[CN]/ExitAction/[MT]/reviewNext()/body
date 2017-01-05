@@ -1,7 +1,7 @@
 {
   int unsavedViewsCount=0;
-  DocumentView documentToBeReviewed=null;
-  for (  DocumentView p : getApplication().views()) {
+  DocumentProject documentToBeReviewed=null;
+  for (  DocumentProject p : getApplication().projects()) {
     if (p.isModified()) {
       if (!p.isDisabled()) {
         documentToBeReviewed=p;

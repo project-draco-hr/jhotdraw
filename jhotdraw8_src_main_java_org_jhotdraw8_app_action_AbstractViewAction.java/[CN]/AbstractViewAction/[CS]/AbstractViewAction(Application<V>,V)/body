@@ -5,6 +5,6 @@
     activeViewListener.changed(null,null,view);
   }
  else {
-    app.activeViewProperty().addListener(activeViewListener);
+    app.activeProjectProperty().addListener(activeViewListener);
   }
 }

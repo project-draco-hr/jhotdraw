@@ -2,7 +2,7 @@
   if (isDisabled()) {
     return;
   }
-  DocumentView view=getActiveView();
+  DocumentProject view=getActiveView();
   if (view != null) {
     PrinterJob job=PrinterJob.createPrinterJob();
     if (job != null && job.showPrintDialog(view.getNode().getScene().getWindow())) {

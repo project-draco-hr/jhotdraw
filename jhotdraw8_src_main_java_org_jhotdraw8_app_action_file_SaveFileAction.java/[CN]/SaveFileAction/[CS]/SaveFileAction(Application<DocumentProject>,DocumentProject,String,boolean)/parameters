@@ -1,0 +1,4 @@
+Application<DocumentProject> app
+DocumentProject view
+String id
+boolean saveAs
