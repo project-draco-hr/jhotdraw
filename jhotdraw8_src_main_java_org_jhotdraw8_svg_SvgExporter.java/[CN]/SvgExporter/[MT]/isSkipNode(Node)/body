@@ -1,0 +1,17 @@
+{
+  if (skipKey != null && Objects.equals(Boolean.TRUE,node.getProperties().get(skipKey))) {
+    return true;
+  }
+  if (skipInvisibleNodes) {
+    if (!node.isVisible()) {
+      return true;
+    }
+    if (node instanceof Shape) {
+      Shape s=(Shape)node;
+      if ((s.getFill() == null || Objects.equals(s.getFill(),Color.TRANSPARENT)) && (s.getStroke() == null || Objects.equals(s.getStroke(),Color.TRANSPARENT))) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
