@@ -1,2 +1,6 @@
 {
+  HierarchicalMap<String,Action> map=super.getActionMap();
+  Action a;
+  map.put(RevertAction.ID,new RevertAction(this,null));
+  return map;
 }

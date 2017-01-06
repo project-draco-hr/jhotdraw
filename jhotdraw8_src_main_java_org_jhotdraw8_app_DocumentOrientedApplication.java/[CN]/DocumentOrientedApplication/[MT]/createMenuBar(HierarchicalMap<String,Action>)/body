@@ -13,15 +13,7 @@
         }
  else {
           System.err.println("Warning DocumentOrientedApplication no action for menu item with id:" + mi.getId());
-          a=new AbstractProjectAction<Project>(this,null,null){
-            @Override protected void handleActionPerformed(            ActionEvent event,            Project p){
-              Action ava=getActiveProject().getActionMap().get(mi.getId());
-              if (ava != null) {
-                ava.handle(event);
-              }
-            }
-          }
-;
+          a=new ScreenMenuBarProxyAction(this,mi.getId());
           systemMenuActiveProjectActions.add(a);
           Actions.bindMenuItem(mi,a,false);
         }

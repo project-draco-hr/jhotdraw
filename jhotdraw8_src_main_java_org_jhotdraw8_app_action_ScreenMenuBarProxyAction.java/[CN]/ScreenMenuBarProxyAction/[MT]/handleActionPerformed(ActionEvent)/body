@@ -1,0 +1,5 @@
+{
+  if (currentAction != null) {
+    currentAction.handle(event);
+  }
+}
