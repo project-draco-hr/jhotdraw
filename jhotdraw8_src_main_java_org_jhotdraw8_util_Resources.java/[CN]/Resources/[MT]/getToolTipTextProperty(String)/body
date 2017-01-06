@@ -1,6 +1,6 @@
 {
   try {
-    String value=getStringRecursive(key + ".toolTipText");
+    String value=getString(key + ".toolTipText");
     return value;
   }
  catch (  MissingResourceException e) {

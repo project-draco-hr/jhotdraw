@@ -1,0 +1,3 @@
+{
+  return Resources.getResources("org.jhotdraw8.samples.grapher.Labels");
+}

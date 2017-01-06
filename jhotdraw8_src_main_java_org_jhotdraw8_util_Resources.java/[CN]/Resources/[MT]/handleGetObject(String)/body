@@ -1,18 +1,7 @@
 {
-  Object obj=null;
-  try {
-    obj=resource.getObject(key);
-  }
- catch (  MissingResourceException e) {
-    if (parent != null) {
-      return parent.getObject(key);
-    }
- else {
-      throw e;
-    }
-  }
+  Object obj=handleGetObjectRecursively(key);
   if (obj instanceof String) {
-    obj=getStringRecursive(key);
+    obj=substitutePlaceholders(key,(String)obj);
   }
   return obj;
 }

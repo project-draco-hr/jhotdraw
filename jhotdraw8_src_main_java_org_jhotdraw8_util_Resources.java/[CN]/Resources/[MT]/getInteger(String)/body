@@ -1,6 +1,6 @@
 {
   try {
-    return Integer.valueOf(getStringRecursive(key));
+    return Integer.valueOf(getString(key));
   }
  catch (  MissingResourceException e) {
     if (isVerbose) {

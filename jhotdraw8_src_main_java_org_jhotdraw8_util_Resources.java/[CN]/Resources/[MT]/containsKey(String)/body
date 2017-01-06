@@ -1,0 +1,12 @@
+{
+  if (key == null) {
+    throw new NullPointerException();
+  }
+  if (resource.containsKey(key)) {
+    return true;
+  }
+  if (parent != null) {
+    return parent.containsKey(key);
+  }
+  return false;
+}

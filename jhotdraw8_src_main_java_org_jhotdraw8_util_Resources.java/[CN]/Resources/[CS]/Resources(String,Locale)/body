@@ -4,7 +4,7 @@
   this.resource=ResourceBundle.getBundle(baseName,locale);
   Resources potentialParent=null;
   try {
-    String parentBaseName=this.resource.getString("parent");
+    String parentBaseName=this.resource.getString("$parent");
     if (parentBaseName != null && !Objects.equals(baseName,parentBaseName)) {
       potentialParent=new Resources(parentBaseName,locale);
     }

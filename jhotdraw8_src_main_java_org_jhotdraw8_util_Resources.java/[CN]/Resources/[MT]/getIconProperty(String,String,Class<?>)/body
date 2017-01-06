@@ -1,6 +1,6 @@
 {
   try {
-    String rsrcName=getStringRecursive(key + suffix);
+    String rsrcName=getString(key + suffix);
     if ("".equals(rsrcName) || rsrcName == null) {
       return null;
     }

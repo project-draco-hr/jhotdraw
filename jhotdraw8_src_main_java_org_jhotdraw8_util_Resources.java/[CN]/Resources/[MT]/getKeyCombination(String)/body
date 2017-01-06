@@ -1,6 +1,6 @@
 {
   KeyCombination ks=null;
-  String s=getStringRecursive(key);
+  String s=getString(key);
   try {
     ks=(s == null || s.isEmpty()) ? (KeyCombination)null : KeyCombination.valueOf(translateKeyStrokeToKeyCombination(s));
   }

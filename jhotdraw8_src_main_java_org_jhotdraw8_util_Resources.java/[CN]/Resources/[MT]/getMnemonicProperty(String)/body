@@ -1,7 +1,7 @@
 {
   String s;
   try {
-    s=getStringRecursive(key + ".mnemonic");
+    s=getString(key + ".mnemonic");
   }
  catch (  MissingResourceException e) {
     if (isVerbose) {

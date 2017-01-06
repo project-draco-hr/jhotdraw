@@ -1,6 +1,6 @@
 {
   try {
-    String value=getStringRecursive(key + ".text");
+    String value=getString(key + ".text");
     return value;
   }
  catch (  MissingResourceException e) {
