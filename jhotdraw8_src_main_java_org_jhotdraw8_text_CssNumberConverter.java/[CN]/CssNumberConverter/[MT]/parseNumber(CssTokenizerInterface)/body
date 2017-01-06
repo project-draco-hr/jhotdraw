@@ -1,0 +1,35 @@
+{
+  tt.skipWhitespace();
+  if (nullable && tt.nextToken() == CssTokenizer.TT_IDENT && "none".equals(tt.currentStringValue())) {
+    return null;
+  }
+ else {
+    tt.pushBack();
+  }
+  Number value=null;
+switch (tt.nextToken()) {
+case CssTokenizerInterface.TT_NUMBER:
+    value=tt.currentNumericValue();
+  break;
+case CssTokenizerInterface.TT_IDENT:
+{
+switch (tt.currentStringValue()) {
+case "INF":
+    value=Double.POSITIVE_INFINITY;
+  break;
+case "-INF":
+value=Double.NEGATIVE_INFINITY;
+break;
+case "NaN":
+value=Double.NaN;
+break;
+default :
+throw new ParseException("number expected:" + tt.currentStringValue(),tt.getStartPosition());
+}
+break;
+}
+default :
+throw new ParseException("number expected",tt.getStartPosition());
+}
+return value;
+}

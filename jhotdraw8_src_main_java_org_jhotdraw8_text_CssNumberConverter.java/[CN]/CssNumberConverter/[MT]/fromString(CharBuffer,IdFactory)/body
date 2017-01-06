@@ -1,0 +1,7 @@
+{
+  int start=buf.position();
+  CssTokenizerInterface tt=new CssTokenizer(new CharBufferReader(buf));
+  Number sz=parseNumber(tt);
+  buf.position(start + tt.getEndPosition());
+  return sz;
+}

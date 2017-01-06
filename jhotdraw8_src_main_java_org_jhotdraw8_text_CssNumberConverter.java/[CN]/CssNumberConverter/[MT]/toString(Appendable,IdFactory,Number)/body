@@ -1,0 +1,12 @@
+{
+  if (value == null) {
+    if (nullable) {
+      out.append("none");
+      return;
+    }
+ else {
+      value=getDefaultValue();
+    }
+  }
+  numberConverter.toString(out,idFactory,value);
+}
