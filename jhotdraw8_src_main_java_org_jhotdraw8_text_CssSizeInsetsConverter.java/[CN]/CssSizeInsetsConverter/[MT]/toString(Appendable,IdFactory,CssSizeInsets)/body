@@ -1,0 +1,18 @@
+{
+  if (value.getRight() == value.getLeft()) {
+    if (value.getTop() == value.getBottom()) {
+      if (value.getTop() == value.getLeft()) {
+        formatter.toStr(out,idFactory,1,value.getTop());
+      }
+ else {
+        formatter.toStr(out,idFactory,2,value.getTop(),value.getRight());
+      }
+    }
+ else {
+      formatter.toStr(out,idFactory,3,value.getTop(),value.getRight(),value.getBottom());
+    }
+  }
+ else {
+    formatter.toStr(out,idFactory,4,value.getTop(),value.getRight(),value.getBottom(),value.getLeft());
+  }
+}

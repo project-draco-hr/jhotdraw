@@ -1,0 +1,8 @@
+{
+  int hash=7;
+  hash=89 * hash + Objects.hashCode(this.top);
+  hash=89 * hash + Objects.hashCode(this.right);
+  hash=89 * hash + Objects.hashCode(this.bottom);
+  hash=89 * hash + Objects.hashCode(this.left);
+  return hash;
+}

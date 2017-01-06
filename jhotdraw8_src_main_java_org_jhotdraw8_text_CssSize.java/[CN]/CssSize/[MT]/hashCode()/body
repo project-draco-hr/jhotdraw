@@ -1,6 +1,6 @@
 {
-  int hash=7;
-  final double v=getDefaultConvertedValue();
-  hash=17 * hash + (int)(Double.doubleToLongBits(v) ^ (Double.doubleToLongBits(this.value) >>> 32));
+  int hash=3;
+  hash=97 * hash + Objects.hashCode(this.units);
+  hash=97 * hash + (int)(Double.doubleToLongBits(this.value) ^ (Double.doubleToLongBits(this.value) >>> 32));
   return hash;
 }

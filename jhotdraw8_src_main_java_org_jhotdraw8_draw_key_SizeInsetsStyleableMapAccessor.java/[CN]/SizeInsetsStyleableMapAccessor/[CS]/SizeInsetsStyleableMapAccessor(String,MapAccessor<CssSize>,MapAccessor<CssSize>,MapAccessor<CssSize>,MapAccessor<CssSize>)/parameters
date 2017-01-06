@@ -1,0 +1,5 @@
+String name
+MapAccessor<CssSize> topKey
+MapAccessor<CssSize> rightKey
+MapAccessor<CssSize> bottomKey
+MapAccessor<CssSize> leftKey

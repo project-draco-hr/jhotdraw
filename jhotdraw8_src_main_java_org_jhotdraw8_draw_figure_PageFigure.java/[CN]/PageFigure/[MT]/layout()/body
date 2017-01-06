@@ -1,5 +1,5 @@
 {
-  int currentPage=1;
+  int currentPage=0;
   ImmutableObservableList<Transform> transforms=ImmutableObservableList.of(getPageTransform(currentPage));
   for (  Figure child : getChildren()) {
     child.set(TRANSFORMS,transforms);

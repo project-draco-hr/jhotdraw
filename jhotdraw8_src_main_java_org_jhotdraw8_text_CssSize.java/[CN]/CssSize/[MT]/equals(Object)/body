@@ -9,8 +9,10 @@
     return false;
   }
   final CssSize other=(CssSize)obj;
-  double otherValue=DefaultUnitConverter.getInstance().convert(other,this.units);
-  if (Math.abs(otherValue - this.value) > 1e-4) {
+  if (Double.doubleToLongBits(this.value) != Double.doubleToLongBits(other.value)) {
+    return false;
+  }
+  if (!Objects.equals(this.units,other.units)) {
     return false;
   }
   return true;

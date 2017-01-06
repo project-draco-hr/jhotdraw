@@ -1,9 +1,11 @@
 {
   String paper=sizePapers.get(value);
-  if (paper != null)   out.append(paper);
+  if (paper != null) {
+    out.append(paper);
+  }
  else {
-    sizeConverter.toString(value.getX());
+    out.append(sizeConverter.toString(value.getX()));
     out.append(' ');
-    sizeConverter.toString(value.getY());
+    out.append(sizeConverter.toString(value.getY()));
   }
 }

@@ -1,0 +1,3 @@
+{
+  return new Insets(top.getDefaultConvertedValue(),right.getDefaultConvertedValue(),bottom.getDefaultConvertedValue(),left.getDefaultConvertedValue());
+}

@@ -1,0 +1,25 @@
+{
+  if (this == obj) {
+    return true;
+  }
+  if (obj == null) {
+    return false;
+  }
+  if (getClass() != obj.getClass()) {
+    return false;
+  }
+  final CssSizeInsets other=(CssSizeInsets)obj;
+  if (!Objects.equals(this.top,other.top)) {
+    return false;
+  }
+  if (!Objects.equals(this.right,other.right)) {
+    return false;
+  }
+  if (!Objects.equals(this.bottom,other.bottom)) {
+    return false;
+  }
+  if (!Objects.equals(this.left,other.left)) {
+    return false;
+  }
+  return true;
+}

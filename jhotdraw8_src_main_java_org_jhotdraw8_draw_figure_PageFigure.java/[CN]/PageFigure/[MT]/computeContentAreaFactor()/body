@@ -1,20 +1,24 @@
 {
   double contentWidth=get(WIDTH);
   double contentHeight=get(HEIGHT);
-  Insets insets=getStyled(PAGE_INSETS);
-  double overlap=getStyled(PAGE_OVERLAP);
+  Insets insets=getStyled(PAGE_INSETS).getDefaultConvertedValue();
+  CssSize2D overlap=getStyled(PAGE_OVERLAP);
+  double overlapX=overlap.getX().getDefaultConvertedValue();
+  double overlapY=overlap.getY().getDefaultConvertedValue();
   int numPagesX=Math.max(1,getStyled(NUM_PAGES_X).intValue());
   int numPagesY=Math.max(1,getStyled(NUM_PAGES_Y).intValue());
-  double contentAreaWidth=(get(PAPER_WIDTH).getDefaultConvertedValue() - insets.getLeft() - insets.getRight()) * numPagesX;
-  double contentAreaHeight=(get(PAPER_HEIGHT).getDefaultConvertedValue() - insets.getTop() - insets.getBottom()) * numPagesY;
+  double innerPageWidth=(get(PAPER_WIDTH).getDefaultConvertedValue() - insets.getLeft() - insets.getRight());
+  double innerPageHeight=(get(PAPER_HEIGHT).getDefaultConvertedValue() - insets.getTop() - insets.getBottom());
+  double totalInnerPageWidth=innerPageWidth * numPagesX - overlapX * numPagesX - 1;
+  double totalInnerPageHeight=innerPageHeight * numPagesY - overlapY * numPagesY - 1;
   double contentRatio=contentWidth / contentHeight;
-  double contentAreaRatio=contentAreaWidth / contentAreaHeight;
+  double innerPageRatio=totalInnerPageWidth / totalInnerPageHeight;
   double contentAreaFactor;
-  if (contentRatio > contentAreaRatio) {
-    contentAreaFactor=(contentWidth + overlap * (numPagesX - 1)) / contentAreaWidth;
+  if (contentRatio > innerPageRatio) {
+    contentAreaFactor=(contentWidth) / totalInnerPageWidth;
   }
  else {
-    contentAreaFactor=(contentHeight + overlap * (numPagesY - 1)) / contentAreaHeight;
+    contentAreaFactor=(contentHeight) / totalInnerPageHeight;
   }
   return contentAreaFactor;
 }
