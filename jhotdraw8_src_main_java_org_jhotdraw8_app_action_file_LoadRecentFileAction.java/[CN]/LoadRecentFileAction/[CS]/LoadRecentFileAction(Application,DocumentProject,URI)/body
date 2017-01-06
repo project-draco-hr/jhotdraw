@@ -1,6 +1,6 @@
 {
   super(app,view);
   this.uri=uri;
-  setMayCreateView(true);
+  setMayCreateProject(true);
   set(Action.LABEL,URIUtil.getName(uri));
 }

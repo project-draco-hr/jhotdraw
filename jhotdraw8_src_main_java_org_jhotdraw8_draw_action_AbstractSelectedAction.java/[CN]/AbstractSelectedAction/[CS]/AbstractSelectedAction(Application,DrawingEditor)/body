@@ -1,4 +1,4 @@
 {
-  super(app,null);
+  super(app,null,null);
   setEditor(editor);
 }

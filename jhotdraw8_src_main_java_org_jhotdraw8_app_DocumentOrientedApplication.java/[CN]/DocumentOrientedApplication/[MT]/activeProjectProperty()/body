@@ -1,3 +1,3 @@
 {
-  return activeView.getReadOnlyProperty();
+  return activeProject.getReadOnlyProperty();
 }

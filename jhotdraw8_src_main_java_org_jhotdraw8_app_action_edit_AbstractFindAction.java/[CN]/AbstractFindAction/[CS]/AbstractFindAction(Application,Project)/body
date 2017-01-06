@@ -1,4 +1,0 @@
-{
-  super(app,view);
-  Resources.getResources("org.jhotdraw8.app.Labels").configureAction(this,ID);
-}

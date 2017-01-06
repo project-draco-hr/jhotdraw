@@ -1,2 +1,7 @@
 {
+  super(app,view,null);
+  labels.configureAction(this,id);
+  this.property=property;
+  this.nodeGetter=null;
+  selectedProperty().bindBidirectional(property);
 }

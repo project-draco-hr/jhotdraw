@@ -1,0 +1,8 @@
+{
+  if (v == null) {
+    return;
+  }
+  oldFocusOwner=v.getNode().getScene().getFocusOwner();
+  v.addDisabler(this);
+  saveView(v);
+}

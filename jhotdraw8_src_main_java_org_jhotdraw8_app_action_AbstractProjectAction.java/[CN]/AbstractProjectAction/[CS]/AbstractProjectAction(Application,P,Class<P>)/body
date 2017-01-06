@@ -1,0 +1,11 @@
+{
+  super(app);
+  this.pClass=pClass;
+  this.project=project;
+  if (project != null) {
+    activeViewListener.changed(null,null,project);
+  }
+ else {
+    app.activeProjectProperty().addListener(activeViewListener);
+  }
+}

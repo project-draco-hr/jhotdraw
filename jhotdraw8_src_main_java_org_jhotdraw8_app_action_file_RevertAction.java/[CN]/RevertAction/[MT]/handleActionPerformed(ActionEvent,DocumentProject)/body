@@ -1,0 +1,16 @@
+{
+  if (isDisabled()) {
+    return;
+  }
+  URI uri=project.getURI();
+  if (project.isModified()) {
+    Alert alert=new Alert(Alert.AlertType.WARNING,"Do you want to revert?\nYou will lose your changes when you revert.",ButtonType.YES,ButtonType.CANCEL);
+    Optional<ButtonType> answer=alert.showAndWait();
+    if (answer.isPresent() && answer.get() == ButtonType.YES) {
+      doIt(project,uri);
+    }
+  }
+ else {
+    doIt(project,uri);
+  }
+}

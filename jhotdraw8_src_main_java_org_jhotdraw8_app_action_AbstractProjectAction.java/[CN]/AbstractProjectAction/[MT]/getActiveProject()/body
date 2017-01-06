@@ -1,0 +1,4 @@
+{
+  Project p=(project != null) ? project : app.getActiveProject();
+  return p == null || pClass == null || pClass.isAssignableFrom(p.getClass()) ? (P)p : null;
+}

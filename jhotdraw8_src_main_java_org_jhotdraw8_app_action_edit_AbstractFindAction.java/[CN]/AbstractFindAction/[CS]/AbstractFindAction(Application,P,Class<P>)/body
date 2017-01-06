@@ -1,0 +1,4 @@
+{
+  super(app,p,pClass);
+  Resources.getResources("org.jhotdraw8.app.Labels").configureAction(this,ID);
+}

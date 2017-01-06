@@ -1,0 +1,18 @@
+{
+  Stage stage=(Stage)project.getNode().getScene().getWindow();
+  project.stop();
+  ChangeListener<Boolean> focusListener=project.get(FOCUS_LISTENER_KEY);
+  if (focusListener != null) {
+    stage.focusedProperty().removeListener(focusListener);
+  }
+  stage.close();
+  project.dispose();
+  project.setApplication(null);
+  project.getActionMap().setParent(null);
+  if (activeProject.get() == project) {
+    activeProject.set(null);
+  }
+  if (projects.isEmpty() && !isSystemMenuSupported) {
+    exit();
+  }
+}

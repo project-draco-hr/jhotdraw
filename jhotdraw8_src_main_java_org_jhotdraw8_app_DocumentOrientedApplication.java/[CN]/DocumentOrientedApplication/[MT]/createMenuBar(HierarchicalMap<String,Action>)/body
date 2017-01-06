@@ -1,6 +1,6 @@
 {
   MenuBar mb=model.createMenuBar();
-  LinkedList<Menu> todo=new LinkedList<>(mb.getMenus());
+  Deque<Menu> todo=new LinkedList<>(mb.getMenus());
   while (!todo.isEmpty()) {
     for (    MenuItem mi : todo.remove().getItems()) {
       if (mi instanceof Menu) {
@@ -12,16 +12,17 @@
           Actions.bindMenuItem(mi,a);
         }
  else {
-          System.err.println("DocumentOrientedApplication: Warning: no action for menu item with id=" + mi.getId());
-          a=new AbstractViewAction(this,null){
-            @Override protected void onActionPerformed(            ActionEvent event){
-              Action ava=getActiveView().getActionMap().get(mi.getId());
+          System.err.println("Warning DocumentOrientedApplication no action for menu item with id:" + mi.getId());
+          a=new AbstractProjectAction<Project>(this,null,null){
+            @Override protected void handleActionPerformed(            ActionEvent event,            Project p){
+              Action ava=getActiveProject().getActionMap().get(mi.getId());
               if (ava != null) {
                 ava.handle(event);
               }
             }
           }
 ;
+          systemMenuActiveProjectActions.add(a);
           Actions.bindMenuItem(mi,a,false);
         }
       }

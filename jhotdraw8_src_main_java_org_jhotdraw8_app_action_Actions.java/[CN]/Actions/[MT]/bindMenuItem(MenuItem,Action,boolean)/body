@@ -4,12 +4,12 @@
     control.getProperties().put("ActionsNameBinding",nameBinding);
     control.textProperty().bind(Action.LABEL.valueAt(action.getProperties()));
     if (control instanceof CheckMenuItem) {
-      Property<Boolean> selectedBinding=Action.SELECTED_KEY.propertyAt(action.getProperties());
+      Property<Boolean> selectedBinding=action.selectedProperty();
       control.getProperties().put("ActionsSelectedBinding",selectedBinding);
       ((CheckMenuItem)control).selectedProperty().bindBidirectional(selectedBinding);
     }
  else     if (control instanceof RadioMenuItem) {
-      Property<Boolean> selectedBinding=Action.SELECTED_KEY.propertyAt(action.getProperties());
+      Property<Boolean> selectedBinding=action.selectedProperty();
       control.getProperties().put("ActionsSelectedBinding",selectedBinding);
       ((RadioMenuItem)control).selectedProperty().bindBidirectional(selectedBinding);
     }
