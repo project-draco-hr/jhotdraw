@@ -5,7 +5,10 @@
   }
   if (event.isMetaDown()) {
     Point2D loc=getLocation();
-    oldPoint=owner.getLocalToWorld().transform(loc);
+    final Transform localToWorld=owner.getLocalToWorld();
+    if (localToWorld != null) {
+      oldPoint=localToWorld.transform(loc);
+    }
   }
   if (oldPoint.equals(newPoint)) {
     return;
