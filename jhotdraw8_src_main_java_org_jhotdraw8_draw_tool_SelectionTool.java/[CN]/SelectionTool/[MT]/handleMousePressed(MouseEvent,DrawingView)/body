@@ -46,6 +46,7 @@
       }
       if (event.isShiftDown() && !event.isMetaDown()) {
         if (pressedFigure != null) {
+          view.getSelectedFigures().remove(pressedFigure);
           view.getSelectedFigures().add(pressedFigure);
           return;
         }
