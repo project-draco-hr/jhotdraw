@@ -2,6 +2,7 @@
   if (isSkipNode(node)) {
     return;
   }
+  writeClipPathDefs(doc,defsNode,node);
   if (node instanceof Shape) {
     Shape shape=(Shape)node;
     writePaintDefs(doc,defsNode,shape.getFill());

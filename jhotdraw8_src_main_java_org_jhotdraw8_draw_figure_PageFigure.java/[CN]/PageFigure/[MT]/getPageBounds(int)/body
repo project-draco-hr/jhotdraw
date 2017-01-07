@@ -2,14 +2,14 @@
   double contentAreaFactor=computeContentAreaFactor();
   Insets insets=getStyled(PAGE_INSETS).getDefaultConvertedValue();
   CssSize2D overlap=getStyled(PAGE_OVERLAP);
-  double overlapX=overlap.getX().getDefaultConvertedValue();
-  double overlapY=overlap.getY().getDefaultConvertedValue();
+  double overlapX=overlap.getX().getConvertedValue();
+  double overlapY=overlap.getY().getConvertedValue();
   int numPagesX=Math.max(1,getStyled(NUM_PAGES_X).intValue());
   double pageX=get(X) - insets.getLeft() * contentAreaFactor;
   double pageY=get(Y) - insets.getTop() * contentAreaFactor;
   ;
-  double pageWidth=get(PAPER_WIDTH).getDefaultConvertedValue() * contentAreaFactor;
-  double pageHeight=get(PAPER_HEIGHT).getDefaultConvertedValue() * contentAreaFactor;
+  double pageWidth=get(PAPER_WIDTH).getConvertedValue() * contentAreaFactor;
+  double pageHeight=get(PAPER_HEIGHT).getConvertedValue() * contentAreaFactor;
   double pageOverlapX=(overlapX + insets.getLeft() + insets.getRight()) * contentAreaFactor;
   double pageOverlapY=(overlapY + insets.getTop() + insets.getBottom()) * contentAreaFactor;
   int px=internalPageNumber % numPagesX;

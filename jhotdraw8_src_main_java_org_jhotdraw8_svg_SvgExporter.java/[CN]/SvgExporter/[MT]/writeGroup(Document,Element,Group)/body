@@ -1,5 +1,6 @@
 {
   Element elem=doc.createElement("g");
+  writeClipAttributes(elem,node);
   parent.appendChild(elem);
   return elem;
 }

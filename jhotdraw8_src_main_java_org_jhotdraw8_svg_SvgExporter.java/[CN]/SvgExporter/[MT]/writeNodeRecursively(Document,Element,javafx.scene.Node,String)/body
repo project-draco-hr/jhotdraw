@@ -8,12 +8,13 @@
     elem=writeShape(doc,parent,(Shape)node);
     writeFillAttributes(elem,(Shape)node);
     writeStrokeAttributes(elem,(Shape)node);
+    writeClipAttributes(elem,node);
   }
  else   if (node instanceof Group) {
     boolean omitGroup=false;
     if (skipInvisibleNodes) {
       Group g=(Group)node;
-      if ((g.getBlendMode() == null || g.getBlendMode() == BlendMode.SRC_OVER) && g.getLocalToParentTransform().isIdentity() && g.getEffect() == null) {
+      if ((g.getBlendMode() == null || g.getBlendMode() == BlendMode.SRC_OVER) && g.getLocalToParentTransform().isIdentity() && g.getEffect() == null && g.getClip() == null) {
         omitGroup=true;
       }
     }

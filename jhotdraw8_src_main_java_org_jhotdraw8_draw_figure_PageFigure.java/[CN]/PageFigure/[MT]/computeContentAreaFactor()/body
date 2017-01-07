@@ -3,12 +3,12 @@
   double contentHeight=get(HEIGHT);
   Insets insets=getStyled(PAGE_INSETS).getDefaultConvertedValue();
   CssSize2D overlap=getStyled(PAGE_OVERLAP);
-  double overlapX=overlap.getX().getDefaultConvertedValue();
-  double overlapY=overlap.getY().getDefaultConvertedValue();
+  double overlapX=overlap.getX().getConvertedValue();
+  double overlapY=overlap.getY().getConvertedValue();
   int numPagesX=Math.max(1,getStyled(NUM_PAGES_X).intValue());
   int numPagesY=Math.max(1,getStyled(NUM_PAGES_Y).intValue());
-  double innerPageWidth=(get(PAPER_WIDTH).getDefaultConvertedValue() - insets.getLeft() - insets.getRight());
-  double innerPageHeight=(get(PAPER_HEIGHT).getDefaultConvertedValue() - insets.getTop() - insets.getBottom());
+  double innerPageWidth=(get(PAPER_WIDTH).getConvertedValue() - insets.getLeft() - insets.getRight());
+  double innerPageHeight=(get(PAPER_HEIGHT).getConvertedValue() - insets.getTop() - insets.getBottom());
   double totalInnerPageWidth=innerPageWidth * numPagesX - overlapX * numPagesX - 1;
   double totalInnerPageHeight=innerPageHeight * numPagesY - overlapY * numPagesY - 1;
   double contentRatio=contentWidth / contentHeight;

@@ -1,0 +1,11 @@
+{
+  Node clip=node.getClip();
+  if (clip == null)   return;
+  String id=idFactory.getId(clip);
+  if (id != null) {
+    elem.setAttribute("clip-path","url(#" + id + ")");
+  }
+ else {
+    System.err.println("WARNING SvgExporter does not supported recursive clips!");
+  }
+}
