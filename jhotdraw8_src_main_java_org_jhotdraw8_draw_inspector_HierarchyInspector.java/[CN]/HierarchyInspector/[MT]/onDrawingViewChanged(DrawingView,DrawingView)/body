@@ -1,11 +1,13 @@
 {
   if (oldValue != null) {
     oldValue.getSelectedFigures().removeListener(viewSelectionHandler);
+    treeView.getProperties().put(EditableComponent.EDITABLE_COMPONENT,null);
   }
   drawingView=newValue;
   if (newValue != null) {
     model.setDrawingModel(newValue.getModel());
     newValue.getSelectedFigures().addListener(viewSelectionHandler);
+    treeView.getProperties().put(EditableComponent.EDITABLE_COMPONENT,drawingView);
   }
  else {
     model.setDrawingModel(new SimpleDrawingModel());

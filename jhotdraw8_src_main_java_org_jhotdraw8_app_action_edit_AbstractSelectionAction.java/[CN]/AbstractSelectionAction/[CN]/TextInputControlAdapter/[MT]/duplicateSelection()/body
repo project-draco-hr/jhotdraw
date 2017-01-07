@@ -1,0 +1,3 @@
+{
+  control.insertText(control.getCaretPosition(),control.getSelectedText());
+}

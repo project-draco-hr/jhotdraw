@@ -1,0 +1,6 @@
+{
+  EditableComponent ec=getEditableComponent();
+  if (ec != null) {
+    handleActionPerformed(event,ec);
+  }
+}

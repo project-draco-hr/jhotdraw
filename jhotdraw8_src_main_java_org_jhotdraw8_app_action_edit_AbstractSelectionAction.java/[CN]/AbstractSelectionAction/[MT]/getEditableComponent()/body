@@ -1,0 +1,22 @@
+{
+  Project v=app.getActiveProject();
+  if (v != null && !v.isDisabled()) {
+    Node n=v.getNode().getScene().getFocusOwner();
+    while (n != null) {
+      if (n instanceof TextInputControl) {
+        TextInputControl tic=(TextInputControl)n;
+        return new TextInputControlAdapter(tic);
+      }
+ else       if (n instanceof EditableComponent) {
+        EditableComponent tic=(EditableComponent)n;
+        return tic;
+      }
+ else       if (n.getProperties().get(EditableComponent.EDITABLE_COMPONENT) instanceof EditableComponent) {
+        EditableComponent tic=(EditableComponent)n.getProperties().get(EditableComponent.EDITABLE_COMPONENT);
+        return tic;
+      }
+      n=n.getParent();
+    }
+  }
+  return null;
+}

@@ -1,0 +1,3 @@
+{
+  control.selectRange(control.getCaretPosition(),control.getCaretPosition());
+}
