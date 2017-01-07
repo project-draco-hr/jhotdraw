@@ -1,0 +1,2 @@
+Application app
+Function<DataFormat,Dialog<Map<? super Key<?>,Object>>> optionsDialog

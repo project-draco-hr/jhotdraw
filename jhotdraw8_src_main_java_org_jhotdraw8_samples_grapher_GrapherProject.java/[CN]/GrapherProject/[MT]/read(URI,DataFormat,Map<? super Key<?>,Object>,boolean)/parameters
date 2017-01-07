@@ -1,0 +1,4 @@
+URI uri
+DataFormat format
+Map<? super Key<?>,Object> options
+boolean append

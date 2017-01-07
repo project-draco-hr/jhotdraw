@@ -1,0 +1,6 @@
+{
+  WritableImage image=renderSlice(slice,slice.getBoundsInLocal(),node,dpi);
+  try (OutputStream out=new BufferedOutputStream(new FileOutputStream(file))){
+    writeImage(out,image,dpi);
+  }
+ }

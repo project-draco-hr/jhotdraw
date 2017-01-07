@@ -1,6 +1,6 @@
 {
-  WritableImage image=renderSlice(page,page.getPageBounds(internalPageNumber),node);
+  WritableImage image=renderSlice(page,page.getPageBounds(internalPageNumber),node,pagesDpi);
   try (OutputStream out=new BufferedOutputStream(new FileOutputStream(file))){
-    writeImage(out,image);
+    writeImage(out,image,pagesDpi);
   }
  }

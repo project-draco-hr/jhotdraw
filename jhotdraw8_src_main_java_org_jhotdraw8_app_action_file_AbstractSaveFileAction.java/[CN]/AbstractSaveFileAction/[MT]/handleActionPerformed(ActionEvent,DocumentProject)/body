@@ -4,5 +4,5 @@
   }
   oldFocusOwner=v.getNode().getScene().getFocusOwner();
   v.addDisabler(this);
-  saveView(v);
+  saveProjectChooseUri(v);
 }

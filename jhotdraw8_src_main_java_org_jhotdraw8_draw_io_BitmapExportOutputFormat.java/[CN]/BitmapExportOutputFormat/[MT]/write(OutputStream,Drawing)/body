@@ -1,4 +1,4 @@
 {
-  WritableImage writableImage=renderImage(drawing,Collections.singleton(drawing));
-  writeImage(out,writableImage);
+  WritableImage writableImage=renderImage(drawing,Collections.singleton(drawing),drawingDpi);
+  writeImage(out,writableImage,drawingDpi);
 }

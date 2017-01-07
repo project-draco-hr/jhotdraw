@@ -1,0 +1,12 @@
+{
+  Map<? super Key<?>,Object> map=new HashMap<>();
+  EXPORT_DRAWING_KEY.put(map,exportDrawingCheckBox.isSelected());
+  EXPORT_PAGES_KEY.put(map,exportPagesCheckBox.isSelected());
+  EXPORT_SLICES_KEY.put(map,exportSlicesCheckBox.isSelected());
+  EXPORT_DRAWING_DPI_KEY.put(map,drawingDpiFormatter.getValue().doubleValue());
+  EXPORT_PAGES_DPI_KEY.put(map,pagesDpiFormatter.getValue().doubleValue());
+  EXPORT_SLICES_DPI_KEY.put(map,slicesDpiFormatter.getValue().doubleValue());
+  EXPORT_SLICES_RESOLUTION_2X_KEY.put(map,slicesResolution2xCheckBox.isSelected());
+  EXPORT_SLICES_RESOLUTION_3X_KEY.put(map,slicesResolution3xCheckBox.isSelected());
+  return map;
+}

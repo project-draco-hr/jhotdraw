@@ -1,5 +1,7 @@
 {
-  OutputFormat.super.write(file,drawing);
+  if (exportDrawing) {
+    OutputFormat.super.write(file,drawing);
+  }
   if (exportSlices) {
     writeSlices(file.getParentFile(),drawing);
   }

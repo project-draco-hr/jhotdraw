@@ -1,0 +1,11 @@
+{
+  boolean dpi=supportsDpi(format);
+  drawingDpiLabel.setVisible(dpi);
+  drawingDpiField.setVisible(dpi);
+  pagesDpiLabel.setVisible(dpi);
+  pagesDpiField.setVisible(dpi);
+  slicesDpiLabel.setVisible(dpi);
+  slicesDpiField.setVisible(dpi);
+  slicesResolution2xCheckBox.setVisible(dpi);
+  slicesResolution3xCheckBox.setVisible(dpi);
+}

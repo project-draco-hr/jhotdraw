@@ -1,0 +1,4 @@
+Application app
+DocumentProject project
+String id
+Function<DataFormat,Dialog<Map<? super Key<?>,Object>>> optionsDialog

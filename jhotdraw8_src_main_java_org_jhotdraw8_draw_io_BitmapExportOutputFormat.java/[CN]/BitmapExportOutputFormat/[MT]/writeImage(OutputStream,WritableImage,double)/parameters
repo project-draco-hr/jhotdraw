@@ -1,0 +1,3 @@
+OutputStream out
+WritableImage writableImage
+double dpi

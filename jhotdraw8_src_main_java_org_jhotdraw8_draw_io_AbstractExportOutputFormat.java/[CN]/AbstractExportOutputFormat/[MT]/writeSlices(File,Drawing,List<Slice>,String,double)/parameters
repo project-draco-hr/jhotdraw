@@ -1,0 +1,5 @@
+File dir
+Drawing drawing
+List<Slice> slices
+String suffix
+double dpi

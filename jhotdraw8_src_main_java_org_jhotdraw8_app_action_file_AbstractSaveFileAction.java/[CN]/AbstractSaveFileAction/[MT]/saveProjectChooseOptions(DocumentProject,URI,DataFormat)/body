@@ -1,0 +1,17 @@
+{
+  Map<? super Key<?>,Object> options=null;
+  Dialog<Map<? super Key<?>,Object>> dialog=createOptionsDialog(format);
+  if (dialog != null) {
+    dialog.initModality(Modality.WINDOW_MODAL);
+    dialog.initOwner(v.getNode().getScene().getWindow());
+    Optional<Map<? super Key<?>,Object>> result=dialog.showAndWait();
+    if (result.isPresent()) {
+      options=result.get();
+    }
+ else {
+      v.removeDisabler(this);
+      return;
+    }
+  }
+  saveProjectToUri(v,uri,format,options);
+}

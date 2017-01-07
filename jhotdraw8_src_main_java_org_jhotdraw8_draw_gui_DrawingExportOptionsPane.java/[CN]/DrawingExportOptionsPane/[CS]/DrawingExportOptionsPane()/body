@@ -1,0 +1,12 @@
+{
+  FXMLLoader loader=new FXMLLoader();
+  loader.setController(this);
+  loader.setRoot(this);
+  loader.setResources(Resources.getResources("org.jhotdraw8.draw.Labels"));
+  try {
+    loader.load(getClass().getResourceAsStream("DrawingExportOptionsPane.fxml"));
+  }
+ catch (  IOException ex) {
+    throw new InternalError(ex);
+  }
+}
