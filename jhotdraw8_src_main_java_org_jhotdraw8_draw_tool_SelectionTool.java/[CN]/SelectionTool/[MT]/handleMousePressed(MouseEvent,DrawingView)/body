@@ -61,6 +61,12 @@
           return;
         }
       }
+ else       if (event.isShiftDown() && event.isMetaDown()) {
+        if (pressedFigure != null) {
+          view.selectedFiguresProperty().clear();
+          view.selectedFiguresProperty().add(pressedFigure);
+        }
+      }
  else       if (!event.isShiftDown() && !event.isMetaDown()) {
         if (pressedFigure != null && !view.selectedFiguresProperty().contains(pressedFigure)) {
           view.selectedFiguresProperty().clear();
