@@ -1,0 +1,44 @@
+{
+  IdFactory idFactory=new SimpleIdFactory();
+  int numberOfPages=0;
+  for (  Page page : pages) {
+    if (page.getId() != null) {
+      idFactory.putId(page,page.getId());
+    }
+    numberOfPages+=page.getNumberOfSubPages();
+  }
+  int pageNumber=0;
+  SimpleDrawingRenderer renderer=new SimpleDrawingRenderer();
+  Group rootNode=new Group();
+  Group parentOfPageNode=new Group();
+  for (  Page page : pages) {
+    for (int internalPageNumber=0, n=page.getNumberOfSubPages(); internalPageNumber < n; internalPageNumber++) {
+      File filename=new File(dir,basename + "_" + (pageNumber + 1)+ "."+ getExtension());
+      hints.put(RenderContext.RENDER_PAGE,page);
+      hints.put(RenderContext.RENDER_NUMBER_OF_PAGES,numberOfPages);
+      hints.put(RenderContext.RENDER_PAGE_NUMBER,pageNumber);
+      hints.put(RenderContext.RENDER_PAGE_INTERNAL_NUMBER,internalPageNumber);
+      renderer.getProperties().putAll(hints);
+      renderer.render(drawing);
+      final Node pageNode=renderer.getNode(page);
+      final Node drawingNode=renderer.getNode(drawing);
+      Shape pageClip=page.getPageClip(internalPageNumber);
+      Transform localToWorld=page.getLocalToWorld();
+      if (localToWorld == null) {
+        pageClip.getTransforms().clear();
+      }
+ else {
+        pageClip.getTransforms().setAll(localToWorld);
+      }
+      drawingNode.setClip(pageClip);
+      Group oldParentOfPageNode=(Group)pageNode.getParent();
+      if (oldParentOfPageNode != null) {
+        oldParentOfPageNode.getChildren().remove(pageNode);
+      }
+      parentOfPageNode.getChildren().setAll(pageNode);
+      rootNode.getChildren().setAll(drawingNode,parentOfPageNode);
+      writePage(filename,page,rootNode,numberOfPages,pageNumber,internalPageNumber);
+      pageNumber++;
+    }
+  }
+}

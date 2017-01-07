@@ -1,4 +1,5 @@
 {
   initView();
   initActionMap(actionMap);
+  getNode().disableProperty().bind(disabledProperty());
 }

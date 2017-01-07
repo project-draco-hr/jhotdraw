@@ -1,4 +1,5 @@
 File dir
+String basename
 Drawing drawing
 List<Page> pages
 Map<Key<?>,Object> hints

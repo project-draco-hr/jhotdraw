@@ -1,5 +1,9 @@
 {
-  WritableImage image=renderSlice(page,page.getPageBounds(internalPageNumber),node,pagesDpi);
+  CssSize pw=page.get(PageFigure.PAPER_WIDTH);
+  double paperWidth=pw.getDefaultConvertedValue();
+  final Bounds pageBounds=page.getPageBounds(internalPageNumber);
+  double factor=paperWidth / pageBounds.getWidth();
+  WritableImage image=renderSlice(page,pageBounds,node,pagesDpi * factor);
   try (OutputStream out=new BufferedOutputStream(new FileOutputStream(file))){
     writeImage(out,image,pagesDpi);
   }

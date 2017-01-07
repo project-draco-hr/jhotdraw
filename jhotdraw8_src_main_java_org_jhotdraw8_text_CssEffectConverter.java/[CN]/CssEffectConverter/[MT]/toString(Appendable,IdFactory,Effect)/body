@@ -102,11 +102,11 @@
     nb.toString(out,idFactory,fx.getOffsetX());
     out.append(',');
     nb.toString(out,idFactory,fx.getOffsetY());
-    out.append(',');
     if (fx.getInput() != null) {
       out.append(", ");
       toString(out,idFactory,fx.getInput());
     }
+    out.append(")");
   }
  else   if (value instanceof GaussianBlur) {
     GaussianBlur fx=(GaussianBlur)value;

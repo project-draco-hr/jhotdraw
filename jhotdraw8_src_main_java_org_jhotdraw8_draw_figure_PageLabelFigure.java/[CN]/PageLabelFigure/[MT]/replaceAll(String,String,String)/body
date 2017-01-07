@@ -1,0 +1,6 @@
+{
+  for (int p=text.indexOf(placeholder); p != -1; p=text.indexOf(placeholder)) {
+    text=text.substring(0,p) + replace + text.substring(p + placeholder.length());
+  }
+  return text;
+}

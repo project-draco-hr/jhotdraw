@@ -1,0 +1,12 @@
+{
+  String text=get(TEXT_WITH_PLACEHOLDERS);
+  final Integer pageNumber=ctx == null ? 0 : ctx.get(RenderContext.RENDER_PAGE_NUMBER);
+  final Integer numPages=ctx == null ? 0 : ctx.get(RenderContext.RENDER_NUMBER_OF_PAGES);
+  if (pageNumber != null) {
+    text=replaceAll(text,PAGE_PLACEHOLDER,"" + (pageNumber + 1));
+  }
+  if (numPages != null) {
+    text=replaceAll(text,NUM_PAGES_PLACEHOLDER,"" + numPages);
+  }
+  return text;
+}

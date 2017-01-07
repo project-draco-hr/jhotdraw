@@ -6,6 +6,11 @@
     writeSlices(file.getParentFile(),drawing);
   }
   if (exportPages) {
-    writePages(file.getParentFile(),drawing);
+    String basename=file.getName();
+    int p=basename.lastIndexOf('.');
+    if (p != -1) {
+      basename=basename.substring(0,p);
+    }
+    writePages(file.getParentFile(),basename,drawing);
   }
 }

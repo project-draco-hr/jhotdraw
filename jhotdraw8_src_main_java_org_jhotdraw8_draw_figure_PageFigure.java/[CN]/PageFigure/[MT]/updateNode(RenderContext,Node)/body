@@ -3,10 +3,20 @@
   node.getTransforms().setAll(getLocalToParent(true));
   Rectangle contentBoundsNode=(Rectangle)groupNode.getProperties().get("contentBounds");
   Path pageBoundsNode=(Path)groupNode.getProperties().get("pageBounds");
+  javafx.scene.Group currentPageNode=(javafx.scene.Group)groupNode.getProperties().get("currentPage");
   applyHideableFigureProperties(node);
-  if (ctx.get(RenderContext.RENDERING_INTENT) != RenderingIntent.EDITOR) {
+  if (ctx.get(RenderContext.RENDERING_INTENT) == RenderingIntent.EDITOR) {
+    node.setVisible(true);
+    contentBoundsNode.setVisible(true);
+    pageBoundsNode.setVisible(true);
+  }
+ else   if (ctx.get(RenderContext.RENDER_PAGE) == this) {
+    node.setVisible(true);
     contentBoundsNode.setVisible(false);
     pageBoundsNode.setVisible(false);
+  }
+ else {
+    node.setVisible(false);
   }
   double contentWidth=get(WIDTH);
   double contentHeight=get(HEIGHT);
@@ -30,14 +40,14 @@
     l.add(new LineTo(x,y + h));
     l.add(new ClosePath());
   }
-  List<Node> nodes=new ArrayList<Node>(getChildren().size() + 2);
-  nodes.add(pageBoundsNode);
-  nodes.add(contentBoundsNode);
+  List<Node> currentPageChildren=new ArrayList<Node>(getChildren().size() + 2);
+  int currentPage=ctx.get(RenderContext.RENDER_PAGE_INTERNAL_NUMBER);
+  currentPageNode.getTransforms().setAll(getPageTranslate(currentPage));
   for (  Figure child : getChildren()) {
-    nodes.add(ctx.getNode(child));
+    currentPageChildren.add(ctx.getNode(child));
   }
-  ObservableList<Node> group=groupNode.getChildren();
-  if (!group.equals(nodes)) {
-    group.setAll(nodes);
+  ObservableList<Node> group=currentPageNode.getChildren();
+  if (!group.equals(currentPageChildren)) {
+    group.setAll(currentPageChildren);
   }
 }

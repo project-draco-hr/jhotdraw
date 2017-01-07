@@ -8,8 +8,10 @@
   pageBoundsNode.setFill(Color.TRANSPARENT);
   pageBoundsNode.setStroke(Color.LIGHTBLUE);
   pageBoundsNode.setStrokeType(StrokeType.CENTERED);
-  groupNode.getChildren().addAll(pageBoundsNode,contentBoundsNode);
+  javafx.scene.Group currentPageNode=new javafx.scene.Group();
+  groupNode.getChildren().addAll(pageBoundsNode,contentBoundsNode,currentPageNode);
   groupNode.getProperties().put("pageBounds",pageBoundsNode);
   groupNode.getProperties().put("contentBounds",contentBoundsNode);
+  groupNode.getProperties().put("currentPage",currentPageNode);
   return groupNode;
 }

@@ -8,5 +8,5 @@
   Map<Key<?>,Object> hints=new HashMap<>();
   RenderContext.RENDERING_INTENT.put(hints,RenderingIntent.EXPORT);
   RenderContext.DPI.put(hints,pagesDpi);
-  writePages(dir,drawing,pages,hints);
+  writePages(dir,basename,drawing,pages,hints);
 }

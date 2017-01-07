@@ -1,0 +1,4 @@
+String name
+DirtyMask mask
+String defaultValue
+String helpText

@@ -1,5 +1,5 @@
 {
-  tn.setText(getText());
+  tn.setText(getText(ctx));
   tn.setX(get(ORIGIN_X));
   tn.setY(get(ORIGIN_Y));
   applyTextFillableFigureProperties(tn);
