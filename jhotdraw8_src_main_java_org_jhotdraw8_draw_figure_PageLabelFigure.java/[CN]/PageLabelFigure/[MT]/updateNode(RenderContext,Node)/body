@@ -3,4 +3,5 @@
   applyTransformableFigureProperties(node);
   applyCompositableFigureProperties(node);
   applyStyleableFigureProperties(ctx,node);
+  applyHideableFigureProperties(node);
 }
