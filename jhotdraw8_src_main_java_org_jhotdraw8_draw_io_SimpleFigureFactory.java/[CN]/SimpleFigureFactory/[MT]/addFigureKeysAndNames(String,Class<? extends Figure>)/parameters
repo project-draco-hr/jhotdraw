@@ -1,0 +1,2 @@
+String figureName
+Class<? extends Figure> f

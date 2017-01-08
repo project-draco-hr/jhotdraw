@@ -1,0 +1,9 @@
+{
+  Object[] v=formatter.fromString(buf);
+  Set<PseudoClass> tokens=new TreeSet<>(NFD_COMPARATOR);
+  for (int i=0, n=(int)v[0]; i < n; i++) {
+    tokens.add(PseudoClass.getPseudoClass((String)v[i + 1]));
+  }
+  ImmutableObservableSet<PseudoClass> l=new ImmutableObservableSet<>(tokens);
+  return l;
+}

@@ -1,6 +1,6 @@
 {
   Set<Figure> newValue=getSelectedFigures();
-  Set<String> union=new TreeSet<>(CssObservableWordListConverter.NFD_COMPARATOR);
+  Set<String> union=new TreeSet<>(CssWordListConverter.NFD_COMPARATOR);
   Set<String> intersection=new HashSet<>();
   boolean first=true;
   for (  Figure f : newValue) {

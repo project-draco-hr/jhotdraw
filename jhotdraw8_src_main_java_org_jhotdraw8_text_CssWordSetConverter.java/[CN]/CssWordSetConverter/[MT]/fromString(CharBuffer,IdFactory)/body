@@ -4,6 +4,6 @@
   for (int i=0, n=(int)v[0]; i < n; i++) {
     tokens.add((String)v[i + 1]);
   }
-  ImmutableObservableList<String> l=new ImmutableObservableList<>(tokens);
+  ImmutableObservableSet<String> l=new ImmutableObservableSet<>(tokens);
   return l;
 }

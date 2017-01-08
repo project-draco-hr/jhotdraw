@@ -1,8 +1,0 @@
-{
-  Object[] v=new Object[value.size() + 1];
-  v[0]=value.size();
-  for (int i=0, n=value.size(); i < n; i++) {
-    v[i + 1]=value.get(i);
-  }
-  formatter.toString(out,v);
-}

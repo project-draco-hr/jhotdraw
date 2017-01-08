@@ -1,11 +1,11 @@
 {
-  Set<String> tokens=new TreeSet<>(NFD_COMPARATOR);
+  Set<PseudoClass> tokens=new TreeSet<>(NFD_COMPARATOR);
   tokens.addAll(value);
   Object[] v=new Object[tokens.size() + 1];
   v[0]=value.size();
   int i=1;
-  for (  String token : tokens) {
-    v[i]=token;
+  for (  PseudoClass token : tokens) {
+    v[i]=token.getPseudoClassName();
     i++;
   }
   formatter.toString(out,v);

@@ -1,0 +1,3 @@
+{
+  addFigureKeysAndNames(figureName,f,Figure.getDeclaredAndInheritedKeys(f));
+}
