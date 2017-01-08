@@ -72,7 +72,7 @@
       m.invoke(p,DirtyBits.NODE_CONTENTS);
     }
   }
- catch (  Exception e) {
+ catch (  NoSuchMethodException|IllegalAccessException|IllegalAccessError|InvocationTargetException e) {
     System.out.println("StylesAttributesInspector e:" + e);
   }
   textArea.setText(buf.toString());
