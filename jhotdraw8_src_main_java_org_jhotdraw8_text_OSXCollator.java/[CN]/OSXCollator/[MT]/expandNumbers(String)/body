@@ -1,0 +1,50 @@
+{
+  if (s == null)   return null;
+  StringBuffer out=new StringBuffer();
+  StringBuffer digits=new StringBuffer();
+  for (int i=0, n=s.length(); i < n; i++) {
+    char ch=s.charAt(i);
+    if (ch >= '0' && ch <= '9') {
+      digits.append(ch);
+    }
+ else {
+      if (digits.length() != 0) {
+        if (digits.length() < 10) {
+          out.append("00");
+          out.append(digits.length());
+        }
+ else         if (digits.length() < 100) {
+          out.append("0");
+          out.append(digits.length());
+        }
+ else         if (digits.length() < 1000) {
+          out.append(digits.length());
+        }
+ else         if (digits.length() > 999) {
+          out.append("999");
+        }
+        out.append(digits.toString());
+        digits.delete(0,digits.length());
+      }
+      out.append(ch);
+    }
+  }
+  if (digits.length() != 0) {
+    if (digits.length() < 10) {
+      out.append("00");
+      out.append(digits.length());
+    }
+ else     if (digits.length() < 100) {
+      out.append("0");
+      out.append(digits.length());
+    }
+ else     if (digits.length() < 1000) {
+      out.append(digits.length());
+    }
+ else     if (digits.length() > 999) {
+      out.append("999");
+    }
+    out.append(digits);
+  }
+  return out.toString();
+}

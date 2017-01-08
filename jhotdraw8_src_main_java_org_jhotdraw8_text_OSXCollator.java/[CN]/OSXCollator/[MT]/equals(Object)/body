@@ -1,0 +1,9 @@
+{
+  if (o instanceof OSXCollator) {
+    OSXCollator that=(OSXCollator)o;
+    return this.collator.equals(that.collator);
+  }
+ else {
+    return false;
+  }
+}

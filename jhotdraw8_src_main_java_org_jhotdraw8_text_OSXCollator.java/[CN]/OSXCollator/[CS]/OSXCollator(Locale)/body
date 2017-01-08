@@ -1,0 +1,28 @@
+{
+  collator=Collator.getInstance(locale);
+  if (collator instanceof RuleBasedCollator) {
+    String rules=((RuleBasedCollator)collator).getRules();
+    int pos=rules.indexOf(",'-'");
+    int primaryRelationPos=rules.indexOf('<');
+    if (primaryRelationPos == rules.indexOf("'<'")) {
+      primaryRelationPos=rules.indexOf('<',primaryRelationPos + 2);
+    }
+    if (pos != -1 && pos < primaryRelationPos) {
+      rules=rules.substring(0,pos) + rules.substring(pos + 4,primaryRelationPos) + "<'-'"+ rules.substring(primaryRelationPos);
+    }
+    pos=rules.indexOf(";' '");
+    primaryRelationPos=rules.indexOf('<');
+    if (primaryRelationPos == rules.indexOf("'<'")) {
+      primaryRelationPos=rules.indexOf('<',primaryRelationPos + 2);
+    }
+    if (pos != -1 && pos < primaryRelationPos) {
+      rules=rules.substring(0,pos) + rules.substring(pos + 4,primaryRelationPos) + "<' '"+ rules.substring(primaryRelationPos);
+    }
+    try {
+      collator=new RuleBasedCollator(rules);
+    }
+ catch (    ParseException e) {
+      e.printStackTrace();
+    }
+  }
+}

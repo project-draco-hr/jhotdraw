@@ -24,13 +24,13 @@
   if (style.getType() != StrokeType.CENTERED) {
 switch (style.getType()) {
 case INSIDE:
-      elem.setAttribute("stroke-position","inside");
+      elem.setAttribute("stroke-alignment","inner");
     break;
 case CENTERED:
-  elem.setAttribute("stroke-position","middle");
+  elem.setAttribute("stroke-alignment","center");
 break;
 case OUTSIDE:
-elem.setAttribute("stroke-position","outside");
+elem.setAttribute("stroke-alignment","outer");
 break;
 default :
 throw new InternalError("Unsupported stroke type " + style.getType());
