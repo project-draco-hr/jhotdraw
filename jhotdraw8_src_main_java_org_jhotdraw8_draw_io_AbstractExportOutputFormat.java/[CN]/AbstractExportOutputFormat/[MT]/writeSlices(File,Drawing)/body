@@ -6,10 +6,12 @@
     }
   }
   writeSlices(dir,drawing,slices,"",slicesDpi);
-  if (exportSlices2x) {
-    writeSlices(dir,drawing,slices,"@2x",2 * slicesDpi);
-  }
-  if (exportSlices3x) {
-    writeSlices(dir,drawing,slices,"@3x",3 * slicesDpi);
+  if (!isResolutionIndependent()) {
+    if (exportSlices2x) {
+      writeSlices(dir,drawing,slices,"@2x",2 * slicesDpi);
+    }
+    if (exportSlices3x) {
+      writeSlices(dir,drawing,slices,"@3x",3 * slicesDpi);
+    }
   }
 }
