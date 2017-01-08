@@ -10,7 +10,8 @@
     if (pe instanceof MoveTo) {
       MoveTo e=(MoveTo)pe;
       if (prev != 'M') {
-        buf.append(prev='M');
+        buf.append('M');
+        prev='L';
       }
       buf.append(nb.toString(e.getX())).append(',').append(nb.toString(e.getY()));
     }
