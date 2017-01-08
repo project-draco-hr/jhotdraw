@@ -16,4 +16,5 @@
   }
   group.getToggles().add(button);
   add(button,gridx,gridy);
+  return button;
 }
