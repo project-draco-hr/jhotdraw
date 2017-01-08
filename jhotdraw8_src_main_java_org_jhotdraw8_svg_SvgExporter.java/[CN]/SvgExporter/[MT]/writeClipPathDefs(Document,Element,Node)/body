@@ -1,6 +1,8 @@
 {
   Node clip=node.getClip();
-  if (clip == null)   return;
+  if (clip == null) {
+    return;
+  }
   if (idFactory.getId(clip) == null) {
     String id=idFactory.createId(clip,"clipPath");
     Element elem=doc.createElement("clipPath");

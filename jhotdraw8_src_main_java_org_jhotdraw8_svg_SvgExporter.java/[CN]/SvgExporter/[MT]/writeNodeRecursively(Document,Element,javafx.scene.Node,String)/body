@@ -19,6 +19,7 @@
       }
     }
     if (!omitGroup) {
+      parent.appendChild(doc.createTextNode(linebreak));
       elem=writeGroup(doc,parent,(Group)node);
     }
   }
