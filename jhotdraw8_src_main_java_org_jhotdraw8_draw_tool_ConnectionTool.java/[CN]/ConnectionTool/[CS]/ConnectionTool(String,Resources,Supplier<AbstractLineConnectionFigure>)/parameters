@@ -1,0 +1,3 @@
+String name
+Resources rsrc
+Supplier<AbstractLineConnectionFigure> figureFactory

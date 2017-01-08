@@ -1,13 +1,8 @@
 {
+  super.updateNode(ctx,node);
   Line lineNode=(Line)node;
   applyHideableFigureProperties(lineNode);
   applyStrokeableFigureProperties(lineNode);
   applyCompositableFigureProperties(node);
   applyStyleableFigureProperties(ctx,node);
-  Point2D start=get(START);
-  lineNode.setStartX(start.getX());
-  lineNode.setStartY(start.getY());
-  Point2D end=get(END);
-  lineNode.setEndX(end.getX());
-  lineNode.setEndY(end.getY());
 }
