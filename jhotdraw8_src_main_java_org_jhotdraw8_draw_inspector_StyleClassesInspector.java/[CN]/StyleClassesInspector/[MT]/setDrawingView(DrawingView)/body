@@ -1,0 +1,14 @@
+{
+  DrawingView oldValue=drawingView;
+  super.setDrawingView(newValue);
+  if (oldValue != null) {
+    oldValue.modelProperty().removeListener(modelListener);
+    modelListener.changed(oldValue.modelProperty(),oldValue.getModel(),null);
+  }
+  this.drawingView=newValue;
+  if (newValue != null) {
+    newValue.modelProperty().removeListener(modelListener);
+    modelListener.changed(newValue.modelProperty(),null,newValue.getModel());
+  }
+  handleDrawingViewChanged(oldValue,newValue);
+}
