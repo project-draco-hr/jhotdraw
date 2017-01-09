@@ -1,6 +1,8 @@
 {
   if (source != null && source.getParent() == this) {
-    children.fireItemUpdated(children.indexOf(source));
+    if (children.hasChangeListeners()) {
+      children.fireItemUpdated(children.indexOf(source));
+    }
   }
   super.firePropertyChangeEvent(source,type,key,oldValue,newValue);
 }
