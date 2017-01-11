@@ -1,0 +1,16 @@
+{
+  if (isExportDrawing()) {
+    XmlOutputFormatMixin.super.write(file,drawing);
+  }
+  if (isExportSlices()) {
+    writeSlices(file.getParentFile(),drawing);
+  }
+  if (isExportPages()) {
+    String basename=file.getName();
+    int p=basename.lastIndexOf('.');
+    if (p != -1) {
+      basename=basename.substring(0,p);
+    }
+    writePages(file.getParentFile(),basename,drawing);
+  }
+}

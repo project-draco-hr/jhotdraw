@@ -1,0 +1,47 @@
+{
+  Paper paper=findPaper(pageSize);
+  Point2D psize=pageSize.getConvertedValue();
+  PageLayout pl=job.getPrinter().createPageLayout(paper,psize.getX() <= psize.getY() ? PageOrientation.PORTRAIT : PageOrientation.LANDSCAPE,0,0,0,0);
+  job.getJobSettings().setPageLayout(pl);
+  paper=pl.getPaper();
+  if (paper == null) {
+    paper=Paper.A4;
+  }
+  double pw, ph;
+  if (pl.getPageOrientation() == PageOrientation.LANDSCAPE) {
+    pw=paper.getHeight();
+    ph=paper.getWidth();
+  }
+ else {
+    pw=paper.getWidth();
+    ph=paper.getHeight();
+  }
+  double paperAspect=paper.getWidth() / paper.getHeight();
+  double pageAspect=viewportBounds.getWidth() / viewportBounds.getHeight();
+  double scaleFactor;
+  if (paperAspect < pageAspect) {
+    scaleFactor=ph / viewportBounds.getHeight();
+  }
+ else {
+    scaleFactor=pw / viewportBounds.getWidth();
+  }
+  Group oldParent=(node.getParent() instanceof Group) ? (Group)node.getParent() : null;
+  int index=-1;
+  if (oldParent != null) {
+    index=oldParent.getChildren().indexOf(node);
+    oldParent.getChildren().remove(index);
+  }
+  Group printParent=new Group();
+  printParent.getChildren().add(node);
+  printParent.getTransforms().addAll(new Translate(-pl.getLeftMargin(),-pl.getTopMargin()),new Scale(scaleFactor,scaleFactor),new Translate(-viewportBounds.getMinX(),-viewportBounds.getMinY()));
+  if (slice.getWorldToLocal() != null) {
+    printParent.getTransforms().add(slice.getWorldToLocal());
+  }
+  Group printNode=new Group();
+  printNode.getChildren().addAll(printParent);
+  job.printPage(printNode);
+  printParent.getChildren().clear();
+  if (oldParent != null) {
+    oldParent.getChildren().add(index,node);
+  }
+}

@@ -1,0 +1,5 @@
+CssSize2D pageSize
+Figure slice
+Bounds viewportBounds
+Node node
+double dpi

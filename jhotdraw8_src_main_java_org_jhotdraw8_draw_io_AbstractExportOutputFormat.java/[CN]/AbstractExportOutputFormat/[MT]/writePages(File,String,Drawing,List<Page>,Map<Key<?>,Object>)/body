@@ -13,7 +13,7 @@
   Group parentOfPageNode=new Group();
   for (  Page page : pages) {
     for (int internalPageNumber=0, n=page.getNumberOfSubPages(); internalPageNumber < n; internalPageNumber++) {
-      File filename=new File(dir,basename + "_" + (pageNumber + 1)+ "."+ getExtension());
+      File filename=(dir == null) ? null : new File(dir,basename + "_" + (pageNumber + 1)+ "."+ getExtension());
       hints.put(RenderContext.RENDER_PAGE,page);
       hints.put(RenderContext.RENDER_NUMBER_OF_PAGES,numberOfPages);
       hints.put(RenderContext.RENDER_PAGE_NUMBER,pageNumber);
@@ -23,20 +23,23 @@
       final Node pageNode=renderer.getNode(page);
       final Node drawingNode=renderer.getNode(drawing);
       Shape pageClip=page.getPageClip(internalPageNumber);
-      Transform localToWorld=page.getLocalToWorld();
+      Transform localToWorld=page.getWorldToLocal();
+      Group parentOfDrawing=new Group();
       if (localToWorld == null) {
-        pageClip.getTransforms().clear();
+        drawingNode.getTransforms().clear();
       }
  else {
-        pageClip.getTransforms().setAll(localToWorld);
+        drawingNode.getTransforms().setAll(localToWorld);
+        parentOfDrawing.getTransforms().setAll(page.getLocalToWorld());
       }
-      drawingNode.setClip(pageClip);
+      parentOfDrawing.getChildren().add(drawingNode);
+      parentOfDrawing.setClip(pageClip);
       Group oldParentOfPageNode=(Group)pageNode.getParent();
       if (oldParentOfPageNode != null) {
         oldParentOfPageNode.getChildren().remove(pageNode);
       }
       parentOfPageNode.getChildren().setAll(pageNode);
-      rootNode.getChildren().setAll(drawingNode,parentOfPageNode);
+      rootNode.getChildren().setAll(parentOfDrawing,parentOfPageNode);
       writePage(filename,page,rootNode,numberOfPages,pageNumber,internalPageNumber);
       pageNumber++;
     }

@@ -1,0 +1,10 @@
+{
+  this.job=job;
+  try {
+    writePages(null,null,drawing);
+    writeSlices(null,drawing);
+  }
+  finally {
+    job=null;
+  }
+}

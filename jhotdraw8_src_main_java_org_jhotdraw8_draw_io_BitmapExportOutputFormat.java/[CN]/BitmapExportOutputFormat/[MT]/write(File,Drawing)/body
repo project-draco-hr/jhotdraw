@@ -1,11 +1,11 @@
 {
-  if (exportDrawing) {
+  if (isExportDrawing()) {
     OutputFormat.super.write(file,drawing);
   }
-  if (exportSlices) {
+  if (isExportSlices()) {
     writeSlices(file.getParentFile(),drawing);
   }
-  if (exportPages) {
+  if (isExportPages()) {
     String basename=file.getName();
     int p=basename.lastIndexOf('.');
     if (p != -1) {

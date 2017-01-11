@@ -1,17 +1,23 @@
 {
   javafx.scene.Group groupNode=new javafx.scene.Group();
   Rectangle contentBoundsNode=new Rectangle();
-  contentBoundsNode.setFill(Color.TRANSPARENT);
+  contentBoundsNode.setFill(null);
   contentBoundsNode.setStroke(Color.MEDIUMBLUE);
   contentBoundsNode.setStrokeType(StrokeType.INSIDE);
   Path pageBoundsNode=new Path();
   pageBoundsNode.setFill(Color.TRANSPARENT);
   pageBoundsNode.setStroke(Color.LIGHTBLUE);
   pageBoundsNode.setStrokeType(StrokeType.CENTERED);
+  Path insetsBoundsNode=new Path();
+  insetsBoundsNode.setFill(null);
+  insetsBoundsNode.setStroke(Color.LIGHTBLUE);
+  insetsBoundsNode.setStrokeType(StrokeType.CENTERED);
+  insetsBoundsNode.getStrokeDashArray().setAll(5.0);
   javafx.scene.Group currentPageNode=new javafx.scene.Group();
-  groupNode.getChildren().addAll(pageBoundsNode,contentBoundsNode,currentPageNode);
-  groupNode.getProperties().put("pageBounds",pageBoundsNode);
-  groupNode.getProperties().put("contentBounds",contentBoundsNode);
-  groupNode.getProperties().put("currentPage",currentPageNode);
+  groupNode.getChildren().addAll(pageBoundsNode,insetsBoundsNode,contentBoundsNode,currentPageNode);
+  groupNode.getProperties().put(PAGE_BOUNDS_PROPERTY,pageBoundsNode);
+  groupNode.getProperties().put(PAGE_INSETS_PROPERTY,insetsBoundsNode);
+  groupNode.getProperties().put(CONTENT_BOUNDS_PROPERTY,contentBoundsNode);
+  groupNode.getProperties().put(CURRENT_PAGE_PROPERTY,currentPageNode);
   return groupNode;
 }

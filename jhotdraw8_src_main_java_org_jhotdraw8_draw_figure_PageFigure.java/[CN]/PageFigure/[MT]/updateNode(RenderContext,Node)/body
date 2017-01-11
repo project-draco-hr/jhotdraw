@@ -1,9 +1,10 @@
 {
   javafx.scene.Group groupNode=(javafx.scene.Group)node;
   node.getTransforms().setAll(getLocalToParent(true));
-  Rectangle contentBoundsNode=(Rectangle)groupNode.getProperties().get("contentBounds");
-  Path pageBoundsNode=(Path)groupNode.getProperties().get("pageBounds");
-  javafx.scene.Group currentPageNode=(javafx.scene.Group)groupNode.getProperties().get("currentPage");
+  Rectangle contentBoundsNode=(Rectangle)groupNode.getProperties().get(CONTENT_BOUNDS_PROPERTY);
+  Path pageBoundsNode=(Path)groupNode.getProperties().get(PAGE_BOUNDS_PROPERTY);
+  Path pageInsetsNode=(Path)groupNode.getProperties().get(PAGE_INSETS_PROPERTY);
+  javafx.scene.Group currentPageNode=(javafx.scene.Group)groupNode.getProperties().get(CURRENT_PAGE_PROPERTY);
   if (ctx.get(RenderContext.RENDERING_INTENT) == RenderingIntent.EDITOR) {
     applyHideableFigureProperties(node);
     contentBoundsNode.setVisible(true);
@@ -13,6 +14,7 @@
     applyHideableFigureProperties(node);
     contentBoundsNode.setVisible(false);
     pageBoundsNode.setVisible(false);
+    pageInsetsNode.setVisible(false);
   }
  else {
     node.setVisible(false);
@@ -25,23 +27,18 @@
   contentBoundsNode.setHeight(contentHeight);
   int numPagesX=Math.max(1,getStyled(NUM_PAGES_X).intValue());
   int numPagesY=Math.max(1,getStyled(NUM_PAGES_Y).intValue());
-  final ObservableList<PathElement> l=pageBoundsNode.getElements();
-  l.clear();
-  for (int i=0, n=numPagesX * numPagesY; i < n; i++) {
-    Bounds b=getPageBounds(i);
-    double x=b.getMinX();
-    double y=b.getMinY();
-    double w=b.getWidth();
-    double h=b.getHeight();
-    l.add(new MoveTo(x,y));
-    l.add(new LineTo(x + w,y));
-    l.add(new LineTo(x + w,y + h));
-    l.add(new LineTo(x,y + h));
-    l.add(new ClosePath());
+  final int n=numPagesX * numPagesY;
+  final List<PathElement> pbList=new ArrayList<>(n * 4);
+  final List<PathElement> pmList=new ArrayList<>(n * 4);
+  for (int i=0; i < n; i++) {
+    addBounds(pbList,getPageBounds(i));
+    addBounds(pmList,getContentBounds(i));
   }
-  List<Node> currentPageChildren=new ArrayList<Node>(getChildren().size() + 2);
+  pageBoundsNode.getElements().setAll(pbList);
+  pageInsetsNode.getElements().setAll(pmList);
   int currentPage=ctx.get(RenderContext.RENDER_PAGE_INTERNAL_NUMBER);
   currentPageNode.getTransforms().setAll(getPageTranslate(currentPage));
+  List<Node> currentPageChildren=new ArrayList<Node>(getChildren().size() + 2);
   for (  Figure child : getChildren()) {
     currentPageChildren.add(ctx.getNode(child));
   }

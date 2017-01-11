@@ -1,0 +1,11 @@
+{
+  double x=b.getMinX();
+  double y=b.getMinY();
+  double w=b.getWidth();
+  double h=b.getHeight();
+  pbList.add(new MoveTo(x,y));
+  pbList.add(new LineTo(x + w,y));
+  pbList.add(new LineTo(x + w,y + h));
+  pbList.add(new LineTo(x,y + h));
+  pbList.add(new ClosePath());
+}
