@@ -1,10 +1,2 @@
 {
-  PrinterJob job=PrinterJob.createPrinterJob();
-  if (job != null && job.showPrintDialog(project.getNode().getScene().getWindow())) {
-    project.print(job);
-  }
- else {
-    Alert alert=new Alert(AlertType.INFORMATION,"Sorry, no printer found");
-    alert.show();
-  }
 }
