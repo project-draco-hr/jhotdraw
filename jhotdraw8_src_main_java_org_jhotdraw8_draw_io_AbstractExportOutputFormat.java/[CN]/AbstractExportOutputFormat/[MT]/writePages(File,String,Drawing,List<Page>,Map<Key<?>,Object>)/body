@@ -1,4 +1,6 @@
 {
+  setExternalHome(dir == null ? null : dir.toURI());
+  setInternalHome(drawing.get(Drawing.DOCUMENT_HOME));
   IdFactory idFactory=new SimpleIdFactory();
   int numberOfPages=0;
   for (  Page page : pages) {

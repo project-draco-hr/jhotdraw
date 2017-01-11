@@ -1,4 +1,6 @@
 {
+  setExternalHome(dir == null ? null : dir.toURI());
+  setInternalHome(drawing.get(Drawing.DOCUMENT_HOME));
   List<Slice> slices=new ArrayList<>();
   for (  Figure f : drawing.preorderIterable()) {
     if (f instanceof Slice) {

@@ -1,6 +1,6 @@
 {
   CssSize pw=page.get(PageFigure.PAPER_WIDTH);
-  SvgExporter exporter=new SvgExporter(ImageFigure.IMAGE_URI,SKIP_KEY);
+  SvgExporter exporter=createExporter();
   markNodesOutsideBoundsWithSkip(node,Transforms.transform(page.getLocalToWorld(),page.getPageBounds(internalPageNumber)));
   node.getTransforms().setAll(page.getWorldToLocal());
   Document doc=exporter.toDocument(node);

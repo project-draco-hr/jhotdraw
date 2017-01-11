@@ -1,5 +1,5 @@
 {
-  SvgExporter exporter=new SvgExporter(ImageFigure.IMAGE_URI,SKIP_KEY);
+  SvgExporter exporter=createExporter();
   markNodesOutsideBoundsWithSkip(node,slice.getBoundsInLocal());
   final Transform worldToLocal=slice.getWorldToLocal();
   if (worldToLocal != null) {
