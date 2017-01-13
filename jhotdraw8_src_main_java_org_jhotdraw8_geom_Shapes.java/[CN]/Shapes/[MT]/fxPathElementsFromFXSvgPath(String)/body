@@ -1,0 +1,6 @@
+{
+  SVGPath svgPath=new SVGPath();
+  svgPath.setContent(content);
+  Path p=(Path)javafx.scene.shape.Shape.subtract(svgPath,new Rectangle(0,0));
+  return p.getElements();
+}
