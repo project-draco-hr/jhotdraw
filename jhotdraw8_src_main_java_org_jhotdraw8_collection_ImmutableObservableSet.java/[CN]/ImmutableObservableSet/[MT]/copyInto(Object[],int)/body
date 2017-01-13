@@ -1,0 +1,6 @@
+{
+  int i=offset;
+  for (  E e : this) {
+    out[i++]=e;
+  }
+}

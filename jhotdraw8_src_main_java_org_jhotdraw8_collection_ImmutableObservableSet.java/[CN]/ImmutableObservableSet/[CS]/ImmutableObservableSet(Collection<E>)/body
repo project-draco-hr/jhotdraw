@@ -1,3 +1,12 @@
 {
-  this.backingSet=new LinkedHashSet<>(copyMe);
+switch (copyMe.size()) {
+case 0:
+    backingSet=Collections.emptySet();
+  break;
+case 1:
+backingSet=Collections.singleton(copyMe.iterator().next());
+break;
+default :
+this.backingSet=new LinkedHashSet<>(copyMe);
+}
 }

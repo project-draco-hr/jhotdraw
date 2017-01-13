@@ -1,0 +1,4 @@
+{
+  this.array=new Object[length];
+  System.arraycopy(a,offset,array,0,length);
+}

@@ -1,5 +1,14 @@
 {
-  ArrayList<T> a=new ArrayList<T>(collection);
-  a.remove(item);
-  return new ImmutableObservableList<>(a);
+  if (collection.size() == 1 && collection.contains(item)) {
+    return ImmutableObservableList.emptyList();
+  }
+  if (collection instanceof List) {
+    List<T> list=(List)collection;
+    return remove(list,list.indexOf(item));
+  }
+ else {
+    ArrayList<T> a=new ArrayList<T>(collection);
+    a.remove(item);
+    return new ImmutableObservableList<>(a);
+  }
 }

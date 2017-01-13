@@ -1,4 +1,7 @@
 {
+  if (collection.size() == 1 && index == 0) {
+    return ImmutableObservableList.emptyList();
+  }
   Object[] a=new Object[collection.size()];
   a=collection.toArray(a);
   Object[] b=new Object[a.length - 1];

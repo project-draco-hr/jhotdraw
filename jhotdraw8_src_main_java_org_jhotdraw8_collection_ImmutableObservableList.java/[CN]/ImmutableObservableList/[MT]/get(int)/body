@@ -1,4 +1,4 @@
 {
-  @SuppressWarnings("unchecked") T value=(T)array[index];
+  @SuppressWarnings("unchecked") E value=(E)array[index];
   return value;
 }

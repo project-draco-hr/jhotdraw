@@ -1,9 +1,5 @@
 {
   Object[] v=formatter.fromString(buf);
-  Set<String> tokens=new TreeSet<>(NFD_COMPARATOR);
-  for (int i=0, n=(int)v[0]; i < n; i++) {
-    tokens.add((String)v[i + 1]);
-  }
-  ImmutableObservableList<String> l=new ImmutableObservableList<>(tokens);
+  ImmutableObservableList<String> l=new ImmutableObservableList<>(v,1,(int)v[0]);
   return l;
 }

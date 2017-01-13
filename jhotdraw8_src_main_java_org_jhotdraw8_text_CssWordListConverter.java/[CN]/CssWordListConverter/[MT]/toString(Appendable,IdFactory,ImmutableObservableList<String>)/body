@@ -1,12 +1,6 @@
 {
-  Set<String> tokens=new TreeSet<>(NFD_COMPARATOR);
-  tokens.addAll(value);
-  Object[] v=new Object[tokens.size() + 1];
+  Object[] v=new Object[value.size() + 1];
   v[0]=value.size();
-  int i=1;
-  for (  String token : tokens) {
-    v[i]=token;
-    i++;
-  }
+  value.copyInto(v,1);
   formatter.toString(out,v);
 }
