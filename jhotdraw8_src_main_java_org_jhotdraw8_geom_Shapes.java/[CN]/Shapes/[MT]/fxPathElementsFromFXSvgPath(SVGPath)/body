@@ -1,4 +1,0 @@
-{
-  Path p=(Path)javafx.scene.shape.Shape.subtract(path,new Rectangle(0,0));
-  return p.getElements();
-}

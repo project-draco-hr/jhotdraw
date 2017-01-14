@@ -1,0 +1,32 @@
+{
+  Point2D a, b, c, d;
+  Point2D c3, c2, c1, c0;
+  Intersection result=new Intersection(Status.NO_INTERSECTION);
+  a=p1.multiply(-1);
+  b=p2.multiply(3);
+  c=p3.multiply(-3);
+  d=a.add(b.add(c.add(p4)));
+  c3=new Point2D(d.getX(),d.getY());
+  a=p1.multiply(3);
+  b=p2.multiply(-6);
+  c=p3.multiply(3);
+  d=a.add(b.add(c));
+  c2=new Point2D(d.getX(),d.getY());
+  a=p1.multiply(-3);
+  b=p2.multiply(3);
+  c=a.add(b);
+  c1=new Point2D(c.getX(),c.getY());
+  c0=new Point2D(p1.getX(),p1.getY());
+  double rxrx=rx * rx;
+  double ryry=ry * ry;
+  Polynomial poly=new Polynomial(c3.getX() * c3.getX() * ryry + c3.getY() * c3.getY() * rxrx,2 * (c3.getX() * c2.getX() * ryry + c3.getY() * c2.getY() * rxrx),2 * (c3.getX() * c1.getX() * ryry + c3.getY() * c1.getY() * rxrx) + c2.getX() * c2.getX() * ryry + c2.getY() * c2.getY() * rxrx,2 * c3.getX() * ryry* (c0.getX() - ec.getX()) + 2 * c3.getY() * rxrx* (c0.getY() - ec.getY()) + 2 * (c2.getX() * c1.getX() * ryry + c2.getY() * c1.getY() * rxrx),2 * c2.getX() * ryry* (c0.getX() - ec.getX()) + 2 * c2.getY() * rxrx* (c0.getY() - ec.getY()) + c1.getX() * c1.getX() * ryry + c1.getY() * c1.getY() * rxrx,2 * c1.getX() * ryry* (c0.getX() - ec.getX()) + 2 * c1.getY() * rxrx* (c0.getY() - ec.getY()),c0.getX() * c0.getX() * ryry - 2 * c0.getY() * ec.getY()* rxrx - 2 * c0.getX() * ec.getX()* ryry + c0.getY() * c0.getY() * rxrx + ec.getX() * ec.getX() * ryry + ec.getY() * ec.getY() * rxrx - rxrx * ryry);
+  double[] roots=poly.getRootsInInterval(0,1);
+  for (int i=0; i < roots.length; i++) {
+    double t=roots[i];
+    result.appendPoint(c3.multiply(t * t * t).add(c2.multiply(t * t).add(c1.multiply(t).add(c0))));
+  }
+  if (result.size() > 0) {
+    result.status=Status.INTERSECTION;
+  }
+  return result;
+}

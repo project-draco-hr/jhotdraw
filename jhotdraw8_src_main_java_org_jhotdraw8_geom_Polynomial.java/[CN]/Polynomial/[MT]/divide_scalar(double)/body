@@ -1,0 +1,5 @@
+{
+  for (int i=0; i < this.coefs.length; i++) {
+    this.coefs[i]/=scalar;
+  }
+}

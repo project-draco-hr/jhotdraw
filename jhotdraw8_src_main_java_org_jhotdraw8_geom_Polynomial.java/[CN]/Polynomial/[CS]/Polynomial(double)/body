@@ -1,0 +1,4 @@
+{
+  this.coefs=coefs;
+  this._variable="t";
+}

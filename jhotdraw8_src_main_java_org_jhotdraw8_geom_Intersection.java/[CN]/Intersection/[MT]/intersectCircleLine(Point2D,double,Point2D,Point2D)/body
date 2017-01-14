@@ -1,0 +1,36 @@
+{
+  Intersection result;
+  double a=(a2.getX() - a1.getX()) * (a2.getX() - a1.getX()) + (a2.getY() - a1.getY()) * (a2.getY() - a1.getY());
+  double b=2 * ((a2.getX() - a1.getX()) * (a1.getX() - c.getX()) + (a2.getY() - a1.getY()) * (a1.getY() - c.getY()));
+  double cc=c.getX() * c.getX() + c.getY() * c.getY() + a1.getX() * a1.getX() + a1.getY() * a1.getY() - 2 * (c.getX() * a1.getX() + c.getY() * a1.getY()) - r * r;
+  double deter=b * b - 4 * a * cc;
+  if (deter < 0) {
+    result=new Intersection(Status.NO_INTERSECTION_OUTSIDE);
+  }
+ else   if (deter == 0) {
+    result=new Intersection(Status.NO_INTERSECTION_TANGENT);
+  }
+ else {
+    double e=Math.sqrt(deter);
+    double u1=(-b + e) / (2 * a);
+    double u2=(-b - e) / (2 * a);
+    if ((u1 < 0 || u1 > 1) && (u2 < 0 || u2 > 1)) {
+      if ((u1 < 0 && u2 < 0) || (u1 > 1 && u2 > 1)) {
+        result=new Intersection(Status.NO_INTERSECTION_OUTSIDE);
+      }
+ else {
+        result=new Intersection(Status.NO_INTERSECTION_INSIDE);
+      }
+    }
+ else {
+      result=new Intersection(Status.INTERSECTION);
+      if (0 <= u1 && u1 <= 1) {
+        result.appendPoint(lerp(a1,a2,u1));
+      }
+      if (0 <= u2 && u2 <= 1) {
+        result.appendPoint(lerp(a1,a2,u2));
+      }
+    }
+  }
+  return result;
+}

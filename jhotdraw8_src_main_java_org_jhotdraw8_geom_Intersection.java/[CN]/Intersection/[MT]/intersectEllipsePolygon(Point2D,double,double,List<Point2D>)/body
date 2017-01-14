@@ -1,0 +1,14 @@
+{
+  Intersection result=new Intersection(Status.NO_INTERSECTION);
+  int length=points.size();
+  for (int i=0; i < length; i++) {
+    Point2D b1=points.get(i);
+    Point2D b2=points.get((i + 1) % length);
+    Intersection inter=Intersection.intersectEllipseLine(c,rx,ry,b1,b2);
+    result.appendPoints(inter.points);
+  }
+  if (!result.isEmpty()) {
+    result.status=Status.INTERSECTION;
+  }
+  return result;
+}

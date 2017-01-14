@@ -1,0 +1,5 @@
+Point2D c
+double rx
+double ry
+Point2D r1
+Point2D r2

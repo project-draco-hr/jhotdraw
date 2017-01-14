@@ -1,0 +1,7 @@
+{
+  double[] derivative=new double[coefs.length - 1];
+  for (int i=1; i < this.coefs.length; i++) {
+    derivative[i - 1]=(i * this.coefs[i]);
+  }
+  return new Polynomial(derivative);
+}

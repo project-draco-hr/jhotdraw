@@ -1,0 +1,8 @@
+{
+  double[] result=new double[0];
+  double a=this.coefs[1];
+  if (a != 0) {
+    result=new double[]{-this.coefs[0] / a};
+  }
+  return result;
+}

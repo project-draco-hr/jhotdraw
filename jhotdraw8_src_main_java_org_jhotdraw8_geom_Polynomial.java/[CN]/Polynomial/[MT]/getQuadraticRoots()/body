@@ -1,0 +1,15 @@
+{
+  double[] results=new double[0];
+  double a=this.coefs[2];
+  double b=this.coefs[1] / a;
+  double c=this.coefs[0] / a;
+  double d=b * b - 4 * c;
+  if (d > 0) {
+    double e=Math.sqrt(d);
+    results=new double[]{0.5 * (-b + e),0.5 * (-b - e)};
+  }
+ else   if (d == 0) {
+    results=new double[]{0.5 * -b};
+  }
+  return results;
+}

@@ -1,4 +1,9 @@
 {
-  Path p=(Path)javafx.scene.shape.Shape.subtract(node,new Rectangle(0,0));
-  return awtShapeFromFXPath(p);
+  Path2DDoubleBuilder b=new Path2DDoubleBuilder();
+  try {
+    buildFromSvgString(b,node.getContent());
+  }
+ catch (  IOException ex) {
+  }
+  return b.get();
 }

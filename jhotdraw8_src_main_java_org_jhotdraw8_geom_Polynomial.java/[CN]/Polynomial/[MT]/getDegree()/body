@@ -1,0 +1,3 @@
+{
+  return this.coefs.length - 1;
+}

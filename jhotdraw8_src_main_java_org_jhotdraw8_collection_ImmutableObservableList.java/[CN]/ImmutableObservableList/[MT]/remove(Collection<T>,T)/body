@@ -3,7 +3,7 @@
     return ImmutableObservableList.emptyList();
   }
   if (collection instanceof List) {
-    List<T> list=(List)collection;
+    @SuppressWarnings("unchecked") List<T> list=(List)collection;
     return remove(list,list.indexOf(item));
   }
  else {

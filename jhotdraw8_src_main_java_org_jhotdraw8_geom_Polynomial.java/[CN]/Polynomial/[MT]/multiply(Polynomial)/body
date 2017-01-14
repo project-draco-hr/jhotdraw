@@ -1,0 +1,9 @@
+{
+  Polynomial result=new Polynomial(new double[this.getDegree() + that.getDegree()]);
+  for (int i=0; i <= this.getDegree(); i++) {
+    for (int j=0; j <= that.getDegree(); j++) {
+      result.coefs[i + j]+=this.coefs[i] * that.coefs[j];
+    }
+  }
+  return result;
+}

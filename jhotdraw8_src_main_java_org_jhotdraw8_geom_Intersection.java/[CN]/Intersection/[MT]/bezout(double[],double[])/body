@@ -1,0 +1,16 @@
+{
+  double AB=e1[0] * e2[1] - e2[0] * e1[1];
+  double AC=e1[0] * e2[2] - e2[0] * e1[2];
+  double AD=e1[0] * e2[3] - e2[0] * e1[3];
+  double AE=e1[0] * e2[4] - e2[0] * e1[4];
+  double AF=e1[0] * e2[5] - e2[0] * e1[5];
+  double BC=e1[1] * e2[2] - e2[1] * e1[2];
+  double BE=e1[1] * e2[4] - e2[1] * e1[4];
+  double BF=e1[1] * e2[5] - e2[1] * e1[5];
+  double CD=e1[2] * e2[3] - e2[2] * e1[3];
+  double DE=e1[3] * e2[4] - e2[3] * e1[4];
+  double DF=e1[3] * e2[5] - e2[3] * e1[5];
+  double BFpDE=BF + DE;
+  double BEmCD=BE - CD;
+  return new Polynomial(AB * BC - AC * AC,AB * BEmCD + AD * BC - 2 * AC * AE,AB * BFpDE + AD * BEmCD - AE * AE - 2 * AC * AF,AB * DF + AD * BFpDE - 2 * AE * AF,AD * DF - AF * AF);
+}

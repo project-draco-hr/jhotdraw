@@ -1,0 +1,22 @@
+{
+  Intersection result;
+  double r_max=r1 + r2;
+  double r_min=Math.abs(r1 - r2);
+  double c_dist=c1.distance(c2);
+  if (c_dist > r_max) {
+    result=new Intersection(Status.NO_INTERSECTION_OUTSIDE);
+  }
+ else   if (c_dist < r_min) {
+    result=new Intersection(Status.NO_INTERSECTION_INSIDE);
+  }
+ else {
+    result=new Intersection(Status.INTERSECTION);
+    double a=(r1 * r1 - r2 * r2 + c_dist * c_dist) / (2 * c_dist);
+    double h=Math.sqrt(r1 * r1 - a * a);
+    Point2D p=lerp(c1,c2,a / c_dist);
+    double b=h / c_dist;
+    result.appendPoint(new Point2D(p.getX() - b * (c2.getY() - c1.getY()),p.getY() + b * (c2.getX() - c1.getX())));
+    result.appendPoint(new Point2D(p.getX() + b * (c2.getY() - c1.getY()),p.getY() - b * (c2.getX() - c1.getX())));
+  }
+  return result;
+}

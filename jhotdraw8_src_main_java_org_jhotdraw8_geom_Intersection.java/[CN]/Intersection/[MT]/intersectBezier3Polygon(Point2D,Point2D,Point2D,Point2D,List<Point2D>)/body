@@ -1,0 +1,14 @@
+{
+  Intersection result=new Intersection(Status.NO_INTERSECTION);
+  int length=points.size();
+  for (int i=0; i < length; i++) {
+    Point2D a1=points.get(i);
+    Point2D a2=points.get((i + 1) % length);
+    Intersection inter=Intersection.intersectBezier3Line(p1,p2,p3,p4,a1,a2);
+    result.appendPoints(inter.points);
+  }
+  if (result.size() > 0) {
+    result.status=Status.INTERSECTION;
+  }
+  return result;
+}

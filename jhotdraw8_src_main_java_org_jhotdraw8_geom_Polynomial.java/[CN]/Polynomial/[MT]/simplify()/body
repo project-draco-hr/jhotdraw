@@ -1,0 +1,14 @@
+{
+  int popAt=this.getDegree();
+  for (int i=this.getDegree(); i >= 0; i--) {
+    if (Math.abs(this.coefs[i]) <= Polynomial.TOLERANCE) {
+      popAt=i;
+    }
+ else {
+      break;
+    }
+  }
+  double[] newCoefs=new double[popAt];
+  System.arraycopy(this.coefs,0,newCoefs,0,popAt);
+  this.coefs=newCoefs;
+}

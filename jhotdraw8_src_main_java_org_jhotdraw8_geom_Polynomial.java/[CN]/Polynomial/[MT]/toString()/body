@@ -1,0 +1,31 @@
+{
+  ArrayList<String> coefs=new ArrayList<String>();
+  ArrayList<String> signs=new ArrayList<String>();
+  for (int i=this.coefs.length - 1; i >= 0; i--) {
+    double value=Math.round(this.coefs[i] * 1000) / 1000;
+    if (value != 0) {
+      String sign=(value < 0) ? " - " : " + ";
+      value=Math.abs(value);
+      String strvalue=Double.toString(value);
+      if (i > 0) {
+        if (value == 1) {
+          strvalue=this._variable;
+        }
+ else {
+          strvalue=value + this._variable;
+        }
+      }
+      if (i > 1) {
+        strvalue+="^" + i;
+      }
+      signs.add(sign);
+      coefs.add(strvalue);
+    }
+  }
+  signs.set(0,(signs.get(0) == " + ") ? "" : "-");
+  StringBuilder result=new StringBuilder();
+  for (int i=0; i < coefs.size(); i++) {
+    result.append(signs.get(i)).append(coefs.get(i));
+  }
+  return result.toString();
+}

@@ -1,0 +1,9 @@
+{
+  FXPathBuilder b=new FXPathBuilder();
+  try {
+    buildFromSvgString(b,content);
+  }
+ catch (  IOException ex) {
+  }
+  return b.get().getElements();
+}
