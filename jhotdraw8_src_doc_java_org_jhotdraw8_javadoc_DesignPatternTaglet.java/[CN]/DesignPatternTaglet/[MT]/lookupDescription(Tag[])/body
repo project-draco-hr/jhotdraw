@@ -35,7 +35,7 @@
             }
             if (descr != null) {
               if (descr.isEmpty()) {
-                System.err.println(lookedUpDpt.position() + ": warning: DesignPatternTaglet \"@" + NAME+ " "+ dpt.unqualfiedInstantiatingType()+ " "+ dpt.patternName+ "\" must have a description.");
+                System.err.println(lookedUpDpt.position() + ": warning: DesignPatternTaglet \"@" + NAME+ " "+ dpt.unqualifiedInstantiatingType()+ " "+ dpt.patternName+ "\" must have a description.");
                 descriptions.put(key,descr);
               }
  else {
@@ -47,11 +47,11 @@
               }
             }
  else {
-              System.err.println(dpt.position() + ": warning: DesignPatternTaglet could not find a \"@" + NAME+ " "+ dpt.unqualfiedInstantiatingType()+ " "+ dpt.patternName+ "\" tag in class "+ dpt.instantiatingType+ ".");
+              System.err.println(dpt.position() + ": warning: DesignPatternTaglet could not find a \"@" + NAME+ " "+ dpt.unqualifiedInstantiatingType()+ " "+ dpt.patternName+ "\" tag in class "+ dpt.instantiatingType+ ".");
             }
           }
  else {
-            System.err.println(dpt.position() + ": warning: DesignPatternTaglet could not find class " + dpt.unqualfiedInstantiatingType()+ ".");
+            System.err.println(dpt.position() + ": warning: DesignPatternTaglet could not find class " + dpt.unqualifiedInstantiatingType()+ ".");
           }
         }
       }
