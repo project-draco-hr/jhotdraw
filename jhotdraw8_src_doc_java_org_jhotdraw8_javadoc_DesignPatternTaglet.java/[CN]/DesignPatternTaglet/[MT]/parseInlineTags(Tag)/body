@@ -13,9 +13,9 @@
   String description="";
   if (p0 != -1 && p1 != -1 && p2 != -1) {
     instantiatingType=toQualifiedName(tag,text.substring(0,p0).trim());
-    patternName=text.substring(p0 + 1,p1).trim();
-    patternRole=text.substring(p1 + 1,p2).trim();
-    description=text.substring(p2 + 1);
+    patternName=cleanupWhitespace(text.substring(p0 + 1,p1));
+    patternRole=cleanupWhitespace(text.substring(p1 + 1,p2));
+    description=cleanupWhitespace(text.substring(p2 + 1));
   }
  else {
     System.err.println(tag.position() + ": warning: DesignPatternTaglet illegal @" + NAME+ " tag. Expected \"@"+ NAME+ " className patternName, roleName. description.\"");

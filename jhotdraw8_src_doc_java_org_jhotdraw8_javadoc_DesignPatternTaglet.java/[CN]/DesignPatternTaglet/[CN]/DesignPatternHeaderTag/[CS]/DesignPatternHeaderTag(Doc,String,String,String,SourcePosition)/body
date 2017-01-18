@@ -1,6 +1,6 @@
 {
   super(holder,new Tag[0],position);
   this.instantiatingType=instantiatingType;
-  this.patternName=patternName.replaceAll("\\s+"," ");
+  this.patternName=patternName;
   this.patternRole=patternRole;
 }
