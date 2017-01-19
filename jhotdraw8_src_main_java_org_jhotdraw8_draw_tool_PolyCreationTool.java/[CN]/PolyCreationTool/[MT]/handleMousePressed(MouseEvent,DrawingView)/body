@@ -5,19 +5,19 @@
   double x1=event.getX();
   double y1=event.getY();
   DrawingModel dm=view.getModel();
-  Point2D c=view.getConstrainer().constrainPoint(figure,view.viewToDrawing(new Point2D(x1,y1)));
-  if (figure == null) {
-    figure=createFigure();
+  Point2D c=view.getConstrainer().constrainPoint(createdFigure,view.viewToDrawing(new Point2D(x1,y1)));
+  if (createdFigure == null) {
+    createdFigure=createFigure();
     points=new ArrayList<>();
     points.add(c);
     points.add(c);
-    Layer layer=getOrCreateLayer(view,figure);
+    Layer layer=getOrCreateLayer(view,createdFigure);
     view.setActiveLayer(layer);
-    dm.addChildTo(figure,layer);
+    dm.addChildTo(createdFigure,layer);
   }
  else {
     points.add(c);
   }
-  dm.set(figure,key,new ImmutableObservableList<>(points));
+  dm.set(createdFigure,key,new ImmutableObservableList<>(points));
   event.consume();
 }

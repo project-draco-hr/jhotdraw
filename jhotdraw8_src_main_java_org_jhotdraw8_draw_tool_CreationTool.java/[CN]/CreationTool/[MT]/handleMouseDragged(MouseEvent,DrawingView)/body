@@ -1,14 +1,14 @@
 {
-  if (figure != null) {
+  if (createdFigure != null) {
     x2=event.getX();
     y2=event.getY();
-    Point2D c1=dv.getConstrainer().constrainPoint(figure,dv.viewToDrawing(x1,y1));
-    Point2D c2=dv.getConstrainer().constrainPoint(figure,dv.viewToDrawing(x2,y2));
+    Point2D c1=dv.getConstrainer().constrainPoint(createdFigure,dv.viewToDrawing(x1,y1));
+    Point2D c2=dv.getConstrainer().constrainPoint(createdFigure,dv.viewToDrawing(x2,y2));
     double newWidth=c2.getX() - c1.getX();
     double newHeight=c2.getY() - c1.getY();
     boolean keepAspect=event.isShiftDown();
     if (keepAspect) {
-      double preferredAspectRatio=figure.getPreferredAspectRatio();
+      double preferredAspectRatio=createdFigure.getPreferredAspectRatio();
       double newRatio=newHeight / newWidth;
       if (newRatio > preferredAspectRatio) {
         newHeight=newWidth * preferredAspectRatio;
@@ -18,7 +18,7 @@
       }
     }
     DrawingModel dm=dv.getModel();
-    dm.reshape(figure,c1.getX(),c1.getY(),newWidth,newHeight);
+    dm.reshape(createdFigure,c1.getX(),c1.getY(),newWidth,newHeight);
   }
   event.consume();
 }

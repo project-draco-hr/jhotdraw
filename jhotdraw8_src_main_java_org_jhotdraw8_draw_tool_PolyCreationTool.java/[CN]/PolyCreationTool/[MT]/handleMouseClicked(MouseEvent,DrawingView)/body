@@ -1,6 +1,6 @@
 {
   if (event.getClickCount() > 1) {
-    if (figure != null) {
+    if (createdFigure != null) {
       for (int i=points.size() - 1; i > 0; i--) {
         if (Objects.equals(points.get(i),points.get(i - 1))) {
           points.remove(i);
@@ -8,15 +8,15 @@
       }
       DrawingModel dm=dv.getModel();
       if (points.size() < 2) {
-        dm.removeFromParent(figure);
+        dm.removeFromParent(createdFigure);
       }
  else {
-        dm.set(figure,key,new ImmutableObservableList<>(points));
+        dm.set(createdFigure,key,new ImmutableObservableList<>(points));
         dv.getSelectedFigures().clear();
         dv.setHandleType(HandleType.POINT);
-        dv.getSelectedFigures().add(figure);
+        dv.getSelectedFigures().add(createdFigure);
       }
-      figure=null;
+      createdFigure=null;
       points=null;
       fireToolDone();
     }

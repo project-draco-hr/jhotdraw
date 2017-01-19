@@ -1,17 +1,17 @@
 {
-  if (figure != null) {
+  if (createdFigure != null) {
     if (abs(x2 - x1) < minSize && abs(y2 - y1) < minSize) {
-      Point2D c1=dv.getConstrainer().constrainPoint(figure,dv.viewToDrawing(x1,y1));
-      Point2D c2=dv.getConstrainer().translatePoint(figure,dv.viewToDrawing(x1 + minSize,y1 + minSize),Constrainer.DIRECTION_NEAREST);
+      Point2D c1=dv.getConstrainer().constrainPoint(createdFigure,dv.viewToDrawing(x1,y1));
+      Point2D c2=dv.getConstrainer().translatePoint(createdFigure,dv.viewToDrawing(x1 + minSize,y1 + minSize),Constrainer.DIRECTION_NEAREST);
       if (c2.equals(c1)) {
         c2=new Point2D(c1.getX() + 10,c1.getY() + 10);
       }
       DrawingModel dm=dv.getModel();
-      dm.reshape(figure,c1.getX(),c1.getY(),c2.getX() - c1.getX(),c2.getY() - c1.getY());
+      dm.reshape(createdFigure,c1.getX(),c1.getY(),c2.getX() - c1.getX(),c2.getY() - c1.getY());
     }
     dv.selectedFiguresProperty().clear();
-    dv.selectedFiguresProperty().add(figure);
-    figure=null;
+    dv.selectedFiguresProperty().add(createdFigure);
+    createdFigure=null;
   }
   event.consume();
   fireToolDone();

@@ -1,6 +1,6 @@
 {
-  if (figure != null) {
-    figure=null;
+  if (createdFigure != null) {
+    createdFigure=null;
     points=null;
   }
 }
