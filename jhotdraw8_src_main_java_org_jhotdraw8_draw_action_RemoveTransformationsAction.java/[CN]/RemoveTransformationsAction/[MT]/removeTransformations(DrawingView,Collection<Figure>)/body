@@ -1,5 +1,5 @@
 {
-  List<Key<?>> keys=TransformableFigure.getDeclaredKeys();
+  Set<Key<?>> keys=TransformableFigure.getDeclaredKeys();
   DrawingModel model=view.getModel();
   for (  Figure child : figures) {
     if (child instanceof TransformableFigure) {
