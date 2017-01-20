@@ -1,0 +1,12 @@
+{
+  int popAt=this.getDegree();
+  for (int i=popAt; i >= 0; i--) {
+    if (Math.abs(this.coefs[i]) <= Polynomial.TOLERANCE) {
+      popAt=i;
+    }
+ else {
+      break;
+    }
+  }
+  return popAt;
+}

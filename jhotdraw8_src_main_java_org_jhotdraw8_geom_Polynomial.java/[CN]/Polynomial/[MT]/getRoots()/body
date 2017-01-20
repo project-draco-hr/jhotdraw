@@ -1,21 +1,20 @@
 {
   double[] result;
-  this.simplify();
-switch (this.getDegree()) {
+switch (simplifiedDegree()) {
 case 0:
     result=new double[0];
   break;
 case 1:
-result=this.getLinearRoot();
+result=getLinearRoot();
 break;
 case 2:
-result=this.getQuadraticRoots();
+result=getQuadraticRoots();
 break;
 case 3:
-result=this.getCubicRoots();
+result=getCubicRoots();
 break;
 case 4:
-result=this.getQuarticRoots();
+result=getQuarticRoots();
 break;
 default :
 result=new double[0];
