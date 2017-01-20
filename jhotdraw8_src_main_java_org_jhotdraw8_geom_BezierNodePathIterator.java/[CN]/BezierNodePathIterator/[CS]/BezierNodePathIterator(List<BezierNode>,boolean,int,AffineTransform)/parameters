@@ -1,0 +1,4 @@
+List<BezierNode> nodes
+boolean closed
+int windingRule
+AffineTransform affine

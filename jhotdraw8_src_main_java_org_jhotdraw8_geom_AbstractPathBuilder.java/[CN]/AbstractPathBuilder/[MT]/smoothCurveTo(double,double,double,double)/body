@@ -1,0 +1,7 @@
+{
+  doSmoothCurveTo(lastX - lastCX + lastX,lastY - lastCY + lastY,x2,y2,x,y);
+  lastX=x;
+  lastY=y;
+  lastCX=x2;
+  lastCY=y2;
+}

@@ -1,0 +1,6 @@
+ArrayList<Point2D> d
+int first
+int last
+double[] uPrime
+Point2D tHat1
+Point2D tHat2

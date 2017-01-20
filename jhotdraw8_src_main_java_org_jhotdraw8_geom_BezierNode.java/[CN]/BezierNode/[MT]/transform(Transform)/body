@@ -1,0 +1,6 @@
+{
+  Point2D p0=transform.transform(x0,y0);
+  Point2D p1=transform.transform(x1,y1);
+  Point2D p2=transform.transform(x2,y2);
+  return new BezierNode(mask,equidistant,colinear,p0.getX(),p0.getY(),p1.getX(),p1.getY(),p2.getX(),p2.getY());
+}

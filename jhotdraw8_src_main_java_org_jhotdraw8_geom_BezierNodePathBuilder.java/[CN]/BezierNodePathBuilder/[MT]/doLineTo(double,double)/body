@@ -1,0 +1,3 @@
+{
+  add(new BezierNode(BezierNode.C0_MASK,false,false,x,y,x,y,x,y));
+}

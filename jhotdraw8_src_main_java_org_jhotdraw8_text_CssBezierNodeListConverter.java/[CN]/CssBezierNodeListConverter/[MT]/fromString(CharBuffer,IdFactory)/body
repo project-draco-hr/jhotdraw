@@ -1,0 +1,23 @@
+{
+  CssTokenizer tt=new CssTokenizer(new CharBufferReader(buf));
+  ImmutableObservableList<BezierNode> p=null;
+  if (tt.nextToken() == CssTokenizer.TT_IDENT) {
+    if (!nullable) {
+      throw new ParseException("String expected. " + tt.currentToken(),buf.position());
+    }
+    if (!"none".equals(tt.currentStringValue())) {
+      throw new ParseException("none or String expected. " + tt.currentToken(),buf.position());
+    }
+    p=null;
+  }
+ else {
+    if (tt.currentToken() != CssTokenizer.TT_STRING) {
+      throw new ParseException("Css String expected. " + tt.currentToken(),buf.position());
+    }
+    BezierNodePathBuilder builder=new BezierNodePathBuilder();
+    Shapes.buildFromSvgString(builder,tt.currentStringValue());
+    p=builder.getNodes();
+  }
+  buf.position(buf.limit());
+  return p;
+}

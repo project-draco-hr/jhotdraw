@@ -1,0 +1,5 @@
+ArrayList<Point2D> d
+int first
+int last
+double[] u
+Point2D[] bezCurve

@@ -1,0 +1,12 @@
+{
+  double maxY=y0;
+  if ((mask & MOVE_MASK) == 0) {
+    if ((mask & C1_MASK) != 0 && y1 > maxY) {
+      maxY=y1;
+    }
+    if ((mask & C2_MASK) != 0 && y2 > maxY) {
+      maxY=y2;
+    }
+  }
+  return maxY;
+}

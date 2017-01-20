@@ -1,0 +1,12 @@
+{
+  double maxX=x0;
+  if ((mask & MOVE_MASK) == 0) {
+    if ((mask & C1_MASK) != 0 && x1 > maxX) {
+      maxX=x1;
+    }
+    if ((mask & C2_MASK) != 0 && x2 > maxX) {
+      maxX=x2;
+    }
+  }
+  return maxX;
+}

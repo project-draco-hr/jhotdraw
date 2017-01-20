@@ -1,0 +1,7 @@
+{
+  doArcTo(radiusX,radiusY,xAxisRotation,x,y,largeArcFlag,sweepFlag);
+  lastX=x;
+  lastY=y;
+  lastCX=x;
+  lastCY=y;
+}

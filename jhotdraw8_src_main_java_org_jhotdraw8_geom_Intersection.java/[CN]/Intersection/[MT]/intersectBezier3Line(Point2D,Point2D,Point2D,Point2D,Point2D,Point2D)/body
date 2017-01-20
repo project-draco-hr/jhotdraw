@@ -36,18 +36,18 @@
       if (a1.getX() == a2.getX()) {
         if (min.getY() <= p10.getY() && p10.getY() <= max.getY()) {
           result.status=Status.INTERSECTION;
-          result.appendPoint(p10);
+          result.appendPoint(p10,t);
         }
       }
  else       if (a1.getY() == a2.getY()) {
         if (min.getX() <= p10.getX() && p10.getX() <= max.getX()) {
           result.status=Status.INTERSECTION;
-          result.appendPoint(p10);
+          result.appendPoint(p10,t);
         }
       }
  else       if (gte(p10,min) && lte(p10,max)) {
         result.status=Status.INTERSECTION;
-        result.appendPoint(p10);
+        result.appendPoint(p10,t);
       }
     }
   }

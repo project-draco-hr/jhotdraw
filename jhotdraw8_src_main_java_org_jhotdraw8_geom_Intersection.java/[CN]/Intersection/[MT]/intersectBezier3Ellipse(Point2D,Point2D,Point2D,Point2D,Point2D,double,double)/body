@@ -19,11 +19,21 @@
   c0=new Point2D(p1.getX(),p1.getY());
   double rxrx=rx * rx;
   double ryry=ry * ry;
-  Polynomial poly=new Polynomial(c3.getX() * c3.getX() * ryry + c3.getY() * c3.getY() * rxrx,2 * (c3.getX() * c2.getX() * ryry + c3.getY() * c2.getY() * rxrx),2 * (c3.getX() * c1.getX() * ryry + c3.getY() * c1.getY() * rxrx) + c2.getX() * c2.getX() * ryry + c2.getY() * c2.getY() * rxrx,2 * c3.getX() * ryry* (c0.getX() - ec.getX()) + 2 * c3.getY() * rxrx* (c0.getY() - ec.getY()) + 2 * (c2.getX() * c1.getX() * ryry + c2.getY() * c1.getY() * rxrx),2 * c2.getX() * ryry* (c0.getX() - ec.getX()) + 2 * c2.getY() * rxrx* (c0.getY() - ec.getY()) + c1.getX() * c1.getX() * ryry + c1.getY() * c1.getY() * rxrx,2 * c1.getX() * ryry* (c0.getX() - ec.getX()) + 2 * c1.getY() * rxrx* (c0.getY() - ec.getY()),c0.getX() * c0.getX() * ryry - 2 * c0.getY() * ec.getY()* rxrx - 2 * c0.getX() * ec.getX()* ryry + c0.getY() * c0.getY() * rxrx + ec.getX() * ec.getX() * ryry + ec.getY() * ec.getY() * rxrx - rxrx * ryry);
+  final double c3x=c3.getX();
+  final double c3y=c3.getY();
+  final double c2x=c2.getX();
+  final double c1x=c1.getX();
+  final double c2y=c2.getY();
+  final double c1y=c1.getY();
+  final double ecx=ec.getX();
+  final double c0x=c0.getX();
+  final double c0y=c0.getY();
+  final double ecy=ec.getY();
+  Polynomial poly=new Polynomial(c3x * c3x * ryry + c3y * c3y * rxrx,2 * (c3x * c2x * ryry + c3y * c2y * rxrx),2 * (c3x * c1x * ryry + c3y * c1y * rxrx) + c2x * c2x * ryry + c2y * c2y * rxrx,2 * c3x * ryry* (c0x - ecx) + 2 * c3y * rxrx* (c0y - ecy) + 2 * (c2x * c1x * ryry + c2y * c1y * rxrx),2 * c2x * ryry* (c0x - ecx) + 2 * c2y * rxrx* (c0y - ecy) + c1x * c1x * ryry + c1y * c1y * rxrx,2 * c1x * ryry* (c0x - ecx) + 2 * c1y * rxrx* (c0y - ecy),c0x * c0x * ryry - 2 * c0y * ecy* rxrx - 2 * c0x * ecx* ryry + c0y * c0y * rxrx + ecx * ecx * ryry + ecy * ecy * rxrx - rxrx * ryry);
   double[] roots=poly.getRootsInInterval(0,1);
   for (int i=0; i < roots.length; i++) {
     double t=roots[i];
-    result.appendPoint(c3.multiply(t * t * t).add(c2.multiply(t * t).add(c1.multiply(t).add(c0))));
+    result.appendPoint(c3.multiply(t * t * t).add(c2.multiply(t * t).add(c1.multiply(t).add(c0))),t);
   }
   if (result.size() > 0) {
     result.status=Status.INTERSECTION;

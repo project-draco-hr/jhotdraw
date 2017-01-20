@@ -1,0 +1,4 @@
+PathBuilder builder
+Point2D[] bezCurve
+double errorSquared
+boolean connectsCorners

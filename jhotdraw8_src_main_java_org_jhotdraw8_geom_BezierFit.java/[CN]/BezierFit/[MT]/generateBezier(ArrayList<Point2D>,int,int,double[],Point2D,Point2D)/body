@@ -1,0 +1,12 @@
+{
+  Point2D[] bezCurve;
+  bezCurve=new Point2D[4];
+  for (int i=0; i < bezCurve.length; i++) {
+  }
+  double dist=v2DistanceBetween2Points(d.get(last),d.get(first)) / 3.0;
+  bezCurve[0]=d.get(first);
+  bezCurve[3]=d.get(last);
+  bezCurve[1]=v2Add(bezCurve[0],v2Scale(tHat1,dist));
+  bezCurve[2]=v2Add(bezCurve[3],v2Scale(tHat2,dist));
+  return (bezCurve);
+}

@@ -1,0 +1,5 @@
+{
+  super(name,rsrc,figureFactory,layerFactory);
+  this.key=key;
+  node.setCursor(Cursor.CROSSHAIR);
+}

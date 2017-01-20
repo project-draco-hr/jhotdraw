@@ -1,0 +1,12 @@
+{
+  double minX=x0;
+  if ((mask & MOVE_MASK) == 0) {
+    if ((mask & C1_MASK) != 0 && x1 < minX) {
+      minX=x1;
+    }
+    if ((mask & C2_MASK) != 0 && x2 < minX) {
+      minX=x2;
+    }
+  }
+  return minX;
+}

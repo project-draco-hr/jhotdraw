@@ -1,0 +1,13 @@
+{
+  int hash=7;
+  hash=59 * hash + this.mask;
+  hash=59 * hash + (this.colinear ? 1 : 0);
+  hash=59 * hash + (this.equidistant ? 1 : 0);
+  hash=59 * hash + (int)(Double.doubleToLongBits(this.x0) ^ (Double.doubleToLongBits(this.x0) >>> 32));
+  hash=59 * hash + (int)(Double.doubleToLongBits(this.x1) ^ (Double.doubleToLongBits(this.x1) >>> 32));
+  hash=59 * hash + (int)(Double.doubleToLongBits(this.x2) ^ (Double.doubleToLongBits(this.x2) >>> 32));
+  hash=59 * hash + (int)(Double.doubleToLongBits(this.y0) ^ (Double.doubleToLongBits(this.y0) >>> 32));
+  hash=59 * hash + (int)(Double.doubleToLongBits(this.y1) ^ (Double.doubleToLongBits(this.y1) >>> 32));
+  hash=59 * hash + (int)(Double.doubleToLongBits(this.y2) ^ (Double.doubleToLongBits(this.y2) >>> 32));
+  return hash;
+}

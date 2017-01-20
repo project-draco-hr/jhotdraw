@@ -1,0 +1,8 @@
+{
+  System.out.println("getLocationInView");
+  BezierNodeMoveHandle instance=null;
+  Point2D expResult=null;
+  Point2D result=instance.getLocationInView();
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

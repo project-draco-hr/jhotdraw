@@ -1,0 +1,16 @@
+{
+  StringBuilder b=new StringBuilder();
+  b.append("Intersection{").append(status).append(", points=");
+  boolean first=true;
+  for (  Point2D p : points) {
+    if (first) {
+      first=false;
+    }
+ else {
+      b.append(' ');
+    }
+    b.append(p.getX()).append(',').append(p.getY());
+  }
+  b.append(", ts=").append(ts).append('}');
+  return b.toString();
+}

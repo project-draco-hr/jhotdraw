@@ -1,0 +1,5 @@
+{
+  this.nodes=nodes;
+  this.closed=closed;
+  this.windingRule=windingRule;
+}

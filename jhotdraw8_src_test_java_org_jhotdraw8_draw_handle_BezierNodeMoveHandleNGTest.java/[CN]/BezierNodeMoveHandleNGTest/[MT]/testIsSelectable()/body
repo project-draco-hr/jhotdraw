@@ -1,0 +1,8 @@
+{
+  System.out.println("isSelectable");
+  BezierNodeMoveHandle instance=null;
+  boolean expResult=false;
+  boolean result=instance.isSelectable();
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

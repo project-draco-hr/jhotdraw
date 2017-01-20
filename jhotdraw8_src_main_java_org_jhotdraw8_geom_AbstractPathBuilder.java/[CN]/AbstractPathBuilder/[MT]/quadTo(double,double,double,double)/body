@@ -1,0 +1,7 @@
+{
+  doQuadTo(x1,y1,x,y);
+  lastX=x;
+  lastY=y;
+  lastCX=x1;
+  lastCY=y1;
+}

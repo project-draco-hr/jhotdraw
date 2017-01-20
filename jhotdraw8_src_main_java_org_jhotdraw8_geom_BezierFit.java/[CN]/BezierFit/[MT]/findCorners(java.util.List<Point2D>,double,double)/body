@@ -1,0 +1,45 @@
+{
+  ArrayList<Integer> cornerIndices=new ArrayList<Integer>();
+  double squaredDistance=minDistance * minDistance;
+  int previousCorner=-1;
+  double previousCornerAngle=0;
+  for (int i=1, n=digitizedPoints.size(); i < n - 1; i++) {
+    Point2D p=digitizedPoints.get(i);
+    Point2D prev=null;
+    boolean intersectsPreviousCorner=false;
+    for (int j=i - 1; j >= 0; j--) {
+      if (j == previousCorner || v2SquaredDistanceBetween2Points(digitizedPoints.get(j),p) >= squaredDistance) {
+        prev=digitizedPoints.get(j);
+        intersectsPreviousCorner=j < previousCorner;
+        break;
+      }
+    }
+    if (prev == null) {
+      continue;
+    }
+    Point2D next=null;
+    for (int j=i + 1; j < n; j++) {
+      if (v2SquaredDistanceBetween2Points(digitizedPoints.get(j),p) >= squaredDistance) {
+        next=digitizedPoints.get(j);
+        break;
+      }
+    }
+    if (next == null) {
+      continue;
+    }
+    double aPrev=Math.atan2(prev.getY() - p.getY(),prev.getX() - p.getX());
+    double aNext=Math.atan2(next.getY() - p.getY(),next.getX() - p.getX());
+    double angle=Math.abs(aPrev - aNext);
+    if (angle < Math.PI - minAngle || angle > Math.PI + minAngle) {
+      if (intersectsPreviousCorner) {
+        cornerIndices.set(cornerIndices.size() - 1,i);
+      }
+ else {
+        cornerIndices.add(i);
+      }
+      previousCorner=i;
+      previousCornerAngle=angle;
+    }
+  }
+  return cornerIndices;
+}

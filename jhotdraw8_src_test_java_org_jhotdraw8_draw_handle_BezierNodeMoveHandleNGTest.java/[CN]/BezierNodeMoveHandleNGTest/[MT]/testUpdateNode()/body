@@ -1,0 +1,7 @@
+{
+  System.out.println("updateNode");
+  DrawingView view=null;
+  BezierNodeMoveHandle instance=null;
+  instance.updateNode(view);
+  fail("The test case is a prototype.");
+}

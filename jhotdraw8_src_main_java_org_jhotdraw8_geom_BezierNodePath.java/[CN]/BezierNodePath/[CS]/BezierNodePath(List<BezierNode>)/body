@@ -1,0 +1,3 @@
+{
+  this(nodes,false,PathIterator.WIND_EVEN_ODD);
+}

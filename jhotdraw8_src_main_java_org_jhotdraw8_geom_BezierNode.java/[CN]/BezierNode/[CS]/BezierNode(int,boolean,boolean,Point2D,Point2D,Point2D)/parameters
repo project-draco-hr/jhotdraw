@@ -1,0 +1,6 @@
+int mask
+boolean equidistant
+boolean colinear
+Point2D c0
+Point2D c1
+Point2D c2

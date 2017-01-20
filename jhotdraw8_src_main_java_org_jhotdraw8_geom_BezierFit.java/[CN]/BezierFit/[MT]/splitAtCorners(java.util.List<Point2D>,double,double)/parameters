@@ -1,0 +1,3 @@
+java.util.List<Point2D> digitizedPoints
+double maxAngle
+double minDistance

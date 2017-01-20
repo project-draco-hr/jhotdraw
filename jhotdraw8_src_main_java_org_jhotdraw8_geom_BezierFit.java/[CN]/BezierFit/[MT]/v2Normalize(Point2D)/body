@@ -1,0 +1,7 @@
+{
+  double len=v2Length(v);
+  if (len != 0.0) {
+    return new Point2D(v.getX() / len,v.getY() / len);
+  }
+  return v;
+}

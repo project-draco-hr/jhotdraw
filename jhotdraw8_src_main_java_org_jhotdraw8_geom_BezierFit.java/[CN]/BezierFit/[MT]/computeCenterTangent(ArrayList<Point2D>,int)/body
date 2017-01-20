@@ -1,0 +1,8 @@
+{
+  Point2D V1, V2, tHatCenter;
+  V1=v2SubII(d.get(center - 1),d.get(center));
+  V2=v2SubII(d.get(center),d.get(center + 1));
+  tHatCenter=new Point2D((V1.getX() + V2.getX()) / 2.0,(V1.getY() + V2.getY()) / 2.0);
+  tHatCenter=v2Normalize(tHatCenter);
+  return tHatCenter;
+}

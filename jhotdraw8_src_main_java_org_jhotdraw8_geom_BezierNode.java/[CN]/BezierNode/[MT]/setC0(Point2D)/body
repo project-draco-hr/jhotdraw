@@ -1,0 +1,3 @@
+{
+  return new BezierNode(mask,equidistant,colinear,c0.getX(),c0.getY(),x1,y1,x2,y2);
+}

@@ -1,0 +1,106 @@
+{
+  int numCoords=0;
+  int type=0;
+  if (index == nodes.size()) {
+    if (nodes.size() > 1) {
+      BezierNode previous=nodes.get(nodes.size() - 1);
+      BezierNode current=nodes.get(0);
+      if ((previous.mask & BezierNode.C2_MASK) == 0) {
+        if ((current.mask & BezierNode.C1_MASK) == 0) {
+          numCoords=1;
+          type=SEG_LINETO;
+          coords[0]=current.x0;
+          coords[1]=current.y0;
+        }
+ else {
+          numCoords=2;
+          type=SEG_QUADTO;
+          coords[0]=current.x1;
+          coords[1]=current.y1;
+          coords[2]=current.x0;
+          coords[3]=current.y0;
+        }
+      }
+ else {
+        if ((current.mask & BezierNode.C1_MASK) == 0) {
+          numCoords=2;
+          type=SEG_QUADTO;
+          coords[0]=previous.x2;
+          coords[1]=previous.y2;
+          coords[2]=current.x0;
+          coords[3]=current.y0;
+        }
+ else {
+          numCoords=3;
+          type=SEG_CUBICTO;
+          coords[0]=previous.x2;
+          coords[1]=previous.y2;
+          coords[2]=current.x1;
+          coords[3]=current.y1;
+          coords[4]=current.x0;
+          coords[5]=current.y0;
+        }
+      }
+    }
+  }
+ else   if (index > nodes.size()) {
+    return SEG_CLOSE;
+  }
+ else   if (index == 0) {
+    BezierNode current=nodes.get(index);
+    coords[0]=current.x0;
+    coords[1]=current.y0;
+    numCoords=1;
+    type=SEG_MOVETO;
+  }
+ else   if (index < nodes.size()) {
+    BezierNode current=nodes.get(index);
+    BezierNode previous=nodes.get(index - 1);
+    if ((current.mask & BezierNode.MOVE_MASK) == BezierNode.MOVE_MASK) {
+      numCoords=1;
+      type=SEG_MOVETO;
+      coords[0]=(float)current.x0;
+      coords[1]=(float)current.y0;
+    }
+ else     if ((previous.mask & BezierNode.C2_MASK) == 0) {
+      if ((current.mask & BezierNode.C1_MASK) == 0) {
+        numCoords=1;
+        type=SEG_LINETO;
+        coords[0]=current.x0;
+        coords[1]=current.y0;
+      }
+ else {
+        numCoords=2;
+        type=SEG_QUADTO;
+        coords[0]=current.x1;
+        coords[1]=current.y1;
+        coords[2]=current.x0;
+        coords[3]=current.y0;
+      }
+    }
+ else {
+      if ((current.mask & BezierNode.C1_MASK) == 0) {
+        numCoords=2;
+        type=SEG_QUADTO;
+        coords[0]=previous.x2;
+        coords[1]=previous.y2;
+        coords[2]=current.x0;
+        coords[3]=current.y0;
+      }
+ else {
+        numCoords=3;
+        type=SEG_CUBICTO;
+        coords[0]=previous.x2;
+        coords[1]=previous.y2;
+        coords[2]=current.x1;
+        coords[3]=current.y1;
+        coords[4]=current.x0;
+        coords[5]=current.y0;
+      }
+    }
+  }
+  if (affine != null) {
+    affine.transform(coords,0,coords,0,numCoords);
+  }
+  return type;
+}

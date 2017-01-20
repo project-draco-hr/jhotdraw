@@ -1,0 +1,49 @@
+{
+  Intersection result;
+  Point2D origin=new Point2D(a1.getX(),a1.getY());
+  Point2D dir=a2.subtract(a1);
+  Point2D center=new Point2D(ec.getX(),ec.getY());
+  Point2D diff=origin.subtract(center);
+  Point2D mDir=new Point2D(dir.getX() / (rx * rx),dir.getY() / (ry * ry));
+  Point2D mDiff=new Point2D(diff.getX() / (rx * rx),diff.getY() / (ry * ry));
+  double a=dir.dotProduct(mDir);
+  double b=dir.dotProduct(mDiff);
+  double c=diff.dotProduct(mDiff) - 1.0;
+  double d=b * b - a * c;
+  if (d < 0) {
+    result=new Intersection(Status.NO_INTERSECTION_OUTSIDE);
+  }
+ else   if (d > 0) {
+    double root=Math.sqrt(d);
+    double t_a=(-b - root) / a;
+    double t_b=(-b + root) / a;
+    if ((t_a < 0 || 1 < t_a) && (t_b < 0 || 1 < t_b)) {
+      if ((t_a < 0 && t_b < 0) || (t_a > 1 && t_b > 1)) {
+        result=new Intersection(Status.NO_INTERSECTION_OUTSIDE);
+      }
+ else {
+        result=new Intersection(Status.NO_INTERSECTION_INSIDE);
+      }
+    }
+ else {
+      result=new Intersection(Status.INTERSECTION);
+      if (0 <= t_a && t_a <= 1) {
+        result.appendPoint(lerp(a1,a2,t_a),t_a);
+      }
+      if (0 <= t_b && t_b <= 1) {
+        result.appendPoint(lerp(a1,a2,t_b),t_b);
+      }
+    }
+  }
+ else {
+    double t=-b / a;
+    if (0 <= t && t <= 1) {
+      result=new Intersection(Status.INTERSECTION);
+      result.appendPoint(lerp(a1,a2,t),t);
+    }
+ else {
+      result=new Intersection(Status.NO_INTERSECTION_OUTSIDE);
+    }
+  }
+  return result;
+}

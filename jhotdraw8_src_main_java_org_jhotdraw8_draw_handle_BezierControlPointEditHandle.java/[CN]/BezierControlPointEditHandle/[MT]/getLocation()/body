@@ -1,0 +1,3 @@
+{
+  return (controlPointMask == BezierNode.C1_MASK) ? getBezierNode().getC1() : getBezierNode().getC2();
+}

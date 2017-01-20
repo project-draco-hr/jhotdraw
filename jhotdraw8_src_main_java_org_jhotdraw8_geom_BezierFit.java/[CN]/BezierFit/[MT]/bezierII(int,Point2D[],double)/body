@@ -1,0 +1,16 @@
+{
+  int i, j;
+  Point2D q;
+  Point2D[] vTemp;
+  vTemp=new Point2D[degree + 1];
+  for (i=0; i <= degree; i++) {
+    vTemp[i]=V[i];
+  }
+  for (i=1; i <= degree; i++) {
+    for (j=0; j <= degree - i; j++) {
+      vTemp[j]=new Point2D((1.0 - t) * vTemp[j].getX() + t * vTemp[j + 1].getX(),(1.0 - t) * vTemp[j].getY() + t * vTemp[j + 1].getY());
+    }
+  }
+  q=vTemp[0];
+  return q;
+}

@@ -9,10 +9,10 @@
       first=false;
     }
  else {
-      out.append(", ");
+      out.append(' ');
     }
     out.append(doubleConverter.toString(p.getX()));
-    out.append(' ');
+    out.append(',');
     out.append(doubleConverter.toString(p.getY()));
   }
 }

@@ -1,7 +1,0 @@
-{
-  super(figure);
-  this.key=key;
-  node=new Polygon();
-  this.styleclass=styleclass;
-  initNode(node);
-}

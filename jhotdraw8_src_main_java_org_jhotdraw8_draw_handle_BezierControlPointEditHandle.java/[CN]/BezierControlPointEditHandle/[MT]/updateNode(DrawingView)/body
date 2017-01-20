@@ -1,0 +1,30 @@
+{
+  Figure f=getOwner();
+  Transform t=Transforms.concat(view.getWorldToView(),f.getLocalToWorld());
+  ImmutableObservableList<BezierNode> list=f.get(pointKey);
+  if (pointIndex >= list.size()) {
+    return;
+  }
+  BezierNode p=getBezierNode();
+  Point2D cp=getLocation();
+  pickLocation=cp=t == null ? cp : t.transform(cp);
+  node.relocate(cp.getX() - 5,cp.getY() - 5);
+  node.setRotate(f.getStyled(ROTATE));
+  node.setRotationAxis(f.getStyled(ROTATION_AXIS));
+  BezierNode bn=getBezierNode();
+  if (bn.isColinear()) {
+    if (bn.isEquidistant()) {
+      node.setShape(REGION_SHAPE_SMOOTH);
+    }
+ else {
+      node.setShape(REGION_SHAPE_COLINEAR);
+    }
+  }
+ else   if (bn.isEquidistant()) {
+    node.setShape(REGION_SHAPE_EQUIDISTANT);
+  }
+ else {
+    node.setShape(REGION_SHAPE_CUSP);
+  }
+  node.setVisible((bn.mask & BezierNode.MOVE_MASK) == 0 && (bn.mask & controlPointMask) != 0);
+}

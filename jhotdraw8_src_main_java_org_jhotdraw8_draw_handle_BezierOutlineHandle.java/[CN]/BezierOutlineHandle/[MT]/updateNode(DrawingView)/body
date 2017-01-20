@@ -1,0 +1,9 @@
+{
+  Figure f=getOwner();
+  Transform t=Transforms.concat(view.getWorldToView(),f.getLocalToWorld());
+  Bounds b=getOwner().getBoundsInLocal();
+  final ImmutableObservableList<BezierNode> nodes=f.getStyled(key);
+  final BezierNodePath bnp=new BezierNodePath(nodes);
+  List<PathElement> elements=Shapes.fxPathElementsFromAWT(bnp.getPathIterator(Transforms.toAWT(t)));
+  node.getElements().setAll(elements);
+}

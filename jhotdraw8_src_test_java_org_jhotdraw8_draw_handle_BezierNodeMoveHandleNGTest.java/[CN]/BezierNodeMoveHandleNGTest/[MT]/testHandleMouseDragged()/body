@@ -1,0 +1,8 @@
+{
+  System.out.println("handleMouseDragged");
+  MouseEvent event=null;
+  DrawingView view=null;
+  BezierNodeMoveHandle instance=null;
+  instance.handleMouseDragged(event,view);
+  fail("The test case is a prototype.");
+}

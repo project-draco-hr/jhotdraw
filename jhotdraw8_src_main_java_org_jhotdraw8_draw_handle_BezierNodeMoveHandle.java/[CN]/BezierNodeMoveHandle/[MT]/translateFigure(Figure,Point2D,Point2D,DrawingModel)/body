@@ -1,0 +1,11 @@
+{
+  Point2D npl=f.worldToParent(newPoint);
+  Point2D opl=f.worldToParent(oldPoint);
+  Transform tx=Transform.translate(npl.getX() - opl.getX(),npl.getY() - opl.getY());
+  if (model != null) {
+    model.reshapeInParent(f,tx);
+  }
+ else {
+    f.reshapeInParent(tx);
+  }
+}

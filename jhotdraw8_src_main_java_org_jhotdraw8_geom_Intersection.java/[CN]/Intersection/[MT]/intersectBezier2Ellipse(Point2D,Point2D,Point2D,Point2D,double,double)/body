@@ -14,7 +14,7 @@
   for (int i=0; i < roots.length; i++) {
     double t=roots[i];
     if (0 <= t && t <= 1) {
-      result.appendPoint(c2.multiply(t * t).add(c1.multiply(t).add(c0)));
+      result.appendPoint(c2.multiply(t * t).add(c1.multiply(t).add(c0)),t);
     }
   }
   if (result.size() > 0) {

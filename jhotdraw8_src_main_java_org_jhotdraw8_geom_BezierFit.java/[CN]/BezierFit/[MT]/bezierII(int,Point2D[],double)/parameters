@@ -1,0 +1,3 @@
+int degree
+Point2D[] V
+double t

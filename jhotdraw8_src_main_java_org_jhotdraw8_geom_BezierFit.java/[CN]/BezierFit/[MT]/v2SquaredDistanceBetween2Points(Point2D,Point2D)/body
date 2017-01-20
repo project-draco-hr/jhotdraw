@@ -1,0 +1,5 @@
+{
+  double dx=a.getX() - b.getX();
+  double dy=a.getY() - b.getY();
+  return (dx * dx) + (dy * dy);
+}

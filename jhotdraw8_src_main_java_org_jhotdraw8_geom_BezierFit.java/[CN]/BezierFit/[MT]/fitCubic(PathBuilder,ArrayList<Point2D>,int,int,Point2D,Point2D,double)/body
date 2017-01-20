@@ -1,0 +1,56 @@
+{
+  Point2D[] bezCurve;
+  double[] u;
+  double maxError;
+  int[] splitPoint=new int[1];
+  int nPts;
+  double iterationError;
+  int maxIterations=4;
+  Point2D tHatCenter;
+  int i;
+  iterationError=errorSquared * errorSquared;
+  nPts=last - first + 1;
+  if (nPts == 2) {
+    double dist=v2DistanceBetween2Points(d.get(last),d.get(first)) / 3.0;
+    Point2D bezCurve0=d.get(first);
+    Point2D bezCurve3=d.get(last);
+    Point2D bezCurve1=v2Add(bezCurve0,tHat1=v2Scale(tHat1,dist));
+    Point2D bezCurve2=v2Add(bezCurve3,tHat2=v2Scale(tHat2,dist));
+    builder.curveTo(bezCurve1,bezCurve2,bezCurve3);
+    return;
+  }
+  u=chordLengthParameterize(d,first,last);
+  bezCurve=generateBezier(d,first,last,u,tHat1,tHat2);
+  maxError=computeMaxError(d,first,last,bezCurve,u,splitPoint);
+  if (maxError < errorSquared) {
+    addCurveTo(builder,bezCurve,errorSquared,first == 0 && last == d.size() - 1);
+    return;
+  }
+  if (maxError < iterationError) {
+    double[] uPrime;
+    for (i=0; i < maxIterations; i++) {
+      uPrime=reparameterize(d,first,last,u,bezCurve);
+      bezCurve=generateBezier(d,first,last,uPrime,tHat1,tHat2);
+      maxError=computeMaxError(d,first,last,bezCurve,uPrime,splitPoint);
+      if (maxError < errorSquared) {
+        addCurveTo(builder,bezCurve,errorSquared,first == 0 && last == d.size() - 1);
+        return;
+      }
+      u=uPrime;
+    }
+  }
+  tHatCenter=computeCenterTangent(d,splitPoint[0]);
+  if (first < splitPoint[0]) {
+    fitCubic(builder,d,first,splitPoint[0],tHat1,tHatCenter,errorSquared);
+  }
+ else {
+    builder.lineTo(d.get(splitPoint[0]).getX(),d.get(splitPoint[0]).getY());
+  }
+  tHatCenter=v2Negate(tHatCenter);
+  if (splitPoint[0] < last) {
+    fitCubic(builder,d,splitPoint[0],last,tHatCenter,tHat2,errorSquared);
+  }
+ else {
+    builder.lineTo(d.get(last).getX(),d.get(last).getY());
+  }
+}

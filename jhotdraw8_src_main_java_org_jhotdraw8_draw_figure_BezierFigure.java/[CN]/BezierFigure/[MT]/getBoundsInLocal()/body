@@ -1,3 +1,13 @@
 {
-  throw new UnsupportedOperationException("Not supported yet.");
+  double minX=Double.POSITIVE_INFINITY;
+  double minY=Double.POSITIVE_INFINITY;
+  double maxX=Double.NEGATIVE_INFINITY;
+  double maxY=Double.NEGATIVE_INFINITY;
+  for (  BezierNode p : get(PATH)) {
+    minX=Math.min(minX,p.getMinX());
+    minY=Math.min(minY,p.getMinY());
+    maxX=Math.max(maxX,p.getMaxX());
+    maxY=Math.max(maxY,p.getMaxY());
+  }
+  return new BoundingBox(minX,minY,maxX - minX,maxY - minY);
 }

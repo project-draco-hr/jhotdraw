@@ -1,0 +1,11 @@
+{
+  if ((mask & MOVE_MASK) != 0 || (mask & C1C2_MASK) != C1C2_MASK) {
+    return false;
+  }
+  Point2D c0=getC0();
+  Point2D c2=getC2();
+  Point2D c1=getC1();
+  final Point2D t1=c1.subtract(c0);
+  final Point2D t2=c2.subtract(c0);
+  return 1 - Math.abs(t1.normalize().dotProduct(t2.normalize())) < 1e-4;
+}

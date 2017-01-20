@@ -1,0 +1,24 @@
+{
+  Point2D newPoint=view.viewToWorld(new Point2D(event.getX(),event.getY()));
+  if (!event.isAltDown() && !event.isControlDown()) {
+    newPoint=view.getConstrainer().constrainPoint(owner,newPoint);
+  }
+  if (event.isMetaDown()) {
+    Point2D loc=getLocation();
+    oldPoint=owner.getLocalToWorld().transform(loc);
+  }
+  if (oldPoint.equals(newPoint)) {
+    return;
+  }
+  DrawingModel model=view.getModel();
+  if (event.isShiftDown()) {
+    for (    Figure f : groupReshapeableFigures) {
+      translateFigure(f,oldPoint,newPoint,model);
+    }
+  }
+ else {
+    Figure f=owner;
+    translateFigure(f,oldPoint,newPoint,model);
+  }
+  oldPoint=newPoint;
+}

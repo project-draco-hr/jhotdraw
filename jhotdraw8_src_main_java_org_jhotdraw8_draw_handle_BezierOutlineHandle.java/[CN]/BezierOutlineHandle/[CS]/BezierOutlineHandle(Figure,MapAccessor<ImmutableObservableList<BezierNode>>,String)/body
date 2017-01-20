@@ -1,0 +1,7 @@
+{
+  super(figure);
+  this.key=key;
+  node=new Path();
+  this.styleclass=styleclass;
+  initNode(node);
+}

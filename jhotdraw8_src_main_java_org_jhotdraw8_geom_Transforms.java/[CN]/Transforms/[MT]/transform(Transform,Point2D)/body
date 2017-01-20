@@ -1,0 +1,3 @@
+{
+  return tx == null ? b : tx.transform(b);
+}

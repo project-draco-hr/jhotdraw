@@ -1,0 +1,11 @@
+{
+  this.mask=C0_MASK;
+  this.colinear=false;
+  this.equidistant=false;
+  this.x0=c0.getX();
+  this.x1=c0.getX();
+  this.x2=c0.getX();
+  this.y0=c0.getY();
+  this.y1=c0.getY();
+  this.y2=c0.getY();
+}

@@ -1,0 +1,7 @@
+{
+  doMoveTo(x,y);
+  lastX=x;
+  lastY=y;
+  lastCX=x;
+  lastCY=y;
+}

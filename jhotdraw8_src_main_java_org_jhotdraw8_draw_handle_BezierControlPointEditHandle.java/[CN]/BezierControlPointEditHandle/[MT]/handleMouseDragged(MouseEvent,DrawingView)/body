@@ -1,0 +1,42 @@
+{
+  Point2D newPoint=view.viewToWorld(new Point2D(event.getX(),event.getY()));
+  final Figure f=getOwner();
+  if (!event.isAltDown() && !event.isControlDown()) {
+    newPoint=view.getConstrainer().constrainPoint(f,newPoint);
+  }
+  ImmutableObservableList<BezierNode> list=owner.get(pointKey);
+  if (pointIndex >= list.size()) {
+    return;
+  }
+  BezierNode bn=list.get(pointIndex);
+  Point2D p=f.worldToLocal(newPoint);
+  if (!bn.isColinear()) {
+    if (controlPointMask == BezierNode.C1_MASK) {
+      view.getModel().set(f,pointKey,ImmutableObservableList.set(list,pointIndex,bn.setC1(p)));
+    }
+ else {
+      view.getModel().set(f,pointKey,ImmutableObservableList.set(list,pointIndex,bn.setC2(p)));
+    }
+  }
+ else {
+    Point2D c0=bn.getC0();
+    double a=Math.PI + Math.atan2(p.getY() - c0.getY(),p.getX() - c0.getX());
+    Point2D p2;
+    if (controlPointMask == BezierNode.C1_MASK) {
+      p2=bn.getC2();
+    }
+ else {
+      p2=bn.getC1();
+    }
+    double r=Math.sqrt((p2.getX() - c0.getX()) * (p2.getX() - c0.getX()) + (p2.getY() - c0.getY()) * (p2.getY() - c0.getY()));
+    double sina=Math.sin(a);
+    double cosa=Math.cos(a);
+    p2=new Point2D(r * cosa + c0.getX(),r * sina + c0.getY());
+    if (controlPointMask == BezierNode.C1_MASK) {
+      view.getModel().set(f,pointKey,ImmutableObservableList.set(list,pointIndex,bn.setC1(p).setC2(p2)));
+    }
+ else {
+      view.getModel().set(f,pointKey,ImmutableObservableList.set(list,pointIndex,bn.setC2(p).setC1(p2)));
+    }
+  }
+}

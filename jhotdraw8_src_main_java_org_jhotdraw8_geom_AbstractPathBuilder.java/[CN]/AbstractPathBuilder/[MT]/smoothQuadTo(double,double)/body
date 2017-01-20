@@ -1,0 +1,7 @@
+{
+  doSmoothQuadTo(lastX - lastCX + lastX,lastY - lastCY + lastY,x,y);
+  lastCX=lastX - lastCX + lastX;
+  lastCY=lastY - lastCY + lastY;
+  lastX=x;
+  lastY=y;
+}

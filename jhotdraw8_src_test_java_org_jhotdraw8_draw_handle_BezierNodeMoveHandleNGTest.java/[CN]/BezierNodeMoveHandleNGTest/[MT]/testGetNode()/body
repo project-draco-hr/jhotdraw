@@ -1,0 +1,8 @@
+{
+  System.out.println("getNode");
+  BezierNodeMoveHandle instance=null;
+  Region expResult=null;
+  Region result=instance.getNode();
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

@@ -1,0 +1,3 @@
+{
+  return intersectLineCircle(a1.getX(),a1.getY(),a2.getX(),a2.getY(),c.getX(),c.getY(),r);
+}

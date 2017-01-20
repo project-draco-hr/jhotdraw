@@ -1,0 +1,4 @@
+{
+  this.points.add(point);
+  this.ts.add(t);
+}

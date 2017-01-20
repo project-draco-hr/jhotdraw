@@ -1,0 +1,3 @@
+{
+  return lerp(a.getX(),a.getY(),b.getX(),b.getY(),t);
+}

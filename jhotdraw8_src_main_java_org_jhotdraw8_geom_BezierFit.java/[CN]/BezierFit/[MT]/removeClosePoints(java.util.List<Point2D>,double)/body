@@ -1,0 +1,23 @@
+{
+  if (minDistance == 0) {
+    return removeCoincidentPoints(digitizedPoints);
+  }
+ else {
+    double squaredDistance=minDistance * minDistance;
+    java.util.ArrayList<Point2D> cleaned=new ArrayList<Point2D>();
+    if (digitizedPoints.size() > 0) {
+      Point2D prev=digitizedPoints.get(0);
+      cleaned.add(prev);
+      for (      Point2D p : digitizedPoints) {
+        if (v2SquaredDistanceBetween2Points(prev,p) > squaredDistance) {
+          cleaned.add(p);
+          prev=p;
+        }
+      }
+      if (!prev.equals(digitizedPoints.get(digitizedPoints.size() - 1))) {
+        cleaned.set(cleaned.size() - 1,digitizedPoints.get(digitizedPoints.size() - 1));
+      }
+    }
+    return cleaned;
+  }
+}

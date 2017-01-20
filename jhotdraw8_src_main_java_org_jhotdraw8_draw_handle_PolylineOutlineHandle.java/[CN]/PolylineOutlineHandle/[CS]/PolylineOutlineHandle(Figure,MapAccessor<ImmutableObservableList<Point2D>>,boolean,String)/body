@@ -1,0 +1,8 @@
+{
+  super(figure);
+  this.key=key;
+  node=new Polyline();
+  this.styleclass=styleclass;
+  this.editable=editable;
+  initNode(node);
+}

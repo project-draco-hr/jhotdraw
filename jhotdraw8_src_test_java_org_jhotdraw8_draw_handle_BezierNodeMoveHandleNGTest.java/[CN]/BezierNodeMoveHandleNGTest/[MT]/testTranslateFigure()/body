@@ -1,0 +1,9 @@
+{
+  System.out.println("translateFigure");
+  Figure f=null;
+  Point2D oldPoint=null;
+  Point2D newPoint=null;
+  DrawingModel model=null;
+  BezierNodeMoveHandle.translateFigure(f,oldPoint,newPoint,model);
+  fail("The test case is a prototype.");
+}

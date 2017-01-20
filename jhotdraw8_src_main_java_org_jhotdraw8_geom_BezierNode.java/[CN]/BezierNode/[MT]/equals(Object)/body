@@ -1,0 +1,40 @@
+{
+  if (this == obj) {
+    return true;
+  }
+  if (obj == null) {
+    return false;
+  }
+  if (getClass() != obj.getClass()) {
+    return false;
+  }
+  final BezierNode other=(BezierNode)obj;
+  if (this.mask != other.mask) {
+    return false;
+  }
+  if (this.colinear != other.colinear) {
+    return false;
+  }
+  if (this.equidistant != other.equidistant) {
+    return false;
+  }
+  if (Double.doubleToLongBits(this.x0) != Double.doubleToLongBits(other.x0)) {
+    return false;
+  }
+  if (Double.doubleToLongBits(this.x1) != Double.doubleToLongBits(other.x1)) {
+    return false;
+  }
+  if (Double.doubleToLongBits(this.x2) != Double.doubleToLongBits(other.x2)) {
+    return false;
+  }
+  if (Double.doubleToLongBits(this.y0) != Double.doubleToLongBits(other.y0)) {
+    return false;
+  }
+  if (Double.doubleToLongBits(this.y1) != Double.doubleToLongBits(other.y1)) {
+    return false;
+  }
+  if (Double.doubleToLongBits(this.y2) != Double.doubleToLongBits(other.y2)) {
+    return false;
+  }
+  return true;
+}

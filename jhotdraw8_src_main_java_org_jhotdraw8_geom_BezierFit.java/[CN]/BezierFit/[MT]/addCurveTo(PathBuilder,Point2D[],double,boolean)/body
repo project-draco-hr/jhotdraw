@@ -1,0 +1,10 @@
+{
+  Point2D lastNode=builder.getLastPoint();
+  double error=Math.sqrt(errorSquared);
+  if (connectsCorners && Geom.lineContainsPoint(lastNode.getX(),lastNode.getY(),bezCurve[3].getX(),bezCurve[3].getY(),bezCurve[1].getX(),bezCurve[1].getY(),error) && Geom.lineContainsPoint(lastNode.getX(),lastNode.getY(),bezCurve[3].getX(),bezCurve[3].getY(),bezCurve[2].getX(),bezCurve[2].getY(),error)) {
+    builder.lineTo(bezCurve[3].getX(),bezCurve[3].getY());
+  }
+ else {
+    builder.curveTo(bezCurve[1].getX(),bezCurve[1].getY(),bezCurve[2].getX(),bezCurve[2].getY(),bezCurve[3].getX(),bezCurve[3].getY());
+  }
+}

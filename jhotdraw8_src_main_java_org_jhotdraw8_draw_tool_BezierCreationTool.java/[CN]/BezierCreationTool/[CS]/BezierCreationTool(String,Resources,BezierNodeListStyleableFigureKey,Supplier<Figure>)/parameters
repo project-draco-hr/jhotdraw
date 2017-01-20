@@ -1,0 +1,4 @@
+String name
+Resources rsrc
+BezierNodeListStyleableFigureKey key
+Supplier<Figure> factory

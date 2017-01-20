@@ -1,0 +1,18 @@
+{
+  java.util.ArrayList<Point2D> cleaned=new ArrayList<Point2D>();
+  if (digitizedPoints.size() > 0) {
+    Point2D prev=digitizedPoints.get(0);
+    cleaned.add(prev);
+    double pnWeight=(1d - weight) / 2d;
+    for (int i=1, n=digitizedPoints.size() - 1; i < n; i++) {
+      Point2D cur=digitizedPoints.get(i);
+      Point2D next=digitizedPoints.get(i + 1);
+      cleaned.add(new Point2D(cur.getX() * weight + pnWeight * prev.getX() + pnWeight * next.getX(),cur.getY() * weight + pnWeight * prev.getY() + pnWeight * next.getY()));
+      prev=cur;
+    }
+    if (digitizedPoints.size() > 1) {
+      cleaned.add(digitizedPoints.get(digitizedPoints.size() - 1));
+    }
+  }
+  return cleaned;
+}

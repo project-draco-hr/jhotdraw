@@ -1,0 +1,24 @@
+{
+  if (event.getClickCount() != 1) {
+    return;
+  }
+  double x1=event.getX();
+  double y1=event.getY();
+  DrawingModel dm=view.getModel();
+  Point2D c=view.getConstrainer().constrainPoint(createdFigure,view.viewToDrawing(new Point2D(x1,y1)));
+  if (createdFigure == null) {
+    createdFigure=createFigure();
+    points=new ArrayList<>();
+    points.add(new BezierNode(c));
+    points.add(new BezierNode(c));
+    Layer layer=getOrCreateLayer(view,createdFigure);
+    view.setActiveLayer(layer);
+    dm.addChildTo(createdFigure,layer);
+  }
+ else {
+    points.add(new BezierNode(c));
+  }
+  dm.set(createdFigure,key,new ImmutableObservableList<>(points));
+  dragStartIndex=-1;
+  event.consume();
+}

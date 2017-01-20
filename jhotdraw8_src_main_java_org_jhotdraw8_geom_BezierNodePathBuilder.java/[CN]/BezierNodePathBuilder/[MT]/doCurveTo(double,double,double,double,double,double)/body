@@ -1,0 +1,7 @@
+{
+  BezierNode last=getLastNode();
+  last=new BezierNode(last.getMask() | BezierNode.C2_MASK,last.equidistant,last.colinear,last.x0,last.y0,last.x1,last.y1,x1,y1);
+  if (last.computeIsColinear())   last=last.setColinear(true);
+  setLast(last);
+  add(new BezierNode(BezierNode.C0C1_MASK,false,false,x,y,x2,y2,x - x2 + x,y - y2 + y));
+}

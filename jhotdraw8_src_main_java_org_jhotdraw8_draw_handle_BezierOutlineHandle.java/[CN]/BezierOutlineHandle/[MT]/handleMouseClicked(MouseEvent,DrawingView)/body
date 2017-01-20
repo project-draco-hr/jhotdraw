@@ -1,0 +1,11 @@
+{
+  if (key != null && event.getClickCount() == 2) {
+    double px=event.getX();
+    double py=event.getY();
+    double tolerance=SimpleDrawingView.TOLERANCE;
+    Point2D pInDrawing=dv.viewToWorld(new Point2D(px,py));
+    pInDrawing=dv.getConstrainer().constrainPoint(owner,pInDrawing);
+    Point2D pInLocal=owner.worldToLocal(pInDrawing);
+    dv.recreateHandles();
+  }
+}

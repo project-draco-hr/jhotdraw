@@ -1,0 +1,7 @@
+PathBuilder builder
+ArrayList<Point2D> d
+int first
+int last
+Point2D tHat1
+Point2D tHat2
+double errorSquared

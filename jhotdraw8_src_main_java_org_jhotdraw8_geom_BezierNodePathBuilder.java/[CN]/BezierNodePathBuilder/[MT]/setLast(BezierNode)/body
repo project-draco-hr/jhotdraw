@@ -1,0 +1,3 @@
+{
+  nodes.set(nodes.size() - 1,newValue);
+}

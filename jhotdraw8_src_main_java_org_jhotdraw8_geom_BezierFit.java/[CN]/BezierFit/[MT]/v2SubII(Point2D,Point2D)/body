@@ -1,0 +1,4 @@
+{
+  Point2D c=new Point2D(a.getX() - b.getX(),a.getY() - b.getY());
+  return (c);
+}

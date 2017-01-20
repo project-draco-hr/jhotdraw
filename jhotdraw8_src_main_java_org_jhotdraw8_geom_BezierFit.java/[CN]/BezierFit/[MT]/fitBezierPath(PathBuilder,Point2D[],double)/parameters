@@ -1,0 +1,3 @@
+PathBuilder builder
+Point2D[] digitizedPoints
+double error

@@ -1,0 +1,19 @@
+{
+  int i;
+  double maxDist;
+  double dist;
+  Point2D P;
+  Point2D v;
+  splitPoint[0]=(last - first + 1) / 2;
+  maxDist=0.0;
+  for (i=first + 1; i < last; i++) {
+    P=bezierII(3,bezCurve,u[i - first]);
+    v=v2SubII(P,d.get(i));
+    dist=v2SquaredLength(v);
+    if (dist >= maxDist) {
+      maxDist=dist;
+      splitPoint[0]=i;
+    }
+  }
+  return (maxDist);
+}

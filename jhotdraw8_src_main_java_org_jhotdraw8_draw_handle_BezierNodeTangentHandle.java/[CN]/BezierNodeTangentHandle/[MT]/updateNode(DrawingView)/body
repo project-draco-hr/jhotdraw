@@ -1,0 +1,31 @@
+{
+  Figure f=getOwner();
+  Transform t=Transforms.concat(view.getWorldToView(),f.getLocalToWorld());
+  ImmutableObservableList<BezierNode> list=f.get(pointKey);
+  if (pointIndex >= list.size()) {
+    return;
+  }
+  BezierNode bn=getBezierNode();
+  Point2D c0=Transforms.transform(t,bn.getC0());
+  Point2D c1=Transforms.transform(t,bn.getC1());
+  Point2D c2=Transforms.transform(t,bn.getC2());
+  Polyline node=getNode();
+  List<Double> points=node.getPoints();
+  points.clear();
+  if (!bn.isMove()) {
+    if ((bn.mask & BezierNode.C1_MASK) != 0) {
+      points.add(c1.getX());
+      points.add(c1.getY());
+      points.add(c0.getX());
+      points.add(c0.getY());
+    }
+    if ((bn.mask & BezierNode.C2_MASK) != 0) {
+      if (points.isEmpty()) {
+        points.add(c0.getX());
+        points.add(c0.getY());
+      }
+      points.add(c2.getX());
+      points.add(c2.getY());
+    }
+  }
+}

@@ -1,0 +1,7 @@
+double radiusX
+double radiusY
+double xAxisRotation
+double x
+double y
+boolean largeArcFlag
+boolean sweepFlag

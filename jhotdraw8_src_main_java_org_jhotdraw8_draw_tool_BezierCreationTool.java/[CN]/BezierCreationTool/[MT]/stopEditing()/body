@@ -1,0 +1,6 @@
+{
+  if (createdFigure != null) {
+    createdFigure=null;
+    points=null;
+  }
+}

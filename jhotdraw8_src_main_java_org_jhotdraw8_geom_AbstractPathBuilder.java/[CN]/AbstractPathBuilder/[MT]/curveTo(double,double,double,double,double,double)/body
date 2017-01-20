@@ -1,0 +1,7 @@
+{
+  doCurveTo(x1,y1,x2,y2,x,y);
+  lastX=x;
+  lastY=y;
+  lastCX=x2;
+  lastCY=y2;
+}

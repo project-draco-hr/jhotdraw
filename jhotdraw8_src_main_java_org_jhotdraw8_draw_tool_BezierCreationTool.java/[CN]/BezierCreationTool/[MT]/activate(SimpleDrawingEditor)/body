@@ -1,0 +1,4 @@
+{
+  requestFocus();
+  createdFigure=null;
+}

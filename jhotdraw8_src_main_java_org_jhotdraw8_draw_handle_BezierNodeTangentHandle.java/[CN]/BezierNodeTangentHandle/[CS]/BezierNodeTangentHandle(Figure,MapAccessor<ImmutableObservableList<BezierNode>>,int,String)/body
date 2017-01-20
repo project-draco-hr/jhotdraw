@@ -1,0 +1,9 @@
+{
+  super(figure);
+  this.pointKey=pointKey;
+  this.pointIndex=pointIndex;
+  this.styleclass=styleclass;
+  node=new Polyline();
+  node.setManaged(false);
+  node.getStyleClass().addAll(styleclass,STYLECLASS_HANDLE);
+}

@@ -1,0 +1,19 @@
+{
+  super(figure);
+  this.pointKey=pointKey;
+  this.pointIndex=pointIndex;
+  this.styleclass=styleclass;
+  this.controlPointMask=controlPointMask;
+  if (this.controlPointMask != BezierNode.C1_MASK && this.controlPointMask != BezierNode.C2_MASK) {
+    throw new IllegalArgumentException("controlPoint:" + controlPointMask);
+  }
+  node=new Region();
+  node.setShape(REGION_SHAPE_CUSP);
+  node.setManaged(false);
+  node.setScaleShape(false);
+  node.setCenterShape(true);
+  node.resize(11,11);
+  node.getStyleClass().addAll(styleclass,STYLECLASS_HANDLE);
+  node.setBorder(REGION_BORDER);
+  node.setBackground(REGION_BACKGROUND);
+}

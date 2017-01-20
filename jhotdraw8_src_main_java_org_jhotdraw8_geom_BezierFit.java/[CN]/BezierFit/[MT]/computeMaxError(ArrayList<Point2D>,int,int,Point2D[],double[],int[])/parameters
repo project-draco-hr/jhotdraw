@@ -1,0 +1,6 @@
+ArrayList<Point2D> d
+int first
+int last
+Point2D[] bezCurve
+double[] u
+int[] splitPoint

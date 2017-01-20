@@ -1,0 +1,4 @@
+{
+  Point2D result=new Point2D(v.getX() * s,v.getY() * s);
+  return result;
+}

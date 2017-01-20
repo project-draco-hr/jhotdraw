@@ -1,0 +1,8 @@
+{
+  super(figure);
+  this.key=key;
+  this.editable=editable;
+  node=new Polygon();
+  this.styleclass=styleclass;
+  initNode(node);
+}

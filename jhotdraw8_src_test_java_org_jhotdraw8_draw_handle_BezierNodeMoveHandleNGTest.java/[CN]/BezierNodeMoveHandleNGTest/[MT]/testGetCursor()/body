@@ -1,0 +1,8 @@
+{
+  System.out.println("getCursor");
+  BezierNodeMoveHandle instance=null;
+  Cursor expResult=null;
+  Cursor result=instance.getCursor();
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

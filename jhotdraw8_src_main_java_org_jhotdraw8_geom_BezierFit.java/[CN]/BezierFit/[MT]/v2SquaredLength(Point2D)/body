@@ -1,0 +1,3 @@
+{
+  return (a.getX() * a.getX()) + (a.getY() * a.getY());
+}

@@ -1,3 +1,16 @@
 {
-  throw new UnsupportedOperationException("Not supported yet.");
+  Path pathNode=(Path)node;
+  applyHideableFigureProperties(node);
+  applyStyleableFigureProperties(ctx,node);
+  applyStrokeableFigureProperties(pathNode);
+  applyFillableFigureProperties(pathNode);
+  applyTransformableFigureProperties(node);
+  applyCompositableFigureProperties(pathNode);
+  final List<PathElement> elements=Shapes.fxPathElementsFromAWT(new BezierNodePath(getStyled(PATH)).getPathIterator(null));
+  if (getStyled(CLOSED)) {
+    elements.add(new ClosePath());
+  }
+  if (!pathNode.getElements().equals(elements)) {
+    pathNode.getElements().setAll(elements);
+  }
 }
