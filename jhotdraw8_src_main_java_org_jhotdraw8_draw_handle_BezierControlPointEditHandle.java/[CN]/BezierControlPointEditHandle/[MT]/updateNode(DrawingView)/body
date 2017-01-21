@@ -26,5 +26,5 @@
  else {
     node.setShape(REGION_SHAPE_CUSP);
   }
-  node.setVisible(!bn.isMoveTo() && (bn.isC(controlPointMask)));
+  node.setVisible(bn.isC(controlPointMask));
 }

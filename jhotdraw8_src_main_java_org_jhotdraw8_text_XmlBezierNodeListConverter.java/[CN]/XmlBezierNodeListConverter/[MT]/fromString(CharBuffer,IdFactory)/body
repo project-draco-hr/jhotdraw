@@ -6,16 +6,14 @@
     if (!nullable) {
       throw new ParseException("String expected. " + tt.currentToken(),buf.position());
     }
-    if (!"none".equals(tt.currentStringValue())) {
-      throw new ParseException("none or String expected. " + tt.currentToken(),buf.position());
+    if ("none".equals(tt.currentStringValue())) {
+      buf.position(buf.limit());
+      return p;
     }
-    p=null;
   }
- else {
-    BezierNodePathBuilder builder=new BezierNodePathBuilder();
-    Shapes.buildFromSvgString(builder,input);
-    p=builder.getNodes();
-  }
+  BezierNodePathBuilder builder=new BezierNodePathBuilder();
+  Shapes.buildFromSvgString(builder,input);
+  p=builder.getNodes();
   buf.position(buf.limit());
   return p;
 }

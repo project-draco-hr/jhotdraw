@@ -1,2 +1,7 @@
 {
+  if (pointKey != null && event.getClickCount() == 2) {
+    ImmutableObservableList<BezierNode> list=owner.get(pointKey);
+    BezierNode bn=list.get(pointIndex);
+    dv.getModel().set(owner,pointKey,ImmutableObservableList.set(list,pointIndex,bn.setColinear(!bn.isColinear())));
+  }
 }
