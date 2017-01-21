@@ -1,9 +1,11 @@
 {
-  if (oldValue != null) {
-    oldValue.removePropertyChangeListener(propertyChangeHandler);
-  }
-  if (newValue != null) {
-    newValue.addPropertyChangeListener(propertyChangeHandler);
+  if (false) {
+    if (oldValue != null) {
+      newValue.getPropertyChangeListeners().add(propertyChangeHandler);
+    }
+    if (newValue != null) {
+      newValue.getPropertyChangeListeners().add(propertyChangeHandler);
+    }
   }
   fire(DrawingModelEvent.rootChanged(this,newValue));
 }

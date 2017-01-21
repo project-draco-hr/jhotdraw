@@ -47,10 +47,11 @@ markDirty(figure,dm);
 invalidate();
 }
 }
-}
 break;
+}
 case LAYOUT_CHANGED:
 markDirty(figure,DirtyBits.LAYOUT);
+invalidate();
 break;
 case STYLE_CHANGED:
 markDirty(figure,DirtyBits.STYLE);

@@ -1,0 +1,5 @@
+{
+  Object oldValue=target.put(key,value);
+  onPropertyChanged(figure,(Key<Object>)key,oldValue,oldValue);
+  return oldValue;
+}

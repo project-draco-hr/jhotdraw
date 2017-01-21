@@ -1,0 +1,5 @@
+{
+  T oldValue=figure.remove(key);
+  onPropertyChanged(figure,key,oldValue,key.getDefaultValue());
+  return oldValue;
+}

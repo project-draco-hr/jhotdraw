@@ -1,3 +1,15 @@
 {
-  return figure.set(key,newValue);
+  if (key instanceof Key<?>) {
+    T oldValue=figure.set(key,newValue);
+    onPropertyChanged(figure,(Key<Object>)key,oldValue,newValue);
+    return oldValue;
+  }
+ else {
+    mapProxy.setFigure(figure);
+    mapProxy.setTarget(figure.getProperties());
+    T oldValue=key.put(mapProxy,newValue);
+    mapProxy.setFigure(null);
+    mapProxy.setTarget(null);
+    return oldValue;
+  }
 }
