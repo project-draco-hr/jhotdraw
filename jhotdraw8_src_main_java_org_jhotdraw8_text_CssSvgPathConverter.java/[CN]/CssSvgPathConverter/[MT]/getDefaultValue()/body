@@ -1,4 +1,3 @@
 {
-  SVGPath p=new SVGPath();
-  return p;
+  return null;
 }

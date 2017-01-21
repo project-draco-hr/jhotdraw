@@ -1,5 +1,14 @@
 {
-  node.setShape(getStyled(SHAPE));
+  String content=getStyled(SHAPE);
+  SVGPath svgPath;
+  if (content != null) {
+    svgPath=new SVGPath();
+    svgPath.setContent(content);
+  }
+ else {
+    svgPath=null;
+  }
+  node.setShape(svgPath);
   Bounds b=getBoundsInLocal();
   node.resizeRelocate(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
   Paint fillColor=Paintable.getPaint(getStyled(FILL_COLOR));

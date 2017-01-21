@@ -7,7 +7,7 @@
     return;
   }
   out.append('"');
-  for (  char ch : value.getContent().toCharArray()) {
+  for (  char ch : value.toCharArray()) {
 switch (ch) {
 case '"':
       out.append('\\');

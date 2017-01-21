@@ -1,6 +1,6 @@
 {
   CssTokenizer tt=new CssTokenizer(new CharBufferReader(buf));
-  SVGPath p=null;
+  String p=null;
   if (tt.nextToken() == CssTokenizer.TT_IDENT) {
     if (!nullable) {
       throw new ParseException("String expected. " + tt.currentToken(),buf.position());
@@ -14,8 +14,7 @@
     if (tt.currentToken() != CssTokenizer.TT_STRING) {
       throw new ParseException("Css String expected. " + tt.currentToken(),buf.position());
     }
-    p=new SVGPath();
-    p.setContent(tt.currentStringValue());
+    p=(tt.currentStringValue());
   }
   buf.position(buf.limit());
   return p;
