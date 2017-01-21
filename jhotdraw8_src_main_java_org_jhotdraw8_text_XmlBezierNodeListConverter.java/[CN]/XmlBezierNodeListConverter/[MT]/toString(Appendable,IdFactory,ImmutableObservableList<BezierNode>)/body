@@ -1,0 +1,10 @@
+{
+  if (value == null) {
+    if (!nullable) {
+      throw new IllegalArgumentException("value is null");
+    }
+    out.append("none");
+    return;
+  }
+  out.append(Shapes.svgStringFromAWT(new BezierNodePath(value).getPathIterator(null)));
+}

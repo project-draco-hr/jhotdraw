@@ -1,0 +1,21 @@
+{
+  String input=buf.toString();
+  CssTokenizer tt=new CssTokenizer(new CharBufferReader(buf));
+  ImmutableObservableList<BezierNode> p=null;
+  if (tt.nextToken() == CssTokenizer.TT_IDENT) {
+    if (!nullable) {
+      throw new ParseException("String expected. " + tt.currentToken(),buf.position());
+    }
+    if (!"none".equals(tt.currentStringValue())) {
+      throw new ParseException("none or String expected. " + tt.currentToken(),buf.position());
+    }
+    p=null;
+  }
+ else {
+    BezierNodePathBuilder builder=new BezierNodePathBuilder();
+    Shapes.buildFromSvgString(builder,input);
+    p=builder.getNodes();
+  }
+  buf.position(buf.limit());
+  return p;
+}

@@ -37,7 +37,9 @@
   addFigureKeysAndNames("Line",LineFigure.class);
   addFigureKeysAndNames("Ellipse",EllipseFigure.class);
   addFigureKeysAndNames("LineConnection",LineConnectionFigure.class);
+  addFigureKeysAndNames("LineConnectionWithMarkers",LineConnectionWithMarkersFigure.class);
   addFigureKeysAndNames("Image",ImageFigure.class);
+  addFigureKeysAndNames("BezierPath",BezierFigure.class);
   addConverterForType(String.class,new DefaultConverter());
   addConverterForType(Point2D.class,new XmlPoint2DConverter());
   addConverterForType(Point3D.class,new XmlPoint3DConverter());
@@ -68,6 +70,7 @@
   addConverter(StrokeableFigure.STROKE_TYPE,new XmlEnumConverter<StrokeType>(StrokeType.class));
   addConverter(TransformableFigure.TRANSFORMS,new XmlTransformListConverter());
   addConverter(PolylineFigure.POINTS,new CssPoint2DListConverter());
+  addConverter(BezierFigure.PATH,new XmlBezierNodeListConverter(true));
   removeKey(StyleableFigure.PSEUDO_CLASS_STATES);
   removeRedundantKeys();
   checkConverters();
