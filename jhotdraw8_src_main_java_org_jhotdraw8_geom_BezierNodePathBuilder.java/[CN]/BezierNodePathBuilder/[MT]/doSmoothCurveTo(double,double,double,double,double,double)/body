@@ -1,5 +1,5 @@
 {
   BezierNode last=getLastNode();
-  setLast(new BezierNode(last.mask | BezierNode.C2_MASK,true,true,last.x0,last.y0,last.x1,last.y1,x1,y1));
+  setLast(new BezierNode(last.getMask() | BezierNode.C2_MASK,true,true,last.getX0(),last.getY0(),last.getX1(),last.getY1(),x1,y1));
   add(new BezierNode(BezierNode.C0C1_MASK,false,false,x,y,x1,y1,x2,y2));
 }

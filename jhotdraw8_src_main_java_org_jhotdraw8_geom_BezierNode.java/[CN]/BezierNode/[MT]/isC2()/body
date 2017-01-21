@@ -1,0 +1,3 @@
+{
+  return (mask & C2_MASK) == C2_MASK;
+}

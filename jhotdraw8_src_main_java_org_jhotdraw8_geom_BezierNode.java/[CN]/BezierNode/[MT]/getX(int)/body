@@ -1,0 +1,12 @@
+{
+switch (mask) {
+case C0_MASK:
+    return getX0();
+case C1_MASK:
+  return getX1();
+case C2_MASK:
+return getX2();
+default :
+throw new IllegalArgumentException("illegal mask:" + mask);
+}
+}

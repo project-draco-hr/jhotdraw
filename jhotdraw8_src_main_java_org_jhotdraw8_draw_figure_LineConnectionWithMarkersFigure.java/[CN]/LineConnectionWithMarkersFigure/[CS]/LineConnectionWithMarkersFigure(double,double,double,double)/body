@@ -1,3 +1,4 @@
 {
   super(startX,startY,endX,endY);
+  set(FILL_COLOR,new CssColor("black",Color.BLACK));
 }
