@@ -15,9 +15,9 @@ case SUBTREE_REMOVED_FROM_DRAWING:
 figure.removeNotify(event.getDrawing());
 removeDirty(figure);
 break;
-case DEPENDENCY_CHANGED:
-figure.dependencyNotify();
-markDirty(figure,DirtyBits.DEPENDENT_LAYOUT);
+case LAYOUT_SUBJECT_CHANGED:
+figure.layoutSubjectChangeNotify();
+markDirty(figure,DirtyBits.LAYOUT_OBSERVERS);
 invalidate();
 break;
 case TRANSFORM_CHANGED:
@@ -25,7 +25,7 @@ markDirty(figure,DirtyBits.TRANSFORM);
 invalidate();
 break;
 case FIGURE_REMOVED_FROM_PARENT:
-markDirty(event.getParent(),DirtyBits.DEPENDENT_LAYOUT,DirtyBits.NODE);
+markDirty(event.getParent(),DirtyBits.LAYOUT_OBSERVERS,DirtyBits.NODE);
 invalidate();
 break;
 case NODE_CHANGED:

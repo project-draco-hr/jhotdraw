@@ -20,7 +20,7 @@
       DirtyMask dm=entry.getValue();
       if (dm.intersects(dmTransform) && !dm.intersects(dmTransformNotify)) {
         for (        Figure a : f.preorderIterable()) {
-          markDirty(a,DirtyBits.DEPENDENT_LAYOUT,DirtyBits.TRANSFORM_NOTIFY);
+          markDirty(a,DirtyBits.LAYOUT_OBSERVERS,DirtyBits.TRANSFORM_NOTIFY);
         }
       }
     }
@@ -38,7 +38,7 @@
       DirtyMask dm=entry.getValue();
       if (dm.intersects(dmLayout)) {
         for (        Figure subtree : f.preorderIterable()) {
-          for (          Figure d : subtree.getDependentFigures()) {
+          for (          Figure d : subtree.getLayoutObservers()) {
             todo.add(d);
           }
         }
@@ -48,7 +48,7 @@
           }
         }
       }
-      if (dm.intersects(DirtyBits.DEPENDENT_LAYOUT)) {
+      if (dm.intersects(DirtyBits.LAYOUT_OBSERVERS)) {
         todo.add(f);
       }
     }
