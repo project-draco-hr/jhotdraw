@@ -1,8 +1,9 @@
 {
-  List<Transform> txs=new ArrayList<Transform>(node.getTransforms());
-  txs.add(new Translate(node.getTranslateX(),node.getTranslateY()));
+  List<Transform> txs=new ArrayList<>();
   Point2D pivot=Geom.center(node.getBoundsInLocal());
-  txs.add(new Scale(node.getScaleX(),node.getScaleY(),pivot.getX(),pivot.getY()));
+  txs.add(new Translate(node.getTranslateX(),node.getTranslateY()));
   txs.add(new Rotate(node.getRotate(),pivot.getX(),pivot.getY()));
+  txs.add(new Scale(node.getScaleX(),node.getScaleY(),pivot.getX(),pivot.getY()));
+  txs.addAll(node.getTransforms());
   writeTransformAttributes(elem,txs);
 }

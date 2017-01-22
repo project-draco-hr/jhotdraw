@@ -1,6 +1,13 @@
 {
   Element elem=doc.createElement("path");
   elem.setAttribute("d",node.getContent());
-  parent.appendChild(elem);
-  return elem;
+switch (node.getFillRule()) {
+case NON_ZERO:
+    break;
+case EVEN_ODD:
+  elem.setAttribute("fill-rule","evenodd");
+break;
+}
+parent.appendChild(elem);
+return elem;
 }
