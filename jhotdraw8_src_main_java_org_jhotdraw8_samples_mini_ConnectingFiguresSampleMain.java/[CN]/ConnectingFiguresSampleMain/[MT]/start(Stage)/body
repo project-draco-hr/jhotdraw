@@ -1,0 +1,15 @@
+{
+  DrawingView drawingView=new SimpleDrawingView();
+  Drawing drawing=new ConnectingFiguresSample().createDrawing();
+  drawingView.setDrawing(drawing);
+  DrawingEditor drawingEditor=new SimpleDrawingEditor();
+  drawingEditor.drawingViewsProperty().add(drawingView);
+  Tool tool=new SelectionTool();
+  drawingEditor.setActiveTool(tool);
+  ScrollPane scrollPane=new ScrollPane();
+  scrollPane.setFitToWidth(true);
+  scrollPane.setFitToHeight(true);
+  scrollPane.setContent(drawingView.getNode());
+  primaryStage.setScene(new Scene(scrollPane));
+  primaryStage.show();
+}

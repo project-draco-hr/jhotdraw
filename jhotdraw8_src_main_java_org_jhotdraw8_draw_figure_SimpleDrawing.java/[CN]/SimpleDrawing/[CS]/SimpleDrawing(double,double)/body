@@ -1,0 +1,4 @@
+{
+  set(WIDTH,width);
+  set(HEIGHT,height);
+}
