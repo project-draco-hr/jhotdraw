@@ -1,0 +1,3 @@
+{
+  this(Geom.clamp((x - bounds.getMinX()) / bounds.getWidth(),0,1),Geom.clamp((y - bounds.getMinY()) / bounds.getHeight(),0,1));
+}

@@ -1,0 +1,10 @@
+{
+  boolean b=false;
+  if (connectorLocation != null) {
+    b=Geom.length2(x,y,connectorLocation.getX(),connectorLocation.getY()) <= tolerance;
+  }
+  if (!b && pickLocation != null) {
+    b=Geom.length2(x,y,pickLocation.getX(),pickLocation.getY()) <= tolerance;
+  }
+  return b;
+}

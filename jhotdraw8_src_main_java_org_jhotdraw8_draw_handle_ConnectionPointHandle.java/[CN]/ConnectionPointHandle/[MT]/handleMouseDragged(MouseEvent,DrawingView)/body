@@ -14,12 +14,15 @@
   if (!event.isMetaDown()) {
     List<Figure> list=view.findFigures(pointInViewCoordinates,true);
     for (    Figure ff : list) {
-      Point2D pointInLocal=ff.worldToLocal(newPoint);
-      newConnector=ff.findConnector(pointInLocal,o);
-      if (newConnector != null) {
-        newConnectedFigure=ff;
-        constrainedPoint=newConnector.getPositionInLocal(o,ff);
-        break;
+      if (ff instanceof ConnectableFigure) {
+        ConnectableFigure cff=(ConnectableFigure)ff;
+        Point2D pointInLocal=cff.worldToLocal(constrainedPoint);
+        newConnector=cff.findConnector(pointInLocal,o);
+        if (newConnector != null) {
+          newConnectedFigure=ff;
+          constrainedPoint=newConnector.getPositionInLocal(o,ff);
+          break;
+        }
       }
     }
   }

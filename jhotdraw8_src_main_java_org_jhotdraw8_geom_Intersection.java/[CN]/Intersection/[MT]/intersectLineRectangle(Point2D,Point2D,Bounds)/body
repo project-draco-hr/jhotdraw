@@ -1,0 +1,3 @@
+{
+  return intersectLineRectangle(a1,a2,r.getMinX(),r.getMinY(),r.getMaxX(),r.getMaxY());
+}

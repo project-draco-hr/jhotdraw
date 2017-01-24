@@ -1,0 +1,25 @@
+{
+  Point2D s=target.worldToLocal(start);
+  Point2D e=target.worldToLocal(end);
+  Bounds bounds=target.getBoundsInLocal();
+  if (target.getStyled(STROKE_COLOR) != null) {
+    double grow;
+switch (target.getStyled(STROKE_TYPE)) {
+case CENTERED:
+default :
+      grow=target.getStyled(STROKE_WIDTH) / 2d;
+    break;
+case OUTSIDE:
+  grow=target.getStyled(STROKE_WIDTH);
+break;
+case INSIDE:
+grow=0d;
+break;
+}
+bounds=Geom.grow(bounds,grow,grow);
+}
+Intersection i=Intersection.intersectLineRectangle(s,e,bounds);
+double maxT=0;
+for (double t : i.getTs()) if (t > maxT) maxT=t;
+return i.isEmpty() ? null : maxT;
+}

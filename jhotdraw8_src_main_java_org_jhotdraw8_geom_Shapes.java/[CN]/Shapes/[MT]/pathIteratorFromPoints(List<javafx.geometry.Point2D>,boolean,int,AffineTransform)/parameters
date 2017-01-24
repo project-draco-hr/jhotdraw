@@ -1,0 +1,4 @@
+List<javafx.geometry.Point2D> points
+boolean closed
+int windingRule
+AffineTransform tx

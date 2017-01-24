@@ -1,0 +1,3 @@
+{
+  this(nodes,false,windingRule == FillRule.EVEN_ODD ? PathIterator.WIND_EVEN_ODD : PathIterator.WIND_NON_ZERO);
+}

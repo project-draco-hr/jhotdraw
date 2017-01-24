@@ -1,19 +1,3 @@
 {
-  Point2D min=minp(r1,r2);
-  Point2D max=maxp(r1,r2);
-  Point2D topRight=new Point2D(max.getX(),min.getY());
-  Point2D bottomLeft=new Point2D(min.getX(),max.getY());
-  Intersection inter1=Intersection.intersectLineLine(min,topRight,a1,a2);
-  Intersection inter2=Intersection.intersectLineLine(topRight,max,a1,a2);
-  Intersection inter3=Intersection.intersectLineLine(max,bottomLeft,a1,a2);
-  Intersection inter4=Intersection.intersectLineLine(bottomLeft,min,a1,a2);
-  Intersection result=new Intersection(Status.NO_INTERSECTION);
-  result.appendPoints(inter1.points);
-  result.appendPoints(inter2.points);
-  result.appendPoints(inter3.points);
-  result.appendPoints(inter4.points);
-  if (!result.isEmpty()) {
-    result.status=Status.INTERSECTION;
-  }
-  return result;
+  return intersectLineRectangle(a1,a2,Math.min(r1.getX(),r2.getX()),Math.min(r1.getY(),r2.getY()),Math.max(r1.getX(),r2.getX()),Math.max(r1.getY(),r2.getY()));
 }

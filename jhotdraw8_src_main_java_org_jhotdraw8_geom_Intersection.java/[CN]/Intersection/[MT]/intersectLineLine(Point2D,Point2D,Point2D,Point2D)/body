@@ -1,26 +1,11 @@
 {
-  Intersection result;
-  double ua_t=(b2.getX() - b1.getX()) * (a1.getY() - b1.getY()) - (b2.getY() - b1.getY()) * (a1.getX() - b1.getX());
-  double ub_t=(a2.getX() - a1.getX()) * (a1.getY() - b1.getY()) - (a2.getY() - a1.getY()) * (a1.getX() - b1.getX());
-  double u_b=(b2.getY() - b1.getY()) * (a2.getX() - a1.getX()) - (b2.getX() - b1.getX()) * (a2.getY() - a1.getY());
-  if (u_b != 0) {
-    double ua=ua_t / u_b;
-    double ub=ub_t / u_b;
-    if (0 <= ua && ua <= 1 && 0 <= ub && ub <= 1) {
-      result=new Intersection(Status.INTERSECTION);
-      result.appendPoint(new Point2D(a1.getX() + ua * (a2.getX() - a1.getX()),a1.getY() + ua * (a2.getY() - a1.getY())),ua);
-    }
- else {
-      result=new Intersection(Status.NO_INTERSECTION);
-    }
-  }
- else {
-    if (ua_t == 0 || ub_t == 0) {
-      result=new Intersection(Status.NO_INTERSECTION_COINCIDENT);
-    }
- else {
-      result=new Intersection(Status.NO_INTERSECTION_PARALLEL);
-    }
-  }
-  return result;
+  final double b2x=b2.getX();
+  final double b1x=b1.getX();
+  final double a1y=a1.getY();
+  final double b1y=b1.getY();
+  final double b2y=b2.getY();
+  final double a1x=a1.getX();
+  final double a2y=a2.getY();
+  final double a2x=a2.getX();
+  return intersectLineLine(a1x,a1y,a2x,a2y,b1x,b1y,b2x,b2y);
 }

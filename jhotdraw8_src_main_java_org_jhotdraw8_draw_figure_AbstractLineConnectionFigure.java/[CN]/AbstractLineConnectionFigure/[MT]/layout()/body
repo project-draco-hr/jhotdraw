@@ -12,9 +12,11 @@
     end=endConnector.getPositionInWorld(this,endTarget);
   }
   if (startConnector != null && startTarget != null) {
-    set(START,worldToParent(startConnector.chopStart(this,startTarget,start,end)));
+    final Point2D p=worldToParent(startConnector.chopStart(this,startTarget,start,end));
+    if (p != null)     set(START,p);
   }
   if (endConnector != null && endTarget != null) {
-    set(END,worldToParent(endConnector.chopEnd(this,endTarget,start,end)));
+    final Point2D p=worldToParent(endConnector.chopEnd(this,endTarget,start,end));
+    if (p != null)     set(END,p);
   }
 }

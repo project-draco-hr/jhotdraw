@@ -14,10 +14,13 @@
   if (!event.isMetaDown()) {
     List<Figure> list=view.findFigures(pointInViewCoordinates,true);
     for (    Figure ff : list) {
-      newConnector=ff.findConnector(newPoint,figure);
-      if (newConnector != null) {
-        newConnectedFigure=ff;
-        break;
+      if (ff instanceof ConnectableFigure) {
+        ConnectableFigure cff=(ConnectableFigure)ff;
+        newConnector=cff.findConnector(newPoint,figure);
+        if (newConnector != null) {
+          newConnectedFigure=ff;
+          break;
+        }
       }
     }
   }

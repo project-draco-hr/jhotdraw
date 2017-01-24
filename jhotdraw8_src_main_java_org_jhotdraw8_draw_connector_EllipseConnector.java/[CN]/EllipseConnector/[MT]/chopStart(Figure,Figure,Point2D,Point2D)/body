@@ -1,0 +1,4 @@
+{
+  Double t=intersect(connection,target,start,end);
+  return t == null ? null : Geom.lerp(start,end,t);
+}

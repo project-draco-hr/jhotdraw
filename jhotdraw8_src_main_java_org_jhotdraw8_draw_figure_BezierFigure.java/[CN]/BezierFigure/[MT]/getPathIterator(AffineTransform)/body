@@ -1,0 +1,3 @@
+{
+  return new BezierNodePath(get(PATH),get(CLOSED),get(FILL_RULE)).getPathIterator(tx);
+}

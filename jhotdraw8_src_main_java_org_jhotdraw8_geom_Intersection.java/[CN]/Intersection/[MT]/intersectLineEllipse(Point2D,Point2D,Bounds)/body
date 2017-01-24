@@ -1,0 +1,5 @@
+{
+  double rx=e.getWidth() * 0.5;
+  double ry=e.getHeight() * 0.5;
+  return intersectLineEllipse(a1,a2,new Point2D(e.getMinX() + rx,e.getMinY() + ry),rx,ry);
+}

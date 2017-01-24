@@ -1,0 +1,4 @@
+{
+  Point2D p=getLocationInView();
+  return Geom.length2(x,y,p.getX(),p.getY()) <= tolerance;
+}

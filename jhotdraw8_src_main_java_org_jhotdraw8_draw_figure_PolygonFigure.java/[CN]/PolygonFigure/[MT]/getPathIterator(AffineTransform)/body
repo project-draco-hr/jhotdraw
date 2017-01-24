@@ -1,0 +1,3 @@
+{
+  return Shapes.pathIteratorFromPoints(get(POINTS),true,PathIterator.WIND_EVEN_ODD,tx);
+}

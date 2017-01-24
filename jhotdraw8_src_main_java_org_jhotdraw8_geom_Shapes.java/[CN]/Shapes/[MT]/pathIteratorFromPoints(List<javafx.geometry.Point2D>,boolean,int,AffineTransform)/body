@@ -1,0 +1,59 @@
+{
+  return new PathIterator(){
+    int index=0;
+    float[] srcf=new float[2];
+    double[] srcd=new double[2];
+    @Override public int currentSegment(    float[] coords){
+      if (index < points.size()) {
+        javafx.geometry.Point2D p=points.get(index);
+        if (tx == null) {
+          coords[0]=(float)p.getX();
+          coords[1]=(float)p.getY();
+        }
+ else {
+          srcf[0]=(float)p.getX();
+          srcf[1]=(float)p.getY();
+          tx.transform(srcf,0,coords,0,1);
+        }
+        return index == 0 ? PathIterator.SEG_MOVETO : PathIterator.SEG_LINETO;
+      }
+ else       if (index == points.size() && closed) {
+        return PathIterator.SEG_CLOSE;
+      }
+ else {
+        throw new IndexOutOfBoundsException();
+      }
+    }
+    @Override public int currentSegment(    double[] coords){
+      if (index < points.size()) {
+        javafx.geometry.Point2D p=points.get(index);
+        if (tx == null) {
+          coords[0]=p.getX();
+          coords[1]=p.getY();
+        }
+ else {
+          srcd[0]=p.getX();
+          srcd[1]=p.getY();
+          tx.transform(srcf,0,coords,0,1);
+        }
+        return index == 0 ? PathIterator.SEG_MOVETO : PathIterator.SEG_LINETO;
+      }
+ else       if (index == points.size() && closed) {
+        return PathIterator.SEG_CLOSE;
+      }
+ else {
+        throw new IndexOutOfBoundsException();
+      }
+    }
+    @Override public int getWindingRule(){
+      return windingRule;
+    }
+    @Override public boolean isDone(){
+      return index >= points.size() + (closed ? 1 : 0);
+    }
+    @Override public void next(){
+      if (index < Integer.MAX_VALUE)       index++;
+    }
+  }
+;
+}
