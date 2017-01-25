@@ -1,0 +1,45 @@
+{
+  Point2D a, b;
+  Point2D c2, c1, c0;
+  double cl;
+  Point2D n;
+  Point2D min=minp(ax,ay,bx,by);
+  Point2D max=maxp(ax,ay,bx,by);
+  Intersection result=new Intersection(Status.NO_INTERSECTION);
+  final Point2D p1=new Point2D(p1x,p1y);
+  final Point2D p2=new Point2D(p2x,p2y);
+  a=p2.multiply(-2);
+  c2=p1.add(a.add(p3x,p3y));
+  a=p1.multiply(-2);
+  b=p2.multiply(2);
+  c1=a.add(b);
+  c0=new Point2D(p1x,p1y);
+  n=new Point2D(ay - by,bx - ax);
+  cl=ax * by - bx * ay;
+  double[] roots=new Polynomial(n.dotProduct(c2),n.dotProduct(c1),n.dotProduct(c0) + cl).getRoots();
+  for (int i=0; i < roots.length; i++) {
+    double t=roots[i];
+    if (0 <= t && t <= 1) {
+      Point2D p4=lerp(p1,p2,t);
+      Point2D p5=lerp(p2x,p2y,p3x,p3y,t);
+      Point2D p6=lerp(p4,p5,t);
+      if (ax == bx) {
+        if (min.getY() <= p6.getY() && p6.getY() <= max.getY()) {
+          result.status=Status.INTERSECTION;
+          result.appendPoint(p6,pointOnLine(p6.getX(),p6.getY(),ax,ay,bx,by));
+        }
+      }
+ else       if (ay == by) {
+        if (min.getX() <= p6.getX() && p6.getX() <= max.getX()) {
+          result.status=Status.INTERSECTION;
+          result.appendPoint(p6,pointOnLine(p6.getX(),p6.getY(),ax,ay,bx,by));
+        }
+      }
+ else       if (gte(p6,min) && lte(p6,max)) {
+        result.status=Status.INTERSECTION;
+        result.appendPoint(p6,pointOnLine(p6.getX(),p6.getY(),ax,ay,bx,by));
+      }
+    }
+  }
+  return result;
+}

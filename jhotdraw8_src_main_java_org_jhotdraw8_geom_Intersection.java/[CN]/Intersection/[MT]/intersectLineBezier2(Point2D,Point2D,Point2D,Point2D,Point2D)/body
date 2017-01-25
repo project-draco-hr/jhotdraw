@@ -1,0 +1,3 @@
+{
+  return intersectLineBezier2(a1.getX(),a1.getY(),a2.getX(),a2.getY(),p1.getX(),p1.getY(),p2.getX(),p2.getY(),p3.getX(),p3.getY());
+}

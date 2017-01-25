@@ -1,0 +1,11 @@
+{
+  System.out.println("intersectLineCircle");
+  Point2D a1=null;
+  Point2D a2=null;
+  Point2D c=null;
+  double r=0.0;
+  Intersection expResult=null;
+  Intersection result=Intersection.intersectLineCircle(a1,a2,c,r);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

@@ -1,0 +1,11 @@
+{
+  System.out.println("intersectBezier2Polygon");
+  Point2D p1=null;
+  Point2D p2=null;
+  Point2D p3=null;
+  List<Point2D> points=null;
+  Intersection expResult=null;
+  Intersection result=Intersection.intersectBezier2Polygon(p1,p2,p3,points);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

@@ -1,0 +1,10 @@
+{
+  double w=x2 - x1;
+  double h=y2 - y1;
+  if (Math.abs(w) > Math.abs(h)) {
+    return (px - x1) / w;
+  }
+ else {
+    return (py - y1) / h;
+  }
+}

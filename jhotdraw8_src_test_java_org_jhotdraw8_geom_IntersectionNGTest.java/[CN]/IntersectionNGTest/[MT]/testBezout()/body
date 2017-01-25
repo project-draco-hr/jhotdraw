@@ -1,0 +1,9 @@
+{
+  System.out.println("bezout");
+  double[] e1=null;
+  double[] e2=null;
+  Polynomial expResult=null;
+  Polynomial result=Intersection.bezout(e1,e2);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

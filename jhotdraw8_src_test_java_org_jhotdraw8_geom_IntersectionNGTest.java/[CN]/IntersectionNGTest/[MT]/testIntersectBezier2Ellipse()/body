@@ -1,0 +1,13 @@
+{
+  System.out.println("intersectBezier2Ellipse");
+  Point2D p1=null;
+  Point2D p2=null;
+  Point2D p3=null;
+  Point2D ec=null;
+  double rx=0.0;
+  double ry=0.0;
+  Intersection expResult=null;
+  Intersection result=Intersection.intersectBezier2Ellipse(p1,p2,p3,ec,rx,ry);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

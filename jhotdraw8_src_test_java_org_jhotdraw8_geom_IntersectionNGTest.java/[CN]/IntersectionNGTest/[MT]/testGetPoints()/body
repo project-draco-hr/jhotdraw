@@ -1,0 +1,8 @@
+{
+  System.out.println("getPoints");
+  Intersection instance=null;
+  List expResult=null;
+  List result=instance.getPoints();
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

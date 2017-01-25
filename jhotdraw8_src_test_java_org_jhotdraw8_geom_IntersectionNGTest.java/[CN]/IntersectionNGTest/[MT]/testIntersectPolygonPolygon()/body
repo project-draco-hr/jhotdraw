@@ -1,0 +1,9 @@
+{
+  System.out.println("intersectPolygonPolygon");
+  List<Point2D> points1=null;
+  List<Point2D> points2=null;
+  Intersection expResult=null;
+  Intersection result=Intersection.intersectPolygonPolygon(points1,points2);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

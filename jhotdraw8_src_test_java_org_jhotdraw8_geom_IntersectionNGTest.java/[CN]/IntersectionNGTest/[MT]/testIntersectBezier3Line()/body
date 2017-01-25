@@ -1,0 +1,13 @@
+{
+  System.out.println("intersectBezier3Line");
+  Point2D p1=null;
+  Point2D p2=null;
+  Point2D p3=null;
+  Point2D p4=null;
+  Point2D a1=null;
+  Point2D a2=null;
+  Intersection expResult=null;
+  Intersection result=Intersection.intersectBezier3Line(p1,p2,p3,p4,a1,a2);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

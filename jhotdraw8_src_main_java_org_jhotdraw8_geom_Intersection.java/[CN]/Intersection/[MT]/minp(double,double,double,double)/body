@@ -1,0 +1,3 @@
+{
+  return new Point2D(Math.min(ax,bx),Math.min(ay,by));
+}

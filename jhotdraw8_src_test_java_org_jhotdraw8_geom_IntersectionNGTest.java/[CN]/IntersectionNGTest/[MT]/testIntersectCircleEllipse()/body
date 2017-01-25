@@ -1,0 +1,12 @@
+{
+  System.out.println("intersectCircleEllipse");
+  Point2D cc=null;
+  double r=0.0;
+  Point2D ec=null;
+  double rx=0.0;
+  double ry=0.0;
+  Intersection expResult=null;
+  Intersection result=Intersection.intersectCircleEllipse(cc,r,ec,rx,ry);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

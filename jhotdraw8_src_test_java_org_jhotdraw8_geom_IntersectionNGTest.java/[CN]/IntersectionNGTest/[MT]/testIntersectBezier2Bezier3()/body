@@ -1,0 +1,14 @@
+{
+  System.out.println("intersectBezier2Bezier3");
+  Point2D a1=null;
+  Point2D a2=null;
+  Point2D a3=null;
+  Point2D b1=null;
+  Point2D b2=null;
+  Point2D b3=null;
+  Point2D b4=null;
+  Intersection expResult=null;
+  Intersection result=Intersection.intersectBezier2Bezier3(a1,a2,a3,b1,b2,b3,b4);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

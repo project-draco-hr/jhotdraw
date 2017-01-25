@@ -25,6 +25,8 @@ break;
 pit=pif.getPathIterator(null);
 }
 Intersection i=Intersection.intersectLinePathIterator(s,e,pit);
+intersections.clear();
+intersections.addAll(i.getPoints());
 double maxT=0;
 for (double t : i.getTs()) {
 if (t > maxT) {

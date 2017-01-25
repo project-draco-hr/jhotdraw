@@ -1,0 +1,10 @@
+{
+  System.out.println("intersectLinePolygon");
+  Point2D a1=null;
+  Point2D a2=null;
+  List<Point2D> points=null;
+  Intersection expResult=null;
+  Intersection result=Intersection.intersectLinePolygon(a1,a2,points);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

@@ -1,0 +1,12 @@
+{
+  System.out.println("intersectEllipseLine");
+  Point2D ec=null;
+  double rx=0.0;
+  double ry=0.0;
+  Point2D a1=null;
+  Point2D a2=null;
+  Intersection expResult=null;
+  Intersection result=Intersection.intersectEllipseLine(ec,rx,ry,a1,a2);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

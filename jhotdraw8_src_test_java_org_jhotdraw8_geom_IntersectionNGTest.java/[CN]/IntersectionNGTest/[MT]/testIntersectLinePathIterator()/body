@@ -1,0 +1,10 @@
+{
+  System.out.println("intersectLinePathIterator");
+  Point2D a=null;
+  Point2D b=null;
+  PathIterator pit=null;
+  Intersection expResult=null;
+  Intersection result=Intersection.intersectLinePathIterator(a,b,pit);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

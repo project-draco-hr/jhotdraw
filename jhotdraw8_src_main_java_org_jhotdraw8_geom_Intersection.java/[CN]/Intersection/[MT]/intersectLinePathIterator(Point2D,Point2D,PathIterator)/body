@@ -30,6 +30,12 @@ lastx=firstx=seg[0];
 lasty=firsty=seg[1];
 break;
 case PathIterator.SEG_QUADTO:
+x=seg[2];
+y=seg[3];
+inter=Intersection.intersectLineBezier2(ax,ay,bx,by,lastx,lasty,seg[0],seg[1],x,y);
+result.appendPoints(inter.points,inter.ts);
+lastx=x;
+lasty=y;
 break;
 }
 }

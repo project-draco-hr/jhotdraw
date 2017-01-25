@@ -1,6 +1,8 @@
 {
   int popAt=simplifiedDegree();
-  if (popAt == this.getDegree())   return this;
+  if (popAt == this.getDegree()) {
+    return this;
+  }
   double[] newCoefs=new double[popAt];
   System.arraycopy(this.coefs,0,newCoefs,0,popAt);
   return new Polynomial(newCoefs);

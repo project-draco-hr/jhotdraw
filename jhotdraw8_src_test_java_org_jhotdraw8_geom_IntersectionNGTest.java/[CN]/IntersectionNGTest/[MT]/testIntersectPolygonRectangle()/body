@@ -1,0 +1,10 @@
+{
+  System.out.println("intersectPolygonRectangle");
+  List<Point2D> points=null;
+  Point2D r1=null;
+  Point2D r2=null;
+  Intersection expResult=null;
+  Intersection result=Intersection.intersectPolygonRectangle(points,r1,r2);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

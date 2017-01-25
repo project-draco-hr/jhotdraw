@@ -1,0 +1,8 @@
+{
+  System.out.println("size");
+  Intersection instance=null;
+  int expResult=0;
+  int result=instance.size();
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}
