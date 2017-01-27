@@ -1,7 +1,6 @@
 {
   int numCoords=0;
   int type=0;
-  int size=nodes.size();
   if (index > size)   return SEG_CLOSE;
   BezierNode previous=nodes.get((index + size - 1) % size);
   BezierNode current=nodes.get(index % size);

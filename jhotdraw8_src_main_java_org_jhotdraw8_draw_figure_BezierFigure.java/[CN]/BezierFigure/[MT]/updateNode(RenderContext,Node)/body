@@ -6,10 +6,7 @@
   applyFillableFigureProperties(pathNode);
   applyTransformableFigureProperties(node);
   applyCompositableFigureProperties(pathNode);
-  final List<PathElement> elements=Shapes.fxPathElementsFromAWT(new BezierNodePath(getStyled(PATH)).getPathIterator(null));
-  if (getStyled(CLOSED)) {
-    elements.add(new ClosePath());
-  }
+  final List<PathElement> elements=Shapes.fxPathElementsFromAWT(new BezierNodePath(getStyled(PATH),getStyled(CLOSED),getStyled(FILL_RULE)).getPathIterator(null));
   if (!pathNode.getElements().equals(elements)) {
     pathNode.getElements().setAll(elements);
   }

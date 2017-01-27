@@ -1,56 +1,54 @@
 {
   double[] results=new double[0];
-  if (this.getDegree() == 3) {
-    double c3=this.coefs[3];
-    double c2=this.coefs[2] / c3;
-    double c1=this.coefs[1] / c3;
-    double c0=this.coefs[0] / c3;
-    double a=(3 * c1 - c2 * c2) / 3;
-    double b=(2 * c2 * c2* c2 - 9 * c1 * c2 + 27 * c0) / 27;
-    double offset=c2 / 3;
-    double discrim=b * b / 4 + a * a * a / 27;
-    double halfB=b / 2;
-    if (Math.abs(discrim) <= Polynomial.TOLERANCE) {
-      discrim=0;
-    }
-    if (discrim > 0) {
-      double e=Math.sqrt(discrim);
-      double tmp;
-      double root;
-      tmp=-halfB + e;
-      if (tmp >= 0) {
-        root=Math.pow(tmp,1 / 3);
-      }
- else {
-        root=-Math.pow(-tmp,1 / 3);
-      }
-      tmp=-halfB - e;
-      if (tmp >= 0) {
-        root+=Math.pow(tmp,1 / 3);
-      }
- else {
-        root-=Math.pow(-tmp,1 / 3);
-      }
-      results=new double[]{root - offset};
-    }
- else     if (discrim < 0) {
-      double distance=Math.sqrt(-a / 3);
-      double angle=Math.atan2(Math.sqrt(-discrim),-halfB) / 3;
-      double cos=Math.cos(angle);
-      double sin=Math.sin(angle);
-      double sqrt3=Math.sqrt(3);
-      results=new double[]{2 * distance * cos - offset,-distance * (cos + sqrt3 * sin) - offset,-distance * (cos - sqrt3 * sin) - offset};
+  double c3=this.coefs[3];
+  double c2=this.coefs[2] / c3;
+  double c1=this.coefs[1] / c3;
+  double c0=this.coefs[0] / c3;
+  double a=(3 * c1 - c2 * c2) / 3;
+  double b=(2 * c2 * c2* c2 - 9 * c1 * c2 + 27 * c0) / 27;
+  double offset=c2 / 3;
+  double discrim=b * b / 4 + a * a * a / 27;
+  double halfB=b / 2;
+  if (Math.abs(discrim) <= Polynomial.TOLERANCE) {
+    discrim=0;
+  }
+  if (discrim > 0) {
+    double e=Math.sqrt(discrim);
+    double tmp;
+    double root;
+    tmp=-halfB + e;
+    if (tmp >= 0) {
+      root=Math.pow(tmp,1.0 / 3.0);
     }
  else {
-      double tmp;
-      if (halfB >= 0) {
-        tmp=-Math.pow(halfB,1 / 3);
-      }
- else {
-        tmp=Math.pow(-halfB,1 / 3);
-      }
-      results=new double[]{2 * tmp - offset,-tmp - offset};
+      root=-Math.pow(-tmp,1.0 / 3.0);
     }
+    tmp=-halfB - e;
+    if (tmp >= 0) {
+      root+=Math.pow(tmp,1.0 / 3.0);
+    }
+ else {
+      root-=Math.pow(-tmp,1.0 / 3.0);
+    }
+    results=new double[]{root - offset};
+  }
+ else   if (discrim < 0) {
+    double distance=Math.sqrt(-a / 3.0);
+    double angle=Math.atan2(Math.sqrt(-discrim),-halfB) / 3.0;
+    double cos=Math.cos(angle);
+    double sin=Math.sin(angle);
+    double sqrt3=Math.sqrt(3);
+    results=new double[]{2 * distance * cos - offset,-distance * (cos + sqrt3 * sin) - offset,-distance * (cos - sqrt3 * sin) - offset};
+  }
+ else {
+    double tmp;
+    if (halfB >= 0) {
+      tmp=-Math.pow(halfB,1.0 / 3.0);
+    }
+ else {
+      tmp=Math.pow(-halfB,1.0 / 3.0);
+    }
+    results=new double[]{2 * tmp - offset,-tmp - offset};
   }
   return results;
 }
