@@ -1,5 +1,4 @@
 {
   Intersection result=intersectLineEllipse(a1,a2,ec,rx,ry);
-  result.throwAwayTs();
   return result;
 }

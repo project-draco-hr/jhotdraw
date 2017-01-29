@@ -26,18 +26,18 @@
       if (ax == bx) {
         if (min.getY() <= p6.getY() && p6.getY() <= max.getY()) {
           result.status=Status.INTERSECTION;
-          result.appendPoint(p6,pointOnLine(p6.getX(),p6.getY(),ax,ay,bx,by));
+          result.put(pointOnLine(p6.getX(),p6.getY(),ax,ay,bx,by),p6);
         }
       }
  else       if (ay == by) {
         if (min.getX() <= p6.getX() && p6.getX() <= max.getX()) {
           result.status=Status.INTERSECTION;
-          result.appendPoint(p6,pointOnLine(p6.getX(),p6.getY(),ax,ay,bx,by));
+          result.put(pointOnLine(p6.getX(),p6.getY(),ax,ay,bx,by),p6);
         }
       }
  else       if (gte(p6,min) && lte(p6,max)) {
         result.status=Status.INTERSECTION;
-        result.appendPoint(p6,pointOnLine(p6.getX(),p6.getY(),ax,ay,bx,by));
+        result.put(pointOnLine(p6.getX(),p6.getY(),ax,ay,bx,by),p6);
       }
     }
   }

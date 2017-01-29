@@ -1,13 +1,10 @@
 {
-  Object[] v=formatter.fromString(buf);
-  if (v == null) {
-    return null;
+  Connector c;
+  CssTokenizerInterface tt=new CssTokenizer(new CharBufferReader(buf));
+  tt.setSkipWhitespaces(true);
+  c=parseConnector(tt);
+  if (!buf.toString().trim().isEmpty()) {
+    throw new ParseException("Locator: End expected, found:" + buf.toString(),buf.position());
   }
-  double choice=(Double)v[0];
-  Supplier<Connector> clazz=choiceToConnectorMap.get(choice);
-  if (clazz == null) {
-    throw new ParseException("no connector found for " + buf,0);
-  }
-  Connector connector=clazz.get();
-  return connector;
+  return c;
 }

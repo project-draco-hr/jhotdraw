@@ -2,8 +2,8 @@
   RectangleFigure a=new RectangleFigure(100,80,150,100);
   RectangleFigure b=new RectangleFigure(300,230,150,100);
   LineConnectionFigure c=new LineConnectionFigure();
-  c.setStartConnection(a,new ChopRectangleConnector());
-  c.setEndConnection(b,new ChopRectangleConnector());
+  c.setStartConnection(a,new RectangleConnector());
+  c.setEndConnection(b,new RectangleConnector());
   c.layout();
   Drawing drawing=new SimpleDrawing(600,400);
   Layer layer=new SimpleLayer();

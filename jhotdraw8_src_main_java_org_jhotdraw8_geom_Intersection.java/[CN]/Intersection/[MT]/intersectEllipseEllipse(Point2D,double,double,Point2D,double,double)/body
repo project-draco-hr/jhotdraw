@@ -15,7 +15,7 @@
       if (Math.abs(test) < norm0) {
         test=(b[0] * xRoots[x] + b[1] * yRoots[y] + b[3]) * xRoots[x] + (b[2] * yRoots[y] + b[4]) * yRoots[y] + b[5];
         if (Math.abs(test) < norm1) {
-          result.appendPoint(new Point2D(xRoots[x],yRoots[y]),Double.NaN);
+          result.put(Double.NaN,new Point2D(xRoots[x],yRoots[y]));
         }
       }
     }
@@ -23,6 +23,5 @@
   if (!result.isEmpty()) {
     result.status=Status.INTERSECTION;
   }
-  result.throwAwayTs();
   return result;
 }

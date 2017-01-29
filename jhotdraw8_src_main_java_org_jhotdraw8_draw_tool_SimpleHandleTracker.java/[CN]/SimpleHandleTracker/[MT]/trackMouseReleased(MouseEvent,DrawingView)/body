@@ -1,3 +1,4 @@
 {
   handle.handleMouseReleased(event,dv);
+  node.setCursor(handle.getCursor());
 }

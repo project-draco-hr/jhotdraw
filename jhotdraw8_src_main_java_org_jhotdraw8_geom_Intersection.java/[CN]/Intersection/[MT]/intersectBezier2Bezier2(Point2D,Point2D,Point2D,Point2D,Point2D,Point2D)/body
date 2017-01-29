@@ -47,7 +47,7 @@
           if (0 <= xRoot && xRoot <= 1) {
             for (int k=0; k < yRoots.length; k++) {
               if (Math.abs(xRoot - yRoots[k]) < TOLERANCE) {
-                result.appendPoint(c22.multiply(s * s).add(c21.multiply(s).add(c20)),xRoot);
+                result.put(xRoot,c22.multiply(s * s).add(c21.multiply(s).add(c20)));
                 break checkRoots;
               }
             }

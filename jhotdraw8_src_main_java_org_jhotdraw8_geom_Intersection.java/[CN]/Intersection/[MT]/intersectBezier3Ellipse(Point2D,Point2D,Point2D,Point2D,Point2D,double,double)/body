@@ -33,7 +33,7 @@
   double[] roots=poly.getRootsInInterval(0,1);
   for (int i=0; i < roots.length; i++) {
     double t=roots[i];
-    result.appendPoint(c3.multiply(t * t * t).add(c2.multiply(t * t).add(c1.multiply(t).add(c0))),t);
+    result.put(t,c3.multiply(t * t * t).add(c2.multiply(t * t).add(c1.multiply(t).add(c0))));
   }
   if (result.size() > 0) {
     result.status=Status.INTERSECTION;

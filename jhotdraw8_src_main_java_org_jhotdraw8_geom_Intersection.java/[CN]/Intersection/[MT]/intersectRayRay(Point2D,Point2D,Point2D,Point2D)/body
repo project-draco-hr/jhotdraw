@@ -6,7 +6,7 @@
   if (u_b != 0) {
     double ua=ua_t / u_b;
     result=new Intersection(Status.INTERSECTION);
-    result.appendPoint(new Point2D(a1.getX() + ua * (a2.getX() - a1.getX()),a1.getY() + ua * (a2.getY() - a1.getY())),ua);
+    result.put(ua,new Point2D(a1.getX() + ua * (a2.getX() - a1.getX()),a1.getY() + ua * (a2.getY() - a1.getY())));
   }
  else {
     if (ua_t == 0 || ub_t == 0) {

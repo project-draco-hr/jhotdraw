@@ -1,0 +1,13 @@
+{
+  if (value instanceof RelativeLocator) {
+    RelativeLocator rl=(RelativeLocator)value;
+    out.append("relative(");
+    out.append(numberConverter.toString(rl.getRelativeX() * 100));
+    out.append("%,");
+    out.append(numberConverter.toString(rl.getRelativeY() * 100));
+    out.append("%)");
+  }
+ else {
+    throw new UnsupportedOperationException("only RelativeLocator supported, value:" + value);
+  }
+}

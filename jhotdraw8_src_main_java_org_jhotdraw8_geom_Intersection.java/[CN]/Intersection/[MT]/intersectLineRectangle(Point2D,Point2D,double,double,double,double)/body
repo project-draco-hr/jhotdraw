@@ -8,10 +8,10 @@
   Intersection inter3=Intersection.intersectLineLine(a1,a2,max,bottomLeft);
   Intersection inter4=Intersection.intersectLineLine(a1,a2,bottomLeft,min);
   Intersection result=new Intersection(Status.NO_INTERSECTION);
-  result.appendPoints(inter1.points,inter1.ts);
-  result.appendPoints(inter2.points,inter2.ts);
-  result.appendPoints(inter3.points,inter3.ts);
-  result.appendPoints(inter4.points,inter4.ts);
+  result.putAll(inter1.getIntersections());
+  result.putAll(inter2.getIntersections());
+  result.putAll(inter3.getIntersections());
+  result.putAll(inter4.getIntersections());
   if (!result.isEmpty()) {
     result.status=Status.INTERSECTION;
   }

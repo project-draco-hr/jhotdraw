@@ -1,0 +1,20 @@
+{
+  Locator locator=null;
+  Function<Locator,Connector> supplier;
+  tt.setSkipWhitespaces(true);
+switch (tt.nextToken()) {
+case CssTokenizerInterface.TT_IDENT:
+    if ("none".equals(tt.currentStringValue())) {
+      return null;
+    }
+  supplier=choiceToConnectorMap.get(tt.currentStringValue());
+if (supplier == null) {
+  throw new ParseException("Connector: unsupported connector, found:" + tt.currentValue(),tt.getStartPosition());
+}
+break;
+default :
+throw new ParseException("Connector: identifier expected, found:" + tt.currentValue(),tt.getStartPosition());
+}
+locator=locatorConverter.parseLocator(tt);
+return supplier.apply(locator);
+}

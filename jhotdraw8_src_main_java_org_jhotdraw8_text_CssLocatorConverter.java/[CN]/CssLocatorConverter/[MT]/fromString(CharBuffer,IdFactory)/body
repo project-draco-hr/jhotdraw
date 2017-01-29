@@ -1,0 +1,10 @@
+{
+  Locator c;
+  CssTokenizerInterface tt=new CssTokenizer(new CharBufferReader(buf));
+  tt.setSkipWhitespaces(true);
+  c=parseLocator(tt);
+  if (!buf.toString().trim().isEmpty()) {
+    throw new ParseException("Locator: End expected, found:" + buf.toString(),buf.position());
+  }
+  return c;
+}

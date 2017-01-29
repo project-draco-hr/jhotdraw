@@ -40,18 +40,18 @@
       if (a1.getX() == a2.getX()) {
         if (amin.getY() <= p10.getY() && p10.getY() <= amax.getY()) {
           result.status=Status.INTERSECTION;
-          result.appendPoint(p10,pointOnLine(p10.getX(),p10.getY(),ax,ay,bx,by));
+          result.put(pointOnLine(p10.getX(),p10.getY(),ax,ay,bx,by),p10);
         }
       }
  else       if (a1.getY() == a2.getY()) {
         if (amin.getX() <= p10.getX() && p10.getX() <= amax.getX()) {
           result.status=Status.INTERSECTION;
-          result.appendPoint(p10,pointOnLine(p10.getX(),p10.getY(),ax,ay,bx,by));
+          result.put(pointOnLine(p10.getX(),p10.getY(),ax,ay,bx,by),p10);
         }
       }
  else       if (gte(p10,amin) && lte(p10,amax)) {
         result.status=Status.INTERSECTION;
-        result.appendPoint(p10,pointOnLine(p10.getX(),p10.getY(),ax,ay,bx,by));
+        result.put(pointOnLine(p10.getX(),p10.getY(),ax,ay,bx,by),p10);
       }
     }
   }

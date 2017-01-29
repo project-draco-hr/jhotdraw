@@ -8,10 +8,10 @@
   Intersection inter3=Intersection.intersectBezier3Line(p1,p2,p3,p4,max,bottomLeft);
   Intersection inter4=Intersection.intersectBezier3Line(p1,p2,p3,p4,bottomLeft,min);
   Intersection result=new Intersection(Status.NO_INTERSECTION);
-  result.appendPoints(inter1.points);
-  result.appendPoints(inter2.points);
-  result.appendPoints(inter3.points);
-  result.appendPoints(inter4.points);
+  result.putAll(inter1.getIntersections());
+  result.putAll(inter2.getIntersections());
+  result.putAll(inter3.getIntersections());
+  result.putAll(inter4.getIntersections());
   if (!result.isEmpty()) {
     result.status=Status.INTERSECTION;
   }

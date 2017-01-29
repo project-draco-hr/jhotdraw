@@ -1,3 +1,0 @@
-{
-  return chopStart(connection,target,new Point2D(sx,sy),new Point2D(ex,ey));
-}

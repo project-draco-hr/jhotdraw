@@ -1,0 +1,29 @@
+{
+  if (!(target instanceof PathIterableFigure)) {
+    return super.intersect(connection,target,start,end);
+  }
+  PathIterableFigure pif=(PathIterableFigure)target;
+  Point2D s=target.worldToLocal(start);
+  Point2D e=target.worldToLocal(end);
+  PathIterator pit;
+  if (target.getStyled(STROKE_COLOR) != null) {
+    double grow;
+switch (target.getStyled(STROKE_TYPE)) {
+case CENTERED:
+default :
+      pit=pif.getPathIterator(null);
+    break;
+case OUTSIDE:
+  pit=pif.getPathIterator(null);
+break;
+case INSIDE:
+pit=pif.getPathIterator(null);
+break;
+}
+}
+ else {
+pit=pif.getPathIterator(null);
+}
+Intersection i=Intersection.intersectLinePathIterator(s,e,pit);
+return i.isEmpty() ? null : i.getIntersections().lastKey();
+}

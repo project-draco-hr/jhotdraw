@@ -15,9 +15,8 @@
     double h=Math.sqrt(r1 * r1 - a * a);
     Point2D p=lerp(c1,c2,a / c_dist);
     double b=h / c_dist;
-    result.appendPoint(new Point2D(p.getX() - b * (c2.getY() - c1.getY()),p.getY() + b * (c2.getX() - c1.getX())),Double.NaN);
-    result.appendPoint(new Point2D(p.getX() + b * (c2.getY() - c1.getY()),p.getY() - b * (c2.getX() - c1.getX())),Double.NaN);
+    result.put(Double.NaN,new Point2D(p.getX() - b * (c2.getY() - c1.getY()),p.getY() + b * (c2.getX() - c1.getX())));
+    result.put(Double.NaN,new Point2D(p.getX() + b * (c2.getY() - c1.getY()),p.getY() - b * (c2.getX() - c1.getX())));
   }
-  result.throwAwayTs();
   return result;
 }

@@ -5,7 +5,7 @@
     Point2D b1=points.get(i);
     Point2D b2=points.get((i + 1) % length);
     Intersection inter=Intersection.intersectLineLine(a1,a2,b1,b2);
-    result.appendPoints(inter.points,inter.ts);
+    result.putAll(inter.getIntersections());
   }
   if (!result.isEmpty()) {
     result.status=Status.INTERSECTION;

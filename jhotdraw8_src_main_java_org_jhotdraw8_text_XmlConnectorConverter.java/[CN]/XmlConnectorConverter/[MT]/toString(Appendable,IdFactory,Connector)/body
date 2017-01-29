@@ -1,4 +1,15 @@
 {
-  double choice=connectorToChoiceMap.get(value.getClass());
-  formatter.toStr(out,idFactory,choice);
+  if (value == null) {
+    out.append("none");
+  }
+  String name=connectorToChoiceMap.get(value.getClass());
+  if (name == null) {
+    throw new IllegalArgumentException("unsupported connector:" + value);
+  }
+  out.append(name);
+  if (value instanceof LocatorConnector) {
+    out.append(" ");
+    LocatorConnector lc=(LocatorConnector)value;
+    locatorConverter.toString(out,idFactory,lc.getLocator());
+  }
 }

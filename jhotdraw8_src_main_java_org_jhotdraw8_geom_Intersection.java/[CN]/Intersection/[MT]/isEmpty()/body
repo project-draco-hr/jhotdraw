@@ -1,3 +1,3 @@
 {
-  return points.isEmpty();
+  return intersections.isEmpty();
 }

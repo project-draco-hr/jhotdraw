@@ -28,10 +28,10 @@
  else {
       result=new Intersection(Status.INTERSECTION);
       if (0 <= t_a && t_a <= 1) {
-        result.appendPoint(lerp(a1,a2,t_a),t_a);
+        result.put(t_a,lerp(a1,a2,t_a));
       }
       if (0 <= t_b && t_b <= 1) {
-        result.appendPoint(lerp(a1,a2,t_b),t_b);
+        result.put(t_b,lerp(a1,a2,t_b));
       }
     }
   }
@@ -39,7 +39,7 @@
     double t=-b / a;
     if (0 <= t && t <= 1) {
       result=new Intersection(Status.INTERSECTION);
-      result.appendPoint(lerp(a1,a2,t),t);
+      result.put(t,lerp(a1,a2,t));
     }
  else {
       result=new Intersection(Status.NO_INTERSECTION_OUTSIDE);

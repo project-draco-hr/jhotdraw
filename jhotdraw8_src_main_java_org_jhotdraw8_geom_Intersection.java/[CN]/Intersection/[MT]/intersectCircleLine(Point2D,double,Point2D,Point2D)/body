@@ -1,5 +1,4 @@
 {
   Intersection inter=intersectLineCircle(a1,a2,c,r);
-  inter.throwAwayTs();
   return inter;
 }

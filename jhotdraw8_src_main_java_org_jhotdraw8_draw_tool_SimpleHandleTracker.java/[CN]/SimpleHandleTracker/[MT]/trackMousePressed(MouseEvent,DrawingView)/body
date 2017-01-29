@@ -1,3 +1,4 @@
 {
   handle.handleMousePressed(event,dv);
+  node.setCursor(handle.getCursor());
 }

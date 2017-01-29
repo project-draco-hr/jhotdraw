@@ -2,7 +2,7 @@
   StringBuilder b=new StringBuilder();
   b.append("Intersection{").append(status).append(", points=");
   boolean first=true;
-  for (  Point2D p : points) {
+  for (  Point2D p : getPoints()) {
     if (first) {
       first=false;
     }
@@ -11,6 +11,6 @@
     }
     b.append(p.getX()).append(',').append(p.getY());
   }
-  b.append(", ts=").append(ts).append('}');
+  b.append(", ts=").append(getTs()).append('}');
   return b.toString();
 }

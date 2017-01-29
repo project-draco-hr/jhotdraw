@@ -24,18 +24,18 @@
       if (a1.getX() == a2.getX()) {
         if (min.getY() <= p6.getY() && p6.getY() <= max.getY()) {
           result.status=Status.INTERSECTION;
-          result.appendPoint(p6,t);
+          result.put(t,p6);
         }
       }
  else       if (a1.getY() == a2.getY()) {
         if (min.getX() <= p6.getX() && p6.getX() <= max.getX()) {
           result.status=Status.INTERSECTION;
-          result.appendPoint(p6,t);
+          result.put(t,p6);
         }
       }
  else       if (gte(p6,min) && lte(p6,max)) {
         result.status=Status.INTERSECTION;
-        result.appendPoint(p6,t);
+        result.put(t,p6);
       }
     }
   }

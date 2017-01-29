@@ -1,0 +1,3 @@
+{
+  return isConnected || !isDragging ? Cursor.CROSSHAIR : Cursor.MOVE;
+}

@@ -6,7 +6,7 @@
     Point2D a1=points.get(i);
     Point2D a2=points.get((i + 1) % length);
     inter=Intersection.intersectCircleLine(c,r,a1,a2);
-    result.appendPoints(inter.points);
+    result.putAll(inter.getIntersections());
   }
   if (!result.isEmpty()) {
     result.status=Status.INTERSECTION;

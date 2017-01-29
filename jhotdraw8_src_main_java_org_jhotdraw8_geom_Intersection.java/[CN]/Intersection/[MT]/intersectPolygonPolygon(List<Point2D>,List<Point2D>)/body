@@ -5,7 +5,7 @@
     Point2D a1=points1.get(i);
     Point2D a2=points1.get((i + 1) % length);
     Intersection inter=Intersection.intersectLinePolygon(a1,a2,points2);
-    result.appendPoints(inter.points);
+    result.putAll(inter.getIntersections());
   }
   if (!result.isEmpty()) {
     result.status=Status.INTERSECTION;

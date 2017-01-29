@@ -1,9 +1,11 @@
 {
   if (tracker != null) {
     drawPane.setCenter(null);
+    node.cursorProperty().unbindBidirectional(tracker.getNode().cursorProperty());
   }
   tracker=t;
   if (tracker != null) {
     drawPane.setCenter(tracker.getNode());
+    node.cursorProperty().bindBidirectional(tracker.getNode().cursorProperty());
   }
 }
