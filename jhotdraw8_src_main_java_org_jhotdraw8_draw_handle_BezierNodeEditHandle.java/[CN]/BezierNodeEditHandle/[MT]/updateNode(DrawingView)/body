@@ -2,7 +2,9 @@
   Figure f=getOwner();
   Transform t=Transforms.concat(view.getWorldToView(),f.getLocalToWorld());
   ImmutableObservableList<BezierNode> list=f.get(pointKey);
-  if (pointIndex >= list.size())   return;
+  if (pointIndex >= list.size()) {
+    return;
+  }
   BezierNode p=getBezierNode();
   Point2D c0=getLocation();
   pickLocation=c0=t == null ? c0 : t.transform(c0);

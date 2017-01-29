@@ -6,7 +6,7 @@
     final Node node=e.getKey();
     final Handle handle=e.getValue();
     if (!handle.isSelectable())     continue;
-    if (handle.contains(vx,vy,TOLERANCE)) {
+    if (handle.contains(this,vx,vy,TOLERANCE_SQUARED)) {
       return handle;
     }
  else {

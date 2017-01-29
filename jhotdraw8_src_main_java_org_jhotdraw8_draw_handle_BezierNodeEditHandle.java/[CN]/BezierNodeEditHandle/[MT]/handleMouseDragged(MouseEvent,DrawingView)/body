@@ -4,7 +4,9 @@
     newPoint=view.getConstrainer().constrainPoint(getOwner(),newPoint);
   }
   ImmutableObservableList<BezierNode> list=owner.get(pointKey);
-  if (pointIndex >= list.size())   return;
+  if (pointIndex >= list.size()) {
+    return;
+  }
   BezierNode p=list.get(pointIndex);
   view.getModel().set(getOwner(),pointKey,ImmutableObservableList.set(list,pointIndex,p.setC0AndTranslateC1C2(getOwner().worldToLocal(newPoint))));
 }
