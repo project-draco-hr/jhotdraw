@@ -1,4 +1,7 @@
 {
+  if (menuFxml == null) {
+    return null;
+  }
   FXMLLoader loader=new FXMLLoader();
   loader.setResources(getResources());
   try (InputStream in=menuFxml.openStream()){

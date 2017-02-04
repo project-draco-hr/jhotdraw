@@ -1,0 +1,3 @@
+{
+  prefs.putInt(key,newValue);
+}

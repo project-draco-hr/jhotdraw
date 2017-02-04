@@ -1,0 +1,4 @@
+{
+  Resources labels=Resources.getResources("org.jhotdraw8.app.Labels");
+  return labels;
+}

@@ -1,0 +1,4 @@
+{
+  this.key=key;
+  this.defaultValue=Collections.unmodifiableList(new ArrayList<>(defaultValue));
+}

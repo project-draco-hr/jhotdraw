@@ -1,0 +1,3 @@
+{
+  return Geom.clamp(prefs.getInt(key,defaultValue),clampMin,clampMax);
+}
