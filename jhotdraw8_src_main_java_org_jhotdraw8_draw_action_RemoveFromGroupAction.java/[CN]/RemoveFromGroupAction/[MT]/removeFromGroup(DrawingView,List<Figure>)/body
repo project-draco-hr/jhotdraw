@@ -3,7 +3,7 @@
   for (  Figure f : figures) {
     Layer layer=f.getAncestor(Layer.class);
     if (layer.isEditable()) {
-      if (f.getParent() != null && f.getParent().isDecomposable() && f.getParent().isEditable() && (f.getParent() instanceof Groupable)) {
+      if (f.getParent() != null && f.getParent().isDecomposable() && f.getParent().isEditable() && (f.getParent() instanceof Grouping)) {
         if (f.isEditable()) {
           reparentableFigures.add(f);
         }

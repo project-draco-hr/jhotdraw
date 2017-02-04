@@ -4,7 +4,7 @@
     return;
   }
   Figure lead=figures.get(figures.size() - 1);
-  if (!(lead instanceof Groupable) && !lead.isAllowsChildren() || !lead.isDecomposable()) {
+  if (!(lead instanceof Grouping) && !lead.isAllowsChildren() || !lead.isDecomposable()) {
     new Alert(Alert.AlertType.INFORMATION,"The last figure in the selection must be a group.").showAndWait();
     return;
   }

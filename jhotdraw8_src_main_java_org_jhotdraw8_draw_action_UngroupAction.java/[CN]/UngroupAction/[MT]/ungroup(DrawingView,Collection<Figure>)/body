@@ -4,7 +4,7 @@
     return;
   }
   for (  Figure f : figures) {
-    if (!(f instanceof Groupable)) {
+    if (!(f instanceof Grouping)) {
       new Alert(Alert.AlertType.INFORMATION,"Only groups can be ungrouped").showAndWait();
       return;
     }
