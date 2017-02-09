@@ -1,0 +1,38 @@
+{
+switch (items.size()) {
+case 0:
+    titlePane.setText(null);
+  titlePane.setGraphic(null);
+titlePane.setContent(null);
+tabPane.getTabs().clear();
+titlePane.requestLayout();
+break;
+case 1:
+{
+DockItem i=items.get(0);
+tabPane.getTabs().clear();
+titlePane.setText(i.getText());
+titlePane.setGraphic(i.getGraphic());
+titlePane.setContent(i.getContent());
+titlePane.requestLayout();
+break;
+}
+default :
+{
+titlePane.setGraphic(null);
+titlePane.setContent(tabPane);
+tabPane.getTabs().setAll(items);
+StringBuilder b=new StringBuilder();
+for (DockItem i : items) {
+if (b.length() > 0) {
+b.append(", ");
+}
+b.append(i.getText());
+}
+titlePane.setText(b.toString());
+tabPane.requestLayout();
+break;
+}
+}
+requestLayout();
+}

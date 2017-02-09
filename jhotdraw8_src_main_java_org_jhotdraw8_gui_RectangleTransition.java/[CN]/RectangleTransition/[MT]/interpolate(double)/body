@@ -1,0 +1,7 @@
+{
+  double invFrac=1 - frac;
+  rectangle.setWidth(fromBounds.getWidth() * invFrac + toBounds.getWidth() * frac);
+  rectangle.setHeight(fromBounds.getHeight() * invFrac + toBounds.getHeight() * frac);
+  rectangle.setX(fromBounds.getMinX() * invFrac + toBounds.getMinX() * frac);
+  rectangle.setY(fromBounds.getMinY() * invFrac + toBounds.getMinY() * frac);
+}

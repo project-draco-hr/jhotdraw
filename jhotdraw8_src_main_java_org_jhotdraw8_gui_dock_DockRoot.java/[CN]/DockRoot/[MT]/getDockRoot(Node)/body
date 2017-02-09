@@ -1,0 +1,7 @@
+{
+  Node node=n.getParent();
+  while (node != null && !(node instanceof DockRoot)) {
+    node=node.getParent();
+  }
+  return (DockRoot)node;
+}

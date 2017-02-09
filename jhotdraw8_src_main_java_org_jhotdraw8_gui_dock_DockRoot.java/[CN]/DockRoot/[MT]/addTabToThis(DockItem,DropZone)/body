@@ -1,0 +1,24 @@
+{
+  if (zone == DropZone.CENTER) {
+    zone=DropZone.LEFT;
+  }
+  Dock newDock=createDock();
+  newDock.getItems().add(tab);
+  Orientation neededOrientation=getNeededOrientation(zone);
+  Track topTrack=getRootTrack();
+  if (topTrack == null || topTrack.getOrientation() != neededOrientation) {
+    topTrack=createTrack(newDock,neededOrientation);
+    addTrack(topTrack);
+  }
+switch (zone) {
+case LEFT:
+case TOP:
+    topTrack.getItems().add(0,newDock.getNode());
+  break;
+case RIGHT:
+case BOTTOM:
+default :
+topTrack.getItems().add(newDock.getNode());
+break;
+}
+}

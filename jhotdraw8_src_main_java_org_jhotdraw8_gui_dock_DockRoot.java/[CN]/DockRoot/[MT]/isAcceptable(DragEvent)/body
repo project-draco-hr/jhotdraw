@@ -1,0 +1,3 @@
+{
+  return e.getDragboard().getContentTypes().contains(DockItem.DOCKABLE_TAB_FORMAT) && DockItem.draggedTab != null && (dockableItems.get() == null || dockableItems.get().contains(DockItem.draggedTab));
+}

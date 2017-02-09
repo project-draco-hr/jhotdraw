@@ -1,0 +1,7 @@
+{
+  if (stackPane.getChildren().size() > 0) {
+    Node topNode=stackPane.getChildren().get(0);
+    return (topNode instanceof Track) ? (Track)topNode : null;
+  }
+  return null;
+}

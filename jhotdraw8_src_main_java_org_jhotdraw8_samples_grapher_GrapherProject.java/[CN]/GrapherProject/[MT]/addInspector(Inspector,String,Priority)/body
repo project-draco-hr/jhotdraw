@@ -1,0 +1,8 @@
+{
+  Resources r=Labels.getResources();
+  DockItem dockItem=new DockItem();
+  dockItem.setText(r.getString(id + ".toolbar"));
+  dockItem.setContent(inspector.getNode());
+  dockItem.getProperties().put("inspector",inspector);
+  return dockItem;
+}

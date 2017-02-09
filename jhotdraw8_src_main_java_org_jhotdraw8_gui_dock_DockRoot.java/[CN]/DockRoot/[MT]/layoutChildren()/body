@@ -1,0 +1,4 @@
+{
+  super.layoutChildren();
+  stackPane.resizeRelocate(0,0,getWidth(),getHeight());
+}

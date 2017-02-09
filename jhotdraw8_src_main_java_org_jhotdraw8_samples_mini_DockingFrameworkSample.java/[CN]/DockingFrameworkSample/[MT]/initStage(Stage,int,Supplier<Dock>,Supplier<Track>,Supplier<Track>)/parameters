@@ -1,0 +1,5 @@
+Stage primaryStage
+int numTabs
+Supplier<Dock> dockSupp
+Supplier<Track> hbSupp
+Supplier<Track> vbSupp

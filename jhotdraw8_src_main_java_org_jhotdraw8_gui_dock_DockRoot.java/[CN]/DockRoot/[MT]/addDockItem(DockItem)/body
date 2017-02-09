@@ -1,0 +1,5 @@
+{
+  Dock dock=createDock();
+  dock.getItems().add(dockItem);
+  addDock(dock);
+}

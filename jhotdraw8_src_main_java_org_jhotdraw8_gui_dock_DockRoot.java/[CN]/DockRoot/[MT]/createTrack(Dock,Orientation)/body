@@ -1,0 +1,18 @@
+{
+  Supplier<Track> supplier=null;
+switch (orientation) {
+case VERTICAL:
+    if (dock != null) {
+      supplier=getVerticalTrackFactoryMap().get(dock.getClass());
+    }
+  if (supplier == null) {
+    supplier=getVerticalTrackFactory();
+  }
+break;
+case HORIZONTAL:
+default :
+supplier=getHorizontalDockTrackFactory();
+break;
+}
+return supplier.get();
+}

@@ -1,0 +1,15 @@
+{
+  Orientation neededOrientation;
+switch (zone) {
+case LEFT:
+case RIGHT:
+    neededOrientation=Orientation.HORIZONTAL;
+  break;
+case TOP:
+case BOTTOM:
+default :
+neededOrientation=Orientation.VERTICAL;
+break;
+}
+return neededOrientation;
+}

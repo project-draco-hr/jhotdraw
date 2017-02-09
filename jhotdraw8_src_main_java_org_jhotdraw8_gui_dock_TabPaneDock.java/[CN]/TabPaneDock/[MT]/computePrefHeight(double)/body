@@ -1,0 +1,3 @@
+{
+  return tabPane.prefHeight(width);
+}

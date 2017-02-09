@@ -1,0 +1,4 @@
+{
+  super.layoutChildren();
+  tabPane.resizeRelocate(0,0,getWidth(),getHeight());
+}

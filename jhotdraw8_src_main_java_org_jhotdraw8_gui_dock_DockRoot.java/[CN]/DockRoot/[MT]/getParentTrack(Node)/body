@@ -1,0 +1,7 @@
+{
+  Node node=n.getParent();
+  while (node != null && !(node instanceof Track)) {
+    node=node.getParent();
+  }
+  return (Track)node;
+}

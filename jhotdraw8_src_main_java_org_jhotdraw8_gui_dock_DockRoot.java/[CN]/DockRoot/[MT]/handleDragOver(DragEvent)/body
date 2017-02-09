@@ -1,0 +1,30 @@
+{
+  if (!isAcceptable(e)) {
+    return;
+  }
+  DropZone zone=getZone(e.getX(),e.getY(),getBoundsInLocal(),rootDropZoneInsets);
+  Bounds bounds=getBoundsInLocal();
+  Insets insets=rootDrawnDropZoneInsets;
+  if (zone == DropZone.CENTER) {
+    Dock pickedNode=getPickedDock(e);
+    if (pickedNode != null) {
+      insets=dockDrawnDropZoneInsets;
+      bounds=sceneToLocal(pickedNode.getNode().localToScene(pickedNode.getNode().getBoundsInLocal()));
+      zone=getZone(e.getX(),e.getY(),bounds,dockDropZoneInsets);
+      if (zone == DropZone.CENTER && !pickedNode.isEditable()) {
+        zone=null;
+      }
+    }
+ else     if (e.getPickResult().getIntersectedNode() != stackPane) {
+      zone=null;
+    }
+  }
+ else   if (e.getPickResult().getIntersectedNode() == stackPane) {
+    zone=DropZone.CENTER;
+  }
+  updateDropRect(zone,bounds,insets);
+  if (zone != null) {
+    e.acceptTransferModes(TransferMode.MOVE);
+  }
+  e.consume();
+}

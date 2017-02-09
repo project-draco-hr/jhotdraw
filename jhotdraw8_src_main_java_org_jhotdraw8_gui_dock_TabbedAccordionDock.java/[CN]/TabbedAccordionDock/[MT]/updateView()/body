@@ -1,0 +1,8 @@
+{
+  try {
+    doUpdateView();
+  }
+ catch (  Throwable t) {
+    t.printStackTrace();
+  }
+}

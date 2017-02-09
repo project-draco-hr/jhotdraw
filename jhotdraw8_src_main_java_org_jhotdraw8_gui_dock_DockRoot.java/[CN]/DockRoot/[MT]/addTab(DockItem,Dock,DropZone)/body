@@ -1,0 +1,54 @@
+{
+  Dock oldDock=tab.getDock();
+  DockRoot root;
+  if (oldDock != null) {
+    oldDock.getItems().remove(tab);
+    root=getDockRoot(oldDock.getNode());
+  }
+ else {
+    root=null;
+  }
+  if (parent != null) {
+    addTabToDock(tab,parent,zone);
+  }
+ else {
+    addTabToThis(tab,zone);
+  }
+  if (oldDock != null) {
+    if (oldDock.getItems().isEmpty()) {
+      Track track=getParentTrack(oldDock.getNode());
+      if (track != null) {
+        track.getItems().remove(oldDock);
+      }
+ else {
+        root.stackPane.getChildren().remove(oldDock);
+      }
+      while (track != null && track.getItems().size() <= 1) {
+        Track parentTrack=getParentTrack(track.getNode());
+        if (track.getItems().isEmpty()) {
+          if (parentTrack != null) {
+            parentTrack.getItems().remove(track);
+          }
+ else {
+            root.stackPane.getChildren().remove(track);
+          }
+        }
+ else {
+          Node reparentedNode=track.getItems().get(0);
+          track.getItems().clear();
+          if (parentTrack != null) {
+            int i=parentTrack.getItems().indexOf(track);
+            parentTrack.getItems().remove(i);
+            parentTrack.getItems().add(i,reparentedNode);
+          }
+ else {
+            root.stackPane.getChildren().remove(track);
+            root.stackPane.getChildren().add(0,reparentedNode);
+          }
+        }
+        track=parentTrack;
+      }
+      System.out.println("oldDock isEmpty  @" + oldDock.hashCode() + " "+ oldDock.getNode().getParent()+ " (should be null!");
+    }
+  }
+}

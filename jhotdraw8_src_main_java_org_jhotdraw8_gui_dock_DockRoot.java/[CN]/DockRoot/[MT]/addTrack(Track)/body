@@ -1,0 +1,9 @@
+{
+  if (stackPane.getChildren().isEmpty()) {
+  }
+ else {
+    Node topNode=stackPane.getChildren().remove(0);
+    track.getItems().add(0,topNode);
+  }
+  stackPane.getChildren().add(0,track.getNode());
+}

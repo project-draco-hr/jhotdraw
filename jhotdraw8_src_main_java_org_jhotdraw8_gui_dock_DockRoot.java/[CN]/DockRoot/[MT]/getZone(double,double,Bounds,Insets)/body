@@ -1,0 +1,17 @@
+{
+  if (y - b.getMinY() < insets.getTop() && b.getHeight() > insets.getTop() + insets.getBottom()) {
+    return DropZone.TOP;
+  }
+ else   if (b.getMaxY() - y < insets.getBottom() && b.getHeight() > insets.getTop() + insets.getBottom()) {
+    return DropZone.BOTTOM;
+  }
+ else   if (x - b.getMinX() < insets.getLeft() && b.getWidth() > insets.getLeft() + insets.getRight()) {
+    return DropZone.LEFT;
+  }
+ else   if (b.getMaxX() - x < insets.getRight() && b.getWidth() > insets.getLeft() + insets.getRight()) {
+    return DropZone.RIGHT;
+  }
+ else {
+    return b.contains(x,y) ? DropZone.CENTER : null;
+  }
+}

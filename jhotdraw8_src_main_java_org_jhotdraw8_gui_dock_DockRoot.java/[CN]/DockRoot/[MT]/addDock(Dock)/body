@@ -1,0 +1,19 @@
+{
+  final ObservableList<Node> children=stackPane.getChildren();
+  if (children.isEmpty()) {
+    children.add(dock.getNode());
+  }
+ else {
+    Node oldRoot=children.get(0);
+    if (oldRoot instanceof Track) {
+      Track track=(Track)oldRoot;
+      track.getItems().add(dock.getNode());
+    }
+ else {
+      children.remove(0);
+      Track track=createTrack((oldRoot instanceof Dock) ? (Dock)oldRoot : null,VERTICAL);
+      track.getItems().addAll(oldRoot,dock.getNode());
+      children.add(track.getNode());
+    }
+  }
+}

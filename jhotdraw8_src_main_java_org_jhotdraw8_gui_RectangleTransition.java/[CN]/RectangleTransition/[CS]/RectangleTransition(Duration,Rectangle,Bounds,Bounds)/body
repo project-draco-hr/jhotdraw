@@ -1,0 +1,6 @@
+{
+  this.rectangle=rectangle;
+  this.fromBounds=fromBounds;
+  this.toBounds=toBounds;
+  setCycleDuration(duration);
+}

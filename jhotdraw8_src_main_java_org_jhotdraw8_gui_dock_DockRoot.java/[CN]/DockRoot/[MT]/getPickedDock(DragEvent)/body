@@ -1,0 +1,8 @@
+{
+  PickResult pick=e.getPickResult();
+  Node pickedNode=pick.getIntersectedNode();
+  while (pickedNode != this && pickedNode != null && !(pickedNode instanceof Dock)) {
+    pickedNode=pickedNode.getParent();
+  }
+  return pickedNode == this ? null : (Dock)pickedNode;
+}

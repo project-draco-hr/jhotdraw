@@ -1,0 +1,28 @@
+{
+  dropRect.setVisible(false);
+  getChildren().remove(dropRect);
+  if (isAcceptable(e)) {
+    DockItem droppedTab=DockItem.draggedTab;
+    DropZone zone=getZone(e.getX(),e.getY(),getBoundsInLocal(),rootDropZoneInsets);
+    Dock parent=null;
+    if (zone == null || zone == DropZone.CENTER) {
+      Dock pickedNode=getPickedDock(e);
+      if (pickedNode != null) {
+        Insets insets=dockDropZoneInsets;
+        Bounds bounds=sceneToLocal(pickedNode.getNode().localToScene(pickedNode.getNode().getBoundsInLocal()));
+        zone=getZone(e.getX(),e.getY(),bounds,insets);
+        parent=pickedNode;
+      }
+ else       if (e.getPickResult().getIntersectedNode() != this) {
+        parent=null;
+      }
+    }
+    if (zone == DropZone.CENTER && parent == null) {
+    }
+    if (zone != null) {
+      e.acceptTransferModes(TransferMode.MOVE);
+      addTab(droppedTab,parent,zone);
+    }
+    e.consume();
+  }
+}

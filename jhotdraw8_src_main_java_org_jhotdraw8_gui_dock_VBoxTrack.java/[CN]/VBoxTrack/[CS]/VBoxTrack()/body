@@ -1,0 +1,14 @@
+{
+  getItems().addListener(new ListChangeListener<Node>(){
+    @Override public void onChanged(    ListChangeListener.Change<? extends Node> c){
+      while (c.next()) {
+        for (        Node remitem : c.getRemoved()) {
+        }
+        for (        Node additem : c.getAddedSubList()) {
+          VBox.setVgrow(additem,Priority.SOMETIMES);
+        }
+      }
+    }
+  }
+);
+}

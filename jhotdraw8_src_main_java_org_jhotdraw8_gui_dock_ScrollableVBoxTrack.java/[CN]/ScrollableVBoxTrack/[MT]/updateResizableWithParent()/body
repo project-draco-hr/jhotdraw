@@ -1,0 +1,10 @@
+{
+  boolean resizeableWithParent=false;
+  for (  Node n : getItems()) {
+    if (SplitPane.isResizableWithParent(n)) {
+      resizeableWithParent=true;
+      break;
+    }
+  }
+  SplitPane.setResizableWithParent(ScrollableVBoxTrack.this,resizeableWithParent);
+}

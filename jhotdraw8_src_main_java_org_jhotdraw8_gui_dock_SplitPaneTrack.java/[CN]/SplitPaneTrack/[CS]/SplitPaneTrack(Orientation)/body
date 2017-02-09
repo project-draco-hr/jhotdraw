@@ -1,0 +1,4 @@
+{
+  setOrientation(o);
+  setStyle("-fx-background-color:transparent;-fx-border-width:0,0;-fx-padding:0;");
+}

@@ -1,0 +1,3 @@
+{
+  stackPane.getChildren().clear();
+}

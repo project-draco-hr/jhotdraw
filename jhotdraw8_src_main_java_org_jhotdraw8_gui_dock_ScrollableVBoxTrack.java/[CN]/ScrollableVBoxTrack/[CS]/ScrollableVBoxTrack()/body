@@ -1,0 +1,25 @@
+{
+  getChildren().add(scrollPane);
+  setMinWidth(10);
+  setMinHeight(10);
+  setMaxWidth(Double.MAX_VALUE);
+  setMaxHeight(Double.MAX_VALUE);
+  SplitPane.setResizableWithParent(this,Boolean.FALSE);
+  scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+  scrollPane.setFitToHeight(false);
+  scrollPane.setFitToWidth(true);
+  scrollPane.setBorder(Border.EMPTY);
+  scrollPane.setStyle("-fx-background-color:transparent;-fx-border-width:0,0;-fx-padding:0;");
+  getItems().addListener(new ListChangeListener<Node>(){
+    @Override public void onChanged(    ListChangeListener.Change<? extends Node> c){
+      while (c.next()) {
+        for (        Node remitem : c.getRemoved()) {
+        }
+        for (        Node additem : c.getAddedSubList()) {
+        }
+      }
+      updateResizableWithParent();
+    }
+  }
+);
+}

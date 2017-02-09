@@ -1,0 +1,10 @@
+{
+  Node graphic=getGraphic();
+  draggedTab=this;
+  Dragboard db=graphic.startDragAndDrop(TransferMode.MOVE);
+  db.setDragView(graphic.snapshot(null,null),e.getX(),e.getY());
+  ClipboardContent content=new ClipboardContent();
+  content.put(DOCKABLE_TAB_FORMAT,System.identityHashCode(this));
+  db.setContent(content);
+  e.consume();
+}

@@ -1,4 +1,3 @@
 Inspector inspector
 String id
 Priority grow
-List<Node> list

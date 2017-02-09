@@ -1,0 +1,3 @@
+{
+  this.dockableItems.set(dockableItems);
+}

@@ -1,0 +1,36 @@
+{
+switch (zone) {
+case CENTER:
+    parent.getItems().add(tab);
+  return;
+}
+Dock newDock=createDock();
+newDock.getItems().add(tab);
+Track parentTrack=getParentTrack(parent.getNode());
+Orientation neededOrientation;
+neededOrientation=getNeededOrientation(zone);
+if (parentTrack == null) {
+parentTrack=createTrack(parent,neededOrientation);
+addTrack(parentTrack);
+}
+ else if (parentTrack.getOrientation() != neededOrientation) {
+Track oldParentTrack=parentTrack;
+parentTrack=createTrack(parent,neededOrientation);
+int i=oldParentTrack.getItems().indexOf(parent.getNode());
+oldParentTrack.getItems().remove(i);
+oldParentTrack.getItems().add(i,parentTrack.getNode());
+parentTrack.getItems().add(parent.getNode());
+}
+int oldIndex=parentTrack.getItems().indexOf(parent.getNode());
+switch (zone) {
+case LEFT:
+case TOP:
+parentTrack.getItems().add(oldIndex,newDock.getNode());
+break;
+case RIGHT:
+case BOTTOM:
+default :
+parentTrack.getItems().add(oldIndex + 1,newDock.getNode());
+break;
+}
+}

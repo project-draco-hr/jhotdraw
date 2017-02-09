@@ -1,0 +1,24 @@
+{
+  setSkin(new CustomSkin<>(this));
+  getChildren().add(accordion);
+  accordion.getPanes().add(titlePane);
+  accordion.setExpandedPane(titlePane);
+  SplitPane.setResizableWithParent(this,Boolean.FALSE);
+  VBox.setVgrow(this,Priority.SOMETIMES);
+  accordion.setStyle("-fx-background-color:transparent;-fx-border:none;-fx-padding:0;");
+  titlePane.setStyle("-fx-background-color:transparent;-fx-border:none;-fx-padding:0;");
+  getItems().addListener(new ListChangeListener<DockItem>(){
+    @Override public void onChanged(    ListChangeListener.Change<? extends DockItem> c){
+      while (c.next()) {
+        for (        DockItem remitem : c.getRemoved()) {
+          remitem.setDock(null);
+        }
+        for (        DockItem additem : c.getAddedSubList()) {
+          additem.setDock(TabbedAccordionDock.this);
+        }
+      }
+      updateView();
+    }
+  }
+);
+}
