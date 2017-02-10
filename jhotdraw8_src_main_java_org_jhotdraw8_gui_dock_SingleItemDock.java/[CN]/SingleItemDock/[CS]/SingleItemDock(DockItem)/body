@@ -1,2 +1,27 @@
 {
+  setSkin(new CustomSkin<>(this));
+  getChildren().add(borderPane);
+  SplitPane.setResizableWithParent(this,Boolean.TRUE);
+  VBox.setVgrow(this,Priority.ALWAYS);
+  HBox.setHgrow(this,Priority.ALWAYS);
+  setMinWidth(40);
+  setMinHeight(40);
+  setMaxWidth(Double.MAX_VALUE);
+  setMaxHeight(Double.MAX_VALUE);
+  getItems().addListener(new ListChangeListener<DockItem>(){
+    @Override public void onChanged(    ListChangeListener.Change<? extends DockItem> c){
+      while (c.next()) {
+        for (        DockItem remitem : c.getRemoved()) {
+          borderPane.setCenter(null);
+        }
+        for (        DockItem additem : c.getAddedSubList()) {
+          borderPane.setCenter(additem.getContent());
+        }
+      }
+    }
+  }
+);
+  if (item != null) {
+    items.add(item);
+  }
 }
