@@ -1,20 +1,3 @@
 {
-  ToggleButton button=new ToggleButton();
-  if (tool.get(Tool.LARGE_ICON_KEY) != null) {
-    button.setGraphic(tool.get(Tool.LARGE_ICON_KEY));
-    if (tool.get(Tool.SHORT_DESCRIPTION) != null) {
-      button.setTooltip(new Tooltip(tool.get(Tool.SHORT_DESCRIPTION)));
-    }
-  }
- else {
-    button.setText(tool.getName());
-  }
-  button.setFocusTraversable(false);
-  button.setUserData(tool);
-  if (group.getToggles().isEmpty()) {
-    button.setSelected(true);
-  }
-  group.getToggles().add(button);
-  add(button,gridx,gridy);
-  return button;
+  return addTool(tool,gridx,gridy,0);
 }

@@ -1,0 +1,4 @@
+Tool tool
+int gridx
+int gridy
+double marginLeft
