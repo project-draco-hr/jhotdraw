@@ -5,7 +5,7 @@
   y2=y1;
   createdFigure=createFigure();
   Point2D c=view.getConstrainer().constrainPoint(createdFigure,view.viewToDrawing(new Point2D(x1,y1)));
-  createdFigure.reshapeInLocal(c.getX(),c.getY(),1,1);
+  createdFigure.reshapeInLocal(c.getX(),c.getY(),defaultWidth,defaultHeight);
   DrawingModel dm=view.getModel();
   Drawing drawing=dm.getRoot();
   Layer layer=getOrCreateLayer(view,createdFigure);

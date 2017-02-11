@@ -1,0 +1,3 @@
+String pathstr
+Bounds b
+List<PathElement> elems
