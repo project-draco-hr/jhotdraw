@@ -25,6 +25,6 @@
   updateDropRect(zone,bounds,insets);
   if (zone != null) {
     e.acceptTransferModes(TransferMode.MOVE);
+    e.consume();
   }
-  e.consume();
 }
