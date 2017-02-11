@@ -1,0 +1,9 @@
+{
+  double sx=tw / fw;
+  double sy=th / fh;
+  Transform t=new Translate(tx - fx,ty - fy);
+  if (!Double.isNaN(sx) && !Double.isNaN(sy) && !Double.isInfinite(sx)&& !Double.isInfinite(sy)&& (sx != 1d || sy != 1d)) {
+    t=Transforms.concat(t,new Scale(sx,sy,fx,fy));
+  }
+  return t;
+}

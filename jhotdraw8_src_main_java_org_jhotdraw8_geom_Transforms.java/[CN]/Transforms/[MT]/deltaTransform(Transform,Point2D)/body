@@ -1,4 +1,8 @@
 {
-  if (t == null)   return p;
- else   return t.deltaTransform(p);
+  if (t == null) {
+    return p;
+  }
+ else {
+    return t.deltaTransform(p);
+  }
 }

@@ -1,4 +1,6 @@
 {
-  if (t == null)   return null;
+  if (t == null) {
+    return null;
+  }
   return new AffineTransform(t.getMxx(),t.getMyx(),t.getMxy(),t.getMyy(),t.getTx(),t.getTy());
 }
