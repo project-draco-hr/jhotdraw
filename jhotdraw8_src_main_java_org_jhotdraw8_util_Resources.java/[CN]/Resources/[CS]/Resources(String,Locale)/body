@@ -4,9 +4,14 @@
   this.resource=ResourceBundle.getBundle(baseName,locale);
   Resources potentialParent=null;
   try {
-    String parentBaseName=this.resource.getString("$parent");
+    String parentBaseName=this.resource.getString(PARENT_RESOURCE_KEY);
     if (parentBaseName != null && !Objects.equals(baseName,parentBaseName)) {
       potentialParent=new Resources(parentBaseName,locale);
+    }
+    if (potentialParent == null) {
+      System.err.println("Can't find parent resource bundle. =" + PARENT_RESOURCE_KEY + "="+ parentBaseName);
+    }
+ else {
     }
   }
  catch (  MissingResourceException e) {

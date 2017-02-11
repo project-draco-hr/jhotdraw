@@ -1,0 +1,4 @@
+{
+  updatePathElements();
+  return Shapes.awtShapeFromFXPathElements(pathElements).getPathIterator(tx);
+}

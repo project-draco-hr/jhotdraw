@@ -1,0 +1,4 @@
+{
+  reshapeInLocal(x,y,width,height);
+  set(STROKE_TYPE,StrokeType.INSIDE);
+}

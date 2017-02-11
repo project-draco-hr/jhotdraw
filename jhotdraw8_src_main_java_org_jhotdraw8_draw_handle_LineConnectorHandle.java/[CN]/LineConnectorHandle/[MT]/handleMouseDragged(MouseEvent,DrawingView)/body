@@ -9,27 +9,32 @@
  else {
     constrainedPoint=newPoint;
   }
-  Figure o=getOwner();
+  ConnectingFigure o=getOwner();
   Connector newConnector=null;
   Figure newConnectedFigure=null;
   isConnected=false;
+  DrawingModel model=view.getModel();
+  model.set(o,targetKey,null);
   if (!event.isMetaDown()) {
     List<Figure> list=view.findFigures(pointInViewCoordinates,true);
-    for (    Figure ff : list) {
-      if (ff instanceof ConnectableFigure) {
-        ConnectableFigure cff=(ConnectableFigure)ff;
-        Point2D pointInLocal=cff.worldToLocal(constrainedPoint);
-        newConnector=cff.findConnector(pointInLocal,o);
-        if (newConnector != null) {
-          newConnectedFigure=ff;
-          constrainedPoint=newConnector.getPositionInLocal(o,ff);
-          isConnected=true;
-          break;
+    for (    Figure f1 : list) {
+      for (      Figure ff : f1.breadthFirstIterable()) {
+        if (ff instanceof ConnectableFigure) {
+          ConnectableFigure cff=(ConnectableFigure)ff;
+          Point2D pointInLocal=cff.worldToLocal(constrainedPoint);
+          if (ff.getBoundsInLocal().contains(pointInLocal)) {
+            newConnector=cff.findConnector(pointInLocal,o);
+            if (newConnector != null && o.canConnect(ff,newConnector)) {
+              newConnectedFigure=ff;
+              constrainedPoint=newConnector.getPositionInLocal(o,ff);
+              isConnected=true;
+              break;
+            }
+          }
         }
       }
     }
   }
-  DrawingModel model=view.getModel();
   model.set(o,pointKey,getOwner().worldToLocal(constrainedPoint));
   model.set(o,connectorKey,newConnector);
   model.set(o,targetKey,newConnectedFigure);

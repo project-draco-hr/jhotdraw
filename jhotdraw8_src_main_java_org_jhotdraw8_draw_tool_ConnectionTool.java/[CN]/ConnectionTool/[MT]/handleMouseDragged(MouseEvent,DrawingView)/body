@@ -2,21 +2,6 @@
   if (figure != null) {
     Point2D pointInViewCoordinates=new Point2D(event.getX(),event.getY());
     Point2D newPoint=view.viewToWorld(pointInViewCoordinates);
-    Connector newConnector=null;
-    Figure newConnectionTarget=null;
-    if (!event.isMetaDown()) {
-      List<Figure> list=view.findFigures(pointInViewCoordinates,true);
-      for (      Figure ff : list) {
-        if (ff instanceof ConnectableFigure) {
-          ConnectableFigure cff=(ConnectableFigure)ff;
-          newConnector=cff.findConnector(cff.worldToLocal(newPoint),figure);
-          if (newConnector != null) {
-            newConnectionTarget=ff;
-            break;
-          }
-        }
-      }
-    }
     Point2D constrainedPoint;
     if (!event.isAltDown() && !event.isControlDown()) {
       constrainedPoint=view.getConstrainer().constrainPoint(figure,newPoint);
@@ -24,7 +9,28 @@
  else {
       constrainedPoint=newPoint;
     }
+    Connector newConnector=null;
+    Figure newConnectionTarget=null;
     DrawingModel model=view.getModel();
+    model.set(figure,LineConnectionFigure.END_TARGET,null);
+    if (!event.isMetaDown()) {
+      List<Figure> list=view.findFigures(pointInViewCoordinates,true);
+      for (      Figure f1 : list) {
+        for (        Figure ff : f1.breadthFirstIterable()) {
+          if (ff instanceof ConnectableFigure) {
+            ConnectableFigure cff=(ConnectableFigure)ff;
+            Point2D pointInLocal=cff.worldToLocal(constrainedPoint);
+            if (ff.getBoundsInLocal().contains(pointInLocal)) {
+              newConnector=cff.findConnector(pointInLocal,figure);
+              if (newConnector != null && figure.canConnect(ff,newConnector)) {
+                newConnectionTarget=ff;
+                break;
+              }
+            }
+          }
+        }
+      }
+    }
     model.set(figure,LineConnectionFigure.END,figure.worldToLocal(constrainedPoint));
     model.set(figure,LineConnectionFigure.END_CONNECTOR,newConnector);
     model.set(figure,LineConnectionFigure.END_TARGET,newConnectionTarget);

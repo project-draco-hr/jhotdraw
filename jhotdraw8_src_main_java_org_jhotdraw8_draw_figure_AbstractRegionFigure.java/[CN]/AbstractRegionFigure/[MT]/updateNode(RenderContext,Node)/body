@@ -1,0 +1,5 @@
+{
+  Path path=(Path)node;
+  updatePathElements();
+  path.getElements().setAll(pathElements);
+}
