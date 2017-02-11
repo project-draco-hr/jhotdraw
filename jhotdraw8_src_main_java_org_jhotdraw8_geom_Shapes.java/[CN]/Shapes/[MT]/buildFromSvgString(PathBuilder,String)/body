@@ -330,7 +330,7 @@ double x=p.x + tt.nval;
 if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
 throw new IOException("y coordinate missing for 'A' at position " + tt.getStartPosition() + " in "+ str);
 }
-double y=p.x + tt.nval;
+double y=p.y + tt.nval;
 builder.arcTo(rx,ry,xAxisRotation,x,y,largeArcFlag,sweepFlag);
 p.x=x;
 p.y=y;
