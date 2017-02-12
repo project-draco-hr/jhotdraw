@@ -5,7 +5,9 @@
   }
   if (event.isMetaDown()) {
     Bounds bounds=anchorFigure.getBoundsInLocal();
-    Point2D loc=new Point2D(bounds.getMinX(),bounds.getMinY());
+    double anchorX=Geom.clamp(anchorFigure.get(AnchorableFigure.ANCHOR_X),0,1);
+    double anchorY=Geom.clamp(anchorFigure.get(AnchorableFigure.ANCHOR_Y),0,1);
+    Point2D loc=new Point2D(bounds.getMinX() + anchorX * bounds.getWidth(),bounds.getMinY() + anchorY * bounds.getHeight());
     oldPoint=anchorFigure.localToWorld(loc);
   }
   if (newPoint.equals(oldPoint)) {

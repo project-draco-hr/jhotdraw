@@ -1,0 +1,12 @@
+{
+  Object[] v=formatter.fromString(buf);
+  int count=(Integer)v[0];
+switch (count) {
+case 1:
+    return new Point2D(((Number)v[1]).doubleValue(),((Number)v[1]).doubleValue());
+case 2:
+  return new Point2D(((Number)v[1]).doubleValue(),((Number)v[2]).doubleValue());
+default :
+throw new ParseException("one or two numbers expected, found " + count + " numbers",0);
+}
+}

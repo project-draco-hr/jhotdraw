@@ -1,0 +1,10 @@
+{
+  double x=value.getX();
+  double y=value.getY();
+  if (x == y) {
+    formatter.toStr(out,idFactory,1,value.getX());
+  }
+ else {
+    formatter.toStr(out,idFactory,2,value.getX(),value.getY());
+  }
+}
