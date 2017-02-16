@@ -13,16 +13,5 @@
   lineNode.resize(10,10);
   lineNode.getStyleClass().setAll(styleclassDisconnected,STYLECLASS_HANDLE);
   lineNode.setBorder(REGION_BORDER);
-  connectorNode=new Region();
-  connectorNode.setShape(PIVOT_NODE_SHAPE);
-  connectorNode.setManaged(false);
-  connectorNode.setScaleShape(false);
-  connectorNode.setCenterShape(true);
-  connectorNode.resize(10,10);
-  connectorNode.getStyleClass().setAll(styleclassDisconnected,STYLECLASS_HANDLE);
-  connectorNode.setBorder(REGION_BORDER);
-  connectorNode.setBackground(REGION_BACKGROUND_CONNECTED);
-  groupNode=new javafx.scene.Group();
-  groupNode.getChildren().addAll(connectorNode,lineNode);
   isConnected=figure.get(connectorKey) != null && figure.get(targetKey) != null;
 }

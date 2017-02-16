@@ -1,0 +1,18 @@
+{
+  LineConnectingFigure f=getOwner();
+  Transform t=Transforms.concat(view.getWorldToView(),f.getLocalToWorld());
+  Bounds b=f.getBoundsInLocal();
+  Point2D start=f.getStartTargetPoint();
+  Point2D end=f.getEndTargetPoint();
+  points[0]=start.getX();
+  points[1]=start.getY();
+  points[2]=end.getX();
+  points[3]=end.getY();
+  if (t != null) {
+    t.transform2DPoints(points,0,points,0,2);
+  }
+  ObservableList<Double> pp=node.getPoints();
+  for (int i=0; i < points.length; i++) {
+    pp.set(i,points[i]);
+  }
+}

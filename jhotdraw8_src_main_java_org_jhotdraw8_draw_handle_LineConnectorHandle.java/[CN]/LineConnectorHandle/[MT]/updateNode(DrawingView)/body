@@ -9,16 +9,11 @@
   lineNode.relocate(p.getX() - 5,p.getY() - 5);
   lineNode.setRotate(f.getStyled(ROTATE));
   lineNode.setRotationAxis(f.getStyled(ROTATION_AXIS));
-  connectorNode.setVisible(isConnected);
   if (isConnected) {
     connectorLocation=view.worldToView(f.get(connectorKey).getPositionInWorld(owner,f.get(targetKey)));
-    if (isConnected) {
-      connectorNode.relocate(connectorLocation.getX() - 5,connectorLocation.getY() - 5);
-    }
+    lineNode.relocate(connectorLocation.getX() - 5,connectorLocation.getY() - 5);
   }
  else {
     connectorLocation=null;
   }
-  groupNode.getChildren().clear();
-  groupNode.getChildren().addAll(connectorNode,lineNode);
 }
