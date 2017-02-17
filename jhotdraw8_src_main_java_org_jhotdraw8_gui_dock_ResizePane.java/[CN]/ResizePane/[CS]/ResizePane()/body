@@ -1,0 +1,6 @@
+{
+  ResizeButton rb=new ResizeButton();
+  rb.setTarget(this);
+  setBottom(rb);
+  rb.visibleProperty().bind(userResizable);
+}

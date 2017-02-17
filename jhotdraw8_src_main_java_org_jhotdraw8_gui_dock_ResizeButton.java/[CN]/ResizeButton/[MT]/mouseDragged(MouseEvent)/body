@@ -1,0 +1,9 @@
+{
+  final Region t=getTarget();
+  if (t != null && pressed != null) {
+    Point2D current=new Point2D(evt.getSceneX(),evt.getSceneY());
+    Point2D delta=current.subtract(pressed);
+    t.setPrefWidth(size.getX() + delta.getX());
+    t.setPrefHeight(size.getY() + delta.getY());
+  }
+}

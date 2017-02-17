@@ -1,8 +1,45 @@
 {
-  try {
-    doUpdateView();
+switch (items.size()) {
+case 0:
+{
+      resizePane.setCenter(null);
+      tabPane.getTabs().clear();
+      titlePane.setText(null);
+      titlePane.setGraphic(null);
+      titlePane.setContent(null);
+      break;
+    }
+case 1:
+{
+    tabPane.getTabs().clear();
+    DockItem i=items.get(0);
+    titlePane.setText(i.getText());
+    titlePane.setGraphic(i.getGraphic());
+    titlePane.setContent(resizePane);
+    resizePane.setCenter(i.getContent());
+    break;
   }
- catch (  Throwable t) {
-    t.printStackTrace();
+default :
+{
+  resizePane.setCenter(tabPane);
+  titlePane.setGraphic(null);
+  tabPane.getTabs().setAll(items);
+  StringBuilder b=new StringBuilder();
+  double minHeight=0;
+  for (  DockItem i : items) {
+    Node content=i.getContent();
+    if (content instanceof Region) {
+      minHeight=max(minHeight,((Region)content).minHeight(-1));
+    }
+    if (b.length() > 0) {
+      b.append(", ");
+    }
+    b.append(i.getText());
   }
+  tabPane.setMinHeight(minHeight + 44);
+  titlePane.setText(b.toString());
+  titlePane.setContent(resizePane);
+  break;
+}
+}
 }

@@ -1,4 +1,0 @@
-{
-  super.layoutChildren();
-  accordion.resizeRelocate(0,0,getWidth(),getHeight());
-}

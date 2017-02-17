@@ -1,4 +1,5 @@
 {
-  super.layoutChildren();
-  scrollPane.resizeRelocate(0,0,getWidth(),getHeight());
+  for (  Node child : getChildren()) {
+    child.resizeRelocate(0,0,getWidth(),getHeight());
+  }
 }

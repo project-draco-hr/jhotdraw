@@ -7,6 +7,7 @@
   setMaxWidth(Double.MAX_VALUE);
   setMaxHeight(Double.MAX_VALUE);
   SplitPane.setResizableWithParent(this,Boolean.FALSE);
+  splitPane.setOrientation(Orientation.VERTICAL);
   scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
   scrollPane.setFitToHeight(false);
   scrollPane.setFitToWidth(true);
@@ -24,7 +25,7 @@
         for (        Node additem : c.getAddedSubList()) {
           if (additem instanceof Dock) {
             Dock d=(Dock)additem;
-            d.setTrack(ScrollableVBoxTrack.this);
+            d.setTrack(ScrollableSplitPaneTrack.this);
           }
         }
       }

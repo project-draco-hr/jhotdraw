@@ -1,0 +1,7 @@
+{
+  final Region t=getTarget();
+  if (t != null) {
+    pressed=new Point2D(evt.getSceneX(),evt.getSceneY());
+    size=new Point2D(getTarget().getWidth(),t.getHeight());
+  }
+}

@@ -1,0 +1,23 @@
+{
+  DockRoot root=new DockRoot();
+  root.setDockFactory(dockSupp);
+  root.setVerticalTrackFactory(vbSupp);
+  root.setHorizontalTrackFactory(hbSupp);
+  if (numTabs > 0) {
+    final TabPaneDock tabPane=new TabPaneDock();
+    for (int i=0; i < numTabs; i++) {
+      final DockItem tab=new DockItem();
+      tab.setText("tab" + (++counter));
+      tab.setContent(new Text("Lorem " + counter + "\nThe quick\nbrown fox\njumps over\nthe lazy\ndog."));
+      tabPane.getItems().add(tab);
+    }
+    Track db=new SplitPaneTrack();
+    db.getItems().add(tabPane);
+    root.addTrack(db);
+  }
+  Scene scene=new Scene(root,300,250);
+  primaryStage.setTitle(title);
+  primaryStage.setScene(scene);
+  primaryStage.show();
+  return root;
+}
