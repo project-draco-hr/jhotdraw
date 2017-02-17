@@ -1,0 +1,4 @@
+DrawingModel model
+Figure figure
+Key<T> key
+boolean allKeys
