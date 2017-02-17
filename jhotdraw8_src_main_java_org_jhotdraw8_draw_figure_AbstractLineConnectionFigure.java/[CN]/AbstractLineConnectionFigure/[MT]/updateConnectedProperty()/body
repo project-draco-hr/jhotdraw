@@ -1,0 +1,3 @@
+{
+  connected.set(get(START_CONNECTOR) != null && get(START_TARGET) != null && get(END_CONNECTOR) != null && get(END_TARGET) != null);
+}
