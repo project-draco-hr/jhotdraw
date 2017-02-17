@@ -12,10 +12,14 @@
   Drawing newDrawing=child.getDrawing();
   if (oldDrawing != newDrawing) {
     if (oldDrawing != null) {
-      fire(DrawingModelEvent.figureRemovedFromDrawing((DrawingModel)this,oldDrawing,child));
+      for (      Figure f : child.preorderIterable()) {
+        fire(DrawingModelEvent.figureRemovedFromDrawing((DrawingModel)this,oldDrawing,f));
+      }
     }
     if (newDrawing != null) {
-      fire(DrawingModelEvent.figureAddedToDrawing((DrawingModel)this,newDrawing,child));
+      for (      Figure f : child.preorderIterable()) {
+        fire(DrawingModelEvent.figureAddedToDrawing((DrawingModel)this,newDrawing,f));
+      }
     }
   }
 }

@@ -10,7 +10,9 @@
           if (a instanceof TransformableFigure) {
             markDirty(a,DirtyBits.NODE,DirtyBits.TRANSFORM);
           }
- else           markDirty(a,DirtyBits.NODE);
+ else {
+            markDirty(a,DirtyBits.NODE);
+          }
         }
       }
     }
