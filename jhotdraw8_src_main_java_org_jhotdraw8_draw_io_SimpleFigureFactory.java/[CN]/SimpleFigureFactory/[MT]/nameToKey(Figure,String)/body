@@ -6,7 +6,8 @@
   if (!strToKey.containsKey(attributeName)) {
     Set<Class<? extends Figure>> set=(skipAttributes.get(attributeName));
     if (set == null || !set.contains(f.getClass())) {
-      throw new IOException("no mapping for attribute " + attributeName + " in figure "+ f.getClass());
+      System.err.println("SimpleFigureFactory WARNING no mapping for attribute " + attributeName + " in figure "+ f.getClass());
+      return null;
     }
   }
   return strToKey.get(attributeName);

@@ -14,7 +14,7 @@
     String id=getAttribute(elem,factory.getObjectIdAttribute());
     if (id != null && !id.isEmpty()) {
       if (factory.getObject(id) != null) {
-        System.err.println("warning: duplicate id " + id + " in element "+ elem.getTagName());
+        System.err.println("SimpleXmlIO warning: duplicate id " + id + " in element "+ elem.getTagName());
         factory.putId(figure,id);
       }
  else {
