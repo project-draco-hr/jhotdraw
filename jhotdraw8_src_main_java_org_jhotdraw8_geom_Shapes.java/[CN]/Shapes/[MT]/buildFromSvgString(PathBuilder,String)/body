@@ -1,35 +1,36 @@
 {
-  Point2D.Double p=new Point2D.Double();
-  Point2D.Double c1=new Point2D.Double();
-  Point2D.Double c2=new Point2D.Double();
-  StreamPosTokenizer tt=new StreamPosTokenizer(new StringReader(str));
-  tt.resetSyntax();
-  tt.parseNumbers();
-  tt.parseExponents();
-  tt.parsePlusAsNumber();
-  tt.whitespaceChars(0,' ');
-  tt.whitespaceChars(',',',');
-  char nextCommand='M';
-  char command='M';
-  Commands:   while (tt.nextToken() != StreamPosTokenizer.TT_EOF) {
-    if (tt.ttype > 0) {
-      command=(char)tt.ttype;
-    }
+  try {
+    Point2D.Double p=new Point2D.Double();
+    Point2D.Double c1=new Point2D.Double();
+    Point2D.Double c2=new Point2D.Double();
+    StreamPosTokenizer tt=new StreamPosTokenizer(new StringReader(str));
+    tt.resetSyntax();
+    tt.parseNumbers();
+    tt.parseExponents();
+    tt.parsePlusAsNumber();
+    tt.whitespaceChars(0,' ');
+    tt.whitespaceChars(',',',');
+    char nextCommand='M';
+    char command='M';
+    Commands:     while (tt.nextToken() != StreamPosTokenizer.TT_EOF) {
+      if (tt.ttype > 0) {
+        command=(char)tt.ttype;
+      }
  else {
-      command=nextCommand;
-      tt.pushBack();
-    }
-    BezierPath.Node node;
+        command=nextCommand;
+        tt.pushBack();
+      }
+      BezierPath.Node node;
 switch (command) {
 case 'M':
-      if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
-        throw new IOException("x coordinate missing for 'M' at position " + tt.getStartPosition() + " in "+ str);
-      }
-    p.x=tt.nval;
-  if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
-    throw new IOException("y coordinate missing for 'M' at position " + tt.getStartPosition() + " in "+ str);
-  }
-p.y=tt.nval;
+        if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
+          throw new IOException("x coordinate missing for 'M' at position " + tt.getStartPosition() + " in "+ str);
+        }
+      p.x=tt.nval;
+    if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {
+      throw new IOException("y coordinate missing for 'M' at position " + tt.getStartPosition() + " in "+ str);
+    }
+  p.y=tt.nval;
 builder.moveTo(p.x,p.y);
 nextCommand='L';
 break;
@@ -340,5 +341,9 @@ break;
 default :
 throw new IOException("Illegal command: " + command);
 }
+}
+}
+ catch (IllegalPathStateException e) {
+throw new IOException(e);
 }
 }

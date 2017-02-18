@@ -52,7 +52,9 @@
       return index >= points.size() + (closed ? 1 : 0);
     }
     @Override public void next(){
-      if (index < Integer.MAX_VALUE)       index++;
+      if (index < Integer.MAX_VALUE) {
+        index++;
+      }
     }
   }
 ;
