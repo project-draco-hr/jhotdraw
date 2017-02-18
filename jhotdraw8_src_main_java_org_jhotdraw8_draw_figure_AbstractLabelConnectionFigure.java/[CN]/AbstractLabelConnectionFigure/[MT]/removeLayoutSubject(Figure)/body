@@ -1,0 +1,5 @@
+{
+  if (subject == get(LABEL_TARGET)) {
+    set(LABEL_TARGET,null);
+  }
+}

@@ -1,3 +1,3 @@
 {
-  addConverterForType(valueType.getName(),converter);
+  addConverterForType(valueType,converter,false);
 }

@@ -1,0 +1,7 @@
+{
+  HashSet<Figure> ctf=new HashSet<>();
+  if (get(LABEL_TARGET) != null) {
+    ctf.add(get(LABEL_TARGET));
+  }
+  return ctf;
+}

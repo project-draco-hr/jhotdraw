@@ -1,0 +1,28 @@
+{
+  Point2D labeledLoc=get(LABELED_LOCATION);
+  Connector labelConnector=get(LABEL_CONNECTOR);
+  Figure labelTarget=get(LABEL_TARGET);
+  Point2D perp;
+  if (labelConnector != null && labelTarget != null) {
+    labeledLoc=labelConnector.getPositionInWorld(this,labelTarget);
+    perp=Geom.perp(Transforms.deltaTransform(getWorldToLocal(),labelConnector.getTangentInWorld(this,labelTarget)));
+  }
+ else {
+    perp=new Point2D(0,-1);
+  }
+  set(LABELED_LOCATION,labeledLoc);
+  Bounds b=getLayoutBounds();
+  double tx=0;
+switch (getStyled(TEXT_HPOS)) {
+case CENTER:
+    tx=b.getWidth() * -0.5;
+  break;
+case LEFT:
+break;
+case RIGHT:
+tx=-b.getWidth();
+break;
+}
+Point2D origin=labeledLoc.add(perp.multiply(getStyled(LABEL_OFFSET))).add(tx,0);
+set(ORIGIN,origin);
+}

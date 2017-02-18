@@ -1,10 +1,8 @@
 {
-  if (subject != null) {
-    if (get(START_TARGET) != null && subject == get(START_TARGET)) {
-      set(START_TARGET,null);
-    }
-    if (get(END_TARGET) != null && subject == get(END_TARGET)) {
-      set(END_TARGET,null);
-    }
+  if (subject == get(START_TARGET)) {
+    set(START_TARGET,null);
+  }
+  if (subject == get(END_TARGET)) {
+    set(END_TARGET,null);
   }
 }

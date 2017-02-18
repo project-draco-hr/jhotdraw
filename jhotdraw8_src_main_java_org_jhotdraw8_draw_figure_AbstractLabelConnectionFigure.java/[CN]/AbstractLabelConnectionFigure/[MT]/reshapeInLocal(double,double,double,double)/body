@@ -1,0 +1,6 @@
+{
+  if (get(LABEL_TARGET) == null) {
+    set(ORIGIN,new Point2D(x,y));
+    set(LABELED_LOCATION,get(ORIGIN));
+  }
+}

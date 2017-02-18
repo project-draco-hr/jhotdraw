@@ -1,0 +1,8 @@
+{
+  for (  Figure f : getLayoutSubjects()) {
+    if (others.contains(f)) {
+      return false;
+    }
+  }
+  return true;
+}

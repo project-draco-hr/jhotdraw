@@ -1,0 +1,4 @@
+{
+  set(LABEL_CONNECTOR,connector);
+  set(LABEL_TARGET,target);
+}
