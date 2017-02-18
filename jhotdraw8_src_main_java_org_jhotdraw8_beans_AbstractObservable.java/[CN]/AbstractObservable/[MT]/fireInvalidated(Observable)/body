@@ -1,0 +1,7 @@
+{
+  if (invalidationListeners != null) {
+    for (    InvalidationListener l : invalidationListeners) {
+      l.invalidated(o);
+    }
+  }
+}
