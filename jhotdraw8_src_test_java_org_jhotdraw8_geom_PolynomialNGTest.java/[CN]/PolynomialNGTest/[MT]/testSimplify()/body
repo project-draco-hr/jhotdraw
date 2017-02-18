@@ -1,0 +1,8 @@
+{
+  System.out.println("simplify");
+  Polynomial instance=null;
+  Polynomial expResult=null;
+  Polynomial result=instance.simplify();
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

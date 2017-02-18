@@ -1,0 +1,9 @@
+{
+  System.out.println("add");
+  Polynomial that=null;
+  Polynomial instance=null;
+  Polynomial expResult=null;
+  Polynomial result=instance.add(that);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}

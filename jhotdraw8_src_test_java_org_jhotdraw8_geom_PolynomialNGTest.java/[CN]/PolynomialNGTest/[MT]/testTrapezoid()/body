@@ -1,0 +1,11 @@
+{
+  System.out.println("trapezoid");
+  double min=0.0;
+  double max=0.0;
+  int n=0;
+  Polynomial instance=null;
+  double expResult=0.0;
+  double result=instance.trapezoid(min,max,n);
+  assertEquals(result,expResult,0.0);
+  fail("The test case is a prototype.");
+}

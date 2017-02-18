@@ -1,0 +1,9 @@
+{
+  System.out.println("multiply");
+  Polynomial that=null;
+  Polynomial instance=null;
+  Polynomial expResult=null;
+  Polynomial result=instance.multiply(that);
+  assertEquals(result,expResult);
+  fail("The test case is a prototype.");
+}
