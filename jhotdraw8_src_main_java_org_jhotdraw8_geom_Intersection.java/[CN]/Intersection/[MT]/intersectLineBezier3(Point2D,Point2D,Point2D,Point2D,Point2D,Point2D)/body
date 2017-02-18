@@ -27,7 +27,8 @@
   c0=new Point2D(p1.getX(),p1.getY());
   n=new Point2D(a1.getY() - a2.getY(),a2.getX() - a1.getX());
   cl=a1.getX() * a2.getY() - a2.getX() * a1.getY();
-  double[] roots=new Polynomial(n.dotProduct(c3),n.dotProduct(c2),n.dotProduct(c1),n.dotProduct(c0) + cl).getRoots();
+  final Polynomial polynomial=new Polynomial(n.dotProduct(c3),n.dotProduct(c2),n.dotProduct(c1),n.dotProduct(c0) + cl);
+  double[] roots=polynomial.getRoots();
   for (int i=0; i < roots.length; i++) {
     double t=roots[i];
     if (0 <= t && t <= 1) {

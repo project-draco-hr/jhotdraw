@@ -7,9 +7,11 @@
     if (get(START_CONNECTOR) == null) {
       list.add(new MoveHandle(this,new PointLocator(START),Handle.STYLECLASS_HANDLE_MOVE));
     }
+ else     list.add(new SelectionHandle(this,new PointLocator(START),Handle.STYLECLASS_HANDLE_MOVE_LOCKED));
     if (get(END_CONNECTOR) == null) {
       list.add(new MoveHandle(this,new PointLocator(END),Handle.STYLECLASS_HANDLE_MOVE));
     }
+ else     list.add(new SelectionHandle(this,new PointLocator(END),Handle.STYLECLASS_HANDLE_MOVE_LOCKED));
   }
  else   if (handleType == HandleType.RESIZE) {
     list.add(new LineConnectionOutlineHandle(this,Handle.STYLECLASS_HANDLE_RESIZE_OUTLINE));

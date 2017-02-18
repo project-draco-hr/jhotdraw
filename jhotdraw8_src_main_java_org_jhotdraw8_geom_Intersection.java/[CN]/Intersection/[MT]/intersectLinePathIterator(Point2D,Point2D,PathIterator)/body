@@ -19,6 +19,11 @@ case PathIterator.SEG_CUBICTO:
 x=seg[4];
 y=seg[5];
 inter=Intersection.intersectLineBezier3(ax,ay,bx,by,lastx,lasty,seg[0],seg[1],seg[2],seg[3],x,y);
+Intersection inter2=Intersection.intersectBezier3Line(new Point2D(lastx,lasty),new Point2D(seg[0],seg[1]),new Point2D(seg[2],seg[3]),new Point2D(x,y),new Point2D(ax,ay),new Point2D(bx,by));
+if (inter.getIntersections().size() != inter2.getIntersections().size()) {
+System.out.println("Intersection found:" + inter);
+System.out.println("  wanted:" + inter2);
+}
 result.putAll(inter.getIntersections());
 lastx=x;
 lasty=y;
