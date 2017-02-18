@@ -4,7 +4,7 @@
   Text t=(Text)g.getProperties().get("text");
   updateRegionNode(ctx,r);
   updateTextNode(ctx,t);
-  if (getStyled(FILL_COLOR) != null || getStyled(STROKE_COLOR) != null) {
+  if (getStyled(FILL) != null || getStyled(STROKE) != null) {
     if (g.getChildren().size() != 2) {
       g.getChildren().setAll(r,t);
     }

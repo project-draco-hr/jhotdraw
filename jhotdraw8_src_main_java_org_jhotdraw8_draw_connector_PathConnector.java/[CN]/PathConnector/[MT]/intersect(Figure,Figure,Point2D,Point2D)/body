@@ -6,7 +6,7 @@
   Point2D s=target.worldToLocal(start);
   Point2D e=target.worldToLocal(end);
   PathIterator pit;
-  if (target.getStyled(STROKE_COLOR) != null) {
+  if (target.getStyled(STROKE) != null) {
     double grow;
 switch (target.getStyled(STROKE_TYPE)) {
 case CENTERED:

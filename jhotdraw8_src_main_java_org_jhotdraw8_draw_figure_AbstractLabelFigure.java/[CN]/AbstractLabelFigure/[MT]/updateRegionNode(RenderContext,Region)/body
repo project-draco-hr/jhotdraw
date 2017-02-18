@@ -11,9 +11,9 @@
   node.setShape(svgPath);
   Bounds b=getBoundsInLocal();
   node.resizeRelocate(b.getMinX(),b.getMinY(),b.getWidth(),b.getHeight());
-  Paint fillColor=Paintable.getPaint(getStyled(FILL_COLOR));
+  Paint fillColor=Paintable.getPaint(getStyled(FILL));
   node.setBackground(fillColor == null ? null : new Background(new BackgroundFill(fillColor,null,null)));
-  Paint strokeColor=Paintable.getPaint(getStyled(STROKE_COLOR));
+  Paint strokeColor=Paintable.getPaint(getStyled(STROKE));
   double strokeWidth=getStyled(STROKE_WIDTH);
   if (strokeColor == null || strokeWidth == 0) {
     node.setBorder(Border.EMPTY);
