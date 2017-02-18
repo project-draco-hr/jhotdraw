@@ -1,0 +1,22 @@
+{
+  if (changeListeners != null) {
+    SetChangeListener.Change<E> change=new SetChangeListener.Change<E>(this){
+      @Override public E getElementAdded(){
+        return e;
+      }
+      @Override public E getElementRemoved(){
+        return null;
+      }
+      @Override public boolean wasAdded(){
+        return true;
+      }
+      @Override public boolean wasRemoved(){
+        return false;
+      }
+    }
+;
+    for (    SetChangeListener<? super E> listener : changeListeners) {
+      listener.onChanged(change);
+    }
+  }
+}

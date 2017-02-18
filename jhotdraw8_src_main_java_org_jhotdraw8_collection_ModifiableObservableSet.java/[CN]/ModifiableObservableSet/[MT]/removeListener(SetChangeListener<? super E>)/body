@@ -1,0 +1,8 @@
+{
+  if (changeListeners != null) {
+    changeListeners.remove(listener);
+    if (changeListeners.isEmpty()) {
+      changeListeners=null;
+    }
+  }
+}

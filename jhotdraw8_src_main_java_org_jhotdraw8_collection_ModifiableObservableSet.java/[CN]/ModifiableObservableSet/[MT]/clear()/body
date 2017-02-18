@@ -1,0 +1,10 @@
+{
+  Object[] values=backingSet.toArray();
+  backingSet.clear();
+  for (  Object v : values) {
+    fireRemoved((E)v);
+  }
+  if (values.length > 0) {
+    fireInvalidated();
+  }
+}

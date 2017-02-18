@@ -1,0 +1,6 @@
+{
+  if (changeListeners == null) {
+    changeListeners=new CopyOnWriteArrayList<>();
+  }
+  changeListeners.add(listener);
+}

@@ -1,0 +1,14 @@
+{
+  boolean modified=false;
+  for (  E e : c) {
+    boolean added=backingSet.add(e);
+    if (added) {
+      fireAdded(e);
+      modified=true;
+    }
+  }
+  if (modified) {
+    fireInvalidated();
+  }
+  return modified;
+}

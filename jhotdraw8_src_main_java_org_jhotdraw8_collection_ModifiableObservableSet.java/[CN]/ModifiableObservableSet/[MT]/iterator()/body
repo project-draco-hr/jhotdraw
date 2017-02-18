@@ -1,0 +1,18 @@
+{
+  return new Iterator<E>(){
+    private final Iterator<? extends E> i=backingSet.iterator();
+    private E current;
+    @Override public boolean hasNext(){
+      return i.hasNext();
+    }
+    @Override public E next(){
+      return current=i.next();
+    }
+    @Override public void remove(){
+      i.remove();
+      fireRemoved(current);
+      fireInvalidated();
+    }
+  }
+;
+}

@@ -1,0 +1,8 @@
+{
+  boolean modified=backingSet.add(e);
+  if (modified) {
+    fireAdded(e);
+    fireInvalidated();
+  }
+  return modified;
+}

@@ -1,0 +1,14 @@
+{
+  boolean modified=false;
+  for (  Object e : c) {
+    boolean removed=backingSet.remove(e);
+    if (removed) {
+      fireRemoved((E)e);
+      modified=true;
+    }
+  }
+  if (modified) {
+    fireInvalidated();
+  }
+  return modified;
+}

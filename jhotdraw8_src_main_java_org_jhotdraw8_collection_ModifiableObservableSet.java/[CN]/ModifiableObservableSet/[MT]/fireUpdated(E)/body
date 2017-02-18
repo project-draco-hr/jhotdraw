@@ -1,0 +1,5 @@
+{
+  fireRemoved(e);
+  fireAdded(e);
+  fireInvalidated();
+}

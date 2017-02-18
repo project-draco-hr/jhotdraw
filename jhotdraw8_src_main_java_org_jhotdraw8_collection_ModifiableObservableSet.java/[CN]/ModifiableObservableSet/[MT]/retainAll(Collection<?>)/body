@@ -1,0 +1,16 @@
+{
+  boolean modified=false;
+  Iterator<E> it=backingSet.iterator();
+  while (it.hasNext()) {
+    E e=it.next();
+    if (!c.contains(e)) {
+      it.remove();
+      fireRemoved(e);
+      modified=true;
+    }
+  }
+  if (modified) {
+    fireInvalidated();
+  }
+  return modified;
+}
