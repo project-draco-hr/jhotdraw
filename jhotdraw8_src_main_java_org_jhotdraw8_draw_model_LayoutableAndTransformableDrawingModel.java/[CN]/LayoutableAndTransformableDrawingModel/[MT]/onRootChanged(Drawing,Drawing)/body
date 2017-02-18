@@ -1,5 +1,5 @@
 {
-  if (false) {
+  if (listenOnDrawing) {
     if (oldValue != null) {
       newValue.getPropertyChangeListeners().add(propertyChangeHandler);
     }
