@@ -1,35 +1,79 @@
 {
+  CagOperation op=getStyled(CAG_OPERATION);
   List<PathIterator> iterators=new ArrayList<>();
-  for (  Figure child : getChildren()) {
-    if (child instanceof PathIterableFigure) {
-      final PathIterableFigure pathIterable=(PathIterableFigure)child;
-      AffineTransform childTx=tx;
-      final Transform localToParent=child.getLocalToParent();
-      if (localToParent != null) {
-        AffineTransform ltpTx=Transforms.toAWT(localToParent);
-        if (tx != null) {
-          childTx=(AffineTransform)tx.clone();
-          childTx.concatenate(ltpTx);
-        }
+  Area area=null;
+  boolean first=true;
+  try {
+    for (    Figure child : getChildren()) {
+      if (child instanceof PathIterableFigure) {
+        final PathIterableFigure pathIterable=(PathIterableFigure)child;
+        AffineTransform childTx=tx;
+        final Transform localToParent=child.getLocalToParent();
+        if (localToParent != null) {
+          AffineTransform ltpTx=Transforms.toAWT(localToParent);
+          if (tx != null) {
+            childTx=(AffineTransform)tx.clone();
+            childTx.concatenate(ltpTx);
+          }
  else {
-          childTx=ltpTx;
+            childTx=ltpTx;
+          }
         }
-      }
-      iterators.add(pathIterable.getPathIterator(childTx));
-    }
-  }
-  PathIterator iter=new CombinedPathIterator(getStyled(FILL_RULE),iterators);
-  double combineStrokeWidth=getStyled(COMBINE_STROKE_WIDTH);
-  if (combineStrokeWidth > 0) {
-    int cap;
-    int join;
+        final PathIterator pathIterator=pathIterable.getPathIterator(childTx);
+        if (first) {
+          first=false;
+switch (op) {
+case NONE:
+            iterators.add(pathIterator);
+          break;
+case ADD:
+case INTERSECT:
+case SUBTRACT:
+case XOR:
+        area=new Area(Shapes.buildFromPathIterator(new Path2DDoubleBuilder(),pathIterator).get());
+      break;
+default :
+    throw new UnsupportedOperationException("" + op);
+}
+iterators.add(pathIterator);
+}
+ else {
+switch (op) {
+case ADD:
+  area.add(new Area(Shapes.buildFromPathIterator(new Path2DDoubleBuilder(),pathIterator).get()));
+break;
+case NONE:
+iterators.add(pathIterator);
+break;
+case INTERSECT:
+area.intersect(new Area(Shapes.buildFromPathIterator(new Path2DDoubleBuilder(),pathIterator).get()));
+break;
+case SUBTRACT:
+area.subtract(new Area(Shapes.buildFromPathIterator(new Path2DDoubleBuilder(),pathIterator).get()));
+break;
+case XOR:
+area.exclusiveOr(new Area(Shapes.buildFromPathIterator(new Path2DDoubleBuilder(),pathIterator).get()));
+break;
+}
+}
+}
+}
+}
+ catch (IOException e) {
+e.printStackTrace();
+}
+PathIterator iter=area != null ? area.getPathIterator(null) : new CombinedPathIterator(getStyled(FILL_RULE),iterators);
+double combineStrokeWidth=getStyled(COMBINE_STROKE_WIDTH);
+if (combineStrokeWidth > 0) {
+int cap;
+int join;
 switch (getStyled(COMBINE_STROKE_LINE_CAP)) {
 case BUTT:
 default :
-      cap=BasicStroke.CAP_BUTT;
-    break;
+cap=BasicStroke.CAP_BUTT;
+break;
 case ROUND:
-  cap=BasicStroke.CAP_ROUND;
+cap=BasicStroke.CAP_ROUND;
 break;
 case SQUARE:
 cap=BasicStroke.CAP_SQUARE;
