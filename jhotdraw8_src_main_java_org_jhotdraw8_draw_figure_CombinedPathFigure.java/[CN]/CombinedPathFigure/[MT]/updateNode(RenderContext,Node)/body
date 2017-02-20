@@ -1,0 +1,12 @@
+{
+  Path n=(Path)node;
+  applyHideableFigureProperties(n);
+  applyTransformableFigureProperties(n);
+  applyStyleableFigureProperties(ctx,n);
+  applyFillableFigureProperties(n);
+  applyStrokeableFigureProperties(n);
+  applyTransformableFigureProperties(n);
+  applyCompositableFigureProperties(n);
+  n.setFillRule(getStyled(FILL_RULE));
+  n.getElements().setAll(Shapes.fxPathElementsFromAWT(getPathIterator(null)));
+}

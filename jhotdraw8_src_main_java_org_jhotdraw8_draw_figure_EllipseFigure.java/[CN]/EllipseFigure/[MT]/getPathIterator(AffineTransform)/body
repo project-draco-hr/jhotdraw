@@ -1,0 +1,8 @@
+{
+  Ellipse shape=new Ellipse();
+  shape.setCenterX(get(CENTER_X));
+  shape.setCenterY(get(CENTER_Y));
+  shape.setRadiusX(get(RADIUS_X));
+  shape.setRadiusY(get(RADIUS_Y));
+  return Shapes.awtShapeFromFX(shape).getPathIterator(tx);
+}

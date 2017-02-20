@@ -1,0 +1,4 @@
+{
+  Path path=(Path)javafx.scene.shape.Shape.subtract(node,new Rectangle());
+  return awtShapeFromFXPath(path);
+}

@@ -5,9 +5,11 @@
   items.clear();
   items.put(drawing,root);
   int childIndex=0;
-  for (  Figure child : drawing.getChildren()) {
-    handleSubtreeAddedToDrawing(child,drawing,childIndex);
-    handleFigureAdded(child,drawing,childIndex);
-    childIndex++;
+  if (drawing != null) {
+    for (    Figure child : drawing.getChildren()) {
+      handleSubtreeAddedToDrawing(child,drawing,childIndex);
+      handleFigureAdded(child,drawing,childIndex);
+      childIndex++;
+    }
   }
 }

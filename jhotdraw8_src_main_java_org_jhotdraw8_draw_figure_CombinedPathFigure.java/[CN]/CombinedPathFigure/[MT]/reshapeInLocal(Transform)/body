@@ -1,0 +1,7 @@
+{
+  flattenTransforms();
+  Transform localTransform=transform;
+  for (  Figure child : getChildren()) {
+    child.reshapeInParent(localTransform);
+  }
+}

@@ -1,0 +1,9 @@
+{
+  Text tn=new Text();
+  tn.setText(getText(null));
+  tn.setX(getStyled(ORIGIN).getX());
+  tn.setY(getStyled(ORIGIN).getY());
+  tn.setBoundsType(TextBoundsType.VISUAL);
+  applyFontableFigureProperties(null,tn);
+  return Shapes.awtShapeFromFX(tn).getPathIterator(tx);
+}

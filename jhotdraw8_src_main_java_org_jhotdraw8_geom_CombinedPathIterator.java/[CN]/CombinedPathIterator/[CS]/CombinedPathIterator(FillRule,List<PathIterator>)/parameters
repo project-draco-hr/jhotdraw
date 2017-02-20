@@ -1,0 +1,2 @@
+FillRule fillRule
+List<PathIterator> iteratorList

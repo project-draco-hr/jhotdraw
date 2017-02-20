@@ -58,16 +58,8 @@
     transitivelyCollectDependentFigures(todo,transitive);
     collectLayoutableAncestors(new ArrayList<>(transitive),transitive);
     for (    Figure f : transitive) {
-      if (f.getLayoutSubjects().isEmpty()) {
-        markDirty(f,DirtyBits.NODE);
-        this.layout(f);
-      }
-    }
-    for (    Figure f : transitive) {
-      if (!f.getLayoutSubjects().isEmpty()) {
-        markDirty(f,DirtyBits.NODE);
-        this.layout(f);
-      }
+      markDirty(f,DirtyBits.NODE);
+      this.layout(f);
     }
     DirtyMask dmStyle=DirtyMask.of(DirtyBits.STYLE);
     for (    Map.Entry<Figure,DirtyMask> entry : new ArrayList<>(dirties.entrySet())) {

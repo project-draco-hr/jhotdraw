@@ -1,0 +1,3 @@
+{
+  this(fillRule == FillRule.EVEN_ODD ? WIND_EVEN_ODD : WIND_NON_ZERO,iteratorList);
+}

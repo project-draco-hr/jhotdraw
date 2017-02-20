@@ -1,0 +1,10 @@
+{
+  Rectangle shape=new Rectangle();
+  shape.setX(get(X));
+  shape.setY(get(Y));
+  shape.setWidth(get(WIDTH));
+  shape.setHeight(get(HEIGHT));
+  shape.setArcWidth(getStyled(ARC_WIDTH));
+  shape.setArcHeight(getStyled(ARC_HEIGHT));
+  return Shapes.awtShapeFromFX(shape).getPathIterator(tx);
+}

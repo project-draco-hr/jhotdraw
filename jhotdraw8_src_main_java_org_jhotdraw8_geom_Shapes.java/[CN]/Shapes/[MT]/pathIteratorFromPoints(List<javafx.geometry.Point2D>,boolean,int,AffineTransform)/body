@@ -34,7 +34,7 @@
  else {
           srcd[0]=p.getX();
           srcd[1]=p.getY();
-          tx.transform(srcf,0,coords,0,1);
+          tx.transform(srcd,0,coords,0,1);
         }
         return index == 0 ? PathIterator.SEG_MOVETO : PathIterator.SEG_LINETO;
       }

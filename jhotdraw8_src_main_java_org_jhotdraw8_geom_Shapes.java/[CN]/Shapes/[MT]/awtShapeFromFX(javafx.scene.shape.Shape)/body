@@ -32,6 +32,9 @@
  else   if (fx instanceof SVGPath) {
     return awtShapeFromFXSvgPath((SVGPath)fx);
   }
+ else   if (fx instanceof Text) {
+    return awtShapeFromFXText((Text)fx);
+  }
  else {
     throw new UnsupportedOperationException("unsupported shape " + fx);
   }

@@ -1,0 +1,6 @@
+{
+  while (current != null && current.isDone()) {
+    current=iterators.isEmpty() ? null : iterators.removeFirst();
+  }
+  return current == null;
+}

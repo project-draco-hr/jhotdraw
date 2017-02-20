@@ -1,0 +1,24 @@
+{
+  double[] coords=new double[6];
+  for (; !iter.isDone(); iter.next()) {
+switch (iter.currentSegment(coords)) {
+case PathIterator.SEG_CLOSE:
+      builder.closePath();
+    break;
+case PathIterator.SEG_CUBICTO:
+  builder.curveTo(coords[0],coords[1],coords[2],coords[3],coords[4],coords[5]);
+break;
+case PathIterator.SEG_LINETO:
+builder.lineTo(coords[0],coords[1]);
+break;
+case PathIterator.SEG_QUADTO:
+builder.quadTo(coords[0],coords[1],coords[2],coords[3]);
+break;
+case PathIterator.SEG_MOVETO:
+builder.moveTo(coords[0],coords[1]);
+break;
+default :
+throw new InternalError("unsupported segment type:" + iter.currentSegment(coords));
+}
+}
+}

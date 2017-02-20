@@ -7,13 +7,13 @@
   addFigureKeysAndNames("Polyline",PolylineFigure.class);
   addFigureKeysAndNames("Polygon",PolygonFigure.class);
   addFigureKeysAndNames("Page",PageFigure.class);
+  addFigureKeysAndNames("CombinedPath",CombinedPathFigure.class);
 {
     Set<MapAccessor<?>> keys=new HashSet<>(Figure.getDeclaredAndInheritedMapAccessors(SimpleDrawing.class));
     keys.remove(Drawing.USER_AGENT_STYLESHEETS);
     keys.remove(Drawing.AUTHOR_STYLESHEETS);
     keys.remove(Drawing.INLINE_STYLESHEETS);
     keys.remove(Drawing.DOCUMENT_HOME);
-    addNodeListKey(TextFigure.class,"",TextFigure.TEXT);
     addFigureKeysAndNames("Drawing",SimpleDrawing.class,keys);
   }
 {

@@ -1,0 +1,5 @@
+{
+  this.windingRule=windingRule;
+  this.iterators=new ArrayDeque<>(iteratorList);
+  current=iteratorList.isEmpty() ? null : this.iterators.removeFirst();
+}

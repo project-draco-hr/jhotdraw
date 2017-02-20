@@ -1,0 +1,3 @@
+{
+  return Shapes.awtShapeFromFX(new Line(get(START_X),get(START_Y),get(END_X),get(END_Y))).getPathIterator(tx);
+}
