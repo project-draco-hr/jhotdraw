@@ -17,7 +17,22 @@
     if (stroke != null) {
       double strokeWidth=f.getStyled(STROKE_WIDTH);
       if (strokeWidth > 0.0) {
-        BasicStroke basicStroke=new BasicStroke((float)strokeWidth,Shapes.awtCapFromFX(f.getStyled(STROKE_LINE_CAP)),Shapes.awtJoinFromFX(f.getStyled(STROKE_LINE_JOIN)),f.getStyled(STROKE_MITER_LIMIT).floatValue());
+        BasicStroke basicStroke;
+        final ImmutableObservableList<Double> dashArray=f.getStyled(STROKE_DASH_ARRAY);
+        if (dashArray != null && !dashArray.isEmpty()) {
+          double dashOffset=f.getStyled(STROKE_DASH_OFFSET);
+          float[] dash=new float[dashArray.size()];
+          boolean allZero=false;
+          for (int i=0, n=dashArray.size(); i < n; i++) {
+            dash[i]=dashArray.get(i).floatValue();
+            allZero=allZero && dash[i] == 0f;
+          }
+          if (allZero)           dash=null;
+          basicStroke=new BasicStroke((float)strokeWidth,Shapes.awtCapFromFX(f.getStyled(STROKE_LINE_CAP)),Shapes.awtJoinFromFX(f.getStyled(STROKE_LINE_JOIN)),f.getStyled(STROKE_MITER_LIMIT).floatValue(),dash,(float)dashOffset);
+        }
+ else {
+          basicStroke=new BasicStroke((float)strokeWidth,Shapes.awtCapFromFX(f.getStyled(STROKE_LINE_CAP)),Shapes.awtJoinFromFX(f.getStyled(STROKE_LINE_JOIN)),f.getStyled(STROKE_MITER_LIMIT).floatValue());
+        }
         try {
           iter=basicStroke.createStrokedShape(Shapes.buildFromPathIterator(new Path2DDoubleBuilder(),iter).get()).getPathIterator(null);
         }

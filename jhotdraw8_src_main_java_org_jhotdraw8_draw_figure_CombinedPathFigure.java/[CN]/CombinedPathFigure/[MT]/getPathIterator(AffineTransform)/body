@@ -1,6 +1,8 @@
 {
   CagOperation op=getStyled(CAG_OPERATION);
-  if (op != null)   return getPathIteratorCAG(tx,op);
+  if (op != null) {
+    return getPathIteratorCAG(tx,op);
+  }
   List<PathIterator> iterators=new ArrayList<>();
   for (  Figure child : getChildren()) {
     final PathIterator childPathIterator=getStyledPathIteratorInParent((PathIterableFigure)child,tx);
