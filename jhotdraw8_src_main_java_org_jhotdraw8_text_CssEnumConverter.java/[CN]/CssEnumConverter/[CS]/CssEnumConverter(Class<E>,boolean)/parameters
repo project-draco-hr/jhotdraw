@@ -1,1 +1,2 @@
 Class<E> enumClass
+boolean nullable

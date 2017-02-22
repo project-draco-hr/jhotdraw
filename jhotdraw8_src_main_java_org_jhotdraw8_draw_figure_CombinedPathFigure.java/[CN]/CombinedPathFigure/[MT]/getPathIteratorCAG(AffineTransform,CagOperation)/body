@@ -1,0 +1,38 @@
+{
+  Area area=null;
+  boolean first=true;
+  try {
+    for (    Figure child : getChildren()) {
+      if (child instanceof PathIterableFigure) {
+        final PathIterator childPathIterator=getStyledPathIteratorInParent((PathIterableFigure)child,tx);
+        if (first) {
+          first=false;
+          area=new Area(Shapes.buildFromPathIterator(new Path2DDoubleBuilder(),childPathIterator).get());
+        }
+ else {
+          Area area1=new Area(Shapes.buildFromPathIterator(new Path2DDoubleBuilder(),childPathIterator).get());
+switch (op) {
+case ADD:
+default :
+            area.add(area1);
+          break;
+case INTERSECT:
+        area.intersect(area1);
+      break;
+case SUBTRACT:
+    area.subtract(area1);
+  break;
+case XOR:
+area.exclusiveOr(area1);
+break;
+}
+}
+}
+}
+}
+ catch (IOException e) {
+e.printStackTrace();
+}
+PathIterator iter=area != null ? area.getPathIterator(null) : new CombinedPathIterator(getStyled(FILL_RULE),Collections.emptyList());
+return iter;
+}

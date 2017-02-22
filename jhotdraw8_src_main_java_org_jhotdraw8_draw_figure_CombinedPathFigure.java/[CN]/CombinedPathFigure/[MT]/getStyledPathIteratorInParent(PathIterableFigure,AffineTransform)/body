@@ -1,0 +1,31 @@
+{
+  AffineTransform childTx=tx;
+  final Transform localToParent=f.getLocalToParent();
+  if (localToParent != null) {
+    AffineTransform ltpTx=Transforms.toAWT(localToParent);
+    if (tx != null) {
+      childTx=(AffineTransform)tx.clone();
+      childTx.concatenate(ltpTx);
+    }
+ else {
+      childTx=ltpTx;
+    }
+  }
+  PathIterator iter=f.getPathIterator(childTx);
+  if (f instanceof StrokeableFigure) {
+    Paint stroke=Paintable.getPaint(f.getStyled(STROKE));
+    if (stroke != null) {
+      double strokeWidth=f.getStyled(STROKE_WIDTH);
+      if (strokeWidth > 0.0) {
+        BasicStroke basicStroke=new BasicStroke((float)strokeWidth,Shapes.awtCapFromFX(f.getStyled(STROKE_LINE_CAP)),Shapes.awtJoinFromFX(f.getStyled(STROKE_LINE_JOIN)),f.getStyled(STROKE_MITER_LIMIT).floatValue());
+        try {
+          iter=basicStroke.createStrokedShape(Shapes.buildFromPathIterator(new Path2DDoubleBuilder(),iter).get()).getPathIterator(null);
+        }
+ catch (        IOException ex) {
+          ex.printStackTrace();
+        }
+      }
+    }
+  }
+  return iter;
+}

@@ -1,6 +1,6 @@
 {
   if (converter == null) {
-    converter=new CssEnumConverter<BlendMode>(BlendMode.class);
+    converter=new CssEnumConverter<BlendMode>(BlendMode.class,false);
   }
   return converter;
 }

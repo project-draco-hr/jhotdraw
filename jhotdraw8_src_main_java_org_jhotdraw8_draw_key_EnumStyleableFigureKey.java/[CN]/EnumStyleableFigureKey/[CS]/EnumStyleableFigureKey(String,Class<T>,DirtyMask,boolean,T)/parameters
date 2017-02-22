@@ -1,4 +1,5 @@
 String name
 Class<T> clazz
 DirtyMask mask
+boolean nullable
 T defaultValue

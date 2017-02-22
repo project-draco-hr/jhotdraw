@@ -1,9 +1,10 @@
 {
   boolean modified=false;
-  for (  Object e : c) {
+  for (  Object o : c) {
+    @SuppressWarnings("unchecked") final E e=(E)o;
     boolean removed=backingSet.remove(e);
     if (removed) {
-      fireRemoved((E)e);
+      fireRemoved(e);
       modified=true;
     }
   }

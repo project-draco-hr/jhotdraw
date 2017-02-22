@@ -1,0 +1,14 @@
+{
+  if (cap == null) {
+    return BasicStroke.CAP_BUTT;
+  }
+switch (cap) {
+case BUTT:
+default :
+    return BasicStroke.CAP_BUTT;
+case ROUND:
+  return BasicStroke.CAP_ROUND;
+case SQUARE:
+return BasicStroke.CAP_SQUARE;
+}
+}

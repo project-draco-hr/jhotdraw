@@ -1,7 +1,8 @@
 {
   boolean modified=backingSet.remove(o);
   if (modified) {
-    fireRemoved((E)o);
+    @SuppressWarnings("unchecked") final E e=(E)o;
+    fireRemoved(e);
     fireInvalidated();
   }
   return modified;

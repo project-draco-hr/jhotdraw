@@ -1,6 +1,9 @@
 {
   if (value == null) {
-    out.append("null");
+    if (!nullable) {
+      throw new IllegalArgumentException("value is not nullable. enum type:" + enumClass + " value:"+ value);
+    }
+    out.append("none");
   }
  else {
     for (    char ch : value.toString().toLowerCase().replace('_','-').toCharArray()) {
