@@ -1,0 +1,11 @@
+{
+  Bounds figureBounds=worldToView(f.localToWorld(f.getBoundsInLocal()));
+  ScrollPane sp=getScrollPane();
+  final Bounds contentPaneBounds=sp.getContent().getBoundsInLocal();
+  double width=contentPaneBounds.getWidth();
+  double height=sp.getContent().getBoundsInLocal().getHeight();
+  double x=figureBounds.getMinX() + figureBounds.getWidth() * 0.5;
+  double y=figureBounds.getMinY() + figureBounds.getHeight() * 0.5;
+  sp.setVvalue(Geom.clamp(y / height,0.0,1.0));
+  sp.setHvalue(Geom.clamp(x / width,0.0,1.0));
+}

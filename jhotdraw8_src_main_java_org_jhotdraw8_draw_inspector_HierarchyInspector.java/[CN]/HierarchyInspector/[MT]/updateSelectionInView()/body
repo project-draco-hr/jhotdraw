@@ -1,6 +1,6 @@
 {
-  if (!isUpdatingSelection) {
-    isUpdatingSelection=true;
+  if (!isUpdatingSelectionInView) {
+    isUpdatingSelectionInView=true;
     TreeTableView.TreeTableViewSelectionModel<Figure> selectionModel=treeView.getSelectionModel();
     Set<Figure> newSelection=new LinkedHashSet<>();
     for (    TreeItem<Figure> item : selectionModel.getSelectedItems()) {
@@ -10,6 +10,6 @@
     }
     drawingView.getSelectedFigures().retainAll(newSelection);
     drawingView.getSelectedFigures().addAll(newSelection);
-    isUpdatingSelection=false;
+    isUpdatingSelectionInView=false;
   }
 }
