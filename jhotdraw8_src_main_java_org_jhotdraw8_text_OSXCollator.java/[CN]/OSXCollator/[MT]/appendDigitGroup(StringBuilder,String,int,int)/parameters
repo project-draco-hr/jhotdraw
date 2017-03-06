@@ -1,0 +1,4 @@
+StringBuilder out
+String s
+int start
+int end

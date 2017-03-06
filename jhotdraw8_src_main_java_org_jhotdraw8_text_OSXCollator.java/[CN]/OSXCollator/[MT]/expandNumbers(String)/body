@@ -1,50 +1,27 @@
 {
-  if (s == null)   return null;
-  StringBuffer out=new StringBuffer();
-  StringBuffer digits=new StringBuffer();
-  for (int i=0, n=s.length(); i < n; i++) {
+  if (s == null) {
+    return null;
+  }
+  StringBuilder out=new StringBuilder();
+  final int n=s.length();
+  int start=-1;
+  for (int i=0; i < n; i++) {
     char ch=s.charAt(i);
-    if (ch >= '0' && ch <= '9') {
-      digits.append(ch);
+    if ('0' <= ch && ch <= '9') {
+      if (start == -1) {
+        start=i;
+      }
     }
  else {
-      if (digits.length() != 0) {
-        if (digits.length() < 10) {
-          out.append("00");
-          out.append(digits.length());
-        }
- else         if (digits.length() < 100) {
-          out.append("0");
-          out.append(digits.length());
-        }
- else         if (digits.length() < 1000) {
-          out.append(digits.length());
-        }
- else         if (digits.length() > 999) {
-          out.append("999");
-        }
-        out.append(digits.toString());
-        digits.delete(0,digits.length());
+      if (start != -1) {
+        appendDigitGroup(out,s,start,i);
+        start=-1;
       }
       out.append(ch);
     }
   }
-  if (digits.length() != 0) {
-    if (digits.length() < 10) {
-      out.append("00");
-      out.append(digits.length());
-    }
- else     if (digits.length() < 100) {
-      out.append("0");
-      out.append(digits.length());
-    }
- else     if (digits.length() < 1000) {
-      out.append(digits.length());
-    }
- else     if (digits.length() > 999) {
-      out.append("999");
-    }
-    out.append(digits);
+  if (start != -1) {
+    appendDigitGroup(out,s,start,n);
   }
   return out.toString();
 }
