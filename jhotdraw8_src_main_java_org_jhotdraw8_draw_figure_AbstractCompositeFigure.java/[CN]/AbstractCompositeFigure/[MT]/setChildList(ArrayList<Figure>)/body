@@ -1,0 +1,3 @@
+{
+  getChildren().setAll(newChildren);
+}

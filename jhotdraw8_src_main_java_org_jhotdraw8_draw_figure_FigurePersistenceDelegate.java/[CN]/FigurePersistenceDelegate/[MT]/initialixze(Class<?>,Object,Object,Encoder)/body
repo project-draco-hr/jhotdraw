@@ -1,0 +1,13 @@
+{
+  if (true)   return;
+  Figure f=(Figure)oldInstance;
+  HashMap<String,Object> result=new HashMap<>();
+  for (  Map.Entry<Key<?>,Object> e : f.getProperties().entrySet()) {
+    Key<?> k=e.getKey();
+    if (!Objects.equals(e.getValue(),k.getDefaultValue())) {
+      result.put(k.getName(),e.getValue());
+    }
+  }
+  out.writeStatement(new Statement("properties","set",new Object[]{oldInstance,result}));
+  out.writeStatement(new Statement("children","set",new Object[]{oldInstance,f.getChildren()}));
+}

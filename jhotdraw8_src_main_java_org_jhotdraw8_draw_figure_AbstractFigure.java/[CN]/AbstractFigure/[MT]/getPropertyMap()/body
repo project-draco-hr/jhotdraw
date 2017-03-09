@@ -1,0 +1,10 @@
+{
+  HashMap<String,Object> result=new HashMap<>();
+  for (  Map.Entry<Key<?>,Object> e : getProperties().entrySet()) {
+    Key<?> k=e.getKey();
+    if (!Objects.equals(e.getValue(),k.getDefaultValue())) {
+      result.put(k.getName(),e.getValue());
+    }
+  }
+  return result;
+}
