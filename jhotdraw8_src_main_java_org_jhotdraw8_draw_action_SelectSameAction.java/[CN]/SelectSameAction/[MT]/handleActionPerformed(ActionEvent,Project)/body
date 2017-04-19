@@ -1,0 +1,8 @@
+{
+  final DrawingView view=getView();
+  if (view == null) {
+    return;
+  }
+  ObservableSet<Figure> selection=view.getSelectedFigures();
+  selectSame(view,selection.isEmpty() ? null : selection.iterator().next());
+}
