@@ -3,5 +3,5 @@
   if (fs != null && fs.contains(element)) {
     return true;
   }
-  return element.getPseudoClassStates().contains(pseudoClass);
+  return element.getPseudoClassStates().contains(PseudoClass.getPseudoClass(pseudoClass));
 }
