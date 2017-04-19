@@ -1,6 +1,17 @@
 {
   if (!valid) {
     isValidating=true;
+    DirtyMask dmStyle=DirtyMask.of(DirtyBits.STYLE);
+    for (    Map.Entry<Figure,DirtyMask> entry : new ArrayList<>(dirties.entrySet())) {
+      Figure f=entry.getKey();
+      DirtyMask dm=entry.getValue();
+      if (dm.intersects(dmStyle)) {
+        f.stylesheetNotify();
+        for (        Figure subf : f.preorderIterable()) {
+          markDirty(subf,DirtyBits.NODE,DirtyBits.TRANSFORM,DirtyBits.LAYOUT);
+        }
+      }
+    }
     DirtyMask dmTransformLayout=DirtyMask.of(DirtyBits.TRANSFORM,DirtyBits.LAYOUT);
     for (    Map.Entry<Figure,DirtyMask> entry : new ArrayList<>(dirties.entrySet())) {
       Figure f=entry.getKey();
@@ -61,23 +72,19 @@
       markDirty(f,DirtyBits.NODE);
       this.layout(f);
     }
-    DirtyMask dmStyle=DirtyMask.of(DirtyBits.STYLE);
-    for (    Map.Entry<Figure,DirtyMask> entry : new ArrayList<>(dirties.entrySet())) {
-      Figure f=entry.getKey();
-      DirtyMask dm=entry.getValue();
-      if (dm.intersects(dmStyle)) {
-        f.stylesheetNotify();
-        for (        Figure subf : f.preorderIterable()) {
-          markDirty(subf,DirtyBits.NODE);
-        }
-      }
-    }
     DirtyMask dmNode=DirtyMask.of(DirtyBits.NODE);
     for (    Map.Entry<Figure,DirtyMask> entry : dirties.entrySet()) {
       Figure f=entry.getKey();
       DirtyMask dm=entry.getValue();
       if (dm.intersects(dmNode)) {
         fireNodeInvalidated(f);
+      }
+    }
+    for (    Map.Entry<Figure,DirtyMask> entry : dirties.entrySet()) {
+      Figure f=entry.getKey();
+      DirtyMask dm=entry.getValue();
+      if (dm.intersects(dmTransform)) {
+        f.transformNotify();
       }
     }
     dirties.clear();
