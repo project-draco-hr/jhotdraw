@@ -1,0 +1,2 @@
+boolean privateConstructor
+Set<E> backingSet

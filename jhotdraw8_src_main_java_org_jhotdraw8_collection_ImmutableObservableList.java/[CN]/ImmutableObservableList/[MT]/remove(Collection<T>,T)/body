@@ -7,7 +7,7 @@
     return remove(list,list.indexOf(item));
   }
  else {
-    ArrayList<T> a=new ArrayList<T>(collection);
+    List<T> a=new ArrayList<T>(collection);
     a.remove(item);
     return new ImmutableObservableList<>(a);
   }

@@ -7,7 +7,7 @@ case 1:
 backingSet=Collections.singleton((E)a[offset]);
 break;
 default :
-this.backingSet=new LinkedHashSet<>(Math.max(2 * length,11));
+this.backingSet=new HashSet<>(Math.max(2 * length,11));
 for (int i=offset, n=offset + length; i < n; i++) {
 backingSet.add((E)a[i]);
 }

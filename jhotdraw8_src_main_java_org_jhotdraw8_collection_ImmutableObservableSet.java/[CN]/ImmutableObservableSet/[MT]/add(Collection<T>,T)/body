@@ -1,5 +1,5 @@
 {
-  LinkedHashSet<T> a=new LinkedHashSet<T>(collection);
+  Set<T> a=new HashSet<T>(collection);
   a.add(item);
   return new ImmutableObservableSet<T>(true,a);
 }

@@ -7,6 +7,6 @@ case 1:
 backingSet=Collections.singleton(copyMe.iterator().next());
 break;
 default :
-this.backingSet=new LinkedHashSet<>(copyMe);
+this.backingSet=new HashSet<>(copyMe);
 }
 }
