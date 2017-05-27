@@ -1,8 +1,0 @@
-{
-  System.out.println("handleMouseReleased");
-  MouseEvent event=null;
-  DrawingView dv=null;
-  BezierNodeMoveHandle instance=null;
-  instance.handleMouseReleased(event,dv);
-  fail("The test case is a prototype.");
-}

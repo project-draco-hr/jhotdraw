@@ -1,9 +1,0 @@
-{
-  System.out.println("eval");
-  double x=0.0;
-  Polynomial instance=null;
-  double expResult=0.0;
-  double result=instance.eval(x);
-  assertEquals(result,expResult,0.0);
-  fail("The test case is a prototype.");
-}

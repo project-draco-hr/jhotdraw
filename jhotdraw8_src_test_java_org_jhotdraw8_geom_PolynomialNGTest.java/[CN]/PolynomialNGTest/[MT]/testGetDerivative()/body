@@ -1,8 +1,0 @@
-{
-  System.out.println("getDerivative");
-  Polynomial instance=null;
-  Polynomial expResult=null;
-  Polynomial result=instance.getDerivative();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

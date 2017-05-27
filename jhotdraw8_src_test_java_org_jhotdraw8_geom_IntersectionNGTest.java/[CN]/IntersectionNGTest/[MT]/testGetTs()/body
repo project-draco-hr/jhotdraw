@@ -1,8 +1,0 @@
-{
-  System.out.println("getTs");
-  Intersection instance=null;
-  List expResult=null;
-  Set<Double> result=instance.getTs();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

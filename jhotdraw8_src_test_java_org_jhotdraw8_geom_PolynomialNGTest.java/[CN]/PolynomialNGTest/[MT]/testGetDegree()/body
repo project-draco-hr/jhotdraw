@@ -1,8 +1,0 @@
-{
-  System.out.println("getDegree");
-  Polynomial instance=null;
-  int expResult=0;
-  int result=instance.getDegree();
-  assertEquals(result,expResult);
-  fail("The test case is a prototype.");
-}

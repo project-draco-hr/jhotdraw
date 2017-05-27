@@ -1,7 +1,0 @@
-{
-  System.out.println("divide_scalar");
-  double scalar=0.0;
-  Polynomial instance=null;
-  instance.divide_scalar(scalar);
-  fail("The test case is a prototype.");
-}
