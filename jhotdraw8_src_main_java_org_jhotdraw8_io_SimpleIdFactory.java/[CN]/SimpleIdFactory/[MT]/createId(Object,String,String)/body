@@ -1,0 +1,16 @@
+{
+  String existingId=objectToId.get(object);
+  if (existingId == null) {
+    long pNextId=prefixToNextId.getOrDefault(prefix,1L);
+    do {
+      existingId=(prefix == null ? "" : prefix) + Long.toString(pNextId++);
+    }
+ while (idToObject.containsKey(existingId));
+    objectToId.put(object,existingId);
+    idToObject.put(existingId,object);
+    prefixToNextId.put(prefix,pNextId);
+  }
+ else {
+  }
+  return existingId;
+}

@@ -1,14 +1,14 @@
 {
-  factory.reset();
+  idFactory.reset();
   if (oldDrawing != null) {
     Figure probe=readNode(doc.getDocumentElement());
     if (probe instanceof Clipping) {
       for (      Figure f : oldDrawing.preorderIterable()) {
-        factory.createId(f);
+        idFactory.createId(f);
       }
     }
  else {
-      factory.reset();
+      idFactory.reset();
     }
   }
   figureToElementMap.clear();
@@ -65,7 +65,7 @@ figureToElementMap.clear();
 }
 comments=null;
 if (external != null) {
-Drawing internal=factory.fromExternalDrawing(external);
+Drawing internal=figureFactory.fromExternalDrawing(external);
 internal.updateCss();
 return internal;
 }

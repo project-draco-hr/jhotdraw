@@ -1,3 +1,0 @@
-{
-  new GrapherApplication().start(primaryStage);
-}

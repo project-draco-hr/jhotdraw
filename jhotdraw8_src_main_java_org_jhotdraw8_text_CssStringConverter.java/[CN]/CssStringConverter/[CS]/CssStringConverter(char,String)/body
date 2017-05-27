@@ -1,0 +1,5 @@
+{
+  this.quoteChar=quoteChar;
+  this.helpText=helpText;
+  defaultValue="" + quoteChar + quoteChar;
+}

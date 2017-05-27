@@ -1,7 +1,7 @@
 {
   Element docElement=doc.getDocumentElement();
-  if (factory.getStylesheetsKey() != null && external.get(factory.getStylesheetsKey()) != null) {
-    for (    Object stylesheet : external.get(factory.getStylesheetsKey())) {
+  if (figureFactory.getStylesheetsKey() != null && external.get(figureFactory.getStylesheetsKey()) != null) {
+    for (    Object stylesheet : external.get(figureFactory.getStylesheetsKey())) {
       if (stylesheet instanceof URI) {
         stylesheet=internalToExternal(external,(URI)stylesheet);
         String stylesheetString=stylesheet.toString();

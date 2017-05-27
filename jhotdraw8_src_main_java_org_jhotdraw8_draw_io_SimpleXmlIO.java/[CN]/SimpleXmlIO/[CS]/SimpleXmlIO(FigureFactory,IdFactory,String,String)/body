@@ -1,5 +1,6 @@
 {
-  this.factory=factory;
+  this.figureFactory=factory;
+  this.idFactory=idFactory;
   this.namespaceURI=namespaceURI;
   this.namespaceQualifier=namespaceQualifier;
 }

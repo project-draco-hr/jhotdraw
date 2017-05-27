@@ -1,15 +1,15 @@
 {
-  if (factory.getStylesheetsKey() != null) {
+  if (figureFactory.getStylesheetsKey() != null) {
     if ("xml-stylesheet".equals(pi.getNodeName()) && pi.getData() != null) {
       Matcher m=hrefPattern.matcher(pi.getData());
       if (m.matches()) {
         String href=m.group(1);
         URI uri=URI.create(href);
         uri=externalToInternal(external,uri);
-        List<URI> listOrNull=external.get(factory.getStylesheetsKey());
+        List<URI> listOrNull=external.get(figureFactory.getStylesheetsKey());
         List<URI> stylesheets=listOrNull == null ? new ArrayList<>() : new ArrayList<>(listOrNull);
         stylesheets.add(uri);
-        external.set(factory.getStylesheetsKey(),stylesheets);
+        external.set(figureFactory.getStylesheetsKey(),stylesheets);
       }
     }
   }

@@ -1,6 +1,6 @@
 {
   try {
-    String elementName=factory.figureToName(figure);
+    String elementName=figureFactory.figureToName(figure);
     if (elementName == null) {
       return;
     }
@@ -13,11 +13,11 @@
     }
     for (    Figure child : figure.getChildren()) {
       final String lbi=linebreak + indent;
-      if (factory.figureToName(child) != null) {
+      if (figureFactory.figureToName(child) != null) {
         writeNodeRecursively(doc,elem,child,lbi);
       }
     }
-    boolean hasNoElementNodes=factory.figureNodeListKeys(figure).isEmpty();
+    boolean hasNoElementNodes=figureFactory.figureNodeListKeys(figure).isEmpty();
     for (    String string : figure.get(XML_BODY_COMMENT_KEY)) {
       if (hasNoElementNodes) {
         elem.appendChild(doc.createTextNode(linebreak));

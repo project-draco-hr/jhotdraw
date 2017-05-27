@@ -1,8 +1,8 @@
 {
-  Set<MapAccessor<?>> keys=factory.figureNodeListKeys(figure);
+  Set<MapAccessor<?>> keys=figureFactory.figureNodeListKeys(figure);
   for (  MapAccessor<?> ky : keys) {
     @SuppressWarnings("unchecked") MapAccessor<Object> key=(MapAccessor<Object>)ky;
-    String name=factory.keyToElementName(figure,key);
+    String name=figureFactory.keyToElementName(figure,key);
     if ("".equals(name)) {
       List<Node> nodeList=new ArrayList<>();
       NodeList children=elem.getChildNodes();
@@ -20,7 +20,7 @@
           }
  else {
             try {
-              if (factory.nameToFigure(childElem.getLocalName()) != null) {
+              if (figureFactory.nameToFigure(childElem.getLocalName()) != null) {
                 continue;
               }
             }
@@ -31,7 +31,7 @@
           }
         }
       }
-      Object value=factory.nodeListToValue(key,nodeList);
+      Object value=figureFactory.nodeListToValue(key,nodeList);
       figure.set(key,value);
     }
  else {

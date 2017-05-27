@@ -3,7 +3,7 @@
   if (id == null) {
     long pNextId=prefixToNextId.getOrDefault(prefix,1L);
     do {
-      id=prefix + Long.toString(pNextId++);
+      id=(prefix == null ? "" : prefix) + Long.toString(pNextId++);
     }
  while (idToObject.containsKey(id));
     objectToId.put(object,id);

@@ -1,6 +1,7 @@
 {
-  setAttribute(elem,factory.getObjectIdAttribute(),factory.createId(figure));
-  for (  MapAccessor<?> k : factory.figureAttributeKeys(figure)) {
+  String id=idFactory.createId(figure);
+  setAttribute(elem,figureFactory.getObjectIdAttribute(),id);
+  for (  MapAccessor<?> k : figureFactory.figureAttributeKeys(figure)) {
     if (k.isTransient()) {
       continue;
     }
@@ -9,13 +10,13 @@
     if (value instanceof URI) {
       value=internalToExternal(figure.getDrawing(),(URI)value);
     }
-    if (!factory.isDefaultValue(figure,key,value)) {
-      String name=factory.keyToName(figure,key);
+    if (!figureFactory.isDefaultValue(figure,key,value)) {
+      String name=figureFactory.keyToName(figure,key);
       if (Figure.class.isAssignableFrom(key.getValueType())) {
-        setAttribute(elem,name,factory.createId(value));
+        setAttribute(elem,name,idFactory.createId(value));
       }
  else {
-        setAttribute(elem,name,factory.valueToString(key,value));
+        setAttribute(elem,name,figureFactory.valueToString(key,value));
       }
     }
   }

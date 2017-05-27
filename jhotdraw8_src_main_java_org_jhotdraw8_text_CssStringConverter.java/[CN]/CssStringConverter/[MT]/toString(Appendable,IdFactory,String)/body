@@ -1,16 +1,12 @@
 {
-  out.append('"');
+  out.append(quoteChar);
   for (  char ch : value.toCharArray()) {
 switch (ch) {
-case '"':
-      out.append('\\');
-    out.append('"');
-  break;
 case ' ':
-out.append(ch);
-break;
+      out.append(ch);
+    break;
 case '\\':
-out.append('\\');
+  out.append('\\');
 out.append('\\');
 break;
 case '\n':
@@ -18,6 +14,11 @@ out.append('\\');
 out.append('\n');
 break;
 default :
+if (ch == quoteChar) {
+out.append('\\');
+out.append(quoteChar);
+}
+ else {
 if (Character.isISOControl(ch) || Character.isWhitespace(ch)) {
 out.append('\\');
 String hex=Integer.toHexString(ch);
@@ -29,8 +30,9 @@ out.append(hex);
  else {
 out.append(ch);
 }
+}
 break;
 }
 }
-out.append('"');
+out.append(quoteChar);
 }

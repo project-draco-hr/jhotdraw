@@ -1,4 +1,4 @@
 {
-  Figure f=(Figure)factory.getObject(id);
+  Figure f=(Figure)idFactory.getObject(id);
   return f;
 }

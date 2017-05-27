@@ -1,7 +1,7 @@
 {
-  for (  MapAccessor<?> ma : factory.figureAttributeKeys(figure)) {
+  for (  MapAccessor<?> ma : figureFactory.figureAttributeKeys(figure)) {
     @SuppressWarnings("unchecked") MapAccessor<Object> mao=(MapAccessor<Object>)ma;
-    Object defaultValue=factory.getDefaultValue(figure,ma);
+    Object defaultValue=figureFactory.getDefaultValue(figure,ma);
     figure.set(mao,defaultValue);
   }
   NamedNodeMap attrs=elem.getAttributes();
@@ -10,14 +10,14 @@
     if (attr.getNamespaceURI() != null && !attr.getNamespaceURI().equals(namespaceURI)) {
       continue;
     }
-    @SuppressWarnings("unchecked") MapAccessor<Object> key=(MapAccessor<Object>)factory.nameToKey(figure,attr.getLocalName());
-    if (key != null && factory.figureAttributeKeys(figure).contains(key)) {
+    @SuppressWarnings("unchecked") MapAccessor<Object> key=(MapAccessor<Object>)figureFactory.nameToKey(figure,attr.getLocalName());
+    if (key != null && figureFactory.figureAttributeKeys(figure).contains(key)) {
       Object value=null;
       if (Figure.class.isAssignableFrom(key.getValueType())) {
         value=getFigure(attr.getValue());
       }
  else {
-        value=factory.stringToValue(key,attr.getValue());
+        value=figureFactory.stringToValue(key,attr.getValue());
       }
       if (value instanceof URI) {
         value=externalToInternal(figure.getDrawing(),(URI)value);

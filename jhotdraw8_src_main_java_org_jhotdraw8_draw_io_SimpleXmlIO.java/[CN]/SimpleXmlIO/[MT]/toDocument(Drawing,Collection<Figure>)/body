@@ -11,19 +11,20 @@
   }
   try {
     Clipping external=new SimpleClipping();
-    factory.reset();
+    idFactory.reset();
     DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
     Document doc;
+    final String docElemName=figureFactory.figureToName(external);
     if (namespaceURI != null) {
       builderFactory.setNamespaceAware(true);
       DocumentBuilder builder=builderFactory.newDocumentBuilder();
       DOMImplementation domImpl=builder.getDOMImplementation();
-      doc=domImpl.createDocument(namespaceURI,namespaceQualifier == null ? factory.figureToName(external) : namespaceQualifier + ":" + factory.figureToName(internal),null);
+      doc=domImpl.createDocument(namespaceURI,namespaceQualifier == null ? docElemName : namespaceQualifier + ":" + docElemName,null);
     }
  else {
       DocumentBuilder builder=builderFactory.newDocumentBuilder();
       doc=builder.newDocument();
-      Element elem=doc.createElement(factory.figureToName(external));
+      Element elem=doc.createElement(docElemName);
       doc.appendChild(elem);
     }
     Element docElement=doc.getDocumentElement();

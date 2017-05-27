@@ -5,21 +5,21 @@
   if (content instanceof String) {
     Set<Figure> figures=new LinkedHashSet<>();
     Figure newDrawing=read((String)content,drawing);
-    factory.reset();
+    idFactory.reset();
     for (    Figure f : drawing.preorderIterable()) {
-      factory.createId(f);
+      idFactory.createId(f);
     }
     if (layer == null) {
       layer=(Layer)drawing.getLastChild();
       if (layer == null) {
         layer=new SimpleLayer();
-        layer.set(StyleableFigure.ID,factory.createId(layer));
+        layer.set(StyleableFigure.ID,idFactory.createId(layer));
         model.addChildTo(layer,drawing);
       }
     }
     for (    Figure f : new ArrayList<>(newDrawing.getChildren())) {
       newDrawing.remove(f);
-      String id=factory.createId(f);
+      String id=idFactory.createId(f);
       f.set(StyleableFigure.ID,id);
       if (f instanceof Layer) {
         model.addChildTo(f,drawing);

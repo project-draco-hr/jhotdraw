@@ -10,6 +10,6 @@
     throw new IOException("no converter for attribute type " + key.getFullValueType());
   }
   StringBuilder builder=new StringBuilder();
-  converter.toString(builder,this,value);
+  converter.toString(builder,idFactory,value);
   return builder.toString();
 }

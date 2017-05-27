@@ -10,7 +10,7 @@
     if (converter == null) {
       throw new IOException("no converter for key \"" + key + "\" with attribute type "+ key.getFullValueType());
     }
-    return converter.fromString(CharBuffer.wrap(string),this);
+    return converter.fromString(CharBuffer.wrap(string),idFactory);
   }
  catch (  ParseException ex) {
     throw new IOException(ex);

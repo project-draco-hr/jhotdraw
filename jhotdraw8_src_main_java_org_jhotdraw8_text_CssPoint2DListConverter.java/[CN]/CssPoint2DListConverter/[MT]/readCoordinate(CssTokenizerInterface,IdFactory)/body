@@ -4,13 +4,13 @@ switch (tt.nextToken()) {
 case CssTokenizerInterface.TT_DIMENSION:
 {
       double value=tt.currentNumericValue().doubleValue();
-      x=idFactory.convert(value,tt.currentStringValue(),"px");
+      x=unitConverter.convert(value,tt.currentStringValue(),"px");
       break;
     }
 case CssTokenizerInterface.TT_PERCENTAGE:
 {
     double value=tt.currentNumericValue().doubleValue() / 100.0;
-    x=idFactory.convert(value,"%","px");
+    x=unitConverter.convert(value,"%","px");
     break;
   }
 case CssTokenizerInterface.TT_NUMBER:
