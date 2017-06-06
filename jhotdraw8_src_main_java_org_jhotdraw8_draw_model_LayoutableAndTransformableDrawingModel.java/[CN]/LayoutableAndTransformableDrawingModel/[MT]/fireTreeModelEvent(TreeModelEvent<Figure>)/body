@@ -1,0 +1,4 @@
+{
+  super.fireTreeModelEvent(event);
+  handleTreeModelEvent(event);
+}

@@ -1,0 +1,3 @@
+{
+  return new TreeModelEvent<E>(source,EventType.NODE_REMOVED_FROM_TREE,node,null,root,-1);
+}

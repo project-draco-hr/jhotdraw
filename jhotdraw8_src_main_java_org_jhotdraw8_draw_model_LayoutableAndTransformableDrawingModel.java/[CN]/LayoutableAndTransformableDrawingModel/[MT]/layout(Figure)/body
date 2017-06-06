@@ -1,4 +1,4 @@
 {
   f.layoutNotify();
-  fire(DrawingModelEvent.layoutChanged(this,f));
+  fireDrawingModelEvent(DrawingModelEvent.layoutChanged(this,f));
 }

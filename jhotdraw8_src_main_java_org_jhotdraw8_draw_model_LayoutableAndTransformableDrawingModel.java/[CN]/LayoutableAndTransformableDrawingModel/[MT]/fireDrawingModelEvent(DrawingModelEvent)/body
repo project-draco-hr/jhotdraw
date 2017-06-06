@@ -1,0 +1,4 @@
+{
+  super.fireDrawingModelEvent(event);
+  handleDrawingModelEvent(event);
+}

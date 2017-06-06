@@ -5,11 +5,11 @@
   }
   drawingView=newValue;
   if (newValue != null) {
-    model.setDrawingModel(newValue.getModel());
+    model.setTreeModel(newValue.getModel());
     newValue.getSelectedFigures().addListener(viewSelectionHandler);
     treeView.getProperties().put(EditableComponent.EDITABLE_COMPONENT,drawingView);
   }
  else {
-    model.setDrawingModel(new SimpleDrawingModel());
+    model.setTreeModel(new SimpleDrawingModel());
   }
 }

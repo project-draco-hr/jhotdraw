@@ -1,9 +1,0 @@
-{
-  TreeItem<Figure> parent=items.get(parentFigure);
-  if (reversed) {
-    parent.getChildren().remove(parent.getChildren().size() - 1 - index);
-  }
- else {
-    parent.getChildren().remove(index);
-  }
-}

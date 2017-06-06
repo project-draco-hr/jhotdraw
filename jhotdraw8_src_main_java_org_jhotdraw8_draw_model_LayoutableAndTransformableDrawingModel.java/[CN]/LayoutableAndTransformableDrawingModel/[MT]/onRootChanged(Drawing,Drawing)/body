@@ -7,5 +7,5 @@
       newValue.getPropertyChangeListeners().add(propertyChangeHandler);
     }
   }
-  fire(DrawingModelEvent.rootChanged(this,newValue));
+  fireTreeModelEvent(TreeModelEvent.rootChanged(this,newValue));
 }

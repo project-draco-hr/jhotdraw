@@ -7,13 +7,13 @@
     }
   }
   if (event.getType() == FigurePropertyChangeEvent.EventType.CHANGED) {
-    fire(DrawingModelEvent.propertyValueChanged(this,event.getSource(),(Key<Object>)event.getKey(),event.getOldValue(),event.getNewValue()));
+    fireDrawingModelEvent(DrawingModelEvent.propertyValueChanged(this,event.getSource(),(Key<Object>)event.getKey(),event.getOldValue(),event.getNewValue()));
     Key<?> k=event.getKey();
     if (k instanceof FigureKey && ((FigureKey<?>)k).getDirtyMask().containsOneOf(DirtyBits.LAYOUT_SUBJECT)) {
-      fire(DrawingModelEvent.layoutSubjectChanged(this,event.getSource()));
+      fireDrawingModelEvent(DrawingModelEvent.layoutSubjectChanged(this,event.getSource()));
       layoutSubjectChange.addAll(event.getSource().getLayoutSubjects());
       for (      Figure f : new ArrayList<>(layoutSubjectChange)) {
-        fire(DrawingModelEvent.layoutSubjectChanged((DrawingModel)this,f));
+        fireDrawingModelEvent(DrawingModelEvent.layoutSubjectChanged((DrawingModel)this,f));
       }
       layoutSubjectChange.clear();
     }

@@ -1,0 +1,17 @@
+{
+  TreeModel<N> m=getTreeModel();
+  N drawing=m.getRoot();
+  root.setValue(drawing);
+  root.getChildren().clear();
+  items.clear();
+  items.put(drawing,root);
+  int childIndex=0;
+  if (drawing != null) {
+    for (int i=0, n=m.getChildCount(drawing); i < n; i++) {
+      N child=m.getChildAt(drawing,i);
+      handleNodeAddedToTree(child,drawing,childIndex);
+      handleNodeAdded(child,drawing,childIndex);
+      childIndex++;
+    }
+  }
+}

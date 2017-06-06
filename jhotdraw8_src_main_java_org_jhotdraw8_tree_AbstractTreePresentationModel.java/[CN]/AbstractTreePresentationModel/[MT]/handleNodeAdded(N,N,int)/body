@@ -1,0 +1,10 @@
+{
+  TreeItem<N> item=items.get(f);
+  TreeItem<N> newParent=items.get(parentE);
+  if (reversed) {
+    newParent.getChildren().add(newParent.getChildren().size() - index,item);
+  }
+ else {
+    newParent.getChildren().add(index,item);
+  }
+}

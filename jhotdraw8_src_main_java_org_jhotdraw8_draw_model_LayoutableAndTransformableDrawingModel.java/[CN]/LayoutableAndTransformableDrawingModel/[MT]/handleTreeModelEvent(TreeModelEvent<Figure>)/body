@@ -1,0 +1,33 @@
+{
+  if (isValidating) {
+    return;
+  }
+  final Figure figure=event.getNode();
+switch (event.getEventType()) {
+case NODE_ADDED_TO_PARENT:
+    markDirty(figure,DirtyBits.LAYOUT,DirtyBits.STYLE);
+  invalidate();
+break;
+case NODE_ADDED_TO_TREE:
+figure.addNotify((Drawing)event.getRoot());
+break;
+case NODE_REMOVED_FROM_TREE:
+figure.removeNotify((Drawing)event.getRoot());
+removeDirty(figure);
+break;
+case NODE_REMOVED_FROM_PARENT:
+markDirty(event.getParent(),DirtyBits.LAYOUT_OBSERVERS,DirtyBits.NODE);
+invalidate();
+break;
+case NODE_CHANGED:
+break;
+case ROOT_CHANGED:
+dirties.clear();
+valid=true;
+break;
+case SUBTREE_NODES_CHANGED:
+break;
+default :
+throw new UnsupportedOperationException(event.getEventType() + "not supported");
+}
+}

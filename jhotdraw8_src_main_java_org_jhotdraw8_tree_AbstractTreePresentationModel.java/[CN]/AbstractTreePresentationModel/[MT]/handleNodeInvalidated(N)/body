@@ -1,0 +1,6 @@
+{
+  TreeItem<N> node=items.get(f);
+  if (node != null) {
+    node.setValue(f);
+  }
+}

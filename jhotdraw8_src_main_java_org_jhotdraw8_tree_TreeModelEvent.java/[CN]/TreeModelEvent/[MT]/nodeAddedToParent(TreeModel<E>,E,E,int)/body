@@ -1,0 +1,3 @@
+{
+  return new TreeModelEvent<E>(source,EventType.NODE_ADDED_TO_PARENT,child,parent,null,index);
+}

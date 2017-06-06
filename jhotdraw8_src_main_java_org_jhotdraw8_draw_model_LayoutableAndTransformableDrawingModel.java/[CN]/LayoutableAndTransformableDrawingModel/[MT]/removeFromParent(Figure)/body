@@ -5,20 +5,20 @@
     int index=parent.getChildren().indexOf(child);
     if (index != -1) {
       parent.getChildren().remove(index);
-      fire(DrawingModelEvent.figureRemovedFromParent((DrawingModel)this,child,parent,index));
-      fire(DrawingModelEvent.nodeInvalidated((DrawingModel)this,parent));
+      fireTreeModelEvent(TreeModelEvent.nodeRemovedFromParent((DrawingModel)this,child,parent,index));
+      fireTreeModelEvent(TreeModelEvent.nodeInvalidated((DrawingModel)this,parent));
     }
   }
   Drawing newDrawing=child.getDrawing();
   if (oldDrawing != newDrawing) {
     if (oldDrawing != null) {
       for (      Figure f : child.preorderIterable()) {
-        fire(DrawingModelEvent.figureRemovedFromDrawing((DrawingModel)this,oldDrawing,f));
+        fireTreeModelEvent(TreeModelEvent.nodeRemovedFromTree((DrawingModel)this,oldDrawing,f));
       }
     }
     if (newDrawing != null) {
       for (      Figure f : child.preorderIterable()) {
-        fire(DrawingModelEvent.figureAddedToDrawing((DrawingModel)this,newDrawing,f));
+        fireTreeModelEvent(TreeModelEvent.nodeAddedToTree((DrawingModel)this,newDrawing,f));
       }
     }
   }

@@ -1,3 +1,0 @@
-{
-  return new DrawingModelEvent(source,EventType.FIGURE_REMOVED_FROM_PARENT,child,parent,null,index,null,null,null);
-}

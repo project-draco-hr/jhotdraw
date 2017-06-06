@@ -1,12 +1,14 @@
 {
   if (oldValue != null) {
     clearSelection();
-    oldValue.removeDrawingModelListener(modelHandler);
+    oldValue.removeTreeModelListener(treeModelHandler);
+    oldValue.removeDrawingModelListener(drawingModelHandler);
     oldValue.removeListener(modelInvalidationListener);
     drawing.setValue(null);
   }
   if (newValue != null) {
-    newValue.addDrawingModelListener(modelHandler);
+    newValue.addDrawingModelListener(drawingModelHandler);
+    newValue.addTreeModelListener(treeModelHandler);
     newValue.addListener(modelInvalidationListener);
     handleDrawingChanged();
     updateLayout();

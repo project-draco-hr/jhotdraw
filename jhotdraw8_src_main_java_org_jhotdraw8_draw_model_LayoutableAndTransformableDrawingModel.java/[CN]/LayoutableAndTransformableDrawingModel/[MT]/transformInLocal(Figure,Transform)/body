@@ -1,4 +1,4 @@
 {
   f.transformInLocal(transform);
-  fire(DrawingModelEvent.transformChanged(this,f));
+  fireDrawingModelEvent(DrawingModelEvent.transformChanged(this,f));
 }

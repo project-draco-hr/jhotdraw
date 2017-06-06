@@ -3,7 +3,7 @@
   clearSelection();
   drawingPane.getChildren().clear();
   activeLayer.set(null);
-  Drawing d=getModel().getRoot();
+  Drawing d=getModel().getDrawing();
   drawing.set(d);
   if (d != null) {
     if (drawingImageView != null) {

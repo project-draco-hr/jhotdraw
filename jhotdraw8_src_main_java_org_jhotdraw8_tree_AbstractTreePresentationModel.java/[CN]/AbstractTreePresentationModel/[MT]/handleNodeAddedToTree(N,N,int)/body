@@ -1,0 +1,13 @@
+{
+  TreeModel<N> m=getTreeModel();
+  TreeItem<N> item=new TreeItem<>(f);
+  item.setExpanded(false);
+  items.put(f,item);
+  int childIndex=0;
+  for (int i=0, n=m.getChildCount(f); i < n; i++) {
+    N child=m.getChildAt(f,i);
+    handleNodeAddedToTree(child,f,childIndex);
+    handleNodeAdded(child,f,childIndex);
+    childIndex++;
+  }
+}

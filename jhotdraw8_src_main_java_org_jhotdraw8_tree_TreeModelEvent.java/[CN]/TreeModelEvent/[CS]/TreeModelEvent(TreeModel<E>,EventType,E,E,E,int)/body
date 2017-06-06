@@ -1,0 +1,8 @@
+{
+  super(source);
+  this.node=node;
+  this.parent=parent;
+  this.root=root;
+  this.index=index;
+  this.eventType=eventType;
+}

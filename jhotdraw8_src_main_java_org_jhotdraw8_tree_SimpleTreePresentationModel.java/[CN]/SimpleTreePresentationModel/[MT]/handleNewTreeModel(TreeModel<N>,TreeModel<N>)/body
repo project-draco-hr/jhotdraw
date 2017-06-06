@@ -1,0 +1,7 @@
+{
+  if (oldValue != null) {
+    oldValue.removeTreeModelListener(modelHandler);
+  }
+  newValue.addTreeModelListener(modelHandler);
+  handleRootChanged();
+}

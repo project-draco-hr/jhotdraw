@@ -6,12 +6,12 @@
     }
   }
 {
-    fire(DrawingModelEvent.propertyValueChanged(this,figure,(Key<Object>)key,oldValue,newValue));
+    fireDrawingModelEvent(DrawingModelEvent.propertyValueChanged(this,figure,(Key<Object>)key,oldValue,newValue));
     if (key instanceof FigureKey && ((FigureKey<?>)key).getDirtyMask().containsOneOf(DirtyBits.LAYOUT_SUBJECT)) {
-      fire(DrawingModelEvent.layoutSubjectChanged(this,figure));
+      fireDrawingModelEvent(DrawingModelEvent.layoutSubjectChanged(this,figure));
       layoutSubjectChange.addAll(figure.getLayoutSubjects());
       for (      Figure f : new ArrayList<>(layoutSubjectChange)) {
-        fire(DrawingModelEvent.layoutSubjectChanged((DrawingModel)this,f));
+        fireDrawingModelEvent(DrawingModelEvent.layoutSubjectChanged((DrawingModel)this,f));
       }
       layoutSubjectChange.clear();
     }
