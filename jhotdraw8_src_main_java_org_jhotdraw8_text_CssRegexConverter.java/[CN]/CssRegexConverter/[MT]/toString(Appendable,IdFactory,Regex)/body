@@ -13,10 +13,12 @@
     out.append("none");
     return;
   }
+  out.append("replace(");
   stringConverter.toString(out,find);
   String replace=value.getReplace();
   if (replace != null) {
-    out.append(' ');
+    out.append(", ");
     stringConverter.toString(out,replace);
   }
+  out.append(')');
 }

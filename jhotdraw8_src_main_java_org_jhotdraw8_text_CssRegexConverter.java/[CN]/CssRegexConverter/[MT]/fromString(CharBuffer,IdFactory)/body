@@ -4,18 +4,38 @@
   String find=null;
   String replace=null;
 switch (tt.nextToken()) {
-case CssTokenizer.TT_STRING:
-    find=tt.currentStringValue();
+case CssTokenizer.TT_FUNCTION:
+    if ("replace".equals(tt.currentStringValue())) {
+    }
+ else {
+      throw new ParseException("\"replace(\" or \"none\" expected",tt.getStartPosition());
+    }
   break;
 case CssTokenizer.TT_IDENT:
 if ("none".equals(tt.currentStringValue())) {
+  tt.skipWhitespace();
+  in.position(tt.getStartPosition());
+  return new Regex();
 }
  else {
-  throw new ParseException("find string or none expected",tt.getStartPosition());
+  throw new ParseException("\"replace(\" or \"none\" expected",tt.getStartPosition());
 }
+default :
+throw new ParseException("find string expected",tt.getStartPosition());
+}
+switch (tt.nextToken()) {
+case CssTokenizer.TT_STRING:
+find=tt.currentStringValue();
 break;
 default :
 throw new ParseException("find string expected",tt.getStartPosition());
+}
+switch (tt.nextToken()) {
+case ',':
+break;
+default :
+tt.pushBack();
+break;
 }
 switch (tt.nextToken()) {
 case CssTokenizer.TT_STRING:
@@ -25,6 +45,12 @@ case CssTokenizer.TT_EOF:
 break;
 default :
 throw new ParseException("replace string expected",tt.getStartPosition());
+}
+switch (tt.nextToken()) {
+case ')':
+break;
+default :
+throw new ParseException("closing bracket \")\" expected",tt.getStartPosition());
 }
 tt.skipWhitespace();
 in.position(tt.getStartPosition());
