@@ -61,7 +61,7 @@
   addConverterForType(Rectangle2D.class,new XmlRectangle2DConverter());
   addConverterForType(BlendMode.class,new XmlEnumConverter<>(BlendMode.class));
   addConverterForType(Effect.class,new XmlEffectConverter());
-  addConverterForType(Figure.class,new XmlFigureReferenceConverter());
+  addConverterForType(Figure.class,new XmlObjectReferenceConverter());
   addConverterForType(CssSize.class,new CssSizeConverter());
   addConverterForType(CssSizeInsets.class,new CssSizeInsetsConverter());
   addConverterForType(CssSize2D.class,new CssSize2DConverter());
