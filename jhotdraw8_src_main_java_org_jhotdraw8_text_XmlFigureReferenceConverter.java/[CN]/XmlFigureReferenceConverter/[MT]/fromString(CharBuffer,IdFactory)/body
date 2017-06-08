@@ -1,4 +1,0 @@
-{
-  String str=buf.toString();
-  return (Figure)idFactory.getObject(str);
-}
