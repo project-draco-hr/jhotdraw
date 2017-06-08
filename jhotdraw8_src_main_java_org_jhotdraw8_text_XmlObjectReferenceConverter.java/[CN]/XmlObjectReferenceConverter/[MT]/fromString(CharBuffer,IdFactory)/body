@@ -1,4 +1,9 @@
 {
   String str=buf.toString();
-  return (T)idFactory.getObject(str);
+  if ("none".equals(str)) {
+    return null;
+  }
+  Object obj=idFactory.getObject(str);
+  @SuppressWarnings("unchecked") T value=clazz.isInstance(obj) ? (T)obj : null;
+  return value;
 }
