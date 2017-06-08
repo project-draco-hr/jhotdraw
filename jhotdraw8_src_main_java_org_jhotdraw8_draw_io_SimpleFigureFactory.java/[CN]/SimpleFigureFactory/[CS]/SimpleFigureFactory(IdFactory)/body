@@ -1,0 +1,6 @@
+{
+  if (idFactory == null) {
+    throw new IllegalArgumentException("idFactory is null");
+  }
+  this.idFactory=idFactory;
+}
