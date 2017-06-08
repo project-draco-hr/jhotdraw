@@ -1,4 +1,7 @@
 {
+  if (str == null) {
+    return str;
+  }
   if (find == null) {
     return replace == null ? str : replace;
   }
