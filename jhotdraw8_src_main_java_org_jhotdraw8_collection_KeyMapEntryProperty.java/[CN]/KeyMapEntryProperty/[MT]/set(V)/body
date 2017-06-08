@@ -3,5 +3,5 @@
     throw new IllegalArgumentException("value is not assignable " + value);
   }
   accessor.put(map,value);
-  super.setValue(value);
+  super.set(value);
 }
