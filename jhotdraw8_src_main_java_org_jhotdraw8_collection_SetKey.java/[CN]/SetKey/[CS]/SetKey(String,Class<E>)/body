@@ -1,0 +1,3 @@
+{
+  super(key,ImmutableObservableSet.class,new Class<?>[]{elemClass},ImmutableObservableSet.emptySet());
+}

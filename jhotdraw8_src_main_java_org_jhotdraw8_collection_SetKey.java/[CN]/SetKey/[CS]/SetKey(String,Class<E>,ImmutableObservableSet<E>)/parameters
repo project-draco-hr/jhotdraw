@@ -1,0 +1,3 @@
+String key
+Class<E> elemClass
+ImmutableObservableSet<E> defaultValue
