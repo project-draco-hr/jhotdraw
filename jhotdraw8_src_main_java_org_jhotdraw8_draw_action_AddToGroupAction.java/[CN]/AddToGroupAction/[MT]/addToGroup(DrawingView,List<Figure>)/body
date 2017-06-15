@@ -1,15 +1,21 @@
 {
   if (figures.size() < 2) {
-    new Alert(Alert.AlertType.INFORMATION,"You must select the figures and a group to which the figures should be added").showAndWait();
+    Alert alert=new Alert(Alert.AlertType.INFORMATION,"You must select the figures and a group to which the figures should be added");
+    alert.getDialogPane().setMaxWidth(640.0);
+    alert.showAndWait();
     return;
   }
   Figure lead=figures.get(figures.size() - 1);
   if (!(lead instanceof Grouping) && !lead.isAllowsChildren() || !lead.isDecomposable()) {
-    new Alert(Alert.AlertType.INFORMATION,"The last figure in the selection must be a group.").showAndWait();
+    final Alert alert=new Alert(Alert.AlertType.INFORMATION,"The last figure in the selection must be a group.");
+    alert.getDialogPane().setMaxWidth(640.0);
+    alert.showAndWait();
     return;
   }
   if (!lead.isEditable()) {
-    new Alert(Alert.AlertType.INFORMATION,"The last figure in the selection is not editable.").showAndWait();
+    final Alert alert=new Alert(Alert.AlertType.INFORMATION,"The last figure in the selection is not editable.");
+    alert.getDialogPane().setMaxWidth(640.0);
+    alert.showAndWait();
     return;
   }
   List<Figure> reparentableFigures=new ArrayList<>();
@@ -20,10 +26,14 @@
     }
  else {
       if ((f instanceof StyleableFigure) && f.get(StyleableFigure.ID) != null) {
-        new Alert(Alert.AlertType.INFORMATION,"The figure with id \"" + f.get(StyleableFigure.ID) + "\" can not be added to the group.").showAndWait();
+        final Alert alert=new Alert(Alert.AlertType.INFORMATION,"The figure with id \"" + f.get(StyleableFigure.ID) + "\" can not be added to the group.");
+        alert.getDialogPane().setMaxWidth(640.0);
+        alert.showAndWait();
       }
  else {
-        new Alert(Alert.AlertType.INFORMATION,"One of the selected figures can not be added to the group.").showAndWait();
+        final Alert alert=new Alert(Alert.AlertType.INFORMATION,"One of the selected figures can not be added to the group.");
+        alert.getDialogPane().setMaxWidth(640.0);
+        alert.showAndWait();
       }
       return;
     }

@@ -11,6 +11,7 @@
           DocumentProject vi=(DocumentProject)p;
           if (vi != v && v.getURI().equals(uri)) {
             Alert alert=new Alert(Alert.AlertType.INFORMATION,labels.getString("application.exit.canNotSaveToOpenFile"));
+            alert.getDialogPane().setMaxWidth(640.0);
             alert.showAndWait();
             continue Outer;
           }

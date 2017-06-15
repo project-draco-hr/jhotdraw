@@ -6,6 +6,7 @@
     URI unsavedURI=unsavedView.getURI();
     ButtonType[] options={new ButtonType(labels.getString("application.exit.saveOption.text"),ButtonData.YES),new ButtonType(labels.getString("application.exit.cancelOption.text"),ButtonData.CANCEL_CLOSE),new ButtonType(labels.getString("application.exit.dontSaveOption.text"),ButtonData.NO)};
     Alert alert=new Alert(Alert.AlertType.CONFIRMATION,labels.getString("application.exit.doYouWantToSave.details"),options);
+    alert.getDialogPane().setMaxWidth(640.0);
     alert.setHeaderText(labels.getFormatted("application.exit.doYouWantToSave.message",unsavedView.getTitle(),unsavedView.getDisambiguation()));
     unsavedView.getNode().getScene().getWindow().requestFocus();
     alert.initOwner(unsavedView.getNode().getScene().getWindow());
