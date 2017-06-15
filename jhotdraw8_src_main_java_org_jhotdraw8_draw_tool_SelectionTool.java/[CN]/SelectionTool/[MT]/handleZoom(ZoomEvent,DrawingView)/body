@@ -1,0 +1,3 @@
+{
+  dv.setZoomFactor(zoomFactor * event.getTotalZoomFactor());
+}
