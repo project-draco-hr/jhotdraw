@@ -20,6 +20,10 @@ bounds=Geom.grow(bounds,grow,grow);
 }
 Intersection i=Intersection.intersectLineEllipse(s,e,bounds);
 double maxT=0;
-for (double t : i.getTs()) if (t > maxT) maxT=t;
+for (double t : i.getTs()) {
+if (t > maxT) {
+maxT=t;
+}
+}
 return i.isEmpty() ? null : maxT;
 }
