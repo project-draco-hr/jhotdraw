@@ -1,0 +1,6 @@
+{
+  super(name,rsrc);
+  this.handleType=handleType;
+  this.figureFactory=figureFactory;
+  this.layerFactory=layerFactory;
+}

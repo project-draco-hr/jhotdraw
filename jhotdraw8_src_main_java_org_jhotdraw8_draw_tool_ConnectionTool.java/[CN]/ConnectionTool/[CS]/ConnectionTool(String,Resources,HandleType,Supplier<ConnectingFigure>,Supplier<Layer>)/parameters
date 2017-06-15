@@ -1,0 +1,5 @@
+String name
+Resources rsrc
+HandleType handleType
+Supplier<ConnectingFigure> figureFactory
+Supplier<Layer> layerFactory
