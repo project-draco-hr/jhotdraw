@@ -4,5 +4,5 @@
   }
   V temp=(V)value;
   map.put(key,temp);
-  super.setValue(value);
+  super.set(value);
 }
