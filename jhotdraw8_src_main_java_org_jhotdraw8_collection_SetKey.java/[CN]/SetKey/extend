@@ -1,1 +1,1 @@
-SimpleKey<ImmutableObservableSet<E>>
+ObjectKey<ImmutableObservableSet<E>>
