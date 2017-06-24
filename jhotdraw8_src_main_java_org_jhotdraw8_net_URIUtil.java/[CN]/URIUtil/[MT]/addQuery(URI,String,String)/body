@@ -1,0 +1,12 @@
+{
+  if (key == null || value == null) {
+    return uri;
+  }
+  if (key.indexOf('=') != -1) {
+    throw new IllegalArgumentException("key:" + key);
+  }
+  if (value.indexOf('=') != -1) {
+    throw new IllegalArgumentException("value:" + value);
+  }
+  return addQuery(uri,key + '=' + value);
+}
