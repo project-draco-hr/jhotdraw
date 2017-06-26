@@ -1,4 +1,5 @@
 {
+  if (f == null)   return null;
   Node n=figureToNodeMap.get(f);
   if (n == null) {
     n=f.createNode(this);
