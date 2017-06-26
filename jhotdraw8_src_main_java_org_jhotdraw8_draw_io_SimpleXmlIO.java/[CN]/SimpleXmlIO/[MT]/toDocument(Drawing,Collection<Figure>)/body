@@ -9,33 +9,13 @@
       ordered.add(f);
     }
   }
-  try {
-    Clipping external=new SimpleClipping();
-    idFactory.reset();
-    DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
-    Document doc;
-    final String docElemName=figureFactory.figureToName(external);
-    if (namespaceURI != null) {
-      builderFactory.setNamespaceAware(true);
-      DocumentBuilder builder=builderFactory.newDocumentBuilder();
-      DOMImplementation domImpl=builder.getDOMImplementation();
-      doc=domImpl.createDocument(namespaceURI,namespaceQualifier == null ? docElemName : namespaceQualifier + ":" + docElemName,null);
-    }
- else {
-      DocumentBuilder builder=builderFactory.newDocumentBuilder();
-      doc=builder.newDocument();
-      Element elem=doc.createElement(docElemName);
-      doc.appendChild(elem);
-    }
-    Element docElement=doc.getDocumentElement();
-    String linebreak="\n";
-    for (    Figure child : ordered) {
-      writeNodeRecursively(doc,docElement,child,linebreak);
-    }
-    docElement.appendChild(doc.createTextNode(linebreak));
-    return doc;
+  Clipping external=new SimpleClipping();
+  idFactory.reset();
+  final String docElemName=figureFactory.figureToName(external);
+  Document doc=createDocument(namespaceURI,namespaceQualifier,docElemName);
+  Element docElement=doc.getDocumentElement();
+  for (  Figure child : ordered) {
+    writeNodeRecursively(doc,docElement,child);
   }
- catch (  ParserConfigurationException ex) {
-    throw new IOException(ex);
-  }
+  return doc;
 }

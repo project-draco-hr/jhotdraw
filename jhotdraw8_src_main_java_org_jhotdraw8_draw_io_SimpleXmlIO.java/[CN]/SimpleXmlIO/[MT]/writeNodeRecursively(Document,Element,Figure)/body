@@ -8,26 +8,17 @@
     writeElementAttributes(elem,figure);
     writeElementNodeList(doc,elem,figure);
     for (    String string : figure.get(XML_HEAD_COMMENT_KEY)) {
-      parent.appendChild(doc.createTextNode(linebreak));
       parent.appendChild(doc.createComment(string));
     }
     for (    Figure child : figure.getChildren()) {
-      final String lbi=linebreak + indent;
       if (figureFactory.figureToName(child) != null) {
-        writeNodeRecursively(doc,elem,child,lbi);
+        writeNodeRecursively(doc,elem,child);
       }
     }
     boolean hasNoElementNodes=figureFactory.figureNodeListKeys(figure).isEmpty();
     for (    String string : figure.get(XML_BODY_COMMENT_KEY)) {
-      if (hasNoElementNodes) {
-        elem.appendChild(doc.createTextNode(linebreak));
-      }
       elem.appendChild(doc.createComment(string));
     }
-    if (hasNoElementNodes && elem.getChildNodes().getLength() != 0) {
-      elem.appendChild(doc.createTextNode(linebreak));
-    }
-    parent.appendChild(doc.createTextNode(linebreak));
     parent.appendChild(elem);
   }
  catch (  IOException e) {

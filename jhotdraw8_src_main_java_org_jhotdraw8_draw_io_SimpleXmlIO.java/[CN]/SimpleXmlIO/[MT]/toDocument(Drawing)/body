@@ -1,42 +1,23 @@
 {
-  try {
-    Drawing external=figureFactory.toExternalDrawing(internal);
-    idFactory.reset();
-    DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
-    Document doc;
-    if (namespaceURI != null) {
-      builderFactory.setNamespaceAware(true);
-      DocumentBuilder builder=builderFactory.newDocumentBuilder();
-      DOMImplementation domImpl=builder.getDOMImplementation();
-      doc=domImpl.createDocument(namespaceURI,namespaceQualifier == null ? figureFactory.figureToName(external) : namespaceQualifier + ":" + figureFactory.figureToName(internal),null);
-    }
- else {
-      DocumentBuilder builder=builderFactory.newDocumentBuilder();
-      doc=builder.newDocument();
-      Element elem=doc.createElement(figureFactory.figureToName(external));
-      doc.appendChild(elem);
-    }
-    Element docElement=doc.getDocumentElement();
-    writeProcessingInstructions(doc,external);
-    for (    String string : external.get(XML_HEAD_COMMENT_KEY)) {
-      doc.insertBefore(doc.createComment(string),docElement);
-    }
-    writeElementAttributes(docElement,external);
-    String linebreak="\n";
-    for (    Figure child : external.getChildren()) {
-      writeNodeRecursively(doc,docElement,child,linebreak);
-    }
-    for (    String string : external.get(XML_BODY_COMMENT_KEY)) {
-      docElement.appendChild(doc.createTextNode(linebreak));
-      docElement.appendChild(doc.createComment(string));
-    }
-    docElement.appendChild(doc.createTextNode(linebreak));
-    for (    String string : external.get(XML_EPILOG_COMMENT_KEY)) {
-      doc.appendChild(doc.createComment(string));
-    }
-    return doc;
+  Drawing external=figureFactory.toExternalDrawing(internal);
+  idFactory.reset();
+  final String docElemName=figureFactory.figureToName(external);
+  Document doc=createDocument(namespaceURI,namespaceQualifier,docElemName);
+  Element docElement=doc.getDocumentElement();
+  writeProcessingInstructions(doc,external);
+  for (  String string : external.get(XML_HEAD_COMMENT_KEY)) {
+    doc.insertBefore(doc.createComment(string),docElement);
   }
- catch (  ParserConfigurationException ex) {
-    throw new IOException(ex);
+  writeElementAttributes(docElement,external);
+  String linebreak="\n";
+  for (  Figure child : external.getChildren()) {
+    writeNodeRecursively(doc,docElement,child);
   }
+  for (  String string : external.get(XML_BODY_COMMENT_KEY)) {
+    docElement.appendChild(doc.createComment(string));
+  }
+  for (  String string : external.get(XML_EPILOG_COMMENT_KEY)) {
+    doc.appendChild(doc.createComment(string));
+  }
+  return doc;
 }

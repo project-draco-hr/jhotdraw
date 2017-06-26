@@ -1,0 +1,4 @@
+{
+  Figure probe=readNode(elem);
+  return probe instanceof Clipping;
+}
