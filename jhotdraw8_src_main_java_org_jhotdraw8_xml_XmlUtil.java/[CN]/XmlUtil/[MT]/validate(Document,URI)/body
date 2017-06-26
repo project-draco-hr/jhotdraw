@@ -1,0 +1,3 @@
+{
+  XmlUtil.validate(doc,schemaUri.toURL());
+}

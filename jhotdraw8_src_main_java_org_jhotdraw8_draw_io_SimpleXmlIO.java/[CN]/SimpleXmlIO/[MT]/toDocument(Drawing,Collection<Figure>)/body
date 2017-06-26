@@ -12,7 +12,7 @@
   Clipping external=new SimpleClipping();
   idFactory.reset();
   final String docElemName=figureFactory.figureToName(external);
-  Document doc=createDocument(namespaceURI,namespaceQualifier,docElemName);
+  Document doc=XmlUtil.createDocument(namespaceURI,namespaceQualifier,docElemName);
   Element docElement=doc.getDocumentElement();
   for (  Figure child : ordered) {
     writeNodeRecursively(doc,docElement,child);

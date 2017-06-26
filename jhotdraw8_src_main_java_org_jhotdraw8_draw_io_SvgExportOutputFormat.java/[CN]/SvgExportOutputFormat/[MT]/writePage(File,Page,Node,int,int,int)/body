@@ -6,5 +6,5 @@
   Document doc=exporter.toDocument(node);
   writePageElementAttributes(doc.getDocumentElement(),page,internalPageNumber);
   node.getTransforms().clear();
-  write(file,doc);
+  XmlUtil.write(file,doc);
 }

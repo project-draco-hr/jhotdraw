@@ -8,5 +8,5 @@
   Document doc=exporter.toDocument(node);
   writeSliceElementAttributes(doc.getDocumentElement(),slice);
   node.getTransforms().clear();
-  write(file,doc);
+  XmlUtil.write(file,doc);
 }

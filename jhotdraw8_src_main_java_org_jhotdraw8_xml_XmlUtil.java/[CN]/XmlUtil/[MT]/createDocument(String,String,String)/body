@@ -1,0 +1,22 @@
+{
+  try {
+    Document doc;
+    DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
+    if (nsURI != null) {
+      builderFactory.setNamespaceAware(true);
+      DocumentBuilder builder=builderFactory.newDocumentBuilder();
+      DOMImplementation domImpl=builder.getDOMImplementation();
+      doc=domImpl.createDocument(nsURI,nsQualifier == null ? docElemName : nsQualifier + ":" + docElemName,null);
+    }
+ else {
+      DocumentBuilder builder=builderFactory.newDocumentBuilder();
+      doc=builder.newDocument();
+      Element elem=doc.createElement(docElemName);
+      doc.appendChild(elem);
+    }
+    return doc;
+  }
+ catch (  ParserConfigurationException ex) {
+    throw new IOException(ex);
+  }
+}

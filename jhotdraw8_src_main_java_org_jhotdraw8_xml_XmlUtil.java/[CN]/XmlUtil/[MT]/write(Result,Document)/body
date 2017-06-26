@@ -1,0 +1,14 @@
+{
+  try {
+    final TransformerFactory factory=TransformerFactory.newInstance();
+    Transformer t=factory.newTransformer();
+    t.setOutputProperty(OutputKeys.INDENT,"yes");
+    t.setOutputProperty(OutputKeys.ENCODING,"UTF-8");
+    t.setOutputProperty("{http://xml.apache.org/xslt}indent-amount","2");
+    DOMSource source=new DOMSource(doc);
+    t.transform(source,result);
+  }
+ catch (  TransformerException ex) {
+    throw new IOException(ex);
+  }
+}
