@@ -1,7 +1,7 @@
 {
   if (listenOnDrawing) {
     if (oldValue != null) {
-      newValue.getPropertyChangeListeners().add(propertyChangeHandler);
+      oldValue.getPropertyChangeListeners().remove(propertyChangeHandler);
     }
     if (newValue != null) {
       newValue.getPropertyChangeListeners().add(propertyChangeHandler);
