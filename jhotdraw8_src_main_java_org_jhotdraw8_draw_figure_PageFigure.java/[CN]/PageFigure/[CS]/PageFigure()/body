@@ -1,0 +1,3 @@
+{
+  set(FILL,new CssColor(Color.TRANSPARENT));
+}
