@@ -5,6 +5,8 @@
   Path pageBoundsNode=(Path)groupNode.getProperties().get(PAGE_BOUNDS_PROPERTY);
   Path pageInsetsNode=(Path)groupNode.getProperties().get(PAGE_INSETS_PROPERTY);
   javafx.scene.Group currentPageNode=(javafx.scene.Group)groupNode.getProperties().get(CURRENT_PAGE_PROPERTY);
+  applyFillableFigureProperties(pageBoundsNode);
+  applyStrokeableFigureProperties(pageBoundsNode);
   if (ctx.get(RenderContext.RENDERING_INTENT) == RenderingIntent.EDITOR) {
     applyHideableFigureProperties(node);
     contentBoundsNode.setVisible(true);

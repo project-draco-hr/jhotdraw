@@ -1,3 +1,4 @@
 {
   set(FILL,new CssColor(Color.TRANSPARENT));
+  set(STROKE_TYPE,StrokeType.CENTERED);
 }

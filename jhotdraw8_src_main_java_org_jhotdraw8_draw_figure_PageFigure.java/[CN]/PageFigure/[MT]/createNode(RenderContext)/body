@@ -5,9 +5,6 @@
   contentBoundsNode.setStroke(Color.LIGHTGRAY);
   contentBoundsNode.setStrokeType(StrokeType.INSIDE);
   Path pageBoundsNode=new Path();
-  pageBoundsNode.setFill(Paintable.getPaint(getStyled(FILL)));
-  pageBoundsNode.setStroke(Paintable.getPaint(getStyled(STROKE)));
-  pageBoundsNode.setStrokeType(StrokeType.CENTERED);
   Path insetsBoundsNode=new Path();
   insetsBoundsNode.setFill(null);
   insetsBoundsNode.setStroke(Color.LIGHTGRAY);
