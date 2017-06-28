@@ -2,14 +2,19 @@
   HashMap<String,StyleableMapAccessor<Object>> metaMap=getMetaMap(elem);
   StyleableMapAccessor<Object> k=metaMap.get(name);
   if (k != null) {
-    @SuppressWarnings("unchecked") Converter<Object> converter=k.getConverter();
-    Object convertedValue;
-    try {
-      convertedValue=converter.fromString(value);
-      elem.setStyled(origin,k,convertedValue);
+    if (INITIAL_KEYWORD.equals(value)) {
+      elem.remove(origin,k);
     }
- catch (    ParseException|IOException ex) {
-      ex.printStackTrace();
+ else {
+      @SuppressWarnings("unchecked") Converter<Object> converter=k.getConverter();
+      Object convertedValue;
+      try {
+        convertedValue=converter.fromString(value);
+        elem.setStyled(origin,k,convertedValue);
+      }
+ catch (      ParseException|IOException ex) {
+        ex.printStackTrace();
+      }
     }
   }
 }

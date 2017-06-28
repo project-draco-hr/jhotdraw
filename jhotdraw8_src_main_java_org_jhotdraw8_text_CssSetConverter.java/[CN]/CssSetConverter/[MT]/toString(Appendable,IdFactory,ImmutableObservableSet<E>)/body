@@ -1,0 +1,8 @@
+{
+  StringBuilder buf=new StringBuilder();
+  for (  E e : value) {
+    if (buf.length() != 0)     buf.append(", ");
+    buf.append(e.toString());
+  }
+  out.append(buf.toString());
+}

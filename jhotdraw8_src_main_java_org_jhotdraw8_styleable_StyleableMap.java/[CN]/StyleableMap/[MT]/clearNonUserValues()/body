@@ -5,6 +5,5 @@
     StyledValue sv=e.getValue();
     sv.removeValue(StyleOrigin.INLINE);
     sv.removeValue(StyleOrigin.AUTHOR);
-    sv.removeValue(StyleOrigin.USER_AGENT);
   }
 }

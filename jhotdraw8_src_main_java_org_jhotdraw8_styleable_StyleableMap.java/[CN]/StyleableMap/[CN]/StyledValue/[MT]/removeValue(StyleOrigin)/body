@@ -4,7 +4,7 @@
     @SuppressWarnings("unchecked") T oldValue=(T)setValue(i,NO_VALUE);
     if (this.origin == origin.ordinal()) {
       this.origin=-1;
-      for (int j=origin.ordinal() - 1; j >= 0; j--) {
+      for (int j=origin.ordinal(); j >= 0; j--) {
         if (getValue(j) != NO_VALUE) {
           this.origin=j;
           break;
