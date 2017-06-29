@@ -3,5 +3,8 @@
   if (k == null) {
     return null;
   }
+  if (!element.containsKey(StyleOrigin.USER,k)) {
+    return INITIAL_VALUE_KEYWORD;
+  }
   return k.getConverter().toString(element.get(k));
 }

@@ -1,0 +1,4 @@
+{
+  Map<Key<?>,Object> map=getStyleableMap().getMap(origin);
+  return key.get(map);
+}
