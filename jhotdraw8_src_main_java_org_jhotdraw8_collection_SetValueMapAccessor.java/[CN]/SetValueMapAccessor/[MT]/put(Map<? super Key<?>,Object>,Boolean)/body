@@ -1,0 +1,12 @@
+{
+  ImmutableObservableSet<E> set=setAccessor.get(a);
+  boolean oldValue=set.contains(this.value);
+  if (value != null && value.booleanValue()) {
+    set=ImmutableObservableSet.add(set,this.value);
+  }
+ else {
+    set=ImmutableObservableSet.remove(set,this.value);
+  }
+  setAccessor.put(a,set);
+  return oldValue;
+}

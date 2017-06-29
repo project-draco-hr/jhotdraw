@@ -1,0 +1,8 @@
+{
+  if (value == null)   throw new IllegalArgumentException("value is null");
+  this.setAccessor=setAccessor;
+  this.value=value;
+  this.defaultValue=defaultValue;
+  this.name=name;
+  this.isTransient=isTransient;
+}

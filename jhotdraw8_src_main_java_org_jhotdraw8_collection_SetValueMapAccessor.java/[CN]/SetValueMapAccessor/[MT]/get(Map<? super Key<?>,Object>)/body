@@ -1,0 +1,3 @@
+{
+  return setAccessor.get(a).contains(value);
+}
