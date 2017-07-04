@@ -1,5 +1,5 @@
 {
-  HashSet<Figure> ctf=new HashSet<>();
+  Set<Figure> ctf=new HashSet<>();
   if (get(START_TARGET) != null) {
     ctf.add(get(START_TARGET));
   }
