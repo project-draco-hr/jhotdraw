@@ -4,6 +4,7 @@
   out.position(0);
   out.limit(count);
   SVGPath p=new SVGPath();
-  p.setContent(out.toString());
+  final String string=out.toString();
+  p.setContent("none".equals(string) ? null : string);
   return p;
 }

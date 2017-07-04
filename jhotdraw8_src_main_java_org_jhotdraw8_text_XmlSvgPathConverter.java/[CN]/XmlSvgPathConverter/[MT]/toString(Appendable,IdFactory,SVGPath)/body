@@ -1,3 +1,4 @@
 {
-  out.append(value.getContent());
+  final String content=value.getContent();
+  out.append(content == null ? "none" : content);
 }

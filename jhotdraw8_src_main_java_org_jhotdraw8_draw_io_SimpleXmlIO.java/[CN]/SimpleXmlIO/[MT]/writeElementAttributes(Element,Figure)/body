@@ -10,7 +10,7 @@
     if (value instanceof URI) {
       value=internalToExternal(figure.getDrawing(),(URI)value);
     }
-    if (!figureFactory.isDefaultValue(figure,key,value)) {
+    if (figure.containsKey(StyleOrigin.USER,key) && !figureFactory.isDefaultValue(figure,key,value)) {
       String name=figureFactory.keyToName(figure,key);
       if (Figure.class.isAssignableFrom(key.getValueType())) {
         setAttribute(elem,name,idFactory.createId(value));
