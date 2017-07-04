@@ -5,7 +5,7 @@
   int numberOfPages=0;
   for (  Page page : pages) {
     if (page.getId() != null) {
-      idFactory.putId(page,page.getId());
+      idFactory.putId(page.getId(),page);
     }
     numberOfPages+=page.getNumberOfSubPages();
   }

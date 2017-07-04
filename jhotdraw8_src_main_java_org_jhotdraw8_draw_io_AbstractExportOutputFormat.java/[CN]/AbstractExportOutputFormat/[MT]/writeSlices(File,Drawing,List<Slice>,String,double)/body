@@ -6,7 +6,7 @@
   IdFactory idFactory=new SimpleIdFactory();
   for (  Figure slice : slices) {
     if (slice.getId() != null) {
-      idFactory.putId(slice,slice.getId());
+      idFactory.putId(slice.getId(),slice);
     }
   }
   for (  Slice slice : slices) {

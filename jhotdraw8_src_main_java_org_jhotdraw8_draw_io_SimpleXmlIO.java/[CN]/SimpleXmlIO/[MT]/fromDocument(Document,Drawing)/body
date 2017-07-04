@@ -10,5 +10,5 @@
       idFactory.reset();
     }
   }
-  return readDrawingOrClipping(doc,oldDrawing);
+  return readDrawingOrClippingFromDocument(doc,oldDrawing);
 }

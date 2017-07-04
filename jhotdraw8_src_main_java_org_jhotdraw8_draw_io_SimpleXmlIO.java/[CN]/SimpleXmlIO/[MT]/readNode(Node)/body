@@ -15,10 +15,10 @@
     if (id != null && !id.isEmpty()) {
       if (idFactory.getObject(id) != null) {
         System.err.println("SimpleXmlIO warning: duplicate id " + id + " in element "+ elem.getTagName());
-        idFactory.putId(figure,id);
+        idFactory.putId(id,figure);
       }
  else {
-        idFactory.putId(figure,id);
+        idFactory.putId(id,figure);
       }
     }
     return figure;
