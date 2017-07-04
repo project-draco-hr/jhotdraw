@@ -1,8 +1,7 @@
 {
   if (!nameToFigure.containsKey(name)) {
-    nameToFigure.put(name,figureSupplier);
+    figureToName.remove(nameToFigure.get(name));
   }
-  if (!figureToName.containsKey(figureClass)) {
-    figureToName.put(figureClass,name);
-  }
+  nameToFigure.put(name,figureSupplier);
+  figureToName.put(figureClass,name);
 }
