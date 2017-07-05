@@ -21,7 +21,8 @@
           if (a instanceof TransformableFigure) {
             markDirty(a,DirtyBits.NODE,DirtyBits.TRANSFORM);
           }
- else {
+          if (a.isLayoutable()) {
+            markDirty(a,DirtyBits.NODE,DirtyBits.LAYOUT);
           }
         }
       }
@@ -65,7 +66,14 @@
         todo.add(f);
       }
     }
-    LinkedHashSet<Figure> transitive=new LinkedHashSet<>(todo);
+    for (    Map.Entry<Figure,DirtyMask> entry : dirties.entrySet()) {
+      Figure f=entry.getKey();
+      DirtyMask dm=entry.getValue();
+      if (dm.intersects(dmLayout)) {
+        this.layout(f);
+      }
+    }
+    Set<Figure> transitive=new LinkedHashSet<>(todo);
     transitivelyCollectDependentFigures(todo,transitive);
     collectLayoutableAncestors(new ArrayList<>(transitive),transitive);
     for (    Figure f : transitive) {
