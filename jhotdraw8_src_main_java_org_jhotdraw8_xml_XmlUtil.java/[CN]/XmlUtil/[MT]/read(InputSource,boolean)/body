@@ -1,0 +1,14 @@
+{
+  try {
+    DocumentBuilderFactory builderFactory=DocumentBuilderFactory.newInstance();
+    if (namespaceAware) {
+      builderFactory.setNamespaceAware(true);
+    }
+    DocumentBuilder builder=builderFactory.newDocumentBuilder();
+    Document doc=builder.parse(inputSource);
+    return doc;
+  }
+ catch (  SAXException|ParserConfigurationException ex) {
+    throw new IOException(ex);
+  }
+}

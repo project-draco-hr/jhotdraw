@@ -1,0 +1,4 @@
+{
+  InputSource inputSource=new InputSource(in.toUri().toASCIIString());
+  return XmlUtil.read(inputSource,namespaceAware);
+}
