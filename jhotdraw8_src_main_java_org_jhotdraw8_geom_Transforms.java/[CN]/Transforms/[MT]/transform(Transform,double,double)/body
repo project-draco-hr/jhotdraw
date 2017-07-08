@@ -1,0 +1,3 @@
+{
+  return tx == null ? new Point2D(x,y) : tx.transform(x,y);
+}
