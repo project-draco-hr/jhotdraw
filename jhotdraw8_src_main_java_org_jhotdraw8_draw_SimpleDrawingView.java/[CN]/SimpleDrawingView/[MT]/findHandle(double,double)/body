@@ -5,7 +5,9 @@
   for (  Map.Entry<Node,Handle> e : new ReversedList<>(nodeToHandleMap.entrySet())) {
     final Node node=e.getKey();
     final Handle handle=e.getValue();
-    if (!handle.isSelectable())     continue;
+    if (!handle.isSelectable()) {
+      continue;
+    }
     if (handle.contains(this,vx,vy,TOLERANCE_SQUARED)) {
       return handle;
     }

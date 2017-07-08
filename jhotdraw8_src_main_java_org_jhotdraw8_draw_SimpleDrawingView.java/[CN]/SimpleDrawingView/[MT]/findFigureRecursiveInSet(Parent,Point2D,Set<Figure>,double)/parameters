@@ -1,4 +1,0 @@
-Parent p
-Point2D pp
-Set<Figure> figures
-double tolerance
