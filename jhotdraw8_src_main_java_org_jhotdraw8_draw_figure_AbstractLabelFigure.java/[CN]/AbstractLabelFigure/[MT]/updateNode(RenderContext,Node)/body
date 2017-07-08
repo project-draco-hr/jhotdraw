@@ -2,6 +2,7 @@
   Group g=(Group)node;
   Region r=(Region)g.getProperties().get("region");
   Text t=(Text)g.getProperties().get("text");
+  updateGroupNode(ctx,g);
   updateRegionNode(ctx,r);
   updateTextNode(ctx,t);
   if (getStyled(FILL) != null || getStyled(STROKE) != null) {
