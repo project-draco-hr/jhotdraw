@@ -29,7 +29,7 @@ case RIGHT:
 tx=-b.getWidth();
 break;
 }
-Point2D origin=labeledLoc;
+Point2D origin=labeledLoc.add(perp.multiply(getStyled(LABEL_PERPENDICULAR_OFFSET))).add(tx,0);
 Point2D labelTranslation=getStyled(LABEL_TRANSLATE);
 origin=origin.add(labelTranslation);
 set(ORIGIN,origin);
