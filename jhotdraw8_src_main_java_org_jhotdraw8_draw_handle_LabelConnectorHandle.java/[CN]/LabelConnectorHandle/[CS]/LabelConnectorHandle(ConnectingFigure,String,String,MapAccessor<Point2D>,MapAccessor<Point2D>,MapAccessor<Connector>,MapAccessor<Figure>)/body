@@ -1,0 +1,16 @@
+{
+  super(figure,styleclassDisconnected,styleclassConnected,pointKey,connectorKey,targetKey);
+  this.originKey=originKey;
+  lineNode=new Line();
+  targetNode=new Region();
+  targetNode.setShape(REGION_SHAPE);
+  targetNode.setManaged(false);
+  targetNode.setScaleShape(false);
+  targetNode.setCenterShape(true);
+  targetNode.resize(10,10);
+  targetNode.getStyleClass().setAll(styleclassDisconnected,STYLECLASS_HANDLE);
+  targetNode.setBorder(REGION_BORDER);
+  lineNode.getStyleClass().add(styleclassConnected);
+  groupNode=new Group();
+  groupNode.getChildren().addAll(lineNode,targetNode);
+}

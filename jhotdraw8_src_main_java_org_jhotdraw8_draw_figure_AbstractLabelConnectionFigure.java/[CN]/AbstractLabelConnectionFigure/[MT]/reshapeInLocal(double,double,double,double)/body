@@ -1,6 +1,15 @@
 {
   if (get(LABEL_TARGET) == null) {
-    set(ORIGIN,new Point2D(x,y));
+    super.reshapeInLocal(x,y,width,height);
     set(LABELED_LOCATION,get(ORIGIN));
+    set(LABEL_TRANSLATE,new Point2D(0,0));
+  }
+ else {
+    Bounds bounds=getBoundsInLocal();
+    double newX, newY;
+    newX=x + Math.min(0,width);
+    newY=y + Math.min(0,height);
+    Point2D oldValue=get(LABEL_TRANSLATE);
+    set(LABEL_TRANSLATE,new Point2D(oldValue.getX() + newX - bounds.getMinX(),oldValue.getY() + newY - bounds.getMinY()));
   }
 }

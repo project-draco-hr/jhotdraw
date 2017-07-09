@@ -1,0 +1,5 @@
+ConnectingFigure figure
+MapAccessor<Point2D> originKey
+MapAccessor<Point2D> pointKey
+MapAccessor<Connector> connectorKey
+MapAccessor<Figure> targetKey

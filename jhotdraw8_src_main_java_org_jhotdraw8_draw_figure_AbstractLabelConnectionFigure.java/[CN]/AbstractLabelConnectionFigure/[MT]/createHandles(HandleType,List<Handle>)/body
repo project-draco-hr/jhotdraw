@@ -10,7 +10,7 @@
   }
  else   if (handleType == HandleType.RESIZE) {
     list.add(new BoundsInLocalOutlineHandle(this,Handle.STYLECLASS_HANDLE_MOVE_OUTLINE));
-    list.add(new LineConnectorHandle(this,LABELED_LOCATION,LABEL_CONNECTOR,LABEL_TARGET));
+    list.add(new LabelConnectorHandle(this,ORIGIN,LABELED_LOCATION,LABEL_CONNECTOR,LABEL_TARGET));
   }
  else   if (handleType == HandleType.POINT) {
     list.add(new BoundsInLocalOutlineHandle(this,Handle.STYLECLASS_HANDLE_MOVE_OUTLINE));

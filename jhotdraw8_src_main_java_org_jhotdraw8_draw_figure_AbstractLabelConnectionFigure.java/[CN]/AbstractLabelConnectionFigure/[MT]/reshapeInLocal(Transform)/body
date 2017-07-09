@@ -1,6 +1,0 @@
-{
-  if (get(LABEL_TARGET) == null) {
-    set(ORIGIN,transform.transform(get(ORIGIN)));
-    set(LABELED_LOCATION,get(ORIGIN));
-  }
-}
