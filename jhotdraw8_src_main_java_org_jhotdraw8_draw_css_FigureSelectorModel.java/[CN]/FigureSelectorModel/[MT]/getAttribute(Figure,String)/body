@@ -1,11 +1,11 @@
 {
-  @SuppressWarnings("unchecked") StyleableMapAccessor<Object> key=(StyleableMapAccessor<Object>)findKey(element,attributeName);
+  StyleableMapAccessor<Object> key=(StyleableMapAccessor<Object>)findKey(element,attributeName);
   if (key == null) {
     return null;
   }
   boolean isInitialValue=!element.containsKey(StyleOrigin.USER,key);
   if ((key instanceof CompositeMapAccessor)) {
-    for (    MapAccessor subkey : (Set<MapAccessor>)((CompositeMapAccessor)key).getSubAccessors()) {
+    for (    MapAccessor<Object> subkey : (Set<MapAccessor<Object>>)((CompositeMapAccessor)key).getSubAccessors()) {
       if (element.containsKey(StyleOrigin.USER,subkey)) {
         isInitialValue=false;
       }
