@@ -12,7 +12,7 @@
         }
       }
     }
-    DirtyMask dmTransformLayout=DirtyMask.of(DirtyBits.TRANSFORM,DirtyBits.LAYOUT);
+    DirtyMask dmTransformLayout=DirtyMask.of(DirtyBits.TRANSFORM,DirtyBits.LAYOUT,DirtyBits.LAYOUT_OBSERVERS);
     for (    Map.Entry<Figure,DirtyMask> entry : new ArrayList<>(dirties.entrySet())) {
       Figure f=entry.getKey();
       DirtyMask dm=entry.getValue();
@@ -34,7 +34,7 @@
       DirtyMask dm=entry.getValue();
       if (dm.intersects(dmTransform) && !dm.intersects(dmTransformNotify)) {
         for (        Figure a : f.preorderIterable()) {
-          markDirty(a,DirtyBits.LAYOUT_OBSERVERS,DirtyBits.TRANSFORM_NOTIFY);
+          markDirty(a,DirtyBits.LAYOUT,DirtyBits.TRANSFORM_NOTIFY);
         }
       }
     }
@@ -46,11 +46,12 @@
       }
     }
     DirtyMask dmLayout=DirtyMask.of(DirtyBits.LAYOUT);
+    DirtyMask dmLayoutOrObservers=DirtyMask.of(DirtyBits.LAYOUT,DirtyBits.LAYOUT_OBSERVERS);
     List<Figure> todo=new ArrayList<>();
     for (    Map.Entry<Figure,DirtyMask> entry : new ArrayList<>(dirties.entrySet())) {
       Figure f=entry.getKey();
       DirtyMask dm=entry.getValue();
-      if (dm.intersects(dmLayout)) {
+      if (dm.intersects(dmLayoutOrObservers)) {
         for (        Figure subtree : f.preorderIterable()) {
           for (          Figure d : subtree.getLayoutObservers()) {
             todo.add(d);
@@ -61,9 +62,6 @@
             markDirty(a,DirtyBits.NODE);
           }
         }
-      }
-      if (dm.intersects(DirtyBits.LAYOUT_OBSERVERS)) {
-        todo.add(f);
       }
     }
     for (    Map.Entry<Figure,DirtyMask> entry : dirties.entrySet()) {
