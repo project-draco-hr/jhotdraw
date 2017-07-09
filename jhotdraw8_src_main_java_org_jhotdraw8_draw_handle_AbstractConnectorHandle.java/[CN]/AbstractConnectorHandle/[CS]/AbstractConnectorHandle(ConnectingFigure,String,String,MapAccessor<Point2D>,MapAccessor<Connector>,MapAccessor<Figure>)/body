@@ -1,0 +1,9 @@
+{
+  super(figure);
+  this.pointKey=pointKey;
+  this.connectorKey=connectorKey;
+  this.targetKey=targetKey;
+  this.styleclassDisconnected=styleclassDisconnected;
+  this.styleclassConnected=styleclassConnected;
+  isConnected=figure.get(connectorKey) != null && figure.get(targetKey) != null;
+}

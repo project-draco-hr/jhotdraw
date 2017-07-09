@@ -4,14 +4,14 @@
   Point2D p=f.get(pointKey);
   pickLocation=p=t == null ? p : t.transform(p);
   boolean isConnected=f.get(connectorKey) != null && f.get(targetKey) != null;
-  lineNode.setBackground(isConnected ? REGION_BACKGROUND_CONNECTED : REGION_BACKGROUND_DISCONNECTED);
-  lineNode.getStyleClass().set(0,isConnected ? styleclassConnected : styleclassDisconnected);
-  lineNode.relocate(p.getX() - 5,p.getY() - 5);
-  lineNode.setRotate(f.getStyled(ROTATE));
-  lineNode.setRotationAxis(f.getStyled(ROTATION_AXIS));
+  targetNode.setBackground(isConnected ? REGION_BACKGROUND_CONNECTED : REGION_BACKGROUND_DISCONNECTED);
+  targetNode.getStyleClass().set(0,isConnected ? styleclassConnected : styleclassDisconnected);
+  targetNode.relocate(p.getX() - 5,p.getY() - 5);
+  targetNode.setRotate(f.getStyled(ROTATE));
+  targetNode.setRotationAxis(f.getStyled(ROTATION_AXIS));
   if (isConnected) {
     connectorLocation=view.worldToView(f.get(connectorKey).getPositionInWorld(owner,f.get(targetKey)));
-    lineNode.relocate(connectorLocation.getX() - 5,connectorLocation.getY() - 5);
+    targetNode.relocate(connectorLocation.getX() - 5,connectorLocation.getY() - 5);
   }
  else {
     connectorLocation=null;

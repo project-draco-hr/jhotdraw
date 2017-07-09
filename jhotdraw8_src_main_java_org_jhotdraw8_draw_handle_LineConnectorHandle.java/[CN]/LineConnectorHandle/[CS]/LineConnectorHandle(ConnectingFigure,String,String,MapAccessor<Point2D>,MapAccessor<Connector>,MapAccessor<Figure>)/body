@@ -1,17 +1,11 @@
 {
-  super(figure);
-  this.pointKey=pointKey;
-  this.connectorKey=connectorKey;
-  this.targetKey=targetKey;
-  this.styleclassDisconnected=styleclassDisconnected;
-  this.styleclassConnected=styleclassConnected;
-  lineNode=new Region();
-  lineNode.setShape(REGION_SHAPE);
-  lineNode.setManaged(false);
-  lineNode.setScaleShape(false);
-  lineNode.setCenterShape(true);
-  lineNode.resize(10,10);
-  lineNode.getStyleClass().setAll(styleclassDisconnected,STYLECLASS_HANDLE);
-  lineNode.setBorder(REGION_BORDER);
-  isConnected=figure.get(connectorKey) != null && figure.get(targetKey) != null;
+  super(figure,styleclassDisconnected,styleclassConnected,pointKey,connectorKey,targetKey);
+  targetNode=new Region();
+  targetNode.setShape(REGION_SHAPE);
+  targetNode.setManaged(false);
+  targetNode.setScaleShape(false);
+  targetNode.setCenterShape(true);
+  targetNode.resize(10,10);
+  targetNode.getStyleClass().setAll(styleclassDisconnected,STYLECLASS_HANDLE);
+  targetNode.setBorder(REGION_BORDER);
 }
