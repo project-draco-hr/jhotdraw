@@ -1,0 +1,14 @@
+{
+  if (!canFlattenTranslate(group)) {
+    return;
+  }
+  Translate translate=flattenTranslate(group);
+  if (!translate.isIdentity()) {
+    for (    Node child : group.getChildren()) {
+      child.getTransforms().add(translate);
+    }
+  }
+  for (  Node child : group.getChildren()) {
+    flattenTranslates(child);
+  }
+}

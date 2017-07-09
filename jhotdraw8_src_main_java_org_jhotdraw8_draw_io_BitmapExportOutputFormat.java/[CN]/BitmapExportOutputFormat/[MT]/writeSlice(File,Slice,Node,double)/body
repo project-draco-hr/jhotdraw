@@ -3,4 +3,5 @@
   try (OutputStream out=new BufferedOutputStream(new FileOutputStream(file))){
     writeImage(out,image,dpi);
   }
- }
+   return false;
+}

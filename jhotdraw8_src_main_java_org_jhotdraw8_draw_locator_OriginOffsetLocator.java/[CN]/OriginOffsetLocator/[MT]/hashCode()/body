@@ -1,0 +1,6 @@
+{
+  int hash=7;
+  hash=71 * hash + (int)(Double.doubleToLongBits(this.offsetX) ^ (Double.doubleToLongBits(this.offsetX) >>> 32));
+  hash=71 * hash + (int)(Double.doubleToLongBits(this.offsetY) ^ (Double.doubleToLongBits(this.offsetY) >>> 32));
+  return hash;
+}

@@ -1,3 +1,4 @@
 {
   printSlice(null,slice,slice.getBoundsInLocal(),node,dpi);
+  return false;
 }

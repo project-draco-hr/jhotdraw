@@ -6,10 +6,8 @@
   if (idFactory.getId(clip) == null) {
     String id=idFactory.createId(clip,"clipPath");
     Element elem=doc.createElement("clipPath");
-    defsNode.appendChild(doc.createTextNode("\n"));
-    writeNodeRecursively(doc,elem,clip,"\n");
+    writeNodeRecursively(doc,elem,clip);
     elem.setAttribute("id",id);
-    elem.appendChild(doc.createTextNode("\n"));
     defsNode.appendChild(elem);
   }
 }

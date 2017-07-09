@@ -1,0 +1,46 @@
+{
+  if (!canFlattenTranslate(path)) {
+    return;
+  }
+  Translate t=flattenTranslate(path);
+  double tx=t.getX();
+  double ty=t.getY();
+  for (  PathElement element : path.getElements()) {
+    if (element instanceof ClosePath) {
+    }
+ else     if (element instanceof MoveTo) {
+      MoveTo e=(MoveTo)element;
+      e.setX(e.getX() + tx);
+      e.setY(e.getY() + ty);
+    }
+ else     if (element instanceof LineTo) {
+      LineTo e=(LineTo)element;
+      e.setX(e.getX() + tx);
+      e.setY(e.getY() + ty);
+    }
+ else     if (element instanceof QuadCurveTo) {
+      QuadCurveTo e=(QuadCurveTo)element;
+      e.setX(e.getX() + tx);
+      e.setY(e.getY() + ty);
+      e.setControlX(e.getControlX() + tx);
+      e.setControlY(e.getControlY() + ty);
+    }
+ else     if (element instanceof CubicCurveTo) {
+      CubicCurveTo e=(CubicCurveTo)element;
+      e.setX(e.getX() + tx);
+      e.setY(e.getY() + ty);
+      e.setControlX1(e.getControlX1() + tx);
+      e.setControlY1(e.getControlY1() + ty);
+      e.setControlX2(e.getControlX2() + tx);
+      e.setControlY2(e.getControlY2() + ty);
+    }
+ else     if (element instanceof ArcTo) {
+      ArcTo e=(ArcTo)element;
+      e.setX(e.getX() + tx);
+      e.setY(e.getY() + ty);
+    }
+ else {
+      throw new UnsupportedOperationException("unknown element type: " + element);
+    }
+  }
+}

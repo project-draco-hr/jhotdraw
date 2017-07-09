@@ -1,0 +1,8 @@
+{
+  if (node instanceof Group) {
+    flattenTranslatesInGroup((Group)node);
+  }
+ else   if (node instanceof Shape) {
+    flattenTranslatesInShape((Shape)node);
+  }
+}

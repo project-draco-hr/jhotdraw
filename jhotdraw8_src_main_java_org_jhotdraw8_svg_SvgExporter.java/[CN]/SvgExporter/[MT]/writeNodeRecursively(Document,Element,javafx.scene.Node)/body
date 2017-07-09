@@ -1,0 +1,45 @@
+{
+  if (isSkipNode(node)) {
+    return;
+  }
+  Element elem=null;
+  if (node instanceof Shape) {
+    elem=writeShape(doc,parent,(Shape)node);
+    writeFillAttributes(elem,(Shape)node);
+    writeStrokeAttributes(elem,(Shape)node);
+    writeClipAttributes(elem,node);
+  }
+ else   if (node instanceof Group) {
+    boolean omitGroup=false;
+    if (skipInvisibleNodes) {
+      Group g=(Group)node;
+      if ((g.getBlendMode() == null || g.getBlendMode() == BlendMode.SRC_OVER) && g.getLocalToParentTransform().isIdentity() && g.getEffect() == null && g.getClip() == null) {
+        omitGroup=true;
+      }
+    }
+    if (!omitGroup) {
+      elem=writeGroup(doc,parent,(Group)node);
+    }
+  }
+ else   if (node instanceof Region) {
+    elem=writeRegion(doc,parent,(Region)node);
+  }
+ else   if (node instanceof ImageView) {
+    elem=writeImageView(doc,parent,(ImageView)node);
+  }
+ else {
+    throw new UnsupportedOperationException("not yet implemented for " + node);
+  }
+  if (elem != null) {
+    writeStyleAttributes(elem,node);
+    writeTransformAttributes(elem,node);
+    writeCompositingAttributes(elem,node);
+  }
+  if (node instanceof Parent) {
+    final Parent pp=(Parent)node;
+    final Element parentElement=elem == null ? parent : elem;
+    for (    javafx.scene.Node child : pp.getChildrenUnmodifiable()) {
+      writeNodeRecursively(doc,parentElement,child);
+    }
+  }
+}

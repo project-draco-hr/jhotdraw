@@ -1,0 +1,4 @@
+{
+  StreamResult result=new StreamResult(out);
+  write(result,doc);
+}

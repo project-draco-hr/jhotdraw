@@ -1,0 +1,16 @@
+{
+  if (obj == null) {
+    return false;
+  }
+  if (getClass() != obj.getClass()) {
+    return false;
+  }
+  final OriginOffsetLocator other=(OriginOffsetLocator)obj;
+  if (this.offsetX != other.offsetX) {
+    return false;
+  }
+  if (this.offsetY != other.offsetY) {
+    return false;
+  }
+  return true;
+}

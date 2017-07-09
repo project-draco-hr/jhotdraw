@@ -1,0 +1,4 @@
+{
+  this.offsetX=offsetX;
+  this.offsetY=offsetY;
+}

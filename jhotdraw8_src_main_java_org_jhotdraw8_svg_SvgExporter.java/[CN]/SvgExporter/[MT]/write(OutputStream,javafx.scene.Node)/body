@@ -1,12 +1,4 @@
 {
   Document doc=toDocument(drawing);
-  try {
-    Transformer t=TransformerFactory.newInstance().newTransformer();
-    DOMSource source=new DOMSource(doc);
-    StreamResult result=new StreamResult(out);
-    t.transform(source,result);
-  }
- catch (  TransformerException ex) {
-    throw new IOException(ex);
-  }
+  XmlUtil.write(out,doc);
 }

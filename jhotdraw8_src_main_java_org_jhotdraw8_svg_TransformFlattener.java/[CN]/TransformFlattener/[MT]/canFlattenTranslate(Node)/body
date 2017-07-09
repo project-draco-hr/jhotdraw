@@ -1,0 +1,11 @@
+{
+  if (node.getRotate() != 0.0 || node.getScaleX() != 1.0 || node.getScaleY() != 1.0) {
+    return false;
+  }
+  for (  Transform t : node.getTransforms()) {
+    if (!(t instanceof Translate)) {
+      return false;
+    }
+  }
+  return true;
+}

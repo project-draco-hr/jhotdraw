@@ -1,7 +1,8 @@
 {
   Bounds b=slice.getBoundsInLocal();
+  Point2D sliceOrigin=slice.getSliceOrigin();
   Transform tx=slice.getWorldToLocal();
   docElement.setAttribute("width",nb.toString(b.getWidth()));
   docElement.setAttribute("height",nb.toString(b.getHeight()));
-  docElement.setAttribute("viewBox",nb.toString(b.getMinX()) + " " + nb.toString(b.getMinY())+ " "+ nb.toString(b.getWidth())+ " "+ nb.toString(b.getHeight()));
+  docElement.setAttribute("viewBox",nb.toString(b.getMinX() - sliceOrigin.getX()) + " " + nb.toString(b.getMinY() - sliceOrigin.getY())+ " "+ nb.toString(b.getWidth())+ " "+ nb.toString(b.getHeight()));
 }

@@ -1,0 +1,17 @@
+{
+  Translate translate=new Translate(node.getTranslateX(),node.getTranslateY());
+  for (  Transform t : node.getTransforms()) {
+    if ((t instanceof Translate)) {
+      Translate tt=(Translate)t;
+      translate=(Translate)translate.createConcatenation(tt);
+    }
+ else {
+      throw new IllegalArgumentException("node has non-translate transforms.");
+    }
+  }
+  node.setTranslateX(0.0);
+  node.setTranslateY(0.0);
+  node.getTransforms().clear();
+  ;
+  return translate;
+}
