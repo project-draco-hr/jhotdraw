@@ -1,8 +1,8 @@
 {
-  HashMap<String,StyleableMapAccessor<Object>> metaMap=new HashMap<>();
+  HashMap<String,WriteableStyleableMapAccessor<Object>> metaMap=new HashMap<>();
   for (  MapAccessor<?> k : elem.getSupportedKeys()) {
-    if (k instanceof StyleableMapAccessor) {
-      @SuppressWarnings("unchecked") StyleableMapAccessor<Object> sk=(StyleableMapAccessor<Object>)k;
+    if (k instanceof WriteableStyleableMapAccessor) {
+      @SuppressWarnings("unchecked") WriteableStyleableMapAccessor<Object> sk=(WriteableStyleableMapAccessor<Object>)k;
       metaMap.put(sk.getCssName(),sk);
     }
   }

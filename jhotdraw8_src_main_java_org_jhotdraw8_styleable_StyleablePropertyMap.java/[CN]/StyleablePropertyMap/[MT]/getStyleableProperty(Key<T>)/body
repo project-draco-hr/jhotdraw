@@ -1,8 +1,8 @@
 {
   @SuppressWarnings("unchecked") StyleableProperty<T> sp=(StyleableProperty<T>)styleableProperties.get(key);
   if (sp == null) {
-    if (key instanceof StyleableMapAccessor) {
-      @SuppressWarnings("unchecked") StyleableProperty<T> temp=new MapStyleableProperty<>(key,((StyleableMapAccessor)key).getCssMetaData());
+    if (key instanceof WriteableStyleableMapAccessor) {
+      @SuppressWarnings("unchecked") StyleableProperty<T> temp=new MapStyleableProperty<>(key,((WriteableStyleableMapAccessor)key).getCssMetaData());
       sp=temp;
     }
  else {

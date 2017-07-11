@@ -1,6 +1,6 @@
 {
   for (  MapAccessor<?> key : element.getSupportedKeys()) {
-    if (key.getName().equals(attributeName) && (key instanceof StyleableMapAccessor)) {
+    if (key.getName().equals(attributeName) && (key instanceof WriteableStyleableMapAccessor)) {
       return true;
     }
   }

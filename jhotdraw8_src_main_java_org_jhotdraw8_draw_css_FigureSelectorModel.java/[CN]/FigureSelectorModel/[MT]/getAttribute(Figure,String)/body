@@ -1,5 +1,5 @@
 {
-  StyleableMapAccessor<Object> key=(StyleableMapAccessor<Object>)findKey(element,attributeName);
+  WriteableStyleableMapAccessor<Object> key=(WriteableStyleableMapAccessor<Object>)findKey(element,attributeName);
   if (key == null) {
     return null;
   }

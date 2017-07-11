@@ -1,0 +1,11 @@
+{
+  if (mappedFigureClasses.add(element.getClass())) {
+    for (    MapAccessor<?> k : element.getSupportedKeys()) {
+      if (k instanceof ReadOnlyStyleableMapAccessor) {
+        ReadOnlyStyleableMapAccessor<?> sk=(ReadOnlyStyleableMapAccessor<?>)k;
+        nameToReadOnlyKeyMap.put(element.getClass() + "$" + sk.getCssName(),sk);
+      }
+    }
+  }
+  return nameToReadOnlyKeyMap.get(element.getClass() + "$" + attributeName);
+}

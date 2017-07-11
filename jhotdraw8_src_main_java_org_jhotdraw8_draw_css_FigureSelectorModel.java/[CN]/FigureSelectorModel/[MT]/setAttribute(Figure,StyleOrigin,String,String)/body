@@ -1,6 +1,6 @@
 {
-  HashMap<String,StyleableMapAccessor<Object>> metaMap=getMetaMap(elem);
-  StyleableMapAccessor<Object> k=metaMap.get(name);
+  HashMap<String,WriteableStyleableMapAccessor<Object>> metaMap=getMetaMap(elem);
+  WriteableStyleableMapAccessor<Object> k=metaMap.get(name);
   if (k != null) {
     if (INITIAL_VALUE_KEYWORD.equals(value)) {
       elem.remove(origin,k);

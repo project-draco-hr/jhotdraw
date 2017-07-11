@@ -1,8 +1,8 @@
 {
   List<CssMetaData<? extends Styleable,?>> list=new ArrayList<>();
   for (  MapAccessor<?> key : getSupportedKeys()) {
-    if (key instanceof StyleableMapAccessor<?>) {
-      StyleableMapAccessor<?> sk=(StyleableMapAccessor<?>)key;
+    if (key instanceof WriteableStyleableMapAccessor<?>) {
+      WriteableStyleableMapAccessor<?> sk=(WriteableStyleableMapAccessor<?>)key;
       CssMetaData<? extends Styleable,?> md=sk.getCssMetaData();
       list.add(md);
     }

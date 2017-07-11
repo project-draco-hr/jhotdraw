@@ -1,9 +1,9 @@
 {
   Set<String> attr=new HashSet<>();
-  Set<StyleableMapAccessor<?>> attrk=new HashSet<>();
+  Set<WriteableStyleableMapAccessor<?>> attrk=new HashSet<>();
   for (  MapAccessor<?> key : element.getSupportedKeys()) {
-    if (key instanceof StyleableMapAccessor) {
-      StyleableMapAccessor<?> sk=(StyleableMapAccessor<?>)key;
+    if (key instanceof WriteableStyleableMapAccessor) {
+      WriteableStyleableMapAccessor<?> sk=(WriteableStyleableMapAccessor<?>)key;
       attrk.add(sk);
     }
   }
@@ -12,7 +12,7 @@
       attrk.removeAll(((CompositeMapAccessor)key).getSubAccessors());
     }
   }
-  for (  StyleableMapAccessor<?> key : attrk) {
+  for (  WriteableStyleableMapAccessor<?> key : attrk) {
     attr.add(key.getCssName());
   }
   return attr;
