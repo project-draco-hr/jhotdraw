@@ -1,4 +1,7 @@
 {
+  if (value == null) {
+    return;
+  }
   Object[] v=new Object[value.size() + 1];
   v[0]=value.size();
   value.copyInto(v,1);
