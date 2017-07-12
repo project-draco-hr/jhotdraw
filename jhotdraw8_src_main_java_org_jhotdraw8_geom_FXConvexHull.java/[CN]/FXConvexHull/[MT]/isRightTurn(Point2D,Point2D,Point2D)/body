@@ -1,0 +1,7 @@
+{
+  if (p1.equals(p2) || p2.equals(p3)) {
+    return false;
+  }
+  double val=(p2.getX() * p3.getY() + p1.getX() * p2.getY() + p3.getX() * p1.getY()) - (p2.getX() * p1.getY() + p3.getX() * p2.getY() + p1.getX() * p3.getY());
+  return val > 0;
+}

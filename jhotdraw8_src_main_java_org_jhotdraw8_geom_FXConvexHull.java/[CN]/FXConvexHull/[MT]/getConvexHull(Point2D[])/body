@@ -1,0 +1,40 @@
+{
+  if (points.length < 3) {
+    return points.clone();
+  }
+  Point2D[] sorted=points.clone();
+  Arrays.sort(sorted,new Comparator<Point2D>(){
+    @Override public int compare(    Point2D o1,    Point2D o2){
+      double v=o1.getX() - o2.getX();
+      if (v == 0) {
+        v=o1.getY() - o2.getY();
+      }
+      return (v > 0) ? 1 : ((v < 0) ? -1 : 0);
+    }
+  }
+);
+  Point2D[] hull=new Point2D[sorted.length + 2];
+  int upper=0;
+  hull[upper++]=sorted[0];
+  hull[upper++]=sorted[1];
+  for (int i=2; i < sorted.length; i++) {
+    hull[upper++]=sorted[i];
+    while (upper > 2 && !isRightTurn(hull[upper - 3],hull[upper - 2],hull[upper - 1])) {
+      hull[upper - 2]=hull[upper - 1];
+      upper--;
+    }
+  }
+  int lower=upper;
+  hull[lower++]=sorted[sorted.length - 2];
+  for (int i=sorted.length - 3; i >= 0; i--) {
+    hull[lower++]=sorted[i];
+    while (lower - upper > 1 && !isRightTurn(hull[lower - 3],hull[lower - 2],hull[lower - 1])) {
+      hull[lower - 2]=hull[lower - 1];
+      lower--;
+    }
+  }
+  lower-=1;
+  Point2D[] convexHull=new Point2D[lower];
+  System.arraycopy(hull,0,convexHull,0,lower);
+  return convexHull;
+}
