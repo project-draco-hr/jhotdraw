@@ -7,7 +7,9 @@
     Map<DataFormat,Object> content=new LinkedHashMap<DataFormat,Object>(){
       private final static long serialVersionUID=0L;
       @Override public Object put(      DataFormat key,      Object value){
-        if (key == null)         throw new IllegalArgumentException("key == null");
+        if (key == null) {
+          throw new IllegalArgumentException("key == null");
+        }
         return super.put(key,value);
       }
     }

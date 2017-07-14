@@ -1,9 +1,21 @@
 {
+  Layer layer=getActiveLayer();
+  if (layer == null || !layer.isEditable()) {
+    layer=null;
+    for (    Figure f : getDrawing().getChildren()) {
+      if (f.isEditable() && (f instanceof Layer)) {
+        layer=(Layer)f;
+      }
+    }
+    if (layer == null) {
+      return;
+    }
+  }
   Clipboard cb=Clipboard.getSystemClipboard();
   ClipboardInputFormat in=getClipboardInputFormat();
   if (in != null) {
     try {
-      in.read(cb,getModel(),getDrawing(),getActiveLayer());
+      in.read(cb,getModel(),getDrawing(),layer);
     }
  catch (    IOException ex) {
       ex.printStackTrace();
