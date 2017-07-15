@@ -1,3 +1,6 @@
 {
+  if (Double.isNaN(minx)) {
+    return new BoundingBox(0,0,0,0);
+  }
   return new BoundingBox(minx,miny,maxx - minx,maxy - miny);
 }

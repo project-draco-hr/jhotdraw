@@ -1,4 +1,7 @@
 {
+  if (Double.isNaN(minx)) {
+    return;
+  }
   elements.add(new MoveTo(minx,miny));
   elements.add(new LineTo(maxx,miny));
   elements.add(new LineTo(maxx,maxy));
