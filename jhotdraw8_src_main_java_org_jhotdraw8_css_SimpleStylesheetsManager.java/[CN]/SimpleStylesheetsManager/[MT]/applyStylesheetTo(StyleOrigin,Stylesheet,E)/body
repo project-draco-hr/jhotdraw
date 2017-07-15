@@ -1,7 +1,12 @@
 {
   SelectorModel<E> selectorModel=getSelectorModel();
-  for (  Map.Entry<Integer,Declaration> entry : collectApplicableDeclarations(elem,s,new LinkedList<Map.Entry<Integer,Declaration>>())) {
+  final List<Map.Entry<Integer,Declaration>> applicableDeclarations=collectApplicableDeclarations(elem,s,new LinkedList<Map.Entry<Integer,Declaration>>());
+  if (applicableDeclarations.isEmpty()) {
+    return false;
+  }
+  for (  Map.Entry<Integer,Declaration> entry : applicableDeclarations) {
     Declaration d=entry.getValue();
     selectorModel.setAttribute(elem,styleOrigin,d.getProperty(),d.getTermsAsString());
   }
+  return true;
 }

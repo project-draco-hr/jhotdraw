@@ -1,14 +1,2 @@
 {
-  if (v == null) {
-    throw new IllegalArgumentException("v=null");
-  }
-  if (null == vertexMap.put(v,vertices.size())) {
-    vertices.add(v);
-    vertexCount++;
-    if (lastEdge.length < vertexCount * LASTEDGE_NUM_FIELDS) {
-      int[] tmp=lastEdge;
-      lastEdge=new int[lastEdge.length * LASTEDGE_NUM_FIELDS];
-      System.arraycopy(tmp,0,lastEdge,0,tmp.length);
-    }
-  }
 }
