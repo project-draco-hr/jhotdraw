@@ -12,7 +12,7 @@
     Connector newConnector=null;
     Figure newConnectionTarget=null;
     DrawingModel model=view.getModel();
-    model.set(figure,LineConnectionFigure.END_TARGET,null);
+    model.set(figure,SimpleLineConnectionFigure.END_TARGET,null);
     if (!event.isMetaDown()) {
       List<Figure> list=view.findFigures(pointInViewCoordinates,true);
       for (      Figure f1 : list) {
@@ -31,9 +31,9 @@
         }
       }
     }
-    model.set(figure,LineConnectionFigure.END,figure.worldToLocal(constrainedPoint));
-    model.set(figure,LineConnectionFigure.END_CONNECTOR,newConnector);
-    model.set(figure,LineConnectionFigure.END_TARGET,newConnectionTarget);
+    model.set(figure,SimpleLineConnectionFigure.END,figure.worldToLocal(constrainedPoint));
+    model.set(figure,SimpleLineConnectionFigure.END_CONNECTOR,newConnector);
+    model.set(figure,SimpleLineConnectionFigure.END_TARGET,newConnectionTarget);
   }
   event.consume();
 }

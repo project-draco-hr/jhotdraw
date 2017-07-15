@@ -1,0 +1,4 @@
+{
+  super.updateStartMarkerNode(ctx,node);
+  applyFillableFigureProperties(node);
+}

@@ -1,6 +1,6 @@
 {
   System.out.println("testNullValueIsNotSameAsDefaultPropertyValue");
-  LabelFigure figure=new LabelFigure();
+  SimpleLabelFigure figure=new SimpleLabelFigure();
   FigureSelectorModel instance=new FigureSelectorModel();
   final PaintableStyleableFigureKey key=FillableFigure.FILL;
   final String attrName=key.getCssName();

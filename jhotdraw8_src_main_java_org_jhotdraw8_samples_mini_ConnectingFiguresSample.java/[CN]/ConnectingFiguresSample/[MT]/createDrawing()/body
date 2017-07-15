@@ -1,7 +1,7 @@
 {
-  RectangleFigure a=new RectangleFigure(100,80,150,100);
-  RectangleFigure b=new RectangleFigure(300,230,150,100);
-  LineConnectionFigure c=new LineConnectionFigure();
+  SimpleRectangleFigure a=new SimpleRectangleFigure(100,80,150,100);
+  SimpleRectangleFigure b=new SimpleRectangleFigure(300,230,150,100);
+  SimpleLineConnectionFigure c=new SimpleLineConnectionFigure();
   c.setStartConnection(a,new RectangleConnector());
   c.setEndConnection(b,new RectangleConnector());
   c.layout();

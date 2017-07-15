@@ -1,6 +1,5 @@
 {
   if (svgString != null) {
-    applyFillableFigureProperties(markerNode);
     markerNode.setContent(svgString);
     double angle=Math.atan2(start.getY() - end.getY(),start.getX() - end.getX());
     markerNode.getTransforms().setAll(new Rotate(angle * 180 / Math.PI,start.getX(),start.getY()),new Scale(markerScaleFactor,markerScaleFactor,start.getX(),start.getY()),new Translate(start.getX(),start.getY()));

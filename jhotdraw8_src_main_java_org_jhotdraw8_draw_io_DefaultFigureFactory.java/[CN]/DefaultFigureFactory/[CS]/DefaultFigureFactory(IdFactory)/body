@@ -2,12 +2,12 @@
   super(idFactory);
   addFigureKeysAndNames("Layer",SimpleLayer.class);
   addFigureKeysAndNames("Clipping",SimpleClipping.class);
-  addFigureKeysAndNames("Rectangle",RectangleFigure.class);
-  addFigureKeysAndNames("Slice",SliceFigure.class);
-  addFigureKeysAndNames("Group",GroupFigure.class);
-  addFigureKeysAndNames("Polyline",PolylineFigure.class);
-  addFigureKeysAndNames("Polygon",PolygonFigure.class);
-  addFigureKeysAndNames("Page",PageFigure.class);
+  addFigureKeysAndNames("Rectangle",SimpleRectangleFigure.class);
+  addFigureKeysAndNames("Slice",SimpleSliceFigure.class);
+  addFigureKeysAndNames("Group",SimpleGroupFigure.class);
+  addFigureKeysAndNames("Polyline",SimplePolylineFigure.class);
+  addFigureKeysAndNames("Polygon",SimplePolygonFigure.class);
+  addFigureKeysAndNames("Page",SimplePageFigure.class);
   addFigureKeysAndNames("CombinedPath",CombinedPathFigure.class);
 {
     Set<MapAccessor<?>> keys=new HashSet<>(Figure.getDeclaredAndInheritedMapAccessors(SimpleDrawing.class));
@@ -18,29 +18,29 @@
     addFigureKeysAndNames("Drawing",SimpleDrawing.class,keys);
   }
 {
-    Set<MapAccessor<?>> keys=new HashSet<>(Figure.getDeclaredAndInheritedMapAccessors(TextFigure.class));
-    keys.remove(TextFigure.TEXT);
-    addNodeListKey(TextFigure.class,"",TextFigure.TEXT);
-    addFigureKeysAndNames("Text",TextFigure.class,keys);
+    Set<MapAccessor<?>> keys=new HashSet<>(Figure.getDeclaredAndInheritedMapAccessors(SimpleTextFigure.class));
+    keys.remove(SimpleTextFigure.TEXT);
+    addNodeListKey(SimpleTextFigure.class,"",SimpleTextFigure.TEXT);
+    addFigureKeysAndNames("Text",SimpleTextFigure.class,keys);
   }
 {
-    Set<MapAccessor<?>> keys=new HashSet<>(Figure.getDeclaredAndInheritedMapAccessors(LabelFigure.class));
-    keys.remove(LabelFigure.TEXT);
-    addNodeListKey(LabelFigure.class,"",LabelFigure.TEXT);
-    addFigureKeysAndNames("Label",LabelFigure.class,keys);
+    Set<MapAccessor<?>> keys=new HashSet<>(Figure.getDeclaredAndInheritedMapAccessors(SimpleLabelFigure.class));
+    keys.remove(SimpleLabelFigure.TEXT);
+    addNodeListKey(SimpleLabelFigure.class,"",SimpleLabelFigure.TEXT);
+    addFigureKeysAndNames("Label",SimpleLabelFigure.class,keys);
   }
 {
-    Set<MapAccessor<?>> keys=new HashSet<>(Figure.getDeclaredAndInheritedMapAccessors(PageLabelFigure.class));
-    keys.remove(PageLabelFigure.TEXT_WITH_PLACEHOLDERS);
-    addNodeListKey(PageLabelFigure.class,"",PageLabelFigure.TEXT_WITH_PLACEHOLDERS);
-    addFigureKeysAndNames("PageLabel",PageLabelFigure.class,keys);
+    Set<MapAccessor<?>> keys=new HashSet<>(Figure.getDeclaredAndInheritedMapAccessors(SimplePageLabelFigure.class));
+    keys.remove(SimplePageLabelFigure.TEXT_WITH_PLACEHOLDERS);
+    addNodeListKey(SimplePageLabelFigure.class,"",SimplePageLabelFigure.TEXT_WITH_PLACEHOLDERS);
+    addFigureKeysAndNames("PageLabel",SimplePageLabelFigure.class,keys);
   }
-  addFigureKeysAndNames("Line",LineFigure.class);
-  addFigureKeysAndNames("Ellipse",EllipseFigure.class);
-  addFigureKeysAndNames("LineConnection",LineConnectionFigure.class);
-  addFigureKeysAndNames("LineConnectionWithMarkers",LineConnectionWithMarkersFigure.class);
-  addFigureKeysAndNames("Image",ImageFigure.class);
-  addFigureKeysAndNames("BezierPath",BezierFigure.class);
+  addFigureKeysAndNames("Line",SimpleLineFigure.class);
+  addFigureKeysAndNames("Ellipse",SimpleEllipseFigure.class);
+  addFigureKeysAndNames("LineConnection",SimpleLineConnectionFigure.class);
+  addFigureKeysAndNames("LineConnectionWithMarkers",SimpleLineConnectionWithMarkersFigure.class);
+  addFigureKeysAndNames("Image",SimpleImageFigure.class);
+  addFigureKeysAndNames("BezierPath",SimpleBezierFigure.class);
   addConverterForType(String.class,new DefaultConverter());
   addConverterForType(Point2D.class,new XmlPoint2DConverter());
   addConverterForType(Point3D.class,new XmlPoint3DConverter());
@@ -76,8 +76,8 @@
   addConverter(StrokeableFigure.STROKE_LINE_JOIN,new XmlEnumConverter<StrokeLineJoin>(StrokeLineJoin.class));
   addConverter(StrokeableFigure.STROKE_TYPE,new XmlEnumConverter<StrokeType>(StrokeType.class));
   addConverter(TransformableFigure.TRANSFORMS,new XmlTransformListConverter());
-  addConverter(PolylineFigure.POINTS,new CssPoint2DListConverter());
-  addConverter(BezierFigure.PATH,new XmlBezierNodeListConverter(true));
+  addConverter(SimplePolylineFigure.POINTS,new CssPoint2DListConverter());
+  addConverter(SimpleBezierFigure.PATH,new XmlBezierNodeListConverter(true));
   removeKey(StyleableFigure.PSEUDO_CLASS_STATES);
   removeRedundantKeys();
   checkConverters();

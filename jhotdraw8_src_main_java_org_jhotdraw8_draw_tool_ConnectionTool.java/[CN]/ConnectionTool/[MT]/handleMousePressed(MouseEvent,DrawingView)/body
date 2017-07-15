@@ -32,8 +32,8 @@
       }
     }
   }
-  figure.set(LineConnectionFigure.START_CONNECTOR,newConnector);
-  figure.set(LineConnectionFigure.START_TARGET,newConnectedFigure);
+  figure.set(SimpleLineConnectionFigure.START_CONNECTOR,newConnector);
+  figure.set(SimpleLineConnectionFigure.START_TARGET,newConnectedFigure);
   dm.addChildTo(figure,layer);
   event.consume();
 }

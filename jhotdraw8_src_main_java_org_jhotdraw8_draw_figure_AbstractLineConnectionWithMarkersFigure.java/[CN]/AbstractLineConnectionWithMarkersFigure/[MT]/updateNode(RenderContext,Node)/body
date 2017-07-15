@@ -1,14 +1,16 @@
 {
   javafx.scene.Group g=(javafx.scene.Group)node;
   Line lineNode=(Line)g.getProperties().get("line");
+  final SVGPath startMarkerNode=(SVGPath)g.getProperties().get("startMarker");
+  final SVGPath endMarkerNode=(SVGPath)g.getProperties().get("endMarker");
   Point2D start=get(START);
   Point2D end=get(END);
   final double startInset=getStyled(START_MARKER_LINE_INSET);
   final double endInset=getStyled(END_MARKER_LINE_INSET);
   final String startMarkerStr=getStyled(START_MARKER);
-  updateMarkerNode(ctx,g,(SVGPath)g.getProperties().get("startMarker"),start,end,startMarkerStr,getStyled(START_MARKER_SCALE_FACTOR));
+  updateMarkerNode(ctx,g,startMarkerNode,start,end,startMarkerStr,getStyled(START_MARKER_SCALE_FACTOR));
   final String endMarkerStr=getStyled(END_MARKER);
-  updateMarkerNode(ctx,g,(SVGPath)g.getProperties().get("endMarker"),end,start,endMarkerStr,getStyled(END_MARKER_SCALE_FACTOR));
+  updateMarkerNode(ctx,g,endMarkerNode,end,start,endMarkerStr,getStyled(END_MARKER_SCALE_FACTOR));
   Point2D dir=end.subtract(start).normalize();
   if (startInset != 0 && startMarkerStr != null) {
     start=start.add(dir.multiply(startInset * getStyled(START_MARKER_SCALE_FACTOR)));
@@ -20,4 +22,7 @@
   lineNode.setStartY(start.getY());
   lineNode.setEndX(end.getX());
   lineNode.setEndY(end.getY());
+  updateLineNode(ctx,lineNode);
+  updateStartMarkerNode(ctx,startMarkerNode);
+  updateEndMarkerNode(ctx,endMarkerNode);
 }

@@ -1,5 +1,5 @@
 {
-  CssSize pw=page.get(PageFigure.PAPER_WIDTH);
+  CssSize pw=page.get(SimplePageFigure.PAPER_WIDTH);
   double paperWidth=pw.getConvertedValue();
   final Bounds pageBounds=page.getPageBounds(internalPageNumber);
   double factor=paperWidth / pageBounds.getWidth();
