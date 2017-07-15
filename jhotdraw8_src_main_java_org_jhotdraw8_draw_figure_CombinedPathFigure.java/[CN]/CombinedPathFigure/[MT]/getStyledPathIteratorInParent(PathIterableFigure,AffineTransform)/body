@@ -27,18 +27,15 @@
             dash[i]=dashArray.get(i).floatValue();
             allZero=allZero && dash[i] == 0f;
           }
-          if (allZero)           dash=null;
+          if (allZero) {
+            dash=null;
+          }
           basicStroke=new BasicStroke((float)strokeWidth,Shapes.awtCapFromFX(f.getStyled(STROKE_LINE_CAP)),Shapes.awtJoinFromFX(f.getStyled(STROKE_LINE_JOIN)),f.getStyled(STROKE_MITER_LIMIT).floatValue(),dash,(float)dashOffset);
         }
  else {
           basicStroke=new BasicStroke((float)strokeWidth,Shapes.awtCapFromFX(f.getStyled(STROKE_LINE_CAP)),Shapes.awtJoinFromFX(f.getStyled(STROKE_LINE_JOIN)),f.getStyled(STROKE_MITER_LIMIT).floatValue());
         }
-        try {
-          iter=basicStroke.createStrokedShape(Shapes.buildFromPathIterator(new Path2DDoubleBuilder(),iter).get()).getPathIterator(null);
-        }
- catch (        IOException ex) {
-          ex.printStackTrace();
-        }
+        iter=basicStroke.createStrokedShape(Shapes.buildFromPathIterator(new Path2DDoubleBuilder(),iter).get()).getPathIterator(null);
       }
     }
   }
