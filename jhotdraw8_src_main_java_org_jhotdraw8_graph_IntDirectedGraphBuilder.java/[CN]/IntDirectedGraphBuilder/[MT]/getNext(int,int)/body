@@ -1,0 +1,9 @@
+{
+  if (vi < 0 || vi >= getVertexCount())   throw new IllegalArgumentException("vi:" + i);
+  if (i < 0 || i >= getNextCount(vi))   throw new IllegalArgumentException("i:" + i);
+  int edgeId=lastEdge[vi * LASTEDGE_NUM_FIELDS + LASTEDGE_POINTER_FIELD];
+  for (int j=i - 1; j >= 0; j--) {
+    edgeId=edges[edgeId * EDGES_NUM_FIELDS + EDGES_POINTER_FIELD];
+  }
+  return edges[edgeId * EDGES_NUM_FIELDS + EDGES_VERTEX_FIELD];
+}

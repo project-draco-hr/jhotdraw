@@ -1,0 +1,11 @@
+{
+  int edgeCount=countEdges(graph);
+  IntDirectedGraphBuilder b=new IntDirectedGraphBuilder(graph.getVertexCount(),edgeCount);
+  for (int i=0, n=graph.getVertexCount(); i < n; i++) {
+    int v=i;
+    for (int j=0, m=graph.getNextCount(v); j < m; j++) {
+      b.addEdge(v,graph.getNext(v,j));
+    }
+  }
+  return b;
+}

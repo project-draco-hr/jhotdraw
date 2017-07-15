@@ -1,0 +1,4 @@
+{
+  int hash=Objects.hashCode(this.a) + Objects.hashCode(this.b);
+  return hash;
+}

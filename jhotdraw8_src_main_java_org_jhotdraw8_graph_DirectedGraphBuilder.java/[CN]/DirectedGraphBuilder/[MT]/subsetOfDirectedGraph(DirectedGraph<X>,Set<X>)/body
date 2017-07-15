@@ -1,0 +1,15 @@
+{
+  DirectedGraphBuilder<X> b=new DirectedGraphBuilder<X>();
+  for (  X v : vertices) {
+    b.addVertex(v);
+  }
+  for (  X v : vertices) {
+    for (int j=0, m=model.getNextCount(v); j < m; j++) {
+      final X u=model.getNext(v,j);
+      if (vertices.contains(u)) {
+        b.addEdge(v,u);
+      }
+    }
+  }
+  return b;
+}

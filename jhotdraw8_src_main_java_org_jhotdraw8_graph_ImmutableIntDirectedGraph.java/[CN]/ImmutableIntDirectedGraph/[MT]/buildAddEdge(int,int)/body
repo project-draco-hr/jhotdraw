@@ -1,0 +1,10 @@
+{
+  int edgeCountOfA=lastEdge[a * 2];
+  int lastEdgeIdOfA=lastEdge[a * 2 + 1];
+  int newLastEdgeIdOfA=edgeCount;
+  edges[newLastEdgeIdOfA * 2]=b;
+  edges[newLastEdgeIdOfA * 2 + 1]=(edgeCountOfA != 0) ? lastEdgeIdOfA : -1;
+  lastEdge[a * 2]=edgeCountOfA + 1;
+  lastEdge[a * 2 + 1]=newLastEdgeIdOfA;
+  edgeCount++;
+}

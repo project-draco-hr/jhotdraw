@@ -1,0 +1,4 @@
+DirectedGraph<V> graph
+V root
+V goal
+ArrayList<V> pathElements

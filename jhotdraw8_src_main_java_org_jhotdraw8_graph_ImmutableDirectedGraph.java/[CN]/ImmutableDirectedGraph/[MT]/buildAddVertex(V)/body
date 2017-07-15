@@ -1,0 +1,4 @@
+{
+  vertexMap.put(v,vertices.size());
+  vertices.add(v);
+}

@@ -1,0 +1,10 @@
+{
+  if (vertexCapacity < 1) {
+    throw new IllegalArgumentException("vertexCapacity: " + vertexCapacity);
+  }
+  if (edgeCapacity < 1) {
+    throw new IllegalArgumentException("edgeCapacity: " + edgeCapacity);
+  }
+  this.edges=new int[edgeCapacity * EDGES_NUM_FIELDS];
+  this.lastEdge=new int[vertexCapacity * LASTEDGE_NUM_FIELDS];
+}

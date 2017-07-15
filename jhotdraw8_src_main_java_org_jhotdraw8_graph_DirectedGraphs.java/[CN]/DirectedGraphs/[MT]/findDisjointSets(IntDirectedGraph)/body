@@ -1,0 +1,36 @@
+{
+  List<Set<Integer>> sets=new ArrayList<>(g.getVertexCount());
+  for (int v=0, n=g.getVertexCount(); v < n; v++) {
+    final LinkedHashSet<Integer> initialSet=new LinkedHashSet<>();
+    initialSet.add(v);
+    sets.add(initialSet);
+  }
+  for (int u=0, n=g.getVertexCount(); u < n; u++) {
+    for (int v=0, m=g.getNextCount(u); v < m; v++) {
+      Set<Integer> uset=sets.get(u);
+      Set<Integer> vset=sets.get(v);
+      if (uset != vset) {
+        if (uset.size() < vset.size()) {
+          for (          Integer uu : uset) {
+            sets.set(uu,vset);
+          }
+          vset.addAll(uset);
+        }
+ else {
+          for (          Integer vv : vset) {
+            sets.set(vv,uset);
+          }
+          uset.addAll(vset);
+        }
+      }
+    }
+  }
+  Map<Set<Integer>,Object> forestMap=new IdentityHashMap<Set<Integer>,Object>();
+  List<Set<Integer>> forest=new ArrayList<>();
+  for (  Set<Integer> set : sets) {
+    if (null == forestMap.put(set,set)) {
+      forest.add(set);
+    }
+  }
+  return forest;
+}

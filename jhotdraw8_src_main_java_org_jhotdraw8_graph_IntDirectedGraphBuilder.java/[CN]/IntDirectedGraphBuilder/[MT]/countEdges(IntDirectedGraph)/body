@@ -1,0 +1,14 @@
+{
+  int edgeCount;
+  if (graph instanceof GraphWithKnownEdgeCount) {
+    edgeCount=((GraphWithKnownEdgeCount)graph).getEdgeCount();
+  }
+ else {
+    edgeCount=0;
+    for (int i=0, n=graph.getVertexCount(); i < n; i++) {
+      int v=i;
+      edgeCount+=graph.getNextCount(v);
+    }
+  }
+  return edgeCount;
+}

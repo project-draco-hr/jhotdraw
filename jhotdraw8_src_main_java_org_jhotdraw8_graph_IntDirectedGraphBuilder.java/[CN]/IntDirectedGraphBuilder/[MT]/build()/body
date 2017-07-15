@@ -1,0 +1,10 @@
+{
+  ImmutableIntDirectedGraph model=new ImmutableIntDirectedGraph(vertexCount,edgeCount);
+  for (int i=0; i < vertexCount; i++) {
+    int v=i;
+    for (int j=0, m=getNextCount(i); j < m; j++) {
+      model.buildAddEdge(v,getNext(i,j));
+    }
+  }
+  return model;
+}
