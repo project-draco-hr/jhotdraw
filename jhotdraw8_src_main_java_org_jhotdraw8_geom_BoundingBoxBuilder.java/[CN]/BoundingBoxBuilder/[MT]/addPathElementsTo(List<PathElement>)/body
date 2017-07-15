@@ -1,0 +1,7 @@
+{
+  elements.add(new MoveTo(minx,miny));
+  elements.add(new LineTo(maxx,miny));
+  elements.add(new LineTo(maxx,maxy));
+  elements.add(new LineTo(minx,maxy));
+  elements.add(new ClosePath());
+}

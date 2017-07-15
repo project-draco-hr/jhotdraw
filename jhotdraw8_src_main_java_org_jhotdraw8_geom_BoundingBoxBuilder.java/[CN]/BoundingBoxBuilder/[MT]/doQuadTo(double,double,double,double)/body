@@ -1,0 +1,4 @@
+{
+  addToBounds(x1,y1);
+  addToBounds(x2,y2);
+}
