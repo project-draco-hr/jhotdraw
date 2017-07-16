@@ -8,6 +8,7 @@
   while (i.hasNext()) {
     V current=i.next();
     if (!breadthFirstSearch(graph,prev,current,pathElements)) {
+      System.out.println("  DirectedGraphPathBuilder could not build path. found only:" + pathElements + " waypoints:"+ waypoints);
       return null;
     }
     prev=current;
