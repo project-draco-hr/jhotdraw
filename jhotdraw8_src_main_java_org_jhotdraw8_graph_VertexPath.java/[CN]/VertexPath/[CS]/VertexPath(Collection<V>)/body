@@ -1,0 +1,3 @@
+{
+  this.elements=Collections.unmodifiableList(new ArrayList<>(elements));
+}
