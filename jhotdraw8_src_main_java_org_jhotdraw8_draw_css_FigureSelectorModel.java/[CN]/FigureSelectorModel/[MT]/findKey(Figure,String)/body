@@ -1,11 +1,7 @@
 {
   if (mappedFigureClasses.add(element.getClass())) {
-    for (    MapAccessor<?> k : element.getSupportedKeys()) {
-      if (k instanceof WriteableStyleableMapAccessor) {
-        WriteableStyleableMapAccessor<?> sk=(WriteableStyleableMapAccessor<?>)k;
-        nameToKeyMap.put(element.getClass() + "$" + sk.getCssName(),sk);
-      }
-    }
+    mapFigureClass(element);
   }
-  return nameToKeyMap.get(element.getClass() + "$" + attributeName);
+  WriteableStyleableMapAccessor<?> result=nameToKeyMap.get(element.getClass() + "$" + attributeName);
+  return result;
 }

@@ -1,0 +1,12 @@
+{
+  for (  MapAccessor<?> k : element.getSupportedKeys()) {
+    if (k instanceof WriteableStyleableMapAccessor) {
+      WriteableStyleableMapAccessor<?> sk=(WriteableStyleableMapAccessor<?>)k;
+      nameToKeyMap.put(element.getClass() + "$" + sk.getCssName(),sk);
+    }
+    if (k instanceof ReadOnlyStyleableMapAccessor) {
+      ReadOnlyStyleableMapAccessor<?> sk=(ReadOnlyStyleableMapAccessor<?>)k;
+      nameToReadOnlyKeyMap.put(element.getClass() + "$" + sk.getCssName(),sk);
+    }
+  }
+}
