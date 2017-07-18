@@ -1,5 +1,5 @@
 {
   super(app);
   this.uri=uri;
-  set(Action.LABEL,UriUtil.getName(uri));
+  set(Action.LABEL,UriUtilX.getName(uri));
 }
