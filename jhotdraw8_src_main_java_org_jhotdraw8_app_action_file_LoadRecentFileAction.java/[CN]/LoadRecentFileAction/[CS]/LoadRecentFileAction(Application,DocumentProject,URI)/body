@@ -2,5 +2,5 @@
   super(app,view);
   this.uri=uri;
   setMayCreateProject(true);
-  set(Action.LABEL,UriUtilX.getName(uri));
+  set(Action.LABEL,UriUtil.getName(uri));
 }
