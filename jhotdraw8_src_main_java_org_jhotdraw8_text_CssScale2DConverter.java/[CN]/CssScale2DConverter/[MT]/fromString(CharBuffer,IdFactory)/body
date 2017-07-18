@@ -1,0 +1,11 @@
+{
+  Object[] v=formatter.fromString(buf);
+switch ((int)v[0]) {
+case 1:
+    return new Point2D(((Number)v[1]).doubleValue(),((Number)v[1]).doubleValue());
+case 2:
+  return new Point2D(((Number)v[1]).doubleValue(),((Number)v[2]).doubleValue());
+default :
+throw new ParseException("Scale with 1 to 2 values expected.",buf.position());
+}
+}

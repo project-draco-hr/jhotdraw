@@ -1,0 +1,3 @@
+String name
+MapAccessor<Double> xKey
+MapAccessor<Double> yKey
