@@ -1,0 +1,10 @@
+{
+  URI u=uri;
+  try {
+    u=new URI(u.getScheme(),u.getUserInfo(),u.getHost(),u.getPort(),u.getPath(),query,u.getFragment());
+  }
+ catch (  URISyntaxException ex) {
+    ex.printStackTrace();
+  }
+  return u;
+}

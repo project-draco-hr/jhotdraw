@@ -26,6 +26,6 @@
     }
   }
  else {
-    saveProjectChooseOptions(v,v.getURI(),null);
+    saveProjectChooseOptions(v,v.getURI(),v.getDataFormat());
   }
 }

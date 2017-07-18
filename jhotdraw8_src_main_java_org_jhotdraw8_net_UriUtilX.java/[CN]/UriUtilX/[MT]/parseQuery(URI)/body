@@ -1,0 +1,13 @@
+{
+  String query=uri.getQuery();
+  Map<String,String> map=new LinkedHashMap<>();
+  if (query != null) {
+    for (    String pair : query.split("&")) {
+      int p=pair.indexOf('=');
+      String key=pair.substring(0,p);
+      String value=pair.substring(p + 1);
+      map.put(key,value);
+    }
+  }
+  return map;
+}
