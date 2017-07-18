@@ -1,7 +1,7 @@
 {
   super(startX,startY,endX,endY);
-  setStyled(StyleOrigin.USER_AGENT,START_MARKER_LINE_INSET,10.0);
-  setStyled(StyleOrigin.USER_AGENT,END_MARKER_LINE_INSET,10.0);
-  setStyled(StyleOrigin.USER_AGENT,START_MARKER,"M0,0 L-10,5 -10,-5Z");
-  setStyled(StyleOrigin.USER_AGENT,END_MARKER,"M0,0 L-10,5 -10,-5Z");
+  setStyled(StyleOrigin.USER_AGENT,MARKER_LINE_INSET_START,10.0);
+  setStyled(StyleOrigin.USER_AGENT,MARKER_LINE_INSET_END,10.0);
+  setStyled(StyleOrigin.USER_AGENT,MARKER_START_SHAPE,"M0,0 L-10,5 -10,-5Z");
+  setStyled(StyleOrigin.USER_AGENT,MARKER_END_SHAPE,"M0,0 L-10,5 -10,-5Z");
 }
