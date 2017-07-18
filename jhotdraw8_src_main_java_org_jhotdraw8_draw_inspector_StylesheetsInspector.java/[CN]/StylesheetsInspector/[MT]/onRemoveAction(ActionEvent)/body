@@ -1,0 +1,8 @@
+{
+  ObservableList<URI> items=listView.getItems();
+  ArrayList<Integer> indices=new ArrayList<>(listView.getSelectionModel().getSelectedIndices());
+  Collections.sort(indices);
+  for (int i=indices.size() - 1; i >= 0; i--) {
+    items.remove((int)indices.get(i));
+  }
+}
