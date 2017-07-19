@@ -1,0 +1,8 @@
+{
+  double halfSize=squareSize * 0.5;
+  elements.add(new MoveTo(x - halfSize,y - halfSize));
+  elements.add(new LineTo(x + halfSize,y - halfSize));
+  elements.add(new LineTo(x + halfSize,y + halfSize));
+  elements.add(new LineTo(x - halfSize,y + halfSize));
+  elements.add(new ClosePath());
+}

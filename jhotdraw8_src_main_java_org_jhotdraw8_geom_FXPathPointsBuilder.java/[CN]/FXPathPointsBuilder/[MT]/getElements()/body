@@ -1,0 +1,7 @@
+{
+  if (needsSquareAtLastPoint) {
+    addSquare(getLastX(),getLastY());
+    needsSquareAtLastPoint=false;
+  }
+  return elements;
+}
