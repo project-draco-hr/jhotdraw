@@ -1,0 +1,7 @@
+{
+  super(figure);
+  node=new Path();
+  this.styleclass=styleclass;
+  initNode(node);
+  this.selectable=selectable;
+}

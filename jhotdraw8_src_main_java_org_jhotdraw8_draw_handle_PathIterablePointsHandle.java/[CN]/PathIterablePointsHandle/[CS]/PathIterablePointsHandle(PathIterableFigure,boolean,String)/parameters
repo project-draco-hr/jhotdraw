@@ -1,0 +1,3 @@
+PathIterableFigure figure
+boolean selectable
+String styleclass
