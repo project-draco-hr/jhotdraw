@@ -7,11 +7,16 @@
   }
   Point2D labeledLoc=get(LABELED_LOCATION);
   Connector labelConnector=get(LABEL_CONNECTOR);
-  Point2D perp;
+  final Point2D perp;
   if (labelConnector != null && labelTarget != null) {
     labeledLoc=labelConnector.getPositionInWorld(this,labelTarget);
-    perp=Geom.perp(Transforms.deltaTransform(getWorldToLocal(),labelConnector.getTangentInWorld(this,labelTarget)));
+    final Point2D tangent=labelConnector.getTangentInWorld(this,labelTarget);
+    perp=Geom.perp(Transforms.deltaTransform(getWorldToLocal(),tangent));
     labeledLoc=Transforms.transform(labelTarget.getParentToLocal(),labeledLoc);
+    if (getStyled(LABEL_AUTOROTATE)) {
+      double theta=Math.atan2(tangent.getY(),tangent.getX());
+      set(ROTATE,theta * 180.0 / Math.PI);
+    }
   }
  else {
     perp=new Point2D(0,1);
