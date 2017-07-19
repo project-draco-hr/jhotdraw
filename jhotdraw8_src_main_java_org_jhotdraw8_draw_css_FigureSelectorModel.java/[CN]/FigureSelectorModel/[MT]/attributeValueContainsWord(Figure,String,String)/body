@@ -1,8 +1,5 @@
 {
-  @SuppressWarnings("unchecked") ReadOnlyStyleableMapAccessor<Object> k=(ReadOnlyStyleableMapAccessor<Object>)findReadOnlyKey(element,attributeName);
-  if (k == null) {
-    return false;
-  }
+  ReadOnlyStyleableMapAccessor<Object> k=getReadOnlyAttributeAccessor(element,attributeName);
   Object value=element.get(k);
   if (value instanceof Collection) {
     @SuppressWarnings("unchecked") Collection<Object> c=(Collection<Object>)value;
@@ -14,6 +11,13 @@
         if (o != null && word.equals(o.toString())) {
           return true;
         }
+      }
+    }
+  }
+ else   if (value instanceof String) {
+    for (    String s : ((String)value).split("\\s+")) {
+      if (s.equals(word)) {
+        return true;
       }
     }
   }

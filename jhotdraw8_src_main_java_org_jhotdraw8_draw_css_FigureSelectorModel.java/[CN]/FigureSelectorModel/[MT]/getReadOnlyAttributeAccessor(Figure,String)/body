@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") ReadOnlyStyleableMapAccessor<Object> k=(ReadOnlyStyleableMapAccessor<Object>)findReadOnlyKey(element,attributeName);
+  return k;
+}

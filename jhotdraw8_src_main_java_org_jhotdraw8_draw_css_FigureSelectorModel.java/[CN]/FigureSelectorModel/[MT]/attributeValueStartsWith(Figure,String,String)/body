@@ -1,10 +1,4 @@
 {
-  @SuppressWarnings("unchecked") ReadOnlyStyleableMapAccessor<Object> k=(ReadOnlyStyleableMapAccessor<Object>)findReadOnlyKey(element,attributeName);
-  if (k == null) {
-    return false;
-  }
-  Object value=element.get(k);
-  @SuppressWarnings("unchecked") Converter<Object> c=k.getConverter();
-  String stringValue=(((Converter<?>)c) instanceof CssStringConverter) ? (String)value : k.getConverter().toString(value);
-  return stringValue.startsWith(substring);
+  String stringValue=getReadOnlyAttributeValueAsString(element,attributeName);
+  return stringValue != null && stringValue.startsWith(substring);
 }
