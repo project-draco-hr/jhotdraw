@@ -1,0 +1,5 @@
+{
+  Point2D p1=transform(x1,y1);
+  Point2D p2=transform(x2,y2);
+  target.quadTo(p1.getX(),p1.getY(),p2.getX(),p2.getY());
+}

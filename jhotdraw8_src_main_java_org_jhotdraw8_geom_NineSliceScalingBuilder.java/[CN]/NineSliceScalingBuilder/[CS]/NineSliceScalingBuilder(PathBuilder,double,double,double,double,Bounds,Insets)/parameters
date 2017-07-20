@@ -1,0 +1,7 @@
+PathBuilder target
+double sx
+double sy
+double pivotX
+double pivotY
+Bounds bounds
+Insets insets

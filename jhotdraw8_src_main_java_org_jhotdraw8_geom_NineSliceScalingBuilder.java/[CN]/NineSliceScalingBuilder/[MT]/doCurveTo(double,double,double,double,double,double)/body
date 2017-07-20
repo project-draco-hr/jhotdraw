@@ -1,0 +1,6 @@
+{
+  Point2D p1=transform(x1,y1);
+  Point2D p2=transform(x2,y2);
+  Point2D p3=transform(x3,y3);
+  target.curveTo(p1.getX(),p1.getY(),p2.getX(),p2.getY(),p3.getX(),p3.getY());
+}

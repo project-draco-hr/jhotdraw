@@ -1,0 +1,9 @@
+PathBuilder target
+double sx
+double sy
+double pivotX
+double pivotY
+double minX
+double minY
+double maxX
+double maxY
