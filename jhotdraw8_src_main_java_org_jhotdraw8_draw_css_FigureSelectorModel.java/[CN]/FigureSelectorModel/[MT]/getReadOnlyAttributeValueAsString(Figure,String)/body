@@ -1,5 +1,8 @@
 {
   ReadOnlyStyleableMapAccessor<Object> k=getReadOnlyAttributeAccessor(element,attributeName);
+  if (k == null) {
+    return null;
+  }
   Object value=element.get(k);
   @SuppressWarnings("unchecked") Converter<Object> c=k.getConverter();
   String stringValue=(((Converter<?>)c) instanceof CssStringConverter) ? (String)value : k.getConverter().toString(value);
