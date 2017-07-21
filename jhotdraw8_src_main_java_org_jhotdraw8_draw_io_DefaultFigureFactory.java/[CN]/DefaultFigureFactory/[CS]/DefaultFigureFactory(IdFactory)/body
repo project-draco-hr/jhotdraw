@@ -69,7 +69,7 @@
   addConverterForType(FillRule.class,new XmlEnumConverter<FillRule>(FillRule.class));
   addConverterForType(FontWeight.class,new XmlEnumConverter<>(FontWeight.class));
   addConverterForType(FontPosture.class,new XmlEnumConverter<>(FontPosture.class));
-  addConverterForType(Regex.class,new CssRegexConverter(true));
+  addConverterForType(RegexReplace.class,new CssRegexConverter(true));
   addConverter(StyleableFigure.STYLE_CLASS,new CssWordListConverter());
   addConverter(StrokeableFigure.STROKE_DASH_ARRAY,new CssDoubleListConverter());
   addConverter(StrokeableFigure.STROKE_LINE_CAP,new XmlEnumConverter<StrokeLineCap>(StrokeLineCap.class));

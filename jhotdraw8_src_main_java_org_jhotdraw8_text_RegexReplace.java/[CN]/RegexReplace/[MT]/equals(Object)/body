@@ -8,7 +8,7 @@
   if (getClass() != obj.getClass()) {
     return false;
   }
-  final Regex other=(Regex)obj;
+  final RegexReplace other=(RegexReplace)obj;
   if (!Objects.equals(this.find,other.find)) {
     return false;
   }

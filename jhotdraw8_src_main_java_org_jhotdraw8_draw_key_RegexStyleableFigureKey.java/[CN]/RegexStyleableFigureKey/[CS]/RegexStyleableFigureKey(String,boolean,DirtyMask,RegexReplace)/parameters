@@ -1,4 +1,4 @@
 String name
 boolean nullable
 DirtyMask mask
-Regex defaultValue
+RegexReplace defaultValue

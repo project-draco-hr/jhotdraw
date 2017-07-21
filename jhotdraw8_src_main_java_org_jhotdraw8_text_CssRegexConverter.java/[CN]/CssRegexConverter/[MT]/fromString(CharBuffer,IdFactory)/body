@@ -15,7 +15,7 @@ case CssTokenizer.TT_IDENT:
 if ("none".equals(tt.currentStringValue())) {
   tt.skipWhitespace();
   in.position(tt.getStartPosition());
-  return new Regex();
+  return new RegexReplace();
 }
  else {
   throw new ParseException("\"replace(\" or \"none\" expected",tt.getStartPosition());
@@ -54,5 +54,5 @@ throw new ParseException("closing bracket \")\" expected",tt.getStartPosition())
 }
 tt.skipWhitespace();
 in.position(tt.getStartPosition());
-return new Regex(find,replace);
+return new RegexReplace(find,replace);
 }

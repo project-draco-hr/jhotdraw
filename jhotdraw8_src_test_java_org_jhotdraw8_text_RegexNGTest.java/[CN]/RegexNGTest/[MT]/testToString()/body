@@ -1,6 +1,6 @@
 {
   System.out.println("toString");
-  Regex instance=new Regex();
+  RegexReplace instance=new RegexReplace();
   String expResult="///";
   String result=instance.toString();
   assertEquals(result,expResult);
