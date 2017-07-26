@@ -15,7 +15,7 @@
     model.set(figure,SimpleLineConnectionFigure.END_TARGET,null);
     if (!event.isMetaDown()) {
       List<Figure> list=view.findFigures(pointInViewCoordinates,true);
-      for (      Figure f1 : list) {
+      SearchLoop:       for (      Figure f1 : list) {
         for (        Figure ff : f1.breadthFirstIterable()) {
           if (figure != ff && (ff instanceof ConnectableFigure)) {
             ConnectableFigure cff=(ConnectableFigure)ff;
@@ -24,7 +24,7 @@
               newConnector=cff.findConnector(cff.worldToLocal(constrainedPoint),figure);
               if (newConnector != null && figure.canConnect(ff,newConnector)) {
                 newConnectionTarget=ff;
-                break;
+                break SearchLoop;
               }
             }
           }

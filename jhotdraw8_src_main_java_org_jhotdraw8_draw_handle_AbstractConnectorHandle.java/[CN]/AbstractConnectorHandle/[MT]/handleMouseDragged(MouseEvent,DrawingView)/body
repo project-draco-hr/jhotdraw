@@ -18,7 +18,7 @@
   model.set(o,targetKey,null);
   if (!event.isMetaDown()) {
     List<Figure> list=view.findFigures(pointInViewCoordinates,true);
-    for (    Figure f1 : list) {
+    SearchLoop:     for (    Figure f1 : list) {
       for (      Figure ff : f1.breadthFirstIterable()) {
         if (owner != ff && (ff instanceof ConnectableFigure)) {
           ConnectableFigure cff=(ConnectableFigure)ff;
@@ -29,7 +29,7 @@
               newConnectedFigure=ff;
               constrainedPoint=newConnector.getPositionInLocal(o,ff);
               isConnected=true;
-              break;
+              break SearchLoop;
             }
           }
         }
