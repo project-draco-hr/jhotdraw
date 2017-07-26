@@ -3,7 +3,7 @@
     dragStartIndex=-1;
     double x2=event.getX();
     double y2=event.getY();
-    Point2D c2=dv.getConstrainer().constrainPoint(createdFigure,dv.viewToDrawing(x2,y2));
+    Point2D c2=dv.getConstrainer().constrainPoint(createdFigure,dv.viewToWorld(x2,y2));
     DrawingModel dm=dv.getModel();
     points.set(points.size() - 1,new BezierNode(c2));
     dm.set(createdFigure,key,new ImmutableObservableList<>(points));

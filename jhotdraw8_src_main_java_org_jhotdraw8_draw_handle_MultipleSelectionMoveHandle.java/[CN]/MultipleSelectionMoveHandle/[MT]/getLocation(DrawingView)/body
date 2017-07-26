@@ -1,3 +1,3 @@
 {
-  return locationInDrawing == null ? null : dv.drawingToView(locationInDrawing);
+  return locationInDrawing == null ? null : dv.worldToView(locationInDrawing);
 }

@@ -1,4 +1,0 @@
-{
-  Bounds boundsInView=worldToView(f.localToWorld(f.getBoundsInLocal()));
-  scrollRectToVisible(boundsInView);
-}

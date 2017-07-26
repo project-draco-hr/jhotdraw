@@ -3,9 +3,11 @@
   ObservableList<PathElement> major=majorNode.getElements();
   minor.clear();
   major.clear();
+  Bounds visibleRect=drawingView.getVisibleRect();
+  visibleRect=drawingView.viewToWorld(visibleRect);
   if (drawGrid.get()) {
     Drawing drawing=drawingView.getDrawing();
-    Transform t=drawingView.getDrawingToView();
+    Transform t=drawingView.getWorldToView();
     double dx=0;
     double dy=0;
     double dw=drawing.get(Drawing.WIDTH);
@@ -24,7 +26,9 @@
     int gmy=Math.max(0,Math.abs(majorY.get()));
     Point2D scaled=t.deltaTransform(gxdelta,gydelta);
     if (scaled.getX() > 2 && gmx != 1) {
-      for (int i=0, n=(int)Math.ceil((dw - gx0) / gxdelta); i < n; i++) {
+      final int start=0;
+      final int end=(int)Math.ceil((dw - gx0) / gxdelta);
+      for (int i=start; i < end; i++) {
         if (gmx > 0 && i % gmx == 0) {
           continue;
         }
@@ -40,7 +44,9 @@
       }
     }
     if (scaled.getY() > 2 && gmy != 1) {
-      for (int i=0, n=(int)Math.ceil((dh - gy0) / gydelta); i < n; i++) {
+      final int start=0;
+      final int end=(int)Math.ceil((dh - gy0) / gydelta);
+      for (int i=start; i < end; i++) {
         if (gmy > 0 && i % gmy == 0) {
           continue;
         }
@@ -85,4 +91,11 @@
       }
     }
   }
+  Bounds b=drawingView.getVisibleRect();
+  b=Geom.grow(b,-20,-20);
+  major.add(new MoveTo(b.getMinX(),b.getMinY()));
+  major.add(new LineTo(b.getMaxX(),b.getMinY()));
+  major.add(new LineTo(b.getMaxX(),b.getMaxY()));
+  major.add(new LineTo(b.getMinX(),b.getMaxY()));
+  major.add(new ClosePath());
 }

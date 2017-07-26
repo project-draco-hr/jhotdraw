@@ -5,7 +5,7 @@
   double x1=event.getX();
   double y1=event.getY();
   DrawingModel dm=view.getModel();
-  Point2D c=view.getConstrainer().constrainPoint(createdFigure,view.viewToDrawing(new Point2D(x1,y1)));
+  Point2D c=view.getConstrainer().constrainPoint(createdFigure,view.viewToWorld(new Point2D(x1,y1)));
   if (createdFigure == null) {
     createdFigure=createFigure();
     points=new ArrayList<>();
