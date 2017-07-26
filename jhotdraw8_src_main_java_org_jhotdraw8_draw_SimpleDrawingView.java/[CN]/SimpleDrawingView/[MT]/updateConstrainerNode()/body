@@ -1,0 +1,7 @@
+{
+  constrainerNodeValid=true;
+  Constrainer c=getConstrainer();
+  if (c != null) {
+    c.updateNode(this);
+  }
+}

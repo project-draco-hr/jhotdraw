@@ -1,9 +1,10 @@
 {
   ScrollPane scrollPane=getScrollPane();
   if (scrollPane == null) {
-    return new BoundingBox(0,0,1,1);
+    return getNode().getBoundsInLocal();
   }
   final Bounds viewportBounds=scrollPane.getViewportBounds();
+  final Bounds scrollPaneBounds=scrollPane.getBoundsInLocal();
   final Bounds contentPaneBounds=scrollPane.getContent().getBoundsInLocal();
   final double hmin=scrollPane.getHmin();
   final double hmax=scrollPane.getHmax();
@@ -17,6 +18,6 @@
   final double viewportHeight=viewportBounds.getHeight();
   final double hoffset=Math.max(0,contentWidth - viewportWidth) * (hvalue - hmin) / (hmax - hmin);
   final double voffset=Math.max(0,contentHeight - viewportHeight) * (vvalue - vmin) / (vmax - vmin);
-  final Bounds rect=new BoundingBox(hoffset,voffset,viewportBounds.getWidth(),viewportHeight);
+  final Bounds rect=new BoundingBox(hoffset,voffset,viewportWidth,viewportHeight);
   return rect;
 }

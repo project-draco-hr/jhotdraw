@@ -1,8 +1,11 @@
 {
   ScrollPane sp=getScrollPane();
-  final Bounds contentPaneBounds=sp.getContent().getBoundsInLocal();
-  double width=contentPaneBounds.getWidth();
-  double height=contentPaneBounds.getHeight();
+  if (sp == null) {
+    return;
+  }
+  final Bounds viewportBounds=scrollPane.getViewportBounds();
+  double width=viewportBounds.getWidth();
+  double height=viewportBounds.getHeight();
   double x=boundsInView.getMinX() + boundsInView.getWidth() * 0.5;
   double y=boundsInView.getMinY() + boundsInView.getHeight() * 0.5;
   sp.setVvalue(Geom.clamp(y / height,0.0,1.0));
