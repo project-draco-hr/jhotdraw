@@ -20,7 +20,7 @@
         for (        Figure a : f.preorderIterable()) {
           if (visited.add(a)) {
             if (a instanceof TransformableFigure) {
-              markDirty(a,DirtyBits.TRANSFORM);
+              markDirty(a,DirtyBits.TRANSFORM,DirtyBits.LAYOUT_OBSERVERS);
             }
           }
         }
