@@ -1,4 +1,7 @@
 {
+  if (e instanceof Observable) {
+    ((Observable)e).addListener(itemHandler);
+  }
   if (changeListeners != null) {
     SetChangeListener.Change<E> change=new SetChangeListener.Change<E>(this){
       @Override public E getElementAdded(){
