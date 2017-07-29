@@ -1,0 +1,14 @@
+{
+  StringBuilder buf=new StringBuilder();
+  for (; t != null; t=t.getCause()) {
+    if ((t instanceof CompletionException) && t.getCause() != null) {
+      continue;
+    }
+    if (buf.length() != 0) {
+      buf.append('\n');
+    }
+    final String msg=t.getLocalizedMessage();
+    buf.append(msg == null ? t.toString() : msg);
+  }
+  return buf.toString();
+}
