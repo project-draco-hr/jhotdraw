@@ -1,18 +1,3 @@
 {
-  WriteableStyleableMapAccessor<Object> key=(WriteableStyleableMapAccessor<Object>)findKey(element,attributeName);
-  if (key == null) {
-    return null;
-  }
-  boolean isInitialValue=!element.containsKey(StyleOrigin.USER,key);
-  if ((key instanceof CompositeMapAccessor)) {
-    for (    MapAccessor<Object> subkey : (Set<MapAccessor<Object>>)((CompositeMapAccessor)key).getSubAccessors()) {
-      if (element.containsKey(StyleOrigin.USER,subkey)) {
-        isInitialValue=false;
-      }
-    }
-  }
-  if (isInitialValue) {
-    return INITIAL_VALUE_KEYWORD;
-  }
-  return key.getConverter().toString(element.get(key));
+  return getAttribute(element,StyleOrigin.USER,attributeName);
 }

@@ -1,0 +1,8 @@
+{
+  if (origin == StyleOrigin.USER) {
+    return getAttribute(elem,name);
+  }
+ else {
+    return SelectorModel.INITIAL_VALUE_KEYWORD;
+  }
+}

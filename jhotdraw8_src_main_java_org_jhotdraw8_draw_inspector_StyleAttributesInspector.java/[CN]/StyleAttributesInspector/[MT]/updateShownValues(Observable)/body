@@ -1,0 +1,15 @@
+{
+  Preferences prefs=Preferences.userNodeForPackage(StyleAttributesInspector.class);
+  String origin;
+  if (showAttributeValues.isSelected()) {
+    origin="user";
+  }
+ else   if (showStylesheetValues.isSelected()) {
+    origin="author";
+  }
+ else {
+    origin="styled";
+  }
+  prefs.put("shownValues",origin);
+  updateTextArea();
+}

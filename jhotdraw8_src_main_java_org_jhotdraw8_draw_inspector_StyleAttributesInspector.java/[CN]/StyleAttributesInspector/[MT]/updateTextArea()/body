@@ -20,6 +20,16 @@
   Set<String> styleClasses=new TreeSet<>();
   Map<String,String> attr=new TreeMap<>();
   Map<String,String> description=new TreeMap<>();
+  final StyleOrigin origin;
+  if (showAttributeValues.isSelected()) {
+    origin=StyleOrigin.USER;
+  }
+ else   if (showStylesheetValues.isSelected()) {
+    origin=StyleOrigin.AUTHOR;
+  }
+ else {
+    origin=null;
+  }
   boolean first=true;
   for (  Figure f : newValue) {
     selectorModel.getAttributeNames(f);
@@ -29,7 +39,7 @@
       type=selectorModel.getType(f);
       styleClasses.addAll(selectorModel.getStyleClasses(f));
       for (      String name : decompose ? selectorModel.getDecomposedAttributeNames(f) : selectorModel.getComposedAttributeNames(f)) {
-        attr.put(name,selectorModel.getAttribute(f,name));
+        attr.put(name,selectorModel.getAttribute(f,origin,name));
       }
     }
  else {
@@ -40,7 +50,7 @@
       for (      String name : attr.keySet()) {
         String oldAttrValue=attr.get(name);
         if (oldAttrValue != null) {
-          String newAttrValue=selectorModel.getAttribute(f,name);
+          String newAttrValue=selectorModel.getAttribute(f,origin,name);
           if (!oldAttrValue.equals(newAttrValue)) {
             attr.put(name,"/* multiple values */");
           }

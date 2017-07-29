@@ -1,4 +1,7 @@
 {
+  if (origin == null) {
+    return getStyled(key);
+  }
   Map<Key<?>,Object> map=getStyleableMap().getMap(origin);
   return key.get(map);
 }
