@@ -1,0 +1,3 @@
+int marginStart
+int marginEnd
+PathBuilder target

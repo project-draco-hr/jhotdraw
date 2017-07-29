@@ -1,0 +1,20 @@
+{
+  if (prevOp != null) {
+switch (prevOp) {
+case MoveTo:
+      break;
+case LineTo:
+    break;
+case ClosePath:
+  break;
+case QuadTo:
+break;
+case CurveTo:
+break;
+default :
+throw new UnsupportedOperationException("prevOp:" + prevOp);
+}
+}
+prevOp=Op.CurveTo;
+target.curveTo(x1,y1,x2,y2,x3,y3);
+}

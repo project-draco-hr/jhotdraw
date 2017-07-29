@@ -1,0 +1,4 @@
+{
+  prevOp=Op.QuadTo;
+  target.quadTo(x1,y1,x2,y2);
+}

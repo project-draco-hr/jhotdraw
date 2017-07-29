@@ -1,0 +1,5 @@
+{
+  doEnd();
+  prevOp=Op.ClosePath;
+  target.closePath();
+}

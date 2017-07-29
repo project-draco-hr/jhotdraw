@@ -1,0 +1,5 @@
+{
+  this.marginStart=marginStart;
+  this.marginEnd=marginEnd;
+  this.target=target;
+}

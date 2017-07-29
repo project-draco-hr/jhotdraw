@@ -1,0 +1,24 @@
+{
+  if (prevOp != null) {
+switch (prevOp) {
+case MoveTo:
+      Point2D dir=new Point2D(x,y).subtract(getLastX(),getLastY()).normalize().multiply(marginStart);
+    target.moveTo(getLastX() + dir.getX(),getLastY() + dir.getY());
+  break;
+case LineTo:
+target.lineTo(getLastX(),getLastY());
+break;
+case ClosePath:
+break;
+case QuadTo:
+break;
+case CurveTo:
+break;
+default :
+throw new UnsupportedOperationException("prevOp:" + prevOp);
+}
+}
+prevOp=Op.LineTo;
+fromX=getLastX();
+fromY=getLastY();
+}
