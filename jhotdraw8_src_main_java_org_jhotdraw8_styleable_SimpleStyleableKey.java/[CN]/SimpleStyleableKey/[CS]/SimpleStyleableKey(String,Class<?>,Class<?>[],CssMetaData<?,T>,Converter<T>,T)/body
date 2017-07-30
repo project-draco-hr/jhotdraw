@@ -1,5 +1,3 @@
 {
-  super(key,clazz,typeParameters,defaultValue);
-  this.converter=converter;
-  this.cssMetaData=metaData;
+  super(key,clazz,typeParameters,metaData,converter,defaultValue);
 }
