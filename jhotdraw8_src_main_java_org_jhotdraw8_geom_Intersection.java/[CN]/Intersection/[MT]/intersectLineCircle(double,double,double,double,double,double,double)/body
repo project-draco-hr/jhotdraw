@@ -9,6 +9,8 @@
   }
  else   if (deter == 0) {
     result=new Intersection(Status.NO_INTERSECTION_TANGENT);
+    double u=(-b) / (2 * a);
+    result.put(u,lerp(x1,y1,x2,y2,u));
   }
  else {
     double e=Math.sqrt(deter);

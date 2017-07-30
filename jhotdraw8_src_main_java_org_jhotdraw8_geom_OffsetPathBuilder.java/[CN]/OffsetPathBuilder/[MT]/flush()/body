@@ -1,0 +1,9 @@
+{
+  for (int i=0, n=segments.size(); i < n; i++) {
+    Point2D p=segments.get(i);
+    if (i == 0)     target.moveTo(p);
+ else     target.lineTo(p);
+  }
+  segments.clear();
+  disks.clear();
+}

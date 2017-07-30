@@ -1,6 +1,6 @@
 {
   if (Double.isNaN(minx)) {
-    return new Rectangle(0,0,0,0);
+    return null;
   }
   return new Rectangle(minx,miny,maxx - minx,maxy - miny);
 }

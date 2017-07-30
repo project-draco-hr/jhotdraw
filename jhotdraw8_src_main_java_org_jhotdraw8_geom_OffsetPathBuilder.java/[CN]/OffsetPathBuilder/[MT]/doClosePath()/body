@@ -1,0 +1,11 @@
+{
+  if (needsMoveTo) {
+    target.moveTo(getLastX(),getLastY());
+    needsMoveTo=false;
+  }
+ else {
+    target.lineTo(getLastX(),getLastY());
+  }
+  flush();
+  target.closePath();
+}
