@@ -1,0 +1,11 @@
+{
+  double minx=Double.MAX_VALUE, miny=Double.MAX_VALUE, maxx=Double.MIN_VALUE, maxy=Double.MIN_VALUE;
+  for (  Figure f : figures) {
+    Bounds b=f.localToWorld(f.getBoundsInLocal());
+    minx=min(minx,b.getMinX());
+    maxx=max(maxx,b.getMaxX());
+    miny=min(miny,b.getMinY());
+    maxy=max(maxy,b.getMaxY());
+  }
+  return new BoundingBox(minx,miny,maxx - minx,maxy - miny);
+}

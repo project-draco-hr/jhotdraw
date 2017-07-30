@@ -1,0 +1,33 @@
+{
+  CssParser parser=new CssParser();
+  try {
+    Stylesheet s=parser.parseStylesheet(textArea.getText());
+    if (!parser.getParseExceptions().isEmpty()) {
+      System.out.println("StyleAttributesInspector:\n" + parser.getParseExceptions().toString().replace(',','\n'));
+    }
+    Drawing d=drawingView.getDrawing();
+    DrawingModel m=drawingView.getModel();
+    ObservableMap<String,Set<Figure>> pseudoStyles=FXCollections.observableHashMap();
+    HashSet<Figure> fs=new HashSet<>(drawingView.getSelectedFigures());
+    if (fs.isEmpty()) {
+      fs.add(d);
+    }
+    pseudoStyles.put("selected",fs);
+    List<Figure> matchedFigures=new ArrayList<>();
+    StylesheetsManager<Figure> sm=d.getStyleManager();
+    FigureSelectorModel fsm=(FigureSelectorModel)sm.getSelectorModel();
+    fsm.additionalPseudoClassStatesProperty().setValue(pseudoStyles);
+    for (    Figure f : d.breadthFirstIterable()) {
+      if (sm.matchesElement(s,f)) {
+        matchedFigures.add(f);
+      }
+    }
+    drawingView.getSelectedFigures().clear();
+    drawingView.getSelectedFigures().addAll(matchedFigures);
+    drawingView.scrollSelectedFiguresToVisible();
+  }
+ catch (  IOException ex) {
+    ex.printStackTrace();
+    return;
+  }
+}
