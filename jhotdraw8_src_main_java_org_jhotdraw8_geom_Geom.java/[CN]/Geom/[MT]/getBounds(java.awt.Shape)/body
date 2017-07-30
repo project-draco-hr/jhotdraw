@@ -1,0 +1,4 @@
+{
+  java.awt.geom.Rectangle2D r=shape.getBounds2D();
+  return new BoundingBox(r.getX(),r.getY(),r.getWidth(),r.getHeight());
+}

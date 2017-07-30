@@ -35,7 +35,7 @@
  else {
           basicStroke=new BasicStroke((float)strokeWidth,Shapes.awtCapFromFX(f.getStyled(STROKE_LINE_CAP)),Shapes.awtJoinFromFX(f.getStyled(STROKE_LINE_JOIN)),f.getStyled(STROKE_MITER_LIMIT).floatValue());
         }
-        iter=basicStroke.createStrokedShape(Shapes.buildFromPathIterator(new Path2DDoubleBuilder(),iter).get()).getPathIterator(null);
+        iter=basicStroke.createStrokedShape(Shapes.buildFromPathIterator(new AWTPathBuilder(),iter).get()).getPathIterator(null);
       }
     }
   }

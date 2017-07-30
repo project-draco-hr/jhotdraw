@@ -1,18 +1,8 @@
 {
   Group g=(Group)node;
-  Region r=(Region)g.getProperties().get("region");
+  Path p=(Path)g.getProperties().get("path");
   Text t=(Text)g.getProperties().get("text");
   updateGroupNode(ctx,g);
-  updateRegionNode(ctx,r);
+  updatePathNode(ctx,p);
   updateTextNode(ctx,t);
-  if (getStyled(FILL) != null || getStyled(STROKE) != null) {
-    if (g.getChildren().size() != 2) {
-      g.getChildren().setAll(r,t);
-    }
-  }
- else {
-    if (g.getChildren().size() != 1) {
-      g.getChildren().setAll(t);
-    }
-  }
 }

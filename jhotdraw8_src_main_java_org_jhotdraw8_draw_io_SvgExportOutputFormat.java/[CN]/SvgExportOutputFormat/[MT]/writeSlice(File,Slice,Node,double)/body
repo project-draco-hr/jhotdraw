@@ -1,5 +1,4 @@
 {
-  SvgExporter exporter=createExporter();
   markNodesOutsideBoundsWithSkip(node,slice.getBoundsInLocal());
   Transform worldToLocal=slice.getWorldToLocal();
   Point2D sliceOrigin=slice.getSliceOrigin();
@@ -8,7 +7,8 @@
     node.getTransforms().setAll(worldToLocal);
   }
   new TransformFlattener().flattenTranslates(node);
-  Document doc=exporter.toDocument(node);
+  final SvgExporter exporter=createExporter();
+  final Document doc=exporter.toDocument(node);
   writeSliceElementAttributes(doc.getDocumentElement(),slice);
   node.getTransforms().clear();
   XmlUtil.write(file,doc);

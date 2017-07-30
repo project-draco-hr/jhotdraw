@@ -1,11 +1,10 @@
 {
   Group g=new Group();
   g.setAutoSizeChildren(false);
-  Region r=new Region();
-  r.setScaleShape(true);
+  Path p=new Path();
   Text text=new Text();
-  g.getChildren().add(text);
-  g.getProperties().put("region",r);
+  g.getChildren().addAll(p,text);
+  g.getProperties().put("path",p);
   g.getProperties().put("text",text);
   return g;
 }
