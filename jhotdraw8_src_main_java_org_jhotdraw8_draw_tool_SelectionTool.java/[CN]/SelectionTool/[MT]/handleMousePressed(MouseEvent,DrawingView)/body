@@ -23,6 +23,7 @@
       }
       if (isSelectBehindEnabled() && (event.isAltDown())) {
         pressedFigure=null;
+        Figure firstFigure=null;
         boolean selectionFound=false;
         for (        Figure f : view.findFigures(vx,vy,false)) {
           if (view.selectedFiguresProperty().contains(f)) {
@@ -35,7 +36,7 @@
           }
         }
         if (pressedFigure == null) {
-          pressedFigure=view.findFigure(vx,vy);
+          pressedFigure=firstFigure;
         }
       }
  else {
