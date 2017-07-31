@@ -2,8 +2,25 @@
   Element elem=doc.createElement("text");
   parent.appendChild(elem);
   elem.appendChild(doc.createTextNode(node.getText()));
-  elem.setAttribute("x",nb.toString(node.getX()));
-  elem.setAttribute("y",nb.toString(node.getY()));
-  writeTextAttributes(elem,node);
-  return elem;
+  VPos vpos=node.getTextOrigin();
+  final double vposOffset;
+switch (vpos) {
+default :
+case BASELINE:
+    vposOffset=0;
+  break;
+case BOTTOM:
+vposOffset=0;
+break;
+case CENTER:
+vposOffset=node.getBoundsInLocal().getHeight() * 0.5;
+break;
+case TOP:
+vposOffset=node.getBoundsInLocal().getHeight();
+break;
+}
+elem.setAttribute("x",nb.toString(node.getX()));
+elem.setAttribute("y",nb.toString(node.getY() + vposOffset));
+writeTextAttributes(elem,node);
+return elem;
 }
