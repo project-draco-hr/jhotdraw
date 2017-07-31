@@ -1,6 +1,10 @@
 {
-  if (vi < 0 || vi >= getVertexCount())   throw new IllegalArgumentException("vi:" + i);
-  if (i < 0 || i >= getNextCount(vi))   throw new IllegalArgumentException("i:" + i);
+  if (vi < 0 || vi >= getVertexCount()) {
+    throw new IllegalArgumentException("vi:" + i);
+  }
+  if (i < 0 || i >= getNextCount(vi)) {
+    throw new IllegalArgumentException("i:" + i);
+  }
   int prevEdgeId=SENTINEL;
   int edgeId=lastEdge[vi * LASTEDGE_NUM_FIELDS + LASTEDGE_POINTER_FIELD];
   for (int j=i - 1; j >= 0; j--) {
@@ -27,11 +31,13 @@
         break;
       }
     }
-    if (!fixed)     for (int e=0; e < edgeCount; e++) {
-      if (edges[e * EDGES_NUM_FIELDS + EDGES_POINTER_FIELD] == moveEdgeId) {
-        edges[e * EDGES_NUM_FIELDS + EDGES_POINTER_FIELD]=edgeId;
-        fixed=true;
-        break;
+    if (!fixed) {
+      for (int e=0; e < edgeCount; e++) {
+        if (edges[e * EDGES_NUM_FIELDS + EDGES_POINTER_FIELD] == moveEdgeId) {
+          edges[e * EDGES_NUM_FIELDS + EDGES_POINTER_FIELD]=edgeId;
+          fixed=true;
+          break;
+        }
       }
     }
   }

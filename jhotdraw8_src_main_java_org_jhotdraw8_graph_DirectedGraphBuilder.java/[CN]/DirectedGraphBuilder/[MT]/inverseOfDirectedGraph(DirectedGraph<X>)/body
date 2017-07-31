@@ -1,6 +1,6 @@
 {
   int edgeCount=countEdges(graph);
-  DirectedGraphBuilder<X> b=new DirectedGraphBuilder<X>(graph.getVertexCount(),edgeCount);
+  DirectedGraphBuilder<X> b=new DirectedGraphBuilder<>(graph.getVertexCount(),edgeCount);
   for (int i=0, n=graph.getVertexCount(); i < n; i++) {
     X v=graph.getVertex(i);
     b.addVertex(v);

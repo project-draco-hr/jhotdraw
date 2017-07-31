@@ -1,5 +1,5 @@
 {
-  DirectedGraphBuilder<X> b=new DirectedGraphBuilder<X>();
+  DirectedGraphBuilder<X> b=new DirectedGraphBuilder<>();
   for (  X v : vertices) {
     b.addVertex(v);
   }

@@ -1,5 +1,5 @@
 {
-  ImmutableDirectedGraph<V> model=new ImmutableDirectedGraph<V>(vertexCount,edgeCount);
+  ImmutableDirectedGraph<V> model=new ImmutableDirectedGraph<>(vertexCount,edgeCount);
   for (  V v : vertices) {
     model.buildAddVertex(v);
   }

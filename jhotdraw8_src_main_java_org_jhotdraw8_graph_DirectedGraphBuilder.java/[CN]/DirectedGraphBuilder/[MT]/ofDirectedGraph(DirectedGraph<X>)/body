@@ -1,5 +1,5 @@
 {
-  DirectedGraphBuilder<X> b=new DirectedGraphBuilder<X>();
+  DirectedGraphBuilder<X> b=new DirectedGraphBuilder<>();
   for (int i=0, n=model.getVertexCount(); i < n; i++) {
     X v=model.getVertex(i);
     b.addVertex(v);
