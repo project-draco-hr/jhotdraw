@@ -11,14 +11,6 @@
   double dh=d.get(Drawing.HEIGHT);
   int imgw=Math.min(16000,Math.max(1,(int)(dw)));
   int imgh=Math.min(16000,Math.max(1,(int)(dh)));
-  if (drawingImageView != null) {
-    if (drawingImage == null || drawingImage.getWidth() != imgw || drawingImage.getHeight() != imgh) {
-      drawingImage=null;
-      drawingImageView.setImage(null);
-      drawingImage=new WritableImage(imgw,imgh);
-      drawingImageView.setImage(drawingImage);
-    }
-  }
   Bounds bounds=drawingPane.getLayoutBounds();
   double x=bounds.getMinX() * f;
   double y=bounds.getMinY() * f;

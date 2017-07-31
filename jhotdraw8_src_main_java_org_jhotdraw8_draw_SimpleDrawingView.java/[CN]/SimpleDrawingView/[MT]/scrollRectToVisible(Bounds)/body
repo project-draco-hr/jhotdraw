@@ -1,13 +1,13 @@
 {
-  ScrollPane scrollPane=getScrollPane();
-  if (scrollPane == null) {
+  ScrollPane sp=getScrollPane();
+  if (sp == null) {
     return;
   }
-  final Bounds contentBounds=scrollPane.getContent().getBoundsInLocal();
+  final Bounds contentBounds=sp.getContent().getBoundsInLocal();
   double width=contentBounds.getWidth();
   double height=contentBounds.getHeight();
   double x=boundsInView.getMinX() + boundsInView.getWidth() * 0.5;
   double y=boundsInView.getMinY() + boundsInView.getHeight() * 0.5;
-  scrollPane.setVvalue(Geom.clamp(y / height,0.0,1.0));
-  scrollPane.setHvalue(Geom.clamp(x / width,0.0,1.0));
+  sp.setVvalue(Geom.clamp(y / height,0.0,1.0));
+  sp.setHvalue(Geom.clamp(x / width,0.0,1.0));
 }

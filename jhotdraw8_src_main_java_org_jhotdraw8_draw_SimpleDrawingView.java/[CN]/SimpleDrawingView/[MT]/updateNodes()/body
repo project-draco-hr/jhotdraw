@@ -1,2 +1,27 @@
 {
+  if (!renderIntoImage) {
+    Figure[] copyOfDirtyFigureNodes=dirtyFigureNodes.toArray(new Figure[dirtyFigureNodes.size()]);
+    dirtyFigureNodes.clear();
+    for (    Figure f : copyOfDirtyFigureNodes) {
+      f.updateNode(this,getNode(f));
+    }
+  }
+  if (!recreateHandles) {
+    Figure[] copyOfDirtyHandles=dirtyHandles.toArray(new Figure[dirtyHandles.size()]);
+    dirtyHandles.clear();
+    for (    Figure f : copyOfDirtyHandles) {
+      List<Handle> hh=handles.get(f);
+      if (hh != null) {
+        for (        Handle h : hh) {
+          h.updateNode(this);
+        }
+      }
+    }
+  }
+  for (  Handle h : secondaryHandles) {
+    h.updateNode(this);
+  }
+  if (!constrainerNodeValid) {
+    updateConstrainerNode();
+  }
 }
