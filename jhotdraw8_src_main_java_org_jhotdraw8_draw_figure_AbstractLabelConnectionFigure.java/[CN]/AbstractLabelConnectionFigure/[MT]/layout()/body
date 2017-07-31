@@ -19,7 +19,7 @@
     }
   }
  else {
-    perp=new Point2D(0,1);
+    perp=new Point2D(0,-1);
   }
   set(LABELED_LOCATION,labeledLoc);
   Bounds b=getLayoutBounds();
