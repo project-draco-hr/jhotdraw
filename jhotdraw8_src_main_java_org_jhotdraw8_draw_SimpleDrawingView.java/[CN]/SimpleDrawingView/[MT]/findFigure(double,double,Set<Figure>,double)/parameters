@@ -1,0 +1,4 @@
+double vx
+double vy
+Set<Figure> figures
+double tolerance

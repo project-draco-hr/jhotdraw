@@ -27,7 +27,7 @@ invalidate();
 break;
 }
 case LAYOUT_CHANGED:
-markDirty(figure,DirtyBits.LAYOUT);
+markDirty(figure,DirtyBits.LAYOUT,DirtyBits.TRANSFORM);
 invalidate();
 break;
 case STYLE_CHANGED:

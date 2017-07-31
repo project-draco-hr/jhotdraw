@@ -1,12 +1,3 @@
 {
-  Node worldNode=getNode(getDrawing());
-  Point2D pointInScene=worldNode.getLocalToSceneTransform().transform(viewToWorld(vx,vy));
-  for (  Figure f : figures) {
-    Node n=getNode(f);
-    Point2D pointInLocal=n.sceneToLocal(pointInScene);
-    if (contains(n,pointInLocal,TOLERANCE)) {
-      return f;
-    }
-  }
-  return null;
+  return findFigure(vx,vy,figures,TOLERANCE);
 }

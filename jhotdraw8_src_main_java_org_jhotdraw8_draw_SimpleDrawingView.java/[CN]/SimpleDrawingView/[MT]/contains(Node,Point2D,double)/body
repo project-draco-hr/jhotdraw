@@ -1,33 +1,39 @@
 {
-  if (tolerance == 0) {
-    return node.contains(point);
-  }
+  double toleranceInLocal=tolerance / node.getLocalToSceneTransform().deltaTransform(1,1).magnitude();
   if (node instanceof Shape) {
     Shape shape=(Shape)node;
-    if (shape.getFill() == null) {
-      return Shapes.outlineContains(Shapes.awtShapeFromFX(shape),new java.awt.geom.Point2D.Double(point.getX(),point.getY()),tolerance);
+    if (shape.contains(point)) {
+      return true;
     }
+    double widthFactor;
+switch (shape.getStrokeType()) {
+case CENTERED:
+default :
+      widthFactor=0.5;
+    break;
+case INSIDE:
+  widthFactor=0;
+break;
+case OUTSIDE:
+widthFactor=1;
+break;
+}
+return Shapes.outlineContains(Shapes.awtShapeFromFX(shape),new java.awt.geom.Point2D.Double(point.getX(),point.getY()),shape.getStrokeWidth() * widthFactor + toleranceInLocal);
+}
+ else if (node instanceof Rectangle) {
+return Geom.contains(node.getBoundsInLocal(),point,toleranceInLocal);
+}
+ else if (node instanceof Group) {
+if (Geom.contains(node.getBoundsInLocal(),point,toleranceInLocal)) {
+for (Node child : ((Group)node).getChildren()) {
+if (contains(child,child.parentToLocal(point),tolerance)) {
+return true;
+}
+}
+}
+return false;
+}
  else {
-      return shape.contains(point);
-    }
-  }
- else   if (node instanceof Rectangle) {
-    return Geom.contains(node.getBoundsInLocal(),point,tolerance);
-  }
- else   if (node instanceof Shape) {
-    return node.contains(point);
-  }
- else   if (node instanceof Group) {
-    if (Geom.contains(node.getBoundsInLocal(),point,tolerance)) {
-      for (      Node child : ((Group)node).getChildren()) {
-        if (contains(child,child.parentToLocal(point),tolerance)) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
- else {
-    return Geom.contains(node.getBoundsInLocal(),point,tolerance);
-  }
+return Geom.contains(node.getBoundsInLocal(),point,tolerance);
+}
 }
