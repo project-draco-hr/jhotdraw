@@ -10,6 +10,12 @@
     fireDrawingModelEvent(DrawingModelEvent.propertyValueChanged(this,event.getSource(),(Key<Object>)event.getKey(),event.getOldValue(),event.getNewValue()));
     Key<?> k=event.getKey();
     if (k instanceof FigureKey && ((FigureKey<?>)k).getDirtyMask().containsOneOf(DirtyBits.LAYOUT_SUBJECT)) {
+      if (event.getOldValue() instanceof Figure) {
+        fireStyleInvalidated((Figure)event.getOldValue());
+      }
+      if (event.getNewValue() instanceof Figure) {
+        fireStyleInvalidated((Figure)event.getNewValue());
+      }
       fireDrawingModelEvent(DrawingModelEvent.layoutSubjectChanged(this,event.getSource()));
       layoutSubjectChange.addAll(event.getSource().getLayoutSubjects());
       for (      Figure f : new ArrayList<>(layoutSubjectChange)) {
