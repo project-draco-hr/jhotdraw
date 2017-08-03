@@ -1,8 +1,31 @@
 {
+  for (int i=0, n=segments.size(); i < n - 2; ++i) {
+    Point2D a1=segments.get(i);
+    Point2D a2=segments.get(i + 1);
+    for (int j=i + 1; j < n - 1; ++j) {
+      Point2D b1=segments.get(j);
+      Point2D b2=segments.get(j + 1);
+      Intersection inter=Intersection.intersectLineLine(a1,a2,b1,b2);
+      if (inter.getStatus() == Intersection.Status.INTERSECTION) {
+        Point2D p=inter.getPoints().iterator().next();
+        segments.set(i + 1,p);
+        segments.set(j,p);
+        for (int k=i + 1; k < j; k++) {
+          segments.remove(i + 1);
+        }
+        n-=j - 1 - i;
+        j-=j - 1 - i;
+      }
+    }
+  }
   for (int i=0, n=segments.size(); i < n; i++) {
     Point2D p=segments.get(i);
-    if (i == 0)     target.moveTo(p);
- else     target.lineTo(p);
+    if (i == 0) {
+      target.moveTo(p);
+    }
+ else {
+      target.lineTo(p);
+    }
   }
   segments.clear();
   disks.clear();
