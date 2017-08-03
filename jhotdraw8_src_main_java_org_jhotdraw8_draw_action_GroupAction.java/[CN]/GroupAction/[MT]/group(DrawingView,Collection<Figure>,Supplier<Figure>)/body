@@ -32,7 +32,7 @@
   DrawingModel model=view.getModel();
   Figure group=groupFactory.get();
   model.addChildTo(group,parent);
-  for (  Figure child : TreeNode.toList(drawing.breadthFirstIterable())) {
+  for (  Figure child : Iterators.toList(drawing.breadthFirstIterable())) {
     if (!figures.contains(child)) {
       continue;
     }
