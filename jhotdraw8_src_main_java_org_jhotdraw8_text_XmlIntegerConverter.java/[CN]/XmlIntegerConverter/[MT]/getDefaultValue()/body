@@ -1,0 +1,4 @@
+{
+  Number n=c.getDefaultValue();
+  return (n == null || n instanceof Integer) ? (Integer)n : n.intValue();
+}
