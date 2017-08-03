@@ -5,28 +5,31 @@
   Drawing drawing=view.getDrawing();
   double vx=event.getX();
   double vy=event.getY();
-  if (event.isControlDown()) {
-    SelectAreaTracker t=getSelectAreaTracker();
-    setTracker(t);
+  Handle h=view.findHandle(vx,vy);
+  if (h != null && h.isEditable()) {
+    if (updateCursor) {
+      node.setCursor(h.getCursor());
+    }
+    setTracker(getHandleTracker(h));
   }
  else {
-    Handle h=view.findHandle(vx,vy);
-    if (h != null && h.getOwner().isEditable()) {
-      if (updateCursor) {
-        node.setCursor(h.getCursor());
-      }
-      setTracker(getHandleTracker(h));
+    if (updateCursor) {
+      node.setCursor(Cursor.DEFAULT);
+    }
+    tracker=null;
+  }
+  if (tracker == null) {
+    if (event.isControlDown()) {
+      SelectAreaTracker t=getSelectAreaTracker();
+      setTracker(t);
     }
  else {
-      if (updateCursor) {
-        node.setCursor(Cursor.DEFAULT);
-      }
       if (isSelectBehindEnabled() && (event.isAltDown())) {
         pressedFigure=null;
         Figure firstFigure=null;
         boolean selectionFound=false;
         for (        Figure f : view.findFigures(vx,vy,false)) {
-          if (firstFigure == null) {
+          if (f.isVisible())           if (firstFigure == null) {
             firstFigure=f;
           }
           if (view.selectedFiguresProperty().contains(f)) {
