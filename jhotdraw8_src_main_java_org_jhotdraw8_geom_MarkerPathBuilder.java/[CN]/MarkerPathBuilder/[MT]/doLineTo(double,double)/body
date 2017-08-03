@@ -1,0 +1,6 @@
+{
+  doStartMarker(x,y);
+  tangentX=getLastX();
+  tangentY=getLastY();
+  needsEndMarker=true;
+}

@@ -1,0 +1,6 @@
+{
+  this.startMarker=startMarker;
+  this.endMarker=endMarker;
+  this.midMarker=midMarker;
+  this.out=out;
+}
