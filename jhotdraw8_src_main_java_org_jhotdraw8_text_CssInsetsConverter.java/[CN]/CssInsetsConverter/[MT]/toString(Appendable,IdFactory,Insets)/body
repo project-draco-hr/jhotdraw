@@ -9,7 +9,7 @@
       }
     }
  else {
-      formatter.toStr(out,idFactory,3,value.getTop(),value.getRight(),value.getBottom());
+      formatter.toStr(out,idFactory,4,value.getTop(),value.getRight(),value.getBottom(),value.getLeft());
     }
   }
  else {
