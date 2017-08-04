@@ -1,0 +1,4 @@
+{
+  rangeCheck(index,size);
+  return items[index];
+}

@@ -1,0 +1,5 @@
+{
+  if (index < 0 || index >= maxExclusive) {
+    throw new IndexOutOfBoundsException("Index out of bounds " + index);
+  }
+}

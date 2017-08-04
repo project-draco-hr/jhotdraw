@@ -1,0 +1,7 @@
+{
+  rangeCheck(index,size + 1);
+  increaseCapacity(size + 1);
+  System.arraycopy(items,index,items,index + 1,size - index);
+  items[index]=newItem;
+  ++size;
+}

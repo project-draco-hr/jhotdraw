@@ -1,0 +1,12 @@
+{
+  if (capacity <= size) {
+    return;
+  }
+  if (items == null) {
+    items=new int[capacity];
+  }
+  int newCapacity=max(capacity,size + size / 2);
+  int[] newItems=new int[newCapacity];
+  System.arraycopy(items,0,newItems,0,size);
+  items=newItems;
+}

@@ -1,0 +1,6 @@
+{
+  rangeCheck(index,size);
+  int removedItem=items[index];
+  items[index]=newItem;
+  return removedItem;
+}

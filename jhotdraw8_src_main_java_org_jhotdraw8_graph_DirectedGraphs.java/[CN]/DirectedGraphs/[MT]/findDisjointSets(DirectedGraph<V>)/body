@@ -2,7 +2,7 @@
   Map<V,List<V>> sets=new LinkedHashMap<>();
   for (int i=0, n=g.getVertexCount(); i < n; i++) {
     final V v=g.getVertex(i);
-    List<V> initialSet=new ArrayList<>();
+    List<V> initialSet=new ArrayList<>(1);
     initialSet.add(v);
     sets.put(v,initialSet);
   }
@@ -28,12 +28,12 @@
       }
     }
   }
-  Map<List<V>,Object> forestMap=new IdentityHashMap<>();
-  List<Set<V>> forest=new ArrayList<>();
+  Map<List<V>,Object> setMap=new IdentityHashMap<>();
+  List<Set<V>> disjointSets=new ArrayList<>();
   for (  List<V> set : sets.values()) {
-    if (null == forestMap.put(set,set)) {
-      forest.add(new LinkedHashSet<>(set));
+    if (null == setMap.put(set,set)) {
+      disjointSets.add(new LinkedHashSet<>(set));
     }
   }
-  return forest;
+  return disjointSets;
 }

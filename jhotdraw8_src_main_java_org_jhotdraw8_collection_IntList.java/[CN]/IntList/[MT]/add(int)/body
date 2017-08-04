@@ -1,0 +1,4 @@
+{
+  increaseCapacity(size + 1);
+  items[size++]=newItem;
+}

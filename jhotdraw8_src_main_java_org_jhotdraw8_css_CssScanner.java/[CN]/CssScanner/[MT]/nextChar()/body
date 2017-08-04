@@ -1,6 +1,6 @@
 {
   if (!pushedChars.isEmpty()) {
-    currentChar=pushedChars.remove(pushedChars.size() - 1);
+    currentChar=pushedChars.removeAt(pushedChars.size() - 1);
     return currentChar;
   }
   currentChar=in.read();

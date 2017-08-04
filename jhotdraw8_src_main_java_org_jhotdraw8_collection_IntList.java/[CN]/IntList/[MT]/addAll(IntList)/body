@@ -1,0 +1,8 @@
+{
+  if (that.isEmpty()) {
+    return;
+  }
+  increaseCapacity(size + that.size);
+  System.arraycopy(that.items,0,this.items,this.size,that.size);
+  this.size+=that.size;
+}
