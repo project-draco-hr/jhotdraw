@@ -8,5 +8,8 @@
   if (parent != null) {
     return parent.containsKey(key);
   }
+  if (isVerbose) {
+    System.out.println("Can't find resource for bundle " + baseName + " key not found: "+ key);
+  }
   return false;
 }

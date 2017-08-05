@@ -12,6 +12,9 @@
       System.err.println("Can't find parent resource bundle. =" + PARENT_RESOURCE_KEY + "="+ parentBaseName);
     }
  else {
+      if (isVerbose) {
+        System.out.println("Found parent resource bundle. " + PARENT_RESOURCE_KEY + "="+ parentBaseName);
+      }
     }
   }
  catch (  MissingResourceException e) {
