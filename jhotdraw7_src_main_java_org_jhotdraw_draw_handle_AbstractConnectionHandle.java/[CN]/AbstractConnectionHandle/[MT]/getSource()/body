@@ -1,6 +1,0 @@
-{
-  if (getTarget() == getOwner().getStartConnector()) {
-    return getOwner().getEndConnector();
-  }
-  return getOwner().getStartConnector();
-}

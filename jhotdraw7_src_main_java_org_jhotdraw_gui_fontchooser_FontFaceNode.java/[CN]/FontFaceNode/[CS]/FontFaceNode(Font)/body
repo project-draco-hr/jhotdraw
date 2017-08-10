@@ -1,4 +1,0 @@
-{
-  this.typeface=typeface;
-  this.name=beautifyName(typeface.getPSName());
-}

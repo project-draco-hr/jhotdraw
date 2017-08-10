@@ -1,5 +1,0 @@
-{
-  if (value != defaultValue) {
-    addAttribute(name,value);
-  }
-}

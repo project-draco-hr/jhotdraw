@@ -1,3 +1,0 @@
-{
-  getView().getDrawing().removeAll(getView().getSelectedFigures());
-}

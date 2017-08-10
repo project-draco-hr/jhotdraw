@@ -1,5 +1,0 @@
-{
-  if (generalPath == null) {
-    generalPath=toGeneralPath();
-  }
-}

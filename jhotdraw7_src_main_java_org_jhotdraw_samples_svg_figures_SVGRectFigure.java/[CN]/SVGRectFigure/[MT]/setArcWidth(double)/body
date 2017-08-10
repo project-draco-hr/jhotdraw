@@ -1,5 +1,0 @@
-{
-  double oldValue=roundrect.arcwidth;
-  roundrect.arcwidth=newValue;
-  firePropertyChange(ARC_WIDTH_PROPERTY,oldValue,newValue);
-}

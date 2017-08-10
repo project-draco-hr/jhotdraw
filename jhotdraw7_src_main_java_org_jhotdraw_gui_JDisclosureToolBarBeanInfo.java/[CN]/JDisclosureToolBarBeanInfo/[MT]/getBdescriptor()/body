@@ -1,8 +1,0 @@
-{
-  if (beanDescriptor == null) {
-    beanDescriptor=new BeanDescriptor(JDisclosureToolBarBeanInfo.class);
-  }
-  beanDescriptor.setValue("isContainer",Boolean.FALSE);
-  beanDescriptor.setDisplayName("JDisclosureToolBar");
-  return beanDescriptor;
-}

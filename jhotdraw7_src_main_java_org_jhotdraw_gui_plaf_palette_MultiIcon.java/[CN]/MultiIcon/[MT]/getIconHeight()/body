@@ -1,4 +1,0 @@
-{
-  generateIconsFromTiledImage();
-  return icons[0].getIconHeight();
-}

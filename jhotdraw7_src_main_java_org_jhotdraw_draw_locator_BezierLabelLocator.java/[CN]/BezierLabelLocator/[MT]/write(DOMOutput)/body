@@ -1,5 +1,0 @@
-{
-  out.addAttribute("relativePosition",relativePosition);
-  out.addAttribute("angle",angle);
-  out.addAttribute("distance",distance);
-}

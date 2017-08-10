@@ -1,9 +1,0 @@
-{
-  if (doctype != null) {
-    out.write("<!DOCTYPE ");
-    out.write(doctype);
-    out.write(">\n");
-  }
-  XMLWriter writer=new XMLWriter(out);
-  writer.write((XMLElement)document.getChildren().get(0));
-}

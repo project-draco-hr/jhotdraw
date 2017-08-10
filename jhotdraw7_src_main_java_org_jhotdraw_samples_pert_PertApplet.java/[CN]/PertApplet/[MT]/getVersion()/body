@@ -1,3 +1,0 @@
-{
-  return PertApplet.class.getPackage().getImplementationVersion();
-}

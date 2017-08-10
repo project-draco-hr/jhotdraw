@@ -1,3 +1,0 @@
-{
-  blueField.setText(Integer.toString(ccModel.getBoundedRangeModel(2).getValue()));
-}

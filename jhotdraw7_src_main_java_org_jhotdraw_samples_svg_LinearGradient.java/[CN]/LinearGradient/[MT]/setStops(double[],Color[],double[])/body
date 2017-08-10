@@ -1,5 +1,0 @@
-{
-  this.stopOffsets=offsets.clone();
-  this.stopColors=colors.clone();
-  this.stopOpacities=stopOpacities.clone();
-}

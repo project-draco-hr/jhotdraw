@@ -1,5 +1,0 @@
-ArrayList<Point2D.Double> d
-int first
-int last
-double[] u
-Point2D.Double[] bezCurve

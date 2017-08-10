@@ -1,3 +1,0 @@
-{
-  return f.get(STROKE_COLOR);
-}

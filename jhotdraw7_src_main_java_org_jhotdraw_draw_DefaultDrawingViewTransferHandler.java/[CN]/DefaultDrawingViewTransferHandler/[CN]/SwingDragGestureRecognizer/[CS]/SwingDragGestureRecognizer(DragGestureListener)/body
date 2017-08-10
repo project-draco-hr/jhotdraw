@@ -1,3 +1,0 @@
-{
-  super(DragSource.getDefaultDragSource(),null,NONE,dgl);
-}

@@ -1,6 +1,0 @@
-{
-  if (beanDescriptor == null)   beanDescriptor=new BeanDescriptor(StrokeToolBarBeanInfo.class);
-  beanDescriptor.setValue("isContainer",Boolean.FALSE);
-  beanDescriptor.setDisplayName("StrokeToolPane");
-  return beanDescriptor;
-}

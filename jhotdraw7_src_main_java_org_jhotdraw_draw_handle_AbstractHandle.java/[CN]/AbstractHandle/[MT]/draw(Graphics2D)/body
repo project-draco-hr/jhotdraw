@@ -1,3 +1,0 @@
-{
-  drawCircle(g,getEditor().getHandleAttribute(HandleAttributeKeys.HANDLE_FILL_COLOR),getEditor().getHandleAttribute(HandleAttributeKeys.HANDLE_STROKE_COLOR));
-}

@@ -1,7 +1,0 @@
-{
-  this.key=key;
-  this.clazz=clazz;
-  this.defaultValue=defaultValue;
-  this.isNullValueAllowed=isNullValueAllowed;
-  this.labels=(labels == null) ? ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels") : labels;
-}

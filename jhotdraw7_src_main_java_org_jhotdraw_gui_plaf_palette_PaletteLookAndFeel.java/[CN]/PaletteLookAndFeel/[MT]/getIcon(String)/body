@@ -1,3 +1,0 @@
-{
-  return (Icon)get(key);
-}

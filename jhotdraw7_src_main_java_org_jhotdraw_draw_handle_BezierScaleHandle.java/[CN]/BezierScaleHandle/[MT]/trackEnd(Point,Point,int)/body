@@ -1,4 +1,0 @@
-{
-  view.getDrawing().fireUndoableEditHappened(new TransformRestoreEdit(getOwner(),restoreData,getOwner().getTransformRestoreData()));
-  location=null;
-}

@@ -1,5 +1,0 @@
-{
-  this.tiledImage=tiledImage;
-  this.tileCount=tileCount;
-  this.isTiledHorizontaly=isTiledHorizontaly;
-}

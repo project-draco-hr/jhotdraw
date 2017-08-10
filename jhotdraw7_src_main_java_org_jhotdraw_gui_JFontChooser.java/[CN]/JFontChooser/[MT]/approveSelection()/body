@@ -1,7 +1,0 @@
-{
-  returnValue=APPROVE_OPTION;
-  if (dialog != null) {
-    dialog.setVisible(false);
-  }
-  fireActionPerformed(APPROVE_SELECTION);
-}

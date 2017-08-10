@@ -1,8 +1,0 @@
-{
-  Collection<Figure> figures=getView().findFiguresWithin(rubberband);
-  for (  Figure f : figures) {
-    if (f.isSelectable()) {
-      getView().addToSelection(f);
-    }
-  }
-}

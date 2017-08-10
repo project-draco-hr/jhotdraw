@@ -1,3 +1,0 @@
-{
-  new ToolBarPrefsHandler(toolbar,name,prefs);
-}

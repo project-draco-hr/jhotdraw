@@ -1,4 +1,0 @@
-{
-  super.write(out);
-  writeAttributes(out);
-}

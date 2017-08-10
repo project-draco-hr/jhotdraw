@@ -1,6 +1,0 @@
-{
-  for (  Disposable d : disposables) {
-    d.dispose();
-  }
-  disposables.clear();
-}

@@ -1,8 +1,0 @@
-{
-  if (isCombineAction) {
-    combineActionPerformed(e);
-  }
- else {
-    splitActionPerformed(e);
-  }
-}

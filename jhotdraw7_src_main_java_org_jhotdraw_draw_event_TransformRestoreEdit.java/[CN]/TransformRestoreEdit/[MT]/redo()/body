@@ -1,6 +1,0 @@
-{
-  super.redo();
-  owner.willChange();
-  owner.restoreTransformTo(newTransformRestoreData);
-  owner.changed();
-}

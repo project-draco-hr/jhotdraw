@@ -1,4 +1,0 @@
-{
-  this((DrawingView)null,scaleFactor,button);
-  setEditor(editor);
-}

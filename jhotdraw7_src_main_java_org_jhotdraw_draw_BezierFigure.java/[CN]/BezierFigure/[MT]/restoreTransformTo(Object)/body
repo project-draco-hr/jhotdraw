@@ -1,3 +1,0 @@
-{
-  path.setTo((BezierPath)geometry);
-}

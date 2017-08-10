@@ -1,4 +1,0 @@
-{
-  initComponents();
-  setToolTipText("on");
-}

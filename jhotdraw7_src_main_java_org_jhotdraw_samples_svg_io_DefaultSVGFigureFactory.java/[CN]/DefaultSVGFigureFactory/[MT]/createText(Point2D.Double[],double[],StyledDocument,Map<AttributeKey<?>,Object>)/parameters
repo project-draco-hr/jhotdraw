@@ -1,4 +1,0 @@
-Point2D.Double[] coordinates
-double[] rotates
-StyledDocument text
-Map<AttributeKey<?>,Object> a

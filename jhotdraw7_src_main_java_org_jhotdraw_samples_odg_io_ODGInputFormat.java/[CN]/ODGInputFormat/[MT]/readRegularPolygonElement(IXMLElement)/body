@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("ODGInputFormat.readRegularPolygonElement(" + elem + "):null - not implemented");
-}

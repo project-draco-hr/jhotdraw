@@ -1,3 +1,0 @@
-{
-  return createColorWheelChooser(sys,angularIndex,radialIndex,verticalIndex,type,false,false);
-}

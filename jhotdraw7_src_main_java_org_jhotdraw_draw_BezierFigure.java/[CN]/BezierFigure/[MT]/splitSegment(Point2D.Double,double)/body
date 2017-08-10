@@ -1,7 +1,0 @@
-{
-  int i=findSegment(split,tolerance);
-  if (i != -1) {
-    addNode(i + 1,new BezierPath.Node(split));
-  }
-  return i + 1;
-}

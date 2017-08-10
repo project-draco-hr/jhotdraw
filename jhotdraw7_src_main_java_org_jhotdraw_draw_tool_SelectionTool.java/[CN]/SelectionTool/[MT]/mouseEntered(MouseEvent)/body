@@ -1,4 +1,0 @@
-{
-  super.mouseEntered(evt);
-  tracker.mouseEntered(evt);
-}

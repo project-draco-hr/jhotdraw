@@ -1,3 +1,0 @@
-{
-  blackField.setText(Integer.toString(ccModel.getBoundedRangeModel(3).getValue()));
-}

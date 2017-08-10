@@ -1,5 +1,0 @@
-{
-  this.relativePosition=relativePosition;
-  this.angle=angle;
-  this.distance=distance;
-}

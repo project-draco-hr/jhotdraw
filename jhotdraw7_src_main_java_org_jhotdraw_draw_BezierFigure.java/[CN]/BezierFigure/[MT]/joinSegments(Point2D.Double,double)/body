@@ -1,8 +1,0 @@
-{
-  int i=findSegment(join,tolerance);
-  if (i != -1 && i > 1) {
-    removeNode(i);
-    return true;
-  }
-  return false;
-}

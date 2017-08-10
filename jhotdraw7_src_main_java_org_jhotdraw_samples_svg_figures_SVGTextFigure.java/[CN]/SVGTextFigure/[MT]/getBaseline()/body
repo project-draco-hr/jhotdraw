@@ -1,3 +1,0 @@
-{
-  return coordinates[0].y - getBounds().y;
-}

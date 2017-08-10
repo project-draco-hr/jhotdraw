@@ -1,8 +1,0 @@
-{
-  if (accept(pathname)) {
-    return pathname;
-  }
- else {
-    return new File(pathname.getPath() + '.' + defaultExtension);
-  }
-}

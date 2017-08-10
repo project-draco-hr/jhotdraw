@@ -1,8 +1,0 @@
-{
-  for (  Handle handle : selectionHandles) {
-    handle.viewTransformChanged();
-  }
-  for (  Handle handle : secondaryHandles) {
-    handle.viewTransformChanged();
-  }
-}

@@ -1,3 +1,0 @@
-{
-  propertySupport.addPropertyChangeListener(propertyName,listener);
-}

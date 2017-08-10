@@ -1,3 +1,0 @@
-{
-  return toLength(str,100);
-}

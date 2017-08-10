@@ -1,4 +1,0 @@
-{
-  super(src);
-  this.invalidatedArea=invalidatedArea;
-}

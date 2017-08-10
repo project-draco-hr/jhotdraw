@@ -1,3 +1,0 @@
-{
-  ((Element)current).setAttribute(name,Boolean.toString(value));
-}

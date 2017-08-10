@@ -1,5 +1,0 @@
-{
-  for (  ActionListener l : listeners.getListeners(ActionListener.class)) {
-    l.actionPerformed(evt);
-  }
-}

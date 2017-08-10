@@ -1,5 +1,0 @@
-{
-  initComponents();
-  setFocusable(false);
-  itemFont=ITEM_FONT;
-}

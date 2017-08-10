@@ -1,3 +1,0 @@
-{
-  return Math.sqrt(v2SquaredDistanceBetween2Points(a,b));
-}

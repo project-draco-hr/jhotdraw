@@ -1,5 +1,0 @@
-{
-  if (!value.equals(defaultValue)) {
-    addAttribute(name,value);
-  }
-}

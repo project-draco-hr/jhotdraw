@@ -1,8 +1,0 @@
-{
-  if (object instanceof File) {
-    setParameter(name,(File)object);
-  }
- else {
-    setParameter(name,object.toString());
-  }
-}

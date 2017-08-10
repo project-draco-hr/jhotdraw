@@ -1,4 +1,0 @@
-{
-  path=newValue.clone();
-  this.setClosed(newValue.isClosed());
-}

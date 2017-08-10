@@ -1,3 +1,0 @@
-{
-  return toDouble(elem,value,0,Double.MIN_VALUE,Double.MAX_VALUE);
-}

@@ -1,5 +1,0 @@
-{
-  int nr=in.read(b,off,len);
-  incrementValue(nr);
-  return nr;
-}

@@ -1,5 +1,0 @@
-{
-  dragLocation=new Point(evt.getX(),evt.getY());
-  multicaster.trackStep(anchor,dragLocation,evt.getModifiersEx(),getView());
-  clearHoverHandles();
-}

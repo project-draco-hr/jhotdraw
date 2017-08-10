@@ -1,3 +1,0 @@
-{
-  return SwingUtilities.layoutCompoundLabel((JComponent)label,fontMetrics,text,icon,label.getVerticalAlignment(),label.getHorizontalAlignment(),label.getVerticalTextPosition(),label.getHorizontalTextPosition(),viewR,iconR,textR,label.getIconTextGap());
-}

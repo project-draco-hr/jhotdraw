@@ -1,3 +1,0 @@
-{
-  roundrect=new RoundRectangle2D.Double(x,y,width,height,DEFAULT_ARC,DEFAULT_ARC);
-}

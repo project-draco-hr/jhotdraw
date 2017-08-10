@@ -1,3 +1,0 @@
-{
-  return getView().drawingToView(getOwner().getDrawingArea());
-}

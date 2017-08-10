@@ -1,9 +1,0 @@
-{
-  if (n.getNodeValue() != null) {
-    buf.append(n.getNodeValue());
-  }
-  NodeList children=n.getChildNodes();
-  for (int i=0; i < children.getLength(); i++) {
-    getText(children.item(i),buf);
-  }
-}

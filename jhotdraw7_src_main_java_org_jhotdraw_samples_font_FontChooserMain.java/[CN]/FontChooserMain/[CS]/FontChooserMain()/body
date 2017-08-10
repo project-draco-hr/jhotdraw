@@ -1,4 +1,0 @@
-{
-  initComponents();
-  add(new JFontChooser());
-}

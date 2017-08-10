@@ -1,9 +1,0 @@
-{
-  useFileDialog=newValue;
-  if (useFileDialog) {
-    fileChooser=null;
-  }
- else {
-    fileDialog=null;
-  }
-}

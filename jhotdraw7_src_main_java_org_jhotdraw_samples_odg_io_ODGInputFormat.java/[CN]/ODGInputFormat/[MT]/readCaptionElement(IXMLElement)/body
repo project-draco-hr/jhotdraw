@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("ODGInputFormat.readCaptureElement(" + elem + "):null - not implemented");
-}

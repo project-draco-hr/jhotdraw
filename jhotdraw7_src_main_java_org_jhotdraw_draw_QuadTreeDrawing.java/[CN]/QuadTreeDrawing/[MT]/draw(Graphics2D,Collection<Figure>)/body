@@ -1,7 +1,0 @@
-{
-  for (  Figure f : c) {
-    if (f.isVisible()) {
-      f.draw(g);
-    }
-  }
-}

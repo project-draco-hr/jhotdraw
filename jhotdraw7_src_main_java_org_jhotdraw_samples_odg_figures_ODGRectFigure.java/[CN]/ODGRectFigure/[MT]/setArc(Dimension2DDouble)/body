@@ -1,4 +1,0 @@
-{
-  roundrect.arcwidth=Math.max(0d,Math.min(roundrect.width,arc.width * 2d));
-  roundrect.archeight=Math.max(0d,Math.min(roundrect.height,arc.height * 2d));
-}

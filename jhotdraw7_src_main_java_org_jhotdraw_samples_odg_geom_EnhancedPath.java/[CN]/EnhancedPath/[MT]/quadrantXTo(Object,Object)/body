@@ -1,6 +1,0 @@
-{
-  if (size() == 0 || get(size() - 1).type == SegType.CLOSE) {
-    throw new IllegalPathStateException("quadrantXTo is only allowed when a path segment is open");
-  }
-  add(new Segment(SegType.QUADRANT_XTO,x,y));
-}

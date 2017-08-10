@@ -1,9 +1,0 @@
-{
-switch (f.get(STROKE_TYPE)) {
-case BASIC:
-default :
-    return f.get(STROKE_WIDTH);
-case DOUBLE:
-  return f.get(STROKE_WIDTH) * (1d + f.get(STROKE_INNER_WIDTH_FACTOR));
-}
-}

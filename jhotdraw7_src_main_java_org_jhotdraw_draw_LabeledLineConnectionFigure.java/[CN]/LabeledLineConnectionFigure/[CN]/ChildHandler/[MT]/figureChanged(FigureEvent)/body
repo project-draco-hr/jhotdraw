@@ -1,7 +1,0 @@
-{
-  if (!owner.isChanging()) {
-    owner.willChange();
-    owner.fireFigureChanged(e);
-    owner.changed();
-  }
-}

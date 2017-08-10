@@ -1,4 +1,0 @@
-{
-  validatePath();
-  return generalPath.intersects(x,y,w,h);
-}

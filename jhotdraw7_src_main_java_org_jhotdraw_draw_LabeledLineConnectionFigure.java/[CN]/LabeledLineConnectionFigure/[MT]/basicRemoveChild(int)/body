@@ -1,5 +1,0 @@
-{
-  Figure figure=children.remove(index);
-  figure.removeFigureListener(childHandler);
-  return figure;
-}

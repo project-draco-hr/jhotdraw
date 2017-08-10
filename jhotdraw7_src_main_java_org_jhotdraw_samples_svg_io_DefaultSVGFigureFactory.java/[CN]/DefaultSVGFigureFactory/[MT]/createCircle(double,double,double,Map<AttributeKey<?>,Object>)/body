@@ -1,3 +1,0 @@
-{
-  return createEllipse(cx,cy,r,r,a);
-}

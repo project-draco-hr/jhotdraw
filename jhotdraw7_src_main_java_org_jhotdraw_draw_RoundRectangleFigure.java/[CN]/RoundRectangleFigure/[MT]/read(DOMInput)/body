@@ -1,5 +1,0 @@
-{
-  super.read(in);
-  roundrect.arcwidth=in.getAttribute("arcWidth",DEFAULT_ARC);
-  roundrect.archeight=in.getAttribute("arcHeight",DEFAULT_ARC);
-}

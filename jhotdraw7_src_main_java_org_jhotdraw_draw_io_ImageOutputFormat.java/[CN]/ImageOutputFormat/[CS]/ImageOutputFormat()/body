@@ -1,3 +1,0 @@
-{
-  this("PNG","Portable Network Graphics (PNG)","png",BufferedImage.TYPE_INT_ARGB);
-}

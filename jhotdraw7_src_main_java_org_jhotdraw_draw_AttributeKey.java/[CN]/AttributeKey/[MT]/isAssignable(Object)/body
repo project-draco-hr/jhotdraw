@@ -1,6 +1,0 @@
-{
-  if (value == null) {
-    return isNullValueAllowed();
-  }
-  return clazz.isInstance(value);
-}

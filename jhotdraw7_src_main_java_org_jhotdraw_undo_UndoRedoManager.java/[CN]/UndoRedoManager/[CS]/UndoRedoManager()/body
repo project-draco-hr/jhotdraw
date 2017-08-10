@@ -1,5 +1,0 @@
-{
-  getLabels();
-  undoAction=new UndoAction();
-  redoAction=new RedoAction();
-}

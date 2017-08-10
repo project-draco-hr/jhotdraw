@@ -1,4 +1,0 @@
-{
-  writePoints(out);
-  writeAttributes(out);
-}

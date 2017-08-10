@@ -1,4 +1,0 @@
-{
-  chooser.setDialogType(JFileChooser.SAVE_DIALOG);
-  showSheet(chooser,parent,null,listener);
-}

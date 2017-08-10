@@ -1,3 +1,0 @@
-{
-  this(width,height,Math.PI / 8d,visible);
-}

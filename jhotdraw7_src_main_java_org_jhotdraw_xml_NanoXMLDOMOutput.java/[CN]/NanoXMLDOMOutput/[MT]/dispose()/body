@@ -1,6 +1,0 @@
-{
-  if (document != null) {
-    document.dispose();
-    document=null;
-  }
-}

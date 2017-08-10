@@ -1,3 +1,0 @@
-{
-  return new Rectangle((int)(r.x * scaleFactor) - translation.x,(int)(r.y * scaleFactor) - translation.y,(int)(r.width * scaleFactor),(int)(r.height * scaleFactor));
-}

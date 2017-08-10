@@ -1,5 +1,0 @@
-{
-  super(connector.getOwner());
-  this.connector=connector;
-  this.prototype=prototype;
-}

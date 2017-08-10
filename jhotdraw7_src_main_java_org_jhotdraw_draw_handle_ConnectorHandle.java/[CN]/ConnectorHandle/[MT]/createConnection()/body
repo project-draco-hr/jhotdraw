@@ -1,3 +1,0 @@
-{
-  return (ConnectionFigure)prototype.clone();
-}

@@ -1,6 +1,0 @@
-{
-  setCookies(raw_cookies);
-  postCookies();
-  setParameters(parameters);
-  return doPost();
-}

@@ -1,3 +1,0 @@
-{
-  return a.containsKey(this) ? (T)a.get(this) : defaultValue;
-}

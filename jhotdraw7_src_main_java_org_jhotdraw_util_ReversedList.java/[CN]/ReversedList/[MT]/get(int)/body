@@ -1,3 +1,0 @@
-{
-  return target.get(target.size() - 1 - index);
-}

@@ -1,4 +1,0 @@
-{
-  add(new ODGBezierFigure());
-  ODGAttributeKeys.setDefaults(this);
-}

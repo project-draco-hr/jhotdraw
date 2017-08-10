@@ -1,3 +1,0 @@
-{
-  return getFontMetrics(c,g,g.getFont());
-}

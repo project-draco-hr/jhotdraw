@@ -1,7 +1,0 @@
-{
-  Object borderProvider=UIManager.get("ToolBar.rolloverBorderProvider");
-  if (borderProvider == null) {
-    return rolloverBorder;
-  }
-  return null;
-}

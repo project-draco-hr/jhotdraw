@@ -1,4 +1,0 @@
-{
-  double error=2d / getZoomFactor();
-  return error;
-}

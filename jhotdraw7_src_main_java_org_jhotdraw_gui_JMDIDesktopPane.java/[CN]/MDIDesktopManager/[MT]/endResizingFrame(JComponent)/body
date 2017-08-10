@@ -1,4 +1,0 @@
-{
-  super.endResizingFrame(f);
-  resizeDesktop();
-}

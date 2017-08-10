@@ -1,6 +1,0 @@
-{
-  int oldValue=majorGridSpacing;
-  majorGridSpacing=newValue;
-  firePropertyChange("majorGridSpacing",oldValue,newValue);
-  fireStateChanged();
-}

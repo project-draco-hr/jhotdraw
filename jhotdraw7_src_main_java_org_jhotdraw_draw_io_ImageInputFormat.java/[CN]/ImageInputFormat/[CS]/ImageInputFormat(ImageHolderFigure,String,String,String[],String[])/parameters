@@ -1,5 +1,0 @@
-ImageHolderFigure prototype
-String formatName
-String description
-String fileExtensions[]
-String[] mimeTypes

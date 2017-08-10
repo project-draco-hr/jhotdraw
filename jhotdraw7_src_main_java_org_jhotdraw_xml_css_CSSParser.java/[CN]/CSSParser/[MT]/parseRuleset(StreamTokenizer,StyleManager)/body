@@ -1,9 +1,0 @@
-{
-  List<String> selectors=parseSelectorList(tt);
-  if (tt.nextToken() != '{')   throw new IOException("Ruleset '{' missing for " + selectors);
-  Map<String,String> declarations=parseDeclarationMap(tt);
-  if (tt.nextToken() != '}')   throw new IOException("Ruleset '}' missing for " + selectors);
-  for (  String selector : selectors) {
-    rm.add(new CSSRule(selector,declarations));
-  }
-}

@@ -1,4 +1,0 @@
-{
-  JOptionPane.showMessageDialog(null,error.getMessage() == null ? error.toString() : error.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
-  error.printStackTrace();
-}

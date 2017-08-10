@@ -1,5 +1,0 @@
-{
-  boolean oldValue=isMultipleValues;
-  isMultipleValues=newValue;
-  firePropertyChange(MULTIPLE_VALUES_PROPERTY,oldValue,newValue);
-}

@@ -1,8 +1,0 @@
-{
-  if (!canUndo()) {
-    throw new CannotUndoException();
-  }
-  figure.willChange();
-  super.undo();
-  figure.changed();
-}

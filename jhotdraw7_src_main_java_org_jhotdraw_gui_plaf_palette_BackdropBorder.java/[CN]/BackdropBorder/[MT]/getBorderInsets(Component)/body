@@ -1,8 +1,0 @@
-{
-  if (foregroundBorder != null) {
-    return foregroundBorder.getBorderInsets(c);
-  }
- else {
-    return backgroundBorder.getBorderInsets(c);
-  }
-}

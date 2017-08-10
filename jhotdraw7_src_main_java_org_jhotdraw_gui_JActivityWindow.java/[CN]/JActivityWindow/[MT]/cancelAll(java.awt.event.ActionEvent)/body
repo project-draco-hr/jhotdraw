@@ -1,8 +1,0 @@
-{
-  Component[] components=progressPanel.getComponents();
-  for (int i=0; i < components.length; i++) {
-    if (components[i] instanceof JActivityView) {
-      ((JActivityView)components[i]).getModel().cancel();
-    }
-  }
-}

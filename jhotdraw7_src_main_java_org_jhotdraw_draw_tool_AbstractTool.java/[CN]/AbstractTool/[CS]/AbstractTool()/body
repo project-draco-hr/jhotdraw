@@ -1,5 +1,0 @@
-{
-  editorProxy=new DrawingEditorProxy();
-  setInputMap(createInputMap());
-  setActionMap(createActionMap());
-}

@@ -1,9 +1,0 @@
-{
-  super(editor);
-  this.scaleFactor=scaleFactor;
-  this.button=button;
-  this.updateAllViews=updateAllViews;
-  label=(int)(scaleFactor * 100) + " %";
-  putValue(Action.DEFAULT,label);
-  putValue(Action.NAME,label);
-}

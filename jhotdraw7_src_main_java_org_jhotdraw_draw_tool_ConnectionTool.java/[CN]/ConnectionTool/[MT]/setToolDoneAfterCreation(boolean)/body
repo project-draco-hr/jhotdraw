@@ -1,4 +1,0 @@
-{
-  boolean oldValue=isToolDoneAfterCreation;
-  isToolDoneAfterCreation=newValue;
-}

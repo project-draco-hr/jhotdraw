@@ -1,4 +1,0 @@
-{
-  LinkedList<JToolBar> list=new LinkedList<JToolBar>();
-  return list;
-}

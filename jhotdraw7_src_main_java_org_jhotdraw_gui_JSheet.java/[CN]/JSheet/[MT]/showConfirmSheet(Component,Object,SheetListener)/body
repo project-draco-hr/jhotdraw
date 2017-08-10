@@ -1,3 +1,0 @@
-{
-  showConfirmSheet(parentComponent,message,JOptionPane.YES_NO_CANCEL_OPTION,listener);
-}

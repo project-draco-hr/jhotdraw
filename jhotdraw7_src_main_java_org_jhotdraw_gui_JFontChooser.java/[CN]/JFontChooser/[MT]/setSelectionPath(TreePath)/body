@@ -1,8 +1,0 @@
-{
-  TreePath oldValue=selectionPath;
-  this.selectionPath=newValue;
-  firePropertyChange(SELECTION_PATH_PROPERTY,oldValue,newValue);
-  if (selectionPath != null && selectionPath.getPathCount() == 4) {
-    setSelectedFont(((FontFaceNode)selectionPath.getLastPathComponent()).getFont());
-  }
-}

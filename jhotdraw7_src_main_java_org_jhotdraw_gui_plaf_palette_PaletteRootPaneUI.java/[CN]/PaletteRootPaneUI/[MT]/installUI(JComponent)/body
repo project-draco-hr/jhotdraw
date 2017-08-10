@@ -1,4 +1,0 @@
-{
-  super.installUI(c);
-  c.setLayout(new PaletteRootLayout((JRootPane)c));
-}

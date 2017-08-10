@@ -1,4 +1,0 @@
-{
-  super(editor,new SVGPathFigure(),false);
-  labels.configureAction(this,ID);
-}

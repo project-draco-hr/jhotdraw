@@ -1,8 +1,0 @@
-{
-  if (o instanceof LinearGradient) {
-    return equals((LinearGradient)o);
-  }
- else {
-    return false;
-  }
-}

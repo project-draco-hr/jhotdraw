@@ -1,4 +1,0 @@
-{
-  readPoints(in);
-  readAttributes(in);
-}

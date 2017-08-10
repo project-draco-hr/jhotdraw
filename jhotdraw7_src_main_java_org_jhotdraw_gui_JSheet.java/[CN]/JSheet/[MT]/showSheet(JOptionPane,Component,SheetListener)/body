@@ -1,5 +1,0 @@
-{
-  final JSheet sheet=createSheet(pane,parentComponent,styleFromMessageType(pane.getMessageType()));
-  sheet.addSheetListener(listener);
-  sheet.show();
-}

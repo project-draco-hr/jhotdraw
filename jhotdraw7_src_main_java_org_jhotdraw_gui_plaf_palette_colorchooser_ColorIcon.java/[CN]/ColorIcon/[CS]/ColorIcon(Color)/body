@@ -1,3 +1,0 @@
-{
-  this(color,(color == null) ? ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels").getToolTipTextProperty("ColorChooser.colorSwatch.noColor") : color.getRed() + "," + color.getGreen()+ ","+ color.getBlue(),14,14);
-}

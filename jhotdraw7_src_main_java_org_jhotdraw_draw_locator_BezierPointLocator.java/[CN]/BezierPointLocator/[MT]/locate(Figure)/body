@@ -1,7 +1,0 @@
-{
-  BezierFigure plf=(BezierFigure)owner;
-  if (index < plf.getNodeCount()) {
-    return plf.getPoint(index,coord);
-  }
-  return new Point2D.Double(0,0);
-}

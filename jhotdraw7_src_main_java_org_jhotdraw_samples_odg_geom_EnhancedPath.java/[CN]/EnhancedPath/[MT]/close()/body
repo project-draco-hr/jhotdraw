@@ -1,6 +1,0 @@
-{
-  if (size() == 0 || get(size() - 1).type == SegType.CLOSE) {
-    throw new IllegalPathStateException("close is only allowed when a path segment is open");
-  }
-  add(new Segment(SegType.CLOSE));
-}

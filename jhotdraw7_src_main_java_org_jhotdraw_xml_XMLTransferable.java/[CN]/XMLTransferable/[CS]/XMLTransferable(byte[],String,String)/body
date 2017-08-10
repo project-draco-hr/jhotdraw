@@ -1,4 +1,0 @@
-{
-  this.data=data;
-  this.flavor=new DataFlavor(mimeType,humanPresentableName);
-}

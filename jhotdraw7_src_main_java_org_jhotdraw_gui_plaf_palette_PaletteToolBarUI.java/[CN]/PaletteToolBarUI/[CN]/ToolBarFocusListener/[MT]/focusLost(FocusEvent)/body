@@ -1,3 +1,0 @@
-{
-  getHandler().focusLost(e);
-}

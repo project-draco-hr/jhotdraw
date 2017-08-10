@@ -1,6 +1,0 @@
-{
-  AffineTransform t=new AffineTransform();
-  t.translate(-translation.x,-translation.y);
-  t.scale(scaleFactor,scaleFactor);
-  return t;
-}

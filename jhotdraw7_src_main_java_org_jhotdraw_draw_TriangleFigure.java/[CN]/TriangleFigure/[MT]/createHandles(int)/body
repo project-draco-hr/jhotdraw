@@ -1,7 +1,0 @@
-{
-  LinkedList<Handle> handles=(LinkedList<Handle>)super.createHandles(detailLevel);
-  if (detailLevel == 0) {
-    handles.add(new OrientationHandle(this));
-  }
-  return handles;
-}

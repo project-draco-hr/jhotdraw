@@ -1,8 +1,0 @@
-{
-  super(editor);
-  this.prototype=prototype;
-  this.isCombineAction=isGroupingAction;
-  labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
-  labels.configureAction(this,ID);
-  updateEnabledState();
-}

@@ -1,3 +1,0 @@
-{
-  wasSelectedOnPressed=((AbstractButton)e.getSource()).isSelected();
-}

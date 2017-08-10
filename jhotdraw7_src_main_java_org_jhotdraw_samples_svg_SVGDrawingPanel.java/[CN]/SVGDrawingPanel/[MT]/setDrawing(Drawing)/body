@@ -1,8 +1,0 @@
-{
-  undoManager.discardAllEdits();
-  if (view.getDrawing() != null) {
-    view.getDrawing().removeUndoableEditListener(undoManager);
-  }
-  view.setDrawing(d);
-  d.addUndoableEditListener(undoManager);
-}

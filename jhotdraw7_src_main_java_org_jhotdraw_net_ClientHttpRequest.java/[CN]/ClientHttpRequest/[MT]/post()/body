@@ -1,4 +1,0 @@
-{
-  postCookies();
-  return doPost();
-}

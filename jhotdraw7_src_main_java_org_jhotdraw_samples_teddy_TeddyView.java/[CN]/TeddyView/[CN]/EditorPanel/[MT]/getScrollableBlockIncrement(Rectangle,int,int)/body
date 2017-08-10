@@ -1,3 +1,0 @@
-{
-  return editor.getScrollableBlockIncrement(visibleRect,orientation,direction);
-}

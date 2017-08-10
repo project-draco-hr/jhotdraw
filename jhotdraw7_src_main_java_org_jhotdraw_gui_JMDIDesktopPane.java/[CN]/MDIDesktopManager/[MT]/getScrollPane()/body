@@ -1,7 +1,0 @@
-{
-  if (desktop.getParent() instanceof JViewport) {
-    JViewport viewPort=(JViewport)desktop.getParent();
-    if (viewPort.getParent() instanceof JScrollPane)     return (JScrollPane)viewPort.getParent();
-  }
-  return null;
-}

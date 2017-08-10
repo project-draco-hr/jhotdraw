@@ -1,5 +1,0 @@
-{
-  for (  TaskFigure succ : target.getSuccessors()) {
-    succ.updateStartTime();
-  }
-}

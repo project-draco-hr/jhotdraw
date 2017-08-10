@@ -1,4 +1,0 @@
-{
-  super.read(in);
-  readAttributes(in);
-}

@@ -1,8 +1,0 @@
-{
-  Point2D.Double p1=new Point2D.Double(toLength(elem.getAttribute("x1",SVG_NAMESPACE,"0"),1),toLength(elem.getAttribute("y1",SVG_NAMESPACE,"0"),1));
-  Point2D.Double p2=new Point2D.Double(toLength(elem.getAttribute("x2",SVG_NAMESPACE,"0"),1),toLength(elem.getAttribute("y2",SVG_NAMESPACE,"0"),1));
-  String styleName=elem.getAttribute("style-name",DRAWING_NAMESPACE,null);
-  Map<AttributeKey<?>,Object> a=styles.getAttributes(styleName,"graphic");
-  ODGFigure f=createLineFigure(p1,p2,a);
-  return f;
-}

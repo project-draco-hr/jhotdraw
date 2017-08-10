@@ -1,3 +1,0 @@
-{
-  return escape(o.getClass().getName());
-}

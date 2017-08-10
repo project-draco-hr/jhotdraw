@@ -1,4 +1,0 @@
-{
-  super(bezierPrototype,attributes);
-  this.pathPrototype=pathPrototype;
-}

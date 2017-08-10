@@ -1,3 +1,0 @@
-{
-  return (presentationName != null) ? presentationName : super.getPresentationName();
-}

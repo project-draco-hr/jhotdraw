@@ -1,7 +1,0 @@
-{
-  if (greedyToken.length() < sval.length()) {
-    pushBack();
-    setStartPosition(getStartPosition() + greedyToken.length());
-    sval=sval.substring(greedyToken.length());
-  }
-}

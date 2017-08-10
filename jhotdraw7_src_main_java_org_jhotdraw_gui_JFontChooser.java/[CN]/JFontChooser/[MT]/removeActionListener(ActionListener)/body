@@ -1,3 +1,0 @@
-{
-  listenerList.remove(ActionListener.class,l);
-}

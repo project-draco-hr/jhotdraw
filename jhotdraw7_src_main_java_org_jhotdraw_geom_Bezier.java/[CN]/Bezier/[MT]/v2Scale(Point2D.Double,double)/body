@@ -1,8 +1,0 @@
-{
-  double len=v2Length(v);
-  if (len != 0.0) {
-    v.x*=newlen / len;
-    v.y*=newlen / len;
-  }
-  return v;
-}

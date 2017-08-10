@@ -1,7 +1,0 @@
-{
-  Object oldValue=this.activityOwner;
-  this.activityOwner=newValue;
-  if (oldValue != newValue) {
-    updateActivityModels();
-  }
-}

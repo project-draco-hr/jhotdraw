@@ -1,4 +1,0 @@
-{
-  this.tool=t;
-  this.editor=editor;
-}

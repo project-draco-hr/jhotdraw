@@ -1,3 +1,0 @@
-{
-  return (ODGView)super.getActiveView();
-}

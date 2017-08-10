@@ -1,4 +1,0 @@
-{
-  connect();
-  os.write(s.getBytes("UTF-8"));
-}

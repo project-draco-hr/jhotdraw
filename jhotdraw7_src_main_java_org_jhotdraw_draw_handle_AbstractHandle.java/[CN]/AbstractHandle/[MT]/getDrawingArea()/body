@@ -1,5 +1,0 @@
-{
-  Rectangle r=getBounds();
-  r.grow(2,2);
-  return r;
-}

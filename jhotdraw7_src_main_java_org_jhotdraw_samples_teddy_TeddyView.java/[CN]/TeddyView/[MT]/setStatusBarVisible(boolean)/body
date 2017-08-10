@@ -1,6 +1,0 @@
-{
-  boolean oldValue=statusBar.isVisible();
-  statusBar.setVisible(newValue);
-  prefs.putBoolean("statusBarVisible",newValue);
-  firePropertyChange("statusBarVisible",oldValue,newValue);
-}

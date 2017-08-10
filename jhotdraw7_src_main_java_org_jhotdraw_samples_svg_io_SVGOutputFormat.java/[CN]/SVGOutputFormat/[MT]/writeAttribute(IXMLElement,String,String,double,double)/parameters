@@ -1,5 +1,0 @@
-IXMLElement elem
-String name
-String namespace
-double value
-double defaultValue

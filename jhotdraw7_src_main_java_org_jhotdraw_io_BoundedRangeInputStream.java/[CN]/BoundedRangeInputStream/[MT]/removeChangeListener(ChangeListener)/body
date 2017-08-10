@@ -1,3 +1,0 @@
-{
-  listenerList.remove(ChangeListener.class,l);
-}

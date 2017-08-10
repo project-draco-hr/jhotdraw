@@ -1,5 +1,0 @@
-Component parentComponent
-Object message
-int messageType
-Icon icon
-SheetListener listener

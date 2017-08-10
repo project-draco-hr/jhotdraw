@@ -1,9 +1,0 @@
-{
-  LinkedList<TaskFigure> list=new LinkedList<TaskFigure>();
-  for (  DependencyFigure c : getDependencies()) {
-    if (c.getEndFigure() == this) {
-      list.add((TaskFigure)c.getStartFigure());
-    }
-  }
-  return list;
-}

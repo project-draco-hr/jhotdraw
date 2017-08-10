@@ -1,5 +1,0 @@
-{
-  LinkedList<Handle> handles=(LinkedList<Handle>)super.createHandles(detailLevel);
-  handles.add(new RoundRectangleRadiusHandle(this));
-  return handles;
-}

@@ -1,6 +1,0 @@
-{
-  this.editor=editor;
-  linkFieldHandler.setEditor(editor);
-  opacitySliderHandler.setEditor(editor);
-  opacityFieldHandler.setEditor(editor);
-}

@@ -1,4 +1,0 @@
-{
-  ActivityModel pm=evt.getActivityModel();
-  removeActivityModel(pm);
-}

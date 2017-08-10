@@ -1,6 +1,0 @@
-{
-  TaskFigure sf=(TaskFigure)start.getOwner();
-  TaskFigure ef=(TaskFigure)end.getOwner();
-  sf.addDependency(this);
-  ef.addDependency(this);
-}

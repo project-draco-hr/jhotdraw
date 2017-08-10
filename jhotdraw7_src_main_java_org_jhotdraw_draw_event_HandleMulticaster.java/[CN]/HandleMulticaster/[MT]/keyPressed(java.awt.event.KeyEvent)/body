@@ -1,8 +1,0 @@
-{
-  for (  Handle h : handles) {
-    h.keyPressed(e);
-    if (e.isConsumed()) {
-      break;
-    }
-  }
-}

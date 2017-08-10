@@ -1,5 +1,0 @@
-{
-  if (prefs != null) {
-    prefs.putInt("find.mode",modeCombo.getSelectedIndex());
-  }
-}

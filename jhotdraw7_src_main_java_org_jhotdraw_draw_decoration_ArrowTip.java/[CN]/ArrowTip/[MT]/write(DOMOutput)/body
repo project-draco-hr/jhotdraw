@@ -1,8 +1,0 @@
-{
-  out.addAttribute("angle",angle);
-  out.addAttribute("innerRadius",innerRadius);
-  out.addAttribute("outerRadius",outerRadius);
-  out.addAttribute("isFilled",isFilled());
-  out.addAttribute("isStroked",isStroked());
-  out.addAttribute("isSolid",isSolid());
-}

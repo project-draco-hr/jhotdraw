@@ -1,3 +1,0 @@
-{
-  return new LinearGradient(x1,y1,x2,y2,stopOffsets,stopColors,stopOpacities,isRelativeToFigureBounds,tx);
-}

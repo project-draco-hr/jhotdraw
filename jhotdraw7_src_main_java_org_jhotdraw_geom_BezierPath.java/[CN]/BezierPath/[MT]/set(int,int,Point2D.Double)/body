@@ -1,5 +1,0 @@
-{
-  Node c=get(nodeIndex);
-  c.x[ctrlIndex]=p.x;
-  c.y[ctrlIndex]=p.y;
-}

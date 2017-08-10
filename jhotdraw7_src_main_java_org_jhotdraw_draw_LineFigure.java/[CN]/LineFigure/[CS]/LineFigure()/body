@@ -1,5 +1,0 @@
-{
-  addNode(new BezierPath.Node(new Point2D.Double(0,0)));
-  addNode(new BezierPath.Node(new Point2D.Double(0,0)));
-  setConnectable(false);
-}

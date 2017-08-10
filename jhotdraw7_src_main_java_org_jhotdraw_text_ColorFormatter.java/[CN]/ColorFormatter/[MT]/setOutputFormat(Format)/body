@@ -1,6 +1,0 @@
-{
-  if (newValue == null) {
-    throw new NullPointerException("outputFormat may not be null");
-  }
-  outputFormat=newValue;
-}

@@ -1,3 +1,0 @@
-{
-  showOptionSheet(parentComponent,message,optionType,messageType,icon,null,null,listener);
-}

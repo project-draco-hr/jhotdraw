@@ -1,4 +1,0 @@
-{
-  parseNumbers();
-  isParseHexNumbers=true;
-}

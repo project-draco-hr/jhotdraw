@@ -1,4 +1,0 @@
-{
-  super.endDraggingFrame(f);
-  resizeDesktop();
-}

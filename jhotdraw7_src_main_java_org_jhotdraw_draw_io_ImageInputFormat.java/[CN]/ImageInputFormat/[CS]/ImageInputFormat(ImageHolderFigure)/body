@@ -1,3 +1,0 @@
-{
-  this(prototype,"Image","Image",ImageIO.getReaderFileSuffixes(),ImageIO.getReaderMIMETypes());
-}

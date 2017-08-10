@@ -1,6 +1,0 @@
-{
-  super(source);
-  this.pane=fileChooser;
-  this.option=option;
-  this.value=value;
-}

@@ -1,5 +1,0 @@
-{
-  updateCollectionList();
-  updateFamilyList();
-  updateFaceList();
-}

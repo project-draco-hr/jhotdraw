@@ -1,5 +1,0 @@
-{
-  TextHolderFigure textOwner=(TextHolderFigure)getOwner();
-  oldSize=newSize=textOwner.getFontSize();
-  restoreData=textOwner.getAttributesRestoreData();
-}

@@ -1,6 +1,0 @@
-{
-  if (cookies == null) {
-    return;
-  }
-  this.cookies.putAll(cookies);
-}

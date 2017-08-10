@@ -1,4 +1,0 @@
-{
-  this.rawCookies=(rawCookies == null) ? "" : rawCookies;
-  cookies.clear();
-}

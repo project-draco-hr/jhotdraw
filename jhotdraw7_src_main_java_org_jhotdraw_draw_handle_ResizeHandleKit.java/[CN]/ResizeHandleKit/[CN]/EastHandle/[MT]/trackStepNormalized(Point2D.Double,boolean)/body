@@ -1,3 +1,0 @@
-{
-  setBounds(new Point2D.Double(sb.x,sb.y),new Point2D.Double(Math.max(sb.x + 1,p.x),sb.y + sb.height));
-}

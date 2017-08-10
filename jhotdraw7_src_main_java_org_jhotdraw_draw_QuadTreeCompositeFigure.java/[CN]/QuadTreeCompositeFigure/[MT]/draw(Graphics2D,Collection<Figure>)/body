@@ -1,5 +1,0 @@
-{
-  for (  Figure f : c) {
-    f.draw(g);
-  }
-}

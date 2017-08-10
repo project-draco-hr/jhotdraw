@@ -1,5 +1,0 @@
-{
-  boolean oldValue=cancelable;
-  cancelable=newValue;
-  firePropertyChange(CANCELABLE_PROPERTY,oldValue,newValue);
-}

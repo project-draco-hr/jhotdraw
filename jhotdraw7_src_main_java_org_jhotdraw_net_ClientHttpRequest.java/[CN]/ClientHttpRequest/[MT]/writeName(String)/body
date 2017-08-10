@@ -1,6 +1,0 @@
-{
-  newline();
-  write("Content-Disposition: form-data; name=\"");
-  write(name);
-  write('"');
-}

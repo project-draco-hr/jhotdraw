@@ -1,3 +1,0 @@
-{
-  putValue(ActionUtil.SELECTED_KEY,getActiveView() != null && !getActiveView().isPropertiesPanelVisible());
-}

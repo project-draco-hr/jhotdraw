@@ -1,6 +1,0 @@
-{
-  super();
-  setOpaque(true);
-  setBorder(getNoFocusBorder());
-  setName("List.cellRenderer");
-}

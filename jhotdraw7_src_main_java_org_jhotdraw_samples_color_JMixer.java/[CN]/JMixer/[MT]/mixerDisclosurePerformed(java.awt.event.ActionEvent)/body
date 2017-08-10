@@ -1,4 +1,0 @@
-{
-  mixerPanel.setVisible(disclosureButton.isSelected());
-  mixerPanel.getParent().validate();
-}

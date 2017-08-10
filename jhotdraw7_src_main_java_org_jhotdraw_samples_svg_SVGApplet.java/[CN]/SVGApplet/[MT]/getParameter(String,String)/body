@@ -1,9 +1,0 @@
-{
-  try {
-    String value=super.getParameter(name);
-    return (value == null) ? defaultValue : value;
-  }
- catch (  NullPointerException e) {
-    return defaultValue;
-  }
-}

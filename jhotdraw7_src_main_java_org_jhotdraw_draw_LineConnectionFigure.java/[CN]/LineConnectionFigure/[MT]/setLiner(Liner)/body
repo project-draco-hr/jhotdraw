@@ -1,5 +1,0 @@
-{
-  Liner oldValue=liner;
-  this.liner=newValue;
-  firePropertyChange(LINER_PROPERTY,oldValue,newValue);
-}

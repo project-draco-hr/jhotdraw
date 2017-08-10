@@ -1,5 +1,0 @@
-{
-  String str=Float.toString(value);
-  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
-  ((Element)current).setAttribute(name,str);
-}

@@ -1,7 +1,0 @@
-{
-  if (newValue != detailLevel) {
-    detailLevel=newValue;
-    invalidateHandles();
-    validateHandles();
-  }
-}

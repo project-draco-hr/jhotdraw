@@ -1,6 +1,0 @@
-{
-  if (getStartConnector() != null && getEndConnector() != null) {
-    handleDisconnect(getStartConnector(),getEndConnector());
-  }
-  super.removeNotify(drawing);
-}

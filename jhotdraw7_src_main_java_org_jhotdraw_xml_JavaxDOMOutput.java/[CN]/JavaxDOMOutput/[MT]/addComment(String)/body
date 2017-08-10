@@ -1,3 +1,0 @@
-{
-  current.appendChild(document.createComment(comment));
-}

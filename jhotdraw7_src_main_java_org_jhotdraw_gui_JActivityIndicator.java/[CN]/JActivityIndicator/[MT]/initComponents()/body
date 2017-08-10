@@ -1,5 +1,0 @@
-{
-  progressBar=new javax.swing.JProgressBar();
-  setLayout(new java.awt.BorderLayout());
-  add(progressBar,java.awt.BorderLayout.CENTER);
-}

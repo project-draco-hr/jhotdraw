@@ -1,5 +1,0 @@
-{
-  TextAreaFigure that=(TextAreaFigure)super.clone();
-  that.bounds=(Rectangle2D.Double)this.bounds.clone();
-  return that;
-}

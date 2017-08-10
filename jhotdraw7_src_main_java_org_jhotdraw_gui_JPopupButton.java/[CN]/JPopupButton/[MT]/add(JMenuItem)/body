@@ -1,4 +1,0 @@
-{
-  getPopupMenu().add(item);
-  item.setFont(itemFont);
-}

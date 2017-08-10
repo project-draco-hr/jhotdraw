@@ -1,5 +1,0 @@
-{
-  Point2D.Double center=Geom.center(r);
-  Point2D.Double p=Geom.polarToPoint2D(angle,r.width / 2,r.height / 2);
-  return new Point2D.Double(center.x + p.x,center.y + p.y);
-}

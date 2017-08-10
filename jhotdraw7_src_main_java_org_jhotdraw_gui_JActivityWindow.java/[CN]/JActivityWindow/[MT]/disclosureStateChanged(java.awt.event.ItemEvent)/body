@@ -1,4 +1,0 @@
-{
-  viewPanel.setVisible(disclosureToggle.isSelected());
-  pack();
-}

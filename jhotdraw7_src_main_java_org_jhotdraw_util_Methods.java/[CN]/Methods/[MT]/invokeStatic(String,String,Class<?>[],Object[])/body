@@ -1,8 +1,0 @@
-{
-  try {
-    return invokeStatic(Class.forName(clazz),methodName,types,values);
-  }
- catch (  ClassNotFoundException e) {
-    throw new NoSuchMethodException("class " + clazz + " not found");
-  }
-}

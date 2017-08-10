@@ -1,4 +1,0 @@
-{
-  super.activate(editor);
-  getView().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
-}

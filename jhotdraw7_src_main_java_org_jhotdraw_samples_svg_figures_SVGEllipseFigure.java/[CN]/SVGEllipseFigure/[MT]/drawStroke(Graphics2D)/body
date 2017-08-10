@@ -1,5 +1,0 @@
-{
-  if (ellipse.width > 0 && ellipse.height > 0) {
-    g.draw(ellipse);
-  }
-}

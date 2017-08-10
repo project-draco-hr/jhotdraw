@@ -1,3 +1,0 @@
-{
-  return importData(comp,t,new HashSet<Figure>(),null);
-}

@@ -1,3 +1,0 @@
-{
-  drawRectangle(g,getEditor().getHandleAttribute(HandleAttributeKeys.NULL_HANDLE_FILL_COLOR),getEditor().getHandleAttribute(HandleAttributeKeys.NULL_HANDLE_STROKE_COLOR));
-}

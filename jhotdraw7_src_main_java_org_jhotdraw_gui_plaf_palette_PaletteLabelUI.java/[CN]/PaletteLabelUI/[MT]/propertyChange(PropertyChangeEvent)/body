@@ -1,8 +1,0 @@
-{
-  String name=evt.getPropertyName();
-  if ("JComponent.sizeVariant".equals(name)) {
-  }
- else {
-    super.propertyChange(evt);
-  }
-}

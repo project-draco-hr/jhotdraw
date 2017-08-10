@@ -1,6 +1,0 @@
-{
-  if (getValueClass() == null && minimum != null) {
-    setValueClass(minimum.getClass());
-  }
-  min=minimum;
-}

@@ -1,6 +1,0 @@
-{
-  super.remap(oldToNew,disconnectIfNotInMap);
-  for (  Figure child : children) {
-    child.remap(oldToNew,disconnectIfNotInMap);
-  }
-}

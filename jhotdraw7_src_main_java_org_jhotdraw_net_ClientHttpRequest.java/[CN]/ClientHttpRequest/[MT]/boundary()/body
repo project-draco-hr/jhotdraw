@@ -1,4 +1,0 @@
-{
-  write("--");
-  write(boundary);
-}

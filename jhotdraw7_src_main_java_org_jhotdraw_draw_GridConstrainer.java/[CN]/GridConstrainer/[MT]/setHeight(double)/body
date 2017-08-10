@@ -1,6 +1,0 @@
-{
-  double oldValue=height;
-  height=newValue;
-  firePropertyChange("height",oldValue,newValue);
-  fireStateChanged();
-}

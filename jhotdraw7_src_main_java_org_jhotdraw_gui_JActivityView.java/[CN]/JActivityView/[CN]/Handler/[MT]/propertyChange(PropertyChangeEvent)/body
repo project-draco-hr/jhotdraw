@@ -1,8 +1,0 @@
-{
-  ActivityManager.invokeAndWait(new Runnable(){
-    @Override public void run(){
-      updateProperties(evt);
-    }
-  }
-);
-}

@@ -1,4 +1,0 @@
-{
-  this.toolBar=t;
-  getHandler().tb=t;
-}

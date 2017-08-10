@@ -1,7 +1,0 @@
-{
-  if (parameters != null) {
-    for (    Map.Entry<String,Object> entry : parameters.entrySet()) {
-      setParameter(entry.getKey(),entry.getValue());
-    }
-  }
-}

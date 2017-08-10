@@ -1,6 +1,0 @@
-{
-  this.editedFigures=editedFigures;
-  this.attributeKey=attributeKey;
-  this.editRedoValue=editRedoValue;
-  this.editUndoData=editUndoData;
-}

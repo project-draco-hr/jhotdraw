@@ -1,7 +1,0 @@
-{
-  if (cancelable && !canceled) {
-    canceled=true;
-    firePropertyChange(CANCELED_PROPERTY,false,true);
-    if (doCancel != null)     doCancel.run();
-  }
-}

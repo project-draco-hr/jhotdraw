@@ -1,3 +1,0 @@
-{
-  configureToolBarButton(button,argument,getBaseClass());
-}

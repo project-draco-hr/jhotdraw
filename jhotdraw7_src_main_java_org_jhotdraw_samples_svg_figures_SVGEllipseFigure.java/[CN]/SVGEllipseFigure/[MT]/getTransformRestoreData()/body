@@ -1,3 +1,0 @@
-{
-  return new Object[]{ellipse.clone(),TRANSFORM.getClone(this),FILL_GRADIENT.getClone(this),STROKE_GRADIENT.getClone(this)};
-}

@@ -1,6 +1,0 @@
-{
-  if (!isTransformableCache) {
-    return;
-  }
-  fireUndoableEditHappened(new TransformRestoreEdit(getOwner(),geometry,getOwner().getTransformRestoreData()));
-}

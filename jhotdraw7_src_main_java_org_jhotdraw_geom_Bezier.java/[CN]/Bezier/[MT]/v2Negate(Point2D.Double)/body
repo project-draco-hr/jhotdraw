@@ -1,5 +1,0 @@
-{
-  v.x=-v.x;
-  v.y=-v.y;
-  return v;
-}

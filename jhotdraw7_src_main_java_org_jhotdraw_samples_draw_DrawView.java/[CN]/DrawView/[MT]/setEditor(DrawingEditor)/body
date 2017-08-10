@@ -1,9 +1,0 @@
-{
-  if (editor != null) {
-    editor.remove(view);
-  }
-  editor=newValue;
-  if (editor != null) {
-    editor.add(view);
-  }
-}

@@ -1,5 +1,0 @@
-OutputStream out
-Drawing drawing
-java.util.List<Figure> figures
-AffineTransform drawingTransform
-Dimension imageSize

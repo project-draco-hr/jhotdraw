@@ -1,5 +1,0 @@
-{
-  Transferable t=transferables.get(flavor);
-  if (t == null)   throw new UnsupportedFlavorException(flavor);
-  return t.getTransferData(flavor);
-}

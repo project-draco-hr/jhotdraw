@@ -1,3 +1,0 @@
-{
-  return getEditor().getHandleAttribute(HandleAttributeKeys.HANDLE_SIZE);
-}

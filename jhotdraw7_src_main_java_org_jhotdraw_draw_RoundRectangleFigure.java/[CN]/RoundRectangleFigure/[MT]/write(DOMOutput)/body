@@ -1,5 +1,0 @@
-{
-  super.write(out);
-  out.addAttribute("arcWidth",roundrect.arcwidth);
-  out.addAttribute("arcHeight",roundrect.archeight);
-}

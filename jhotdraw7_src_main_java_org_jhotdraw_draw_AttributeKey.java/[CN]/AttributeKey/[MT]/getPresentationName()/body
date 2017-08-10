@@ -1,3 +1,0 @@
-{
-  return (labels == null) ? key : labels.getString("attribute." + key + ".text");
-}

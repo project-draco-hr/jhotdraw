@@ -1,3 +1,0 @@
-{
-  return (Float)(map.containsKey(key) ? map.get(key) : def);
-}

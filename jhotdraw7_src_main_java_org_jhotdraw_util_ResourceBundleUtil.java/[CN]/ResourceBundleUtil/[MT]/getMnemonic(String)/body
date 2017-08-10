@@ -1,4 +1,0 @@
-{
-  String s=getStringRecursive(key);
-  return (s == null || s.length() == 0) ? '\0' : s.charAt(0);
-}

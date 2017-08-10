@@ -1,8 +1,0 @@
-{
-  try {
-    redo();
-  }
- catch (  CannotRedoException e) {
-    System.out.println("Cannot redo: " + e);
-  }
-}

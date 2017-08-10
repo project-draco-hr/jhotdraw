@@ -1,3 +1,0 @@
-{
-  origin=new Point2D.Double(anchor.x,anchor.y);
-}

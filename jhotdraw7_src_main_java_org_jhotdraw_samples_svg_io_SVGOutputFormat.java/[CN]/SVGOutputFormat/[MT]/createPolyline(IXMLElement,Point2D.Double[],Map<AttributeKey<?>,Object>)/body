@@ -1,8 +1,0 @@
-{
-  IXMLElement elem=doc.createElement("polyline");
-  writeAttribute(elem,"points",toPoints(points),null);
-  writeShapeAttributes(elem,attributes);
-  writeOpacityAttribute(elem,attributes);
-  writeTransformAttribute(elem,attributes);
-  return elem;
-}

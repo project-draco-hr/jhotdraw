@@ -1,7 +1,0 @@
-{
-  boolean b=model.isCancelable() && !model.isClosed();
-  if (cancelButton.isVisible() != b) {
-    cancelButton.setVisible(b);
-    revalidate();
-  }
-}

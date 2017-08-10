@@ -1,3 +1,0 @@
-{
-  return new DefaultFormatterFactory(new ColorFormatter(outputFormat,allowsNullValue,isAdaptive));
-}

@@ -1,6 +1,0 @@
-{
-  ODGRectFigure figure=new ODGRectFigure();
-  figure.setBounds(bounds);
-  figure.setAttributes(a);
-  return figure;
-}

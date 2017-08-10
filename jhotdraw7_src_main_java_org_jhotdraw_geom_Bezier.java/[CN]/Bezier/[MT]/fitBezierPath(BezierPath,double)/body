@@ -1,7 +1,0 @@
-{
-  ArrayList<Point2D.Double> d=new ArrayList<Point2D.Double>(digitizedPoints.size());
-  for (  BezierPath.Node n : digitizedPoints) {
-    d.add(new Point2D.Double(n.x[0],n.y[0]));
-  }
-  return fitBezierPath(d,error);
-}

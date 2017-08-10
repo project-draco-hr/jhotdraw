@@ -1,3 +1,0 @@
-{
-  JActivityWindow.getInstance().setVisible(true);
-}

@@ -1,5 +1,0 @@
-{
-  if (liner != null) {
-    liner.lineout(this);
-  }
-}

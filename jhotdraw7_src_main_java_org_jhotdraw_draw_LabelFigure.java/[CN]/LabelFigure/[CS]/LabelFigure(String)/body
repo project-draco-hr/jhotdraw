@@ -1,4 +1,0 @@
-{
-  setText(text);
-  setEditable(false);
-}

@@ -1,7 +1,0 @@
-{
-  super.dispose();
-  if (transformOwner != null) {
-    transformOwner.removeFigureListener(this);
-    transformOwner=null;
-  }
-}

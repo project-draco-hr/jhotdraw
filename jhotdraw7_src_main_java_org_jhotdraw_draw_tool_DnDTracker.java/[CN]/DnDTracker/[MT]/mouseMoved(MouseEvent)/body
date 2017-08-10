@@ -1,3 +1,0 @@
-{
-  updateCursor(editor.findView((Container)evt.getSource()),evt.getPoint());
-}

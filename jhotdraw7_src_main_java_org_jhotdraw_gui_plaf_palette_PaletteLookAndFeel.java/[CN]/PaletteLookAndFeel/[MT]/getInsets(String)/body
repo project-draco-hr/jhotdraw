@@ -1,3 +1,0 @@
-{
-  return (Insets)get(key);
-}

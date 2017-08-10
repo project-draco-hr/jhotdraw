@@ -1,4 +1,0 @@
-{
-  repaint(evt.getInvalidatedArea());
-  invalidateDimension();
-}

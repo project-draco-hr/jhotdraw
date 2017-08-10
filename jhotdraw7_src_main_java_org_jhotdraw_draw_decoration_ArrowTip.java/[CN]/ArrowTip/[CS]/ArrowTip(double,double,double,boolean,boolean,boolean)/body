@@ -1,6 +1,0 @@
-{
-  super(isFilled,isStroked,isSolid);
-  this.angle=angle;
-  this.outerRadius=outerRadius;
-  this.innerRadius=innerRadius;
-}

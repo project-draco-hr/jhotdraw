@@ -1,3 +1,0 @@
-{
-  return new Point((int)(p.x * scaleFactor) - translation.x,(int)(p.y * scaleFactor) - translation.y);
-}

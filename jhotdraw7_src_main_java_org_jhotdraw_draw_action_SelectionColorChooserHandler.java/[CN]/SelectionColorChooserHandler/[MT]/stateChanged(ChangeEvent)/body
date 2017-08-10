@@ -1,6 +1,0 @@
-{
-  if (isUpdating++ == 0) {
-    applySelectedColorToFigures();
-  }
-  isUpdating--;
-}

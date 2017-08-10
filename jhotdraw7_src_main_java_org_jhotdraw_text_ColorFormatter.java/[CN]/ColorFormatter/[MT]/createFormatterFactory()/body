@@ -1,3 +1,0 @@
-{
-  return createFormatterFactory(Format.RGB_INTEGER_SHORT,true,true);
-}

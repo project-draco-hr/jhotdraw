@@ -1,3 +1,0 @@
-{
-  messageLabel.setText(message);
-}

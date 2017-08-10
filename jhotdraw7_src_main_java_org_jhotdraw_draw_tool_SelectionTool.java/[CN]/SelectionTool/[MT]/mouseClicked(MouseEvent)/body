@@ -1,5 +1,0 @@
-{
-  if (getView() != null && getView().isEnabled()) {
-    tracker.mouseClicked(evt);
-  }
-}

@@ -1,5 +1,0 @@
-{
-  PaletteLookAndFeel.installColorsAndFont(p,"Panel.background","Panel.foreground","Panel.font");
-  PaletteLookAndFeel.installBorder(p,"Panel.border");
-  PaletteLookAndFeel.installProperty(p,"opaque",PaletteLookAndFeel.getInstance().get("Panel.opaque"));
-}

@@ -1,3 +1,0 @@
-{
-  return (Border)get(key);
-}

@@ -1,7 +1,0 @@
-{
-  Shape clip=g.getClip();
-  Rectangle r=getCanvasViewBounds();
-  g.clipRect(r.x,r.y,r.width,r.height);
-  getConstrainer().draw(g,this);
-  g.setClip(clip);
-}

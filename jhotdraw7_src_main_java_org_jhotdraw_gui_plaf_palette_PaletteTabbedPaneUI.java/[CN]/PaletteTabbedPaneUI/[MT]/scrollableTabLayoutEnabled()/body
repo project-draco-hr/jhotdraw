@@ -1,3 +1,0 @@
-{
-  return tabPane.getTabLayoutPolicy() == JTabbedPane.SCROLL_TAB_LAYOUT;
-}

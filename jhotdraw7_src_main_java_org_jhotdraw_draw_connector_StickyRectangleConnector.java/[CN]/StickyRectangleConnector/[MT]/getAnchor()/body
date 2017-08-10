@@ -1,3 +1,0 @@
-{
-  return Geom.angleToPoint(getOwner().getBounds(),angle);
-}

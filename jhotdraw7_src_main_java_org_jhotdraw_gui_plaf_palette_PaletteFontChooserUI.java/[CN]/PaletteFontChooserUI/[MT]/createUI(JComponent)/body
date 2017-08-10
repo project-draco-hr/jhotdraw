@@ -1,4 +1,0 @@
-{
-  PaletteFontChooserUI ui=new PaletteFontChooserUI((JFontChooser)c);
-  return ui;
-}

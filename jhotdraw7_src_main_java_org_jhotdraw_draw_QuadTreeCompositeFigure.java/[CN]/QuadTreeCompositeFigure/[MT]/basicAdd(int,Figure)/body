@@ -1,6 +1,0 @@
-{
-  children.add(index,figure);
-  quadTree.add(figure,figure.getDrawingArea());
-  figure.addFigureListener(figureHandler);
-  needsSorting=true;
-}

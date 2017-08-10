@@ -1,6 +1,0 @@
-{
-  if (panelUI == null) {
-    panelUI=new PalettePanelUI();
-  }
-  return panelUI;
-}

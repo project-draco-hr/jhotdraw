@@ -1,4 +1,0 @@
-{
-  super.setHasUnsavedChanges(newValue);
-  undo.setHasSignificantEdits(newValue);
-}

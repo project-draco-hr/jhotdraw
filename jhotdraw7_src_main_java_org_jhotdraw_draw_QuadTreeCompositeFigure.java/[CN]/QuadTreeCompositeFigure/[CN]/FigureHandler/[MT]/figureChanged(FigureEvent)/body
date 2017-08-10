@@ -1,6 +1,0 @@
-{
-  quadTree.remove(e.getFigure());
-  quadTree.add(e.getFigure(),e.getFigure().getDrawingArea());
-  needsSorting=true;
-  if (!isChanging())   fireAreaInvalidated(e.getInvalidatedArea());
-}

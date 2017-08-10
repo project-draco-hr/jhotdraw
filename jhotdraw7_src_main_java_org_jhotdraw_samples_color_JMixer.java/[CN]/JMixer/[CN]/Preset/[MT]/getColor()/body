@@ -1,3 +1,0 @@
-{
-  return new Color(sliderModel.getColorSpace(),new float[]{(index / 8) / 12f,1f,(index % 8 + 2) / 12f},1f);
-}

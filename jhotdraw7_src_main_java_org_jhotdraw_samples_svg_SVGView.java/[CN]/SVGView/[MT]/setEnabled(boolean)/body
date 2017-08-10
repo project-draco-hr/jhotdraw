@@ -1,4 +1,0 @@
-{
-  svgPanel.setEnabled(newValue);
-  super.setEnabled(newValue);
-}

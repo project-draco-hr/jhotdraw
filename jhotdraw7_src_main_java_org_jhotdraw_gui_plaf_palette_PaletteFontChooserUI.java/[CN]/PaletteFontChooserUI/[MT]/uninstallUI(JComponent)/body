@@ -1,4 +1,0 @@
-{
-  uninstallListeners(fontChooser);
-  uninstallComponents(fontChooser);
-}

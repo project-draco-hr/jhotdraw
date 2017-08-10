@@ -1,3 +1,0 @@
-{
-  slantSize=in.getAttribute("slant",20d);
-}

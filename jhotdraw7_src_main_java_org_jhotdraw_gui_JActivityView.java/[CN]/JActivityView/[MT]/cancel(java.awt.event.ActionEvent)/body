@@ -1,4 +1,0 @@
-{
-  model.cancel();
-  model.setNote("Cancelling...");
-}

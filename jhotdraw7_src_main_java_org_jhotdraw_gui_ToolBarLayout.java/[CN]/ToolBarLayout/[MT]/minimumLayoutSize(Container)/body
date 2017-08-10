@@ -1,3 +1,0 @@
-{
-  return preferredLayoutSize(parent);
-}

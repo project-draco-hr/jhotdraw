@@ -1,6 +1,0 @@
-{
-  boolean oldValue=isVisible;
-  isVisible=newValue;
-  firePropertyChange("visible",oldValue,newValue);
-  fireStateChanged();
-}

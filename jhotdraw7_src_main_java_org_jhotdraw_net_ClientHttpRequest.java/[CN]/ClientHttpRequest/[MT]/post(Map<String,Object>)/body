@@ -1,5 +1,0 @@
-{
-  postCookies();
-  setParameters(parameters);
-  return doPost();
-}

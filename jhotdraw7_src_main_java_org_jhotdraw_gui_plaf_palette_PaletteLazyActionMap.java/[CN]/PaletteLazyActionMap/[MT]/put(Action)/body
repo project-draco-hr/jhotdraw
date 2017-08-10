@@ -1,3 +1,0 @@
-{
-  put(action.getValue(Action.NAME),action);
-}

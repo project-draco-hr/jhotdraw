@@ -1,3 +1,0 @@
-{
-  this.handles=new LinkedList<Handle>(handles);
-}

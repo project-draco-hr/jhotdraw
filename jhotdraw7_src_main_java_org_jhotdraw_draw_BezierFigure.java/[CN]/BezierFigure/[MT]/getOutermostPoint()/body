@@ -1,3 +1,0 @@
-{
-  return path.get(path.indexOfOutermostNode()).getControlPoint(0);
-}

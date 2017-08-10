@@ -1,3 +1,0 @@
-{
-  return getOwner().getNodeCount() > index ? getOwner().getNode(index) : null;
-}

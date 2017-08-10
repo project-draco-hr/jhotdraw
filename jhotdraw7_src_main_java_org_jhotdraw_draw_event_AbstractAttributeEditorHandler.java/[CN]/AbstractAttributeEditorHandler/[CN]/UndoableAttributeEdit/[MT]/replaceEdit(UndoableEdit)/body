@@ -1,6 +1,0 @@
-{
-  if (anEdit instanceof UndoableAttributeEdit) {
-    return ((UndoableAttributeEdit)anEdit).editUndoData == this.editUndoData;
-  }
-  return false;
-}

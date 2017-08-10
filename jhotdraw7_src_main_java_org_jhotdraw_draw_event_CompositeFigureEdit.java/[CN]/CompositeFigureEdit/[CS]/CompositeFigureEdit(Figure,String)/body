@@ -1,4 +1,0 @@
-{
-  super(presentationName);
-  this.figure=figure;
-}

@@ -1,5 +1,0 @@
-{
-  long nr=in.skip(n);
-  incrementValue((int)nr);
-  return nr;
-}

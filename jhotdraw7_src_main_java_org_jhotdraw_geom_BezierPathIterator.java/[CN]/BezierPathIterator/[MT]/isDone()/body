@@ -1,3 +1,0 @@
-{
-  return (index >= path.size() + (path.isClosed() ? 2 : 0));
-}

@@ -1,4 +1,0 @@
-{
-  double value=toDouble(elem,readAttribute(elem,"opacity","1"),1,0,1);
-  OPACITY.put(a,value);
-}

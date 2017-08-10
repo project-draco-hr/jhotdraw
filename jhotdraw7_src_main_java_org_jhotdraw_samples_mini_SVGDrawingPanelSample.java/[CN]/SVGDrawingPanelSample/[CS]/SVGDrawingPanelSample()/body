@@ -1,4 +1,0 @@
-{
-  initComponents();
-  setSize(new Dimension(600,400));
-}

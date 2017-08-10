@@ -1,4 +1,0 @@
-{
-  getHandler().tb=toolBar;
-  return getHandler();
-}

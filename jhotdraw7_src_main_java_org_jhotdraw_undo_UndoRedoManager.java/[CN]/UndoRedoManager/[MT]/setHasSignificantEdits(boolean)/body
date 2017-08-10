@@ -1,5 +1,0 @@
-{
-  boolean oldValue=hasSignificantEdits;
-  hasSignificantEdits=newValue;
-  firePropertyChange("hasSignificantEdits",oldValue,newValue);
-}

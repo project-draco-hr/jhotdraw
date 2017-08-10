@@ -1,8 +1,0 @@
-{
-  if (beanDescriptor == null) {
-    beanDescriptor=new BeanDescriptor(JLifeFormattedTexAreaBeanInfo.class);
-  }
-  beanDescriptor.setValue("isContainer",Boolean.FALSE);
-  beanDescriptor.setDisplayName("JLifeFormattedTextArea");
-  return beanDescriptor;
-}

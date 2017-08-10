@@ -1,7 +1,0 @@
-{
-  for (  CSSRule rule : rules) {
-    if (rule.matches(elem)) {
-      rule.apply(elem);
-    }
-  }
-}

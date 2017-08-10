@@ -1,5 +1,0 @@
-{
-  this.editor=editor;
-  editorProxy.setTarget(null);
-  isActive=false;
-}

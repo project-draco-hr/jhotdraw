@@ -1,3 +1,0 @@
-{
-  return new Rectangle2D.Double((r.x + translation.x) / scaleFactor,(r.y + translation.y) / scaleFactor,r.width / scaleFactor,r.height / scaleFactor);
-}

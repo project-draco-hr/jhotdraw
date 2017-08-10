@@ -1,8 +1,0 @@
-{
-  if (evt.getSource() == loadButton) {
-    DrawLiveConnectApplet.this.load(evt);
-  }
- else   if (evt.getSource() == saveButton) {
-    DrawLiveConnectApplet.this.save(evt);
-  }
-}

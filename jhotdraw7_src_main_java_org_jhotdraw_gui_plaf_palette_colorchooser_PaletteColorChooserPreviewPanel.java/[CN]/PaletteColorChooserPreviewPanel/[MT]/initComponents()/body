@@ -1,4 +1,0 @@
-{
-  setPreferredSize(new java.awt.Dimension(26,26));
-  setLayout(new java.awt.BorderLayout());
-}

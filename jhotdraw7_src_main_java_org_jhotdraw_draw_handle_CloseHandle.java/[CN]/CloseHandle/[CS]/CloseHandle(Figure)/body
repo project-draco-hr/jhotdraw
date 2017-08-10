@@ -1,3 +1,0 @@
-{
-  this(owner,new RelativeLocator(1.0,0.0));
-}

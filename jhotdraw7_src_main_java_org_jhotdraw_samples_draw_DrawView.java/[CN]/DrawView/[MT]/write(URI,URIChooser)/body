@@ -1,5 +1,0 @@
-{
-  Drawing drawing=view.getDrawing();
-  OutputFormat outputFormat=drawing.getOutputFormats().get(0);
-  outputFormat.write(f,drawing);
-}

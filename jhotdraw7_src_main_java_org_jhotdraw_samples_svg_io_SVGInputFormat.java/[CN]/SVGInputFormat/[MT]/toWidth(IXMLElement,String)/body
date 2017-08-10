@@ -1,3 +1,0 @@
-{
-  return toLength(elem,str,viewportStack.peek().widthPercentFactor);
-}

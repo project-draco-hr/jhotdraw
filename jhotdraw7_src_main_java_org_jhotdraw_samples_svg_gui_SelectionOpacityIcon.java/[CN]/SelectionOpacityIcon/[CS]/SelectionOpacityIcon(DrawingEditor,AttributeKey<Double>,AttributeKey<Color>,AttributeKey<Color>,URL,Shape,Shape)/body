@@ -1,9 +1,0 @@
-{
-  super(imageLocation);
-  this.editor=editor;
-  this.opacityKey=opacityKey;
-  this.fillColorKey=fillColorKey;
-  this.strokeColorKey=strokeColorKey;
-  this.fillShape=fillShape;
-  this.strokeShape=strokeShape;
-}

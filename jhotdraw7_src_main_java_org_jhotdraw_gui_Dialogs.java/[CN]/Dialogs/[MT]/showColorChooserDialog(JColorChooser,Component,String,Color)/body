@@ -1,7 +1,0 @@
-{
-  final JColorChooser pane=chooser;
-  Dialogs.ColorTracker ok=new Dialogs.ColorTracker(pane);
-  JDialog dialog=JColorChooser.createDialog(component,title,true,pane,ok,null);
-  dialog.setVisible(true);
-  return ok.getColor();
-}

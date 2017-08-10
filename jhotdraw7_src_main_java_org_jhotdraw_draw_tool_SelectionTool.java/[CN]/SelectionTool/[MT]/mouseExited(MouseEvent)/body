@@ -1,4 +1,0 @@
-{
-  super.mouseExited(evt);
-  tracker.mouseExited(evt);
-}

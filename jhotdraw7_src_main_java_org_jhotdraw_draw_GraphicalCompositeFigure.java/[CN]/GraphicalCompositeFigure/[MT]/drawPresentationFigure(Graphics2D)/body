@@ -1,5 +1,0 @@
-{
-  if (getPresentationFigure() != null) {
-    getPresentationFigure().draw(g);
-  }
-}

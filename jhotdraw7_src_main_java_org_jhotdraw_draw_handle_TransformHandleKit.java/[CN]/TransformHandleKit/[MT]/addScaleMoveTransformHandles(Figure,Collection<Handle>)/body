@@ -1,6 +1,0 @@
-{
-  if (f.isTransformable()) {
-    addCornerTransformHandles(f,handles);
-    addEdgeTransformHandles(f,handles);
-  }
-}

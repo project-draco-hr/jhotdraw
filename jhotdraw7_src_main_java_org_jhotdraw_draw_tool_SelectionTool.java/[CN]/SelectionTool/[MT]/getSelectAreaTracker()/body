@@ -1,6 +1,0 @@
-{
-  if (selectAreaTracker == null) {
-    selectAreaTracker=new DefaultSelectAreaTracker();
-  }
-  return selectAreaTracker;
-}

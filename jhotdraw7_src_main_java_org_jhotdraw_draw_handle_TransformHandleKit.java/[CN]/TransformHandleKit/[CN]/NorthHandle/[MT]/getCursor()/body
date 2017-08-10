@@ -1,3 +1,0 @@
-{
-  return Cursor.getPredefinedCursor(Cursor.N_RESIZE_CURSOR);
-}

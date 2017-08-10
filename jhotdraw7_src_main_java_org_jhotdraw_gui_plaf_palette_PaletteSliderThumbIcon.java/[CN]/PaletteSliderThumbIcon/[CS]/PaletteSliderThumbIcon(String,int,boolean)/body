@@ -1,3 +1,0 @@
-{
-  super(Images.createImage(PaletteSliderThumbIcon.class.getResource(resource)),tileCount,isTiledHorizontaly);
-}

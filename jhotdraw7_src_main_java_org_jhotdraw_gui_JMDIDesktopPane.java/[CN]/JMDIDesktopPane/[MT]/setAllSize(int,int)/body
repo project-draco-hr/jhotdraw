@@ -1,3 +1,0 @@
-{
-  setAllSize(new Dimension(width,height));
-}

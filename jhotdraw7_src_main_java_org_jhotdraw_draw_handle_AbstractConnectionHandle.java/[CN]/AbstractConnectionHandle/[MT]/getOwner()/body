@@ -1,3 +1,0 @@
-{
-  return (ConnectionFigure)super.getOwner();
-}

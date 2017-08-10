@@ -1,7 +1,0 @@
-{
-  super(source);
-  this.pane=optionPane;
-  this.option=option;
-  this.value=value;
-  this.inputValue=inputValue;
-}

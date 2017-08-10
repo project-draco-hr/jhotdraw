@@ -1,4 +1,0 @@
-{
-  this.view=newValue;
-  updateActiveView();
-}

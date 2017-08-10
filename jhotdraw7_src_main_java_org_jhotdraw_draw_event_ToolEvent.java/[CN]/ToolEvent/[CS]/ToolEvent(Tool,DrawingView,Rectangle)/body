@@ -1,5 +1,0 @@
-{
-  super(src);
-  this.view=view;
-  this.invalidatedArea=invalidatedArea;
-}

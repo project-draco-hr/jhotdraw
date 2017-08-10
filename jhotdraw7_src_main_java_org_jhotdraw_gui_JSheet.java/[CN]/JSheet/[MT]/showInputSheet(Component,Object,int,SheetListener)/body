@@ -1,3 +1,0 @@
-{
-  showInputSheet(parentComponent,message,messageType,null,null,null,listener);
-}

@@ -1,3 +1,0 @@
-AttributeKey<T> key
-AttributeEditor<T> attributeEditor
-DrawingEditor drawingEditor

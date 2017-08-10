@@ -1,4 +1,0 @@
-{
-  super(relativeX,relativeY);
-  this.isQuadratic=isQuadratic;
-}

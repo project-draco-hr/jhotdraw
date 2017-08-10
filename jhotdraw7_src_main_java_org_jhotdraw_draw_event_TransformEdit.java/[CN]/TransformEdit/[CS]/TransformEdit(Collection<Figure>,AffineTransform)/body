@@ -1,4 +1,0 @@
-{
-  this.figures=figures;
-  this.tx=(AffineTransform)tx.clone();
-}

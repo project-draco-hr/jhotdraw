@@ -1,4 +1,0 @@
-{
-  double error=getError();
-  return error * error;
-}

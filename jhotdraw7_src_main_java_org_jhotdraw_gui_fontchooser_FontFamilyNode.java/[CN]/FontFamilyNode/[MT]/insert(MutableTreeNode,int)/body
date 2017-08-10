@@ -1,8 +1,0 @@
-{
-  FontFamilyNode oldParent=(FontFamilyNode)newChild.getParent();
-  if (oldParent != null) {
-    oldParent.remove(newChild);
-  }
-  newChild.setParent(this);
-  children.add(index,(FontFaceNode)newChild);
-}

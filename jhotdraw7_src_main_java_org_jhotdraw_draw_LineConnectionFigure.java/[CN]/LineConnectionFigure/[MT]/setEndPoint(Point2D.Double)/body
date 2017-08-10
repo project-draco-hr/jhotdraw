@@ -1,3 +1,0 @@
-{
-  setPoint(getNodeCount() - 1,p);
-}

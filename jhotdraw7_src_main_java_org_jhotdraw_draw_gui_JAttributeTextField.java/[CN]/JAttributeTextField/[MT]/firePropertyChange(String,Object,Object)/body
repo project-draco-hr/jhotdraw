@@ -1,6 +1,0 @@
-{
-  super.firePropertyChange(propertyName,oldValue,newValue);
-  if (propertyName == "value") {
-    super.firePropertyChange(ATTRIBUTE_VALUE_PROPERTY,oldValue,newValue);
-  }
-}

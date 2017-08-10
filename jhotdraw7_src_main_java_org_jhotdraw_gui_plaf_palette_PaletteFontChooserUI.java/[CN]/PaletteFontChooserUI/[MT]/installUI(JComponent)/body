@@ -1,4 +1,0 @@
-{
-  installComponents(fontChooser);
-  installListeners(fontChooser);
-}

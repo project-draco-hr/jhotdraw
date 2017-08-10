@@ -1,6 +1,0 @@
-{
-  super.redo();
-  owner.willChange();
-  owner.setBounds(newAnchor,newLead);
-  owner.changed();
-}

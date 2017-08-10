@@ -1,3 +1,0 @@
-{
-  return getDrawing().findFiguresWithin(viewToDrawing(r));
-}

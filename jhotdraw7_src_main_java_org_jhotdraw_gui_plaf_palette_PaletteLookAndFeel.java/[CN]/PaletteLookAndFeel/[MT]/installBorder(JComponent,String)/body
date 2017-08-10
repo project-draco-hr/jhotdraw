@@ -1,6 +1,0 @@
-{
-  Border b=c.getBorder();
-  if (b == null || b instanceof UIResource) {
-    c.setBorder(getInstance().getBorder(defaultBorderName));
-  }
-}

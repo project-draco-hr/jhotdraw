@@ -1,6 +1,0 @@
-{
-  super.transform(tx);
-  if (getPresentationFigure() != null) {
-    getPresentationFigure().transform(tx);
-  }
-}

@@ -1,3 +1,0 @@
-{
-  return PaletteLookAndFeel.getInstance().getIcon("ColorChooser.colorSlidersIcon");
-}

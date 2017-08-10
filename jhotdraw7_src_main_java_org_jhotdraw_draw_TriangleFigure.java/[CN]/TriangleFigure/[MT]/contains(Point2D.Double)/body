@@ -1,9 +1,0 @@
-{
-  Shape triangle=getBezierPath();
-  double grow=AttributeKeys.getPerpendicularHitGrowth(this);
-  if (grow != 0d) {
-    GrowStroke gs=new GrowStroke((float)grow,(float)(AttributeKeys.getStrokeTotalWidth(this) * get(STROKE_MITER_LIMIT)));
-    triangle=gs.createStrokedShape(triangle);
-  }
-  return triangle.contains(p);
-}

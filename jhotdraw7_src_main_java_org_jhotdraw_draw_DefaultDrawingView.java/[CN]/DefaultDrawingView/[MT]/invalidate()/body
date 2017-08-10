@@ -1,4 +1,0 @@
-{
-  invalidateDimension();
-  super.invalidate();
-}

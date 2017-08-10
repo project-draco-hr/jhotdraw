@@ -1,5 +1,0 @@
-{
-  svgPanel=new org.jhotdraw.samples.svg.SVGDrawingPanel();
-  setLayout(new java.awt.BorderLayout());
-  add(svgPanel,java.awt.BorderLayout.CENTER);
-}

@@ -1,9 +1,0 @@
-{
-  if (panels == null) {
-    panels=new JPanel[getDisclosureStateCount()];
-    for (int i=0; i < panels.length; i++) {
-      panels[i]=new ProxyPanel();
-    }
-  }
-  return panels[state];
-}

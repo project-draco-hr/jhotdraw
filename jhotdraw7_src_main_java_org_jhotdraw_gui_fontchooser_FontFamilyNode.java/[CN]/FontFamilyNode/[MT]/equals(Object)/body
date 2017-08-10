@@ -1,7 +1,0 @@
-{
-  if (o instanceof FontFamilyNode) {
-    FontFamilyNode that=(FontFamilyNode)o;
-    return that.name.equals(this.name);
-  }
-  return false;
-}

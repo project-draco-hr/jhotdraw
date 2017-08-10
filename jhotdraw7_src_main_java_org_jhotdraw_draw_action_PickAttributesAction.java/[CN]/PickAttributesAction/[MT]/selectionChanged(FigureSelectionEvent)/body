@@ -1,3 +1,0 @@
-{
-  setEnabled(getView().getSelectionCount() == 1);
-}

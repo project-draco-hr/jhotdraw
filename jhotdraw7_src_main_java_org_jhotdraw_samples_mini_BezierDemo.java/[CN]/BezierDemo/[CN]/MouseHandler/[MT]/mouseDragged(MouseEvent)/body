@@ -1,6 +1,0 @@
-{
-  double zoomFactor=getZoomFactor();
-  example.digitized.lineTo(e.getX() / zoomFactor,e.getY() / zoomFactor);
-  example.invalidate();
-  canvas.repaint();
-}

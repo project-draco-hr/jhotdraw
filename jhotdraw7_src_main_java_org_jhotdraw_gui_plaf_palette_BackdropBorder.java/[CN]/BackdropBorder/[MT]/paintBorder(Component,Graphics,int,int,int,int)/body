@@ -1,5 +1,0 @@
-{
-  if (foregroundBorder != null) {
-    foregroundBorder.paintBorder(c,g,x,y,width,height);
-  }
-}

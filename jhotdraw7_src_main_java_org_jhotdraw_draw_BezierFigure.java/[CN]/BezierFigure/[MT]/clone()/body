@@ -1,6 +1,0 @@
-{
-  BezierFigure that=(BezierFigure)super.clone();
-  that.path=this.path.clone();
-  that.invalidate();
-  return that;
-}

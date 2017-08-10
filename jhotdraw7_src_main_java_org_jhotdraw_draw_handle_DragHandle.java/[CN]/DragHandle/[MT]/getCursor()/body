@@ -1,3 +1,0 @@
-{
-  return Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
-}

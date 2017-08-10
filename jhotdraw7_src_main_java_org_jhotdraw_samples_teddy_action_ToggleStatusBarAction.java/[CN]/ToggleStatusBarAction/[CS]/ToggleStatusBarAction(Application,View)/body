@@ -1,5 +1,0 @@
-{
-  super(app,view);
-  labels.configureAction(this,ID);
-  setPropertyName("statusBarVisible");
-}

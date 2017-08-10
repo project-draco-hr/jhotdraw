@@ -1,8 +1,0 @@
-{
-  for (  IXMLElement child : elem.getChildren()) {
-    ODGFigure figure=readElement(child);
-    if (figure != null) {
-      figures.add(figure);
-    }
-  }
-}

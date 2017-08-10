@@ -1,9 +1,0 @@
-{
-  Ellipse2D.Double r=(Ellipse2D.Double)ellipse.clone();
-  double grow=AttributeKeys.getPerpendicularHitGrowth(this);
-  r.x-=grow;
-  r.y-=grow;
-  r.width+=grow * 2;
-  r.height+=grow * 2;
-  return r.contains(p);
-}

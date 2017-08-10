@@ -1,5 +1,0 @@
-{
-  if (os == null) {
-    os=connection.getOutputStream();
-  }
-}

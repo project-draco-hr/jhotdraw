@@ -1,3 +1,0 @@
-{
-  return ((presentationName != null) ? UndoRedoManager.getLabels().getString("edit.redo.text") + " " + presentationName : super.getRedoPresentationName());
-}

@@ -1,3 +1,0 @@
-{
-  this(angle,outerRadius,innerRadius,true,false,true);
-}

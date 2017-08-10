@@ -1,5 +1,0 @@
-{
-  ellipse=new Ellipse2D.Double(x,y,width,height);
-  SVGAttributeKeys.setDefaults(this);
-  setConnectable(false);
-}

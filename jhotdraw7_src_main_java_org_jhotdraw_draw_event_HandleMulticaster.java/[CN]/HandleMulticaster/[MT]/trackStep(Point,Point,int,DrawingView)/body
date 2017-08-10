@@ -1,5 +1,0 @@
-{
-  for (  Handle h : handles) {
-    h.trackStep(anchor,lead,modifiersEx);
-  }
-}

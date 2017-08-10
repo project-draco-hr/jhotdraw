@@ -1,4 +1,0 @@
-{
-  set(PATH_CLOSED,newValue);
-  setConnectable(newValue);
-}

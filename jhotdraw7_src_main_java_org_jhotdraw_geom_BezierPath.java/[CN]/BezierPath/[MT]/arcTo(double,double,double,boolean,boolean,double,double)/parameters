@@ -1,7 +1,0 @@
-double rx
-double ry
-double xAxisRotation
-boolean largeArcFlag
-boolean sweepFlag
-double x
-double y

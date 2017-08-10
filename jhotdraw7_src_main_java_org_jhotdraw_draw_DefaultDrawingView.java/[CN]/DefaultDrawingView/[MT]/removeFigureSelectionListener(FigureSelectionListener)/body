@@ -1,3 +1,0 @@
-{
-  listenerList.remove(FigureSelectionListener.class,fsl);
-}

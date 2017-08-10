@@ -1,5 +1,0 @@
-{
-  ByteArrayOutputStream buf=new ByteArrayOutputStream();
-  write(buf,drawing,figures);
-  return new InputStreamTransferable(new DataFlavor(SVG_MIMETYPE,"Image SVG"),buf.toByteArray());
-}

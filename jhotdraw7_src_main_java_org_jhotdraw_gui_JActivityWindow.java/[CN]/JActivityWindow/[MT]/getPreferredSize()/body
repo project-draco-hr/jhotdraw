@@ -1,5 +1,0 @@
-{
-  Dimension d=super.getPreferredSize();
-  d.height=Math.min(600,d.height);
-  return d;
-}

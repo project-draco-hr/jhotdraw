@@ -1,3 +1,0 @@
-{
-  writeAttribute(elem,"opacity",OPACITY.get(m),1d);
-}

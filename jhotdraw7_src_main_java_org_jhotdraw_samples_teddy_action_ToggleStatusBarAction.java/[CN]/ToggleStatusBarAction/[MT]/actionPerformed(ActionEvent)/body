@@ -1,3 +1,0 @@
-{
-  getActiveView().setStatusBarVisible(!getActiveView().isStatusBarVisible());
-}

@@ -1,4 +1,0 @@
-{
-  super.basicAdd(index,figure);
-  invalidateSortOrder();
-}

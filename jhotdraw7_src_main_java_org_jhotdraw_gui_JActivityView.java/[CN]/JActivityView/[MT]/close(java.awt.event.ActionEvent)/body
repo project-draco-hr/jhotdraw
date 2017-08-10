@@ -1,4 +1,0 @@
-{
-  closeButton.setEnabled(false);
-  putClientProperty(REQUEST_REMOVE_PROPERTY,true);
-}

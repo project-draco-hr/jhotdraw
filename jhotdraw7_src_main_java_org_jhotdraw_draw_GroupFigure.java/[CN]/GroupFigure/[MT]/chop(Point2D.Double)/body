@@ -1,4 +1,0 @@
-{
-  Rectangle2D.Double r=getBounds();
-  return Geom.angleToPoint(r,Geom.pointToAngle(r,from));
-}

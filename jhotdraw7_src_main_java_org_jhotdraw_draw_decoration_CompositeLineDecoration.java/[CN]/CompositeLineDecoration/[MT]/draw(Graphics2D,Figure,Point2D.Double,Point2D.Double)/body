@@ -1,5 +1,0 @@
-{
-  for (  LineDecoration decoration : decorations) {
-    decoration.draw(g,f,p1,p2);
-  }
-}

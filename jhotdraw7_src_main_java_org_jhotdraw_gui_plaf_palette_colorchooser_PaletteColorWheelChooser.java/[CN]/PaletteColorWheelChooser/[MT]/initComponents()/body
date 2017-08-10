@@ -1,9 +1,0 @@
-{
-  brightnessSlider=new javax.swing.JSlider();
-  setBorder(javax.swing.BorderFactory.createEmptyBorder(4,6,6,6));
-  setLayout(new java.awt.BorderLayout());
-  brightnessSlider.setMajorTickSpacing(50);
-  brightnessSlider.setOrientation(javax.swing.JSlider.VERTICAL);
-  brightnessSlider.setPaintTicks(true);
-  add(brightnessSlider,java.awt.BorderLayout.EAST);
-}

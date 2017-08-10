@@ -1,7 +1,0 @@
-Component parentComponent
-Object message
-int messageType
-Icon icon
-Object[] selectionValues
-Object initialSelectionValue
-SheetListener listener

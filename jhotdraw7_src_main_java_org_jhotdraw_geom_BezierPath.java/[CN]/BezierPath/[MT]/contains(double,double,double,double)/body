@@ -1,4 +1,0 @@
-{
-  validatePath();
-  return generalPath.contains(x,y,w,h);
-}

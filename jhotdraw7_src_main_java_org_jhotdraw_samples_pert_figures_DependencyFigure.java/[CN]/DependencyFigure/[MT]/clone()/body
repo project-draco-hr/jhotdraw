@@ -1,4 +1,0 @@
-{
-  DependencyFigure that=(DependencyFigure)super.clone();
-  return that;
-}

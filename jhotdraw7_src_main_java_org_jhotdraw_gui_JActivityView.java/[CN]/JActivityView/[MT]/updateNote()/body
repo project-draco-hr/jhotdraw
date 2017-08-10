@@ -1,4 +1,0 @@
-{
-  String txt=model.getNote();
-  noteLabel.setText(model.getNote());
-}

@@ -1,3 +1,0 @@
-{
-  setSelectedFile(uri == null ? null : new File(uri));
-}

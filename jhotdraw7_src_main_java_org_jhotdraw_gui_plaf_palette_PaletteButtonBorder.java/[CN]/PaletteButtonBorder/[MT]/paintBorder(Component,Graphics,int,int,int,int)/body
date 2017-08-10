@@ -1,5 +1,0 @@
-{
-  if (c instanceof AbstractButton) {
-    paintBorder((AbstractButton)c,g,x,y,width,height);
-  }
-}

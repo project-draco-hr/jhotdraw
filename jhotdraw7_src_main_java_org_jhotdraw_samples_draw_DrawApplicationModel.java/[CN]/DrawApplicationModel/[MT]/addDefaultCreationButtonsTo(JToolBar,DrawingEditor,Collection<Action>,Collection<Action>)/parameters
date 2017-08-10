@@ -1,4 +1,0 @@
-JToolBar tb
-DrawingEditor editor
-Collection<Action> drawingActions
-Collection<Action> selectionActions

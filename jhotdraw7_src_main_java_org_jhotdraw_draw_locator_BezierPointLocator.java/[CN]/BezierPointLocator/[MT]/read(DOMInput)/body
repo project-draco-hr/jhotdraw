@@ -1,4 +1,0 @@
-{
-  index=in.getAttribute("index",0);
-  coord=in.getAttribute("coord",0);
-}

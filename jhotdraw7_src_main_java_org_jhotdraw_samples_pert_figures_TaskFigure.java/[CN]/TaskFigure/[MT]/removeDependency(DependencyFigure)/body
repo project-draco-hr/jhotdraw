@@ -1,4 +1,0 @@
-{
-  dependencies.remove(f);
-  updateStartTime();
-}

@@ -1,5 +1,0 @@
-int rows
-int cols
-int hgap
-int vgap
-boolean isVertical

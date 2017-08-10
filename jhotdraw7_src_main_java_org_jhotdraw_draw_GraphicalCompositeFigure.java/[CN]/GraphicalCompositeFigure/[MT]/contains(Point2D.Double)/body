@@ -1,7 +1,0 @@
-{
-  boolean contains=super.contains(p);
-  if (!contains && getPresentationFigure() != null) {
-    contains=getPresentationFigure().contains(p);
-  }
-  return contains;
-}

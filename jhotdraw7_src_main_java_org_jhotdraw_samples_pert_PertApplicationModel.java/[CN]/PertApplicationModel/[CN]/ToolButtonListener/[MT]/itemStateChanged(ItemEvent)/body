@@ -1,5 +1,0 @@
-{
-  if (evt.getStateChange() == ItemEvent.SELECTED) {
-    editor.setTool(tool);
-  }
-}

@@ -1,7 +1,0 @@
-{
-  if (theta == 0) {
-    return angle;
-  }
-  double factor=Math.round(angle / theta);
-  return theta * factor;
-}

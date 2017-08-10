@@ -1,3 +1,0 @@
-{
-  return Shapes.outlineContains(this,p,tolerance);
-}

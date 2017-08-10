@@ -1,8 +1,0 @@
-{
-  super(editor);
-  this.key=key;
-  this.colorChooser=colorChooser;
-  this.popupMenu=popupMenu;
-  colorChooser.getSelectionModel().addChangeListener(this);
-  updateEnabledState();
-}

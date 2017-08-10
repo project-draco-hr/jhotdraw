@@ -1,3 +1,0 @@
-{
-  return proxy.getClass().getName() + '@' + Integer.toHexString(proxy.hashCode());
-}

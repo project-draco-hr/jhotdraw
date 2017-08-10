@@ -1,7 +1,0 @@
-{
-  this.owner=owner;
-  this.oldAnchor=oldAnchor;
-  this.oldLead=oldLead;
-  this.newAnchor=newAnchor;
-  this.newLead=newLead;
-}

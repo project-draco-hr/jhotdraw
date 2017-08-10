@@ -1,5 +1,0 @@
-{
-  JFileURIChooser c=new JFileURIChooser();
-  c.addChoosableFileFilter(new ExtensionFileFilter("Drawing .xml","xml"));
-  return c;
-}

@@ -1,4 +1,0 @@
-BezierFigure owner
-int index
-BezierPath.Node oldValue
-BezierPath.Node newValue

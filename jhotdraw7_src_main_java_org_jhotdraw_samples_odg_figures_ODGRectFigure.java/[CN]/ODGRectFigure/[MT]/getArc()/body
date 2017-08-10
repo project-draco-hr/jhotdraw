@@ -1,3 +1,0 @@
-{
-  return new Dimension2DDouble(roundrect.arcwidth / 2d,roundrect.archeight / 2d);
-}

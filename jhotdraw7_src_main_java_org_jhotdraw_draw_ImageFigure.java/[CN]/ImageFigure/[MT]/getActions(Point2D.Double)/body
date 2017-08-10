@@ -1,4 +1,0 @@
-{
-  LinkedList<Action> actions=new LinkedList<Action>();
-  return actions;
-}

@@ -1,8 +1,0 @@
-{
-  for (  Object[] o : classTagArray) {
-    addStorableClass((String)o[1],(Class)o[0]);
-  }
-  for (  Object[] o : enumTagArray) {
-    addEnumClass((String)o[1],(Class)o[0]);
-  }
-}

@@ -1,4 +1,0 @@
-{
-  super(isClosed);
-  set(UNCLOSED_PATH_FILLED,true);
-}

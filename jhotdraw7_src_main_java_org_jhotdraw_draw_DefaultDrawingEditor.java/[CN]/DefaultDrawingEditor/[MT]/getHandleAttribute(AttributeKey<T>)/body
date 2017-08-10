@@ -1,8 +1,0 @@
-{
-  if (handleAttributes.containsKey(key)) {
-    return key.get(handleAttributes);
-  }
- else {
-    return key.getDefaultValue();
-  }
-}

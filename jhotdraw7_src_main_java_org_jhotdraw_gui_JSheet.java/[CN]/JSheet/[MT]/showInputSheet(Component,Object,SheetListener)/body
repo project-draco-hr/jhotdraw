@@ -1,3 +1,0 @@
-{
-  showInputSheet(parentComponent,message,JOptionPane.QUESTION_MESSAGE,listener);
-}

@@ -1,6 +1,0 @@
-{
-  if (getPresentationFigure() == null) {
-    return super.getBounds();
-  }
-  return getPresentationFigure().getBounds();
-}

@@ -1,6 +1,0 @@
-{
-  isAdaptive=newValue;
-  if (newValue && lastUsedInputFormat != null) {
-    outputFormat=lastUsedInputFormat;
-  }
-}

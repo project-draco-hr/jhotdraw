@@ -1,5 +1,0 @@
-{
-  relativePosition=in.getAttribute("relativePosition",0d);
-  angle=in.getAttribute("angle",0d);
-  distance=in.getAttribute("distance",0);
-}

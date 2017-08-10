@@ -1,3 +1,0 @@
-{
-  saturationField.setText(Integer.toString(ccModel.getBoundedRangeModel(1).getValue()));
-}

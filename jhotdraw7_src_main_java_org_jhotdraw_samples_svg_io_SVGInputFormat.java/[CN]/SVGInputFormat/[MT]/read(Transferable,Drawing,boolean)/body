@@ -1,9 +1,0 @@
-{
-  InputStream in=(InputStream)t.getTransferData(new DataFlavor("image/svg+xml","Image SVG"));
-  try {
-    read(in,drawing,false);
-  }
-  finally {
-    in.close();
-  }
-}

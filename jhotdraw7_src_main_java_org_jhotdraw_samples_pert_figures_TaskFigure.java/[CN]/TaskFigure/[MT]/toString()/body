@@ -1,3 +1,0 @@
-{
-  return "TaskFigure#" + hashCode() + " "+ getName()+ " "+ getDuration()+ " "+ getStartTime();
-}

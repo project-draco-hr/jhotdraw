@@ -1,3 +1,0 @@
-{
-  return (getOwner().isTextOverflow()) ? ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").getString("handle.textOverflow.toolTipText") : null;
-}

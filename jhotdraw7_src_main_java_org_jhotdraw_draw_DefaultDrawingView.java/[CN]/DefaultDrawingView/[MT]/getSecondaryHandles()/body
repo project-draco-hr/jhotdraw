@@ -1,4 +1,0 @@
-{
-  validateHandles();
-  return Collections.unmodifiableList(secondaryHandles);
-}

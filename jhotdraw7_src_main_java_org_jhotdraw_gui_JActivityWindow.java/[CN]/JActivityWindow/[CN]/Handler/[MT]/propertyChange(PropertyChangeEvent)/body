@@ -1,5 +1,0 @@
-{
-  if (evt.getPropertyName() == JActivityView.REQUEST_REMOVE_PROPERTY) {
-    removeActivityModel(((JActivityView)evt.getSource()).getModel());
-  }
-}

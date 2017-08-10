@@ -1,4 +1,0 @@
-{
-  double width=Math.ceil(STROKE_WIDTH.get(this));
-  return new Dimension2DDouble(width,width);
-}

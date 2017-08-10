@@ -1,9 +1,0 @@
-{
-  try {
-    Method sm=c.getMethod(m.getName(),m.getParameterTypes());
-    return raiseToPublicClass(sm);
-  }
- catch (  NoSuchMethodException ee) {
-    return null;
-  }
-}

@@ -1,4 +1,0 @@
-{
-  this.bounds=bounds;
-  this.objects=new HashMap<T,Rectangle2D.Double>();
-}

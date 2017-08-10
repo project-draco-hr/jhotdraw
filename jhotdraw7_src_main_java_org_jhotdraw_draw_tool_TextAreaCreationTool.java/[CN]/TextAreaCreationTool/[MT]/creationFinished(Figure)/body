@@ -1,5 +1,0 @@
-{
-  getView().clearSelection();
-  getView().addToSelection(createdFigure);
-  beginEdit((TextHolderFigure)createdFigure);
-}

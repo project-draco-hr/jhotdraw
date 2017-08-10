@@ -1,7 +1,0 @@
-{
-  if (isEditable() && contains(p)) {
-    TextAreaEditingTool tool=new TextAreaEditingTool(this);
-    return tool;
-  }
-  return null;
-}

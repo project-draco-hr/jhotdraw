@@ -1,5 +1,0 @@
-{
-  super.invalidate();
-  cachedTransformedShape=null;
-  cachedHitShape=null;
-}

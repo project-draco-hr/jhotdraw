@@ -1,4 +1,0 @@
-{
-  pressed=true;
-  fireAreaInvalidated(getDrawingArea());
-}

@@ -1,3 +1,0 @@
-{
-  return new RadialGradient(cx,cy,fx,fy,r,stopOffsets,stopColors,stopOpacities,isRelativeToFigureBounds,tx);
-}

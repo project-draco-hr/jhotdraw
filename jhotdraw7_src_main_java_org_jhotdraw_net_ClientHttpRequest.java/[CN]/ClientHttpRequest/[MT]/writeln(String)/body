@@ -1,5 +1,0 @@
-{
-  connect();
-  write(s);
-  newline();
-}

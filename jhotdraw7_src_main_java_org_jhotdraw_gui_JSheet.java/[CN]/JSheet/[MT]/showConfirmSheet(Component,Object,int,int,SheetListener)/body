@@ -1,3 +1,0 @@
-{
-  showConfirmSheet(parentComponent,message,optionType,messageType,null,listener);
-}

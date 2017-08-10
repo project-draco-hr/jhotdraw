@@ -1,6 +1,0 @@
-{
-  this.owner=owner;
-  this.name=name;
-  this.oldValue=oldValue;
-  this.newValue=newValue;
-}

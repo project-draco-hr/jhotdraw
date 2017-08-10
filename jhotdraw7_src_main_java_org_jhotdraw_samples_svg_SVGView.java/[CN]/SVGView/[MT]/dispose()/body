@@ -1,7 +1,0 @@
-{
-  clear();
-  undo.removePropertyChangeListener(propertyHandler);
-  propertyHandler=null;
-  svgPanel.dispose();
-  super.dispose();
-}

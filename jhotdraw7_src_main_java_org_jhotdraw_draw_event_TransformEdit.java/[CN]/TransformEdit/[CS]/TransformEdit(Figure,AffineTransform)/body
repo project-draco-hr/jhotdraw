@@ -1,5 +1,0 @@
-{
-  figures=new LinkedList<Figure>();
-  ((LinkedList<Figure>)figures).add(figure);
-  this.tx=(AffineTransform)tx.clone();
-}

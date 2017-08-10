@@ -1,6 +1,0 @@
-{
-  if (that instanceof AttributeKey) {
-    return ((AttributeKey)that).key.equals(this.key);
-  }
-  return false;
-}

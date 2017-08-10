@@ -1,7 +1,0 @@
-{
-  Figure figure=getChild(index);
-  quadTree.remove(figure);
-  needsSorting=true;
-  super.basicRemoveChild(index);
-  return figure;
-}

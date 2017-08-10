@@ -1,5 +1,0 @@
-{
-  super.invalidate();
-  cachedPath=null;
-  cachedDrawingArea=null;
-}

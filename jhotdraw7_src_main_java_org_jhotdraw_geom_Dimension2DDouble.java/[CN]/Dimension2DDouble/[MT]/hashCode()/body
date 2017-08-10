@@ -1,4 +1,0 @@
-{
-  float sum=(float)(width + height);
-  return Float.floatToIntBits(sum * (sum + 1) / 2 + (float)width);
-}

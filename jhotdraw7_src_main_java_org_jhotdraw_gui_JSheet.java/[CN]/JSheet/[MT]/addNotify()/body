@@ -1,5 +1,0 @@
-{
-  super.addNotify();
-  if (UIManager.getBoolean("Sheet.showAsSheet")) {
-  }
-}

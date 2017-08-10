@@ -1,3 +1,0 @@
-{
-  owner.remove(e.getFigure());
-}

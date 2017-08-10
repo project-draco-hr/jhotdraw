@@ -1,3 +1,0 @@
-{
-  r.setRect(r.getX() - getLeft(),r.getY() - getTop(),r.getWidth() + getLeft() + getRight(),r.getHeight() + getTop() + getBottom());
-}

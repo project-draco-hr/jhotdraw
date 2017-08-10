@@ -1,5 +1,0 @@
-double min
-double max
-double multiplier
-boolean allowsNullValue
-String unit

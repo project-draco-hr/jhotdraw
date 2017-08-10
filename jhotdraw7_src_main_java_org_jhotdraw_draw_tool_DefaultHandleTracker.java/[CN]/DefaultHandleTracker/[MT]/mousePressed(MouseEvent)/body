@@ -1,5 +1,0 @@
-{
-  anchor=new Point(evt.getX(),evt.getY());
-  multicaster.trackStart(anchor,evt.getModifiersEx(),getView());
-  clearHoverHandles();
-}

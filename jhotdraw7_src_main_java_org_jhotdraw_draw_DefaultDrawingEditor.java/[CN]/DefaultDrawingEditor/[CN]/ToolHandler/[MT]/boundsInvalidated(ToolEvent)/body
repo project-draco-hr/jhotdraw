@@ -1,9 +1,0 @@
-{
-  Drawing d=evt.getView().getDrawing();
-  for (  DrawingView v : views) {
-    if (v.getDrawing() == d) {
-      JComponent c=v.getComponent();
-      c.revalidate();
-    }
-  }
-}

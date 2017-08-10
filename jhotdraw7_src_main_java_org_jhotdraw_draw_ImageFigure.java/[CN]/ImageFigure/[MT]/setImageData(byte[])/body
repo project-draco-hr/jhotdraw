@@ -1,6 +1,0 @@
-{
-  willChange();
-  this.imageData=imageData;
-  this.bufferedImage=null;
-  changed();
-}

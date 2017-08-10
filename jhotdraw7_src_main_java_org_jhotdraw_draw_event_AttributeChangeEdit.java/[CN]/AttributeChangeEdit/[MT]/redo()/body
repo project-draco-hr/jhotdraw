@@ -1,6 +1,0 @@
-{
-  super.redo();
-  owner.willChange();
-  owner.set(name,newValue);
-  owner.changed();
-}

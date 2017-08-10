@@ -1,6 +1,0 @@
-{
-  super(source);
-  this.child=child;
-  this.invalidatedArea=invalidatedArea;
-  this.index=0;
-}

@@ -1,8 +1,0 @@
-{
-  if (beanDescriptor == null) {
-    beanDescriptor=new BeanDescriptor(JAttributeTextAreaBeanInfo.class);
-  }
-  beanDescriptor.setValue("isContainer",Boolean.FALSE);
-  beanDescriptor.setDisplayName("JAttributeTextArea");
-  return beanDescriptor;
-}

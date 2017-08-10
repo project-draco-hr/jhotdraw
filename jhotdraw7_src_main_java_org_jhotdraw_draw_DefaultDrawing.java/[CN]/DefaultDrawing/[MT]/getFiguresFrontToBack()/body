@@ -1,4 +1,0 @@
-{
-  ensureSorted();
-  return new ReversedList<Figure>(getChildren());
-}

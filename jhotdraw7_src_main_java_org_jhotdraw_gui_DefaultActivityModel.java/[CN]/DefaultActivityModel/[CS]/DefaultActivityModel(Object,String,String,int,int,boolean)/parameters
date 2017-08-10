@@ -1,6 +1,0 @@
-Object owner
-String title
-String note
-int min
-int max
-boolean isIndeterminate

@@ -1,3 +1,0 @@
-{
-  return noteLabel.getText();
-}

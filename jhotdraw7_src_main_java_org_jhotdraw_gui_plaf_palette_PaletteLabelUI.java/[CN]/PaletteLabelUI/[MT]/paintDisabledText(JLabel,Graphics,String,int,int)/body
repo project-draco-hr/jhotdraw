@@ -1,6 +1,0 @@
-{
-  Color c=UIManager.getColor("Label.disabledForeground");
-  g.setColor((c != null) ? c : l.getForeground());
-  int accChar=-1;
-  PaletteUtilities.drawString(g,s,accChar,textX,textY);
-}

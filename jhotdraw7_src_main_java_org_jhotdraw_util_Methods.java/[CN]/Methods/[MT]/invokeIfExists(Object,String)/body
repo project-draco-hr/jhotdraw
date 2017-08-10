@@ -1,7 +1,0 @@
-{
-  try {
-    invoke(obj,methodName);
-  }
- catch (  NoSuchMethodException e) {
-  }
-}

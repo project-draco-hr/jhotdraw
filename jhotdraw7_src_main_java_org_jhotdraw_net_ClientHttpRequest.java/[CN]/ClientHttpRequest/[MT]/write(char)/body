@@ -1,4 +1,0 @@
-{
-  connect();
-  os.write(c);
-}

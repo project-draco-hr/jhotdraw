@@ -1,8 +1,0 @@
-{
-  if (f.isTransformable()) {
-    handles.add(south(f));
-    handles.add(north(f));
-    handles.add(east(f));
-    handles.add(west(f));
-  }
-}

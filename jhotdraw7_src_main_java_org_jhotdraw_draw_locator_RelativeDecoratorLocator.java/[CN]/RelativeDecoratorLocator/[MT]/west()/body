@@ -1,3 +1,0 @@
-{
-  return new RelativeDecoratorLocator(0.0,0.5);
-}

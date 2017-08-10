@@ -1,3 +1,0 @@
-{
-  return flavor.equals(DataFlavor.imageFlavor) || flavor.equals(IMAGE_PNG_FLAVOR);
-}

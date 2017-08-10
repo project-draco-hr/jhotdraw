@@ -1,9 +1,0 @@
-{
-  if (popupMenu == null) {
-    popupMenu=new JPopupMenu();
-    popupMenu.setLayout(new VerticalGridLayout(0,getColumnCount()));
-    popupMenu.addPopupMenuListener(handler);
-    popupMenu.setLightWeightPopupEnabled(false);
-  }
-  return popupMenu;
-}

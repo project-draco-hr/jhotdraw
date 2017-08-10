@@ -1,5 +1,0 @@
-{
-  if (value != null) {
-    ((Element)current).setAttribute(name,value);
-  }
-}

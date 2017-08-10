@@ -1,7 +1,0 @@
-{
-  if (hoverHandles.size() > 0 && !getView().isFigureSelected(hoverFigure)) {
-    for (    Handle h : hoverHandles) {
-      h.draw(g);
-    }
-  }
-}

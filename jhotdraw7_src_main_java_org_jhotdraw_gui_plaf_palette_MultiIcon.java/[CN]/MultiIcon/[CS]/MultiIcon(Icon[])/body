@@ -1,4 +1,0 @@
-{
-  this.icons=icons.clone();
-  generateMissingIcons();
-}

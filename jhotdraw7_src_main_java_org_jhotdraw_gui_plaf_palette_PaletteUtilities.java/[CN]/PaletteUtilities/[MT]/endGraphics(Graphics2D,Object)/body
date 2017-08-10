@@ -1,5 +1,0 @@
-{
-  if (oldHints != null) {
-    graphics2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,oldHints);
-  }
-}

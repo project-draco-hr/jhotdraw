@@ -1,7 +1,0 @@
-{
-  initComponents();
-  setOpaque(false);
-  tabbedPane.setTabLayoutPolicy(JTabbedPane.WRAP_TAB_LAYOUT);
-  tabbedPane.setUI((TabbedPaneUI)PaletteTabbedPaneUI.createUI(tabbedPane));
-  tabbedPane.putClientProperty("Palette.TabbedPane.paintContentBorder",false);
-}

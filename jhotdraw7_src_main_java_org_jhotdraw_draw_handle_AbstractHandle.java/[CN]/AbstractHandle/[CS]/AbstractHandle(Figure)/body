@@ -1,7 +1,0 @@
-{
-  if (owner == null) {
-    throw new IllegalArgumentException("owner must not be null");
-  }
-  this.owner=owner;
-  owner.addFigureListener(this);
-}

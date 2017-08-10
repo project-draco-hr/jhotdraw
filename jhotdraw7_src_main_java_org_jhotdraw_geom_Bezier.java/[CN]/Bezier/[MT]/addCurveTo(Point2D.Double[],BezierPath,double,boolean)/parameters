@@ -1,4 +1,0 @@
-Point2D.Double[] bezCurve
-BezierPath bezierPath
-double errorSquared
-boolean connectsCorners

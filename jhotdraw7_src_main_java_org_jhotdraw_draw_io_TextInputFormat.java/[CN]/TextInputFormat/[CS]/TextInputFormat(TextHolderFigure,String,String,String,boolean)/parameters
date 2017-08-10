@@ -1,5 +1,0 @@
-TextHolderFigure prototype
-String formatName
-String description
-String fileExtension
-boolean isMultiline

@@ -1,3 +1,0 @@
-{
-  listenerList.remove(SheetListener.class,l);
-}

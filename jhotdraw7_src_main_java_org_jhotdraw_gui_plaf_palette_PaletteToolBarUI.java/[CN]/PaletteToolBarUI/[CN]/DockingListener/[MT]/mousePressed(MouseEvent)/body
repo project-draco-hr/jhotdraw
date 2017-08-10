@@ -1,5 +1,0 @@
-{
-  getHandler().tb=toolBar;
-  getHandler().mousePressed(e);
-  isDragging=getHandler().isDragging;
-}

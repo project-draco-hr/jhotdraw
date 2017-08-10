@@ -1,6 +1,0 @@
-{
-  if (!rubberband.isEmpty()) {
-    fireAreaInvalidated(rubberband);
-    rubberband.width=-1;
-  }
-}

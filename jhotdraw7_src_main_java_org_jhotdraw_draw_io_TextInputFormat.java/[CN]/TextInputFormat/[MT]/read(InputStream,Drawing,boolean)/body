@@ -1,6 +1,0 @@
-{
-  if (replace) {
-    drawing.removeAllChildren();
-  }
-  drawing.basicAddAll(0,createTextHolderFigures(in));
-}

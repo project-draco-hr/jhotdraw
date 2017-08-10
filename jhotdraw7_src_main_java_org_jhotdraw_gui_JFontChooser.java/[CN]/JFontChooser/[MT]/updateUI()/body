@@ -1,8 +1,0 @@
-{
-  if (UIManager.get(getUIClassID()) != null) {
-    setUI((FontChooserUI)UIManager.getUI(this));
-  }
- else {
-    setUI(PaletteFontChooserUI.createUI(this));
-  }
-}

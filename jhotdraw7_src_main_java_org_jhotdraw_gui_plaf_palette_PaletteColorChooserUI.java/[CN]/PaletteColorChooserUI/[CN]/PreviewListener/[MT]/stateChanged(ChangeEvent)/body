@@ -1,7 +1,0 @@
-{
-  ColorSelectionModel model=(ColorSelectionModel)e.getSource();
-  if (previewPanel != null) {
-    previewPanel.setForeground(model.getSelectedColor());
-    previewPanel.repaint();
-  }
-}

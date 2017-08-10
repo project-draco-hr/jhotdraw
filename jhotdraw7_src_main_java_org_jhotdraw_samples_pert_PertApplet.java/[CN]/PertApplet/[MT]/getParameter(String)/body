@@ -1,8 +1,0 @@
-{
-  try {
-    return super.getParameter(name);
-  }
- catch (  NullPointerException e) {
-    return null;
-  }
-}

@@ -1,5 +1,0 @@
-{
-  if (a.isSharingToolsAmongViews()) {
-    ((DrawView)p).setEditor(getSharedEditor());
-  }
-}

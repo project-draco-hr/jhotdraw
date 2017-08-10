@@ -1,6 +1,0 @@
-{
-  super(source);
-  this.attribute=attribute;
-  this.oldValue=oldValue;
-  this.newValue=newValue;
-}

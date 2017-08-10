@@ -1,3 +1,0 @@
-{
-  this(prototype,formatName,description,new String[]{fileExtension},new String[]{mimeType});
-}

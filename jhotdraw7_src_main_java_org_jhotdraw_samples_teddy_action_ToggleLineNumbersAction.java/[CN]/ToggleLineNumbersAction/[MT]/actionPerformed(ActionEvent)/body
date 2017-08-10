@@ -1,3 +1,0 @@
-{
-  getActiveView().setLineNumbersVisible(!getActiveView().isLineNumbersVisible());
-}

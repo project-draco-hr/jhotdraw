@@ -1,7 +1,0 @@
-{
-  if (get(TRANSFORM) != null) {
-    path.transform(get(TRANSFORM));
-    set(TRANSFORM,null);
-  }
-  invalidate();
-}

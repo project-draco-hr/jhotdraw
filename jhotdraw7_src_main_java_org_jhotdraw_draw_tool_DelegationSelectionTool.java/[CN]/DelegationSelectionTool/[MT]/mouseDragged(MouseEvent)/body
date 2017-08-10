@@ -1,9 +1,0 @@
-{
-  if (popupTimer != null) {
-    popupTimer.stop();
-    popupTimer=null;
-  }
-  if (popupMenu == null || !popupMenu.isVisible()) {
-    super.mouseDragged(evt);
-  }
-}

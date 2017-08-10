@@ -1,5 +1,0 @@
-{
-  BezierFigure figure=getOwner();
-  view.getDrawing().fireUndoableEditHappened(edit=new CompositeEdit("Punkt verschieben"));
-  oldNode=figure.getNode(index);
-}

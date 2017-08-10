@@ -1,7 +1,0 @@
-{
-  if (!closed) {
-    closed=true;
-    firePropertyChange(CLOSED_PROPERTY,false,true);
-    ActivityManager.getInstance().remove(this);
-  }
-}

@@ -1,6 +1,0 @@
-{
-  if (cachedHitShape == null) {
-    cachedHitShape=new GrowStroke((float)ODGAttributeKeys.getStrokeTotalWidth(this) / 2f,(float)ODGAttributeKeys.getStrokeTotalMiterLimit(this)).createStrokedShape(getTransformedShape());
-  }
-  return cachedHitShape;
-}

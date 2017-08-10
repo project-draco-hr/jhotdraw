@@ -1,8 +1,0 @@
-Path2D.Double shape
-AttributedCharacterIterator styledText
-float verticalPos
-float maxVerticalPos
-float leftMargin
-float rightMargin
-float[] tabStops
-int tabCount

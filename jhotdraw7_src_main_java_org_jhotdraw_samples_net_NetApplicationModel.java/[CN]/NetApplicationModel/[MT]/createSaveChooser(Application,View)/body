@@ -1,5 +1,0 @@
-{
-  JFileURIChooser c=new JFileURIChooser();
-  c.addChoosableFileFilter(new ExtensionFileFilter("Net Diagram .xml","xml"));
-  return c;
-}
