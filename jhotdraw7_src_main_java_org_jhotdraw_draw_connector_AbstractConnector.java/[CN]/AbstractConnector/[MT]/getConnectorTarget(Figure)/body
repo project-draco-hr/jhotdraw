@@ -1,0 +1,3 @@
+{
+  return (isConnectToDecorator && ((DecoratedFigure)f).getDecorator() != null) ? ((DecoratedFigure)f).getDecorator() : f;
+}

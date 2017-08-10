@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(getConvexHull2D(points.toArray(new Point2D.Double[points.size()])));
+}

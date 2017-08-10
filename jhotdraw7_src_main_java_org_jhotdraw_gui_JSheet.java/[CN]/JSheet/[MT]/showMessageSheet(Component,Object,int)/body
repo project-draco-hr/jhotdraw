@@ -1,0 +1,7 @@
+{
+  showMessageSheet(parentComponent,message,messageType,null,new SheetListener(){
+    @Override public void optionSelected(    SheetEvent evt){
+    }
+  }
+);
+}

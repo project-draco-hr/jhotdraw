@@ -1,0 +1,47 @@
+{
+  ArrayList<ArrayList<Point2D.Double>> segments;
+  segments=splitAtCorners(digitizedPoints,77 / 180d * Math.PI,error * error);
+  for (int i=0, n=segments.size(); i < n; i++) {
+    ArrayList<Point2D.Double> seg=segments.get(i);
+    seg=removeClosePoints(seg,error * 2);
+    seg=reduceNoise(seg,0.8);
+    segments.set(i,seg);
+  }
+  BezierPath fittedPath=new BezierPath();
+  boolean isEmpty=false;
+  for (  ArrayList<Point2D.Double> seg : segments) {
+    if (seg.isEmpty()) {
+      isEmpty=false;
+      break;
+    }
+  }
+  if (!isEmpty) {
+    double errorSquared=error * error;
+    for (    ArrayList<Point2D.Double> seg : segments) {
+switch (seg.size()) {
+case 0:
+        break;
+case 1:
+      fittedPath.add(new BezierPath.Node(seg.get(0)));
+    break;
+case 2:
+  if (fittedPath.isEmpty()) {
+    fittedPath.add(new BezierPath.Node(seg.get(0)));
+  }
+fittedPath.lineTo(seg.get(1).x,seg.get(1).y);
+break;
+default :
+if (fittedPath.isEmpty()) {
+fittedPath.add(new BezierPath.Node(seg.get(0)));
+}
+Point2D.Double tHat1;
+Point2D.Double tHat2;
+tHat1=computeLeftTangent(seg,0);
+tHat2=computeRightTangent(seg,seg.size() - 1);
+fitCubic(seg,0,seg.size() - 1,tHat1,tHat2,errorSquared,fittedPath);
+break;
+}
+}
+}
+return fittedPath;
+}

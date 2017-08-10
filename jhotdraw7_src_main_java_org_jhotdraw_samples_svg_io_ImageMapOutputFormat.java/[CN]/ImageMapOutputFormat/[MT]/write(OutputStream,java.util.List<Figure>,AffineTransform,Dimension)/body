@@ -1,0 +1,22 @@
+{
+  this.drawingTransform=(drawingTransform == null) ? new AffineTransform() : drawingTransform;
+  this.bounds=(imageSize == null) ? new Rectangle(0,0,Integer.MAX_VALUE,Integer.MAX_VALUE) : new Rectangle(0,0,imageSize.width,imageSize.height);
+  XMLElement document=new XMLElement("map");
+  for (  Figure f : new ReversedList<Figure>(figures)) {
+    writeElement(document,f);
+  }
+  if (!isIncludeNohref) {
+    for (int i=document.getChildrenCount() - 1; i >= 0; i--) {
+      XMLElement child=(XMLElement)document.getChildAtIndex(i);
+      if (child.hasAttribute("nohref")) {
+        document.removeChildAtIndex(i);
+      }
+    }
+  }
+  PrintWriter writer=new PrintWriter(new OutputStreamWriter(out,"UTF-8"));
+  for (  Object o : document.getChildren()) {
+    XMLElement child=(XMLElement)o;
+    new XMLWriter(writer).write(child);
+  }
+  writer.flush();
+}

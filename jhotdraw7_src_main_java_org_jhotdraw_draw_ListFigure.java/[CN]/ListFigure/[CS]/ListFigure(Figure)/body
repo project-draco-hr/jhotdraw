@@ -1,0 +1,5 @@
+{
+  super(presentationFigure);
+  setLayouter(new VerticalLayouter());
+  set(LAYOUT_INSETS,new Insets2D.Double(4,8,4,8));
+}

@@ -1,0 +1,7 @@
+double innerWidth
+double outlineWidth
+int cap
+int join
+double miterLimit
+float[] dashes
+float dashPhase

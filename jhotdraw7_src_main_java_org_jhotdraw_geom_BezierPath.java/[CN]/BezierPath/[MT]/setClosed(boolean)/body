@@ -1,0 +1,6 @@
+{
+  if (isClosed != newValue) {
+    isClosed=newValue;
+    invalidatePath();
+  }
+}

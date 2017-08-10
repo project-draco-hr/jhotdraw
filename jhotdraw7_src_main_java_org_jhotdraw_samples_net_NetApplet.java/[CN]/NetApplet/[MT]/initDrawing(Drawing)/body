@@ -1,0 +1,10 @@
+{
+  d.setInputFormats((java.util.List<InputFormat>)Collections.EMPTY_LIST);
+  d.setOutputFormats((java.util.List<OutputFormat>)Collections.EMPTY_LIST);
+  DOMStorableInputOutputFormat ioFormat=new DOMStorableInputOutputFormat(new NetFactory());
+  d.addInputFormat(ioFormat);
+  d.addInputFormat(new ImageInputFormat(new ImageFigure()));
+  d.addInputFormat(new TextInputFormat(new TextFigure()));
+  d.addOutputFormat(ioFormat);
+  d.addOutputFormat(new ImageOutputFormat());
+}

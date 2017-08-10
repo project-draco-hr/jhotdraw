@@ -1,0 +1,14 @@
+{
+  if (DEBUG) {
+    System.out.println("DefaultDrawingViewTransferHandler .createTransferable(" + c + ")");
+  }
+  Transferable retValue;
+  if (c instanceof DrawingView) {
+    DrawingView view=(DrawingView)c;
+    retValue=createTransferable(view,view.getSelectedFigures());
+  }
+ else {
+    retValue=super.createTransferable(c);
+  }
+  return retValue;
+}

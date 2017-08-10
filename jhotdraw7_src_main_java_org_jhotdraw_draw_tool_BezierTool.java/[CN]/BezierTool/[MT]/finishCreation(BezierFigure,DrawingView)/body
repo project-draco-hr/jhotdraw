@@ -1,0 +1,7 @@
+{
+  fireUndoEvent(createdFigure,creationView);
+  creationView.addToSelection(createdFigure);
+  if (isToolDoneAfterCreation) {
+    fireToolDone();
+  }
+}

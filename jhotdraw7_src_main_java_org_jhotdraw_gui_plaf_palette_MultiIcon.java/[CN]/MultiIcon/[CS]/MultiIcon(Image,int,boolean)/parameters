@@ -1,0 +1,3 @@
+Image tiledImage
+int tileCount
+boolean isTiledHorizontaly

@@ -1,0 +1,3 @@
+{
+  return importData((JComponent)support.getComponent(),support.getTransferable(),new HashSet<Figure>(),support.getDropLocation() == null ? null : support.getDropLocation().getDropPoint());
+}

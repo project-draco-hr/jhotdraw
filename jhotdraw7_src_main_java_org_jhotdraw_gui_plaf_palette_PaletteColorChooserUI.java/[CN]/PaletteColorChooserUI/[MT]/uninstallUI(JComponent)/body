@@ -1,0 +1,14 @@
+{
+  chooser.remove(mainPanel);
+  uninstallListeners();
+  uninstallDefaultChoosers();
+  uninstallDefaults();
+  mainPanel.setPreviewPanel(null);
+  if (previewPanel instanceof UIResource) {
+    chooser.setPreviewPanel(null);
+  }
+  mainPanel=null;
+  previewPanel=null;
+  defaultChoosers=null;
+  chooser=null;
+}

@@ -1,0 +1,37 @@
+{
+  DataFlavor importFlavor=null;
+  SearchLoop:   for (  DataFlavor flavor : t.getTransferDataFlavors()) {
+    if (DataFlavor.imageFlavor.match(flavor)) {
+      importFlavor=flavor;
+      break SearchLoop;
+    }
+    for (    String mimeType : mimeTypes) {
+      if (flavor.isMimeTypeEqual(mimeType)) {
+        importFlavor=flavor;
+        break SearchLoop;
+      }
+    }
+  }
+  Object data=t.getTransferData(importFlavor);
+  Image img=null;
+  if (data instanceof Image) {
+    img=(Image)data;
+  }
+ else   if (data instanceof InputStream) {
+    img=ImageIO.read((InputStream)data);
+  }
+  if (img == null) {
+    throw new IOException("Unsupported data format " + importFlavor);
+  }
+  ImageHolderFigure figure=(ImageHolderFigure)prototype.clone();
+  figure.setBufferedImage(Images.toBufferedImage(img));
+  figure.setBounds(new Point2D.Double(0,0),new Point2D.Double(figure.getBufferedImage().getWidth(),figure.getBufferedImage().getHeight()));
+  LinkedList<Figure> list=new LinkedList<Figure>();
+  list.add(figure);
+  if (replace) {
+    drawing.removeAllChildren();
+    drawing.set(CANVAS_WIDTH,figure.getBounds().width);
+    drawing.set(CANVAS_HEIGHT,figure.getBounds().height);
+  }
+  drawing.addAll(list);
+}

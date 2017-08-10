@@ -1,0 +1,10 @@
+{
+  SVGPathFigure figure=new SVGPathFigure();
+  figure.removeAllChildren();
+  SVGBezierFigure bf=new SVGBezierFigure();
+  bf.addNode(new BezierPath.Node(x1,y1));
+  bf.addNode(new BezierPath.Node(x2,y2));
+  figure.add(bf);
+  figure.setAttributes(a);
+  return figure;
+}

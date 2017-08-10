@@ -1,0 +1,7 @@
+{
+  toolBarButtonGroup=new javax.swing.ButtonGroup();
+  tabbedPane=new javax.swing.JTabbedPane();
+  setLayout(new java.awt.BorderLayout());
+  tabbedPane.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
+  add(tabbedPane,java.awt.BorderLayout.CENTER);
+}

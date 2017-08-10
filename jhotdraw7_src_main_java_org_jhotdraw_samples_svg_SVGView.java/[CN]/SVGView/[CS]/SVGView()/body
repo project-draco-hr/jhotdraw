@@ -1,0 +1,15 @@
+{
+  initComponents();
+  undo=svgPanel.getUndoRedoManager();
+  Drawing oldDrawing=svgPanel.getDrawing();
+  svgPanel.setDrawing(createDrawing());
+  firePropertyChange(DRAWING_PROPERTY,oldDrawing,svgPanel.getDrawing());
+  svgPanel.getDrawing().addUndoableEditListener(undo);
+  initActions();
+  undo.addPropertyChangeListener(propertyHandler=new PropertyChangeListener(){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
+      setHasUnsavedChanges(undo.hasSignificantEdits());
+    }
+  }
+);
+}

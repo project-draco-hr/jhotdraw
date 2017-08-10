@@ -1,0 +1,6 @@
+{
+  if (key == TRANSFORM) {
+    invalidate();
+  }
+  super.set(key,newValue);
+}

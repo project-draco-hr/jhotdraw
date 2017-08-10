@@ -1,0 +1,8 @@
+{
+  boolean isError=model.getError() != null;
+  boolean isWarning=model.getWarning() != null;
+  errorLabel.setVisible(isError);
+  warningLabel.setVisible(!isError && isWarning);
+  noteLabel.setVisible(!isError && !isWarning);
+  revalidate();
+}

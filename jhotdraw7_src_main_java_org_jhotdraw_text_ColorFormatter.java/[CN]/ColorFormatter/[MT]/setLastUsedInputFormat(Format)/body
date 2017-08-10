@@ -1,0 +1,7 @@
+{
+  lastUsedInputFormat=newValue;
+  if (isAdaptive) {
+    outputFormat=lastUsedInputFormat;
+  }
+  prefs.put("ColorFormatter.lastUsedInputFormat",newValue.name());
+}

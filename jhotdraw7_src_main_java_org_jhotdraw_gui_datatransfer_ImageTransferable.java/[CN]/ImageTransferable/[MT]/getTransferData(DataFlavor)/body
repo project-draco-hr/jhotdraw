@@ -1,0 +1,13 @@
+{
+  if (flavor.equals(DataFlavor.imageFlavor)) {
+    return image;
+  }
+ else   if (flavor.equals(IMAGE_PNG_FLAVOR)) {
+    ByteArrayOutputStream buf=new ByteArrayOutputStream();
+    ImageIO.write(Images.toBufferedImage(image),"PNG",buf);
+    return new ByteArrayInputStream(buf.toByteArray());
+  }
+ else {
+    throw new UnsupportedFlavorException(flavor);
+  }
+}

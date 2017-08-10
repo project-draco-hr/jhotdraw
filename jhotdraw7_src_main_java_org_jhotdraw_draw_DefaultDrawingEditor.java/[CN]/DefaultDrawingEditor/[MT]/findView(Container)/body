@@ -1,0 +1,8 @@
+{
+  for (  DrawingView v : views) {
+    if (v.getComponent() == c) {
+      return v;
+    }
+  }
+  return null;
+}

@@ -1,0 +1,42 @@
+{
+  String name=e.getPropertyName();
+  if (name.equals(JColorChooser.CHOOSER_PANELS_PROPERTY)) {
+    AbstractColorChooserPanel[] oldPanels=(AbstractColorChooserPanel[])e.getOldValue();
+    AbstractColorChooserPanel[] newPanels=(AbstractColorChooserPanel[])e.getNewValue();
+    for (int i=0; i < oldPanels.length; i++) {
+      if (oldPanels[i] != null) {
+        Container wrapper=oldPanels[i].getParent();
+        if (wrapper != null) {
+          Container parent=wrapper.getParent();
+          if (parent != null)           parent.remove(wrapper);
+          oldPanels[i].uninstallChooserPanel(chooser);
+        }
+      }
+    }
+    mainPanel.removeAllColorChooserPanels();
+    for (int i=0; i < newPanels.length; i++) {
+      if (newPanels[i] != null) {
+        mainPanel.addColorChooserPanel(newPanels[i]);
+      }
+    }
+    chooser.applyComponentOrientation(chooser.getComponentOrientation());
+    for (int i=0; i < newPanels.length; i++) {
+      if (newPanels[i] != null) {
+        newPanels[i].installChooserPanel(chooser);
+      }
+    }
+  }
+  if (name.equals(JColorChooser.PREVIEW_PANEL_PROPERTY)) {
+    if (e.getNewValue() != previewPanel) {
+      installPreviewPanel();
+    }
+  }
+  if ("componentOrientation".equals(name)) {
+    ComponentOrientation o=(ComponentOrientation)e.getNewValue();
+    JColorChooser cc=(JColorChooser)e.getSource();
+    if (o != (ComponentOrientation)e.getOldValue()) {
+      cc.applyComponentOrientation(o);
+      cc.updateUI();
+    }
+  }
+}

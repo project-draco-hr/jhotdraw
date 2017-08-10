@@ -1,0 +1,6 @@
+{
+  if (tabPane.getTabLayoutPolicy() == JTabbedPane.SCROLL_TAB_LAYOUT) {
+    return super.createLayoutManager();
+  }
+  return new TabbedPaneLayout();
+}

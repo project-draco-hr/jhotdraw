@@ -1,0 +1,57 @@
+{
+  if (DEBUG) {
+    System.out.println("DefaultDrawingViewTransferHandler .exportDone " + action + " move="+ MOVE);
+  }
+  if (source instanceof DrawingView) {
+    final DrawingView view=(DrawingView)source;
+    final Drawing drawing=view.getDrawing();
+    if (action == MOVE) {
+      final LinkedList<CompositeFigureEvent> deletionEvents=new LinkedList<CompositeFigureEvent>();
+      final LinkedList<Figure> selectedFigures=(exportedFigures == null) ? new LinkedList<Figure>() : new LinkedList<Figure>(exportedFigures);
+      for (      Figure f : selectedFigures) {
+        if (!f.isRemovable()) {
+          source.getToolkit().beep();
+          return;
+        }
+      }
+      CompositeFigureListener removeListener=new CompositeFigureListener(){
+        @Override public void figureAdded(        CompositeFigureEvent e){
+        }
+        @Override public void figureRemoved(        CompositeFigureEvent evt){
+          deletionEvents.addFirst(evt);
+        }
+      }
+;
+      drawing.addCompositeFigureListener(removeListener);
+      drawing.removeAll(selectedFigures);
+      drawing.removeCompositeFigureListener(removeListener);
+      drawing.removeAll(selectedFigures);
+      drawing.fireUndoableEditHappened(new AbstractUndoableEdit(){
+        private static final long serialVersionUID=1L;
+        @Override public String getPresentationName(){
+          ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+          return labels.getString("edit.delete.text");
+        }
+        @Override public void undo() throws CannotUndoException {
+          super.undo();
+          view.clearSelection();
+          for (          CompositeFigureEvent evt : deletionEvents) {
+            drawing.add(evt.getIndex(),evt.getChildFigure());
+          }
+          view.addToSelection(selectedFigures);
+        }
+        @Override public void redo() throws CannotRedoException {
+          super.redo();
+          for (          CompositeFigureEvent evt : new ReversedList<CompositeFigureEvent>(deletionEvents)) {
+            drawing.remove(evt.getChildFigure());
+          }
+        }
+      }
+);
+    }
+  }
+ else {
+    super.exportDone(source,data,action);
+  }
+  exportedFigures=null;
+}

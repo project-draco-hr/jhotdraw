@@ -1,0 +1,9 @@
+{
+  super(in);
+  try {
+    size=in.available();
+  }
+ catch (  IOException ioe) {
+    size=0;
+  }
+}

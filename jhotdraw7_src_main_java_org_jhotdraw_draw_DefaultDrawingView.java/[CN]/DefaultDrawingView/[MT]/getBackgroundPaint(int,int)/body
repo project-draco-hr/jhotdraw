@@ -1,0 +1,13 @@
+{
+  if (backgroundTile == null) {
+    backgroundTile=new BufferedImage(16,16,BufferedImage.TYPE_INT_RGB);
+    Graphics2D g=backgroundTile.createGraphics();
+    g.setColor(Color.white);
+    g.fillRect(0,0,16,16);
+    g.setColor(new Color(0xdfdfdf));
+    g.fillRect(0,0,8,8);
+    g.fillRect(8,8,8,8);
+    g.dispose();
+  }
+  return new TexturePaint(backgroundTile,new Rectangle(x,y,backgroundTile.getWidth(),backgroundTile.getHeight()));
+}

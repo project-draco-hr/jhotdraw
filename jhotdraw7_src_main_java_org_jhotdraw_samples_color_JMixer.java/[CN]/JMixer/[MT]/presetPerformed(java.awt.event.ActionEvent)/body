@@ -1,0 +1,8 @@
+{
+  Object obj=presetCombo.getSelectedItem();
+  if (obj instanceof Preset) {
+    Preset preset=(Preset)obj;
+    HarmonicColorModel m=harmonicWheel.getHarmonicColorModel();
+    m.set(m.getBase(),preset.getColor());
+  }
+}

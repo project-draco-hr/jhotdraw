@@ -1,0 +1,18 @@
+{
+  String name=evt.getPropertyName();
+  if (name == DrawingEditor.ACTIVE_VIEW_PROPERTY) {
+    if (view != null) {
+      view.removePropertyChangeListener(this);
+      view.removeFigureSelectionListener(this);
+    }
+    view=(DrawingView)evt.getNewValue();
+    if (view != null) {
+      view.addPropertyChangeListener(this);
+      view.addFigureSelectionListener(this);
+    }
+    updateVisibility();
+  }
+ else   if (name == DrawingEditor.TOOL_PROPERTY) {
+    updateVisibility();
+  }
+}

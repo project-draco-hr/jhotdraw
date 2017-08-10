@@ -1,0 +1,3 @@
+{
+  return path.splitSegment(split,tolerance);
+}

@@ -1,0 +1,7 @@
+{
+  Rectangle2D.Double r=super.getDrawingArea();
+  if (getPresentationFigure() != null) {
+    r.add(getPresentationFigure().getDrawingArea());
+  }
+  return r;
+}

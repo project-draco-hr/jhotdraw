@@ -1,0 +1,4 @@
+{
+  TriangleFigure bf=(TriangleFigure)getConnectorTarget(target);
+  return bf.chop(from);
+}

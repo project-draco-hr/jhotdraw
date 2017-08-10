@@ -1,0 +1,6 @@
+double angle
+double outerRadius
+double innerRadius
+boolean isFilled
+boolean isStroked
+boolean isSolid

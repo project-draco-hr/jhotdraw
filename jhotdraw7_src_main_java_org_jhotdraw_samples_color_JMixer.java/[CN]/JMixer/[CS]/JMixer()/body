@@ -1,0 +1,110 @@
+{
+  initComponents();
+  DefaultComboBoxModel presets=new DefaultComboBoxModel();
+  presets.addElement(new Preset("Powerful",4));
+  presets.addElement(new Preset("Rich",1));
+  presets.addElement(new Preset("Romantic",7));
+  presets.addElement(new Preset("Vital",12));
+  presets.addElement(new Preset("Earthy",10));
+  presets.addElement(new Preset("Friendly",20));
+  presets.addElement(new Preset("Soft",22));
+  presets.addElement(new Preset("Welcoming",28));
+  presets.addElement(new Preset("Moving",36));
+  presets.addElement(new Preset("Elegant",39));
+  presets.addElement(new Preset("Fresh",52));
+  presets.addElement(new Preset("Traditional",49));
+  presets.addElement(new Preset("Refreshing",60));
+  presets.addElement(new Preset("Tropical",62));
+  presets.addElement(new Preset("Classic",68));
+  presets.addElement(new Preset("Dependable",65));
+  presets.addElement(new Preset("Calm",70));
+  presets.addElement(new Preset("Regal",76));
+  presets.addElement(new Preset("Magical",84));
+  presets.addElement(new Preset("Energetic",92));
+  presets.addElement(new Preset("Subdued",94));
+  presetCombo.setModel(presets);
+  Font smallFont=new Font("Lucida Grande",Font.PLAIN,11);
+  for (  Component c : mixerPanel.getComponents()) {
+    c.setFont(smallFont);
+  }
+  swatchesList=new JList(){
+    private static final long serialVersionUID=1L;
+    @Override public String getToolTipText(    MouseEvent evt){
+      int index=locationToIndex(evt.getPoint());
+      Object item=getModel().getElementAt(index);
+      JComponent c=(JComponent)getCellRenderer().getListCellRendererComponent(this,item,index,false,false);
+      return c.getToolTipText();
+    }
+  }
+;
+  swatchesList.setLayoutOrientation(javax.swing.JList.VERTICAL_WRAP);
+  swatchesList.setVisibleRowCount(5);
+  scrollPane.setViewportView(swatchesList);
+  harmonicWheel.setColorSpace(HSLColorSpace.getInstance());
+  scrollPane.setPreferredSize(new Dimension(100,100));
+  swatchesList.setModel((ListModel)harmonicWheel.getHarmonicColorModel());
+  swatchesList.setCellRenderer(new ColorListCellRenderer());
+  sliderModel=new DefaultColorSliderModel(harmonicWheel.getHarmonicColorModel().getColorSpace());
+  sliderModel.configureSlider(1,saturationSlider);
+  harmonicWheel.getHarmonicColorModel().addListDataListener(new ListDataListener(){
+    @Override public void intervalAdded(    ListDataEvent e){
+    }
+    @Override public void intervalRemoved(    ListDataEvent e){
+    }
+    @Override public void contentsChanged(    ListDataEvent e){
+      adjusting++;
+      HarmonicColorModel hcm=harmonicWheel.getHarmonicColorModel();
+      Color cc=hcm.get(e.getIndex0());
+      if (cc != null) {
+        sliderModel.setColor(cc);
+      }
+      adjusting--;
+    }
+  }
+);
+  harmonicWheel.addPropertyChangeListener(new PropertyChangeListener(){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
+      String name=evt.getPropertyName();
+      if (name == JHarmonicColorWheel.SELECTED_INDEX_PROPERTY) {
+        adjusting++;
+        int index=harmonicWheel.getSelectedIndex();
+        HarmonicColorModel hcm=harmonicWheel.getHarmonicColorModel();
+        if (index != -1) {
+          sliderModel.setColor(hcm.get(index));
+        }
+        adjusting--;
+      }
+    }
+  }
+);
+  sliderModel.addChangeListener(new ChangeListener(){
+    @Override public void stateChanged(    ChangeEvent e){
+      if (adjusting++ == 0) {
+        HarmonicColorModel hcm=harmonicWheel.getHarmonicColorModel();
+        if (!hcm.isAdjusting()) {
+          int index=harmonicWheel.getSelectedIndex();
+          if (index != -1) {
+            Color cc=sliderModel.getColor();
+            Color oldValue=hcm.get(index);
+            Color newValue=new Color(oldValue.getColorSpace(),ColorUtil.fromColor(oldValue.getColorSpace(),cc),1f);
+            hcm.set(index,newValue);
+          }
+        }
+      }
+      adjusting--;
+    }
+  }
+);
+  harmonicWheel.setSelectedIndex(0);
+  harmonicWheel.getHarmonicColorModel().setSize(25);
+  HarmonicColorModel h=harmonicWheel.getHarmonicColorModel();
+  ColorSpace sys=h.getColorSpace();
+  h.set(0,new Color(sys,ColorUtil.fromRGB(sys,0,19,148),1f));
+  h.set(1,new Color(sys,ColorUtil.fromRGB(sys,218,37,26),1f));
+  h.set(2,new Color(sys,ColorUtil.fromRGB(sys,70,148,27),1f));
+  h.set(3,new Color(sys,ColorUtil.fromRGB(sys,174,46,248),1f));
+  h.set(4,new Color(sys,ColorUtil.fromRGB(sys,255,252,76),1f));
+  h.set(5,new Color(sys,ColorUtil.fromRGB(sys,234,155,65),1f));
+  h.set(6,new Color(sys,ColorUtil.fromRGB(sys,51,51,51),1f));
+  h.set(7,new Color(sys,ColorUtil.fromRGB(sys,153,153,153),1f));
+}

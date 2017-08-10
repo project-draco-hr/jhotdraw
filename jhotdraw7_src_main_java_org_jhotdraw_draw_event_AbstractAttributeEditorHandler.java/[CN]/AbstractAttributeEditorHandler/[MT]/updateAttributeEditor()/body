@@ -1,0 +1,29 @@
+{
+  if (updateDepth++ == 0) {
+    Set<Figure> figures=getEditedFigures();
+    if (editor == null) {
+      attributeEditor.getComponent().setEnabled(false);
+    }
+ else     if (activeView == null || figures.isEmpty()) {
+      attributeEditor.getComponent().setEnabled(true);
+      T value=editor.getDefaultAttribute(attributeKey);
+      attributeEditor.setAttributeValue(value);
+      attributeEditor.setMultipleValues(false);
+    }
+ else {
+      attributeEditor.getComponent().setEnabled(true);
+      T value=figures.iterator().next().get(attributeKey);
+      boolean isMultiple=false;
+      for (      Figure f : figures) {
+        T v=f.get(attributeKey);
+        if ((v == null || value == null) && v != value || v != null && value != null && !v.equals(value)) {
+          isMultiple=true;
+          break;
+        }
+      }
+      attributeEditor.setAttributeValue(value);
+      attributeEditor.setMultipleValues(isMultiple);
+    }
+  }
+  updateDepth--;
+}

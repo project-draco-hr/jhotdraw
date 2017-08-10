@@ -1,0 +1,14 @@
+{
+  AffineTransform tx=new AffineTransform();
+  Rectangle2D.Double figureBounds=new Rectangle2D.Double(toLength(elem.getAttribute("x",SVG_NAMESPACE,"0"),1),toLength(elem.getAttribute("y",SVG_NAMESPACE,"0"),1),toLength(elem.getAttribute("width",SVG_NAMESPACE,"0"),1),toLength(elem.getAttribute("height",SVG_NAMESPACE,"0"),1));
+  tx.translate(figureBounds.x,figureBounds.y);
+  String[] viewBoxValues=toWSOrCommaSeparatedArray(elem.getAttribute("viewBox",SVG_NAMESPACE,null));
+  if (viewBoxValues.length == 4) {
+    Rectangle2D.Double viewBox=new Rectangle2D.Double(toNumber(viewBoxValues[0]),toNumber(viewBoxValues[1]),toNumber(viewBoxValues[2]),toNumber(viewBoxValues[3]));
+    if (!viewBox.isEmpty() && !figureBounds.isEmpty()) {
+      tx.scale(figureBounds.width / viewBox.width,figureBounds.height / viewBox.height);
+      tx.translate(-viewBox.x,-viewBox.y);
+    }
+  }
+  return tx;
+}

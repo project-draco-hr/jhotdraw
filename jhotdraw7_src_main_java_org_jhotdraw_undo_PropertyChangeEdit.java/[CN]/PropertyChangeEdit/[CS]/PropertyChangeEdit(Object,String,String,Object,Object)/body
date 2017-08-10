@@ -1,0 +1,7 @@
+{
+  this.source=source;
+  this.propertyName=propertyName;
+  this.presentationName=presentationName;
+  this.oldValue=oldValue;
+  this.newValue=newValue;
+}

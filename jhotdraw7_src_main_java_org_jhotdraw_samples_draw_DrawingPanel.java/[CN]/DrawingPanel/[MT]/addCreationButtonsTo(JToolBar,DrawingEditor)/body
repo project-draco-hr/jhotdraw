@@ -1,0 +1,3 @@
+{
+  addDefaultCreationButtonsTo(tb,editor,ButtonFactory.createDrawingActions(editor),ButtonFactory.createSelectionActions(editor));
+}

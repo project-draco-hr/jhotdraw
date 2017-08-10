@@ -1,0 +1,13 @@
+{
+  Document doc=getDocument();
+  if (offset < 0) {
+    throw new BadLocationException("Can't translate offset to line",-1);
+  }
+ else   if (offset > doc.getLength()) {
+    throw new BadLocationException("Can't translate offset to line",doc.getLength() + 1);
+  }
+ else {
+    Element map=getDocument().getDefaultRootElement();
+    return map.getElementIndex(offset);
+  }
+}

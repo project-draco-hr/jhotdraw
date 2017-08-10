@@ -1,0 +1,6 @@
+{
+  previewLabel=new javax.swing.JLabel();
+  setLayout(new java.awt.BorderLayout());
+  previewLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+  add(previewLabel,java.awt.BorderLayout.CENTER);
+}

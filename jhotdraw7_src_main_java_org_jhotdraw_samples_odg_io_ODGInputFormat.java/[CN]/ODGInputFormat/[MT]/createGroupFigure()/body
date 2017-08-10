@@ -1,0 +1,4 @@
+{
+  ODGGroupFigure figure=new ODGGroupFigure();
+  return figure;
+}

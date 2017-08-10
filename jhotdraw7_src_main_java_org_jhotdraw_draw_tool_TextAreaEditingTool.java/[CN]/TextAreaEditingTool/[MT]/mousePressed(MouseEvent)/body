@@ -1,0 +1,6 @@
+{
+  if (typingTarget != null) {
+    beginEdit(typingTarget);
+    updateCursor(getView(),e.getPoint());
+  }
+}

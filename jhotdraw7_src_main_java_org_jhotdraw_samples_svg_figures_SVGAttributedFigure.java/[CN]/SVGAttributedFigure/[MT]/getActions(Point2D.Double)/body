@@ -1,0 +1,16 @@
+{
+  LinkedList<Action> actions=new LinkedList<Action>();
+  if (get(TRANSFORM) != null) {
+    ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+    actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")){
+      private static final long serialVersionUID=1L;
+      @Override public void actionPerformed(      ActionEvent evt){
+        willChange();
+        fireUndoableEditHappened(TRANSFORM.setUndoable(SVGAttributedFigure.this,null));
+        changed();
+      }
+    }
+);
+  }
+  return actions;
+}

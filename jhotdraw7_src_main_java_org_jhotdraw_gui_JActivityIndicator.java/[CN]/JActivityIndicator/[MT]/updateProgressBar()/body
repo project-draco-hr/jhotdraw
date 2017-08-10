@@ -1,0 +1,17 @@
+{
+  if (models.isEmpty()) {
+    progressBar.setModel(new DefaultBoundedRangeModel());
+    progressBar.setEnabled(false);
+    progressBar.setVisible(false);
+  }
+ else   if (models.size() == 1) {
+    progressBar.setModel(models.get(0));
+    progressBar.setEnabled(true);
+    progressBar.setVisible(true);
+  }
+ else {
+    progressBar.setModel(new DefaultBoundedRangeModel());
+    progressBar.setEnabled(true);
+    progressBar.setVisible(true);
+  }
+}

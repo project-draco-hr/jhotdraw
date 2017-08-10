@@ -1,0 +1,3 @@
+{
+  return (ODGPathFigure)super.getOwner();
+}

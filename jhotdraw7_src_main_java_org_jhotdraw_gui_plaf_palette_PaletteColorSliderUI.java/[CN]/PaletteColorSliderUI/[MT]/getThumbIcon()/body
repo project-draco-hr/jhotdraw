@@ -1,0 +1,14 @@
+{
+  String key;
+  if (slider.getOrientation() == JSlider.HORIZONTAL) {
+    key="Slider.northThumb.small";
+  }
+ else {
+    key="Slider.westThumb.small";
+  }
+  Icon icon=PaletteLookAndFeel.getInstance().getIcon(key);
+  if (icon == null) {
+    throw new InternalError(key + " missing in PaletteLookAndFeel");
+  }
+  return icon;
+}

@@ -1,0 +1,6 @@
+{
+  Rectangle vr=drawingToView(r);
+  vr.grow(2,2);
+  dirtyArea.add(vr);
+  repaint(vr);
+}

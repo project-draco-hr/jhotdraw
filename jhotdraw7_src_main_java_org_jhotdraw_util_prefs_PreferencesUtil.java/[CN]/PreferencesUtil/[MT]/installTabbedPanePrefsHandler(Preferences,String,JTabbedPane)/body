@@ -1,0 +1,14 @@
+{
+  int selectedTab=prefs.getInt(name,0);
+  try {
+    tabbedPane.setSelectedIndex(selectedTab);
+  }
+ catch (  IndexOutOfBoundsException e) {
+  }
+  tabbedPane.addChangeListener(new ChangeListener(){
+    @Override public void stateChanged(    ChangeEvent e){
+      prefs.putInt(name,tabbedPane.getSelectedIndex());
+    }
+  }
+);
+}

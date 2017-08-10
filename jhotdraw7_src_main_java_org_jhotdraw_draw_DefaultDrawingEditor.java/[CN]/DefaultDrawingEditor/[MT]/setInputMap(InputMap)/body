@@ -1,0 +1,5 @@
+{
+  InputMap oldValue=inputMap;
+  inputMap=newValue;
+  firePropertyChange(INPUT_MAP_PROPERTY,oldValue,newValue);
+}

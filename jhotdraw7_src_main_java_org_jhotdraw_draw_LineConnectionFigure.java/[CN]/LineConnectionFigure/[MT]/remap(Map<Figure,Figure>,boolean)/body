@@ -1,0 +1,36 @@
+{
+  willChange();
+  super.remap(oldToNew,disconnectIfNotInMap);
+  Figure newStartFigure=null;
+  Figure newEndFigure=null;
+  if (getStartFigure() != null) {
+    newStartFigure=oldToNew.get(getStartFigure());
+    if (newStartFigure == null && !disconnectIfNotInMap) {
+      newStartFigure=getStartFigure();
+    }
+  }
+  if (getEndFigure() != null) {
+    newEndFigure=oldToNew.get(getEndFigure());
+    if (newEndFigure == null && !disconnectIfNotInMap) {
+      newEndFigure=getEndFigure();
+    }
+  }
+  if (newStartFigure != null) {
+    setStartConnector(newStartFigure.findCompatibleConnector(getStartConnector(),true));
+  }
+ else {
+    if (disconnectIfNotInMap) {
+      setStartConnector(null);
+    }
+  }
+  if (newEndFigure != null) {
+    setEndConnector(newEndFigure.findCompatibleConnector(getEndConnector(),false));
+  }
+ else {
+    if (disconnectIfNotInMap) {
+      setEndConnector(null);
+    }
+  }
+  updateConnection();
+  changed();
+}

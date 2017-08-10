@@ -1,0 +1,7 @@
+{
+  this.prototype=prototype;
+  this.formatName=formatName;
+  this.description=description;
+  this.fileExtensions=fileExtensions.clone();
+  this.mimeTypes=mimeTypes.clone();
+}

@@ -1,0 +1,4 @@
+JOptionPane pane
+int option
+Object value
+Object inputValue

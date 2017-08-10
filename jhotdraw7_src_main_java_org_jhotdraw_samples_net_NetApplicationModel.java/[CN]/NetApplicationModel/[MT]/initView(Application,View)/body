@@ -1,0 +1,5 @@
+{
+  if (a.isSharingToolsAmongViews()) {
+    ((NetView)p).setEditor(getSharedEditor());
+  }
+}

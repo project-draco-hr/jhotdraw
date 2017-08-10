@@ -1,0 +1,8 @@
+{
+  Font oldValue=itemFont;
+  itemFont=newValue;
+  if (popupMenu != null) {
+    updateItemFont(popupMenu);
+  }
+  firePropertyChange(ITEM_FONT_PROPERTY,oldValue,newValue);
+}

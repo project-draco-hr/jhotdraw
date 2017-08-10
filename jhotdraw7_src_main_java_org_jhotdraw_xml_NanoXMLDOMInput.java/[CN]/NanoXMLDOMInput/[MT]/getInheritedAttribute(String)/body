@@ -1,0 +1,10 @@
+{
+  LinkedList<String> values=new LinkedList<String>();
+  for (  IXMLElement node : stack) {
+    String value=node.getAttribute(name,null);
+    values.add(value);
+  }
+  String value=current.getAttribute(name,null);
+  values.add(value);
+  return values;
+}

@@ -1,0 +1,3 @@
+{
+  redField.setText(Integer.toString(ccModel.getBoundedRangeModel(0).getValue()));
+}

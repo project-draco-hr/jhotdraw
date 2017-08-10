@@ -1,0 +1,18 @@
+{
+  TeddyView view=((TeddyView)app.getActiveView());
+  if (view != null) {
+    updateMatcher();
+    if (matcher != null) {
+      int pos=matcher.findNext(view.getSelectionEnd());
+      if (pos == -1 && wrapAroundCheck.isSelected()) {
+        pos=matcher.findNext(0);
+      }
+      if (pos == -1) {
+        getToolkit().beep();
+      }
+ else {
+        view.select(pos,matcher.getFindString().length() + pos);
+      }
+    }
+  }
+}

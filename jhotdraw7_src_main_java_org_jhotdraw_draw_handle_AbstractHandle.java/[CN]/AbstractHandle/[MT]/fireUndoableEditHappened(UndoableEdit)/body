@@ -1,0 +1,3 @@
+{
+  view.getDrawing().fireUndoableEditHappened(edit);
+}

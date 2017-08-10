@@ -1,0 +1,6 @@
+{
+  AffineTransform t=TRANSFORM.get(a);
+  if (t != null) {
+    writeAttribute(elem,"transform",toTransform(t),"none");
+  }
+}

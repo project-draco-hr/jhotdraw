@@ -1,0 +1,13 @@
+{
+  Insets insets=getInsets();
+  int x=insets.left;
+  int y=insets.top;
+  int w=getWidth() - insets.left - insets.right;
+  int h=getHeight() - insets.top - insets.bottom;
+  g.setColor(previewBackgroundColor);
+  g.fillRect(x + 1,y + 1,w - 2,h - 2);
+  g.setColor(previewBorderColor);
+  g.drawRect(x,y,w - 1,h - 1);
+  g.setColor(getForeground());
+  g.fillRect(x + 2,y + 2,w - 4,h - 4);
+}

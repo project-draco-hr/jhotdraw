@@ -1,0 +1,5 @@
+{
+  ActionMap oldValue=actionMap;
+  actionMap=newValue;
+  firePropertyChange(ACTION_MAP_PROPERTY,oldValue,newValue);
+}

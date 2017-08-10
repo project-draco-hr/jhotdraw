@@ -1,0 +1,7 @@
+{
+  Font f=c.getFont();
+  if (f == null || f instanceof UIResource) {
+    c.setFont(getInstance().getFont(defaultFontName));
+  }
+  installColors(c,defaultBgName,defaultFgName);
+}

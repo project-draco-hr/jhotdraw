@@ -1,0 +1,14 @@
+{
+  if (evt.getClickCount() == 2 && view.getHandleDetailLevel() % 2 == 0) {
+    for (    Figure child : getChildren()) {
+      SVGBezierFigure bf=(SVGBezierFigure)child;
+      int index=bf.findSegment(p,5f / view.getScaleFactor());
+      if (index != -1) {
+        bf.handleMouseClick(p,evt,view);
+        evt.consume();
+        return true;
+      }
+    }
+  }
+  return false;
+}

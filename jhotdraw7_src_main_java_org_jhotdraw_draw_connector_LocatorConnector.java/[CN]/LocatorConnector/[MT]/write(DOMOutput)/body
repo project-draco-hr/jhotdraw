@@ -1,0 +1,6 @@
+{
+  super.write(out);
+  out.openElement("locator");
+  out.writeObject(locator);
+  out.closeElement();
+}

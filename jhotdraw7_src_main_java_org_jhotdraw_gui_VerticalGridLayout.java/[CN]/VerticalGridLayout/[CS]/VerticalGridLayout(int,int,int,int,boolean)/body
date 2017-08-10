@@ -1,0 +1,10 @@
+{
+  if ((rows == 0) && (cols == 0)) {
+    throw new IllegalArgumentException("rows and cols cannot both be zero");
+  }
+  this.rows=rows;
+  this.cols=cols;
+  this.hgap=hgap;
+  this.vgap=vgap;
+  this.isVertical=isVertical;
+}

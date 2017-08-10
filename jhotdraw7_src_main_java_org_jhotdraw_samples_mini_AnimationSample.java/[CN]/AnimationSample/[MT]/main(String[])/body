@@ -1,0 +1,9 @@
+{
+  System.setProperty("apple.awt.graphics.UseQuartz","false");
+  java.awt.EventQueue.invokeLater(new Runnable(){
+    @Override public void run(){
+      new AnimationSample().setVisible(true);
+    }
+  }
+);
+}

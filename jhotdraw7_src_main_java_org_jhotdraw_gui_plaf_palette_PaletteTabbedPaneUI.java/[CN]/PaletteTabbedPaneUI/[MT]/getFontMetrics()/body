@@ -1,0 +1,4 @@
+{
+  Font font=PaletteLookAndFeel.getInstance().getFont("TabbedPane.selectedFont");
+  return tabPane.getFontMetrics(font);
+}

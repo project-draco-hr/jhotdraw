@@ -1,0 +1,24 @@
+{
+  DrawingView newValue=(view != null) ? view : ((editor != null && editor.getActiveView() != null) ? editor.getActiveView() : null);
+  DrawingView oldValue=activeView;
+  if (activeView != null) {
+    activeView.removePropertyChangeListener(eventHandler);
+    activeView.removeFigureSelectionListener(eventHandler);
+    if (figuresOfInterest != null) {
+      for (      Figure f : figuresOfInterest) {
+        f.removeFigureListener(eventHandler);
+      }
+    }
+  }
+  activeView=newValue;
+  if (activeView != null) {
+    activeView.addPropertyChangeListener(eventHandler);
+    activeView.addFigureSelectionListener(eventHandler);
+    figuresOfInterest=getEditedFigures();
+    for (    Figure f : figuresOfInterest) {
+      f.addFigureListener(eventHandler);
+    }
+  }
+  attributeRestoreData=null;
+  updateAttributeEditor();
+}

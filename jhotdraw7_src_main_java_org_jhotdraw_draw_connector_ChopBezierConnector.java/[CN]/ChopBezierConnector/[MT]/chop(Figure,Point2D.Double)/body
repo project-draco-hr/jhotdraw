@@ -1,0 +1,4 @@
+{
+  BezierFigure bf=(BezierFigure)getConnectorTarget(target);
+  return bf.chop(from);
+}

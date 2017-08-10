@@ -1,0 +1,6 @@
+{
+  handles.add(new NullHandle(f,new RelativeLocator(0f,0f)));
+  handles.add(new NullHandle(f,new RelativeLocator(0f,1f)));
+  handles.add(new NullHandle(f,new RelativeLocator(1f,0f)));
+  handles.add(new NullHandle(f,new RelativeLocator(1f,1f)));
+}

@@ -1,0 +1,8 @@
+{
+  if (current.getChildNodes().getLength() == 0) {
+    return defaultValue;
+  }
+  StringBuilder buf=new StringBuilder();
+  getText(current,buf);
+  return buf.toString();
+}

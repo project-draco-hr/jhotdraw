@@ -1,0 +1,6 @@
+{
+  DefaultDrawing drawing=new DefaultDrawing();
+  drawing.addInputFormat(new SerializationInputOutputFormat());
+  drawing.addOutputFormat(new SerializationInputOutputFormat());
+  return drawing;
+}

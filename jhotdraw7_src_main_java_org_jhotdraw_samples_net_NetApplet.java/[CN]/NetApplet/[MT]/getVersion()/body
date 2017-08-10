@@ -1,0 +1,3 @@
+{
+  return NetApplet.class.getPackage().getImplementationVersion();
+}

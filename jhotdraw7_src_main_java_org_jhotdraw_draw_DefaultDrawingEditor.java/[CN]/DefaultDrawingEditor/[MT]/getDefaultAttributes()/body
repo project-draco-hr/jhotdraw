@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("cast") Map<AttributeKey<?>,Object> m=(Map<AttributeKey<?>,Object>)Collections.unmodifiableMap(defaultAttributes);
+  return m;
+}

@@ -1,0 +1,4 @@
+{
+  this.foregroundBorder=foregroundBorder;
+  this.backgroundBorder=backgroundBorder;
+}

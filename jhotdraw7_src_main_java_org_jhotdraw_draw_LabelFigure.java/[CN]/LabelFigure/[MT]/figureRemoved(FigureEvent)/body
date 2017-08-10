@@ -1,0 +1,6 @@
+{
+  if (e.getFigure() == target) {
+    target.removeFigureListener(this);
+    target=null;
+  }
+}

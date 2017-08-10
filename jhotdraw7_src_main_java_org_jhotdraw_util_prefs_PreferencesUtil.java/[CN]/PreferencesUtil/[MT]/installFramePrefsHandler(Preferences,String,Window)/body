@@ -1,0 +1,3 @@
+{
+  installFramePrefsHandler(prefs,name,window,new Dimension(400,300));
+}

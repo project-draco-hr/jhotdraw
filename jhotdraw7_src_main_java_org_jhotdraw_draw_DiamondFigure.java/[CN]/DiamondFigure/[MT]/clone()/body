@@ -1,0 +1,5 @@
+{
+  DiamondFigure that=(DiamondFigure)super.clone();
+  that.rectangle=(Rectangle2D.Double)this.rectangle.clone();
+  return that;
+}

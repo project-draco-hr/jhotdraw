@@ -1,0 +1,8 @@
+{
+  super.write(out);
+  if (getImageData() != null) {
+    out.openElement("imageData");
+    out.addText(Base64.encodeBytes(getImageData()));
+    out.closeElement();
+  }
+}

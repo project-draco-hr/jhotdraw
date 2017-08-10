@@ -1,0 +1,3 @@
+{
+  this(factory,"Drawing","xml","image/x-jhotdraw");
+}

@@ -1,0 +1,4 @@
+{
+  beginEdit((TextHolderFigure)createdFigure);
+  updateCursor(getView(),new Point(0,0));
+}

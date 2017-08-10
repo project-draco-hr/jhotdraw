@@ -1,0 +1,14 @@
+{
+  Point2D.Double p=(Point2D.Double)owner.getStartPoint().clone();
+  if (owner instanceof TextHolderFigure) {
+    p.y+=((TextHolderFigure)owner).getFontSize();
+    p.y+=((TextHolderFigure)owner).getInsets().top;
+  }
+ else {
+    p.y+=owner.get(FONT_SIZE);
+  }
+  if (owner.get(TRANSFORM) != null) {
+    owner.get(TRANSFORM).transform(p,p);
+  }
+  return p;
+}

@@ -1,0 +1,20 @@
+{
+  Graphics2D g=(Graphics2D)gr;
+  setViewRenderingHints(g);
+  drawBackground(g);
+  drawCanvas(g);
+  drawConstrainer(g);
+  if (isDrawingDoubleBuffered()) {
+    if (isWindows) {
+      drawDrawingNonvolatileBuffered(g);
+    }
+ else {
+      drawDrawingVolatileBuffered(g);
+    }
+  }
+ else {
+    drawDrawing(g);
+  }
+  drawHandles(g);
+  drawTool(g);
+}

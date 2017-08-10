@@ -1,0 +1,5 @@
+{
+  float oldValue=getPopupAlpha();
+  getPopupMenu().putClientProperty("Quaqua.PopupMenu.windowAlpha",newValue);
+  firePropertyChange("popupAlpha",oldValue,newValue);
+}

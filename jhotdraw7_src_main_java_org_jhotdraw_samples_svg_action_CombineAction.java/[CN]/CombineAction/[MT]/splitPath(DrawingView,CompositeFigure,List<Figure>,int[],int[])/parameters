@@ -1,0 +1,5 @@
+DrawingView view
+CompositeFigure group
+List<Figure> ungroupedPaths
+int[] ungroupedPathsIndices
+int[] ungroupedPathsChildCounts

@@ -1,0 +1,25 @@
+{
+  if (isAWTEventListenerPermitted) {
+    return;
+  }
+ else {
+    AWTEvent evt=EventQueue.getCurrentEvent();
+    if (evt != null && evt.getSource() instanceof Component) {
+      Component src=(Component)evt.getSource();
+      Component invoker=getInvoker();
+      if (!SwingUtilities.isDescendingFrom(src,JComponentPopup.this) && SwingUtilities.getWindowAncestor(src) == SwingUtilities.getWindowAncestor(invoker)) {
+        JLayeredPane srcLP=(JLayeredPane)SwingUtilities.getAncestorOfClass(JLayeredPane.class,src);
+        Component srcLPChild=src;
+        while (srcLPChild.getParent() != srcLP) {
+          srcLPChild=srcLPChild.getParent();
+        }
+        if (srcLP.getLayer(srcLPChild) < JLayeredPane.POPUP_LAYER) {
+          JComponentPopup.this.setVisible(false);
+        }
+      }
+    }
+ else {
+      super.menuSelectionChanged(isIncluded);
+    }
+  }
+}

@@ -1,0 +1,4 @@
+double width
+double height
+double theta
+boolean visible

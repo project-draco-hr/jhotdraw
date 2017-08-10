@@ -1,0 +1,17 @@
+{
+  if (userNodes != null) {
+    if (!userNodes.containsKey(c.getPackage())) {
+      userNodes.put(c.getPackage(),new PreferencesUtil(false));
+    }
+    return userNodes.get(c.getPackage());
+  }
+  try {
+    return Preferences.userNodeForPackage(c);
+  }
+ catch (  Throwable t) {
+    if (userNodes == null) {
+      userNodes=new HashMap<Package,Preferences>();
+    }
+    return userNodeForPackage(c);
+  }
+}

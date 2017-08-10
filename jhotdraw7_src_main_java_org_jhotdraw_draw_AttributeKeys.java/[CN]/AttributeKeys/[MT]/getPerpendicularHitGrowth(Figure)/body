@@ -1,0 +1,11 @@
+{
+  double grow;
+  if (f.get(STROKE_COLOR) == null) {
+    grow=getPerpendicularFillGrowth(f);
+  }
+ else {
+    double strokeWidth=AttributeKeys.getStrokeTotalWidth(f);
+    grow=getPerpendicularDrawGrowth(f) + strokeWidth / 2d;
+  }
+  return grow;
+}

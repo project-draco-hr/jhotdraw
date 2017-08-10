@@ -1,0 +1,6 @@
+{
+  if (c != null) {
+    return c.getFontMetrics(font);
+  }
+  return Toolkit.getDefaultToolkit().getFontMetrics(font);
+}

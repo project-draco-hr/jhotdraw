@@ -1,0 +1,7 @@
+{
+  String value;
+  value=readAttribute(elem,"transform","none");
+  if (!"none".equals(value)) {
+    TRANSFORM.put(a,toTransform(elem,value));
+  }
+}

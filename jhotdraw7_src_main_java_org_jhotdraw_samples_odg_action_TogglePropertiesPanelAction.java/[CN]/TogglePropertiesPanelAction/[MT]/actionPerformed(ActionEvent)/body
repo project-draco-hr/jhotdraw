@@ -1,0 +1,3 @@
+{
+  getActiveView().setPropertiesPanelVisible(!getActiveView().isPropertiesPanelVisible());
+}

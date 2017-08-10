@@ -1,0 +1,6 @@
+{
+  ODGEllipseFigure figure=new ODGEllipseFigure();
+  figure.setBounds(bounds);
+  figure.setAttributes(a);
+  return figure;
+}

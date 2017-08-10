@@ -1,0 +1,7 @@
+{
+  this.description=description;
+  this.fileExtension=fileExtension;
+  this.mimeType=DataFlavor.javaSerializedObjectMimeType;
+  this.prototype=prototype;
+  this.dataFlavor=new DataFlavor(prototype.getClass(),description);
+}

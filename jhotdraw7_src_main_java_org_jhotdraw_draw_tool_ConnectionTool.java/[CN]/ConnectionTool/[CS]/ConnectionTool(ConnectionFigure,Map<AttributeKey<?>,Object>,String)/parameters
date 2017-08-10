@@ -1,0 +1,3 @@
+ConnectionFigure prototype
+Map<AttributeKey<?>,Object> attributes
+String presentationName

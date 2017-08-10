@@ -1,0 +1,17 @@
+{
+  Rectangle tabRect=rects[tabIndex];
+  int nudge=0;
+switch (tabPlacement) {
+case LEFT:
+    nudge=isSelected ? -1 : 1;
+  break;
+case RIGHT:
+nudge=isSelected ? 1 : -1;
+break;
+case BOTTOM:
+case TOP:
+default :
+nudge=tabRect.width % 2;
+}
+return nudge;
+}

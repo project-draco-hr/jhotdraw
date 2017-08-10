@@ -1,0 +1,3 @@
+{
+  return (BezierFigure)super.getOwner();
+}

@@ -1,0 +1,16 @@
+{
+  setEnabled(getEditor().isEnabled());
+  if (getView() != null && colorChooser != null && popupMenu != null) {
+    colorChooser.setEnabled(getView().getSelectionCount() > 0);
+    popupMenu.setEnabled(getView().getSelectionCount() > 0);
+    isUpdating++;
+    if (getView().getSelectionCount() > 0) {
+      for (      Figure f : getView().getSelectedFigures()) {
+        Color figureColor=f.get(key);
+        colorChooser.setColor(figureColor == null ? new Color(0,true) : figureColor);
+        break;
+      }
+    }
+    isUpdating--;
+  }
+}

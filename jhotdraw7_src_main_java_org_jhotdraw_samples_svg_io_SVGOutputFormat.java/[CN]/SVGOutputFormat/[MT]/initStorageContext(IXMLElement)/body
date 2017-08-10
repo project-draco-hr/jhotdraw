@@ -1,0 +1,4 @@
+{
+  identifiedElements=new HashMap<IXMLElement,String>();
+  gradientToIDMap=new HashMap<Gradient,String>();
+}

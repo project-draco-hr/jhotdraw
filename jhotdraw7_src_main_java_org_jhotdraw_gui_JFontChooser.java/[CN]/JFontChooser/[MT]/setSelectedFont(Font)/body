@@ -1,0 +1,6 @@
+{
+  Font oldValue=selectedFont;
+  this.selectedFont=newValue;
+  firePropertyChange(SELECTED_FONT_PROPERTY,oldValue,newValue);
+  updateSelectionPath(newValue);
+}

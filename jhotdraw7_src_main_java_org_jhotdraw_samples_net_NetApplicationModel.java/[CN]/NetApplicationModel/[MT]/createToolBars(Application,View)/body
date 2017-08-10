@@ -1,0 +1,26 @@
+{
+  ResourceBundleUtil drawLabels=ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+  NetView p=(NetView)pr;
+  DrawingEditor editor;
+  if (p == null) {
+    editor=getSharedEditor();
+  }
+ else {
+    editor=p.getEditor();
+  }
+  LinkedList<JToolBar> list=new LinkedList<JToolBar>();
+  JToolBar tb;
+  tb=new JToolBar();
+  addCreationButtonsTo(tb,editor);
+  tb.setName(drawLabels.getString("window.drawToolBar.title"));
+  list.add(tb);
+  tb=new JToolBar();
+  ButtonFactory.addAttributesButtonsTo(tb,editor);
+  tb.setName(drawLabels.getString("window.attributesToolBar.title"));
+  list.add(tb);
+  tb=new JToolBar();
+  ButtonFactory.addAlignmentButtonsTo(tb,editor);
+  tb.setName(drawLabels.getString("window.alignmentToolBar.title"));
+  list.add(tb);
+  return list;
+}

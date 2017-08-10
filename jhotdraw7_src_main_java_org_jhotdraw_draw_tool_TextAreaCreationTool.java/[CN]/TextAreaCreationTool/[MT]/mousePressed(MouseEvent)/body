@@ -1,0 +1,11 @@
+{
+  if (typingTarget != null) {
+    endEdit();
+    if (isToolDoneAfterCreation()) {
+      fireToolDone();
+    }
+  }
+ else {
+    super.mousePressed(e);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  putValue(Action.SELECTED_KEY,getActiveView() != null && getActiveView().isLineNumbersVisible());
+}

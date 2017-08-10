@@ -1,0 +1,9 @@
+{
+  if (progressOwner == null || model.getOwner() == progressOwner) {
+    models.add(model);
+    model.addPropertyChangeListener(handler);
+    updateProgressBar();
+    updateToolTip();
+    updateIndeterminate();
+  }
+}

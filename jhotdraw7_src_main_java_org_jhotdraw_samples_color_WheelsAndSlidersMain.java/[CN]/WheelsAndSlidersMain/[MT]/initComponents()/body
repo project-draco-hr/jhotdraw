@@ -1,0 +1,33 @@
+{
+  chooserPanel=new javax.swing.JPanel();
+  previewLabel=new javax.swing.JLabel();
+  jPanel1=new javax.swing.JPanel();
+  screenColorProfileLabel=new javax.swing.JLabel();
+  chooseColorProfileButton=new javax.swing.JButton();
+  resetColorProfileButton=new javax.swing.JButton();
+  setLayout(new java.awt.BorderLayout());
+  chooserPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10,10,10,10));
+  chooserPanel.setLayout(new java.awt.GridLayout(0,4,10,10));
+  add(chooserPanel,java.awt.BorderLayout.CENTER);
+  previewLabel.setText("Selected Color");
+  add(previewLabel,java.awt.BorderLayout.SOUTH);
+  screenColorProfileLabel.setText("Screen Color Profile:");
+  jPanel1.add(screenColorProfileLabel);
+  chooseColorProfileButton.setText("Choose...");
+  chooseColorProfileButton.addActionListener(new java.awt.event.ActionListener(){
+    public void actionPerformed(    java.awt.event.ActionEvent evt){
+      onChooseScreenColorProfile(evt);
+    }
+  }
+);
+  jPanel1.add(chooseColorProfileButton);
+  resetColorProfileButton.setText("Reset");
+  resetColorProfileButton.addActionListener(new java.awt.event.ActionListener(){
+    public void actionPerformed(    java.awt.event.ActionEvent evt){
+      onResetScreenColorProfile(evt);
+    }
+  }
+);
+  jPanel1.add(resetColorProfileButton);
+  add(jPanel1,java.awt.BorderLayout.NORTH);
+}

@@ -1,0 +1,9 @@
+{
+  if (actions == null) {
+    this.actions=null;
+  }
+ else {
+    this.actions=new ArrayList<Action>();
+    this.actions.addAll(actions);
+  }
+}

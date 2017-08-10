@@ -1,0 +1,10 @@
+{
+  initComponents();
+  ownerARadio.setActionCommand("A");
+  ownerBRadio.setActionCommand("B");
+  ownerCRadio.setActionCommand("C");
+  indicatorA.setActivityOwner("A");
+  indicatorB.setActivityOwner("B");
+  indicatorC.setActivityOwner("C");
+  JActivityWindow.getInstance();
+}

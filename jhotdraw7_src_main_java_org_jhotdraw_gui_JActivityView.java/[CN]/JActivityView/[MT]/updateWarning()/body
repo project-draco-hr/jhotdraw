@@ -1,0 +1,5 @@
+{
+  String txt=model.getWarning();
+  warningLabel.setText(txt);
+  updateLabelVisibility();
+}

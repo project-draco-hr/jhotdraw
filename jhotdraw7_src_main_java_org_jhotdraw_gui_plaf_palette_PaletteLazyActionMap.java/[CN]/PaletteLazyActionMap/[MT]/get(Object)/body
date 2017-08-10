@@ -1,0 +1,4 @@
+{
+  loadIfNecessary();
+  return super.get(key);
+}

@@ -1,0 +1,8 @@
+{
+  angle=in.getAttribute("angle",0.35f);
+  innerRadius=in.getAttribute("innerRadius",12f);
+  outerRadius=in.getAttribute("outerRadius",12f);
+  setFilled(in.getAttribute("isFilled",false));
+  setStroked(in.getAttribute("isStroked",false));
+  setSolid(in.getAttribute("isSolid",false));
+}

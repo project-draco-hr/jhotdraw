@@ -1,0 +1,4 @@
+{
+  super(editor,new ODGPathFigure());
+  labels.configureAction(this,ID);
+}

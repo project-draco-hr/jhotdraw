@@ -1,0 +1,4 @@
+{
+  validatePath();
+  return generalPath.getPathIterator(at);
+}

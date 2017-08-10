@@ -1,0 +1,149 @@
+{
+  if (DEBUG) {
+    System.out.println("ODGInputFormat toEnhancedPath " + str);
+  }
+  EnhancedPath path=null;
+  Object x, y;
+  Object x1, y1, x2, y2, x3, y3;
+  StreamPosTokenizer tt=new StreamPosTokenizer(new StringReader(str));
+  tt.resetSyntax();
+  tt.parseNumbers();
+  tt.parseExponents();
+  tt.parsePlusAsNumber();
+  tt.whitespaceChars(0,' ');
+  tt.whitespaceChars(',',',');
+  char nextCommand='M';
+  char command='M';
+  Commands:   while (tt.nextToken() != StreamPosTokenizer.TT_EOF) {
+    if (tt.ttype > 0) {
+      command=(char)tt.ttype;
+    }
+ else {
+      command=nextCommand;
+      tt.pushBack();
+    }
+    nextCommand=command;
+switch (command) {
+case 'M':
+      if (path == null) {
+        path=new EnhancedPath();
+      }
+    x=nextEnhancedCoordinate(tt,str);
+  y=nextEnhancedCoordinate(tt,str);
+path.moveTo(x,y);
+nextCommand='L';
+break;
+case 'L':
+x=nextEnhancedCoordinate(tt,str);
+y=nextEnhancedCoordinate(tt,str);
+path.lineTo(x,y);
+break;
+case 'C':
+x1=nextEnhancedCoordinate(tt,str);
+y1=nextEnhancedCoordinate(tt,str);
+x2=nextEnhancedCoordinate(tt,str);
+y2=nextEnhancedCoordinate(tt,str);
+x=nextEnhancedCoordinate(tt,str);
+y=nextEnhancedCoordinate(tt,str);
+path.curveTo(x1,y1,x2,y2,x,y);
+break;
+case 'Z':
+path.close();
+break;
+case 'N':
+break;
+case 'F':
+break;
+case 'S':
+break;
+case 'T':
+x=nextEnhancedCoordinate(tt,str);
+y=nextEnhancedCoordinate(tt,str);
+x1=nextEnhancedCoordinate(tt,str);
+y1=nextEnhancedCoordinate(tt,str);
+x2=nextEnhancedCoordinate(tt,str);
+y2=nextEnhancedCoordinate(tt,str);
+path.ellipseTo(x,y,x1,y1,x2,y2);
+break;
+case 'U':
+x=nextEnhancedCoordinate(tt,str);
+y=nextEnhancedCoordinate(tt,str);
+x1=nextEnhancedCoordinate(tt,str);
+y1=nextEnhancedCoordinate(tt,str);
+x2=nextEnhancedCoordinate(tt,str);
+y2=nextEnhancedCoordinate(tt,str);
+path.moveTo(x1,y1);
+path.ellipseTo(x,y,x1,y1,x2,y2);
+break;
+case 'A':
+x1=nextEnhancedCoordinate(tt,str);
+y1=nextEnhancedCoordinate(tt,str);
+x2=nextEnhancedCoordinate(tt,str);
+y2=nextEnhancedCoordinate(tt,str);
+x3=nextEnhancedCoordinate(tt,str);
+y3=nextEnhancedCoordinate(tt,str);
+x=nextEnhancedCoordinate(tt,str);
+y=nextEnhancedCoordinate(tt,str);
+path.arcTo(x1,y1,x2,y2,x3,y3,x,y);
+break;
+case 'B':
+x1=nextEnhancedCoordinate(tt,str);
+y1=nextEnhancedCoordinate(tt,str);
+x2=nextEnhancedCoordinate(tt,str);
+y2=nextEnhancedCoordinate(tt,str);
+x3=nextEnhancedCoordinate(tt,str);
+y3=nextEnhancedCoordinate(tt,str);
+x=nextEnhancedCoordinate(tt,str);
+y=nextEnhancedCoordinate(tt,str);
+path.moveTo(x1,y1);
+path.arcTo(x1,y1,x2,y2,x3,y3,x,y);
+break;
+case 'W':
+x1=nextEnhancedCoordinate(tt,str);
+y1=nextEnhancedCoordinate(tt,str);
+x2=nextEnhancedCoordinate(tt,str);
+y2=nextEnhancedCoordinate(tt,str);
+x3=nextEnhancedCoordinate(tt,str);
+y3=nextEnhancedCoordinate(tt,str);
+x=nextEnhancedCoordinate(tt,str);
+y=nextEnhancedCoordinate(tt,str);
+path.clockwiseArcTo(x1,y1,x2,y2,x3,y3,x,y);
+break;
+case 'V':
+x1=nextEnhancedCoordinate(tt,str);
+y1=nextEnhancedCoordinate(tt,str);
+x2=nextEnhancedCoordinate(tt,str);
+y2=nextEnhancedCoordinate(tt,str);
+x3=nextEnhancedCoordinate(tt,str);
+y3=nextEnhancedCoordinate(tt,str);
+x=nextEnhancedCoordinate(tt,str);
+y=nextEnhancedCoordinate(tt,str);
+path.moveTo(x1,y1);
+path.clockwiseArcTo(x1,y1,x2,y2,x3,y3,x,y);
+break;
+case 'X':
+x=nextEnhancedCoordinate(tt,str);
+y=nextEnhancedCoordinate(tt,str);
+path.quadrantXTo(x,y);
+break;
+case 'Y':
+x=nextEnhancedCoordinate(tt,str);
+y=nextEnhancedCoordinate(tt,str);
+path.quadrantYTo(x,y);
+break;
+case 'Q':
+x1=nextEnhancedCoordinate(tt,str);
+y1=nextEnhancedCoordinate(tt,str);
+x=nextEnhancedCoordinate(tt,str);
+y=nextEnhancedCoordinate(tt,str);
+path.quadTo(x1,y1,x,y);
+break;
+default :
+if (DEBUG) {
+System.out.println("ODGInputFormat.toEnhancedPath aborting after illegal path command: " + command + " found in path "+ str);
+}
+break Commands;
+}
+}
+return path;
+}

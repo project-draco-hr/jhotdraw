@@ -1,0 +1,9 @@
+{
+  BufferedInputStream in=new BufferedInputStream(new FileInputStream(file));
+  try {
+    read(in);
+  }
+  finally {
+    in.close();
+  }
+}

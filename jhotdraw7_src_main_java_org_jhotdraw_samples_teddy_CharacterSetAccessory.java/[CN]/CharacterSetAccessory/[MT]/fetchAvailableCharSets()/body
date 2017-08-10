@@ -1,0 +1,30 @@
+{
+  if (availableCharSets == null) {
+    new BackgroundTask(){
+      @Override public void construct(){
+        SortedMap<String,Charset> sm=Charset.availableCharsets();
+        LinkedList<String> list=new LinkedList<String>();
+        for (        String key : sm.keySet()) {
+          if (!key.startsWith("x-")) {
+            list.add(key);
+          }
+        }
+        availableCharSets=list.toArray();
+        Arrays.sort(availableCharSets);
+      }
+      @Override public void finished(){
+        Object selectedItem=charSetCombo.getSelectedItem();
+        charSetCombo.setModel(new DefaultComboBoxModel(availableCharSets));
+        charSetCombo.setSelectedItem(selectedItem);
+        charSetCombo.setEnabled(true);
+      }
+    }
+.start();
+  }
+ else {
+    Object selectedItem=charSetCombo.getSelectedItem();
+    charSetCombo.setModel(new DefaultComboBoxModel(availableCharSets));
+    charSetCombo.setSelectedItem(selectedItem);
+    charSetCombo.setEnabled(true);
+  }
+}

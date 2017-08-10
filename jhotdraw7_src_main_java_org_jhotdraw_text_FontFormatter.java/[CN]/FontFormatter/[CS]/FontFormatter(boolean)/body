@@ -1,0 +1,9 @@
+{
+  this.allowsNullValue=allowsNullValue;
+  setOverwriteMode(false);
+  putGenericFontFamily("serif",new Font("Serif",Font.PLAIN,12));
+  putGenericFontFamily("sans-serif",new Font("SansSerif",Font.PLAIN,12));
+  putGenericFontFamily("cursive",new Font("SansSerif",Font.ITALIC,12));
+  putGenericFontFamily("fantasy",new Font("Serif",Font.PLAIN,12));
+  putGenericFontFamily("monospace",new Font("Monospaced",Font.PLAIN,12));
+}

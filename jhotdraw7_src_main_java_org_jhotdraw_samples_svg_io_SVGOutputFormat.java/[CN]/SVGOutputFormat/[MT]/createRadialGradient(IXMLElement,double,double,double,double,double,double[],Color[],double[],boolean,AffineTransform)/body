@@ -1,0 +1,18 @@
+{
+  IXMLElement elem=doc.createElement("radialGradient");
+  writeAttribute(elem,"cx",toNumber(cx),"0.5");
+  writeAttribute(elem,"cy",toNumber(cy),"0.5");
+  writeAttribute(elem,"fx",toNumber(fx),toNumber(cx));
+  writeAttribute(elem,"fy",toNumber(fy),toNumber(cy));
+  writeAttribute(elem,"r",toNumber(r),"0.5");
+  writeAttribute(elem,"gradientUnits",(isRelativeToFigureBounds) ? "objectBoundingBox" : "userSpaceOnUse","objectBoundingBox");
+  writeAttribute(elem,"gradientTransform",toTransform(transform),"none");
+  for (int i=0; i < stopOffsets.length; i++) {
+    IXMLElement stop=new XMLElement("stop");
+    writeAttribute(stop,"offset",toNumber(stopOffsets[i]),null);
+    writeAttribute(stop,"stop-color",toColor(stopColors[i]),null);
+    writeAttribute(stop,"stop-opacity",toNumber(stopOpacities[i]),"1");
+    elem.addChild(stop);
+  }
+  return elem;
+}

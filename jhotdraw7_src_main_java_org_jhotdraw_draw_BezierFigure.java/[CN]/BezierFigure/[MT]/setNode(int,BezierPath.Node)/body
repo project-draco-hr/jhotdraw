@@ -1,0 +1,4 @@
+{
+  path.set(index,p);
+  invalidate();
+}

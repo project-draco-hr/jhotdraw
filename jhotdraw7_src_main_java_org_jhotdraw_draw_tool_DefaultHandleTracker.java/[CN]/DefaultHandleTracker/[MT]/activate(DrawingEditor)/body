@@ -1,0 +1,10 @@
+{
+  super.activate(editor);
+  DrawingView v=getView();
+  if (v != null) {
+    v.setCursor(masterHandle.getCursor());
+    v.setActiveHandle(masterHandle);
+  }
+  clearHoverHandles();
+  masterHandle.addHandleListener(eventHandler);
+}

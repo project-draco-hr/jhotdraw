@@ -1,0 +1,7 @@
+{
+  Graphics2D g=(Graphics2D)gr;
+  if (c.isOpaque()) {
+    g.setColor(c.getBackground());
+    g.fillRect(0,0,c.getWidth(),c.getHeight());
+  }
+}

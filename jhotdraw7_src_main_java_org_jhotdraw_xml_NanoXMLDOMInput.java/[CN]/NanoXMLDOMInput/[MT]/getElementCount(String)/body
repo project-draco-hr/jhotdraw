@@ -1,0 +1,10 @@
+{
+  int count=0;
+  ArrayList<IXMLElement> list=current.getChildren();
+  for (  IXMLElement node : list) {
+    if (node.getName().equals(tagName)) {
+      count++;
+    }
+  }
+  return count;
+}

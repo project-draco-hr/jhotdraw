@@ -1,0 +1,5 @@
+{
+  labels=ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+  initComponents();
+  setActivityManager(ActivityManager.getInstance());
+}

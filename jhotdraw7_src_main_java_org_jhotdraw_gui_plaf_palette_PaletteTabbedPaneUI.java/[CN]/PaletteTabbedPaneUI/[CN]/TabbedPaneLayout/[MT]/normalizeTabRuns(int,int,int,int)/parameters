@@ -1,0 +1,4 @@
+int tabPlacement
+int tabCount
+int start
+int max

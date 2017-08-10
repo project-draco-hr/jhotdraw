@@ -1,0 +1,5 @@
+{
+  boolean oldValue=isSelectBehindEnabled;
+  isSelectBehindEnabled=newValue;
+  firePropertyChange(SELECT_BEHIND_ENABLED_PROPERTY,oldValue,newValue);
+}

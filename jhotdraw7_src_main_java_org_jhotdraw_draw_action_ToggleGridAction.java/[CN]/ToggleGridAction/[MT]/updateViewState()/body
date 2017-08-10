@@ -1,0 +1,4 @@
+{
+  DrawingView view=getView();
+  putValue(ActionUtil.SELECTED_KEY,view != null && view.isConstrainerVisible());
+}

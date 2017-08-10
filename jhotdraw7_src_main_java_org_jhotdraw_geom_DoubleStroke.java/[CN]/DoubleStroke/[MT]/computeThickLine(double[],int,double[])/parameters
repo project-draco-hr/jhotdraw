@@ -1,0 +1,3 @@
+double[] seg
+int offset
+double corners[]

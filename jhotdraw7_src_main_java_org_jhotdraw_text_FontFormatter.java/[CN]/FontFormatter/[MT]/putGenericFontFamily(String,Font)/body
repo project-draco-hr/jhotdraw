@@ -1,0 +1,3 @@
+{
+  genericFontFamilies.put(familyName.toLowerCase(),font);
+}

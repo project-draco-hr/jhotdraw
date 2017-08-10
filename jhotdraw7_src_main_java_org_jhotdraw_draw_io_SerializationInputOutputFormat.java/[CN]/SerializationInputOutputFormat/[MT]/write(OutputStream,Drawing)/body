@@ -1,0 +1,5 @@
+{
+  ObjectOutputStream oout=new ObjectOutputStream(out);
+  oout.writeObject(drawing);
+  oout.flush();
+}

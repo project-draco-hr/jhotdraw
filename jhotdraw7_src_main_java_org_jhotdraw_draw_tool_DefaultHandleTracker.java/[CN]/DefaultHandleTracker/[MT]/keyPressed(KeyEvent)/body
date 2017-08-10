@@ -1,0 +1,9 @@
+{
+  multicaster.keyPressed(evt);
+  if (!evt.isConsumed()) {
+    super.keyPressed(evt);
+    if (dragLocation != null) {
+      multicaster.trackStep(anchor,dragLocation,evt.getModifiersEx(),getView());
+    }
+  }
+}

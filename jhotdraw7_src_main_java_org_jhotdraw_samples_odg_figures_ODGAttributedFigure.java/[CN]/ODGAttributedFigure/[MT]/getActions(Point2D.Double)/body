@@ -1,0 +1,16 @@
+{
+  LinkedList<Action> actions=new LinkedList<Action>();
+  if (get(TRANSFORM) != null) {
+    ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+    actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")){
+      private static final long serialVersionUID=1L;
+      public void actionPerformed(      ActionEvent evt){
+        willChange();
+        fireUndoableEditHappened(TRANSFORM.setUndoable(ODGAttributedFigure.this,null));
+        changed();
+      }
+    }
+);
+  }
+  return actions;
+}

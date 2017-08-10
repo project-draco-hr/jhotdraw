@@ -1,0 +1,5 @@
+{
+  super.validate();
+  path.invalidatePath();
+  cappedPath=null;
+}

@@ -1,0 +1,10 @@
+{
+  Shape bounds=getOwner().getBounds();
+  if (getOwner().get(TRANSFORM) != null) {
+    bounds=getOwner().get(TRANSFORM).createTransformedShape(bounds);
+  }
+  bounds=view.getDrawingToViewTransform().createTransformedShape(bounds);
+  Rectangle r=bounds.getBounds();
+  r.grow(2,2);
+  return r;
+}

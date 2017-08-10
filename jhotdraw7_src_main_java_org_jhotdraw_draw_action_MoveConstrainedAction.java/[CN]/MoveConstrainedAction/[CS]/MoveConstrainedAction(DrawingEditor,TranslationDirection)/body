@@ -1,0 +1,5 @@
+{
+  super(editor);
+  this.dir=dir;
+  updateEnabledState();
+}

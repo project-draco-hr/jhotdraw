@@ -1,0 +1,6 @@
+{
+  this.formatName=formatName;
+  this.description=description;
+  this.fileExtension=fileExtension;
+  this.imageType=bufferedImageType;
+}

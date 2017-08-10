@@ -1,0 +1,16 @@
+{
+  initComponents();
+  opacitySlider=new JAttributeSlider(JSlider.VERTICAL,0,100,100);
+  opacityPopupButton.add(opacitySlider);
+  opacityPopupButton.putClientProperty("JButton.buttonType","toolbar");
+  add(opacityPopupButton);
+  opacityField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0d,1d,100d));
+  opacityFieldHandler=new FigureAttributeEditorHandler<Double>(OPACITY,opacityField,editor);
+  opacitySliderHandler=new FigureAttributeEditorHandler<Double>(OPACITY,opacitySlider,editor);
+  linkFieldHandler=new FigureAttributeEditorHandler<String>(LINK,linkField,editor);
+  Font font=getFont().deriveFont(11f);
+  for (  Component c : getComponents()) {
+    c.setFont(font);
+  }
+  opacitySlider.setFont(font);
+}

@@ -1,0 +1,7 @@
+{
+  Rectangle2D.Double b=getBounds();
+  out.addAttribute("x",b.x);
+  out.addAttribute("y",b.y);
+  writeAttributes(out);
+  writeDecorator(out);
+}

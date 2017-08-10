@@ -1,0 +1,6 @@
+{
+  this.owner=owner;
+  this.index=index;
+  this.oldValue=oldValue;
+  this.newValue=newValue;
+}

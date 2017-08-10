@@ -1,0 +1,10 @@
+{
+  Point p=new Point(evt.getX(),evt.getY());
+  Figure figure=getView().findFigure(p);
+  if (figure != null || drawingActions.size() > 0) {
+    showPopupMenu(figure,p,evt.getComponent());
+  }
+ else {
+    popupMenu=null;
+  }
+}

@@ -1,0 +1,4 @@
+{
+  readBounds(in);
+  readAttributes(in);
+}

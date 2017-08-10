@@ -1,0 +1,4 @@
+{
+  loadIfNecessary();
+  super.put(key,action);
+}

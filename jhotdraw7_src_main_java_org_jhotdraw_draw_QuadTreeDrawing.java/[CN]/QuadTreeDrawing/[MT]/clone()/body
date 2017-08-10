@@ -1,0 +1,8 @@
+{
+  QuadTreeDrawing that=(QuadTreeDrawing)super.clone();
+  that.quadTree=new QuadTree<Figure>();
+  for (  Figure f : getChildren()) {
+    quadTree.add(f,f.getDrawingArea());
+  }
+  return that;
+}

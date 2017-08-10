@@ -1,0 +1,6 @@
+{
+  super.remap(oldToNew,disconnectIfNotInMap);
+  if (presentationFigure != null) {
+    presentationFigure.remap(oldToNew,disconnectIfNotInMap);
+  }
+}

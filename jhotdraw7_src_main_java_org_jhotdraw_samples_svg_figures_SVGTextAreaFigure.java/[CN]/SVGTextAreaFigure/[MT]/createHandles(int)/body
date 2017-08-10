@@ -1,0 +1,20 @@
+{
+  LinkedList<Handle> handles=new LinkedList<Handle>();
+switch (detailLevel % 2) {
+case -1:
+    handles.add(new BoundsOutlineHandle(this,false,true));
+  break;
+case 0:
+ResizeHandleKit.addResizeHandles(this,handles);
+handles.add(new FontSizeHandle(this));
+handles.add(new TextOverflowHandle(this));
+handles.add(new LinkHandle(this));
+break;
+case 1:
+TransformHandleKit.addTransformHandles(this,handles);
+break;
+default :
+break;
+}
+return handles;
+}

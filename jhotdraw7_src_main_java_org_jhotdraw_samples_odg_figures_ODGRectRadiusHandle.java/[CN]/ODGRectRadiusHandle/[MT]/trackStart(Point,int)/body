@@ -1,0 +1,4 @@
+{
+  ODGRectFigure odgRect=(ODGRectFigure)getOwner();
+  originalArc2D=odgRect.getArc();
+}

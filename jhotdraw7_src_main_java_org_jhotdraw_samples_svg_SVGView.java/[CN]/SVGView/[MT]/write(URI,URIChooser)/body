@@ -1,0 +1,3 @@
+{
+  new SVGOutputFormat().write(new File(uri),svgPanel.getDrawing());
+}

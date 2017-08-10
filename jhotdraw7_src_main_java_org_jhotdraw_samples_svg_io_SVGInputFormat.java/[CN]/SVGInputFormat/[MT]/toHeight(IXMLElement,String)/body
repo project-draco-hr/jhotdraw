@@ -1,0 +1,3 @@
+{
+  return toLength(elem,str,viewportStack.peek().heightPercentFactor);
+}

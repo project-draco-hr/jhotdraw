@@ -1,0 +1,5 @@
+{
+  commonStyles=new HashMap<String,Style>();
+  automaticStyles=new HashMap<String,Style>();
+  masterStyles=new HashMap<String,Style>();
+}

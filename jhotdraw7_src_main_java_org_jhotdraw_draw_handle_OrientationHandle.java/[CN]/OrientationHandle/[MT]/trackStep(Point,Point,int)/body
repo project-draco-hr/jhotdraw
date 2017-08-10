@@ -1,0 +1,34 @@
+{
+  Rectangle leadRect=new Rectangle(lead);
+switch (Geom.outcode(centerBox,leadRect)) {
+case Geom.OUT_TOP:
+default :
+    newValue=AttributeKeys.Orientation.NORTH;
+  break;
+case Geom.OUT_TOP | Geom.OUT_RIGHT:
+newValue=AttributeKeys.Orientation.NORTH_EAST;
+break;
+case Geom.OUT_RIGHT:
+newValue=AttributeKeys.Orientation.EAST;
+break;
+case Geom.OUT_BOTTOM | Geom.OUT_RIGHT:
+newValue=AttributeKeys.Orientation.SOUTH_EAST;
+break;
+case Geom.OUT_BOTTOM:
+newValue=AttributeKeys.Orientation.SOUTH;
+break;
+case Geom.OUT_BOTTOM | Geom.OUT_LEFT:
+newValue=AttributeKeys.Orientation.SOUTH_WEST;
+break;
+case Geom.OUT_LEFT:
+newValue=AttributeKeys.Orientation.WEST;
+break;
+case Geom.OUT_TOP | Geom.OUT_LEFT:
+newValue=AttributeKeys.Orientation.NORTH_WEST;
+break;
+}
+getOwner().willChange();
+getOwner().set(ORIENTATION,newValue);
+getOwner().changed();
+updateBounds();
+}

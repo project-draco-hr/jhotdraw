@@ -1,0 +1,8 @@
+{
+  getHandler().tb=toolBar;
+  getHandler().isDragging=isDragging;
+  getHandler().origin=origin;
+  getHandler().mouseReleased(e);
+  isDragging=getHandler().isDragging;
+  origin=getHandler().origin;
+}

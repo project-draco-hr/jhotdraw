@@ -1,0 +1,3 @@
+{
+  SVGAttributeKeys.setDefaults(this);
+}

@@ -1,0 +1,3 @@
+{
+  setBounds(new Point2D.Double(sb.x,Math.min(sb.y + sb.height - 1,p.y)),new Point2D.Double(sb.x + sb.width,sb.y + sb.height));
+}

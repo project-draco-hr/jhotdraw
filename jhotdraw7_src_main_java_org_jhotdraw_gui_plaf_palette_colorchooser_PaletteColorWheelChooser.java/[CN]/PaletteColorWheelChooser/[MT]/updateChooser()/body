@@ -1,0 +1,5 @@
+{
+  updatingChooser++;
+  ccModel.setColor(getColorFromModel());
+  updatingChooser--;
+}

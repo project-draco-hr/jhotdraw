@@ -1,0 +1,10 @@
+{
+  LinkedList<String> values=new LinkedList<String>();
+  Node node=current;
+  while (node != null) {
+    String value=((Element)node).getAttribute(name);
+    values.addFirst(value);
+    node=node.getParentNode();
+  }
+  return values;
+}

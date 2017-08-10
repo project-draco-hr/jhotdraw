@@ -1,0 +1,5 @@
+{
+  roundrect=new RoundRectangle2D.Double(x,y,width,height,rx,ry);
+  SVGAttributeKeys.setDefaults(this);
+  setConnectable(false);
+}

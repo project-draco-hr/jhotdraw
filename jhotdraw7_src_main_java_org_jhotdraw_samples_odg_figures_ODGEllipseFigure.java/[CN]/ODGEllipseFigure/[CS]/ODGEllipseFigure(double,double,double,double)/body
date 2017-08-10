@@ -1,0 +1,4 @@
+{
+  ellipse=new Ellipse2D.Double(x,y,width,height);
+  ODGAttributeKeys.setDefaults(this);
+}

@@ -1,0 +1,4 @@
+{
+  super(isSignificant);
+  this.figure=figure;
+}

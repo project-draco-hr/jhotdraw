@@ -1,0 +1,3 @@
+{
+  fireBoundsInvalidated(e.getInvalidatedArea());
+}

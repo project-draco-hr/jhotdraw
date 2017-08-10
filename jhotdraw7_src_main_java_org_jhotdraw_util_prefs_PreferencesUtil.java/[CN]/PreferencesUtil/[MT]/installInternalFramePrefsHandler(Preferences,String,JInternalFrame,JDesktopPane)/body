@@ -1,0 +1,29 @@
+{
+  Rectangle screenBounds=desktop.getBounds();
+  screenBounds.setLocation(0,0);
+  Insets screenInsets=desktop.getInsets();
+  screenBounds.x+=screenInsets.left;
+  screenBounds.y+=screenInsets.top;
+  screenBounds.width-=screenInsets.left + screenInsets.right;
+  screenBounds.height-=screenInsets.top + screenInsets.bottom;
+  Dimension preferredSize=window.getPreferredSize();
+  Dimension minSize=window.getMinimumSize();
+  Rectangle bounds=new Rectangle(prefs.getInt(name + ".x",0),prefs.getInt(name + ".y",0),Math.max(minSize.width,prefs.getInt(name + ".width",preferredSize.width)),Math.max(minSize.height,prefs.getInt(name + ".height",preferredSize.height)));
+  if (!screenBounds.contains(bounds)) {
+    bounds.x=screenBounds.x + (screenBounds.width - bounds.width) / 2;
+    bounds.y=screenBounds.y + (screenBounds.height - bounds.height) / 2;
+    Rectangle.intersect(screenBounds,bounds,bounds);
+  }
+  window.setBounds(bounds);
+  window.addComponentListener(new ComponentAdapter(){
+    @Override public void componentMoved(    ComponentEvent evt){
+      prefs.putInt(name + ".x",evt.getComponent().getX());
+      prefs.putInt(name + ".y",evt.getComponent().getY());
+    }
+    @Override public void componentResized(    ComponentEvent evt){
+      prefs.putInt(name + ".width",evt.getComponent().getWidth());
+      prefs.putInt(name + ".height",evt.getComponent().getHeight());
+    }
+  }
+);
+}

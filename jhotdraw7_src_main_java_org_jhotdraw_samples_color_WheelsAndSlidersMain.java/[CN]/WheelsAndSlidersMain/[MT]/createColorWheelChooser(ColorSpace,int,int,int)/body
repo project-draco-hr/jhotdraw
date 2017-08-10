@@ -1,0 +1,3 @@
+{
+  return createColorWheelChooser(sys,angularIndex,radialIndex,verticalIndex,JColorWheel.Type.POLAR);
+}

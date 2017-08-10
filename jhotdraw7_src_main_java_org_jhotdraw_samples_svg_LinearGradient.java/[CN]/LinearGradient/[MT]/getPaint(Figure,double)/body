@@ -1,0 +1,30 @@
+{
+  if (stopColors.length == 0) {
+    return new Color(0x0,true);
+  }
+  Color[] colors=new Color[stopColors.length];
+  float[] fractions=new float[stopColors.length];
+  float previousFraction=0;
+  for (int i=0; i < stopColors.length; i++) {
+    fractions[i]=Math.min(1f,Math.max(previousFraction,(float)stopOffsets[i]));
+    colors[i]=new Color((stopColors[i].getRGB() & 0xffffff) | ((int)(opacity * stopOpacities[i] * 255) << 24),true);
+    previousFraction=fractions[i];
+  }
+  Point2D.Double p1;
+  Point2D.Double p2;
+  p1=new Point2D.Double(x1,y1);
+  p2=new Point2D.Double(x2,y2);
+  AffineTransform t=transform;
+  if (isRelativeToFigureBounds) {
+    t=(AffineTransform)t.clone();
+    Rectangle2D.Double bounds=f.getBounds();
+    t.translate(bounds.x,bounds.y);
+    t.scale(bounds.width,bounds.height);
+  }
+  if (stopColors.length == 1 || t.getDeterminant() == 0) {
+    return colors[0];
+  }
+  LinearGradientPaint gp;
+  gp=new LinearGradientPaint(p1,p2,fractions,colors,LinearGradientPaint.CycleMethod.NO_CYCLE,LinearGradientPaint.ColorSpaceType.SRGB,t);
+  return gp;
+}

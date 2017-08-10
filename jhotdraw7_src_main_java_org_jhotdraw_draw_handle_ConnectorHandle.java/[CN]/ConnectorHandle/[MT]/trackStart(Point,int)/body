@@ -1,0 +1,7 @@
+{
+  setConnection(createConnection());
+  Point2D.Double p=getLocationOnDrawing();
+  getConnection().setStartPoint(p);
+  getConnection().setEndPoint(p);
+  view.getDrawing().add(getConnection());
+}

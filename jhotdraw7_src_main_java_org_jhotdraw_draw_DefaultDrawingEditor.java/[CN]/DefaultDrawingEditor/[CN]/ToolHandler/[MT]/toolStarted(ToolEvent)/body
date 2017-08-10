@@ -1,0 +1,3 @@
+{
+  setActiveView(evt.getView());
+}

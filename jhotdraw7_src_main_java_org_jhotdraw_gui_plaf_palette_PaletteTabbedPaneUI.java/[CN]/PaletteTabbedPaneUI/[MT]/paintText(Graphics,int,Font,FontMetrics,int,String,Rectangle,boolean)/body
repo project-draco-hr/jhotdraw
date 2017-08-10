@@ -1,0 +1,27 @@
+{
+  g.setFont(font);
+  View v=getTextViewForTab(tabIndex);
+  if (v != null) {
+    v.paint(g,textRect);
+  }
+ else {
+    int mnemIndex=tabPane.getDisplayedMnemonicIndexAt(tabIndex);
+    if (tabPane.isEnabled() && tabPane.isEnabledAt(tabIndex)) {
+      Color fg=tabPane.getForegroundAt(tabIndex);
+      if (isSelected && (fg instanceof UIResource)) {
+        Color selectedFG=PaletteLookAndFeel.getInstance().getColor("TabbedPane.selectedForeground");
+        if (selectedFG != null) {
+          fg=selectedFG;
+        }
+      }
+      g.setColor(fg);
+      PaletteUtilities.drawStringUnderlineCharAt(tabPane,g,title,mnemIndex,textRect.x,textRect.y + metrics.getAscent());
+    }
+ else {
+      g.setColor(tabPane.getBackgroundAt(tabIndex).brighter());
+      PaletteUtilities.drawStringUnderlineCharAt(tabPane,g,title,mnemIndex,textRect.x,textRect.y + metrics.getAscent());
+      g.setColor(tabPane.getBackgroundAt(tabIndex).darker());
+      PaletteUtilities.drawStringUnderlineCharAt(tabPane,g,title,mnemIndex,textRect.x - 1,textRect.y + metrics.getAscent() - 1);
+    }
+  }
+}

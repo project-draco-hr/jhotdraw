@@ -1,0 +1,5 @@
+{
+  int oldValue=getDisclosureStateCount();
+  disclosureButton.putClientProperty(DisclosureIcon.STATE_COUNT_PROPERTY,newValue);
+  firePropertyChange(DISCLOSURE_STATE_COUNT_PROPERTY,oldValue,newValue);
+}

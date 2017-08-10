@@ -1,0 +1,23 @@
+{
+  if (elem.getName() != null && elem.getName().equals("style") && readAttribute(elem,"type","").equals("text/css") && elem.getContent() != null) {
+    CSSParser cssParser=new CSSParser();
+    cssParser.parse(elem.getContent(),styleManager);
+  }
+ else {
+    if (elem.getNamespace() == null || elem.getNamespace().equals(SVG_NAMESPACE)) {
+      String style=readAttribute(elem,"style",null);
+      if (style != null) {
+        for (        String styleProperty : style.split(";")) {
+          String[] stylePropertyElements=styleProperty.split(":");
+          if (stylePropertyElements.length == 2 && !elem.hasAttribute(stylePropertyElements[0].trim(),SVG_NAMESPACE)) {
+            elem.setAttribute(stylePropertyElements[0].trim(),SVG_NAMESPACE,stylePropertyElements[1].trim());
+          }
+        }
+      }
+      styleManager.applyStylesTo(elem);
+      for (      IXMLElement child : elem.getChildren()) {
+        flattenStyles(child);
+      }
+    }
+  }
+}

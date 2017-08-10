@@ -1,0 +1,9 @@
+{
+  slidersComboBox=new javax.swing.JComboBox();
+  slidersHolder=new javax.swing.JPanel();
+  setBorder(javax.swing.BorderFactory.createEmptyBorder(4,6,6,6));
+  setLayout(new java.awt.BorderLayout());
+  add(slidersComboBox,java.awt.BorderLayout.NORTH);
+  slidersHolder.setLayout(new java.awt.CardLayout());
+  add(slidersHolder,java.awt.BorderLayout.CENTER);
+}

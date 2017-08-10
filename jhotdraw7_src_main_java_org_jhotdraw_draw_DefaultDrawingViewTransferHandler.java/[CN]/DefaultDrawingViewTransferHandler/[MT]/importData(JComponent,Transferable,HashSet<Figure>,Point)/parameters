@@ -1,0 +1,4 @@
+JComponent comp
+Transferable t
+HashSet<Figure> transferFigures
+Point dropPoint

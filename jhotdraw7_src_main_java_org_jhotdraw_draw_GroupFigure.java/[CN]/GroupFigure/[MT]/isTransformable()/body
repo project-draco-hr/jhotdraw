@@ -1,0 +1,8 @@
+{
+  for (  Figure f : children) {
+    if (!f.isTransformable()) {
+      return false;
+    }
+  }
+  return true;
+}

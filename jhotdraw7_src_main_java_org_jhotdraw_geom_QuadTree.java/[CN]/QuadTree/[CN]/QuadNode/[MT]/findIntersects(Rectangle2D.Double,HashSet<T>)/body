@@ -1,0 +1,15 @@
+{
+  if (bounds.intersects(r)) {
+    for (    Map.Entry<T,Rectangle2D.Double> entry : objects.entrySet()) {
+      if (entry.getValue().intersects(r)) {
+        result.add(entry.getKey());
+      }
+    }
+    if (!isLeaf()) {
+      northWest.findIntersects(r,result);
+      northEast.findIntersects(r,result);
+      southWest.findIntersects(r,result);
+      southEast.findIntersects(r,result);
+    }
+  }
+}

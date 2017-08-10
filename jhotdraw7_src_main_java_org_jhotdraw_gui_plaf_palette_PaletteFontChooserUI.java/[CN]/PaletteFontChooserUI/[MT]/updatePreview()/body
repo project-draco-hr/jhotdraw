@@ -1,0 +1,5 @@
+{
+  isUpdating++;
+  previewPanel.setSelectedFont(fontChooser.getSelectedFont());
+  isUpdating--;
+}

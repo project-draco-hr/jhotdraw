@@ -1,0 +1,92 @@
+{
+  PaletteLookAndFeel plaf=labels=PaletteLookAndFeel.getInstance();
+  initComponents();
+  setUI(PalettePanelUI.createUI(this));
+  cyanFieldPanel.setUI((PanelUI)PalettePanelUI.createUI(cyanFieldPanel));
+  magentaFieldPanel.setUI((PanelUI)PalettePanelUI.createUI(magentaFieldPanel));
+  yellowFieldPanel.setUI((PanelUI)PalettePanelUI.createUI(yellowFieldPanel));
+  blackFieldPanel.setUI((PanelUI)PalettePanelUI.createUI(blackFieldPanel));
+  cyanLabel.setUI((LabelUI)PaletteLabelUI.createUI(cyanLabel));
+  magentaLabel.setUI((LabelUI)PaletteLabelUI.createUI(magentaLabel));
+  yellowLabel.setUI((LabelUI)PaletteLabelUI.createUI(yellowLabel));
+  blackLabel.setUI((LabelUI)PaletteLabelUI.createUI(blackLabel));
+  cyanFieldLabel.setUI((LabelUI)PaletteLabelUI.createUI(cyanFieldLabel));
+  magentaFieldLabel.setUI((LabelUI)PaletteLabelUI.createUI(magentaFieldLabel));
+  yellowFieldLabel.setUI((LabelUI)PaletteLabelUI.createUI(yellowFieldLabel));
+  blackFieldLabel.setUI((LabelUI)PaletteLabelUI.createUI(blackFieldLabel));
+  cyanField.setUI((TextUI)PaletteTextFieldUI.createUI(cyanField));
+  magentaField.setUI((TextUI)PaletteTextFieldUI.createUI(magentaField));
+  yellowField.setUI((TextUI)PaletteTextFieldUI.createUI(yellowField));
+  blackField.setUI((TextUI)PaletteTextFieldUI.createUI(blackField));
+  Font font=plaf.getFont("ColorChooser.font");
+  cyanLabel.setFont(font);
+  cyanSlider.setFont(font);
+  cyanField.setFont(font);
+  cyanFieldLabel.setFont(font);
+  magentaLabel.setFont(font);
+  magentaSlider.setFont(font);
+  magentaField.setFont(font);
+  magentaFieldLabel.setFont(font);
+  yellowLabel.setFont(font);
+  yellowSlider.setFont(font);
+  yellowField.setFont(font);
+  yellowFieldLabel.setFont(font);
+  blackLabel.setFont(font);
+  blackSlider.setFont(font);
+  blackField.setFont(font);
+  blackFieldLabel.setFont(font);
+  int textSliderGap=plaf.getInt("ColorChooser.textSliderGap");
+  if (textSliderGap != 0) {
+    Border fieldBorder=new EmptyBorder(0,textSliderGap,0,0);
+    cyanFieldPanel.setBorder(fieldBorder);
+    magentaFieldPanel.setBorder(fieldBorder);
+    yellowFieldPanel.setBorder(fieldBorder);
+    blackFieldPanel.setBorder(fieldBorder);
+  }
+  try {
+    ccModel=new PaletteColorSliderModel(new CMYKGenericColorSpace());
+  }
+ catch (  IOException e) {
+    System.err.println("Warning: " + getClass() + " couldn't load \"Generic CMYK Profile.icc\".");
+    ccModel=new PaletteColorSliderModel(new CMYKNominalColorSpace());
+  }
+  ccModel.configureSlider(0,cyanSlider);
+  ccModel.configureSlider(1,magentaSlider);
+  ccModel.configureSlider(2,yellowSlider);
+  ccModel.configureSlider(3,blackSlider);
+  cyanField.setText(Integer.toString(cyanSlider.getValue()));
+  magentaField.setText(Integer.toString(magentaSlider.getValue()));
+  yellowField.setText(Integer.toString(yellowSlider.getValue()));
+  blackField.setText(Integer.toString(blackSlider.getValue()));
+  Insets borderMargin=UIManager.getInsets("Component.visualMargin");
+  if (borderMargin != null) {
+    borderMargin=(Insets)borderMargin.clone();
+    borderMargin.left=3 - borderMargin.left;
+    cyanFieldLabel.putClientProperty("Quaqua.Component.visualMargin",borderMargin);
+    magentaFieldLabel.putClientProperty("Quaqua.Component.visualMargin",borderMargin);
+    yellowFieldLabel.putClientProperty("Quaqua.Component.visualMargin",borderMargin);
+    blackFieldLabel.putClientProperty("Quaqua.Component.visualMargin",borderMargin);
+  }
+  new ColorSliderTextFieldHandler(cyanField,ccModel,0);
+  new ColorSliderTextFieldHandler(magentaField,ccModel,1);
+  new ColorSliderTextFieldHandler(yellowField,ccModel,2);
+  new ColorSliderTextFieldHandler(blackField,ccModel,3);
+  ccModel.addChangeListener(new ChangeListener(){
+    @Override public void stateChanged(    ChangeEvent evt){
+      if (updateRecursion++ == 0) {
+        setColorToModel(ccModel.getColor());
+      }
+      updateRecursion--;
+    }
+  }
+);
+  cyanField.setMinimumSize(cyanField.getPreferredSize());
+  magentaField.setMinimumSize(magentaField.getPreferredSize());
+  yellowField.setMinimumSize(yellowField.getPreferredSize());
+  blackField.setMinimumSize(blackField.getPreferredSize());
+  EmptyBorder bm=new EmptyBorder(0,0,0,0);
+  cyanLabel.setBorder(bm);
+  magentaLabel.setBorder(bm);
+  yellowLabel.setBorder(bm);
+  blackLabel.setBorder(bm);
+}

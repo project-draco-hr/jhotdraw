@@ -1,0 +1,4 @@
+{
+  addDecoration(decoration1);
+  addDecoration(decoration2);
+}

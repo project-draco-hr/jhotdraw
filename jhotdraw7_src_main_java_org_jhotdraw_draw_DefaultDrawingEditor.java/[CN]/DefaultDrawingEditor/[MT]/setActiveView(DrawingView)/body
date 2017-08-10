@@ -1,0 +1,5 @@
+{
+  DrawingView oldValue=activeView;
+  activeView=newValue;
+  firePropertyChange(ACTIVE_VIEW_PROPERTY,oldValue,newValue);
+}

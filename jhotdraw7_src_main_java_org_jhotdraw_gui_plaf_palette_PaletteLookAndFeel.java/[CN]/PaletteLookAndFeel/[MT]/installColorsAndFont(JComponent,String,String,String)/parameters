@@ -1,0 +1,4 @@
+JComponent c
+String defaultBgName
+String defaultFgName
+String defaultFontName

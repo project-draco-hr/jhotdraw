@@ -1,0 +1,5 @@
+{
+  setStartPoint(anchor);
+  setEndPoint(lead);
+  invalidate();
+}

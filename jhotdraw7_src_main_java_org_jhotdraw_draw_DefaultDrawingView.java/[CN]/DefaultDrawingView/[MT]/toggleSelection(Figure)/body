@@ -1,0 +1,8 @@
+{
+  if (selectedFigures.contains(figure)) {
+    removeFromSelection(figure);
+  }
+ else {
+    addToSelection(figure);
+  }
+}

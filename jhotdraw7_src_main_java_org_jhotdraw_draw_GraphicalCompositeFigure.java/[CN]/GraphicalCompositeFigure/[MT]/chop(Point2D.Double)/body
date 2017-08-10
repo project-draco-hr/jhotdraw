@@ -1,0 +1,20 @@
+{
+  Rectangle2D.Double r=getBounds();
+  if (get(STROKE_COLOR) != null) {
+    double grow;
+switch (get(STROKE_PLACEMENT)) {
+case CENTER:
+default :
+      grow=AttributeKeys.getStrokeTotalWidth(this);
+    break;
+case OUTSIDE:
+  grow=AttributeKeys.getStrokeTotalWidth(this);
+break;
+case INSIDE:
+grow=0d;
+break;
+}
+Geom.grow(r,grow,grow);
+}
+return Geom.angleToPoint(r,Geom.pointToAngle(r,from));
+}

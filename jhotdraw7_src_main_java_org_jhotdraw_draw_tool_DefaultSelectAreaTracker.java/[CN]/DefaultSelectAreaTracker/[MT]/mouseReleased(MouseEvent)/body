@@ -1,0 +1,4 @@
+{
+  selectGroup(evt.isShiftDown());
+  clearRubberBand();
+}

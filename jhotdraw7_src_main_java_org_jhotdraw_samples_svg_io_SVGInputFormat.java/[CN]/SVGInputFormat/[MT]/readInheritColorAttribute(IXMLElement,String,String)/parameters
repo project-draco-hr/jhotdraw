@@ -1,0 +1,3 @@
+IXMLElement elem
+String attributeName
+String defaultValue

@@ -1,0 +1,14 @@
+{
+  int count=0;
+  ArrayList<IXMLElement> list=current.getChildren();
+  for (  IXMLElement node : list) {
+    if (node.getName().equals(tagName)) {
+      if (count++ == index) {
+        stack.push(current);
+        current=node;
+        return;
+      }
+    }
+  }
+  throw new IOException("no such element:" + tagName + " at index:"+ index);
+}

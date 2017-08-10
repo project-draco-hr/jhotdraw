@@ -1,0 +1,5 @@
+{
+  super(isFilled,isStroked,isSolid);
+  this.path=path;
+  this.decorationRadius=decorationRadius;
+}

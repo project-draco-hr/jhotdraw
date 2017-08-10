@@ -1,0 +1,3 @@
+{
+  return PaletteLookAndFeel.getInstance().getIcon("ColorChooser.colorSwatchesIcon");
+}

@@ -1,0 +1,4 @@
+{
+  getImageData();
+  out.defaultWriteObject();
+}

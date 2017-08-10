@@ -1,0 +1,7 @@
+{
+  double radius=0;
+  for (  LineDecoration decoration : decorations) {
+    radius=Math.max(radius,decoration.getDecorationRadius(f));
+  }
+  return radius;
+}

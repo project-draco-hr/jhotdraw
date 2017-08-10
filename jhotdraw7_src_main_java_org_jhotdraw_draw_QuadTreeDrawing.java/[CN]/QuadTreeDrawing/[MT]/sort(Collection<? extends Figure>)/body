@@ -1,0 +1,10 @@
+{
+  ensureSorted();
+  ArrayList<Figure> sorted=new ArrayList<Figure>(c.size());
+  for (  Figure f : children) {
+    if (c.contains(f)) {
+      sorted.add(f);
+    }
+  }
+  return sorted;
+}

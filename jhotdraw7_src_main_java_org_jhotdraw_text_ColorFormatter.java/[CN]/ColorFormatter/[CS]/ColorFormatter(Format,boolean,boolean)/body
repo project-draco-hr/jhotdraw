@@ -1,0 +1,21 @@
+{
+  this.outputFormat=outputFormat;
+  this.allowsNullValue=allowsNullValue;
+  this.isAdaptive=isAdaptive;
+  numberFormat=new DecimalFormat("#.#");
+  numberFormat.setDecimalSeparatorAlwaysShown(false);
+  numberFormat.setMaximumFractionDigits(1);
+  DecimalFormatSymbols dfs=new DecimalFormatSymbols();
+  dfs.setDecimalSeparator('.');
+  numberFormat.setDecimalFormatSymbols(dfs);
+  prefs=PreferencesUtil.userNodeForPackage(getClass());
+  try {
+    lastUsedInputFormat=Format.valueOf(prefs.get("ColorFormatter.lastUsedInputFormat",Format.RGB_HEX.name()));
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  if (isAdaptive && lastUsedInputFormat != null) {
+    this.outputFormat=lastUsedInputFormat;
+  }
+  setOverwriteMode(false);
+}

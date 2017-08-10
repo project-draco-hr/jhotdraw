@@ -1,0 +1,29 @@
+{
+  openElement(index);
+  Object o;
+  String ref=getAttribute("ref",null);
+  String id=getAttribute("id",null);
+  if (ref != null && id != null) {
+    throw new IOException("Element has both an id and a ref attribute: <" + getTagName() + " id="+ id+ " ref="+ ref+ ">");
+  }
+  if (id != null && idobjects.containsKey(id)) {
+    throw new IOException("Duplicate id attribute: <" + getTagName() + " id="+ id+ ">");
+  }
+  if (ref != null && !idobjects.containsKey(ref)) {
+    throw new IOException("Illegal ref attribute value: <" + getTagName() + " ref="+ ref+ ">");
+  }
+  if (ref != null) {
+    o=idobjects.get(ref);
+  }
+ else {
+    o=factory.read(this);
+    if (id != null) {
+      idobjects.put(id,o);
+    }
+    if (o instanceof DOMStorable) {
+      ((DOMStorable)o).read(this);
+    }
+  }
+  closeElement();
+  return o;
+}

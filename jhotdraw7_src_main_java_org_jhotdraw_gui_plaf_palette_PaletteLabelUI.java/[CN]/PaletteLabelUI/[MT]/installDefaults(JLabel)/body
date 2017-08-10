@@ -1,0 +1,8 @@
+{
+  super.installDefaults(b);
+  PaletteLookAndFeel.installBorder(b,"Label.border");
+  PaletteLookAndFeel.installColorsAndFont(b,"Label.background","Label.foreground","Label.font");
+  if (b.getClass().getName().endsWith("LabelUIResource")) {
+    b.setFont(UIManager.getFont("Slider.labelFont"));
+  }
+}

@@ -1,0 +1,5 @@
+{
+  for (int i=0; i < defaultChoosers.length; i++) {
+    chooser.removeChooserPanel(defaultChoosers[i]);
+  }
+}

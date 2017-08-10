@@ -1,0 +1,5 @@
+{
+  super.installDefaults(slider);
+  PaletteLookAndFeel.installBorder(slider,"Slider.border");
+  PaletteLookAndFeel.installColors(slider,"Slider.background","Slider.foreground");
+}

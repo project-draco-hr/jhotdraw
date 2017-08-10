@@ -1,0 +1,16 @@
+{
+  if (this.editor != null) {
+    this.removePropertyChangeListener(getEventHandler());
+    for (    Disposable d : disposables) {
+      d.dispose();
+    }
+    disposables.clear();
+  }
+  this.editor=editor;
+  if (editor != null) {
+    init();
+    clearDisclosedComponents();
+    setDisclosureState(Math.max(0,Math.min(getDisclosureStateCount(),prefs.getInt(getID() + ".disclosureState",getDefaultDisclosureState()))));
+    this.addPropertyChangeListener(getEventHandler());
+  }
+}

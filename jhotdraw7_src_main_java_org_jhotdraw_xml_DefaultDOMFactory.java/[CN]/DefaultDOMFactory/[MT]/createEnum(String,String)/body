@@ -1,0 +1,16 @@
+{
+  Class<T> enumClass=(Class<T>)nameToEnumClassMap.get(name);
+  if (enumClass == null) {
+    throw new IllegalArgumentException("Enum name not known to factory:" + name);
+  }
+  Set<Enum> enums=valueToEnumMap.get(value);
+  if (enums == null) {
+    return Enum.valueOf(enumClass,value);
+  }
+  for (  Enum e : enums) {
+    if (e.getClass() == enumClass) {
+      return e;
+    }
+  }
+  throw new IllegalArgumentException("Enum value not known to factory:" + value);
+}

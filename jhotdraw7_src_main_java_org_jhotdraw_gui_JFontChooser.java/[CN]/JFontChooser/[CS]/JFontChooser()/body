@@ -1,0 +1,20 @@
+{
+  loadAllFonts();
+  model=new DefaultFontChooserModel.UIResource();
+  model.addTreeModelListener(modelHandler);
+  updateUI();
+  addPropertyChangeListener(new PropertyChangeListener(){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
+      if (evt.getPropertyName() == "ancestor" && evt.getNewValue() != null) {
+        try {
+          ((DefaultFontChooserModel)model).setFonts(getAllFonts());
+        }
+ catch (        Exception ex) {
+          ex.printStackTrace();
+        }
+        JFontChooser.this.removePropertyChangeListener(this);
+      }
+    }
+  }
+);
+}

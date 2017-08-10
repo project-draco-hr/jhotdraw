@@ -1,0 +1,6 @@
+IXMLElement doc
+double cx
+double cy
+double rx
+double ry
+Map<AttributeKey<?>,Object> attributes

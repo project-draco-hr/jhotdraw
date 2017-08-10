@@ -1,0 +1,4 @@
+{
+  Element map=getDocument().getDefaultRootElement();
+  return map.getElementCount();
+}

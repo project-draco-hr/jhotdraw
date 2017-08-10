@@ -1,0 +1,3 @@
+{
+  this.angle=(float)Geom.pointToAngle(getOwner().getBounds(),p);
+}

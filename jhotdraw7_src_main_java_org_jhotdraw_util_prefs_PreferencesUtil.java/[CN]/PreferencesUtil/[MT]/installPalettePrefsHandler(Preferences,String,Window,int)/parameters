@@ -1,0 +1,4 @@
+Preferences prefs
+String name
+Window window
+int x

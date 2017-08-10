@@ -1,0 +1,6 @@
+{
+  Rectangle2D.Double r=(Rectangle2D.Double)ellipse.getBounds2D();
+  double grow=AttributeKeys.getPerpendicularHitGrowth(this);
+  Geom.grow(r,grow + 1,grow + 1);
+  return r;
+}

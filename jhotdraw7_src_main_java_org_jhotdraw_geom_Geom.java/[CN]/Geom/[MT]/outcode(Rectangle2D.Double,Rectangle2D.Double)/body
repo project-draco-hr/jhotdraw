@@ -1,0 +1,16 @@
+{
+  int outcode=0;
+  if (r2.x > r1.x + r1.width) {
+    outcode=OUT_RIGHT;
+  }
+ else   if (r2.x + r2.width < r1.x) {
+    outcode=OUT_LEFT;
+  }
+  if (r2.y > r1.y + r1.height) {
+    outcode|=OUT_BOTTOM;
+  }
+ else   if (r2.y + r2.height < r1.y) {
+    outcode|=OUT_TOP;
+  }
+  return outcode;
+}

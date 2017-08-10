@@ -1,0 +1,4 @@
+{
+  SVGPathFigure that=(SVGPathFigure)super.clone();
+  return that;
+}

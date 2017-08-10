@@ -1,0 +1,5 @@
+{
+  if (bounds == null) {
+  }
+  return (Rectangle2D.Double)bounds.clone();
+}

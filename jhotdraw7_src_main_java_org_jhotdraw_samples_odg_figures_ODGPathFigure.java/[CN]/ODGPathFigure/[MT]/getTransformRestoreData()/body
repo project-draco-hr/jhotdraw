@@ -1,0 +1,7 @@
+{
+  ArrayList<BezierPath> paths=new ArrayList<BezierPath>(getChildCount());
+  for (int i=0, n=getChildCount(); i < n; i++) {
+    paths.add(getChild(i).getBezierPath());
+  }
+  return new Object[]{paths,TRANSFORM.getClone(this),FILL_GRADIENT.getClone(this),STROKE_GRADIENT.getClone(this)};
+}

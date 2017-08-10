@@ -1,0 +1,4 @@
+{
+  super(presentationName,isSignificant);
+  this.figure=figure;
+}

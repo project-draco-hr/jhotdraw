@@ -1,0 +1,28 @@
+{
+  JFileChooser fc=getOpenChooser();
+  if (file != null) {
+    fc.setSelectedFile(file);
+  }
+  if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+    svgPanel.setEnabled(false);
+    final File selectedFile=fc.getSelectedFile();
+    final InputFormat selectedFormat=fileFilterInputFormatMap.get(fc.getFileFilter());
+    new BackgroundTask(){
+      @Override protected void construct() throws IOException {
+        svgPanel.read(selectedFile.toURI(),selectedFormat);
+      }
+      @Override protected void done(){
+        file=selectedFile;
+        setTitle(file.getName());
+      }
+      @Override protected void failed(      Throwable error){
+        error.printStackTrace();
+        JOptionPane.showMessageDialog(SVGDrawingPanelSample.this,"<html><b>Couldn't open file \"" + selectedFile.getName() + "\"<br>"+ error.toString(),"Open File",JOptionPane.ERROR_MESSAGE);
+      }
+      @Override protected void finished(){
+        svgPanel.setEnabled(true);
+      }
+    }
+.start();
+  }
+}

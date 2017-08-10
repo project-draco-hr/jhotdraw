@@ -1,0 +1,71 @@
+{
+  if (getParameter("Locale") != null) {
+    Locale.setDefault(new Locale(getParameter("Locale")));
+  }
+  final ResourceBundleUtil labels=ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+  try {
+    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+  }
+ catch (  Throwable e) {
+  }
+  try {
+    PopupFactory.setSharedInstance(new PopupFactory());
+  }
+ catch (  Throwable e) {
+  }
+  Container c=getContentPane();
+  final ProgressIndicator progress=new ProgressIndicator(getName(),labels.getString("progressInitializing"));
+  c.add(progress);
+  progress.revalidate();
+  new Worker<Drawing>(){
+    @Override protected Drawing construct() throws Exception {
+      Thread t=new Thread(){
+        @Override public void run(){
+          try {
+            drawingComponent=createDrawingComponent();
+          }
+ catch (          Throwable t) {
+            t.printStackTrace();
+          }
+        }
+      }
+;
+      t.start();
+      try {
+        progress.setNote(labels.getString("progressLoading"));
+        Drawing drawing=loadDrawing(progress);
+        progress.setNote(labels.getString("progressOpeningEditor"));
+        progress.setIndeterminate(true);
+        return drawing;
+      }
+  finally {
+        t.join();
+      }
+    }
+    @Override protected void done(    Drawing result){
+      Container c=getContentPane();
+      c.removeAll();
+      c.setLayout(new BorderLayout());
+      c.add(drawingComponent.getComponent());
+      initComponents();
+      if (result != null) {
+        setDrawing(result);
+      }
+      drawingComponent.revalidate();
+      ((JComponent)c).revalidate();
+    }
+    @Override protected void failed(    Throwable error){
+      Drawing d=createDrawing();
+      String message=(error.getMessage() == null) ? error.toString() : error.getMessage();
+      SVGTextAreaFigure txt=new SVGTextAreaFigure(labels.getFormatted("messageLoadFailed",getParameter("DrawingURL"),message));
+      txt.setBounds(new Point2D.Double(0,0),new Point2D.Double(getWidth(),getHeight()));
+      d.add(txt);
+      done(d);
+    }
+    @Override protected void finished(){
+      long end=System.currentTimeMillis();
+      System.out.println("AbstractDrawingApplet startup latency:" + (end - start));
+    }
+  }
+.start();
+}

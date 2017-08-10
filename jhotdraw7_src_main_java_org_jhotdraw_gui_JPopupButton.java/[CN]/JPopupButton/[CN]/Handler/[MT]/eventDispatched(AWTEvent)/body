@@ -1,0 +1,20 @@
+{
+  if (!(ev instanceof MouseEvent) || !(ev.getSource() instanceof Component)) {
+    return;
+  }
+  Component src=(Component)ev.getSource();
+  if (ev.getID() == MouseEvent.MOUSE_PRESSED) {
+    if (SwingUtilities.getWindowAncestor(src) == SwingUtilities.getWindowAncestor(JPopupButton.this)) {
+      JLayeredPane srcLP=(JLayeredPane)SwingUtilities.getAncestorOfClass(JLayeredPane.class,src);
+      Component srcLPChild=src;
+      while (srcLPChild.getParent() != srcLP) {
+        srcLPChild=srcLPChild.getParent();
+      }
+      if (srcLP.getLayer(srcLPChild) < JLayeredPane.POPUP_LAYER) {
+        popupMenu.setVisible(false);
+      }
+    }
+  }
+ else {
+  }
+}

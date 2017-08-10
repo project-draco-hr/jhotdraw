@@ -1,0 +1,5 @@
+{
+  NodeFigure that=(NodeFigure)super.clone();
+  that.createConnectors();
+  return that;
+}

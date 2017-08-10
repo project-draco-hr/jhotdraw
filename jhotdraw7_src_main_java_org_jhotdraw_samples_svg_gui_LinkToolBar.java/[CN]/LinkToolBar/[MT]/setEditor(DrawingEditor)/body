@@ -1,0 +1,10 @@
+{
+  if (displayer != null) {
+    displayer.dispose();
+    displayer=null;
+  }
+  super.setEditor(newValue);
+  if (newValue != null) {
+    displayer=new SelectionComponentDisplayer(editor,this);
+  }
+}

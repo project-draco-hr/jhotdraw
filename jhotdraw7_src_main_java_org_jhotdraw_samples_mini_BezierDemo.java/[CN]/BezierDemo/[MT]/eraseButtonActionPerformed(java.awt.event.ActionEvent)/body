@@ -1,0 +1,4 @@
+{
+  examples.clear();
+  canvas.repaint();
+}

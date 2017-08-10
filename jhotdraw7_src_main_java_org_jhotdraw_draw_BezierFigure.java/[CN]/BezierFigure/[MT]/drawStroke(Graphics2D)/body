@@ -1,0 +1,16 @@
+{
+  if (isClosed()) {
+    double grow=AttributeKeys.getPerpendicularDrawGrowth(this);
+    if (grow == 0d) {
+      g.draw(path);
+    }
+ else {
+      GrowStroke gs=new GrowStroke(grow,AttributeKeys.getStrokeTotalWidth(this) * get(STROKE_MITER_LIMIT));
+      g.draw(gs.createStrokedShape(path));
+    }
+  }
+ else {
+    g.draw(getCappedPath());
+  }
+  drawCaps(g);
+}

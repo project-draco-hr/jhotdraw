@@ -1,0 +1,5 @@
+{
+  this.isFilled=isFilled;
+  this.isStroked=isStroked;
+  this.isSolid=isSolid;
+}

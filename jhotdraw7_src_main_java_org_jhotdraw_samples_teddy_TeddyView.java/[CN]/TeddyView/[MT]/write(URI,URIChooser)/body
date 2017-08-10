@@ -1,0 +1,12 @@
+{
+  String characterSet, lineSeparator;
+  if (chooser == null || !(chooser instanceof JFileURIChooser) || !(((JFileURIChooser)chooser).getAccessory() instanceof CharacterSetAccessory)) {
+    characterSet=prefs.get("characterSet","UTF-8");
+    lineSeparator=prefs.get("lineSeparator","\n");
+  }
+ else {
+    characterSet=((CharacterSetAccessory)((JFileURIChooser)chooser).getAccessory()).getCharacterSet();
+    lineSeparator=((CharacterSetAccessory)((JFileURIChooser)chooser).getAccessory()).getLineSeparator();
+  }
+  write(f,characterSet,lineSeparator);
+}

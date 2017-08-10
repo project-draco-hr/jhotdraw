@@ -1,0 +1,25 @@
+{
+  if (!(ev instanceof MouseEvent) || !(ev.getSource() instanceof Component)) {
+    return;
+  }
+  MouseEvent me=(MouseEvent)ev;
+  Component src=(Component)ev.getSource();
+  Component invoker=JComponentPopup.this.getInvoker();
+  if (ev.getID() == MouseEvent.MOUSE_PRESSED) {
+    if (!SwingUtilities.isDescendingFrom(src,JComponentPopup.this) && SwingUtilities.getWindowAncestor(src) == SwingUtilities.getWindowAncestor(invoker)) {
+      JLayeredPane srcLP=(JLayeredPane)SwingUtilities.getAncestorOfClass(JLayeredPane.class,src);
+      Component srcLPChild=src;
+      while (srcLPChild.getParent() != srcLP) {
+        srcLPChild=srcLPChild.getParent();
+      }
+      if (srcLP.getLayer(srcLPChild) < JLayeredPane.POPUP_LAYER) {
+        JComponentPopup.this.setVisible(false);
+      }
+    }
+  }
+ else   if (ev.getID() == MouseEvent.MOUSE_CLICKED) {
+    if (me.getClickCount() == 2 && SwingUtilities.isDescendingFrom(src,JComponentPopup.this)) {
+      JComponentPopup.this.setVisible(false);
+    }
+  }
+}

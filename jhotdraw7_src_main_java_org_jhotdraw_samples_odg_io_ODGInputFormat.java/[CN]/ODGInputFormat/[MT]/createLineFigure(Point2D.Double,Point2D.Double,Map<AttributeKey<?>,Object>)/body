@@ -1,0 +1,6 @@
+{
+  ODGPathFigure figure=new ODGPathFigure();
+  figure.setBounds(p1,p2);
+  figure.setAttributes(a);
+  return figure;
+}

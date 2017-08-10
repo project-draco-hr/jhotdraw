@@ -1,0 +1,13 @@
+{
+  StringBuffer cookieList=new StringBuffer(rawCookies);
+  for (Iterator<Map.Entry<String,String>> i=cookies.entrySet().iterator(); i.hasNext(); ) {
+    Map.Entry<String,String> entry=i.next();
+    cookieList.append(entry.getKey() + "=" + entry.getValue());
+    if (i.hasNext()) {
+      cookieList.append("; ");
+    }
+  }
+  if (cookieList.length() > 0) {
+    connection.setRequestProperty("Cookie",cookieList.toString());
+  }
+}

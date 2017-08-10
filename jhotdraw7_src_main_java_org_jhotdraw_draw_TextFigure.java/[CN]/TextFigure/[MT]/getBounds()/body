@@ -1,0 +1,5 @@
+{
+  TextLayout layout=getTextLayout();
+  Rectangle2D.Double r=new Rectangle2D.Double(origin.x,origin.y,layout.getAdvance(),layout.getAscent() + layout.getDescent());
+  return r;
+}

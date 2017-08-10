@@ -1,0 +1,11 @@
+{
+  this.editor=editor;
+  this.weakRef=new WeakReference<JComponent>(component);
+  if (editor.getActiveView() != null) {
+    view=editor.getActiveView();
+    view.addPropertyChangeListener(this);
+    view.addFigureSelectionListener(this);
+  }
+  editor.addPropertyChangeListener(this);
+  updateVisibility();
+}

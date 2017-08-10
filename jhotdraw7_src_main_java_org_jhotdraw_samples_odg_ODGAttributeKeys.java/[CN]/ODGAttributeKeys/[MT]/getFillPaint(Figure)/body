@@ -1,0 +1,13 @@
+{
+  double opacity=f.get(FILL_OPACITY);
+  if (f.get(FILL_GRADIENT) != null) {
+    return f.get(FILL_GRADIENT).getPaint(f,opacity);
+  }
+  Color color=f.get(FILL_COLOR);
+  if (color != null) {
+    if (opacity != 1) {
+      color=new Color((color.getRGB() & 0xffffff) | (int)(opacity * 255) << 24,true);
+    }
+  }
+  return color;
+}

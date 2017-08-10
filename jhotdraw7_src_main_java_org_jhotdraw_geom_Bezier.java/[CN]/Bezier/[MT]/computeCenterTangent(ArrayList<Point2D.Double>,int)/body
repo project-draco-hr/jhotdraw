@@ -1,0 +1,9 @@
+{
+  Point2D.Double V1, V2, tHatCenter=new Point2D.Double();
+  V1=v2SubII(d.get(center - 1),d.get(center));
+  V2=v2SubII(d.get(center),d.get(center + 1));
+  tHatCenter.x=(V1.x + V2.x) / 2.0;
+  tHatCenter.y=(V1.y + V2.y) / 2.0;
+  tHatCenter=v2Normalize(tHatCenter);
+  return tHatCenter;
+}

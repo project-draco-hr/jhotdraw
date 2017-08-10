@@ -1,0 +1,12 @@
+{
+  this.factory=factory;
+  try {
+    document=getBuilder().parse(new InputSource(in));
+    current=document;
+  }
+ catch (  SAXException ex) {
+    IOException e=new IOException(ex.getMessage());
+    e.initCause(ex);
+    throw e;
+  }
+}

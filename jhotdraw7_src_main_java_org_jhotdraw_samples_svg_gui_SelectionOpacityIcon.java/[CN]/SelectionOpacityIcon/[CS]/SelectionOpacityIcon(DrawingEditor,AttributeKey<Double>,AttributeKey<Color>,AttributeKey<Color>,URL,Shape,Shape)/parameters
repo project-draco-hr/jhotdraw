@@ -1,0 +1,7 @@
+DrawingEditor editor
+AttributeKey<Double> opacityKey
+AttributeKey<Color> fillColorKey
+AttributeKey<Color> strokeColorKey
+URL imageLocation
+Shape fillShape
+Shape strokeShape

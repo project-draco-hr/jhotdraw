@@ -1,0 +1,27 @@
+{
+  initComponents();
+  models=new ArrayList<ColorSliderModel>();
+  views=new ArrayList<>();
+  sliderViews=new ArrayList<>();
+  handler=new Handler();
+  previewLabel.setOpaque(true);
+  chooserPanel.add(createSliderChooser(ColorSpace.getInstance(ColorSpace.CS_sRGB)));
+  chooserPanel.add(createColorWheelChooser(ICC_ColorSpace.getInstance(ICC_ColorSpace.CS_sRGB),0,1,2,JColorWheel.Type.SQUARE));
+  chooserPanel.add(createSliderChooser(CMYKNominalColorSpace.getInstance()));
+  chooserPanel.add(new JPanel());
+  chooserPanel.add(createColorWheelChooser(HSBColorSpace.getInstance()));
+  chooserPanel.add(createColorWheelChooser(HSVColorSpace.getInstance()));
+  chooserPanel.add(createColorWheelChooser(HSLColorSpace.getInstance()));
+  chooserPanel.add(createColorWheelChooser(HSLColorSpace.getInstance(),0,2,1));
+  chooserPanel.add(createColorWheelChooser(HSVPhysiologicColorSpace.getInstance()));
+  chooserPanel.add(createColorWheelChooser(HSLPhysiologicColorSpace.getInstance()));
+  chooserPanel.add(createColorWheelChooser(HSLPhysiologicColorSpace.getInstance(),0,2,1));
+  chooserPanel.add(new JPanel());
+  ColorSpace cs;
+  cs=new CIELABColorSpace();
+  chooserPanel.add(createColorWheelChooser(cs,1,2,0,JColorWheel.Type.SQUARE));
+  cs=new CIELCHabColorSpace();
+  chooserPanel.add(createColorWheelChooser(cs,2,1,0,JColorWheel.Type.POLAR));
+  chooserPanel.add(createColorWheelChooser(ICC_ColorSpace.getInstance(ICC_ColorSpace.CS_CIEXYZ),2,0,1,JColorWheel.Type.SQUARE));
+  chooserPanel.add(createColorWheelChooser(ICC_ColorSpace.getInstance(ICC_ColorSpace.CS_PYCC),1,2,0,JColorWheel.Type.SQUARE));
+}

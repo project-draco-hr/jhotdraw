@@ -1,0 +1,20 @@
+{
+  Object value;
+  value=readInheritAttribute(elem,"text-anchor","start");
+  if (SVG_TEXT_ANCHORS.get(value) != null) {
+    TEXT_ANCHOR.put(a,SVG_TEXT_ANCHORS.get(value));
+  }
+  value=readInheritAttribute(elem,"display-align","auto");
+  if (!"auto".equals(value)) {
+    if ("center".equals(value)) {
+      TEXT_ANCHOR.put(a,TextAnchor.MIDDLE);
+    }
+ else     if ("before".equals(value)) {
+      TEXT_ANCHOR.put(a,TextAnchor.END);
+    }
+  }
+  value=readInheritAttribute(elem,"text-align","start");
+  if (!"start".equals(value)) {
+    TEXT_ALIGN.put(a,SVG_TEXT_ALIGNS.get(value));
+  }
+}

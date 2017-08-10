@@ -1,0 +1,32 @@
+{
+  if (updateDepth++ == 0) {
+    Set<Figure> figures=getEditedFigures();
+    if (activeView == null || figures.isEmpty()) {
+    }
+ else {
+      T value=attributeEditor.getAttributeValue();
+      if (attributeRestoreData == null) {
+        attributeRestoreData=new LinkedList<Object>();
+        for (        Figure f : figures) {
+          attributeRestoreData.add(f.getAttributesRestoreData());
+        }
+      }
+      for (      Figure f : figures) {
+        f.willChange();
+        f.set(attributeKey,value);
+        for (        Map.Entry<AttributeKey<?>,Object> entry : defaultAttributes.entrySet()) {
+          f.set((AttributeKey<Object>)entry.getKey(),entry.getValue());
+        }
+        f.changed();
+      }
+      if (editor != null && isUpdateDrawingEditorDefaults) {
+        editor.setDefaultAttribute(attributeKey,value);
+      }
+      getActiveView().getDrawing().fireUndoableEditHappened(new UndoableAttributeEdit<T>(new HashSet<Figure>(figures),attributeKey,value,attributeRestoreData));
+      if (!attributeEditor.getValueIsAdjusting()) {
+        attributeRestoreData=null;
+      }
+    }
+  }
+  updateDepth--;
+}

@@ -1,0 +1,2 @@
+HashMap<Figure,Figure> oldToNew
+boolean disconnectIfNotInMap

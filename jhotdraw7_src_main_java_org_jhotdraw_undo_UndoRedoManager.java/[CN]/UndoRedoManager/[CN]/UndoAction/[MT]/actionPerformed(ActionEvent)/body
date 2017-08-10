@@ -1,0 +1,9 @@
+{
+  try {
+    undo();
+  }
+ catch (  CannotUndoException e) {
+    System.err.println("Cannot undo: " + e);
+    e.printStackTrace();
+  }
+}

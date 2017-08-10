@@ -1,0 +1,2 @@
+AttributeKey<T> key
+T value

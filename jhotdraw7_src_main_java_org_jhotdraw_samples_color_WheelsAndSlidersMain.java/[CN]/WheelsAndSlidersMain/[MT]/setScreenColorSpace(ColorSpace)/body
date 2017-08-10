@@ -1,0 +1,14 @@
+{
+  if (cs == null) {
+    screenColorProfileLabel.setText("sRGB");
+  }
+ else {
+    screenColorProfileLabel.setText(ColorUtil.getName(cs));
+  }
+  for (  JColorWheel wheel : views) {
+    wheel.setScreenColorSpace(cs);
+  }
+  for (  ColorSliderUI ui : sliderViews) {
+    ui.setScreenColorSpace(cs);
+  }
+}

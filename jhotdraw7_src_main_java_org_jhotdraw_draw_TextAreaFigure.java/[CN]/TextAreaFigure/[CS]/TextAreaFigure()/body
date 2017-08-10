@@ -1,0 +1,3 @@
+{
+  this(ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").getString("TextFigure.defaultText"));
+}

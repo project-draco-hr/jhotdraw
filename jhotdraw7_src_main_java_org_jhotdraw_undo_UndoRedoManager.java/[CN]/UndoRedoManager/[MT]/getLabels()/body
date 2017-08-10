@@ -1,0 +1,6 @@
+{
+  if (labels == null) {
+    labels=ResourceBundleUtil.getBundle("org.jhotdraw.undo.Labels");
+  }
+  return labels;
+}

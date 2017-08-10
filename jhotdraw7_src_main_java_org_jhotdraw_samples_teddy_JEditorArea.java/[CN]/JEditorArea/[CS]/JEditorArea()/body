@@ -1,0 +1,4 @@
+{
+  setEditorKit(new StyledEditorKit());
+  initComponents();
+}

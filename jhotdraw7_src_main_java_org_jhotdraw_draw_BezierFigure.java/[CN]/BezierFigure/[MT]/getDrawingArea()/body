@@ -1,0 +1,16 @@
+{
+  Rectangle2D.Double r=super.getDrawingArea();
+  if (getNodeCount() > 1) {
+    if (get(START_DECORATION) != null) {
+      Point2D.Double p1=getPoint(0,0);
+      Point2D.Double p2=getPoint(1,0);
+      r.add(get(START_DECORATION).getDrawingArea(this,p1,p2));
+    }
+    if (get(END_DECORATION) != null) {
+      Point2D.Double p1=getPoint(getNodeCount() - 1,0);
+      Point2D.Double p2=getPoint(getNodeCount() - 2,0);
+      r.add(get(END_DECORATION).getDrawingArea(this,p1,p2));
+    }
+  }
+  return r;
+}

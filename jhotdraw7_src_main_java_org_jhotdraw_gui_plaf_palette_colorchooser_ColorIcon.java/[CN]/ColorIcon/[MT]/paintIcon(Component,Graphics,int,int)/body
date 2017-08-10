@@ -1,0 +1,24 @@
+{
+  if (fillColor == null || fillColor.getAlpha() == 0) {
+    if (width == noColorImage.getWidth() && height == noColorImage.getHeight()) {
+      g.drawImage(noColorImage,x,y,c);
+    }
+ else {
+      g.setColor(Color.WHITE);
+      g.fillRect(x + 1,y + 1,width - 2,height - 2);
+      g.setColor(Color.red);
+      int[] xpoints=new int[]{x + 2,x + width - 5,x + width - 3,x + width - 3,x + 4,x + 2};
+      int[] ypoints=new int[]{y + height - 5,y + 2,y + 2,y + 4,y + height - 3,y + height - 3};
+      g.fillPolygon(xpoints,ypoints,xpoints.length);
+    }
+  }
+ else {
+    g.setColor(fillColor);
+    g.fillRect(x + 1,y + 1,width - 2,height - 2);
+  }
+  g.setColor(new Color(0x666666));
+  g.drawLine(x,y,x + width - 1,y);
+  g.drawLine(x + width - 1,y,x + width - 1,y + width - 1);
+  g.drawLine(x + width - 1,y + height - 1,x,y + height - 1);
+  g.drawLine(x,y + height - 1,x,y);
+}

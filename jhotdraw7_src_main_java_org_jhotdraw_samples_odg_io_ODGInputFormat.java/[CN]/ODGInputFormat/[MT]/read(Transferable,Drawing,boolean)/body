@@ -1,0 +1,9 @@
+{
+  InputStream in=(InputStream)t.getTransferData(new DataFlavor("application/vnd.oasis.opendocument.graphics","Image SVG"));
+  try {
+    read(in,drawing,replace);
+  }
+  finally {
+    in.close();
+  }
+}

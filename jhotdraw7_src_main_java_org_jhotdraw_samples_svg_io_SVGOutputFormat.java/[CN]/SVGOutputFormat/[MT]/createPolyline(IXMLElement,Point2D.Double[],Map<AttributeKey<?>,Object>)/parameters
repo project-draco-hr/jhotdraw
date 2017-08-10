@@ -1,0 +1,3 @@
+IXMLElement doc
+Point2D.Double[] points
+Map<AttributeKey<?>,Object> attributes

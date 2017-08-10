@@ -1,0 +1,4 @@
+DOMFactory factory
+String description
+String fileExtension
+String mimeType

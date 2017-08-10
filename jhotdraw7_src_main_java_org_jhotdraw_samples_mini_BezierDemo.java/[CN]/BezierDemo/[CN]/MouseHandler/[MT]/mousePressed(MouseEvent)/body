@@ -1,0 +1,8 @@
+{
+  example=new Example();
+  examples.add(example);
+  example.error=getError();
+  double zoomFactor=getZoomFactor();
+  example.digitized.moveTo(e.getX() / zoomFactor,e.getY() / zoomFactor);
+  canvas.repaint();
+}

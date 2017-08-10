@@ -1,0 +1,4 @@
+Color color
+String name
+int width
+int height

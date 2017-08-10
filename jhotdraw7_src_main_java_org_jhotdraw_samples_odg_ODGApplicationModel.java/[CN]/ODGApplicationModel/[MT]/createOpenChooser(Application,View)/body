@@ -1,0 +1,28 @@
+{
+  final JFileURIChooser c=new JFileURIChooser();
+  final HashMap<javax.swing.filechooser.FileFilter,InputFormat> fileFilterInputFormatMap=new HashMap<javax.swing.filechooser.FileFilter,InputFormat>();
+  c.putClientProperty("ffInputFormatMap",fileFilterInputFormatMap);
+  javax.swing.filechooser.FileFilter firstFF=null;
+  if (view == null) {
+    view=new ODGView();
+  }
+  for (  InputFormat format : ((ODGView)view).getDrawing().getInputFormats()) {
+    javax.swing.filechooser.FileFilter ff=format.getFileFilter();
+    if (firstFF == null) {
+      firstFF=ff;
+    }
+    fileFilterInputFormatMap.put(ff,format);
+    c.addChoosableFileFilter(ff);
+  }
+  c.setFileFilter(firstFF);
+  c.addPropertyChangeListener(new PropertyChangeListener(){
+    @Override public void propertyChange(    PropertyChangeEvent evt){
+      if ("fileFilterChanged".equals(evt.getPropertyName())) {
+        InputFormat inputFormat=fileFilterInputFormatMap.get(evt.getNewValue());
+        c.setAccessory((inputFormat == null) ? null : inputFormat.getInputFormatAccessory());
+      }
+    }
+  }
+);
+  return c;
+}

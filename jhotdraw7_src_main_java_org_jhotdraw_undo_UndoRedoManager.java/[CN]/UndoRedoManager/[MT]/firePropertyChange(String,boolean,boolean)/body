@@ -1,0 +1,3 @@
+{
+  propertySupport.firePropertyChange(propertyName,oldValue,newValue);
+}

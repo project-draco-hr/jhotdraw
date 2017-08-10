@@ -1,0 +1,16 @@
+{
+  if (dir == null) {
+    throw new IllegalArgumentException("dir must not be null");
+  }
+  angle=constrainAngle(angle);
+switch (dir) {
+case CLOCKWISE:
+    angle+=theta;
+  break;
+case COUNTER_CLOCKWISE:
+default :
+angle-=theta;
+break;
+}
+return angle;
+}

@@ -1,0 +1,9 @@
+{
+  DefaultDrawing drawing=new DefaultDrawing();
+  DOMStorableInputOutputFormat ioFormat=new DOMStorableInputOutputFormat(new NetFactory());
+  drawing.addInputFormat(ioFormat);
+  drawing.addInputFormat(new TextInputFormat(new NodeFigure()));
+  drawing.addOutputFormat(ioFormat);
+  drawing.addOutputFormat(new ImageOutputFormat());
+  return drawing;
+}

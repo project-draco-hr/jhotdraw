@@ -1,0 +1,6 @@
+{
+  if (key.equals(SVGAttributeKeys.TRANSFORM) || key.equals(SVGAttributeKeys.FONT_FACE) || key.equals(SVGAttributeKeys.FONT_BOLD)|| key.equals(SVGAttributeKeys.FONT_ITALIC)|| key.equals(SVGAttributeKeys.FONT_SIZE)) {
+    invalidate();
+  }
+  super.set(key,newValue);
+}

@@ -1,0 +1,3 @@
+{
+  return UIManager.getLookAndFeel().getID().equals("Aqua") || UIManager.getBoolean("Sheet.showAsSheet");
+}

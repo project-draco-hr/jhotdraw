@@ -1,0 +1,3 @@
+{
+  return Geom.angleToPoint(target.getBounds(),angle);
+}

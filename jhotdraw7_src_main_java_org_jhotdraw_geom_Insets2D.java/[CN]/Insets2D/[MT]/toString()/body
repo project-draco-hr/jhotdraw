@@ -1,0 +1,3 @@
+{
+  return getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1) + "[top=" + getTop()+ ",left="+ getLeft()+ ",bottom="+ getBottom()+ ",right="+ getRight()+ "]";
+}

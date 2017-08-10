@@ -1,0 +1,9 @@
+{
+  if (createdFigure != null) {
+    getDrawing().remove(createdFigure);
+    createdFigure=null;
+  }
+  targetFigure=null;
+  startConnector=endConnector=null;
+  super.deactivate(editor);
+}

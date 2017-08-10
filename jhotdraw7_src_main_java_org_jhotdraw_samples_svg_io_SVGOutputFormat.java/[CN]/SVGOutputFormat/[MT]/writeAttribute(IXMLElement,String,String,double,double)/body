@@ -1,0 +1,5 @@
+{
+  if (value != defaultValue) {
+    elem.setAttribute(name,toNumber(value));
+  }
+}

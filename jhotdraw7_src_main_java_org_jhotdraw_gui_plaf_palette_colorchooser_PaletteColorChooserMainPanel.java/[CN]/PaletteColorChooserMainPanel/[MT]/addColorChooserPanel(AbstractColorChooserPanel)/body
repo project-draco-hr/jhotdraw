@@ -1,0 +1,11 @@
+{
+  final String displayName=ccp.getDisplayName();
+  if (displayName == null) {
+    return;
+  }
+{
+    JPanel centerView=new JPanel(new BorderLayout());
+    centerView.add(ccp);
+    tabbedPane.add(centerView,displayName);
+  }
+}

@@ -1,0 +1,20 @@
+{
+  double numerator, denominator;
+  Point2D.Double[] Q1=new Point2D.Double[3], Q2=new Point2D.Double[2];
+  Point2D.Double Q_u, Q1_u, Q2_u;
+  double uPrime;
+  int i;
+  Q_u=bezierII(3,Q,u);
+  for (i=0; i <= 2; i++) {
+    Q1[i]=new Point2D.Double((Q[i + 1].x - Q[i].x) * 3.0,(Q[i + 1].y - Q[i].y) * 3.0);
+  }
+  for (i=0; i <= 1; i++) {
+    Q2[i]=new Point2D.Double((Q1[i + 1].x - Q1[i].x) * 2.0,(Q1[i + 1].y - Q1[i].y) * 2.0);
+  }
+  Q1_u=bezierII(2,Q1,u);
+  Q2_u=bezierII(1,Q2,u);
+  numerator=(Q_u.x - P.x) * (Q1_u.x) + (Q_u.y - P.y) * (Q1_u.y);
+  denominator=(Q1_u.x) * (Q1_u.x) + (Q1_u.y) * (Q1_u.y) + (Q_u.x - P.x) * (Q2_u.x) + (Q_u.y - P.y) * (Q2_u.y);
+  uPrime=u - (numerator / denominator);
+  return (uPrime);
+}

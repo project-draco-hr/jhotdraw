@@ -1,0 +1,8 @@
+{
+  if (prototype instanceof CompositeFigure) {
+    return prototype.clone();
+  }
+ else {
+    return super.createFigure();
+  }
+}

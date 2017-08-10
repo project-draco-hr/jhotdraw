@@ -1,0 +1,12 @@
+{
+  fc.removeAll();
+  fc.setLayout(new BorderLayout());
+  selectionPanel=new PaletteFontChooserSelectionPanel();
+  fc.add(selectionPanel,BorderLayout.CENTER);
+  previewPanel=new PaletteFontChooserPreviewPanel();
+  fc.add(previewPanel,BorderLayout.NORTH);
+  updateCollectionList();
+  updateFamilyList();
+  updateFaceList();
+  updatePreview();
+}

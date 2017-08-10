@@ -1,0 +1,16 @@
+{
+  if (obj == null) {
+    return false;
+  }
+  if (getClass() != obj.getClass()) {
+    return false;
+  }
+  final RelativeLocator other=(RelativeLocator)obj;
+  if (this.relativeX != other.relativeX) {
+    return false;
+  }
+  if (this.relativeY != other.relativeY) {
+    return false;
+  }
+  return true;
+}

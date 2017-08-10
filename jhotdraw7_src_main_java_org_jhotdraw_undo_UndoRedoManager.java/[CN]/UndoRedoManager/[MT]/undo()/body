@@ -1,0 +1,10 @@
+{
+  undoOrRedoInProgress=true;
+  try {
+    super.undo();
+  }
+  finally {
+    undoOrRedoInProgress=false;
+    updateActions();
+  }
+}

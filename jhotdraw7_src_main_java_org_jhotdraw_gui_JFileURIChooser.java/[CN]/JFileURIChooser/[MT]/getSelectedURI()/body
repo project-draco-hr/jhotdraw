@@ -1,0 +1,3 @@
+{
+  return getSelectedFile() == null ? null : getSelectedFile().toURI();
+}

@@ -1,0 +1,4 @@
+{
+  this((app.getComponent() == null) ? null : (Frame)SwingUtilities.getWindowAncestor(app.getComponent()),false);
+  this.app=app;
+}

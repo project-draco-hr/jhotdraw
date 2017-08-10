@@ -1,0 +1,6 @@
+JComponent c
+Graphics g
+String text
+int underlinedIndex
+int x
+int y

@@ -1,0 +1,8 @@
+{
+  double sum1=getLeft() + getBottom();
+  double sum2=getRight() + getTop();
+  double val1=sum1 * (sum1 + 1) / 2 + getLeft();
+  double val2=sum2 * (sum2 + 1) / 2 + getTop();
+  double sum3=val1 + val2;
+  return java.lang.Float.floatToIntBits((float)(sum3 * (sum3 + 1) / 2 + val2));
+}

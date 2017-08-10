@@ -1,0 +1,6 @@
+{
+  boolean oldValue=isConstrainerVisible;
+  isConstrainerVisible=newValue;
+  firePropertyChange(CONSTRAINER_VISIBLE_PROPERTY,oldValue,newValue);
+  repaint();
+}

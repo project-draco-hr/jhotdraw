@@ -1,0 +1,6 @@
+{
+  super.paintIcon(c,g,x,y);
+  if (c.isFocusOwner() && icons[FOCUS_RING] != null) {
+    icons[FOCUS_RING].paintIcon(c,g,x,y);
+  }
+}

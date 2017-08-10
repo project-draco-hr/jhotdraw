@@ -1,0 +1,15 @@
+{
+  SwingUtilities.invokeLater(new Runnable(){
+    @Override public void run(){
+      JFrame f=new JFrame("JHotDraw Draw Applet");
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      DrawApplet a=new DrawApplet();
+      f.getContentPane().add(a);
+      a.init();
+      f.setSize(620,400);
+      f.setVisible(true);
+      a.start();
+    }
+  }
+);
+}

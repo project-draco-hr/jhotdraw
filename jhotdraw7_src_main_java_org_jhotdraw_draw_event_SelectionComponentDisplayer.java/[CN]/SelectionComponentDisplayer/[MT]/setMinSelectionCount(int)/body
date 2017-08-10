@@ -1,0 +1,4 @@
+{
+  minSelectionCount=newValue;
+  updateVisibility();
+}

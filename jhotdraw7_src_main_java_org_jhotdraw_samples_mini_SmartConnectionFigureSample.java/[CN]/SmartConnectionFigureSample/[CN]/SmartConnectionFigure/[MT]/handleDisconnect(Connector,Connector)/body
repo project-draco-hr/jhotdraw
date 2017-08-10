@@ -1,0 +1,7 @@
+{
+  setAttributeEnabled(STROKE_TYPE,true);
+  willChange();
+  set(STROKE_TYPE,StrokeType.BASIC);
+  changed();
+  setAttributeEnabled(STROKE_TYPE,false);
+}

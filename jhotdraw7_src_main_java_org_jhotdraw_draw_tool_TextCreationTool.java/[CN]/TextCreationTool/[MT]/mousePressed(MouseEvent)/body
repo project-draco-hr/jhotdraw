@@ -1,0 +1,16 @@
+{
+  if (typingTarget != null) {
+    endEdit();
+    if (isToolDoneAfterCreation()) {
+      fireToolDone();
+    }
+  }
+ else {
+    super.mousePressed(e);
+    TextHolderFigure textHolder=(TextHolderFigure)getCreatedFigure();
+    getView().clearSelection();
+    getView().addToSelection(textHolder);
+    beginEdit(textHolder);
+    updateCursor(getView(),e.getPoint());
+  }
+}

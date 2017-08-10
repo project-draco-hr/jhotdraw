@@ -1,0 +1,16 @@
+{
+  for (  PropertyChangeListener l : propertySupport.getPropertyChangeListeners()) {
+    if (l == listener) {
+      propertySupport.removePropertyChangeListener(l);
+      break;
+    }
+    if (l instanceof WeakPropertyChangeListener) {
+      WeakPropertyChangeListener wl=(WeakPropertyChangeListener)l;
+      PropertyChangeListener target=wl.getTarget();
+      if (target == listener) {
+        propertySupport.removePropertyChangeListener(l);
+        break;
+      }
+    }
+  }
+}

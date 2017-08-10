@@ -1,0 +1,15 @@
+{
+  if (bufferedImage != null && imageData == null) {
+    try {
+      ByteArrayOutputStream bout=new ByteArrayOutputStream();
+      ImageIO.write(bufferedImage,"PNG",bout);
+      bout.close();
+      imageData=bout.toByteArray();
+    }
+ catch (    IOException e) {
+      e.printStackTrace();
+      bufferedImage=null;
+    }
+  }
+  return imageData;
+}

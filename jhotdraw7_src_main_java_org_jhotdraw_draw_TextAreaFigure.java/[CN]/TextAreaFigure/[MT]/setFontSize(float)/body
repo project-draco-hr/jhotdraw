@@ -1,0 +1,3 @@
+{
+  set(FONT_SIZE,new Double(size));
+}

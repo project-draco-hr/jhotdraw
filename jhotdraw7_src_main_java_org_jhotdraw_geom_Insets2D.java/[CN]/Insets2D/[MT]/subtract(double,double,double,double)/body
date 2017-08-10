@@ -1,0 +1,3 @@
+{
+  set(getTop() - top,getLeft() - left,getBottom() - bottom,getRight() - right);
+}

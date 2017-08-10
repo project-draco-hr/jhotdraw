@@ -1,0 +1,6 @@
+{
+  int oldValue=columnCount;
+  columnCount=newValue;
+  getPopupMenu().setLayout(new VerticalGridLayout(0,getColumnCount(),isVertical));
+  firePropertyChange(COLUMN_COUNT_PROPERTY,oldValue,newValue);
+}

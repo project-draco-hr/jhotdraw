@@ -1,0 +1,4 @@
+{
+  NAME.put(a,elem.getAttribute("name",DRAWING_NAMESPACE,null));
+  TRANSFORM.put(a,toTransform(elem.getAttribute("transform",DRAWING_NAMESPACE,null)));
+}

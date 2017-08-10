@@ -1,0 +1,7 @@
+{
+  this.textField=textField;
+  this.ccModel=ccModel;
+  this.component=component;
+  textField.getDocument().addDocumentListener(this);
+  ccModel.getBoundedRangeModel(component).addChangeListener(this);
+}

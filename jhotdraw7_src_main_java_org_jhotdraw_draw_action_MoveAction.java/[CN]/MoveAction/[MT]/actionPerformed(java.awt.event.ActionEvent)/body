@@ -1,0 +1,15 @@
+{
+  CompositeEdit edit;
+  AffineTransform tx=new AffineTransform();
+  tx.translate(dx,dy);
+  HashSet<Figure> transformedFigures=new HashSet<Figure>();
+  for (  Figure f : getView().getSelectedFigures()) {
+    if (f.isTransformable()) {
+      transformedFigures.add(f);
+      f.willChange();
+      f.transform(tx);
+      f.changed();
+    }
+  }
+  fireUndoableEditHappened(new TransformEdit(transformedFigures,tx));
+}

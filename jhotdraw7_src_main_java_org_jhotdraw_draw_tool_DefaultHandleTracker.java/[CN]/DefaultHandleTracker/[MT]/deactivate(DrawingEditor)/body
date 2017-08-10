@@ -1,0 +1,11 @@
+{
+  super.deactivate(editor);
+  DrawingView v=getView();
+  if (v != null) {
+    v.setCursor(Cursor.getDefaultCursor());
+    v.setActiveHandle(null);
+  }
+  clearHoverHandles();
+  dragLocation=null;
+  masterHandle.removeHandleListener(eventHandler);
+}

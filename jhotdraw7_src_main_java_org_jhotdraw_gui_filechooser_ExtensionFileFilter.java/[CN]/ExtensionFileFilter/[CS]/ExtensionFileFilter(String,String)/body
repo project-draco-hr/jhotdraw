@@ -1,0 +1,6 @@
+{
+  this.description=description;
+  this.extensions=new HashSet<String>();
+  extensions.add(extension.toLowerCase());
+  defaultExtension=extension;
+}

@@ -1,0 +1,9 @@
+{
+  if (!isChanging()) {
+    quadTree.remove(e.getFigure());
+    quadTree.add(e.getFigure(),e.getFigure().getDrawingArea());
+    needsSorting=true;
+    invalidate();
+    fireAreaInvalidated(e.getInvalidatedArea());
+  }
+}

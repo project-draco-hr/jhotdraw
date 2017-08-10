@@ -1,0 +1,11 @@
+{
+  if (DataFlavor.imageFlavor.match(flavor)) {
+    return true;
+  }
+  for (  String mimeType : mimeTypes) {
+    if (flavor.isMimeTypeEqual(mimeType)) {
+      return true;
+    }
+  }
+  return false;
+}

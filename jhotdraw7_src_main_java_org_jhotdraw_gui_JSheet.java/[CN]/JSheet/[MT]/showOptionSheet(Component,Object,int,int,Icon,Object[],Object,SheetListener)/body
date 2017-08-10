@@ -1,0 +1,11 @@
+{
+  JOptionPane pane=new JOptionPane(message,messageType,optionType,icon,options,initialValue);
+  pane.setInitialValue(initialValue);
+  pane.setComponentOrientation(((parentComponent == null) ? JOptionPane.getRootFrame() : parentComponent).getComponentOrientation());
+  int style=styleFromMessageType(messageType);
+  JSheet sheet=createSheet(pane,parentComponent,style);
+  pane.selectInitialValue();
+  sheet.addSheetListener(listener);
+  sheet.show();
+  sheet.toFront();
+}

@@ -1,0 +1,4 @@
+{
+  double tmp=1.0 - u;
+  return (tmp * tmp * tmp);
+}

@@ -1,0 +1,12 @@
+{
+  BufferedInputStream bin=(in instanceof BufferedInputStream) ? (BufferedInputStream)in : new BufferedInputStream(in);
+  bin.mark(2);
+  int magic=(bin.read() & 0xff) | ((bin.read() & 0xff) << 8);
+  bin.reset();
+  if (magic == GZIPInputStream.GZIP_MAGIC) {
+    super.read(new GZIPInputStream(bin),drawing,replace);
+  }
+ else {
+    super.read(bin,drawing,replace);
+  }
+}

@@ -1,0 +1,15 @@
+{
+  ArrayList<Integer> cornerIndices=findCorners(digitizedPoints,maxAngle,minDistance);
+  ArrayList<ArrayList<Point2D.Double>> segments=new ArrayList<ArrayList<Point2D.Double>>(cornerIndices.size() + 1);
+  if (cornerIndices.size() == 0) {
+    segments.add(new ArrayList<Point2D.Double>(digitizedPoints));
+  }
+ else {
+    segments.add(new ArrayList<Point2D.Double>(digitizedPoints.subList(0,cornerIndices.get(0) + 1)));
+    for (int i=1; i < cornerIndices.size(); i++) {
+      segments.add(new ArrayList<Point2D.Double>(digitizedPoints.subList(cornerIndices.get(i - 1),cornerIndices.get(i) + 1)));
+    }
+    segments.add(new ArrayList<Point2D.Double>(digitizedPoints.subList(cornerIndices.get(cornerIndices.size() - 1),digitizedPoints.size())));
+  }
+  return segments;
+}

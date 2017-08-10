@@ -1,0 +1,3 @@
+{
+  listenerList.remove(ToolListener.class,l);
+}

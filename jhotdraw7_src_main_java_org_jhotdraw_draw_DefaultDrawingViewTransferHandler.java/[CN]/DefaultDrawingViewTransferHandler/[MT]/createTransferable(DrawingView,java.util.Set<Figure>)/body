@@ -1,0 +1,37 @@
+{
+  if (DEBUG) {
+    System.out.println("DefaultDrawingViewTransferHandler .createTransferable(" + view + ","+ transferFigures+ ")");
+  }
+  Transferable retValue;
+  Drawing drawing=view.getDrawing();
+  exportedFigures=null;
+  if (drawing.getOutputFormats() == null || drawing.getOutputFormats().size() == 0) {
+    retValue=null;
+  }
+ else {
+    java.util.List<Figure> toBeCopied=drawing.sort(transferFigures);
+    if (toBeCopied.size() > 0) {
+      try {
+        CompositeTransferable transfer=new CompositeTransferable();
+        for (        OutputFormat format : drawing.getOutputFormats()) {
+          Transferable t=format.createTransferable(drawing,toBeCopied,view.getScaleFactor());
+          if (!transfer.isDataFlavorSupported(t.getTransferDataFlavors()[0])) {
+            transfer.add(t);
+          }
+        }
+        exportedFigures=new HashSet<Figure>(transferFigures);
+        retValue=transfer;
+      }
+ catch (      IOException e) {
+        if (DEBUG) {
+          e.printStackTrace();
+        }
+        retValue=null;
+      }
+    }
+ else {
+      retValue=null;
+    }
+  }
+  return retValue;
+}

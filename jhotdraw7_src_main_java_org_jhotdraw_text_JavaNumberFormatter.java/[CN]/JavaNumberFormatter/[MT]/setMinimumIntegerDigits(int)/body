@@ -1,0 +1,5 @@
+{
+  decimalFormat.setMinimumIntegerDigits(newValue);
+  scientificFormat.setMinimumIntegerDigits(newValue);
+  this.minIntDigits=newValue;
+}

@@ -1,0 +1,8 @@
+{
+  jList=new javax.swing.JList();
+  setBorder(javax.swing.BorderFactory.createEmptyBorder(4,6,6,6));
+  setLayout(new java.awt.GridBagLayout());
+  jList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+  jList.setLayoutOrientation(javax.swing.JList.VERTICAL_WRAP);
+  add(jList,new java.awt.GridBagConstraints());
+}

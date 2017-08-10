@@ -1,0 +1,39 @@
+{
+  String value;
+  double doubleValue;
+  value=readInheritAttribute(elem,"font-family","Dialog");
+  String[] familyNames=toQuotedAndCommaSeparatedArray(value);
+  Font font=null;
+  for (int i=0; i < familyNames.length; i++) {
+    try {
+      font=(Font)fontFormatter.stringToValue(familyNames[i]);
+      break;
+    }
+ catch (    ParseException e) {
+    }
+  }
+  if (font == null) {
+    if (familyNames.length > 0) {
+      fontFormatter.setAllowsUnknownFont(true);
+      try {
+        font=(Font)fontFormatter.stringToValue(familyNames[0]);
+      }
+ catch (      ParseException e) {
+      }
+      fontFormatter.setAllowsUnknownFont(false);
+    }
+  }
+  if (font == null) {
+    font=new Font("Dialog",Font.PLAIN,12);
+  }
+  FONT_FACE.put(a,font);
+  doubleValue=readInheritFontSizeAttribute(elem,"font-size","medium");
+  FONT_SIZE.put(a,doubleValue);
+  value=readInheritAttribute(elem,"font-style","normal");
+  FONT_ITALIC.put(a,"italic".equals(value));
+  value=readInheritAttribute(elem,"font-variant","normal");
+  value=readInheritAttribute(elem,"font-weight","normal");
+  FONT_BOLD.put(a,"bold".equals(value) || "bolder".equals(value) || "400".equals(value)|| "500".equals(value)|| "600".equals(value)|| "700".equals(value)|| "800".equals(value)|| "900".equals(value));
+  value=readAttribute(elem,"text-decoration","none");
+  FONT_UNDERLINE.put(a,"underline".equals(value));
+}

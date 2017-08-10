@@ -1,0 +1,6 @@
+{
+  labels=ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+  initComponents();
+  closeButton.setVisible(false);
+  setModel(model);
+}

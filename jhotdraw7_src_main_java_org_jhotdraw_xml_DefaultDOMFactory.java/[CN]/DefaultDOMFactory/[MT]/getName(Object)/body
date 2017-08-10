@@ -1,0 +1,10 @@
+{
+  String name=(o == null) ? null : classToNameMap.get(o.getClass());
+  if (name == null) {
+    name=super.getName(o);
+  }
+  if (name == null) {
+    throw new IllegalArgumentException("Storable class not known to factory. Storable class:" + o.getClass() + " Factory:"+ this.getClass());
+  }
+  return name;
+}

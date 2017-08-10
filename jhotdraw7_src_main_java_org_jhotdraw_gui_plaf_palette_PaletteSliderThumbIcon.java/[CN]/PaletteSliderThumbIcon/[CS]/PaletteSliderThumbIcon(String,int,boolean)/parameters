@@ -1,0 +1,3 @@
+String resource
+int tileCount
+boolean isTiledHorizontaly

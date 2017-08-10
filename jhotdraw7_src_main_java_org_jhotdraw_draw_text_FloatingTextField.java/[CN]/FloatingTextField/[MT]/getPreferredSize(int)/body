@@ -1,0 +1,4 @@
+{
+  textField.setColumns(cols);
+  return textField.getPreferredSize();
+}

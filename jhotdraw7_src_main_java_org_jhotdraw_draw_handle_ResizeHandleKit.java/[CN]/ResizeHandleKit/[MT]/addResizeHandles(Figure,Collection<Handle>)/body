@@ -1,0 +1,7 @@
+{
+  handles.add(new BoundsOutlineHandle(f));
+  if (f.isTransformable()) {
+    addCornerResizeHandles(f,handles);
+    addEdgeResizeHandles(f,handles);
+  }
+}

@@ -1,0 +1,10 @@
+{
+  Set<Figure> oldSelection=new HashSet<Figure>(selectedFigures);
+  if (selectedFigures.remove(figure)) {
+    Set<Figure> newSelection=new HashSet<Figure>(selectedFigures);
+    invalidateHandles();
+    figure.removeFigureListener(handleInvalidator);
+    fireSelectionChanged(oldSelection,newSelection);
+    repaint();
+  }
+}

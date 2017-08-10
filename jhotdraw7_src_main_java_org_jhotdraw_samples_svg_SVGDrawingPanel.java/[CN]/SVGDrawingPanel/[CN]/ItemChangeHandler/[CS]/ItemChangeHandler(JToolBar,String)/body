@@ -1,0 +1,4 @@
+{
+  this.toolbar=toolbar;
+  this.prefkey=prefkey;
+}

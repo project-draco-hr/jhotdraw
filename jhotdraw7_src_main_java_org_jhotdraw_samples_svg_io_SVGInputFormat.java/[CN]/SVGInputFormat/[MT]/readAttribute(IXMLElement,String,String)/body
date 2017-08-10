@@ -1,0 +1,23 @@
+{
+  if (elem.hasAttribute(attributeName,SVG_NAMESPACE)) {
+    String value=elem.getAttribute(attributeName,SVG_NAMESPACE,null);
+    if ("inherit".equals(value)) {
+      return readAttribute(elem.getParent(),attributeName,defaultValue);
+    }
+ else {
+      return value;
+    }
+  }
+ else   if (elem.hasAttribute(attributeName)) {
+    String value=elem.getAttribute(attributeName,null);
+    if ("inherit".equals(value)) {
+      return readAttribute(elem.getParent(),attributeName,defaultValue);
+    }
+ else {
+      return value;
+    }
+  }
+ else {
+    return defaultValue;
+  }
+}

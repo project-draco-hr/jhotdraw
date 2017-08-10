@@ -1,0 +1,6 @@
+{
+  super.undo();
+  owner.willChange();
+  owner.setNode(index,oldValue);
+  owner.changed();
+}

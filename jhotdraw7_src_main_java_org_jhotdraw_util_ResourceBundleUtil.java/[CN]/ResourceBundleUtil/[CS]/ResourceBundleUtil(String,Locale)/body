@@ -1,0 +1,5 @@
+{
+  this.locale=locale;
+  this.baseName=baseName;
+  this.resource=ResourceBundle.getBundle(baseName,locale);
+}

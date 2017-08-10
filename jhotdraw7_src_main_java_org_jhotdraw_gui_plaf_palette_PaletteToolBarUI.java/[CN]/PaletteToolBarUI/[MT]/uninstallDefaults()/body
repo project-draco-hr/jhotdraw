@@ -1,0 +1,11 @@
+{
+  LookAndFeel.uninstallBorder(toolBar);
+  dockingColor=null;
+  floatingColor=null;
+  dockingBorderColor=null;
+  floatingBorderColor=null;
+  installNormalBorders(toolBar);
+  rolloverBorder=null;
+  nonRolloverBorder=null;
+  nonRolloverToggleBorder=null;
+}

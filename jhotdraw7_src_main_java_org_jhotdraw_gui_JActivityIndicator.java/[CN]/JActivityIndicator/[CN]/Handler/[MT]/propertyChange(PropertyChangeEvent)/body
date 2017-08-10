@@ -1,0 +1,8 @@
+{
+  if (evt.getPropertyName() == ActivityModel.INDETERMINATE_PROPERTY) {
+    updateIndeterminate();
+  }
+  if (evt.getPropertyName() == ActivityModel.NOTE_PROPERTY) {
+    updateToolTip();
+  }
+}

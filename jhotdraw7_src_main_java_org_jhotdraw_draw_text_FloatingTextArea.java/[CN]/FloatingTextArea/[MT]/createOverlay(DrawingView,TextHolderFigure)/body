@@ -1,0 +1,9 @@
+{
+  view.getComponent().add(editScrollContainer,0);
+  editedFigure=figure;
+  this.view=view;
+  if (editedFigure != null) {
+    editedFigure.addFigureListener(figureHandler);
+    updateWidget();
+  }
+}

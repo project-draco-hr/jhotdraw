@@ -1,0 +1,5 @@
+{
+  if (chooser.getTransferHandler() instanceof UIResource) {
+    chooser.setTransferHandler(null);
+  }
+}

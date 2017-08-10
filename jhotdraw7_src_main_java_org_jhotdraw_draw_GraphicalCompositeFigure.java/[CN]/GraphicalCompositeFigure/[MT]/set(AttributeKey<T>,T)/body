@@ -1,0 +1,9 @@
+{
+  if (forbiddenAttributes == null || !forbiddenAttributes.contains(key)) {
+    if (getPresentationFigure() != null) {
+      getPresentationFigure().set(key,newValue);
+    }
+    T oldValue=key.put(attributes,newValue);
+    fireAttributeChanged(key,oldValue,newValue);
+  }
+}

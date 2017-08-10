@@ -1,0 +1,6 @@
+{
+  super.removeNotify(drawing);
+  if (getPresentationFigure() != null) {
+    getPresentationFigure().removeNotify(drawing);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").getString("handle.fontSize.toolTipText");
+}

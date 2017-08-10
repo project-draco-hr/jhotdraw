@@ -1,0 +1,5 @@
+{
+  if (tabPlacement == TOP || tabPlacement == BOTTOM) {
+    super.normalizeTabRuns(tabPlacement,tabCount,start,max);
+  }
+}

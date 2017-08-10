@@ -1,0 +1,65 @@
+{
+  labels=PaletteLookAndFeel.getInstance();
+  initComponents();
+  PaletteLookAndFeel plaf=PaletteLookAndFeel.getInstance();
+  setUI(PalettePanelUI.createUI(this));
+  redLabel.setUI((LabelUI)PaletteLabelUI.createUI(redLabel));
+  greenLabel.setUI((LabelUI)PaletteLabelUI.createUI(greenLabel));
+  blueLabel.setUI((LabelUI)PaletteLabelUI.createUI(blueLabel));
+  redField.setUI((TextUI)PaletteTextFieldUI.createUI(redField));
+  greenField.setUI((TextUI)PaletteTextFieldUI.createUI(greenField));
+  blueField.setUI((TextUI)PaletteTextFieldUI.createUI(blueField));
+  ccModel.getBoundedRangeModel(0).setMaximum(255);
+  ccModel.getBoundedRangeModel(1).setMaximum(255);
+  ccModel.getBoundedRangeModel(2).setMaximum(255);
+  Font font=plaf.getFont("ColorChooser.font");
+  redLabel.setFont(font);
+  redSlider.setFont(font);
+  redField.setFont(font);
+  greenLabel.setFont(font);
+  greenSlider.setFont(font);
+  greenField.setFont(font);
+  blueLabel.setFont(font);
+  blueSlider.setFont(font);
+  blueField.setFont(font);
+  int textSliderGap=plaf.getInt("ColorChooser.textSliderGap");
+  if (textSliderGap != 0) {
+    Insets fieldInsets=new Insets(0,textSliderGap,0,0);
+    GridBagLayout layout=(GridBagLayout)getLayout();
+    GridBagConstraints gbc;
+    gbc=layout.getConstraints(redField);
+    gbc.insets=fieldInsets;
+    layout.setConstraints(redField,gbc);
+    gbc=layout.getConstraints(greenField);
+    gbc.insets=fieldInsets;
+    layout.setConstraints(greenField,gbc);
+    gbc=layout.getConstraints(blueField);
+    gbc.insets=fieldInsets;
+    layout.setConstraints(blueField,gbc);
+  }
+  ccModel.configureSlider(0,redSlider);
+  ccModel.configureSlider(1,greenSlider);
+  ccModel.configureSlider(2,blueSlider);
+  redField.setText(Integer.toString(redSlider.getValue()));
+  greenField.setText(Integer.toString(greenSlider.getValue()));
+  blueField.setText(Integer.toString(blueSlider.getValue()));
+  new ColorSliderTextFieldHandler(redField,ccModel,0);
+  new ColorSliderTextFieldHandler(greenField,ccModel,1);
+  new ColorSliderTextFieldHandler(blueField,ccModel,2);
+  ccModel.addChangeListener(new ChangeListener(){
+    @Override public void stateChanged(    ChangeEvent evt){
+      if (updateRecursion++ == 0) {
+        setColorToModel(new Color(ccModel.getBoundedRangeModel(0).getValue(),ccModel.getBoundedRangeModel(1).getValue(),ccModel.getBoundedRangeModel(2).getValue()));
+      }
+      updateRecursion--;
+    }
+  }
+);
+  redField.setMinimumSize(redField.getPreferredSize());
+  greenField.setMinimumSize(greenField.getPreferredSize());
+  blueField.setMinimumSize(blueField.getPreferredSize());
+  EmptyBorder bm=new EmptyBorder(0,0,0,0);
+  redLabel.setBorder(bm);
+  greenLabel.setBorder(bm);
+  blueLabel.setBorder(bm);
+}

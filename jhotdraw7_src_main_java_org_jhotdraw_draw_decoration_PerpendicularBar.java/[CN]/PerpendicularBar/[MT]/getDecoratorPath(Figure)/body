@@ -1,0 +1,7 @@
+{
+  Path2D.Double path=new Path2D.Double();
+  double halfHeight=height / 2;
+  path.moveTo(+halfHeight,0);
+  path.lineTo(-halfHeight,0);
+  return path;
+}

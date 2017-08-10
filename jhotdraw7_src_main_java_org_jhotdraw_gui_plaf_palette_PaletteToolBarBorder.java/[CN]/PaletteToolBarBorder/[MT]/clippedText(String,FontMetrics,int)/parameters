@@ -1,0 +1,3 @@
+String text
+FontMetrics fm
+int availTextWidth

@@ -1,0 +1,17 @@
+{
+  int count=views.size();
+switch (count) {
+case 0:
+    infoLabel.setText(labels.getString("ActivityWindow.noActivities.text"));
+  cancelAllButton.setEnabled(false);
+break;
+case 1:
+infoLabel.setText(labels.getString("ActivityWindow.oneActivity.text"));
+cancelAllButton.setEnabled(true);
+break;
+default :
+infoLabel.setText(labels.getFormatted("ActivityWindow.nActivities.text",count));
+cancelAllButton.setEnabled(true);
+break;
+}
+}

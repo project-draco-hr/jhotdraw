@@ -1,0 +1,3 @@
+{
+  return (emptyDrawingLabel == null) ? null : emptyDrawingLabel.getText();
+}

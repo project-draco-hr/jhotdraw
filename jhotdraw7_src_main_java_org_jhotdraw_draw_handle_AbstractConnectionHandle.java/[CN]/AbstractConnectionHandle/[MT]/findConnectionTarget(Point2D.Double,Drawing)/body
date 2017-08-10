@@ -1,0 +1,13 @@
+{
+  Figure targetFigure=findConnectableFigure(p,drawing);
+  if (getSource() == null && targetFigure != null) {
+    return findConnector(p,targetFigure,getOwner());
+  }
+ else   if (targetFigure != null) {
+    Connector target=findConnector(p,targetFigure,getOwner());
+    if ((targetFigure != null) && targetFigure.isConnectable() && !targetFigure.includes(getOwner())&& (canConnect(getSource(),target))) {
+      return target;
+    }
+  }
+  return null;
+}

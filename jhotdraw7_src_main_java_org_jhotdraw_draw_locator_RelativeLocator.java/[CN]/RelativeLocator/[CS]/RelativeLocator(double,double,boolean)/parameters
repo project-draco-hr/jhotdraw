@@ -1,0 +1,3 @@
+double relativeX
+double relativeY
+boolean isTransform

@@ -1,0 +1,20 @@
+{
+  if (e.getSource() == drawing) {
+    AttributeKey<?> a=e.getAttribute();
+    if (a.equals(CANVAS_HEIGHT) || a.equals(CANVAS_WIDTH)) {
+      validateViewTranslation();
+      repaint();
+    }
+    if (e.getInvalidatedArea() != null) {
+      repaintDrawingArea(e.getInvalidatedArea());
+    }
+ else {
+      repaintDrawingArea(viewToDrawing(getCanvasViewBounds()));
+    }
+  }
+ else {
+    if (e.getInvalidatedArea() != null) {
+      repaintDrawingArea(e.getInvalidatedArea());
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  if (isClosed() || get(UNCLOSED_PATH_FILLED)) {
+    double grow=AttributeKeys.getPerpendicularFillGrowth(this);
+    if (grow == 0d) {
+      g.fill(path);
+    }
+ else {
+      GrowStroke gs=new GrowStroke(grow,AttributeKeys.getStrokeTotalWidth(this) * get(STROKE_MITER_LIMIT));
+      g.fill(gs.createStrokedShape(path));
+    }
+  }
+}

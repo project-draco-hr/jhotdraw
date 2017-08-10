@@ -1,0 +1,3 @@
+{
+  installPalettePrefsHandler(prefs,name,window,0);
+}

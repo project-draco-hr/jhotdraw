@@ -1,0 +1,31 @@
+{
+  if (drawing.getChildCount() == 0) {
+    return new BufferedImage(1,1,BufferedImage.TYPE_INT_ARGB);
+  }
+  Rectangle2D.Double drawBounds=null;
+  for (  Figure f : figures) {
+    if (drawBounds == null) {
+      drawBounds=f.getDrawingArea();
+    }
+ else {
+      drawBounds.add(f.getDrawingArea());
+    }
+  }
+  if (clipToFigures) {
+    AffineTransform transform=new AffineTransform();
+    transform.translate(-drawBounds.x * scaleFactor,-drawBounds.y * scaleFactor);
+    transform.scale(scaleFactor,scaleFactor);
+    return toImage(drawing,figures,transform,new Dimension((int)(drawBounds.width * scaleFactor),(int)(drawBounds.height * scaleFactor)));
+  }
+ else {
+    AffineTransform transform=new AffineTransform();
+    if (drawBounds.x < 0) {
+      transform.translate(-drawBounds.x * scaleFactor,0);
+    }
+    if (drawBounds.y < 0) {
+      transform.translate(0,-drawBounds.y * scaleFactor);
+    }
+    transform.scale(scaleFactor,scaleFactor);
+    return toImage(drawing,figures,transform,new Dimension((int)((Math.max(0,drawBounds.x) + drawBounds.width) * scaleFactor),(int)((Math.max(0,drawBounds.y) + drawBounds.height) * scaleFactor)));
+  }
+}

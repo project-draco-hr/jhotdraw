@@ -1,0 +1,13 @@
+{
+  view.getComponent().requestFocus();
+  if (textField != null) {
+    textField.setVisible(false);
+    view.getComponent().remove(textField);
+    Rectangle bounds=textField.getBounds();
+    view.getComponent().repaint(bounds.x,bounds.y,bounds.width,bounds.height);
+  }
+  if (editedFigure != null) {
+    editedFigure.removeFigureListener(figureHandler);
+    editedFigure=null;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  super.addNotify(drawing);
+  if (getPresentationFigure() != null) {
+    getPresentationFigure().addNotify(drawing);
+  }
+}

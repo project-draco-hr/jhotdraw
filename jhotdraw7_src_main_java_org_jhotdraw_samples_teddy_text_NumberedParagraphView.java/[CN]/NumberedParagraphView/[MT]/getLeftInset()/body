@@ -1,0 +1,4 @@
+{
+  short left=super.getLeftInset();
+  return (viewFactory.isLineNumbersVisible()) ? (short)(left + NUMBERS_WIDTH) : left;
+}

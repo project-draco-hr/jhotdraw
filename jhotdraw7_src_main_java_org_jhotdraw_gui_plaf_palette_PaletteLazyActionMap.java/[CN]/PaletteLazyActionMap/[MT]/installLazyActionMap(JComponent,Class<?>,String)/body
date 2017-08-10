@@ -1,0 +1,8 @@
+{
+  ActionMap map=(ActionMap)UIManager.get(defaultsKey);
+  if (map == null) {
+    map=new PaletteLazyActionMap(loaderClass);
+    UIManager.getLookAndFeelDefaults().put(defaultsKey,map);
+  }
+  SwingUtilities.replaceUIActionMap(c,map);
+}

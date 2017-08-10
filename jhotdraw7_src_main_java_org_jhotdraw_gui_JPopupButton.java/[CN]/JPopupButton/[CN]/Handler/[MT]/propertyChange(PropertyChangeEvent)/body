@@ -1,0 +1,8 @@
+{
+  if ("enabled".equals(evt.getPropertyName())) {
+    setEnabled(((Boolean)evt.getNewValue()).booleanValue());
+  }
+ else {
+    repaint();
+  }
+}

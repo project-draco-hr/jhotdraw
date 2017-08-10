@@ -1,0 +1,3 @@
+{
+  return new ExtensionFileFilter("Open Document Drawing (ODG)","odg");
+}

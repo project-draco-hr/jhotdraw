@@ -1,0 +1,8 @@
+{
+  if (models.remove(model)) {
+    model.removePropertyChangeListener(handler);
+    updateProgressBar();
+    updateToolTip();
+    updateIndeterminate();
+  }
+}

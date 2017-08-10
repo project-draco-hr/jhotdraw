@@ -1,0 +1,4 @@
+{
+  labels.configureAction(this,"edit.redo");
+  setEnabled(false);
+}

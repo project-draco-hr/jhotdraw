@@ -1,0 +1,3 @@
+{
+  prefs.putBoolean(prefsPrefix + ".visible",true);
+}

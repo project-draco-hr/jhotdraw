@@ -1,0 +1,7 @@
+{
+  returnValue=CANCEL_OPTION;
+  if (dialog != null) {
+    dialog.setVisible(false);
+  }
+  fireActionPerformed(CANCEL_SELECTION);
+}

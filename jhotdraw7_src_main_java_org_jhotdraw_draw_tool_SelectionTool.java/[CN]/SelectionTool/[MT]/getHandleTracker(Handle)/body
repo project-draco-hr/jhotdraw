@@ -1,0 +1,7 @@
+{
+  if (handleTracker == null) {
+    handleTracker=new DefaultHandleTracker();
+  }
+  handleTracker.setHandles(handle,getView().getCompatibleHandles(handle));
+  return handleTracker;
+}

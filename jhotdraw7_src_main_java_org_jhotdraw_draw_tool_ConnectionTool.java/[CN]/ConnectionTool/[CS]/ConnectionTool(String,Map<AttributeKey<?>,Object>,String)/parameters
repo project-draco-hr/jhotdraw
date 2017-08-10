@@ -1,0 +1,3 @@
+String prototypeClassName
+Map<AttributeKey<?>,Object> attributes
+String presentationName

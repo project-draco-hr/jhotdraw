@@ -1,0 +1,4 @@
+{
+  x[index]=p.x;
+  y[index]=p.y;
+}

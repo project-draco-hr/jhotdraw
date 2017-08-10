@@ -1,0 +1,7 @@
+{
+  super.transform(tx);
+  for (  Figure f : children) {
+    f.transform(tx);
+  }
+  invalidate();
+}

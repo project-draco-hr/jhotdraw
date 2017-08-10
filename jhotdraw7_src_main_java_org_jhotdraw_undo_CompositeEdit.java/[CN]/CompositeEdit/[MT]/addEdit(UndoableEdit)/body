@@ -1,0 +1,12 @@
+{
+  if (anEdit == this) {
+    end();
+    return true;
+  }
+ else   if (isInProgress() && (anEdit instanceof CompositeEdit)) {
+    return true;
+  }
+ else {
+    return super.addEdit(anEdit);
+  }
+}

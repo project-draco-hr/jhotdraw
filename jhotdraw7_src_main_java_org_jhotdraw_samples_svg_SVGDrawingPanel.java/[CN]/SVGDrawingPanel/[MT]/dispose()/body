@@ -1,0 +1,21 @@
+{
+  toolsPane.removeContainerListener(containerHandler);
+  containerHandler=null;
+  setEditor(null);
+  for (  PropertyChangeListener pcl : view.getListeners(PropertyChangeListener.class)) {
+    view.removePropertyChangeListener(pcl);
+  }
+  view.setDrawing(null);
+  actionToolBar.dispose();
+  alignToolBar.dispose();
+  arrangeToolBar.dispose();
+  canvasToolBar.dispose();
+  creationToolBar.dispose();
+  figureToolBar.dispose();
+  fillToolBar.dispose();
+  fontToolBar.dispose();
+  linkToolBar.dispose();
+  strokeToolBar.dispose();
+  viewToolBar.dispose();
+  removeAll();
+}

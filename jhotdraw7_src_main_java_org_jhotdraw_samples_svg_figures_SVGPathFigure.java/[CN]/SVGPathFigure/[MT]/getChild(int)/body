@@ -1,0 +1,3 @@
+{
+  return (SVGBezierFigure)super.getChild(index);
+}

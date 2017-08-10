@@ -1,0 +1,31 @@
+{
+  String value=null;
+  if (elem.hasAttribute(attributeName,SVG_NAMESPACE)) {
+    value=elem.getAttribute(attributeName,SVG_NAMESPACE,null);
+  }
+ else   if (elem.hasAttribute(attributeName)) {
+    value=elem.getAttribute(attributeName,null);
+  }
+ else   if (elem.getParent() != null && (elem.getParent().getNamespace() == null || elem.getParent().getNamespace().equals(SVG_NAMESPACE))) {
+    return readInheritFontSizeAttribute(elem.getParent(),attributeName,defaultValue);
+  }
+ else {
+    value=defaultValue;
+  }
+  if ("inherit".equals(value)) {
+    return readInheritFontSizeAttribute(elem.getParent(),attributeName,defaultValue);
+  }
+ else   if (SVG_ABSOLUTE_FONT_SIZES.containsKey(value)) {
+    return SVG_ABSOLUTE_FONT_SIZES.get(value);
+  }
+ else   if (SVG_RELATIVE_FONT_SIZES.containsKey(value)) {
+    return SVG_RELATIVE_FONT_SIZES.get(value) * readInheritFontSizeAttribute(elem.getParent(),attributeName,defaultValue);
+  }
+ else   if (value.endsWith("%")) {
+    double factor=Double.valueOf(value.substring(0,value.length() - 1));
+    return factor * readInheritFontSizeAttribute(elem.getParent(),attributeName,defaultValue);
+  }
+ else {
+    return toNumber(elem,value);
+  }
+}

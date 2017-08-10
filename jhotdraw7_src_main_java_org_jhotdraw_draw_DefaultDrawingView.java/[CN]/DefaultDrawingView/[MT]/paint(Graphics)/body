@@ -1,0 +1,5 @@
+{
+  if (paintEnabled) {
+    super.paint(g);
+  }
+}

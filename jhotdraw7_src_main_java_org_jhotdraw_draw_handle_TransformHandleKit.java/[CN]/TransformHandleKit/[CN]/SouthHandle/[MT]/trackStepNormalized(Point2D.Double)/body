@@ -1,0 +1,4 @@
+{
+  Rectangle2D.Double r=getTransformedBounds();
+  transform(new Point2D.Double(r.x,r.y),new Point2D.Double(r.x + r.width,Math.max(r.y + 1,p.y)));
+}

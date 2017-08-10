@@ -1,0 +1,32 @@
+{
+  for (  IXMLElement child : elem.getChildren()) {
+    String ns=child.getNamespace();
+    String name=child.getName();
+    if ("default-style".equals(name) && (ns == null || ns.equals(STYLE_NAMESPACE))) {
+      readDefaultStyleElement(child,styles);
+    }
+ else     if ("layer-set".equals(name) && (ns == null || ns.equals(DRAWING_NAMESPACE))) {
+      readLayerSetElement(child,styles);
+    }
+ else     if ("list-style".equals(name) && (ns == null || ns.equals(TEXT_NAMESPACE))) {
+      readListStyleElement(child,styles);
+    }
+ else     if ("marker".equals(name) && (ns == null || ns.equals(DRAWING_NAMESPACE))) {
+      readMarkerElement(child,styles);
+    }
+ else     if ("master-page".equals(name) && (ns == null || ns.equals(STYLE_NAMESPACE))) {
+      readMasterPageElement(child,styles);
+    }
+ else     if ("page-layout".equals(name) && (ns == null || ns.equals(STYLE_NAMESPACE))) {
+      readPageLayoutElement(child,styles);
+    }
+ else     if ("style".equals(name) && (ns == null || ns.equals(STYLE_NAMESPACE))) {
+      readStyleElement(child,styles);
+    }
+ else {
+      if (DEBUG) {
+        System.out.println("ODGStylesReader unsupported <" + elem.getName() + "> child: "+ child);
+      }
+    }
+  }
+}

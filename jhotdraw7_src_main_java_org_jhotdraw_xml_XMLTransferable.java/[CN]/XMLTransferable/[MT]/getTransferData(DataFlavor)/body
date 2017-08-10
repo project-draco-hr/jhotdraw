@@ -1,0 +1,8 @@
+{
+  if (this.flavor.equals(flavor)) {
+    return new ByteArrayInputStream(data);
+  }
+ else {
+    throw new UnsupportedFlavorException(flavor);
+  }
+}

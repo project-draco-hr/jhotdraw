@@ -1,0 +1,7 @@
+{
+  view.getDrawing().fireUndoableEditHappened(new TransformRestoreEdit(getOwner(),restoreData,getOwner().getTransformRestoreData()));
+  fireAreaInvalidated(getDrawingArea());
+  location=null;
+  invalidate();
+  fireAreaInvalidated(getDrawingArea());
+}

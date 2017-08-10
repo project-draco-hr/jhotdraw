@@ -1,0 +1,32 @@
+{
+  double opacity=get(OPACITY);
+  opacity=Math.min(Math.max(0d,opacity),1d);
+  if (opacity != 0d) {
+    Composite savedComposite=g.getComposite();
+    if (opacity != 1d) {
+      g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,(float)opacity));
+    }
+    BufferedImage image=getBufferedImage();
+    if (image != null) {
+      if (get(TRANSFORM) != null) {
+        Graphics2D gx=(Graphics2D)g.create();
+        gx.setRenderingHints(g.getRenderingHints());
+        gx.transform(get(TRANSFORM));
+        gx.drawImage(image,(int)rectangle.x,(int)rectangle.y,(int)rectangle.width,(int)rectangle.height,null);
+        gx.dispose();
+      }
+ else {
+        g.drawImage(image,(int)rectangle.x,(int)rectangle.y,(int)rectangle.width,(int)rectangle.height,null);
+      }
+    }
+ else {
+      Shape shape=getTransformedShape();
+      g.setColor(Color.red);
+      g.setStroke(new BasicStroke());
+      g.draw(shape);
+    }
+    if (opacity != 1d) {
+      g.setComposite(savedComposite);
+    }
+  }
+}

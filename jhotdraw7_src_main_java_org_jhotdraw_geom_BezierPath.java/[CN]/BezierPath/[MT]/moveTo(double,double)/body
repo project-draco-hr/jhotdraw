@@ -1,0 +1,8 @@
+{
+  if (size() != 0) {
+    throw new IllegalPathStateException("moveTo only allowed when empty");
+  }
+  Node node=new Node(x1,y1);
+  node.keepColinear=false;
+  add(node);
+}

@@ -1,0 +1,6 @@
+{
+  if (cachedDefaults == null) {
+    cachedDefaults=getDefaults();
+  }
+  return cachedDefaults;
+}

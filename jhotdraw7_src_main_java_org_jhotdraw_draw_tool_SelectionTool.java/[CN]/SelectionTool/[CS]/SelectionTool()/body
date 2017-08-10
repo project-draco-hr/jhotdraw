@@ -1,0 +1,5 @@
+{
+  tracker=getSelectAreaTracker();
+  trackerHandler=new TrackerHandler();
+  tracker.addToolListener(trackerHandler);
+}

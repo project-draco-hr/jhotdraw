@@ -1,0 +1,6 @@
+{
+  super(source);
+  this.pane=chooser;
+  this.option=option;
+  this.value=value;
+}

@@ -1,0 +1,3 @@
+{
+  return (ODGBezierFigure)super.getChild(index);
+}

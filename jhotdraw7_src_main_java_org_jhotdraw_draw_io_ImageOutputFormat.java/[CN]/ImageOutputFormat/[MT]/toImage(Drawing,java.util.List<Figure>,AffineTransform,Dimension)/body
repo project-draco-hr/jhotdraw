@@ -1,0 +1,34 @@
+{
+  Color background=drawing.get(CANVAS_FILL_COLOR);
+  double opacity=drawing.get(CANVAS_FILL_OPACITY);
+  if (background == null) {
+    background=new Color(0xff,0xff,0xff,0x0);
+  }
+ else {
+    background=new Color(background.getRed(),background.getGreen(),background.getBlue(),(int)(background.getAlpha() * opacity));
+  }
+  BufferedImage buf=new BufferedImage(Math.max(1,imageSize.width),Math.max(1,imageSize.height),(background.getAlpha() == 255) ? BufferedImage.TYPE_INT_RGB : BufferedImage.TYPE_INT_ARGB);
+  Graphics2D g=buf.createGraphics();
+  Composite savedComposite=g.getComposite();
+  g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC));
+  g.setColor(background);
+  g.fillRect(0,0,buf.getWidth(),buf.getHeight());
+  g.setComposite(savedComposite);
+  setRenderingHints(g);
+  g.transform(transform);
+  for (  Figure f : figures) {
+    f.draw(g);
+  }
+  g.dispose();
+  if (imageType != BufferedImage.TYPE_INT_ARGB) {
+    BufferedImage buf2=new BufferedImage(buf.getWidth(),buf.getHeight(),imageType);
+    g=buf2.createGraphics();
+    setRenderingHints(g);
+    g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC));
+    g.drawImage(buf,0,0,null);
+    g.dispose();
+    buf.flush();
+    buf=buf2;
+  }
+  return buf;
+}

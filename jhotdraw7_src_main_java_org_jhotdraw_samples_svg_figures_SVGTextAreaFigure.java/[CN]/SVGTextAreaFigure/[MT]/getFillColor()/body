@@ -1,0 +1,3 @@
+{
+  return get(FILL_COLOR).equals(Color.white) ? Color.black : Color.WHITE;
+}

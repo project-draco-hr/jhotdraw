@@ -1,0 +1,5 @@
+{
+  int px=p.x - (r.x + r.width / 2);
+  int py=p.y - (r.y + r.height / 2);
+  return atan2(py * r.width,px * r.height);
+}

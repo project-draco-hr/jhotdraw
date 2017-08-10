@@ -1,0 +1,7 @@
+{
+  if (isEditable() && contains(p)) {
+    TextEditingTool tool=new TextEditingTool(this);
+    return tool;
+  }
+  return null;
+}

@@ -1,0 +1,5 @@
+{
+  getOwner().willChange();
+  getOwner().setEndPoint(p);
+  getOwner().changed();
+}

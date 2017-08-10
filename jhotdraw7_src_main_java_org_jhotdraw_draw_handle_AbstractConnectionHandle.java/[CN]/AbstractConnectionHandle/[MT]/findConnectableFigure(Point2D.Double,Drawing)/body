@@ -1,0 +1,8 @@
+{
+  for (  Figure f : drawing.getFiguresFrontToBack()) {
+    if (!f.includes(getOwner()) && f.isConnectable() && f.contains(p)) {
+      return f;
+    }
+  }
+  return null;
+}

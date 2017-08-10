@@ -1,0 +1,3 @@
+{
+  this(JSlider.VERTICAL,0,100,50);
+}

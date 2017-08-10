@@ -1,0 +1,29 @@
+{
+  Window window=SwingUtilities.getWindowAncestor(toolbar);
+  JFrame frame=new JFrame(toolbar.getName(),(window != null) ? window.getGraphicsConfiguration() : null){
+    private static final long serialVersionUID=1L;
+    @Override protected JRootPane createRootPane(){
+      JRootPane rootPane=new JRootPane(){
+        private static final long serialVersionUID=1L;
+        private boolean packing=false;
+        @Override public void validate(){
+          super.validate();
+          if (!packing) {
+            packing=true;
+            pack();
+            packing=false;
+          }
+        }
+      }
+;
+      rootPane.setOpaque(true);
+      return rootPane;
+    }
+  }
+;
+  frame.getRootPane().setName("ToolBar.FloatingFrame");
+  frame.setResizable(false);
+  WindowListener wl=createFrameListener();
+  frame.addWindowListener(wl);
+  return frame;
+}

@@ -1,0 +1,3 @@
+{
+  super(key,defaultAttributes,attributeEditor,drawingEditor,updateDrawingEditorDefaults);
+}

@@ -1,0 +1,6 @@
+{
+  IXMLElement elem=parent.createElement("area");
+  if (writePolyAttributes(elem,f,new GrowStroke((getStrokeTotalWidth(f) / 2d),getStrokeTotalWidth(f)).createStrokedShape(new Line2D.Double(f.getStartPoint(),f.getEndPoint())))) {
+    parent.addChild(elem);
+  }
+}

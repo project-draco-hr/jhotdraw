@@ -1,0 +1,4 @@
+{
+  size=newMaximum;
+  fireStateChanged();
+}

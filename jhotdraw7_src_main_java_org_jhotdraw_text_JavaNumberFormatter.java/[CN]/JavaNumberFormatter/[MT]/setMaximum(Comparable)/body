@@ -1,0 +1,6 @@
+{
+  if (getValueClass() == null && max != null) {
+    setValueClass(max.getClass());
+  }
+  this.max=max;
+}

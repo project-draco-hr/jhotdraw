@@ -1,0 +1,4 @@
+{
+  setSelector(selector);
+  this.properties=properties;
+}

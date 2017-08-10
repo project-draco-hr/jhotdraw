@@ -1,0 +1,6 @@
+{
+  DrawingView view=getView();
+  if (view != null) {
+    view.setConstrainerVisible(!view.isConstrainerVisible());
+  }
+}

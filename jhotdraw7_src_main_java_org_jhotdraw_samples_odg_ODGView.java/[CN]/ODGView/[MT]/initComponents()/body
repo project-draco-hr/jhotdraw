@@ -1,0 +1,11 @@
+{
+  scrollPane=new javax.swing.JScrollPane();
+  view=new org.jhotdraw.draw.DefaultDrawingView();
+  propertiesPanel=new org.jhotdraw.samples.odg.ODGPropertiesPanel();
+  setLayout(new java.awt.BorderLayout());
+  scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+  scrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+  scrollPane.setViewportView(view);
+  add(scrollPane,java.awt.BorderLayout.CENTER);
+  add(propertiesPanel,java.awt.BorderLayout.SOUTH);
+}

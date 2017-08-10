@@ -1,0 +1,3 @@
+{
+  progressModel.setValue(nv);
+}

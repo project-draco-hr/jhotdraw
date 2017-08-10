@@ -1,0 +1,8 @@
+{
+  if (popupMenu != null && popupMenu.isShowing() || popupBecameInvisible >= evt.getWhen()) {
+    popupMenu.setVisible(false);
+  }
+ else {
+    showPopup(evt);
+  }
+}

@@ -1,0 +1,4 @@
+{
+  JavaNumberFormatter formatter=new JavaNumberFormatter(min,max,multiplier,allowsNullValue,null);
+  return new DefaultFormatterFactory(formatter);
+}

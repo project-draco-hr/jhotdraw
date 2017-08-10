@@ -1,0 +1,5 @@
+{
+  if (decoration != null) {
+    decorations.add(decoration);
+  }
+}

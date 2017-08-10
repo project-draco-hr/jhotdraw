@@ -1,0 +1,14 @@
+{
+  Graphics2D gg=(Graphics2D)g.create();
+  gg.transform(view.getDrawingToViewTransform());
+  for (  Connector c : connectors) {
+    c.draw(gg);
+  }
+  gg.dispose();
+  if (getTarget() == null) {
+    drawCircle(g,getEditor().getHandleAttribute(HandleAttributeKeys.DISCONNECTED_CONNECTION_HANDLE_FILL_COLOR),getEditor().getHandleAttribute(HandleAttributeKeys.DISCONNECTED_CONNECTION_HANDLE_STROKE_COLOR));
+  }
+ else {
+    drawCircle(g,getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTION_HANDLE_FILL_COLOR),getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTION_HANDLE_STROKE_COLOR));
+  }
+}

@@ -1,0 +1,9 @@
+{
+  if (this.popupMenu != null) {
+    popupMenu.removePopupMenuListener(handler);
+  }
+  this.popupMenu=popupMenu;
+  if (this.popupMenu != null) {
+    popupMenu.addPopupMenuListener(handler);
+  }
+}

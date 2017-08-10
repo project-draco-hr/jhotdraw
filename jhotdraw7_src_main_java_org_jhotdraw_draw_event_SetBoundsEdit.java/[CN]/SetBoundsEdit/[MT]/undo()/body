@@ -1,0 +1,6 @@
+{
+  super.undo();
+  owner.willChange();
+  owner.setBounds(oldAnchor,oldLead);
+  owner.changed();
+}

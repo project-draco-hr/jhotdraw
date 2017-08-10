@@ -1,0 +1,12 @@
+{
+  if (key == OPACITY) {
+    attributes.put(key,value);
+  }
+ else   if (key == LINK || key == LINK_TARGET) {
+    attributes.put(key,value);
+  }
+ else {
+    super.set(key,value);
+  }
+  invalidate();
+}

@@ -1,0 +1,5 @@
+{
+  if (evt.getSource() == disclosureToggle) {
+    JActivityWindow.this.disclosureStateChanged(evt);
+  }
+}

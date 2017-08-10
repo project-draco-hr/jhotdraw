@@ -1,0 +1,7 @@
+DrawingEditor editor
+AttributeKey<Double> opacityKey
+AttributeKey<Color> fillColorKey
+AttributeKey<Color> strokeColorKey
+Image image
+Shape fillShape
+Shape strokeShape

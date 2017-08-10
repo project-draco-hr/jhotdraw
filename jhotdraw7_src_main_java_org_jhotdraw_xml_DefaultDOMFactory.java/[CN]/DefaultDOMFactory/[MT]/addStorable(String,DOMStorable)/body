@@ -1,0 +1,4 @@
+{
+  nameToPrototypeMap.put(name,prototype);
+  classToNameMap.put(prototype.getClass(),name);
+}

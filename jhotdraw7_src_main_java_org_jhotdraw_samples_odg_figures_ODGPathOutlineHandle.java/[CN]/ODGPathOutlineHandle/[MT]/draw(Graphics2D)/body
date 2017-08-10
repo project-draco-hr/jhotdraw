@@ -1,0 +1,9 @@
+{
+  Shape bounds=getOwner().getPath();
+  if (getOwner().get(TRANSFORM) != null) {
+    bounds=getOwner().get(TRANSFORM).createTransformedShape(bounds);
+  }
+  bounds=view.getDrawingToViewTransform().createTransformedShape(bounds);
+  g.setColor(HANDLE_FILL_COLOR);
+  g.draw(bounds);
+}

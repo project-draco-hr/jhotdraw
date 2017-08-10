@@ -1,0 +1,16 @@
+{
+  int handlesize=getHandlesize();
+  Point2D.Double outer=getBezierFigure().getOutermostPoint();
+  Point2D.Double ctr=getBezierFigure().getCenter();
+  double len=Geom.length(outer.x,outer.y,ctr.x,ctr.y);
+  if (len == 0) {
+    return new Point2D.Double(outer.x - handlesize / 2,outer.y + handlesize / 2);
+  }
+  double u=handlesize / len;
+  if (u > 1.0) {
+    return new Point2D.Double((outer.x * 3 + ctr.x) / 4,(outer.y * 3 + ctr.y) / 4);
+  }
+ else {
+    return new Point2D.Double(outer.x * (1.0 - u) + ctr.x * u,outer.y * (1.0 - u) + ctr.y * u);
+  }
+}

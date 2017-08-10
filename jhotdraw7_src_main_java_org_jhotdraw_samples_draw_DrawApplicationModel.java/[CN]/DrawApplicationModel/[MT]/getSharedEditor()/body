@@ -1,0 +1,6 @@
+{
+  if (sharedEditor == null) {
+    sharedEditor=new DefaultDrawingEditor();
+  }
+  return sharedEditor;
+}

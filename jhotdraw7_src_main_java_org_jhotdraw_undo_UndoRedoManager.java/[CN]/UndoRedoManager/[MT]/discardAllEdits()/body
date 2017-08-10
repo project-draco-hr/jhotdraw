@@ -1,0 +1,5 @@
+{
+  super.discardAllEdits();
+  updateActions();
+  setHasSignificantEdits(false);
+}

@@ -1,0 +1,4 @@
+{
+  String value=current.getAttribute(name,null);
+  return (value == null || value.length() == 0) ? defaultValue : Long.decode(value).intValue();
+}

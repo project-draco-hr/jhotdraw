@@ -1,0 +1,14 @@
+{
+  SwingUtilities.invokeLater(new Runnable(){
+    @Override public void run(){
+      JFrame f=new JFrame("Color Wheels, Squares and Sliders");
+      final WheelsAndSlidersMain colorWheelsMain=new WheelsAndSlidersMain();
+      f.add(colorWheelsMain);
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      f.pack();
+      f.setVisible(true);
+      colorWheelsMain.onResetScreenColorProfile(null);
+    }
+  }
+);
+}

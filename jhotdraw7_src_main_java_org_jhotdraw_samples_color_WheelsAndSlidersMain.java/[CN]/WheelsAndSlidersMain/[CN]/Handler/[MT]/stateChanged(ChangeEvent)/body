@@ -1,0 +1,20 @@
+{
+  if (adjusting++ == 0) {
+    ColorSliderModel m=(ColorSliderModel)e.getSource();
+    color=m.getColor();
+    previewLabel.setBackground(color);
+    for (    ColorSliderModel c : models) {
+      if (c != m) {
+        if (c.getColorSpace().equals(m.getColorSpace())) {
+          for (int i=0; i < m.getComponentCount(); i++) {
+            c.setComponent(i,m.getComponent(i));
+          }
+        }
+ else {
+          c.setColor(color);
+        }
+      }
+    }
+  }
+  adjusting--;
+}

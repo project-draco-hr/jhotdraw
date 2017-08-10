@@ -1,0 +1,20 @@
+{
+  if (eventHandler == null) {
+    eventHandler=new PropertyChangeListener(){
+      @Override public void propertyChange(      PropertyChangeEvent evt){
+        String name=evt.getPropertyName();
+        if (name == DISCLOSURE_STATE_PROPERTY) {
+          try {
+            prefs.putInt(getID() + ".disclosureState",(Integer)evt.getNewValue());
+          }
+ catch (          IllegalStateException e) {
+            System.err.println("Warning AbstractToolBar caught IllegalStateException of Preferences class");
+            e.printStackTrace();
+          }
+        }
+      }
+    }
+;
+  }
+  return eventHandler;
+}

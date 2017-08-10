@@ -1,0 +1,8 @@
+{
+  UIDefaults defaults=getCachedDefaults();
+  Object value=defaults.get(key);
+  if (!(value instanceof ActiveValue) && !(value instanceof LazyValue)) {
+    return value;
+  }
+  return value;
+}

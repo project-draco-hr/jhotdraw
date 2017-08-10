@@ -1,0 +1,6 @@
+{
+  setPresentationFigure(new EllipseFigure());
+  LabelFigure label=new LabelFigure("Label");
+  label.transform(new AffineTransform(0,0,0,0,25,37));
+  add(label);
+}

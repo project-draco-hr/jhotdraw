@@ -1,0 +1,3 @@
+{
+  this(color,name,14,14);
+}

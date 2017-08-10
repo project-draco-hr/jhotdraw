@@ -1,0 +1,4 @@
+java.awt.Component c
+java.awt.Graphics gr
+int x
+int y

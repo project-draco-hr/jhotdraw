@@ -1,0 +1,21 @@
+{
+  for (int i=0; i < oldPanels.length; i++) {
+    Container wrapper=oldPanels[i].getParent();
+    if (wrapper != null) {
+      Container parent=wrapper.getParent();
+      if (parent != null)       parent.remove(wrapper);
+      oldPanels[i].uninstallChooserPanel(chooser);
+    }
+  }
+  mainPanel.removeAllColorChooserPanels();
+  for (int i=0; i < newPanels.length; i++) {
+    if (newPanels[i] != null) {
+      mainPanel.addColorChooserPanel(newPanels[i]);
+    }
+  }
+  for (int i=0; i < newPanels.length; i++) {
+    if (newPanels[i] != null) {
+      newPanels[i].installChooserPanel(chooser);
+    }
+  }
+}

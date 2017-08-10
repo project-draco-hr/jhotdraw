@@ -1,0 +1,11 @@
+{
+  view.getComponent().add(textField,0);
+  textField.setText(figure.getText());
+  textField.setColumns(figure.getTextColumns());
+  textField.selectAll();
+  textField.setVisible(true);
+  editedFigure=figure;
+  editedFigure.addFigureListener(figureHandler);
+  this.view=view;
+  updateWidget();
+}
