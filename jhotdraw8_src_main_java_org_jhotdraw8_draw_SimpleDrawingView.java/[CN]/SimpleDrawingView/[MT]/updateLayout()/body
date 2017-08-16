@@ -27,18 +27,22 @@
     canvasPane.setWidth(dw * f);
     canvasPane.setHeight(dh * f);
   }
-  double padding=20;
+  final Insets margin=getMargin();
+  final double marginL=margin.getLeft();
+  final double marginR=margin.getRight();
+  final double marginT=margin.getTop();
+  final double marginB=margin.getBottom();
   double lw=max(max(0,x) + w,max(0,-x) + dw * f);
   double lh=max(max(0,y) + h,max(0,-y) + dh * f);
-  drawingPane.setTranslateX(padding);
-  drawingPane.setTranslateY(padding);
-  canvasPane.setTranslateX(padding);
-  canvasPane.setTranslateY(padding);
-  toolPane.resize(lw + padding * 2,lh + padding * 2);
+  drawingPane.setTranslateX(marginL);
+  drawingPane.setTranslateY(marginT);
+  canvasPane.setTranslateX(marginL);
+  canvasPane.setTranslateY(marginT);
+  toolPane.resize(lw + marginL + marginR,lh + marginT + marginB);
   toolPane.layout();
-  overlaysPane.setClip(new Rectangle(0,0,lw + padding * 2,lh + padding * 2));
-  rootPane.setPrefSize(lw + padding * 2,lh + padding * 2);
-  rootPane.setMaxSize(lw + padding * 2,lh + padding * 2);
+  overlaysPane.setClip(new Rectangle(0,0,lw + marginL + marginR,lh + marginT + marginB));
+  rootPane.setPrefSize(lw + marginL + marginR,lh + marginT + marginB);
+  rootPane.setMaxSize(lw + marginL + marginR,lh + marginT + marginB);
   invalidateWorldViewTransforms();
   invalidateHandleNodes();
 }
