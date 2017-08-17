@@ -9,8 +9,6 @@
   }
   double dw=d.get(Drawing.WIDTH);
   double dh=d.get(Drawing.HEIGHT);
-  int imgw=Math.min(16000,Math.max(1,(int)(dw)));
-  int imgh=Math.min(16000,Math.max(1,(int)(dh)));
   Bounds bounds=drawingPane.getLayoutBounds();
   double x=bounds.getMinX() * f;
   double y=bounds.getMinY() * f;
