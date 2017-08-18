@@ -1,3 +1,0 @@
-{
-  return computeThickLine(seg[0 + offset],seg[1 + offset],seg[2 + offset],seg[3 + offset],innerWidth,corners);
-}

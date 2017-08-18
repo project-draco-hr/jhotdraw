@@ -1,3 +1,0 @@
-{
-  return new Dimension2DDouble(width,height);
-}
