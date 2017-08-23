@@ -1,0 +1,17 @@
+{
+  final Path2D.Double marker;
+  if (needsStartMarker) {
+    needsStartMarker=false;
+    marker=startMarker;
+  }
+ else {
+    marker=midMarker;
+  }
+  if (marker == null) {
+    return;
+  }
+  final double x0=getLastX();
+  final double y0=getLastY();
+  final Transform tx=Transforms.rotate(x0 - x,y0 - y,0,0).createConcatenation(new Translate(x,y));
+  Shapes.buildFromPathIterator(out,marker.getPathIterator(Transforms.toAWT(tx)));
+}
