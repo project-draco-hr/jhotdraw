@@ -69,6 +69,7 @@
   addConverterForType(FillRule.class,new XmlEnumConverter<FillRule>(FillRule.class));
   addConverterForType(FontWeight.class,new XmlEnumConverter<>(FontWeight.class));
   addConverterForType(FontPosture.class,new XmlEnumConverter<>(FontPosture.class));
+  addConverterForType(LabelAutorotate.class,new XmlEnumConverter<>(LabelAutorotate.class));
   addConverterForType(RegexReplace.class,new CssRegexConverter(true));
   addConverterForType(StrokeLineJoin.class,new XmlEnumConverter<>(StrokeLineJoin.class));
   addConverterForType(StrokeLineCap.class,new XmlEnumConverter<>(StrokeLineCap.class));

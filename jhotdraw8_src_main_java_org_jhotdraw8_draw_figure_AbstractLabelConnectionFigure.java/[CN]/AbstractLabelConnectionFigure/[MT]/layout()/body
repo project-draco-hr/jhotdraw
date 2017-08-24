@@ -5,36 +5,54 @@
     invalidateTransforms();
     return;
   }
-  Point2D labeledLoc=get(LABELED_LOCATION);
+  final Point2D labeledLoc;
   Connector labelConnector=get(LABEL_CONNECTOR);
   final Point2D perp;
+  final Point2D tangent;
   if (labelConnector != null && labelTarget != null) {
     labeledLoc=labelConnector.getPositionInWorld(this,labelTarget);
-    final Point2D tangent=labelConnector.getTangentInWorld(this,labelTarget);
-    perp=Geom.perp(Transforms.deltaTransform(getWorldToLocal(),tangent));
-    labeledLoc=Transforms.transform(labelTarget.getParentToLocal(),labeledLoc);
-    if (getStyled(LABEL_AUTOROTATE)) {
-      double theta=Math.atan2(tangent.getY(),tangent.getX());
-      set(ROTATE,theta * 180.0 / Math.PI);
-    }
+    tangent=labelConnector.getTangentInWorld(this,labelTarget);
+    perp=Geom.perp(tangent);
   }
  else {
+    labeledLoc=get(LABELED_LOCATION);
+    tangent=new Point2D(1,0);
     perp=new Point2D(0,-1);
   }
-  set(LABELED_LOCATION,labeledLoc);
-  Bounds b=getLayoutBounds();
-  double tx=0;
+switch (getStyled(LABEL_AUTOROTATE)) {
+case FULL:
+{
+      final double theta=(Math.atan2(tangent.getY(),tangent.getX()) * 180.0 / Math.PI + 360.0) % 360.0;
+      set(ROTATE,theta);
+    }
+  break;
+case HALF:
+{
+  final double theta=(Math.atan2(tangent.getY(),tangent.getX()) * 180.0 / Math.PI + 360.0) % 360.0;
+  final double halfTheta=theta <= 90.0 || theta > 270.0 ? theta : (theta + 180.0) % 360.0;
+  set(ROTATE,halfTheta);
+}
+break;
+case OFF:
+default :
+break;
+}
+set(LABELED_LOCATION,labeledLoc);
+Bounds b=getLayoutBounds();
+double tx=0;
 switch (getStyled(TEXT_HPOS)) {
 case CENTER:
-    tx=b.getWidth() * -0.5;
-  break;
+tx=b.getWidth() * -0.5;
+break;
 case LEFT:
 break;
 case RIGHT:
 tx=-b.getWidth();
 break;
 }
-Point2D origin=labeledLoc.add(perp.multiply(-getStyled(LABEL_OFFSET))).add(tx,0);
+final double labelOffsetX=-getStyled(LABEL_OFFSET_X).getConvertedValue();
+final double labelOffsetY=getStyled(LABEL_OFFSET_Y).getConvertedValue();
+Point2D origin=labeledLoc.add(perp.multiply(-labelOffsetY)).add(-perp.getY() * (labelOffsetX + tx),perp.getX() * (labelOffsetX + tx));
 Point2D labelTranslation=getStyled(LABEL_TRANSLATE);
 origin=origin.add(labelTranslation);
 set(ORIGIN,origin);
