@@ -1,0 +1,4 @@
+{
+  this.dpi=dpi;
+  this.percentageFactor=percentageFactor;
+}
