@@ -1,3 +1,0 @@
-{
-  this(target,sx,sy,pivotX,pivotY,bounds.getMinX() + insets.getLeft(),bounds.getMinY() + insets.getTop(),bounds.getMaxX() - insets.getRight(),bounds.getMaxY() - insets.getBottom());
-}

@@ -1,0 +1,13 @@
+{
+  this(dest,destBounds.getWidth() / bounds.getWidth(),destBounds.getHeight() / bounds.getHeight(),bounds.getMinX(),bounds.getMinY(),bounds.getMinX() + insets.getLeft(),bounds.getMinY() + insets.getTop(),bounds.getMaxX() - insets.getRight(),bounds.getMaxY() - insets.getBottom());
+  Translate t=new Translate(destBounds.getMinX() - bounds.getMinX(),destBounds.getMinY() - bounds.getMinY());
+  center=Transforms.concat(center,t);
+  top=Transforms.concat(top,t);
+  bottom=Transforms.concat(bottom,t);
+  right=Transforms.concat(right,t);
+  left=Transforms.concat(left,t);
+  topLeft=Transforms.concat(topLeft,t);
+  topRight=Transforms.concat(topRight,t);
+  bottomRight=Transforms.concat(bottomRight,t);
+  bottomLeft=Transforms.concat(bottomLeft,t);
+}
