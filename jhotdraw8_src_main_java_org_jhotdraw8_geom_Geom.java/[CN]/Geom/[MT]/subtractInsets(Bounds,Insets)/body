@@ -1,0 +1,3 @@
+{
+  return new BoundingBox(b.getMinX() + i.getLeft(),b.getMinY() + i.getTop(),b.getWidth() - i.getLeft() - i.getRight(),b.getHeight() - i.getTop() - i.getBottom());
+}

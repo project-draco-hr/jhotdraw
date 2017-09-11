@@ -1,4 +1,8 @@
 {
+  if (value == null || value.getLeft() == null || value.getRight() == null | value.getTop() == null || value.getBottom() == null) {
+    out.append("none");
+    return;
+  }
   if (value.getRight() == value.getLeft()) {
     if (value.getTop() == value.getBottom()) {
       if (value.getTop() == value.getLeft()) {

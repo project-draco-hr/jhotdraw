@@ -1,8 +1,16 @@
 {
   CssSizeInsets oldValue=get(a);
-  topKey.put(a,value.getTop());
-  rightKey.put(a,value.getRight());
-  bottomKey.put(a,value.getBottom());
-  leftKey.put(a,value.getLeft());
+  if (value == null) {
+    topKey.put(a,null);
+    rightKey.put(a,null);
+    bottomKey.put(a,null);
+    leftKey.put(a,null);
+  }
+ else {
+    topKey.put(a,value.getTop());
+    rightKey.put(a,value.getRight());
+    bottomKey.put(a,value.getBottom());
+    leftKey.put(a,value.getLeft());
+  }
   return oldValue;
 }

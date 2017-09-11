@@ -1,9 +1,37 @@
 {
+  final Transform t;
   if (x < minX) {
+    if (y < minY) {
+      t=topLeft;
+    }
+ else     if (y > maxY) {
+      t=bottomLeft;
+    }
+ else {
+      t=left;
+    }
   }
  else   if (x > maxX) {
+    if (y < minY) {
+      t=topRight;
+    }
+ else     if (y > maxY) {
+      t=bottomRight;
+    }
+ else {
+      t=right;
+    }
   }
  else {
+    if (y < minY) {
+      t=top;
+    }
+ else     if (y > maxY) {
+      t=bottom;
+    }
+ else {
+      t=center;
+    }
   }
-  return new Point2D(x,y);
+  return t.transform(x,y);
 }

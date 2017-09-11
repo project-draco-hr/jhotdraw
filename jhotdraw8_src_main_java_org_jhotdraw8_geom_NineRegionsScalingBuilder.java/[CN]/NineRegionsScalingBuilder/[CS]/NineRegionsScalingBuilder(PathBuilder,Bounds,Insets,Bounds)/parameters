@@ -1,4 +1,4 @@
 PathBuilder dest
-Bounds bounds
-Insets insets
+Bounds srcBounds
+Insets srcInsets
 Bounds destBounds

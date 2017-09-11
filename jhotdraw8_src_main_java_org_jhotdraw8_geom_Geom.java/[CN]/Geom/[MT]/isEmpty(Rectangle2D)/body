@@ -1,0 +1,3 @@
+{
+  return b.getWidth() <= 0 || b.getHeight() <= 0;
+}

@@ -1,0 +1,3 @@
+{
+  return b.getMinX() + "," + b.getMinY()+ ","+ b.getWidth()+ ","+ b.getHeight();
+}

@@ -3,5 +3,8 @@
   final CssSize right=rightKey.get(a);
   final CssSize bottom=bottomKey.get(a);
   final CssSize left=leftKey.get(a);
+  if (top == null || right == null || bottom == null | left == null) {
+    return null;
+  }
   return new CssSizeInsets(top == null ? CssSize.ZERO : top,right == null ? CssSize.ZERO : right,bottom == null ? CssSize.ZERO : bottom,left == null ? CssSize.ZERO : left);
 }

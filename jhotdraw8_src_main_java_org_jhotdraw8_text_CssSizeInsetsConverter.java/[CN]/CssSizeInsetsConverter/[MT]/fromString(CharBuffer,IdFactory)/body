@@ -1,4 +1,8 @@
 {
+  String str=buf.toString();
+  if (nullable && "none".equals(str.trim())) {
+    return null;
+  }
   Object[] v=formatter.fromString(buf);
 switch ((int)v[0]) {
 case 1:

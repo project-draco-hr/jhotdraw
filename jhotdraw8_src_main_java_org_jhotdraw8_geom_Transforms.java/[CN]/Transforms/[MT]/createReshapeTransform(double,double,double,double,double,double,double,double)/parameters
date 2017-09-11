@@ -1,8 +1,8 @@
-double fx
-double fy
-double fw
-double fh
-double tx
-double ty
-double tw
-double th
+double sx
+double sy
+double sw
+double sh
+double dx
+double dy
+double dw
+double dh
