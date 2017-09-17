@@ -1,5 +1,5 @@
 {
-  IntList cornerIndices=new IntList();
+  IntArrayList cornerIndices=new IntArrayList();
   double squaredDistance=minDistance * minDistance;
   int previousCorner=-1;
   double previousCornerAngle=0;
