@@ -1,0 +1,23 @@
+{
+  if (done) {
+    out.lineTo(x,y);
+    return;
+  }
+  Intersection i=Intersection.intersectLineCircle(getLastX(),getLastY(),x,y,cx,cy,radius);
+switch (i.getStatus()) {
+case INTERSECTION:
+    Point2D p=i.getLastPoint();
+  out.moveTo(p.getX(),p.getY());
+out.lineTo(x,y);
+break;
+case NO_INTERSECTION_INSIDE:
+break;
+case NO_INTERSECTION_OUTSIDE:
+case NO_INTERSECTION_TANGENT:
+default :
+out.moveTo(getLastX(),getLastY());
+done=true;
+out.lineTo(x,y);
+break;
+}
+}

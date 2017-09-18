@@ -5,18 +5,18 @@
   final SVGPath endMarkerNode=(SVGPath)g.getProperties().get("endMarker");
   Point2D start=get(START);
   Point2D end=get(END);
-  final double startInset=getStyled(MARKER_LINE_INSET_START);
-  final double endInset=getStyled(MARKER_LINE_INSET_END);
-  final String startMarkerStr=getStyled(MARKER_START_SHAPE);
-  updateMarkerNode(ctx,g,startMarkerNode,start,end,startMarkerStr,getStyled(MARKER_SCALE_FACTOR_START));
-  final String endMarkerStr=getStyled(MARKER_END_SHAPE);
-  updateMarkerNode(ctx,g,endMarkerNode,end,start,endMarkerStr,getStyled(MARKER_SCALE_FACTOR_END));
+  final double startInset=getStrokeCutStart();
+  final double endInset=getStrokeCutEnd();
+  final String startMarkerStr=getMarkerStartShape();
+  updateMarkerNode(ctx,g,startMarkerNode,start,end,startMarkerStr,getMarkerStartScaleFactor());
+  final String endMarkerStr=getMarkerEndShape();
+  updateMarkerNode(ctx,g,endMarkerNode,end,start,endMarkerStr,getMarkerEndScaleFactor());
   Point2D dir=end.subtract(start).normalize();
   if (startInset != 0 && startMarkerStr != null) {
-    start=start.add(dir.multiply(startInset * getStyled(MARKER_SCALE_FACTOR_START)));
+    start=start.add(dir.multiply(startInset * getMarkerStartScaleFactor()));
   }
   if (endInset != 0 && endMarkerStr != null) {
-    end=end.add(dir.multiply(-endInset * getStyled(MARKER_SCALE_FACTOR_END)));
+    end=end.add(dir.multiply(-endInset * getMarkerEndScaleFactor()));
   }
   lineNode.setStartX(start.getX());
   lineNode.setStartY(start.getY());

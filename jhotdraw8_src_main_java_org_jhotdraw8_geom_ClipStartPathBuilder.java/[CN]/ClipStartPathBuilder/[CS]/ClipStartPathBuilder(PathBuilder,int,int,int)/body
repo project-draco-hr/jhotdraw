@@ -1,0 +1,6 @@
+{
+  this.radius=radius;
+  this.out=out;
+  this.cx=cx;
+  this.cy=cy;
+}

@@ -1,0 +1,14 @@
+{
+  final double x12=(x2 - x1) * t + x1;
+  final double y12=(y2 - y1) * t + y1;
+  final double x23=(x3 - x2) * t + x2;
+  final double y23=(y3 - y2) * t + y2;
+  final double x123=(x23 - x12) * t + x12;
+  final double y123=(y23 - y12) * t + y12;
+  if (leftCurveTo != null) {
+    leftCurveTo.accept(x12,y12,x123,y123);
+  }
+  if (rightCurveTo != null) {
+    rightCurveTo.accept(x23,y23,x3,y3);
+  }
+}
