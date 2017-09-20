@@ -1,7 +1,6 @@
 {
-  int edgeId=lastEdge[vi * 2 + 1];
-  for (int j=i - 1; j >= 0; j--) {
-    edgeId=edges[edgeId * 2 + 1];
+  if (i < 0 || i >= getNextCount(vi)) {
+    throw new IllegalArgumentException("i(" + i + ") < 0 || i >= "+ getNext(vi,i));
   }
-  return edges[edgeId * 2];
+  return edges[vertices[vi] + i];
 }

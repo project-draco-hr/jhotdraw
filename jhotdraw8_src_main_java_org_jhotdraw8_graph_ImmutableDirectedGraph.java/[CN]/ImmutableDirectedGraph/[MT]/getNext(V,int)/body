@@ -1,0 +1,8 @@
+{
+  final Object[] edgeList=edges.get(v);
+  if (edgeList == null) {
+    throw new IllegalArgumentException("vertex v(" + v + ") has no edges.");
+  }
+  @SuppressWarnings("unchecked") final V b=(V)edgeList[i];
+  return b;
+}

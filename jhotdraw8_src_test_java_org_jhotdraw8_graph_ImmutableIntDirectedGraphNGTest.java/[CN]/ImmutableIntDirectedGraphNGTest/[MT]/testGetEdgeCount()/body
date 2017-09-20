@@ -1,0 +1,17 @@
+{
+  System.out.println("getEdgeCount");
+  int a=0;
+  int b=1;
+  int c=1;
+  IntDirectedGraphBuilder builder=new IntDirectedGraphBuilder();
+  builder.setVertexCount(3);
+  ImmutableIntDirectedGraph instance=builder.build();
+  assertEquals(instance.getVertexCount(),3,"vertex count");
+  assertEquals(instance.getEdgeCount(),0,"edge count");
+  builder.addEdge(a,b);
+  instance=builder.build();
+  assertEquals(instance.getVertexCount(),3,"vertex count");
+  assertEquals(instance.getEdgeCount(),1,"edge count");
+  assertEquals(instance.getNextCount(a),1,"edge count of " + a);
+  assertEquals(instance.getNext(a,0),b,"next edge of " + a);
+}

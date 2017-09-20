@@ -1,3 +1,9 @@
 {
-  return lastEdge[vi * 2];
+  final int vertexCount=getVertexCount();
+  if (vi < 0 || vi >= vertexCount) {
+    throw new IllegalArgumentException("vi(" + vi + ") < 0 || vi >= "+ vertexCount);
+  }
+  final int offset=vertices[vi];
+  final int nextOffset=(vi == vertexCount - 1) ? edges.length : vertices[vi + 1];
+  return nextOffset - offset;
 }

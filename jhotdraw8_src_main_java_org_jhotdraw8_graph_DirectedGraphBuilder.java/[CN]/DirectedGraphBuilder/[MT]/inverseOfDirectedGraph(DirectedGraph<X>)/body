@@ -1,5 +1,5 @@
 {
-  int edgeCount=countEdges(graph);
+  final int edgeCount=graph.getEdgeCount();
   DirectedGraphBuilder<X> b=new DirectedGraphBuilder<>(graph.getVertexCount(),edgeCount);
   for (int i=0, n=graph.getVertexCount(); i < n; i++) {
     X v=graph.getVertex(i);

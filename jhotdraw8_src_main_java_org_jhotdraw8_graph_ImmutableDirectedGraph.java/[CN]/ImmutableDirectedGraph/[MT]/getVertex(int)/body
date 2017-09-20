@@ -1,3 +1,4 @@
 {
-  return vertices.get(vi);
+  @SuppressWarnings("unchecked") final V v=(V)vertices[indexOfVertex];
+  return v;
 }

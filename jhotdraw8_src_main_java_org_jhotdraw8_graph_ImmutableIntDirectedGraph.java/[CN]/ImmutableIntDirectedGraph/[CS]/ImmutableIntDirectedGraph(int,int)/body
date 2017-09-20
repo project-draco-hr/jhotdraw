@@ -1,5 +1,0 @@
-{
-  this.vertexCount=vertexCapacity;
-  this.edges=new int[edgeCapacity * 2];
-  this.lastEdge=new int[vertexCapacity * 2];
-}

@@ -1,5 +1,0 @@
-{
-  int a=vertexMap.get(va);
-  int b=vertexMap.get(vb);
-  buildAddEdge(a,b);
-}
