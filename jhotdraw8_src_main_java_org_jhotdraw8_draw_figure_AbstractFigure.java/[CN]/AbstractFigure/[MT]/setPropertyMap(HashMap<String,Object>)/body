@@ -1,8 +1,10 @@
 {
   HashMap<String,Key<?>> keyst=new HashMap<>();
   Map<Key<?>,Object> m=getProperties();
-  for (  MapAccessor<?> ma : Figure.getDeclaredAndInheritedMapAccessors(getClass()))   if (ma instanceof Key<?>) {
-    keyst.put(ma.getName(),(Key<?>)ma);
+  for (  MapAccessor<?> ma : Figure.getDeclaredAndInheritedMapAccessors(getClass())) {
+    if (ma instanceof Key<?>) {
+      keyst.put(ma.getName(),(Key<?>)ma);
+    }
   }
   for (  Map.Entry<String,Object> e : newMap.entrySet()) {
     String name=e.getKey();

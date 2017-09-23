@@ -18,7 +18,7 @@
       }
     }
     for (    Figure f : new ArrayList<>(newDrawing.getChildren())) {
-      newDrawing.remove(f);
+      newDrawing.removeChild(f);
       String id=idFactory.createId(f);
       f.set(StyleableFigure.ID,id);
       if (f instanceof Layer) {

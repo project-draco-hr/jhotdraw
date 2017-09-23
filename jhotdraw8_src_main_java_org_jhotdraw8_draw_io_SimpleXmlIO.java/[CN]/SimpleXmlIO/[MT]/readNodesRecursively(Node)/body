@@ -13,7 +13,7 @@ if (child instanceof Figure) {
   if (!child.isSuitableParent(figure)) {
     throw new IOException(list.item(i).getNodeName() + " is not a suitable child for " + ((Element)node).getTagName()+ ".");
   }
-  figure.add(child);
+  figure.addChild(child);
 }
 }
 if (!comments.isEmpty()) {

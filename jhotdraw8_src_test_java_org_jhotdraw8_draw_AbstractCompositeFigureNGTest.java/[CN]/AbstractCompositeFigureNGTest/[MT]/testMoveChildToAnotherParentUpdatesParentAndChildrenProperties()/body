@@ -2,8 +2,8 @@
   Figure parent1=new AbstractCompositeFigureImpl();
   Figure parent2=new AbstractCompositeFigureImpl();
   Figure child=new AbstractCompositeFigureImpl();
-  parent1.add(child);
-  parent2.add(child);
+  parent1.addChild(child);
+  parent2.addChild(child);
   assertFalse(parent1.getChildren().contains(child));
   assertTrue(parent2.getChildren().contains(child));
   assertEquals(child.getParent(),parent2);

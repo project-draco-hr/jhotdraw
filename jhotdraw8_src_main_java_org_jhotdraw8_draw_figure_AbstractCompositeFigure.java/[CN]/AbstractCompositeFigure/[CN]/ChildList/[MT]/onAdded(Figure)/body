@@ -1,7 +1,7 @@
 {
   Figure oldParent=e.getParent();
   if (oldParent != null && oldParent != AbstractCompositeFigure.this) {
-    oldParent.remove(e);
+    oldParent.removeChild(e);
   }
   e.parentProperty().set(AbstractCompositeFigure.this);
 }
