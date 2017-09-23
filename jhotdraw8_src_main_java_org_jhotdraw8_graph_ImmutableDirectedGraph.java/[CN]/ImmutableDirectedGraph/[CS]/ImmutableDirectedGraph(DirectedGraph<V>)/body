@@ -7,7 +7,10 @@
     V va=graph.getVertex(a);
     vertices[a]=va;
     final int nextCount=graph.getNextCount(va);
-    if (nextCount > 0) {
+    if (nextCount == 1) {
+      edges.put(va,graph.getNext(va,0));
+    }
+ else     if (nextCount > 1) {
       Object[] edgeList=new Object[nextCount];
       for (int i=0; i < nextCount; i++) {
         edgeList[i++]=graph.getNext(va,i);
