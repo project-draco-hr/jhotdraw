@@ -28,6 +28,6 @@ break;
 }
 }
 }
-PathIterator iter=area != null ? area.getPathIterator(null) : new CombinedPathIterator(getStyled(FILL_RULE),Collections.emptyList());
+PathIterator iter=area != null ? area.getPathIterator(null) : new ConcatenatedPathIterator(getStyled(FILL_RULE),Collections.emptyList());
 return iter;
 }

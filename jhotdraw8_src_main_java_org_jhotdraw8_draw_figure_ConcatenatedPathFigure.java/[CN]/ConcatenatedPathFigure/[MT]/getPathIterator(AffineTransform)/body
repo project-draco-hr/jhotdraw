@@ -8,5 +8,5 @@
     final PathIterator childPathIterator=getStyledPathIteratorInParent((PathIterableFigure)child,tx);
     iterators.add(childPathIterator);
   }
-  return new CombinedPathIterator(getStyled(FILL_RULE),iterators);
+  return new ConcatenatedPathIterator(getStyled(FILL_RULE),iterators);
 }

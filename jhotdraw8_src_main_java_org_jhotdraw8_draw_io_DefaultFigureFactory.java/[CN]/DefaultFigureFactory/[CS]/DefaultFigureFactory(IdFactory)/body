@@ -8,7 +8,7 @@
   addFigureKeysAndNames("Polyline",SimplePolylineFigure.class);
   addFigureKeysAndNames("Polygon",SimplePolygonFigure.class);
   addFigureKeysAndNames("Page",SimplePageFigure.class);
-  addFigureKeysAndNames("CombinedPath",CombinedPathFigure.class);
+  addFigureKeysAndNames("CombinedPath",ConcatenatedPathFigure.class);
 {
     Set<MapAccessor<?>> keys=new HashSet<>(Figure.getDeclaredAndInheritedMapAccessors(SimpleDrawing.class));
     keys.remove(Drawing.USER_AGENT_STYLESHEETS);
@@ -55,7 +55,7 @@
   addConverterForType(CssColor.class,new XmlCColorConverter(true));
   addConverterForType(Boolean.class,new XmlBooleanConverter());
   addConverterForType(TextAlignment.class,new XmlEnumConverter<>(TextAlignment.class));
-  addConverterForType(CombinedPathFigure.CagOperation.class,new XmlEnumConverter<CombinedPathFigure.CagOperation>(CombinedPathFigure.CagOperation.class));
+  addConverterForType(ConcatenatedPathFigure.CagOperation.class,new XmlEnumConverter<ConcatenatedPathFigure.CagOperation>(ConcatenatedPathFigure.CagOperation.class));
   addConverterForType(VPos.class,new XmlEnumConverter<>(VPos.class));
   addConverterForType(HPos.class,new XmlEnumConverter<>(HPos.class));
   addConverterForType(CssFont.class,new XmlFFontConverter());
