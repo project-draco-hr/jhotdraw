@@ -20,5 +20,8 @@
   if (result.size() > 0) {
     result.status=Status.INTERSECTION;
   }
+ else {
+    result.status=intersectPointEllipse(p1,ec,rx,ry).status;
+  }
   return result;
 }

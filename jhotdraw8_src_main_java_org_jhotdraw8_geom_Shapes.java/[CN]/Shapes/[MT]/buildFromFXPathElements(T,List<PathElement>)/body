@@ -46,5 +46,6 @@
       builder.closePath();
     }
   }
+  builder.finish();
   return builder;
 }

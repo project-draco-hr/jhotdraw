@@ -9,6 +9,7 @@ case INTERSECTION:
     Point2D p=i.getLastPoint();
   out.moveTo(p.getX(),p.getY());
 out.lineTo(x,y);
+done=true;
 break;
 case NO_INTERSECTION_INSIDE:
 break;

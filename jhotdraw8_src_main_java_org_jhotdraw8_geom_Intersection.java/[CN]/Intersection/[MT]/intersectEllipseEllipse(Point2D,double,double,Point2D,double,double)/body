@@ -3,9 +3,8 @@
   double[] b={ry2 * ry2,0,rx2 * rx2,-2 * ry2 * ry2* c2.getX(),-2 * rx2 * rx2* c2.getY(),ry2 * ry2 * c2.getX()* c2.getX() + rx2 * rx2 * c2.getY()* c2.getY() - rx2 * rx2 * ry2* ry2};
   Polynomial yPoly=Intersection.bezout(a,b);
   double[] yRoots=yPoly.getRoots();
-  double epsilon=1e-3;
-  double norm0=(a[0] * a[0] + 2 * a[1] * a[1] + a[2] * a[2]) * epsilon;
-  double norm1=(b[0] * b[0] + 2 * b[1] * b[1] + b[2] * b[2]) * epsilon;
+  double norm0=(a[0] * a[0] + 2 * a[1] * a[1] + a[2] * a[2]) * EPSILON;
+  double norm1=(b[0] * b[0] + 2 * b[1] * b[1] + b[2] * b[2]) * EPSILON;
   Intersection result=new Intersection(Status.NO_INTERSECTION);
   for (int y=0; y < yRoots.length; y++) {
     Polynomial xPoly=new Polynomial(a[0],a[3] + yRoots[y] * a[1],a[5] + yRoots[y] * (a[4] + yRoots[y] * a[2]));

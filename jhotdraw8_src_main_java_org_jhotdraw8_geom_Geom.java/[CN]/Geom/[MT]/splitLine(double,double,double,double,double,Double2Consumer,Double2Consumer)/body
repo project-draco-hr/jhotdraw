@@ -1,0 +1,10 @@
+{
+  final double x12=(x2 - x1) * t + x1;
+  final double y12=(y2 - y1) * t + y1;
+  if (leftLineTo != null) {
+    leftLineTo.accept(x12,y12);
+  }
+  if (rightLineTo != null) {
+    rightLineTo.accept(x2,y2);
+  }
+}
