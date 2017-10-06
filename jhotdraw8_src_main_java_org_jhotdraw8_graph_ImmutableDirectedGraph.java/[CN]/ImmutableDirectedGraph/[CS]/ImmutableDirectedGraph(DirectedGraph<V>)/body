@@ -13,7 +13,7 @@
  else     if (nextCount > 1) {
       Object[] edgeList=new Object[nextCount];
       for (int i=0; i < nextCount; i++) {
-        edgeList[i++]=graph.getNext(va,i);
+        edgeList[i]=graph.getNext(va,i);
       }
       edges.put(va,edgeList);
     }

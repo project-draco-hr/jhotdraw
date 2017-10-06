@@ -2,10 +2,12 @@
   Object edgeListOrVertex=edges.get(v);
   if (edgeListOrVertex instanceof Object[]) {
     final Object[] edgeList=(Object[])edgeListOrVertex;
-    return (V)edgeList[i];
+    @SuppressWarnings("unchecked") final V next=(V)edgeList[i];
+    return next;
   }
   if (edgeListOrVertex == null) {
     throw new IllegalArgumentException("vertex v(" + v + ") has no edges.");
   }
-  return (V)edgeListOrVertex;
+  @SuppressWarnings("unchecked") final V next=(V)edgeListOrVertex;
+  return next;
 }
