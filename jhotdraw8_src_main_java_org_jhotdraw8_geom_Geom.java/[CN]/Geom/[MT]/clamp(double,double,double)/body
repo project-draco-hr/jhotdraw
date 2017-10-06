@@ -1,5 +1,5 @@
 {
-  if (value < min) {
+  if (Double.isNaN(value) || value < min) {
     return min;
   }
   if (value > max) {
