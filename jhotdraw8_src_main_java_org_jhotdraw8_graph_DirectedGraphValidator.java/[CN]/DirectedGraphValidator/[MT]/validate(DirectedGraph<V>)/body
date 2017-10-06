@@ -1,0 +1,16 @@
+{
+  Set<V> vertices=new LinkedHashSet<>();
+  for (int i=0, n=graph.getVertexCount(); i < n; i++) {
+    if (!vertices.add(graph.getVertex(i))) {
+      return false;
+    }
+  }
+  for (  V v : vertices) {
+    for (int j=0, m=graph.getNextCount(v); j < m; j++) {
+      if (!vertices.contains(graph.getNext(v,j))) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
