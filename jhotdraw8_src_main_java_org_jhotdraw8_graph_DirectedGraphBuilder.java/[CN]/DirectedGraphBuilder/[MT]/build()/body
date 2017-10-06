@@ -1,3 +1,8 @@
 {
-  return new ImmutableDirectedGraph<V>(this);
+  final ImmutableDirectedGraph<V> graph=new ImmutableDirectedGraph<V>(this);
+  ;
+  if (!new DirectedGraphValidator<V>().validate(graph)) {
+    throw new IllegalArgumentException("graph is not valid");
+  }
+  return graph;
 }
