@@ -1,0 +1,3 @@
+{
+  return svgStringFromAWT(awtShapeFromFXPathElements(elements));
+}
