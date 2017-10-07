@@ -1,0 +1,7 @@
+{
+  flattenTransforms();
+  Transform localTransform=Transforms.createReshapeTransform(getBoundsInLocal(),x,y,width,height);
+  for (  Figure child : getChildren()) {
+    child.reshapeInParent(localTransform);
+  }
+}
