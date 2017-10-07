@@ -2,16 +2,17 @@
   if (isDisabled()) {
     return;
   }
-  URI uri=project.getURI();
+  final URI uri=project.getURI();
+  final DataFormat dataFormat=project.getDataFormat();
   if (project.isModified()) {
     Alert alert=new Alert(Alert.AlertType.WARNING,"Do you want to revert?\nYou will lose your changes when you revert.",ButtonType.YES,ButtonType.CANCEL);
     alert.getDialogPane().setMaxWidth(640.0);
     Optional<ButtonType> answer=alert.showAndWait();
     if (answer.isPresent() && answer.get() == ButtonType.YES) {
-      doIt(project,uri);
+      doIt(project,uri,dataFormat);
     }
   }
  else {
-    doIt(project,uri);
+    doIt(project,uri,dataFormat);
   }
 }

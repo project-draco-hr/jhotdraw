@@ -1,0 +1,7 @@
+{
+  Attributes2Impl attrs=new Attributes2Impl(attributes);
+  attrs.addAttribute(LOCATION_NAMESPACE,SYSTEM_ID_ATTRIBUTE,QUALIFIED_SYSTEM_ID_ATTRIBUTE,"CDATA",locator.getSystemId());
+  attrs.addAttribute(LOCATION_NAMESPACE,LINE_NUMBER_ATTRIBUTE,QUALIFIED_LINE_ATTRIBUTE,"CDATA",Integer.toString(locator.getLineNumber()));
+  attrs.addAttribute(LOCATION_NAMESPACE,COLUMN_NUMBER_ATTRIBUTE,QUALIFIED_COLUMN_ATTRIBUTE,"CDATA",Integer.toString(locator.getColumnNumber()));
+  super.startElement(uri,localName,qName,attrs);
+}

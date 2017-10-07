@@ -1,0 +1,16 @@
+{
+  try {
+    XMLReader xmlReader=XMLReaderFactory.createXMLReader();
+    LocationFilter locationFilter=new LocationFilter(xmlReader);
+    SAXSource saxSource=new SAXSource(locationFilter,inputSource);
+    TransformerFactory transformerFactory=TransformerFactory.newInstance();
+    Transformer transformer=transformerFactory.newTransformer();
+    DOMResult domResult=new DOMResult();
+    transformer.transform(saxSource,domResult);
+    Node root=domResult.getNode();
+    return (Document)root;
+  }
+ catch (  TransformerException|SAXException ex) {
+    throw new IOException(ex);
+  }
+}

@@ -5,7 +5,10 @@
     Validator validator=schema.newValidator();
     validator.validate(new StreamSource(new File(xmlUri)));
   }
- catch (  SAXException e) {
+ catch (  SAXParseException e) {
+    throw new IOException("Invalid XML file: " + e.getSystemId() + "\nError in line: "+ e.getLineNumber()+ ", column: "+ e.getColumnNumber()+ ".",e);
+  }
+catch (  SAXException e) {
     throw new IOException("Invalid XML file: " + xmlUri,e);
   }
 }

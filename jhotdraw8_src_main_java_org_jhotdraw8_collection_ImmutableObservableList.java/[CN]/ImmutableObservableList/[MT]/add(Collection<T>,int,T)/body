@@ -1,5 +1,5 @@
 {
-  if (collection.isEmpty() && index == 0) {
+  if (collection == null || collection.isEmpty() && index == 0) {
     return ImmutableObservableList.of(item);
   }
   Object[] a=new Object[collection.size()];
