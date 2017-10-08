@@ -5,8 +5,10 @@
   }
   List<PathIterator> iterators=new ArrayList<>();
   for (  Figure child : getChildren()) {
-    final PathIterator childPathIterator=getStyledPathIteratorInParent((PathIterableFigure)child,tx);
-    iterators.add(childPathIterator);
+    if (child instanceof PathIterableFigure) {
+      final PathIterator childPathIterator=getStyledPathIteratorInParent((PathIterableFigure)child,tx);
+      iterators.add(childPathIterator);
+    }
   }
   return new ConcatenatedPathIterator(getStyled(FILL_RULE),iterators);
 }

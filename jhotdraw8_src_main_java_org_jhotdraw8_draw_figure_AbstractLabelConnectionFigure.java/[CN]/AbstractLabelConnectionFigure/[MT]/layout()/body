@@ -52,7 +52,8 @@ break;
 }
 final double labelOffsetX=-getStyled(LABEL_OFFSET_X).getConvertedValue();
 final double labelOffsetY=getStyled(LABEL_OFFSET_Y).getConvertedValue();
-Point2D origin=labeledLoc.add(perp.multiply(-labelOffsetY)).add(-perp.getY() * (labelOffsetX + tx),perp.getX() * (labelOffsetX + tx));
+Point2D origin=labeledLoc.add(perp.multiply(-labelOffsetY)).add(tangent.multiply(labelOffsetX));
+origin=origin.add(tx,0);
 Point2D labelTranslation=getStyled(LABEL_TRANSLATE);
 origin=origin.add(labelTranslation);
 set(ORIGIN,origin);
