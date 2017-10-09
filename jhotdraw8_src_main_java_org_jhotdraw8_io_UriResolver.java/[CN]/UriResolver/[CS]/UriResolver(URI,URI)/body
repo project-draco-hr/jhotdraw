@@ -1,0 +1,4 @@
+{
+  this.internal=internal;
+  this.external=externl;
+}

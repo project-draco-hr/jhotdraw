@@ -1,6 +1,5 @@
 {
   SvgExporter exporter=new SvgExporter(SimpleImageFigure.IMAGE_URI,SKIP_KEY);
-  exporter.setExternalHome(getExternalHome());
-  exporter.setInternalHome(getInternalHome());
+  exporter.setUriResolver(getUriResolver());
   return exporter;
 }

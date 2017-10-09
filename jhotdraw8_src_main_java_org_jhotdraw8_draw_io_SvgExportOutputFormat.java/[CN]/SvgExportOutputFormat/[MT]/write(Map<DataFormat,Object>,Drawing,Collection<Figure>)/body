@@ -1,6 +1,5 @@
 {
-  setExternalHome(null);
-  setInternalHome(drawing.get(Drawing.DOCUMENT_HOME));
+  setUriResolver(new UriResolver(drawing.get(Drawing.DOCUMENT_HOME),null));
   StringWriter out=new StringWriter();
   Document doc=toDocument(drawing,selection);
   try {

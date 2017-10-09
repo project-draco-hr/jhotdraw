@@ -9,7 +9,7 @@
   URI uri=(URI)node.getProperties().get(imageUriKey);
   String href=null;
   if (uri != null) {
-    href=toExternal(uri).toString();
+    href=uriResolver.apply(uri).toString();
   }
  else {
     if (node.getImage() != null) {

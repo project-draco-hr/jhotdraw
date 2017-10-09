@@ -29,8 +29,10 @@
         Figure firstFigure=null;
         boolean selectionFound=false;
         for (        Figure f : view.findFigures(vx,vy,false)) {
-          if (f.isVisible())           if (firstFigure == null) {
-            firstFigure=f;
+          if (f.isVisible()) {
+            if (firstFigure == null) {
+              firstFigure=f;
+            }
           }
           if (view.selectedFiguresProperty().contains(f)) {
             selectionFound=true;

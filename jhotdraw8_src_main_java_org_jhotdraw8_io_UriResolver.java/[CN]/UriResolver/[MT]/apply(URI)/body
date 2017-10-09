@@ -1,0 +1,9 @@
+{
+  if (internal != null) {
+    uri=internal.resolve(uri);
+  }
+  if (external != null) {
+    uri=external.relativize(uri);
+  }
+  return uri;
+}
