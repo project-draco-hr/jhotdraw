@@ -1,4 +1,4 @@
 {
   super(startX,startY,endX,endY);
-  set(FILL,new CssColor("black",Color.BLACK));
+  set(MARKER_FILL,new CssColor("black",Color.BLACK));
 }
