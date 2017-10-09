@@ -1,0 +1,13 @@
+{
+  if (!isStartDone) {
+    startX=getLastX();
+    startY=getLastY();
+    startTangentX=x1 - startX;
+    startTangentY=y1 - startY;
+    isStartDone=true;
+  }
+  endX=x3;
+  endY=y3;
+  endTangentX=x2 - x3;
+  endTangentY=y2 - y3;
+}
