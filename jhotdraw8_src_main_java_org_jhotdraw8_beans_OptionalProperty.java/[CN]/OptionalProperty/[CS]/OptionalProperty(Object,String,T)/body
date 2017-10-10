@@ -1,3 +1,0 @@
-{
-  super(bean,name,Optional.ofNullable(initialValue));
-}

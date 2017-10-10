@@ -3,6 +3,6 @@
     return super.get(key);
   }
  else {
-    return (parent != null) ? parent.get(key) : null;
+    return (parent == null) ? null : parent.get(key);
   }
 }
