@@ -13,7 +13,6 @@
     }
  else {
       if (isVerbose) {
-        System.out.println("Found parent resource bundle. " + PARENT_RESOURCE_KEY + "="+ parentBaseName);
       }
     }
   }
