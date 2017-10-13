@@ -1,4 +1,4 @@
 {
-  ImmutableObservableList<Point2D> list=owner.get(pointKey);
+  ImmutableList<Point2D> list=owner.get(pointKey);
   return list.get(pointIndex);
 }

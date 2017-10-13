@@ -18,6 +18,6 @@
  else {
     points.add(c);
   }
-  dm.set(createdFigure,key,new ImmutableObservableList<>(points));
+  dm.set(createdFigure,key,ImmutableList.ofCollection(points));
   event.consume();
 }

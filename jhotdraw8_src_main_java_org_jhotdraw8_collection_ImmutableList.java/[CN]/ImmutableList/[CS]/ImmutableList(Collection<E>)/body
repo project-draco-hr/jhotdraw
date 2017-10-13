@@ -1,0 +1,3 @@
+{
+  this.array=copyItems == null || copyItems.isEmpty() ? new Object[0] : copyItems.toArray();
+}

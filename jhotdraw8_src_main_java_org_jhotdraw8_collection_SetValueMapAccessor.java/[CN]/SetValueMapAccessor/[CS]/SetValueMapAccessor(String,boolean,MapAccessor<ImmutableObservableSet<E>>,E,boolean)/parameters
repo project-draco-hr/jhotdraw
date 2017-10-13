@@ -1,5 +1,0 @@
-String name
-boolean isTransient
-MapAccessor<ImmutableObservableSet<E>> setAccessor
-E value
-boolean defaultValue

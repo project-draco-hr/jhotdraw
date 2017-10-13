@@ -1,7 +1,7 @@
 {
   if (pointKey != null && event.getClickCount() == 2) {
     if (owner.get(pointKey).size() > 2) {
-      dv.getModel().set(owner,pointKey,ImmutableObservableList.remove(owner.get(pointKey),pointIndex));
+      dv.getModel().set(owner,pointKey,ImmutableList.remove(owner.get(pointKey),pointIndex));
       dv.recreateHandles();
     }
   }

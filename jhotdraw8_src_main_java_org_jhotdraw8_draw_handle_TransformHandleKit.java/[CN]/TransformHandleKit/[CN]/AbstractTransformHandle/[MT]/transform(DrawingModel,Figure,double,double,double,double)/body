@@ -15,11 +15,11 @@
   }
 switch (oldTransforms.size()) {
 case 0:
-    model.set(owner,TRANSFORMS,ImmutableObservableList.of(transform));
+    model.set(owner,TRANSFORMS,ImmutableList.of(transform));
   break;
 default :
 int last=oldTransforms.size() - 1;
-model.set(owner,TRANSFORMS,ImmutableObservableList.set(oldTransforms,last,Transforms.concat(oldTransforms.get(last),transform)));
+model.set(owner,TRANSFORMS,ImmutableList.set(oldTransforms,last,Transforms.concat(oldTransforms.get(last),transform)));
 break;
 }
 }

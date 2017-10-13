@@ -3,5 +3,5 @@
   for (int i=0, n=newP.size(); i < n; i++) {
     newP.set(i,newP.get(i).transform(transform));
   }
-  set(PATH,new ImmutableObservableList<>(newP));
+  set(PATH,ImmutableList.ofCollection(newP));
 }

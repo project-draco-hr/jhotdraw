@@ -1,0 +1,3 @@
+Appendable buf
+IdFactory idFactory
+ImmutableList<Transform> txs

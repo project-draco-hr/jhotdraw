@@ -11,7 +11,7 @@
         dm.removeFromParent(createdFigure);
       }
  else {
-        dm.set(createdFigure,key,new ImmutableObservableList<>(points));
+        dm.set(createdFigure,key,ImmutableList.ofCollection(points));
         dv.getSelectedFigures().clear();
         dv.setHandleType(HandleType.POINT);
         dv.getSelectedFigures().add(createdFigure);

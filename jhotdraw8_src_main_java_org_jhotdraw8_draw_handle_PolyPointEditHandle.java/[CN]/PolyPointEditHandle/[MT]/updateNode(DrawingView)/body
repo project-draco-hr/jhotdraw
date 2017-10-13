@@ -1,7 +1,7 @@
 {
   Figure f=getOwner();
   Transform t=Transforms.concat(view.getWorldToView(),f.getLocalToWorld());
-  ImmutableObservableList<Point2D> list=f.get(pointKey);
+  ImmutableList<Point2D> list=f.get(pointKey);
   Point2D p=list.get(pointIndex);
   pickLocation=p=t == null ? p : t.transform(p);
   node.relocate(p.getX() - 5,p.getY() - 5);

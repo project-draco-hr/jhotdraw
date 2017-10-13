@@ -1,0 +1,5 @@
+String name
+boolean isTransient
+MapAccessor<ImmutableSet<E>> setAccessor
+E value
+boolean defaultValue

@@ -1,9 +1,0 @@
-{
-  if (collection == null || collection.isEmpty()) {
-    return ImmutableObservableList.of(item);
-  }
-  Object[] a=new Object[collection.size() + 1];
-  a=collection.toArray(a);
-  a[a.length - 1]=item;
-  return new ImmutableObservableList<>(true,a);
-}

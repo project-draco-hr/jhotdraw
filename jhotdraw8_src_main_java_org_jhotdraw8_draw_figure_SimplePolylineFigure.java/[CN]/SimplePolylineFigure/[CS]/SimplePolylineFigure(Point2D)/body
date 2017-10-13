@@ -1,4 +1,4 @@
 {
-  set(POINTS,ImmutableObservableList.of(points));
+  set(POINTS,ImmutableList.of(points));
   set(FILL,null);
 }

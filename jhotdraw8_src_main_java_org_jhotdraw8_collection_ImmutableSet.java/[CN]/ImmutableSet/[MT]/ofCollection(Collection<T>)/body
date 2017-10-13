@@ -1,0 +1,3 @@
+{
+  return collection.isEmpty() ? emptySet() : new ImmutableSet<T>(collection);
+}

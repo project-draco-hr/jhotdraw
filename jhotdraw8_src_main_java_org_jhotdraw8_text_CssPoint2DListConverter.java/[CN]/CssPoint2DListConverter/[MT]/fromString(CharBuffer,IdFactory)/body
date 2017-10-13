@@ -4,7 +4,7 @@
   tt.setSkipWhitespaces(true);
   if (tt.nextToken() == CssTokenizer.TT_IDENT && "none".equals(tt.currentStringValue())) {
     tt.skipWhitespace();
-    return new ImmutableObservableList<>(l);
+    return ImmutableList.ofCollection(l);
   }
  else {
     tt.pushBack();
@@ -22,5 +22,5 @@
     }
   }
   tt.skipWhitespace();
-  return new ImmutableObservableList<>(l);
+  return ImmutableList.ofCollection(l);
 }

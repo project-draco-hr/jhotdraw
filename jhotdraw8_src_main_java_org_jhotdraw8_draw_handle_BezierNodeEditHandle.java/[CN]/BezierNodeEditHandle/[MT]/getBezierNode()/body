@@ -1,4 +1,4 @@
 {
-  ImmutableObservableList<BezierNode> list=owner.get(pointKey);
+  ImmutableList<BezierNode> list=owner.get(pointKey);
   return list.get(pointIndex);
 }

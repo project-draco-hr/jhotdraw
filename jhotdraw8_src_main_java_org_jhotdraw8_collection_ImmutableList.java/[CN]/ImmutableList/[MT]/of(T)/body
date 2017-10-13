@@ -1,0 +1,3 @@
+{
+  return items.length == 0 ? emptyList() : new ImmutableList<>(true,items);
+}

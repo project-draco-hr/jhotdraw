@@ -1,5 +1,0 @@
-{
-  Set<T> a=new HashSet<T>(collection);
-  a.remove(item);
-  return new ImmutableObservableSet<T>(true,a);
-}

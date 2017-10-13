@@ -1,3 +1,0 @@
-String name
-MapAccessor<ImmutableObservableSet<E>> setAccessor
-E value

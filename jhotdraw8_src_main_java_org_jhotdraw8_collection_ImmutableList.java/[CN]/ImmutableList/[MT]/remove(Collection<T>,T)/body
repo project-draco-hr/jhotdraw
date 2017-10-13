@@ -1,0 +1,14 @@
+{
+  if (collection == null || collection.size() == 1 && collection.contains(item)) {
+    return ImmutableList.emptyList();
+  }
+  if (collection instanceof List) {
+    @SuppressWarnings("unchecked") List<T> list=(List)collection;
+    return remove(list,list.indexOf(item));
+  }
+ else {
+    List<T> a=new ArrayList<T>(collection);
+    a.remove(item);
+    return new ImmutableList<>(a);
+  }
+}

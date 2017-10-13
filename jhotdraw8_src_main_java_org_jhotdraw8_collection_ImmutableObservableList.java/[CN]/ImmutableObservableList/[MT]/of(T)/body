@@ -1,3 +1,0 @@
-{
-  return items.length == 0 ? emptyList() : new ImmutableObservableList<>(true,items);
-}

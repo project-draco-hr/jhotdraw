@@ -19,7 +19,7 @@
       }
     }
     if (insertAt != -1 && insertLocation != null) {
-      dv.getModel().set(owner,key,ImmutableObservableList.add(owner.get(key),insertAt,insertLocation));
+      dv.getModel().set(owner,key,ImmutableList.add(owner.get(key),insertAt,insertLocation));
       dv.recreateHandles();
     }
   }

@@ -1,0 +1,5 @@
+{
+  Set<T> a=new HashSet<T>(collection);
+  a.remove(item);
+  return new ImmutableSet<T>(true,a);
+}

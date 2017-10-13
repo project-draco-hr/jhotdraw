@@ -1,0 +1,4 @@
+Figure figure
+MapAccessor<ImmutableList<Point2D>> pointKey
+int pointIndex
+String styleclass

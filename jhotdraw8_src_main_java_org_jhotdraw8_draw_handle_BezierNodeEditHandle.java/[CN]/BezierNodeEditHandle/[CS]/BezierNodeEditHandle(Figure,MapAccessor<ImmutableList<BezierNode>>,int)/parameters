@@ -1,0 +1,3 @@
+Figure figure
+MapAccessor<ImmutableList<BezierNode>> pointKey
+int pointIndex

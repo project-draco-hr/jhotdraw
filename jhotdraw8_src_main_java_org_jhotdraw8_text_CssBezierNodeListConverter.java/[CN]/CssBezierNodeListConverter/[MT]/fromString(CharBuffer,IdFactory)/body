@@ -1,6 +1,6 @@
 {
   CssTokenizer tt=new CssTokenizer(new CharBufferReader(buf));
-  ImmutableObservableList<BezierNode> p=null;
+  ImmutableList<BezierNode> p=null;
   if (tt.nextToken() == CssTokenizer.TT_IDENT) {
     if (!nullable) {
       throw new ParseException("String expected. " + tt.currentToken(),buf.position());

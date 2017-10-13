@@ -1,3 +1,0 @@
-{
-  this.array=copyItems == null ? new Object[0] : copyItems.toArray();
-}

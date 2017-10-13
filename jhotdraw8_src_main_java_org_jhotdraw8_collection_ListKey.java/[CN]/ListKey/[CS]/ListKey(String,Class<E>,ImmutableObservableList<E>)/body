@@ -1,3 +1,0 @@
-{
-  super(key,ImmutableObservableList.class,new Class<?>[]{elemClass},defaultValue);
-}

@@ -1,0 +1,3 @@
+String key
+Class<E> elemClass
+ImmutableSet<E> defaultValue

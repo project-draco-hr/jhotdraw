@@ -1,0 +1,3 @@
+String name
+MapAccessor<ImmutableSet<E>> setAccessor
+E value

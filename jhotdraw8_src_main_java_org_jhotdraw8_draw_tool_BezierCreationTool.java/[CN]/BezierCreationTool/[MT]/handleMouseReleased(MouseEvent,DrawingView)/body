@@ -12,7 +12,7 @@
     BezierNodePathBuilder builder=new BezierNodePathBuilder();
     double error=5 / dv.getZoomFactor();
     BezierFit.fitBezierPath(builder,digitized,error);
-    final ImmutableObservableList<BezierNode> built=builder.getNodes();
+    final ImmutableList<BezierNode> built=builder.getNodes();
     ArrayList<BezierNode> newList=new ArrayList<>(dragStartIndex + built.size());
     for (int i=0; i < dragStartIndex; i++) {
       newList.add(points.get(i));
@@ -28,7 +28,7 @@
     newList.add(points.get(points.size() - 1));
     points=newList;
     DrawingModel dm=dv.getModel();
-    dm.set(createdFigure,key,new ImmutableObservableList<>(points));
+    dm.set(createdFigure,key,ImmutableList.ofCollection(points));
   }
   dragStartIndex=-1;
 }

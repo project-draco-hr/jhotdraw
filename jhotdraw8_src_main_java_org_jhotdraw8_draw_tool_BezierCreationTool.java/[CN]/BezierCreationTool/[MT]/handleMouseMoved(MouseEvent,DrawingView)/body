@@ -6,7 +6,7 @@
     Point2D c2=dv.getConstrainer().constrainPoint(createdFigure,dv.viewToWorld(x2,y2));
     DrawingModel dm=dv.getModel();
     points.set(points.size() - 1,new BezierNode(c2));
-    dm.set(createdFigure,key,new ImmutableObservableList<>(points));
+    dm.set(createdFigure,key,ImmutableList.ofCollection(points));
   }
   event.consume();
 }

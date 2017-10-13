@@ -1,7 +1,7 @@
 {
   Figure f=getOwner();
   Transform t=Transforms.concat(view.getWorldToView(),f.getLocalToWorld());
-  ImmutableObservableList<BezierNode> list=f.get(pointKey);
+  ImmutableList<BezierNode> list=f.get(pointKey);
   if (pointIndex >= list.size()) {
     return;
   }

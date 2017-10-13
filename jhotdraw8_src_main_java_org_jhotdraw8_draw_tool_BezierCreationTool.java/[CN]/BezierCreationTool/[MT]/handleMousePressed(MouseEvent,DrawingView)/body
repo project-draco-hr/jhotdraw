@@ -18,7 +18,7 @@
  else {
     points.add(new BezierNode(c));
   }
-  dm.set(createdFigure,key,new ImmutableObservableList<>(points));
+  dm.set(createdFigure,key,ImmutableList.ofCollection(points));
   dragStartIndex=-1;
   event.consume();
 }

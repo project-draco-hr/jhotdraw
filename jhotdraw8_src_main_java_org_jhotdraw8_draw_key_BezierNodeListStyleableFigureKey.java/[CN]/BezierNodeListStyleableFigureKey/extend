@@ -1,1 +1,1 @@
-SimpleFigureKey<ImmutableObservableList<BezierNode>>
+SimpleFigureKey<ImmutableList<BezierNode>>

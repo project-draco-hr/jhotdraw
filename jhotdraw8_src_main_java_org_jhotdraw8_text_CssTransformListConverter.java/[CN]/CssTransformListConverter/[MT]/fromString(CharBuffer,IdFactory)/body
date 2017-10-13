@@ -4,7 +4,7 @@
   tt.setSkipWhitespaces(true);
   if (tt.nextToken() == CssTokenizer.TT_IDENT && tt.currentStringValue().equals("none")) {
     in.position(in.limit());
-    return ImmutableObservableList.emptyList();
+    return ImmutableList.emptyList();
   }
  else {
     tt.pushBack();
@@ -162,5 +162,5 @@ tt.pushBack();
 }
 }
 in.position(in.limit());
-return new ImmutableObservableList<>(txs);
+return ImmutableList.ofCollection(txs);
 }

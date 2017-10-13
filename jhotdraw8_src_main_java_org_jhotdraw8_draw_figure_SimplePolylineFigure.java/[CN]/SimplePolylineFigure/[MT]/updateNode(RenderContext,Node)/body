@@ -6,7 +6,7 @@
   applyFillableFigureProperties(lineNode);
   applyTransformableFigureProperties(node);
   applyCompositableFigureProperties(lineNode);
-  final ImmutableObservableList<Point2D> points=getStyled(POINTS);
+  final ImmutableList<Point2D> points=getStyled(POINTS);
   List<Double> list=new ArrayList<>(points.size() * 2);
   for (  Point2D p : points) {
     list.add(p.getX());

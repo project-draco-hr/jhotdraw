@@ -1,5 +1,5 @@
 {
   Object[] v=formatter.fromString(buf);
-  ImmutableObservableSet<PseudoClass> l=new ImmutableObservableSet<>(v,1,(int)v[0]);
+  ImmutableSet<PseudoClass> l=ImmutableSet.ofArray(v,1,(int)v[0]);
   return l;
 }

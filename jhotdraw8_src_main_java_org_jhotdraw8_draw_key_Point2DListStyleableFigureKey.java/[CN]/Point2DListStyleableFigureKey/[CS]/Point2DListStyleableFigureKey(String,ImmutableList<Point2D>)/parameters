@@ -1,0 +1,2 @@
+String name
+ImmutableList<Point2D> defaultValue

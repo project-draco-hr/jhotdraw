@@ -1,5 +1,5 @@
 {
   Object[] v=formatter.fromString(buf);
-  ImmutableObservableList<String> l=new ImmutableObservableList<>(v,1,(int)v[0]);
+  ImmutableList<String> l=ImmutableList.ofArray(v,1,(int)v[0]);
   return l;
 }
