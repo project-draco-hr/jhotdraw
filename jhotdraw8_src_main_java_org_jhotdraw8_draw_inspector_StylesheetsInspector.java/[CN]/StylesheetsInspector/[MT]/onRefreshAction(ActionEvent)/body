@@ -1,0 +1,5 @@
+{
+  for (  Figure f : getDrawing().preorderIterable()) {
+    getDrawingModel().fireStyleInvalidated(f);
+  }
+}
