@@ -1,0 +1,4 @@
+{
+  this.drawing=drawing;
+  doAddNotify(drawing);
+}

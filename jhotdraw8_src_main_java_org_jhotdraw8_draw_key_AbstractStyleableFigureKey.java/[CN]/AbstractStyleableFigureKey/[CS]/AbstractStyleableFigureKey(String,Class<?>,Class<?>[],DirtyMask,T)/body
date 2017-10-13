@@ -1,0 +1,3 @@
+{
+  this(name,clazz,typeParameters,true,dirtyMask,defaultValue);
+}

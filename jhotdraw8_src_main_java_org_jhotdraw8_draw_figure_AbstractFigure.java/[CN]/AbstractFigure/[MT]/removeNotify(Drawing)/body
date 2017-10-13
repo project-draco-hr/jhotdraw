@@ -1,0 +1,4 @@
+{
+  this.drawing=null;
+  doRemoveNotify(drawing);
+}

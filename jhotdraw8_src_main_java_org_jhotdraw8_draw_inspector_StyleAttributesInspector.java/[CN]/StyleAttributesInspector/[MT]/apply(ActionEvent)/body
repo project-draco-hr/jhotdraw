@@ -8,7 +8,7 @@
     Drawing d=drawingView.getDrawing();
     DrawingModel m=drawingView.getModel();
     ObservableMap<String,Set<Figure>> pseudoStyles=FXCollections.observableHashMap();
-    HashSet<Figure> fs=new HashSet<>(drawingView.getSelectedFigures());
+    Set<Figure> fs=new HashSet<>(drawingView.getSelectedFigures());
     if (fs.isEmpty()) {
       fs.add(d);
     }

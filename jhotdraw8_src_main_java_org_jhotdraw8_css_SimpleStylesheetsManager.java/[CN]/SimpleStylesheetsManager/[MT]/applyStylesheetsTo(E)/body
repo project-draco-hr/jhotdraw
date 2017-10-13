@@ -1,32 +1,32 @@
 {
   SelectorModel<E> selectorModel=getSelectorModel();
   for (  Declaration d : collectApplicableDeclarations(elem,getUserAgentStylesheets())) {
-    selectorModel.setAttribute(elem,StyleOrigin.USER_AGENT,d.getProperty(),d.getTermsAsString());
+    doSetAttribute(selectorModel,elem,StyleOrigin.USER_AGENT,d.getProperty(),d.getTermsAsString());
   }
   for (  Declaration d : collectApplicableDeclarations(elem,getAuthorStylesheets())) {
-    selectorModel.setAttribute(elem,StyleOrigin.AUTHOR,d.getProperty(),d.getTermsAsString());
+    doSetAttribute(selectorModel,elem,StyleOrigin.AUTHOR,d.getProperty(),d.getTermsAsString());
   }
   for (  Declaration d : collectApplicableDeclarations(elem,getInlineStylesheets())) {
-    selectorModel.setAttribute(elem,StyleOrigin.INLINE,d.getProperty(),d.getTermsAsString());
+    doSetAttribute(selectorModel,elem,StyleOrigin.INLINE,d.getProperty(),d.getTermsAsString());
   }
-  HashMap<String,String> applicableDeclarations=new HashMap<>();
   if (selectorModel.hasAttribute(elem,"style")) {
+    Map<String,String> inlineDeclarations=new HashMap<>();
     String styleValue=selectorModel.getAttribute(elem,"style");
     try {
       for (      Declaration d : parser.parseDeclarationList(styleValue)) {
         if (d.getTerms().isEmpty()) {
           continue;
         }
-        applicableDeclarations.put(d.getProperty(),d.getTermsAsString());
+        inlineDeclarations.put(d.getProperty(),d.getTermsAsString());
       }
     }
  catch (    IOException ex) {
       System.err.println("DOMStyleManager: Invalid style attribute on element. style=" + styleValue);
       ex.printStackTrace();
     }
+    for (    Map.Entry<String,String> entry : inlineDeclarations.entrySet()) {
+      doSetAttribute(selectorModel,elem,StyleOrigin.INLINE,entry.getKey(),entry.getValue());
+    }
+    inlineDeclarations.clear();
   }
-  for (  Map.Entry<String,String> entry : applicableDeclarations.entrySet()) {
-    selectorModel.setAttribute(elem,StyleOrigin.INLINE,entry.getKey(),entry.getValue());
-  }
-  applicableDeclarations.clear();
 }

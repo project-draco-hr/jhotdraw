@@ -1,9 +1,13 @@
 {
-  HashMap<String,WriteableStyleableMapAccessor<Object>> metaMap=new HashMap<>();
-  for (  MapAccessor<?> k : elem.getSupportedKeys()) {
-    if (k instanceof WriteableStyleableMapAccessor) {
-      @SuppressWarnings("unchecked") WriteableStyleableMapAccessor<Object> sk=(WriteableStyleableMapAccessor<Object>)k;
-      metaMap.put(sk.getCssName(),sk);
+  Map<String,WriteableStyleableMapAccessor<Object>> metaMap=figureToMetaMap.get(elem.getClass());
+  if (metaMap == null) {
+    metaMap=new HashMap<>();
+    figureToMetaMap.put(elem.getClass(),metaMap);
+    for (    MapAccessor<?> k : elem.getSupportedKeys()) {
+      if (k instanceof WriteableStyleableMapAccessor) {
+        @SuppressWarnings("unchecked") WriteableStyleableMapAccessor<Object> sk=(WriteableStyleableMapAccessor<Object>)k;
+        metaMap.put(sk.getCssName(),sk);
+      }
     }
   }
   return metaMap;

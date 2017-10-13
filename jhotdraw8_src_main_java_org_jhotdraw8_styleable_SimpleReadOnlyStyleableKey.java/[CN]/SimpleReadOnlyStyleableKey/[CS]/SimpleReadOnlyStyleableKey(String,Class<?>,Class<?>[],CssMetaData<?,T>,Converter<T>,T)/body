@@ -2,4 +2,5 @@
   super(key,clazz,typeParameters,defaultValue);
   this.converter=converter;
   this.cssMetaData=metaData;
+  this.cssName=ReadOnlyStyleableMapAccessor.toCssName(key);
 }

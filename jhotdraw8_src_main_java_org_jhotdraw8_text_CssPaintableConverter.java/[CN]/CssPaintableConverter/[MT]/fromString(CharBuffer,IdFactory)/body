@@ -1,5 +1,9 @@
 {
   String str=buf.toString();
+  if ("none".equals(str)) {
+    buf.position(buf.length());
+    return null;
+  }
   int pos=buf.position();
   ParseException pe=null;
   try {

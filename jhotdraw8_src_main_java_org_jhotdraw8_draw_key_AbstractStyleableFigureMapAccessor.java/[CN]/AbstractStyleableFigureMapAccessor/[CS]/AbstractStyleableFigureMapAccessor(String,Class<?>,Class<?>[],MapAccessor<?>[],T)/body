@@ -20,4 +20,5 @@
     }
   }
   dirtyMask=m;
+  cssName=ReadOnlyStyleableMapAccessor.toCssName(name);
 }

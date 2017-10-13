@@ -1,1 +1,1 @@
-SimpleFigureKey<ImmutableList<BezierNode>>
+AbstractStyleableFigureKey<ImmutableList<BezierNode>>

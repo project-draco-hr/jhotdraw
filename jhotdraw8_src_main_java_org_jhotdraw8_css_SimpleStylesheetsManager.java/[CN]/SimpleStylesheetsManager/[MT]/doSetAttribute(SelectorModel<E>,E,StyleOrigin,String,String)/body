@@ -1,0 +1,3 @@
+{
+  selectorModel1.setAttribute(elem,styleOrigin,key,value);
+}

@@ -4,9 +4,6 @@
   if (d != null) {
     StylesheetsManager<Figure> styleManager=d.getStyleManager();
     styleManager.applyStylesheetsTo(this);
-    for (    Figure child : getChildren()) {
-      child.updateCss();
-    }
   }
   invalidateTransforms();
 }
