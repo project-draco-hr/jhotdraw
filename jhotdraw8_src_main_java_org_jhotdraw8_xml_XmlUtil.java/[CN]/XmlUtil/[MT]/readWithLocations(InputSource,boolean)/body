@@ -1,6 +1,6 @@
 {
   try {
-    XMLReader xmlReader=XMLReaderFactory.createXMLReader();
+    XMLReader xmlReader=SAXParserFactory.newInstance().newSAXParser().getXMLReader();
     LocationFilter locationFilter=new LocationFilter(xmlReader);
     SAXSource saxSource=new SAXSource(locationFilter,inputSource);
     TransformerFactory transformerFactory=TransformerFactory.newInstance();
@@ -10,7 +10,7 @@
     Node root=domResult.getNode();
     return (Document)root;
   }
- catch (  TransformerException|SAXException ex) {
+ catch (  TransformerException|SAXException|ParserConfigurationException ex) {
     throw new IOException(ex);
   }
 }
