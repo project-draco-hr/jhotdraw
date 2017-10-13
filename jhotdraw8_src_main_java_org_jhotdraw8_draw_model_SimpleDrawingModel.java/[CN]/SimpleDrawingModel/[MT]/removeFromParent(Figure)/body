@@ -1,5 +1,5 @@
 {
-  Drawing oldDrawing=child.getDrawing();
+  Figure oldRoot=child.getRoot();
   Figure parent=child.getParent();
   if (parent != null) {
     int index=parent.getChildren().indexOf(child);
@@ -9,16 +9,16 @@
       fireTreeModelEvent(TreeModelEvent.nodeInvalidated((DrawingModel)this,parent));
     }
   }
-  Drawing newDrawing=child.getDrawing();
-  if (oldDrawing != newDrawing) {
-    if (oldDrawing != null) {
+  Figure newRoot=child.getRoot();
+  if (oldRoot != newRoot) {
+    if (oldRoot != null) {
       for (      Figure f : child.preorderIterable()) {
-        fireTreeModelEvent(TreeModelEvent.nodeRemovedFromTree((DrawingModel)this,oldDrawing,f));
+        fireTreeModelEvent(TreeModelEvent.nodeRemovedFromTree((DrawingModel)this,oldRoot,f));
       }
     }
-    if (newDrawing != null) {
+    if (newRoot != null) {
       for (      Figure f : child.preorderIterable()) {
-        fireTreeModelEvent(TreeModelEvent.nodeAddedToTree((DrawingModel)this,newDrawing,f));
+        fireTreeModelEvent(TreeModelEvent.nodeAddedToTree((DrawingModel)this,newRoot,f));
       }
     }
   }
