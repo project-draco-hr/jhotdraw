@@ -1,4 +1,4 @@
 {
-  finish();
+  pathDone();
   return new Path(elements);
 }

@@ -1,4 +1,4 @@
 {
   doEnd();
-  target.finish();
+  target.pathDone();
 }

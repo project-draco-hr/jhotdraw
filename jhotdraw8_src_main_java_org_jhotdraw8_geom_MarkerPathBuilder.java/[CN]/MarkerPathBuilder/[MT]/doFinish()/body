@@ -1,4 +1,4 @@
 {
   doEndMarker();
-  out.finish();
+  out.pathDone();
 }

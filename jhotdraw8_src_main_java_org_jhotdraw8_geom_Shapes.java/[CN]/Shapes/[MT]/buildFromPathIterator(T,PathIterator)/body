@@ -21,6 +21,6 @@ default :
 throw new InternalError("unsupported segment type:" + iter.currentSegment(coords));
 }
 }
-builder.finish();
+builder.pathDone();
 return builder;
 }

@@ -4,5 +4,5 @@
     needsMoveTo=false;
   }
   flush();
-  target.finish();
+  target.pathDone();
 }

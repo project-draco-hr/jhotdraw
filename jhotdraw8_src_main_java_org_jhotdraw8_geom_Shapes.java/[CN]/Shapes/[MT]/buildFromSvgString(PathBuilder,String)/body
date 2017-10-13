@@ -346,6 +346,6 @@ throw new IOException("Illegal command: " + command);
  catch (IllegalPathStateException e) {
 throw new IOException(e);
 }
-builder.finish();
+builder.pathDone();
 return builder;
 }
