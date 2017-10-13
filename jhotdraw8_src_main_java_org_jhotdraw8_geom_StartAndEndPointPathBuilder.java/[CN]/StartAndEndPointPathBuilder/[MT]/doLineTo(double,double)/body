@@ -2,12 +2,12 @@
   if (!isStartDone) {
     startX=getLastX();
     startY=getLastY();
-    startTangentX=x - startX;
-    startTangentY=y - startY;
+    startTangentX=startX - x;
+    startTangentY=startY - y;
     isStartDone=true;
   }
   endX=x;
   endY=y;
-  endTangentX=getLastX() - x;
-  endTangentY=getLastY() - y;
+  endTangentX=x - getLastX();
+  endTangentY=y - getLastY();
 }
