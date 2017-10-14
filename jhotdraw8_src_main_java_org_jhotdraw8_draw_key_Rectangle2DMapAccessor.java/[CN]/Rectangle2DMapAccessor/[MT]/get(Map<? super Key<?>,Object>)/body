@@ -1,0 +1,3 @@
+{
+  return new Rectangle2D(xKey.get(a),yKey.get(a),max(0.0,widthKey.get(a)),max(0.0,heightKey.get(a)));
+}

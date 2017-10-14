@@ -1,0 +1,8 @@
+{
+  Rectangle2D oldValue=get(a);
+  xKey.remove(a);
+  yKey.remove(a);
+  widthKey.remove(a);
+  heightKey.remove(a);
+  return oldValue;
+}
