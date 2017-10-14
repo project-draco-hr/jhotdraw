@@ -1,0 +1,19 @@
+{
+{
+    if (key instanceof FigureKey && ((FigureKey<?>)key).getDirtyMask().containsOneOf(DirtyBits.LAYOUT_SUBJECT)) {
+      layoutSubjectChange.clear();
+      layoutSubjectChange.addAll(figure.getLayoutSubjects());
+    }
+  }
+{
+    fireDrawingModelEvent(DrawingModelEvent.propertyValueChanged(this,figure,(Key<Object>)key,oldValue,newValue));
+    if (key instanceof FigureKey && ((FigureKey<?>)key).getDirtyMask().containsOneOf(DirtyBits.LAYOUT_SUBJECT)) {
+      fireDrawingModelEvent(DrawingModelEvent.layoutSubjectChanged(this,figure));
+      layoutSubjectChange.addAll(figure.getLayoutSubjects());
+      for (      Figure f : new ArrayList<>(layoutSubjectChange)) {
+        fireDrawingModelEvent(DrawingModelEvent.layoutSubjectChanged((DrawingModel)this,f));
+      }
+      layoutSubjectChange.clear();
+    }
+  }
+}

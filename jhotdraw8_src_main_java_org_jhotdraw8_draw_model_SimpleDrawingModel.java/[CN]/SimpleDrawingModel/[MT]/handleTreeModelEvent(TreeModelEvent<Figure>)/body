@@ -9,10 +9,14 @@ case NODE_ADDED_TO_PARENT:
   invalidate();
 break;
 case NODE_ADDED_TO_TREE:
-if (event.getRoot() instanceof Drawing) figure.addNotify((Drawing)event.getRoot());
+if (event.getRoot() instanceof Drawing) {
+figure.addNotify((Drawing)event.getRoot());
+}
 break;
 case NODE_REMOVED_FROM_TREE:
-if (event.getRoot() instanceof Drawing) figure.removeNotify((Drawing)event.getRoot());
+if (event.getRoot() instanceof Drawing) {
+figure.removeNotify((Drawing)event.getRoot());
+}
 removeDirty(figure);
 break;
 case NODE_REMOVED_FROM_PARENT:
