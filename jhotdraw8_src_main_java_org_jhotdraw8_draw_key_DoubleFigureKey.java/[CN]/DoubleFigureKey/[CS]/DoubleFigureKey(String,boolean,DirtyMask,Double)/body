@@ -1,0 +1,3 @@
+{
+  super(name,Double.class,isNullable,dirtyMask,defaultValue);
+}
