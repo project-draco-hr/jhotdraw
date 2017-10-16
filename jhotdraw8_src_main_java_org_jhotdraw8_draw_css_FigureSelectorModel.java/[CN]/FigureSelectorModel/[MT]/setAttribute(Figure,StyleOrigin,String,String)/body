@@ -13,7 +13,6 @@
         elem.setStyled(origin,k,convertedValue);
       }
  catch (      ParseException|IOException ex) {
-        ex.printStackTrace();
       }
     }
   }

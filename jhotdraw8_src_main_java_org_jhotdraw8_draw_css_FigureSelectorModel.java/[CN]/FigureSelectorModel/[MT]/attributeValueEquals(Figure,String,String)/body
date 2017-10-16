@@ -1,4 +1,4 @@
 {
   String stringValue=getReadOnlyAttributeValueAsString(element,attributeName);
-  return stringValue != null && requestedValue.equals(stringValue);
+  return Objects.equals(stringValue,requestedValue);
 }
