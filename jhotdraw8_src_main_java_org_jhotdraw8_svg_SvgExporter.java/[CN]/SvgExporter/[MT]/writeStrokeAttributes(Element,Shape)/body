@@ -6,7 +6,7 @@
       elem.setAttribute("stroke","url(#" + id + ")");
     }
  else {
-      elem.setAttribute("stroke",paint.toString(stroke));
+      elem.setAttribute("stroke",paintConverter.toString(stroke));
       if (stroke instanceof Color) {
         Color c=(Color)stroke;
         if (!c.isOpaque()) {

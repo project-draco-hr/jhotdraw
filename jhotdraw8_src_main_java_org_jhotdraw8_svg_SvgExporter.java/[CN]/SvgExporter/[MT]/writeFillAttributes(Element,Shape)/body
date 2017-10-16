@@ -5,7 +5,7 @@
     elem.setAttribute("fill","url(#" + id + ")");
   }
  else {
-    elem.setAttribute("fill",paint.toString(fill));
+    elem.setAttribute("fill",paintConverter.toString(fill));
     if (fill instanceof Color) {
       Color c=(Color)fill;
       if (!c.isOpaque()) {
@@ -13,4 +13,24 @@
       }
     }
   }
+  final FillRule fillRule;
+  if (node instanceof Path) {
+    Path path=(Path)node;
+    fillRule=path.getFillRule();
+  }
+ else   if (node instanceof SVGPath) {
+    SVGPath path=(SVGPath)node;
+    fillRule=path.getFillRule();
+  }
+ else {
+    fillRule=FillRule.NON_ZERO;
+  }
+switch (fillRule) {
+case EVEN_ODD:
+    elem.setAttribute("fill-rule","evenodd");
+  break;
+case NON_ZERO:
+default :
+break;
+}
 }

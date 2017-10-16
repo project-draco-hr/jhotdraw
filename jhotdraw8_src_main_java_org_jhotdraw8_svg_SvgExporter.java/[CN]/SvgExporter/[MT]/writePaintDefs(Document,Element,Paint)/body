@@ -37,7 +37,7 @@ for (Stop s : g.getStops()) {
 Element stopElem=doc.createElement("stop");
 stopElem.setAttribute("offset",nb.toString(s.getOffset() * 100) + "%");
 Color c=s.getColor();
-stopElem.setAttribute("stop-color",this.paint.toString(c));
+stopElem.setAttribute("stop-color",this.paintConverter.toString(c));
 if (!c.isOpaque()) {
 stopElem.setAttribute("stop-opacity",nb.toString(c.getOpacity()));
 }
@@ -84,7 +84,7 @@ for (Stop s : g.getStops()) {
 Element stopElem=doc.createElement("stop");
 stopElem.setAttribute("offset",nb.toString(s.getOffset() * 100) + "%");
 Color c=s.getColor();
-stopElem.setAttribute("stop-color",this.paint.toString(c));
+stopElem.setAttribute("stop-color",this.paintConverter.toString(c));
 if (!c.isOpaque()) {
 stopElem.setAttribute("stop-opacity",nb.toString(c.getOpacity()));
 }

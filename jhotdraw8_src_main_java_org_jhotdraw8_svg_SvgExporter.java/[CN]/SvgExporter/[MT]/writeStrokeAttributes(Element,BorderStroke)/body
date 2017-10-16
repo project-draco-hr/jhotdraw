@@ -1,6 +1,6 @@
 {
   if (shape.getTopStroke() != null) {
-    elem.setAttribute("stroke",paint.toString(shape.getTopStroke()));
+    elem.setAttribute("stroke",paintConverter.toString(shape.getTopStroke()));
   }
   if (shape.getWidths().getTop() != 1) {
     elem.setAttribute("stroke-width",nb.toString(shape.getWidths().getTop()));
