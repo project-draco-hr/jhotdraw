@@ -1,9 +1,6 @@
 {
   final int n=model.getVertexCount();
-  int[] result=new int[n];
-  int[] deg=new int[n];
-  int[] queue=new int[n];
-  int first=0, last=0;
+  final int[] deg=new int[n];
   for (int i=0; i < n; i++) {
     final int m=model.getNextCount(i);
     for (int j=0; j < m; j++) {
@@ -11,11 +8,14 @@
       deg[v]++;
     }
   }
+  final int[] queue=new int[n];
+  int first=0, last=0;
   for (int i=0; i < n; i++) {
     if (deg[i] == 0) {
       queue[last++]=i;
     }
   }
+  final int[] result=new int[n];
   int done=0;
   BitSet doneSet=null;
   while (done < n) {
