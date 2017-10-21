@@ -1,8 +1,3 @@
 {
-  Object edgeListOrVertex=edges.get(v);
-  if (edgeListOrVertex instanceof Object[]) {
-    final Object[] edgeList=(Object[])edgeListOrVertex;
-    return edgeList.length;
-  }
-  return edgeListOrVertex == null ? 0 : 1;
+  return getNextCount(vertexToIndexMap.get(vertex));
 }

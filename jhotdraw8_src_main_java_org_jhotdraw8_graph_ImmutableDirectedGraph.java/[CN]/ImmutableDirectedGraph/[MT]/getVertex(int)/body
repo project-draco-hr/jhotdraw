@@ -1,4 +1,3 @@
 {
-  @SuppressWarnings("unchecked") final V v=(V)vertices[indexOfVertex];
-  return v;
+  return indexToVertexMap.get(indexOfVertex);
 }

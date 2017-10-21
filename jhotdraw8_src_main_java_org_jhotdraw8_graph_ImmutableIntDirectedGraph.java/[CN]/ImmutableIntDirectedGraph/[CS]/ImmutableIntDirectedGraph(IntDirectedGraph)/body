@@ -4,10 +4,10 @@
   final int vertexCapacity=graph.getVertexCount();
   this.edges=new int[edgeCapacity];
   this.vertices=new int[vertexCapacity];
-  for (int a=0; a < vertexCapacity; a++) {
-    vertices[a]=edgeCount;
-    for (int i=0, n=graph.getNextCount(a); i < n; i++) {
-      edges[edgeCount++]=graph.getNext(a,i);
+  for (int vIndex=0; vIndex < vertexCapacity; vIndex++) {
+    vertices[vIndex]=edgeCount;
+    for (int i=0, n=graph.getNextCount(vIndex); i < n; i++) {
+      edges[edgeCount++]=graph.getNext(vIndex,i);
     }
   }
 }

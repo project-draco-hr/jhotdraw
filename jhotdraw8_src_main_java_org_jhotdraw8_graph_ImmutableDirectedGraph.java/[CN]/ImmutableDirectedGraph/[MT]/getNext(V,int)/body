@@ -1,13 +1,3 @@
 {
-  Object edgeListOrVertex=edges.get(v);
-  if (edgeListOrVertex instanceof Object[]) {
-    final Object[] edgeList=(Object[])edgeListOrVertex;
-    @SuppressWarnings("unchecked") final V next=(V)edgeList[i];
-    return next;
-  }
-  if (edgeListOrVertex == null) {
-    throw new IllegalArgumentException("vertex v(" + v + ") has no edges.");
-  }
-  @SuppressWarnings("unchecked") final V next=(V)edgeListOrVertex;
-  return next;
+  return indexToVertexMap.get(getNext(vertexToIndexMap.get(vertex),i));
 }
