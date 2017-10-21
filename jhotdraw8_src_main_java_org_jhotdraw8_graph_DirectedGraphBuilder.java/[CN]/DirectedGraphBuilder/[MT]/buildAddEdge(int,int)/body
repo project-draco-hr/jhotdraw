@@ -8,7 +8,7 @@
   int lastEdgeIdOfA=edgeCountOfA == 0 ? SENTINEL : lastEdge[a * LASTEDGE_NUM_FIELDS + LASTEDGE_POINTER_FIELD];
   int newLastEdgeIdOfA=edgeCount;
   edges[newLastEdgeIdOfA * EDGES_NUM_FIELDS + EDGES_VERTEX_FIELD]=b;
-  edges[newLastEdgeIdOfA * EDGES_NUM_FIELDS + EDGES_POINTER_FIELD]=lastEdgeIdOfA;
+  edges[newLastEdgeIdOfA * EDGES_NUM_FIELDS + EDGES_NEXT_FIELD]=lastEdgeIdOfA;
   lastEdge[a * LASTEDGE_NUM_FIELDS + LASTEDGE_COUNT_FIELD]=edgeCountOfA + 1;
   lastEdge[a * LASTEDGE_NUM_FIELDS + LASTEDGE_POINTER_FIELD]=newLastEdgeIdOfA;
   edgeCount++;

@@ -4,7 +4,7 @@
   }
   int edgeId=lastEdge[vi * LASTEDGE_NUM_FIELDS + LASTEDGE_POINTER_FIELD];
   for (int j=i - 1; j >= 0; j--) {
-    edgeId=edges[edgeId * EDGES_NUM_FIELDS + EDGES_POINTER_FIELD];
+    edgeId=edges[edgeId * EDGES_NUM_FIELDS + EDGES_NEXT_FIELD];
   }
   return edges[edgeId * EDGES_NUM_FIELDS + EDGES_VERTEX_FIELD];
 }
