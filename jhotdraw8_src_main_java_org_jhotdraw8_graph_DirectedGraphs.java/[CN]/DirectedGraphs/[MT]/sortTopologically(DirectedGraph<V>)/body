@@ -1,10 +1,10 @@
 {
-  final DirectedGraphInt im;
-  if (!(m instanceof DirectedGraphInt)) {
+  final IntDirectedGraph im;
+  if (!(m instanceof IntDirectedGraph)) {
     im=DirectedGraphBuilder.ofDirectedGraph(m);
   }
  else {
-    im=(DirectedGraphInt)m;
+    im=(IntDirectedGraph)m;
   }
   int[] a=sortTopologicallyInt(im);
   List<V> result=new ArrayList<>(a.length);

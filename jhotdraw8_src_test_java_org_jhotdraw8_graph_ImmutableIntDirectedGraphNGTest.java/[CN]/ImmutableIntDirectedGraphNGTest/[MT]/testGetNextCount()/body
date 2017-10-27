@@ -3,9 +3,9 @@
   int a=0;
   int b=1;
   int c=2;
-  DirectedGraphBuilderInt builder=new DirectedGraphBuilderInt();
+  IntDirectedGraphBuilder builder=new IntDirectedGraphBuilder();
   builder.setVertexCount(3);
-  ImmutableDirectedGraphInt instance=builder.build();
+  IntImmutableDirectedGraph instance=builder.build();
   assertEquals(instance.getVertexCount(),3,"vertex count");
   assertEquals(instance.getEdgeCount(),0,"edge count");
   assertEquals(instance.getNextCount(a),0,"edge count of " + a);

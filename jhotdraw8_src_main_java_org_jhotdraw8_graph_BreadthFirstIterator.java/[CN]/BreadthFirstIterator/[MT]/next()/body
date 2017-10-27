@@ -1,7 +1,7 @@
 {
   V current=queue.remove();
   for (  V next : graph.getNextVertices(current)) {
-    if (visited.add(next)) {
+    if (visited.test(next)) {
       queue.add(next);
     }
   }

@@ -1,7 +1,2 @@
 {
-  this.graph=graph;
-  queue=new ArrayDeque<>(graph.getEdgeCount());
-  visited=new HashSet<>(graph.getVertexCount());
-  queue.add(root);
-  visited.add(root);
 }
