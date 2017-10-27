@@ -1,0 +1,11 @@
+{
+  Integer current=queue.remove();
+  for (int i=0, n=graph.getNextCount(current); i < n; i++) {
+    int next=graph.getNext(current,i);
+    if (!visited.get(next)) {
+      visited.set(next);
+      queue.add(next);
+    }
+  }
+  return current;
+}
