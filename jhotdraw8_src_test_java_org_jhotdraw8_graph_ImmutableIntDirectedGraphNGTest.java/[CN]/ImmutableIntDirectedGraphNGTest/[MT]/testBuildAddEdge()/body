@@ -3,7 +3,7 @@
   int a=0;
   int b=1;
   int c=1;
-  IntDirectedGraphBuilder builder=new IntDirectedGraphBuilder();
+  DirectedGraphBuilderInt builder=new DirectedGraphBuilderInt();
   builder.setVertexCount(3);
   ImmutableIntDirectedGraph instance=builder.build();
   assertEquals(instance.getVertexCount(),3,"vertex count");

@@ -1,0 +1,6 @@
+{
+  if (index >= last) {
+    throw new IndexOutOfBoundsException("index(" + index + ") >= last("+ last+ ")");
+  }
+  return queue[index * Q_NUM_FIELDS + Q_VERTEX];
+}

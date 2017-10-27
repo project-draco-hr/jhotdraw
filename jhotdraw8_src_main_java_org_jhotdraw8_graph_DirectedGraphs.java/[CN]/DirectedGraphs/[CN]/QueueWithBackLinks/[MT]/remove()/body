@@ -1,0 +1,8 @@
+{
+  if (isEmpty()) {
+    throw new NoSuchElementException();
+  }
+  int vertex=queue[first * Q_NUM_FIELDS + Q_VERTEX];
+  ++first;
+  return vertex;
+}

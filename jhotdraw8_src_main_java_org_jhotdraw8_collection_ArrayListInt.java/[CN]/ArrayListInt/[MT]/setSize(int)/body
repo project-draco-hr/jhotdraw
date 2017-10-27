@@ -1,0 +1,7 @@
+{
+  increaseCapacity(newSize);
+  if (newSize > size) {
+    Arrays.fill(items,size,newSize,0);
+  }
+  size=newSize;
+}

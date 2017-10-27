@@ -1,0 +1,39 @@
+{
+  final List<ArrayListInt> sets=new ArrayList<>(g.getVertexCount());
+  for (int v=0, n=g.getVertexCount(); v < n; v++) {
+    final ArrayListInt initialSet=new ArrayListInt(1);
+    initialSet.add(v);
+    sets.add(initialSet);
+  }
+  for (int u=0, n=g.getVertexCount(); u < n; u++) {
+    for (int v=0, m=g.getNextCount(u); v < m; v++) {
+      final ArrayListInt uset=sets.get(u);
+      final ArrayListInt vset=sets.get(v);
+      if (uset != vset) {
+        if (uset.size() < vset.size()) {
+          for (int i=0, usize=uset.size(); i < usize; i++) {
+            int uu=uset.get(i);
+            sets.set(uu,vset);
+          }
+          vset.addAll(uset);
+        }
+ else {
+          for (int i=0, vsize=vset.size(); i < vsize; i++) {
+            int vv=vset.get(i);
+            sets.set(vv,uset);
+          }
+          uset.addAll(vset);
+        }
+      }
+    }
+  }
+  final Map<ArrayListInt,Object> setMap=new IdentityHashMap<ArrayListInt,Object>();
+  final List<Set<Integer>> disjointSets=new ArrayList<>();
+  for (  ArrayListInt set : sets) {
+    if (!setMap.containsKey(set)) {
+      setMap.put(set,set);
+      disjointSets.add(set.addAllInto(new LinkedHashSet<Integer>()));
+    }
+  }
+  return disjointSets;
+}

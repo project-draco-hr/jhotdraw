@@ -1,0 +1,5 @@
+{
+  queue[last * Q_NUM_FIELDS + Q_VERTEX]=vertex;
+  queue[last * Q_NUM_FIELDS + Q_PARENT_INDEX]=parentIndex;
+  ++last;
+}
