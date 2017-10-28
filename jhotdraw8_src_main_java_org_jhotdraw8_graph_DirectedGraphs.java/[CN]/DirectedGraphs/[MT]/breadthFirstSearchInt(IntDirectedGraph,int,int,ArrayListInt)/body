@@ -1,6 +1,6 @@
 {
   BitSet visited=new BitSet(graph.getVertexCount());
-  QueueWithBackLinks queue=new QueueWithBackLinks(graph.getEdgeCount());
+  QueueWithBackLinks queue=new QueueWithBackLinks(max(1,min(graph.getVertexCount(),graph.getEdgeCount())));
   queue.add(root,SENTINEL);
   visited.set(root);
   int current=SENTINEL;

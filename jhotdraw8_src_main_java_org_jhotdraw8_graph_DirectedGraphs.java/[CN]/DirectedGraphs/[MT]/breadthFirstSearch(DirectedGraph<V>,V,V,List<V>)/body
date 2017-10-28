@@ -1,6 +1,6 @@
 {
   Set<V> visited=new HashSet<>(graph.getVertexCount());
-  Queue<BackLink<V>> queue=new ArrayDeque<>(graph.getEdgeCount());
+  Queue<BackLink<V>> queue=new ArrayDeque<>(max(1,min(graph.getVertexCount(),graph.getEdgeCount())));
   BackLink<V> rootBackLink=new BackLink<>(root,null);
   visited.add(root);
   queue.add(rootBackLink);
