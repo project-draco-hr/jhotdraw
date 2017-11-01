@@ -1,0 +1,5 @@
+{
+  this.vertex=vertex;
+  this.parent=parent;
+  this.edge=edge;
+}

@@ -1,0 +1,7 @@
+{
+  VertexPath<V> result=findAnyVertexPath(graph,start,goal);
+  if (result == null) {
+    throw new PathBuilderException("Breadh first search stalled at vertex: " + start + ".");
+  }
+  return result;
+}

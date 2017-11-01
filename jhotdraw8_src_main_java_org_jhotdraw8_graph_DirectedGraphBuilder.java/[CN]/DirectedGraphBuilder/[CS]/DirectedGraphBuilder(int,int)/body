@@ -1,12 +1,5 @@
 {
-  if (vertexCapacity < 0) {
-    throw new IllegalArgumentException("vertexCapacity: " + vertexCapacity);
-  }
-  if (edgeCapacity < 0) {
-    throw new IllegalArgumentException("edgeCapacity: " + edgeCapacity);
-  }
+  super(vertexCapacity,edgeCapacity);
   this.vertexMap=new HashMap<>(vertexCapacity + vertexCapacity * 40 / 100,0.75f);
   this.vertices=new ArrayList<>(vertexCapacity);
-  this.edges=new int[edgeCapacity * EDGES_NUM_FIELDS];
-  this.lastEdge=new int[vertexCapacity * LASTEDGE_NUM_FIELDS];
 }

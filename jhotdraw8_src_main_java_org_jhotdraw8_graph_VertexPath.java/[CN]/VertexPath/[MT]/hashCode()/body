@@ -1,0 +1,5 @@
+{
+  int hash=7;
+  hash=53 * hash + Objects.hashCode(this.vertices);
+  return hash;
+}

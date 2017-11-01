@@ -1,37 +1,20 @@
 {
-  Map<V,List<V>> sets=new LinkedHashMap<>();
-  for (int i=0, n=g.getVertexCount(); i < n; i++) {
-    final V v=g.getVertex(i);
-    List<V> initialSet=new ArrayList<>(1);
-    initialSet.add(v);
-    sets.put(v,initialSet);
-  }
+  Map<V,List<V>> forest=createForest(g);
   for (int i=0, n=g.getVertexCount(); i < n; i++) {
     V u=g.getVertex(i);
     for (int j=0, m=g.getNextCount(u); j < m; j++) {
       V v=g.getNext(u,j);
-      List<V> uset=sets.get(u);
-      List<V> vset=sets.get(v);
+      List<V> uset=forest.get(u);
+      List<V> vset=forest.get(v);
       if (uset != vset) {
-        if (uset.size() < vset.size()) {
-          for (          V uu : uset) {
-            sets.put(uu,vset);
-          }
-          vset.addAll(uset);
-        }
- else {
-          for (          V vv : vset) {
-            sets.put(vv,uset);
-          }
-          uset.addAll(vset);
-        }
+        union(uset,vset,forest);
       }
     }
   }
-  Map<List<V>,Object> setMap=new IdentityHashMap<>();
-  List<Set<V>> disjointSets=new ArrayList<>();
-  for (  List<V> set : sets.values()) {
-    if (null == setMap.put(set,set)) {
+  Set<List<V>> visited=Collections.newSetFromMap(new IdentityHashMap<List<V>,Boolean>(forest.size()));
+  List<Set<V>> disjointSets=new ArrayList<>(forest.size());
+  for (  List<V> set : forest.values()) {
+    if (visited.add(set)) {
       disjointSets.add(new LinkedHashSet<>(set));
     }
   }

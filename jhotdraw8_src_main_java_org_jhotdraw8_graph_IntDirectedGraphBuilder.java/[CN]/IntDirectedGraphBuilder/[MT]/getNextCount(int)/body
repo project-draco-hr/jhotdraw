@@ -1,3 +1,0 @@
-{
-  return lastEdge[vi * LASTEDGE_NUM_FIELDS + LASTEDGE_COUNT_FIELD];
-}

@@ -1,0 +1,7 @@
+{
+  System.out.println("findShortestPath");
+  IntDirectedGraph graph=createGraph();
+  IntDirectedGraphPathBuilder instance=new IntDirectedGraphPathBuilder();
+  VertexPath<Integer> result=instance.findAnyVertexPath(graph,start,goal);
+  assertEquals(result,expResult);
+}

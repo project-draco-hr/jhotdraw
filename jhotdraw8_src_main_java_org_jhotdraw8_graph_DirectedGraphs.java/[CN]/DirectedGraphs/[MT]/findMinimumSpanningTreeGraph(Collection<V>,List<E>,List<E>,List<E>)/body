@@ -1,0 +1,15 @@
+{
+  List<E> includedEdgeList=findMinimumSpanningTree(vertices,orderedEdges,rejectedEdges);
+  if (includedEdges != null) {
+    includedEdges.addAll(includedEdgeList);
+  }
+  DirectedGraphWithEdgesBuilder<V,E> builder=new DirectedGraphWithEdgesBuilder<>();
+  for (  V v : vertices) {
+    builder.addVertex(v);
+  }
+  for (  E e : includedEdgeList) {
+    builder.addEdge(e.getStart(),e.getEnd(),e);
+    builder.addEdge(e.getEnd(),e.getStart(),e);
+  }
+  return builder;
+}

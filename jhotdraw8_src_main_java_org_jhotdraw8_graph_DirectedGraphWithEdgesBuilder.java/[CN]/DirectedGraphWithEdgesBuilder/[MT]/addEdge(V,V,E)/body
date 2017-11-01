@@ -1,0 +1,12 @@
+{
+  if (va == null) {
+    throw new IllegalArgumentException("va=null");
+  }
+  if (vb == null) {
+    throw new IllegalArgumentException("vb=null");
+  }
+  int a=vertexMap.get(va);
+  int b=vertexMap.get(vb);
+  buildAddEdge(a,b);
+  edgeData.add(edge);
+}

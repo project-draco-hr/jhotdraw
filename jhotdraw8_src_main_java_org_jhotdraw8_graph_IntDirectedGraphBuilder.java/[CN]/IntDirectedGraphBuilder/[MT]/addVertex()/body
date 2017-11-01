@@ -1,3 +1,3 @@
 {
-  setVertexCount(vertexCount + 1);
+  buildAddVertex();
 }

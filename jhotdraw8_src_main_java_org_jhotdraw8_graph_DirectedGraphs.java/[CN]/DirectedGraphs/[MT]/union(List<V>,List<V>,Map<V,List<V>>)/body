@@ -1,0 +1,16 @@
+{
+  if (uset != vset) {
+    if (uset.size() < vset.size()) {
+      for (      V uu : uset) {
+        forest.put(uu,vset);
+      }
+      vset.addAll(uset);
+    }
+ else {
+      for (      V vv : vset) {
+        forest.put(vv,uset);
+      }
+      uset.addAll(vset);
+    }
+  }
+}

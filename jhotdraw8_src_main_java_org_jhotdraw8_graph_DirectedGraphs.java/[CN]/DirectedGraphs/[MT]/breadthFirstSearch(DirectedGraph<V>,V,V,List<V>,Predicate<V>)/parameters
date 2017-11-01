@@ -1,5 +1,0 @@
-DirectedGraph<V> graph
-V root
-V goal
-List<V> pathElements
-Predicate<V> visited

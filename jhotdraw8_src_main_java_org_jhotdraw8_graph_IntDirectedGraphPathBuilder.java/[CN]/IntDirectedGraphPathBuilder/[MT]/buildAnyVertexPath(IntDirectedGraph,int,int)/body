@@ -1,0 +1,7 @@
+{
+  VertexPath<Integer> pathElements=IntDirectedGraphPathBuilder.this.findAnyVertexPath(graph,start,goal);
+  if (pathElements == null) {
+    throw new PathBuilderException("Breadh first search stalled at vertex: " + start + ".");
+  }
+  return pathElements;
+}

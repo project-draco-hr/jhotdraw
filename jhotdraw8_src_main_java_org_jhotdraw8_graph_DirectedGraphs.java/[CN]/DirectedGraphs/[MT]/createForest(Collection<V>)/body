@@ -1,0 +1,9 @@
+{
+  Map<V,List<V>> forest=new LinkedHashMap<>(vertices.size());
+  for (  V v : vertices) {
+    List<V> initialSet=new ArrayList<>(1);
+    initialSet.add(v);
+    forest.put(v,initialSet);
+  }
+  return forest;
+}

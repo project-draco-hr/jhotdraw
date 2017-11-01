@@ -1,0 +1,18 @@
+{
+  Iterator<Integer> i=waypoints.iterator();
+  IntArrayList pathElements=new IntArrayList();
+  if (!i.hasNext()) {
+    return null;
+  }
+  int start=i.next();
+  pathElements.add(start);
+  while (i.hasNext()) {
+    int goal=i.next();
+    boolean back=breadthFirstSearchInt(graph,start,goal,pathElements);
+    if (back == false) {
+      return null;
+    }
+    start=goal;
+  }
+  return new VertexPath<>(pathElements.addAllInto(new ArrayList<>(pathElements.size())));
+}

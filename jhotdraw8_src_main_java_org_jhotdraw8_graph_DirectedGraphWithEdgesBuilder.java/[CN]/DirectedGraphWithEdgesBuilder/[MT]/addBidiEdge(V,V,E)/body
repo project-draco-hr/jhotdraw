@@ -1,0 +1,4 @@
+{
+  addEdge(va,vb,edge);
+  addEdge(vb,va,edge);
+}

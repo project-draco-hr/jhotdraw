@@ -1,0 +1,4 @@
+Collection<V> vertices
+List<E> orderedEdges
+List<E> includedEdges
+List<E> rejectedEdges

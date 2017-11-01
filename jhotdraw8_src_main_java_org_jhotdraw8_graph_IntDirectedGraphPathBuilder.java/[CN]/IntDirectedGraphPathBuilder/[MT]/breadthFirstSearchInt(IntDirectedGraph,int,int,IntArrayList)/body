@@ -1,0 +1,32 @@
+{
+  BitSet visited=new BitSet(graph.getVertexCount());
+  QueueWithBackLinks queue=new QueueWithBackLinks(max(1,min(graph.getVertexCount(),graph.getEdgeCount())));
+  queue.add(start,SENTINEL);
+  visited.set(start);
+  int current=SENTINEL;
+  while (!queue.isEmpty()) {
+    current=queue.remove();
+    if (current == goal) {
+      break;
+    }
+    for (int i=0, n=graph.getNextCount(current); i < n; i++) {
+      int next=graph.getNext(current,i);
+      if (!visited.get(next)) {
+        visited.set(next);
+        queue.add(next,queue.getIndexOfRemoved());
+      }
+    }
+  }
+  if (current == SENTINEL) {
+    return false;
+  }
+  int insertionPoint=pathElements.size();
+  for (int i=queue.getIndexOfRemoved(); queue.getVertex(i) != start; i=queue.getParentIndex(i)) {
+    ++insertionPoint;
+  }
+  pathElements.setSize(insertionPoint);
+  for (int i=queue.getIndexOfRemoved(); queue.getVertex(i) != start; i=queue.getParentIndex(i)) {
+    pathElements.set(--insertionPoint,queue.getVertex(i));
+  }
+  return true;
+}

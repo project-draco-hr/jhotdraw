@@ -1,0 +1,15 @@
+{
+  IntArrayList pathElements=new IntArrayList(graph.getVertexCount());
+  pathElements.add(start);
+  boolean success=breadthFirstSearchInt(graph,start,goal,pathElements);
+  if (!success) {
+    return null;
+  }
+ else {
+    ArrayList<Integer> vertices=new ArrayList<>(pathElements.size());
+    for (int i=0, n=pathElements.size(); i < n; i++) {
+      vertices.add(pathElements.get(i));
+    }
+    return new VertexPath<>(vertices);
+  }
+}

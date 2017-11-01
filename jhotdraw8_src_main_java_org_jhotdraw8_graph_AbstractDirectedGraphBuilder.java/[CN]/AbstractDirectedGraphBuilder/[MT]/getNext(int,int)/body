@@ -1,0 +1,4 @@
+{
+  int edgeId=getIndexOfEdge(vi,i);
+  return edges[edgeId * EDGES_NUM_FIELDS + EDGES_VERTEX_FIELD];
+}

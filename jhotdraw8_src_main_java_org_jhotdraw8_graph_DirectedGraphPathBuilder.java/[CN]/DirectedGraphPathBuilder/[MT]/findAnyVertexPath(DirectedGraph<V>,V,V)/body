@@ -1,0 +1,13 @@
+{
+  Deque<V> pathElements=new ArrayDeque<>(graph.getVertexCount());
+  BackLink<V> back=breadthFirstSearch(graph,start,goal);
+  if (back == null) {
+    return null;
+  }
+ else {
+    for (; back != null; back=back.parent) {
+      pathElements.addFirst(back.vertex);
+    }
+  }
+  return new VertexPath<>(pathElements);
+}

@@ -1,0 +1,16 @@
+{
+  if (this == obj) {
+    return true;
+  }
+  if (obj == null) {
+    return false;
+  }
+  if (getClass() != obj.getClass()) {
+    return false;
+  }
+  final VertexPath<?> other=(VertexPath<?>)obj;
+  if (!Objects.equals(this.vertices,other.vertices)) {
+    return false;
+  }
+  return true;
+}

@@ -1,11 +1,3 @@
 {
-  if (newValue < vertexCount) {
-    throw new IllegalArgumentException("can only add vertices:" + newValue);
-  }
-  vertexCount=newValue;
-  if (lastEdge.length < vertexCount * LASTEDGE_NUM_FIELDS) {
-    int[] tmp=lastEdge;
-    lastEdge=new int[lastEdge.length * LASTEDGE_NUM_FIELDS];
-    System.arraycopy(tmp,0,lastEdge,0,tmp.length);
-  }
+  buildSetVertexCount(newValue);
 }

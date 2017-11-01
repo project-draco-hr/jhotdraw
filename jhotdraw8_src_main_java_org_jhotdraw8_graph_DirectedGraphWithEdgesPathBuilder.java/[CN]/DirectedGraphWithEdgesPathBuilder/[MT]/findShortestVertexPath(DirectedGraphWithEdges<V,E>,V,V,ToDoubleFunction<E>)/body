@@ -1,0 +1,9 @@
+{
+  NodeWithCost<V,E> node=findShortestPath(graph,start,goal,costf);
+  if (node == null)   return null;
+  LinkedList<V> vertices=new LinkedList<>();
+  for (NodeWithCost<V,E> parent=node; parent != null; parent=parent.parent) {
+    vertices.addFirst(parent.vertex);
+  }
+  return new VertexPath<>(vertices);
+}

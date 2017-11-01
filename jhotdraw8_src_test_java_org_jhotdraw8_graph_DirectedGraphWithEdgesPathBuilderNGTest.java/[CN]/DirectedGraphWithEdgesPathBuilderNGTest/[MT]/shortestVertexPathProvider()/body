@@ -1,0 +1,3 @@
+{
+  return new Object[][]{{1,5,VertexPath.of(1,3,6,5)},{1,4,VertexPath.of(1,3,4)},{2,6,VertexPath.of(2,3,6)}};
+}

@@ -1,0 +1,3 @@
+IntDirectedGraph graph
+int start
+int goal

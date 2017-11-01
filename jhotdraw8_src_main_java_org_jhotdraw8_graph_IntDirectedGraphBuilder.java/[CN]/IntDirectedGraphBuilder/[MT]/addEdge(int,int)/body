@@ -1,15 +1,3 @@
 {
-  if (edges.length <= edgeCount * EDGES_NUM_FIELDS) {
-    int[] tmp=edges;
-    edges=new int[edges.length * EDGES_NUM_FIELDS];
-    System.arraycopy(tmp,0,edges,0,tmp.length);
-  }
-  int edgeCountOfA=lastEdge[a * LASTEDGE_NUM_FIELDS + LASTEDGE_COUNT_FIELD];
-  int lastEdgeIdOfA=lastEdge[a * LASTEDGE_NUM_FIELDS + LASTEDGE_POINTER_FIELD];
-  int newLastEdgeIdOfA=edgeCount;
-  edges[newLastEdgeIdOfA * EDGES_NUM_FIELDS + EDGES_VERTEX_FIELD]=b;
-  edges[newLastEdgeIdOfA * EDGES_NUM_FIELDS + EDGES_POINTER_FIELD]=(edgeCountOfA != 0) ? lastEdgeIdOfA : SENTINEL;
-  lastEdge[a * LASTEDGE_NUM_FIELDS + LASTEDGE_COUNT_FIELD]=edgeCountOfA + 1;
-  lastEdge[a * LASTEDGE_NUM_FIELDS + LASTEDGE_POINTER_FIELD]=newLastEdgeIdOfA;
-  edgeCount++;
+  buildAddEdge(a,b);
 }

@@ -1,3 +1,3 @@
 {
-  return "VertexPath{" + elements + '}';
+  return "VertexPath{" + vertices + '}';
 }

@@ -1,0 +1,24 @@
+{
+  Queue<BackLink<V>> queue=new ArrayDeque<>(max(1,min(graph.getVertexCount(),graph.getEdgeCount())));
+  BackLink<V> rootBackLink=new BackLink<>(root,null);
+  visited.test(root);
+  queue.add(rootBackLink);
+  BackLink<V> current=null;
+  while (!queue.isEmpty()) {
+    current=queue.remove();
+    if (current.vertex == goal) {
+      break;
+    }
+    for (int i=0, n=graph.getNextCount(current.vertex); i < n; i++) {
+      V next=graph.getNext(current.vertex,i);
+      if (visited.test(next)) {
+        BackLink<V> backLink=new BackLink<>(next,current);
+        queue.add(backLink);
+      }
+    }
+  }
+  if (current == null || current.vertex != goal) {
+    return null;
+  }
+  return current;
+}

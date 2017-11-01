@@ -1,0 +1,3 @@
+DirectedGraph<V> graph
+V root
+V goal
