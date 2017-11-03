@@ -1,0 +1,19 @@
+{
+  if (this == obj) {
+    return true;
+  }
+  if (obj == null) {
+    return false;
+  }
+  if (getClass() != obj.getClass()) {
+    return false;
+  }
+  @SuppressWarnings("unchecked") final OrderedPair<V> other=(OrderedPair)obj;
+  if (!Objects.equals(this.a,other.a)) {
+    return false;
+  }
+  if (!Objects.equals(this.b,other.b)) {
+    return false;
+  }
+  return true;
+}
