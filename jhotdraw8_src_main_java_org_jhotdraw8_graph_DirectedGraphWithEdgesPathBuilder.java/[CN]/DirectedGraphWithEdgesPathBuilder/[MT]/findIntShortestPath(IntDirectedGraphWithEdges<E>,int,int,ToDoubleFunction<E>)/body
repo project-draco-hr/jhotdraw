@@ -1,0 +1,39 @@
+{
+  IntNodeWithCost<E> node=new IntNodeWithCost<>(start,0.0,null,null);
+  PriorityQueue<IntNodeWithCost<E>> frontier=new PriorityQueue<>();
+  frontier.add(node);
+  BitSet explored=new BitSet(graph.getVertexCount());
+  IntNodeWithCost[] frontierMap=new IntNodeWithCost[graph.getVertexCount()];
+  while (true) {
+    if (frontier.isEmpty()) {
+      return null;
+    }
+    node=frontier.poll();
+    final int vertex=node.vertex;
+    frontierMap[vertex]=null;
+    if (vertex == goal) {
+      break;
+    }
+    explored.set(node.getVertex());
+    for (int i=0, count=graph.getNextCount(vertex); i < count; i++) {
+      int next=graph.getNext(vertex,i);
+      final E edge=graph.getNextEdge(vertex,i);
+      double cost=node.cost + costf.applyAsDouble(edge);
+      IntNodeWithCost<E> nwc=new IntNodeWithCost<>(next,cost,node,edge);
+      boolean isInFrontier=frontierMap[next] != null;
+      if (!explored.get(next) && !isInFrontier) {
+        frontier.add(nwc);
+        frontierMap[next]=nwc;
+      }
+ else       if (isInFrontier) {
+        IntNodeWithCost<E> nwcInFrontier=frontierMap[next];
+        if (nwcInFrontier.cost > cost) {
+          frontier.remove(nwcInFrontier);
+          frontier.add(nwc);
+          frontierMap[next]=nwc;
+        }
+      }
+    }
+  }
+  return node;
+}

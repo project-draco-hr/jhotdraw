@@ -1,7 +1,9 @@
 {
   Deque<V> vertices=new ArrayDeque<>();
   BackLinkWithEdge<V,E> current=breadthFirstSearchWithEdges(graph,start,goal);
-  if (current == null)   return null;
+  if (current == null) {
+    return null;
+  }
   for (BackLinkWithEdge<V,E> i=current; i != null; i=i.parent) {
     vertices.addFirst(i.vertex);
   }

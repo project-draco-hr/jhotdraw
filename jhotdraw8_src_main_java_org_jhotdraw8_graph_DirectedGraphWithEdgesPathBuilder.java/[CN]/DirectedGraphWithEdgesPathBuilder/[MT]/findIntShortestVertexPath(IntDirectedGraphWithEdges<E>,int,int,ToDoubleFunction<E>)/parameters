@@ -1,0 +1,4 @@
+IntDirectedGraphWithEdges<E> graph
+int start
+int goal
+ToDoubleFunction<E> costf

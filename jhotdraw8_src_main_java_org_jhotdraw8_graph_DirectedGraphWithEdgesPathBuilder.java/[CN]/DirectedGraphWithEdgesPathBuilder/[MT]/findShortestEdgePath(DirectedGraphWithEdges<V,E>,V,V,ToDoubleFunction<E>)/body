@@ -1,9 +1,21 @@
 {
-  NodeWithCost<V,E> node=findShortestPath(graph,start,goal,costf);
-  if (node == null)   return null;
-  LinkedList<E> edges=new LinkedList<>();
-  for (NodeWithCost<V,E> parent=node; parent != null && parent.edge != null; parent=parent.parent) {
-    edges.addFirst(parent.edge);
+  if (graph instanceof IntDirectedGraphWithEdges) {
+    @SuppressWarnings("unchecked") IntDirectedGraphWithEdges<E> intGraph=(IntDirectedGraphWithEdges<E>)graph;
+    int startIndex=-1, goalIndex=-1;
+    for (int i=0, n=graph.getVertexCount(); i < n; i++) {
+      V v=graph.getVertex(i);
+      if (v == start) {
+        startIndex=i;
+        if (goalIndex != -1)         break;
+      }
+      if (v == goal) {
+        goalIndex=i;
+        if (startIndex != -1)         break;
+      }
+    }
+    return findIntShortestEdgePath(intGraph,startIndex,goalIndex,costf);
   }
-  return new EdgePath<>(edges);
+ else {
+    return doFindShortestEdgePath(graph,start,goal,costf);
+  }
 }

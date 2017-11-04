@@ -1,0 +1,11 @@
+{
+  IntNodeWithCost<E> node=findIntShortestPath(graph,start,goal,costf);
+  if (node == null) {
+    return null;
+  }
+  LinkedList<E> edges=new LinkedList<>();
+  for (IntNodeWithCost<E> parent=node; parent != null && parent.edge != null; parent=parent.parent) {
+    edges.addFirst(parent.edge);
+  }
+  return new EdgePath<>(edges);
+}

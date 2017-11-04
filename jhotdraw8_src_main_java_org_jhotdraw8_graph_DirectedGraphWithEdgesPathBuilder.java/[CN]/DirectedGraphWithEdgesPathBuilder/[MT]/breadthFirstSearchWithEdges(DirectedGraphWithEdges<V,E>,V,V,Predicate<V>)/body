@@ -11,7 +11,7 @@
     }
     for (int i=0, n=graph.getNextCount(current.vertex); i < n; i++) {
       V next=graph.getNext(current.vertex,i);
-      E edge=graph.getEdge(current.vertex,i);
+      E edge=graph.getNextEdge(current.vertex,i);
       if (visited.test(next)) {
         BackLinkWithEdge<V,E> backLink=new BackLinkWithEdge<>(next,current,edge);
         queue.add(backLink);
