@@ -1,3 +1,6 @@
 {
+  if (invalidationListeners == null) {
+    invalidationListeners=new CopyOnWriteArrayList<>();
+  }
   return invalidationListeners;
 }
