@@ -26,7 +26,7 @@
         frontierMap[next]=nwc;
       }
  else       if (isInFrontier) {
-        IntNodeWithCost<E> nwcInFrontier=frontierMap[next];
+        @SuppressWarnings("unchecked") IntNodeWithCost<E> nwcInFrontier=frontierMap[next];
         if (nwcInFrontier.cost > cost) {
           frontier.remove(nwcInFrontier);
           frontier.add(nwc);
