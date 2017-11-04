@@ -1,9 +1,9 @@
 {
-  IntNodeWithCost<E> node=new IntNodeWithCost<>(start,0.0,null,null);
   PriorityQueue<IntNodeWithCost<E>> frontier=new PriorityQueue<>();
-  frontier.add(node);
   BitSet explored=new BitSet(graph.getVertexCount());
-  IntNodeWithCost[] frontierMap=new IntNodeWithCost[graph.getVertexCount()];
+  @SuppressWarnings({"unchecked","rawtypes"}) IntNodeWithCost[] frontierMap=new IntNodeWithCost[graph.getVertexCount()];
+  IntNodeWithCost<E> node=new IntNodeWithCost<>(start,0.0,null,null);
+  frontier.add(node);
   while (true) {
     if (frontier.isEmpty()) {
       return null;
@@ -20,13 +20,12 @@
       final E edge=graph.getNextEdge(vertex,i);
       double cost=node.cost + costf.applyAsDouble(edge);
       IntNodeWithCost<E> nwc=new IntNodeWithCost<>(next,cost,node,edge);
-      boolean isInFrontier=frontierMap[next] != null;
-      if (!explored.get(next) && !isInFrontier) {
+      @SuppressWarnings("unchecked") IntNodeWithCost<E> nwcInFrontier=frontierMap[next];
+      if (!explored.get(next) && nwcInFrontier == null) {
         frontier.add(nwc);
         frontierMap[next]=nwc;
       }
- else       if (isInFrontier) {
-        @SuppressWarnings("unchecked") IntNodeWithCost<E> nwcInFrontier=frontierMap[next];
+ else       if (nwcInFrontier != null) {
         if (nwcInFrontier.cost > cost) {
           frontier.remove(nwcInFrontier);
           frontier.add(nwc);

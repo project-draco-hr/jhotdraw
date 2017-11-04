@@ -6,11 +6,15 @@
       V v=graph.getVertex(i);
       if (v == start) {
         startIndex=i;
-        if (goalIndex != -1)         break;
+        if (goalIndex != -1) {
+          break;
+        }
       }
       if (v == goal) {
         goalIndex=i;
-        if (startIndex != -1)         break;
+        if (startIndex != -1) {
+          break;
+        }
       }
     }
     VertexPath<Integer> intPath=findIntShortestVertexPath(intGraph,startIndex,goalIndex,costf);
