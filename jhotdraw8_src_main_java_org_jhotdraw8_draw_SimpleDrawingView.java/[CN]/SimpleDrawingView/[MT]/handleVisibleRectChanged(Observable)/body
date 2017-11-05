@@ -1,4 +1,5 @@
 {
   invalidateConstrainerNode();
+  invalidateLayerNodes();
   repaint();
 }
