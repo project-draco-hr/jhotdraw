@@ -11,4 +11,5 @@
       listView.getItems().setAll(stylesheets);
     }
   }
+  counter=0;
 }
