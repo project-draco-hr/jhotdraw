@@ -1,0 +1,3 @@
+{
+  return findShortestVertexPath(graph,start,goal,costFunction);
+}

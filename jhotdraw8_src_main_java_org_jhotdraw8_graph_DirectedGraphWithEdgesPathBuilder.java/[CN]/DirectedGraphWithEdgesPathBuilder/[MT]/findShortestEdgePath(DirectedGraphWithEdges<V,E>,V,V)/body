@@ -1,0 +1,3 @@
+{
+  return findShortestEdgePath(graph,start,goal,costFunction);
+}
