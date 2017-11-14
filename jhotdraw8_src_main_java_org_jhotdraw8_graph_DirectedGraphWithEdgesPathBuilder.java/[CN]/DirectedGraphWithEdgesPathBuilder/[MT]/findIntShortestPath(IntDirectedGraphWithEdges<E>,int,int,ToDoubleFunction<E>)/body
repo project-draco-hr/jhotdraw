@@ -19,17 +19,19 @@
       int next=graph.getNext(vertex,i);
       final E edge=graph.getNextEdge(vertex,i);
       double cost=node.cost + costf.applyAsDouble(edge);
-      IntNodeWithCost<E> nwc=new IntNodeWithCost<>(next,cost,node,edge);
       @SuppressWarnings("unchecked") IntNodeWithCost<E> nwcInFrontier=frontierMap[next];
       if (!explored.get(next) && nwcInFrontier == null) {
+        IntNodeWithCost<E> nwc=new IntNodeWithCost<>(next,cost,node,edge);
         frontier.add(nwc);
         frontierMap[next]=nwc;
       }
  else       if (nwcInFrontier != null) {
         if (nwcInFrontier.cost > cost) {
           frontier.remove(nwcInFrontier);
-          frontier.add(nwc);
-          frontierMap[next]=nwc;
+          nwcInFrontier.cost=cost;
+          nwcInFrontier.parent=node;
+          nwcInFrontier.edge=edge;
+          frontier.add(nwcInFrontier);
         }
       }
     }

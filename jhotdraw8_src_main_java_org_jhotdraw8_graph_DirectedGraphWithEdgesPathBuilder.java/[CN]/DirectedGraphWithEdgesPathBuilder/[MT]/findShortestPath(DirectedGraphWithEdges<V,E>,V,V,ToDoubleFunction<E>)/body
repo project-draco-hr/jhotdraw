@@ -19,9 +19,9 @@
       V next=graph.getNext(vertex,i);
       final E edge=graph.getNextEdge(vertex,i);
       double cost=node.cost + costf.applyAsDouble(edge);
-      NodeWithCost<V,E> nwc=new NodeWithCost<>(next,cost,node,edge);
       boolean isInFrontier=frontierMap.containsKey(next);
       if (!explored.contains(next) && !isInFrontier) {
+        NodeWithCost<V,E> nwc=new NodeWithCost<>(next,cost,node,edge);
         frontier.add(nwc);
         frontierMap.put(next,nwc);
       }
@@ -29,8 +29,10 @@
         NodeWithCost<V,E> nwcInFrontier=frontierMap.get(next);
         if (nwcInFrontier.cost > cost) {
           frontier.remove(nwcInFrontier);
-          frontier.add(nwc);
-          frontierMap.put(next,nwc);
+          nwcInFrontier.cost=cost;
+          nwcInFrontier.parent=node;
+          nwcInFrontier.edge=edge;
+          frontier.add(nwcInFrontier);
         }
       }
     }
