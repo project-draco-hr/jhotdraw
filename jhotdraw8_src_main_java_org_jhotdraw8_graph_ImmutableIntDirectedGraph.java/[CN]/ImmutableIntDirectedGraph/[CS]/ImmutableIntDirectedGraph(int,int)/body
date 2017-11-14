@@ -1,0 +1,4 @@
+{
+  this.edges=new int[edgeCount];
+  this.vertices=new int[vertexCount];
+}

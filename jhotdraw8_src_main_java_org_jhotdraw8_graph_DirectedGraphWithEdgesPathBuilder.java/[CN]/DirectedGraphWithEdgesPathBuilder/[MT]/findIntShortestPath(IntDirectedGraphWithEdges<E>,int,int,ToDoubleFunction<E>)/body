@@ -1,22 +1,13 @@
 {
-  if (intFrontier == null) {
-    intFrontier=new PriorityQueue<>();
-  }
- else {
-    intFrontier.clear();
-  }
   final int vertexCount=graph.getVertexCount();
-  if (intExplored == null || intExplored.cardinality() < vertexCount) {
-    intExplored=new BitSet(vertexCount);
-  }
- else {
-    intExplored.clear();
-  }
   if (intFrontierMap == null || intFrontierMap.length < vertexCount) {
     intFrontierMap=new IntNodeWithCost[vertexCount];
+    intExplored=new BitSet(vertexCount);
+    intFrontier=new PriorityQueue<>();
   }
- else {
-    Arrays.fill(intFrontierMap,null);
-  }
-  return doFindIntShortestPath(start,intFrontier,intFrontierMap,goal,intExplored,graph,costf);
+  IntNodeWithCost<E> result=doFindIntShortestPath(start,intFrontier,intFrontierMap,goal,intExplored,graph,costf);
+  intFrontier.clear();
+  intExplored.clear();
+  clear(intFrontierMap);
+  return result;
 }

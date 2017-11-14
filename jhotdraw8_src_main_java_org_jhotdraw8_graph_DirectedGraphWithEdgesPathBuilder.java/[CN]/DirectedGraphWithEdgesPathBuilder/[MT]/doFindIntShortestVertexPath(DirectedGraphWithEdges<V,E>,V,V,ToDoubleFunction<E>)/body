@@ -20,9 +20,9 @@
   if (intPath == null) {
     return null;
   }
-  ArrayList<V> elements=new ArrayList<V>();
+  ArrayList<V> elements=new ArrayList<>(intPath.getVertices().size());
   for (  Integer vi : intPath.getVertices()) {
     elements.add(graph.getVertex(vi));
   }
-  return new VertexPath<V>(elements);
+  return new VertexPath<>(elements);
 }

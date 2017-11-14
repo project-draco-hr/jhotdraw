@@ -1,0 +1,6 @@
+{
+  if (i < 0 || i >= getNextCount(vi)) {
+    throw new IllegalArgumentException("i(" + i + ") < 0 || i >= "+ getNextCount(vi));
+  }
+  return vertices[vi] + i;
+}

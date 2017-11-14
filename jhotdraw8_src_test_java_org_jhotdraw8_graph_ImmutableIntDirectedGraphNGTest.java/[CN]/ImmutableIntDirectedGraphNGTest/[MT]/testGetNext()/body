@@ -5,7 +5,7 @@
   int c=1;
   IntDirectedGraphBuilder builder=new IntDirectedGraphBuilder();
   builder.setVertexCount(3);
-  IntImmutableDirectedGraph instance=builder.build();
+  ImmutableIntDirectedGraph instance=builder.build();
   assertEquals(instance.getVertexCount(),3,"vertex count");
   assertEquals(instance.getEdgeCount(),0,"edge count");
   builder.addEdge(a,b);
