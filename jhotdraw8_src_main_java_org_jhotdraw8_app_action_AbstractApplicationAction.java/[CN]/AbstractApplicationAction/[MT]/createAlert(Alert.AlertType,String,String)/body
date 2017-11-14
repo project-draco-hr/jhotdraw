@@ -1,0 +1,12 @@
+{
+  TextArea textArea=new TextArea(message);
+  textArea.setEditable(false);
+  textArea.setWrapText(true);
+  GridPane gridPane=new GridPane();
+  gridPane.add(textArea,0,0);
+  Alert alert=new Alert(alertType);
+  alert.getDialogPane().setContent(gridPane);
+  alert.setHeaderText(headerText);
+  alert.getDialogPane().setMaxWidth(640.0);
+  return alert;
+}

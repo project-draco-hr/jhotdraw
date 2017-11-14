@@ -1,0 +1,3 @@
+Alert.AlertType alertType
+String message
+String headerText
