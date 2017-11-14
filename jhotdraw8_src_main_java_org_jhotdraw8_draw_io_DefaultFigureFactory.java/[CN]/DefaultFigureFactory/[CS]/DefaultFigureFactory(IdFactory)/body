@@ -80,6 +80,7 @@
   addConverter(TransformableFigure.TRANSFORMS,new XmlTransformListConverter());
   addConverter(SimplePolylineFigure.POINTS,new CssPoint2DListConverter());
   addConverter(SimpleBezierFigure.PATH,new XmlBezierNodeListConverter(true));
+  addConverter(BorderableFigure.BORDER_STROKE_DASH_ARRAY,new CssDoubleListConverter());
   removeKey(StyleableFigure.PSEUDO_CLASS_STATES);
   removeRedundantKeys();
   checkConverters();
