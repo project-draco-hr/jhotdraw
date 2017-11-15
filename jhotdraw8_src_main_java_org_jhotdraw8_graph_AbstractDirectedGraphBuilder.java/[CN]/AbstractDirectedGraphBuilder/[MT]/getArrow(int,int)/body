@@ -1,0 +1,4 @@
+{
+  int arrowId=getArrowIndex(vi,i);
+  return (A)arrows[arrowId];
+}

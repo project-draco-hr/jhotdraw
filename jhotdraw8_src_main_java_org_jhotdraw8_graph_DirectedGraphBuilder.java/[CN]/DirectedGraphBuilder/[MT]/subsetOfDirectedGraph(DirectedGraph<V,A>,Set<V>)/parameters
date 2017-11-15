@@ -1,0 +1,2 @@
+DirectedGraph<V,A> model
+Set<V> vertices

@@ -1,4 +1,0 @@
-{
-  this.vertex=vertex;
-  this.parent=parent;
-}

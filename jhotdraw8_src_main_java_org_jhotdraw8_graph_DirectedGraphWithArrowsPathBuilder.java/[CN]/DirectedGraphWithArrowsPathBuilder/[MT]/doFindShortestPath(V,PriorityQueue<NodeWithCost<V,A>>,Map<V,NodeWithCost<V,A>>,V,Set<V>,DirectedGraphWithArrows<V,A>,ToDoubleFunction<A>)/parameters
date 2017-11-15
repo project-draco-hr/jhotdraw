@@ -1,7 +1,0 @@
-V start
-PriorityQueue<NodeWithCost<V,A>> frontier
-Map<V,NodeWithCost<V,A>> frontierMap
-V goal
-Set<V> explored
-DirectedGraphWithArrows<V,A> graph
-ToDoubleFunction<A> costf

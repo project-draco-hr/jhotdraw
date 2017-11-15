@@ -1,0 +1,2 @@
+IntDirectedGraph<A> graph
+Collection<Integer> waypoints

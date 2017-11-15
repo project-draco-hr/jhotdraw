@@ -5,6 +5,7 @@
   if (arrowCapacity < 0) {
     throw new IllegalArgumentException("arrowCapacity: " + arrowCapacity);
   }
-  this.arrows=new int[arrowCapacity * ARROWS_NUM_FIELDS];
+  this.arrowHeads=new int[arrowCapacity * ARROWS_NUM_FIELDS];
   this.lastArrow=new int[vertexCapacity * LASTARROW_NUM_FIELDS];
+  this.arrows=new Object[arrowCapacity];
 }

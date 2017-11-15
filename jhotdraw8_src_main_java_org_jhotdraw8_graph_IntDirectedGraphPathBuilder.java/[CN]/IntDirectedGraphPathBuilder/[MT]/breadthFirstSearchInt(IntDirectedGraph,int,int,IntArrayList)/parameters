@@ -1,4 +1,0 @@
-IntDirectedGraph graph
-int start
-int goal
-IntArrayList pathElements

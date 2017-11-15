@@ -1,0 +1,24 @@
+{
+  Iterator<V> i=waypoints.iterator();
+  List<V> pathElements=new ArrayList<>(graph.getVertexCount());
+  if (!i.hasNext()) {
+    return null;
+  }
+  V start=i.next();
+  pathElements.add(start);
+  while (i.hasNext()) {
+    V goal=i.next();
+    BackLinkWithArrow<V,A> back=breadthFirstSearchWithArrows(graph,start,goal);
+    if (back == null) {
+      return null;
+    }
+ else {
+      int index=pathElements.size();
+      for (; back != null; back=back.parent) {
+        pathElements.add(index,back.vertex);
+      }
+    }
+    start=goal;
+  }
+  return new VertexPath<>(pathElements);
+}

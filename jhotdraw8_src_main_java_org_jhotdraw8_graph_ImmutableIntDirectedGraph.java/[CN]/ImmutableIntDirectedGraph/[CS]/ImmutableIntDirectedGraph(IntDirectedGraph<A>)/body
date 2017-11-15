@@ -1,0 +1,16 @@
+{
+  int arrowCount=0;
+  final int arrowCapacity=graph.getArrowCount();
+  final int vertexCapacity=graph.getVertexCount();
+  this.arrowHeads=new int[arrowCapacity];
+  this.arrows=new Object[arrowCapacity];
+  this.vertices=new int[vertexCapacity];
+  for (int vIndex=0; vIndex < vertexCapacity; vIndex++) {
+    vertices[vIndex]=arrowCount;
+    for (int i=0, n=graph.getNextCount(vIndex); i < n; i++) {
+      arrowHeads[arrowCount]=graph.getNext(vIndex,i);
+      arrows[arrowCount]=graph.getArrow(vIndex,i);
+      arrowCount++;
+    }
+  }
+}

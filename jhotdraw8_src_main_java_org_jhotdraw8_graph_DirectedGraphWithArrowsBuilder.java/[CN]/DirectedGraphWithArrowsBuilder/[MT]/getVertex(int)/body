@@ -1,6 +1,0 @@
-{
-  if (vertices.get(vi) == null) {
-    System.err.println("DIrectedGraphBuilder is broken");
-  }
-  return vertices.get(vi);
-}

@@ -1,0 +1,15 @@
+{
+  final int arrowCount=graph.getArrowCount();
+  DirectedGraphBuilder<V,A> b=new DirectedGraphBuilder<>(graph.getVertexCount(),arrowCount);
+  for (int i=0, n=graph.getVertexCount(); i < n; i++) {
+    V v=graph.getVertex(i);
+    b.addVertex(v);
+  }
+  for (int i=0, n=graph.getVertexCount(); i < n; i++) {
+    V v=graph.getVertex(i);
+    for (int j=0, m=graph.getNextCount(v); j < m; j++) {
+      b.addArrow(graph.getNext(v,j),v,graph.getArrow(v,j));
+    }
+  }
+  return b;
+}

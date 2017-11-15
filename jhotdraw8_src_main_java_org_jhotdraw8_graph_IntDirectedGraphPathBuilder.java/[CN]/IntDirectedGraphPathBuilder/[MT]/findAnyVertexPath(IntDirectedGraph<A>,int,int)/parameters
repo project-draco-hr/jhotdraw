@@ -1,0 +1,3 @@
+IntDirectedGraph<A> graph
+int start
+int goal

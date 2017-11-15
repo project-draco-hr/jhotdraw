@@ -1,4 +1,4 @@
 {
-  int arrowId=getIndexOfArrow(vi,i);
-  return arrows[arrowId * ARROWS_NUM_FIELDS + ARROWS_VERTEX_FIELD];
+  int arrowId=getArrowIndex(vi,i);
+  return arrowHeads[arrowId * ARROWS_NUM_FIELDS + ARROWS_VERTEX_FIELD];
 }

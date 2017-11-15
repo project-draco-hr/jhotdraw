@@ -1,6 +1,6 @@
 {
   System.out.println("findAnyVertexPath");
-  DirectedGraphWithArrows<Integer,Double> graph=createGraph();
+  DirectedGraph<Integer,Double> graph=createGraph();
   DirectedGraphWithArrowsPathBuilder<Integer,Double> instance=new DirectedGraphWithArrowsPathBuilder<>();
   EdgePath<Double> result=instance.findAnyArrowPath(graph,start,goal);
   assertEquals(result,expResult);

@@ -1,0 +1,4 @@
+DirectedGraph<V,E> graph
+V root
+V goal
+Predicate<V> visited

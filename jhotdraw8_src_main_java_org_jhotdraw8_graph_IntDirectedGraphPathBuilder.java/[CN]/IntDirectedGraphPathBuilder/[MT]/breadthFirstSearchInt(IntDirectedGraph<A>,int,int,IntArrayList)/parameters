@@ -1,0 +1,4 @@
+IntDirectedGraph<A> graph
+int start
+int goal
+IntArrayList pathElements

@@ -1,4 +1,5 @@
 {
-  this.arrows=new int[arrowCount];
+  this.arrowHeads=new int[arrowCount];
   this.vertices=new int[vertexCount];
+  this.arrows=new Object[arrowCount];
 }

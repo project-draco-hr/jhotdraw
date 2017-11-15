@@ -1,5 +1,5 @@
 {
   super(vertexCapacity,arrowCapacity);
-  this.vertexMap=new HashMap<>(vertexCapacity + vertexCapacity * 40 / 100,0.75f);
+  this.vertexMap=new HashMap<>(vertexCapacity);
   this.vertices=new ArrayList<>(vertexCapacity);
 }

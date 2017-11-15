@@ -1,3 +1,3 @@
 {
-  this.arrows=Collections.unmodifiableList(new ArrayList<>(elements));
+  this.edges=Collections.unmodifiableList(new ArrayList<>(elements));
 }

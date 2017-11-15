@@ -1,8 +1,0 @@
-{
-  if (graph instanceof IntDirectedGraphWithArrows) {
-    return doFindIntShortestVertexPath(graph,start,goal,costf);
-  }
- else {
-    return doFindShortestVertexPath(graph,start,goal,costf);
-  }
-}

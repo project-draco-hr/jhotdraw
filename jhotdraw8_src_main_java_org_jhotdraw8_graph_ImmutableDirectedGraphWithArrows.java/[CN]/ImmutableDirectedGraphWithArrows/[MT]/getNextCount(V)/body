@@ -1,3 +1,0 @@
-{
-  return getNextCount(vertexToIndexMap.get(vertex));
-}

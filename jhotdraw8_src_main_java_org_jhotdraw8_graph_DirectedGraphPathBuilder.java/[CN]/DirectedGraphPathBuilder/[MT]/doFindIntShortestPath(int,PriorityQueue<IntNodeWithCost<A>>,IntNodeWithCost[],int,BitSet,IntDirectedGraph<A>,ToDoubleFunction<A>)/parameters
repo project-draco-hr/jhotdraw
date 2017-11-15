@@ -1,0 +1,7 @@
+int start
+PriorityQueue<IntNodeWithCost<A>> frontier
+IntNodeWithCost[] frontierMap
+int goal
+BitSet explored
+IntDirectedGraph<A> graph
+ToDoubleFunction<A> costf

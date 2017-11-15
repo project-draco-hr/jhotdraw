@@ -3,7 +3,7 @@
   if (includedArrows != null) {
     includedArrows.addAll(includedArrowList);
   }
-  DirectedGraphWithArrowsBuilder<V,E> builder=new DirectedGraphWithArrowsBuilder<>();
+  DirectedGraphBuilder<V,E> builder=new DirectedGraphBuilder<>();
   for (  V v : vertices) {
     builder.addVertex(v);
   }

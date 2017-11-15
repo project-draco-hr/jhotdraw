@@ -9,7 +9,7 @@
     return false;
   }
   final EdgePath<?> other=(EdgePath<?>)obj;
-  if (!Objects.equals(this.arrows,other.arrows)) {
+  if (!Objects.equals(this.edges,other.edges)) {
     return false;
   }
   return true;

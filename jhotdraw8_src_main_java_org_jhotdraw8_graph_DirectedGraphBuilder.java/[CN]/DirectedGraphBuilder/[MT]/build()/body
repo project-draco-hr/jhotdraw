@@ -1,7 +1,4 @@
 {
-  final ImmutableDirectedGraph<V> graph=new ImmutableDirectedGraph<V>(this);
-  if (!new DirectedGraphValidator<V>().validate(graph)) {
-    throw new IllegalArgumentException("graph is not valid");
-  }
+  final ImmutableDirectedGraph<V,A> graph=new ImmutableDirectedGraph<>(this);
   return graph;
 }

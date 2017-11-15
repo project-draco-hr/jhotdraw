@@ -1,0 +1,25 @@
+{
+  if (graph instanceof IntDirectedGraph) {
+    @SuppressWarnings("unchecked") IntDirectedGraph<A> intGraph=(IntDirectedGraph<A>)graph;
+    int startIndex=-1, goalIndex=-1;
+    for (int i=0, n=graph.getVertexCount(); i < n; i++) {
+      V v=graph.getVertex(i);
+      if (v == start) {
+        startIndex=i;
+        if (goalIndex != -1) {
+          break;
+        }
+      }
+      if (v == goal) {
+        goalIndex=i;
+        if (startIndex != -1) {
+          break;
+        }
+      }
+    }
+    return findIntShortestEdgePath(intGraph,startIndex,goalIndex,costf);
+  }
+ else {
+    return doFindShortestEdgePath(graph,start,goal,costf);
+  }
+}

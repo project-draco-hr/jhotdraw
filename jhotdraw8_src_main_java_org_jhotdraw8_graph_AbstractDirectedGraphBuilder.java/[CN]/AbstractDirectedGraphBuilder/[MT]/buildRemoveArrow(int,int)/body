@@ -9,20 +9,20 @@
   int arrowId=lastArrow[vi * LASTARROW_NUM_FIELDS + LASTARROW_POINTER_FIELD];
   for (int j=i - 1; j >= 0; j--) {
     prevArrowId=arrowId;
-    arrowId=arrows[arrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD];
+    arrowId=arrowHeads[arrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD];
   }
   if (prevArrowId == SENTINEL) {
-    lastArrow[vi * LASTARROW_NUM_FIELDS + LASTARROW_POINTER_FIELD]=arrows[arrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD];
+    lastArrow[vi * LASTARROW_NUM_FIELDS + LASTARROW_POINTER_FIELD]=arrowHeads[arrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD];
   }
  else {
-    arrows[prevArrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD]=arrows[arrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD];
+    arrowHeads[prevArrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD]=arrowHeads[arrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD];
   }
   lastArrow[vi * LASTARROW_NUM_FIELDS + LASTARROW_COUNT_FIELD]--;
   arrowCount--;
   int moveArrowId=arrowCount;
   if (arrowId != moveArrowId) {
-    arrows[arrowId * ARROWS_NUM_FIELDS + ARROWS_VERTEX_FIELD]=arrows[moveArrowId * ARROWS_NUM_FIELDS + ARROWS_VERTEX_FIELD];
-    arrows[arrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD]=arrows[moveArrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD];
+    arrowHeads[arrowId * ARROWS_NUM_FIELDS + ARROWS_VERTEX_FIELD]=arrowHeads[moveArrowId * ARROWS_NUM_FIELDS + ARROWS_VERTEX_FIELD];
+    arrowHeads[arrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD]=arrowHeads[moveArrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD];
     boolean fixed=false;
     for (int v=0; v < vertexCount; v++) {
       if (lastArrow[v * LASTARROW_NUM_FIELDS + LASTARROW_COUNT_FIELD] > 0 && lastArrow[v * LASTARROW_NUM_FIELDS + LASTARROW_POINTER_FIELD] == moveArrowId) {
@@ -33,8 +33,8 @@
     }
     if (!fixed) {
       for (int e=0; e < arrowCount; e++) {
-        if (arrows[e * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD] == moveArrowId) {
-          arrows[e * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD]=arrowId;
+        if (arrowHeads[e * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD] == moveArrowId) {
+          arrowHeads[e * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD]=arrowId;
           fixed=true;
           break;
         }

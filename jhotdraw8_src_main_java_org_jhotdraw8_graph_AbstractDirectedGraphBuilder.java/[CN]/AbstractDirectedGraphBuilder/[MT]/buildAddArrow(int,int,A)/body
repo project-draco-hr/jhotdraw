@@ -1,0 +1,16 @@
+{
+  if (arrowHeads.length <= arrowCount * ARROWS_NUM_FIELDS) {
+    int[] tmp=arrowHeads;
+    arrowHeads=new int[arrowHeads.length * ARROWS_NUM_FIELDS];
+    System.arraycopy(tmp,0,arrowHeads,0,tmp.length);
+  }
+  int arrowCountOfA=lastArrow[a * LASTARROW_NUM_FIELDS + LASTARROW_COUNT_FIELD];
+  int lastArrowIdOfA=arrowCountOfA == 0 ? SENTINEL : lastArrow[a * LASTARROW_NUM_FIELDS + LASTARROW_POINTER_FIELD];
+  int newLastArrowIdOfA=arrowCount;
+  arrowHeads[newLastArrowIdOfA * ARROWS_NUM_FIELDS + ARROWS_VERTEX_FIELD]=b;
+  arrowHeads[newLastArrowIdOfA * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD]=lastArrowIdOfA;
+  lastArrow[a * LASTARROW_NUM_FIELDS + LASTARROW_COUNT_FIELD]=arrowCountOfA + 1;
+  lastArrow[a * LASTARROW_NUM_FIELDS + LASTARROW_POINTER_FIELD]=newLastArrowIdOfA;
+  arrows[newLastArrowIdOfA]=arrow;
+  arrowCount++;
+}

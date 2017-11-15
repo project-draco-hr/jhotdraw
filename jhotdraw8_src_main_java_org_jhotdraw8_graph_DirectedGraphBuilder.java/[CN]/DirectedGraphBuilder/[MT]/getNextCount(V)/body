@@ -1,3 +1,3 @@
 {
-  return getNextCount(getIndexOfVertex(v));
+  return getNextCount(getVertexIndex(v));
 }
