@@ -1,5 +1,5 @@
 {
   int hash=7;
-  hash=53 * hash + Objects.hashCode(this.edges);
+  hash=53 * hash + Objects.hashCode(this.arrows);
   return hash;
 }

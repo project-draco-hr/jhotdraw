@@ -1,0 +1,11 @@
+{
+  Deque<A> arrows=new ArrayDeque<>();
+  BackLinkWithArrow<V,A> current=breadthFirstSearchWithArrows(graph,start,goal);
+  if (current == null) {
+    return null;
+  }
+  for (BackLinkWithArrow<V,A> i=current; i.arrow != null; i=i.parent) {
+    arrows.addFirst(i.arrow);
+  }
+  return new EdgePath<>(arrows);
+}

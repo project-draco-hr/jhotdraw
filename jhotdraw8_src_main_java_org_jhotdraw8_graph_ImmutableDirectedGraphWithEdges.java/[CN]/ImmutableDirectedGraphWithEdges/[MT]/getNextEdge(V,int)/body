@@ -1,3 +1,0 @@
-{
-  return (E)edgeData[getEdgeIndex(vertexToIndexMap.get(vertex),index)];
-}

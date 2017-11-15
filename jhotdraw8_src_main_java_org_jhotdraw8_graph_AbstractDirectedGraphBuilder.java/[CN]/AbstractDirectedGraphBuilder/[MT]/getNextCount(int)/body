@@ -1,3 +1,3 @@
 {
-  return lastEdge[vi * LASTEDGE_NUM_FIELDS + LASTEDGE_COUNT_FIELD];
+  return lastArrow[vi * LASTARROW_NUM_FIELDS + LASTARROW_COUNT_FIELD];
 }

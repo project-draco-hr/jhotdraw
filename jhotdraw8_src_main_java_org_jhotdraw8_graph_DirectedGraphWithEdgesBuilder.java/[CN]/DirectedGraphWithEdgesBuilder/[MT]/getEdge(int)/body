@@ -1,3 +1,0 @@
-{
-  return edgeData.get(indexOfEdge);
-}

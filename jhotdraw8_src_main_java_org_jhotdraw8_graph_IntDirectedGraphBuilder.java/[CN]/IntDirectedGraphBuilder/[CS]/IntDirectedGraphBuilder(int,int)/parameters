@@ -1,2 +1,2 @@
 int vertexCapacity
-int edgeCapacity
+int arrowCapacity

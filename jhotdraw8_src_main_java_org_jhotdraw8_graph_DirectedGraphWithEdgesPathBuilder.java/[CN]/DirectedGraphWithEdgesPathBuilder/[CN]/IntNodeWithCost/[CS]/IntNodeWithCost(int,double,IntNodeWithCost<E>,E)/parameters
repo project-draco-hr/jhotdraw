@@ -1,4 +1,0 @@
-int node
-double cost
-IntNodeWithCost<E> parent
-E edge

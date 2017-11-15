@@ -1,0 +1,37 @@
+{
+  IntNodeWithCost<A> node=new IntNodeWithCost<>(start,0.0,null,null);
+  frontier.add(node);
+  while (true) {
+    if (frontier.isEmpty()) {
+      return null;
+    }
+    node=frontier.poll();
+    final int vertex=node.vertex;
+    frontierMap[vertex]=null;
+    if (vertex == goal) {
+      break;
+    }
+    explored.set(node.getVertex());
+    for (int i=0, count=graph.getNextCount(vertex); i < count; i++) {
+      int next=graph.getNext(vertex,i);
+      final A arrow=graph.getArrow(vertex,i);
+      double cost=node.cost + costf.applyAsDouble(arrow);
+      @SuppressWarnings("unchecked") IntNodeWithCost<A> nwcInFrontier=frontierMap[next];
+      if (!explored.get(next) && nwcInFrontier == null) {
+        IntNodeWithCost<A> nwc=new IntNodeWithCost<>(next,cost,node,arrow);
+        frontier.add(nwc);
+        frontierMap[next]=nwc;
+      }
+ else       if (nwcInFrontier != null) {
+        if (nwcInFrontier.cost > cost) {
+          frontier.remove(nwcInFrontier);
+          nwcInFrontier.cost=cost;
+          nwcInFrontier.parent=node;
+          nwcInFrontier.arrow=arrow;
+          frontier.add(nwcInFrontier);
+        }
+      }
+    }
+  }
+  return node;
+}

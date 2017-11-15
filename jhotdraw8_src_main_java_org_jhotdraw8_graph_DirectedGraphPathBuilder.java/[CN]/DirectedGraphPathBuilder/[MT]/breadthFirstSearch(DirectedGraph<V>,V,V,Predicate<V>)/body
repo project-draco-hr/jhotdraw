@@ -1,5 +1,5 @@
 {
-  Queue<BackLink<V>> queue=new ArrayDeque<>(max(1,min(graph.getVertexCount(),graph.getEdgeCount())));
+  Queue<BackLink<V>> queue=new ArrayDeque<>(max(1,min(graph.getVertexCount(),graph.getArrowCount())));
   BackLink<V> rootBackLink=new BackLink<>(root,null);
   visited.test(root);
   queue.add(rootBackLink);

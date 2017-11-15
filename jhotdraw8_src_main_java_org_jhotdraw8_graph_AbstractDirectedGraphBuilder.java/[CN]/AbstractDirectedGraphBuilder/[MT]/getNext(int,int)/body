@@ -1,4 +1,4 @@
 {
-  int edgeId=getIndexOfEdge(vi,i);
-  return edges[edgeId * EDGES_NUM_FIELDS + EDGES_VERTEX_FIELD];
+  int arrowId=getIndexOfArrow(vi,i);
+  return arrows[arrowId * ARROWS_NUM_FIELDS + ARROWS_VERTEX_FIELD];
 }

@@ -1,6 +1,6 @@
 {
   this.graph=graph;
-  queue=new ArrayDeque<>(graph.getEdgeCount());
+  queue=new ArrayDeque<>(graph.getArrowCount());
   this.visited=visited;
   queue.add(root);
   visited.test(root);

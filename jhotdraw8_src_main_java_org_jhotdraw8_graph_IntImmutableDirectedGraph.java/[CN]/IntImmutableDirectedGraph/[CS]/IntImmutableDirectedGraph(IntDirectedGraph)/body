@@ -1,13 +1,13 @@
 {
-  int edgeCount=0;
-  final int edgeCapacity=graph.getEdgeCount();
+  int arrowCount=0;
+  final int arrowCapacity=graph.getArrowCount();
   final int vertexCapacity=graph.getVertexCount();
-  this.edges=new int[edgeCapacity];
+  this.arrows=new int[arrowCapacity];
   this.vertices=new int[vertexCapacity];
   for (int vIndex=0; vIndex < vertexCapacity; vIndex++) {
-    vertices[vIndex]=edgeCount;
+    vertices[vIndex]=arrowCount;
     for (int i=0, n=graph.getNextCount(vIndex); i < n; i++) {
-      edges[edgeCount++]=graph.getNext(vIndex,i);
+      arrows[arrowCount++]=graph.getNext(vIndex,i);
     }
   }
 }

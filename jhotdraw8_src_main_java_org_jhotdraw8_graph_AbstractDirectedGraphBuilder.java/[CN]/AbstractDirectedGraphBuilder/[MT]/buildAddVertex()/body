@@ -1,8 +1,8 @@
 {
   vertexCount++;
-  if (lastEdge.length < vertexCount * LASTEDGE_NUM_FIELDS) {
-    int[] tmp=lastEdge;
-    lastEdge=new int[lastEdge.length * 2 * LASTEDGE_NUM_FIELDS];
-    System.arraycopy(tmp,0,lastEdge,0,tmp.length);
+  if (lastArrow.length < vertexCount * LASTARROW_NUM_FIELDS) {
+    int[] tmp=lastArrow;
+    lastArrow=new int[lastArrow.length * 2 * LASTARROW_NUM_FIELDS];
+    System.arraycopy(tmp,0,lastArrow,0,tmp.length);
   }
 }

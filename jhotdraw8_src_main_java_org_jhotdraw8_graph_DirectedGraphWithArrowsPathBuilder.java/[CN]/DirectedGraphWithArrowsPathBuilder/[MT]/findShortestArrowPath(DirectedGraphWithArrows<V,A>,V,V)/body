@@ -1,0 +1,3 @@
+{
+  return findShortestArrowPath(graph,start,goal,costFunction);
+}

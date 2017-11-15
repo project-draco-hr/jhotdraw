@@ -1,7 +1,0 @@
-{
-  System.out.println("findAnyVertexPath");
-  DirectedGraphWithEdges<Integer,Double> graph=createGraph();
-  DirectedGraphWithEdgesPathBuilder<Integer,Double> instance=new DirectedGraphWithEdgesPathBuilder<>();
-  EdgePath<Double> result=instance.findAnyEdgePath(graph,start,goal);
-  assertEquals(result,expResult);
-}

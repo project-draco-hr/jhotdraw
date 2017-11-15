@@ -1,4 +1,0 @@
-{
-  int edgeId=getIndexOfEdge(getIndexOfVertex(vertex),i);
-  return edgeData.get(edgeId);
-}

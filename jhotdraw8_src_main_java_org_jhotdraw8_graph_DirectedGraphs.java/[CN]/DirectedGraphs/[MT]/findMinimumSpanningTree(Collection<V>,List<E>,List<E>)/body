@@ -1,18 +1,18 @@
 {
-  List<E> minimumSpanningTree=new ArrayList<>(orderedEdges.size());
-  if (rejectedEdges == null) {
-    rejectedEdges=new ArrayList<>(orderedEdges.size());
+  List<E> minimumSpanningTree=new ArrayList<>(orderedArrows.size());
+  if (rejectedArrows == null) {
+    rejectedArrows=new ArrayList<>(orderedArrows.size());
   }
   Map<V,List<V>> forest=createForest(vertices);
-  for (  E edge : orderedEdges) {
-    List<V> uset=forest.get(edge.getStart());
-    List<V> vset=forest.get(edge.getEnd());
+  for (  E arrow : orderedArrows) {
+    List<V> uset=forest.get(arrow.getStart());
+    List<V> vset=forest.get(arrow.getEnd());
     if (uset != vset) {
       union(uset,vset,forest);
-      minimumSpanningTree.add(edge);
+      minimumSpanningTree.add(arrow);
     }
  else {
-      rejectedEdges.add(edge);
+      rejectedArrows.add(arrow);
     }
   }
   return minimumSpanningTree;

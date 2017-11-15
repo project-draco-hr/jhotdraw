@@ -1,0 +1,4 @@
+IntDirectedGraphWithArrows<A> graph
+int start
+int goal
+ToDoubleFunction<A> costf

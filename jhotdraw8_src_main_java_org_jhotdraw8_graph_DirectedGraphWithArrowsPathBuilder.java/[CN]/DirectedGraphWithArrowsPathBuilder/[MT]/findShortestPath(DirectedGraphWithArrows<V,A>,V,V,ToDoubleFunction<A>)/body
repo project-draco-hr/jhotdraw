@@ -1,0 +1,6 @@
+{
+  PriorityQueue<NodeWithCost<V,A>> frontier=new PriorityQueue<>();
+  Set<V> explored=new HashSet<>(graph.getVertexCount());
+  Map<V,NodeWithCost<V,A>> frontierMap=new HashMap<>(graph.getVertexCount());
+  return doFindShortestPath(start,frontier,frontierMap,goal,explored,graph,costf);
+}

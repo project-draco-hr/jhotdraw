@@ -1,4 +1,0 @@
-{
-  addEdge(a,b);
-  addEdge(b,a);
-}

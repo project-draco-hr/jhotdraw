@@ -4,7 +4,7 @@
     X v=model.getVertex(i);
     b.addVertex(v);
     for (int j=0, m=model.getNextCount(v); j < m; j++) {
-      b.addEdge(v,model.getNext(v,j));
+      b.addArrow(v,model.getNext(v,j));
     }
   }
   return b;

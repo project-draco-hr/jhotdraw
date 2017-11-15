@@ -1,0 +1,4 @@
+{
+  int arrowId=getIndexOfArrow(getIndexOfVertex(vertex),i);
+  return arrowData.get(arrowId);
+}

@@ -7,7 +7,7 @@
     for (int j=0, m=model.getNextCount(v); j < m; j++) {
       final X u=model.getNext(v,j);
       if (vertices.contains(u)) {
-        b.addEdge(v,u);
+        b.addArrow(v,u);
       }
     }
   }

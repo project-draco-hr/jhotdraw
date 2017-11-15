@@ -4,6 +4,6 @@
     throw new IllegalArgumentException("vi(" + vi + ") < 0 || vi >= "+ vertexCount);
   }
   final int offset=vertices[vi];
-  final int nextOffset=(vi == vertexCount - 1) ? edges.length : vertices[vi + 1];
+  final int nextOffset=(vi == vertexCount - 1) ? arrows.length : vertices[vi + 1];
   return nextOffset - offset;
 }

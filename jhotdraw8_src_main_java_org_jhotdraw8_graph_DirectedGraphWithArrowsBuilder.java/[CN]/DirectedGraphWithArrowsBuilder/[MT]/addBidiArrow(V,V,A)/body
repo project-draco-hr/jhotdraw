@@ -1,0 +1,4 @@
+{
+  addArrow(va,vb,arrow);
+  addArrow(vb,va,arrow);
+}

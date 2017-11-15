@@ -1,0 +1,3 @@
+DirectedGraphWithArrows<V,A> graph
+V start
+V goal

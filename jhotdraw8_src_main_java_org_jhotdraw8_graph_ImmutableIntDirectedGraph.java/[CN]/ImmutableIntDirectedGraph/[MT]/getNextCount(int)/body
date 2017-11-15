@@ -1,5 +1,5 @@
 {
   final int offset=vertices[vi];
-  final int nextOffset=(vi == vertices.length - 1) ? edges.length : vertices[vi + 1];
+  final int nextOffset=(vi == vertices.length - 1) ? arrows.length : vertices[vi + 1];
   return nextOffset - offset;
 }

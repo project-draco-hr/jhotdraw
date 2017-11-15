@@ -1,6 +1,0 @@
-{
-  this.vertex=node;
-  this.cost=cost;
-  this.parent=parent;
-  this.edge=edge;
-}

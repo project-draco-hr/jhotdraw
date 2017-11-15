@@ -1,0 +1,44 @@
+{
+  if (vi < 0 || vi >= getVertexCount()) {
+    throw new IllegalArgumentException("vi:" + i);
+  }
+  if (i < 0 || i >= getNextCount(vi)) {
+    throw new IllegalArgumentException("i:" + i);
+  }
+  int prevArrowId=SENTINEL;
+  int arrowId=lastArrow[vi * LASTARROW_NUM_FIELDS + LASTARROW_POINTER_FIELD];
+  for (int j=i - 1; j >= 0; j--) {
+    prevArrowId=arrowId;
+    arrowId=arrows[arrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD];
+  }
+  if (prevArrowId == SENTINEL) {
+    lastArrow[vi * LASTARROW_NUM_FIELDS + LASTARROW_POINTER_FIELD]=arrows[arrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD];
+  }
+ else {
+    arrows[prevArrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD]=arrows[arrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD];
+  }
+  lastArrow[vi * LASTARROW_NUM_FIELDS + LASTARROW_COUNT_FIELD]--;
+  arrowCount--;
+  int moveArrowId=arrowCount;
+  if (arrowId != moveArrowId) {
+    arrows[arrowId * ARROWS_NUM_FIELDS + ARROWS_VERTEX_FIELD]=arrows[moveArrowId * ARROWS_NUM_FIELDS + ARROWS_VERTEX_FIELD];
+    arrows[arrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD]=arrows[moveArrowId * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD];
+    boolean fixed=false;
+    for (int v=0; v < vertexCount; v++) {
+      if (lastArrow[v * LASTARROW_NUM_FIELDS + LASTARROW_COUNT_FIELD] > 0 && lastArrow[v * LASTARROW_NUM_FIELDS + LASTARROW_POINTER_FIELD] == moveArrowId) {
+        lastArrow[v * LASTARROW_NUM_FIELDS + LASTARROW_POINTER_FIELD]=arrowId;
+        fixed=true;
+        break;
+      }
+    }
+    if (!fixed) {
+      for (int e=0; e < arrowCount; e++) {
+        if (arrows[e * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD] == moveArrowId) {
+          arrows[e * ARROWS_NUM_FIELDS + ARROWS_NEXT_FIELD]=arrowId;
+          fixed=true;
+          break;
+        }
+      }
+    }
+  }
+}

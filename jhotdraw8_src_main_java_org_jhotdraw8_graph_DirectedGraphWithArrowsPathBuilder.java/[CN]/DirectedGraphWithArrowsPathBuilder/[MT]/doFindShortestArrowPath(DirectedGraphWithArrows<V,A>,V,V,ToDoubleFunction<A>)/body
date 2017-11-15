@@ -1,0 +1,11 @@
+{
+  NodeWithCost<V,A> node=findShortestPath(graph,start,goal,costf);
+  if (node == null) {
+    return null;
+  }
+  LinkedList<A> arrows=new LinkedList<>();
+  for (NodeWithCost<V,A> parent=node; parent != null && parent.arrow != null; parent=parent.parent) {
+    arrows.addFirst(parent.arrow);
+  }
+  return new EdgePath<>(arrows);
+}

@@ -1,0 +1,17 @@
+{
+  super(graph.getVertexCount(),graph.getArrowCount());
+  final int vcount=graph.getVertexCount();
+  this.vertexMap=new HashMap<>(vcount);
+  this.vertices=new ArrayList<>(vcount);
+  final int ecount=graph.getArrowCount();
+  this.arrowData=new ArrayList<>(ecount);
+  for (int i=0; i < vcount; i++) {
+    addVertex(graph.getVertex(i));
+  }
+  for (int i=0; i < vcount; i++) {
+    V v=graph.getVertex(i);
+    for (int j=0, n=graph.getNextCount(v); j < n; j++) {
+      addArrow(v,graph.getNext(v,j),graph.getArrow(v,j));
+    }
+  }
+}
