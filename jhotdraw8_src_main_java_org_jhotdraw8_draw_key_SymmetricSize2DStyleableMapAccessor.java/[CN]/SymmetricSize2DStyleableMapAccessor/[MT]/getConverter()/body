@@ -1,0 +1,6 @@
+{
+  if (converter == null) {
+    converter=new CssSymmetricSize2DConverter();
+  }
+  return converter;
+}

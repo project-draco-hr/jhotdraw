@@ -1,0 +1,12 @@
+{
+  Object[] v=formatter.fromString(buf);
+  int count=(Integer)v[0];
+switch (count) {
+case 1:
+    return new CssSize2D(((CssSize)v[1]),((CssSize)v[1]));
+case 2:
+  return new CssSize2D(((CssSize)v[1]),((CssSize)v[2]));
+default :
+throw new ParseException("one or two numbers expected, found " + count + " numbers",0);
+}
+}

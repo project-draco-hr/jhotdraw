@@ -1,0 +1,3 @@
+{
+  return new CssSize2D(CssSize.ZERO,CssSize.ZERO);
+}
