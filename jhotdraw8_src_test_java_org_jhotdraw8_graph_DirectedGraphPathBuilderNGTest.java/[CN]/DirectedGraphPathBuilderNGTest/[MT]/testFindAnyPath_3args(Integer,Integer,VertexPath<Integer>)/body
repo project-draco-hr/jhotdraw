@@ -1,7 +1,7 @@
 {
   System.out.println("findAnyPath");
-  DirectedGraph<Integer> graph=createGraph();
-  DirectedGraphPathBuilder<Integer> instance=new DirectedGraphPathBuilder<>();
+  DirectedGraph<Integer,Double> graph=createGraph();
+  DirectedGraphPathBuilder<Integer,Double> instance=new DirectedGraphPathBuilder<>();
   VertexPath<Integer> result=instance.findAnyVertexPath(graph,start,goal);
   assertEquals(result,expResult);
 }
