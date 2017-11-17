@@ -1,5 +1,5 @@
 {
-  set(RenderContext.CLIP_BOUNDS,getVisibleRect());
+  set(RenderContext.CLIP_BOUNDS,viewToWorld(getVisibleRect()));
   if (!renderIntoImage) {
     Figure[] copyOfDirtyFigureNodes=dirtyFigureNodes.toArray(new Figure[dirtyFigureNodes.size()]);
     dirtyFigureNodes.clear();
