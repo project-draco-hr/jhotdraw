@@ -1,7 +1,7 @@
 {
   this.graph=graph;
   this.intToV=intToV;
-  queue=new ArrayDeque<>(graph.getArrowCount());
+  queue=new ArrayDeque<>(16);
   visited=new BitSet(graph.getVertexCount());
   queue.add(root);
   visited.set(root);
