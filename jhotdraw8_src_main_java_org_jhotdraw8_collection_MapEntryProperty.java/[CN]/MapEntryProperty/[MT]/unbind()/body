@@ -2,7 +2,7 @@
   super.unbind();
   if (map != null) {
     map.removeListener(weakListener);
-    mapListener=null;
+    weakListener=null;
     map=null;
     key=null;
   }
