@@ -1,6 +1,6 @@
 {
   Deque<V> vertices=new ArrayDeque<>();
-  BackLinkWithArrow<V,A> current=breadthFirstSearchWithArrows(graph,start,goal);
+  BackLinkWithArrow<V,A> current=breadthFirstSearch(graph,start,goal);
   if (current == null) {
     return null;
   }
