@@ -1,14 +1,11 @@
 {
-  if (styledMap == null) {
-    styledMap=new MapAdapter<K,V>(){
-      @Override @SuppressWarnings("unchecked") public boolean containsKey(      Object key){
-        return containsStyledKey((K)key);
-      }
-      @Override @SuppressWarnings("unchecked") public V get(      Object key){
-        return getStyled((K)key);
-      }
+  return new MapAdapter<K,V>(){
+    @Override @SuppressWarnings("unchecked") public boolean containsKey(    Object key){
+      return containsStyledKey((K)key);
     }
-;
+    @Override @SuppressWarnings("unchecked") public V get(    Object key){
+      return getStyled((K)key);
+    }
   }
-  return styledMap;
+;
 }
