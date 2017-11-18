@@ -1,3 +1,3 @@
 {
-  super(owner,styleclass,RelativeLocator.northWest(),NORTH_WEST_SHAPE,REGION_BACKGROUND,REGION_BORDER);
+  super(owner,styleclass,RelativeLocator.NORTH_WEST,NORTH_WEST_SHAPE,REGION_BACKGROUND,REGION_BORDER);
 }
