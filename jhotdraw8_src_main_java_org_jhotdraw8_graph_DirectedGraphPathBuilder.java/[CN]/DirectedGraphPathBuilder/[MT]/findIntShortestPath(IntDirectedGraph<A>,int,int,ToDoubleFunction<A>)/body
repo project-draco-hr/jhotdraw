@@ -3,11 +3,13 @@
   if (intFrontierMap == null || intFrontierMap.length < vertexCount) {
     intFrontierMap=new IntNodeWithCost[vertexCount];
     intExplored=new BitSet(vertexCount);
+  }
+  if (intFrontier == null) {
     intFrontier=new PriorityQueue<>(16);
   }
   IntNodeWithCost<A> result=doFindIntShortestPath(start,intFrontier,intFrontierMap,goal,intExplored,graph,costf);
   intFrontier.clear();
   intExplored.clear();
-  clear(intFrontierMap);
+  Arrays.fill(intFrontierMap,null);
   return result;
 }
