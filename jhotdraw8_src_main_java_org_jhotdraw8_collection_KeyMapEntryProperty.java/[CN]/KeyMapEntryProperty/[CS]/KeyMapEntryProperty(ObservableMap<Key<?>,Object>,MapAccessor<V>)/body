@@ -1,4 +1,4 @@
 {
-  super(map,(key instanceof Key<?>) ? (Key<?>)key : null,key.getValueType());
+  this.map=map;
   this.accessor=key;
 }
