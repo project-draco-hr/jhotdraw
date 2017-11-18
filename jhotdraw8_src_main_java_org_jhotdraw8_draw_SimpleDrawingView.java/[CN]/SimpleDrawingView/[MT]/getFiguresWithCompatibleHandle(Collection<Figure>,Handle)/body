@@ -1,6 +1,6 @@
 {
   validateHandles();
-  Map<Figure,Figure> result=new IdentityHashMap<>();
+  Map<Figure,Figure> result=new HashMap<>();
   for (  Map.Entry<Figure,List<Handle>> entry : handles.entrySet()) {
     if (figures.contains(entry.getKey())) {
       for (      Handle h : entry.getValue()) {
