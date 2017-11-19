@@ -1,0 +1,5 @@
+{
+  changed((Key<Object>)change.getKey(),change.getValueRemoved(),change.getValueAdded());
+  AbstractStyleablePropertyBean.this.callObservers(origin,false,change);
+  super.callObservers(origin,change);
+}

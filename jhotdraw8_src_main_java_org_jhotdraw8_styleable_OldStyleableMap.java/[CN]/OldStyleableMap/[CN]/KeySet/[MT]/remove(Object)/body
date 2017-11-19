@@ -1,0 +1,3 @@
+{
+  return OldStyleableMap.this.remove(o) != null;
+}

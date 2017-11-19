@@ -1,0 +1,10 @@
+{
+  StyleableMap<String,String> map=new SimpleStyleableMap<>();
+  map.put("1","user");
+  map.put(StyleOrigin.AUTHOR,"1","author");
+  assertEquals(map.size(),1);
+  assertEquals(map.get("1"),"user");
+  assertEquals(map.get(StyleOrigin.USER,"1"),"user");
+  assertEquals(map.get(StyleOrigin.AUTHOR,"1"),"author");
+  assertEquals(map.get(StyleOrigin.AUTHOR,"1"),"author");
+}

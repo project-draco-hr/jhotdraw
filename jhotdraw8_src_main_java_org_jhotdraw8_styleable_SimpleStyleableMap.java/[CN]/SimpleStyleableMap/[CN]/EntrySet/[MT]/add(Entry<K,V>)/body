@@ -1,0 +1,7 @@
+{
+  boolean added=!SimpleStyleableMap.this.containsKey(e.getKey()) || Objects.equals(SimpleStyleableMap.this.get(e.getKey()),e.getValue());
+  if (added) {
+    SimpleStyleableMap.this.put(e.getKey(),e.getValue());
+  }
+  return added;
+}

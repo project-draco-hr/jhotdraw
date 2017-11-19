@@ -1,0 +1,15 @@
+{
+  if (this.key.equals(change.getKey())) {
+    if (change.wasAdded()) {
+      @SuppressWarnings("unchecked") T valueAdded=(T)change.getValueAdded();
+      if (super.get() != valueAdded) {
+        set(valueAdded);
+      }
+    }
+ else     if (change.wasRemoved()) {
+      if (super.get() != null) {
+        set(null);
+      }
+    }
+  }
+}

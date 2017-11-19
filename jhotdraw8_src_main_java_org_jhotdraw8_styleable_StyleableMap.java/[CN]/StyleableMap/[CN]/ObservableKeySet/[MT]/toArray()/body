@@ -1,8 +1,0 @@
-{
-  Object[] a=new Object[size()];
-  int i=0;
-  for (Iterator<K> it=iterator(); it.hasNext(); ) {
-    a[i++]=it.next();
-  }
-  return a;
-}

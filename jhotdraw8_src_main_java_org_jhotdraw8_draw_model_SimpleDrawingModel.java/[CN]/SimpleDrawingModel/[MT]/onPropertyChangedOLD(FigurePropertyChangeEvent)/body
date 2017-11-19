@@ -1,12 +1,5 @@
 {
-  if (event.getType() == FigurePropertyChangeEvent.EventType.WILL_CHANGE) {
-    Key<?> k=event.getKey();
-    if (k instanceof FigureKey && ((FigureKey<?>)k).getDirtyMask().containsOneOf(DirtyBits.LAYOUT_SUBJECT)) {
-      layoutSubjectChange.clear();
-      layoutSubjectChange.addAll(event.getSource().getLayoutSubjects());
-    }
-  }
- else   if (event.getType() == FigurePropertyChangeEvent.EventType.CHANGED) {
+  if (event.getType() == FigurePropertyChangeEvent.EventType.CHANGED) {
     fireDrawingModelEvent(DrawingModelEvent.propertyValueChanged(this,event.getSource(),(Key<Object>)event.getKey(),event.getOldValue(),event.getNewValue()));
     Key<?> k=event.getKey();
     if (k instanceof FigureKey && ((FigureKey<?>)k).getDirtyMask().containsOneOf(DirtyBits.LAYOUT_SUBJECT)) {

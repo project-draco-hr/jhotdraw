@@ -1,0 +1,4 @@
+int ordinal
+int index
+K key
+V newValue

@@ -1,0 +1,7 @@
+{
+  this.keyMap=keyMap;
+  this.values=new ArrayList<>(keyMap.size() * numOrigins);
+  this.origin=StyleOrigin.USER;
+  this.originOrdinal=origin.ordinal();
+  this.sizes=new int[numOrigins];
+}

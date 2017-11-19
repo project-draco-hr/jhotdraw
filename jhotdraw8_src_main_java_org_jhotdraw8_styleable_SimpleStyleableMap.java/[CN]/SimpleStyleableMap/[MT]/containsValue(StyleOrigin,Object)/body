@@ -1,0 +1,8 @@
+{
+  for (int i=originOrdinal, n=values.size(); i < n; i+=numOrigins) {
+    if (Objects.equals(values.get(i),value)) {
+      return true;
+    }
+  }
+  return false;
+}

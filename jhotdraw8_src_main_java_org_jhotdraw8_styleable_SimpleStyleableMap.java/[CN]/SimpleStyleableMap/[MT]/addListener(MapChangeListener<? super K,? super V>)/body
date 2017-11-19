@@ -1,0 +1,6 @@
+{
+  if (changeListenerList == null) {
+    changeListenerList=new CopyOnWriteArrayList<>();
+  }
+  changeListenerList.add(observer);
+}

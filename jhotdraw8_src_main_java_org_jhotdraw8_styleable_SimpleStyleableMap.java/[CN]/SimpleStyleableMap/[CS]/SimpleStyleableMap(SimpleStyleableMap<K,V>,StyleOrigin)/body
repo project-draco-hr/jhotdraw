@@ -1,0 +1,10 @@
+{
+  this.keyMap=that.keyMap;
+  this.values=that.values;
+  this.origin=styleOrigin;
+  this.originOrdinal=(styleOrigin == null) ? -1 : styleOrigin.ordinal();
+  this.sizes=that.sizes;
+  that.createListenerLists();
+  this.changeListenerList=that.changeListenerList;
+  this.invalidationListenerList=that.invalidationListenerList;
+}

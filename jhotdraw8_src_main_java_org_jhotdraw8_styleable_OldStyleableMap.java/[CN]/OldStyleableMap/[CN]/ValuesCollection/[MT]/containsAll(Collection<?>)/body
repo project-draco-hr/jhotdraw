@@ -1,0 +1,8 @@
+{
+  for (  Object k : c) {
+    if (!containsValue(origin,k)) {
+      return false;
+    }
+  }
+  return true;
+}

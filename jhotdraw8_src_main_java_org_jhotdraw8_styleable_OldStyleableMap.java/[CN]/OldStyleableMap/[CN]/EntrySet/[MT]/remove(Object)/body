@@ -1,0 +1,4 @@
+{
+  Entry<K,V> entry=(Entry<K,V>)o;
+  return OldStyleableMap.this.remove(oesOrigin,entry.getKey()) != null;
+}

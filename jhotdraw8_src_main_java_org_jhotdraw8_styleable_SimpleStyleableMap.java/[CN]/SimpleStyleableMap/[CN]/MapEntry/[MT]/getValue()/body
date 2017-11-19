@@ -1,0 +1,3 @@
+{
+  return SimpleStyleableMap.this.getValue(SimpleStyleableMap.this.originOrdinal,index,key);
+}

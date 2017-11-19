@@ -1,0 +1,3 @@
+{
+  return (origin == this.origin) ? this : new SimpleStyleableMap(this,origin);
+}

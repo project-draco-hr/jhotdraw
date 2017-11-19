@@ -1,0 +1,4 @@
+{
+  int index=ensureCapacity(key);
+  return setValue(styleOrigin.ordinal(),index,key,value);
+}

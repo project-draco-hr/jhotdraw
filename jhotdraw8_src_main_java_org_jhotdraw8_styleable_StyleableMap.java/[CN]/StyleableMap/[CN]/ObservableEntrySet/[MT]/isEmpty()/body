@@ -1,3 +1,0 @@
-{
-  return StyleableMap.this.isEmpty(oesOrigin);
-}

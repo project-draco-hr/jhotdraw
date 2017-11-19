@@ -1,0 +1,13 @@
+{
+  StyleableMap<String,String> map=new SimpleStyleableMap<>();
+  map.put(StyleOrigin.AUTHOR,"1","author1");
+  map.put(StyleOrigin.AUTHOR,"2","author2");
+  map.put(StyleOrigin.AUTHOR,"3","author3");
+  map.put(StyleOrigin.AUTHOR,"4","author4");
+  map.put(StyleOrigin.USER,"2","user2");
+  map.put(StyleOrigin.USER,"3","user3");
+  for (  Map.Entry<String,String> e : map.entrySet()) {
+    System.out.println(e);
+  }
+  System.out.println("---");
+}

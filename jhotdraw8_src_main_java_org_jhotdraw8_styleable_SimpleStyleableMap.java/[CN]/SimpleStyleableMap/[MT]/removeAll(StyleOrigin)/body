@@ -1,0 +1,10 @@
+{
+  int ordinal=origin.ordinal();
+  for (Iterator<Entry<K,Integer>> i=keyMap.entrySet().iterator(); i.hasNext(); ) {
+    Entry<K,Integer> e=i.next();
+    Integer index=e.getValue();
+    if (index < values.size()) {
+      removeValue(ordinal,index,e.getKey());
+    }
+  }
+}

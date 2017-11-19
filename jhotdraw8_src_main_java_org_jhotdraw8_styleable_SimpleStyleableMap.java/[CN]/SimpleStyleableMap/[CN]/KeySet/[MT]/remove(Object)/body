@@ -1,0 +1,7 @@
+{
+  boolean removed=SimpleStyleableMap.this.containsKey(o);
+  if (removed) {
+    SimpleStyleableMap.this.remove(o);
+  }
+  return removed;
+}

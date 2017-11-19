@@ -1,0 +1,19 @@
+{
+  if (ordinal == -1) {
+    throw new UnsupportedOperationException("can not remove styled value");
+  }
+  final int arrayIndex=index * numOrigins + ordinal;
+  Object oldValue=arrayIndex < values.size() ? values.get(arrayIndex) : EMPTY;
+  if (oldValue == EMPTY) {
+    return null;
+  }
+ else {
+    values.set(index * numOrigins + ordinal,EMPTY);
+    sizes[ordinal]--;
+    if (origin == StyleOrigin.USER) {
+      @SuppressWarnings("unchecked") ChangeEvent change=new ChangeEvent(key,(V)oldValue,null,false,true);
+      callObservers(this.origin,change);
+    }
+    return (V)oldValue;
+  }
+}

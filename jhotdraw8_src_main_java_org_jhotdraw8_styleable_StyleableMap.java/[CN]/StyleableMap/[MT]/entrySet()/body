@@ -1,6 +1,0 @@
-{
-  if (entrySet == null) {
-    entrySet=new ObservableEntrySet(StyleOrigin.USER);
-  }
-  return entrySet;
-}

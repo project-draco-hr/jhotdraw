@@ -1,0 +1,4 @@
+{
+  final int arrayIndex=index * numOrigins + ordinal;
+  return arrayIndex < values.size() && values.get(arrayIndex) != EMPTY;
+}

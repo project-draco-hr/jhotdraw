@@ -1,0 +1,10 @@
+{
+  int index=ensureCapacity((K)key);
+  for (int i=numOrigins - 1; i >= 0; i--) {
+    V value=(V)values.get(index * numOrigins + i);
+    if (value != EMPTY) {
+      return StyleOrigin.values()[i];
+    }
+  }
+  return null;
+}

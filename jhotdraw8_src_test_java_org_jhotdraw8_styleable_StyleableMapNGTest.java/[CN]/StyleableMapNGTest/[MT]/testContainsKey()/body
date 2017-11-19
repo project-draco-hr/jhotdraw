@@ -1,0 +1,12 @@
+{
+  StyleableMap<String,String> map=new SimpleStyleableMap<>();
+  map.put("1","user");
+  assertTrue(map.containsKey("1"));
+  assertNull(map.get("2"));
+  assertFalse(map.containsKey("2"));
+  map.put("3","user");
+  assertTrue(map.containsKey("1"));
+  assertTrue(map.containsKey("3"));
+  assertNull(map.get("2"));
+  assertFalse(map.containsKey("2"));
+}

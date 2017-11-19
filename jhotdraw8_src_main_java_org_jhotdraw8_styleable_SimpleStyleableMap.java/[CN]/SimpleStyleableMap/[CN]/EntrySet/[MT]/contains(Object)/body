@@ -1,0 +1,7 @@
+{
+  if (!(o instanceof Entry)) {
+    return false;
+  }
+  Entry<K,V> e=(Entry<K,V>)o;
+  return SimpleStyleableMap.this.containsKey(e.getKey()) && Objects.equals(SimpleStyleableMap.this.get(e.getKey()),e.getValue());
+}

@@ -1,0 +1,19 @@
+{
+  Object value;
+  if (ordinal == -1) {
+    value=(V)EMPTY;
+    if (index * numOrigins < values.size()) {
+      for (int i=numOrigins - 1; i >= 0; i--) {
+        value=(V)values.get(index * numOrigins + i);
+        if (value != EMPTY) {
+          break;
+        }
+      }
+    }
+  }
+ else {
+    final int arrayIndex=index * numOrigins + ordinal;
+    value=values.size() < arrayIndex ? EMPTY : values.get(arrayIndex);
+  }
+  return value == EMPTY ? null : (V)value;
+}

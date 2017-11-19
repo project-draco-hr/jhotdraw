@@ -1,0 +1,12 @@
+{
+  int author=StyleOrigin.AUTHOR.ordinal();
+  int inline=StyleOrigin.INLINE.ordinal();
+  for (Iterator<Entry<K,Integer>> i=keyMap.entrySet().iterator(); i.hasNext(); ) {
+    Entry<K,Integer> e=i.next();
+    Integer index=e.getValue();
+    if (index < values.size()) {
+      removeValue(author,index,e.getKey());
+      removeValue(inline,index,e.getKey());
+    }
+  }
+}

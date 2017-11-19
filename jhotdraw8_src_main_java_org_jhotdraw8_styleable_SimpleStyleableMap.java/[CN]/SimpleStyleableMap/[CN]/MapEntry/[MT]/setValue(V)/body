@@ -1,0 +1,5 @@
+{
+  V oldValue=SimpleStyleableMap.this.getValue(SimpleStyleableMap.this.originOrdinal,index,key);
+  SimpleStyleableMap.this.setValue(SimpleStyleableMap.this.originOrdinal,index,key,value);
+  return oldValue;
+}

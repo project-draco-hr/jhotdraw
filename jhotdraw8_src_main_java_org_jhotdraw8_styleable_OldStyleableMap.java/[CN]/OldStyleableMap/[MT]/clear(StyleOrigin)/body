@@ -1,0 +1,11 @@
+{
+  for (Iterator<Entry<K,StyledValue>> i=backingMap.entrySet().iterator(); i.hasNext(); ) {
+    Entry<K,StyledValue> e=i.next();
+    K key=e.getKey();
+    StyledValue sv=e.getValue();
+    @SuppressWarnings("unchecked") V val=sv.getValue(o);
+    ChangeEvent change=new ChangeEvent(key,val,null,false,true);
+    sv.removeValue(o);
+    callObservers(o,change);
+  }
+}

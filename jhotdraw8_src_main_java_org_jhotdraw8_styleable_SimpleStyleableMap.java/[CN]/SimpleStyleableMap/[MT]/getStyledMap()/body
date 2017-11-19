@@ -1,0 +1,7 @@
+{
+  createListenerLists();
+  if (styledMap == null) {
+    styledMap=new SimpleStyleableMap<K,V>(this,null);
+  }
+  return styledMap;
+}

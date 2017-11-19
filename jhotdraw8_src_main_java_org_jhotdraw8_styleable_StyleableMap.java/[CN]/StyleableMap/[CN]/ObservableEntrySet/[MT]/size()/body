@@ -1,3 +1,0 @@
-{
-  return StyleableMap.this.size(oesOrigin);
-}

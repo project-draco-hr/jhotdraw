@@ -1,6 +1,0 @@
-{
-  if (values == null) {
-    values=new ObservableValues(StyleOrigin.USER);
-  }
-  return values;
-}

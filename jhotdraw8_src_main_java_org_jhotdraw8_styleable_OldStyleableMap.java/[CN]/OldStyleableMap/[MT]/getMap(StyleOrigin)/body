@@ -1,0 +1,17 @@
+{
+  return new MapAdapter<K,V>(){
+    @Override public boolean containsKey(    Object key){
+      return OldStyleableMap.this.containsKey(origin,key);
+    }
+    @Override @SuppressWarnings("unchecked") public V get(    Object key){
+      return OldStyleableMap.this.get(origin,(K)key);
+    }
+    @Override public V put(    K key,    V value){
+      return OldStyleableMap.this.put(origin,key,value);
+    }
+    @Override @SuppressWarnings("unchecked") public V remove(    Object key){
+      return OldStyleableMap.this.remove(origin,(K)key);
+    }
+  }
+;
+}

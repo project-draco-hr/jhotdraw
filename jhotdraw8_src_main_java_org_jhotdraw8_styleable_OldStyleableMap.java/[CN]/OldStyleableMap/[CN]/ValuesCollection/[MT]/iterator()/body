@@ -1,0 +1,38 @@
+{
+  return new Iterator<V>(){
+    private Iterator<Entry<K,StyledValue>> entryIt=backingMap.entrySet().iterator();
+    private boolean hasNext;
+    private K nextKey;
+    private K lastKey;
+    private V nextValue;
+    private V lastValue;
+{
+      advance();
+    }
+    private void advance(){
+      while (entryIt.hasNext()) {
+        Entry<K,StyledValue> entry=entryIt.next();
+        if (entry.getValue().hasValue(origin)) {
+          nextKey=entry.getKey();
+          nextValue=entry.getValue().getValue(origin);
+          hasNext=true;
+          return;
+        }
+      }
+      hasNext=false;
+    }
+    @Override public boolean hasNext(){
+      return hasNext;
+    }
+    @Override public V next(){
+      lastKey=nextKey;
+      lastValue=nextValue;
+      advance();
+      return lastValue;
+    }
+    @Override public void remove(){
+      OldStyleableMap.this.remove(origin,lastKey);
+    }
+  }
+;
+}

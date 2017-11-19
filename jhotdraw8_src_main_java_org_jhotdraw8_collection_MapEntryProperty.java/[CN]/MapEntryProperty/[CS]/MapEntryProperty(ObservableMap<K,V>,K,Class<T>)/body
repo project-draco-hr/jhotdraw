@@ -1,2 +1,6 @@
 {
+  this.map=map;
+  this.key=key;
+  this.tClazz=tClazz;
+  map.addListener(weakListener=new WeakMapChangeListener<>(this));
 }

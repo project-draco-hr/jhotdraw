@@ -1,0 +1,9 @@
+{
+  super(OldStyleableMap.this);
+  assert(wasAdded || wasRemoved);
+  this.key=key;
+  this.old=old;
+  this.added=added;
+  this.wasAdded=wasAdded;
+  this.wasRemoved=wasRemoved;
+}

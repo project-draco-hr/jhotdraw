@@ -1,0 +1,38 @@
+{
+  return new Iterator<Entry<K,V>>(){
+    private Iterator<Entry<K,Integer>> entryIt=SimpleStyleableMap.this.keyMap.entrySet().iterator();
+    private boolean hasNext;
+    private K nextKey;
+    private K lastKey;
+    private int nextValue;
+    private int lastValue;
+{
+      advance();
+    }
+    private void advance(){
+      while (entryIt.hasNext()) {
+        Entry<K,Integer> entry=entryIt.next();
+        if (hasValue(entry.getValue())) {
+          nextKey=entry.getKey();
+          nextValue=entry.getValue();
+          hasNext=true;
+          return;
+        }
+      }
+      hasNext=false;
+    }
+    @Override public boolean hasNext(){
+      return hasNext;
+    }
+    @Override public Entry<K,V> next(){
+      lastKey=nextKey;
+      lastValue=nextValue;
+      advance();
+      return new MapEntry(lastKey,lastValue);
+    }
+    @Override public void remove(){
+      SimpleStyleableMap.this.removeValue(SimpleStyleableMap.this.originOrdinal,lastValue,lastKey);
+    }
+  }
+;
+}
