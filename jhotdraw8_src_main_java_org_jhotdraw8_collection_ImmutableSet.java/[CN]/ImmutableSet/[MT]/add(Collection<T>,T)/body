@@ -1,5 +1,10 @@
 {
-  Set<T> a=new HashSet<T>(collection);
-  a.add(item);
-  return new ImmutableSet<T>(true,a);
+switch (collection.size()) {
+case 0:
+    return new ImmutableSet<T>(Collections.singleton(item));
+default :
+  Set<T> a=new LinkedHashSet<T>(collection);
+a.add(item);
+return new ImmutableSet<T>(true,a);
+}
 }
