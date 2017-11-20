@@ -1,0 +1,3 @@
+{
+  buf.append('C').append(Double.toString(x1)).append(',').append(Double.toString(y1)).append(' ').append(Double.toString(x2)).append(',').append(Double.toString(y2)).append(' ').append(Double.toString(x)).append(',').append(Double.toString(y));
+}

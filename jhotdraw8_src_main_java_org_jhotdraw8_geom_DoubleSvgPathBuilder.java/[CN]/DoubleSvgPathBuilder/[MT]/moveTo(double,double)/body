@@ -1,0 +1,3 @@
+{
+  buf.append('M').append(Double.toString(x)).append(',').append(Double.toString(y));
+}

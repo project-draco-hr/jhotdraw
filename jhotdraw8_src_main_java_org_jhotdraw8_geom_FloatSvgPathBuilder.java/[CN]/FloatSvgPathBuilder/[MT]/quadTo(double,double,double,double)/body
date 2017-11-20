@@ -1,0 +1,3 @@
+{
+  buf.append('Q').append(Float.toString((float)x1)).append(',').append(Float.toString((float)y1)).append(' ').append(Float.toString((float)x)).append(',').append(Float.toString((float)y));
+}
