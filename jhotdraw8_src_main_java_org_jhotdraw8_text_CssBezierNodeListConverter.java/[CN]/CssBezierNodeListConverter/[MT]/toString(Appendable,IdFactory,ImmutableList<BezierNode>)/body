@@ -7,6 +7,6 @@
     return;
   }
   out.append('"');
-  out.append(Shapes.svgStringFromAWT(new BezierNodePath(value).getPathIterator(null)));
+  out.append(Shapes.doubleSvgStringFromAWT(new BezierNodePath(value).getPathIterator(null)));
   out.append('"');
 }

@@ -1,3 +1,0 @@
-{
-  return Shapes.svgStringFromAWT(shape.getPathIterator(at));
-}
