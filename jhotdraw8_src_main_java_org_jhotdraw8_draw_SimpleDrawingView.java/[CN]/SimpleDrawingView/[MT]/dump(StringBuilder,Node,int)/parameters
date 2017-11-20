@@ -1,0 +1,3 @@
+StringBuilder buf
+Node n
+int depth

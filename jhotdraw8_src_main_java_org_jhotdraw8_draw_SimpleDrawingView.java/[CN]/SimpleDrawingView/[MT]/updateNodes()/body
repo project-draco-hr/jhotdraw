@@ -4,7 +4,9 @@
     Figure[] copyOfDirtyFigureNodes=dirtyFigureNodes.toArray(new Figure[dirtyFigureNodes.size()]);
     dirtyFigureNodes.clear();
     for (    Figure f : copyOfDirtyFigureNodes) {
-      f.updateNode(this,getNode(f));
+      if (f.isVisible()) {
+        f.updateNode(this,getNode(f));
+      }
     }
   }
   if (!recreateHandles) {

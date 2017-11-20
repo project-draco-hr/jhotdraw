@@ -1,19 +1,19 @@
 {
   for (int i=0; i < depth; i++) {
-    System.out.print(".");
+    buf.append(".");
   }
-  System.out.print(n + " lb: " + Geom.toString(n.getLayoutBounds()));
+  buf.append(n + " lb: " + Geom.toString(n.getLayoutBounds())).append('\n');
   Figure f=nodeToFigureMap.get(n);
   if (f != null) {
-    System.out.println(" flb: " + Geom.toString(f.getBoundsInParent()));
+    buf.append(" flb: " + Geom.toString(f.getBoundsInParent())).append('\n');
   }
  else {
-    System.out.println();
+    buf.append('\n');
   }
   if (n instanceof Parent) {
     Parent p=(Parent)n;
     for (    Node c : p.getChildrenUnmodifiable()) {
-      dump(c,depth + 1);
+      dump(buf,c,depth + 1);
     }
   }
 }
