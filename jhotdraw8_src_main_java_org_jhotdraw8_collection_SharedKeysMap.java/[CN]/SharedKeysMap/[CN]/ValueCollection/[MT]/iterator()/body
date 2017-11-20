@@ -1,0 +1,38 @@
+{
+  return new Iterator<V>(){
+    private Iterator<Entry<K,Integer>> entryIt=keyMap.entrySet().iterator();
+    private boolean hasNext;
+    private K nextKey;
+    private K lastKey;
+    private V nextValue;
+    private V lastValue;
+{
+      advance();
+    }
+    private void advance(){
+      while (entryIt.hasNext()) {
+        Entry<K,Integer> entry=entryIt.next();
+        if (SharedKeysMap.this.hasValue(entry.getValue())) {
+          nextKey=entry.getKey();
+          nextValue=SharedKeysMap.this.getValue(entry.getValue(),nextKey);
+          hasNext=true;
+          return;
+        }
+      }
+      hasNext=false;
+    }
+    @Override public boolean hasNext(){
+      return hasNext;
+    }
+    @Override public V next(){
+      lastKey=nextKey;
+      lastValue=nextValue;
+      advance();
+      return lastValue;
+    }
+    @Override public void remove(){
+      SharedKeysMap.this.remove(lastKey);
+    }
+  }
+;
+}

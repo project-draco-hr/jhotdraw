@@ -1,0 +1,4 @@
+{
+  this.keyMap=keyMap;
+  this.values=new ArrayList<>(keyMap.size());
+}

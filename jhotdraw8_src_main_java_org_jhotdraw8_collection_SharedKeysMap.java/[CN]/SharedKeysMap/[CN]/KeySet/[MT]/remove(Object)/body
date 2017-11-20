@@ -1,0 +1,7 @@
+{
+  boolean removed=SharedKeysMap.this.containsKey(o);
+  if (removed) {
+    SharedKeysMap.this.remove(o);
+  }
+  return removed;
+}

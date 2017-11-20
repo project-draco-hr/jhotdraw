@@ -1,0 +1,4 @@
+{
+  final int arrayIndex=index;
+  return arrayIndex < values.size() && values.get(arrayIndex) != EMPTY;
+}

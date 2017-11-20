@@ -1,0 +1,13 @@
+{
+  V oldValue=(V)values.get(index);
+  if (oldValue == EMPTY) {
+    size++;
+  }
+  values.set(index,newValue);
+  V returnValue=oldValue == EMPTY ? null : oldValue;
+  if (!Objects.equals(oldValue,newValue)) {
+    ChangeEvent change=new ChangeEvent(key,returnValue,newValue,true,oldValue != EMPTY);
+    callObservers(change);
+  }
+  return returnValue;
+}

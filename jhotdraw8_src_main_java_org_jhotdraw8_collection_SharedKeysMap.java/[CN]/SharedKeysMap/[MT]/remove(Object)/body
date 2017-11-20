@@ -1,0 +1,4 @@
+{
+  int index=ensureCapacity((K)key);
+  return removeValue(index,(K)key);
+}

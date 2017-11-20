@@ -1,0 +1,8 @@
+{
+  if (invalidationListenerList == null) {
+    invalidationListenerList=new CopyOnWriteArrayList<>();
+  }
+  if (changeListenerList == null) {
+    changeListenerList=new CopyOnWriteArrayList<>();
+  }
+}

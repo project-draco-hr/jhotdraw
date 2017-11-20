@@ -1,0 +1,12 @@
+{
+  if (changeListenerList != null) {
+    for (    MapChangeListener<? super K,? super V> l : changeListenerList) {
+      l.onChanged(change);
+    }
+  }
+  if (invalidationListenerList != null) {
+    for (    InvalidationListener l : invalidationListenerList) {
+      l.invalidated(this);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  for (Iterator<Entry<K,Integer>> i=keyMap.entrySet().iterator(); i.hasNext(); ) {
+    Entry<K,Integer> e=i.next();
+    Integer index=e.getValue();
+    if (index < values.size()) {
+      removeValue(index,e.getKey());
+    }
+  }
+  if (size != 0) {
+    for (int i=0, n=values.size(); i < n; i++) {
+      values.set(i,EMPTY);
+    }
+    size=0;
+  }
+}

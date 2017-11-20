@@ -1,0 +1,3 @@
+{
+  return "ChangeEvent{" + "key=" + key + ", old="+ old+ ", added="+ added+ ", wasAdded="+ wasAdded+ ", wasRemoved="+ wasRemoved+ '}';
+}

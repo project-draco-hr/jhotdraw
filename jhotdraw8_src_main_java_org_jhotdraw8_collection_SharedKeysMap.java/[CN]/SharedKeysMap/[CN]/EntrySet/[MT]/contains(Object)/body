@@ -1,0 +1,7 @@
+{
+  if (!(o instanceof Entry)) {
+    return false;
+  }
+  Entry<K,V> e=(Entry<K,V>)o;
+  return SharedKeysMap.this.containsKey(e.getKey()) && Objects.equals(SharedKeysMap.this.get(e.getKey()),e.getValue());
+}

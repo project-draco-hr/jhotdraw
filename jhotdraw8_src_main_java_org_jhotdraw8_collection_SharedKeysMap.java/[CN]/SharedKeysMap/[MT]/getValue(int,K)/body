@@ -1,0 +1,6 @@
+{
+  Object value;
+  final int arrayIndex=index;
+  value=values.size() < arrayIndex ? EMPTY : values.get(arrayIndex);
+  return value == EMPTY ? null : (V)value;
+}

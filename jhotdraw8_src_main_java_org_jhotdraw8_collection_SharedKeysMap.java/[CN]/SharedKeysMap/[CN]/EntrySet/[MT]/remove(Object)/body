@@ -1,0 +1,11 @@
+{
+  if (!(o instanceof Entry)) {
+    return false;
+  }
+  Entry<K,V> e=(Entry<K,V>)o;
+  boolean removed=SharedKeysMap.this.containsKey(e.getKey()) && Objects.equals(SharedKeysMap.this.get(e.getKey()),e.getValue());
+  if (removed) {
+    SharedKeysMap.this.remove(e.getKey());
+  }
+  return removed;
+}
