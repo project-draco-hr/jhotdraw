@@ -7,7 +7,7 @@
   }
   Bounds b=getBoundsInLocal();
   try {
-    AWTPathBuilder builder=new AWTPathBuilder();
+    AWTDoublePathBuilder builder=new AWTDoublePathBuilder();
     Shapes.buildFromSvgString(builder,content);
     Path2D.Double path=builder.get();
     FXPathBuilder builder2=new FXPathBuilder();

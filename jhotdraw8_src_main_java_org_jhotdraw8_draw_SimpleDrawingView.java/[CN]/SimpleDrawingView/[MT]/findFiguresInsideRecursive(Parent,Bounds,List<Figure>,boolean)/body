@@ -6,7 +6,7 @@
       continue;
     }
     Figure f1=nodeToFigureMap.get(n);
-    if (f1 != null && f1.isSelectable() && f1.isVisible()) {
+    if (f1 != null && f1.isSelectable() && f1.isShowing()) {
       Bounds pl=n.parentToLocal(pp);
       if (pl.contains(n.getBoundsInLocal())) {
         Figure f=nodeToFigureMap.get(n);

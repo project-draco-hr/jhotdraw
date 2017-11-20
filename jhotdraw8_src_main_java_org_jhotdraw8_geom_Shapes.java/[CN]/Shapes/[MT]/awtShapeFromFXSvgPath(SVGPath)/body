@@ -1,5 +1,5 @@
 {
-  AWTPathBuilder b=new AWTPathBuilder();
+  AWTDoublePathBuilder b=new AWTDoublePathBuilder();
   try {
     buildFromSvgString(b,node.getContent());
   }

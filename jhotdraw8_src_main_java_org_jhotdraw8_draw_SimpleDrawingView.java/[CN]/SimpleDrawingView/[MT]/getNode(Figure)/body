@@ -8,6 +8,7 @@
     figureToNodeMap.put(f,n);
     nodeToFigureMap.put(n,f);
     dirtyFigureNodes.add(f);
+    repaint();
   }
   return n;
 }

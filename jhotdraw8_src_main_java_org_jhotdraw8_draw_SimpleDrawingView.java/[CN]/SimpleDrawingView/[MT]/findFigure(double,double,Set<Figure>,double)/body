@@ -2,7 +2,7 @@
   Node worldNode=getNode(getDrawing());
   Point2D pointInScene=worldNode.getLocalToSceneTransform().transform(viewToWorld(vx,vy));
   for (  Figure f : figures) {
-    if (f.isVisible()) {
+    if (f.isShowing()) {
       Node n=getNode(f);
       Point2D pointInLocal=n.sceneToLocal(pointInScene);
       if (contains(n,pointInLocal,tolerance)) {

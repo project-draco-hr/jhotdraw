@@ -1,0 +1,3 @@
+{
+  return figureToNodeMap.containsKey(f);
+}
