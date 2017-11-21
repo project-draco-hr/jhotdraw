@@ -14,7 +14,7 @@
   left=Transforms.createReshapeTransform(sx,sy + it,il,sh - it - ib,dx,dy + it,il,dh - it - ib);
   right=Transforms.createReshapeTransform(sx + sw - ir,sy + it,ir,sh - it - ib,dx + dw - ir,dy + it,ir,dh - it - ib);
   topLeft=Transforms.createReshapeTransform(sx,sy,il,it,dx,dy,il,it);
-  bottomLeft=Transforms.createReshapeTransform(sx,sy + sh - ib,il,ib,dx,dy + sh - ib,il,ib);
+  bottomLeft=Transforms.createReshapeTransform(sx,sy + sh - ib,il,ib,dx,dy + dh - ib,il,ib);
   topRight=Transforms.createReshapeTransform(sx + sw - ir,sy,ir,it,dx + dw - ir,dy,ir,it);
-  bottomRight=Transforms.createReshapeTransform(sx + sw - ir,sy + sh - ib,ir,ib,dx + sw - ir,dy + dh - ib,ir,ib);
+  bottomRight=Transforms.createReshapeTransform(sx + sw - ir,sy + sh - ib,ir,ib,dx + dw - ir,dy + dh - ib,ir,ib);
 }
