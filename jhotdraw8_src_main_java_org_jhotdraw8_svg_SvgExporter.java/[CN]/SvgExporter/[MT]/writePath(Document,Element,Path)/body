@@ -1,4 +1,5 @@
 {
+  if (node.getElements().isEmpty())   return null;
   Element elem=doc.createElement("path");
   parent.appendChild(elem);
   StringBuilder buf=new StringBuilder();
