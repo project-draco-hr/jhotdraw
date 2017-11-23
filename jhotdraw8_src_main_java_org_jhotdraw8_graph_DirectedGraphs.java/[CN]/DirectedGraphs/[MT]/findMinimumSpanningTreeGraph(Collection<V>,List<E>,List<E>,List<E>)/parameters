@@ -1,4 +1,0 @@
-Collection<V> vertices
-List<E> orderedArrows
-List<E> includedArrows
-List<E> rejectedArrows

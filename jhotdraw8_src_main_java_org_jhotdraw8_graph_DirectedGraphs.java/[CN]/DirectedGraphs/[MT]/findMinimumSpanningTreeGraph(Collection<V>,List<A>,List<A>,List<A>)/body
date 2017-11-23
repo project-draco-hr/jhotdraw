@@ -1,13 +1,13 @@
 {
-  List<E> includedArrowList=findMinimumSpanningTree(vertices,orderedArrows,rejectedArrows);
+  List<A> includedArrowList=findMinimumSpanningTree(vertices,orderedArrows,rejectedArrows);
   if (includedArrows != null) {
     includedArrows.addAll(includedArrowList);
   }
-  DirectedGraphBuilder<V,E> builder=new DirectedGraphBuilder<>();
+  DirectedGraphBuilder<V,A> builder=new DirectedGraphBuilder<>();
   for (  V v : vertices) {
     builder.addVertex(v);
   }
-  for (  E e : includedArrowList) {
+  for (  A e : includedArrowList) {
     builder.addArrow(e.getStart(),e.getEnd(),e);
     builder.addArrow(e.getEnd(),e.getStart(),e);
   }

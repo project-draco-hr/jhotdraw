@@ -1,0 +1,4 @@
+Collection<V> vertices
+List<A> orderedArrows
+List<A> includedArrows
+List<A> rejectedArrows

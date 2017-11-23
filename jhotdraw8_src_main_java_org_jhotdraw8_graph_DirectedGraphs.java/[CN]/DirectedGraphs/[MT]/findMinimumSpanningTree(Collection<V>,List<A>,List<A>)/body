@@ -1,10 +1,10 @@
 {
-  List<E> minimumSpanningTree=new ArrayList<>(orderedArrows.size());
+  List<A> minimumSpanningTree=new ArrayList<>(orderedArrows.size());
   if (rejectedArrows == null) {
     rejectedArrows=new ArrayList<>(orderedArrows.size());
   }
   Map<V,List<V>> forest=createForest(vertices);
-  for (  E arrow : orderedArrows) {
+  for (  A arrow : orderedArrows) {
     List<V> uset=forest.get(arrow.getStart());
     List<V> vset=forest.get(arrow.getEnd());
     if (uset != vset) {
