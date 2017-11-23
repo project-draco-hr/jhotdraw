@@ -1,0 +1,6 @@
+{
+  this.line=line;
+  this.column=column;
+  this.systemId=systemId;
+  this.publicId=publicId;
+}

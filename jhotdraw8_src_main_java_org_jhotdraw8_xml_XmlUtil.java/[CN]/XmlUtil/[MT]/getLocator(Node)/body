@@ -1,0 +1,10 @@
+{
+  Node attrNode=node.getAttributes().getNamedItemNS(LOCATION_NAMESPACE,LOCATION_ATTRIBUTE);
+  if (attrNode != null) {
+    String[] parts=attrNode.getNodeValue().split(SEPARATOR);
+    if (parts.length == 4) {
+      return new MyLocator(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),parts[2],parts[3]);
+    }
+  }
+  return null;
+}
