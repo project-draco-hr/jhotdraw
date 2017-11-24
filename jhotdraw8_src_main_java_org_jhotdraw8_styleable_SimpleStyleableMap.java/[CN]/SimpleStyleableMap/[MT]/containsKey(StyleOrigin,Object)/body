@@ -3,6 +3,6 @@
   if (origin == null) {
     return getStyleOrigin(key) != null;
   }
-  boolean result=index != null && index * numOrigins < values.size() && values.get(index * numOrigins + origin.ordinal()) != EMPTY;
+  boolean result=index != null && index * numOrigins + origin.ordinal() < values.size() && values.get(index * numOrigins + origin.ordinal()) != EMPTY;
   return result;
 }

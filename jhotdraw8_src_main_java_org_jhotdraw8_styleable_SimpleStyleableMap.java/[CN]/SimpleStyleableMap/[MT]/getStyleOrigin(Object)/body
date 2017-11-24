@@ -1,7 +1,8 @@
 {
   int index=ensureCapacity((K)key);
   for (int i=numOrigins - 1; i >= 0; i--) {
-    V value=(V)values.get(index * numOrigins + i);
+    final int arrayIndex=index * numOrigins + i;
+    Object value=arrayIndex < values.size() ? values.get(arrayIndex) : EMPTY;
     if (value != EMPTY) {
       return StyleOrigin.values()[i];
     }
