@@ -1,6 +1,6 @@
 {
   if (properties == null) {
-    properties=FXCollections.observableMap(new IdentityHashMap<>());
+    properties=FXCollections.observableHashMap();
   }
   return properties;
 }

@@ -1,10 +1,15 @@
 {
-  Set<Figure> ctf=new HashSet<>();
-  if (get(START_TARGET) != null) {
-    ctf.add(get(START_TARGET));
+  final Figure startTarget=get(START_TARGET);
+  final Figure endTarget=get(END_TARGET);
+  if (startTarget == null && endTarget == null) {
+    return Collections.emptySet();
   }
-  if (get(END_TARGET) != null) {
-    ctf.add(get(END_TARGET));
+  Set<Figure> ctf=new HashSet<>();
+  if (startTarget != null) {
+    ctf.add(startTarget);
+  }
+  if (endTarget != null) {
+    ctf.add(endTarget);
   }
   return ctf;
 }

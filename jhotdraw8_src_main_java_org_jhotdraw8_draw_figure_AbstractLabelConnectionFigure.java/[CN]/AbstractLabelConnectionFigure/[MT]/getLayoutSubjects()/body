@@ -1,7 +1,4 @@
 {
-  HashSet<Figure> ctf=new HashSet<>();
-  if (get(LABEL_TARGET) != null) {
-    ctf.add(get(LABEL_TARGET));
-  }
-  return ctf;
+  final Figure labelTarget=get(LABEL_TARGET);
+  return labelTarget == null ? Collections.emptySet() : Collections.singleton(labelTarget);
 }

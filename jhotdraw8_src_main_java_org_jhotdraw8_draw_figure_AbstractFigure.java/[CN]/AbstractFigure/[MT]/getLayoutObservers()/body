@@ -1,6 +1,6 @@
 {
   if (dependentFigures == null) {
-    dependentFigures=FXCollections.observableSet(Collections.newSetFromMap(new IdentityHashMap<Figure,Boolean>()));
+    dependentFigures=new ModifiableObservableSet<>();
   }
   return dependentFigures;
 }

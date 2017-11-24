@@ -1,0 +1,4 @@
+{
+  Integer index=keyMap.get(key);
+  return index == null ? defaultValue : getValue(originOrdinal,index,(K)key,defaultValue);
+}

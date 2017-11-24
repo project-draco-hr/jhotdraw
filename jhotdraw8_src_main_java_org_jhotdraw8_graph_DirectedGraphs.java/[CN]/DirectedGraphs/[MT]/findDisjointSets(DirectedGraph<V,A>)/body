@@ -11,7 +11,7 @@
       }
     }
   }
-  Set<List<V>> visited=Collections.newSetFromMap(new IdentityHashMap<List<V>,Boolean>(forest.size()));
+  Set<List<V>> visited=new HashSet<List<V>>(forest.size());
   List<Set<V>> disjointSets=new ArrayList<>(forest.size());
   for (  List<V> set : forest.values()) {
     if (visited.add(set)) {

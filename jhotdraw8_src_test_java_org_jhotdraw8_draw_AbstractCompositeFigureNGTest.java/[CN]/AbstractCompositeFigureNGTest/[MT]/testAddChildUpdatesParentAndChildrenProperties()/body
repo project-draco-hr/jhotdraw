@@ -3,5 +3,5 @@
   Figure child=new AbstractCompositeFigureImpl();
   parent.addChild(child);
   assertTrue(parent.getChildren().contains(child));
-  assertEquals(child.getParent(),parent);
+  assertEquals((Object)child.getParent(),(Object)parent);
 }

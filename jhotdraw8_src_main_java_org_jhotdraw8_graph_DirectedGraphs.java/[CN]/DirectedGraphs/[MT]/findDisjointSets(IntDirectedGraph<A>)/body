@@ -27,7 +27,7 @@
       }
     }
   }
-  final Map<IntArrayList,Object> setMap=new IdentityHashMap<IntArrayList,Object>();
+  final Map<IntArrayList,Object> setMap=new HashMap<IntArrayList,Object>();
   final List<Set<Integer>> disjointSets=new ArrayList<>();
   for (  IntArrayList set : sets) {
     if (!setMap.containsKey(set)) {

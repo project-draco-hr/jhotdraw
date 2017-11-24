@@ -1,6 +1,6 @@
 {
   Set<Figure> newValue=getSelectedFigures();
-  Set<String> union=new TreeSet<>(CssWordListConverter.NFD_COMPARATOR);
+  Set<String> union=new HashSet<>();
   Set<String> intersection=new HashSet<>();
   boolean first=true;
   for (  Figure f : newValue) {
@@ -10,13 +10,19 @@
       first=false;
     }
  else {
-      intersection.retainAll(tags);
+      if (!intersection.isEmpty()) {
+        intersection.retainAll(tags);
+      }
     }
-    union.addAll(tags);
+    if (!tags.isEmpty()) {
+      union.addAll(tags);
+    }
   }
   ObservableList<StyleClassItem> items=listView.getItems();
   items.clear();
-  for (  String t : union) {
+  List<String> unionList=new ArrayList<>(union);
+  Collections.sort(unionList);
+  for (  String t : unionList) {
     items.add(new StyleClassItem(t,intersection.contains(t)));
   }
 }

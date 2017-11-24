@@ -1,0 +1,6 @@
+{
+  minX=Math.min(minX,other.minX);
+  maxX=Math.max(maxX,other.maxX);
+  minY=Math.min(minY,other.minY);
+  maxY=Math.max(maxY,other.maxY);
+}

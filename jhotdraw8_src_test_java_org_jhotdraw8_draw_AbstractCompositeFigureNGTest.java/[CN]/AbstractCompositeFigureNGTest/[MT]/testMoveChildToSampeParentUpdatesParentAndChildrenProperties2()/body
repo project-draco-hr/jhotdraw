@@ -7,8 +7,8 @@
   parent1.getChildren().add(0,child1);
   assertEquals(parent1.getChildren().size(),2);
   assertTrue(parent1.getChildren().contains(child1));
-  assertEquals(child1.getParent(),parent1);
-  assertEquals(parent1.getChildren().get(0),child1);
-  assertEquals(parent1.getChildren().get(1),child2);
-  assertEquals(child1.getParent(),parent1);
+  assertEquals((Object)child1.getParent(),parent1);
+  assertEquals((Object)parent1.getChildren().get(0),child1);
+  assertEquals((Object)parent1.getChildren().get(1),child2);
+  assertEquals((Object)child1.getParent(),parent1);
 }

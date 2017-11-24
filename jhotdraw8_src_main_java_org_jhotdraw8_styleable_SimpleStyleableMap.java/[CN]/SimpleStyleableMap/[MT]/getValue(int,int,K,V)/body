@@ -16,5 +16,5 @@
     final int arrayIndex=index * numOrigins + ordinal;
     value=arrayIndex < values.size() ? values.get(arrayIndex) : EMPTY;
   }
-  return value == EMPTY ? null : (V)value;
+  return value == EMPTY ? defaultValue : (V)value;
 }
