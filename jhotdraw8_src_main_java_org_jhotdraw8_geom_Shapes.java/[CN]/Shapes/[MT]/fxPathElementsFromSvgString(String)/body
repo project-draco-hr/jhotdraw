@@ -5,5 +5,5 @@
   }
  catch (  IOException ex) {
   }
-  return b.get().getElements();
+  return b.build().getElements();
 }

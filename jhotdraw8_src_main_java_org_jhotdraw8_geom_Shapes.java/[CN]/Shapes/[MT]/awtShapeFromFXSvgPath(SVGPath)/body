@@ -5,5 +5,5 @@
   }
  catch (  IOException ex) {
   }
-  return b.get();
+  return b.build();
 }
