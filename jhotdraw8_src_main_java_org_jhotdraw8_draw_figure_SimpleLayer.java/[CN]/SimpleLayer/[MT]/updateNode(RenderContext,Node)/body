@@ -8,12 +8,11 @@
   List<Node> childNodes=new ArrayList<>(getChildren().size());
   int maxNodesPerLayer=ctx.get(RenderContext.MAX_NODES_PER_LAYER);
   Bounds clipBounds=ctx.get(RenderContext.CLIP_BOUNDS);
-  if (ctx.get(RenderContext.RENDERING_INTENT) == RenderingIntent.EDITOR && clipBounds != null && getChildren().size() > maxNodesPerLayer) {
+  if (ctx.get(RenderContext.RENDERING_INTENT) == RenderingIntent.EDITOR && clipBounds != null) {
     for (    Figure child : getChildren()) {
       Node childNode=ctx.getNode(child);
-      if (childNode.getBoundsInParent().intersects(clipBounds)) {
+      if (child.getBoundsInWorld().intersects(clipBounds)) {
         childNodes.add(childNode);
-        if (childNodes.size() > maxNodesPerLayer)         break;
       }
     }
     if (childNodes.size() > maxNodesPerLayer) {

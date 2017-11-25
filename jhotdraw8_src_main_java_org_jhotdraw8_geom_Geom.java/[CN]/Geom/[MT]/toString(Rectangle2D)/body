@@ -1,3 +1,3 @@
 {
-  return b.getMinX() + "," + b.getMinY()+ ","+ b.getWidth()+ ","+ b.getHeight();
+  return b == null ? "null" : b.getMinX() + "," + b.getMinY()+ ","+ b.getWidth()+ ","+ b.getHeight();
 }

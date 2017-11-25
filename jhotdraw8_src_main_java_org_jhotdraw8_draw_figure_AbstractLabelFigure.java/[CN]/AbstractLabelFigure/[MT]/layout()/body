@@ -1,3 +1,4 @@
 {
-  invalidateBounds();
+  Bounds b=getLayoutBounds();
+  setCachedValue(BOUNDS_IN_LOCAL_CACHE_KEY,b);
 }

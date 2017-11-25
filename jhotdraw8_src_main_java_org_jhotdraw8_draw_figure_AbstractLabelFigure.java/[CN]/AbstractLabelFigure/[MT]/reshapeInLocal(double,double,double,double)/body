@@ -2,5 +2,4 @@
   Bounds lb=getLayoutBounds();
   Insets i=getStyled(PADDING);
   set(ORIGIN,new Point2D(x + i.getLeft(),y + lb.getHeight() - i.getBottom()));
-  invalidateBounds();
 }

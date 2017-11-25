@@ -1,5 +1,8 @@
 {
-  tn.setText(getText(ctx));
+  final String text=getText(ctx);
+  if (!Objects.equals(text,tn.getText())) {
+    tn.setText(text);
+  }
   tn.setX(get(ORIGIN_X));
   tn.setY(get(ORIGIN_Y));
   applyTextFillableFigureProperties(tn);
