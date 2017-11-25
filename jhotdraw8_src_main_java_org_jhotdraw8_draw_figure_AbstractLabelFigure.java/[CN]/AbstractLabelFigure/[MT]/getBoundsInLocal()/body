@@ -1,9 +1,11 @@
 {
+  Bounds boundsInLocal=getCachedValue(BOUNDS_IN_LOCAL_CACHE_KEY);
   if (boundsInLocal == null) {
     getLayoutBounds();
     Bounds b=textNode.getBoundsInLocal();
     Insets i=getStyled(PADDING);
     boundsInLocal=new BoundingBox(b.getMinX() - i.getLeft(),b.getMinY() - i.getTop(),b.getWidth() + i.getLeft() + i.getRight(),b.getHeight() + i.getTop() + i.getBottom());
+    setCachedValue(BOUNDS_IN_LOCAL_CACHE_KEY,boundsInLocal);
   }
   return boundsInLocal;
 }

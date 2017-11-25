@@ -2,22 +2,8 @@
   if (e instanceof Observable) {
     ((Observable)e).removeListener(itemHandler);
   }
-  if (changeListeners != null) {
-    SetChangeListener.Change<E> change=new SetChangeListener.Change<E>(this){
-      @Override public E getElementAdded(){
-        return null;
-      }
-      @Override public E getElementRemoved(){
-        return e;
-      }
-      @Override public boolean wasAdded(){
-        return false;
-      }
-      @Override public boolean wasRemoved(){
-        return true;
-      }
-    }
-;
+  if (changeListeners != null && !changeListeners.isEmpty()) {
+    SetChangeListener.Change<E> change=new Change<E>(this,e,false);
     for (    SetChangeListener<? super E> listener : changeListeners) {
       listener.onChanged(change);
     }

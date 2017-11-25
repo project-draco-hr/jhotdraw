@@ -1,0 +1,5 @@
+{
+  super(set);
+  this.value=value;
+  this.wasAdded=wasAdded;
+}

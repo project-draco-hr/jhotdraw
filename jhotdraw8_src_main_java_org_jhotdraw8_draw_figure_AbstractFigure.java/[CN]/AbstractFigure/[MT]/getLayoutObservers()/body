@@ -1,6 +1,6 @@
 {
   if (dependentFigures == null) {
-    dependentFigures=new ModifiableObservableSet<>();
+    dependentFigures=FXCollections.observableArrayList();
   }
   return dependentFigures;
 }

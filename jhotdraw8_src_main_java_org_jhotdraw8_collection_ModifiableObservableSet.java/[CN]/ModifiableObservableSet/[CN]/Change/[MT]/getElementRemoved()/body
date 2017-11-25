@@ -1,0 +1,3 @@
+{
+  return (!wasAdded) ? value : null;
+}

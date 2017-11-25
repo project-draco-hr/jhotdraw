@@ -1,3 +1,0 @@
-StyleOrigin origin
-boolean willChange
-MapChangeListener.Change<Key<?>,Object> change

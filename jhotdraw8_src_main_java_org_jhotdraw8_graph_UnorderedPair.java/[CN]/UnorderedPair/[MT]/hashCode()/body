@@ -1,4 +1,3 @@
 {
-  int hash=13 + a.hashCode() + b.hashCode();
-  return hash;
+  return a.hashCode() * b.hashCode();
 }
