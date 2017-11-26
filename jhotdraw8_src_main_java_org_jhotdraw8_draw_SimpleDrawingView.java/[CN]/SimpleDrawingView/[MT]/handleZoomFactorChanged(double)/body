@@ -1,0 +1,17 @@
+{
+  Scale st=new Scale(newValue,newValue);
+  if (drawingPane != null) {
+    if (drawingPane.getTransforms().isEmpty()) {
+      drawingPane.getTransforms().add(st);
+    }
+ else {
+      drawingPane.getTransforms().set(0,st);
+    }
+  }
+  updateLayout();
+  invalidateHandleNodes();
+  if (constrainer.get() != null) {
+    constrainer.get().updateNode(SimpleDrawingView.this);
+  }
+  scrollSelectedFiguresToVisible();
+}
