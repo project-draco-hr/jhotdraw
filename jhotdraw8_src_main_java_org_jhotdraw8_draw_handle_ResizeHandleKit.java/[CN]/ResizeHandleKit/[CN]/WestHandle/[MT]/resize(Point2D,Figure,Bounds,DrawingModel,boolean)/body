@@ -6,5 +6,5 @@
     double newRatio=newHeight / newWidth;
     newHeight=newWidth * preferredAspectRatio;
   }
-  model.reshape(owner,newX,(bounds.getMinY() + bounds.getMaxY() - newHeight) * 0.5,newWidth,newHeight);
+  model.reshapeInLocal(owner,newX,(bounds.getMinY() + bounds.getMaxY() - newHeight) * 0.5,newWidth,newHeight);
 }

@@ -14,50 +14,48 @@
     tangent=new Point2D(1,0);
     perp=new Point2D(0,-1);
   }
+  set(LABELED_LOCATION,labeledLoc);
+  Bounds b=getLayoutBounds();
+  double hposTranslate=0;
+switch (getStyled(TEXT_HPOS)) {
+case CENTER:
+    hposTranslate=b.getWidth() * -0.5;
+  break;
+case LEFT:
+break;
+case RIGHT:
+hposTranslate=-b.getWidth();
+break;
+}
+final double labelOffsetX=getStyled(LABEL_OFFSET_X).getConvertedValue();
+final double labelOffsetY=getStyled(LABEL_OFFSET_Y).getConvertedValue();
+Point2D origin=labeledLoc.add(perp.multiply(-labelOffsetY)).add(tangent.multiply(labelOffsetX));
+Rotate rotate=null;
 switch (getStyled(LABEL_AUTOROTATE)) {
 case FULL:
 {
-      final double theta=(Math.atan2(tangent.getY(),tangent.getX()) * 180.0 / Math.PI + 360.0) % 360.0;
-      set(ROTATE,theta);
-    }
-  break;
+final double theta=(Math.atan2(tangent.getY(),tangent.getX()) * 180.0 / Math.PI + 360.0) % 360.0;
+rotate=new Rotate(theta,origin.getX(),origin.getY());
+}
+break;
 case HALF:
 {
-  final double theta=(Math.atan2(tangent.getY(),tangent.getX()) * 180.0 / Math.PI + 360.0) % 360.0;
-  final double halfTheta=theta <= 90.0 || theta > 270.0 ? theta : (theta + 180.0) % 360.0;
-  set(ROTATE,halfTheta);
+final double theta=(Math.atan2(tangent.getY(),tangent.getX()) * 180.0 / Math.PI + 360.0) % 360.0;
+final double halfTheta=theta <= 90.0 || theta > 270.0 ? theta : (theta + 180.0) % 360.0;
+rotate=new Rotate(halfTheta,origin.getX(),origin.getY());
 }
 break;
 case OFF:
 default :
 break;
 }
-set(LABELED_LOCATION,labeledLoc);
-Bounds b=getLayoutBounds();
-double tx=0;
-switch (getStyled(TEXT_HPOS)) {
-case CENTER:
-tx=b.getWidth() * -0.5;
-break;
-case LEFT:
-break;
-case RIGHT:
-tx=-b.getWidth();
-break;
-}
-final double labelOffsetX=-getStyled(LABEL_OFFSET_X).getConvertedValue();
-final double labelOffsetY=getStyled(LABEL_OFFSET_Y).getConvertedValue();
-Point2D origin=labeledLoc.add(perp.multiply(-labelOffsetY)).add(tangent.multiply(labelOffsetX));
-origin=origin.add(tx,0);
+origin=origin.add(hposTranslate,0);
 Point2D labelTranslation=getStyled(LABEL_TRANSLATE);
 origin=origin.add(labelTranslation);
 set(ORIGIN,origin);
-if (labelTarget != null) {
-setTransforms(labelTarget.getLocalToParent());
-}
- else {
-setTransforms();
-}
+List<Transform> transforms=new ArrayList<>();
+if (rotate != null) transforms.add(rotate);
+setTransforms(transforms.toArray(new Transform[transforms.size()]));
 Bounds bconnected=getLayoutBounds();
 setCachedValue(BOUNDS_IN_LOCAL_CACHE_KEY,bconnected);
 invalidateTransforms();

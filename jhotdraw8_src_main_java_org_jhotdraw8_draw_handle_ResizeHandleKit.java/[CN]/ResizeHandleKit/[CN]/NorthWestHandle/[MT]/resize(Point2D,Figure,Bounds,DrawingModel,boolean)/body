@@ -12,5 +12,5 @@
       newWidth=newHeight / preferredAspectRatio;
     }
   }
-  model.reshape(owner,bounds.getMaxX() - newWidth,bounds.getMaxY() - newHeight,newWidth,newHeight);
+  model.reshapeInLocal(owner,bounds.getMaxX() - newWidth,bounds.getMaxY() - newHeight,newWidth,newHeight);
 }

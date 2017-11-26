@@ -5,5 +5,5 @@
   if (keepAspect) {
     newWidth=newHeight / preferredAspectRatio;
   }
-  model.reshape(owner,(bounds.getMinX() + bounds.getMaxX() - newWidth) * 0.5,bounds.getMinY(),newWidth,newHeight);
+  model.reshapeInLocal(owner,(bounds.getMinX() + bounds.getMaxX() - newWidth) * 0.5,bounds.getMinY(),newWidth,newHeight);
 }

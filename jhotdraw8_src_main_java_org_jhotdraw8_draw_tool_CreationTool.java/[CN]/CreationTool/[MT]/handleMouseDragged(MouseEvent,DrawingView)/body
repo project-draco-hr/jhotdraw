@@ -18,7 +18,7 @@
       }
     }
     DrawingModel dm=dv.getModel();
-    dm.reshape(createdFigure,c1.getX(),c1.getY(),newWidth,newHeight);
+    dm.reshapeInLocal(createdFigure,c1.getX(),c1.getY(),newWidth,newHeight);
   }
   event.consume();
 }
