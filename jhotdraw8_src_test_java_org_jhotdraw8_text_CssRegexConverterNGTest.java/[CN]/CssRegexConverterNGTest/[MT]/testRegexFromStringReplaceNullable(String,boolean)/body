@@ -1,0 +1,14 @@
+{
+  CssRegexConverter cNullable=new CssRegexConverter(true);
+  RegexReplace rgx=cNullable.fromString(inputCssRegex);
+  if (expectNull)   assertNull(rgx,"Nullable converter must return null regex");
+ else   assertNotNull(rgx,"Nullable converter most not return null regex");
+  CssRegexConverter cNonnull=new CssRegexConverter(false);
+  try {
+    RegexReplace rgxNonnull=cNonnull.fromString(inputCssRegex);
+    if (expectNull)     fail("Nonnull converter must produce ParseException");
+  }
+ catch (  ParseException e) {
+    if (!expectNull)     fail("Nonnull converter must not produce ParseException");
+  }
+}
