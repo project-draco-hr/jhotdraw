@@ -1,8 +1,0 @@
-{
-  for (  Object k : c) {
-    if (!containsKey(ksetOrigin,k)) {
-      return false;
-    }
-  }
-  return true;
-}

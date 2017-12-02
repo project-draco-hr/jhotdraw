@@ -1,8 +1,0 @@
-{
-  for (Iterator<Entry<K,StyledValue>> i=backingMap.entrySet().iterator(); i.hasNext(); ) {
-    Entry<K,StyledValue> e=i.next();
-    StyledValue sv=e.getValue();
-    sv.removeValue(StyleOrigin.INLINE);
-    sv.removeValue(StyleOrigin.AUTHOR);
-  }
-}

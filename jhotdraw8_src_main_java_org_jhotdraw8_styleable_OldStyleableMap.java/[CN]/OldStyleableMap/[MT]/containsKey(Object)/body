@@ -1,3 +1,0 @@
-{
-  return containsKey(StyleOrigin.USER,key);
-}

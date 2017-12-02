@@ -1,5 +1,0 @@
-{
-  if (invalidationListenerList != null) {
-    invalidationListenerList.remove(listener);
-  }
-}

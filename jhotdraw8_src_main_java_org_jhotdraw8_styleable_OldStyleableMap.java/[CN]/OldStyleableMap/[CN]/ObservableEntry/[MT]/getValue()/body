@@ -1,3 +1,0 @@
-{
-  return backingEntry.getValue().getValue(oeOrigin);
-}

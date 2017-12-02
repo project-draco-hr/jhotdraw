@@ -1,7 +1,0 @@
-{
-  V oldValue=backingEntry.getValue().getValue(oeOrigin);
-  ChangeEvent change=new ChangeEvent(getKey(),oldValue,value,true,true);
-  backingEntry.getValue().setValue(oeOrigin,value);
-  callObservers(oeOrigin,change);
-  return oldValue;
-}

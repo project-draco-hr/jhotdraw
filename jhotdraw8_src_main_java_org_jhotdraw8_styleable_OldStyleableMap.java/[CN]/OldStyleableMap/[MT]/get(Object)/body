@@ -1,4 +1,0 @@
-{
-  @SuppressWarnings("unchecked") V ret=get(StyleOrigin.USER,(K)key);
-  return ret;
-}

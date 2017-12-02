@@ -1,8 +1,0 @@
-{
-  int i=origin.ordinal();
-  @SuppressWarnings("unchecked") T oldValue=(T)setValue(i,newValue);
-  if (this.origin == -1 || origin.ordinal() > this.origin) {
-    this.origin=origin.ordinal();
-  }
-  return oldValue;
-}

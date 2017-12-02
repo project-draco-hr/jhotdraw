@@ -1,3 +1,0 @@
-{
-  return origin == -1;
-}

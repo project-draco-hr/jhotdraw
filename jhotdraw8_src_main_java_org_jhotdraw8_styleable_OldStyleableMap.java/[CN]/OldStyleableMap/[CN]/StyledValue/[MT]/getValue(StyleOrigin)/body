@@ -1,4 +1,0 @@
-{
-  @SuppressWarnings("unchecked") T ret=styleOrigin == null ? null : (T)getValue(styleOrigin.ordinal());
-  return ret;
-}
