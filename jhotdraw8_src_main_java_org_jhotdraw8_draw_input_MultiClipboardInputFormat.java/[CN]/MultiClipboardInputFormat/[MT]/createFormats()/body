@@ -1,0 +1,10 @@
+{
+  if (formatSuppliers != null) {
+    int n=formatSuppliers.length;
+    formats=new ClipboardInputFormat[n];
+    for (int i=0; i < n; i++) {
+      formats[i]=formatSuppliers[i].get();
+    }
+    formatSuppliers=null;
+  }
+}

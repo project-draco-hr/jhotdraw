@@ -1,4 +1,5 @@
 {
+  createFormats();
   IOException firstCause=null;
   for (  ClipboardInputFormat f : formats) {
     try {

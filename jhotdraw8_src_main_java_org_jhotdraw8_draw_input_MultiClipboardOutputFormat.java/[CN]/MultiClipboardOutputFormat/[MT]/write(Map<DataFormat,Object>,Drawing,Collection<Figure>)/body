@@ -1,4 +1,5 @@
 {
+  createFormats();
   for (  ClipboardOutputFormat f : formats) {
     f.write(out,drawing,selection);
   }
