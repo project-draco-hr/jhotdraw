@@ -4,7 +4,5 @@
   Path p=new Path();
   Text text=new Text();
   g.getChildren().addAll(p,text);
-  g.getProperties().put("path",p);
-  g.getProperties().put("text",text);
   return g;
 }

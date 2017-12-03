@@ -1,0 +1,14 @@
+{
+  if (key == LABEL_TARGET) {
+    if (oldValue != null) {
+      ((Figure)oldValue).getLayoutObservers().remove(this);
+    }
+    if (newValue != null) {
+      ((Figure)newValue).getLayoutObservers().add(this);
+    }
+    updateConnectedProperty();
+  }
+ else   if (key == LABEL_CONNECTOR) {
+    updateConnectedProperty();
+  }
+}

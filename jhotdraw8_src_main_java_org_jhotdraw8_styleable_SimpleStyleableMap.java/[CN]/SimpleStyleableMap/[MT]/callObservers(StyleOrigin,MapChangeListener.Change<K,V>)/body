@@ -1,13 +1,13 @@
 {
   if (origin == StyleOrigin.USER) {
-    if (changeListenerList != null) {
-      for (      MapChangeListener<? super K,? super V> l : changeListenerList) {
+    if (originalMap.changeListenerList != null) {
+      for (      MapChangeListener<? super K,? super V> l : originalMap.changeListenerList) {
         l.onChanged(change);
       }
     }
   }
-  if (invalidationListenerList != null) {
-    for (    InvalidationListener l : invalidationListenerList) {
+  if (originalMap.invalidationListenerList != null) {
+    for (    InvalidationListener l : originalMap.invalidationListenerList) {
       l.invalidated(this);
     }
   }

@@ -1,4 +1,4 @@
 {
-  updatePathElements();
-  return Shapes.awtShapeFromFXPathElements(pathElements).getPathIterator(tx);
+  if (pathElements == null)   pathElements=new Path2D.Float();
+  return pathElements.getPathIterator(tx);
 }

@@ -6,10 +6,10 @@
       final PathIterator childPathIterator=getStyledPathIteratorInParent((PathIterableFigure)child,tx);
       if (first) {
         first=false;
-        area=new Area(Shapes.buildFromPathIterator(new AWTDoublePathBuilder(),childPathIterator).build());
+        area=new Area(Shapes.buildFromPathIterator(new AWTPathBuilder(),childPathIterator).build());
       }
  else {
-        Area area1=new Area(Shapes.buildFromPathIterator(new AWTDoublePathBuilder(),childPathIterator).build());
+        Area area1=new Area(Shapes.buildFromPathIterator(new AWTPathBuilder(),childPathIterator).build());
 switch (op) {
 case ADD:
 default :

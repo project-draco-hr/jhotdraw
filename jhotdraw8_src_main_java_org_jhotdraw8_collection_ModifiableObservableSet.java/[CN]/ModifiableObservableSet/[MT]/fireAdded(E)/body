@@ -1,7 +1,4 @@
 {
-  if (e instanceof Observable) {
-    ((Observable)e).addListener(itemHandler);
-  }
   if (changeListeners != null) {
     SetChangeListener.Change<E> change=new Change<E>(this,e,true);
     for (    SetChangeListener<? super E> listener : changeListeners) {

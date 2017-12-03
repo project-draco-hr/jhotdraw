@@ -1,5 +1,5 @@
 {
-  if (invalidationListenerList != null) {
-    invalidationListenerList.remove(listener);
+  if (originalMap.invalidationListenerList != null) {
+    originalMap.invalidationListenerList.remove(listener);
   }
 }

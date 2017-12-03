@@ -1,5 +1,5 @@
 {
-  if (changeListenerList != null) {
-    changeListenerList.remove(observer);
+  if (originalMap.changeListenerList != null) {
+    originalMap.changeListenerList.remove(observer);
   }
 }

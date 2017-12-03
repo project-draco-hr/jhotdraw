@@ -1,5 +1,5 @@
 {
-  AWTDoublePathBuilder b=new AWTDoublePathBuilder();
+  AWTPathBuilder b=new AWTPathBuilder();
   buildFromSvgString(b,str);
-  return b.build();
+  return (Path2D.Double)b.build();
 }

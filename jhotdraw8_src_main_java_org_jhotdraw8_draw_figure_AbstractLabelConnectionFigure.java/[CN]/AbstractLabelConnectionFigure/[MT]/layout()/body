@@ -54,7 +54,9 @@ Point2D labelTranslation=getStyled(LABEL_TRANSLATE);
 origin=origin.add(labelTranslation);
 set(ORIGIN,origin);
 List<Transform> transforms=new ArrayList<>();
-if (rotate != null) transforms.add(rotate);
+if (rotate != null) {
+transforms.add(rotate);
+}
 setTransforms(transforms.toArray(new Transform[transforms.size()]));
 Bounds bconnected=getLayoutBounds();
 setCachedValue(BOUNDS_IN_LOCAL_CACHE_KEY,bconnected);

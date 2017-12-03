@@ -7,9 +7,9 @@
   }
   Bounds b=getBoundsInLocal();
   try {
-    AWTDoublePathBuilder builder=new AWTDoublePathBuilder();
+    AWTPathBuilder builder=new AWTPathBuilder(new Path2D.Float());
     Shapes.buildFromSvgString(builder,content);
-    Path2D.Double path=builder.build();
+    Path2D path=builder.build();
     FXPathBuilder builder2=new FXPathBuilder();
     javafx.geometry.Rectangle2D shapeBounds=getStyled(SHAPE_BOUNDS);
     final Bounds srcBounds=shapeBounds == null || Geom.isEmpty(shapeBounds) ? Geom.getBounds(path) : Geom.getBounds(shapeBounds);

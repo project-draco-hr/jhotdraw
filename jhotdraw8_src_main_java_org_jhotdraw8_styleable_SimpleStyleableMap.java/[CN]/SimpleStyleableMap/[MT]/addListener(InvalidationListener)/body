@@ -1,6 +1,6 @@
 {
-  if (invalidationListenerList == null) {
-    invalidationListenerList=new CopyOnWriteArrayList<>();
+  if (originalMap.invalidationListenerList == null) {
+    originalMap.invalidationListenerList=new CopyOnWriteArrayList<>();
   }
-  invalidationListenerList.add(listener);
+  originalMap.invalidationListenerList.add(listener);
 }

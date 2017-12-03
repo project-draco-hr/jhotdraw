@@ -1,6 +1,6 @@
 {
   if (cachedValues == null) {
-    cachedValues=new ConcurrentHashMap<>();
+    cachedValues=new SharedKeysMap<>(cachedValuesKeyMap);
   }
   return (value == null) ? key.remove(cachedValues) : key.put(cachedValues,value);
 }

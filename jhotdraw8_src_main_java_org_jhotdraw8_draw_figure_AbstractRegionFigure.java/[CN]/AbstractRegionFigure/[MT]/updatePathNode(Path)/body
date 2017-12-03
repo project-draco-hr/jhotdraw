@@ -1,0 +1,3 @@
+{
+  path.getElements().setAll(Shapes.fxPathElementsFromAWT(pathElements.getPathIterator(null)));
+}

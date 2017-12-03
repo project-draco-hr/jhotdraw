@@ -1,0 +1,23 @@
+{
+  if (key == START_TARGET) {
+    if (oldValue != null && get(END_TARGET) != oldValue) {
+      ((Figure)oldValue).getLayoutObservers().remove(AbstractLineConnectionFigure.this);
+    }
+    if (newValue != null) {
+      ((Figure)newValue).getLayoutObservers().add(AbstractLineConnectionFigure.this);
+    }
+    updateConnectedProperty();
+  }
+ else   if (key == END_TARGET) {
+    if (oldValue != null && get(START_TARGET) != oldValue) {
+      ((Figure)oldValue).getLayoutObservers().remove(AbstractLineConnectionFigure.this);
+    }
+    if (newValue != null) {
+      ((Figure)newValue).getLayoutObservers().add(AbstractLineConnectionFigure.this);
+    }
+    updateConnectedProperty();
+  }
+ else   if (key == END_CONNECTOR) {
+    updateConnectedProperty();
+  }
+}

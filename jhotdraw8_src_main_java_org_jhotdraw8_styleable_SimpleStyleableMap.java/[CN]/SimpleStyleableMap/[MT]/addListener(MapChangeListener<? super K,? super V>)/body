@@ -1,6 +1,6 @@
 {
-  if (changeListenerList == null) {
-    changeListenerList=new CopyOnWriteArrayList<>();
+  if (originalMap.changeListenerList == null) {
+    originalMap.changeListenerList=new CopyOnWriteArrayList<>();
   }
-  changeListenerList.add(observer);
+  originalMap.changeListenerList.add(observer);
 }

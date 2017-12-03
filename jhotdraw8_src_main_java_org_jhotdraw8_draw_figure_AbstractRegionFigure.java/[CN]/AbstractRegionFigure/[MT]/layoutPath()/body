@@ -1,0 +1,9 @@
+{
+  String pathstr=getStyled(SHAPE);
+  if (pathElements == null) {
+    pathElements=pathElements=new Path2D.Float();
+  }
+  pathElements.reset();
+  Bounds b=getBoundsInLocal();
+  Shapes.reshape(pathstr,b,new AWTPathBuilder(pathElements));
+}

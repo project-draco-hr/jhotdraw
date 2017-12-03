@@ -1,8 +1,0 @@
-{
-  String pathstr=getStyled(SHAPE);
-  if (pathElements == null) {
-    pathElements=FXCollections.observableArrayList();
-  }
-  Bounds b=getBoundsInLocal();
-  Shapes.reshapePathElements(pathstr,b,pathElements);
-}
