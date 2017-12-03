@@ -1,3 +1,5 @@
 {
-  return get(SLICE_ORIGIN);
+  Bounds b=getBoundsInLocal();
+  Point2D p=get(SLICE_ORIGIN);
+  return p.add(b.getMinX(),b.getMinY());
 }

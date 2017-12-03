@@ -1,0 +1,9 @@
+{
+  Point2D newPoint=view.viewToWorld(new Point2D(event.getX(),event.getY()));
+  if (!event.isAltDown() && !event.isControlDown()) {
+    newPoint=view.getConstrainer().constrainPoint(getOwner(),newPoint);
+  }
+  final Point2D localPoint=getOwner().worldToLocal(newPoint);
+  Bounds bounds=getOwner().getBoundsInLocal();
+  view.getModel().set(getOwner(),pointKey,localPoint.subtract(bounds.getMinX(),bounds.getMinY()));
+}

@@ -1,0 +1,4 @@
+Figure figure
+String styleclass
+MapAccessor<Point2D> pointKey
+MapAccessor<Point2D> controlPointKey

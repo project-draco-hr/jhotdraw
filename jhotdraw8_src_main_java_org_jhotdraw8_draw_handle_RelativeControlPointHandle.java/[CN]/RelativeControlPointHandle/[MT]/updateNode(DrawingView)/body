@@ -1,0 +1,11 @@
+{
+  Figure f=getOwner();
+  Transform t=Transforms.concat(view.getWorldToView(),f.getLocalToWorld());
+  Point2D point=f.get(pointKey);
+  Point2D controlPoint=f.get(controlPointKey);
+  Point2D p=point.add(controlPoint);
+  pickLocation=t == null ? p : t.transform(p);
+  node.relocate(pickLocation.getX() - 5,pickLocation.getY() - 5);
+  node.setRotate(f.getStyled(ROTATE));
+  node.setRotationAxis(f.getStyled(ROTATION_AXIS));
+}

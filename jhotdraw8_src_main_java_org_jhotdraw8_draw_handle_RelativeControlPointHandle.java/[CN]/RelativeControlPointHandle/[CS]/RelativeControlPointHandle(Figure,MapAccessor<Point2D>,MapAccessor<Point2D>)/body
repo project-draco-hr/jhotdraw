@@ -1,0 +1,3 @@
+{
+  this(figure,STYLECLASS_HANDLE_POINT,pointKey,controlPointKey);
+}
