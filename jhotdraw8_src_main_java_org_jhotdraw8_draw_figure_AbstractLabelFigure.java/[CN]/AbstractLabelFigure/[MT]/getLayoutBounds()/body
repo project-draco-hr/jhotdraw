@@ -1,7 +1,5 @@
 {
-  if (textNode == null) {
-    textNode=new Text();
-  }
+  Text textNode=new Text();
   updateTextNode(null,textNode);
   Bounds b=textNode.getLayoutBounds();
   Insets i=getStyled(PADDING);
