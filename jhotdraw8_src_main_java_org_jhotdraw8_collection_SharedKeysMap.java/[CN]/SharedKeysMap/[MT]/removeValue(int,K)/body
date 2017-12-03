@@ -1,14 +1,15 @@
 {
   final int arrayIndex=index;
-  Object oldValue=arrayIndex < values.size() ? values.get(arrayIndex) : EMPTY;
-  if (oldValue == EMPTY) {
+  Object oldValue=arrayIndex < values.size() ? values.get(arrayIndex) : null;
+  if (oldValue == null) {
     return null;
   }
  else {
-    values.set(index,EMPTY);
+    values.set(index,null);
     size--;
-    @SuppressWarnings("unchecked") ChangeEvent change=new ChangeEvent(key,(V)oldValue,null,false,true);
+    V returnValue=(V)(oldValue == NULL_VALUE ? null : oldValue);
+    @SuppressWarnings("unchecked") ChangeEvent change=new ChangeEvent(key,returnValue,null,false,true);
     callObservers(change);
-    return (V)oldValue;
+    return returnValue;
   }
 }

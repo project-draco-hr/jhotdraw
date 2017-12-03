@@ -1,8 +1,8 @@
 {
   javafx.scene.Group g=(javafx.scene.Group)node;
   Line lineNode=(Line)g.getChildren().get(0);
-  final SVGPath startMarkerNode=(SVGPath)g.getChildren().get(1);
-  final SVGPath endMarkerNode=(SVGPath)g.getChildren().get(2);
+  final Path startMarkerNode=(Path)g.getChildren().get(1);
+  final Path endMarkerNode=(Path)g.getChildren().get(2);
   Point2D start=get(START);
   Point2D end=get(END);
   final double startInset=getStrokeCutStart();

@@ -1,8 +1,8 @@
 {
   javafx.scene.Group g=new javafx.scene.Group();
   final Line line=new Line();
-  final SVGPath startMarker=new SVGPath();
-  final SVGPath endMarker=new SVGPath();
+  final Path startMarker=new Path();
+  final Path endMarker=new Path();
   g.getChildren().addAll(line,startMarker,endMarker);
   return g;
 }

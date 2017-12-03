@@ -1,5 +1,5 @@
 {
   Integer index=keyMap.get(key);
-  boolean result=index != null && index < values.size() && values.get(index) != EMPTY;
+  boolean result=index != null && index < values.size() && values.get(index) != null;
   return result;
 }

@@ -3,7 +3,7 @@
   Integer indexIfPresent=keyMap.putIfAbsent(key,indexIfAbsent);
   int index=indexIfPresent == null ? indexIfAbsent : indexIfPresent;
   for (int i=values.size(), n=(1 + index); i < n; i++) {
-    values.add(EMPTY);
+    values.add(null);
   }
   return index;
 }

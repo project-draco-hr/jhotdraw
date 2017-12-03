@@ -1,7 +1,11 @@
 {
   if (svgString != null) {
-    markerNode.setContent(svgString);
+    markerNode.getElements().setAll(Shapes.fxPathElementsFromSvgString(svgString));
     double angle=Math.atan2(start.getY() - end.getY(),start.getX() - end.getX());
     markerNode.getTransforms().setAll(new Rotate(angle * 180 / Math.PI,start.getX(),start.getY()),new Scale(markerScaleFactor,markerScaleFactor,start.getX(),start.getY()),new Translate(start.getX(),start.getY()));
+    markerNode.setVisible(true);
+  }
+ else {
+    markerNode.setVisible(false);
   }
 }

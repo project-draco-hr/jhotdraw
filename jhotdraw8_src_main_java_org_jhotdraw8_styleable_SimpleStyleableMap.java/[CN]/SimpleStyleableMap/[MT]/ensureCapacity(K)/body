@@ -5,7 +5,7 @@
   int n=n=(1 + index) * numOrigins;
   values.ensureCapacity(n);
   for (int i=values.size(); i < n; i++) {
-    values.add(EMPTY);
+    values.add(null);
   }
   return index;
 }

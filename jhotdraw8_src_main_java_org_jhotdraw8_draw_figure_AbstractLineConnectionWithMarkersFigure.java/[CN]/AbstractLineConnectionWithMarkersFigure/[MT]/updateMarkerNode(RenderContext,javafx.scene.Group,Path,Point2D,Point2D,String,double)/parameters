@@ -1,6 +1,6 @@
 RenderContext ctx
 javafx.scene.Group group
-SVGPath markerNode
+Path markerNode
 Point2D start
 Point2D end
 String svgString
