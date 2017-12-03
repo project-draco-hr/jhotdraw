@@ -1,0 +1,4 @@
+{
+  Preferences prefs=Preferences.userNodeForPackage(DockItem.class);
+  prefs.putBoolean(getId() + ".selected",newv);
+}

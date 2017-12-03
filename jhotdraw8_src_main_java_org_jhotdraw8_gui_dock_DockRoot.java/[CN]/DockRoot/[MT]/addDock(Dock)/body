@@ -11,7 +11,7 @@
     }
  else {
       children.remove(0);
-      Track track=createTrack((oldRoot instanceof Dock) ? (Dock)oldRoot : null,VERTICAL);
+      Track track=createTrack(null,(oldRoot instanceof Dock) ? (Dock)oldRoot : null,VERTICAL);
       track.getItems().addAll(oldRoot,dock.getNode());
       children.add(track.getNode());
     }

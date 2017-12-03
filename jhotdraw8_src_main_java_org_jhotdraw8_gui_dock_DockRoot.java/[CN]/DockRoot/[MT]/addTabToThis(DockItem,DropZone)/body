@@ -7,7 +7,7 @@
   Orientation neededOrientation=getNeededOrientation(zone);
   Track topTrack=getRootTrack();
   if (topTrack == null || topTrack.getOrientation() != neededOrientation) {
-    topTrack=createTrack(newDock,neededOrientation);
+    topTrack=createTrack(null,newDock,neededOrientation);
     addTrack(topTrack);
   }
 switch (zone) {
