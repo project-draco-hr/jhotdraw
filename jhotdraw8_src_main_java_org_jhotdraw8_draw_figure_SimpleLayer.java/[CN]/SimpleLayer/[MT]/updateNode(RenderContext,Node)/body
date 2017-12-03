@@ -10,8 +10,8 @@
   Bounds clipBounds=ctx.get(RenderContext.CLIP_BOUNDS);
   if (ctx.get(RenderContext.RENDERING_INTENT) == RenderingIntent.EDITOR && clipBounds != null) {
     for (    Figure child : getChildren()) {
-      Node childNode=ctx.getNode(child);
       if (child.getBoundsInWorld().intersects(clipBounds)) {
+        Node childNode=ctx.getNode(child);
         childNodes.add(childNode);
       }
     }
