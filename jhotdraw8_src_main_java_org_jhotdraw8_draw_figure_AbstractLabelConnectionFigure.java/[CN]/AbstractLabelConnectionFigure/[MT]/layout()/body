@@ -31,11 +31,13 @@ final double labelOffsetX=getStyled(LABEL_OFFSET_X).getConvertedValue();
 final double labelOffsetY=getStyled(LABEL_OFFSET_Y).getConvertedValue();
 Point2D origin=labeledLoc.add(perp.multiply(-labelOffsetY)).add(tangent.multiply(labelOffsetX));
 Rotate rotate=null;
+final boolean layoutTransforms;
 switch (getStyled(LABEL_AUTOROTATE)) {
 case FULL:
 {
 final double theta=(Math.atan2(tangent.getY(),tangent.getX()) * 180.0 / Math.PI + 360.0) % 360.0;
 rotate=new Rotate(theta,origin.getX(),origin.getY());
+layoutTransforms=true;
 }
 break;
 case HALF:
@@ -43,10 +45,12 @@ case HALF:
 final double theta=(Math.atan2(tangent.getY(),tangent.getX()) * 180.0 / Math.PI + 360.0) % 360.0;
 final double halfTheta=theta <= 90.0 || theta > 270.0 ? theta : (theta + 180.0) % 360.0;
 rotate=new Rotate(halfTheta,origin.getX(),origin.getY());
+layoutTransforms=true;
 }
 break;
 case OFF:
 default :
+layoutTransforms=false;
 break;
 }
 origin=origin.add(hposTranslate,0);
@@ -57,7 +61,9 @@ List<Transform> transforms=new ArrayList<>();
 if (rotate != null) {
 transforms.add(rotate);
 }
+if (layoutTransforms) {
 setTransforms(transforms.toArray(new Transform[transforms.size()]));
+}
 Bounds bconnected=getLayoutBounds();
 setCachedValue(BOUNDS_IN_LOCAL_CACHE_KEY,bconnected);
 invalidateTransforms();
