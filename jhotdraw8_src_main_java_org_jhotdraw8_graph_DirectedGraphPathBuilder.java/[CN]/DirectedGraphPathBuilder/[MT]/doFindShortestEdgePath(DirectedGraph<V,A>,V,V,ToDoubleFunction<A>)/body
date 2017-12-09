@@ -3,7 +3,7 @@
   if (node == null) {
     return null;
   }
-  LinkedList<A> arrows=new LinkedList<>();
+  ArrayDeque<A> arrows=new ArrayDeque<>();
   for (NodeWithCost<V,A> parent=node; parent != null && parent.arrow != null; parent=parent.parent) {
     arrows.addFirst(parent.arrow);
   }

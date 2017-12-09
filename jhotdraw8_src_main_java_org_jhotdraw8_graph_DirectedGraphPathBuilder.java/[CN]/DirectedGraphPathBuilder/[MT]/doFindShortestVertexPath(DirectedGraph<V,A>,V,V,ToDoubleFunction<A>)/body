@@ -3,7 +3,7 @@
   if (node == null) {
     return null;
   }
-  LinkedList<V> vertices=new LinkedList<>();
+  ArrayDeque<V> vertices=new ArrayDeque<>();
   for (NodeWithCost<V,A> parent=node; parent != null; parent=parent.parent) {
     vertices.addFirst(parent.vertex);
   }
