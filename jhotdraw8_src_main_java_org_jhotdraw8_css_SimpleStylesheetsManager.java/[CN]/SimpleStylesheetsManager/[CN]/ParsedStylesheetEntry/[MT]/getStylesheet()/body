@@ -1,11 +1,16 @@
 {
-  try {
-    return future.get();
+  if (future != null) {
+    try {
+      stylesheet=future.get();
+      future=null;
+    }
+ catch (    InterruptedException ex) {
+    }
+catch (    ExecutionException ex) {
+      ex.printStackTrace();
+      stylesheet=null;
+      future=null;
+    }
   }
- catch (  InterruptedException ex) {
-    return null;
-  }
-catch (  ExecutionException ex) {
-    return null;
-  }
+  return stylesheet;
 }
