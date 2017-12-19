@@ -2,4 +2,9 @@
   super(name,rsrc,figureFactory,layerFactory);
   this.key=key;
   node.setCursor(Cursor.CROSSHAIR);
+  rubberBand.setVisible(false);
+  rubberBand.setMouseTransparent(true);
+  rubberBand.getStrokeDashArray().setAll(2.0,5.0);
+  rubberBand.setManaged(false);
+  node.getChildren().add(rubberBand);
 }

@@ -10,7 +10,6 @@
     createdFigure=createFigure();
     points=new ArrayList<>();
     points.add(new BezierNode(c));
-    points.add(new BezierNode(c));
     Layer layer=getOrCreateLayer(view,createdFigure);
     view.setActiveLayer(layer);
     dm.addChildTo(createdFigure,layer);

@@ -5,7 +5,9 @@
     double tolerance=SimpleDrawingView.TOLERANCE;
     Point2D pInDrawing=dv.viewToWorld(new Point2D(px,py));
     pInDrawing=dv.getConstrainer().constrainPoint(owner,pInDrawing);
-    Point2D pInLocal=owner.worldToLocal(pInDrawing);
+    Point2D localp=owner.worldToLocal(pInDrawing);
+    final ImmutableList<BezierNode> nodes=getOwner().get(key);
+    System.err.println("BezierOutlineHandle add point at " + localp + " not implemented");
     dv.recreateHandles();
   }
 }

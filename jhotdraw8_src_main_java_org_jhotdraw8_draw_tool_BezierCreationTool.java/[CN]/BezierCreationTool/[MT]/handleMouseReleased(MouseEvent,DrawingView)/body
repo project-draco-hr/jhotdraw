@@ -29,6 +29,6 @@
     points=newList;
     DrawingModel dm=dv.getModel();
     dm.set(createdFigure,key,ImmutableList.ofCollection(points));
+    dragStartIndex=-1;
   }
-  dragStartIndex=-1;
 }

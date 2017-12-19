@@ -1,12 +1,14 @@
 {
   if (createdFigure != null) {
-    dragStartIndex=-1;
-    double x2=event.getX();
-    double y2=event.getY();
-    Point2D c2=dv.getConstrainer().constrainPoint(createdFigure,dv.viewToWorld(x2,y2));
-    DrawingModel dm=dv.getModel();
-    points.set(points.size() - 1,new BezierNode(c2));
-    dm.set(createdFigure,key,ImmutableList.ofCollection(points));
+    if (!points.isEmpty()) {
+      BezierNode lastNode=points.get(points.size() - 1);
+      Point2D start=Transforms.transform(Transforms.concat(dv.getWorldToView(),createdFigure.getLocalToWorld()),lastNode.getX0(),lastNode.getY0());
+      rubberBand.setStartX(start.getX());
+      rubberBand.setStartY(start.getY());
+      rubberBand.setEndX(event.getX());
+      rubberBand.setEndY(event.getY());
+      rubberBand.setVisible(true);
+    }
   }
   event.consume();
 }
