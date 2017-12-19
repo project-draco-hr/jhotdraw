@@ -1,0 +1,3 @@
+{
+  return Intersections.intersectBezier3Ellipse(p1,p2,p3,p4,c,r,r);
+}

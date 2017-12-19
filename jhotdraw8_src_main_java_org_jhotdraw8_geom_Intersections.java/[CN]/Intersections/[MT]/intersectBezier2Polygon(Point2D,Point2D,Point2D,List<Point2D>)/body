@@ -1,0 +1,11 @@
+{
+  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  int length=points.size();
+  for (int i=0; i < length; i++) {
+    Point2D a1=points.get(i);
+    Point2D a2=points.get((i + 1) % length);
+    Intersection inter=Intersections.intersectBezier2Line(p1,p2,p3,a1,a2);
+    result.putAll(inter.getIntersections());
+  }
+  return new Intersection(result.isEmpty() ? Intersection.Status.NO_INTERSECTION : Status.INTERSECTION,result);
+}

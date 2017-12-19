@@ -1,0 +1,38 @@
+{
+  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  double a=(x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+  double b=2 * ((x2 - x1) * (x1 - cx) + (y2 - y1) * (y1 - cy));
+  double cc=cx * cx + cy * cy + x1 * x1 + y1 * y1 - 2 * (cx * x1 + cy * y1) - r * r;
+  double deter=b * b - 4 * a * cc;
+  Intersection.Status status;
+  if (deter < 0) {
+    status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
+  }
+ else   if (deter == 0) {
+    status=Intersection.Status.NO_INTERSECTION_TANGENT;
+    double u=(-b) / (2 * a);
+  }
+ else {
+    double e=Math.sqrt(deter);
+    double u1=(-b + e) / (2 * a);
+    double u2=(-b - e) / (2 * a);
+    if ((u1 < 0 || u1 > 1) && (u2 < 0 || u2 > 1)) {
+      if ((u1 < 0 && u2 < 0) || (u1 > 1 && u2 > 1)) {
+        status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
+      }
+ else {
+        status=Intersection.Status.NO_INTERSECTION_INSIDE;
+      }
+    }
+ else {
+      status=Intersection.Status.INTERSECTION;
+      if (0 <= u1 && u1 <= 1) {
+        result.put(u1,lerp(x1,y1,x2,y2,u1));
+      }
+      if (0 <= u2 && u2 <= 1) {
+        result.put(u2,lerp(x1,y1,x2,y2,u2));
+      }
+    }
+  }
+  return new Intersection(status,result);
+}

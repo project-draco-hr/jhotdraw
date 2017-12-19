@@ -1,3 +1,0 @@
-{
-  return Intersection.intersectEllipseEllipse(cc,r,r,ec,rx,ry);
-}

@@ -1,0 +1,2 @@
+List<Point2D> lista
+UnaryOperator<Point2D> op

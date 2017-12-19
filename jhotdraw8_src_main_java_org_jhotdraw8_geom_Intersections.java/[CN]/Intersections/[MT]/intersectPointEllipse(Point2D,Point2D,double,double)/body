@@ -1,0 +1,20 @@
+{
+  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  double px=point.getX();
+  double py=point.getY();
+  double cx=center.getX();
+  double cy=center.getY();
+  double det=(px - cx) * (px - cx) / (rx * rx) + (py - py) * (py - py) / (ry * ry);
+  Intersection.Status status;
+  if (abs(det) - 1 == EPSILON) {
+    status=Intersection.Status.INTERSECTION;
+    result.put(0.0,point);
+  }
+ else   if (det < 1) {
+    status=Intersection.Status.NO_INTERSECTION_INSIDE;
+  }
+ else {
+    status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
+  }
+  return new Intersection(status,result);
+}

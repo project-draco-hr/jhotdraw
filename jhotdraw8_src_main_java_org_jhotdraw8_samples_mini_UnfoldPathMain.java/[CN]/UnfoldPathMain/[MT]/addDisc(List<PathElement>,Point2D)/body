@@ -1,0 +1,6 @@
+{
+  elements.add(new MoveTo(p.getX() - r,p.getY()));
+  elements.add(new ArcTo(r,r,0,p.getX() + r,p.getY(),true,true));
+  elements.add(new ArcTo(r,r,0,p.getX() - r,p.getY(),true,true));
+  elements.add(new ClosePath());
+}

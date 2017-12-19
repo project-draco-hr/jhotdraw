@@ -1,0 +1,3 @@
+List<Point2D> lista
+List<Point2D> listb
+BinaryOperator<Point2D> op

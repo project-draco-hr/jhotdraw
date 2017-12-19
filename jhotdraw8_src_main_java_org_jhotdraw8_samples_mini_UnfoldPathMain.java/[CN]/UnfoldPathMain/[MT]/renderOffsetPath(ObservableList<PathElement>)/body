@@ -1,0 +1,29 @@
+{
+  elements.clear();
+  List<Point2D> offsetList=new ArrayList<>();
+  for (int i=0, n=points.size() - 1; i < n; i++) {
+    Point2D p1=points.get(i);
+    Point2D p2=points.get(i + 1);
+    Point2D perp=perp(p2.subtract(p1)).normalize();
+    final Point2D op1=p1.add(perp.multiply(width / 2));
+    moveTo(elements,op1);
+    final Point2D op2=p2.add(perp.multiply(width / 2));
+    lineTo(elements,op2);
+    offsetList.add(op1);
+    offsetList.add(op2);
+  }
+  final ObservableList<PathElement> isects=intersections.getElements();
+  final ObservableList<PathElement> isects2=intersections2.getElements();
+  isects.clear();
+  isects2.clear();
+  for (int i=0, n=offsetList.size() - 2; i < n; i+=2) {
+    Point2D isect=intersection(offsetList.get(i),offsetList.get(i + 1),offsetList.get(i + 2),offsetList.get(i + 3));
+    if (isect != null) {
+      addDisc(isects,isect);
+    }
+    Point2D isect2=intersection2(offsetList.get(i),offsetList.get(i + 1),offsetList.get(i + 2),offsetList.get(i + 3));
+    if (isect2 != null) {
+      addDisc(isects2,isect2);
+    }
+  }
+}

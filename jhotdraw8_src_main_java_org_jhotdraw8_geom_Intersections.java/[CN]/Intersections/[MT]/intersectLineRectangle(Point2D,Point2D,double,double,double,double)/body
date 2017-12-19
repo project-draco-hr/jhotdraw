@@ -1,0 +1,17 @@
+{
+  Point2D min=new Point2D(rminx,rminy);
+  Point2D max=new Point2D(rmaxx,rmaxy);
+  Point2D topRight=new Point2D(rmaxx,rminy);
+  Point2D bottomLeft=new Point2D(rminx,rmaxy);
+  Intersection inter1=Intersections.intersectLineLine(a1,a2,min,topRight);
+  Intersection inter2=Intersections.intersectLineLine(a1,a2,topRight,max);
+  Intersection inter3=Intersections.intersectLineLine(a1,a2,max,bottomLeft);
+  Intersection inter4=Intersections.intersectLineLine(a1,a2,bottomLeft,min);
+  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  Intersection.Status status=Intersection.Status.NO_INTERSECTION;
+  result.putAll(inter1.getIntersections());
+  result.putAll(inter2.getIntersections());
+  result.putAll(inter3.getIntersections());
+  result.putAll(inter4.getIntersections());
+  return new Intersection(result);
+}

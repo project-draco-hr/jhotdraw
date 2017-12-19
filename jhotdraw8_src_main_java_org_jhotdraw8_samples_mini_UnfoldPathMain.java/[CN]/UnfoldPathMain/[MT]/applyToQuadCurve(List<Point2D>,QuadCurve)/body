@@ -1,0 +1,8 @@
+{
+  curve.setStartX(list1.get(0).getX());
+  curve.setStartY(list1.get(0).getY());
+  curve.setControlX(list1.get(1).getX());
+  curve.setControlY(list1.get(1).getY());
+  curve.setEndX(list1.get(2).getX());
+  curve.setEndY(list1.get(2).getY());
+}

@@ -1,0 +1,8 @@
+{
+  for (int i=0, n=p1s.size(); i < n; i++) {
+    Point2D p1=p1s.get(i);
+    Point2D p2=p2s.get(i);
+    moveTo(elements,p1);
+    lineTo(elements,p2);
+  }
+}

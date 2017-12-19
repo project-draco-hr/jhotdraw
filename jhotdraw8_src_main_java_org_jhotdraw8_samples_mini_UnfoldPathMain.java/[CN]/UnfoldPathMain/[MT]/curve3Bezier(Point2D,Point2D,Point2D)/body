@@ -1,0 +1,20 @@
+{
+  double x1, y1, x2, y2, x3, y3;
+  x1=p1.getX();
+  y1=p1.getY();
+  x2=p2.getX();
+  y2=p2.getY();
+  x3=p3.getX();
+  y3=p3.getY();
+  List<Point2D> points=new ArrayList<>();
+  curve3RecursiveBezier(points,x1,y1,x2,y2,x3,y3,0);
+  Point2D dp1=points.get(0).subtract(p1);
+  if (dp1.magnitude() > 1e-10) {
+    points.add(0,p1);
+  }
+  Point2D dp3=points.get(points.size() - 1).subtract(p3);
+  if (dp3.magnitude() > 1e-10) {
+    points.add(p3);
+  }
+  return points;
+}

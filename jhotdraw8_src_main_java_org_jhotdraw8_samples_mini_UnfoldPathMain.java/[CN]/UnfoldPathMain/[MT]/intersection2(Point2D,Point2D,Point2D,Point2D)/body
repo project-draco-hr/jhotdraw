@@ -1,0 +1,23 @@
+{
+  double x1, y1, x2, y2, x3, y3, x4, y4;
+  x1=p1.getX();
+  y1=p1.getY();
+  x2=p2.getX();
+  y2=p2.getY();
+  x3=p3.getX();
+  y3=p3.getY();
+  x4=p4.getX();
+  y4=p4.getY();
+  double den=(x2 - x1) * (y4 - y3) - (y2 - y1) * (x4 - x3);
+  if (abs(den) < 1e-20) {
+    return null;
+  }
+  double nom1=(x4 - x3) * (y1 - y3) - (y4 - y3) * (x1 - x3);
+  double nom2=(x2 - x1) * (y1 - y3) - (y2 - y1) * (x1 - x3);
+  double ua=nom1 / den;
+  double ub=nom2 / den;
+  if (0.0 <= ua && 0.0 <= ub && ub <= 1.0) {
+    return p1.add((p2.subtract(p1).multiply(ua)));
+  }
+  return null;
+}

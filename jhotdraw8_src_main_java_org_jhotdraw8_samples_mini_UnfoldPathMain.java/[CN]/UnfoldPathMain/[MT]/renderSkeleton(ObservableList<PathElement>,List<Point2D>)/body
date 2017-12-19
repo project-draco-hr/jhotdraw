@@ -1,0 +1,11 @@
+{
+  for (int i=0, n=points.size() - 1; i < n; i++) {
+    Point2D p1=points.get(i);
+    Point2D p2=points.get(i + 1);
+    Point2D perp=perp(p2.subtract(p1)).normalize();
+    moveTo(elements,p1.subtract(perp.multiply(width / 2)));
+    lineTo(elements,p1.add(perp.multiply(width / 2)));
+    moveTo(elements,p2.subtract(perp.multiply(width / 2)));
+    lineTo(elements,p2.add(perp.multiply(width / 2)));
+  }
+}

@@ -1,0 +1,3 @@
+{
+  this(intersections.isEmpty() ? Status.NO_INTERSECTION : Status.INTERSECTION,intersections);
+}

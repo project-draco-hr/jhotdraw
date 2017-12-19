@@ -1,0 +1,25 @@
+{
+  Point2D mousep=new Point2D(evt.getSceneX(),evt.getSceneY());
+  if (evt.getEventType() == MouseEvent.MOUSE_CLICKED) {
+    if (mousep.equals(pressedp)) {
+      int index=findIndex(mousep);
+      if (index == -1) {
+        points.add(mousep);
+      }
+ else {
+        points.remove(selected);
+      }
+      updateView();
+    }
+  }
+ else   if (evt.getEventType() == MouseEvent.MOUSE_PRESSED) {
+    pressedp=mousep;
+    selected=findIndex(mousep);
+  }
+ else   if (evt.getEventType() == MouseEvent.MOUSE_DRAGGED) {
+    if (selected != -1) {
+      points.set(selected,mousep);
+    }
+    updateView();
+  }
+}

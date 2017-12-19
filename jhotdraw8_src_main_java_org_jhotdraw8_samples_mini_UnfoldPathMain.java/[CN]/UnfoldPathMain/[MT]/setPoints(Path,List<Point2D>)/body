@@ -1,0 +1,13 @@
+{
+  final List<PathElement> elems=poly.getElements();
+  boolean first=true;
+  for (  Point2D p : points) {
+    if (first) {
+      first=false;
+      elems.add(new MoveTo(p.getX(),p.getY()));
+    }
+ else {
+      elems.add(new LineTo(p.getX(),p.getY()));
+    }
+  }
+}

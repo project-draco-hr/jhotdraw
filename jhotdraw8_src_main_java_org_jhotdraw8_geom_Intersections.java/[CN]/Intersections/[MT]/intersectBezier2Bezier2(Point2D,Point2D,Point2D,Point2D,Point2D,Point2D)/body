@@ -1,0 +1,60 @@
+{
+  Point2D a, b;
+  Point2D c12, c11, c10;
+  Point2D c22, c21, c20;
+  Polynomial poly;
+  a=a2.multiply(-2);
+  c12=a1.add(a.add(a3));
+  a=a1.multiply(-2);
+  b=a2.multiply(2);
+  c11=a.add(b);
+  c10=a1;
+  ;
+  a=b2.multiply(-2);
+  c22=b1.add(a.add(b3));
+  a=b1.multiply(-2);
+  b=b2.multiply(2);
+  c21=a.add(b);
+  c20=b1;
+  if (c12.getY() == 0) {
+    double v0=c12.getX() * (c10.getY() - c20.getY());
+    double v1=v0 - c11.getX() * c11.getY();
+    double v2=v0 + v1;
+    double v3=c11.getY() * c11.getY();
+    poly=new Polynomial(c12.getX() * c22.getY() * c22.getY(),2 * c12.getX() * c21.getY()* c22.getY(),c12.getX() * c21.getY() * c21.getY() - c22.getX() * v3 - c22.getY() * v0 - c22.getY() * v1,-c21.getX() * v3 - c21.getY() * v0 - c21.getY() * v1,(c10.getX() - c20.getX()) * v3 + (c10.getY() - c20.getY()) * v1);
+  }
+ else {
+    double v0=c12.getX() * c22.getY() - c12.getY() * c22.getX();
+    double v1=c12.getX() * c21.getY() - c21.getX() * c12.getY();
+    double v2=c11.getX() * c12.getY() - c11.getY() * c12.getX();
+    double v3=c10.getY() - c20.getY();
+    double v4=c12.getY() * (c10.getX() - c20.getX()) - c12.getX() * v3;
+    double v5=-c11.getY() * v2 + c12.getY() * v4;
+    double v6=v2 * v2;
+    poly=new Polynomial(v0 * v0,2 * v0 * v1,(-c22.getY() * v6 + c12.getY() * v1 * v1 + c12.getY() * v0 * v4 + v0 * v5) / c12.getY(),(-c21.getY() * v6 + c12.getY() * v1 * v4 + v1 * v5) / c12.getY(),(v3 * v6 + v4 * v5) / c12.getY());
+  }
+  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  double[] roots=poly.getRoots();
+  for (int i=0; i < roots.length; i++) {
+    double s=roots[i];
+    if (0 <= s && s <= 1) {
+      double[] xRoots=new Polynomial(c12.getX(),c11.getX(),c10.getX() - c20.getX() - s * c21.getX() - s * s * c22.getX()).getRoots();
+      double yRoots[]=new Polynomial(c12.getY(),c11.getY(),c10.getY() - c20.getY() - s * c21.getY() - s * s * c22.getY()).getRoots();
+      if (xRoots.length > 0 && yRoots.length > 0) {
+        double TOLERANCE=1e-4;
+        checkRoots:         for (int j=0; j < xRoots.length; j++) {
+          double xRoot=xRoots[j];
+          if (0 <= xRoot && xRoot <= 1) {
+            for (int k=0; k < yRoots.length; k++) {
+              if (Math.abs(xRoot - yRoots[k]) < TOLERANCE) {
+                result.put(xRoot,c22.multiply(s * s).add(c21.multiply(s).add(c20)));
+                break checkRoots;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  return new Intersection(result.isEmpty() ? Intersection.Status.NO_INTERSECTION : Intersection.Status.INTERSECTION,result);
+}

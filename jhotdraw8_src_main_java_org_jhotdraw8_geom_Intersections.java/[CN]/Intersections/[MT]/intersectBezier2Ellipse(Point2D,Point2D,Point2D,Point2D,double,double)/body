@@ -1,0 +1,28 @@
+{
+  Point2D a, b;
+  Point2D c2, c1, c0;
+  a=p2.multiply(-2);
+  c2=p1.add(a.add(p3));
+  a=p1.multiply(-2);
+  b=p2.multiply(2);
+  c1=a.add(b);
+  c0=new Point2D(p1.getX(),p1.getY());
+  double rxrx=rx * rx;
+  double ryry=ry * ry;
+  double[] roots=new Polynomial(ryry * c2.getX() * c2.getX() + rxrx * c2.getY() * c2.getY(),2 * (ryry * c2.getX() * c1.getX() + rxrx * c2.getY() * c1.getY()),ryry * (2 * c2.getX() * c0.getX() + c1.getX() * c1.getX()) + rxrx * (2 * c2.getY() * c0.getY() + c1.getY() * c1.getY()) - 2 * (ryry * ec.getX() * c2.getX() + rxrx * ec.getY() * c2.getY()),2 * (ryry * c1.getX() * (c0.getX() - ec.getX()) + rxrx * c1.getY() * (c0.getY() - ec.getY())),ryry * (c0.getX() * c0.getX() + ec.getX() * ec.getX()) + rxrx * (c0.getY() * c0.getY() + ec.getY() * ec.getY()) - 2 * (ryry * ec.getX() * c0.getX() + rxrx * ec.getY() * c0.getY()) - rxrx * ryry).getRoots();
+  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  for (int i=0; i < roots.length; i++) {
+    double t=roots[i];
+    if (0 <= t && t <= 1) {
+      result.put(t,c2.multiply(t * t).add(c1.multiply(t).add(c0)));
+    }
+  }
+  Intersection.Status status;
+  if (result.size() > 0) {
+    status=Intersection.Status.INTERSECTION;
+  }
+ else {
+    status=intersectPointEllipse(p1,ec,rx,ry).getStatus();
+  }
+  return new Intersection(status,result);
+}

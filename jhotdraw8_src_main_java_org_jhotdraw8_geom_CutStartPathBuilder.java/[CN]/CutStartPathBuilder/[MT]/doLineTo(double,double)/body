@@ -3,7 +3,7 @@
     out.lineTo(x,y);
     return;
   }
-  Intersection i=Intersection.intersectLineCircle(getLastX(),getLastY(),x,y,cx,cy,radius);
+  Intersection i=Intersections.intersectLineCircle(getLastX(),getLastY(),x,y,cx,cy,radius);
 switch (i.getStatus()) {
 case INTERSECTION:
     Point2D p=i.getLastPoint();

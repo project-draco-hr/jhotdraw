@@ -20,7 +20,6 @@
         command=nextCommand;
         tt.pushBack();
       }
-      BezierPath.Node node;
 switch (command) {
 case 'M':
         if (tt.nextToken() != StreamPosTokenizer.TT_NUMBER) {

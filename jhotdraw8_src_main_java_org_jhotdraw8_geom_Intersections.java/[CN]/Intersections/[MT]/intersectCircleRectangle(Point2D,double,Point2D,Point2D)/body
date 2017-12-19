@@ -1,0 +1,23 @@
+{
+  Point2D min=minp(r1,r2);
+  Point2D max=maxp(r1,r2);
+  Point2D topRight=new Point2D(max.getX(),min.getY());
+  Point2D bottomLeft=new Point2D(min.getX(),max.getY());
+  Intersection inter1=Intersections.intersectCircleLine(c,r,min,topRight);
+  Intersection inter2=Intersections.intersectCircleLine(c,r,topRight,max);
+  Intersection inter3=Intersections.intersectCircleLine(c,r,max,bottomLeft);
+  Intersection inter4=Intersections.intersectCircleLine(c,r,bottomLeft,min);
+  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  result.putAll(inter1.getIntersections());
+  result.putAll(inter2.getIntersections());
+  result.putAll(inter3.getIntersections());
+  result.putAll(inter4.getIntersections());
+  Intersection.Status status;
+  if (!result.isEmpty()) {
+    status=Intersection.Status.INTERSECTION;
+  }
+ else {
+    status=inter1.getStatus();
+  }
+  return new Intersection(status,result);
+}

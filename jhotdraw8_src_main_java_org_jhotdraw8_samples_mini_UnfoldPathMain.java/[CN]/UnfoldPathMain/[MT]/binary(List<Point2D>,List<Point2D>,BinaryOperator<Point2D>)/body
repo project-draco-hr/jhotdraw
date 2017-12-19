@@ -1,0 +1,8 @@
+{
+  int n=lista.size();
+  List<Point2D> listc=new ArrayList<>();
+  for (int i=0; i < n; i++) {
+    listc.add(op.apply(lista.get(i),listb.get(i)));
+  }
+  return listc;
+}

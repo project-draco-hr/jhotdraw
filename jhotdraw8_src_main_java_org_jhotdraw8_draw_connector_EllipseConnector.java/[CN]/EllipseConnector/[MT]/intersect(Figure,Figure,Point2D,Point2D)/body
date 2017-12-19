@@ -18,7 +18,7 @@ break;
 }
 bounds=Geom.grow(bounds,grow,grow);
 }
-Intersection i=Intersection.intersectLineEllipse(s,e,bounds);
+Intersection i=Intersections.intersectLineEllipse(s,e,bounds);
 double maxT=0;
 for (double t : i.getTs()) {
 if (t > maxT) {

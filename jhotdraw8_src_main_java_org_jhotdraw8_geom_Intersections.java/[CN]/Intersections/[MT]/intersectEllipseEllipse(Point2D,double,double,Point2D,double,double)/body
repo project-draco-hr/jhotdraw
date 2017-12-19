@@ -1,0 +1,23 @@
+{
+  double[] a={ry1 * ry1,0,rx1 * rx1,-2 * ry1 * ry1* c1.getX(),-2 * rx1 * rx1* c1.getY(),ry1 * ry1 * c1.getX()* c1.getX() + rx1 * rx1 * c1.getY()* c1.getY() - rx1 * rx1 * ry1* ry1};
+  double[] b={ry2 * ry2,0,rx2 * rx2,-2 * ry2 * ry2* c2.getX(),-2 * rx2 * rx2* c2.getY(),ry2 * ry2 * c2.getX()* c2.getX() + rx2 * rx2 * c2.getY()* c2.getY() - rx2 * rx2 * ry2* ry2};
+  Polynomial yPoly=Intersections.bezout(a,b);
+  double[] yRoots=yPoly.getRoots();
+  double norm0=(a[0] * a[0] + 2 * a[1] * a[1] + a[2] * a[2]) * EPSILON;
+  double norm1=(b[0] * b[0] + 2 * b[1] * b[1] + b[2] * b[2]) * EPSILON;
+  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  for (int y=0; y < yRoots.length; y++) {
+    Polynomial xPoly=new Polynomial(a[0],a[3] + yRoots[y] * a[1],a[5] + yRoots[y] * (a[4] + yRoots[y] * a[2]));
+    double[] xRoots=xPoly.getRoots();
+    for (int x=0; x < xRoots.length; x++) {
+      double test=(a[0] * xRoots[x] + a[1] * yRoots[y] + a[3]) * xRoots[x] + (a[2] * yRoots[y] + a[4]) * yRoots[y] + a[5];
+      if (Math.abs(test) < norm0) {
+        test=(b[0] * xRoots[x] + b[1] * yRoots[y] + b[3]) * xRoots[x] + (b[2] * yRoots[y] + b[4]) * yRoots[y] + b[5];
+        if (Math.abs(test) < norm1) {
+          result.put(Double.NaN,new Point2D(xRoots[x],yRoots[y]));
+        }
+      }
+    }
+  }
+  return new Intersection(result);
+}

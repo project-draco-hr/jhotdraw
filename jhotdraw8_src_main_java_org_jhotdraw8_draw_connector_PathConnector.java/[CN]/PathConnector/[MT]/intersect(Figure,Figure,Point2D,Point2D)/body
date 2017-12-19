@@ -24,6 +24,6 @@ break;
  else {
 pit=pif.getPathIterator(null);
 }
-Intersection i=Intersection.intersectLinePathIterator(s,e,pit);
+Intersection i=Intersections.intersectLinePathIterator(s,e,pit);
 return i.isEmpty() ? null : i.getIntersections().lastKey();
 }

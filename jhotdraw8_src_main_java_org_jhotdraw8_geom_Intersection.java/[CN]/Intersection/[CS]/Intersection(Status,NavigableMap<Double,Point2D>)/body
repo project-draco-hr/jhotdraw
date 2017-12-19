@@ -1,0 +1,7 @@
+{
+  if (status == Status.INTERSECTION && intersections.isEmpty() || status != Status.INTERSECTION && !intersections.isEmpty()) {
+    throw new IllegalArgumentException("status=" + status + " intersections="+ intersections);
+  }
+  this.intersections=Collections.unmodifiableNavigableMap(intersections);
+  this.status=status;
+}
