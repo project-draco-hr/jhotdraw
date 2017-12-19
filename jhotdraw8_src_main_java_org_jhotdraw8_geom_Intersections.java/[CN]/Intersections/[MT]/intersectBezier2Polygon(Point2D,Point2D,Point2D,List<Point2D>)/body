@@ -7,5 +7,5 @@
     Intersection inter=Intersections.intersectBezier2Line(p1,p2,p3,a1,a2);
     result.putAll(inter.getIntersections());
   }
-  return new Intersection(result.isEmpty() ? Intersection.Status.NO_INTERSECTION : Status.INTERSECTION,result);
+  return new Intersection(result);
 }

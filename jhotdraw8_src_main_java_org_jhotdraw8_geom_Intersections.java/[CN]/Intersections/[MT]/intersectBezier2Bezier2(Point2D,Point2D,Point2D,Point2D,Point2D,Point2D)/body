@@ -56,5 +56,5 @@
       }
     }
   }
-  return new Intersection(result.isEmpty() ? Intersection.Status.NO_INTERSECTION : Intersection.Status.INTERSECTION,result);
+  return new Intersection(result);
 }
