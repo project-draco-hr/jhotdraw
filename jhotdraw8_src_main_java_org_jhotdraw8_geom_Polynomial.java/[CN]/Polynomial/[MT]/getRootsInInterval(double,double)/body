@@ -1,8 +1,10 @@
 {
   double[] roots=new double[0];
-  Double root;
-  if (this.getDegree() == 1) {
-    root=this.bisection(min,max);
+  if (this.getDegree() == 0) {
+    return new double[0];
+  }
+ else   if (this.getDegree() == 1) {
+    Double root=this.bisection(min,max);
     if (root != null) {
       roots=new double[]{root};
     }
@@ -11,7 +13,7 @@
     Polynomial deriv=this.getDerivative();
     double[] droots=deriv.getRootsInInterval(min,max);
     if (droots.length > 0) {
-      root=this.bisection(min,droots[0]);
+      Double root=this.bisection(min,droots[0]);
       if (root != null) {
         roots=new double[]{root};
       }
@@ -27,7 +29,7 @@
       }
     }
  else {
-      root=this.bisection(min,max);
+      Double root=this.bisection(min,max);
       if (root != null) {
         roots=new double[]{root};
       }

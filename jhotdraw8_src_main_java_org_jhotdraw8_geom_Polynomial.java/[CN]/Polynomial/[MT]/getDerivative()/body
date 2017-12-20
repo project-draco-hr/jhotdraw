@@ -3,5 +3,5 @@
   for (int i=1; i < this.coefs.length; i++) {
     derivative[i - 1]=(i * this.coefs[i]);
   }
-  return new Polynomial(derivative);
+  return new Polynomial(false,derivative);
 }

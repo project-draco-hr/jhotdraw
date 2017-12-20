@@ -7,15 +7,15 @@
   Point2D a2=new Point2D(300,175);
   Intersection expResult=null;
   System.out.println("line->bezier2");
-  Intersection result=Intersection.intersectLineBezier2(a1,a2,p1,p2,p3);
+  Intersection result=Intersections.intersectLineBezier2(a1,a2,p1,p2,p3);
   System.out.println(result.getPoints());
   System.out.println(result.getTs());
   System.out.println("bezier2->line");
-  result=Intersection.intersectBezier2Line(p1,p2,p3,a1,a2);
+  result=Intersections.intersectBezier2Line(p1,p2,p3,a1,a2);
   System.out.println(result.getPoints());
   System.out.println(result.getTs());
   System.out.println("line->line");
-  result=Intersection.intersectLineLine(a1,a2,p1,p3);
+  result=Intersections.intersectLineLine(a1,a2,p1,p3);
   System.out.println(result.getPoints());
   System.out.println(result.getTs());
   for (  double t : result.getTs()) {

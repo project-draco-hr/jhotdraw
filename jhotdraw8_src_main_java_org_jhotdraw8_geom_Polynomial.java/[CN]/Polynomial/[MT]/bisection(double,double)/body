@@ -1,7 +1,7 @@
 {
   double minValue=this.eval(min);
   double maxValue=this.eval(max);
-  double result=0;
+  Double result=null;
   if (Math.abs(minValue) <= Polynomial.TOLERANCE) {
     result=min;
   }

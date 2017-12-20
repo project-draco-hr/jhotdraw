@@ -1,0 +1,7 @@
+{
+  PolynomialNGTest test=new PolynomialNGTest();
+  for (  Object[] a : test.polynomials()) {
+    test.testGetRoots((Polynomial)a[0],(double[])a[1]);
+    test.testGetRootsInInterval((Polynomial)a[0],(double[])a[1]);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  Intersection isect=Intersections.intersectPathIteratorPoint(getPathIterator(null),x,y,tolerance);
+  System.err.println("BezierNodePath split " + isect);
+  return !isect.isEmpty();
+}

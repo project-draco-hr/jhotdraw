@@ -1,8 +1,0 @@
-{
-  System.out.println("getRoots");
-  Polynomial instance=new Polynomial(0.0,13885.714285714286,0,-13885.714285714286);
-  System.out.println(instance);
-  double[] expResult=new double[]{1,-1};
-  double[] result=instance.getRoots();
-  assertEquals(Arrays.toString(result),Arrays.toString(expResult));
-}

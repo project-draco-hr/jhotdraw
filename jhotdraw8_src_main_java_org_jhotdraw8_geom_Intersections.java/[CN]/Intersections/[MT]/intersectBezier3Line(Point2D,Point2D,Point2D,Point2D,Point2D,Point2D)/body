@@ -5,7 +5,7 @@
   Point2D n;
   final Point2D min=minp(a1,a2);
   final Point2D max=maxp(a1,a2);
-  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   a=p1.multiply(-1);
   b=p2.multiply(3);
   c=p3.multiply(-3);
@@ -37,18 +37,18 @@
       if (a1.getX() == a2.getX()) {
         if (min.getY() <= p10.getY() && p10.getY() <= max.getY()) {
           status=Intersection.Status.INTERSECTION;
-          result.put(t,p10);
+          result.add(new AbstractMap.SimpleEntry<>(t,p10));
         }
       }
  else       if (a1.getY() == a2.getY()) {
         if (min.getX() <= p10.getX() && p10.getX() <= max.getX()) {
           status=Intersection.Status.INTERSECTION;
-          result.put(t,p10);
+          result.add(new AbstractMap.SimpleEntry<>(t,p10));
         }
       }
  else       if (gte(p10,min) && lte(p10,max)) {
         status=Intersection.Status.INTERSECTION;
-        result.put(t,p10);
+        result.add(new AbstractMap.SimpleEntry<>(t,p10));
       }
     }
   }

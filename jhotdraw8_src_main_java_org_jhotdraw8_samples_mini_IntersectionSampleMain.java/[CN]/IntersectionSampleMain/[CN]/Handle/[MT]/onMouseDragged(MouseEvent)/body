@@ -1,0 +1,4 @@
+{
+  updateShape.accept(new Point2D(evt.getX() - evt.getX() % 10,evt.getY() - evt.getY() % 10));
+  updateHandles();
+}

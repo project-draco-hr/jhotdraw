@@ -1,0 +1,4 @@
+{
+  node.setX(x - node.getWidth() / 2);
+  node.setY(y - node.getHeight() / 2);
+}

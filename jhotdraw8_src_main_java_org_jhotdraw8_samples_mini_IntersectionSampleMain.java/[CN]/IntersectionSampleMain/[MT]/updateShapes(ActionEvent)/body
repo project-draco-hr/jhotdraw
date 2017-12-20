@@ -1,0 +1,13 @@
+{
+  handles.clear();
+  shapes.clear();
+  canvas.getChildren().clear();
+  Shape shape;
+  shape=createShapeAndHandles(choice1.getValue(),Color.GREEN,Color.GREEN);
+  shape=createShapeAndHandles(choice2.getValue(),Color.CYAN,Color.CYAN);
+  for (  Handle h : handles) {
+    canvas.getChildren().add(h.node);
+  }
+  canvas.getChildren().add(isectPath);
+  updateHandles();
+}

@@ -1,7 +1,7 @@
 {
   Point2D a, b, c, d;
   Point2D c3, c2, c1, c0;
-  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   a=p1.multiply(-1);
   b=p2.multiply(3);
   c=p3.multiply(-3);
@@ -33,7 +33,7 @@
   double[] roots=poly.getRootsInInterval(0,1);
   for (int i=0; i < roots.length; i++) {
     double t=roots[i];
-    result.put(t,c3.multiply(t * t * t).add(c2.multiply(t * t).add(c1.multiply(t).add(c0))));
+    result.add(new AbstractMap.SimpleEntry<>(t,c3.multiply(t * t * t).add(c2.multiply(t * t).add(c1.multiply(t).add(c0)))));
   }
   if (result.size() > 0) {
     return new Intersection(result);

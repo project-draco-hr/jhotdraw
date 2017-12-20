@@ -7,10 +7,10 @@
   Intersection inter2=Intersections.intersectEllipseLine(c,rx,ry,topRight,max);
   Intersection inter3=Intersections.intersectEllipseLine(c,rx,ry,max,bottomLeft);
   Intersection inter4=Intersections.intersectEllipseLine(c,rx,ry,bottomLeft,min);
-  NavigableMap<Double,Point2D> result=new TreeMap<>();
-  result.putAll(inter1.getIntersections());
-  result.putAll(inter2.getIntersections());
-  result.putAll(inter3.getIntersections());
-  result.putAll(inter4.getIntersections());
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
+  result.addAll(inter1.getIntersections());
+  result.addAll(inter2.getIntersections());
+  result.addAll(inter3.getIntersections());
+  result.addAll(inter4.getIntersections());
   return new Intersection(result);
 }

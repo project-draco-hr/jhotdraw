@@ -1,5 +1,5 @@
 {
-  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   double r_max=r1 + r2;
   double r_min=Math.abs(r1 - r2);
   double c_dist=c1.distance(c2);
@@ -16,8 +16,8 @@
     double h=Math.sqrt(r1 * r1 - a * a);
     Point2D p=lerp(c1,c2,a / c_dist);
     double b=h / c_dist;
-    result.put(Double.NaN,new Point2D(p.getX() - b * (c2.getY() - c1.getY()),p.getY() + b * (c2.getX() - c1.getX())));
-    result.put(Double.NaN,new Point2D(p.getX() + b * (c2.getY() - c1.getY()),p.getY() - b * (c2.getX() - c1.getX())));
+    result.add(new AbstractMap.SimpleEntry<>(Double.NaN,new Point2D(p.getX() - b * (c2.getY() - c1.getY()),p.getY() + b * (c2.getX() - c1.getX()))));
+    result.add(new AbstractMap.SimpleEntry<>(Double.NaN,new Point2D(p.getX() + b * (c2.getY() - c1.getY()),p.getY() - b * (c2.getX() - c1.getX()))));
   }
   return new Intersection(status,result);
 }

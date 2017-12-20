@@ -1,0 +1,52 @@
+{
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
+  Intersection.Status status=Intersection.Status.NO_INTERSECTION;
+  final double[] seg=new double[6];
+  double firstx=0, firsty=0;
+  double lastx=0, lasty=0;
+  double x, y;
+  int i=0;
+  for (; !pit.isDone(); pit.next(), i++) {
+    Intersection inter;
+switch (pit.currentSegment(seg)) {
+case PathIterator.SEG_CLOSE:
+      inter=Intersections.intersectLinePoint(lastx,lasty,firstx,firsty,px,py,tolerance);
+    break;
+case PathIterator.SEG_CUBICTO:
+  x=seg[4];
+y=seg[5];
+inter=Intersections.intersectBezier3Point(lastx,lasty,seg[0],seg[1],seg[2],seg[3],x,y,px,py,tolerance);
+lastx=x;
+lasty=y;
+break;
+case PathIterator.SEG_LINETO:
+x=seg[0];
+y=seg[1];
+inter=Intersections.intersectLinePoint(lastx,lasty,x,y,px,py,tolerance);
+lastx=x;
+lasty=y;
+break;
+case PathIterator.SEG_MOVETO:
+lastx=firstx=seg[0];
+lasty=firsty=seg[1];
+inter=null;
+break;
+case PathIterator.SEG_QUADTO:
+x=seg[2];
+y=seg[3];
+inter=Intersections.intersectBezier2Point(lastx,lasty,seg[0],seg[1],x,y,px,py,tolerance);
+lastx=x;
+lasty=y;
+break;
+default :
+inter=null;
+break;
+}
+if (inter != null) {
+for (Map.Entry<Double,Point2D> entry : inter.getIntersections()) {
+result.add(new AbstractMap.SimpleEntry<>(entry.getKey() + i,entry.getValue()));
+}
+}
+}
+return new Intersection(result);
+}

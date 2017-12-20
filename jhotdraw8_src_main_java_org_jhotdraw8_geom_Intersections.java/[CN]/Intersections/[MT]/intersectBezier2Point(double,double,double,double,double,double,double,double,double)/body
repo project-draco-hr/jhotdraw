@@ -1,0 +1,12 @@
+{
+  Intersection isect=intersectBezier2Ellipse(new Point2D(x1,y1),new Point2D(x2,y2),new Point2D(x3,y3),new Point2D(px,py),tolerance,tolerance);
+  if (isect.isEmpty()) {
+    if (isect.getStatus() == Intersection.Status.NO_INTERSECTION_INSIDE && tolerance > EPSILON * 2) {
+      return intersectBezier2Point(x1,y1,x2,y2,x3,y3,px,py,tolerance / 2);
+    }
+ else {
+      return new Intersection(Status.NO_INTERSECTION);
+    }
+  }
+  return isect;
+}

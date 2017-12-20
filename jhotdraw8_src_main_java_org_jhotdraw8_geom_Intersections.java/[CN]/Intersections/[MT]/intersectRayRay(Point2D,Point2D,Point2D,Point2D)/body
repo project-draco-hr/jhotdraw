@@ -1,5 +1,5 @@
 {
-  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   Intersection.Status status=Intersection.Status.NO_INTERSECTION;
   double ua_t=(b2.getX() - b1.getX()) * (a1.getY() - b1.getY()) - (b2.getY() - b1.getY()) * (a1.getX() - b1.getX());
   double ub_t=(a2.getX() - a1.getX()) * (a1.getY() - b1.getY()) - (a2.getY() - a1.getY()) * (a1.getX() - b1.getX());
@@ -7,7 +7,7 @@
   if (u_b != 0) {
     double ua=ua_t / u_b;
     status=Intersection.Status.INTERSECTION;
-    result.put(ua,new Point2D(a1.getX() + ua * (a2.getX() - a1.getX()),a1.getY() + ua * (a2.getY() - a1.getY())));
+    result.add(new AbstractMap.SimpleEntry<>(ua,new Point2D(a1.getX() + ua * (a2.getX() - a1.getX()),a1.getY() + ua * (a2.getY() - a1.getY()))));
   }
  else {
     if (ua_t == 0 || ub_t == 0) {

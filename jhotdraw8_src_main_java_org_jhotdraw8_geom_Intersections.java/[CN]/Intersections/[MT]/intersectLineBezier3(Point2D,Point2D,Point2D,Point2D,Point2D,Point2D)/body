@@ -9,7 +9,7 @@
   Point2D n;
   final Point2D amin=minp(a1,a2);
   final Point2D amax=maxp(a1,a2);
-  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   a=p1.multiply(-1);
   b=p2.multiply(3);
   c=p3.multiply(-3);
@@ -42,18 +42,18 @@
       if (a1.getX() == a2.getX()) {
         if (amin.getY() <= p10.getY() && p10.getY() <= amax.getY()) {
           status=Intersection.Status.INTERSECTION;
-          result.put(pointOnLine(p10.getX(),p10.getY(),ax,ay,bx,by),p10);
+          result.add(new AbstractMap.SimpleEntry<>(pointOnLine(p10.getX(),p10.getY(),ax,ay,bx,by),p10));
         }
       }
  else       if (a1.getY() == a2.getY()) {
         if (amin.getX() <= p10.getX() && p10.getX() <= amax.getX()) {
           status=Intersection.Status.INTERSECTION;
-          result.put(pointOnLine(p10.getX(),p10.getY(),ax,ay,bx,by),p10);
+          result.add(new AbstractMap.SimpleEntry<>(pointOnLine(p10.getX(),p10.getY(),ax,ay,bx,by),p10));
         }
       }
  else       if (gte(p10,amin) && lte(p10,amax)) {
         status=Intersection.Status.INTERSECTION;
-        result.put(pointOnLine(p10.getX(),p10.getY(),ax,ay,bx,by),p10);
+        result.add(new AbstractMap.SimpleEntry<>(pointOnLine(p10.getX(),p10.getY(),ax,ay,bx,by),p10));
       }
     }
   }

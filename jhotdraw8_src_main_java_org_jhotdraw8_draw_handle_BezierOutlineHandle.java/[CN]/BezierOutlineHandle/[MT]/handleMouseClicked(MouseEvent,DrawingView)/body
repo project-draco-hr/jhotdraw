@@ -2,12 +2,14 @@
   if (key != null && event.getClickCount() == 2) {
     double px=event.getX();
     double py=event.getY();
-    double tolerance=SimpleDrawingView.TOLERANCE;
     Point2D pInDrawing=dv.viewToWorld(new Point2D(px,py));
-    pInDrawing=dv.getConstrainer().constrainPoint(owner,pInDrawing);
+    double tolerance=dv.getViewToWorld().deltaTransform(dv.getTolerance(),dv.getTolerance()).getX();
     Point2D localp=owner.worldToLocal(pInDrawing);
     final ImmutableList<BezierNode> nodes=getOwner().get(key);
     System.err.println("BezierOutlineHandle add point at " + localp + " not implemented");
+    BezierNodePath path=new BezierNodePath(nodes);
+    if (path.split(localp.getX(),localp.getY(),tolerance)) {
+    }
     dv.recreateHandles();
   }
 }

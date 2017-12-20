@@ -1,10 +1,10 @@
 {
-  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   final double distance=point.distance(center);
   Intersection.Status status;
   if (distance - radius < EPSILON) {
     status=Intersection.Status.INTERSECTION;
-    result.put(0.0,point);
+    result.add(new AbstractMap.SimpleEntry<>(0.0,point));
   }
  else   if (distance < radius) {
     status=Intersection.Status.NO_INTERSECTION_INSIDE;

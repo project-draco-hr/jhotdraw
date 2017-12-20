@@ -33,7 +33,7 @@
     double v6=v2 * v2;
     poly=new Polynomial(v0 * v0,2 * v0 * v1,(-c22.getY() * v6 + c12.getY() * v1 * v1 + c12.getY() * v0 * v4 + v0 * v5) / c12.getY(),(-c21.getY() * v6 + c12.getY() * v1 * v4 + v1 * v5) / c12.getY(),(v3 * v6 + v4 * v5) / c12.getY());
   }
-  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   double[] roots=poly.getRoots();
   for (int i=0; i < roots.length; i++) {
     double s=roots[i];
@@ -47,7 +47,7 @@
           if (0 <= xRoot && xRoot <= 1) {
             for (int k=0; k < yRoots.length; k++) {
               if (Math.abs(xRoot - yRoots[k]) < TOLERANCE) {
-                result.put(xRoot,c22.multiply(s * s).add(c21.multiply(s).add(c20)));
+                result.add(new AbstractMap.SimpleEntry<>(xRoot,c22.multiply(s * s).add(c21.multiply(s).add(c20))));
                 break checkRoots;
               }
             }

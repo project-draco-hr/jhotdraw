@@ -1,0 +1,4 @@
+{
+  node.setFill(color);
+  node.setStroke(Color.BLACK);
+}

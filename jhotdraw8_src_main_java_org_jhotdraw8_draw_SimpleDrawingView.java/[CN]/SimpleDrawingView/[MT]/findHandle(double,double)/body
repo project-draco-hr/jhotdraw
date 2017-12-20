@@ -8,11 +8,11 @@
     if (!handle.isSelectable()) {
       continue;
     }
-    if (handle.contains(this,vx,vy,TOLERANCE_SQUARED)) {
+    if (handle.contains(this,vx,vy,getTolerance(),getTolerance() * getTolerance())) {
       return handle;
     }
  else {
-      if (contains(node,new Point2D(vx,vy),TOLERANCE)) {
+      if (contains(node,new Point2D(vx,vy),getTolerance())) {
         return handle;
       }
     }

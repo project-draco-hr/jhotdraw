@@ -1,5 +1,5 @@
 {
   Drawing dr=getDrawing();
-  Figure f=findFigureRecursive((Parent)getNode(dr),viewToWorld(vx,vy),TOLERANCE);
+  Figure f=findFigureRecursive((Parent)getNode(dr),viewToWorld(vx,vy),getViewToWorld().deltaTransform(getTolerance(),getTolerance()).getX());
   return f;
 }

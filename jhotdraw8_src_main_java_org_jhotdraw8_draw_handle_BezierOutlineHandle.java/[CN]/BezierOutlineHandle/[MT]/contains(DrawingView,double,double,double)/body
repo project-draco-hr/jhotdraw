@@ -1,6 +1,3 @@
 {
-  final SimpleBezierFigure o=getOwner();
-  Point2D localp=Transforms.concat(dv.getViewToWorld(),o.getWorldToLocal()).transform(x,y);
-  Intersection isect=Intersections.intersectPathIteratorPointTolerance(o.getPathIterator(null),localp.getX(),localp.getY(),sqrt(tolerance));
-  return !isect.isEmpty();
+  return contains(dv,x,y,sqrt(toleranceSquared),toleranceSquared);
 }

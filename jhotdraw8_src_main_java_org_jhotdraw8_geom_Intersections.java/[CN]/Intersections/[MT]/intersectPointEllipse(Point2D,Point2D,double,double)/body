@@ -1,5 +1,5 @@
 {
-  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   double px=point.getX();
   double py=point.getY();
   double cx=center.getX();
@@ -8,7 +8,7 @@
   Intersection.Status status;
   if (abs(det) - 1 == EPSILON) {
     status=Intersection.Status.INTERSECTION;
-    result.put(0.0,point);
+    result.add(new AbstractMap.SimpleEntry<>(0.0,point));
   }
  else   if (det < 1) {
     status=Intersection.Status.NO_INTERSECTION_INSIDE;

@@ -25,5 +25,5 @@ break;
 pit=pif.getPathIterator(null);
 }
 Intersection i=Intersections.intersectLinePathIterator(s,e,pit);
-return i.isEmpty() ? null : i.getIntersections().lastKey();
+return i.isEmpty() ? null : i.getLastT();
 }

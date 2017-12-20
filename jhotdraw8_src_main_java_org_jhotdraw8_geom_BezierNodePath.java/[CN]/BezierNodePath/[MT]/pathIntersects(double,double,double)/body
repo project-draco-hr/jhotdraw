@@ -1,0 +1,4 @@
+{
+  Intersection isect=Intersections.intersectPathIteratorPoint(getPathIterator(null),x,y,tolerance);
+  return !isect.isEmpty();
+}

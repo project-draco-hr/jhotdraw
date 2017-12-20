@@ -1,0 +1,16 @@
+{
+  double vx=x2 - x1;
+  double vy=y2 - y1;
+  double vxx=vx * vx;
+  double vyy=vy * vy;
+  double vTv=vxx + vyy;
+  double xx=vxx / vTv;
+  double xy=vx * vy / vTv;
+  double yy=vyy / vTv;
+  double yx=xy;
+  double tx=xx * x1 + xy * y1;
+  double ty=yx * x1 + yy * y1;
+  double bx=xx * ax + xy * ay + tx;
+  double by=yx * ax + yy * ay + ty;
+  return new Point2D(bx,by);
+}

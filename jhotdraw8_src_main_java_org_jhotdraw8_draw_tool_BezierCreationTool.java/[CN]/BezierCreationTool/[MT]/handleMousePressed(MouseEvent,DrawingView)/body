@@ -18,6 +18,7 @@
     points.add(new BezierNode(c));
   }
   dm.set(createdFigure,key,ImmutableList.ofCollection(points));
+  rubberBand.setVisible(false);
   dragStartIndex=-1;
   event.consume();
 }

@@ -1,4 +1,4 @@
 DrawingView dv
 double x
 double y
-double tolerance
+double toleranceSquared

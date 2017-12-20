@@ -1,11 +1,11 @@
 {
-  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   int length=points.size();
   for (int i=0; i < length; i++) {
     Point2D b1=points.get(i);
     Point2D b2=points.get((i + 1) % length);
     Intersection inter=Intersections.intersectEllipseLine(c,rx,ry,b1,b2);
-    result.putAll(inter.getIntersections());
+    result.addAll(inter.getIntersections());
   }
   return new Intersection(result);
 }

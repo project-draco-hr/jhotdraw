@@ -1,12 +1,12 @@
 {
-  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   int length=points.size();
   Intersection inter=null;
   for (int i=0; i < length; i++) {
     Point2D a1=points.get(i);
     Point2D a2=points.get((i + 1) % length);
     inter=Intersections.intersectCircleLine(c,r,a1,a2);
-    result.putAll(inter.getIntersections());
+    result.addAll(inter.getIntersections());
   }
   Intersection.Status status;
   if (!result.isEmpty()) {

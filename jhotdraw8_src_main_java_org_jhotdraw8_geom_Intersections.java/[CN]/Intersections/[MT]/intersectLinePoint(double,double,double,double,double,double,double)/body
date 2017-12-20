@@ -1,0 +1,49 @@
+{
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
+  double a=(x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+  double b=2 * ((x2 - x1) * (x1 - cx) + (y2 - y1) * (y1 - cy));
+  double cc=cx * cx + cy * cy + x1 * x1 + y1 * y1 - 2 * (cx * x1 + cy * y1) - r * r;
+  double deter=b * b - 4 * a * cc;
+  Intersection.Status status;
+  if (deter < 0) {
+    status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
+  }
+ else   if (deter == 0) {
+    status=Intersection.Status.NO_INTERSECTION_TANGENT;
+  }
+ else {
+    double e=Math.sqrt(deter);
+    double u1=(-b + e) / (2 * a);
+    double u2=(-b - e) / (2 * a);
+    if ((u1 < 0 || u1 > 1) && (u2 < 0 || u2 > 1)) {
+      if ((u1 < 0 && u2 < 0) || (u1 > 1 && u2 > 1)) {
+        status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
+      }
+ else {
+        status=Intersection.Status.NO_INTERSECTION_INSIDE;
+      }
+    }
+ else {
+      status=Intersection.Status.INTERSECTION;
+      if (0 <= u1 && u1 <= 1) {
+        if (u2 > 1) {
+          result.add(new AbstractMap.SimpleEntry<>(1.0,new Point2D(x1,y1)));
+        }
+ else         if (u2 < 0) {
+          result.add(new AbstractMap.SimpleEntry<>(0.0,new Point2D(x2,y2)));
+        }
+ else {
+          final double u=0.5 * (u1 + u2);
+          result.add(new AbstractMap.SimpleEntry<>(u,lerp(x1,y1,x2,y2,u)));
+        }
+      }
+ else       if (u1 < 0) {
+        result.add(new AbstractMap.SimpleEntry<>(0.0,new Point2D(x1,y1)));
+      }
+ else {
+        result.add(new AbstractMap.SimpleEntry<>(1.0,new Point2D(x2,y2)));
+      }
+    }
+  }
+  return new Intersection(status,result);
+}

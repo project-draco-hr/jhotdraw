@@ -7,11 +7,11 @@
   Intersection inter2=Intersections.intersectLineRectangle(topRight,max,b1,b2);
   Intersection inter3=Intersections.intersectLineRectangle(max,bottomLeft,b1,b2);
   Intersection inter4=Intersections.intersectLineRectangle(bottomLeft,min,b1,b2);
-  NavigableMap<Double,Point2D> result=new TreeMap<>();
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   Intersection.Status status=Intersection.Status.NO_INTERSECTION;
-  result.putAll(inter1.getIntersections());
-  result.putAll(inter2.getIntersections());
-  result.putAll(inter3.getIntersections());
-  result.putAll(inter4.getIntersections());
+  result.addAll(inter1.getIntersections());
+  result.addAll(inter2.getIntersections());
+  result.addAll(inter3.getIntersections());
+  result.addAll(inter4.getIntersections());
   return new Intersection(result);
 }

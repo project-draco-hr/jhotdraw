@@ -1,0 +1,23 @@
+{
+  double[] a={ry1 * ry1,0,rx1 * rx1,-2 * ry1 * ry1* cx1,-2 * rx1 * rx1* cy1,ry1 * ry1 * cx1* cx1 + rx1 * rx1 * cy1* cy1 - rx1 * rx1 * ry1* ry1};
+  double[] b={ry2 * ry2,0,rx2 * rx2,-2 * ry2 * ry2* cx2,-2 * rx2 * rx2* cy2,ry2 * ry2 * cx2* cx2 + rx2 * rx2 * cy2* cy2 - rx2 * rx2 * ry2* ry2};
+  Polynomial yPoly=Intersections.bezout(a,b);
+  double[] yRoots=yPoly.getRoots();
+  double norm0=(a[0] * a[0] + 2 * a[1] * a[1] + a[2] * a[2]) * EPSILON;
+  double norm1=(b[0] * b[0] + 2 * b[1] * b[1] + b[2] * b[2]) * EPSILON;
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
+  for (int y=0; y < yRoots.length; y++) {
+    Polynomial xPoly=new Polynomial(a[0],a[3] + yRoots[y] * a[1],a[5] + yRoots[y] * (a[4] + yRoots[y] * a[2]));
+    double[] xRoots=xPoly.getRoots();
+    for (int x=0; x < xRoots.length; x++) {
+      double test=(a[0] * xRoots[x] + a[1] * yRoots[y] + a[3]) * xRoots[x] + (a[2] * yRoots[y] + a[4]) * yRoots[y] + a[5];
+      if (Math.abs(test) < norm0) {
+        test=(b[0] * xRoots[x] + b[1] * yRoots[y] + b[3]) * xRoots[x] + (b[2] * yRoots[y] + b[4]) * yRoots[y] + b[5];
+        if (Math.abs(test) < norm1) {
+          result.add(new AbstractMap.SimpleEntry<>((double)x,new Point2D(xRoots[x],yRoots[y])));
+        }
+      }
+    }
+  }
+  return new Intersection(result);
+}

@@ -1,0 +1,2 @@
+Status status
+List<Map.Entry<Double,Point2D>> intersections

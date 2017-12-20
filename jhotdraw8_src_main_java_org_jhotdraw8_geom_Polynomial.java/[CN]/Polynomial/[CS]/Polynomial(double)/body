@@ -1,7 +1,3 @@
 {
-  this.coefs=new double[coefs.length];
-  for (int i=0; i < coefs.length; i++) {
-    this.coefs[i]=coefs[coefs.length - i - 1];
-  }
-  this.variable="t";
+  this(true,coefs);
 }

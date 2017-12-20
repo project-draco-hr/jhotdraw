@@ -5,5 +5,5 @@
   }
   double[] newCoefs=new double[popAt];
   System.arraycopy(this.coefs,0,newCoefs,0,popAt);
-  return new Polynomial(newCoefs);
+  return new Polynomial(false,newCoefs);
 }

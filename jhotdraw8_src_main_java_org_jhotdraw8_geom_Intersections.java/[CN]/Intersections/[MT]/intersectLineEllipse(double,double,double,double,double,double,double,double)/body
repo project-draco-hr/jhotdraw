@@ -1,0 +1,50 @@
+{
+  List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
+  Point2D origin=new Point2D(x1,y1);
+  Point2D dir=new Point2D(x2,y2).subtract(x1,y1);
+  Point2D center=new Point2D(cx,cy);
+  Point2D diff=origin.subtract(center);
+  Point2D mDir=new Point2D(dir.getX() / (rx * rx),dir.getY() / (ry * ry));
+  Point2D mDiff=new Point2D(diff.getX() / (rx * rx),diff.getY() / (ry * ry));
+  double a=dir.dotProduct(mDir);
+  double b=dir.dotProduct(mDiff);
+  double c=diff.dotProduct(mDiff) - 1.0;
+  double d=b * b - a * c;
+  Intersection.Status status=Intersection.Status.NO_INTERSECTION;
+  if (d < 0) {
+    status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
+  }
+ else   if (d > 0) {
+    double root=Math.sqrt(d);
+    double t_a=(-b - root) / a;
+    double t_b=(-b + root) / a;
+    if ((t_a < 0 || 1 < t_a) && (t_b < 0 || 1 < t_b)) {
+      if ((t_a < 0 && t_b < 0) || (t_a > 1 && t_b > 1)) {
+        status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
+      }
+ else {
+        status=Intersection.Status.NO_INTERSECTION_INSIDE;
+      }
+    }
+ else {
+      status=Intersection.Status.INTERSECTION;
+      if (0 <= t_a && t_a <= 1) {
+        result.add(new AbstractMap.SimpleEntry<>(t_a,lerp(x1,y1,x2,y2,t_a)));
+      }
+      if (0 <= t_b && t_b <= 1) {
+        result.add(new AbstractMap.SimpleEntry<>(t_b,lerp(x1,y1,x2,y2,t_b)));
+      }
+    }
+  }
+ else {
+    double t=-b / a;
+    if (0 <= t && t <= 1) {
+      status=Intersection.Status.INTERSECTION;
+      result.add(new AbstractMap.SimpleEntry<>(t,lerp(x1,y1,x2,y2,t)));
+    }
+ else {
+      status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
+    }
+  }
+  return new Intersection(status,result);
+}
