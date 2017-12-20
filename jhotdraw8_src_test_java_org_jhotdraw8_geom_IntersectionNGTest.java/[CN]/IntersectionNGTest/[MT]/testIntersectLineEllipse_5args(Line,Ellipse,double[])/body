@@ -1,0 +1,19 @@
+{
+  System.out.println("intersectLineEllipse");
+  Point2D bc=new Point2D(b.getCenterX(),b.getCenterX());
+  double brx=b.getRadiusX();
+  double bry=b.getRadiusY();
+  Point2D a1=new Point2D(a.getStartX(),a.getStartY());
+  Point2D a2=new Point2D(a.getEndX(),a.getEndY());
+  System.out.println("line->ellipse");
+  Intersection isec=Intersections.intersectLineEllipse(a1,a2,bc,brx,bry);
+  System.out.println("  isec: " + isec);
+  double[] actual=new double[isec.size()];
+  for (int i=0; i < actual.length; i++) {
+    actual[i]=isec.getTs().get(i);
+  }
+  Arrays.sort(actual);
+  for (int i=0; i < expected.length; i++) {
+    assertEquals(actual[i],expected[i],1e6,"root #" + i);
+  }
+}

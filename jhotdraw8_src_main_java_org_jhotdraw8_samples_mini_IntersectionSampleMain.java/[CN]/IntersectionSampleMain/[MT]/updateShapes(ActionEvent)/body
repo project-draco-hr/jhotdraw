@@ -1,13 +1,23 @@
 {
-  handles.clear();
-  shapes.clear();
+  int index=(evt.getSource() == choice1) ? 0 : 1;
+  Color color=index == 0 ? Color.GREEN : Color.CYAN;
+  final Map.Entry<Shape,List<Handle>> newEntry=createShapeAndHandles(((ChoiceBox<String>)evt.getSource()).getValue(),color,color);
+  shapes.set(index,newEntry);
   canvas.getChildren().clear();
-  Shape shape;
-  shape=createShapeAndHandles(choice1.getValue(),Color.GREEN,Color.GREEN);
-  shape=createShapeAndHandles(choice2.getValue(),Color.CYAN,Color.CYAN);
-  for (  Handle h : handles) {
-    canvas.getChildren().add(h.node);
+  for (  Map.Entry<Shape,List<Handle>> entry : shapes) {
+    if (entry != null) {
+      canvas.getChildren().add(entry.getKey());
+    }
+  }
+  for (  Map.Entry<Shape,List<Handle>> entry : shapes) {
+    if (entry != null) {
+      List<Handle> handles=entry.getValue();
+      for (      Handle h : handles) {
+        canvas.getChildren().add(h.node);
+      }
+    }
   }
   canvas.getChildren().add(isectPath);
   updateHandles();
+  updateIntersections();
 }

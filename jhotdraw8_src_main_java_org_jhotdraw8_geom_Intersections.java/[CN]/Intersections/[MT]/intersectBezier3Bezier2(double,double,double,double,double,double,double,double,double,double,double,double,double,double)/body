@@ -1,0 +1,4 @@
+{
+  Intersection isect=intersectBezier2Bezier3(new Point2D(bx1,by1),new Point2D(bx2,by2),new Point2D(bx3,by3),new Point2D(ax1,ay1),new Point2D(ax2,ay2),new Point2D(ax3,ay3),new Point2D(ax4,ay4));
+  return isect;
+}

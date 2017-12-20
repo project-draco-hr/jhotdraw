@@ -11,7 +11,7 @@
   double c=diff.dotProduct(mDiff) - 1.0;
   double d=b * b - a * c;
   Intersection.Status status=Intersection.Status.NO_INTERSECTION;
-  if (d < 0) {
+  if (d < -EPSILON) {
     status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
   }
  else   if (d > 0) {

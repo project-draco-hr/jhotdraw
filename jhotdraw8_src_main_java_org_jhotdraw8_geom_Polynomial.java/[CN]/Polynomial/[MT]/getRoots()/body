@@ -1,6 +1,7 @@
 {
   double[] result;
-switch (simplifiedDegree()) {
+  final int simplifiedDegree=simplifiedDegree();
+switch (simplifiedDegree) {
 case 0:
     result=new double[0];
   break;
@@ -17,7 +18,7 @@ case 4:
 result=getQuarticRoots();
 break;
 default :
-result=new double[0];
+throw new UnsupportedOperationException("Degree is too high. simplifiedDegree=" + simplifiedDegree);
 }
 return result;
 }

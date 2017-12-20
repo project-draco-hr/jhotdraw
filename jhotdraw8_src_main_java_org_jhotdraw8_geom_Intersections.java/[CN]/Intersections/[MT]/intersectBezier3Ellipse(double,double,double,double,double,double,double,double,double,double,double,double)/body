@@ -1,0 +1,3 @@
+{
+  return intersectBezier3Ellipse(new Point2D(ax1,ay1),new Point2D(ax2,ay2),new Point2D(ax3,ay3),new Point2D(ax4,ay4),new Point2D(cx,cy),rx,ry);
+}

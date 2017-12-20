@@ -1,0 +1,3 @@
+{
+  return new Object[][]{{new Line(10,40,200,40),new Ellipse(100,100,60,60),new double[]{0.47368421052631576}},{new Line(10,40,200,40),new Ellipse(100,100,50,60),new double[]{0.47368421052631576}}};
+}
