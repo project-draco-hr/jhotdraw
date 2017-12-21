@@ -1,5 +1,5 @@
 {
-  double[] results=new double[0];
+  double[] results;
   double c3=this.coefs[3];
   double c2=this.coefs[2] / c3;
   double c1=this.coefs[1] / c3;

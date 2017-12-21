@@ -1,0 +1,3 @@
+{
+  return intersectCircleRectangle(new Point2D(c1x,c1y),r1,new Point2D(x,y),new Point2D(x + w,y + h));
+}

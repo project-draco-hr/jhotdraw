@@ -57,6 +57,9 @@
       }
     }
   }
+  if (numResults == results.length) {
+    return results;
+  }
   double[] finalResults=new double[numResults];
   System.arraycopy(results,0,finalResults,0,numResults);
   return finalResults;
