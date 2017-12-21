@@ -1,0 +1,3 @@
+{
+  return intersectEllipseEllipse(cx1,cy1,rx1,ry1,cx2,cy2,r2,r2);
+}

@@ -1,5 +1,2 @@
 {
-  double a=x1 - x2;
-  double b=x2 - y2;
-  return a * a + b * b;
 }

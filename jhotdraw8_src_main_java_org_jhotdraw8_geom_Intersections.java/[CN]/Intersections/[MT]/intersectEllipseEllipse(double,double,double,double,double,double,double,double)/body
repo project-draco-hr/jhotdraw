@@ -14,7 +14,7 @@
       if (Math.abs(test) < norm0) {
         test=(b[0] * xRoots[x] + b[1] * yRoots[y] + b[3]) * xRoots[x] + (b[2] * yRoots[y] + b[4]) * yRoots[y] + b[5];
         if (Math.abs(test) < norm1) {
-          result.add(new AbstractMap.SimpleEntry<>((double)x,new Point2D(xRoots[x],yRoots[y])));
+          result.add(new AbstractMap.SimpleEntry<>(Double.NaN,new Point2D(xRoots[x],yRoots[y])));
         }
       }
     }

@@ -1,0 +1,3 @@
+{
+  return intersectRectangleRectangle(new Point2D(ax,ay),new Point2D(ax + aw,ay + ah),new Point2D(bx,by),new Point2D(bx + bw,by + bh));
+}

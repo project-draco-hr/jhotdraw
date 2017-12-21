@@ -1,39 +1,43 @@
 {
   double[] roots=new double[0];
-  if (this.getDegree() == 0) {
+switch (this.simplifiedDegree()) {
+case 0:
     return new double[0];
+case 1:
+{
+    Double root=this.bisection(min,max);
+    if (root != null) {
+      roots=new double[]{root};
+    }
+    return roots;
   }
- else   if (this.getDegree() == 1) {
+default :
+{
+  Polynomial deriv=this.getDerivative();
+  double[] droots=deriv.getRootsInInterval(min,max);
+  if (droots.length > 0) {
+    Double root=this.bisection(min,droots[0]);
+    if (root != null) {
+      roots=new double[]{root};
+    }
+    for (int i=0; i <= droots.length - 2; i++) {
+      root=this.bisection(droots[i],droots[i + 1]);
+      if (root != null) {
+        roots=push(roots,root);
+      }
+    }
+    root=this.bisection(droots[droots.length - 1],max);
+    if (root != null) {
+      roots=push(roots,root);
+    }
+  }
+ else {
     Double root=this.bisection(min,max);
     if (root != null) {
       roots=new double[]{root};
     }
   }
- else {
-    Polynomial deriv=this.getDerivative();
-    double[] droots=deriv.getRootsInInterval(min,max);
-    if (droots.length > 0) {
-      Double root=this.bisection(min,droots[0]);
-      if (root != null) {
-        roots=new double[]{root};
-      }
-      for (int i=0; i <= droots.length - 2; i++) {
-        root=this.bisection(droots[i],droots[i + 1]);
-        if (root != null) {
-          roots=push(roots,root);
-        }
-      }
-      root=this.bisection(droots[droots.length - 1],max);
-      if (root != null) {
-        roots=push(roots,root);
-      }
-    }
- else {
-      Double root=this.bisection(min,max);
-      if (root != null) {
-        roots=new double[]{root};
-      }
-    }
-  }
-  return roots;
+}
+}
+return roots;
 }

@@ -1,0 +1,30 @@
+{
+  if (shape.getClass() == Circle.class) {
+    Circle l0=(Circle)shape;
+    System.out.println("circle" + name + ":"+ l0.getCenterX()+ " "+ l0.getCenterY()+ " "+ l0.getRadius());
+  }
+ else   if (shape.getClass() == CubicCurve.class) {
+    CubicCurve l0=(CubicCurve)shape;
+    System.out.println("cubiccurve" + name + ":"+ l0.getStartX()+ " "+ l0.getStartY()+ " "+ l0.getControlX1()+ " "+ l0.getControlY1()+ " "+ l0.getControlX2()+ " "+ l0.getControlY2()+ " "+ l0.getEndX()+ " "+ l0.getEndY());
+  }
+ else   if (shape.getClass() == Ellipse.class) {
+    Ellipse l0=(Ellipse)shape;
+    System.out.println("ellipse" + name + ":"+ l0.getCenterX()+ " "+ l0.getCenterY()+ " "+ l0.getRadiusX()+ " "+ l0.getRadiusY());
+  }
+ else   if (shape.getClass() == Line.class) {
+    Line l0=(Line)shape;
+    System.out.println("line" + name + ":"+ l0.getStartX()+ " "+ l0.getStartY()+ " "+ l0.getEndX()+ " "+ l0.getEndY());
+  }
+ else   if (shape.getClass() == Point.class) {
+    Point l0=(Point)shape;
+    System.out.println("point" + name + ":"+ l0.getCenterX()+ " "+ l0.getCenterY()+ " "+ l0.getRadius());
+  }
+ else   if (shape.getClass() == Rectangle.class) {
+    Rectangle l0=(Rectangle)shape;
+    System.out.println("rectangle" + name + ":"+ l0.getX()+ " "+ l0.getY()+ " "+ l0.getWidth()+ " "+ l0.getHeight());
+  }
+ else   if (shape.getClass() == QuadCurve.class) {
+    QuadCurve l0=(QuadCurve)shape;
+    System.out.println("quadcurve" + name + ":"+ l0.getStartX()+ " "+ l0.getStartY()+ " "+ l0.getControlX()+ " "+ l0.getControlY()+ " "+ l0.getEndX()+ " "+ l0.getEndY());
+  }
+}

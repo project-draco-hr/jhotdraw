@@ -1,0 +1,3 @@
+{
+  return intersectCircleLine(new Point2D(cx,cy),r,new Point2D(a0x,a0y),new Point2D(a1x,a1y));
+}
