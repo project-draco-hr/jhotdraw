@@ -1,0 +1,3 @@
+{
+  majorGridColorProperty.setValue(newValue);
+}
