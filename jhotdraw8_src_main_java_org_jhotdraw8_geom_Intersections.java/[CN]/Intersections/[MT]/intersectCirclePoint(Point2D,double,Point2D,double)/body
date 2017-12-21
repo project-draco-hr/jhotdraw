@@ -1,19 +1,20 @@
 {
   List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
-  double r_max=r1 + r2;
-  double r_min=Math.abs(r1 - r2);
-  double c_dist=c1.distance(c2);
+  double r_max=cr + pr;
+  double r_min=Math.abs(cr - pr);
+  double c_dist=cc.distance(pc);
   Intersection.Status status;
-  if (c_dist > r_max) {
-    status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
-  }
- else   if (c_dist < r_min) {
+  if (abs(c_dist) < EPSILON) {
     status=Intersection.Status.NO_INTERSECTION_INSIDE;
   }
  else {
-    status=Intersection.Status.INTERSECTION;
-    Point2D p=lerp(c1,c2,r1 / c_dist);
-    result.add(new AbstractMap.SimpleEntry<>(Double.NaN,p));
+    Point2D p=lerp(cc,pc,cr / c_dist);
+    final double dd=Geom.squaredDistance(p,pc);
+    if (dd <= pr * pr) {
+      status=Intersection.Status.INTERSECTION;
+      result.add(new AbstractMap.SimpleEntry<>(Double.NaN,p));
+    }
+ else     status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
   }
   return new Intersection(status,result);
 }
