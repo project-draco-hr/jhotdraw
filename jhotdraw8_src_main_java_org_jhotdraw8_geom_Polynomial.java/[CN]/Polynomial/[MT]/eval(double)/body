@@ -1,7 +1,4 @@
 {
-  if (Double.isNaN(x)) {
-    throw new IllegalArgumentException("parameter must be a number, x=" + x);
-  }
   double result=0;
   for (int i=this.coefs.length - 1; i >= 0; i--) {
     result=result * x + this.coefs[i];
