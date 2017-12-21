@@ -1,4 +1,4 @@
 {
-  Intersection result=intersectLineEllipse(a1,a2,ec,rx,ry);
+  Intersection result=intersectLineEllipse(a0,a1,ec,rx,ry);
   return result;
 }

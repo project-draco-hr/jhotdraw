@@ -1,44 +1,42 @@
 {
-  Point2D a, b;
-  Point2D c2, c1, c0;
-  double cl;
-  Point2D n;
-  Point2D min=minp(ax,ay,bx,by);
-  Point2D max=maxp(ax,ay,bx,by);
+  Point2D topLeft=topLeft(a0x,a0y,a1x,a1y);
+  Point2D bottomRight=bottomRight(a0x,a0y,a1x,a1y);
   List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
-  final Point2D p1=new Point2D(p1x,p1y);
-  final Point2D p2=new Point2D(p2x,p2y);
-  a=p2.multiply(-2);
-  c2=p1.add(a.add(p3x,p3y));
-  a=p1.multiply(-2);
-  b=p2.multiply(2);
-  c1=a.add(b);
-  c0=new Point2D(p1x,p1y);
-  n=new Point2D(ay - by,bx - ax);
-  cl=ax * by - bx * ay;
+  final Point2D p0, p1;
+  p0=new Point2D(p0x,p0y);
+  p1=new Point2D(p1x,p1y);
+  final Point2D c2, c1, c0;
+  c2=p0.add(p1.multiply(-2).add(p2x,p2y));
+  c1=p0.multiply(-2).add(p1.multiply(2));
+  c0=p0;
+  final Point2D n;
+  n=new Point2D(a0y - a1y,a1x - a0x);
+  final double cl;
+  cl=a0x * a1y - a1x * a0y;
   double[] roots=new Polynomial(n.dotProduct(c2),n.dotProduct(c1),n.dotProduct(c0) + cl).getRoots();
   Intersection.Status status=Intersection.Status.NO_INTERSECTION;
   for (int i=0; i < roots.length; i++) {
     double t=roots[i];
     if (0 <= t && t <= 1) {
-      Point2D p4=lerp(p1,p2,t);
-      Point2D p5=lerp(p2x,p2y,p3x,p3y,t);
-      Point2D p6=lerp(p4,p5,t);
-      if (ax == bx) {
-        if (min.getY() <= p6.getY() && p6.getY() <= max.getY()) {
+      final Point2D p4, p5, p6;
+      p4=lerp(p0,p1,t);
+      p5=lerp(p1x,p1y,p2x,p2y,t);
+      p6=lerp(p4,p5,t);
+      if (a0x == a1x) {
+        if (topLeft.getY() <= p6.getY() && p6.getY() <= bottomRight.getY()) {
           status=Intersection.Status.INTERSECTION;
-          result.add(new AbstractMap.SimpleEntry<>(pointOnLine(p6.getX(),p6.getY(),ax,ay,bx,by),p6));
+          result.add(new AbstractMap.SimpleEntry<>(pointOnLine(p6.getX(),p6.getY(),a0x,a0y,a1x,a1y),p6));
         }
       }
- else       if (ay == by) {
-        if (min.getX() <= p6.getX() && p6.getX() <= max.getX()) {
+ else       if (a0y == a1y) {
+        if (topLeft.getX() <= p6.getX() && p6.getX() <= bottomRight.getX()) {
           status=Intersection.Status.INTERSECTION;
-          result.add(new AbstractMap.SimpleEntry<>(pointOnLine(p6.getX(),p6.getY(),ax,ay,bx,by),p6));
+          result.add(new AbstractMap.SimpleEntry<>(pointOnLine(p6.getX(),p6.getY(),a0x,a0y,a1x,a1y),p6));
         }
       }
- else       if (gte(p6,min) && lte(p6,max)) {
+ else       if (gte(p6,topLeft) && lte(p6,bottomRight)) {
         status=Intersection.Status.INTERSECTION;
-        result.add(new AbstractMap.SimpleEntry<>(pointOnLine(p6.getX(),p6.getY(),ax,ay,bx,by),p6));
+        result.add(new AbstractMap.SimpleEntry<>(pointOnLine(p6.getX(),p6.getY(),a0x,a0y,a1x,a1y),p6));
       }
     }
   }

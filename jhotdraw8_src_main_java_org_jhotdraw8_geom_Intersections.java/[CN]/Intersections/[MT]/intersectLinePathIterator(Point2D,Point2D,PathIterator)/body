@@ -1,10 +1,11 @@
 {
   List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   Intersection.Status status=Intersection.Status.NO_INTERSECTION;
-  final double ax=a.getX();
-  final double ay=a.getY();
-  final double bx=b.getX();
-  final double by=b.getY();
+  final double a0x, a0y, a1x, a1y;
+  a0x=a0.getX();
+  a0y=a0.getY();
+  a1x=a1.getX();
+  a1y=a1.getY();
   final double[] seg=new double[6];
   double firstx=0, firsty=0;
   double lastx=0, lasty=0;
@@ -13,13 +14,13 @@
     Intersection inter;
 switch (pit.currentSegment(seg)) {
 case PathIterator.SEG_CLOSE:
-      inter=Intersections.intersectLineLine(ax,ay,bx,by,lastx,lasty,firstx,firsty);
+      inter=Intersections.intersectLineLine(a0x,a0y,a1x,a1y,lastx,lasty,firstx,firsty);
     result.addAll(inter.getIntersections());
   break;
 case PathIterator.SEG_CUBICTO:
 x=seg[4];
 y=seg[5];
-inter=Intersections.intersectLineBezier3(ax,ay,bx,by,lastx,lasty,seg[0],seg[1],seg[2],seg[3],x,y);
+inter=Intersections.intersectLineBezier3(a0x,a0y,a1x,a1y,lastx,lasty,seg[0],seg[1],seg[2],seg[3],x,y);
 result.addAll(inter.getIntersections());
 lastx=x;
 lasty=y;
@@ -27,7 +28,7 @@ break;
 case PathIterator.SEG_LINETO:
 x=seg[0];
 y=seg[1];
-inter=Intersections.intersectLineLine(ax,ay,bx,by,lastx,lasty,x,y);
+inter=Intersections.intersectLineLine(a0x,a0y,a1x,a1y,lastx,lasty,x,y);
 result.addAll(inter.getIntersections());
 lastx=x;
 lasty=y;
@@ -39,7 +40,7 @@ break;
 case PathIterator.SEG_QUADTO:
 x=seg[2];
 y=seg[3];
-inter=Intersections.intersectLineBezier2(ax,ay,bx,by,lastx,lasty,seg[0],seg[1],x,y);
+inter=Intersections.intersectLineBezier2(a0x,a0y,a1x,a1y,lastx,lasty,seg[0],seg[1],x,y);
 result.addAll(inter.getIntersections());
 lastx=x;
 lasty=y;

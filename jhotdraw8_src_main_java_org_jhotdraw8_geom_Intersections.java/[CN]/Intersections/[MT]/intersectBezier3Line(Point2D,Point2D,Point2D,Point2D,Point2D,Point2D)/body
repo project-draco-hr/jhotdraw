@@ -1,52 +1,46 @@
 {
-  Point2D a, b, c, d;
-  Point2D c3, c2, c1, c0;
-  double cl;
-  Point2D n;
-  final Point2D min=minp(a1,a2);
-  final Point2D max=maxp(a1,a2);
+  final Point2D topLeft=topLeft(a0,a1);
+  final Point2D bottomRight=bottomRight(a0,a1);
   List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
-  a=p1.multiply(-1);
-  b=p2.multiply(3);
-  c=p3.multiply(-3);
-  d=a.add(b.add(c.add(p4)));
-  c3=new Point2D(d.getX(),d.getY());
-  a=p1.multiply(3);
-  b=p2.multiply(-6);
-  c=p3.multiply(3);
-  d=a.add(b.add(c));
-  c2=new Point2D(d.getX(),d.getY());
-  a=p1.multiply(-3);
-  b=p2.multiply(3);
-  c=a.add(b);
-  c1=new Point2D(c.getX(),c.getY());
-  c0=new Point2D(p1.getX(),p1.getY());
-  n=new Point2D(a1.getY() - a2.getY(),a2.getX() - a1.getX());
-  cl=a1.getX() * a2.getY() - a2.getX() * a1.getY();
+  final Point2D c3, c2, c1, c0;
+  c3=p0.multiply(-1).add(p1.multiply(3).add(p2.multiply(-3).add(p3)));
+  c2=p0.multiply(3).add(p1.multiply(-6).add(p2.multiply(3)));
+  c1=p0.multiply(-3).add(p1.multiply(3));
+  c0=p0;
+  final double a0x, a0y, a1x, a1y;
+  a0y=a0.getY();
+  a1y=a1.getY();
+  a1x=a1.getX();
+  a0x=a0.getX();
+  final Point2D n;
+  n=new Point2D(a0y - a1y,a1x - a0x);
+  final double cl;
+  cl=a0x * a1y - a1x * a0y;
   double[] roots=new Polynomial(n.dotProduct(c3),n.dotProduct(c2),n.dotProduct(c1),n.dotProduct(c0) + cl).getRoots();
   Intersection.Status status=Intersection.Status.NO_INTERSECTION;
   for (int i=0; i < roots.length; i++) {
-    double t=roots[i];
+    final double t=roots[i];
     if (0 <= t && t <= 1) {
-      Point2D p5=lerp(p1,p2,t);
-      Point2D p6=lerp(p2,p3,t);
-      Point2D p7=lerp(p3,p4,t);
-      Point2D p8=lerp(p5,p6,t);
-      Point2D p9=lerp(p6,p7,t);
-      Point2D p10=lerp(p8,p9,t);
-      if (a1.getX() == a2.getX()) {
-        if (min.getY() <= p10.getY() && p10.getY() <= max.getY()) {
+      final Point2D p5, p6, p7, p8, p9, p10;
+      p5=lerp(p0,p1,t);
+      p6=lerp(p1,p2,t);
+      p7=lerp(p2,p3,t);
+      p8=lerp(p5,p6,t);
+      p9=lerp(p6,p7,t);
+      p10=lerp(p8,p9,t);
+      if (a0x == a1x) {
+        if (topLeft.getY() <= p10.getY() && p10.getY() <= bottomRight.getY()) {
           status=Intersection.Status.INTERSECTION;
           result.add(new AbstractMap.SimpleEntry<>(t,p10));
         }
       }
- else       if (a1.getY() == a2.getY()) {
-        if (min.getX() <= p10.getX() && p10.getX() <= max.getX()) {
+ else       if (a0y == a1y) {
+        if (topLeft.getX() <= p10.getX() && p10.getX() <= bottomRight.getX()) {
           status=Intersection.Status.INTERSECTION;
           result.add(new AbstractMap.SimpleEntry<>(t,p10));
         }
       }
- else       if (gte(p10,min) && lte(p10,max)) {
+ else       if (gte(p10,topLeft) && lte(p10,bottomRight)) {
         status=Intersection.Status.INTERSECTION;
         result.add(new AbstractMap.SimpleEntry<>(t,p10));
       }

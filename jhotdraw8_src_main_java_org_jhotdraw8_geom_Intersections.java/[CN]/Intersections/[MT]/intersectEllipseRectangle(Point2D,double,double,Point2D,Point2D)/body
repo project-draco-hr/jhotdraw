@@ -1,12 +1,14 @@
 {
-  Point2D min=minp(r1,r2);
-  Point2D max=maxp(r1,r2);
-  Point2D topRight=new Point2D(max.getX(),min.getY());
-  Point2D bottomLeft=new Point2D(min.getX(),max.getY());
-  Intersection inter1=Intersections.intersectEllipseLine(c,rx,ry,min,topRight);
-  Intersection inter2=Intersections.intersectEllipseLine(c,rx,ry,topRight,max);
-  Intersection inter3=Intersections.intersectEllipseLine(c,rx,ry,max,bottomLeft);
-  Intersection inter4=Intersections.intersectEllipseLine(c,rx,ry,bottomLeft,min);
+  final Point2D topLeft, bottomRight, topRight, bottomLeft;
+  topLeft=topLeft(r1,r2);
+  bottomRight=bottomRight(r1,r2);
+  topRight=new Point2D(bottomRight.getX(),topLeft.getY());
+  bottomLeft=new Point2D(topLeft.getX(),bottomRight.getY());
+  final Intersection inter1, inter2, inter3, inter4;
+  inter1=Intersections.intersectEllipseLine(c,rx,ry,topLeft,topRight);
+  inter2=Intersections.intersectEllipseLine(c,rx,ry,topRight,bottomRight);
+  inter3=Intersections.intersectEllipseLine(c,rx,ry,bottomRight,bottomLeft);
+  inter4=Intersections.intersectEllipseLine(c,rx,ry,bottomLeft,topLeft);
   List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   result.addAll(inter1.getIntersections());
   result.addAll(inter2.getIntersections());

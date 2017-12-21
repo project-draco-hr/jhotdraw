@@ -1,12 +1,14 @@
 {
-  Point2D min=minp(r1,r2);
-  Point2D max=maxp(r1,r2);
-  Point2D topRight=new Point2D(max.getX(),min.getY());
-  Point2D bottomLeft=new Point2D(min.getX(),max.getY());
-  Intersection inter1=Intersections.intersectLinePolygon(min,topRight,points);
-  Intersection inter2=Intersections.intersectLinePolygon(topRight,max,points);
-  Intersection inter3=Intersections.intersectLinePolygon(max,bottomLeft,points);
-  Intersection inter4=Intersections.intersectLinePolygon(bottomLeft,min,points);
+  final Point2D topLeft, bottomRight, topRight, bottomLeft;
+  topLeft=topLeft(r0,r1);
+  bottomRight=bottomRight(r0,r1);
+  topRight=new Point2D(bottomRight.getX(),topLeft.getY());
+  bottomLeft=new Point2D(topLeft.getX(),bottomRight.getY());
+  final Intersection inter1, inter2, inter3, inter4;
+  inter1=Intersections.intersectLinePolygon(topLeft,topRight,points);
+  inter2=Intersections.intersectLinePolygon(topRight,bottomRight,points);
+  inter3=Intersections.intersectLinePolygon(bottomRight,bottomLeft,points);
+  inter4=Intersections.intersectLinePolygon(bottomLeft,topLeft,points);
   List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   Intersection.Status status=Intersection.Status.NO_INTERSECTION;
   result.addAll(inter1.getIntersections());

@@ -1,12 +1,50 @@
 {
-  Intersection isect=Intersections.intersectBezier3Ellipse(new Point2D(x1,y1),new Point2D(x2,y2),new Point2D(x3,y3),new Point2D(x4,y4),new Point2D(px,py),tolerance,tolerance);
-  if (isect.isEmpty()) {
-    if (isect.getStatus() == Intersection.Status.NO_INTERSECTION_INSIDE && tolerance > EPSILON * 2) {
-      return intersectBezier2Point(x1,y1,x2,y2,x3,y3,px,py,tolerance / 2);
+  final double c2x, c2y, c1x, c1y, c0x, c0y;
+  c2x=x0 - 2 * x1 + x2;
+  c2y=y0 - 2 * y1 + y2;
+  c1x=-2 * (x0 - x1);
+  c1y=-2 * (y0 - y1);
+  c0x=x0;
+  c0y=y0;
+  final double a, b, c, d;
+  a=(c2x * c2x + c2y * c2y);
+  b=2 * (c1x * c2x + c1y * c2y);
+  c=(c1x * c1x + c1y * c1y + 2 * c0x * c2x + 2 * c0y * c2y - 2 * c2x * cx - 2 * c2y * cy);
+  d=2 * (c0x * c1x + c0y * c1y - c1x * cx - c1y * cy);
+  final double[] roots=new Polynomial(4 * a,3 * b,2 * c,d).getRoots();
+  final List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
+  final Point2D p0, p1, p2;
+  p0=new Point2D(x0,y0);
+  p1=new Point2D(x1,y1);
+  p2=new Point2D(x2,y2);
+  final double rr=r * r;
+  double bestDistance=Double.POSITIVE_INFINITY;
+  for (  double t : roots) {
+    final Point2D p;
+    double tt;
+    if (t < 0) {
+      tt=0;
+      p=p0;
+    }
+ else     if (t > 1) {
+      tt=1;
+      p=p2;
     }
  else {
-      return new Intersection(Status.NO_INTERSECTION);
+      tt=t;
+      p=p0.multiply((1 - t) * (1 - t)).add(p1.multiply(2 * (1 - t) * t)).add(p2.multiply(t * t));
+    }
+    double squaredDistance=(p.getX() - cx) * (p.getX() - cx) + (p.getY() - cy) * (p.getY() - cy);
+    if (squaredDistance < rr) {
+      if (squaredDistance < bestDistance) {
+        bestDistance=squaredDistance;
+        result.clear();
+        result.add(new AbstractMap.SimpleEntry<>(tt,p));
+      }
+ else       if (squaredDistance == bestDistance) {
+        result.add(new AbstractMap.SimpleEntry<>(tt,p));
+      }
     }
   }
-  return isect;
+  return new Intersection(result);
 }

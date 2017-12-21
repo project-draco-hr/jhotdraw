@@ -1,12 +1,14 @@
 {
-  Point2D min=minp(r1,r2);
-  Point2D max=maxp(r1,r2);
-  Point2D topRight=new Point2D(max.getX(),min.getY());
-  Point2D bottomLeft=new Point2D(min.getX(),max.getY());
-  Intersection inter1=Intersections.intersectCircleLine(c,r,min,topRight);
-  Intersection inter2=Intersections.intersectCircleLine(c,r,topRight,max);
-  Intersection inter3=Intersections.intersectCircleLine(c,r,max,bottomLeft);
-  Intersection inter4=Intersections.intersectCircleLine(c,r,bottomLeft,min);
+  final Point2D topLeft, bottomRight, topRight, bottomLeft;
+  topLeft=topLeft(r0,r1);
+  bottomRight=bottomRight(r0,r1);
+  topRight=new Point2D(bottomRight.getX(),topLeft.getY());
+  bottomLeft=new Point2D(topLeft.getX(),bottomRight.getY());
+  final Intersection inter1, inter2, inter3, inter4;
+  inter1=Intersections.intersectCircleLine(c,r,topLeft,topRight);
+  inter2=Intersections.intersectCircleLine(c,r,topRight,bottomRight);
+  inter3=Intersections.intersectCircleLine(c,r,bottomRight,bottomLeft);
+  inter4=Intersections.intersectCircleLine(c,r,bottomLeft,topLeft);
   List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   result.addAll(inter1.getIntersections());
   result.addAll(inter2.getIntersections());

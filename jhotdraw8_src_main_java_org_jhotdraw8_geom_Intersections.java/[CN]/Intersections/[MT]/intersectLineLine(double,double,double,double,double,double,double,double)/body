@@ -1,15 +1,15 @@
 {
   List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   Intersection.Status status=Intersection.Status.NO_INTERSECTION;
-  double ua_t=(b2x - b1x) * (a1y - b1y) - (b2y - b1y) * (a1x - b1x);
-  double ub_t=(a2x - a1x) * (a1y - b1y) - (a2y - a1y) * (a1x - b1x);
-  double u_b=(b2y - b1y) * (a2x - a1x) - (b2x - b1x) * (a2y - a1y);
+  double ua_t=(b1x - b0x) * (a0y - b0y) - (b1y - b0y) * (a0x - b0x);
+  double ub_t=(a1x - a0x) * (a0y - b0y) - (a1y - a0y) * (a0x - b0x);
+  double u_b=(b1y - b0y) * (a1x - a0x) - (b1x - b0x) * (a1y - a0y);
   if (u_b != 0) {
     double ua=ua_t / u_b;
     double ub=ub_t / u_b;
     if (0 <= ua && ua <= 1 && 0 <= ub && ub <= 1) {
       status=Intersection.Status.INTERSECTION;
-      result.add(new AbstractMap.SimpleEntry<>(ua,new Point2D(a1x + ua * (a2x - a1x),a1y + ua * (a2y - a1y))));
+      result.add(new AbstractMap.SimpleEntry<>(ua,new Point2D(a0x + ua * (a1x - a0x),a0y + ua * (a1y - a0y))));
     }
  else {
       status=Intersection.Status.NO_INTERSECTION;

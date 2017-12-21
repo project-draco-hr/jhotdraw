@@ -1,12 +1,14 @@
 {
-  Point2D min=new Point2D(rminx,rminy);
-  Point2D max=new Point2D(rmaxx,rmaxy);
-  Point2D topRight=new Point2D(rmaxx,rminy);
-  Point2D bottomLeft=new Point2D(rminx,rmaxy);
-  Intersection inter1=Intersections.intersectLineLine(a1,a2,min,topRight);
-  Intersection inter2=Intersections.intersectLineLine(a1,a2,topRight,max);
-  Intersection inter3=Intersections.intersectLineLine(a1,a2,max,bottomLeft);
-  Intersection inter4=Intersections.intersectLineLine(a1,a2,bottomLeft,min);
+  final Point2D topLeft, bottomRight, topRight, bottomLeft;
+  topLeft=new Point2D(rminx,rminy);
+  bottomRight=new Point2D(rmaxx,rmaxy);
+  topRight=new Point2D(rmaxx,rminy);
+  bottomLeft=new Point2D(rminx,rmaxy);
+  final Intersection inter1, inter2, inter3, inter4;
+  inter1=Intersections.intersectLineLine(a0,a1,topLeft,topRight);
+  inter2=Intersections.intersectLineLine(a0,a1,topRight,bottomRight);
+  inter3=Intersections.intersectLineLine(a0,a1,bottomRight,bottomLeft);
+  inter4=Intersections.intersectLineLine(a0,a1,bottomLeft,topLeft);
   List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   Intersection.Status status=Intersection.Status.NO_INTERSECTION;
   result.addAll(inter1.getIntersections());

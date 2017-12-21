@@ -1,0 +1,3 @@
+{
+  return intersectCircleCircle(new Point2D(c1x,c1y),r1,new Point2D(c2x,c2y),r2);
+}

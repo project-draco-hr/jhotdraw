@@ -1,4 +1,4 @@
 {
-  Intersection inter=intersectLineCircle(a1,a2,c,r);
+  Intersection inter=intersectLineCircle(a0,a1,c,r);
   return inter;
 }

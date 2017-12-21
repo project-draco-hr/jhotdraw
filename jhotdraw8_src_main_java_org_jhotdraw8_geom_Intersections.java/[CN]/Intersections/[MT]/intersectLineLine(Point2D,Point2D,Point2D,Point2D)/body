@@ -1,11 +1,12 @@
 {
-  final double b2x=b2.getX();
-  final double b1x=b1.getX();
-  final double a1y=a1.getY();
-  final double b1y=b1.getY();
-  final double b2y=b2.getY();
-  final double a1x=a1.getX();
-  final double a2y=a2.getY();
-  final double a2x=a2.getX();
-  return intersectLineLine(a1x,a1y,a2x,a2y,b1x,b1y,b2x,b2y);
+  final double a0x, a0y, a1x, a1y, b0x, b0y, b1x, b1y;
+  a0x=a0.getX();
+  a0y=a0.getY();
+  a1x=a1.getX();
+  a1y=a1.getY();
+  b0x=b0.getX();
+  b0y=b0.getY();
+  b1x=b1.getX();
+  b1y=b1.getY();
+  return intersectLineLine(a0x,a0y,a1x,a1y,b0x,b0y,b1x,b1y);
 }
