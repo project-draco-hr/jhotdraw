@@ -36,12 +36,12 @@
     }
     double dist_2=(p.getX() - cx) * (p.getX() - cx) + (p.getY() - cy) * (p.getY() - cy);
     if (dist_2 < r_2) {
-      if (dist_2 < bestDistance) {
-        bestDistance=dist_2;
-        result.clear();
+      if (abs(dist_2 - bestDistance) < EPSILON) {
         result.add(new AbstractMap.SimpleEntry<>(tt,p));
       }
- else       if (dist_2 == bestDistance) {
+ else       if (dist_2 < bestDistance) {
+        bestDistance=dist_2;
+        result.clear();
         result.add(new AbstractMap.SimpleEntry<>(tt,p));
       }
     }

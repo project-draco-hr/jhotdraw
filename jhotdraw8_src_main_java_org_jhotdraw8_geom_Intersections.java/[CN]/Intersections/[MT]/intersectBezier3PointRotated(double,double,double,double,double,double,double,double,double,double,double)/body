@@ -1,32 +1,39 @@
 {
-  final double c3x, c3y, c2x, c2y, c1x, c1y, c0x, c0y;
-  c3x=-(x0 - 3 * x1 + 3 * x2 - x3);
-  c3y=-(y0 - 3 * y1 + 3 * y2 - y3);
-  c2x=3 * (x0 - 2 * x1 + x2);
-  c2y=3 * (y0 - 2 * y1 + y2);
-  c1x=-3 * (x0 - x1);
-  c1y=-3 * (y0 - y1);
-  c0x=x0;
-  c0y=y0;
+  Point2D[] points=translateRotate(ax0,ay0,ax3,ay3,ax1,ay1,ax2,ay2,ax3,ay3,acx,acy);
+  final double x1, y1, x2, y2, x3, y3, cx, cy;
+  x1=points[0].getX();
+  y1=points[0].getY();
+  x2=points[1].getX();
+  y2=points[1].getY();
+  x3=points[2].getX();
+  cx=points[3].getX();
+  cy=points[3].getY();
+  final double c3x, c3y, c2x, c2y, c1x, c1y;
+  c3x=-(-3 * x1 + 3 * x2 - x3);
+  c3y=-(-3 * y1 + 3 * y2);
+  c2x=3 * (-2 * x1 + x2);
+  c2y=3 * (-2 * y1 + y2);
+  c1x=-3 * (-x1);
+  c1y=-3 * (-y1);
   final double a, b, c, d, e, f;
   a=(c3x * c3x + c3y * c3y);
   b=2 * (c2x * c3x + c2y * c3y);
   c=(c2x * c2x + c2y * c2y + 2 * c1x * c3x + 2 * c1y * c3y);
-  d=2 * (c1x * c2x + c1y * c2y + c0x * c3x + c0y * c3y - c3x * cx - c3y * cy);
-  e=(c1x * c1x + c1y * c1y + 2 * c0x * c2x + 2 * c0y * c2y - 2 * c2x * cx - 2 * c2y * cy);
-  f=2 * (c0x * c1x + c0y * c1y - c1x * cx - c1y * cy);
+  d=2 * (c1x * c2x + c1y * c2y - c3x * cx - c3y * cy);
+  e=(c1x * c1x + c1y * c1y - 2 * c2x * cx - 2 * c2y * cy);
+  f=2 * (-c1x * cx - c1y * cy);
   final double[] roots=new Polynomial(6 * a,5 * b,4 * c,3 * d,2 * e,f).getRootsInInterval(0,1);
   final List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   final Point2D p0, p1, p2, p3;
-  p0=new Point2D(x0,y0);
-  p1=new Point2D(x1,y1);
-  p2=new Point2D(x2,y2);
-  p3=new Point2D(x3,y3);
+  p0=new Point2D(ax0,ay0);
+  p1=new Point2D(ax1,ay1);
+  p2=new Point2D(ax2,ay2);
+  p3=new Point2D(ax3,ay3);
   final double rr=r * r;
   double bestDistance=Double.POSITIVE_INFINITY;
   for (  double t : roots) {
     final Point2D p=p0.multiply((1 - t) * (1 - t) * (1 - t)).add(p1.multiply(3 * (1 - t) * (1 - t)* t)).add(p2.multiply(3 * (1 - t) * t* t)).add(p3.multiply(t * t * t));
-    double dd=(p.getX() - cx) * (p.getX() - cx) + (p.getY() - cy) * (p.getY() - cy);
+    double dd=(p.getX() - acx) * (p.getX() - acx) + (p.getY() - acy) * (p.getY() - acy);
     if (dd < rr) {
       if (abs(dd - bestDistance) < EPSILON) {
         result.add(new AbstractMap.SimpleEntry<>(t,p));
@@ -41,7 +48,7 @@
   if (result.isEmpty()) {
     for (double t=0; t <= 1; t+=1) {
       final Point2D p=p0.multiply((1 - t) * (1 - t) * (1 - t)).add(p1.multiply(3 * (1 - t) * (1 - t)* t)).add(p2.multiply(3 * (1 - t) * t* t)).add(p3.multiply(t * t * t));
-      double dd=(p.getX() - cx) * (p.getX() - cx) + (p.getY() - cy) * (p.getY() - cy);
+      double dd=(p.getX() - acx) * (p.getX() - acx) + (p.getY() - acy) * (p.getY() - acy);
       if (dd < rr) {
         if (abs(dd - bestDistance) < EPSILON) {
           result.add(new AbstractMap.SimpleEntry<>(t,p));

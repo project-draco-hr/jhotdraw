@@ -1,36 +1,20 @@
 {
-  if (true) {
-    return Arrays.toString(this.coefs);
-  }
-  ArrayList<String> coefs=new ArrayList<String>();
-  ArrayList<String> signs=new ArrayList<String>();
-  for (int i=this.coefs.length - 1; i >= 0; i--) {
-    double value=this.coefs[i];
-    if (value != 0) {
-      String sign=(value < 0) ? " - " : " + ";
-      value=Math.abs(value);
-      String strvalue=Double.toString(value);
-      if (i > 0) {
-        if (value == 1) {
-          strvalue=this.variable;
-        }
- else {
-          strvalue=value + this.variable;
-        }
-      }
+  StringBuilder b=new StringBuilder();
+  b.append('[');
+  for (int i=coefs.length - 1; i >= 0; i--) {
+    if (coefs[i] >= 0) {
+      b.append('+');
+    }
+    b.append(coefs[i]);
+    if (i > 0) {
+      b.append("*x");
       if (i > 1) {
-        strvalue+="^" + i;
+        b.append('^').append(i);
       }
-      signs.add(sign);
-      coefs.add(strvalue);
+    }
+    if (i > 0) {
+      b.append(' ');
     }
   }
-  if (signs.size() > 0) {
-    signs.set(0,(signs.get(0) == " + ") ? "" : "-");
-  }
-  StringBuilder result=new StringBuilder();
-  for (int i=0; i < coefs.size(); i++) {
-    result.append(signs.get(i)).append(coefs.get(i));
-  }
-  return result.toString();
+  return b.append(']').toString();
 }

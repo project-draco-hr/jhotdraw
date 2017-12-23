@@ -1,4 +1,0 @@
-{
-  this.y=y;
-  this.dy=dy;
-}

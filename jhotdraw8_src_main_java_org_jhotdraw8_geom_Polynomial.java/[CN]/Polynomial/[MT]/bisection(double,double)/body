@@ -2,10 +2,10 @@
   double minValue=this.eval(min);
   double maxValue=this.eval(max);
   Double result=null;
-  if (Math.abs(minValue) <= Polynomial.TOLERANCE) {
+  if (Math.abs(minValue) <= EPSILON) {
     result=min;
   }
- else   if (Math.abs(maxValue) <= Polynomial.TOLERANCE) {
+ else   if (Math.abs(maxValue) <= EPSILON) {
     result=max;
   }
  else   if (minValue * maxValue <= 0) {
@@ -15,7 +15,7 @@
     for (double i=0; i < iters; i++) {
       result=0.5 * (min + max);
       double value=this.eval(result);
-      if (Math.abs(value) <= Polynomial.TOLERANCE) {
+      if (Math.abs(value) <= EPSILON) {
         break;
       }
       if (value * minValue < 0) {

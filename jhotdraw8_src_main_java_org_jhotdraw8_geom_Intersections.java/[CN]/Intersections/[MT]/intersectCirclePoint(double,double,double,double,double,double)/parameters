@@ -1,6 +1,6 @@
-double c1x
-double c1y
-double r1
-double c2x
-double c2y
-double r2
+double cx
+double cy
+double cr
+double px
+double py
+double pr

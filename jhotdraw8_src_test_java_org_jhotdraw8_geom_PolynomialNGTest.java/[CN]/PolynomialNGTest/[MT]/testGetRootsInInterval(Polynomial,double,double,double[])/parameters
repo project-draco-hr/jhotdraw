@@ -1,0 +1,4 @@
+Polynomial instance
+double from
+double to
+double[] expected

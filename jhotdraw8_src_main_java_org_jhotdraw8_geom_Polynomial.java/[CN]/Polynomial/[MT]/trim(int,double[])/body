@@ -1,0 +1,8 @@
+{
+  if (length == a.length) {
+    return a;
+  }
+  double[] finalResults=new double[length];
+  System.arraycopy(a,0,finalResults,0,length);
+  return finalResults;
+}

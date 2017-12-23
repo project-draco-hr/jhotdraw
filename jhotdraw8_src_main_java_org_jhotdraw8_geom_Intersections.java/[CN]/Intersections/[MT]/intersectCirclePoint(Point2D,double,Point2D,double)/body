@@ -1,7 +1,5 @@
 {
   List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
-  double r_max=cr + pr;
-  double r_min=Math.abs(cr - pr);
   double c_dist=cc.distance(pc);
   Intersection.Status status;
   if (abs(c_dist) < EPSILON) {
@@ -14,7 +12,9 @@
       status=Intersection.Status.INTERSECTION;
       result.add(new AbstractMap.SimpleEntry<>(Double.NaN,p));
     }
- else     status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
+ else {
+      status=Intersection.Status.NO_INTERSECTION_OUTSIDE;
+    }
   }
   return new Intersection(status,result);
 }

@@ -1,6 +1,0 @@
-{
-  double[] r=new double[a.length + 1];
-  System.arraycopy(a,0,r,0,a.length);
-  r[a.length]=d;
-  return r;
-}

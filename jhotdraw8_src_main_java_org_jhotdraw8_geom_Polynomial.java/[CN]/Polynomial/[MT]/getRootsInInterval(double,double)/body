@@ -48,10 +48,5 @@ default :
   break;
 }
 }
-if (numRoots == roots.length) {
-return roots;
-}
-double[] finalResults=new double[numRoots];
-System.arraycopy(roots,0,finalResults,0,numRoots);
-return finalResults;
+return trim(numRoots,roots);
 }

@@ -1,0 +1,10 @@
+{
+  Point2D dir=a1.subtract(a0).normalize();
+  Point2D normal=new Point2D(-dir.getY(),dir.getX());
+  Point2D[] result=new Point2D[points.length];
+  for (int i=0; i < points.length; i++) {
+    Point2D translated=points[i].subtract(a0);
+    result[i]=new Point2D(dir.dotProduct(translated),normal.dotProduct(translated));
+  }
+  return result;
+}
