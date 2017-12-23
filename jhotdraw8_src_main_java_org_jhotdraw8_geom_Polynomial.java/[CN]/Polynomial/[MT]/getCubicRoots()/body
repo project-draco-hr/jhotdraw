@@ -15,6 +15,9 @@
   offset=c2 / 3;
   halfB=b / 2;
   double discrim=b * b / 4 + a * a * a / 27;
+  if (Math.abs(discrim) <= EPSILON) {
+    discrim=0;
+  }
   if (discrim > 0) {
     double e=Math.sqrt(discrim);
     double tmp;

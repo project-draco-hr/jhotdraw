@@ -10,8 +10,8 @@
   }
  else   if (minValue * maxValue <= 0) {
     double tmp1=Math.log(max - min);
-    double tmp2=MathLN10 * Polynomial.ACCURACY;
-    double iters=Math.ceil((tmp1 + tmp2) / MathLN2);
+    double tmp2=LN10 * Polynomial.ACCURACY;
+    double iters=Math.ceil((tmp1 + tmp2) / LN2);
     for (double i=0; i < iters; i++) {
       result=0.5 * (min + max);
       double value=this.eval(result);

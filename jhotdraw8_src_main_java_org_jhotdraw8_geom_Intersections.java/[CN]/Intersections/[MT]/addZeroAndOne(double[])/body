@@ -1,0 +1,15 @@
+{
+  double[] roots=new double[clampedRoots.length + 2];
+  int numRoots=0;
+  Arrays.sort(clampedRoots);
+  if (clampedRoots.length == 0 || clampedRoots[0] > 0) {
+    roots[numRoots++]=0.0;
+  }
+  for (int i=0; i < clampedRoots.length; i++) {
+    roots[numRoots++]=clampedRoots[i];
+  }
+  if (clampedRoots.length == 0 || clampedRoots[clampedRoots.length - 1] < 1) {
+    roots[numRoots++]=1;
+  }
+  return Polynomial.trim(numRoots,roots);
+}

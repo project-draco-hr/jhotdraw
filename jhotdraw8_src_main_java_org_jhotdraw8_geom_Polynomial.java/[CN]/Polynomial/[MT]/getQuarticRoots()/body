@@ -10,6 +10,9 @@
   double[] resolveRoots=new Polynomial(1,-c2,c3 * c1 - 4 * c0,-c3 * c3 * c0 + 4 * c2 * c0 - c1 * c1).getCubicRoots();
   double y=resolveRoots[0];
   double discrim=c3 * c3 / 4 - c2 + y;
+  if (Math.abs(discrim) <= EPSILON) {
+    discrim=0;
+  }
   if (discrim > 0) {
     double e=Math.sqrt(discrim);
     final double t1, t2;

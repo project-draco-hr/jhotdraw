@@ -15,7 +15,8 @@
   d=2 * (c1x * c2x + c1y * c2y + c0x * c3x + c0y * c3y - c3x * cx - c3y * cy);
   e=(c1x * c1x + c1y * c1y + 2 * c0x * c2x + 2 * c0y * c2y - 2 * c2x * cx - 2 * c2y * cy);
   f=2 * (c0x * c1x + c0y * c1y - c1x * cx - c1y * cy);
-  final double[] roots=new Polynomial(6 * a,5 * b,4 * c,3 * d,2 * e,f).getRootsInInterval(0,1);
+  final double[] clampedRoots=new Polynomial(6 * a,5 * b,4 * c,3 * d,2 * e,f).getRootsInInterval(0,1);
+  final double[] roots=addZeroAndOne(clampedRoots);
   final List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   final Point2D p0, p1, p2, p3;
   p0=new Point2D(x0,y0);
@@ -25,7 +26,8 @@
   final double rr=r * r;
   double bestDistance=Double.POSITIVE_INFINITY;
   for (  double t : roots) {
-    final Point2D p=p0.multiply((1 - t) * (1 - t) * (1 - t)).add(p1.multiply(3 * (1 - t) * (1 - t)* t)).add(p2.multiply(3 * (1 - t) * t* t)).add(p3.multiply(t * t * t));
+    final Point2D p;
+    p=p0.multiply((1 - t) * (1 - t) * (1 - t)).add(p1.multiply(3 * (1 - t) * (1 - t)* t)).add(p2.multiply(3 * (1 - t) * t* t)).add(p3.multiply(t * t * t));
     double dd=(p.getX() - cx) * (p.getX() - cx) + (p.getY() - cy) * (p.getY() - cy);
     if (dd < rr) {
       if (abs(dd - bestDistance) < EPSILON) {
@@ -35,22 +37,6 @@
         bestDistance=dd;
         result.clear();
         result.add(new AbstractMap.SimpleEntry<>(t,p));
-      }
-    }
-  }
-  if (result.isEmpty()) {
-    for (double t=0; t <= 1; t+=1) {
-      final Point2D p=p0.multiply((1 - t) * (1 - t) * (1 - t)).add(p1.multiply(3 * (1 - t) * (1 - t)* t)).add(p2.multiply(3 * (1 - t) * t* t)).add(p3.multiply(t * t * t));
-      double dd=(p.getX() - cx) * (p.getX() - cx) + (p.getY() - cy) * (p.getY() - cy);
-      if (dd < rr) {
-        if (abs(dd - bestDistance) < EPSILON) {
-          result.add(new AbstractMap.SimpleEntry<>(t,p));
-        }
- else         if (dd < bestDistance) {
-          bestDistance=dd;
-          result.clear();
-          result.add(new AbstractMap.SimpleEntry<>(t,p));
-        }
       }
     }
   }
