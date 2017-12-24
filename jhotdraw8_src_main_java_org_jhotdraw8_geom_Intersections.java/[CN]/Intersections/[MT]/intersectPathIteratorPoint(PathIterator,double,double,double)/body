@@ -6,6 +6,7 @@
   double lastx=0, lasty=0;
   double x, y;
   int i=0;
+  double closestDistance=Double.POSITIVE_INFINITY;
   for (; !pit.isDone(); pit.next(), i++) {
     Intersection inter;
 switch (pit.currentSegment(seg)) {
@@ -15,7 +16,7 @@ case PathIterator.SEG_CLOSE:
 case PathIterator.SEG_CUBICTO:
   x=seg[4];
 y=seg[5];
-inter=Intersections.intersectBezier3Point(lastx,lasty,seg[0],seg[1],seg[2],seg[3],x,y,px,py,tolerance);
+inter=Intersections.intersectCubicCurvePoint(lastx,lasty,seg[0],seg[1],seg[2],seg[3],x,y,px,py,tolerance);
 lastx=x;
 lasty=y;
 break;
@@ -34,7 +35,7 @@ break;
 case PathIterator.SEG_QUADTO:
 x=seg[2];
 y=seg[3];
-inter=Intersections.intersectBezier2Point(lastx,lasty,seg[0],seg[1],x,y,px,py,tolerance);
+inter=Intersections.intersectQuadraticCurvePoint(lastx,lasty,seg[0],seg[1],x,y,px,py,tolerance);
 lastx=x;
 lasty=y;
 break;
@@ -44,7 +45,15 @@ break;
 }
 if (inter != null) {
 for (Map.Entry<Double,Point2D> entry : inter.getIntersections()) {
+final double dd=Geom.squaredDistance(entry.getValue(),px,py);
+if (abs(dd - closestDistance) < EPSILON) {
 result.add(new AbstractMap.SimpleEntry<>(entry.getKey() + i,entry.getValue()));
+}
+ else if (dd < closestDistance) {
+result.clear();
+closestDistance=dd;
+result.add(new AbstractMap.SimpleEntry<>(entry.getKey() + i,entry.getValue()));
+}
 }
 }
 }

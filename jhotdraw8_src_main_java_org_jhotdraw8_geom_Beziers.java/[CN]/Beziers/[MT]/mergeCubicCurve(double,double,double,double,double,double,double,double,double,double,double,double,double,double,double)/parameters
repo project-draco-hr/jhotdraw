@@ -1,0 +1,15 @@
+double x0
+double y0
+double x01
+double y01
+double x012
+double y012
+double x0123
+double y0123
+double x123
+double y123
+double x23
+double y23
+double x3
+double y3
+double tolerance

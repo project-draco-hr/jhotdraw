@@ -1,0 +1,3 @@
+{
+  return new Point2D(p.getX() / factor,p.getY() / factor);
+}

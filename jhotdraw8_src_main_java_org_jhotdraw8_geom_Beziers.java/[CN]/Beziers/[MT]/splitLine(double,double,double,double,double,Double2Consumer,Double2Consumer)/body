@@ -1,0 +1,3 @@
+{
+  Geom.splitLine(x0,y0,x1,y1,t,leftLineTo,rightLineTo);
+}

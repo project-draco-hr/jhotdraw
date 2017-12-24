@@ -1,3 +1,0 @@
-{
-  return intersectBezier2Line(new Point2D(ax0,ay0),new Point2D(ax1,ay1),new Point2D(ax2,ay2),new Point2D(bx0,by0),new Point2D(bx1,by1));
-}

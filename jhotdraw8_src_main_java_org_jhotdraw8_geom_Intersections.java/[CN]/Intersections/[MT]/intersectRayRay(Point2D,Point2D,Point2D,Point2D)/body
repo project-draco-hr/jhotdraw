@@ -1,13 +1,22 @@
 {
   List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
   Intersection.Status status=Intersection.Status.NO_INTERSECTION;
-  double ua_t=(b1.getX() - b0.getX()) * (a0.getY() - b0.getY()) - (b1.getY() - b0.getY()) * (a0.getX() - b0.getX());
-  double ub_t=(a1.getX() - a0.getX()) * (a0.getY() - b0.getY()) - (a1.getY() - a0.getY()) * (a0.getX() - b0.getX());
-  double u_b=(b1.getY() - b0.getY()) * (a1.getX() - a0.getX()) - (b1.getX() - b0.getX()) * (a1.getY() - a0.getY());
+  final double a0y, b1x, b0x, b0y, b1y, a0x, a1y;
+  a0y=a0.getY();
+  b1x=b1.getX();
+  b0x=b0.getX();
+  b0y=b0.getY();
+  b1y=b1.getY();
+  a0x=a0.getX();
+  a1y=a1.getY();
+  double ua_t=(b1x - b0x) * (a0y - b0y) - (b1y - b0y) * (a0x - b0x);
+  final double a1x=a1.getX();
+  double ub_t=(a1x - a0x) * (a0y - b0y) - (a1y - a0y) * (a0x - b0x);
+  double u_b=(b1y - b0y) * (a1x - a0x) - (b1x - b0x) * (a1y - a0y);
   if (u_b != 0) {
     double ua=ua_t / u_b;
     status=Intersection.Status.INTERSECTION;
-    result.add(new AbstractMap.SimpleEntry<>(ua,new Point2D(a0.getX() + ua * (a1.getX() - a0.getX()),a0.getY() + ua * (a1.getY() - a0.getY()))));
+    result.add(new AbstractMap.SimpleEntry<>(ua,new Point2D(a0x + ua * (a1x - a0x),a0y + ua * (a1y - a0y))));
   }
  else {
     if (ua_t == 0 || ub_t == 0) {

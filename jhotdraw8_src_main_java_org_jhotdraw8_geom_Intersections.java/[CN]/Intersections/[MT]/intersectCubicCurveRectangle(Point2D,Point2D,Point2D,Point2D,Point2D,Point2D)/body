@@ -1,0 +1,18 @@
+{
+  final Point2D topLeft, bottomRight, topRight, bottomLeft;
+  topLeft=topLeft(r0,r1);
+  bottomRight=bottomRight(r0,r1);
+  topRight=new Point2D(bottomRight.getX(),topLeft.getY());
+  bottomLeft=new Point2D(topLeft.getX(),bottomRight.getY());
+  final Intersection inter1, inter2, inter3, inter4;
+  inter1=Intersections.intersectCubicCurveLine(p0,p1,p2,p3,topLeft,topRight);
+  inter2=Intersections.intersectCubicCurveLine(p0,p1,p2,p3,topRight,bottomRight);
+  inter3=Intersections.intersectCubicCurveLine(p0,p1,p2,p3,bottomRight,bottomLeft);
+  inter4=Intersections.intersectCubicCurveLine(p0,p1,p2,p3,bottomLeft,topLeft);
+  final List<Map.Entry<Double,Point2D>> result=new ArrayList<>();
+  result.addAll(inter1.getIntersections());
+  result.addAll(inter2.getIntersections());
+  result.addAll(inter3.getIntersections());
+  result.addAll(inter4.getIntersections());
+  return new Intersection(result);
+}

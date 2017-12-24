@@ -1,0 +1,3 @@
+{
+  return Intersections.intersectCubicCurveEllipse(new Point2D(x0,y0),new Point2D(x1,y1),new Point2D(x2,y2),new Point2D(x3,y3),new Point2D(cx,cy),r,r);
+}
