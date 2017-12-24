@@ -1,6 +1,6 @@
 {
   int i=this.getDegree();
-  while (i > 0 && Math.abs(this.coefs[i]) <= EPSILON) {
+  while (i > 0 && abs(this.coefs[i]) <= EPSILON) {
     i--;
   }
   return i;

@@ -1,0 +1,4 @@
+ToDoubleFunction<Double> func
+double min
+double max
+int n

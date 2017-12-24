@@ -1,0 +1,28 @@
+{
+  double range=max - min;
+  double st=0.5 * range * (func.applyAsDouble(min) + func.applyAsDouble(max));
+  double t=st;
+  double s=4.0 * st / 3.0;
+  double os=s;
+  double ost=st;
+  int it=1;
+  for (int n=2; n <= 20; n++) {
+    double delta=range / it;
+    double x=min + 0.5 * delta;
+    double sum=0;
+    for (double i=1; i <= it; i++) {
+      sum+=func.applyAsDouble(x);
+      x+=delta;
+    }
+    t=0.5 * (t + range * sum / it);
+    st=t;
+    s=(4.0 * st - ost) / 3.0;
+    if (abs(s - os) < EPSILON * abs(os)) {
+      break;
+    }
+    os=s;
+    ost=st;
+    it<<=1;
+  }
+  return s;
+}

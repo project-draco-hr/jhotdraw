@@ -10,29 +10,29 @@
   double[] resolveRoots=new Polynomial(1,-c2,c3 * c1 - 4 * c0,-c3 * c3 * c0 + 4 * c2 * c0 - c1 * c1).getCubicRoots();
   double y=resolveRoots[0];
   double discrim=c3 * c3 / 4 - c2 + y;
-  if (Math.abs(discrim) <= EPSILON) {
+  if (abs(discrim) <= EPSILON) {
     discrim=0;
   }
   if (discrim > 0) {
-    double e=Math.sqrt(discrim);
+    double e=sqrt(discrim);
     final double t1, t2;
     t1=0.75 * c3 * c3 - e * e - 2 * c2;
     t2=(4 * c3 * c2 - 8 * c1 - c3 * c3 * c3) / (4 * e);
     double plus=t1 + t2;
     double minus=t1 - t2;
-    if (Math.abs(plus) <= EPSILON) {
+    if (abs(plus) <= EPSILON) {
       plus=0;
     }
-    if (Math.abs(minus) <= EPSILON) {
+    if (abs(minus) <= EPSILON) {
       minus=0;
     }
     if (plus >= 0) {
-      double f=Math.sqrt(plus);
+      double f=sqrt(plus);
       results[numResults++]=c3 / -4 + (e + f) / 2;
       results[numResults++]=c3 / -4 + (e - f) / 2;
     }
     if (minus >= 0) {
-      double f=Math.sqrt(minus);
+      double f=sqrt(minus);
       results[numResults++]=c3 / -4 + (f - e) / 2;
       results[numResults++]=c3 / -4 - (f + e) / 2;
     }
@@ -45,15 +45,15 @@
       if (t2 < 0) {
         t2=0;
       }
-      t2=2 * Math.sqrt(t2);
+      t2=2 * sqrt(t2);
       double t1=3 * c3 * c3 / 4 - 2 * c2;
       if (t1 + t2 >= EPSILON) {
-        double d=Math.sqrt(t1 + t2);
+        double d=sqrt(t1 + t2);
         results[numResults++]=-c3 / 4 + d / 2;
         results[numResults++]=-c3 / 4 - d / 2;
       }
       if (t1 - t2 >= EPSILON) {
-        double d=Math.sqrt(t1 - t2);
+        double d=sqrt(t1 - t2);
         results[numResults++]=-c3 / 4 + d / 2;
         results[numResults++]=-c3 / 4 - d / 2;
       }

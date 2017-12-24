@@ -4,7 +4,7 @@
   double c=this.coefs[0] / a;
   double d=b * b - 4 * c;
   if (d > 0) {
-    double e=Math.sqrt(d);
+    double e=sqrt(d);
     return new double[]{0.5 * (-b + e),0.5 * (-b - e)};
   }
  else   if (d == 0) {
