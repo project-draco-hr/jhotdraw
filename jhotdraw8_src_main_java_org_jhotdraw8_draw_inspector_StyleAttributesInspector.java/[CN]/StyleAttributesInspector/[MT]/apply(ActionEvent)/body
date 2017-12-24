@@ -23,6 +23,7 @@
         m.fireLayoutInvalidated(f);
       }
     }
+    drawingView.recreateHandles();
   }
  catch (  IOException ex) {
     ex.printStackTrace();

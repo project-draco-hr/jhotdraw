@@ -7,7 +7,6 @@
     Point2D localp=owner.worldToLocal(pInDrawing);
     final SimpleBezierFigure o=getOwner();
     final ImmutableList<BezierNode> nodes=o.get(key);
-    System.err.println("BezierOutlineHandle add point at " + localp + " not implemented");
     BezierNodePath path=new BezierNodePath(nodes);
     if (path.split(localp.getX(),localp.getY(),tolerance)) {
       dv.getModel().set(o,key,ImmutableList.ofCollection(path.getNodes()));
