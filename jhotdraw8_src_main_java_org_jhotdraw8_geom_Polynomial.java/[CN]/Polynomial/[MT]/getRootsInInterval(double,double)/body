@@ -24,23 +24,23 @@ default :
   Polynomial deriv=this.getDerivative();
   double[] droots=deriv.getRootsInInterval(min,max);
   if (droots.length > 0) {
-    Double root=this.bisection(min,droots[0]);
+    Double root=bisection(this,min,droots[0]);
     if (root != null) {
       roots[numRoots++]=root;
     }
     for (int i=0; i <= droots.length - 2; i++) {
-      root=this.bisection(droots[i],droots[i + 1]);
+      root=bisection(this,droots[i],droots[i + 1]);
       if (root != null) {
         roots[numRoots++]=root;
       }
     }
-    root=this.bisection(droots[droots.length - 1],max);
+    root=bisection(this,droots[droots.length - 1],max);
     if (root != null) {
       roots[numRoots++]=root;
     }
   }
  else {
-    Double root=this.bisection(min,max);
+    Double root=bisection(this,min,max);
     if (root != null) {
       roots[numRoots++]=root;
     }

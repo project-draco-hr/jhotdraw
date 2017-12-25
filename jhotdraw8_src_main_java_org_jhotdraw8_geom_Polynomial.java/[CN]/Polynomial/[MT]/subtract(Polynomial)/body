@@ -6,7 +6,7 @@
   for (int i=0; i <= dmax; i++) {
     double v1=(i <= d1) ? this.coefs[i] : 0;
     double v2=(i <= d2) ? that.coefs[i] : 0;
-    result[i]=v1 + v2;
+    result[i]=v1 - v2;
   }
   return new Polynomial(false,result);
 }

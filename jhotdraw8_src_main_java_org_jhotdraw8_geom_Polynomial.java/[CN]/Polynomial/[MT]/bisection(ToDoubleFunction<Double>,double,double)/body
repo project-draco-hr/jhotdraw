@@ -1,6 +1,6 @@
 {
-  double minValue=this.eval(min);
-  double maxValue=this.eval(max);
+  double minValue=func.applyAsDouble(min);
+  double maxValue=func.applyAsDouble(max);
   Double result=null;
   if (abs(minValue) <= EPSILON) {
     result=min;
@@ -14,7 +14,7 @@
     double iters=ceil((tmp1 + tmp2) / LN2);
     for (double i=0; i < iters; i++) {
       result=0.5 * (min + max);
-      double value=this.eval(result);
+      double value=func.applyAsDouble(result);
       if (abs(value) <= EPSILON) {
         break;
       }

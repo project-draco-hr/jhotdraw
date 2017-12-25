@@ -1,5 +1,7 @@
 {
+  double[] result=new double[this.coefs.length];
   for (int i=0; i < this.coefs.length; i++) {
-    this.coefs[i]/=scalar;
+    result[i]=this.coefs[i]/=scalar;
   }
+  return new Polynomial(false,result);
 }
