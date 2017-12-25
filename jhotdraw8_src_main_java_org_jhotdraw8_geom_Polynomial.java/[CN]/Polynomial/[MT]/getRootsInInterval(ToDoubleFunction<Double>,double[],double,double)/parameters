@@ -1,0 +1,4 @@
+ToDoubleFunction<Double> func
+double[] droots
+double min
+double max
