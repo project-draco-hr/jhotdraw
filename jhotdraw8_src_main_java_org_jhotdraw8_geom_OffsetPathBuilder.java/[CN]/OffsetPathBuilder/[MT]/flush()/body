@@ -8,7 +8,6 @@
       Intersection inter=Intersections.intersectLineLine(a1,a2,b1,b2);
       if (inter.getStatus() == Intersection.Status.INTERSECTION) {
         Point2D p=inter.getPoints().iterator().next();
-        segments.set(i + 1,p);
         segments.set(j,p);
         for (int k=i + 1; k < j; k++) {
           segments.remove(i + 1);
