@@ -1,0 +1,12 @@
+{
+  final FXPathBuilder fxPathBuilder=new FXPathBuilder();
+  final OffsetPathBuilder builder=new OffsetPathBuilder(fxPathBuilder,width);
+  if (!points.isEmpty()) {
+    builder.moveTo(points.get(0).getX(),points.get(0).getY());
+    for (int i=1, n=points.size(); i < n; i++) {
+      builder.lineTo(points.get(i).getX(),points.get(i).getY());
+    }
+    builder.pathDone();
+  }
+  return fxPathBuilder.getElements();
+}
