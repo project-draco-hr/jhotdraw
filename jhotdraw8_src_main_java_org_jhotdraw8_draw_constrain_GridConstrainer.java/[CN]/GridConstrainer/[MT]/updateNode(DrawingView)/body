@@ -3,10 +3,11 @@
   ObservableList<PathElement> major=majorNode.getElements();
   minor.clear();
   major.clear();
-  CssColor minorGridColor=getMinorGridColor();
-  minorNode.setStroke(minorGridColor == null ? null : minorGridColor.getColor());
-  CssColor majorGridColor=getMajorGridColor();
-  majorNode.setStroke(majorGridColor == null ? null : majorGridColor.getColor());
+  CssColor gridColor=getGridColor();
+  minorNode.setStroke(gridColor == null ? null : gridColor.getColor());
+  majorNode.setStroke(gridColor == null ? null : gridColor.getColor());
+  minorNode.setStrokeWidth(0.5);
+  majorNode.setStrokeWidth(1.0);
   Bounds visibleRect=drawingView.viewToWorld(drawingView.getVisibleRect());
   if (drawGrid.get()) {
     Drawing drawing=drawingView.getDrawing();
