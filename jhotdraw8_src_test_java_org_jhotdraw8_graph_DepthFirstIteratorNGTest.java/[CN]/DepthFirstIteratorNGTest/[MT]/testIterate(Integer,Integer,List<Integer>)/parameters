@@ -1,0 +1,3 @@
+Integer start
+Integer goal
+List<Integer> expResult

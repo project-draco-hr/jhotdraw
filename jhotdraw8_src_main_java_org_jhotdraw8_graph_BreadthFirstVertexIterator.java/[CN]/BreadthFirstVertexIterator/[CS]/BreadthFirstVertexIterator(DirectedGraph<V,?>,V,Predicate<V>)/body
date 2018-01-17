@@ -1,0 +1,7 @@
+{
+  this.graph=graph;
+  queue=new ArrayDeque<>(16);
+  this.visited=visited;
+  queue.add(root);
+  visited.test(root);
+}

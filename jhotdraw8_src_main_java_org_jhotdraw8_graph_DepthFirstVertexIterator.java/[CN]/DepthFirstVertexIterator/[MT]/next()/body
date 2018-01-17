@@ -1,0 +1,11 @@
+{
+  if (next == NEEDS_LOOKAHEAD) {
+    lookahead();
+  }
+  if (next == SENTINEL) {
+    throw new NoSuchElementException();
+  }
+  V result=next;
+  next=(V)NEEDS_LOOKAHEAD;
+  return result;
+}

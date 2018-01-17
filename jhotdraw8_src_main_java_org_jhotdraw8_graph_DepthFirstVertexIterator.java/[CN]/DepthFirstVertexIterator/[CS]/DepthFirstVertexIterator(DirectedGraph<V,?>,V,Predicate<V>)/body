@@ -1,0 +1,6 @@
+{
+  this.graph=graph;
+  stack=new ArrayDeque<>(16);
+  this.visited=visited;
+  stack.push(root);
+}

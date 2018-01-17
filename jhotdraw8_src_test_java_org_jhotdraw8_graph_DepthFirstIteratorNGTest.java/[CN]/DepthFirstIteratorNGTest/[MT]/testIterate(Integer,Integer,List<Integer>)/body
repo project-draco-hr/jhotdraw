@@ -1,0 +1,15 @@
+{
+  System.out.println("testIterate");
+  DirectedGraph<Integer,Double> graph=createGraph();
+  DepthFirstVertexIterator<Integer,Double> instance=new DepthFirstVertexIterator<>(graph,start);
+  List<Integer> result=new ArrayList<>();
+  while (instance.hasNext()) {
+    final Integer next=instance.next();
+    result.add(next);
+    if (next == goal) {
+      break;
+    }
+  }
+  System.out.println("actual:" + result);
+  assertEquals(result,expResult);
+}

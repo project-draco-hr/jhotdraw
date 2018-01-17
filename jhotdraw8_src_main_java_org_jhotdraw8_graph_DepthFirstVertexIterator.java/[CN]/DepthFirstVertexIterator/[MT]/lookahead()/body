@@ -1,0 +1,13 @@
+{
+  while (!stack.isEmpty()) {
+    V current=stack.pop();
+    if (visited.test(current)) {
+      for (      V next : graph.getNextVertices(current)) {
+        stack.push(next);
+      }
+      next=current;
+      return;
+    }
+  }
+  next=(V)SENTINEL;
+}

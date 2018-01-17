@@ -1,0 +1,6 @@
+{
+  if (next == NEEDS_LOOKAHEAD) {
+    lookahead();
+  }
+  return next != SENTINEL;
+}
